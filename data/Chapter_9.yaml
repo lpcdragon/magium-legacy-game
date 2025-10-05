@@ -1,0 +1,1439 @@
+scenes:
+  - name: ch9_intro
+    texts:
+      - source: scene_text
+        paragraph: 2
+        text: "After finishing our briefing and finding our way out of the ruins, we wave goodbye to Leo the leopard, we grab our backpacks and we start heading towards our new objective. Flower is leading the way again, but this time she looks a lot less confident than before, and there's definitely some uneasiness in her voice as she speaks to us.\r\n\r\n\"Okay, so we'll need to follow this path for the next few hours, until we reach the first crossroads,\" the girl says. \"After that, there isn't really a path to follow anymore, so you're going to have to stick close to me if you don't want to get lost. If you want to take food breaks, just tell me and we'll--\"\r\n\r\n\"Flower,\" Kate interrupts her. \"Why did you agree to come with us to the ogre stronghold? Isn't it a little dangerous even for you to be heading straight into monster territory like this?\"\r\n\r\n\"Well, yeah, but if I didn't agree to come with you, Eleya would have killed you...\"\r\n\r\n\"So what?\" Kate asks. \"If the fox killed us, then our blood wouldn't have been on your hands. Why would you go so far out of your way to help a group of complete strangers? Why not just let her kill us and go on about your business?\"\r\n\r\n\"I don't know... I just... couldn't...\"\r\n\r\nKate looks at her for a few seconds, and then she smiles faintly.\r\n\r\n\"I see...\" she says. \"Flower, I believe we may have started off on the wrong foot this morning. Allow me to rectify that.\""
+      - source: scene_text_2
+        paragraph: 2
+        text: "She then holds out her hand to her, and says:\r\n\r\n\"My name is Kate. Pleased to meet you!\"\r\n\r\nFlower looks somewhat taken aback by Kate's sudden shift in attitude towards her, and she shakes her hand, hesitantly.\r\n\r\n\"And my name is Rose!\" Rose says, as she offers her hand as well. \"I'm glad to have you with us, Flower!\"\r\n\r\n\"I'm Hadrik,\" says Hadrik. \"But you can just call me 'dwarf'. Either name will do!\"\r\n\r\nFlower takes a few steps back and is now starting to panic.\r\n\r\n\"I'm sorry!\" she says. \"I've never really been accepted into a group before. I have no idea what you're supposed to say in these situations!\"\r\n\r\n\"It's okay, Flower,\" Kate says. \"You don't need to say anything.\"\r\n\r\n\"Oh,\" Flower says, as she starts to calm down. \"Well, that's a relief!\""
+    effects:
+      - set:
+          successful_checks:
+            - 'Checkpoint reached: Game saved.'
+        condition: checkpoint_rich = 1
+    choices:
+      - position: 1
+        text: Introduce myself to Flower as well
+        effects:
+          - set:
+              current_scene: ch9_introduce
+              checkpoint_rich: 0
+      - position: 2
+        text: Keep my silence for now
+        effects:
+          - set:
+              current_scene: ch9_silence
+              checkpoint_rich: 0
+  - name: ch9_introduce
+    texts:
+      - source: scene_text
+        paragraph: 4
+        text: "\"I'm Barry,\" I tell her. \"Pleased to meet you as well!\"\r\n\r\n\"Oh, thanks!\" Flower says. \"But I already got your name! It's pretty easy to remember!\"\r\n\r\n\"You can say that again!\" Hadrik says, with a grin. \"It's probably also the reason why you can't throw a rock without hitting at least three Barrys in the Western Continent.\"\r\n\r\nHe then starts laughing loudly, as he usually does.\r\n\r\n\"Is Barry a common name on the other continents?\" Flower asks me.\r\n\r\n\"Yeah, I've met at least two dozen Barrys in my lifetime, and I don't really socialize much,\" I tell her.\r\n\r\n\"Well, to be fair,\" Hadrik says, \"my name is also pretty common on the Northern Continent. Especially for giants like myself.\"\r\n\r\n\"You're a giant?!\" Flower asks, shocked. \"Wow... I guess you really must have been the black sheep of your family, huh?\"\r\n\r\nHadrik laughs.\r\n\r\n\"You're not completely wrong there, little girl, but my family's opinion of me had nothing to do with my size, I'm afraid. The only reason I'm this small right now is because I've magically shapeshifted myself into a dwarf. I assure you that my height is well above average among my peers!\""
+      - source: scene_text_2
+        paragraph: 4
+        text: "\"I've always meant to ask,\" Rose says. \"Why did you choose to shapeshift yourself into a dwarf and not a human? Wouldn't it have been easier to fight if you'd kept your body proportions at least somewhat similar to your original form?\"\r\n\r\n\"Remember how I said that my friends call me 'the dwarf'?\" Hadrik asks. \"Well, that's because I spend most of my time drinking with dwarves from the Northern Continent, and because I'm shapeshifting into one more often than not. Given that I've picked up their accent and mannerism in the many years I've spent in their taverns, I thought it would raise less suspicion if I just came disguised as a dwarf, instead of a human. Plus, I've always enjoyed fighting with a handicap, so that's also a bonus!\"\r\n\r\nHe laughs again.\r\n\r\nFlower is now approaching Daren, and starts to address him.\r\n\r\n\"I'm sorry, I still didn't get your name...\" she tells him.\r\n\r\n\"Daren,\" he says. \"The name's Daren.\"\r\n\r\n\"You don't really like me very much, do you, Daren?\" the girl asks, with a concerned tone.\r\n\r\n\"I like you just fine,\" he says. \"It's the banshee I'm not very fond of.\"\r\n\r\n\"Oh, lighten up, Daren!\" Hadrik says. \"What do you think she's going to do? Betray us all and join the ogres once we get to their stronghold?\""
+      - source: scene_3
+        paragraph: 3
+        text: "\"Actually, that's exactly what I'm worried about,\" Daren says.\r\n\r\n\"I think I'm starting to understand why Petal doesn't want to talk to you guys...\" Flower says."
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_awakening
+  - name: ch9_silence
+    texts:
+      - source: scene_text
+        paragraph: 3
+        text: "Instead of jumping on the welcome wagon like everyone else, I decide to keep my silence for now and see how things turn out. Daren, who also seems to be in no hurry to rush towards Flower, grabs me by the shoulder and whispers in my ear:\r\n\r\n\"I don't trust that banshee, Barry,\" he says. \"The girl seems nice, but that's not a good enough reason to assume the same about the evil spirit she's harboring inside her body. Try to keep your guard up around her.\"\r\n\r\nFlower is now approaching us, and starts to address Daren.\r\n\r\n\"I'm sorry, I still didn't get your name...\" she tells him.\r\n\r\n\"Daren,\" he says. \"The name's Daren.\"\r\n\r\n\"You don't really like me very much, do you, Daren?\" the girl asks, with a concerned tone.\r\n\r\n\"I like you just fine,\" he says. \"It's the banshee I'm not very fond of.\"\r\n\r\n\"Oh, lighten up, Daren!\" Hadrik says. \"What do you think she's going to do? Betray us all and join the ogres once we get to their stronghold?\"\r\n\r\n\"Actually, that's exactly what I'm worried about,\" Daren says.\r\n\r\n\"I think I'm starting to understand why Petal doesn't want to talk to you guys...\" Flower says.\r\n\r\n\"Wait, aren't you going to ask me my name?\" I ask her.\r\n\r\n\"Oh, no, I already got your name, Barry! Yours is pretty easy to remember!\""
+      - source: scene_text_2
+        paragraph: 3
+        text: "\"You can say that again!\" Hadrik says, with a grin. \"It's probably also the reason why you can't throw a rock without hitting at least three Barrys in the Western Continent.\"\r\n\r\nHe then starts laughing loudly, as he usually does.\r\n\r\n\"Is Barry a common name on the other continents?\" Flower asks me.\r\n\r\n\"Yeah, I've met at least two dozen Barrys in my lifetime, and I don't really socialize much,\" I tell her.\r\n\r\n\"Well, to be fair,\" Hadrik says, \"my name is also pretty common on the Northern Continent. Especially for giants like myself.\"\r\n\r\n\"You're a giant?!\" Flower asks, shocked. \"Wow... I guess you really must have been the black sheep of your family, huh?\"\r\n\r\nHadrik laughs.\r\n\r\n\"You're not completely wrong there, little girl, but my family's opinion of me had nothing to do with my size, I'm afraid. The only reason I'm this small right now is because I've magically shapeshifted myself into a dwarf. I assure you that my height is well above average among my peers!\""
+      - source: scene_3
+        paragraph: 2
+        text: "\"I've always meant to ask,\" Rose says. \"Why did you choose to shapeshift yourself into a dwarf and not a human? Wouldn't it have been easier to fight if you'd kept your body proportions at least somewhat similar to your original form?\"\r\n\r\n\"Remember how I said that my friends call me 'the dwarf'?\" Hadrik asks. \"Well, that's because I spend most of my time drinking with dwarves from the Northern Continent, and because I'm shapeshifting into one more often than not. Given that I've picked up their accent and mannerism in the many years I've spent in their taverns, I thought it would raise less suspicion if I just came disguised as a dwarf, instead of a human. Plus, I've always enjoyed fighting with a handicap, so that's also a bonus!\"\r\n\r\nHe laughs again."
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_awakening
+  - name: ch9_awakening
+    routes:
+      - texts:
+          - source: scene_text
+            paragraph: 5
+            text: "\"If I may ask,\" Kate says, \"how exactly did you and Petal come to share the same body? I've never heard of something like this happening before.\"\r\n\r\n\"Oh, Petal told me that our souls fused together during her awakening, twenty years ago,\" Flower says. \"I don't really know the specifics of soul fusion, though. You'll have to ask Petal about that.\"\r\n\r\n\"Wait, twenty years ago?\" Hadrik asks. \"How old are you, exactly?\"\r\n\r\n\"I'll be turning thirty next month!\" the girl says, smiling.\r\n\r\nSeeing the looks on our faces, she decides to give us a bit more context.\r\n\r\n\"A body stops aging after it's been possessed by a banshee,\" she says. \"I was just about to turn ten when Petal awakened.\"\r\n\r\n\"I'm so sorry about what happened...\" Rose tells her. \"It must have been a terrible ordeal for a child to go through...\"\r\n\r\n\"No, you've got it all wrong!\" Flower says. \"The day Petal awakened was the happiest day of my life! At long last, I had someone here with me, to share my world with! You cannot possibly imagine the joy I felt when I realized that I no longer had to live my life alone inside of my own mind!\""
+        condition: ch8_old = 0
+        choices:
+          - position: 1
+            text: >-
+              Live inside your own mind? You mean to say that you space out a
+              lot?
+            effects:
+              - set:
+                  current_scene: ch9_space_out
+          - position: 2
+            text: Talk about an active imagination!
+            effects:
+              - set:
+                  current_scene: ch9_imagination
+          - position: 3
+            text: >-
+              I know a good doctor in the Western Continent, if you are
+              interested.
+            effects:
+              - set:
+                  current_scene: ch9_doctor
+      - texts:
+          - source: scene_text
+            paragraph: 6
+            text: "\"If I may ask,\" Kate says, \"how exactly did you and Petal come to share the same body? I've never heard of something like this happening before.\"\r\n\r\n\"Oh, Petal told me that our souls fused together during her awakening, twenty years ago,\" Flower says. \"I don't really know the specifics of soul fusion, though. You'll have to ask Petal about that.\"\r\n\r\n\"I'm so sorry about what happened...\" Rose tells her. \"It must have been a terrible ordeal for a child to go through...\"\r\n\r\n\"No, you've got it all wrong!\" Flower says. \"The day Petal awakened was the happiest day of my life! At long last, I had someone here with me, to share my world with! You cannot possibly imagine the joy I felt when I realized that I no longer had to live my life alone inside of my own mind!\""
+        condition: ch8_old = 1
+        choices:
+          - position: 1
+            text: >-
+              Live inside your own mind? You mean to say that you space out a
+              lot?
+            effects:
+              - set:
+                  current_scene: ch9_space_out
+          - position: 2
+            text: Talk about an active imagination!
+            effects:
+              - set:
+                  current_scene: ch9_imagination
+          - position: 3
+            text: >-
+              I know a good doctor in the Western Continent, if you are
+              interested.
+            effects:
+              - set:
+                  current_scene: ch9_doctor
+  - name: ch9_space_out
+    texts:
+      - source: scene_text
+        paragraph: 7
+        text: "\"Live inside your own mind? You mean to say that you space out a lot?\" \r\n\r\n\"No!\" Flower shouts. \"I mean that I'm literally living inside my own mind, and I've been doing so ever since I was born! Why doesn't anyone ever believe me?\"\r\n\r\n\"I believe you, Flower,\" Kate says.\r\n\r\n\"You do?...\" the girl asks.\r\n\r\n\"Yes, because you are not the first person to tell me of this. A friend of mine, called--\"\r\n\r\nKate pauses a bit, before she begins to speak again.\r\n\r\n\"A friend of mine, called Diane, was in the same situation as you, and she wasn't the only one. Many of the orphans from the Beacon of Hope were like this. The lessathi called them ethereals. People who identify with their souls, instead of their bodies.\"\r\n\r\n\"Their souls?\" Rose asks."
+      - source: scene_text_2
+        paragraph: 5
+        text: "\"Yes,\" Kate says. \"Most people don't even know that they have a soul, because they only use their five senses to explore the world around them. However, the soul, which stores a person's memory and the very essence of their being, is actually being kept on the ethereal plane, in a pocket universe that is usually referred to as their mind. While the human brain facilitates the interaction between the soul and the body, it is not the sole actor in the creation of an individual's personality, as most scholars would have you believe. After a person dies, in the same way that their body decomposes and eventually becomes one with the earth, the person's soul also decomposes into ethereal matter and eventually becomes one with the ethereal plane once more.\"\r\n\r\n\"Hey, that's not what they taught me in giant school!\" Hadrik says. \"As far as I know, once we die, our spirits are all supposed to go to the afterlife of whatever god we worshipped during our lives on this plane!\"\r\n\r\n\"Believe what you will,\" Kate tells him. \"I am merely reciting texts from old lessathi books that I was allowed to read during my time at the Beacon. Or at least the books that they were kind enough to have translated in the common language. Getting back to the subject at hand, the ethereals are different from other humans, because they experience life from the perspective of their souls, instead of their bodies. Imagine living your whole life inside a giant puppet, unable to get out, forced to use it every time you need to interact with a person from the outside world.\""
+      - source: scene_3
+        paragraph: 4
+        text: "\"I sometimes pretend that I use invisible strings to control my body!\" Flower says. \"It makes life in here a little more bearable.\"\r\n\r\n\"Most children will instinctively realize that something is different about ethereals,\" Kate continues, \"so they will usually isolate them from a very young age and not accept them in their groups. Being left alone both in their mind and in the outside world, ethereals are forced to find their own ways to cope with their situation. Some of them will simply start shutting the whole world out, and isolate themselves even further. Others will make titanic efforts to integrate themselves in society, but the social awkwardness that they gained from years of isolation will always stand in their way. Living their lives alone in their own minds also causes many ethereals to develop eccentric personalities and to fixate on a hobby they like until they become exceptionally skilled at it. Diane used to love tinkering with complex devices for hours on end. Flower, I assume that your chosen hobby would be acrobacy?\"\r\n\r\n\"Oh, yes!\" Flower says. \"I absolutely love it! I used to be in a circus when I was little, and since then there's rarely been a day when I've neglected to train my acrobatic skills!\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_beacon
+  - name: ch9_imagination
+    texts:
+      - source: scene_text
+        paragraph: 8
+        text: "\"Talk about an active imagination!\"\r\n\r\n\"Kids say the craziest things sometimes,\" Hadrik says. \"Why, I remember once when I asked a little kid if--\"\r\n\r\n\"I'm not imagining things!\" Flower shouts, visibly upset. \"I've been living my life inside my own mind for as long as I can remember! Why doesn't anyone ever believe me?\"\r\n\r\n\"I believe you, Flower,\" Kate says.\r\n\r\n\"You do?...\" the girl asks.\r\n\r\n\"Yes, because you are not the first person to tell me of this. A friend of mine, called--\"\r\n\r\nKate pauses a bit, before she begins to speak again.\r\n\r\n\"A friend of mine, called Diane, was in the same situation as you, and she wasn't the only one. Many of the orphans from the Beacon of Hope were like this. The lessathi called them ethereals. People who identify with their souls, instead of their bodies.\"\r\n\r\n\"Their souls?\" Rose asks."
+      - source: scene_text_2
+        paragraph: 5
+        text: "\"Yes,\" Kate says. \"Most people don't even know that they have a soul, because they only use their five senses to explore the world around them. However, the soul, which stores a person's memory and the very essence of their being, is actually being kept on the ethereal plane, in a pocket universe that is usually referred to as their mind. While the human brain facilitates the interaction between the soul and the body, it is not the sole actor in the creation of an individual's personality, as most scholars would have you believe. After a person dies, in the same way that their body decomposes and eventually becomes one with the earth, the person's soul also decomposes into ethereal matter and eventually becomes one with the ethereal plane once more.\"\r\n\r\n\"Hey, that's not what they taught me in giant school!\" Hadrik says. \"As far as I know, once we die, our spirits are all supposed to go to the afterlife of whatever god we worshipped during our lives on this plane!\"\r\n\r\n\"Believe what you will,\" Kate tells him. \"I am merely reciting texts from old lessathi books that I was allowed to read during my time at the Beacon. Or at least the books that they were kind enough to have translated in the common language. Getting back to the subject at hand, the ethereals are different from other humans, because they experience life from the perspective of their souls, instead of their bodies. Imagine living your whole life inside a giant puppet, unable to get out, forced to use it every time you need to interact with a person from the outside world.\""
+      - source: scene_3
+        paragraph: 4
+        text: "\"I sometimes pretend that I use invisible strings to control my body!\" Flower says. \"It makes life in here a little more bearable.\"\r\n\r\n\"Most children will instinctively realize that something is different about ethereals,\" Kate continues, \"so they will usually isolate them from a very young age and not accept them in their groups. Being left alone both in their mind and in the outside world, ethereals are forced to find their own ways to cope with their situation. Some of them will simply start shutting the whole world out, and isolate themselves even further. Others will make titanic efforts to integrate themselves in society, but the social awkwardness that they gained from years of isolation will always stand in their way. Living their lives alone in their own minds also causes many ethereals to develop eccentric personalities and to fixate on a hobby they like until they become exceptionally skilled at it. Diane used to love tinkering with complex devices for hours on end. Flower, I assume that your chosen hobby would be acrobacy?\"\r\n\r\n\"Oh, yes!\" Flower says. \"I absolutely love it! I used to be in a circus when I was little, and since then there's rarely been a day when I've neglected to train my acrobatic skills!\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_beacon
+  - name: ch9_doctor
+    texts:
+      - source: scene_text
+        paragraph: 9
+        text: "\"I know a good doctor in the Western Continent, if you are interested.\"\r\n\r\n\"Don't be so harsh, Barry,\" Hadrik tells me. \"Kids can have some very active imaginations! Why, I remember once when I asked a little kid if--\"\r\n\r\n\"I'm not imagining things!\" Flower shouts, visibly upset. \"I've been living my life inside my own mind for as long as I can remember! Why doesn't anyone ever believe me?\"\r\n\r\n\"I believe you, Flower,\" Kate says.\r\n\r\n\"You do?...\" the girl asks.\r\n\r\n\"Yes, because you are not the first person to tell me of this. A friend of mine, called--\"\r\n\r\nKate pauses a bit, before she begins to speak again.\r\n\r\n\"A friend of mine, called Diane, was in the same situation as you, and she wasn't the only one. Many of the orphans from the Beacon of Hope were like this. The lessathi called them ethereals. People who identify with their souls, instead of their bodies.\"\r\n\r\n\"Their souls?\" Rose asks."
+      - source: scene_text_2
+        paragraph: 5
+        text: "\"Yes,\" Kate says. \"Most people don't even know that they have a soul, because they only use their five senses to explore the world around them. However, the soul, which stores a person's memory and the very essence of their being, is actually being kept on the ethereal plane, in a pocket universe that is usually referred to as their mind. While the human brain facilitates the interaction between the soul and the body, it is not the sole actor in the creation of an individual's personality, as most scholars would have you believe. After a person dies, in the same way that their body decomposes and eventually becomes one with the earth, the person's soul also decomposes into ethereal matter and eventually becomes one with the ethereal plane once more.\"\r\n\r\n\"Hey, that's not what they taught me in giant school!\" Hadrik says. \"As far as I know, once we die, our spirits are all supposed to go to the afterlife of whatever god we worshipped during our lives on this plane!\"\r\n\r\n\"Believe what you will,\" Kate tells him. \"I am merely reciting texts from old lessathi books that I was allowed to read during my time at the Beacon. Or at least the books that they were kind enough to have translated in the common language. Getting back to the subject at hand, the ethereals are different from other humans, because they experience life from the perspective of their souls, instead of their bodies. Imagine living your whole life inside a giant puppet, unable to get out, forced to use it every time you need to interact with a person from the outside world.\""
+      - source: scene_3
+        paragraph: 4
+        text: "\"I sometimes pretend that I use invisible strings to control my body!\" Flower says. \"It makes life in here a little more bearable.\"\r\n\r\n\"Most children will instinctively realize that something is different about ethereals,\" Kate continues, \"so they will usually isolate them from a very young age and not accept them in their groups. Being left alone both in their mind and in the outside world, ethereals are forced to find their own ways to cope with their situation. Some of them will simply start shutting the whole world out, and isolate themselves even further. Others will make titanic efforts to integrate themselves in society, but the social awkwardness that they gained from years of isolation will always stand in their way. Living their lives alone in their own minds also causes many ethereals to develop eccentric personalities and to fixate on a hobby they like until they become exceptionally skilled at it. Diane used to love tinkering with complex devices for hours on end. Flower, I assume that your chosen hobby would be acrobacy?\"\r\n\r\n\"Oh, yes!\" Flower says. \"I absolutely love it! I used to be in a circus when I was little, and since then there's rarely been a day when I've neglected to train my acrobatic skills!\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_beacon
+  - name: ch9_beacon
+    texts:
+      - source: scene_text
+        paragraph: 10
+        text: "\"While your acrobatic skills may be noteworthy,\" Kate says, \"they are by far eclipsed by your natural affinity for magic. Do you know why that is?\"\r\n\r\n\"I'm not sure... Petal always told me that I am learning magic at a much faster rate than should be humanly possible. Is this because I'm an ethereal too?\"\r\n\r\n\"Yes! The ethereal plane is closer in nature to the magical plane than the earthen plane is. For this reason, your unique perspective allows you to understand magic much more naturally than the rest of us. Being an ethereal does not grant you magical powers upon birth, but those that are also born as mages are fated to become extremely powerful. This is why the lessathi from the Beacon of Hope made it their mission to capture as many ethereal orphans as possible, in the hopes that their experiments would have a greater chance of success. My friend Diane and her brother were both ethereals, and they turned out to be quite the prodigies.\"\r\n\r\n\"I think I'm finally starting to understand why Petal was so surprised to find me inside my own mind when she first awakened,\" Flower says.\r\n\r\n\"If I were to venture a guess,\" Kate says, \"I'd say that your unexpected fusion with the banshee's soul also came as a result of your rather unique circumstances. Normally, a banshee would find the soul defenseless when she invades her host's mind, but you must have been waiting for her, armed and ready. Given that you had the terrain advantage, she had no choice but to settle for a compromise.\""
+      - source: scene_text_2
+        paragraph: 6
+        text: "Flower gasps loudly, all of a sudden.\r\n\r\n\"Oh no, I just realized something!\" she says. \"The Beacon you spoke of... and the experiments...\"\r\n\r\nShe pauses.\r\n\r\n\"Are you an artificial mage?\" she asks.\r\n\r\n\"I am. Why do you ask?\"\r\n\r\n\"Oh gods, you must have had it so much worse than I did! At least I had Petal's experience to rely on when we were being chased down by banshee hunters. She's taught me a lot of survival tips that have come in handy along the years. Would you like me to share some of them with you?\"\r\n\r\n\"Uh, I suppose it couldn't hurt...\"\r\n\r\n\"Great!\" Flower says, as her cheerful smile returns to her face once again. \"I'll try to remember everything I know on the way to the ogre stronghold. Come on, follow me! We can talk more while we walk!\"\r\n\r\n\"Ethereals, huh?\" Arraka says to herself, while we start our long march towards our objective. \"That's a pretty cool sounding name. I might actually start using it myself from now on!\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_crossroads
+  - name: ch9_crossroads
+    texts:
+      - source: scene_text
+        paragraph: 11
+        text: "We spent the next few hours following the path that Flower told us about. During this time, Daren and Hadrik started a bit of a competition to see which one of them could tell the most interesting story from their adventures, while Kate and Flower started sharing their similar life experiences with each other, which seemed to bring them a little closer together.\r\n\r\nOnce we reached the crossroads, around noon, we all stopped in our tracks, and Daren started addressing Rose, with a serious look on his face:\r\n\r\n\"Rose, I think you should take this path and head to your hometown as soon as possible. Don't worry about us and the collars. We'll be fine! The sick people in your town are all waiting for you!\"\r\n\r\n\"She can't leave...\" Kate says. \"Remember what the leopard told us before we left? If any two of the collars get further away than three miles from each other, then all of us will start to get electrical shocks of increasing intensity surging throughout our bodies. If the collars get more than four miles away from each other, then we'll all get killed. The lessathi were the ones who originally designed these devices, and this was a measure they took to keep their prisoners in check. Rose, I'm so sorry... I did not know it would come to this. I should have tried to stop you when you offered to come with me yesterday. This is all my fault...\""
+      - source: scene_text_2
+        paragraph: 7
+        text: "\"Kate, you had no way of knowing this would happen,\" Rose says. \"Even with this detour, I'll still arrive ahead of my original schedule, as long as we keep following the direct route we've been using up until now. There's no need to apologize for any of this. We're friends, remember?\"\r\n\r\nNot knowing exactly how to answer, Kate simply nods to her, and we all decide to take a small break to eat some food, because we haven't really eaten much since our imprisonment. After I finish my meal, I notice that Flower, who wasn't particularly hungry, had decided to make use of this time to practice her fire magic, by shooting fireballs at various rocks lying on the side of the road. \r\n\r\n\"You sure do like to train, huh?\" I ask Flower as I approach her.\r\n\r\n\"Oh, no, I'm not training right now,\" she says. \"I just like to blow stuff up!\"\r\n\r\n\"How old did you say you were, again?\"\r\n\r\n\"I'm almost thirty!\""
+    choices:
+      - position: 1
+        text: Then why are you always acting like a ten-year-old?
+        effects:
+          - set:
+              current_scene: ch9_acting
+      - position: 2
+        text: >-
+          You do realize that your brain technically never developed past the
+          age of ten, right?
+        effects:
+          - set:
+              current_scene: ch9_developed
+  - name: ch9_acting
+    texts:
+      - source: scene_text
+        paragraph: 12
+        text: "\"Then why are you always acting like a ten-year-old?\"\r\n\r\n\"Your face is acting like a ten-year-old!\" Flower tells me, with a pouty face.\r\n\r\nUnsure of how to reply to such a masterfully crafted retort, I decide to change the subject instead.\r\n\r\n\"So, uh... What did you do with Arraka? I see you're not wearing the amulet around your neck.\"\r\n\r\n\"Oh, she said that she wanted to socialize with the group, so I handed her to Hadrik for a while, since he's the only one who doesn't seem to have an aversion towards her.\"\r\n\r\nShe then points towards Hadrik, who is holding the amulet in his right hand and having a conversation with Arraka about ogres and ways to kill them.\r\n\r\n\"It's a shame that I won't be able to transform back into a giant when we reach the stronghold,\" Hadrik says. \"It's been a while since I've fought some ogres, and I really miss hearing the satisfying sound of them getting squashed under my feet!\"\r\n\r\n\"Well, at least you'll get to see the looks on their dumb faces when you'll be sending their own fireballs back towards them,\" Arraka says.\r\n\r\n\"Actually, ogres are so stupid that I doubt they'd even have the time to realize what happened before they'd get burnt to ashes.\"\r\n\r\nBoth Arraka and Hadrik then start laughing loudly, at the same time."
+      - source: scene_text_2
+        paragraph: 8
+        text: "\"You know, I'm pretty good at teleportation magic,\" Arraka says. \"If you free me from the amulet, I could teleport a few of the ogres here, and we could have a fun little practice run before the main event. What do you say?\"\r\n\r\n\"Nah,\" Hadrik says, with a grin.\r\n\r\n\"Well, it was worth a shot,\" Arraka says.\r\n\r\n\"I'm so glad that Arraka finally found someone she can relate to!\" Flower says, looking genuinely happy for her. \"I don't really have a lot in common with her, so we don't talk all that much, and Petal hates her guts.\"\r\n\r\n\"That begs the question...\" I tell her. \"Why are you still keeping her with you?\"\r\n\r\n\"I would like to ask the same question,\" Kate says, as she approaches us. \"Wouldn't it be better to just throw her at the bottom of a lake and be done with her? I don't really feel very comfortable travelling with her at my side. Her very aura sends chills down my spine.\"\r\n\r\n\"I... can't throw her away...\" Flower says, with an uncharacteristically serious expression on her face.\r\n\r\n\"Why not?\" Kate asks.\r\n\r\n\"Because she can free herself from the amulet if we leave her unsupervised. She barely has access to any magic while trapped in there, but with the little she has, she is able to generate a very small explosion as long as she is left alone to channel the spell for a few hours.\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_leader
+  - name: ch9_developed
+    texts:
+      - source: scene_text
+        paragraph: 13
+        text: "\"You do realize that your brain technically never developed past the age of ten, right?\"\r\n\r\n\"Lalalalala! I'm not listening!\" the girl starts shouting, as she covers her ears and starts singing.\r\n\r\n\"I rest my case,\" I say, and then I decide to change the subject. \"So, uh... What did you do with Arraka? I see you're not wearing the amulet around your neck.\"\r\n\r\n\"Oh, she said that she wanted to socialize with the group, so I handed her to Hadrik for a while, since he's the only one who doesn't seem to have an aversion towards her.\"\r\n\r\nShe then points towards Hadrik, who is holding the amulet in his right hand and having a conversation with Arraka about ogres and ways to kill them.\r\n\r\n\"It's a shame that I won't be able to transform back into a giant when we reach the stronghold,\" Hadrik says. \"It's been a while since I've fought some ogres, and I really miss hearing the satisfying sound of them getting squashed under my feet!\"\r\n\r\n\"Well, at least you'll get to see the looks on their dumb faces when you'll be sending their own fireballs back towards them,\" Arraka says.\r\n\r\n\"Actually, ogres are so stupid that I doubt they'd even have the time to realize what happened before they'd get burnt to ashes.\"\r\n\r\nBoth Arraka and Hadrik then start laughing loudly, at the same time."
+      - source: scene_text_2
+        paragraph: 8
+        text: "\"You know, I'm pretty good at teleportation magic,\" Arraka says. \"If you free me from the amulet, I could teleport a few of the ogres here, and we could have a fun little practice run before the main event. What do you say?\"\r\n\r\n\"Nah,\" Hadrik says, with a grin.\r\n\r\n\"Well, it was worth a shot,\" Arraka says.\r\n\r\n\"I'm so glad that Arraka finally found someone she can relate to!\" Flower says, looking genuinely happy for her. \"I don't really have a lot in common with her, so we don't talk all that much, and Petal hates her guts.\"\r\n\r\n\"That begs the question...\" I tell her. \"Why are you still keeping her with you?\"\r\n\r\n\"I would like to ask the same question,\" Kate says, as she approaches us. \"Wouldn't it be better to just throw her at the bottom of a lake and be done with her? I don't really feel very comfortable travelling with her at my side. Her very aura sends chills down my spine.\"\r\n\r\n\"I... can't throw her away...\" Flower says, with an uncharacteristically serious expression on her face.\r\n\r\n\"Why not?\" Kate asks.\r\n\r\n\"Because she can free herself from the amulet if we leave her unsupervised. She barely has access to any magic while trapped in there, but with the little she has, she is able to generate a very small explosion as long as she is left alone to channel the spell for a few hours.\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_leader
+  - name: ch9_leader
+    texts:
+      - source: scene_text
+        paragraph: 14
+        text: "\"So what?\" Kate says. \"If she gets away, then it's not your problem anymore.\"\r\n\r\n\"Wrong,\" Flower says. \"If she gets away, she'll become everybody's problem.\"\r\n\r\n\"She's that powerful?\" I ask her.\r\n\r\n\"Yes, she is. Have you heard of the still winter?\"\r\n\r\n\"Only bits and pieces,\" I tell her. \"I heard that it was a great war between the lessathi and the stillwaters of this continent, some six hundred years ago.\"\r\n\r\n\"That's pretty much the main gist of it,\" Flower says. \"What I'm betting you haven't heard, though, is the fact that Arraka used to be the leader of these stillwaters.\"\r\n\r\n\"A banshee?\" Kate asks. \"Leading an army of stillwaters?\"\r\n\r\n\"She wasn't alone,\" Flower says. \"She was fused with a stillwater guy, in the same way I am now with Petal. From what I hear, our two cases are the only two occurrences of soul fusion in our history. After what you've told me, Kate, I'm willing to bet that this stillwater Arraka fused with was an ethereal as well!\"\r\n\r\n\"Hold on,\" I tell her. \"Can banshees possess male hosts? I thought they always went for women.\"\r\n\r\n\"That's because all banshees are female spirits,\" Kate tells me, \"and in order to minimize the risks during their awakenings, they tend to only possess female bodies so that their magical auras are closer in nature to those of their hosts. I assume that a spirit as powerful as Arraka has no need to take such precautions.\""
+      - source: scene_text_2
+        paragraph: 9
+        text: "\"That's right,\" Flower says. \"Arraka was so powerful, in fact, that it took the combined effort of Eleya and the Creator to put a stop to her rampage.\"\r\n\r\n\"The Creator is that guy who is considered to be the founder of Varathia's current civilization, right?\" I ask her.\r\n\r\n\"Yeah, that's him,\" Flower says. \"So, as I was saying, the Creator and the fox managed to defeat Arraka, but only temporarily. Even they weren't powerful enough to kill her outright, but they managed to cast a very complex spell on her, which forbids her to possess any of the humanoid races. For the next six hundred years, she was forced to possess only animals, which are too weak for her to be able to use her full powers.\"\r\n\r\n\"So, if she's already been roaming free for six hundred years, why is she more of a problem now?\" I ask her.\r\n\r\n\"Because of me,\" Flower says. \"The nature of my magical aura has changed drastically since my soul has fused with Petal's, and since my aura is so different now from that of any other humans, the spell cast on Arraka cannot identify me as a human being anymore, and therefore does not prohibit her from possessing my body. Even if I were to throw Arraka somewhere far away, she'd just break out of the amulet and find her way to me sooner or later. And then it wouldn't be all over just for me and Petal, it may well be the end for the entire continent, or maybe even the world...\"\r\n\r\n\"Wait,\" I tell her. \"You're saying that you have to keep Arraka under constant supervision, so that you can dispel her explosion spell before she fully channels it, but what happens when you sleep?\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_dispel
+  - name: ch9_dispel
+    texts:
+      - source: scene_text
+        paragraph: 15
+        text: "\"Oh, Petal and I sleep in turns, so our body technically never goes to sleep,\" Flower says. \"In fact, Petal's been sleeping ever since we left the ruins.\"\r\n\r\n\"But what if you both fall unconscious?\" Kate says.\r\n\r\n\"Well, at first we tried to see if there weren't any incantations we could use to automatically dispel any spells cast in an area every few hours, but unfortunately all of them required the caster to consciously focus on the spells they want to interrupt.\"\r\n\r\nFlower then turns towards Arraka, who was subtly channeling an explosion spell while she was talking to Hadrik, and she dispels it with a flick of her finger.\r\n\r\n\"Gods be damned!\" Arraka shouts. \"Girl, do you have eyes in the back of your head?!\"\r\n\r\n\"See?\" Flower tells us. \"You can't dispel it unless you focus on her spell, specifically. So, instead of going for automatic dispelling, we made a spell that continuously tries to wake us up in case we're both unconscious, and if it doesn't manage to do it in two hours, it kills us both, which at least ensures that we'll have a peaceful death, instead of Arraka absorbing both our souls and then destroying the world.\"\r\n\r\n\"Wow,\" Kate says. \"That's quite a... pragmatic approach.\"\r\n\r\n\"It was Petal's idea!\" Flower says, smiling.\r\n\r\n\"I thought as much,\" Kate says."
+    choices:
+      - position: 1
+        text: >-
+          Speaking of Petal, how have you two been getting along these past
+          twenty years?
+        effects:
+          - set:
+              current_scene: ch9_getting_along
+      - position: 2
+        text: So, what's life with Arraka like?
+        effects:
+          - set:
+              current_scene: ch9_life_with_arraka
+      - position: 3
+        text: Would you say that Petal is the smartest of your group?
+        effects:
+          - set:
+              current_scene: ch9_smartest
+  - name: ch9_getting_along
+    texts:
+      - source: scene_text
+        paragraph: 16
+        text: "\"Speaking of Petal, how have you two been getting along these past twenty years?\"\r\n\r\n\"Oh, it's been a blast!\" Flower says. \"I've been having loads of fun over the years and I think Petal's been enjoying it too! Or at least I think she has. It's kind of hard to tell because she's always grumpy and not very sociable.\"\r\n\r\n\"Yeah, I know the type,\" I tell her, as I look towards Kate.\r\n\r\nKate frowns at me, but she doesn't dignify my comment with a response.\r\n\r\n\"Hey, Flower!\" Daren shouts from a distance. \"Is this the right way to the ogre stronghold?\"\r\n\r\n\"No!\" Flower shouts back, as she runs off towards where Daren is standing. \"If we keep going this way, we'll end up in the middle of a swamp! We need to turn left here, and then follow this trail until we get out of the forest.\"\r\n\r\nThe six of us resume our journey, and Flower takes the lead once more. The girl has become much more reliable since we got out of the ruins. She looks like she knows exactly where she's going, and she's regularly checking various landmarks that she's set in the past, in order to make sure that we're still on the right track. She must have walked these paths many times throughout the years."
+      - source: scene_text_2
+        paragraph: 10
+        text: "As it starts to get dark, we decide to make camp in a valley near a small river, where there aren't many trees that could hide any potential ambushers. Flower and Kate went to scout the area around our camp, while Daren and Hadrik, who both had several spare tents in their enchanted backpacks, are now busy setting them up. Since they said they didn't need any help, and there wasn't really anything else that needed doing, Rose and I sat ourselves down on a log not far from them, in order to not get in their way.\r\n\r\n\"So, uh...\" I start to ask Rose. \"How have you been holding up, lately? You looked pretty shaken up after we ran into that hydra. And you didn't seem to be doing so well when the dragon attacked us, either...\"\r\n\r\nRose blushes as she hears my question.\r\n\r\n\"Oh, you've noticed...\" she says, sounding a little embarrassed."
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_whimpers
+  - name: ch9_life_with_arraka
+    texts:
+      - source: scene_text
+        paragraph: 17
+        text: "\"So, what's life with Arraka like?\"\r\n\r\n\"It's not as bad as you might think,\" Flower says. \"I mean, okay, she tries to get us into trouble with any chance she gets, but when things get really serious, she can be very helpful. If I die, she won't have any more humans left to possess once she gets out of the amulet, so it's in her best interest to help us stay alive for as long as possible!\"\r\n\r\n\"Hey, Flower!\" Daren shouts from a distance. \"Is this the right way to the ogre stronghold?\"\r\n\r\n\"No!\" Flower shouts back, as she runs off towards where Daren is standing. \"If we keep going this way, we'll end up in the middle of a swamp! We need to turn left here, and then follow this trail until we get out of the forest.\"\r\n\r\nThe six of us resume our journey, and Flower takes the lead once more. The girl has become much more reliable since we got out of the ruins. She looks like she knows exactly where she's going, and she's regularly checking various landmarks that she's set in the past, in order to make sure that we're still on the right track. She must have walked these paths many times throughout the years."
+      - source: scene_text_2
+        paragraph: 10
+        text: "As it starts to get dark, we decide to make camp in a valley near a small river, where there aren't many trees that could hide any potential ambushers. Flower and Kate went to scout the area around our camp, while Daren and Hadrik, who both had several spare tents in their enchanted backpacks, are now busy setting them up. Since they said they didn't need any help, and there wasn't really anything else that needed doing, Rose and I sat ourselves down on a log not far from them, in order to not get in their way.\r\n\r\n\"So, uh...\" I start to ask Rose. \"How have you been holding up, lately? You looked pretty shaken up after we ran into that hydra. And you didn't seem to be doing so well when the dragon attacked us, either...\"\r\n\r\nRose blushes as she hears my question.\r\n\r\n\"Oh, you've noticed...\" she says, sounding a little embarrassed."
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_whimpers
+  - name: ch9_smartest
+    texts:
+      - source: scene_text
+        paragraph: 18
+        text: "\"Would you say that Petal is the smartest of your group?\"\r\n\r\n\"Well, she's definitely smarter than me,\" Flower says. \"I'm not sure about Arraka, though. She plays the fool most of the time, but she can be really cunning when she tries. Petal and Arraka have had to set aside their differences and cooperate several times in the past, and it's really scary to see what plans they can come up with when they put their heads together.\"\r\n\r\n\"Hey, Flower!\" Daren shouts from a distance. \"Is this the right way to the ogre stronghold?\"\r\n\r\n\"No!\" Flower shouts back, as she runs off towards where Daren is standing. \"If we keep going this way, we'll end up in the middle of a swamp! We need to turn left here, and then follow this trail until we get out of the forest.\"\r\n\r\nThe six of us resume our journey, and Flower takes the lead once more. The girl has become much more reliable since we got out of the ruins. She looks like she knows exactly where she's going, and she's regularly checking various landmarks that she's set in the past, in order to make sure that we're still on the right track. She must have walked these paths many times throughout the years."
+      - source: scene_text_2
+        paragraph: 10
+        text: "As it starts to get dark, we decide to make camp in a valley near a small river, where there aren't many trees that could hide any potential ambushers. Flower and Kate went to scout the area around our camp, while Daren and Hadrik, who both had several spare tents in their enchanted backpacks, are now busy setting them up. Since they said they didn't need any help, and there wasn't really anything else that needed doing, Rose and I sat ourselves down on a log not far from them, in order to not get in their way.\r\n\r\n\"So, uh...\" I start to ask Rose. \"How have you been holding up, lately? You looked pretty shaken up after we ran into that hydra. And you didn't seem to be doing so well when the dragon attacked us, either...\"\r\n\r\nRose blushes as she hears my question.\r\n\r\n\"Oh, you've noticed...\" she says, sounding a little embarrassed."
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_whimpers
+  - name: ch9_whimpers
+    texts:
+      - source: scene_text
+        paragraph: 19
+        text: "\"Well, it would have been a bit difficult to ignore you, what with the whimpers and trembling and everything.\"\r\n\r\nAs I finish my sentence, Rose punches me in my left arm, but she does so very lightly. I would have barely felt her touching me if I weren't paying attention.\r\n\r\n\"I'm starting to understand why Kate hits you so often,\" Rose says, smiling playfully. \"But thank you for your concern. As you may have realized, I've always been afraid of giant monsters. I am accustomed with small and medium sized ones, because I've run into several goblins and ogres during my travels, but the very thought of meeting a dragon in the flesh would always send chills down my spine. I never imagined that I'd come face to face with both a dragon and a hydra in less than one day. I knew they existed, but I hoped I'd never run into one of them during my lifetime. I can't imagine what it's like for people like Daren and Hadrik who fight monsters like these on a monthly basis.\"\r\n\r\nShe pauses.\r\n\r\n\"Come to think of it, this must all be pretty new for you too, isn't it? From what you've told me, you had never even fought a goblin before coming to this tournament. How are you always able to remain so calm, despite the fact that you've had your entire world turned upside down?\""
+    choices:
+      - position: 1
+        text: I'm not calm, it's just that I'm very good at hiding fear.
+        effects:
+          - set:
+              current_scene: ch9_hiding_fear
+      - position: 2
+        text: It's because I'm carrying this stat device with me.
+        effects:
+          - set:
+              current_scene: ch9_stat_device
+      - position: 3
+        text: I guess I've always been a little crazy.
+        effects:
+          - set:
+              current_scene: ch9_crazy
+  - name: ch9_hiding_fear
+    texts:
+      - source: scene_text
+        paragraph: 20
+        text: "\"I'm not calm, it's just that I'm very good at hiding fear.\"\r\n\r\n\"Modesty doesn't suit you, Barry,\" Rose says, smiling. \"If you were just hiding your fear from us, then you wouldn't have been able to confront that dragon, yesterday, and save us all. You were really gallant, up there, you know. Something about the look you had in your eyes before you went to fight Tyrath made me feel really safe, and cast away all my fears.\"\r\n\r\nOnce she stops talking, Rose suddenly realizes she was blushing, so she quickly turns her head away in a clumsy attempt to hide her face from me."
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_blushing
+  - name: ch9_stat_device
+    texts:
+      - source: scene_text
+        paragraph: 21
+        text: "\"It's because I'm carrying this stat device with me.\"\r\n\r\n\"You have a stat that gives you courage?\" Rose asks me, shocked. \"I envy you so much right now!\"\r\n\r\n\"No, no, that's not what I meant! I wasn't talking about a stat, I was just saying that it's very reassuring to have a device that can enhance my abilities. It almost makes me feel like I'm a mage myself, and that feeling gives me the strength I need to face all of these dangers without cowering in fear. Especially when the device gives me actual magic powers, like in that fight with the dragon, yesterday!\"\r\n\r\nRose smiles.\r\n\r\n\"You know... you were really gallant, up there, while you were confronting Tyrath,\" she says. \"Something about the look you had in your eyes before you went to fight the dragon made me feel really safe, and cast away all my fears.\"\r\n\r\nOnce she stops talking, Rose suddenly realizes she was blushing, so she quickly turns her head away in a clumsy attempt to hide her face from me."
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_blushing
+  - name: ch9_crazy
+    texts:
+      - source: scene_text
+        paragraph: 22
+        text: "\"I guess I've always been a little crazy.\"\r\n\r\nRose giggles softly.\r\n\r\n\"I suppose that fear would be the last thing on your mind when you are crazy enough to come to a tournament like this without any kind of magical abilities!\"\r\n\r\n\"Hey, now, that's just not true! I mean, sure, I'm not a mage myself, but the stat device I'm using is a pretty powerful magic item. Especially when it gives me actual magic powers, like in that fight with the dragon, yesterday!\"\r\n\r\nRose smiles.\r\n\r\n\"You know... you were really gallant, up there, while you were confronting Tyrath,\" she says. \"Something about the look you had in your eyes before you went to fight the dragon made me feel really safe, and cast away all my fears.\"\r\n\r\nOnce she stops talking, Rose suddenly realizes she was blushing, so she quickly turns her head away in a clumsy attempt to hide her face from me."
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_blushing
+  - name: ch9_blushing
+    routes:
+      - texts:
+          - source: scene_text
+            paragraph: 23
+            text: "As I don't really feel like embarrassing her, I decide to ignore what happened and change the subject.\r\n\r\n\"So, anyway,\" I tell her, \"there's something I've been meaning to ask you in private since this morning. What do you think about Flower?\"\r\n\r\nRose turns her head back towards me when she hears my question, and I notice that her cheeks are no longer red. She seems somewhat surprised by my sudden inquiry. \r\n\r\n\"Do you mean in a general sense?\" Rose asks me. \"To me, she seems like a charming young girl with a cheerful personality and a kind heart, and I find that she is a really fun person to be around with. What about you? There has to be some reason why you asked me this. What do you think about Flower?\""
+        condition: ch6_flirt = 1
+        choices:
+          - position: 1
+            text: I find her a bit annoying, to be frank.
+            effects:
+              - set:
+                  current_scene: ch9_annoying
+          - position: 2
+            text: I just can't bring myself to trust her.
+            effects:
+              - set:
+                  current_scene: ch9_trust
+          - position: 3
+            text: I was just thinking about what Daren said this morning.
+            effects:
+              - set:
+                  current_scene: ch9_morning
+          - position: 4
+            text: >-
+              I think she's pretty fun too. I was just curious to see if you
+              thought the same.
+            effects:
+              - set:
+                  current_scene: ch9_curious
+      - texts:
+          - source: scene_text
+            paragraph: 23
+            text: "As I don't really feel like embarrassing her, I decide to ignore what happened and change the subject.\r\n\r\n\"So, anyway,\" I tell her, \"there's something I've been meaning to ask you in private since this morning. What do you think about Flower?\"\r\n\r\nRose turns her head back towards me when she hears my question, and I notice that her cheeks are no longer red. She seems somewhat surprised by my sudden inquiry. \r\n\r\n\"Do you mean in a general sense?\" Rose asks me. \"To me, she seems like a charming young girl with a cheerful personality and a kind heart, and I find that she is a really fun person to be around with. What about you? There has to be some reason why you asked me this. What do you think about Flower?\""
+        condition: ch6_flirt = 5
+        choices:
+          - position: 1
+            text: I find her a bit annoying, to be frank.
+            effects:
+              - set:
+                  current_scene: ch9_annoying
+          - position: 2
+            text: I just can't bring myself to trust her.
+            effects:
+              - set:
+                  current_scene: ch9_trust
+          - position: 3
+            text: I was just thinking about what Daren said this morning.
+            effects:
+              - set:
+                  current_scene: ch9_morning
+          - position: 4
+            text: >-
+              I think she's pretty fun too. I was just curious to see if you
+              thought the same.
+            effects:
+              - set:
+                  current_scene: ch9_curious
+      - texts:
+          - source: scene_text
+            paragraph: 23
+            text: "As I don't really feel like embarrassing her, I decide to ignore what happened and change the subject.\r\n\r\n\"So, anyway,\" I tell her, \"there's something I've been meaning to ask you in private since this morning. What do you think about Flower?\"\r\n\r\nRose turns her head back towards me when she hears my question, and I notice that her cheeks are no longer red. She seems somewhat surprised by my sudden inquiry. \r\n\r\n\"Do you mean in a general sense?\" Rose asks me. \"To me, she seems like a charming young girl with a cheerful personality and a kind heart, and I find that she is a really fun person to be around with. What about you? There has to be some reason why you asked me this. What do you think about Flower?\""
+        condition: ch6_flirt = 6
+        choices:
+          - position: 1
+            text: I find her a bit annoying, to be frank.
+            effects:
+              - set:
+                  current_scene: ch9_annoying
+          - position: 2
+            text: I just can't bring myself to trust her.
+            effects:
+              - set:
+                  current_scene: ch9_trust
+          - position: 3
+            text: I was just thinking about what Daren said this morning.
+            effects:
+              - set:
+                  current_scene: ch9_morning
+          - position: 4
+            text: >-
+              I think she's pretty fun too. I was just curious to see if you
+              thought the same.
+            effects:
+              - set:
+                  current_scene: ch9_curious
+      - texts:
+          - source: scene_text
+            paragraph: 24
+            text: "\"Wait a minute,\" I say. \"You were blushing just now. I saw you!\"\r\n\r\n\"I was not!\" Rose says, as she turns her head back towards me, to show me that her cheeks are no longer red. \"You must have been imagining things. Can we change the subject?\"\r\n\r\nShe pauses.\r\n\r\n\"Please?\" she then adds, with a pleading look in her eyes.\r\n\r\nSeeing the look in her eyes, I could no longer bring myself to continue teasing her, so I changed the subject, as she requested.\r\n\r\n\"Alright, then,\" I say. \"There's actually something I've been meaning to ask you in private since this morning. What do you think about Flower?\"\r\n\r\nRose looks like she's somewhat surprised by my question.\r\n\r\n\"Do you mean in a general sense?\" Rose asks me. \"To me, she seems like a charming young girl with a cheerful personality and a kind heart, and I find that she is a really fun person to be around with. What about you? There has to be some reason why you asked me this. What do you think about Flower?\""
+        condition: ch6_flirt = 3
+        choices:
+          - position: 1
+            text: I find her a bit annoying, to be frank.
+            effects:
+              - set:
+                  current_scene: ch9_annoying
+          - position: 2
+            text: I just can't bring myself to trust her.
+            effects:
+              - set:
+                  current_scene: ch9_trust
+          - position: 3
+            text: I was just thinking about what Daren said this morning.
+            effects:
+              - set:
+                  current_scene: ch9_morning
+          - position: 4
+            text: >-
+              I think she's pretty fun too. I was just curious to see if you
+              thought the same.
+            effects:
+              - set:
+                  current_scene: ch9_curious
+      - texts:
+          - source: scene_text
+            paragraph: 24
+            text: "\"Wait a minute,\" I say. \"You were blushing just now. I saw you!\"\r\n\r\n\"I was not!\" Rose says, as she turns her head back towards me, to show me that her cheeks are no longer red. \"You must have been imagining things. Can we change the subject?\"\r\n\r\nShe pauses.\r\n\r\n\"Please?\" she then adds, with a pleading look in her eyes.\r\n\r\nSeeing the look in her eyes, I could no longer bring myself to continue teasing her, so I changed the subject, as she requested.\r\n\r\n\"Alright, then,\" I say. \"There's actually something I've been meaning to ask you in private since this morning. What do you think about Flower?\"\r\n\r\nRose looks like she's somewhat surprised by my question.\r\n\r\n\"Do you mean in a general sense?\" Rose asks me. \"To me, she seems like a charming young girl with a cheerful personality and a kind heart, and I find that she is a really fun person to be around with. What about you? There has to be some reason why you asked me this. What do you think about Flower?\""
+        condition: ch6_flirt = 4
+        choices:
+          - position: 1
+            text: I find her a bit annoying, to be frank.
+            effects:
+              - set:
+                  current_scene: ch9_annoying
+          - position: 2
+            text: I just can't bring myself to trust her.
+            effects:
+              - set:
+                  current_scene: ch9_trust
+          - position: 3
+            text: I was just thinking about what Daren said this morning.
+            effects:
+              - set:
+                  current_scene: ch9_morning
+          - position: 4
+            text: >-
+              I think she's pretty fun too. I was just curious to see if you
+              thought the same.
+            effects:
+              - set:
+                  current_scene: ch9_curious
+      - texts:
+          - source: scene_text
+            paragraph: 25
+            text: "\"Wait a minute,\" I say. \"You were blushing just now. I saw you! Should I take it that you've changed your opinion of me since the last time we've talked in private?\"\r\n\r\n\"Only about your fighting capabilities,\" Rose says, as she turns her head back towards me, to show me that her cheeks are no longer red. \"It might have been different if your first comment about me hadn't been about my large breasts, but as it stands, I'm afraid that my original opinion of you isn't very likely to change.\"\r\n\r\n\"Well, damn...\" I say.\r\n\r\nRose smiles again.\r\n\r\n\"Don't be so upset, Barry!\" she says. \"You and I come from completely different worlds. Once this tournament is finished, it's unlikely that you'll ever be able to find your way back here, and I am not planning to leave this continent anytime soon. Even if we ended up together, it couldn't have lasted long.\"\r\n\r\n\"I suppose you're right,\" I tell her, and then I decide to change the subject. \"So, anyway, there's something I've been meaning to ask you in private since this morning. What do you think about Flower?\"\r\n\r\nRose looks like she's somewhat surprised by my question.\r\n\r\n\"Do you mean in a general sense?\" Rose asks me. \"To me, she seems like a charming young girl with a cheerful personality and a kind heart, and I find that she is a really fun person to be around with. What about you? There has to be some reason why you asked me this. What do you think about Flower?\""
+        condition: ch6_flirt = 2
+        choices:
+          - position: 1
+            text: I find her a bit annoying, to be frank.
+            effects:
+              - set:
+                  current_scene: ch9_annoying
+          - position: 2
+            text: I just can't bring myself to trust her.
+            effects:
+              - set:
+                  current_scene: ch9_trust
+          - position: 3
+            text: I was just thinking about what Daren said this morning.
+            effects:
+              - set:
+                  current_scene: ch9_morning
+          - position: 4
+            text: >-
+              I think she's pretty fun too. I was just curious to see if you
+              thought the same.
+            effects:
+              - set:
+                  current_scene: ch9_curious
+  - name: ch9_annoying
+    texts:
+      - source: scene_text
+        paragraph: 26
+        text: "\"I find her a bit annoying, to be frank.\"\r\n\r\n\"How so?\"\r\n\r\n\"Well, she's technically older than me, but she always acts like a little kid. It's kind of hard to take someone like that seriously.\"\r\n\r\n\"Remember, Barry, she was never really given the chance to grow up in the real sense of the word. I understand why you might find her annoying because of that, but even though she might appear to be fooling around at times, I really think that she is taking this situation a lot more seriously than she lets on. Could you maybe give her another chance?\"\r\n\r\n\"I suppose I could try...\"\r\n\r\n\"Wonderful!\" Rose says, smiling. \"Oh, and don't worry, I'm not going to tell Flower what you said about her. It will be our little secret!\"\r\n\r\n\"Leaving the girl aside, though, the banshee inhabiting her body is actually the one I'm more worried about. Those words that Daren said this morning are still ringing in my head.\"\r\n\r\n\"Well, I for one trust Petal.\"\r\n\r\n\"But you haven't even talked to her...\""
+      - source: scene_text_2
+        paragraph: 11
+        text: "\"No, but Flower has! They've been living together for twenty years. If Petal still has Flower's trust after that much time, then that is enough for me.\"\r\n\r\n\"Maybe you're right. I don't think anyone could hide their true nature for such a long time. If the banshee were up to something, she would have given herself away at some point during these past two decades. I mean, nobody can act that well, right?\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_sleep
+  - name: ch9_trust
+    texts:
+      - source: scene_text
+        paragraph: 27
+        text: "\"I just can't bring myself to trust her.\"\r\n\r\n\"Why's that?\"\r\n\r\n\"Well, banshees never struck me as the most trustworthy types.\"\r\n\r\nRose gasps.\r\n\r\n\"Shame on you, Barry!\" she says. \"I'm almost starting to believe that Daren was right about you. Did you really only trust Kate because of her pretty face?\"\r\n\r\n\"Hey, Kate was different! I could tell from the get-go that she wasn't a real banshee!\"\r\n\r\n\"Well, neither is Flower! Petal is the banshee. And if Flower trusts her, then I do too!\"\r\n\r\n\"You're willing to trust a banshee just like that, without any evidence whatsoever?\"\r\n\r\n\"Yes! Because her and Flower have been together for twenty years. If Petal still has Flower's trust after so much time, then that's enough evidence for me. Please, Barry, couldn't you maybe give Petal another chance? For me?\"\r\n\r\nI sigh.\r\n\r\n\"Well, I suppose I could give her the benefit of the doubt, at least...\"\r\n\r\n\"Thank you!\" Rose says, smiling. \"I promise that you won't regret it!\"\r\n\r\n\"Let's hope so.\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_sleep
+  - name: ch9_morning
+    texts:
+      - source: scene_text
+        paragraph: 28
+        text: "\"I was just thinking about what Daren said this morning.\"\r\n\r\n\"You mean, when he said that Petal might betray us once we reach the ogres?\"\r\n\r\n\"Yeah.\"\r\n\r\n\"Well, I for one trust Petal.\"\r\n\r\n\"But you haven't even talked to her...\"\r\n\r\n\"No, but Flower has! They've been living together for twenty years. If Petal still has Flower's trust after that much time, then that is enough for me.\"\r\n\r\n\"Maybe you're right. I don't think anyone could hide their true nature for such a long time. If the banshee were up to something, she would have given herself away at some point during these past two decades. I mean, nobody can act that well, right?\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_sleep
+  - name: ch9_curious
+    texts:
+      - source: scene_text
+        paragraph: 29
+        text: "\"I think she's pretty fun too. I was just curious to see if you thought the same.\"\r\n\r\n\"It's too bad that Daren doesn't seem to share our opinion of her...\"\r\n\r\n\"Can you blame him, though? Banshees aren't really known for their moral integrity, and the girl shares her body with one.\"\r\n\r\n\"Well, I for one trust Petal.\"\r\n\r\n\"But you haven't even talked to her...\"\r\n\r\n\"No, but Flower has! They've been living together for twenty years. If Petal still has Flower's trust after that much time, then that is enough for me.\"\r\n\r\n\"Maybe you're right. I don't think anyone could hide their true nature for such a long time. If the banshee were up to something, she would have given herself away at some point during these past two decades. I mean, nobody can act that well, right?\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_sleep
+  - name: ch9_sleep
+    texts:
+      - source: scene_text
+        paragraph: 30
+        text: "While Rose and I were finishing our conversation, Daren and Hadrik were starting to work on the last two tents. Kate and Flower, who had just returned from their scouting mission, reported that there was no suspicious activity around our campsite and then they both took a seat on a log next to us. \r\n\r\nOnce the tents have all been set, we decided to go to sleep early, in order to be well rested when we leave tomorrow, at the crack of dawn. Flower volunteered to take first watch, and then she immediately went to climb the highest hill, to get a good view of the entire valley. As she passed me by, I could sense her aura weakening considerably, and the banshee's aura becoming a lot stronger. Does this mean that the girl went to sleep and left the banshee in charge of the night shift? If that is so, then this would be the perfect opportunity to get to know the banshee a bit, before we reach the ogre stronghold tomorrow. \r\n\r\n\"Aren't you going to sleep, Barry?\" Rose asks me, as she sees me just standing there."
+    choices:
+      - position: 1
+        text: Tell her what I just noticed about Flower and Petal
+        effects:
+          - set:
+              current_scene: ch9_inventory
+              ch9_inventory: 0
+      - position: 2
+        text: >-
+          Tell her to go on ahead because I need to do an inventory of my
+          backpack's contents
+        effects:
+          - set:
+              current_scene: ch9_inventory
+              ch9_inventory: 1
+  - name: ch9_inventory
+    routes:
+      - texts:
+          - source: scene_text
+            paragraph: 32
+            text: "\"Actually, I was thinking of staying up for a while longer.\"\r\n\r\nI then whisper in Rose's ear what I noticed about Flower and Petal, and I tell her that I want to have a little discussion with the banshee before I go to sleep.\r\n\r\nRose gasps.\r\n\r\n\"Barry, that's an excellent idea!\" she says. \"Hold on, just give me a second to leave my backpack inside my tent, and I'll come with you.\"\r\n\r\nAs the two of us make our way up towards where Flower went to oversee the valley, I start to realize that my intuition was right, and the girl really did go to sleep. I can feel that the outworldly aura around her is definitely the dominant one at this point in time, and as we get closer, I see that her eyes are shining with a bright blue light, in the same way that they did before, when the banshee took control of the body.\r\n\r\n\"The girl is sleeping,\" Petal tells us, in a cold voice, as she sees us climb the hill towards her. \"I can wake her up if you need to tell her something important.\"\r\n\r\nThe banshee is sitting on the grass, cross legged, with a sandwich in her hands. It appears that she was just about to start eating, before she saw us come up the hill.\r\n\r\n\"Actually, you're the one we wanted to talk to, not Flower,\" I say.\r\n\r\n\"Is that so?\" the banshee says, eyeing me suspiciously. \"Well, then, by all means, have a seat.\"\r\n\r\nShe then takes a bite out of her sandwich, while I seat myself on the grass next to her."
+          - source: scene_text_2
+            paragraph: 13
+            text: "\"Am I correct in assuming that you are Petal?\" Rose asks. \"My name is Rose. Pleased to meet you!\"\r\n\r\nShe then offers the banshee her hand.\r\n\r\n\"Actually, my name is Illuna,\" the banshee says, without taking her hands off her sandwich. \"Petal is just a nickname that the girl gave to me when we first met, because I didn't want to give her my real name. She's been calling me that ever since.\"\r\n\r\nSeeing that the banshee has no intention of shaking her hand, Rose smiles politely and takes a seat on the grass, on the other side of her.\r\n\r\n\"So, uh,\" I start to say, \"it's a really lovely weather we're having, don't you think?\"\r\n\r\nThe banshee frowns when she hears my question, and she turns her head towards me.\r\n\r\n\"Cut to the chase, human,\" she says. \"I've never been very fond of the roundabout ways in which you people like to start your conversations. You're here because you don't trust me to guard your camp by myself, aren't you?\""
+        condition: ch9_inventory = 0
+        choices:
+          - position: 1
+            text: Yeah, that's about right.
+            effects:
+              - set:
+                  current_scene: ch9_right
+          - position: 2
+            text: No, I just wanted to get to know you!
+            effects:
+              - set:
+                  current_scene: ch9_know
+          - position: 3
+            text: Actually, I just wanted to talk about the weather.
+            effects:
+              - set:
+                  current_scene: ch9_weather
+      - texts:
+          - source: scene_text
+            paragraph: 31
+            text: "\"Oh, uh... I just remembered that I needed to do a quick inventory of my backpack's contents before going to bed. I can't really see what I have inside of it anymore, since Daren enchanted it, and I just wanted to make sure that I still remember all of my items correctly.\"\r\n\r\n\"Is that so?\" Rose asks me, smiling.\r\n\r\n\"Yeah, you go on ahead. I'm going to be out here for a while.\"\r\n\r\n\"Okay, then. Good night, Barry!\"\r\n\r\n\"Sleep tight!\" I tell her, as she goes to enter her tent.\r\n\r\nOnce I make sure that everyone went to sleep, I start to make my way up towards where Flower went to oversee the valley. It's time to see if my intuition was right, and Flower really did go to sleep earlier. As I get closer to her, I realize that I wasn't wrong, because the girl's eyes are shining with a bright blue light, and the outworldly aura around her is definitely the dominant one at this point in time. \r\n\r\n\"The girl is sleeping,\" Petal tells me, in a cold voice, as she sees me climb the hill towards her. \"I can wake her up if you need to tell her something important.\"\r\n\r\nThe banshee is sitting on the grass, cross legged, with a sandwich in her hands. It appears that she was just about to start eating, before she saw me come up the hill."
+          - source: scene_text_2
+            paragraph: 12
+            text: "\"Actually, you're the one I wanted to talk to, not Flower,\" I say.\r\n\r\n\"Is that so?\" the banshee says, eyeing me suspiciously. \"Well, then, by all means, have a seat.\"\r\n\r\nShe then takes a bite out of her sandwich, while I seat myself on the grass next to her.\r\n\r\n\"So, uh,\" I start to say, \"it's a really lovely weather we're having, don't you think?\"\r\n\r\nThe banshee frowns when she hears my question, and she turns her head towards me.\r\n\r\n\"Cut to the chase, human,\" she says. \"I've never been very fond of the roundabout ways in which you people like to start your conversations. You're here because you don't trust me to guard your camp by myself, aren't you?\""
+        condition: ch9_inventory = 1
+        choices:
+          - position: 1
+            text: Yeah, that's about right.
+            effects:
+              - set:
+                  current_scene: ch9_right
+          - position: 2
+            text: No, I just wanted to get to know you!
+            effects:
+              - set:
+                  current_scene: ch9_know
+          - position: 3
+            text: Actually, I just wanted to talk about the weather.
+            effects:
+              - set:
+                  current_scene: ch9_weather
+  - name: ch9_right
+    texts:
+      - source: scene_text
+        paragraph: 33
+        text: "\"Yeah, that's about right.\"\r\n\r\n\"Well, you're not wrong to be suspicious of me,\" Petal says. \"Not even I would trust another banshee to have my best interests at heart without some very strong evidence to back up such a claim. After all, I've been travelling with Arraka around my neck for almost two decades.\"   \r\n\r\nThere's some muffled sounds coming from Arraka's amulet.\r\n\r\n\"Zip it,\" Petal tells her. \"I couldn't care less about what you have to say on the subject.\"\r\n\r\n\"You're not even going to try, are you?\" I ask Petal.\r\n\r\n\"Try what?\" she says.\r\n\r\n\"To get us to trust you.\"\r\n\r\n\"Why would I even bother to do such a thing?\" she asks. \"We are only travelling together because Flower decided to help you on a whim. Once you are free of your collars, I'm expecting us to part ways and then to never hear from each other again. Given these circumstances, I see no reason why I should waste my time trying to gain your trust. Feel free to believe what you want of me, and I will do the same for you.\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_sandwich
+  - name: ch9_know
+    texts:
+      - source: scene_text
+        paragraph: 34
+        text: "\"No, I just wanted to get to know you!\"\r\n\r\n\"Well, then you are either a liar or a fool,\" Petal says. \"Nobody should trust a banshee to have their best interests at heart without some very strong evidence to back up such a claim. And Flower is nowhere near a reliable enough source of information, when it comes such matters.\"\r\n\r\n\"You're not even going to try, are you?\" I ask Petal.\r\n\r\n\"Try what?\" she says.\r\n\r\n\"To get us to trust you.\"\r\n\r\n\"Why would I even bother to do such a thing?\" she asks. \"We are only travelling together because Flower decided to help you on a whim. Once you are free of your collars, I'm expecting us to part ways and then to never hear from each other again. Given these circumstances, I see no reason why I should waste my time trying to gain your trust. Feel free to believe what you want of me, and I will do the same for you.\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_sandwich
+  - name: ch9_weather
+    texts:
+      - source: scene_text
+        paragraph: 35
+        text: "\"Actually, I just wanted to talk about the weather.\"\r\n\r\nThe banshee looks at me for a few moments, unsure of what to make of me.\r\n\r\n\"In that case,\" she says, finally, \"I agree with you that the weather has been remarkably good in these past few days. Now, if this is all you had to say, then I would appreciate it if you left me to finish my sandwich in peace.\"\r\n\r\n\"You're not even going to try, are you?\" I ask Petal.\r\n\r\n\"Try what?\" she says.\r\n\r\n\"To get us to trust you.\"\r\n\r\n\"Why would I even bother to do such a thing?\" she asks. \"We are only travelling together because Flower decided to help you on a whim. Once you are free of your collars, I'm expecting us to part ways and then to never hear from each other again. Given these circumstances, I see no reason why I should waste my time trying to gain your trust. Feel free to believe what you want of me, and I will do the same for you.\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_sandwich
+  - name: ch9_sandwich
+    routes:
+      - texts:
+          - source: scene_text
+            paragraph: 37
+            text: "\"I've been meaning to ask...\" Rose says. \"Where did you get that sandwich from? I never saw you carry a backpack with you.\"\r\n\r\n\"I made it with magic,\" Illuna says, as she waves her hand and magically conjures two more sandwiches that fall directly into our laps. \"Here, knock yourselves out.\"\r\n\r\nI take a look at the sandwich she conjured out of nowhere, and then grab it with both my hands, but I am a bit hesitant in taking a bite from it. I have no idea what ingredients she made this from. Could it be poisoned?\r\n\r\n\"Oh, for crying out loud!\" Illuna says, when she sees me eye her sandwich suspiciously. \"You're not seriously thinking that the sandwich is poisoned, are you? Who in the world still uses poison nowadays? Barring the hundreds of easily learnable magical protections that can provide you with immunity against all poisons, you can even buy anti-poison elixirs for ten copper a piece. Surely you must have drunk at least ONE of those before coming to this tournament? A single elixir should easily provide you with immunity to all known poisons for the remainder of this tournament. Just eat the damn sandwich, will you?\"\r\n\r\nRose giggles.\r\n\r\n\"Now I understand why Flower told me you were always grumpy!\" she says, smiling playfully."
+          - source: scene_text_2
+            paragraph: 15
+            text: "\"Spectacular,\" Illuna says. \"Is there anything else that the girl shared about me while I was asleep?\"\r\n\r\n\"Well, she most certainly didn't tell me that you could conjure food out of thin air!\" Rose says. \"That is normally a skill that only the grand priests of each city can master. You must be incredibly talented!\"\r\n\r\n\"Actually, I am ashamed to admit that Flower was the one who taught me this skill.\"\r\n\r\n\"Flower did?\"\r\n\r\n\"Yes, the girl has the natural talent of being able to instantly comprehend some ridiculously complex spells without expending any effort whatsoever. She only saw the spirit fox cast this spell once, twenty years ago, and she managed to mimic it in the very next second. However, she is completely hopeless when it comes to learning spells that require the least amount of studying beforehand. I've been trying to teach her healing for years, but it's like trying to teach an ogre how to speak lessathi.\""
+        condition: ch9_inventory = 0
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_multiplied
+      - texts:
+          - source: scene_text
+            paragraph: 36
+            text: "While the two of us were talking, we started to catch a glimpse of Rose's head, as she was slowly climbing the hill towards us. \r\n\r\n\"Oh great, look!\" Petal says. \"Someone else who feels like talking about the weather in the middle of the night. I am never going to finish this sandwich, am I?\"\r\n\r\nAs Rose reaches our location, she pauses for a few moments to catch her breath, and then she punches me in the shoulder, this time with a little more force than when she hit me earlier.\r\n\r\n\"You are a terrible liar, you know that?\" she tells me. \"What was all that about sorting through your backpack? Did you forget that Daren enchanted my backpack too? I already know that there's no need to sort through anything because the backpack gives each owner the possibility to see a list of all their items!\"\r\n\r\nCrap, I did not know about that function.\r\n\r\n\"You could have told me where you were going!\" Rose says. \"Didn't it occur to you that I might want to talk with Petal too?\"\r\n\r\n\"I'm sorry,\" I tell her. \"I guess I got caught up in the moment, back there...\""
+          - source: scene_text_2
+            paragraph: 14
+            text: "Rose sighs.\r\n\r\n\"It's fine,\" she says. \"I'm sure you didn't mean any harm. Just... try to trust me a little more next time, okay?\" \r\n\r\nShe then turns towards the banshee.\r\n\r\n\"Am I correct in assuming that you are Petal?\" Rose asks. \"My name is Rose. Pleased to meet you!\"\r\n\r\nShe then offers the banshee her hand.\r\n\r\n\"Actually, my name is Illuna,\" the banshee says, without taking her hands off her sandwich. \"Petal is just a nickname that the girl gave to me when we first met, because I didn't want to give her my real name. She's been calling me that ever since.\"\r\n\r\nSeeing that the banshee has no intention of shaking her hand, Rose smiles politely and takes a seat on the grass, on the other side of her.\r\n\r\n\"Wait a minute,\" I tell the banshee. \"I just realized something. You don't have a backpack. So where did you get that sandwich from?\""
+        condition: ch9_inventory = 1
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_magic
+  - name: ch9_magic
+    texts:
+      - source: scene_text
+        paragraph: 38
+        text: "\"I made it with magic,\" Illuna says, as she waves her hand and magically conjures two more sandwiches that fall directly into our laps. \"Here, knock yourselves out.\"\r\n\r\nI take a look at the sandwich she conjured out of nowhere, and then grab it with both my hands, but I am a bit hesitant in taking a bite from it. I have no idea what ingredients she made this from. Could it be poisoned?\r\n\r\n\"Oh, for crying out loud!\" Illuna says, when she sees me eye her sandwich suspiciously. \"You're not seriously thinking that the sandwich is poisoned, are you? Who in the world still uses poison nowadays? Barring the hundreds of easily learnable magical protections that can provide you with immunity against all poisons, you can even buy anti-poison elixirs for ten copper a piece. Surely you must have drunk at least ONE of those before coming to this tournament? A single elixir should easily provide you with immunity to all known poisons for the remainder of this tournament. Just eat the damn sandwich, will you?\"\r\n\r\nRose giggles.\r\n\r\n\"Now I understand why Flower told me you were always grumpy!\" she says, smiling playfully."
+      - source: scene_text_2
+        paragraph: 16
+        text: "\"Spectacular,\" Illuna says. \"Is there anything else that the girl shared about me while I was asleep?\"\r\n\r\n\"Well, she most certainly didn't tell me that you could conjure food out of thin air!\" Rose says. \"That is normally a skill that only the grand priests of each city can master. You must be incredibly talented!\"\r\n\r\n\"Actually, I am ashamed to admit that Flower was the one who taught me this skill.\"\r\n\r\n\"Flower did?\"\r\n\r\n\"Yes, the girl has the natural talent of being able to instantly comprehend some ridiculously complex spells without expending any effort whatsoever. She only saw the spirit fox cast this spell once, twenty years ago, and she managed to mimic it in the very next second. However, she is completely hopeless when it comes to learning spells that require the least amount of studying beforehand. I've been trying to teach her healing for years, but it's like trying to teach an ogre how to speak lessathi.\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_multiplied
+  - name: ch9_multiplied
+    texts:
+      - source: scene_text
+        paragraph: 39
+        text: "Rose smiles.\r\n\r\n\"See?\" she tells Illuna. \"You can actually open up to us if you try!\"\r\n\r\nThe banshee frowns at her.\r\n\r\n\"Congratulations,\" she says, coldly. \"You have achieved your goal. Now will you finally go away and let me finish my sandwich in peace?\"\r\n\r\n\"You know, you look really cute when you frown!\" Rose says, smiling playfully again.\r\n\r\n\"Good grief,\" Illuna says. \"What would it take to make you go away and let me have my peace and quiet? It's hard enough that I have to put up with Flower while she's awake. Can't I at least have some rest while she's asleep?\"\r\n\r\n\"Of course not!\" Rose says, with a cute smirk on her face. \"If we went to sleep now, then who would be left here to tease you all night long?\"\r\n\r\n\"By the gods,\" Illuna says. \"It's as if the Flowers have multiplied...\""
+      - source: scene_text_2
+        paragraph: 17
+        text: "We ended up spending the next few hours talking with Illuna, and although on the surface she appeared to be annoyed by us, a part of me felt that she was actually enjoying our company, in her own way. Even if she maintained her grumpy demeanor throughout the night, the banshee slowly started to open up towards us and she even told us a few stories from her adventures with Flower in the past few years. It was later in the night that we were interrupted by Daren and Hadrik, who came to take over our shift.\r\n\r\n\"Wait, wasn't Flower supposed to be the only one taking this shift?\" Hadrik asks us, surprised.\r\n\r\n\"It seems that Flower misled us yesterday,\" Daren says, with a grave tone in his voice. \"Because she apparently never intended to take on that shift herself.\"\r\n\r\nIlluna and Daren then spend a few seconds looking each other in the eye, as if they were ready to jump at each other's throats any second."
+    choices:
+      - position: 1
+        text: Hey now, let's all calm down! We're all on the same team here, right?
+        effects:
+          - set:
+              current_scene: ch9_calm
+      - position: 2
+        text: >-
+          Actually, their souls are fused, so Flower didn't technically lie
+          yesterday.
+        effects:
+          - set:
+              current_scene: ch9_fused
+      - position: 3
+        text: You're not seriously going to start a fight here, are you?
+        effects:
+          - set:
+              current_scene: ch9_fight
+  - name: ch9_calm
+    texts:
+      - source: scene_text
+        paragraph: 40
+        text: "\"Hey now, let's all calm down! We're all on the same team here, right?\"\r\n\r\n\"I don't know, are we?\" Daren says. \"Everything worked out fine because you and Rose figured out what happened and went to keep a close watch on her, but who is to say that she wouldn't have slit our throats in our sleep if left unsupervised?\"\r\n\r\n\"There would be no need to use such underhanded tactics to rid myself of a handful of mages that can't even use magic,\" Illuna says. \"You and your friends pose no threat to me in your current condition. If you have a bone to pick with me, healer, then I would be more than happy to show you that I'm not bluffing.\"\r\n\r\n\"I will take you up on that offer, banshee,\" Daren says, as he pulls out his sword. \"Let's see if you fight as well as you run your mouth.\"\r\n\r\n\"Daren, wait!\" I shout, as I place myself between the two of them. \"Do you plan to kill the girl along with the banshee?\"\r\n\r\n\"Just because the sword can't lock onto the banshee's aura by itself does not mean I can't do it manually,\" Daren says. \"I can still kill the banshee without harming the girl if I focus hard enough.\"\r\n\r\n\"Have you gone mad?\" I ask him. \"How do you expect to properly target the banshee's aura if the sword can't do it by itself? You're almost guaranteed to fail!\"\r\n\r\n\"If I do, then it would still be a better fate for the girl than to live her whole life chained to an evil spirit.\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_intervention
+  - name: ch9_fused
+    texts:
+      - source: scene_text
+        paragraph: 41
+        text: "\"Actually, their souls are fused, so Flower didn't technically lie yesterday.\"\r\n\r\n\"Damn it, Barry!\" Daren says. \"You know very well what I meant! Their souls might be one and the same, but they still kept their own distinct personalities, as evidenced by the fact that one can be awake while the other is asleep. If you and Rose hadn't been here to keep a close watch on her, who is to say that she wouldn't have slit all of our throats in our sleep if left unsupervised?\"\r\n\r\n\"There would be no need to use such underhanded tactics to rid myself of a handful of mages that can't even use magic,\" Illuna says. \"You and your friends pose no threat to me in your current condition. If you have a bone to pick with me, healer, then I would be more than happy to show you that I'm not bluffing.\"\r\n\r\n\"I will take you up on that offer, banshee,\" Daren says, as he pulls out his sword. \"Let's see if you fight as well as you run your mouth.\"\r\n\r\n\"Daren, wait!\" I shout, as I place myself between the two of them. \"Do you plan to kill the girl along with the banshee?\"\r\n\r\n\"Just because the sword can't lock onto the banshee's aura by itself does not mean I can't do it manually,\" Daren says. \"I can still kill the banshee without harming the girl if I focus hard enough.\"\r\n\r\n\"Have you gone mad?\" I ask him. \"How do you expect to properly target the banshee's aura if the sword can't do it by itself? You're almost guaranteed to fail!\"\r\n\r\n\"If I do, then it would still be a better fate for the girl than to live her whole life chained to an evil spirit.\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_intervention
+  - name: ch9_fight
+    texts:
+      - source: scene_text
+        paragraph: 42
+        text: "\"You're not seriously going to start a fight here, are you?\"\r\n\r\n\"This is no joking matter, Barry,\" Daren says. \"Everything worked out fine because you and Rose figured out what happened and went to keep a close watch on her, but who is to say that she wouldn't have slit our throats in our sleep if left unsupervised?\"\r\n\r\n\"There would be no need to use such underhanded tactics to rid myself of a handful of mages that can't even use magic,\" Illuna says. \"You and your friends pose no threat to me in your current condition. If you have a bone to pick with me, healer, then I would be more than happy to show you that I'm not bluffing.\"\r\n\r\n\"I will take you up on that offer, banshee,\" Daren says, as he pulls out his sword. \"Let's see if you fight as well as you run your mouth.\"\r\n\r\n\"Daren, wait!\" I shout, as I place myself between the two of them. \"Do you plan to kill the girl along with the banshee?\"\r\n\r\n\"Just because the sword can't lock onto the banshee's aura by itself does not mean I can't do it manually,\" Daren says. \"I can still kill the banshee without harming the girl if I focus hard enough.\"\r\n\r\n\"Have you gone mad?\" I ask him. \"How do you expect to properly target the banshee's aura if the sword can't do it by itself? You're almost guaranteed to fail!\"\r\n\r\n\"If I do, then it would still be a better fate for the girl than to live her whole life chained to an evil spirit.\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_intervention
+  - name: ch9_intervention
+    texts:
+      - source: scene_text
+        paragraph: 43
+        text: "\"Oh yeah? And who's going to lead us to the ogre stronghold with the girl gone?\"\r\n\r\n\"We already know the general direction. I'd say we are close enough to our destination to be able to make it there even without a guide at this point. Step aside, Barry.\"\r\n\r\n\"Yeah,\" I say, with a laugh, as I pull out my dagger. \"That's gonna happen.\" \r\n\r\n\"Whoa-ho-ho there, friends!\" Hadrik says. \"How about you both take a deep long breath and think about what you are doing? Do you really want to end things like this, over some petty squabble? Wouldn't you rather have your names immortalized as legendary warriors who fought in the greatest mage tournament in recent history than be remembered as the idiots who died before the contest even started?\"\r\n\r\n\"Daren, please...\" Rose says, with a pleading look.\r\n\r\nSeeing that nobody is on his side, Daren finally decides to sheathe his sword.\r\n\r\n\"I'm not going to fight you, Barry,\" he says. \"I was hoping to intimidate you into backing down, but I suppose that if you aren't the type to get intimidated by a stillwater or a dragon, a sword isn't exactly going to do me much good. If you feel so strongly about this, then I have no choice but to leave matters as they are, for now. You were right about Kate, so I can only hope that your instincts are right this time too.\""
+      - source: scene_text_2
+        paragraph: 18
+        text: "With these last words, Daren and Hadrik walk past us to take their stations at the top of the hill, while Rose, Illuna and I head down, towards our tents. The three of us descend from the hill without uttering a single word to each other, and when we reach Flower's tent, Illuna turns her head towards me before going in.\r\n\r\n\"Your intervention from earlier was unnecessary, human,\" she tells me. \"I could have taken care of that healer without your help.\"\r\n\r\n\"Come on, don't be like that!\" I say. \"Friends should stick out for each other in their time of need!\"\r\n\r\n\"You seem to be under the false impression that you and I are friends. I assure you that you could not be any further from the truth.\""
+    choices:
+      - position: 1
+        text: Relax, I only wanted to make sure we don't lose our only guide.
+        effects:
+          - set:
+              current_scene: ch9_guide
+      - position: 2
+        text: I didn't do this for you, I did it for Flower's sake.
+        effects:
+          - set:
+              current_scene: ch9_sake
+      - position: 3
+        text: Love you too, Illuna!
+        effects:
+          - set:
+              current_scene: ch9_love
+  - name: ch9_guide
+    texts:
+      - source: scene_text
+        paragraph: 44
+        text: "\"Relax, I only wanted to make sure we don't lose our only guide. It wasn't anything personal.\"\r\n\r\n\"I see,\" the banshee says. \"In that case I cannot blame you for being too cautious. However, I will give you one warning. Do not make the mistake of considering me your ally. Our affiliation is only temporary, and it will end the moment we finish our little trip together. You would be a fool to think otherwise.\" \r\n\r\nShe then turns her back on us and slowly steps into her tent.\r\n\r\n\"Good night, Illuna!\" Rose says, waving, but the banshee gives no sign of having heard her, and she closes the tent behind her.\r\n\r\n\"Well, I'd say that went pretty well!\" Rose says, smiling, as we head for our tents.\r\n\r\n\"You think?\" I ask her.\r\n\r\n\"Of course I do!\" she says. \"Didn't you see how happy she was when you jumped to her defense, earlier? If you manage to see past her grumpy facade, you can tell that she really isn't that much different from the rest of us!\"\r\n\r\n\"I think I'm starting to see a little bit of Flower in you...\"\r\n\r\n\"There's a little bit of Flower in all of us, Barry!\" Rose says, as she points towards me. \"Yours just happens to be buried underneath several layers of cynicism and sarcastic quips!\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_backpack
+  - name: ch9_sake
+    texts:
+      - source: scene_text
+        paragraph: 45
+        text: "\"I didn't do this for you, I did it for Flower's sake.\"\r\n\r\n\"Your relationship with the girl does not concern me,\" the banshee says, \"but I understand why it would have caused you to act in the way that you did. However, I will give you one warning. Do not make the mistake of considering me your ally. Our affiliation is only temporary, and it will end the moment we finish our little trip together. You would be a fool to think otherwise.\"\r\n\r\nShe then turns her back on us and slowly steps into her tent.\r\n\r\n\"Good night, Illuna!\" Rose says, waving, but the banshee gives no sign of having heard her, and she closes the tent behind her.\r\n\r\n\"Well, I'd say that went pretty well!\" Rose says, smiling, as we head for our tents.\r\n\r\n\"You think?\" I ask her.\r\n\r\n\"Of course I do!\" she says. \"Didn't you see how happy she was when you jumped to her defense, earlier? If you manage to see past her grumpy facade, you can tell that she really isn't that much different from the rest of us!\"\r\n\r\n\"I think I'm starting to see a little bit of Flower in you...\"\r\n\r\n\"There's a little bit of Flower in all of us, Barry!\" Rose says, as she points towards me. \"Yours just happens to be buried underneath several layers of cynicism and sarcastic quips!\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_backpack
+  - name: ch9_love
+    texts:
+      - source: scene_text
+        paragraph: 46
+        text: "\"Love you too, Illuna!\"\r\n\r\nThe banshee frowns at me.\r\n\r\n\"I will give you one warning, human, and one warning only,\" she says. \"Do not make the mistake of considering me your ally. Our affiliation is only temporary, and it will end the moment we finish our little trip together. You would be a fool to think otherwise.\"\r\n\r\nShe then turns her back on us and slowly steps into her tent.\r\n\r\n\"Good night, Illuna!\" Rose says, waving, but the banshee gives no sign of having heard her, and she closes the tent behind her.\r\n\r\n\"Well, I'd say that went pretty well!\" Rose says, smiling, as we head for our tents.\r\n\r\n\"You think?\" I ask her.\r\n\r\n\"Of course I do!\" she says. \"Didn't you see how happy she was when you jumped to her defense, earlier? If you manage to see past her grumpy facade, you can tell that she really isn't that much different from the rest of us!\"\r\n\r\n\"I think I'm starting to see a little bit of Flower in you...\"\r\n\r\n\"There's a little bit of Flower in all of us, Barry!\" Rose says, as she points towards me. \"Yours just happens to be buried underneath several layers of cynicism and sarcastic quips!\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_backpack
+  - name: ch9_backpack
+    routes:
+      - texts:
+          - source: scene_text
+            paragraph: 47
+            text: "She smiles.\r\n\r\n\"Thank you for inviting me to join you tonight. I really appreciate it! Maybe we can do this again, sometime!\"\r\n\r\n\"I see no reason why not!\" I say.\r\n\r\n\"Good night, Barry!\" Rose says, smiling.\r\n\r\n\"Sleep well, Rose,\" I tell her, as we both part ways and head for our respective tents.\r\n\r\nOnce I get inside my tent, I fall asleep almost immediately. I never realized how tired I really was, until my head touched the pillow. I wake up a few hours later, to the sound of footsteps and several tents being dismantled. \r\n\r\n\"Had a nice sleep, Barry?\" Hadrik tells me, with a grin, as I step outside. \"I'll be taking back my tent, if you don't mind!\"\r\n\r\nAs he starts to dismantle the tent, I take a good look around me and see that everyone is already up on their feet, busy either with the tents or with packing their bags. The sun is just starting to rise, which means that we now have a little over four days left to finish our quest."
+          - source: scene_text_2
+            paragraph: 19
+            text: "I suddenly remember that I wanted to do a quick inventory of my backpack's contents before leaving, since I can no longer see what's inside of it, due to Daren's enchantment.\r\n\r\nI start to take my items out of the backpack, one by one, by focusing on their image before reaching for them. I need to make sure that I don't forget anything. Maybe I should make a list?\r\n\r\n\"What the hell are you doing?\" Kate says, as she approaches me.\r\n\r\n\"I'm doing a quick inventory,\" I answer her. \"I didn't really get a good look at all of my items before Daren enchanted my backpack, so I just wanted to make sure that I'm not forgetting anything.\"\r\n\r\nAfter looking at me for a few seconds, Kate grabs my hand, and she uses it to tap three times on the inside of my backpack. Immediately after she releases me, a screen magically appears above my backpack, giving me a detailed list of all my items, with corresponding pictures for each of them. \r\n\r\n\"There's your quick inventory,\" Kate says. \"Now hurry up and put that stuff back in, or you'll get left behind.\""
+        condition: ch9_inventory = 0
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_strategy
+      - texts:
+          - source: scene_text
+            paragraph: 48
+            text: "She smiles.\r\n\r\n\"It was really fun, hanging out with you tonight! Maybe we can do this again, sometime!\"\r\n\r\n\"I see no reason why not!\" I say.\r\n\r\n\"Good night, Barry!\" Rose says, smiling.\r\n\r\n\"Sleep well, Rose,\" I tell her, as we both part ways and head for our respective tents.\r\n\r\nOnce I get inside my tent, I fall asleep almost immediately. I never realized how tired I really was, until my head touched the pillow. I wake up a few hours later, to the sound of footsteps and several tents being dismantled. \r\n\r\n\"Had a nice sleep, Barry?\" Hadrik tells me, with a grin, as I step outside. \"I'll be taking back my tent, if you don't mind!\"\r\n\r\nAs he starts to dismantle the tent, I take a good look around me and see that everyone is already up on their feet, busy either with the tents or with packing their bags. The sun is just starting to rise, which means that we now have a little over four days left to finish our quest."
+          - source: scene_text_2
+            paragraph: 20
+            text: "While everyone is busy with the tents, I decide to spend my time trying to figure out how to get the backpack to show me a list of my contents. After about half a minute of fiddling around with it, I start to realize that this system might not be as intuitive as I would have hoped.  \r\n\r\n\"What the hell are you doing?\" Kate says, as she approaches me.\r\n\r\n\"I'm trying to figure out how to get a list of all my items, but this stuff is beyond me...\" I say.\r\n\r\nAfter looking at me for a few seconds, Kate grabs my hand, and she uses it to tap three times on the inside of my backpack. Immediately after she releases me, a screen magically appears above my backpack, giving me a detailed list of all my items, with corresponding pictures for each of them. \r\n\r\n\"There's your list,\" Kate says. \"Now stop wasting time and come help me with this tent. The sun is already up, so we want to start moving as soon as possible.\""
+        condition: ch9_inventory = 1
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_strategy
+  - name: ch9_strategy
+    texts:
+      - source: scene_text
+        paragraph: 49
+        text: "Once we all finished what we had to do, we started marching yet again, with Flower leading the group, just like yesterday. This time, however, the five of us were a lot more silent than before. With the exception of Flower's occasional directions, there were barely any words spoken between the six of us in the first half hour of our journey.\r\n\r\n\"Did... something happen while I was asleep?\" Flower asks, worried, after noticing that something is wrong.\r\n\r\n\"No!\" Daren and I both shout at the same time.\r\n\r\n\"Uh... okay?\" Flower says, with an even more worried tone than before.\r\n\r\n\"From what I heard, Barry and Daren had a little fight last night,\" Kate says. \"Pay them no mind. I'm sure they'll get over it soon enough.\"\r\n\r\nAfter a few more hours of walking through the forest, Flower announced to us that we were starting to get closer to our goal. We decided that this was a good time to take a little break and talk about our strategy for infiltrating the stronghold."
+      - source: scene_text_2
+        paragraph: 21
+        text: "\"First things first,\" Daren says. \"We need to decide what to do with Rose during our attack. The way I see it, we have two options. Either we take her with us, or we leave her in a safe area outside of the stronghold, with someone to act as her bodyguard, just in case. Anyone have any thoughts on this?\"\r\n\r\n\"I volunteer to stay behind and guard Rose,\" Kate says. \"I'm not sure of how much help I can be in infiltrating the fort without my magic, but I should be able to handle a few ogre scouts on my own if need be.\""
+    choices:
+      - position: 1
+        text: Try to convince them that it's safer to take Rose with us
+        effects:
+          - set:
+              current_scene: ch9_take_rose
+              ch9_take_rose: 1
+      - position: 2
+        text: Agree with Kate's plan
+        effects:
+          - set:
+              current_scene: ch9_take_rose
+              ch9_take_rose: 0
+  - name: ch9_take_rose
+    routes:
+      - texts:
+          - source: scene_text
+            paragraph: 50
+            text: "\"I think it would be safer to take Rose with us to the stronghold,\" I say. \"We've been told that the ogres have mages within their ranks. If even one of those mages happens to be in the scouting party, Kate will have no chance to beat him.\"\r\n\r\n\"The lad makes a good point,\" Hadrik says. \"It's too risky to leave Rose behind. I say we take her with us. If we managed to protect her in the ruins, we can do it here too!\"\r\n\r\nDaren turns towards Rose.\r\n\r\n\"Rose, is this okay with you?\" he asks her.\r\n\r\n\"Of course!\" she says. \"We've already been through much worse together. I'll try my best not to get in anyone's way, once we enter the fort.\"\r\n\r\n\"Before we make any concrete plans,\" Hadrik says, \"could we maybe go over the leopard's briefing one more time? His accent in Common was horrible and I'm not sure I got all he said.\""
+          - source: scene_text_2
+            paragraph: 22
+            text: "\"Well, first of all,\" Kate says, \"the chalice we are meant to retrieve was used to give water unique healing properties which could cure some illnesses that were incurable through the use of spells. The artifact itself looks like a regular golden chalice, except it has triangular markings on the sides. Regarding the stronghold's defenses, the leopard said that the ogres are primarily divided between regular warriors that use big clubs to fight, and mages that have a variety of magical specialties. The most dangerous ones that we should be on the lookout for are their shaman, who should be easily recognizable by the multitude of tattoos inscribed on his body, and the stronghold captain, who is the only ogre warrior in the fort that wears heavy armor. That should be about the main gist of it.\"\r\n\r\n\"If this chalice of theirs is so important, I still don't get why the fox doesn't just storm the fort herself to get it back,\" Hadrik says. \"Isn't she supposed to be really powerful?\"\r\n\r\n\"Eleya derives most of her power from the sacred woods throughout the continent,\" Flower says. \"When she steps outside those woods, she is not much stronger than most other animals. This is why the war between animals and monsters has been going on for decades, without reaching a conclusion. This is also why access to the sacred woods is forbidden for all outsiders.\"\r\n\r\n\"Getting back to the discussion at hand,\" Daren says, \"I believe that the next thing we need to establish is how we are going to retrieve that chalice. From what I heard, the stronghold is positioned on top of a hill, and all of the trees in a mile radius from it have been cut down. There's no way we'll be able to sneak our way in.\""
+        condition: ch9_take_rose = 1
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_sloppy
+      - texts:
+          - source: scene_text
+            paragraph: 52
+            text: "\"I think this would be our best course of action,\" I say. \"It would be too dangerous to take Rose with us into the fort. There is no guarantee that we can defend her while fighting the hordes of ogres without using any magic.\"\r\n\r\n\"Aye,\" Hadrik says. \"I'm sure that Kate will be more than able to deal with a few measly ogres!\"\r\n\r\n\"Rose, do you still have that transceiver I gave you?\" Daren says.\r\n\r\n\"Yes, do you want it back?\" Rose asks.\r\n\r\n\"No, keep it,\" Daren says. \"And in case anything happens while we are away, use it to contact us.\"\r\n\r\n\"Before we make any concrete plans,\" Hadrik says, \"could we maybe go over the leopard's briefing one more time? His accent in Common was horrible and I'm not sure I got all he said.\""
+          - source: scene_text_2
+            paragraph: 24
+            text: "\"Well, first of all,\" Kate says, \"the chalice we are meant to retrieve was used to give water unique healing properties which could cure some illnesses that were incurable through the use of spells. The artifact itself looks like a regular golden chalice, except it has triangular markings on the sides. Regarding the stronghold's defenses, the leopard said that the ogres are primarily divided between regular warriors that use big clubs to fight, and mages that have a variety of magical specialties. The most dangerous ones that we should be on the lookout for are their shaman, who should be easily recognizable by the multitude of tattoos inscribed on his body, and the stronghold captain, who is the only ogre warrior in the fort that wears heavy armor. That should be about the main gist of it.\"\r\n\r\n\"If this chalice of theirs is so important, I still don't get why the fox doesn't just storm the fort herself to get it back,\" Hadrik says. \"Isn't she supposed to be really powerful?\"\r\n\r\n\"Eleya derives most of her power from the sacred woods throughout the continent,\" Flower says. \"When she steps outside those woods, she is not much stronger than most other animals. This is why the war between animals and monsters has been going on for decades, without reaching a conclusion. This is also why access to the sacred woods is forbidden for all outsiders.\"\r\n\r\n\"Getting back to the discussion at hand,\" Daren says, \"I believe that the next thing we need to establish is how we are going to retrieve that chalice. From what I heard, the stronghold is positioned on top of a hill, and all of the trees in a mile radius from it have been cut down. There's no way we'll be able to sneak our way in.\""
+        condition: ch9_take_rose = 0
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_sloppy
+  - name: ch9_sloppy
+    texts:
+      - source: scene_text
+        paragraph: 51
+        text: "\"Maybe we could try to buy it from them?\" Rose suggests.\r\n\r\n\"It wouldn't work,\" Kate says. \"The ogres stole that chalice knowing full well what it was capable of. They're not going to give it away for any price.\"\r\n\r\n\"Well then, I guess there's only one option left,\" Hadrik says, with a grin. \"We go in right through their front door!\"\r\n\r\n\"I'm afraid that we are left with no other alternative,\" Daren says.\r\n\r\n\"If we encounter any elementalists, leave them to me!\" Hadrik says. \"Since I focus mainly on shapeshifting magic, I've had to develop certain techniques that I can use in place of defensive spells while I am transformed. One of these techniques allows me to harden the magical aura around my body, which is not only great for defense, but also for attacking. If I use it to harden the magical aura around my fists, I can easily deflect fireballs with my punches, and send them right back at their casters!\"\r\n\r\n\"My sword is also good against elementalists,\" Daren says. \"I can use it to absorb any element, and I also have a sword technique that can temporarily sever a mage's link to the magical plane, making them unable to cast spells for thirty minutes.\"\r\n\r\n\"Hah!\" Hadrik says. \"Who says mages need magic to fight? We'll conquer this stronghold of theirs in no time!\""
+      - source: scene_text_2
+        paragraph: 23
+        text: "\"If we're all agreed to attack the fort openly, then I guess there's not much more to discuss,\" Daren says. \"There are too many things we don't know about the building's layout and the distribution of their troops to be able to anticipate what will happen. We'll just have to rely on our instincts, once the battle begins. If no one else has anything to add, then I suggest we get going. We still have a lot of ground to cover until we reach our objective.\"\r\n\r\nIt was a few more hours later that we got close enough to the stronghold to be able to do a bit of reconnaissance. Flower and Hadrik went to scout ahead, while the rest of us looked for a good place to bury our backpacks, since it would be too difficult to fight with them on our backs and we'd have no place to leave them while we're in the fort. Before burying my backpack, I made sure to take my crossbow out of it, since I am sure to need it in the upcoming battle.\r\n\r\nAfter about thirty or so minutes, Flower and Hadrik returned to us, with some rather unsettling news.\r\n\r\n\"It's dead quiet out there,\" Hadrik tells us. \"And I'm not just talking about a lack of patrols, I'm saying there weren't even any ogres posted on the walls. Something doesn't add up, here. The ogres may be stupid, but they couldn't possibly be this sloppy.\""
+    choices:
+      - position: 1
+        text: Maybe they're onto us and want to lure us into a trap.
+        effects:
+          - set:
+              current_scene: ch9_trap
+      - position: 2
+        text: Maybe we caught them during their lunch break?
+        effects:
+          - set:
+              current_scene: ch9_lunch
+      - position: 3
+        text: Maybe they abandoned the fort and moved elsewhere?
+        effects:
+          - set:
+              current_scene: ch9_moved
+  - name: ch9_trap
+    texts:
+      - source: scene_text
+        paragraph: 53
+        text: "\"Maybe they're onto us and want to lure us into a trap.\"\r\n\r\n\"I agree,\" Daren says. \"We've been told that their mages are quite capable, so it's entirely possible that they're using magic to detect when anyone is approaching their stronghold. Unfortunately, we do not have the luxury to just stand here and wait them out until they get bored. Time is not on our side, and we can't really tell what they are trying to accomplish until we actually enter the fort. Let's just hope that our lack of any detailed plan regarding our actions once we've infiltrated the stronghold won't prove fatal to us.\"\r\n\r\n\"Oh, don't worry!\" Flower says. \"Petal and I have a secret plan. It's sure to work!\"\r\n\r\n\"I see,\" Daren says. \"And would you by any chance have any intention of sharing this secret plan with the rest of us?\"\r\n\r\n\"No, of course not!\" Flower says, shocked. \"How would it still be a secret if we just started telling everyone about it?\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_worry
+  - name: ch9_lunch
+    texts:
+      - source: scene_text
+        paragraph: 54
+        text: "\"Maybe we caught them during their lunch break.\"\r\n\r\n\"Don't be silly, Barry,\" Hadrik says. \"If they aren't even disciplined enough to keep their fort defended during their lunch breaks, I really can't see how the animals would have had so much trouble in dealing with them until now. This smells like a trap to me.\"\r\n\r\n\"I agree,\" Daren says. \"We've been told that their mages are quite capable, so it's entirely possible that they're using magic to detect when anyone is approaching their stronghold. Unfortunately, we do not have the luxury to just stand here and wait them out until they get bored. Time is not on our side, and we can't really tell what they are trying to accomplish until we actually enter the fort. Let's just hope that our lack of any detailed plan regarding our actions once we've infiltrated the stronghold won't prove fatal to us.\"\r\n\r\n\"Oh, don't worry!\" Flower says. \"Petal and I have a secret plan. It's sure to work!\"\r\n\r\n\"I see,\" Daren says. \"And would you by any chance have any intention of sharing this secret plan with the rest of us?\"\r\n\r\n\"No, of course not!\" Flower says, shocked. \"How would it still be a secret if we just started telling everyone about it?\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_worry
+  - name: ch9_moved
+    texts:
+      - source: scene_text
+        paragraph: 55
+        text: "\"Maybe they abandoned the fort and moved elsewhere.\"\r\n\r\n\"I find that hard to believe,\" Hadrik says. \"From what the leopard told us, this fortified structure used to belong to a group of goblins before the ogres took it from them, by force. If they went through so much trouble to secure this fort, I doubt they'd just abandon it like that for no reason. This smells like a trap to me.\"\r\n\r\n\"I agree,\" Daren says. \"We've been told that their mages are quite capable, so it's entirely possible that they're using magic to detect when anyone is approaching their stronghold. Unfortunately, we do not have the luxury to just stand here and wait them out until they get bored. Time is not on our side, and we can't really tell what they are trying to accomplish until we actually enter the fort. Let's just hope that our lack of any detailed plan regarding our actions once we've infiltrated the stronghold won't prove fatal to us.\"\r\n\r\n\"Oh, don't worry!\" Flower says. \"Petal and I have a secret plan. It's sure to work!\"\r\n\r\n\"I see,\" Daren says. \"And would you by any chance have any intention of sharing this secret plan with the rest of us?\"\r\n\r\n\"No, of course not!\" Flower says, shocked. \"How would it still be a secret if we just started telling everyone about it?\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_worry
+  - name: ch9_worry
+    routes:
+      - texts:
+          - source: scene_text
+            paragraph: 56
+            text: "\"Right,\" Daren says, in a dismissive tone. \"Well then, I guess this is it. This won't be an easy fight. Not by a long shot. We're going to be vastly outnumbered, we'll be fighting on unfamiliar terrain, and worst of all, we won't have our magic to help us. However, we've all had to go through hardships since the beginning of this tournament, and we've always somehow managed to pull through. It would be pointless to hold a last minute strategy meeting now, given the extremely limited information we have on our enemy, so instead, I will tell you this: Whatever you do, don't get yourselves killed!\"\r\n\r\n\"You worry too much, Daren,\" Hadrik says, with a grin. \"Nobody is going to die here. Most of us have already had our fair share of battles in the past. We haven't survived this long just to be taken out by a bunch of overgrown baboons in the middle of nowhere. We'll win this fight like we've won many others, and by the end of the day we'll all have another exciting story to share with friends over a drink near the fireside!\"\r\n\r\n\"Let's hope you're right,\" Daren says.\r\n\r\nHe then turns to Rose and Kate.\r\n\r\n\"Rose,\" he says, \"this is where we part ways, for now. You'll be in Kate's hands until the rest of us get back from the fort. Remember, if anything unexpected happens, contact us through your transceiver, and we'll try to come to your aid, even if we're in the middle of a battle.\""
+          - source: scene_text_2
+            paragraph: 25
+            text: "\"We'll be fine, Daren!\" Rose says, smiling. \"There's no need to worry about us. Just make sure you all come back in one piece!\"\r\n\r\n\"Flower, are you sure about this?\" Kate says. \"The fox only said you had to lead us to the stronghold. You've already fulfilled your promise. There's no need for you to risk your life for us any further.\"\r\n\r\n\"Oh, I could never live with myself if I just abandoned you here like this!\" Flower says. \"And besides, Petal and I have fought ogres before. They're not that tough! I don't think there will be any problems.\""
+        condition: ch9_take_rose = 0
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_final_march
+      - texts:
+          - source: scene_text
+            paragraph: 57
+            text: "\"Right,\" Daren says, in a dismissive tone. \"Well then, I guess this is it. This won't be an easy fight. Not by a long shot. We're going to be vastly outnumbered, we'll be fighting on unfamiliar terrain, and worst of all, we won't have our magic to help us. However, we've all had to go through hardships since the beginning of this tournament, and we've always somehow managed to pull through. It would be pointless to hold a last minute strategy meeting now, given the extremely limited information we have on our enemy, so instead, I will tell you this: Whatever you do, don't get yourselves killed!\"\r\n\r\n\"You worry too much, Daren,\" Hadrik says, with a grin. \"Nobody is going to die here. Most of us have already had our fair share of battles in the past. We haven't survived this long just to be taken out by a bunch of overgrown baboons in the middle of nowhere. We'll win this fight like we've won many others, and by the end of the day we'll all have another exciting story to share with friends over a drink near the fireside!\"\r\n\r\n\"Let's hope you're right,\" Daren says.\r\n\r\n\"Flower, are you sure about this?\" Kate says. \"The fox only said you had to lead us to the stronghold. You've already fulfilled your promise. There's no need for you to risk your life for us any further.\"\r\n\r\n\"Oh, I could never live with myself if I just abandoned you here like this!\" Flower says. \"And besides, Petal and I have fought ogres before. They're not that tough! I don't think there will be any problems.\""
+        condition: ch9_take_rose = 1
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_final_march
+  - name: ch9_final_march
+    routes:
+      - texts:
+          - source: scene_text
+            paragraph: 58
+            text: "With these last words, we all wave goodbye to Kate and Rose, and then we start our final march towards the stronghold.\r\n\r\nIt took us about ten minutes to reach the end of the forest. The whole area around the fort had been completely cleansed of trees and all other vegetation, to provide direct line of sight for the ogre patrols. The stronghold itself was placed on top of a hill, and it had a surface of maybe one thousand square feet. Its walls were made of stone, and had a height of about thirty feet, while the only visible entrance to the fort was a very large wooden gate that had been left wide open, giving us a clear view of the stronghold's inner yard.\r\n\r\nThere seemed to be one main building in the middle, which was connected to all four of the walls that formed a square around it. Getting a closer look at the fort, we soon realized that it wasn't just the walls that were deserted, but the whole yard as well. \r\n\r\n\"They sure aren't trying to hide the fact that this is a trap, are they?\" Hadrik asks, as we step through their open gates.\r\n\r\n\"Keep your guards up,\" Daren says, as he looks around. \"They could attack us from any direction.\""
+          - source: scene_text_2
+            paragraph: 26
+            text: "While we make our way inside their inner yard, Arraka suddenly starts to make a very loud noise from inside her amulet.\r\n\r\n\"Oh no, you don't!\" Flower says. \"If I open the amulet now, you're just going to shout as loud as you can and give away our position to the ogres, aren't you? You're not going to fool me again!\"\r\n\r\nArraka makes an even louder muffled sound, and she doesn't appear to have any intention of stopping."
+        condition: ch9_take_rose = 0 AND hearing < 2
+        set:
+          failed_checks:
+            - '[ Hearing check failed - level 2 ]'
+          ch9_ogres: 1
+        choices:
+          - position: 1
+            text: Try to convince Flower to open the amulet
+            effects:
+              - set:
+                  current_scene: ch9_open
+          - position: 2
+            text: Ignore Arraka
+            effects:
+              - set:
+                  current_scene: ch9_ignore
+      - texts:
+          - source: scene_text
+            paragraph: 59
+            text: "With these last words, we all grab our weapons and start our final march towards the stronghold.\r\n\r\nIt took us about ten minutes to reach the end of the forest. The whole area around the fort had been completely cleansed of trees and all other vegetation, to provide direct line of sight for the ogre patrols. The stronghold itself was placed on top of a hill, and it had a surface of maybe one thousand square feet. Its walls were made of stone, and had a height of about thirty feet, while the only visible entrance to the fort was a very large wooden gate that had been left wide open, giving us a clear view of the stronghold's inner yard.\r\n\r\nThere seemed to be one main building in the middle, which was connected to all four of the walls that formed a square around it. Getting a closer look at the fort, we soon realized that it wasn't just the walls that were deserted, but the whole yard as well. \r\n\r\n\"They sure aren't trying to hide the fact that this is a trap, are they?\" Hadrik asks, as we step through their open gates.\r\n\r\n\"Keep your guards up,\" Daren says, as he looks around. \"They could attack us from any direction.\""
+          - source: scene_text_2
+            paragraph: 27
+            text: "While we make our way inside their inner yard, Arraka suddenly starts to make a very loud noise from inside her amulet.\r\n\r\n\"Oh no, you don't!\" Flower says. \"If I open the amulet now, you're just going to shout as loud as you can and give away our position to the ogres, aren't you? You're not going to fool me again!\"\r\n\r\nArraka makes an even louder muffled sound, and she doesn't appear to have any intention of stopping."
+        condition: ch9_take_rose = 1 AND hearing < 2
+        set:
+          failed_checks:
+            - '[ Hearing check failed - level 2 ]'
+          ch9_ogres: 1
+        choices:
+          - position: 1
+            text: Try to convince Flower to open the amulet
+            effects:
+              - set:
+                  current_scene: ch9_open
+          - position: 2
+            text: Ignore Arraka
+            effects:
+              - set:
+                  current_scene: ch9_ignore
+      - texts:
+          - source: scene_text
+            paragraph: 60
+            text: "While Flower and Kate were talking, I heard what sounded like footsteps somewhere behind me. I immediately turn around to see if we are being followed, but there's no one there. Was it just my imagination? \r\n\r\nAfter looking around for a few more seconds and coming up empty, I arrive at the conclusion that I'm just too tense right now to be able to fully trust my senses, so I turn around and get ready to leave for the fort. Once we all make sure that we have everything we need, we wave goodbye to Kate and Rose, and then we start our final march towards the stronghold."
+        condition: ch9_take_rose = 0 AND hearing >= 2 AND perception = 0
+        set:
+          failed_checks:
+            - '[ Observation check failed - level 1 ]'
+          successful_checks:
+            - '[ Hearing check successful - level 2 ]'
+          ch9_ogres: 2
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_muffled
+      - texts:
+          - source: scene_text
+            paragraph: 61
+            text: "While Flower and Kate were talking, I heard what sounded like footsteps somewhere behind me. I immediately turn around to see if we are being followed, but there's no one there. Was it just my imagination? \r\n\r\nAfter looking around for a few more seconds and coming up empty, I arrive at the conclusion that I'm just too tense right now to be able to fully trust my senses, so I turn around and get ready to leave for the fort. Once we all make sure that we have everything we need, we start our final march towards the stronghold."
+        condition: ch9_take_rose = 1 AND hearing >= 2 AND perception = 0
+        set:
+          failed_checks:
+            - '[ Observation check failed - level 1 ]'
+          successful_checks:
+            - '[ Hearing check successful - level 2 ]'
+          ch9_ogres: 2
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_muffled
+      - texts:
+          - source: scene_text
+            paragraph: 62
+            text: "While Flower and Kate were talking, I heard what sounded like footsteps somewhere behind me. I immediately turn around to see if we are being followed, but there's no one there. Was it just my imagination? \r\n\r\nI start to look carefully at the area where I heard the sound, earlier. Everything seems to be in order, except for one small detail that catches my attention. The grass is unusually flat right around the spot where I heard those footsteps. It's as if a force is pushing that particular patch of grass towards the ground, in the same way it would be pushed if someone were to stand on it. \r\n\r\nA crazy thought occurs to me, and I aim my crossbow somewhere a few feet above the flat grass.\r\n\r\n\"Barry, what are you playing at?\" Daren asks me. \"Put that crossbow down, and let's go to the fort.\" \r\n\r\nI pay him no mind, and I shoot an arrow at the empty space in front of me. Instead of going through the air, however, the arrow stops in mid-flight, and a trickle of blood starts coming out from its tip. Soon afterwards, a hideous creature begins to slowly materialize in front of us, with my arrow sticking out of its big belly. The monster is about eight feet tall, with thick gray skin, and it's wearing nothing other than a loincloth around its waist. Two of its lower fangs are sticking out of its closed mouth, its forehead is exceedingly narrow, and on its face, it is wearing one of the dumbest expressions I've ever seen in my life."
+        condition: hearing >= 2 AND perception >= 1
+        set:
+          successful_checks:
+            - '[ Hearing check successful - level 2 ]'
+            - '[ Observation check successful - level 1 ]'
+          ch9_ogres: 3
+          ac_ch9_observer: 1
+        achievement:
+          id: ac_ch9_observer
+          title: Keen observer
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_nice
+  - name: ch9_nice
+    routes:
+      - texts:
+          - source: scene_text
+            paragraph: 63
+            text: "The ogre shouts loudly, as it pulls the arrow out with one of its hands, and readies its five foot long club with the other. Another ogre is now coming out of invisibility, ready to fight alongside its wounded comrade. The two of them, however, do not get much of a chance to show off their strength, because in the blink of an eye, Daren took out his sword and beheaded one of them, while Hadrik made a big jump and smashed the other ogre's head in with his boot, leaving only a bloody mess where its face once was.\r\n\r\n\"Nice one, Barry!\" Daren says, as the two ogres' carcasses fall on the ground with a loud thump. \"I wouldn't even have imagined that the ogres had access to such advanced spells as invisibility. That shaman of theirs is really not to be taken lightly.\"\r\n\r\n\"I don't think it's safe to leave Rose and Kate behind anymore, knowing that the ogres can use spells like these,\" I say.\r\n\r\n\"You're right,\" Daren says. \"Rose, Kate, you're coming with us to the fort. It's far too dangerous to leave you here. I'm not accepting 'no' for an answer.\"\r\n\r\nOnce we make sure that there are no other invisible ogre scouts in the area, we grab our weapons and start our final march towards the stronghold."
+        condition: ch9_take_rose = 0
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_muffled
+      - texts:
+          - source: scene_text
+            paragraph: 64
+            text: "The ogre shouts loudly, as it pulls the arrow out with one of its hands, and readies its five foot long club with the other. Another ogre is now coming out of invisibility, ready to fight alongside its wounded comrade. The two of them, however, do not get much of a chance to show off their strength, because in the blink of an eye, Daren took out his sword and beheaded one of them, while Hadrik made a big jump and smashed the other ogre's head in with his boot, leaving only a bloody mess where its face once was.\r\n\r\n\"Nice one, Barry!\" Daren says, as the two ogres' carcasses fall on the ground with a loud thump. \"I wouldn't even have imagined that the ogres had access to such advanced spells as invisibility. That shaman of theirs is really not to be taken lightly.\"\r\n\r\nOnce we make sure that there are no other invisible ogre scouts in the area, we grab our weapons and start our final march towards the stronghold."
+        condition: ch9_take_rose = 1
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_muffled
+  - name: ch9_muffled
+    texts:
+      - source: scene_text
+        paragraph: 65
+        text: "It took us about ten minutes to reach the end of the forest. The whole area around the fort had been completely cleansed of trees and all other vegetation, to provide direct line of sight for the ogre patrols. The stronghold itself was placed on top of a hill, and it had a surface of around four hundred thousand square feet. Its walls were made of stone, and had a height of about thirty feet, while the only visible entrance to the fort was a very large wooden gate that had been left wide open, giving us a clear view of the stronghold's inner yard.\r\n\r\nThere seemed to be one main building in the middle, which was connected to all four of the walls that formed a square around it. Getting a closer look at the fort, we soon realized that it wasn't just the walls that were deserted, but the whole yard as well. \r\n\r\n\"They sure aren't trying to hide the fact that this is a trap, are they?\" Hadrik asks, as we step through their open gates.\r\n\r\n\"Keep your guards up,\" Daren says, as he looks around. \"They could attack us from any direction.\"\r\n\r\nWhile we make our way inside their inner yard, Arraka suddenly starts to make a very loud noise from inside her amulet.\r\n\r\n\"Oh no, you don't!\" Flower says. \"If I open the amulet now, you're just going to shout as loud as you can and give away our position to the ogres, aren't you? You're not going to fool me again!\"\r\n\r\nArraka makes an even louder muffled sound, and she doesn't appear to have any intention of stopping."
+    choices:
+      - position: 1
+        text: Try to convince Flower to open the amulet
+        effects:
+          - set:
+              current_scene: ch9_open
+      - position: 2
+        text: Ignore Arraka
+        effects:
+          - set:
+              current_scene: ch9_ignore
+  - name: ch9_open
+    routes:
+      - texts:
+          - source: scene_text
+            paragraph: 66
+            text: "\"Flower,\" I say. \"It's clear that the ogres already know we're here. I don't think she wants to give away our position to them. Maybe she figured out where they're hiding and wants to let us know. Could you open the amulet and see what she wants?\"\r\n\r\n\"Well, if you say so...\" Flower says, as she opens the amulet.\r\n\r\n\"They're invisible, you idiots!\" Arraka shouts with all of her might, as soon as we are able to hear her. \"They're invisible and they have you all surrounded! Shoot them! Shoot them now!\"\r\n\r\nI aim my crossbow forward, and then I shoot an arrow at the empty space in front of me. Instead of going through the air, however, the arrow stops in mid-flight, and a trickle of blood starts coming out from its tip. Soon afterwards, a hideous creature begins to slowly materialize in front of us, with my arrow sticking out of its big belly. The monster is about eight feet tall, with thick gray skin, and it's wearing nothing other than a loincloth around its waist. Two of its lower fangs are sticking out of its closed mouth, its forehead is exceedingly narrow, and on its face, it is wearing one of the dumbest expressions I've ever seen in my life."
+          - source: scene_text_2
+            paragraph: 28
+            text: >-
+              The other ogres are now also slowly appearing out of thin air, and
+              it turns out that there are at least a hundred of them, and they
+              have us all surrounded. Two of the ogres stand out from the crowd,
+              one because of the excessive amount of tattoos on his body, and
+              the other because of his heavy armor. They must be the shaman and
+              the fort captain that we've heard so much about. All of the other
+              ogres are wearing nothing but loincloths and are holding big clubs
+              in their hands, so it's a bit difficult to distinguish their mages
+              from their warriors.
+        condition: ch9_ogres <> 3
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_brave
+      - texts:
+          - source: scene_text
+            paragraph: 67
+            text: "\"Flower,\" I say. \"It's clear that the ogres already know we're here. I don't think she wants to give away our position to them. Maybe she figured out where they're hiding and wants to let us know. Could you open the amulet and see what she wants?\"\r\n\r\n\"Well, if you say so...\" Flower says, as she opens the amulet.\r\n\r\n\"They're invisible, you idiots!\" Arraka shouts with all of her might, as soon as we are able to hear her. \"They're invisible and they have you all surrounded! Shoot them! Shoot them now!\"\r\n\r\n I aim my crossbow right in front of me, and then I shoot. As expected, the arrow sticks itself into the belly of an ogre again, as the monster starts to slowly materialize in front of our eyes.\r\n\r\nThe other ogres are now also slowly appearing out of thin air, and it turns out that there are at least a hundred of them, and they have us all surrounded. Two of the ogres stand out from the crowd, one because of the excessive amount of tattoos on his body, and the other because of his heavy armor. They must be the shaman and the fort captain that we've heard so much about. All of the other ogres are wearing nothing but loincloths and are holding big clubs in their hands, so it's a bit difficult to distinguish their mages from their warriors."
+        condition: ch9_ogres = 3
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_brave
+  - name: ch9_ignore
+    routes:
+      - texts:
+          - source: scene_text
+            paragraph: 68
+            text: "As we advance through the fort's yard, Arraka is starting to get even more agitated, and the amulet is beginning to shake violently as her muffled sounds intensify.\r\n\r\n\"What's happening?\" Hadrik says. \"Why aren't they attacking?\"\r\n\r\n\"They must be waiting for something,\" Daren says. \"If only I could figure out what they...\"\r\n\r\nHe pauses for a few seconds, as the answer to his own question dawns upon him.\r\n\r\n\"By the gods...\" Daren says. \"They must all be invisible, like those scouts from earlier. Barry, shoot your crossbow somewhere. Anywhere. Quick!\"\r\n\r\nI aim my crossbow right in front of me, and then I shoot. As expected, the arrow sticks itself into the belly of an ogre again, as the monster starts to slowly materialize in front of our eyes.\r\n\r\nThe other ogres are now also slowly appearing out of thin air, and it turns out that there are at least a hundred of them, and they have us all surrounded. Two of the ogres stand out from the crowd, one because of the excessive amount of tattoos on his body, and the other because of his heavy armor. They must be the shaman and the fort captain that we've heard so much about. All of the other ogres are wearing nothing but loincloths and are holding big clubs in their hands, so it's a bit difficult to distinguish their mages from their warriors."
+        condition: ch9_ogres = 3
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_brave
+      - texts:
+          - source: scene_text
+            paragraph: 69
+            text: "As we advance through the fort's yard, Arraka is starting to get even more agitated, and the amulet is beginning to shake violently as her muffled sounds intensify.\r\n\r\n\"What's happening?\" Hadrik says. \"Why aren't they attacking?\"\r\n\r\n\"They must be waiting for something,\" Daren says. \"If only I could figure out what they are trying to accomplish.\"\r\n\r\nArraka is now shaking the amulet more violently than ever before, as her muffled screams are so loud that I can almost start to understand her words.\r\n\r\n\"What do you want?!\" Flower says, finally, as she caves in and opens the amulet.\r\n\r\n\"They're invisible, you morons!\" Arraka shouts loudly, with her voice full of rage. \"They have you all surrounded!\""
+        condition: ch9_ogres <> 3
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_ogre_club
+  - name: ch9_ogre_club
+    routes:
+      - texts:
+          - source: scene_text
+            paragraph: 70
+            text: "As I turn around, I am terrified to learn that one of the ogres has just come out of invisibility, and is now bringing down a five foot long club towards my skull. \r\n\r\nThe dumb and gleeful expression on the monster's face was the last thing I got to see, before his club smashed my head in and sent my lifeless body tumbling to the ground."
+        condition: reflexes < 3
+        set:
+          failed_checks:
+            - '[ Reflexes check failed - level 3 ]'
+          is_dead: 1
+        choices:
+          - position: 1
+            text: Restart game
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+          - position: 2
+            text: Load from last checkpoint
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+          - position: 3
+            text: Load game
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+      - texts:
+          - source: scene_text
+            paragraph: 71
+            text: "As I turn around, I am terrified to learn that one of the ogres has just come out of invisibility, and is now bringing down a five foot long club towards my skull. \r\n\r\nWhile the club was descending towards me, my body moved on its own, and I managed to get out of harm's way, while the ogre's weapon smashed the ground and sent bits of rock flying everywhere.\r\n\r\nAs I get a closer look at my attacker, I see that the monster is about eight feet tall, with thick gray skin, and it's wearing nothing other than a loincloth around its waist. Two of its lower fangs are sticking out of its closed mouth, its forehead is exceedingly narrow, and on its face, it is wearing one of the dumbest expressions I've ever seen in my life.\r\n\r\nThe rest of the ogres are now also slowly appearing out of thin air, and it turns out that there are at least a hundred of them, and they have us all surrounded. Two of the ogres stand out from the crowd, one because of the excessive amount of tattoos on his body, and the other because of his heavy armor. They must be the shaman and the fort captain that we've heard so much about. All of the other ogres are wearing nothing but loincloths and are holding big clubs in their hands, so it's a bit difficult to distinguish their mages from their warriors."
+        condition: reflexes >= 3
+        set:
+          successful_checks:
+            - '[ Reflexes check successful - level 3 ]'
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch9_brave
+                condition: is_dead = 0
+  - name: ch9_brave
+    texts:
+      - source: scene_text
+        paragraph: 72
+        text: "The ogres surrounding us are all making loud noises and preparing their clubs, while we pull out our own weapons and get ready to fight. Before we get to engage the enemy, however, their captain roars loudly, and that makes all of the other ogres grow completely silent. They then step aside in order to make way for their shaman to pass, as he approaches us and then stops a few feet away from our position, while leaning on his wooden staff.\r\n\r\n\"Welcome, brave warriors!\" the shaman says, in the common language, with a wicked grin on his face. \"You don't often see humans wandering around these parts nowadays. I must say that you are certainly bold to have come here all by yourselves. To what do I owe this pleasure?\""
+    choices:
+      - position: 1
+        text: There's no reason for us to explain ourselves to you, monster!
+        effects:
+          - set:
+              current_scene: ch9_monster
+      - position: 2
+        text: We came here seeking the sacred chalice.
+        effects:
+          - set:
+              current_scene: ch9_sacred
+      - position: 3
+        text: We came here because we'd like to join your merry group!
+        effects:
+          - set:
+              current_scene: ch9_merry
+  - name: ch9_monster
+    texts:
+      - source: scene_text
+        paragraph: 73
+        text: "\"There's no reason for us to explain ourselves to you, monster!\"\r\n\r\n\"If I were you, I'd be more careful with my words, human,\" the shaman says, with his grin gone from his face. \"You aren't exactly in a position to refuse our demands, at this time.\"\r\n\r\n\"Like hell we aren't, you ugly bastard!\" Daren says. \"We're going to plow through your minions faster than you can even give the order to attack.\"\r\n\r\n\"I see...\" the ogre shaman says. \"Then I'm afraid I'm going to have to ask you to drop your weapons, humans. As of right now, you are our prisoners.\"\r\n\r\n\"Yeah, that's not how this is going to work,\" Hadrik says, with a grin, as he readies his fists."
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_persuade
+            condition: ch9_take_rose = 0
+          - set:
+              current_scene: ch9_submission
+            condition: ch9_take_rose = 1
+          - set:
+              current_scene: ch9_submission
+            condition: ch9_take_rose = 0 AND ch9_ogres = 3
+  - name: ch9_sacred
+    texts:
+      - source: scene_text
+        paragraph: 74
+        text: "\"We came here seeking the sacred chalice.\"\r\n\r\n\"Ah, so it's the golden fox that sent you here, then,\" the shaman says, while rubbing his chin with his left hand. \"I don't know what the fox offered you in exchange for the chalice, but I doubt it would be worth all of your lives. I could have you all crushed by uttering a single word, but I do not want to risk the lives of any of my people without good reason. So here is my offer to you. Leave now, and we will grant you safe passage out of our fort. We will bring no harm to you, and we can all forget this unfortunate incident ever happened. What say you to this, human warriors?\"\r\n\r\n\"Like hell we're leaving this place without the chalice, you ugly bastard!\" Daren says. \"If you're not going to give it to us, then we'll just have to fight our way through your minions until we find it ourselves.\"\r\n\r\n\"I see...\" the ogre shaman says. \"Then I'm afraid I'm going to have to ask you to drop your weapons, humans. As of right now, you are our prisoners.\"\r\n\r\n\"Yeah, that's not how this is going to work,\" Hadrik says, with a grin, as he readies his fists."
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_persuade
+            condition: ch9_take_rose = 0
+          - set:
+              current_scene: ch9_submission
+            condition: ch9_take_rose = 1
+          - set:
+              current_scene: ch9_submission
+            condition: ch9_take_rose = 0 AND ch9_ogres = 3
+  - name: ch9_merry
+    texts:
+      - source: scene_text
+        paragraph: 75
+        text: "\"We came here because we'd like to join your merry group!\"\r\n\r\n\"If I were you, I'd be wary of making such jests, human,\" the shaman says, still grinning. \"As it so happens, we could use some slaves for manual labor in our fort, so your group would serve us well in this regard.\"\r\n\r\n\"Like hell are we going to work for you, you ugly bastard!\" Daren says. \"We're going to plow through your minions faster than you can even give the order to attack.\"\r\n\r\n\"I see...\" the ogre shaman says. \"Then I'm afraid I'm going to have to ask you to drop your weapons, humans. As of right now, you are our prisoners.\"\r\n\r\n\"Yeah, that's not how this is going to work,\" Hadrik says, with a grin, as he readies his fists."
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_persuade
+            condition: ch9_take_rose = 0
+          - set:
+              current_scene: ch9_submission
+            condition: ch9_take_rose = 1
+          - set:
+              current_scene: ch9_submission
+            condition: ch9_take_rose = 0 AND ch9_ogres = 3
+  - name: ch9_persuade
+    texts:
+      - source: scene_text
+        paragraph: 76
+        text: "\"Perhaps I could persuade you to change your minds,\" the shaman says, and then he smacks his staff into the ground.\r\n\r\nImmediately afterwards, two ogres who were invisible are now slowly appearing in front of us, each of them carrying a passed out woman on his back.\r\n\r\n\"No!\" Daren shouts, as he recognizes the two figures being carried by the ogres.\r\n\r\nKate and Rose are both unconscious, and they have both their hands and their legs tied up. They must have been knocked out before they even had the chance to know who attacked them. \r\n\r\n\"Throw down your weapons, humans,\" the shaman says. \"If you don't, my allies will squash their heads with their bare hands.\""
+    choices:
+      - position: 1
+        text: Throw down my weapons
+        effects:
+          - set:
+              current_scene: ch9_throw
+      - position: 2
+        text: Shoot the two ogres holding Kate and Rose with my crossbow
+        effects:
+          - set:
+              current_scene: ch9_crossbow
+  - name: ch9_crossbow
+    texts:
+      - source: scene_text
+        paragraph: 77
+        text: "I quickly aim my crossbow for the two ogres, and shoot for their heads, in rapid succession. Their reactions were surprisingly fast, and they both managed to deflect my arrows with their clubs.\r\n\r\n\"That was a mistake, human,\" the shaman says.\r\n\r\n\"No, wait,\" Daren says, as he drops his shield and sword. \"See? I've dropped my weapons!\"\r\n\r\n\"Too late,\" the shaman says, as he gives a signal to the two ogres beside him.\r\n\r\nHis allies grab both Rose and Kate's heads in their hands, and they clench their fists, crashing their skulls with a sickening crunch.\r\n\r\n\"No!\" Daren shouts. \"You'll pay for this! You'll all pay for this!\"\r\n\r\nHe rushes towards the two ogres, but their captain steps in front of them, and he hits Daren with his club. Daren instinctively placed his shield between himself and the ogre's weapon, but the force behind the hit was so great that it sent him flying into a nearby wall."
+      - source: scene_text_2
+        paragraph: 29
+        text: "As the others start to fight, I find myself just standing there, unable to get the image of Kate and Rose's last moments out of my head. I am the reason this happened. This is all my fault. I'm the one who killed them.\r\n\r\nAs these thoughts race through my head, I notice too late that an ogre had managed to sneak behind me, and was now swinging his club towards my head. There was no time for me to react, and the force of the impact cracked my skull right open, sending my lifeless body tumbling to the ground."
+    choices:
+      - position: 1
+        text: Restart game
+        effects:
+          - set:
+              current_scene: ch1_intro1
+              storyboard_controls: Jump to frame "Chapter 1"
+      - position: 2
+        text: Load from last checkpoint
+        effects:
+          - set:
+              chapter_load: 1
+              storyboard_controls: Jump to frame "Save load game"
+      - position: 3
+        text: Load game
+        effects:
+          - set:
+              storyboard_controls: Jump to frame "Save load game"
+  - name: ch9_throw
+    texts:
+      - source: scene_text
+        paragraph: 78
+        text: "I do as the shaman says, and throw my crossbow at his feet. I then take my dagger out and throw it away as well. Daren hesitates for a few seconds, but eventually he follows my example and throws down both his sword and his shield. Hadrik and Flower were carrying no weapons with them, so they simply stood there, looking at the ogre.\r\n\r\n\"A wise decision,\" the shaman says, as he gestures towards his two associates.\r\n\r\nThe two ogres take Kate and Rose off their backs and then they throw them both on the ground next to us. \r\n\r\n\"Rose!\" Daren shouts, as he grabs her in his arms and starts to shake her. \"Rose, can you hear me?\"\r\n\r\nWhile Daren tries to wake up Rose, I go to check on Kate. Thankfully, she does not appear to have sustained any severe injuries, and she is breathing normally. \r\n\r\n\"Daren?...\" Rose says, as she finally starts to awaken. \"What happened? How did I get here?\"\r\n\r\n\"Rose, you were attacked by ogres, and then they brought you here,\" Daren says. \"We are now at the ogres' fort, and we were just forced to surrender to them.\"\r\n\r\nRose gasps.\r\n\r\n\"Oh gods...\" she says. \"Is this... Did they capture you because of us? Daren, I'm so sorry...\"\r\n\r\n\"It wasn't your fault,\" Daren says. \"We shouldn't have left you behind. We should have taken you with us from the very beginning.\""
+    effects:
+      - set:
+          ac_ch9_decision: 1
+        achievement:
+          id: ac_ch9_decision
+          title: A wise decision
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_interrupt
+  - name: ch9_submission
+    texts:
+      - source: scene_text
+        paragraph: 79
+        text: "\"If you're not going to cooperate, then we have no choice but to force you into submission,\" the shaman says. \r\n\r\n\"There will be no need for that,\" I hear Flower's voice coming from my left. \r\n\r\nAs I take a look at her, I see that her eyes are bright blue again, and she has Illuna's cold expression on her face. However, unlike before, this time the girl's aura is so weak that it pales in comparison to the banshee's. I can barely feel any life force coming from it, as if she were in some kind of a dormant state.\r\n\r\nImmediately after Illuna stops talking, a golden cage pops out of nowhere and it surrounds us all, leaving only the banshee and the ogres outside of it.\r\n\r\n\"I believe you all still remember the spell that the fox used to trap you back in the ruins,\" Illuna tells us. \"I wouldn't even think about trying to break out of there through brute strength. That golden cage is practically indestructible.\"\r\n\r\nShe is not lying. Even without being a mage, I can tell that this is an incredibly powerful spell. There's no way we're breaking out of here without any magic.\r\n\r\n\"What is the meaning of this, banshee?\" Daren says, furious. \"What have you done with the girl?\"\r\n\r\n\"I've put Flower in a stasis,\" Illuna says. \"I've dealt enough with her idiocy for one day. In fact, I would say I've dealt with it enough to last me for a lifetime.\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_traitorous
+  - name: ch9_interrupt
+    texts:
+      - source: scene_text
+        paragraph: 80
+        text: "\"I'm sorry to interrupt,\" the shaman says, \"but I would like to have you all turn around with your hands behind your backs, so we can tie you up nicely. We will then take you to our prison, and we'll decide tomorrow what do with you.\"\r\n\r\n\"There will be no need for that,\" I hear Flower's voice coming from my left. \r\n\r\nAs I take a look at her, I see that her eyes are bright blue again, and she has Illuna's cold expression on her face. However, unlike before, this time the girl's aura is so weak that it pales in comparison to the banshee's. I can barely feel any life force coming from it, as if she were in some kind of a dormant state.\r\n\r\nImmediately after Illuna stops talking, a golden cage pops out of nowhere and it surrounds us all, leaving only the banshee and the ogres outside of it.\r\n\r\n\"I believe you all still remember the spell that the fox used to trap you back in the ruins,\" Illuna tells us. \"I wouldn't even think about trying to break out of there through brute strength. That golden cage is practically indestructible.\"\r\n\r\nShe is not lying. Even without being a mage, I can tell that this is an incredibly powerful spell. There's no way we're breaking out of here without any magic.\r\n\r\n\"What is the meaning of this, banshee?\" Daren says, furious. \"What have you done with the girl?\"\r\n\r\n\"I've put Flower in a stasis,\" Illuna says. \"I've dealt enough with her idiocy for one day. In fact, I would say I've dealt with it enough to last me for a lifetime.\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_traitorous
+  - name: ch9_traitorous
+    texts:
+      - source: scene_text
+        paragraph: 81
+        text: "She then turns to the ogre shaman.\r\n\r\n\"Great shaman,\" she says, \"my name is Illuna, and I am a banshee. I've come here to offer you my services in exchange for access to the rare and unique books from your stronghold's library. As a token of my goodwill, I offer you these human intruders as a tribute.\"\r\n\r\n\"You traitorous little--\" Daren starts to say, but he is interrupted by the captain of the ogres.\r\n\r\n\"Bold words for puny prisoner!\" the captain shouts loudly, in the common language, speaking with a very broken accent and grammar. \"What make banshee think that ogre want your services?\" \r\n\r\n\"Don't be so rash, captain,\" the shaman says. \"This isn't just any banshee. This is Illuna, of the sacred woods massacre. It is said that she killed hundreds of guardians of the forest in a single day, without showing the slightest amount of mercy. However, it is also said that she went soft ever since she fused with this little girl we see before us.\"\r\n\r\n\"The girl I share the body with has been threading the line between asset and liability for far too long,\" Illuna says. \"Her natural magical talents made her a particularly powerful ally, but her whims overwhelmed her judgment more often than not, and she repeatedly put us into mortal danger because of this. Her decision to help these mages infiltrate your stronghold was the final straw, and it made me realize that I needed to rid myself of her quick, before she would become the end of me.\""
+      - source: scene_text_2
+        paragraph: 30
+        text: "\"And how do you plan on doing that?\" the shaman asks.\r\n\r\n\"I've heard of several shamanistic rituals that could help me with my soul fusion problem,\" the banshee says. \"I only require some time to study in your library, and I am sure that I will find a way to eliminate the girl for good, without harming myself in the process.\"\r\n\r\n\"And in exchange for this favor, you offer us your loyalty?\" the shaman asks.\r\n\r\n\"Precisely,\" Illuna says.\r\n\r\n\"Then I require you to do one more thing to prove that you are being sincere,\" the shaman says, with a wicked grin. \"You'll have to execute your friends from that cage.\"\r\n\r\n\"Sadly, I cannot do that,\" the banshee says. \"Killing them now would result in all of our deaths.\"\r\n\r\n\"How so?\" the shaman asks.\r\n\r\n\"Those collars that they are wearing have been placed around their necks by the great golden fox, who is also the one who sent them here to steal your sacred chalice,\" Illuna says. \"They are made in such a manner that if the humans die, the collars explode, and those explosions would be powerful enough to easily level your fort and kill all of your warriors. The fox took this extreme measure to make sure that you all get eliminated even if the humans fail their mission.\""
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: ch9_mechanisms
+  - name: ch9_mechanisms
+    texts:
+      - source: scene_text
+        paragraph: 82
+        text: "\"Hmm...\" the shaman says, as he strokes his chin. \"I recognize these collars. They were made by the lessathi of old. I know for a fact that these devices had some very dangerous self-destruct mechanisms set in place in case the prisoners wearing them misbehaved.\"\r\n\r\nHe pauses.\r\n\r\n\"What do you propose we do with them, then?\" he asks the banshee.\r\n\r\n\"We wait,\" Illuna says. \"The fox gave them five days to complete their quest. If they do not return in five days, she will assume that they abandoned their mission, and they will die by electrocution. In this case, the self-destruct mechanism in the collars will not get activated.\"\r\n\r\n\"You've said enough,\" the shaman says. \"It's clear that you hold no attachment to your former allies. You are welcome to use our library as much as you please, Illuna of the sacred woods massacre. We will discuss your payment after you rid yourself of the girl. As for these humans, I have a teleportation spell that can easily transport them into their cell, as long as they don't move from their position for a while. If you confirm that you can still hold onto that cage, I will start casting it.\"\r\n\r\n\"My cage will last for at least another few minutes,\" Illuna says. \"However, I have one more warning to give you. That dwarf possesses a giant's strength and could easily break through the walls of your prison without any weapons. I suggest you transport them into one of the cells that have a paralysis spell cast on them. I've visited this stronghold before, when it was owned by goblins, and I remember that there was at least one such cell on the lower levels of the main building.\""
+      - source: scene_text_2
+        paragraph: 31
+        text: "\"You remember correctly, banshee,\" the shaman says. \"Very well, then. I will send them to one of the paralysis cells.\"\r\n\r\nHe then starts casting his teleportation spell, and our bodies start to slowly vibrate, while we get covered in a bright white light.\r\n\r\n\"You bloody traitor!\" Hadrik says, as he tries to bend the cage's bars with his bare hands. \"I can't believe you actually told them about my giant's strength!\"\r\n\r\n\"Illuna, how could you do this?\" Rose asks the banshee, as a tear drops from her eye. \"I trusted you. Flower trusted you. How could you betray us all like this?\"\r\n\r\n\"You are far too trusting for your own good, Rose,\" Illuna says, with a frozen look in her eyes. \"I already warned you not to consider me your ally. You should have listened to your healer when you had the chance. Now you will pay the price for your foolishness.\"\r\n\r\nThe banshee's cold look and Rose's tears are the last things I see before everything fades to black and we all get teleported to what may well become our final destination."
+    choices:
+      - position: 1
+        text: Next chapter
+        effects:
+          - set:
+              next_chapter_crash: 1
+              storyboard_controls: Jump to frame "Save load game"
+              current_scene: ch10_intro
+              chapter_save: 1
+              checkpoint_rich: 1
