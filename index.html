@@ -4,7 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magium Game</title>
-    <script type="module" crossorigin src="./assets/index-C0FnyT5i.js"></script>
+    <style>
+      /* Ensure the page background is fully black and remove default margins so
+         the app's 24px padding doesn't produce a lighter border on mobile */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: #111;
+        color: #eee;
+      }
+      /* Make scrollbars on mobile less intrusive */
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-D1s3LaPC.js"></script>
   </head>
   <body>
     <div id="root"></div>
@@ -13,7 +29,7 @@
       // `magium` object with `routeId`, propagate it onto <section>
       // elements as `data-route-id`. Also observe mutations so dynamically
       // rendered sections receive the attribute.
-      (function () {
+      ;(function () {
         try {
           if (typeof window === 'undefined' || typeof document === 'undefined') return
           function applyRouteId() {
@@ -36,7 +52,10 @@
               var mo = new MutationObserver(function () {
                 applyRouteId()
               })
-              mo.observe(document.documentElement || document.body, { childList: true, subtree: true })
+              mo.observe(document.documentElement || document.body, {
+                childList: true,
+                subtree: true,
+              })
             }
             // Also run a periodic check in case the game sets routeId later
             if (typeof setInterval !== 'undefined') setInterval(applyRouteId, 500)
