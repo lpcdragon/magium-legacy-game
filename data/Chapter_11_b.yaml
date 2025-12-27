@@ -7,7 +7,75 @@ scenes:
       - set:
           first_book_purchased: 1
           iap_check_resume: 0
-    routes: []
+    texts:
+      - source: scene_text
+        paragraph: 42
+        text: "This marks the end of the first Magium book.\r\n\r\nThe second book has been completed and is ready to unlock, but only the first eleven chapters of book 3 are available so far, with the next chapters to be released one by one, as I write them. (the main series will likely have 5 books in total)\r\n\r\nMy current estimate is that the 12th chapter of the third book should be released within the next few months.\r\n\r\nIf you already paid to unlock the 2nd book, you can tap on the button below to proceed. Otherwise, you will need to complete 25 achievements from the 1st book in order to unlock the second one.\r\n\r\nYou can see how many more achievements you need to complete in the achievements menu. \r\n\r\nI would also like to add that I strongly suggest you save the game now on a save slot you won't overwrite, if you're planning to start completing achievements, since otherwise you'll lose the progress of your current playthrough and you'll have to finish the game again in order to be able to progress to the next book.\r\n\r\nYou should also be careful to not uninstall the game, since all of the next books will be uploaded within the same app, and if you uninstall the game, all your local progress, including your achievements, will be lost.\r\n\r\nThank you for playing!\r\n\r\nP.S. If you enjoyed the game, don't forget to recommend it to your friends."
+    routes:
+      - texts: []
+        condition: first_book_purchased = 1
+        choices:
+          - position: 1
+            text: Proceed to book 2
+            effects:
+              - set:
+                  b1_saved_stats: 1
+                  b1_strength: ${strength_aux}
+                  b1_agility: ${agility_aux}
+                  b1_toughness: ${toughness_aux}
+                  b1_reflexes: ${reflexes_aux}
+                  b1_hearing: ${hearing_aux}
+                  b1_perception: ${perception_aux}
+                  b1_ancient_languages: ${ancient_languages_aux}
+                  b1_combat_technique: ${combat_technique_aux}
+                  b1_premonition: ${premonition_aux}
+                  b1_available_points: ${available_points_aux}
+                  storyboard_controls: Jump to frame "Save load game"
+                  current_scene: b2_ch01a_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+      - texts: []
+        condition: nb_of_unlocked_achievements >= 25 AND first_book_purchased = 0
+        choices:
+          - position: 1
+            text: Proceed to book 2
+            effects:
+              - set:
+                  b1_saved_stats: 1
+                  b1_strength: ${strength_aux}
+                  b1_agility: ${agility_aux}
+                  b1_toughness: ${toughness_aux}
+                  b1_reflexes: ${reflexes_aux}
+                  b1_hearing: ${hearing_aux}
+                  b1_perception: ${perception_aux}
+                  b1_ancient_languages: ${ancient_languages_aux}
+                  b1_combat_technique: ${combat_technique_aux}
+                  b1_premonition: ${premonition_aux}
+                  b1_available_points: ${available_points_aux}
+                  storyboard_controls: Jump to frame "Save load game"
+                  current_scene: b2_ch01a_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+      - texts: []
+        condition: nb_of_unlocked_achievements < 25 AND first_book_purchased = 0
+        choices:
+          - position: 1
+            text: Restart game
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+          - position: 2
+            text: Load from last checkpoint
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+          - position: 3
+            text: Load game
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
   - name: ch11b_clones
     texts:
       - source: scene_text

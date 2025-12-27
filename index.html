@@ -4,9 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magium Game</title>
-    <script type="module" crossorigin src="./assets/index-DXupwHAD.js"></script>
+    <script type="module" crossorigin src="./assets/index-C0FnyT5i.js"></script>
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Helper shim for tests / traversal: if the game exposes a global
+      // `magium` object with `routeId`, propagate it onto <section>
+      // elements as `data-route-id`. Also observe mutations so dynamically
+      // rendered sections receive the attribute.
+      (function () {
+        try {
+          if (typeof window === 'undefined' || typeof document === 'undefined') return
+          function applyRouteId() {
+            try {
+              var mg = window.magium
+              var rid = mg && mg.routeId
+              if (typeof rid !== 'undefined' && rid !== null) {
+                var s = document.querySelector('section')
+                if (s) s.setAttribute('data-route-id', String(rid))
+              }
+            } catch (e) {
+              /* ignore */
+            }
+          }
+          // Apply on DOMContentLoaded and periodically for safety
+          document.addEventListener('DOMContentLoaded', function () {
+            applyRouteId()
+            // Observe for added/changed section elements if supported
+            if (typeof MutationObserver !== 'undefined') {
+              var mo = new MutationObserver(function () {
+                applyRouteId()
+              })
+              mo.observe(document.documentElement || document.body, { childList: true, subtree: true })
+            }
+            // Also run a periodic check in case the game sets routeId later
+            if (typeof setInterval !== 'undefined') setInterval(applyRouteId, 500)
+          })
+        } catch (e) {
+          /* ignore */
+        }
+      })()
+    </script>
   </body>
 </html>

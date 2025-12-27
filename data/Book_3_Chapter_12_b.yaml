@@ -851,21 +851,6 @@ scenes:
       - source: scene_3
         paragraph: 29
         text: "\"Kate,\" I say, \"do you remember our plan to take down the Arraka from the past?\"\r\n\r\n\"I remember it, yes,\" Kate answers me.\r\n\r\n\"Good,\" I say, \"Then, I'm going to need you to save up your energy as much as possible, and not do anything until I set up the perfect opportunity for you. You'll know it when it happens.\"\r\n\r\n\"Okay, I'll be waiting, then,\" Kate says."
-    effects:
-      - set:
-          strength: strength aux
-          agility: agility aux
-          toughness: toughness aux
-          reflexes: reflexes aux
-          hearing: hearing aux
-          perception: perception aux
-          ancient_languages: ancient languages aux
-          combat_technique: combat technique aux
-          premonition: premonition aux
-          available_points: available points aux
-          bluff: bluff aux
-          magical_sense: magical sense aux
-          aura_hardening: aura hardening aux
     choices:
       - position: 1
         text: >-
@@ -875,19 +860,19 @@ scenes:
           - set:
               current_scene: b3_ch12b_allout1
               b3_ch12_eiden: 4
-              strength: strength aux
-              agility: agility aux
-              toughness: toughness aux
-              reflexes: reflexes aux
-              hearing: hearing aux
-              perception: perception aux
-              ancient_languages: ancient languages aux
-              combat_technique: combat technique aux
-              premonition: premonition aux
-              available_points: available points aux
-              bluff: bluff aux
-              magical_sense: magical sense aux
-              aura_hardening: aura hardening aux
+              strength: ${strength_aux}
+              agility: ${agility_aux}
+              toughness: ${toughness_aux}
+              reflexes: ${reflexes_aux}
+              hearing: ${hearing_aux}
+              perception: ${perception_aux}
+              ancient_languages: ${ancient_languages_aux}
+              combat_technique: ${combat_technique_aux}
+              premonition: ${premonition_aux}
+              available_points: ${available_points_aux}
+              bluff: ${bluff_aux}
+              magical_sense: ${magical_sense_aux}
+              aura_hardening: ${aura_hardening_aux}
             condition: >-
               strength_aux = 4 AND agility_aux = 4 AND toughness_aux = 4 AND
               reflexes_aux = 4 AND aura_hardening_aux = 4
@@ -898,37 +883,37 @@ scenes:
         effects:
           - set:
               current_scene: b3_ch12b_support
-              strength: strength aux
-              agility: agility aux
-              toughness: toughness aux
-              reflexes: reflexes aux
-              hearing: hearing aux
-              perception: perception aux
-              ancient_languages: ancient languages aux
-              combat_technique: combat technique aux
-              premonition: premonition aux
-              available_points: available points aux
-              bluff: bluff aux
-              magical_sense: magical sense aux
-              aura_hardening: aura hardening aux
+              strength: ${strength_aux}
+              agility: ${agility_aux}
+              toughness: ${toughness_aux}
+              reflexes: ${reflexes_aux}
+              hearing: ${hearing_aux}
+              perception: ${perception_aux}
+              ancient_languages: ${ancient_languages_aux}
+              combat_technique: ${combat_technique_aux}
+              premonition: ${premonition_aux}
+              available_points: ${available_points_aux}
+              bluff: ${bluff_aux}
+              magical_sense: ${magical_sense_aux}
+              aura_hardening: ${aura_hardening_aux}
       - position: 3
         text: Attack Eiden together with Flower and Illuna.
         effects:
           - set:
               current_scene: b3_ch12b_together
-              strength: strength aux
-              agility: agility aux
-              toughness: toughness aux
-              reflexes: reflexes aux
-              hearing: hearing aux
-              perception: perception aux
-              ancient_languages: ancient languages aux
-              combat_technique: combat technique aux
-              premonition: premonition aux
-              available_points: available points aux
-              bluff: bluff aux
-              magical_sense: magical sense aux
-              aura_hardening: aura hardening aux
+              strength: ${strength_aux}
+              agility: ${agility_aux}
+              toughness: ${toughness_aux}
+              reflexes: ${reflexes_aux}
+              hearing: ${hearing_aux}
+              perception: ${perception_aux}
+              ancient_languages: ${ancient_languages_aux}
+              combat_technique: ${combat_technique_aux}
+              premonition: ${premonition_aux}
+              available_points: ${available_points_aux}
+              bluff: ${bluff_aux}
+              magical_sense: ${magical_sense_aux}
+              aura_hardening: ${aura_hardening_aux}
   - name: b3_ch12b_support
     routes:
       - texts:
@@ -1664,6 +1649,19 @@ scenes:
                   current_scene: b3_ch12b_blinding
                 condition: is_dead = 0
   - name: b3_ch12b_steal
+    texts:
+      - source: scene_text
+        paragraph: 62
+        text: "It's time for me to pull out the ace in my sleeve. Meridith told me that I have a one-time opportunity to steal Eiden's energy with my stat device for a few seconds before he catches on to what I'm doing. Now would be the best time to make use of it.\r\n\r\nI quickly pull out my stat device and press on one of the buttons three times, like Meridith showed me.\r\n\r\n\"You're leveling up your stats now, of all times?\" Eiden says, looking unimpressed. \"You do realize that no matter what you do, it's not going to--\"\r\n\r\nAll of a sudden, Eiden realizes what I'm doing and he casts a very fast fire spell at me."
+      - source: scene_text
+        paragraph: 61
+        text: "It's time for me to pull out the ace in my sleeve. Meridith told me that I have a one-time opportunity to steal Eiden's energy with my stat device for a few seconds before he catches on to what I'm doing. Now would be the best time to make use of it.\r\n\r\n\"Hadrik, stand back!\" I say. \"I've got this!\"\r\n\r\n\"Well, if you say so,\" Hadrik says, as he now flies away to give us some space. \"I hope you know what you're doing.\"\r\n\r\n\"I like your confidence, Barry,\" Eiden says, as he is now approaching me. \"Shall I take it that you finally came up with a plan?\"\r\n\r\n\"Oh yeah!\" I say. \"Watch this!\"\r\n\r\nI then pull out my stat device and press on one of the buttons three times, like Meridith showed me.\r\n\r\n\"You're leveling up your stats now, of all times?\" Eiden says, looking unimpressed. \"You do realize that no matter what you do, it's not going to--\"\r\n\r\nAll of a sudden, Eiden realizes what I'm doing and he casts a very fast fire spell at me."
+      - source: scene_text
+        paragraph: 64
+        text: "It's time for me to pull out the ace in my sleeve. Meridith told me that I have a one-time opportunity to steal Eiden's energy with my stat device for a few seconds before he catches on to what I'm doing. Now would be the best time to make use of it.\r\n\r\nI quickly pull out my stat device and press on one of the buttons three times, like Meridith showed me.\r\n\r\n\"You're leveling up your stats now, of all times?\" Eiden says, looking unimpressed. \"You do realize that no matter what you do, it's not going to--\"\r\n\r\nAll of a sudden, Eiden realizes what I'm doing and he casts a very fast fire spell at me."
+      - source: scene_text
+        paragraph: 63
+        text: "It's time for me to pull out the ace in my sleeve. Meridith told me that I have a one-time opportunity to steal Eiden's energy with my stat device for a few seconds before he catches on to what I'm doing. Now would be the best time to make use of it.\r\n\r\n\"Hadrik, stand back!\" I say. \"I've got this!\"\r\n\r\n\"Well, if you say so,\" Hadrik says, as he now flies away to give us some space. \"I hope you know what you're doing.\"\r\n\r\n\"I like your confidence, Barry,\" Eiden says, as he is now approaching me. \"Shall I take it that you finally came up with a plan?\"\r\n\r\n\"Oh yeah!\" I say. \"Watch this!\"\r\n\r\nI then pull out my stat device and press on one of the buttons three times, like Meridith showed me.\r\n\r\n\"You're leveling up your stats now, of all times?\" Eiden says, looking unimpressed. \"You do realize that no matter what you do, it's not going to--\"\r\n\r\nAll of a sudden, Eiden realizes what I'm doing and he casts a very fast fire spell at me."
     routes:
       - texts:
           - source: scene_text_2
@@ -1944,5 +1942,3 @@ scenes:
         effects:
           - set:
               storyboard_controls: Jump to frame "Save load game"
-  - name: b3_ch02a_resort
-    routes: []

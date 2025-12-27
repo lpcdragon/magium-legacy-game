@@ -310,7 +310,50 @@ scenes:
           - set:
               current_scene: b2_ch04a_strategy
   - name: b2_ch04a_strategy
-    routes: []
+    texts:
+      - source: scene_text
+        paragraph: 21
+        text: "As Wilhelm stops talking, a blue writing appears in the middle of us, with large characters, so that we can all see it clearly.\r\n\r\n\"Please excuse me,\" the text says, \"but I would like to begin discussing our strategy for tomorrow, now, if you all don't mind.\"\r\n\r\nWe all turn towards Leila, who is staring at us with an upset look on her face.\r\n\r\n\"Oh, uh...\" Bruce says. \"Of course, of course... Maybe we should start doing that.\"\r\n\r\n\"I could not agree more,\" Wilhelm says.\r\n\r\n\"And just what are we supposed to talk about, exactly?\" the mage says. \"We still haven't been given any information in regards to tomorrow's events. The only thing we know so far is that we're likely going to be battling mythical creatures of some kind, in one of the rounds.\"  \r\n\r\nLeila gives me a look. \r\n\r\nI wonder if she's having second thoughts about us not telling them of what we found out in the caverns. If I were to change my mind, then there would definitely not be a better moment than this."
+      - source: scene_text
+        paragraph: 22
+        text: "As Wilhelm stops talking, a blue writing appears in the middle of us, with large characters, so that we can all see it clearly.\r\n\r\n\"Please excuse me,\" the text says, \"but I would like to begin discussing our strategy for tomorrow, now, if you all don't mind.\"\r\n\r\nWe all turn towards Leila, who is staring at us with an upset look on her face.\r\n\r\n\"Oh, uh...\" Bruce says. \"Of course, of course... Maybe we should start doing that.\"\r\n\r\n\"I could not agree more,\" Wilhelm says.\r\n\r\n\"And just what are we supposed to talk about, exactly?\" the mage says. \"We still haven't been given any information in regards to tomorrow's events. The only thing we know so far is that we're likely going to be battling mythical creatures of some kind, in one of the rounds.\"  \r\n\r\nLeila gives me a look. \r\n\r\nI think she's trying to tell me that this would be the best moment for me to let everyone know about what we found out in the caverns. Then again, I suppose it's still not too late to change my mind, either."
+    routes:
+      - texts: []
+        condition: b2_ch2_threatened <> 2
+        choices:
+          - position: 1
+            text: >-
+              Ask Wilhelm if he overheard the guards say anything about the
+              arena event
+            effects:
+              - set:
+                  current_scene: b2_ch04a_overheard
+                  b2_ch4_inform2: 0
+          - position: 2
+            text: Tell everyone about what we found out in the caverns
+            effects:
+              - set:
+                  current_scene: b2_ch04a_caverns
+                  b2_ch4_inform2: 1
+                  b2_ch4_inform3: 0
+      - texts: []
+        condition: b2_ch2_threatened = 2
+        choices:
+          - position: 1
+            text: >-
+              Ask if somebody overheard the guards say anything about the arena
+              event
+            effects:
+              - set:
+                  current_scene: b2_ch04a_overheard
+                  b2_ch4_inform2: 0
+          - position: 2
+            text: Tell everyone about what we found out in the caverns
+            effects:
+              - set:
+                  current_scene: b2_ch04a_caverns
+                  b2_ch4_inform2: 1
+                  b2_ch4_inform3: 0
   - name: b2_ch04a_caverns
     routes:
       - texts:
