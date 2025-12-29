@@ -5,6 +5,13 @@ chapter_effects:
   - condition: b3_ch3_stats_unavailable = 0
     effects:
       - enable stats
+  - condition: ac_b3_ch9_consolation > 5 AND ac_b3_ch9_prize != 1
+    effects:
+      - set:
+          ac_b3_ch9_prize: 1
+      - achievement:
+          id: ac_b3_ch9_prize
+          title: Consolation prize
 scenes:
   - name: b3_ch09c_teaming
     texts:
