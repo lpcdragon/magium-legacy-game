@@ -11,8 +11,9 @@
       body {
         height: 100%;
         margin: 0;
-        background: #111;
-        color: #eee;
+        /* Defer to app theme CSS variables so body adapts to chosen theme */
+        background: var(--bg, #111);
+        color: var(--text, #eee);
         /* Base UI font size */
         font-size: 18px;
       }
@@ -22,11 +23,37 @@
         -moz-osx-font-smoothing: grayscale;
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-CdlQ1RwV.js"></script>
+    <script type="module" crossorigin src="./assets/index-BhNMpiql.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-COyEkFiY.css">
   </head>
   <body>
     <div id="root"></div>
     <script>
+      // Ensure initial theme class is applied before the app mounts so body
+      // background and other global styles reflect user's saved preference.
+      ;(function () {
+        try {
+          var raw = null
+          try {
+            raw = localStorage.getItem('magium:styles')
+          } catch (e) {
+            raw = null
+          }
+          if (raw) {
+            try {
+              var prefs = JSON.parse(raw)
+              if (prefs && prefs.palette) {
+                document.documentElement.classList.add('theme-' + String(prefs.palette))
+              }
+            } catch (e) {
+              /* ignore JSON errors */
+            }
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      })()
+
       // Helper shim for tests / traversal: if the game exposes a global
       // `magium` object with `routeId`, propagate it onto <section>
       // elements as `data-route-id`. Also observe mutations so dynamically
