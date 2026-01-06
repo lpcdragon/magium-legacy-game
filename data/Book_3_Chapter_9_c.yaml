@@ -44,7 +44,8 @@ scenes:
               storyboard_controls: Jump to frame "Save load game"
   - name: b3_ch09c_teleport
     routes:
-      - texts:
+      - condition: b3_ch9_conclusions = 2
+        texts:
           - source: scene_text
             paragraph: 3
             text: "\"Alright,\" I say. \"Let's go to Peter first, then. Can you teleport us there now?\"\r\n\r\n\"I'm on it!\" Flower says, as we are both getting enveloped by a bright white light.\r\n\r\n\"What are you doing here?\" I suddenly hear the voice of Peter, once we are done teleporting to our new location, in the middle of the ether.\r\n\r\nWhen I turn to look towards Peter, who was somewhere around ten feet away from us, I see that the king of the underground was also there, like Flower said, and he had already created a body for himself in the ethereal plane. As I get a better look at the two of them, I notice the fact that Peter's eyes are not shining brightly like Flower's, which means that he must not have experienced the same evolution that would allow him to teleport over long distances and to detect souls on the ethereal plane no matter where they are.\r\n\r\n\"Well, we were about to go deal with the Overseer and thought that you might want to join us,\" I tell Peter. \"What do you say?\"\r\n\r\n\"You want us to go with you after you deliberately told us that you and the Overseer were planning to ambush us?\" Peter says. \"What kind of fools do you take us for?\"\r\n\r\n\"Come on, Peter,\" I say. \"Use your brain a little. That was obviously a joke. What would be the point of an ambush if I just announced it in advance so brazenly?\""
@@ -54,21 +55,20 @@ scenes:
           - source: scene_3
             paragraph: 3
             text: "\"No reason?...\" I tell the king. \"You were planning to assassinate us, man! How is that not a good enough reason to consider switching sides? You think we didn't know about your secret plans? The Overseer played a recording for us where you told Albert to deal with us 'discreetly' if we wouldn't agree with you being crowned as the new king of Ollendor. If that is not a direct admission of betrayal, then I don't know what is!\"\r\n\r\n\"Ah, I think I'm finally beginning to understand what is going on,\" the king of the underground says. \"Indeed, if that is what you've heard, then I cannot fault you for your actions. I would have probably interpreted my words in the same way as you, if I were in your place. I realize that it would be pointless by now to tell you that this was all a misunderstanding, so I am instead going to take a leap of faith and trust what you said about you refusing the Overseer's offer. Hopefully, with all this said and done, we can finally put this argument behind us and focus on the more important task of planning our attack against our common foe.\""
-        condition: b3_ch9_conclusions = 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch09c_invented
-      - texts:
+      - condition: b3_ch9_conclusions <> 2
+        texts:
           - source: scene_text
             paragraph: 4
             text: "\"Alright,\" I say. \"Let's go to Peter first, then. Can you teleport us there now?\"\r\n\r\n\"I'm on it!\" Flower says, as we are both getting enveloped by a bright white light.\r\n\r\n\"What are you doing here?\" I suddenly hear the voice of Peter, once we are done teleporting to our new location, in the middle of the ether.\r\n\r\nWhen I turn to look towards Peter, who was somewhere around ten feet away from us, I see that the king of the underground was also there, like Flower said, and he had already created a body for himself in the ethereal plane. As I get a better look at the two of them, I notice the fact that Peter's eyes are not shining brightly like Flower's, which means that he must not have experienced the same evolution that would allow him to teleport over long distances and to detect souls on the ethereal plane no matter where they are.\r\n\r\n\"Well, we were about to go deal with the Overseer and thought that you might want to join us,\" I tell Peter. \"What do you say?\""
           - source: scene_text_2
             paragraph: 4
             text: "\"We were actually heading towards him as well,\" the king of the underground says. \"We'd be grateful if you helped transport us there, because Peter has only a limited amount of teleportation spells that he can use per day, and we'd rather not waste them unless it's absolutely necessary.\"\r\n\r\n\"Perfect,\" I say. \"We'll take you there right now, then!\"\r\n\r\n\"Hold on a moment,\" the king says. \"Don't you think we should be planning our attack a little before charging in like this?\""
-        condition: b3_ch9_conclusions <> 2
         choices:
           - position: 1
             text: Continue
@@ -219,7 +219,8 @@ scenes:
               current_scene: b3_ch09c_researched
   - name: b3_ch09c_researched
     routes:
-      - texts:
+      - condition: b3_ch9_element = 0
+        texts:
           - source: scene_text
             paragraph: 11
             text: "Just as the flying metal balls are about to shoot their beams, I unleash a powerful wave of fire that encompasses the entire area around me. The red-eyed drones don't get the time to react and they are easily turned into burning scrap metal, which then continues to float in place, because there is no force in this realm to make it fall down.\r\n\r\nHah. I knew it! I knew that asking Flower to teach me a spell that can deal with a large amount of drones all at once would be a good idea!\r\n\r\nOkay, so that must have earned me a few seconds of thinking, at least. Let's see if I can come up with a plan or something.\r\n\r\nAs I look all around me to see what the situation on the battlefield is, different thoughts are racing through my head at a very high speed. How do I deal with this? Can I dispel disintegration? No, no, no, these beams that the drones are shooting at us are completely black. It's like they're swallowing up all of the light around them. I don't think this kind of an effect can even be achieved on the earthen plane. I've read tons of articles from scholars that have researched disintegration in the past, and most of them agreed that such a spell should only be possible in ideal environments that cannot be created on a material plane of existence."
@@ -229,14 +230,14 @@ scenes:
           - source: scene_3
             paragraph: 8
             text: "\"You've... read professor Krygell's article?...\" Peter asks me, shocked.\r\n\r\n\"Yes, but that's not the point,\" I say, as I'm flying around, dodging disintegrating beams left and right. \"I just realized that there is a way to make this work, but we all need to work together.\"\r\n\r\n\"What do you mean?\" Peter says, as he destroys two more drones, but then two others pop up from nowhere to take their place.\r\n\r\n\"The one thing that all the scholars agreed on when talking about disintegration was that auras are by far the most resistant to it,\" I say. \"We've already seen how well the king of the underground's hardened aura barrier could withstand that shockwave from before, and we also have Flower, who is an ethereal and a fire elementalist, so she would be the perfect candidate for an experiment like this, thanks to the huge amount of control that she has over her flames. If you and I can keep the other drones away from them in the meantime, they might just be able to pull it off, but we need to hurry!\""
-        condition: b3_ch9_element = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch09c_feasible
-      - texts:
+      - condition: b3_ch9_element = 1
+        texts:
           - source: scene_text
             paragraph: 12
             text: "Just as the flying metal balls are about to shoot their beams, I conjure a large sphere of water around me which quickly shoots dozens of water jets in all directions. The jets pass through the drones' red eyes before they have the time to react, essentially destroying them and then leaving their metal corpses to float in place, because there is no force in this realm to make them fall down. Once my attack is over, the water sphere around me disappears into thin air, so that I can get a proper look at the onslaught that I've caused.\r\n\r\nHah. I knew it! I knew that asking Illuna to teach me a spell that can deal with a large amount of drones all at once would be a good idea!\r\n\r\nOkay, so that must have earned me a few seconds of thinking, at least. Let's see if I can come up with a plan or something.\r\n\r\nAs I look all around me to see what the situation on the battlefield is, different thoughts are racing through my head at a very high speed. How do I deal with this? Can I dispel disintegration? No, no, no, these beams that the drones are shooting at us are completely black. It's like they're swallowing up all of the light around them. I don't think this kind of an effect can even be achieved on the earthen plane. I've read tons of articles from scholars that have researched disintegration in the past, and most of them agreed that such a spell should only be possible in ideal environments that cannot be created on a material plane of existence."
@@ -246,14 +247,14 @@ scenes:
           - source: scene_3
             paragraph: 8
             text: "\"You've... read professor Krygell's article?...\" Peter asks me, shocked.\r\n\r\n\"Yes, but that's not the point,\" I say, as I'm flying around, dodging disintegrating beams left and right. \"I just realized that there is a way to make this work, but we all need to work together.\"\r\n\r\n\"What do you mean?\" Peter says, as he destroys two more drones, but then two others pop up from nowhere to take their place.\r\n\r\n\"The one thing that all the scholars agreed on when talking about disintegration was that auras are by far the most resistant to it,\" I say. \"We've already seen how well the king of the underground's hardened aura barrier could withstand that shockwave from before, and we also have Flower, who is an ethereal and a fire elementalist, so she would be the perfect candidate for an experiment like this, thanks to the huge amount of control that she has over her flames. If you and I can keep the other drones away from them in the meantime, they might just be able to pull it off, but we need to hurry!\""
-        condition: b3_ch9_element = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch09c_feasible
-      - texts:
+      - condition: b3_ch9_element = 2
+        texts:
           - source: scene_text
             paragraph: 13
             text: "Just as the flying metal balls are about to shoot their beams, I send out a flurry of wind blades in all directions. The wind blades pass through the drones' red eyes before they have the time to react, essentially destroying them and then leaving their metal corpses to float in place, because there is no force in this realm to make them fall down.\r\n\r\nHah. I knew it! I knew that asking Melindra to teach me a spell that can deal with a large amount of drones all at once would be a good idea!\r\n\r\nOkay, so that must have earned me a few seconds of thinking, at least. Let's see if I can come up with a plan or something.\r\n\r\nAs I look all around me to see what the situation on the battlefield is, different thoughts are racing through my head at a very high speed. How do I deal with this? Can I dispel disintegration? No, no, no, these beams that the drones are shooting at us are completely black. It's like they're swallowing up all of the light around them. I don't think this kind of an effect can even be achieved on the earthen plane. I've read tons of articles from scholars that have researched disintegration in the past, and most of them agreed that such a spell should only be possible in ideal environments that cannot be created on a material plane of existence."
@@ -263,14 +264,14 @@ scenes:
           - source: scene_3
             paragraph: 8
             text: "\"You've... read professor Krygell's article?...\" Peter asks me, shocked.\r\n\r\n\"Yes, but that's not the point,\" I say, as I'm flying around, dodging disintegrating beams left and right. \"I just realized that there is a way to make this work, but we all need to work together.\"\r\n\r\n\"What do you mean?\" Peter says, as he destroys two more drones, but then two others pop up from nowhere to take their place.\r\n\r\n\"The one thing that all the scholars agreed on when talking about disintegration was that auras are by far the most resistant to it,\" I say. \"We've already seen how well the king of the underground's hardened aura barrier could withstand that shockwave from before, and we also have Flower, who is an ethereal and a fire elementalist, so she would be the perfect candidate for an experiment like this, thanks to the huge amount of control that she has over her flames. If you and I can keep the other drones away from them in the meantime, they might just be able to pull it off, but we need to hurry!\""
-        condition: b3_ch9_element = 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch09c_feasible
-      - texts:
+      - condition: b3_ch9_element = 3
+        texts:
           - source: scene_text
             paragraph: 14
             text: "Just as the flying metal balls are about to shoot their beams, I unleash a blast of freezing magic that encompasses the entire area around me. The red-eyed drones don't get the time to react and they are easily turned into statues of ice, which then continue to float in place, because there is no force in this realm to make them fall down.\r\n\r\nHah. I knew it! I knew that asking Kate to teach me a spell that can deal with a large amount of drones all at once would be a good idea!\r\n\r\nOkay, so that must have earned me a few seconds of thinking, at least. Let's see if I can come up with a plan or something.\r\n\r\nAs I look all around me to see what the situation on the battlefield is, different thoughts are racing through my head at a very high speed. How do I deal with this? Can I dispel disintegration? No, no, no, these beams that the drones are shooting at us are completely black. It's like they're swallowing up all of the light around them. I don't think this kind of an effect can even be achieved on the earthen plane. I've read tons of articles from scholars that have researched disintegration in the past, and most of them agreed that such a spell should only be possible in ideal environments that cannot be created on a material plane of existence."
@@ -280,7 +281,6 @@ scenes:
           - source: scene_3
             paragraph: 8
             text: "\"You've... read professor Krygell's article?...\" Peter asks me, shocked.\r\n\r\n\"Yes, but that's not the point,\" I say, as I'm flying around, dodging disintegrating beams left and right. \"I just realized that there is a way to make this work, but we all need to work together.\"\r\n\r\n\"What do you mean?\" Peter says, as he destroys two more drones, but then two others pop up from nowhere to take their place.\r\n\r\n\"The one thing that all the scholars agreed on when talking about disintegration was that auras are by far the most resistant to it,\" I say. \"We've already seen how well the king of the underground's hardened aura barrier could withstand that shockwave from before, and we also have Flower, who is an ethereal and a fire elementalist, so she would be the perfect candidate for an experiment like this, thanks to the huge amount of control that she has over her flames. If you and I can keep the other drones away from them in the meantime, they might just be able to pull it off, but we need to hurry!\""
-        condition: b3_ch9_element = 3
         choices:
           - position: 1
             text: Continue
@@ -322,6 +322,7 @@ scenes:
           - set:
               current_scene: b3_ch09c_chop
               ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
+            condition: b3_ch9_element != 0
           - set:
               current_scene: b3_ch09c_frantically
               b3_ch9_hydra: 0
@@ -340,14 +341,14 @@ scenes:
               b3_ch9_hydra: 2
   - name: b3_ch09c_chop
     routes:
-      - texts:
+      - condition: b3_ch9_element = 2
+        texts:
           - source: scene_text
             paragraph: 17
             text: "\"If it's all the same to you, I'd like to begin by cutting all of its heads off,\" I say.\r\n\r\n\"Hold on a minute,\" Peter says. \"Isn't a hydra supposed to regrow two heads after you sever one of them?\"\r\n\r\n\"Oh, no, actually that's just a misconception,\" I say. \"We thought so too until we met a real hydra in one of the underground ruins of Varathia and saw that it's just a monster with very high regenerative powers. The reason why you need to chop off all of its heads at once is because it can just grow them back mere seconds after you cut them, so the fight will never end. Look, I'll show you!\"\r\n\r\nI then send twenty or so wind blades towards the flying hydra, severing its heads all at once."
           - source: scene_text_2
             paragraph: 14
             text: "\"There we go!\" I say, as the hydra's snake-like necks are now just squirming around aimlessly. \"No more hydra!\"\r\n\r\nNot long after I stop talking, the necks begin to regenerate very fast, but instead of growing back to their original forms, they split into two and create two heads for each one that had been cut. Before I get a chance to react, the hydra teleports in front of me instantly and it lunges at me with all of its fourteen heads.\r\n\r\nThe last thing I get to experience is my ethereal body getting melted by acid saliva, as one of the green hydra heads swallows me whole, and then I lose my consciousness completely."
-        condition: b3_ch9_element = 2
         choices:
           - position: 1
             text: Restart game
@@ -366,14 +367,14 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: b3_ch9_element = 1
+        texts:
           - source: scene_text
             paragraph: 18
             text: "\"If it's all the same to you, I'd like to begin by cutting all of its heads off,\" I say.\r\n\r\n\"Hold on a minute,\" Peter says. \"Isn't a hydra supposed to regrow two heads after you sever one of them?\"\r\n\r\n\"Oh, no, actually that's just a misconception,\" I say. \"We thought so too until we met a real hydra in one of the underground ruins of Varathia and saw that it's just a monster with very high regenerative powers. The reason why you need to chop off all of its heads at once is because it can just grow them back mere seconds after you cut them, so the fight will never end. Look, I'll show you!\"\r\n\r\nI then use two long water whips to slice through the flying hydra's long necks all at once."
           - source: scene_text_2
             paragraph: 14
             text: "\"There we go!\" I say, as the hydra's snake-like necks are now just squirming around aimlessly. \"No more hydra!\"\r\n\r\nNot long after I stop talking, the necks begin to regenerate very fast, but instead of growing back to their original forms, they split into two and create two heads for each one that had been cut. Before I get a chance to react, the hydra teleports in front of me instantly and it lunges at me with all of its fourteen heads.\r\n\r\nThe last thing I get to experience is my ethereal body getting melted by acid saliva, as one of the green hydra heads swallows me whole, and then I lose my consciousness completely."
-        condition: b3_ch9_element = 1
         choices:
           - position: 1
             text: Restart game
@@ -392,14 +393,14 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: b3_ch9_element = 3
+        texts:
           - source: scene_text
             paragraph: 19
             text: "\"If it's all the same to you, I'd like to begin by cutting all of its heads off,\" I say.\r\n\r\n\"Hold on a minute,\" Peter says. \"Isn't a hydra supposed to regrow two heads after you sever one of them?\"\r\n\r\n\"Oh, no, actually that's just a misconception,\" I say. \"We thought so too until we met a real hydra in one of the underground ruins of Varathia and saw that it's just a monster with very high regenerative powers. The reason why you need to chop off all of its heads at once is because it can just grow them back mere seconds after you cut them, so the fight will never end. Look, I'll show you!\"\r\n\r\nI then create a very large disc of ice next to the hydra, and make it spin really quickly. Before the monster gets to understand what's going on, I send the disc flying in the hydra's direction, slicing through all of its necks easily."
           - source: scene_text_2
             paragraph: 14
             text: "\"There we go!\" I say, as the hydra's snake-like necks are now just squirming around aimlessly. \"No more hydra!\"\r\n\r\nNot long after I stop talking, the necks begin to regenerate very fast, but instead of growing back to their original forms, they split into two and create two heads for each one that had been cut. Before I get a chance to react, the hydra teleports in front of me instantly and it lunges at me with all of its fourteen heads.\r\n\r\nThe last thing I get to experience is my ethereal body getting melted by acid saliva, as one of the green hydra heads swallows me whole, and then I lose my consciousness completely."
-        condition: b3_ch9_element = 3
         choices:
           - position: 1
             text: Restart game
@@ -420,7 +421,8 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
   - name: b3_ch09c_frantically
     routes:
-      - texts:
+      - condition: b3_ch9_hydra = 0
+        texts:
           - source: scene_text
             paragraph: 24
             text: "\"If it's all the same to you, I'd like to begin by cutting all of its heads off,\" I say.\r\n\r\n\"Hold on a minute,\" Peter says. \"Isn't a hydra supposed to regrow two heads after you sever one of them?\"\r\n\r\n\"Oh, no, actually that's just a misconception,\" I say. \"We thought so too until we met a real hydra in one of the underground ruins of Varathia and saw that it's just a monster with very high regenerative powers. The reason why you need to chop off all of its heads at once is because it can just grow them back mere seconds after you cut them, so the fight will never end.\"\r\n\r\nI pause for a few seconds before I continue.\r\n\r\n\"Unfortunately, I just realized that I don't really have a spell in my repertoire that can help me cut all the heads off at once,\" I say. \"Most of my powerful attacks are fire spells that I've learned from Flower, and as you may have realized by now, fire is not exactly the best element to use if you want to slice through things. Maybe you could give me a hand, Peter?\"\r\n\r\n\"If you think I'm going to risk cutting a hydra's heads off based purely on your anecdotal evidence, then you are out of your mind,\" Peter says. \"Burning it with fire is obviously our safest bet. I'm going to toss a fireball at it. Feel free to join me if you want.\""
@@ -430,7 +432,6 @@ scenes:
           - source: scene_3
             paragraph: 11
             text: "Shortly after I stop talking, I begin to feel one of the most eerie and hard to describe sensations that I've ever experienced in my life. The feeling that I'm getting is as if my consciousness is being repeatedly thrust through a tunnel, back and forth, and it can't seem to decide at which end of the tunnel its destination is. \r\n\r\nAs this is happening, I'm finding myself for one second lying face-first in a puddle on a street, during a storm, and for the next second I'm back here on the ethereal plane, floating in the middle of the sea of light. After being thrown around between the earthen and ethereal plane a few more times, I can sense all of the light around me connecting directly to my mind, and then I begin to hear some very clear thoughts in my head, as if they were my own, even though I am positive that I'm not the one thinking them.\r\n\r\n\"This is not the place to resolve your conflict,\" the voice in my head says. \"Return to your sanctuaries now, and disturb these resting grounds no longer.\"\r\n\r\n\"Peter, did you hear that too?\" the king of the underground says, as we're all temporarily frozen in place, unsure of what to do. \"Who contacted us just now? Was it the ether?\"\r\n\r\n\"I'm... not sure...\" Peter says, as he is looking towards the king, with a somewhat fearful look in his eyes."
-        condition: b3_ch9_hydra = 0
         choices:
           - position: 1
             text: Continue
@@ -438,7 +439,8 @@ scenes:
               - set:
                   current_scene: b3_ch09c_conducted
                   b3_ch3_stats_unavailable: 0
-      - texts:
+      - condition: b3_ch9_hydra = 1 AND b3_ch9_element = 0
+        texts:
           - source: scene_text
             paragraph: 20
             text: "\"We should probably go with fire, since it's the safest one out of the options we've got,\" I say.\r\n\r\n\"I agree,\" Peter says. \"Everyone who can cast fire spells, follow my lead. Let's try to attack all at once.\"\r\n\r\nAs Peter throws his fireball at the hydra, Flower envelops the monster in a large column of fire, and I decide to do the same, using one of the stronger spells that Flower taught me. The flying hydra begins to scream in pain with the majority of its heads, but then it teleports instantly right in front of Flower, lunging at her with two of its snake-like necks. She barely manages to dash away from it by using her fire jets, but the hydra closes in on her again by using its immense wings to propel itself forward."
@@ -448,7 +450,6 @@ scenes:
           - source: scene_3
             paragraph: 11
             text: "Shortly after I stop talking, I begin to feel one of the most eerie and hard to describe sensations that I've ever experienced in my life. The feeling that I'm getting is as if my consciousness is being repeatedly thrust through a tunnel, back and forth, and it can't seem to decide at which end of the tunnel its destination is. \r\n\r\nAs this is happening, I'm finding myself for one second lying face-first in a puddle on a street, during a storm, and for the next second I'm back here on the ethereal plane, floating in the middle of the sea of light. After being thrown around between the earthen and ethereal plane a few more times, I can sense all of the light around me connecting directly to my mind, and then I begin to hear some very clear thoughts in my head, as if they were my own, even though I am positive that I'm not the one thinking them.\r\n\r\n\"This is not the place to resolve your conflict,\" the voice in my head says. \"Return to your sanctuaries now, and disturb these resting grounds no longer.\"\r\n\r\n\"Peter, did you hear that too?\" the king of the underground says, as we're all temporarily frozen in place, unsure of what to do. \"Who contacted us just now? Was it the ether?\"\r\n\r\n\"I'm... not sure...\" Peter says, as he is looking towards the king, with a somewhat fearful look in his eyes."
-        condition: b3_ch9_hydra = 1 AND b3_ch9_element = 0
         choices:
           - position: 1
             text: Continue
@@ -456,7 +457,8 @@ scenes:
               - set:
                   current_scene: b3_ch09c_conducted
                   b3_ch3_stats_unavailable: 0
-      - texts:
+      - condition: b3_ch9_hydra = 1 AND b3_ch9_element <> 0
+        texts:
           - source: scene_text
             paragraph: 21
             text: "\"We should probably go with fire, since it's the safest one out of the options we've got,\" I say.\r\n\r\n\"I agree,\" Peter says. \"Everyone who can cast fire spells, follow my lead. Let's try to attack all at once.\"\r\n\r\nAs Peter throws his fireball at the hydra, Flower envelops the monster in a large column of fire, and I decide to throw a fireball of my own as well, for good measure. The flying hydra begins to scream in pain with the majority of its heads, but then it teleports instantly right in front of Flower, lunging at her with two of its snake-like necks. She barely manages to dash away from it by using her fire jets, but the hydra closes in on her again by using its immense wings to propel itself forward."
@@ -466,7 +468,6 @@ scenes:
           - source: scene_3
             paragraph: 11
             text: "Shortly after I stop talking, I begin to feel one of the most eerie and hard to describe sensations that I've ever experienced in my life. The feeling that I'm getting is as if my consciousness is being repeatedly thrust through a tunnel, back and forth, and it can't seem to decide at which end of the tunnel its destination is. \r\n\r\nAs this is happening, I'm finding myself for one second lying face-first in a puddle on a street, during a storm, and for the next second I'm back here on the ethereal plane, floating in the middle of the sea of light. After being thrown around between the earthen and ethereal plane a few more times, I can sense all of the light around me connecting directly to my mind, and then I begin to hear some very clear thoughts in my head, as if they were my own, even though I am positive that I'm not the one thinking them.\r\n\r\n\"This is not the place to resolve your conflict,\" the voice in my head says. \"Return to your sanctuaries now, and disturb these resting grounds no longer.\"\r\n\r\n\"Peter, did you hear that too?\" the king of the underground says, as we're all temporarily frozen in place, unsure of what to do. \"Who contacted us just now? Was it the ether?\"\r\n\r\n\"I'm... not sure...\" Peter says, as he is looking towards the king, with a somewhat fearful look in his eyes."
-        condition: b3_ch9_hydra = 1 AND b3_ch9_element <> 0
         choices:
           - position: 1
             text: Continue
@@ -474,7 +475,8 @@ scenes:
               - set:
                   current_scene: b3_ch09c_conducted
                   b3_ch3_stats_unavailable: 0
-      - texts:
+      - condition: b3_ch9_hydra = 2 AND b3_ch9_element = 0
+        texts:
           - source: scene_text
             paragraph: 22
             text: "\"We should probably start by trying to stab its heart,\" I say.\r\n\r\n\"Stab its heart how?\" Peter says. \"From what I've heard, every hydra is born with its heart in a different place, as some sort of evolutionary self-defense mechanism to help protect its only major weakness. We'd be much better off just burning it to death. Technically, its heart will also get destroyed this way, and we won't have to waste time finding a needle in a haystack.\"\r\n\r\n\"I suppose you do have a point,\" I say. \"So, should we burn it on the count of three, then?\"\r\n\r\n\"Just follow my lead,\" Peter says. \"You guys can cast your spells as soon as I've thrown my fireball at it.\"\r\n\r\nAs Peter throws his fireball at the hydra like he said, Flower envelops the monster in a large column of fire, and I decide to do the same, using one of the stronger spells that Flower taught me. The flying hydra begins to scream in pain with the majority of its heads, but then it teleports instantly right in front of Flower, lunging at her with two of its snake-like necks. She barely manages to dash away from it by using her fire jets, but the hydra closes in on her again by using its immense wings to propel itself forward."
@@ -484,7 +486,6 @@ scenes:
           - source: scene_3
             paragraph: 11
             text: "Shortly after I stop talking, I begin to feel one of the most eerie and hard to describe sensations that I've ever experienced in my life. The feeling that I'm getting is as if my consciousness is being repeatedly thrust through a tunnel, back and forth, and it can't seem to decide at which end of the tunnel its destination is. \r\n\r\nAs this is happening, I'm finding myself for one second lying face-first in a puddle on a street, during a storm, and for the next second I'm back here on the ethereal plane, floating in the middle of the sea of light. After being thrown around between the earthen and ethereal plane a few more times, I can sense all of the light around me connecting directly to my mind, and then I begin to hear some very clear thoughts in my head, as if they were my own, even though I am positive that I'm not the one thinking them.\r\n\r\n\"This is not the place to resolve your conflict,\" the voice in my head says. \"Return to your sanctuaries now, and disturb these resting grounds no longer.\"\r\n\r\n\"Peter, did you hear that too?\" the king of the underground says, as we're all temporarily frozen in place, unsure of what to do. \"Who contacted us just now? Was it the ether?\"\r\n\r\n\"I'm... not sure...\" Peter says, as he is looking towards the king, with a somewhat fearful look in his eyes."
-        condition: b3_ch9_hydra = 2 AND b3_ch9_element = 0
         choices:
           - position: 1
             text: Continue
@@ -492,7 +493,8 @@ scenes:
               - set:
                   current_scene: b3_ch09c_conducted
                   b3_ch3_stats_unavailable: 0
-      - texts:
+      - condition: b3_ch9_hydra = 2 AND b3_ch9_element <> 0
+        texts:
           - source: scene_text
             paragraph: 23
             text: "\"We should probably start by trying to stab its heart,\" I say.\r\n\r\n\"Stab its heart how?\" Peter says. \"From what I've heard, every hydra is born with its heart in a different place, as some sort of evolutionary self-defense mechanism to help protect its only major weakness. We'd be much better off just burning it to death. Technically, its heart will also get destroyed this way, and we won't have to waste time finding a needle in a haystack.\"\r\n\r\n\"I suppose you do have a point,\" I say. \"So, should we burn it on the count of three, then?\"\r\n\r\n\"Just follow my lead,\" Peter says. \"You guys can cast your spells as soon as I've thrown my fireball at it.\"\r\n\r\nAs Peter throws his fireball at the hydra like he said, Flower envelops the monster in a large column of fire, and I decide to throw a fireball of my own as well, for good measure. The flying hydra begins to scream in pain with the majority of its heads, but then it teleports instantly right in front of Flower, lunging at her with two of its snake-like necks. She barely manages to dash away from it by using her fire jets, but the hydra closes in on her again by using its immense wings to propel itself forward."
@@ -502,7 +504,6 @@ scenes:
           - source: scene_3
             paragraph: 11
             text: "Shortly after I stop talking, I begin to feel one of the most eerie and hard to describe sensations that I've ever experienced in my life. The feeling that I'm getting is as if my consciousness is being repeatedly thrust through a tunnel, back and forth, and it can't seem to decide at which end of the tunnel its destination is. \r\n\r\nAs this is happening, I'm finding myself for one second lying face-first in a puddle on a street, during a storm, and for the next second I'm back here on the ethereal plane, floating in the middle of the sea of light. After being thrown around between the earthen and ethereal plane a few more times, I can sense all of the light around me connecting directly to my mind, and then I begin to hear some very clear thoughts in my head, as if they were my own, even though I am positive that I'm not the one thinking them.\r\n\r\n\"This is not the place to resolve your conflict,\" the voice in my head says. \"Return to your sanctuaries now, and disturb these resting grounds no longer.\"\r\n\r\n\"Peter, did you hear that too?\" the king of the underground says, as we're all temporarily frozen in place, unsure of what to do. \"Who contacted us just now? Was it the ether?\"\r\n\r\n\"I'm... not sure...\" Peter says, as he is looking towards the king, with a somewhat fearful look in his eyes."
-        condition: b3_ch9_hydra = 2 AND b3_ch9_element <> 0
         choices:
           - position: 1
             text: Continue
@@ -574,14 +575,14 @@ scenes:
               b3_ch9_hadrik: 1
   - name: b3_ch09c_preoccupied
     routes:
-      - texts:
+      - condition: b3_ch9_hadrik = 0
+        texts:
           - source: scene_text
             paragraph: 28
             text: "\"Now that you mention it,\" I tell Flower, \"maybe it would be better if you brought the others to their minds too.\"\r\n\r\n\"Okay...\" Flower says. \"But it's going to take a while. You know that, right?\"\r\n\r\n\"Sure, no problem,\" I say. \"We can handle the hydra by ourselves.\"\r\n\r\n\"Just don't die till I get back here, alright?\" Flower tells me. \"I'll try to return as quickly as I can.\"\r\n\r\nShe then gets surrounded by a bright light once again, and a few seconds later, she teleports away."
           - source: scene_text_2
             paragraph: 20
             text: "Now that Flower left, I decide to take a good look around me in both planes of existence, to see what the situation is at the moment. \r\n\r\nFrom what I can tell, it seems like the Overseer is currently too preoccupied with what's going on in Ollendor to pay attention to us on the ethereal plane, and it shows, because the hydra has barely done anything noteworthy in the past minute except for using its breath attacks against us a few times.\r\n\r\nMeanwhile, on the earthen plane, one of the metal golems has gained a significant advance on the other four, and it will very soon get close enough to shoot its fire beam at us. If Hadrik doesn't wake up soon, we might be in trouble."
-        condition: b3_ch9_hadrik = 0
         choices:
           - position: 1
             text: Attack the Overseer on the ethereal plane, while he's distracted.
@@ -596,14 +597,14 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch09c_upwards
-      - texts:
+      - condition: b3_ch9_hadrik = 1
+        texts:
           - source: scene_text
             paragraph: 29
             text: "\"Hadrik should be enough to take care of the metal golems,\" I say. \"We still need your help against the hydra, so we can't have you gone for too long.\"\r\n\r\n\"Alright,\" Flower says. \"I'll get going, then. Try not to get yourself killed till I come back!\"\r\n\r\nShe then gets surrounded by a bright light once again, and a few seconds later, she teleports away."
           - source: scene_text_2
             paragraph: 20
             text: "Now that Flower left, I decide to take a good look around me in both planes of existence, to see what the situation is at the moment. \r\n\r\nFrom what I can tell, it seems like the Overseer is currently too preoccupied with what's going on in Ollendor to pay attention to us on the ethereal plane, and it shows, because the hydra has barely done anything noteworthy in the past minute except for using its breath attacks against us a few times.\r\n\r\nMeanwhile, on the earthen plane, one of the metal golems has gained a significant advance on the other four, and it will very soon get close enough to shoot its fire beam at us. If Hadrik doesn't wake up soon, we might be in trouble."
-        condition: b3_ch9_hadrik = 1
         choices:
           - position: 1
             text: Attack the Overseer on the ethereal plane, while he's distracted.
@@ -620,103 +621,19 @@ scenes:
                   current_scene: b3_ch09c_upwards
   - name: b3_ch09c_distracted
     routes:
-      - texts:
+      - condition: b3_ch9_element = 0
+        texts:
           - source: scene_text
             paragraph: 30
             text: "I waste no time and I attack the green-eyed drone on the ethereal plane with a beam of fire that I learned from Flower.\r\n\r\nThe beam does not get to reach my target, however, because the hydra teleports itself right in front of the Overseer and it absorbs all of the damage."
-        condition: b3_ch9_element = 0
-        choices:
-          - position: 1
-            text: Restart game
-            effects:
-              - set:
-                  current_scene: ch1_intro1
-                  storyboard_controls: Jump to frame "Chapter 1"
-          - position: 2
-            text: Load from last checkpoint
-            effects:
-              - set:
-                  chapter_load: 1
-                  storyboard_controls: Jump to frame "Save load game"
-          - position: 3
-            text: Load game
-            effects:
-              - set:
-                  storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_text
-            paragraph: 31
-            text: "I waste no time and I attack the green-eyed drone on the ethereal plane with a powerful jet of water that I learned from Illuna.\r\n\r\nThe jet doesn't get to reach my target, however, because the hydra teleports itself right in front of the Overseer and it absorbs all of the damage."
-        condition: b3_ch9_element = 1
-        choices:
-          - position: 1
-            text: Restart game
-            effects:
-              - set:
-                  current_scene: ch1_intro1
-                  storyboard_controls: Jump to frame "Chapter 1"
-          - position: 2
-            text: Load from last checkpoint
-            effects:
-              - set:
-                  chapter_load: 1
-                  storyboard_controls: Jump to frame "Save load game"
-          - position: 3
-            text: Load game
-            effects:
-              - set:
-                  storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_text
-            paragraph: 32
-            text: "I waste no time and I attack the green-eyed drone on the ethereal plane by throwing several wind blades at it, just like I learned from Melindra.\r\n\r\nMy projectiles don't get to reach my target, however, because the hydra teleports itself right in front of the Overseer and it absorbs all of the damage."
-        condition: b3_ch9_element = 2
-        choices:
-          - position: 1
-            text: Restart game
-            effects:
-              - set:
-                  current_scene: ch1_intro1
-                  storyboard_controls: Jump to frame "Chapter 1"
-          - position: 2
-            text: Load from last checkpoint
-            effects:
-              - set:
-                  chapter_load: 1
-                  storyboard_controls: Jump to frame "Save load game"
-          - position: 3
-            text: Load game
-            effects:
-              - set:
-                  storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_text
-            paragraph: 33
-            text: "I waste no time and I attack the green-eyed drone on the ethereal plane with a freezing beam that I learned from Kate.\r\n\r\nThe beam does not get to reach my target, however, because the hydra teleports itself right in front of the Overseer and it absorbs all of the damage. Unfortunately, the freezing beam wasn't powerful enough to actually encase the monster in ice, so aside from pissing off the hydra, my attack didn't have much of an effect."
-        condition: b3_ch9_element = 3
-        choices:
-          - position: 1
-            text: Restart game
-            effects:
-              - set:
-                  current_scene: ch1_intro1
-                  storyboard_controls: Jump to frame "Chapter 1"
-          - position: 2
-            text: Load from last checkpoint
-            effects:
-              - set:
-                  chapter_load: 1
-                  storyboard_controls: Jump to frame "Save load game"
-          - position: 3
-            text: Load game
-            effects:
-              - set:
-                  storyboard_controls: Jump to frame "Save load game"
-      - texts:
           - source: scene_text_2
             paragraph: 21
             text: "Once the creature regenerates itself, it immediately makes me into its next target, teleporting close to me again and then chasing me around the ether relentlessly, without giving me a moment's respite or the opportunity to switch my focus back to the earthen plane.\r\n\r\nAs I am struggling to shake off the hydra, the metal golem on the earthen plane finally gets close enough to attack us and it shoots a huge fire beam out of its mouth, which is so powerful that it incinerates me in an instant."
-        condition: aura_hardening = 0
+            condition: aura_hardening = 0
+          - source: scene_text_2
+            paragraph: 22
+            text: "Once the creature regenerates itself, it immediately makes me into its next target, teleporting close to me again and then chasing me around the ether relentlessly, without giving me a moment's respite or the opportunity to switch my focus back to the earthen plane.\r\n\r\nAs I am struggling to shake off the hydra, the metal golem on the earthen plane finally gets close enough to attack us and it shoots a huge fire beam out of its mouth, which is so powerful that it burns through my hardened aura easily and it incinerates me in an instant."
+            condition: aura_hardening > 0
         choices:
           - position: 1
             text: Restart game
@@ -735,11 +652,81 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: b3_ch9_element = 1
+        texts:
+          - source: scene_text
+            paragraph: 31
+            text: "I waste no time and I attack the green-eyed drone on the ethereal plane with a powerful jet of water that I learned from Illuna.\r\n\r\nThe jet doesn't get to reach my target, however, because the hydra teleports itself right in front of the Overseer and it absorbs all of the damage."
+          - source: scene_text_2
+            paragraph: 21
+            text: "Once the creature regenerates itself, it immediately makes me into its next target, teleporting close to me again and then chasing me around the ether relentlessly, without giving me a moment's respite or the opportunity to switch my focus back to the earthen plane.\r\n\r\nAs I am struggling to shake off the hydra, the metal golem on the earthen plane finally gets close enough to attack us and it shoots a huge fire beam out of its mouth, which is so powerful that it incinerates me in an instant."
+            condition: aura_hardening = 0
           - source: scene_text_2
             paragraph: 22
             text: "Once the creature regenerates itself, it immediately makes me into its next target, teleporting close to me again and then chasing me around the ether relentlessly, without giving me a moment's respite or the opportunity to switch my focus back to the earthen plane.\r\n\r\nAs I am struggling to shake off the hydra, the metal golem on the earthen plane finally gets close enough to attack us and it shoots a huge fire beam out of its mouth, which is so powerful that it burns through my hardened aura easily and it incinerates me in an instant."
-        condition: aura_hardening > 0
+            condition: aura_hardening > 0
+        choices:
+          - position: 1
+            text: Restart game
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+          - position: 2
+            text: Load from last checkpoint
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+          - position: 3
+            text: Load game
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+      - condition: b3_ch9_element = 2
+        texts:
+          - source: scene_text
+            paragraph: 32
+            text: "I waste no time and I attack the green-eyed drone on the ethereal plane by throwing several wind blades at it, just like I learned from Melindra.\r\n\r\nMy projectiles don't get to reach my target, however, because the hydra teleports itself right in front of the Overseer and it absorbs all of the damage."
+          - source: scene_text_2
+            paragraph: 21
+            text: "Once the creature regenerates itself, it immediately makes me into its next target, teleporting close to me again and then chasing me around the ether relentlessly, without giving me a moment's respite or the opportunity to switch my focus back to the earthen plane.\r\n\r\nAs I am struggling to shake off the hydra, the metal golem on the earthen plane finally gets close enough to attack us and it shoots a huge fire beam out of its mouth, which is so powerful that it incinerates me in an instant."
+            condition: aura_hardening = 0
+          - source: scene_text_2
+            paragraph: 22
+            text: "Once the creature regenerates itself, it immediately makes me into its next target, teleporting close to me again and then chasing me around the ether relentlessly, without giving me a moment's respite or the opportunity to switch my focus back to the earthen plane.\r\n\r\nAs I am struggling to shake off the hydra, the metal golem on the earthen plane finally gets close enough to attack us and it shoots a huge fire beam out of its mouth, which is so powerful that it burns through my hardened aura easily and it incinerates me in an instant."
+            condition: aura_hardening > 0
+        choices:
+          - position: 1
+            text: Restart game
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+          - position: 2
+            text: Load from last checkpoint
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+          - position: 3
+            text: Load game
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+      - condition: b3_ch9_element = 3
+        texts:
+          - source: scene_text
+            paragraph: 33
+            text: "I waste no time and I attack the green-eyed drone on the ethereal plane with a freezing beam that I learned from Kate.\r\n\r\nThe beam does not get to reach my target, however, because the hydra teleports itself right in front of the Overseer and it absorbs all of the damage. Unfortunately, the freezing beam wasn't powerful enough to actually encase the monster in ice, so aside from pissing off the hydra, my attack didn't have much of an effect."
+          - source: scene_text_2
+            paragraph: 21
+            text: "Once the creature regenerates itself, it immediately makes me into its next target, teleporting close to me again and then chasing me around the ether relentlessly, without giving me a moment's respite or the opportunity to switch my focus back to the earthen plane.\r\n\r\nAs I am struggling to shake off the hydra, the metal golem on the earthen plane finally gets close enough to attack us and it shoots a huge fire beam out of its mouth, which is so powerful that it incinerates me in an instant."
+            condition: aura_hardening = 0
+          - source: scene_text_2
+            paragraph: 22
+            text: "Once the creature regenerates itself, it immediately makes me into its next target, teleporting close to me again and then chasing me around the ether relentlessly, without giving me a moment's respite or the opportunity to switch my focus back to the earthen plane.\r\n\r\nAs I am struggling to shake off the hydra, the metal golem on the earthen plane finally gets close enough to attack us and it shoots a huge fire beam out of its mouth, which is so powerful that it burns through my hardened aura easily and it incinerates me in an instant."
+            condition: aura_hardening > 0
         choices:
           - position: 1
             text: Restart game
@@ -766,7 +753,8 @@ scenes:
           b3_ch9_currents = 1 AND perception < 3 AND is_dead = 0 AND reflexes <
           3
     routes:
-      - texts:
+      - condition: b3_ch9_currents = 0
+        texts:
           - source: scene_text
             paragraph: 34
             text: "I begin to focus my consciousness on the earthen plane and I raise my arms up, causing Melindra's air currents to activate themselves and to propel me upwards.\r\n\r\nThe strong wind from the storm is giving me a lot of trouble with my maneuvering, just as I expected it to, but at least I still retain full control of the magical currents. I can't imagine how bad this would have been if I had told Melindra to cast the version of the currents where she needed to be awake to help me control them.\r\n\r\nBefore heading for the golem, I fly around for about twenty seconds or so, trying to see exactly how well I can handle myself in this storm. Like Melindra said, this doesn't feel too different from flying a plane in a hurricane. In fact, I think it might even be a little easier, because the air currents are much more responsive than the controls of a gnomish flying contraption.\r\n\r\nOnce I'm done testing all of the basic flight maneuvers, I head straight for the metal golem that is closest to us, in the hopes that I can maybe lure it away from the plaza. While I am still in mid-flight, I pull out the crossbow from my backpack and I shoot a few bolts in the golem's head.\r\n\r\n\"Hey!\" I shout at the golem. \"Hey, over here! Over here, you big piece of junk!\"\r\n\r\nI then shoot a few more bolts at it just to make sure that I catch its attention. The golem seems to be finally reacting to me, as it is now turning around and opening its mouth, ready to shoot a fire beam at me."
@@ -776,7 +764,6 @@ scenes:
           - source: scene_3
             paragraph: 15
             text: "Instead of giving the golem more movement patterns to study, I decide to stop flying around and to just stare straight at it, waiting for it to attack me.\r\n\r\n\"Hey, I'm right here!\" I shout at the golem. \"I'm not moving. Are you going to shoot me or what?\"\r\n\r\nAfter a few seconds of silence, the golem fires its beam at me, and I move out of the way at the last possible moment. Thankfully, my air currents are extremely responsive, so I was able to pull off my stunt perfectly. Having successfully evaded the attack, I stop in mid-air again, so that I can taunt the golem some more.\r\n\r\n\"You almost got it, buddy!\" I tell the metal giant. \"Why don't you try again? I'm sure you'll get it next time.\"\r\n\r\nOnce again the golem shoots me with its fire beam but I evade it easily, just as it was about to hit me. Seeing that my enemy has now stopped trying to aim for me and it's just standing there, confused, I cross my arms and then the two of us begin to simply look at each other, in complete silence. Our little staring contest continues for a while longer, until I see a small but familiar shape on the ground approaching the golem at a breathtaking speed."
-        condition: b3_ch9_currents = 0
         choices:
           - position: 1
             text: Continue
@@ -784,7 +771,8 @@ scenes:
               - set:
                   current_scene: b3_ch09c_holographic
                 condition: is_dead = 0
-      - texts:
+      - condition: b3_ch9_currents = 1 AND perception >= 3
+        texts:
           - source: scene_text
             paragraph: 35
             text: "I begin to focus my consciousness on the earthen plane and I raise my arms up, causing Melindra's air currents to activate themselves and to propel me upwards.\r\n\r\nWhen I reach a higher altitude, I quickly realize that the air currents are very unresponsive compared to what they are usually like, and this is almost certainly because of the new version of currents that I asked Melindra to cast on me before the battle. Considering that she is not awake to help me control the currents, I am only getting the disadvantages of this spell and almost none of the advantages. \r\n\r\nActually, there is one small advantage. Despite their unresponsiveness, at least these currents feel more stable than the old ones, so I don't have to worry that much about the strong wind from the storm messing up my direction. \r\n\r\nOnce I'm done testing all of the basic flight maneuvers, I head straight for the metal golem that is closest to us, in the hopes that I can maybe lure it away from the plaza. While I am still in mid-flight, I pull out the crossbow from my backpack and I shoot a few bolts in the golem's head.\r\n\r\n\"Hey!\" I shout at the golem. \"Hey, over here! Over here, you big piece of junk!\"\r\n\r\nI then shoot a few more bolts at it just to make sure that I catch its attention. The golem seems to be finally reacting to me, as it is now turning around and opening its mouth, ready to shoot a fire beam at me."
@@ -794,10 +782,10 @@ scenes:
           - source: scene_3
             paragraph: 16
             text: "Using this new information that I've learned, I keep flying in the same way that I normally did for a while longer, but as soon as I see the golem tilting its head, I immediately dash in the opposite direction. The metal giant gets confused by this, and it tries to aim for me once more, but as soon as it tilts its head again, I quickly change my direction, leaving the poor golem in an even more perplexed state than before.\r\n\r\nAfter we repeat these exact same motions a few more times, the golem begins to just stand there, without doing anything, probably because it's trying to understand why its flawless path prediction algorithm is no longer working as intended. This staring contest between us continues for a while longer, until I see a small but familiar shape on the ground approaching the golem at a breathtaking speed."
-        condition: b3_ch9_currents = 1 AND perception >= 3
-        set:
-          successful_checks:
-            - '[ Observation check successful - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Observation check successful - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -805,22 +793,23 @@ scenes:
               - set:
                   current_scene: b3_ch09c_holographic
                 condition: is_dead = 0
-      - texts:
-          - source: scene_text_2
-            paragraph: 25
-            text: "I begin to fly around erratically, to make it harder for the metal giant to anticipate my movements. The golem fires a beam towards me, and then another, and then another, missing every time, but also getting closer with each consecutive shot. Is it starting to predict my movements?... Maybe I'm not flying randomly enough.\r\n\r\nAs I am trying to adjust my flight patterns so that they are harder to guess, the golem shoots a fire beam only a few inches away from me, and suddenly I can feel my heart beating two times faster than before.\r\n\r\nHow did it get so close to me? Am I really that predictable? What am I doing wrong?\r\n\r\nRealizing that I am very soon going to need to start dodging the lasers right when the golem shoots them, I begin to panic a little. \r\n\r\nWill I be fast enough to dodge every one of its attacks? And what about the limited responsiveness of the currents? How badly is that going to affect me when I need to take split second decisions?\r\n\r\nAs I manage to very narrowly evade another fire beam, I suddenly get the answer to my question. Based on the speed of the beam and the timing of my reaction, I'd say that my reflexes should in fact be good enough to compensate for the currents' unresponsiveness. It will be very close, though. One small mistake and I'm toast. Let's hope that I can hold out at least until Hadrik gets here."
+      - condition: b3_ch9_currents = 1 AND perception < 3 AND reflexes >= 3
+        texts:
           - source: scene_text
             paragraph: 36
             text: "I begin to focus my consciousness on the earthen plane and I raise my arms up, causing Melindra's air currents to activate themselves and to propel me upwards.\r\n\r\nWhen I reach a higher altitude, I quickly realize that the air currents are very unresponsive compared to what they are usually like, and this is almost certainly because of the new version of currents that I asked Melindra to cast on me before the battle. Considering that she is not awake to help me control the currents, I am only getting the disadvantages of this spell and almost none of the advantages. \r\n\r\nActually, there is one small advantage. Despite their unresponsiveness, at least these currents feel more stable than the old ones, so I don't have to worry that much about the strong wind from the storm messing up my direction. \r\n\r\nOnce I'm done testing all of the basic flight maneuvers, I head straight for the metal golem that is closest to us, in the hopes that I can maybe lure it away from the plaza. While I am still in mid-flight, I pull out the crossbow from my backpack and I shoot a few bolts in the golem's head.\r\n\r\n\"Hey!\" I shout at the golem. \"Hey, over here! Over here, you big piece of junk!\"\r\n\r\nI then shoot a few more bolts at it just to make sure that I catch its attention. The golem seems to be finally reacting to me, as it is now turning around and opening its mouth, ready to shoot a fire beam at me."
+          - source: scene_text_2
+            paragraph: 25
+            text: "I begin to fly around erratically, to make it harder for the metal giant to anticipate my movements. The golem fires a beam towards me, and then another, and then another, missing every time, but also getting closer with each consecutive shot. Is it starting to predict my movements?... Maybe I'm not flying randomly enough.\r\n\r\nAs I am trying to adjust my flight patterns so that they are harder to guess, the golem shoots a fire beam only a few inches away from me, and suddenly I can feel my heart beating two times faster than before.\r\n\r\nHow did it get so close to me? Am I really that predictable? What am I doing wrong?\r\n\r\nRealizing that I am very soon going to need to start dodging the lasers right when the golem shoots them, I begin to panic a little. \r\n\r\nWill I be fast enough to dodge every one of its attacks? And what about the limited responsiveness of the currents? How badly is that going to affect me when I need to take split second decisions?\r\n\r\nAs I manage to very narrowly evade another fire beam, I suddenly get the answer to my question. Based on the speed of the beam and the timing of my reaction, I'd say that my reflexes should in fact be good enough to compensate for the currents' unresponsiveness. It will be very close, though. One small mistake and I'm toast. Let's hope that I can hold out at least until Hadrik gets here."
           - source: scene_3
             paragraph: 17
             text: "Just as I had feared, the golem's path prediction algorithm has now been perfected to such a degree that no matter how chaotically I think I'm moving, the metal giant will always be one step ahead of me. After dodging two more beams by relying solely on my reflexes, I decide to stop in mid-air and to taunt the golem, since there really isn't much point in trying to outsmart it anymore.\r\n\r\n\"Come on!\" I shout at the golem, while waving my arms around like a lunatic. \"I'm right here! What are you waiting for?! Give it your best shot!\"\r\n\r\nAfter a few seconds of silence, the golem fires its beam at me, and I move out of the way at the last possible moment. I then stop somewhere above the golem again, so that I can taunt it some more.\r\n\r\n\"What's wrong?!\" I shout. \"Is your fancy algorithm too stupid to hit a stationary target? Can't predict my moves anymore if I'm standing in place? Huh?!\"\r\n\r\nOnce again the golem shoots me with its fire beam but I evade it easily, just as it was about to hit me. Seeing that my enemy has stopped trying to aim for me and it's just standing there, confused, I shrug at it from a distance with my arms stretched, and then we continue to watch each other for a while without saying anything.\r\n\r\nWhile I am still waiting for my opponent to make a move, I see a small but familiar shape on the ground approaching the golem at a breathtaking speed."
-        condition: b3_ch9_currents = 1 AND perception < 3 AND reflexes >= 3
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 3 ]'
-          failed_checks:
-            - '[ Observation check failed - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 3 ]'
+              failed_checks:
+                - '[ Observation check failed - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -828,21 +817,22 @@ scenes:
               - set:
                   current_scene: b3_ch09c_holographic
                 condition: is_dead = 0
-      - texts:
+      - condition: >-
+          b3_ch9_currents = 1 AND aura_hardening = 0 AND perception < 3 AND
+          reflexes < 3
+        texts:
           - source: scene_text
             paragraph: 36
             text: "I begin to focus my consciousness on the earthen plane and I raise my arms up, causing Melindra's air currents to activate themselves and to propel me upwards.\r\n\r\nWhen I reach a higher altitude, I quickly realize that the air currents are very unresponsive compared to what they are usually like, and this is almost certainly because of the new version of currents that I asked Melindra to cast on me before the battle. Considering that she is not awake to help me control the currents, I am only getting the disadvantages of this spell and almost none of the advantages. \r\n\r\nActually, there is one small advantage. Despite their unresponsiveness, at least these currents feel more stable than the old ones, so I don't have to worry that much about the strong wind from the storm messing up my direction. \r\n\r\nOnce I'm done testing all of the basic flight maneuvers, I head straight for the metal golem that is closest to us, in the hopes that I can maybe lure it away from the plaza. While I am still in mid-flight, I pull out the crossbow from my backpack and I shoot a few bolts in the golem's head.\r\n\r\n\"Hey!\" I shout at the golem. \"Hey, over here! Over here, you big piece of junk!\"\r\n\r\nI then shoot a few more bolts at it just to make sure that I catch its attention. The golem seems to be finally reacting to me, as it is now turning around and opening its mouth, ready to shoot a fire beam at me."
           - source: scene_text_2
             paragraph: 26
             text: "I begin to fly around erratically, to make it harder for the metal giant to anticipate my movements. The golem fires a beam towards me, and then another, and then another, missing every time, but also getting closer with each consecutive shot. Is it starting to predict my movements?... Maybe I'm not flying randomly enough.\r\n\r\nAs I am trying to adjust my flight patterns so that they are harder to guess, the golem shoots a fire beam only a few inches away from me, and suddenly I can feel my heart beating two times faster than before.\r\n\r\nHow did it get so close to me? Am I really that predictable? What am I doing wrong?\r\n\r\nRealizing that I am very soon going to need to start dodging the lasers right when the golem shoots them, I begin to panic a little. \r\n\r\nWill I be fast enough to dodge every one of its attacks? And what about the limited responsiveness of the currents? How badly is that going to affect me when I need to take split second decisions?\r\n\r\nIt does not take me long to find out the answer to my question, because the next fire beam is finally accurate enough to hit me, and also powerful enough to incinerate me in an instant."
-        condition: >-
-          b3_ch9_currents = 1 AND aura_hardening = 0 AND perception < 3 AND
-          reflexes < 3
-        set:
-          failed_checks:
-            - '[ Observation check failed - level 3 ]'
-            - '[ Reflexes check failed - level 3 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Observation check failed - level 3 ]'
+                - '[ Reflexes check failed - level 3 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -861,21 +851,22 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_text_2
-            paragraph: 27
-            text: "I begin to fly around erratically, to make it harder for the metal giant to anticipate my movements. The golem fires a beam towards me, and then another, and then another, missing every time, but also getting closer with each consecutive shot. Is it starting to predict my movements?... Maybe I'm not flying randomly enough.\r\n\r\nAs I am trying to adjust my flight patterns so that they are harder to guess, the golem shoots a fire beam only a few inches away from me, and suddenly I can feel my heart beating two times faster than before.\r\n\r\nHow did it get so close to me? Am I really that predictable? What am I doing wrong?\r\n\r\nRealizing that I am very soon going to need to start dodging the lasers right when the golem shoots them, I begin to panic a little. \r\n\r\nWill I be fast enough to dodge every one of its attacks? And what about the limited responsiveness of the currents? How badly is that going to affect me when I need to take split second decisions?\r\n\r\nIt does not take me long to find out the answer to my question, because the next fire beam is finally accurate enough to hit me, and also powerful enough to burn through my hardened aura and incinerate me in an instant."
+      - condition: >-
+          b3_ch9_currents = 1 AND aura_hardening > 0 AND perception < 3 AND
+          reflexes < 3
+        texts:
           - source: scene_text
             paragraph: 36
             text: "I begin to focus my consciousness on the earthen plane and I raise my arms up, causing Melindra's air currents to activate themselves and to propel me upwards.\r\n\r\nWhen I reach a higher altitude, I quickly realize that the air currents are very unresponsive compared to what they are usually like, and this is almost certainly because of the new version of currents that I asked Melindra to cast on me before the battle. Considering that she is not awake to help me control the currents, I am only getting the disadvantages of this spell and almost none of the advantages. \r\n\r\nActually, there is one small advantage. Despite their unresponsiveness, at least these currents feel more stable than the old ones, so I don't have to worry that much about the strong wind from the storm messing up my direction. \r\n\r\nOnce I'm done testing all of the basic flight maneuvers, I head straight for the metal golem that is closest to us, in the hopes that I can maybe lure it away from the plaza. While I am still in mid-flight, I pull out the crossbow from my backpack and I shoot a few bolts in the golem's head.\r\n\r\n\"Hey!\" I shout at the golem. \"Hey, over here! Over here, you big piece of junk!\"\r\n\r\nI then shoot a few more bolts at it just to make sure that I catch its attention. The golem seems to be finally reacting to me, as it is now turning around and opening its mouth, ready to shoot a fire beam at me."
-        condition: >-
-          b3_ch9_currents = 1 AND aura_hardening > 0 AND perception < 3 AND
-          reflexes < 3
-        set:
-          failed_checks:
-            - '[ Observation check failed - level 3 ]'
-            - '[ Reflexes check failed - level 3 ]'
-          is_dead: 1
+          - source: scene_text_2
+            paragraph: 27
+            text: "I begin to fly around erratically, to make it harder for the metal giant to anticipate my movements. The golem fires a beam towards me, and then another, and then another, missing every time, but also getting closer with each consecutive shot. Is it starting to predict my movements?... Maybe I'm not flying randomly enough.\r\n\r\nAs I am trying to adjust my flight patterns so that they are harder to guess, the golem shoots a fire beam only a few inches away from me, and suddenly I can feel my heart beating two times faster than before.\r\n\r\nHow did it get so close to me? Am I really that predictable? What am I doing wrong?\r\n\r\nRealizing that I am very soon going to need to start dodging the lasers right when the golem shoots them, I begin to panic a little. \r\n\r\nWill I be fast enough to dodge every one of its attacks? And what about the limited responsiveness of the currents? How badly is that going to affect me when I need to take split second decisions?\r\n\r\nIt does not take me long to find out the answer to my question, because the next fire beam is finally accurate enough to hit me, and also powerful enough to burn through my hardened aura and incinerate me in an instant."
+        effects:
+          - set:
+              failed_checks:
+                - '[ Observation check failed - level 3 ]'
+                - '[ Reflexes check failed - level 3 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -930,7 +921,8 @@ scenes:
               current_scene: b3_ch09c_pillars
   - name: b3_ch09c_pillars
     routes:
-      - texts:
+      - condition: b3_ch9_hadrik = 1
+        texts:
           - source: scene_text
             paragraph: 39
             text: "As Peter and I look at each other from a distance, it takes only a few moments for us to figure out that we are both thinking the same thing, so we both nod curtly and then we hurry up to get into position for casting a grand-scale spell of the likes that the ethereal realm has probably never seen before.\r\n\r\nThere is only one way to definitively paralyze a monster of this size, and every person who has ever aimed to become a generalist should know of it. It is one of sage Drakesbane's favorite spells, and I heard that he routinely uses it whenever he goes on his dragon hunts. Neither me nor Peter could ever dream of casting such a complex spell by ourselves, but if we were to work together and synchronize ourselves perfectly, it might just be worth a shot...\r\n\r\n\"My king,\" Peter says, as the two of us are flying around, setting up invisible magic pillars in strategic positions, so that they can act as catalysts for our large-scale paralysis spell. \"Would it be possible to keep the hydra away from us for around... fifty seconds? Barry and I are working on something important.\"\r\n\r\n\"Is that so?\" the king asks, surprised. \"I suppose I could keep it occupied for a minute or so, yes.\"\r\n\r\nHe then makes a very large semi-transparent box around the hydra, trapping it inside. Realizing what happened, the hydra tries using its claws and its fangs to dig its way out of the aura cage, but it's not making any progress so far."
@@ -948,7 +940,6 @@ scenes:
               that I may have run out of places to hide from all four golems,
               and that I might be forced to dodge all of their attacks very
               soon.
-        condition: b3_ch9_hadrik = 1
         choices:
           - position: 1
             text: Try placing myself between two golems again.
@@ -960,7 +951,8 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch09c_finding
-      - texts:
+      - condition: b3_ch9_hadrik = 0
+        texts:
           - source: scene_text
             paragraph: 39
             text: "As Peter and I look at each other from a distance, it takes only a few moments for us to figure out that we are both thinking the same thing, so we both nod curtly and then we hurry up to get into position for casting a grand-scale spell of the likes that the ethereal realm has probably never seen before.\r\n\r\nThere is only one way to definitively paralyze a monster of this size, and every person who has ever aimed to become a generalist should know of it. It is one of sage Drakesbane's favorite spells, and I heard that he routinely uses it whenever he goes on his dragon hunts. Neither me nor Peter could ever dream of casting such a complex spell by ourselves, but if we were to work together and synchronize ourselves perfectly, it might just be worth a shot...\r\n\r\n\"My king,\" Peter says, as the two of us are flying around, setting up invisible magic pillars in strategic positions, so that they can act as catalysts for our large-scale paralysis spell. \"Would it be possible to keep the hydra away from us for around... fifty seconds? Barry and I are working on something important.\"\r\n\r\n\"Is that so?\" the king asks, surprised. \"I suppose I could keep it occupied for a minute or so, yes.\"\r\n\r\nHe then makes a very large semi-transparent box around the hydra, trapping it inside. Realizing what happened, the hydra tries using its claws and its fangs to dig its way out of the aura cage, but it's not making any progress so far."
@@ -970,7 +962,6 @@ scenes:
           - source: scene_3
             paragraph: 21
             text: "While I am busy setting up the pillars on the ethereal plane, I also make sure to blink from time to time, so that I can switch my perspective to the earthen plane and position myself in a place where the golems can't shoot at me without risking to destroy each other. After I change my location a few times, I suddenly realize that I may have run out of places to hide from all four golems, and that I might be forced to dodge all of their attacks very soon.\r\n\r\nJust as I was preparing to engage the metal giants in open combat, I see Daren making a run towards me, with his shield and sword at the ready.\r\n\r\n\"Barry, over here!\" Daren says. \"Come take cover behind my shield!\""
-        condition: b3_ch9_hadrik = 0
         choices:
           - position: 1
             text: Take cover behind Daren's shield.
@@ -1003,15 +994,9 @@ scenes:
           - set:
               current_scene: b3_ch09c_maintenance
   - name: b3_ch09c_fought
-    effects:
-      - set:
-          ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
-        condition: reflexes < 2 AND b3_ch9_currents = 0 AND is_dead = 0
-      - set:
-          ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
-        condition: is_dead = 0 AND reflexes < 4 AND b3_ch9_currents = 1
     routes:
-      - texts:
+      - condition: reflexes < 2 AND b3_ch9_currents = 0
+        texts:
           - source: scene_text
             paragraph: 41
             text: "\"I don't think your shield can hold against four fire beams all at once,\" I say. \"Maybe it would be better if we each fought two golems. I'll try to lure the two on the right. You try seeing if you can catch the attention of the ones on the left.\"\r\n\r\n\"Are we only supposed to stall them, or do we need to destroy all of them by ourselves?...\" Daren says.\r\n\r\n\"No, no, we only need to keep them busy for... one minute or two,\" I say.\r\n\r\n\"Why?\" Daren says loudly, as he is now moving towards the golems on the left. \"What happens in two minutes?\"\r\n\r\n\"The end of the battle, hopefully,\" I say, and then I place myself between two golems again, hoping that this would buy me enough time to create another pillar on the ethereal plane.\r\n\r\nOnce I blink and switch my main focus to the other plane of existence, I quickly place a new magical pillar in a new position, while I carefully look with the corner of my eye to see what the golems are doing.\r\n\r\nTo my shock, it seems that one of the golems has finally decided that getting rid of me is worth destroying one of its brethren, and it opens fire on me with no warning."
@@ -1021,11 +1006,14 @@ scenes:
               Unfortunately, the time it took me to switch back my focus to the
               earthen plane and to dash away was not enough for me to escape the
               beam, and the flames burnt me to ashes in a matter of seconds.
-        condition: reflexes < 2 AND b3_ch9_currents = 0
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Reflexes check failed - level 2 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Reflexes check failed - level 2 ]'
+          - set:
+              ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
+            condition: is_dead = 0
         choices:
           - position: 1
             text: Restart game
@@ -1044,7 +1032,8 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: reflexes >= 2 AND b3_ch9_currents = 0
+        texts:
           - source: scene_text
             paragraph: 41
             text: "\"I don't think your shield can hold against four fire beams all at once,\" I say. \"Maybe it would be better if we each fought two golems. I'll try to lure the two on the right. You try seeing if you can catch the attention of the ones on the left.\"\r\n\r\n\"Are we only supposed to stall them, or do we need to destroy all of them by ourselves?...\" Daren says.\r\n\r\n\"No, no, we only need to keep them busy for... one minute or two,\" I say.\r\n\r\n\"Why?\" Daren says loudly, as he is now moving towards the golems on the left. \"What happens in two minutes?\"\r\n\r\n\"The end of the battle, hopefully,\" I say, and then I place myself between two golems again, hoping that this would buy me enough time to create another pillar on the ethereal plane.\r\n\r\nOnce I blink and switch my main focus to the other plane of existence, I quickly place a new magical pillar in a new position, while I carefully look with the corner of my eye to see what the golems are doing.\r\n\r\nTo my shock, it seems that one of the golems has finally decided that getting rid of me is worth destroying one of its brethren, and it opens fire on me with no warning."
@@ -1054,18 +1043,19 @@ scenes:
           - source: scene_3
             paragraph: 22
             text: "When I see the two hydra heads looking directly at me, I get a sudden chill down my spine and without thinking, I rush towards the king and Peter, while doing some very quick gestures with my hands and chanting a really old incantation that I can't believe I'm still remembering after all the time that passed since I read about it.\r\n\r\nJust as I am finishing my spell, the brown hydra heads open their mouths at last, and the sound that they are making is so loud that it feels like it could rupture our eardrums in a matter of seconds. Fortunately for us, the spell that I was casting earlier finally activates itself, creating a large anti-sound barrier around Peter, the king and myself, which blocks all incoming noises, no matter how powerful they are.\r\n\r\nAs we are standing within our sound-proof shelter, we watch the hydra roaring silently for about another ten seconds or so, until the pillars unleash their last wave of energy upon the monster, turning it into stone.\r\n\r\n\"Okay...?\" I say, as I look a little confused towards the hydra that had turned into a statue and then I deactivate the anti-sound barrier that was surrounding us. \"I could have sworn that this spell was meant to just paralyze, not petrify its target. I honestly have no idea where the petrification came from. But hey, I suppose beggars can't be choosers, right?\"\r\n\r\n\"...How did you know?\" Peter asks, after looking at me in silence for a few seconds."
-        condition: reflexes >= 2 AND b3_ch9_currents = 0
-        set:
-          is_dead: 0
-          successful_checks:
-            - '[ Reflexes check successful - level 2 ]'
+        effects:
+          - set:
+              is_dead: 0
+              successful_checks:
+                - '[ Reflexes check successful - level 2 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch09c_maintenance
-      - texts:
+      - condition: reflexes < 4 AND b3_ch9_currents = 1
+        texts:
           - source: scene_text
             paragraph: 41
             text: "\"I don't think your shield can hold against four fire beams all at once,\" I say. \"Maybe it would be better if we each fought two golems. I'll try to lure the two on the right. You try seeing if you can catch the attention of the ones on the left.\"\r\n\r\n\"Are we only supposed to stall them, or do we need to destroy all of them by ourselves?...\" Daren says.\r\n\r\n\"No, no, we only need to keep them busy for... one minute or two,\" I say.\r\n\r\n\"Why?\" Daren says loudly, as he is now moving towards the golems on the left. \"What happens in two minutes?\"\r\n\r\n\"The end of the battle, hopefully,\" I say, and then I place myself between two golems again, hoping that this would buy me enough time to create another pillar on the ethereal plane.\r\n\r\nOnce I blink and switch my main focus to the other plane of existence, I quickly place a new magical pillar in a new position, while I carefully look with the corner of my eye to see what the golems are doing.\r\n\r\nTo my shock, it seems that one of the golems has finally decided that getting rid of me is worth destroying one of its brethren, and it opens fire on me with no warning."
@@ -1076,11 +1066,14 @@ scenes:
               earthen plane and to dash away was not enough for me to escape the
               beam, especially considering how unresponsive my currents are, and
               the flames burnt me to ashes in a matter of seconds.
-        condition: reflexes < 4 AND b3_ch9_currents = 1
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Reflexes check failed - level 4 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Reflexes check failed - level 4 ]'
+          - set:
+              ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
+            condition: is_dead = 0
         choices:
           - position: 1
             text: Restart game
@@ -1099,7 +1092,8 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: reflexes >= 4 AND b3_ch9_currents = 1
+        texts:
           - source: scene_text
             paragraph: 41
             text: "\"I don't think your shield can hold against four fire beams all at once,\" I say. \"Maybe it would be better if we each fought two golems. I'll try to lure the two on the right. You try seeing if you can catch the attention of the ones on the left.\"\r\n\r\n\"Are we only supposed to stall them, or do we need to destroy all of them by ourselves?...\" Daren says.\r\n\r\n\"No, no, we only need to keep them busy for... one minute or two,\" I say.\r\n\r\n\"Why?\" Daren says loudly, as he is now moving towards the golems on the left. \"What happens in two minutes?\"\r\n\r\n\"The end of the battle, hopefully,\" I say, and then I place myself between two golems again, hoping that this would buy me enough time to create another pillar on the ethereal plane.\r\n\r\nOnce I blink and switch my main focus to the other plane of existence, I quickly place a new magical pillar in a new position, while I carefully look with the corner of my eye to see what the golems are doing.\r\n\r\nTo my shock, it seems that one of the golems has finally decided that getting rid of me is worth destroying one of its brethren, and it opens fire on me with no warning."
@@ -1109,11 +1103,11 @@ scenes:
           - source: scene_3
             paragraph: 22
             text: "When I see the two hydra heads looking directly at me, I get a sudden chill down my spine and without thinking, I rush towards the king and Peter, while doing some very quick gestures with my hands and chanting a really old incantation that I can't believe I'm still remembering after all the time that passed since I read about it.\r\n\r\nJust as I am finishing my spell, the brown hydra heads open their mouths at last, and the sound that they are making is so loud that it feels like it could rupture our eardrums in a matter of seconds. Fortunately for us, the spell that I was casting earlier finally activates itself, creating a large anti-sound barrier around Peter, the king and myself, which blocks all incoming noises, no matter how powerful they are.\r\n\r\nAs we are standing within our sound-proof shelter, we watch the hydra roaring silently for about another ten seconds or so, until the pillars unleash their last wave of energy upon the monster, turning it into stone.\r\n\r\n\"Okay...?\" I say, as I look a little confused towards the hydra that had turned into a statue and then I deactivate the anti-sound barrier that was surrounding us. \"I could have sworn that this spell was meant to just paralyze, not petrify its target. I honestly have no idea where the petrification came from. But hey, I suppose beggars can't be choosers, right?\"\r\n\r\n\"...How did you know?\" Peter asks, after looking at me in silence for a few seconds."
-        condition: reflexes >= 4 AND b3_ch9_currents = 1
-        set:
-          is_dead: 0
-          successful_checks:
-            - '[ Reflexes check successful - level 4 ]'
+        effects:
+          - set:
+              is_dead: 0
+              successful_checks:
+                - '[ Reflexes check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1121,15 +1115,9 @@ scenes:
               - set:
                   current_scene: b3_ch09c_maintenance
   - name: b3_ch09c_between
-    effects:
-      - set:
-          ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
-        condition: reflexes < 2 AND is_dead = 0 AND b3_ch9_currents = 0
-      - set:
-          ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
-        condition: reflexes < 4 AND is_dead = 0 AND b3_ch9_currents = 1
     routes:
-      - texts:
+      - condition: reflexes < 2 AND b3_ch9_currents = 0
+        texts:
           - source: scene_text
             paragraph: 42
             text: "I might not be able to hide myself from all four golems at once, but I can still make sure that at least two of them won't attack me as long as I place myself between them.\r\n\r\nOnce I find myself a good enough spot, I position myself between two of the golems, making sure that a third one also does not have a good view of me. Now, as long as I pay close attention to the fourth one, I should be able to stay here for another twenty seconds or so.\r\n\r\nI blink my eyes in order to switch back to the ethereal plane, and I create another magical pillar, while I'm keeping a close watch on the situation from the earthen plane with the corner of my eye.\r\n\r\nTo my shock, it seems that one of the two golems between which I've positioned myself decided that getting rid of me is worth destroying one of its brethren, and it opens fire on me with no warning."
@@ -1139,11 +1127,14 @@ scenes:
               Unfortunately, the time it took me to switch back my focus to the
               earthen plane and to dash away was not enough for me to escape the
               beam, and the flames burnt me to ashes in a matter of seconds.
-        condition: reflexes < 2 AND b3_ch9_currents = 0
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Reflexes check failed - level 2 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Reflexes check failed - level 2 ]'
+          - set:
+              ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
+            condition: is_dead = 0
         choices:
           - position: 1
             text: Restart game
@@ -1162,28 +1153,33 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: reflexes >= 2 AND b3_ch9_currents = 0
+        texts:
+          - source: scene_text
+            paragraph: 42
+            text: "I might not be able to hide myself from all four golems at once, but I can still make sure that at least two of them won't attack me as long as I place myself between them.\r\n\r\nOnce I find myself a good enough spot, I position myself between two of the golems, making sure that a third one also does not have a good view of me. Now, as long as I pay close attention to the fourth one, I should be able to stay here for another twenty seconds or so.\r\n\r\nI blink my eyes in order to switch back to the ethereal plane, and I create another magical pillar, while I'm keeping a close watch on the situation from the earthen plane with the corner of my eye.\r\n\r\nTo my shock, it seems that one of the two golems between which I've positioned myself decided that getting rid of me is worth destroying one of its brethren, and it opens fire on me with no warning."
           - source: scene_text_2
             paragraph: 32
             text: "I would've probably been dead if not for my quick reaction time, but I managed to switch my focus back to the earthen plane and to get out of the way just in time to see the golem behind me getting absolutely destroyed by the beam of its comrade-in-arms. The metal giant that attacked me seems to now be regretting its decision, because it is keeping its head down, without making any more movements, as if it were mourning its deceased partner.\r\n\r\nThis momentary pause gives me the opportunity to go place the final pillar that was needed for the paralysis spell to function in the ethereal plane, and as soon as I'm done, I give the 'okay' signal to Peter so that we can commence our simultaneous casting.\r\n\r\nThe semi-invisible pillars that have been placed in a circle around the hydra are now all lighting up, and they are beginning to form a perimeter of green light around the monster. The light is getting more and more intense by the second, while the area inside the perimeter is getting bombarded by magical energy.\r\n\r\nAs the king of the underground releases the hydra from its imprisonment, the green lights from the pillars are now all attacking the monster in unison. Realizing that its time is at an end, the hydra roars loudly with the majority of its heads. The only heads that remain silent, just like the last time, are the brown-colored ones. Coincidentally, these are also the only heads that haven't used any sort of breath attacks so far.\r\n\r\nNo breath attacks... No roaring... What are they waiting for, exactly?"
           - source: scene_3
             paragraph: 22
             text: "When I see the two hydra heads looking directly at me, I get a sudden chill down my spine and without thinking, I rush towards the king and Peter, while doing some very quick gestures with my hands and chanting a really old incantation that I can't believe I'm still remembering after all the time that passed since I read about it.\r\n\r\nJust as I am finishing my spell, the brown hydra heads open their mouths at last, and the sound that they are making is so loud that it feels like it could rupture our eardrums in a matter of seconds. Fortunately for us, the spell that I was casting earlier finally activates itself, creating a large anti-sound barrier around Peter, the king and myself, which blocks all incoming noises, no matter how powerful they are.\r\n\r\nAs we are standing within our sound-proof shelter, we watch the hydra roaring silently for about another ten seconds or so, until the pillars unleash their last wave of energy upon the monster, turning it into stone.\r\n\r\n\"Okay...?\" I say, as I look a little confused towards the hydra that had turned into a statue and then I deactivate the anti-sound barrier that was surrounding us. \"I could have sworn that this spell was meant to just paralyze, not petrify its target. I honestly have no idea where the petrification came from. But hey, I suppose beggars can't be choosers, right?\"\r\n\r\n\"...How did you know?\" Peter asks, after looking at me in silence for a few seconds."
-          - source: scene_text
-            paragraph: 42
-            text: "I might not be able to hide myself from all four golems at once, but I can still make sure that at least two of them won't attack me as long as I place myself between them.\r\n\r\nOnce I find myself a good enough spot, I position myself between two of the golems, making sure that a third one also does not have a good view of me. Now, as long as I pay close attention to the fourth one, I should be able to stay here for another twenty seconds or so.\r\n\r\nI blink my eyes in order to switch back to the ethereal plane, and I create another magical pillar, while I'm keeping a close watch on the situation from the earthen plane with the corner of my eye.\r\n\r\nTo my shock, it seems that one of the two golems between which I've positioned myself decided that getting rid of me is worth destroying one of its brethren, and it opens fire on me with no warning."
-        condition: reflexes >= 2 AND b3_ch9_currents = 0
-        set:
-          is_dead: 0
-          successful_checks:
-            - '[ Reflexes check successful - level 2 ]'
+        effects:
+          - set:
+              is_dead: 0
+              successful_checks:
+                - '[ Reflexes check successful - level 2 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch09c_maintenance
-      - texts:
+      - condition: reflexes < 4 AND b3_ch9_currents = 1
+        texts:
+          - source: scene_text
+            paragraph: 42
+            text: "I might not be able to hide myself from all four golems at once, but I can still make sure that at least two of them won't attack me as long as I place myself between them.\r\n\r\nOnce I find myself a good enough spot, I position myself between two of the golems, making sure that a third one also does not have a good view of me. Now, as long as I pay close attention to the fourth one, I should be able to stay here for another twenty seconds or so.\r\n\r\nI blink my eyes in order to switch back to the ethereal plane, and I create another magical pillar, while I'm keeping a close watch on the situation from the earthen plane with the corner of my eye.\r\n\r\nTo my shock, it seems that one of the two golems between which I've positioned myself decided that getting rid of me is worth destroying one of its brethren, and it opens fire on me with no warning."
           - source: scene_text_2
             paragraph: 36
             text: >-
@@ -1191,14 +1187,14 @@ scenes:
               earthen plane and to dash away was not enough for me to escape the
               beam, especially considering how unresponsive my currents are, and
               the flames burnt me to ashes in a matter of seconds.
-          - source: scene_text
-            paragraph: 42
-            text: "I might not be able to hide myself from all four golems at once, but I can still make sure that at least two of them won't attack me as long as I place myself between them.\r\n\r\nOnce I find myself a good enough spot, I position myself between two of the golems, making sure that a third one also does not have a good view of me. Now, as long as I pay close attention to the fourth one, I should be able to stay here for another twenty seconds or so.\r\n\r\nI blink my eyes in order to switch back to the ethereal plane, and I create another magical pillar, while I'm keeping a close watch on the situation from the earthen plane with the corner of my eye.\r\n\r\nTo my shock, it seems that one of the two golems between which I've positioned myself decided that getting rid of me is worth destroying one of its brethren, and it opens fire on me with no warning."
-        condition: reflexes < 4 AND b3_ch9_currents = 1
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Reflexes check failed - level 4 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Reflexes check failed - level 4 ]'
+          - set:
+              ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
+            condition: is_dead = 0
         choices:
           - position: 1
             text: Restart game
@@ -1217,21 +1213,22 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: reflexes >= 4 AND b3_ch9_currents = 1
+        texts:
+          - source: scene_text
+            paragraph: 42
+            text: "I might not be able to hide myself from all four golems at once, but I can still make sure that at least two of them won't attack me as long as I place myself between them.\r\n\r\nOnce I find myself a good enough spot, I position myself between two of the golems, making sure that a third one also does not have a good view of me. Now, as long as I pay close attention to the fourth one, I should be able to stay here for another twenty seconds or so.\r\n\r\nI blink my eyes in order to switch back to the ethereal plane, and I create another magical pillar, while I'm keeping a close watch on the situation from the earthen plane with the corner of my eye.\r\n\r\nTo my shock, it seems that one of the two golems between which I've positioned myself decided that getting rid of me is worth destroying one of its brethren, and it opens fire on me with no warning."
           - source: scene_text_2
             paragraph: 32
             text: "I would've probably been dead if not for my quick reaction time, but I managed to switch my focus back to the earthen plane and to get out of the way just in time to see the golem behind me getting absolutely destroyed by the beam of its comrade-in-arms. The metal giant that attacked me seems to now be regretting its decision, because it is keeping its head down, without making any more movements, as if it were mourning its deceased partner.\r\n\r\nThis momentary pause gives me the opportunity to go place the final pillar that was needed for the paralysis spell to function in the ethereal plane, and as soon as I'm done, I give the 'okay' signal to Peter so that we can commence our simultaneous casting.\r\n\r\nThe semi-invisible pillars that have been placed in a circle around the hydra are now all lighting up, and they are beginning to form a perimeter of green light around the monster. The light is getting more and more intense by the second, while the area inside the perimeter is getting bombarded by magical energy.\r\n\r\nAs the king of the underground releases the hydra from its imprisonment, the green lights from the pillars are now all attacking the monster in unison. Realizing that its time is at an end, the hydra roars loudly with the majority of its heads. The only heads that remain silent, just like the last time, are the brown-colored ones. Coincidentally, these are also the only heads that haven't used any sort of breath attacks so far.\r\n\r\nNo breath attacks... No roaring... What are they waiting for, exactly?"
           - source: scene_3
             paragraph: 22
             text: "When I see the two hydra heads looking directly at me, I get a sudden chill down my spine and without thinking, I rush towards the king and Peter, while doing some very quick gestures with my hands and chanting a really old incantation that I can't believe I'm still remembering after all the time that passed since I read about it.\r\n\r\nJust as I am finishing my spell, the brown hydra heads open their mouths at last, and the sound that they are making is so loud that it feels like it could rupture our eardrums in a matter of seconds. Fortunately for us, the spell that I was casting earlier finally activates itself, creating a large anti-sound barrier around Peter, the king and myself, which blocks all incoming noises, no matter how powerful they are.\r\n\r\nAs we are standing within our sound-proof shelter, we watch the hydra roaring silently for about another ten seconds or so, until the pillars unleash their last wave of energy upon the monster, turning it into stone.\r\n\r\n\"Okay...?\" I say, as I look a little confused towards the hydra that had turned into a statue and then I deactivate the anti-sound barrier that was surrounding us. \"I could have sworn that this spell was meant to just paralyze, not petrify its target. I honestly have no idea where the petrification came from. But hey, I suppose beggars can't be choosers, right?\"\r\n\r\n\"...How did you know?\" Peter asks, after looking at me in silence for a few seconds."
-          - source: scene_text
-            paragraph: 42
-            text: "I might not be able to hide myself from all four golems at once, but I can still make sure that at least two of them won't attack me as long as I place myself between them.\r\n\r\nOnce I find myself a good enough spot, I position myself between two of the golems, making sure that a third one also does not have a good view of me. Now, as long as I pay close attention to the fourth one, I should be able to stay here for another twenty seconds or so.\r\n\r\nI blink my eyes in order to switch back to the ethereal plane, and I create another magical pillar, while I'm keeping a close watch on the situation from the earthen plane with the corner of my eye.\r\n\r\nTo my shock, it seems that one of the two golems between which I've positioned myself decided that getting rid of me is worth destroying one of its brethren, and it opens fire on me with no warning."
-        condition: reflexes >= 4 AND b3_ch9_currents = 1
-        set:
-          is_dead: 0
-          successful_checks:
-            - '[ Reflexes check successful - level 4 ]'
+        effects:
+          - set:
+              is_dead: 0
+              successful_checks:
+                - '[ Reflexes check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1239,20 +1236,20 @@ scenes:
               - set:
                   current_scene: b3_ch09c_maintenance
   - name: b3_ch09c_finding
-    effects:
-      - set:
-          ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
-        condition: perception < 2 AND is_dead = 0
     routes:
-      - texts:
+      - condition: perception < 2
+        texts:
           - source: scene_text
             paragraph: 43
             text: "There has to be some place I've missed. Some place where I can sit quietly for twenty seconds so that I can finish placing my pillars on the ethereal plane.\r\n\r\nI start to gain some altitude, so that I can get a better view of the area where the golems are. As I am doing this, two of the golems shoot their beams at me, but I was ready for them, and dodged their attacks easily. Now, then... let me take a good look around. Where would be the best spot for me to position myself?\r\n\r\nAs I keep flying around, trying to figure out what it is that I'm missing, the golems begin attacking me again, and I am forced to dive away from their beams. Unfortunately, what I did not realize was that the first two beams were only meant to lead me into a trap, because the other two golems anticipated exactly which way I would dodge, and they incinerated me before I could get any chance to understand what they were doing."
-        condition: perception < 2
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Observation check failed - level 2 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Observation check failed - level 2 ]'
+          - set:
+              ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
+            condition: is_dead = 0
         choices:
           - position: 1
             text: Restart game
@@ -1271,21 +1268,22 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: perception >= 2
+        texts:
+          - source: scene_text
+            paragraph: 44
+            text: "There has to be some place I've missed. Some place where I can sit quietly for twenty seconds so that I can finish placing my pillars on the ethereal plane.\r\n\r\nI start to gain some altitude, so that I can get a better view of the area where the golems are. As I am doing this, two of the golems shoot their beams at me, but I was ready for them, and dodged their attacks easily. Now, then... let me take a good look around. Where would be the best spot for me to position myself?\r\n\r\nAs I get a good bird's-eye view of the entire area below me, I finally manage to find what I was looking for. There is exactly one spot that should temporarily shield me from all of the golems at the same time, and that is at the very center of them. As long as I place myself correctly, I should be positioned right between two separate pairs of golems, and at a sufficient enough distance from them that they can't just instantly walk over to me and attack me with their hands.\r\n\r\nThis is perfect. I'm heading down there right now.\r\n\r\nThe golems attempt to shoot at me a few times before I get to a lower altitude, but as soon as I place myself in the right spot, they all stop what they were doing, and now they are just looking at me confused."
           - source: scene_text_2
             paragraph: 33
             text: "I take advantage of this opportunity to blink my eyes and to switch my focus to the ethereal plane, so that I can create another one of the magical pillars that are needed for the paralysis spell. Once I am done with that, I go to place the final pillar, while still keeping a close watch on the situation from the earthen plane with the corner of my eye.\r\n\r\nAs soon as the last pillar is placed as well, I give the 'okay' signal to Peter so that we can commence our simultaneous casting.\r\n\r\nThe semi-invisible pillars that have been placed in a circle around the hydra are now all lighting up, and they are beginning to form a perimeter of green light around the monster. The light is getting more and more intense by the second, while the area inside the perimeter is getting bombarded by magical energy.\r\n\r\nAs the king of the underground releases the hydra from its imprisonment, the green lights from the pillars are now all attacking the monster in unison. Realizing that its time is at an end, the hydra roars loudly with the majority of its heads. The only heads that remain silent, just like the last time, are the brown-colored ones. Coincidentally, these are also the only heads that haven't used any sort of breath attacks so far.\r\n\r\nNo breath attacks... No roaring... What are they waiting for, exactly?"
           - source: scene_3
             paragraph: 22
             text: "When I see the two hydra heads looking directly at me, I get a sudden chill down my spine and without thinking, I rush towards the king and Peter, while doing some very quick gestures with my hands and chanting a really old incantation that I can't believe I'm still remembering after all the time that passed since I read about it.\r\n\r\nJust as I am finishing my spell, the brown hydra heads open their mouths at last, and the sound that they are making is so loud that it feels like it could rupture our eardrums in a matter of seconds. Fortunately for us, the spell that I was casting earlier finally activates itself, creating a large anti-sound barrier around Peter, the king and myself, which blocks all incoming noises, no matter how powerful they are.\r\n\r\nAs we are standing within our sound-proof shelter, we watch the hydra roaring silently for about another ten seconds or so, until the pillars unleash their last wave of energy upon the monster, turning it into stone.\r\n\r\n\"Okay...?\" I say, as I look a little confused towards the hydra that had turned into a statue and then I deactivate the anti-sound barrier that was surrounding us. \"I could have sworn that this spell was meant to just paralyze, not petrify its target. I honestly have no idea where the petrification came from. But hey, I suppose beggars can't be choosers, right?\"\r\n\r\n\"...How did you know?\" Peter asks, after looking at me in silence for a few seconds."
-          - source: scene_text
-            paragraph: 44
-            text: "There has to be some place I've missed. Some place where I can sit quietly for twenty seconds so that I can finish placing my pillars on the ethereal plane.\r\n\r\nI start to gain some altitude, so that I can get a better view of the area where the golems are. As I am doing this, two of the golems shoot their beams at me, but I was ready for them, and dodged their attacks easily. Now, then... let me take a good look around. Where would be the best spot for me to position myself?\r\n\r\nAs I get a good bird's-eye view of the entire area below me, I finally manage to find what I was looking for. There is exactly one spot that should temporarily shield me from all of the golems at the same time, and that is at the very center of them. As long as I place myself correctly, I should be positioned right between two separate pairs of golems, and at a sufficient enough distance from them that they can't just instantly walk over to me and attack me with their hands.\r\n\r\nThis is perfect. I'm heading down there right now.\r\n\r\nThe golems attempt to shoot at me a few times before I get to a lower altitude, but as soon as I place myself in the right spot, they all stop what they were doing, and now they are just looking at me confused."
-        condition: perception >= 2
-        set:
-          is_dead: 0
-          successful_checks:
-            - '[ Observation check successful - level 2 ]'
+        effects:
+          - set:
+              is_dead: 0
+              successful_checks:
+                - '[ Observation check successful - level 2 ]'
         choices:
           - position: 1
             text: Continue
@@ -1293,8 +1291,16 @@ scenes:
               - set:
                   current_scene: b3_ch09c_maintenance
   - name: b3_ch09c_maintenance
+    effects:
+      - set:
+          ac_b3_ch9_trinkets: 1
+        achievement:
+          id: ac_b3_ch9_trinkets
+          title: No need for trinkets
+        condition: b3_ch9_currents = 0 AND b3_ch9_cover = 1
     routes:
-      - texts:
+      - condition: b3_ch9_hadrik = 0
+        texts:
           - source: scene_text
             paragraph: 45
             text: "\"How did I know what?\" I say.\r\n\r\n\"That the hydra was about to hit us with a sonic attack,\" Peter answers me. \"How did you figure it out?\"\r\n\r\n\"Oh, I didn't know for sure,\" I say. \"It was only a hunch. See, the thing is that I've been watching the brown hydra heads closely ever since you mentioned that it wouldn't make any sense for them to breathe rocks, and the truth is that I didn't see them doing any sort of elemental attacks for the whole duration of the battle. However, what I did notice was that these particular heads were the only ones that were always silent while the other heads were roaring or screaming. So, that got me thinking... what if these heads did not in fact have any elemental powers at all? What if their only power was their roar, and they were saving it for a special occasion this whole time? And what better way could there possibly be to use their ultimate weapon than as a last resort, when they were sure that they were about to get killed?\"\r\n\r\n\"Huh...\" Peter says, as he looks contemplatively at the stone statue of the hydra, and then at me. \"You know... Maybe I was wrong about you. Maybe you are not the fraud I thought you were. Maybe... you are a generalist after all!\"\r\n\r\n\"The Overseer protocol congratulates you for completing the second experimental procedure,\" the green-eyed drone says. \"Unfortunately, according to my calculations, your chances of surviving the third experimental procedure are very slim. We will, however, continue to ask for your cooperation until--\""
@@ -1304,14 +1310,14 @@ scenes:
           - source: scene_3
             paragraph: 23
             text: "\"Really?\" I ask the king, as I begin to control my body from the earthen plane like a puppet in order to fly it back to the plaza, while signalling Daren to follow me. \"You're not at all worried about that ominous warning that he gave us before he disappeared? Not even a little bit?\"\r\n\r\n\"Worried about what?\" the king of the underground says. \"About the empty threats of a dying machine? Even if he still somehow manages to remain alive after losing his core, he will be only a shadow of his former self. Without an army, the Overseer is just another drone. And you've seen what I can do to drones.\"\r\n\r\nAll of a sudden, we hear Flower teleporting back to us and then we get to see the shock on her face, as she looks at the stone hydra and at the place where the Overseer's green-eyed drone used to be.\r\n\r\n\"Guys, I'm sorry, I didn't get to teleport everyone yet,\" Flower says, \"but I just had to come back here and confirm that what I was picking up with my magical sense was real... Did you really manage to beat both the hydra AND the Overseer while I was away? That's amazing! How did you even do it?\""
-        condition: b3_ch9_hadrik = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch09c_indebted
-      - texts:
+      - condition: b3_ch9_hadrik = 1
+        texts:
           - source: scene_text
             paragraph: 45
             text: "\"How did I know what?\" I say.\r\n\r\n\"That the hydra was about to hit us with a sonic attack,\" Peter answers me. \"How did you figure it out?\"\r\n\r\n\"Oh, I didn't know for sure,\" I say. \"It was only a hunch. See, the thing is that I've been watching the brown hydra heads closely ever since you mentioned that it wouldn't make any sense for them to breathe rocks, and the truth is that I didn't see them doing any sort of elemental attacks for the whole duration of the battle. However, what I did notice was that these particular heads were the only ones that were always silent while the other heads were roaring or screaming. So, that got me thinking... what if these heads did not in fact have any elemental powers at all? What if their only power was their roar, and they were saving it for a special occasion this whole time? And what better way could there possibly be to use their ultimate weapon than as a last resort, when they were sure that they were about to get killed?\"\r\n\r\n\"Huh...\" Peter says, as he looks contemplatively at the stone statue of the hydra, and then at me. \"You know... Maybe I was wrong about you. Maybe you are not the fraud I thought you were. Maybe... you are a generalist after all!\"\r\n\r\n\"The Overseer protocol congratulates you for completing the second experimental procedure,\" the green-eyed drone says. \"Unfortunately, according to my calculations, your chances of surviving the third experimental procedure are very slim. We will, however, continue to ask for your cooperation until--\""
@@ -1321,7 +1327,6 @@ scenes:
           - source: scene_3
             paragraph: 24
             text: "\"Really?\" I ask the king, as I begin to control my body from the earthen plane like a puppet in order to fly it back to the plaza. \"You're not at all worried about that ominous warning that he gave us before he disappeared? Not even a little bit?\"\r\n\r\n\"Worried about what?\" the king of the underground says. \"About the empty threats of a dying machine? Even if he still somehow manages to remain alive after losing his core, he will be only a shadow of his former self. Without an army, the Overseer is just another drone. And you've seen what I can do to drones.\"\r\n\r\nAll of a sudden, we hear Flower teleporting back to us and then we get to see the shock on her face, as she looks at the stone hydra and at the place where the Overseer's green-eyed drone used to be.\r\n\r\n\"Guys, I'm so sorry that I couldn't get back here sooner,\" Flower says. \"I got a really nasty headache because I teleported too many times in a row over large distances and I was worried that I might mess up your fight. I didn't even imagine that you'd beat them so fast! How did you even do it?\""
-        condition: b3_ch9_hadrik = 1
         choices:
           - position: 1
             text: Continue
@@ -1407,7 +1412,8 @@ scenes:
               current_scene: b3_ch09c_ingenuity
   - name: b3_ch09c_ingenuity
     routes:
-      - texts:
+      - condition: b3_ch9_hadrik = 0
+        texts:
           - source: scene_text
             paragraph: 50
             text: "\"Okay, Flower has calmed down for now,\" Illuna says. \"What were we talking about again? Oh right, the darkness. Well, there's not much to say about it, really. Darkness is the absence of light. The light from the ethereal plane is the ether itself. The ether was the one attacking you, so Flower decided to teleport you in the only place where you'd be truly safe from it. However, the only way to get yourself out of the ethereal abyss is by imagining a place very clearly in your head, and being firmly convinced that you can transport yourself there through your own powers. Seeing that you were no longer breathing on the earthen plane, I assumed that you had failed at your task, so I had to get a little creative.\"\r\n\r\nShe then holds out her palm and conjures a floating sphere of water above it, hinting that she was the reason why the water that I was drenched in was three times colder than the rain drops from the storm.\r\n\r\n\"Wow...\" I tell her. \"I don't know what to say. Thank you. And Flower. I have no idea what would have happened if you two hadn't intervened the way you did. How did you even come up with these ideas?\"\r\n\r\n\"...Experience,\" Illuna says. \"And a little bit of ingenuity. Let's just say that this isn't the first time when we've had to make use of the ethereal abyss, and it probably won't be the last either. Now, if you'll excuse me, I have to check up on Flower. There are still a few matters left unresolved in the ethereal plane that we need to take care of.\"\r\n\r\n\"Wait, is Flower okay?\" I ask. \"I can't switch my consciousness back to the ethereal plane to check. Did she manage to escape from the ether?\""
@@ -1417,14 +1423,14 @@ scenes:
           - source: scene_3
             paragraph: 27
             text: "\"Actually, no,\" the king says. \"I'm the only one who went back to his own mind. Peter is not being targeted by the ether, apparently. My guess is that ethereals must be getting special treatment when it comes to such things.\"\r\n\r\n\"Yeah, Flower hasn't had any trouble either, so you're probably right,\" I tell the king. \"Hey, uh... How did it go for you?... When you reached your sanctuary, I mean. Did you lose all contact with your soul too, or can you still see things from its perspective?\"\r\n\r\n\"No, I completely lost the ability to see what was happening on the ethereal plane once I got back inside my own mind,\" the king says. \"From what I understand, this is how it's supposed to be. Your soul's aura links itself with the aura of your mind as soon as it enters its premises, and then your mind from the ethereal plane is what manages the connection between your soul and your body here on the earthen plane. What we experienced today was nothing more than an anomaly. Unless you were born as an ethereal, it's not normal to see things from the perspective of your soul. It will likely feel strange for a few more hours to not be able to switch our consciousness between planes anymore, but I'm sure the sensation will pass, and that soon our short escapade through the ethereal realms will feel like nothing more than a dream.\"\r\n\r\n\"Yes...\" I say. \"That's what I'm afraid of...\""
-        condition: b3_ch9_hadrik = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch09c_stories
-      - texts:
+      - condition: b3_ch9_hadrik = 1
+        texts:
           - source: scene_text
             paragraph: 50
             text: "\"Okay, Flower has calmed down for now,\" Illuna says. \"What were we talking about again? Oh right, the darkness. Well, there's not much to say about it, really. Darkness is the absence of light. The light from the ethereal plane is the ether itself. The ether was the one attacking you, so Flower decided to teleport you in the only place where you'd be truly safe from it. However, the only way to get yourself out of the ethereal abyss is by imagining a place very clearly in your head, and being firmly convinced that you can transport yourself there through your own powers. Seeing that you were no longer breathing on the earthen plane, I assumed that you had failed at your task, so I had to get a little creative.\"\r\n\r\nShe then holds out her palm and conjures a floating sphere of water above it, hinting that she was the reason why the water that I was drenched in was three times colder than the rain drops from the storm.\r\n\r\n\"Wow...\" I tell her. \"I don't know what to say. Thank you. And Flower. I have no idea what would have happened if you two hadn't intervened the way you did. How did you even come up with these ideas?\"\r\n\r\n\"...Experience,\" Illuna says. \"And a little bit of ingenuity. Let's just say that this isn't the first time when we've had to make use of the ethereal abyss, and it probably won't be the last either. Now, if you'll excuse me, I have to check up on Flower. There are still a few matters left unresolved in the ethereal plane that we need to take care of.\"\r\n\r\n\"Wait, is Flower okay?\" I ask. \"I can't switch my consciousness back to the ethereal plane to check. Did she manage to escape from the ether?\""
@@ -1434,7 +1440,6 @@ scenes:
           - source: scene_3
             paragraph: 27
             text: "\"Actually, no,\" the king says. \"I'm the only one who went back to his own mind. Peter is not being targeted by the ether, apparently. My guess is that ethereals must be getting special treatment when it comes to such things.\"\r\n\r\n\"Yeah, Flower hasn't had any trouble either, so you're probably right,\" I tell the king. \"Hey, uh... How did it go for you?... When you reached your sanctuary, I mean. Did you lose all contact with your soul too, or can you still see things from its perspective?\"\r\n\r\n\"No, I completely lost the ability to see what was happening on the ethereal plane once I got back inside my own mind,\" the king says. \"From what I understand, this is how it's supposed to be. Your soul's aura links itself with the aura of your mind as soon as it enters its premises, and then your mind from the ethereal plane is what manages the connection between your soul and your body here on the earthen plane. What we experienced today was nothing more than an anomaly. Unless you were born as an ethereal, it's not normal to see things from the perspective of your soul. It will likely feel strange for a few more hours to not be able to switch our consciousness between planes anymore, but I'm sure the sensation will pass, and that soon our short escapade through the ethereal realms will feel like nothing more than a dream.\"\r\n\r\n\"Yes...\" I say. \"That's what I'm afraid of...\""
-        condition: b3_ch9_hadrik = 1
         choices:
           - position: 1
             text: Continue
@@ -1443,28 +1448,28 @@ scenes:
                   current_scene: b3_ch09c_stories
   - name: b3_ch09c_stories
     routes:
-      - texts:
+      - condition: b3_ch9_hadrik = 0
+        texts:
           - source: scene_text
             paragraph: 51
             text: "I then pause for a few seconds, before I continue.\r\n\r\n\"So, anyway... do you have any plans yet about what we're going to do with all these unconscious rebels?\" I say. \"Do you think there's any chance that they'll find their way back to their minds by themselves?\"\r\n\r\n\"We were actually discussing that right before you joined us,\" Daren says. \"Flower told Peter that she'll try to guide as many rebels as she can to their sanctuaries, but that she'll need a little time to rest after each trip, because she gets sick if she teleports too many times in a row. Peter will also be guiding some rebels' souls, but his teleportation spells are more limited, so he will only be flying through the ether most of the time.\"\r\n\r\n\"Either way, this is likely going to take a while,\" Peter says. \"You people have already helped enough and deserve some rest. As soon as your whole group is awake, we'll talk to Breynan so he can teleport you back to the underground base. I'm pretty sure that he should still be waiting for us in the teleporter room.\""
           - source: scene_text_2
             paragraph: 42
             text: "\"What about you two?\" I ask Peter and the king. \"Won't you be coming back with us?\"\r\n\r\n\"We will stay here for a while longer to guard our unconscious comrades,\" Peter says. \"Just to be safe. You never know what enemies might be lurking just around the corner.\"\r\n\r\n\"Of course,\" I say. \"I suppose it never hurts to be too careful.\"\r\n\r\nAs we are talking, we see Hadrik running towards us and when he spots us, he makes a quick dash in our direction, reaching us in less than a second.\r\n\r\n\"Hahaha!\" Hadrik laughs. \"Did you guys see? Did you see what I did to the Overseer? I mean, I guess you couldn't have seen it, but oh, man... Oh, man, the stories I have to tell you. Hold on a sec, I'm gonna take out a few bottles of dwarven ale and I'll tell you all about it!\"\r\n\r\nHe then pulls out some bottles from his backpack like he said he would, and he hands them to us.\r\n\r\n\"Uh, no bottles for us,\" the king of the underground says. \"We're still on active duty until all of our men are sent back safely to the underground base.\"\r\n\r\n\"Sure, no problem!\" Hadrik says, as he puts Peter and the king's bottles back in his backpack. \"So, anyway, where was I? Oh yeah, I was gonna start from the beginning. Let me tell you what happened right after I reached the door to the Overseer's secret base. Man, you guys are going to love this!\""
-        condition: b3_ch9_hadrik = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch09c_ending
-      - texts:
+      - condition: b3_ch9_hadrik = 1
+        texts:
           - source: scene_text
             paragraph: 52
             text: "I then pause for a few seconds, before I continue.\r\n\r\n\"So, anyway... do you have any plans yet about what we're going to do with all these unconscious rebels?\" I say. \"Do you think there's any chance that they'll find their way back to their minds by themselves?\"\r\n\r\n\"We were actually talking about that right before you joined us,\" Peter says. \"Flower told me that she'll try to guide as many of our people as she can to their sanctuaries, but that she'll need some time to rest after each trip, because she can't teleport too many times in a row without getting sick. I'll also be doing some guiding of my own, of course, but my progress will likely be much slower, because I'll need to fly around the ether instead of teleporting, for the most part.\"\r\n\r\nHe pauses.\r\n\r\n\"Either way, this is likely going to take a while,\" Peter continues. \"You people have already helped enough and deserve some rest. As soon as your whole group is awake, we'll talk to Breynan so he can teleport you back to the underground base. I'm pretty sure that he should still be waiting for us in the teleporter room.\""
           - source: scene_text_2
             paragraph: 42
             text: "\"What about you two?\" I ask Peter and the king. \"Won't you be coming back with us?\"\r\n\r\n\"We will stay here for a while longer to guard our unconscious comrades,\" Peter says. \"Just to be safe. You never know what enemies might be lurking just around the corner.\"\r\n\r\n\"Of course,\" I say. \"I suppose it never hurts to be too careful.\"\r\n\r\nAs we are talking, we see Hadrik running towards us and when he spots us, he makes a quick dash in our direction, reaching us in less than a second.\r\n\r\n\"Hahaha!\" Hadrik laughs. \"Did you guys see? Did you see what I did to the Overseer? I mean, I guess you couldn't have seen it, but oh, man... Oh, man, the stories I have to tell you. Hold on a sec, I'm gonna take out a few bottles of dwarven ale and I'll tell you all about it!\"\r\n\r\nHe then pulls out some bottles from his backpack like he said he would, and he hands them to us.\r\n\r\n\"Uh, no bottles for us,\" the king of the underground says. \"We're still on active duty until all of our men are sent back safely to the underground base.\"\r\n\r\n\"Sure, no problem!\" Hadrik says, as he puts Peter and the king's bottles back in his backpack. \"So, anyway, where was I? Oh yeah, I was gonna start from the beginning. Let me tell you what happened right after I reached the door to the Overseer's secret base. Man, you guys are going to love this!\""
-        condition: b3_ch9_hadrik = 1
         choices:
           - position: 1
             text: Continue
@@ -1487,11 +1492,11 @@ scenes:
               current_scene: b3_ch09c_credits
   - name: b3_ch09c_credits
     routes:
-      - texts:
+      - condition: b3_ch8_overseer2 = 0
+        texts:
           - source: scene_text
             paragraph: 54
             text: "Chapter 10 of book 3 is now available. Press on the button below to proceed.\r\n\r\nPlease be aware that this chapter will be divided into two separate sections, but there will only be one checkpoint, at the beginning of the chapter, so that you can still restart the chapter from the beginning in case you didn't save your game there manually.\r\n\r\n----Summary of the previous chapter----\r\n\r\nAfter a fierce battle in the ethereal plane, Barry and his friends managed to defeat the Overseer, with a little help from the king of the underground and Peter.\r\n\r\nNow that there is nobody left to claim the throne after the old king's death, an election is about to be held in the underground caverns, in order to establish who the rebels will nominate to be the new king of Ollendor."
-        condition: b3_ch8_overseer2 = 0
         choices:
           - position: 1
             text: Proceed to next chapter
@@ -1501,11 +1506,11 @@ scenes:
                   chapter_save: 1
                   checkpoint_rich: 1
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: b3_ch8_overseer2 = 1
+        texts:
           - source: scene_text
             paragraph: 55
             text: "Chapter 10 of book 3 is now available. Press on the button below to proceed.\r\n\r\nPlease be aware that this chapter will be divided into two separate sections, but there will only be one checkpoint, at the beginning of the chapter, so that you can still restart the chapter from the beginning in case you didn't save your game there manually.\r\n\r\n----Summary of the previous chapter----\r\n\r\nAfter a fierce battle in the ethereal plane, Barry and his friends finally managed to defeat the king of the underground and Peter. Once the battle was over, the Overseer's drones carried all of the unconscious rebels away from the battlefield, in order to lock them in a prison.\r\n\r\nHowever, instead of sending a green-eyed drone to talk to Barry and his team, the Overseer summoned them all to the royal palace, without giving them any other options to contact him.\r\n\r\nReluctantly, Barry and the others started heading towards the Ollendor castle, so that they could have one last discussion with the Overseer about his plans of ruling the city, now that the rebels no longer posed a problem for him."
-        condition: b3_ch8_overseer2 = 1
         choices:
           - position: 1
             text: Proceed to next chapter

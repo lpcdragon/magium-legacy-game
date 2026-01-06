@@ -12,8 +12,8 @@ scenes:
         paragraph: 42
         text: "This marks the end of the first Magium book.\r\n\r\nThe second book has been completed and is ready to unlock, but only the first eleven chapters of book 3 are available so far, with the next chapters to be released one by one, as I write them. (the main series will likely have 5 books in total)\r\n\r\nMy current estimate is that the 12th chapter of the third book should be released within the next few months.\r\n\r\nIf you already paid to unlock the 2nd book, you can tap on the button below to proceed. Otherwise, you will need to complete 25 achievements from the 1st book in order to unlock the second one.\r\n\r\nYou can see how many more achievements you need to complete in the achievements menu. \r\n\r\nI would also like to add that I strongly suggest you save the game now on a save slot you won't overwrite, if you're planning to start completing achievements, since otherwise you'll lose the progress of your current playthrough and you'll have to finish the game again in order to be able to progress to the next book.\r\n\r\nYou should also be careful to not uninstall the game, since all of the next books will be uploaded within the same app, and if you uninstall the game, all your local progress, including your achievements, will be lost.\r\n\r\nThank you for playing!\r\n\r\nP.S. If you enjoyed the game, don't forget to recommend it to your friends."
     routes:
-      - texts: []
-        condition: first_book_purchased = 1
+      - condition: first_book_purchased = 1
+        texts: []
         choices:
           - position: 1
             text: Proceed to book 2
@@ -34,8 +34,8 @@ scenes:
                   current_scene: b2_ch01a_intro
                   chapter_save: 1
                   checkpoint_rich: 1
-      - texts: []
-        condition: nb_of_unlocked_achievements >= 25 AND first_book_purchased = 0
+      - condition: nb_of_unlocked_achievements >= 25 AND first_book_purchased = 0
+        texts: []
         choices:
           - position: 1
             text: Proceed to book 2
@@ -56,8 +56,8 @@ scenes:
                   current_scene: b2_ch01a_intro
                   chapter_save: 1
                   checkpoint_rich: 1
-      - texts: []
-        condition: nb_of_unlocked_achievements < 25 AND first_book_purchased = 0
+      - condition: nb_of_unlocked_achievements < 25 AND first_book_purchased = 0
+        texts: []
         choices:
           - position: 1
             text: Restart game
@@ -101,15 +101,16 @@ scenes:
               current_scene: ch11b_concentrate
   - name: ch11b_freeze
     routes:
-      - texts:
+      - condition: premonition < 4
+        texts:
           - source: scene_text
             paragraph: 3
             text: "\"Kate,\" I say, \"could you freeze the whole area around us in order to take care of all the clones at the same time?\"\r\n\r\n\"Yes,\" Kate says, \"I was about to do just that.\"\r\n\r\nShe then sends a powerful wave of freezing magic all around us, which hits all of the clones at once. Immediately after the illusions disappear, Kate's freezing wave reverses its direction, and it hits us all before we get the time to react.\r\n\r\nAs the others each shake off the ice spell in their own way, I can feel myself slowly freezing to death, while my heartbeat gets slower and slower by the second.\r\n\r\n\"Kate, unfreeze him, quick!\" Daren says.\r\n\r\n\"I can't!\" Kate says. \"I don't know how!\"\r\n\r\nDaren rushes towards me and he tries to cast a healing spell of some sort on me, but it's too late for that. I can already feel my consciousness slipping away, as my vision starts to blur, little by little. I died shortly afterwards, without even finding out what it was that sent Kate's spell back against us."
-        condition: premonition < 4
-        set:
-          failed_checks:
-            - '[ Premonition check failed - level 4 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Premonition check failed - level 4 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -128,17 +129,18 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: premonition >= 4
+        texts:
           - source: scene_text
             paragraph: 4
             text: "\"Kate,\" I say, \"could you freeze the whole area around us in order to take care of all the clones at the same time?\"\r\n\r\nAs soon as I stop talking, I see a vision in which Kate blasts all of the clones with a wave of ice. Once they all disappear, Kate's freezing wave quickly reverses its direction, and it hits us all before we get the time to react.\r\n\r\n\"Yes,\" Kate answers me, \"I was about to do just that.\"\r\n\r\n\"Wait!\" I shout. \"Don't do it!\"\r\n\r\nKate is looking a little confused, but she stops her spell just in time.\r\n\r\n\"Why not?\" she asks me.\r\n\r\n\"I just had a premonition,\" I say. \"If you had cast that spell, it would have turned against us and frozen us all, right after the clones disappeared.\"\r\n\r\n\"So the clones are a trap, then?\" Hadrik asks."
           - source: scene_text_2
             paragraph: 3
             text: "\"Wait a minute!\" Arraka says. \"I think I got it!\"\r\n\r\n\"Do you recognize the spell?\" Kate asks.\r\n\r\n\"Yeah,\" Arraka says. \"This is actually one of Memphir's favorite illusion spells. No wonder he started teaching it to his followers.\"\r\n\r\n\"Memphir?\" Hadrik asks. \"Is that the name of the God of Fate?\"\r\n\r\n\"Yeah, that's him,\" Arraka says. \"The spell is designed in such a way that when all of the illusions get destroyed, the attackers get hit back with all of the spells they'd cast to slay the clones. I always used to fall for that stupid trick.\"\r\n\r\n\"How can you tell that it's the exact same spell?\" I ask her.\r\n\r\n\"If you pay close attention, you will see that all of the clones have an easily recognizable signature in their magical auras,\" Arraka says. \"The flow of their auras has a sort of slithering motion to it. Kind of like a snake moving in the grass. Do you get what I'm saying?\"\r\n\r\n\"Yeah, I think I get it,\" I say.\r\n\r\n\"Hey, I think I can see it too!\" Hadrik says. \"This is great! Now we just need to see which of them don't carry this signature, and we'll know who the originals are!\"\r\n\r\n\"Uh-huh,\" Arraka says. \"Good luck with that.\""
-        condition: premonition >= 4
-        set:
-          successful_checks:
-            - '[ Premonition check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Premonition check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -484,21 +486,22 @@ scenes:
               current_scene: ch11b_civilians2
   - name: ch11b_civilians2
     routes:
-      - texts:
+      - condition: perception >= 2
+        texts:
           - source: scene_text
             paragraph: 24
             text: "As the steam surrounds me, I suddenly notice some barely visible sparks starting to form next to me. This doesn't seem right. I need to get away from here, quick.\r\n\r\nJust as I fly out of the steam, the sparks I left behind turn into a big explosion that sends a powerful wave of air my way, which makes me spin around in mid-air for a few seconds.\r\n\r\n\"No, no, no, you're doing it all wrong!\" Arraka shouts at me from inside her amulet. \"Stop attacking the whole barrier and focus on just one point! Can't you see how slowly their supporting mage is reinforcing individual parts of the barrier? It's because he never learned how to properly localize his energy output! I kept telling him about it six hundred years ago, but the idiot wouldn't believe me until I demonstrated it to him by using a goddamned tree branch to break through his barrier and puncture his lungs.\"\r\n\r\nTaking advice from Arraka is not something I am particularly keen on doing right now, but as I take a look towards the skeleton's magical barrier, I can at least tell that she is not lying. The magical energy is spread thin throughout the barrier, which helps a great deal against spells with a wide area of effect, but it should leave it vulnerable against more focused attacks. I start charging up a lightning attack while I fly around in circles to avoid the other skeletons' magical projectiles.  When my attack is powerful enough, I stop for a second in order to get a clear shot, and then I aim directly at the supporting mage, making sure that all of the power behind my strike is concentrated on a single point."
           - source: scene_text_2
             paragraph: 20
             text: "My lightning strike goes straight through the barrier and it hits the supporting stillwater in the skull, killing him instantly. As the magical barrier starts to disappear, the other four skeletons that were hiding underneath it are now standing around, looking very confused. I take advantage of this and use a great deal of magical energy to create a large pool of acid underneath the stillwaters. \r\n\r\nThe skeletons were caught unawares and they had no time to react. As they all sink slowly into the pool of acid, the air elementalist uses a wind spell to lift the upper half of his body that hasn't yet melted into the air, but I quickly raise two chunks of rock from the ground, and I use them to smash the skeleton's head between them. Eventually, all of the skeletons sink fully into the acid, and I decide to start heading towards the ground, before my device's energy depletes completely. Once I get down, the pool of acid disappears, but the skeletons had already melted completely before this happened, which means that the necromancer is now the only enemy left standing."
-        condition: perception >= 2
-        set:
-          successful_checks:
-            - '[ Observation check successful - level 2 ]'
-          ac_ch11_stillwater: 1
-        achievement:
-          id: ac_ch11_stillwater
-          title: Stillwater slayer
+        effects:
+          - set:
+              successful_checks:
+                - '[ Observation check successful - level 2 ]'
+              ac_ch11_stillwater: 1
+            achievement:
+              id: ac_ch11_stillwater
+              title: Stillwater slayer
         choices:
           - position: 1
             text: Continue
@@ -506,7 +509,8 @@ scenes:
               - set:
                   current_scene: ch11b_sacrificial
                 condition: is_dead = 0
-      - texts:
+      - condition: perception < 2 AND hearing >= 3
+        texts:
           - source: scene_text
             paragraph: 25
             text: "As the steam surrounds me, I suddenly start to hear the sound of sparks crackling somewhere very close to me. This doesn't seem right. I need to get away from here, quick.\r\n\r\nJust as I fly out of the steam, the sparks I left behind turn into a big explosion that sends a powerful wave of air my way, which makes me spin around in mid-air for a few seconds.\r\n\r\n\"No, no, no, you're doing it all wrong!\" Arraka shouts at me from inside her amulet. \"Stop attacking the whole barrier and focus on just one point! Can't you see how slowly their supporting mage is reinforcing individual parts of the barrier? It's because he never learned how to properly localize his energy output! I kept telling him about it six hundred years ago, but the idiot wouldn't believe me until I demonstrated it to him by using a goddamned tree branch to break through his barrier and puncture his lungs.\""
@@ -527,16 +531,16 @@ scenes:
               get down, the pool of acid disappears, but the skeletons had
               already melted completely before this happened, which means that
               the necromancer is now the only enemy left standing.
-        condition: perception < 2 AND hearing >= 3
-        set:
-          successful_checks:
-            - '[ Hearing check successful - level 3 ]'
-          failed_checks:
-            - '[ Observation check failed - level 2 ]'
-          ac_ch11_stillwater: 1
-        achievement:
-          id: ac_ch11_stillwater
-          title: Stillwater slayer
+        effects:
+          - set:
+              successful_checks:
+                - '[ Hearing check successful - level 3 ]'
+              failed_checks:
+                - '[ Observation check failed - level 2 ]'
+              ac_ch11_stillwater: 1
+            achievement:
+              id: ac_ch11_stillwater
+              title: Stillwater slayer
         choices:
           - position: 1
             text: Continue
@@ -544,16 +548,17 @@ scenes:
               - set:
                   current_scene: ch11b_sacrificial
                 condition: is_dead = 0
-      - texts:
+      - condition: perception < 2 AND hearing < 3
+        texts:
           - source: scene_text
             paragraph: 26
             text: "There's no need to panic. I can just use my magical sense to tell where they are. As I start to attack the stillwaters again, I suddenly hear a loud crackling noise right next to me and immediately afterwards, a very powerful explosion sends me crashing into the ground. The explosion was too close to me for my magical shield to fully protect me, and I think I must have broken at least two ribs from that fall. \r\n\r\nI never get the chance to get back into the fight, because right after I hit the ground, a thick layer of rock presses itself onto me and it crushes me into a thick red paste in a matter of seconds."
-        condition: perception < 2 AND hearing < 3
-        set:
-          failed_checks:
-            - '[ Observation check failed - level 2 ]'
-            - '[ Hearing check failed - level 3 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Observation check failed - level 2 ]'
+                - '[ Hearing check failed - level 3 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -633,14 +638,14 @@ scenes:
               current_scene: ch11b_sacrificial
   - name: ch11b_sacrificial
     routes:
-      - texts:
+      - condition: ch11_strategy = 1
+        texts:
           - source: scene_text
             paragraph: 32
             text: "\"No!\" Zack shouts. \"I won't let it end like this!\"\r\n\r\nRight after he finishes his sentence, the necromancer takes a knife out of his robes and he uses it to stab himself in the chest. He then gets enveloped in a bright red light, and soon afterwards, he starts turning into ashes. \r\n\r\n\"The God of Death... shall have his prize...\" Zack says, just before he draws his last breath.\r\n\r\nAs we all gather around to look at the pile of ashes that the necromancer has turned into, Hadrik starts to laugh.\r\n\r\n\"As far as final words go, I've heard better!\" the dwarf says.\r\n\r\n\"That wasn't just some empty threat,\" Illuna says, while she looks around frantically, as if she were expecting something to blow up. \"That thing he just cast was a sacrificial spell. A kind of spell that requires the death of its caster as payment, in exchange for providing effects that would not be obtainable through normal means. The curse of death that the ogre shaman cast on me before we left the fort was also one of these spells. This isn't over yet...\"\r\n\r\n\"Relax,\" Hadrik says. \"If his all-powerful stillwater skeletons couldn't kill us, what do you expect him to do after he's already dead?\""
           - source: scene_text_2
             paragraph: 26
             text: "\"That's some tough talk coming from someone who couldn't even identify an obvious weakness in their enemy's defenses,\" Arraka says. \"You all would have been toast if it weren't for me. I'm the one who saved all of you losers. Where's my reward for that, huh?\"\r\n\r\n\"Oh, I've got your reward right here!\" Hadrik says, as he grabs Arraka's amulet from Flower's neck, and he starts spinning it by the chain.\r\n\r\n\"Wait,\" Flower says. \"Don't do that! Didn't I tell you that she has motion sickness?\"\r\n\r\n\"Really?\" Hadrik says, with a grin, as he continues to spin Arraka. \"Huh. I guess it must have slipped my mind.\""
-        condition: ch11_strategy = 1
         choices:
           - position: 1
             text: Put her down, Hadrik. It's not worth the bother.
@@ -657,14 +662,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch11b_spin
-      - texts:
+      - condition: ch11_strategy = 2
+        texts:
           - source: scene_text
             paragraph: 32
             text: "\"No!\" Zack shouts. \"I won't let it end like this!\"\r\n\r\nRight after he finishes his sentence, the necromancer takes a knife out of his robes and he uses it to stab himself in the chest. He then gets enveloped in a bright red light, and soon afterwards, he starts turning into ashes. \r\n\r\n\"The God of Death... shall have his prize...\" Zack says, just before he draws his last breath.\r\n\r\nAs we all gather around to look at the pile of ashes that the necromancer has turned into, Hadrik starts to laugh.\r\n\r\n\"As far as final words go, I've heard better!\" the dwarf says.\r\n\r\n\"That wasn't just some empty threat,\" Illuna says, while she looks around frantically, as if she were expecting something to blow up. \"That thing he just cast was a sacrificial spell. A kind of spell that requires the death of its caster as payment, in exchange for providing effects that would not be obtainable through normal means. The curse of death that the ogre shaman cast on me before we left the fort was also one of these spells. This isn't over yet...\"\r\n\r\n\"Relax,\" Hadrik says. \"If his all-powerful stillwater skeletons couldn't kill us, what do you expect him to do after he's already dead?\""
           - source: scene_text_2
             paragraph: 26
             text: "\"That's some tough talk coming from someone who couldn't even identify an obvious weakness in their enemy's defenses,\" Arraka says. \"You all would have been toast if it weren't for me. I'm the one who saved all of you losers. Where's my reward for that, huh?\"\r\n\r\n\"Oh, I've got your reward right here!\" Hadrik says, as he grabs Arraka's amulet from Flower's neck, and he starts spinning it by the chain.\r\n\r\n\"Wait,\" Flower says. \"Don't do that! Didn't I tell you that she has motion sickness?\"\r\n\r\n\"Really?\" Hadrik says, with a grin, as he continues to spin Arraka. \"Huh. I guess it must have slipped my mind.\""
-        condition: ch11_strategy = 2
         choices:
           - position: 1
             text: Put her down, Hadrik. It's not worth the bother.
@@ -681,14 +686,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch11b_spin
-      - texts:
+      - condition: ch11_strategy = 3
+        texts:
           - source: scene_text
             paragraph: 31
             text: "\"No!\" Zack shouts, as the barrier around him begins to disappear. \"I won't let it end like this!\"\r\n\r\nRight after he finishes his sentence, the necromancer takes a knife out of his robes and he uses it to stab himself in the chest. He then gets enveloped in a bright red light, and soon afterwards, he starts turning into ashes. \r\n\r\n\"The God of Death... shall have his prize...\" Zack says, just before he draws his last breath.\r\n\r\nAs we all gather around to look at the pile of ashes that the necromancer has turned into, Hadrik starts to laugh.\r\n\r\n\"As far as final words go, I've heard better!\" the dwarf says.\r\n\r\n\"That wasn't just some empty threat,\" Illuna says, while she looks around frantically, as if she were expecting something to blow up. \"That thing he just cast was a sacrificial spell. A kind of spell that requires the death of its caster as payment, in exchange for providing effects that would not be obtainable through normal means. The curse of death that the ogre shaman cast on me before we left the fort was also one of these spells. This isn't over yet...\"\r\n\r\n\"Relax,\" Hadrik says. \"If his all-powerful stillwater skeletons couldn't kill us, what do you expect him to do after he's already dead?\""
           - source: scene_text_2
             paragraph: 26
             text: "\"That's some tough talk coming from someone who couldn't even identify an obvious weakness in their enemy's defenses,\" Arraka says. \"You all would have been toast if it weren't for me. I'm the one who saved all of you losers. Where's my reward for that, huh?\"\r\n\r\n\"Oh, I've got your reward right here!\" Hadrik says, as he grabs Arraka's amulet from Flower's neck, and he starts spinning it by the chain.\r\n\r\n\"Wait,\" Flower says. \"Don't do that! Didn't I tell you that she has motion sickness?\"\r\n\r\n\"Really?\" Hadrik says, with a grin, as he continues to spin Arraka. \"Huh. I guess it must have slipped my mind.\""
-        condition: ch11_strategy = 3
         choices:
           - position: 1
             text: Put her down, Hadrik. It's not worth the bother.
@@ -705,14 +710,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch11b_spin
-      - texts:
+      - condition: ch11_strategy = 4
+        texts:
           - source: scene_text
             paragraph: 31
             text: "\"No!\" Zack shouts, as the barrier around him begins to disappear. \"I won't let it end like this!\"\r\n\r\nRight after he finishes his sentence, the necromancer takes a knife out of his robes and he uses it to stab himself in the chest. He then gets enveloped in a bright red light, and soon afterwards, he starts turning into ashes. \r\n\r\n\"The God of Death... shall have his prize...\" Zack says, just before he draws his last breath.\r\n\r\nAs we all gather around to look at the pile of ashes that the necromancer has turned into, Hadrik starts to laugh.\r\n\r\n\"As far as final words go, I've heard better!\" the dwarf says.\r\n\r\n\"That wasn't just some empty threat,\" Illuna says, while she looks around frantically, as if she were expecting something to blow up. \"That thing he just cast was a sacrificial spell. A kind of spell that requires the death of its caster as payment, in exchange for providing effects that would not be obtainable through normal means. The curse of death that the ogre shaman cast on me before we left the fort was also one of these spells. This isn't over yet...\"\r\n\r\n\"Relax,\" Hadrik says. \"If his all-powerful stillwater skeletons couldn't kill us, what do you expect him to do after he's already dead?\""
           - source: scene_text_2
             paragraph: 26
             text: "\"That's some tough talk coming from someone who couldn't even identify an obvious weakness in their enemy's defenses,\" Arraka says. \"You all would have been toast if it weren't for me. I'm the one who saved all of you losers. Where's my reward for that, huh?\"\r\n\r\n\"Oh, I've got your reward right here!\" Hadrik says, as he grabs Arraka's amulet from Flower's neck, and he starts spinning it by the chain.\r\n\r\n\"Wait,\" Flower says. \"Don't do that! Didn't I tell you that she has motion sickness?\"\r\n\r\n\"Really?\" Hadrik says, with a grin, as he continues to spin Arraka. \"Huh. I guess it must have slipped my mind.\""
-        condition: ch11_strategy = 4
         choices:
           - position: 1
             text: Put her down, Hadrik. It's not worth the bother.
@@ -764,7 +769,8 @@ scenes:
               current_scene: ch11b_hole
   - name: ch11b_hole
     routes:
-      - texts:
+      - condition: hearing < 4
+        texts:
           - source: scene_text
             paragraph: 36
             text: "While Hadrik and Arraka are talking, I hear the sound of stones smashing against the ground somewhere on the opposite side of the market square. As I turn around to identify the source of the sound, it takes me a few seconds to fully process the scene unfolding before my eyes.\r\n\r\nThere is a hole in the ground, with broken stones all around it at the place where I heard the noise, and Rose is just standing there in front of it, with her arms hanging besides her and a completely blank expression on her face, as a skeleton is hugging her tightly while slowly twisting a rusted knife into her heart. As the light leaves Rose's eyes completely, her attacker presses the knife harder into her chest, making her fall on her back, while the skeleton crumbles into pieces.\r\n\r\n\"Rose!\" Daren shouts, as he rushes towards her.\r\n\r\nWhen he reaches her, Daren starts casting a healing spell, but Rose does not react to it in any way. We all gather around the two of them, and watch them without saying a word, as Daren continues to cast healing spell after healing spell, while Rose is staring blankly into the distance, without moving a muscle.\r\n\r\n\"Rose, stay with me!\" Daren shouts, as he keeps desperately casting his spells."
@@ -774,18 +780,19 @@ scenes:
           - source: scene_3
             paragraph: 8
             text: "\"Hey, now, hold on there!\" Hadrik says. \"You can't just go and blame this all on yourself. Rose knew very well what she was getting into when she decided to stick with us after what happened yesterday with the noble. She made her own choice and she stuck by it until the end. She died with honor, and we should all respect her for that.\"\r\n\r\n\"What do you know about Rose?!\" Daren shouts furiously, all of a sudden. \"Do you think she wanted to live her last moments in a cesspool like this? Do you think she died happily, knowing that she left her little siblings behind to fend for themselves? Do you seriously think that everything in the world can be measured by your primitive values? What gives you the right to talk about Rose this way? Tell me!\""
-        condition: hearing < 4
-        set:
-          failed_checks:
-            - '[ Hearing check failed - level 4 ]'
-          ch11_saved_rose: 0
+        effects:
+          - set:
+              failed_checks:
+                - '[ Hearing check failed - level 4 ]'
+              ch11_saved_rose: 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch11b_revenant
-      - texts:
+      - condition: hearing = 4 AND perception < 4
+        texts:
           - source: scene_text
             paragraph: 37
             text: "While Hadrik and Arraka are talking, I hear the sound of stones starting to crumble somewhere on the opposite side of the market square. I turn around, in order to try and identify the source of the sound, but I don't see anyone in that direction except Rose.   \r\n\r\nSuddenly, the stones on the ground in front of Rose get sent flying into the air, as a skeleton emerges from underneath them and quickly uses a rusted knife to stab her in the heart. Rose had no time to react. At first, there was only shock in her eyes, but soon, her facial expression turned blank, while her arms hung beside her, motionless. As the light leaves Rose's eyes completely, her attacker presses the knife harder into her chest, making her fall on her back, while the skeleton crumbles into pieces.\r\n\r\n\"Rose!\" Daren shouts, as he rushes towards her.\r\n\r\nWhen he reaches her, Daren starts casting a healing spell, but Rose does not react to it in any way. We all gather around the two of them, and watch them without saying a word, as Daren continues to cast healing spell after healing spell, while Rose is staring blankly into the distance, without moving a muscle.\r\n\r\n\"Rose, stay with me!\" Daren shouts, as he keeps desperately casting his spells."
@@ -795,20 +802,21 @@ scenes:
           - source: scene_3
             paragraph: 8
             text: "\"Hey, now, hold on there!\" Hadrik says. \"You can't just go and blame this all on yourself. Rose knew very well what she was getting into when she decided to stick with us after what happened yesterday with the noble. She made her own choice and she stuck by it until the end. She died with honor, and we should all respect her for that.\"\r\n\r\n\"What do you know about Rose?!\" Daren shouts furiously, all of a sudden. \"Do you think she wanted to live her last moments in a cesspool like this? Do you think she died happily, knowing that she left her little siblings behind to fend for themselves? Do you seriously think that everything in the world can be measured by your primitive values? What gives you the right to talk about Rose this way? Tell me!\""
-        condition: hearing = 4 AND perception < 4
-        set:
-          failed_checks:
-            - '[ Observation failed - level 4 ]'
-          successful_checks:
-            - '[ Hearing check successful - level 4 ]'
-          ch11_saved_rose: 0
+        effects:
+          - set:
+              failed_checks:
+                - '[ Observation failed - level 4 ]'
+              successful_checks:
+                - '[ Hearing check successful - level 4 ]'
+              ch11_saved_rose: 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch11b_revenant
-      - texts:
+      - condition: hearing = 4 AND perception = 4 AND agility < 4
+        texts:
           - source: scene_text
             paragraph: 38
             text: "While Hadrik and Arraka are talking, I hear the sound of stones starting to crumble somewhere on the opposite side of the market square. I turn around, in order to try and identify the source of the sound, and I realize that the stones on the ground in front of Rose are all slightly cracked. I get a really ominous feeling about this, and before I get the time to think things through, my body moves on its own, and I start running towards Rose as fast as I can.\r\n\r\nBefore I get to reach her, all of the stones in front of Rose suddenly get sent flying into the air, as a skeleton emerges from underneath them and quickly uses a rusted knife to stab her in the heart. Rose had no time to react. At first, there was only shock in her eyes, but soon, her facial expression turned blank, while her arms hung beside her, motionless. As the light leaves Rose's eyes completely, her attacker presses the knife harder into her chest, making her fall on her back, while the skeleton crumbles into pieces.\r\n\r\n\"Rose!\" Daren shouts, as he rushes towards her.\r\n\r\nWhen he reaches her, Daren starts casting a healing spell, but Rose does not react to it in any way. We all gather around the two of them, and watch them without saying a word, as Daren continues to cast healing spell after healing spell, while Rose is staring blankly into the distance, without moving a muscle."
@@ -818,21 +826,22 @@ scenes:
           - source: scene_3
             paragraph: 10
             text: "\"This is my fault...\" Daren says, as he finally lets go of Rose. \"I was the one who offered to escort her home. I was the one who promised we'd protect her. I failed her. It's my fault that she's dead...\"\r\n\r\n\"Hey, now, hold on there!\" Hadrik says. \"You can't just go and blame this all on yourself. Rose knew very well what she was getting into when she decided to stick with us after what happened yesterday with the noble. She made her own choice and she stuck by it until the end. She died with honor, and we should all respect her for that.\"\r\n\r\n\"What do you know about Rose?!\" Daren shouts furiously, all of a sudden. \"Do you think she wanted to live her last moments in a cesspool like this? Do you think she died happily, knowing that she left her little siblings behind to fend for themselves? Do you seriously think that everything in the world can be measured by your primitive values? What gives you the right to talk about Rose this way? Tell me!\""
-        condition: hearing = 4 AND perception = 4 AND agility < 4
-        set:
-          successful_checks:
-            - '[ Hearing check successful - level 4 ]'
-            - '[ Observation check successful - level 4 ]'
-          failed_checks:
-            - '[ Speed check failed - level 4 ]'
-          ch11_saved_rose: 0
+        effects:
+          - set:
+              successful_checks:
+                - '[ Hearing check successful - level 4 ]'
+                - '[ Observation check successful - level 4 ]'
+              failed_checks:
+                - '[ Speed check failed - level 4 ]'
+              ch11_saved_rose: 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch11b_revenant
-      - texts:
+      - condition: hearing = 4 AND perception = 4 AND agility = 4
+        texts:
           - source: scene_text
             paragraph: 39
             text: "While Hadrik and Arraka are talking, I hear the sound of stones starting to crumble somewhere on the opposite side of the market square. I turn around, in order to try and identify the source of the sound, and I realize that the stones on the ground in front of Rose are all slightly cracked. I get a really ominous feeling about this, and before I get the time to think things through, my body moves on its own, and I start running towards Rose as fast as I can.\r\n\r\nJust as I reach her, all of the stones in front of Rose suddenly get sent flying into the air, as a skeleton emerges from underneath them and tries to stab her in the heart with a rusted knife. I pull the skeleton away from her and slam him into the ground, as I take out my own dagger and prepare to deliver the finishing blow. To my surprise, there was no need for me to stab the skeleton, because it had already crumbled to pieces the moment it hit the ground. \r\n\r\n\"Rose, are you alright?\" Daren shouts as he and all the others are running towards us.\r\n\r\n\"I, uh... Yes!\" Rose says. \"Thanks to Barry!\"\r\n\r\n\"Barry, how did you know what would happen?\" Kate asks me. \"Did the stat booster give you a premonition?\""
@@ -842,17 +851,17 @@ scenes:
           - source: scene_3
             paragraph: 9
             text: "\"Well, once was more than enough,\" Daren says. \"You didn't just save all of our lives by rewinding time, you may well have saved the entire world. But we can talk about this later. Right now, I need to heal everyone. We wouldn't want to be caught off guard by some other crazy duo of mages who are hunting for bounties.\"\r\n\r\nSoon after Daren starts to heal us, a loud booming noise suddenly starts to echo all throughout the city."
-        condition: hearing = 4 AND perception = 4 AND agility = 4
-        set:
-          successful_checks:
-            - '[ Hearing check successful - level 4 ]'
-            - '[ Observation check successful - level 4 ]'
-            - '[ Speed check successful - level 4 ]'
-          ch11_saved_rose: 1
-          ac_ch11_casualties: 1
-        achievement:
-          id: ac_ch11_casualties
-          title: No casualties
+        effects:
+          - set:
+              successful_checks:
+                - '[ Hearing check successful - level 4 ]'
+                - '[ Observation check successful - level 4 ]'
+                - '[ Speed check successful - level 4 ]'
+              ch11_saved_rose: 1
+              ac_ch11_casualties: 1
+            achievement:
+              id: ac_ch11_casualties
+              title: No casualties
         choices:
           - position: 1
             text: Continue
@@ -884,6 +893,13 @@ scenes:
       - source: scene_3
         paragraph: 11
         text: "The gnome clears his throat again.\r\n\r\n\"And now that the introductions are out of the way,\" Golmyck says, \"I believe it is finally time to give you all what you've been waiting for.\"\r\n\r\nThe gnome grins.\r\n\r\n\"Your first objectives!\" he says.\r\n\r\n-----End of book 1-----"
+    effects:
+      - set:
+          ac_ch11_average: 1
+        achievement:
+          id: ac_ch11_average
+          title: Average Joe
+        condition: available_points = 19
     choices:
       - position: 1
         text: Proceed towards book 2

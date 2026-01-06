@@ -6,14 +6,14 @@ scenes:
             - 'Checkpoint reached: Game saved.'
         condition: checkpoint_rich = 1
     routes:
-      - texts:
+      - condition: ch3_kate_badly_hurt = 0 AND ch3_bloodied = 0
+        texts:
           - source: scene_text
             paragraph: 222
             text: "Daren was waiting for us in front of our cave. The moment we got in hearing range of him, he started to rant about how we shouldn't have gone off on our own, and about how we should stick together at all times.\r\n\r\nKate simply waved him off, and went inside our cave to get a bit more sleep, after telling him that this morning's events have tired her out. When Daren asked me what she meant, I told him all about the duke of Bagelberry and his merry men, and how they ambushed us.\r\n\r\n\"You were lucky that you managed to get out of there alive,\" Daren said to me. \"Why did we even bother to have a strategy meeting yesterday if we were all going to ignore it afterwards anyway?\"\r\n\r\nAfter he's cooled off a bit, the two of us resumed our guard duty, posting ourselves in front of the cave's entrance.\r\n\r\nAs we stand guard, we start discussing about the tournament, and its organization as we've seen it thus far."
           - source: scene_text_2
             paragraph: 3
             text: "\"I just can't understand it,\" Daren tells me. \"What are the organizers thinking? They're letting people without any trace of magic join this contest, and they don't even bother to enforce a rule that prohibits fighting before they announce the objectives. It's like they don't even care about all the lives that are at stake!\"\r\n\r\n\"I don't think they do,\" I tell Daren. \"Do you remember what they made us agree to before joining the tournament? Whoever wins this championship will be obligated to come to Varathia's aid in case of an outside invasion. People only agreed to it because there hasn't been an attempt at invading Varathia in thousands of years, but I don't think that's the point. They just want the most powerful mage in the world to serve as their own personal scarecrow. They probably only care about whoever's going to win.\"\r\n\r\n\"But even so, if their goal is to get their hands on a powerful mage, why have they still not announced the objectives? Wouldn't it be in their best interest to get this tournament finished as quickly as possible?\""
-        condition: ch3_kate_badly_hurt = 0 AND ch3_bloodied = 0
         choices:
           - position: 1
             text: Maybe there are no objectives.
@@ -23,20 +23,27 @@ scenes:
                   checkpoint_rich: 0
                   ch4_objectives: 1
           - position: 2
-            text: Maybe they're waiting for our numbers to decrease.
+            text: Maybe they encountered some unexpected technical difficulties.
             effects:
               - set:
                   current_scene: ch4_intro2
                   checkpoint_rich: 0
                   ch4_objectives: 2
-      - texts:
+          - position: 3
+            text: Maybe they're waiting for our numbers to decrease.
+            effects:
+              - set:
+                  current_scene: ch4_intro2
+                  checkpoint_rich: 0
+                  ch4_objectives: 3
+      - condition: ch3_kate_badly_hurt = 0 AND ch3_bloodied = 1
+        texts:
           - source: scene_text
             paragraph: 223
             text: "Daren was waiting for us in front of our cave. The moment we got in hearing range of him, he started to rant about how we shouldn't have gone off on our own, but he stopped mid-sentence when we got closer and he saw all of Kate's cuts and bruises. He immediately rushed to her aid with a healing spell, and after that, she went back inside the cave to get some sleep, without saying another word. When Daren asked me what happened I told him all about the duke of Bagelberry and his merry men, and how they ambushed us.\r\n\r\n\"You were lucky that you managed to get out of there alive,\" Daren said to me. \"Why did we even bother to have a strategy meeting yesterday if we were all going to ignore it afterwards anyway?\"\r\n\r\nAfter he's cooled off a bit, the two of us resumed our guard duty, posting ourselves in front of the cave's entrance.\r\n\r\nAs we stand guard, we start discussing about the tournament, and its organization as we've seen it thus far."
           - source: scene_text_2
             paragraph: 4
             text: "\"I just can't understand it,\" Daren tells me. \"What are the organizers thinking? They're letting people without any trace of magic join this contest, and they don't even bother to enforce a rule that prohibits fighting before they announce the objectives. It's like they don't even care about all the lives that are at stake!\"\r\n\r\n\"I don't think they do,\" I tell Daren. \"Do you remember what they made us agree to before joining the tournament? Whoever wins this championship will be obligated to come to Varathia's aid in case of an outside invasion. People only agreed to it because there hasn't been an attempt at invading Varathia in thousands of years, but I don't think that's the point. They just want the most powerful mage in the world to serve as their own personal scarecrow. They probably only care about whoever's going to win.\"\r\n\r\n\"But even so, if their goal is to get their hands on a powerful mage, why have they still not announced the objectives? Wouldn't it be in their best interest to get this tournament finished as quickly as possible?\""
-        condition: ch3_kate_badly_hurt = 0 AND ch3_bloodied = 1
         choices:
           - position: 1
             text: Maybe there are no objectives.
@@ -46,17 +53,24 @@ scenes:
                   checkpoint_rich: 0
                   ch4_objectives: 1
           - position: 2
-            text: Maybe they're waiting for our numbers to decrease.
+            text: Maybe they encountered some unexpected technical difficulties.
             effects:
               - set:
                   current_scene: ch4_intro2
                   checkpoint_rich: 0
                   ch4_objectives: 2
-      - texts:
+          - position: 3
+            text: Maybe they're waiting for our numbers to decrease.
+            effects:
+              - set:
+                  current_scene: ch4_intro2
+                  checkpoint_rich: 0
+                  ch4_objectives: 3
+      - condition: ch3_kate_badly_hurt = 1
+        texts:
           - source: scene_text
             paragraph: 224
             text: "Daren and I resumed our guard duty, posting ourselves in front of the cave's entrance.\r\n\r\nAs we stand guard, we start discussing about the tournament, and its organization as we've seen it thus far.\r\n\r\n\"I just can't understand it,\" Daren tells me. \"What are the organizers thinking? They're letting people without any trace of magic join this contest, and they don't even bother to enforce a rule that prohibits fighting before they announce the objectives. It's like they don't even care about all the lives that are at stake!\"\r\n\r\n\"I don't think they do,\" I tell Daren. \"Do you remember what they made us agree to before joining the tournament? Whoever wins this championship will be obligated to come to Varathia's aid in case of an outside invasion. People only agreed to it because there hasn't been an attempt at invading Varathia in thousands of years, but I don't think that's the point. They just want the most powerful mage in the world to serve as their own personal scarecrow. They probably only care about whoever's going to win.\"\r\n\r\n\"But even so, if their goal is to get their hands on a powerful mage, why have they still not announced the objectives? Wouldn't it be in their best interest to get this tournament finished as quickly as possible?\""
-        condition: ch3_kate_badly_hurt = 1
         choices:
           - position: 1
             text: Maybe there are no objectives.
@@ -66,22 +80,29 @@ scenes:
                   checkpoint_rich: 0
                   ch4_objectives: 1
           - position: 2
-            text: Maybe they're waiting for our numbers to decrease.
+            text: Maybe they encountered some unexpected technical difficulties.
             effects:
               - set:
                   current_scene: ch4_intro2
                   checkpoint_rich: 0
                   ch4_objectives: 2
+          - position: 3
+            text: Maybe they're waiting for our numbers to decrease.
+            effects:
+              - set:
+                  current_scene: ch4_intro2
+                  checkpoint_rich: 0
+                  ch4_objectives: 3
   - name: ch4_intro2
     routes:
-      - texts:
+      - condition: ch4_objectives = 1
+        texts:
           - source: scene_text
             paragraph: 225
             text: "\"Maybe there are no objectives. Maybe this really is a life and death tournament, and they're just waiting to see who will be the last man standing.\"\r\n\r\n\"By the gods, Barry! Don't even joke about something like that. If that were true, then this tournament would turn into one of the biggest bloodbaths of this century. I refuse to believe that the rulers of one of the greatest civilizations in our world would turn to such barbarity.\"\r\n\r\nBefore we get to continue our conversation, we sense someone approaching our location. Kate's barrier spell must have worn off.\r\n\r\n\"Keep your guard up, Barry!\"\r\n\r\nAs this person approaches, we can sense his magical aura more clearly. His magical aura is just as weak as that of the crossbowmen from before. Is this a survivor from our last battle, looking to avenge his fallen comrades?\r\n\r\nWhen he gets within visual range of us, we discover that he is rather young for a warrior, and he isn't wearing any protective gear. He seems to be somewhere in his late teens, but no older than twenty, and he's wearing loose pants and a loose tunic, not much different from clothes one would normally change into before going to bed. The fact that he's walking with his eyes closed and his hands in his pockets is not really helping his case either. He looks like he just got out of bed to get a midnight snack, and definitely not like a participant in a life and death tournament. However, he can't be one of the locals either, since we would have been immediately notified to not harm him."
           - source: scene_text_2
             paragraph: 5
             text: "\"Good morrow, lad!\" Daren shouts after the boy. \"Lovely day for a walk, isn't it? What business would you have with us? If you are lost, we'd be more than happy to give you directions!\" \r\n\r\nWith Daren, it's hard to tell when he's being sarcastic or sincere, since there are no hints in his look or his tone of voice, and as I've known him so far he'd be capable of either of those things in this situation. Our young visitor doesn't seem to have taken offense at Daren's remark, and smiles politely with his eyes still closed.\r\n\r\n\"There's no need,\" the boy answers. \"I was looking for some old friends of mine when I sensed there was a fellow stillwater nearby, so I just had to stop by and say hello. There's so few of us nowadays, that it would be a shame to not at least greet each other in passing! My name is Eiden. Pleased to meet you!\"\r\n\r\nMy whole body freezes for a second. An actual stillwater? Here? No... No. I should calm down. It's likely just some other guy who came up with the same idea as me. I refuse to fall for my own trick! \r\n\r\nSeeing that I don't say anything, Daren replies in my stead.\r\n\r\n\"Don't mind him! Barry's a little shy. I'm sure he's also pleased to make your acquaintance. My name's Daren.\"\r\n\r\n\"Oh? Then you must be the healer in armor I've been hearing so much about! And it seems that you also have a third member in your party. A survivor of the Beacon of Hope, no less. I did not know any of them were still alive.\""
-        condition: ch4_objectives = 1
         choices:
           - position: 1
             text: What's the Beacon of Hope?
@@ -93,14 +114,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch4_survivor
-      - texts:
+      - condition: ch4_objectives = 2
+        texts:
           - source: scene_text
             paragraph: 226
             text: "\"Maybe they encountered some unexpected technical difficulties. Maybe they're working to fix them as we speak, and we'll receive our objectives before noon.\"\r\n\r\n\"I really hope you're right, Barry. I just can't bring myself to believe that they're doing this intentionally...\"\r\n\r\nBefore we get to continue our conversation, we sense someone approaching our location. Kate's barrier spell must have worn off.\r\n\r\n\"Keep your guard up, Barry!\"\r\n\r\nAs this person approaches, we can sense his magical aura more clearly. His magical aura is just as weak as that of the crossbowmen from before. Is this a survivor from our last battle, looking to avenge his fallen comrades?\r\n\r\nWhen he gets within visual range of us, we discover that he is rather young for a warrior, and he isn't wearing any protective gear. He seems to be somewhere in his late teens, but no older than twenty, and he's wearing loose pants and a loose tunic, not much different from clothes one would normally change into before going to bed. The fact that he's walking with his eyes closed and his hands in his pockets is not really helping his case either. He looks like he just got out of bed to get a midnight snack, and definitely not like a participant in a life and death tournament. However, he can't be one of the locals either, since we would have been immediately notified to not harm him."
           - source: scene_text_2
             paragraph: 6
             text: "\"Good morrow, lad!\" Daren shouts after the boy. \"Lovely day for a walk, isn't it? What business would you have with us? If you are lost, we'd be more than happy to give you directions!\" \r\n\r\nWith Daren, it's hard to tell when he's being sarcastic or sincere, since there are no hints in his look or his tone of voice, and as I've known him so far he'd be capable of either of those things in this situation. Our young visitor doesn't seem to have taken offense at Daren's remark, and smiles politely with his eyes still closed.\r\n\r\n\"There's no need,\" the boy answers. \"I was looking for some old friends of mine when I sensed there was a fellow stillwater nearby, so I just had to stop by and say hello. There's so few of us nowadays, that it would be a shame to not at least greet each other in passing! My name is Eiden. Pleased to meet you!\"\r\n\r\nMy whole body freezes for a second. An actual stillwater? Here? No... No. I should calm down. It's likely just some other guy who came up with the same idea as me. I refuse to fall for my own trick! \r\n\r\nSeeing that I don't say anything, Daren replies in my stead.\r\n\r\n\"Don't mind him! Barry's a little shy. I'm sure he's also pleased to make your acquaintance. My name's Daren.\"\r\n\r\n\"Oh? Then you must be the healer in armor I've been hearing so much about! And it seems that you also have a third member in your party. A survivor of the Beacon of Hope, no less. I did not know any of them were still alive.\""
-        condition: ch4_objectives = 2
         choices:
           - position: 1
             text: What's the Beacon of Hope?
@@ -112,14 +133,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch4_survivor
-      - texts:
+      - condition: ch4_objectives = 3
+        texts:
           - source: scene_text
             paragraph: 227
             text: "\"Maybe they're waiting for our numbers to decrease. Maybe they weren't expecting such a high number of participants and they're waiting for us to kill each other while we wait for the objectives.\"\r\n\r\n\"Well, if that's their plan, then it's working magnificently for them. I just hope you're wrong about this.\"\r\n\r\nBefore we get to continue our conversation, we sense someone approaching our location. Kate's barrier spell must have worn off.\r\n\r\n\"Keep your guard up, Barry!\"\r\n\r\nAs this person approaches, we can sense his magical aura more clearly. His magical aura is just as weak as that of the crossbowmen from before. Is this a survivor from our last battle, looking to avenge his fallen comrades?\r\n\r\nWhen he gets within visual range of us, we discover that he is rather young for a warrior, and he isn't wearing any protective gear. He seems to be somewhere in his late teens, but no older than twenty, and he's wearing loose pants and a loose tunic, not much different from clothes one would normally change into before going to bed. The fact that he's walking with his eyes closed and his hands in his pockets is not really helping his case either. He looks like he just got out of bed to get a midnight snack, and definitely not like a participant in a life and death tournament. However, he can't be one of the locals either, since we would have been immediately notified to not harm him."
           - source: scene_text_2
             paragraph: 7
             text: "\"Good morrow, lad!\" Daren shouts after the boy. \"Lovely day for a walk, isn't it? What business would you have with us? If you are lost, we'd be more than happy to give you directions!\" \r\n\r\nWith Daren, it's hard to tell when he's being sarcastic or sincere, since there are no hints in his look or his tone of voice, and as I've known him so far he'd be capable of either of those things in this situation. Our young visitor doesn't seem to have taken offense at Daren's remark, and smiles politely with his eyes still closed.\r\n\r\n\"There's no need,\" the boy answers. \"I was looking for some old friends of mine when I sensed there was a fellow stillwater nearby, so I just had to stop by and say hello. There's so few of us nowadays, that it would be a shame to not at least greet each other in passing! My name is Eiden. Pleased to meet you!\"\r\n\r\nMy whole body freezes for a second. An actual stillwater? Here? No... No. I should calm down. It's likely just some other guy who came up with the same idea as me. I refuse to fall for my own trick! \r\n\r\nSeeing that I don't say anything, Daren replies in my stead.\r\n\r\n\"Don't mind him! Barry's a little shy. I'm sure he's also pleased to make your acquaintance. My name's Daren.\"\r\n\r\n\"Oh? Then you must be the healer in armor I've been hearing so much about! And it seems that you also have a third member in your party. A survivor of the Beacon of Hope, no less. I did not know any of them were still alive.\""
-        condition: ch4_objectives = 3
         choices:
           - position: 1
             text: What's the Beacon of Hope?
@@ -224,6 +245,7 @@ scenes:
         effects:
           - set:
               current_scene: ch4_dave_vs_eiden
+            condition: ch1_show_yourself != 2
           - set:
               current_scene: ch4_face_shown
             condition: ch1_show_yourself = 2
@@ -332,7 +354,8 @@ scenes:
               current_scene: ch4_barry_vs_dave
   - name: ch4_barry_vs_dave
     routes:
-      - texts:
+      - condition: ch3_kate_badly_hurt = 0 AND ch3_bloodied = 0
+        texts:
           - source: scene_text
             paragraph: 237
             text: "\"What happened? Where's the stillwater?\" he asks me.\r\n\r\n\"Forget the stillwater. Look who came to greet us.\"\r\n\r\nDave's henchmen started talking amongst themselves. It seems they are not fully convinced they should risk going into battle against both the legendary hero Daren and a stillwater at the same time. \r\n\r\nI take advantage of this and call for Kate. \r\n\r\n\"Kate! We're being attacked! Come quick!\"\r\n\r\n\"Stop shouting, I'm right here,\" Kate says, as she exits the cave. \"As if anyone could sleep with this stench. It smells worse than all the fields of corpses we've passed on our way here.\"\r\n\r\nShe addresses Cutthroat Dave's men.\r\n\r\n\"Good gods, we've already passed three lakes since we arrived. Three! One single dive in any of them would have done wonders. Maybe with a big rock tied to your feet in order to make sure to remove the filth for good.\"\r\n\r\n\"Who's the loud-mouthed wench?\" Cutthroat Dave asks me. \"We've been here for little more than a day and you've already bought a whore? Couldn't you have kept it in your pants at least until the end of the tournament?\"\r\n\r\nOne of Kate's eyes is twitching. Here we go again..."
@@ -342,7 +365,6 @@ scenes:
           - source: scene_3
             paragraph: 7
             text: "\"We'll tie him up, leave him here, and let the gods decide his fate.\"\r\n\r\nKate looks as though she's considering whether to simply execute Cutthroat Dave without Daren's consent. She decides against it, probably not wanting to push her luck. Instead she addresses me.\r\n\r\n\"Barry, say something to him. He listens to you.\""
-        condition: ch3_kate_badly_hurt = 0 AND ch3_bloodied = 0
         choices:
           - position: 1
             text: Try to persuade Daren to agree with Kate
@@ -354,22 +376,22 @@ scenes:
             effects:
               - set:
                   current_scene: ch4_agree
-      - texts:
+      - condition: ch3_kate_badly_hurt = 0 AND ch3_bloodied = 1
+        texts:
           - source: scene_text
             paragraph: 245
             text: "\"What happened? Where's the stillwater?\" he asks me.\r\n\r\n\"Forget the stillwater. Look who came to greet us.\"\r\n\r\nDave's henchmen started talking amongst themselves. It seems they are not fully convinced they should risk going into battle against both the legendary hero Daren and a stillwater at the same time. \r\n\r\nI take advantage of this and call for Kate. \r\n\r\n\"Kate! We're being attacked! Come quick!\"\r\n\r\nThere's no answer. I try to call for her again, but I still get no response. I guess our brawl with the crossbowmen must have taken a bigger toll on her than she let on. It seems it's going to be just me and Daren for the duration of this fight. I'd better put that stat device to good use.\r\n\r\n\"What are you lot so scared of?\" Dave asks his men. \"I took down that sad excuse for a hero by myself yesterday. Don't believe everything you hear on the street. His legends are just as full of crap as those of stillwaters. This is the real world!\""
-        condition: ch3_kate_badly_hurt = 0 AND ch3_bloodied = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch4_strategy
-      - texts:
+      - condition: ch3_kate_badly_hurt = 1
+        texts:
           - source: scene_text
             paragraph: 246
             text: "\"What happened? Where's the stillwater?\" he asks me.\r\n\r\n\"Forget the stillwater. Look who came to greet us.\"\r\n\r\nDave's henchmen started talking amongst themselves. It seems they are not fully convinced they should risk going into battle against both the legendary hero Daren and a stillwater at the same time. \r\n\r\nI can't risk calling for Kate to help given her current condition. It's going to be just me and Daren for the duration of this fight. I'd better put that stat device to good use.\r\n\r\n\"What are you lot so scared of?\" Dave asks his men. \"I took down that sad excuse for a hero by myself yesterday. Don't believe everything you hear on the street. His legends are just as full of crap as those of stillwaters. This is the real world!\""
-        condition: ch3_kate_badly_hurt = 1
         choices:
           - position: 1
             text: Continue
@@ -477,11 +499,11 @@ scenes:
               current_scene: ch4_barry_vs_dave
   - name: ch4_strategy
     routes:
-      - texts:
+      - condition: ch3_tactics = 1
+        texts:
           - source: scene_text
             paragraph: 247
             text: "\"This is it, Barry,\" Daren says. \"Remember our strategy meeting yesterday? If you could just manage to keep Cutthroat Dave busy until I finish his henchmen, it could mean the difference between life and death.\"\r\n\r\n\"I, uh... This may seem like a rather stupid question, given our situation, but... Do you happen to have a spare dagger I could use?\"\r\n\r\nDaren shakes his head in disapproval and hands me a dagger from his belt. \r\n\r\n\"Really, Barry. There were dozens of daggers on the ground you could have picked on our way here. Try to take this more seriously.\""
-        condition: ch3_tactics = 1
         choices:
           - position: 1
             text: Try to keep Cutthroat Dave busy while Daren defeats the others
@@ -493,11 +515,11 @@ scenes:
             effects:
               - set:
                   current_scene: ch4_defeat
-      - texts:
+      - condition: ch3_tactics = 2
+        texts:
           - source: scene_text
             paragraph: 248
             text: "\"Barry,\" Daren says. \"Remember our strategy meeting yesterday? This is your time to shine. I couldn't take out Dave yesterday, but maybe you can. I will take on his henchmen in the meantime.\"\r\n\r\n\"I, uh... This may seem like a rather stupid question, given our situation, but... Do you happen to have a spare dagger I could use?\"\r\n\r\nDaren shakes his head in disapproval and hands me a dagger from his belt. \r\n\r\n\"Really, Barry. There were dozens of daggers on the ground you could have picked on our way here. Try to take this more seriously.\""
-        condition: ch3_tactics = 2
         choices:
           - position: 1
             text: Try to keep Cutthroat Dave busy while Daren defeats the others
@@ -509,11 +531,11 @@ scenes:
             effects:
               - set:
                   current_scene: ch4_defeat
-      - texts:
+      - condition: ch3_tactics = 3
+        texts:
           - source: scene_text
             paragraph: 249
             text: "\"Barry,\" Daren says. \"I know this isn't what we talked about yesterday during our strategy meeting, but I don't think I can fight all these thugs by myself, especially considering my weakness to Dave's technique. Is there any way you could join the fight? Even keeping their leader busy for a while could mean the difference between life and death.\"\r\n\r\n\"I, uh... This may seem like a rather stupid question, given our situation, but... Do you happen to have a spare dagger I could use?\"\r\n\r\nDaren shakes his head in disapproval and hands me a dagger from his belt. \r\n\r\n\"Really, Barry. There were dozens of daggers on the ground you could have picked on our way here. Try to take this more seriously.\""
-        condition: ch3_tactics = 3
         choices:
           - position: 1
             text: Try to keep Cutthroat Dave busy while Daren defeats the others
@@ -527,22 +549,22 @@ scenes:
                   current_scene: ch4_defeat
   - name: ch4_busy
     routes:
-      - texts:
+      - condition: ch3_tactics <> 1
+        texts:
           - source: scene_text
             paragraph: 250
             text: "\"I'd rather try to distract Dave than fight him head on. I'm not very confident in my combat skills at this point.\"\r\n\r\n\"And how do you plan to grab his attention?\"\r\n\r\n\"Watch this.\"\r\n\r\nI shout to Dave as loud as I can, in a very pathetic and pleading voice.\r\n\r\n\"Dave, please! Have mercy! You can do whatever you want with Daren. Just spare me my life! Please, I beg of you!\"\r\n\r\n\"Hahahaha! You won't get any mercy from me, you pathetic little worm. Blame your fate for having been unlucky enough to cross paths with Cutthroat Dave! I'm going to use your entrails to decorate my cave.\"\r\n\r\n\"Aaahh\" I scream like a little girl and run for the trees on the opposite side of the cutthroat.\r\n\r\n\"Come back here, you cowardly dog. Men, I'll leave this beaten old relic to you. The stillwater's mine!\"\r\n\r\nDaren grins at me, and then he engages the thugs.\r\n\r\nI enter the shade of the forest, and wait for Dave to follow me in. If I play my cards right, I can use the trees as cover long enough for Daren to finish off the cutthroats.\r\n\r\nDave is still running towards me, but his knives have a life of their own, and they've already started scouting the forest for me."
-        condition: ch3_tactics <> 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch4_busy2
-      - texts:
+      - condition: ch3_tactics = 1
+        texts:
           - source: scene_text
             paragraph: 251
             text: "\"Alright, time for me to grab his attention, then.\"\r\n\r\n\"And how do you plan on doing that?\"\r\n\r\n\"Watch this.\"\r\n\r\nI shout to Dave as loud as I can, in a very pathetic and pleading voice.\r\n\r\n\"Dave, please! Have mercy! You can do whatever you want with Daren. Just spare me my life! Please, I beg of you!\"\r\n\r\n\"Hahahaha! You won't get any mercy from me, you pathetic little worm. Blame your fate for having been unlucky enough to cross paths with Cutthroat Dave! I'm going to use your entrails to decorate my cave.\"\r\n\r\n\"Aaahh\" I scream like a little girl and run for the trees on the opposite side of the cutthroat.\r\n\r\n\"Come back here, you cowardly dog. Men, I'll leave this beaten old relic to you. The stillwater's mine!\"\r\n\r\nDaren grins at me, and then he engages the thugs.\r\n\r\nI enter the shade of the forest, and wait for Dave to follow me in. If I play my cards right, I can use the trees as cover long enough for Daren to finish off the cutthroats.\r\n\r\nDave is still running towards me, but his knives have a life of their own, and they've already started scouting the forest for me."
-        condition: ch3_tactics = 1
         choices:
           - position: 1
             text: Continue
@@ -551,14 +573,15 @@ scenes:
                   current_scene: ch4_busy2
   - name: ch4_busy2
     routes:
-      - texts:
+      - condition: reflexes = 3
+        texts:
           - source: scene_text
             paragraph: 252
             text: "The knives are incredibly fast, but my sharp reflexes help me get out of their way just in time, even when they catch me by surprise. \r\n\r\n\"Come out here and face me, you coward!\" Dave calls out to me. \"If I knew this tournament would be so pathetic, I would've just stayed home where at least the people I killed had the dignity to AARGHHHHHHH\"\r\n\r\nI turn around to see what happened, and I see Daren, with his sword in Cutthroat Dave's ribs, pinning him to a pine tree. \r\n\r\n\"Thanks for letting me know where you were,\" says Daren. \"I would've never found you if not for your constant yammering.\"\r\n\r\n\"You want me to mop the floor with you again, healer?! You think I can't fight you both?\"\r\n\r\nHe attempts to send his flying knives into Daren, but because of the pain, he can't take full control of them and they drop to the ground before reaching him. Daren takes his sword out of the cutthroat and punches him in the stomach with brutal force. Dave falls on his rear, trying to gasp for air.\r\n\r\n\"You're not fighting anyone, Dave. You're finished. We're going to tie you to this tree, and let the gods decide your fate.\""
-        condition: reflexes = 3
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 3 ]'
         choices:
           - position: 1
             text: Try to persuade Daren to kill him instead
@@ -573,16 +596,17 @@ scenes:
               - set:
                   current_scene: ch4_daren_spare
                 condition: is_dead = 0
-      - texts:
+      - condition: reflexes < 3 AND agility = 3
+        texts:
           - source: scene_text
             paragraph: 253
             text: "One of the knives catches me by surprise, and grazes my shoulder. \r\n\r\nSince my reflexes are not good enough to dodge the flying daggers when they catch me by surprise, I try to outrun them, instead. The knives are not fast enough to keep up with me, which makes them get stuck in a tree every time I quickly change my direction.\r\n\r\n\"Come out here and face me, you coward!\" Dave calls out to me. \"If I knew this tournament would be so pathetic, I would've just stayed home where at least the people I killed had the dignity to AARGHHHHHHH\"\r\n\r\nI turn around to see what happened, and I see Daren, with his sword in Cutthroat Dave's ribs, pinning him to a pine tree. \r\n\r\n\"Thanks for letting me know where you were,\" says Daren. \"I would've never found you if not for your constant yammering.\"\r\n\r\n\"You want me to mop the floor with you again, healer?! You think I can't fight you both?\"\r\n\r\nHe attempts to send his flying knives into Daren, but because of the pain, he can't take full control of them and they drop to the ground before reaching him. Daren takes his sword out of the cutthroat and punches him in the stomach with brutal force. Dave falls on his rear, trying to gasp for air.\r\n\r\n\"You're not fighting anyone, Dave. You're finished. We're going to tie you to this tree, and let the gods decide your fate.\""
-        condition: reflexes < 3 AND agility = 3
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 3 ]'
-          failed_checks:
-            - '[ Reflexes check failed - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 3 ]'
+              failed_checks:
+                - '[ Reflexes check failed - level 3 ]'
         choices:
           - position: 1
             text: Try to persuade Daren to kill him instead
@@ -597,20 +621,21 @@ scenes:
               - set:
                   current_scene: ch4_daren_spare
                 condition: is_dead = 0
-      - texts:
+      - condition: reflexes < 3 AND agility < 3 AND perception = 3
+        texts:
           - source: scene_text
             paragraph: 254
             text: "One of the knives catches me by surprise, and grazes my shoulder. I try to move constantly between the trees in order to lose his flying daggers but they're faster than me.\r\n\r\nLuckily, with my observation skills, if I focus hard enough, I can pretty much pay attention to all of the knives at the same time, which is more than enough to keep me out of harm's way until Daren takes care of the others.\r\n\r\n\"Come out here and face me, you coward!\" Dave calls out to me. \"If I knew this tournament would be so pathetic, I would've just stayed home where at least the people I killed had the dignity to AARGHHHHHHH\"\r\n\r\nI turn around to see what happened, and I see Daren, with his sword in Cutthroat Dave's ribs, pinning him to a pine tree."
           - source: scene_text_2
             paragraph: 17
             text: "\"Thanks for letting me know where you were,\" says Daren. \"I would've never found you if not for your constant yammering.\"\r\n\r\n\"You want me to mop the floor with you again, healer?! You think I can't fight you both?\"\r\n\r\nHe attempts to send his flying knives into Daren, but because of the pain, he can't take full control of them and they drop to the ground before reaching him. Daren takes his sword out of the cutthroat and punches him in the stomach with brutal force. Dave falls on his rear, trying to gasp for air.\r\n\r\n\"You're not fighting anyone, Dave. You're finished. We're going to tie you to this tree, and let the gods decide your fate.\""
-        condition: reflexes < 3 AND agility < 3 AND perception = 3
-        set:
-          successful_checks:
-            - '[ Observation check successful - level 3 ]'
-          failed_checks:
-            - '[ Reflexes check failed - level 3 ]'
-            - '[ Speed check failed - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Observation check successful - level 3 ]'
+              failed_checks:
+                - '[ Reflexes check failed - level 3 ]'
+                - '[ Speed check failed - level 3 ]'
         choices:
           - position: 1
             text: Try to persuade Daren to kill him instead
@@ -625,20 +650,21 @@ scenes:
               - set:
                   current_scene: ch4_daren_spare
                 condition: is_dead = 0
-      - texts:
+      - condition: reflexes < 3 AND agility < 3 AND perception < 3
+        texts:
           - source: scene_text
             paragraph: 255
             text: "One of the knives catches me by surprise, and grazes my shoulder. I try to move constantly between the trees in order to lose his flying daggers but they're faster than me.  \r\n\r\nThere's two of them to my left, and three more to the right. Or is that four to the right? They're so fast that I can barely keep track of them. His knives have managed to corner me and they're now all facing me menacingly, floating in the air, just ready to strike.\r\n\r\nCutthroat Dave strolls in, casually from behind a tree, with a grin as big as his face.\r\n\r\n\"No use crying for mercy now, boy. Don't think I'm going to give you an easy death. My knives like to play with their prey before they finish it. Say your prayers, you sniveling little git. Cutthroat Dave's going to enjoy AAAARRRGHHHHHH\"\r\n\r\nA pillar of fire appears in place of where Cutthroat Dave was originally standing, and his gloating gets replaced with desperate screams of agony. The fire completely ignores all of the vegetation around it, and when it dies out, I see that nothing remains of the cutthroat except for his ashes, that are now scattering in the wind."
           - source: scene_text_2
             paragraph: 18
             text: "Shortly after, Eiden emerges from the shadows, with his usual smile on his face. It doesn't take me long to realize who was behind the previous display of fireworks.\r\n\r\n\"See, Barry, this is how you deal with a vermin infestation. Tell me, what kind of a mailman dies before setting foot out of the post office? I have half a mind to file a complaint for your shoddy services.\"\r\n\r\n\"I'm... really sorry, I promise I'll do better next... time?\"\r\n\r\n\"That's the spirit!\"\r\n\r\n\"Barry!\" I can hear Daren shout from outside the forest. \r\n\r\nA quick look outside shows me that all of Dave's henchmen have been dealt with, and Daren is now rushing towards my location.\r\n\r\nAs I turn back, I find to my surprise that Eiden is nowhere to be seen. He must have teleported away while I wasn't looking. \r\n\r\n\"Deliver my message, Barry,\" I can hear Eiden's voice echo from the trees around me. \"And do not fail me again.\""
-        condition: reflexes < 3 AND agility < 3 AND perception < 3
-        set:
-          failed_checks:
-            - '[ Reflexes check failed - level 3 ]'
-            - '[ Speed check failed - level 3 ]'
-            - '[ Observation check failed - level 3 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Reflexes check failed - level 3 ]'
+                - '[ Speed check failed - level 3 ]'
+                - '[ Observation check failed - level 3 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Next chapter
@@ -728,22 +754,22 @@ scenes:
               ch4_spared_dave: 1
   - name: ch4_defeat
     routes:
-      - texts:
+      - condition: ch3_tactics <> 2
+        texts:
           - source: scene_text
             paragraph: 260
             text: "\"I'd rather fight Dave head on than try to distract him. I think it's safer to try and finish the fight quickly, than to drag it out until you can join in.\" \r\n\r\n\"As you wish. So what's your plan, then?\"\r\n\r\n\"I plan to do this.\""
-        condition: ch3_tactics <> 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch4_defeat2
-      - texts:
+      - condition: ch3_tactics = 2
+        texts:
           - source: scene_text
             paragraph: 261
             text: "\"I've been waiting for this,\" I say, as I look towards Cutthroat Dave.\r\n\r\n\"So what's your plan, then?\"\r\n\r\n\"I plan to do this.\""
-        condition: ch3_tactics = 2
         choices:
           - position: 1
             text: Continue
@@ -752,15 +778,16 @@ scenes:
                   current_scene: ch4_defeat2
   - name: ch4_defeat2
     routes:
-      - texts:
+      - condition: strength = 3
+        texts:
           - source: scene_text
             paragraph: 262
             text: "I pick up a rock from the ground and throw it at Cutthroat Dave as hard as I can.\r\n\r\nThe cutthroat tried to block it with two of his flying daggers, but he wasn't fast enough. The force of the impact was so strong that it slammed Dave into a tree behind him. He then fell to the ground, with his hands in front of him, coughing up blood.\r\n\r\nOne more hit should seal the deal."
-        condition: strength = 3
-        set:
-          successful_checks:
-            - '[ Strength check successful - level 3 ]'
-          ch4_dave_defeat: 1
+        effects:
+          - set:
+              successful_checks:
+                - '[ Strength check successful - level 3 ]'
+              ch4_dave_defeat: 1
         choices:
           - position: 1
             text: Attempt to kill him
@@ -774,20 +801,21 @@ scenes:
               - set:
                   current_scene: ch4_defeat_spare
                 condition: is_dead = 0
-      - texts:
+      - condition: strength < 3 AND agility = 3
+        texts:
           - source: scene_text
             paragraph: 263
             text: "I pick up a rock from the ground and throw it at Cutthroat Dave as hard as I can.\r\n\r\nThe cutthroat blocked it with two of his flying daggers. \r\n\r\n\"This ain't no rock throwing contest, boy. You'd better be prepared for what's coming.\"\r\n\r\n\"I have his attention,\" I tell Daren. \"Now, go. Go!\"\r\n\r\nDaren wastes no more time and rushes towards Cutthroat Dave's henchmen.\r\n\r\nThe cutthroat's flying knives are now all flying towards me at a very rapid pace. I get out of their way and start heading towards my target.\r\n\r\nI travel the distance between me and Dave almost instantly, and strike at him with my dagger. He manages to parry with two knives that he was holding in his own hands, but he looks pretty shocked.\r\n\r\n\"I don't know what kind of magic you used to run this fast, boy, but you can't run faster than my daggers.\""
           - source: scene_text_2
             paragraph: 22
             text: "Three of his flying knives race towards me but I dodge them in the nick of time. We're battling in an open space and I already know how fast his daggers can go. I'm not going to let him surprise me.\r\n\r\nI start running circles around the cutthroat in order to disorient him. He keeps sending his daggers at me, but they're not fast enough to catch me. He's trying to keep up with me, but I can see him slipping. I need to go faster. \r\n\r\nI keep running around him, dodging daggers left and right, looking for an opening. Every time he looks like he's lost sight of me, I jump in for him, but he manages to block my hits at the last moment. Faster. I need to go even faster.\r\n\r\nI start to move more erratically, to confuse him even further. Cutthroat Dave keeps turning after me in order to not leave his back exposed, but he's starting to get dizzy. The look in his eyes is nowhere near as confident as it was when this fight began. His knives have yet to even touch me and I'm not feeling the least bit tired. \r\n\r\nThere it is. The moment I've been waiting for. His eyes have lost their focus, and he's lost sight of me. I have him now. I take another lunge at him, this time with a lot more speed than before. He sees me and attempts to block my strike again, but he is too late. My knife went right through his chest, but I didn't hit any of his vital organs.\r\n\r\nI only need one more hit to end this once and for all."
-        condition: strength < 3 AND agility = 3
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 3 ]'
-          failed_checks:
-            - '[ Strength check failed - level 3 ]'
-          ch4_dave_defeat: 2
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 3 ]'
+              failed_checks:
+                - '[ Strength check failed - level 3 ]'
+              ch4_dave_defeat: 2
         choices:
           - position: 1
             text: Aim for the kill
@@ -801,21 +829,22 @@ scenes:
               - set:
                   current_scene: ch4_defeat_spare
                 condition: is_dead = 0
-      - texts:
+      - condition: strength < 3 AND agility < 3 AND reflexes = 3
+        texts:
           - source: scene_text
             paragraph: 264
             text: "I pick up a rock from the ground and throw it at Cutthroat Dave as hard as I can.\r\n\r\nThe cutthroat blocked it with two of his flying daggers. \r\n\r\n\"This ain't no rock throwing contest, boy. You'd better be prepared for what's coming.\"\r\n\r\n\"I have his attention,\" I tell Daren. \"Now, go. Go!\"\r\n\r\nDaren wastes no more time and rushes towards Cutthroat Dave's henchmen.\r\n\r\nThe cutthroat's flying knives are now all flying towards me at a very rapid pace. I get out of their way and start heading towards my target.\r\n\r\nAs I approach Dave, four of his knives block my path and fly towards me. \r\n\r\nI may not be fast enough to outrun his daggers, but at least my reflexes are sharp enough to get out of their way in time."
           - source: scene_text_2
             paragraph: 23
             text: "I try to get close to him again, but his knives won't let me. This is getting me nowhere. I need to find a way to go on the offensive. \r\n\r\n\"My daggers have a mind of their own, stillwater. You'll never escape from them no matter how hard you try.\"\r\n\r\nThat's it. His daggers have a mind of their own. He isn't controlling them all at the same time. I can use that to my advantage.\r\n\r\nI take a good look to see where all his daggers are. I then make sure a few of them are following me and make a run for Cutthroat Dave. As before, a few of his daggers post themselves in front of me in order to defend their master. I wait until the final moment and slide underneath them, continuing my sprint towards the cutthroat. Dave readies two daggers he was holding in his hands, and prepares to block my strike. \r\n\r\nInstead of slashing at him, I feint an attack, and quickly side step to his right side. As I was hoping, he did not see the flying daggers that were following close behind me, and as a result, he did not get to stop them in time. Two of them went right through his stomach and another one through his left leg.\r\n\r\nOne more hit should finish this once and for all."
-        condition: strength < 3 AND agility < 3 AND reflexes = 3
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 3 ]'
-          failed_checks:
-            - '[ Strength check failed - level 3 ]'
-            - '[ Speed check failed - level 3 ]'
-          ch4_dave_defeat: 3
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 3 ]'
+              failed_checks:
+                - '[ Strength check failed - level 3 ]'
+                - '[ Speed check failed - level 3 ]'
+              ch4_dave_defeat: 3
         choices:
           - position: 1
             text: Aim for the kill
@@ -829,7 +858,8 @@ scenes:
               - set:
                   current_scene: ch4_defeat_spare
                 condition: is_dead = 0
-      - texts:
+      - condition: strength < 3 AND agility < 3 AND reflexes < 3
+        texts:
           - source: scene_text
             paragraph: 265
             text: "I pick up a rock from the ground and throw it at Cutthroat Dave as hard as I can.\r\n\r\nThe cutthroat blocked it with two of his flying daggers. \r\n\r\n\"This ain't no rock throwing contest, boy. You'd better be prepared for what's coming.\"\r\n\r\n\"I have his attention,\" I tell Daren. \"Now, go. Go!\"\r\n\r\nDaren wastes no more time and rushes towards Cutthroat Dave's henchmen.\r\n\r\nThe cutthroat's flying knives are now all flying towards me at a very rapid pace. I get out of their way and start heading towards my target.\r\n\r\nAs I approach Dave, four of his knives block my path and fly towards me. \r\n\r\nI manage to dodge two of them, but the other two hit me in my left leg. I drop to one knee, unable to move from the pain.\r\n\r\nCutthroat Dave approaches me with a big grin on his face. His flying knives now have me completely surrounded, and they're all facing me menacingly, floating in the air, just ready to strike."
@@ -839,13 +869,13 @@ scenes:
           - source: scene_3
             paragraph: 8
             text: "\"Tell me, what kind of a mailman dies before setting foot out of the post office? I have half a mind to file a complaint for your shoddy services.\"\r\n\r\n\"I'm... really sorry, I promise I'll do better next... time?\"\r\n\r\n\"That's the spirit!\" he says as he starts vanishing into thin air.\r\n\r\nOnce Eiden's outline is barely visible anymore, I hear his voice echo from the trees around me.\r\n\r\n\"Deliver my message, Barry.  And do not fail me again.\""
-        condition: strength < 3 AND agility < 3 AND reflexes < 3
-        set:
-          failed_checks:
-            - '[ Strength check failed - level 3 ]'
-            - '[ Speed check failed - level 3 ]'
-            - '[ Reflexes check failed - level 3 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Strength check failed - level 3 ]'
+                - '[ Speed check failed - level 3 ]'
+                - '[ Reflexes check failed - level 3 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Next chapter
@@ -865,14 +895,14 @@ scenes:
           id: ac_ch4_cutthroat
           title: Defeated Cutthroat Dave
     routes:
-      - texts:
+      - condition: ch4_dave_defeat = 1
+        texts:
           - source: scene_text
             paragraph: 266
             text: "I pick up another rock from the ground, and use all of the strength in my right arm for one final throw. The cutthroat once again tries to block the attack with two of his daggers but he doesn't get the timing right, and the rock completely smashes his head.\r\n\r\nHis henchmen, who saw what happened look utterly terrified.\r\n\r\n\"DAMN, Barry!\" Daren says. \"You sure don't pull your punches.\"\r\n\r\n\"I'm not done, yet.\"\r\n\r\nI pick up two more rocks from the ground, and throw them at two of the other thugs. Both of their skulls crack and the men fall to the ground, lifeless. \r\n\r\nCutthroat Dave's remaining henchmen scream their lungs out and  make a run for the woods. I throw another rock in their general direction, but I don't bother chasing after them. Aiming my shots would be much more difficult in the forest, because of all the trees in my way. And besides, with the fear they had in their eyes, I doubt they'll be bothering us any longer.\r\n\r\nThere's a slow sound of clapping hands coming from the trees. Looking to see what's making the sound, I see Eiden, leaning against a pine tree with his usual smile on his face.\r\n\r\n\"Impressive, Barry,\" he says. \"You don't often see stat boosters used so efficiently these days!\"\r\n\r\nYou!\" Daren shouts, and he rushes towards the stillwater."
           - source: scene_text_2
             paragraph: 25
             text: "Once again, with one gesture of his hands, Eiden puts Daren to sleep in the middle of his sprint, which makes him fall on the ground and slide on his armor for a few feet before coming to a halt.\r\n\r\n\"Seriously, this is getting ridiculous,\" Eiden says.\r\n\r\n\"You know about stat boosters too?\" I ask the stillwater.\r\n\r\n\"I do! And what I also know is why that stat booster works so well for you, specifically. Have you ever wondered why that is, Barry?\"\r\n\r\nHe's right. The stat device has performed beyond all of my expectations since I got here. I didn't really give it much thought since I figured my calculations must have been wrong. But even with all of the energy it's accumulating, something is still clearly off.\r\n\r\n\"I have. But I don't suppose you're going to just give me the answer?\"\r\n\r\n\"Of course not. Where would the fun in that be? But do not fret! As long as you remain on this continent, you will get your answers sooner or later.\"\r\n\r\nHe smiles.\r\n\r\n\"Well, then. I'll be waiting for you to deliver my message. Do not fail me, Barry.\"\r\n\r\nWith these last words he turns his back to me, and he disappears into the darkness of the forest."
-        condition: ch4_dave_defeat = 1
         choices:
           - position: 1
             text: Next chapter
@@ -885,14 +915,14 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
                   ch4_ending: 5
                   ch4_spared_dave: 0
-      - texts:
+      - condition: ch4_dave_defeat = 2
+        texts:
           - source: scene_text
             paragraph: 268
             text: "I show him no mercy. I quickly strike him again, this time going straight for his heart. I can feel his body stop moving as I pull my dagger out, and he drops to the ground, lifeless, along with his flying knives.\r\n\r\nLooking towards the other side of the clearing, it seems Daren managed to make short work of Cutthroat Dave's henchmen. Not even one of them is left alive.\r\n\r\nThere's a slow sound of clapping hands coming from the trees. Looking to see what's making the sound, I see Eiden, leaning against a pine tree with his usual smile on his face.\r\n\r\n\"Impressive, Barry,\" he says. \"You don't often see stat boosters used so efficiently these days!\"\r\n\r\nYou!\" Daren shouts, and he rushes towards the stillwater.\r\n\r\nOnce again, with one gesture of his hands, Eiden puts Daren to sleep in the middle of his sprint, which makes him fall on the ground and slide on his armor for a few feet before coming to a halt.\r\n\r\n\"Seriously, this is getting ridiculous,\" Eiden says."
           - source: scene_text_2
             paragraph: 27
             text: "\"You know about stat boosters too?\" I ask the stillwater.\r\n\r\n\"I do! And what I also know is why that stat booster works so well for you, specifically. Have you ever wondered why that is, Barry?\"\r\n\r\nHe's right. The stat device has performed beyond all of my expectations since I got here. I didn't really give it much thought since I figured my calculations must have been wrong. But even with all of the energy it's accumulating, something is still clearly off.\r\n\r\n\"I have. But I don't suppose you're going to just give me the answer?\"\r\n\r\n\"Of course not. Where would the fun in that be? But do not fret! As long as you remain on this island, you will get your answers sooner or later.\"\r\n\r\nHe smiles.\r\n\r\n\"Well, then. I'll be waiting for you to deliver my message. Do not fail me, Barry.\"\r\n\r\nWith these last words he turns his back to me, and he disappears into the darkness of the forest."
-        condition: ch4_dave_defeat = 2
         choices:
           - position: 1
             text: Next chapter
@@ -905,14 +935,14 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
                   ch4_ending: 5
                   ch4_spared_dave: 0
-      - texts:
+      - condition: ch4_dave_defeat = 3
+        texts:
           - source: scene_text
             paragraph: 270
             text: "I show him no mercy. I quickly lunge for him, aiming my blade straight for his heart. I can feel his body stop moving as I pull my dagger out, and he drops to the ground, lifeless, along with his flying knives.\r\n\r\nLooking towards the other side of the clearing, it seems Daren managed to make short work of Cutthroat Dave's henchmen. Not even one of them is left alive.\r\n\r\nThere's a slow sound of clapping hands coming from the trees. Looking to see what's making the sound, I see Eiden, leaning against a pine tree with his usual smile on his face.\r\n\r\n\"Impressive, Barry,\" he says. \"You don't often see stat boosters used so efficiently these days!\"\r\n\r\nYou!\" Daren shouts, and he rushes towards the stillwater.\r\n\r\nOnce again, with one gesture of his hands, Eiden puts Daren to sleep in the middle of his sprint, which makes him fall on the ground and slide on his armor for a few feet before coming to a halt.\r\n\r\n\"Seriously, this is getting ridiculous,\" Eiden says."
           - source: scene_text_2
             paragraph: 29
             text: "\"You know about stat boosters too?\" I ask the stillwater.\r\n\r\n\"I do! And what I also know is why that stat booster works so well for you, specifically. Have you ever wondered why that is, Barry?\"\r\n\r\nHe's right. The stat device has performed beyond all of my expectations since I got here. I didn't really give it much thought since I figured my calculations must have been wrong. But even with all of the energy it's accumulating, something is still clearly off.\r\n\r\n\"I have. But I don't suppose you're going to just give me the answer?\"\r\n\r\n\"Of course not. Where would the fun in that be? But do not fret! As long as you remain on this island, you will get your answers sooner or later.\"\r\n\r\nHe smiles.\r\n\r\n\"Well, then. I'll be waiting for you to deliver my message. Do not fail me, Barry.\"\r\n\r\nWith these last words he turns his back to me, and he disappears into the darkness of the forest."
-        condition: ch4_dave_defeat = 3
         choices:
           - position: 1
             text: Next chapter
@@ -933,7 +963,8 @@ scenes:
           id: ac_ch4_cutthroat
           title: Defeated Cutthroat Dave
     routes:
-      - texts:
+      - condition: ch4_dave_defeat = 1
+        texts:
           - source: scene_text
             paragraph: 267
             text: "I pick up another rock from the ground, but this time I do not put all of my strength behind my throw, in order to avoid killing Dave. Since the rock was slower this time, the cutthroat had the time to block it with two of his flying daggers.\r\n\r\nHe coughs up some more blood.\r\n\r\n\"You were lucky, stillwater. You caught me off guard. It won't happen again.\"\r\n\r\nCutthroat Dave then pulls out a scroll of teleportation from his pocket, and quickly uses it to make himself scarce, to the shock and dismay of his loyal followers.\r\n\r\nWhere in the hell did that lowlife get a teleportation scroll from? I've been searching one for months and came up empty. Not to mention that even a single one of those scrolls costs a fortune.\r\n\r\n \"DAMN, Barry!\" Daren says. \"You sure don't pull your punches.\"\r\n\r\n\"Actually, I did. And it cost me. But I'm not done, yet.\"\r\n\r\nI pick up some pebbles from the ground, and use all of the strength in my right arm to throw them towards Dave's henchmen. Seven of them got seriously wounded and are now screaming, scared. \r\n\r\n\"Did you see that?!\" one of them says. \"All he did was throw some pebbles he picked up from the ground.\"\r\n\r\n\"He beat the boss too. Let's get the hell out of here!\""
@@ -943,7 +974,6 @@ scenes:
           - source: scene_3
             paragraph: 9
             text: "\"I have. But I don't suppose you're going to just give me the answer?\"\r\n\r\n\"Of course not. Where would the fun in that be? But do not fret! As long as you remain on this continent, you will get your answers sooner or later.\"\r\n\r\nHe smiles.\r\n\r\n\"Well, then. I'll be waiting for you to deliver my message. Do not fail me, Barry.\"\r\n\r\nWith these last words he turns his back to me, and he disappears into the darkness of the forest."
-        condition: ch4_dave_defeat = 1
         choices:
           - position: 1
             text: Next chapter
@@ -956,14 +986,14 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
                   ch4_spared_dave: 1
                   ch4_ending: 5
-      - texts:
+      - condition: ch4_dave_defeat = 2
+        texts:
           - source: scene_text
             paragraph: 269
             text: "I aim my second strike between his ribs. I then pull my dagger out of him and kick him to the ground. Cutthroat Dave coughs up some blood, and without another word, he quickly pulls out a scroll of teleportation from his pocket, and makes himself scarce.\r\n\r\nWhere in the hell did that lowlife get a teleportation scroll from? I've been searching one for months and came up empty. Not to mention that even a single one of those scrolls costs a fortune.\r\n\r\nLooking towards the other side of the clearing, it seems Daren managed to make short work of Cutthroat Dave's henchmen. Not even one of them is left alive.\r\n\r\nThere's a slow sound of clapping hands coming from the trees. Looking to see what's making the sound, I see Eiden, leaning against a pine tree with his usual smile on his face.\r\n\r\n\"Impressive, Barry,\" he says. \"You don't often see stat boosters used so efficiently these days!\"\r\n\r\nYou!\" Daren shouts, and he rushes towards the stillwater.\r\n\r\nOnce again, with one gesture of his hands, Eiden puts Daren to sleep in the middle of his sprint, which makes him fall on the ground and slide on his armor for a few feet before coming to a halt.\r\n\r\n\"Seriously, this is getting ridiculous,\" Eiden says."
           - source: scene_text_2
             paragraph: 28
             text: "\"You know about stat boosters too?\" I ask the stillwater.\r\n\r\n\"I do! And what I also know is why that stat booster works so well for you, specifically. Have you ever wondered why that is, Barry?\"\r\n\r\nHe's right. The stat device has performed beyond all of my expectations since I got here. I didn't really give it much thought since I figured my calculations must have been wrong. But even with all of the energy it's accumulating, something is still clearly off.\r\n\r\n\"I have. But I don't suppose you're going to just give me the answer?\"\r\n\r\n\"Of course not. Where would the fun in that be? But do not fret! As long as you remain on this island, you will get your answers sooner or later.\"\r\n\r\nHe smiles.\r\n\r\n\"Well, then. I'll be waiting for you to deliver my message. Do not fail me, Barry.\"\r\n\r\nWith these last words he turns his back to me, and he disappears into the darkness of the forest."
-        condition: ch4_dave_defeat = 2
         choices:
           - position: 1
             text: Next chapter
@@ -976,14 +1006,14 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
                   ch4_spared_dave: 1
                   ch4_ending: 5
-      - texts:
+      - condition: ch4_dave_defeat = 3
+        texts:
           - source: scene_text
             paragraph: 271
             text: "I lunge for him and aim my blade between his ribs. I then pull my dagger out of him and kick him to the ground. Cutthroat Dave coughs up some blood, and without another word, he quickly pulls out a scroll of teleportation from his pocket, and makes himself scarce.\r\n\r\nWhere in the hell did that lowlife get a teleportation scroll from? I've been searching one for months and came up empty. Not to mention that even a single one of those scrolls costs a fortune.\r\n\r\nLooking towards the other side of the clearing, it seems Daren managed to make short work of Cutthroat Dave's henchmen. Not even one of them is left alive.\r\n\r\nThere's a slow sound of clapping hands coming from the trees. Looking to see what's making the sound, I see Eiden, leaning against a pine tree with his usual smile on his face.\r\n\r\n\"Impressive, Barry,\" he says. \"You don't often see stat boosters used so efficiently these days!\"\r\n\r\nYou!\" Daren shouts, and he rushes towards the stillwater.\r\n\r\nOnce again, with one gesture of his hands, Eiden puts Daren to sleep in the middle of his sprint, which makes him fall on the ground and slide on his armor for a few feet before coming to a halt.\r\n\r\n\"Seriously, this is getting ridiculous,\" Eiden says.\r\n\r\n\"You know about stat boosters too?\" I ask the stillwater."
           - source: scene_text_2
             paragraph: 30
             text: "\"I do! And what I also know is why that stat booster works so well for you, specifically. Have you ever wondered why that is, Barry?\"\r\n\r\nHe's right. The stat device has performed beyond all of my expectations since I got here. I didn't really give it much thought since I figured my calculations must have been wrong. But even with all of the energy it's accumulating, something is still clearly off.\r\n\r\n\"I have. But I don't suppose you're going to just give me the answer?\"\r\n\r\n\"Of course not. Where would the fun in that be? But do not fret! As long as you remain on this island, you will get your answers sooner or later.\"\r\n\r\nHe smiles.\r\n\r\n\"Well, then. I'll be waiting for you to deliver my message. Do not fail me, Barry.\"\r\n\r\nWith these last words he turns his back to me, and he disappears into the darkness of the forest."
-        condition: ch4_dave_defeat = 3
         choices:
           - position: 1
             text: Next chapter

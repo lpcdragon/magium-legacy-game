@@ -38,115 +38,163 @@ scenes:
               b3_ch10_leader: 2
   - name: b3_ch10c_leader
     routes:
-      - texts:
+      - condition: b3_ch8_overseer2 = 0 AND b3_ch8_king = 0
+        texts:
           - source: scene_text
             paragraph: 3
             text: "\"I think he will be a great leader.\"\r\n\r\n\"The king of the underground's henchman?\" Eiden says, while raising an eyebrow. \"Is that your opinion of him?\"\r\n\r\n\"Well, he will certainly be better than the previous king, at least,\" I say, while shrugging.\r\n\r\n\"Indeed, but that could be said about almost anyone,\" Eiden tells me. \"What I am asking is if you think he was the best choice out of the ones available.\"\r\n\r\n\"I mean, sure,\" I say. \"Why not? Albert was practically the main leader of the rebel forces before he began serving the king of the underground, so I'd say he's more than qualified for the job.\"\r\n\r\n\"I see,\" Eiden says."
-        condition: b3_ch8_overseer2 = 0 AND b3_ch8_king = 0
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch10c_message
-      - texts:
-          - source: scene_text
-            paragraph: 4
-            text: "\"I think he will be a great leader.\"\r\n\r\n\"The king of the underground's henchman?\" Eiden says, while raising an eyebrow. \"Is that your opinion of him?\"\r\n\r\n\"Well, he will certainly be better than the previous king, at least,\" I say, while shrugging.\r\n\r\n\"Indeed, but that could be said about almost anyone,\" Eiden tells me. \"What I am asking is if you think he was the best choice out of the ones available.\"\r\n\r\n\"I mean, sure,\" I say. \"Why not? Peter was the most well-liked leader of the rebels, and also probably the most good-natured one of the three. He should be more than up to the task of rebuilding the kingdom.\"\r\n\r\n\"I see,\" Eiden says."
-        condition: b3_ch8_overseer2 = 0 AND b3_ch8_king = 1
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch10c_message
-      - texts:
-          - source: scene_text
-            paragraph: 5
-            text: "\"I think he will be a great leader.\"\r\n\r\n\"The king of the underground?\" Eiden says, while raising an eyebrow. \"Is that your opinion of him?\"\r\n\r\n\"Well, he will certainly be better than the previous king, at least,\" I say, while shrugging.\r\n\r\n\"Indeed, but that could be said about almost anyone,\" Eiden tells me. \"What I am asking is if you think he was the best choice out of the ones available.\"\r\n\r\n\"I mean, sure,\" I say. \"Why not? He has a lot of experience with leading people, so he will certainly be of great help to rebuild the kingdom.\"\r\n\r\n\"I see,\" Eiden says."
-        condition: b3_ch8_overseer2 = 0 AND b3_ch8_king = 2
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch10c_message
-      - texts:
-          - source: scene_text
-            paragraph: 5
-            text: "\"I think he will be a great leader.\"\r\n\r\n\"The king of the underground?\" Eiden says, while raising an eyebrow. \"Is that your opinion of him?\"\r\n\r\n\"Well, he will certainly be better than the previous king, at least,\" I say, while shrugging.\r\n\r\n\"Indeed, but that could be said about almost anyone,\" Eiden tells me. \"What I am asking is if you think he was the best choice out of the ones available.\"\r\n\r\n\"I mean, sure,\" I say. \"Why not? He has a lot of experience with leading people, so he will certainly be of great help to rebuild the kingdom.\"\r\n\r\n\"I see,\" Eiden says."
-        condition: b3_ch8_overseer2 = 0 AND b3_ch8_king = 3
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch10c_message
-      - texts:
-          - source: scene_text
-            paragraph: 5
-            text: "\"I think he will be a great leader.\"\r\n\r\n\"The king of the underground?\" Eiden says, while raising an eyebrow. \"Is that your opinion of him?\"\r\n\r\n\"Well, he will certainly be better than the previous king, at least,\" I say, while shrugging.\r\n\r\n\"Indeed, but that could be said about almost anyone,\" Eiden tells me. \"What I am asking is if you think he was the best choice out of the ones available.\"\r\n\r\n\"I mean, sure,\" I say. \"Why not? He has a lot of experience with leading people, so he will certainly be of great help to rebuild the kingdom.\"\r\n\r\n\"I see,\" Eiden says."
-        condition: b3_ch8_overseer2 = 0 AND b3_ch8_king = 4
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch10c_message
-      - texts:
-          - source: scene_text
-            paragraph: 6
-            text: "\"I think he will be a great leader.\"\r\n\r\n\"The Overseer?\" Eiden says, while stroking his chin. \"The last I heard of him, he was looking to add more mage slaves to the seredium towers, in order to power up his drones more efficiently.\"\r\n\r\n\"That bastard...\" I say. \"He told us that the issues concerning the towers would be resolved!\"\r\n\r\n\"And they were,\" Eiden says. \"From the Overseer's point of view, the only issue that the towers had was that they weren't operating at full capacity. That problem will soon be fixed, just as he promised.\"\r\n\r\n\"He's going to be sorry,\" I say. \"As soon as we're strong enough to beat him, we'll come back to that city, and then he will meet the same fate as the last king of Ollendor.\"\r\n\r\n\"I see,\" Eiden says."
-        condition: b3_ch8_overseer2 = 1 AND b3_ch4_billy <> 7 AND b3_ch4_billy <> 8
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch10c_message
-      - texts:
-          - source: scene_text
-            paragraph: 7
-            text: "\"I think he will be a great leader.\"\r\n\r\n\"You are talking about Breynan or the Overseer?\" Eiden asks me.\r\n\r\n\"Both of them, to be honest,\" I say. \"I am quite confident that those two will do wonders as long as they work together.\"\r\n\r\n\"Hmm...\" Eiden says. \"It's true that from what I've heard, the Overseer is working on a way to make the seredium towers function without mage slaves, which is surprising, considering that he should not have anything to gain from doing such a thing. Am I to understand that your group had something to do with this?\"\r\n\r\n\"Yeah, this was part of the deal that we made with the Overseer when we agreed to help him take control of the city,\" I say. \"He promised that he would liberate the prisoners from the towers as soon as he'd find a way to eliminate the need for chaining mages to that energy-sucking machine.\"\r\n\r\n\"Interesting...\" Eiden says."
-        condition: b3_ch8_overseer2 = 1 AND b3_ch4_billy = 7
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch10c_message
-      - texts:
-          - source: scene_text
-            paragraph: 7
-            text: "\"I think he will be a great leader.\"\r\n\r\n\"You are talking about Breynan or the Overseer?\" Eiden asks me.\r\n\r\n\"Both of them, to be honest,\" I say. \"I am quite confident that those two will do wonders as long as they work together.\"\r\n\r\n\"Hmm...\" Eiden says. \"It's true that from what I've heard, the Overseer is working on a way to make the seredium towers function without mage slaves, which is surprising, considering that he should not have anything to gain from doing such a thing. Am I to understand that your group had something to do with this?\"\r\n\r\n\"Yeah, this was part of the deal that we made with the Overseer when we agreed to help him take control of the city,\" I say. \"He promised that he would liberate the prisoners from the towers as soon as he'd find a way to eliminate the need for chaining mages to that energy-sucking machine.\"\r\n\r\n\"Interesting...\" Eiden says."
-        condition: b3_ch8_overseer2 = 1 AND b3_ch4_billy = 8
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch10c_message
-      - texts:
-          - source: scene_text
-            paragraph: 8
-            text: "\"I think he will be a great leader.\"\r\n\r\n\"Hmm...\" Eiden says. \"I have to admit that a goblin healer as a king is an interesting choice to say the least. I was also surprised to see how cooperative the king of the underground has been during the latest events that occurred in their city.\"\r\n\r\n\"What do you mean?\" I ask him. \"What latest events?\"\r\n\r\n\"You haven't heard?\" Eiden says. \"Your goblin friend was apparently very adamant in his desire to free every single one of the prisoners from the seredium towers, but if this were to be done too hastily, it would have no doubt led to a general state of chaos, since almost all of the magical devices in the city, including the flying vehicles, would have stopped working out of the blue. In order to counteract this, the king of the underground had his men spread rumors for a day or two, making sure that the majority of the population would find out for themselves about the state of the prisoners and about the horrors that they have endured all this time at the hands of the previous king and his underlings. As a result, people very quickly took to the streets in order to request that all the prisoners should be freed at once, and naturally the goblin was very happy to comply with their demands.\"\r\n\r\n\"Oh, I get it!\" I say. \"And since the people themselves were the ones who asked for the prisoners' release, they could no longer complain about the flying vehicles no longer working, right?\""
-          - source: scene_text_2
-            paragraph: 3
-            text: "\"Obviously, there were still many complaints, but far fewer than there would have been if not for the king of the underground's intervention,\" Eiden says. \"The important part is that the chances of this situation devolving into a civil war are now very slim, which is far more than one could have normally hoped, given the circumstances.\"\r\n\r\n\"Right,\" I say.\r\n\r\nAfter saying this, we both remain silent for about five seconds or so, until I finally decide that I should probably be the one to continue our conversation.\r\n\r\n\"So... is this all you wanted to ask, then?\" I tell Eiden.\r\n\r\n\"Yes,\" Eiden says. \"Regarding this topic, at least.\"\r\n\r\n\"What about the second topic that you wanted to discuss with us?\" Kate says, while frowning.\r\n\r\n\"It's funny that you should ask this question, Kate of the Beacon of Hope,\" Eiden says, \"since the next subject of conversation probably concerns you the most, out of the whole group. The truth of the matter is that I was getting bored waiting for you all to reach your next destination, and I came here in the hopes that I could perhaps ask you to hurry it up a bit, since your next encounter very much concerns me as much as you.\"\r\n\r\n\"What are you talking about?\" Kate says. \"Why would our next destination concern both you and me?\"\r\n\r\n\"...You mean you don't know where you're going?\" Eiden asks, looking rather shocked."
-        condition: b3_ch8_overseer2 = 0 AND b3_ch8_king = 5
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch10c_message
-      - texts:
           - source: scene_text_2
             paragraph: 4
             text: "After saying this, we both remain silent for about five seconds or so, until I finally decide that I should probably be the one to continue our conversation.\r\n\r\n\"So... is this all you wanted to ask, then?\" I tell Eiden.\r\n\r\n\"Yes,\" Eiden says. \"Regarding this topic, at least.\"\r\n\r\n\"What about the second topic that you wanted to discuss with us?\" Kate says, while frowning.\r\n\r\n\"It's funny that you should ask this question, Kate of the Beacon of Hope,\" Eiden says, \"since the next subject of conversation probably concerns you the most, out of the whole group. The truth of the matter is that I was getting bored waiting for you all to reach your next destination, and I came here in the hopes that I could perhaps ask you to hurry it up a bit, since your next encounter very much concerns me as much as you.\"\r\n\r\n\"What are you talking about?\" Kate says. \"Why would our next destination concern both you and me?\"\r\n\r\n\"...You mean you don't know where you're going?\" Eiden asks, looking rather shocked.\r\n\r\nHe then turns towards Melindra, who is looking very stressed out right now."
           - source: scene_3
             paragraph: 3
             text: "\"Melindra, you haven't told them?\" Eiden says.\r\n\r\n\"I was going to tell them!\" Melindra says. \"I was just... waiting for the right time, that's all!\"\r\n\r\n\"Then there is no time like the present, wouldn't you say?\" Eiden tells her.\r\n\r\n\"Melindra, what's going on?\" Kate asks. \"Who is this person that you are taking us to, and what does any of this have to do with me?\"\r\n\r\n\"It's.... I... Kate, first of all I need you to remain calm,\" Melindra says, looking as if she were on the verge of panicking herself. \"Can you promise me that?\"\r\n\r\n\"Okay,\" Kate says. \"I promise.\"\r\n\r\n\"Alright,\" Melindra says, \"so, umm... the first thing that I need to mention is that when you and I first met, I honestly had no knowledge of anything related to artificial mages or the Beacon of Hope. I only found out about these things much later, when I heard you guys talking about them.\"\r\n\r\n\"Fair enough,\" Kate says. \"But why are you telling me this all of a sudden?\"\r\n\r\n\"It's because...\" Melindra says, \"you see... the person that I wanted you to meet... my acquaintance who has the pinecone detector is in fact... it's... she is--\"\r\n\r\n\"It's Meridith,\" Eiden says, seeing that Melindra can't bring herself to say the words. \"She is leading you to Meridith.\""
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch10c_message
+      - condition: b3_ch8_overseer2 = 0 AND b3_ch8_king = 1
+        texts:
+          - source: scene_text
+            paragraph: 4
+            text: "\"I think he will be a great leader.\"\r\n\r\n\"The king of the underground's henchman?\" Eiden says, while raising an eyebrow. \"Is that your opinion of him?\"\r\n\r\n\"Well, he will certainly be better than the previous king, at least,\" I say, while shrugging.\r\n\r\n\"Indeed, but that could be said about almost anyone,\" Eiden tells me. \"What I am asking is if you think he was the best choice out of the ones available.\"\r\n\r\n\"I mean, sure,\" I say. \"Why not? Peter was the most well-liked leader of the rebels, and also probably the most good-natured one of the three. He should be more than up to the task of rebuilding the kingdom.\"\r\n\r\n\"I see,\" Eiden says."
+          - source: scene_text_2
+            paragraph: 4
+            text: "After saying this, we both remain silent for about five seconds or so, until I finally decide that I should probably be the one to continue our conversation.\r\n\r\n\"So... is this all you wanted to ask, then?\" I tell Eiden.\r\n\r\n\"Yes,\" Eiden says. \"Regarding this topic, at least.\"\r\n\r\n\"What about the second topic that you wanted to discuss with us?\" Kate says, while frowning.\r\n\r\n\"It's funny that you should ask this question, Kate of the Beacon of Hope,\" Eiden says, \"since the next subject of conversation probably concerns you the most, out of the whole group. The truth of the matter is that I was getting bored waiting for you all to reach your next destination, and I came here in the hopes that I could perhaps ask you to hurry it up a bit, since your next encounter very much concerns me as much as you.\"\r\n\r\n\"What are you talking about?\" Kate says. \"Why would our next destination concern both you and me?\"\r\n\r\n\"...You mean you don't know where you're going?\" Eiden asks, looking rather shocked.\r\n\r\nHe then turns towards Melindra, who is looking very stressed out right now."
+          - source: scene_3
+            paragraph: 3
+            text: "\"Melindra, you haven't told them?\" Eiden says.\r\n\r\n\"I was going to tell them!\" Melindra says. \"I was just... waiting for the right time, that's all!\"\r\n\r\n\"Then there is no time like the present, wouldn't you say?\" Eiden tells her.\r\n\r\n\"Melindra, what's going on?\" Kate asks. \"Who is this person that you are taking us to, and what does any of this have to do with me?\"\r\n\r\n\"It's.... I... Kate, first of all I need you to remain calm,\" Melindra says, looking as if she were on the verge of panicking herself. \"Can you promise me that?\"\r\n\r\n\"Okay,\" Kate says. \"I promise.\"\r\n\r\n\"Alright,\" Melindra says, \"so, umm... the first thing that I need to mention is that when you and I first met, I honestly had no knowledge of anything related to artificial mages or the Beacon of Hope. I only found out about these things much later, when I heard you guys talking about them.\"\r\n\r\n\"Fair enough,\" Kate says. \"But why are you telling me this all of a sudden?\"\r\n\r\n\"It's because...\" Melindra says, \"you see... the person that I wanted you to meet... my acquaintance who has the pinecone detector is in fact... it's... she is--\"\r\n\r\n\"It's Meridith,\" Eiden says, seeing that Melindra can't bring herself to say the words. \"She is leading you to Meridith.\""
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch10c_message
+      - condition: b3_ch8_overseer2 = 0 AND b3_ch8_king = 2
+        texts:
+          - source: scene_text
+            paragraph: 5
+            text: "\"I think he will be a great leader.\"\r\n\r\n\"The king of the underground?\" Eiden says, while raising an eyebrow. \"Is that your opinion of him?\"\r\n\r\n\"Well, he will certainly be better than the previous king, at least,\" I say, while shrugging.\r\n\r\n\"Indeed, but that could be said about almost anyone,\" Eiden tells me. \"What I am asking is if you think he was the best choice out of the ones available.\"\r\n\r\n\"I mean, sure,\" I say. \"Why not? He has a lot of experience with leading people, so he will certainly be of great help to rebuild the kingdom.\"\r\n\r\n\"I see,\" Eiden says."
+          - source: scene_text_2
+            paragraph: 4
+            text: "After saying this, we both remain silent for about five seconds or so, until I finally decide that I should probably be the one to continue our conversation.\r\n\r\n\"So... is this all you wanted to ask, then?\" I tell Eiden.\r\n\r\n\"Yes,\" Eiden says. \"Regarding this topic, at least.\"\r\n\r\n\"What about the second topic that you wanted to discuss with us?\" Kate says, while frowning.\r\n\r\n\"It's funny that you should ask this question, Kate of the Beacon of Hope,\" Eiden says, \"since the next subject of conversation probably concerns you the most, out of the whole group. The truth of the matter is that I was getting bored waiting for you all to reach your next destination, and I came here in the hopes that I could perhaps ask you to hurry it up a bit, since your next encounter very much concerns me as much as you.\"\r\n\r\n\"What are you talking about?\" Kate says. \"Why would our next destination concern both you and me?\"\r\n\r\n\"...You mean you don't know where you're going?\" Eiden asks, looking rather shocked.\r\n\r\nHe then turns towards Melindra, who is looking very stressed out right now."
+          - source: scene_3
+            paragraph: 3
+            text: "\"Melindra, you haven't told them?\" Eiden says.\r\n\r\n\"I was going to tell them!\" Melindra says. \"I was just... waiting for the right time, that's all!\"\r\n\r\n\"Then there is no time like the present, wouldn't you say?\" Eiden tells her.\r\n\r\n\"Melindra, what's going on?\" Kate asks. \"Who is this person that you are taking us to, and what does any of this have to do with me?\"\r\n\r\n\"It's.... I... Kate, first of all I need you to remain calm,\" Melindra says, looking as if she were on the verge of panicking herself. \"Can you promise me that?\"\r\n\r\n\"Okay,\" Kate says. \"I promise.\"\r\n\r\n\"Alright,\" Melindra says, \"so, umm... the first thing that I need to mention is that when you and I first met, I honestly had no knowledge of anything related to artificial mages or the Beacon of Hope. I only found out about these things much later, when I heard you guys talking about them.\"\r\n\r\n\"Fair enough,\" Kate says. \"But why are you telling me this all of a sudden?\"\r\n\r\n\"It's because...\" Melindra says, \"you see... the person that I wanted you to meet... my acquaintance who has the pinecone detector is in fact... it's... she is--\"\r\n\r\n\"It's Meridith,\" Eiden says, seeing that Melindra can't bring herself to say the words. \"She is leading you to Meridith.\""
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch10c_message
+      - condition: b3_ch8_overseer2 = 0 AND b3_ch8_king = 3
+        texts:
+          - source: scene_text
+            paragraph: 5
+            text: "\"I think he will be a great leader.\"\r\n\r\n\"The king of the underground?\" Eiden says, while raising an eyebrow. \"Is that your opinion of him?\"\r\n\r\n\"Well, he will certainly be better than the previous king, at least,\" I say, while shrugging.\r\n\r\n\"Indeed, but that could be said about almost anyone,\" Eiden tells me. \"What I am asking is if you think he was the best choice out of the ones available.\"\r\n\r\n\"I mean, sure,\" I say. \"Why not? He has a lot of experience with leading people, so he will certainly be of great help to rebuild the kingdom.\"\r\n\r\n\"I see,\" Eiden says."
+          - source: scene_text_2
+            paragraph: 4
+            text: "After saying this, we both remain silent for about five seconds or so, until I finally decide that I should probably be the one to continue our conversation.\r\n\r\n\"So... is this all you wanted to ask, then?\" I tell Eiden.\r\n\r\n\"Yes,\" Eiden says. \"Regarding this topic, at least.\"\r\n\r\n\"What about the second topic that you wanted to discuss with us?\" Kate says, while frowning.\r\n\r\n\"It's funny that you should ask this question, Kate of the Beacon of Hope,\" Eiden says, \"since the next subject of conversation probably concerns you the most, out of the whole group. The truth of the matter is that I was getting bored waiting for you all to reach your next destination, and I came here in the hopes that I could perhaps ask you to hurry it up a bit, since your next encounter very much concerns me as much as you.\"\r\n\r\n\"What are you talking about?\" Kate says. \"Why would our next destination concern both you and me?\"\r\n\r\n\"...You mean you don't know where you're going?\" Eiden asks, looking rather shocked.\r\n\r\nHe then turns towards Melindra, who is looking very stressed out right now."
+          - source: scene_3
+            paragraph: 3
+            text: "\"Melindra, you haven't told them?\" Eiden says.\r\n\r\n\"I was going to tell them!\" Melindra says. \"I was just... waiting for the right time, that's all!\"\r\n\r\n\"Then there is no time like the present, wouldn't you say?\" Eiden tells her.\r\n\r\n\"Melindra, what's going on?\" Kate asks. \"Who is this person that you are taking us to, and what does any of this have to do with me?\"\r\n\r\n\"It's.... I... Kate, first of all I need you to remain calm,\" Melindra says, looking as if she were on the verge of panicking herself. \"Can you promise me that?\"\r\n\r\n\"Okay,\" Kate says. \"I promise.\"\r\n\r\n\"Alright,\" Melindra says, \"so, umm... the first thing that I need to mention is that when you and I first met, I honestly had no knowledge of anything related to artificial mages or the Beacon of Hope. I only found out about these things much later, when I heard you guys talking about them.\"\r\n\r\n\"Fair enough,\" Kate says. \"But why are you telling me this all of a sudden?\"\r\n\r\n\"It's because...\" Melindra says, \"you see... the person that I wanted you to meet... my acquaintance who has the pinecone detector is in fact... it's... she is--\"\r\n\r\n\"It's Meridith,\" Eiden says, seeing that Melindra can't bring herself to say the words. \"She is leading you to Meridith.\""
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch10c_message
+      - condition: b3_ch8_overseer2 = 0 AND b3_ch8_king = 4
+        texts:
+          - source: scene_text
+            paragraph: 5
+            text: "\"I think he will be a great leader.\"\r\n\r\n\"The king of the underground?\" Eiden says, while raising an eyebrow. \"Is that your opinion of him?\"\r\n\r\n\"Well, he will certainly be better than the previous king, at least,\" I say, while shrugging.\r\n\r\n\"Indeed, but that could be said about almost anyone,\" Eiden tells me. \"What I am asking is if you think he was the best choice out of the ones available.\"\r\n\r\n\"I mean, sure,\" I say. \"Why not? He has a lot of experience with leading people, so he will certainly be of great help to rebuild the kingdom.\"\r\n\r\n\"I see,\" Eiden says."
+          - source: scene_text_2
+            paragraph: 4
+            text: "After saying this, we both remain silent for about five seconds or so, until I finally decide that I should probably be the one to continue our conversation.\r\n\r\n\"So... is this all you wanted to ask, then?\" I tell Eiden.\r\n\r\n\"Yes,\" Eiden says. \"Regarding this topic, at least.\"\r\n\r\n\"What about the second topic that you wanted to discuss with us?\" Kate says, while frowning.\r\n\r\n\"It's funny that you should ask this question, Kate of the Beacon of Hope,\" Eiden says, \"since the next subject of conversation probably concerns you the most, out of the whole group. The truth of the matter is that I was getting bored waiting for you all to reach your next destination, and I came here in the hopes that I could perhaps ask you to hurry it up a bit, since your next encounter very much concerns me as much as you.\"\r\n\r\n\"What are you talking about?\" Kate says. \"Why would our next destination concern both you and me?\"\r\n\r\n\"...You mean you don't know where you're going?\" Eiden asks, looking rather shocked.\r\n\r\nHe then turns towards Melindra, who is looking very stressed out right now."
+          - source: scene_3
+            paragraph: 3
+            text: "\"Melindra, you haven't told them?\" Eiden says.\r\n\r\n\"I was going to tell them!\" Melindra says. \"I was just... waiting for the right time, that's all!\"\r\n\r\n\"Then there is no time like the present, wouldn't you say?\" Eiden tells her.\r\n\r\n\"Melindra, what's going on?\" Kate asks. \"Who is this person that you are taking us to, and what does any of this have to do with me?\"\r\n\r\n\"It's.... I... Kate, first of all I need you to remain calm,\" Melindra says, looking as if she were on the verge of panicking herself. \"Can you promise me that?\"\r\n\r\n\"Okay,\" Kate says. \"I promise.\"\r\n\r\n\"Alright,\" Melindra says, \"so, umm... the first thing that I need to mention is that when you and I first met, I honestly had no knowledge of anything related to artificial mages or the Beacon of Hope. I only found out about these things much later, when I heard you guys talking about them.\"\r\n\r\n\"Fair enough,\" Kate says. \"But why are you telling me this all of a sudden?\"\r\n\r\n\"It's because...\" Melindra says, \"you see... the person that I wanted you to meet... my acquaintance who has the pinecone detector is in fact... it's... she is--\"\r\n\r\n\"It's Meridith,\" Eiden says, seeing that Melindra can't bring herself to say the words. \"She is leading you to Meridith.\""
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch10c_message
+      - condition: b3_ch8_overseer2 = 1 AND b3_ch4_billy <> 7 AND b3_ch4_billy <> 8
+        texts:
+          - source: scene_text
+            paragraph: 6
+            text: "\"I think he will be a great leader.\"\r\n\r\n\"The Overseer?\" Eiden says, while stroking his chin. \"The last I heard of him, he was looking to add more mage slaves to the seredium towers, in order to power up his drones more efficiently.\"\r\n\r\n\"That bastard...\" I say. \"He told us that the issues concerning the towers would be resolved!\"\r\n\r\n\"And they were,\" Eiden says. \"From the Overseer's point of view, the only issue that the towers had was that they weren't operating at full capacity. That problem will soon be fixed, just as he promised.\"\r\n\r\n\"He's going to be sorry,\" I say. \"As soon as we're strong enough to beat him, we'll come back to that city, and then he will meet the same fate as the last king of Ollendor.\"\r\n\r\n\"I see,\" Eiden says."
+          - source: scene_text_2
+            paragraph: 4
+            text: "After saying this, we both remain silent for about five seconds or so, until I finally decide that I should probably be the one to continue our conversation.\r\n\r\n\"So... is this all you wanted to ask, then?\" I tell Eiden.\r\n\r\n\"Yes,\" Eiden says. \"Regarding this topic, at least.\"\r\n\r\n\"What about the second topic that you wanted to discuss with us?\" Kate says, while frowning.\r\n\r\n\"It's funny that you should ask this question, Kate of the Beacon of Hope,\" Eiden says, \"since the next subject of conversation probably concerns you the most, out of the whole group. The truth of the matter is that I was getting bored waiting for you all to reach your next destination, and I came here in the hopes that I could perhaps ask you to hurry it up a bit, since your next encounter very much concerns me as much as you.\"\r\n\r\n\"What are you talking about?\" Kate says. \"Why would our next destination concern both you and me?\"\r\n\r\n\"...You mean you don't know where you're going?\" Eiden asks, looking rather shocked.\r\n\r\nHe then turns towards Melindra, who is looking very stressed out right now."
+          - source: scene_3
+            paragraph: 3
+            text: "\"Melindra, you haven't told them?\" Eiden says.\r\n\r\n\"I was going to tell them!\" Melindra says. \"I was just... waiting for the right time, that's all!\"\r\n\r\n\"Then there is no time like the present, wouldn't you say?\" Eiden tells her.\r\n\r\n\"Melindra, what's going on?\" Kate asks. \"Who is this person that you are taking us to, and what does any of this have to do with me?\"\r\n\r\n\"It's.... I... Kate, first of all I need you to remain calm,\" Melindra says, looking as if she were on the verge of panicking herself. \"Can you promise me that?\"\r\n\r\n\"Okay,\" Kate says. \"I promise.\"\r\n\r\n\"Alright,\" Melindra says, \"so, umm... the first thing that I need to mention is that when you and I first met, I honestly had no knowledge of anything related to artificial mages or the Beacon of Hope. I only found out about these things much later, when I heard you guys talking about them.\"\r\n\r\n\"Fair enough,\" Kate says. \"But why are you telling me this all of a sudden?\"\r\n\r\n\"It's because...\" Melindra says, \"you see... the person that I wanted you to meet... my acquaintance who has the pinecone detector is in fact... it's... she is--\"\r\n\r\n\"It's Meridith,\" Eiden says, seeing that Melindra can't bring herself to say the words. \"She is leading you to Meridith.\""
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch10c_message
+      - condition: b3_ch8_overseer2 = 1 AND b3_ch4_billy = 7
+        texts:
+          - source: scene_text
+            paragraph: 7
+            text: "\"I think he will be a great leader.\"\r\n\r\n\"You are talking about Breynan or the Overseer?\" Eiden asks me.\r\n\r\n\"Both of them, to be honest,\" I say. \"I am quite confident that those two will do wonders as long as they work together.\"\r\n\r\n\"Hmm...\" Eiden says. \"It's true that from what I've heard, the Overseer is working on a way to make the seredium towers function without mage slaves, which is surprising, considering that he should not have anything to gain from doing such a thing. Am I to understand that your group had something to do with this?\"\r\n\r\n\"Yeah, this was part of the deal that we made with the Overseer when we agreed to help him take control of the city,\" I say. \"He promised that he would liberate the prisoners from the towers as soon as he'd find a way to eliminate the need for chaining mages to that energy-sucking machine.\"\r\n\r\n\"Interesting...\" Eiden says."
+          - source: scene_text_2
+            paragraph: 4
+            text: "After saying this, we both remain silent for about five seconds or so, until I finally decide that I should probably be the one to continue our conversation.\r\n\r\n\"So... is this all you wanted to ask, then?\" I tell Eiden.\r\n\r\n\"Yes,\" Eiden says. \"Regarding this topic, at least.\"\r\n\r\n\"What about the second topic that you wanted to discuss with us?\" Kate says, while frowning.\r\n\r\n\"It's funny that you should ask this question, Kate of the Beacon of Hope,\" Eiden says, \"since the next subject of conversation probably concerns you the most, out of the whole group. The truth of the matter is that I was getting bored waiting for you all to reach your next destination, and I came here in the hopes that I could perhaps ask you to hurry it up a bit, since your next encounter very much concerns me as much as you.\"\r\n\r\n\"What are you talking about?\" Kate says. \"Why would our next destination concern both you and me?\"\r\n\r\n\"...You mean you don't know where you're going?\" Eiden asks, looking rather shocked.\r\n\r\nHe then turns towards Melindra, who is looking very stressed out right now."
+          - source: scene_3
+            paragraph: 3
+            text: "\"Melindra, you haven't told them?\" Eiden says.\r\n\r\n\"I was going to tell them!\" Melindra says. \"I was just... waiting for the right time, that's all!\"\r\n\r\n\"Then there is no time like the present, wouldn't you say?\" Eiden tells her.\r\n\r\n\"Melindra, what's going on?\" Kate asks. \"Who is this person that you are taking us to, and what does any of this have to do with me?\"\r\n\r\n\"It's.... I... Kate, first of all I need you to remain calm,\" Melindra says, looking as if she were on the verge of panicking herself. \"Can you promise me that?\"\r\n\r\n\"Okay,\" Kate says. \"I promise.\"\r\n\r\n\"Alright,\" Melindra says, \"so, umm... the first thing that I need to mention is that when you and I first met, I honestly had no knowledge of anything related to artificial mages or the Beacon of Hope. I only found out about these things much later, when I heard you guys talking about them.\"\r\n\r\n\"Fair enough,\" Kate says. \"But why are you telling me this all of a sudden?\"\r\n\r\n\"It's because...\" Melindra says, \"you see... the person that I wanted you to meet... my acquaintance who has the pinecone detector is in fact... it's... she is--\"\r\n\r\n\"It's Meridith,\" Eiden says, seeing that Melindra can't bring herself to say the words. \"She is leading you to Meridith.\""
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch10c_message
+      - condition: b3_ch8_overseer2 = 1 AND b3_ch4_billy = 8
+        texts:
+          - source: scene_text
+            paragraph: 7
+            text: "\"I think he will be a great leader.\"\r\n\r\n\"You are talking about Breynan or the Overseer?\" Eiden asks me.\r\n\r\n\"Both of them, to be honest,\" I say. \"I am quite confident that those two will do wonders as long as they work together.\"\r\n\r\n\"Hmm...\" Eiden says. \"It's true that from what I've heard, the Overseer is working on a way to make the seredium towers function without mage slaves, which is surprising, considering that he should not have anything to gain from doing such a thing. Am I to understand that your group had something to do with this?\"\r\n\r\n\"Yeah, this was part of the deal that we made with the Overseer when we agreed to help him take control of the city,\" I say. \"He promised that he would liberate the prisoners from the towers as soon as he'd find a way to eliminate the need for chaining mages to that energy-sucking machine.\"\r\n\r\n\"Interesting...\" Eiden says."
+          - source: scene_text_2
+            paragraph: 4
+            text: "After saying this, we both remain silent for about five seconds or so, until I finally decide that I should probably be the one to continue our conversation.\r\n\r\n\"So... is this all you wanted to ask, then?\" I tell Eiden.\r\n\r\n\"Yes,\" Eiden says. \"Regarding this topic, at least.\"\r\n\r\n\"What about the second topic that you wanted to discuss with us?\" Kate says, while frowning.\r\n\r\n\"It's funny that you should ask this question, Kate of the Beacon of Hope,\" Eiden says, \"since the next subject of conversation probably concerns you the most, out of the whole group. The truth of the matter is that I was getting bored waiting for you all to reach your next destination, and I came here in the hopes that I could perhaps ask you to hurry it up a bit, since your next encounter very much concerns me as much as you.\"\r\n\r\n\"What are you talking about?\" Kate says. \"Why would our next destination concern both you and me?\"\r\n\r\n\"...You mean you don't know where you're going?\" Eiden asks, looking rather shocked.\r\n\r\nHe then turns towards Melindra, who is looking very stressed out right now."
+          - source: scene_3
+            paragraph: 3
+            text: "\"Melindra, you haven't told them?\" Eiden says.\r\n\r\n\"I was going to tell them!\" Melindra says. \"I was just... waiting for the right time, that's all!\"\r\n\r\n\"Then there is no time like the present, wouldn't you say?\" Eiden tells her.\r\n\r\n\"Melindra, what's going on?\" Kate asks. \"Who is this person that you are taking us to, and what does any of this have to do with me?\"\r\n\r\n\"It's.... I... Kate, first of all I need you to remain calm,\" Melindra says, looking as if she were on the verge of panicking herself. \"Can you promise me that?\"\r\n\r\n\"Okay,\" Kate says. \"I promise.\"\r\n\r\n\"Alright,\" Melindra says, \"so, umm... the first thing that I need to mention is that when you and I first met, I honestly had no knowledge of anything related to artificial mages or the Beacon of Hope. I only found out about these things much later, when I heard you guys talking about them.\"\r\n\r\n\"Fair enough,\" Kate says. \"But why are you telling me this all of a sudden?\"\r\n\r\n\"It's because...\" Melindra says, \"you see... the person that I wanted you to meet... my acquaintance who has the pinecone detector is in fact... it's... she is--\"\r\n\r\n\"It's Meridith,\" Eiden says, seeing that Melindra can't bring herself to say the words. \"She is leading you to Meridith.\""
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch10c_message
+      - condition: b3_ch8_overseer2 = 0 AND b3_ch8_king = 5
+        texts:
+          - source: scene_text
+            paragraph: 8
+            text: "\"I think he will be a great leader.\"\r\n\r\n\"Hmm...\" Eiden says. \"I have to admit that a goblin healer as a king is an interesting choice to say the least. I was also surprised to see how cooperative the king of the underground has been during the latest events that occurred in their city.\"\r\n\r\n\"What do you mean?\" I ask him. \"What latest events?\"\r\n\r\n\"You haven't heard?\" Eiden says. \"Your goblin friend was apparently very adamant in his desire to free every single one of the prisoners from the seredium towers, but if this were to be done too hastily, it would have no doubt led to a general state of chaos, since almost all of the magical devices in the city, including the flying vehicles, would have stopped working out of the blue. In order to counteract this, the king of the underground had his men spread rumors for a day or two, making sure that the majority of the population would find out for themselves about the state of the prisoners and about the horrors that they have endured all this time at the hands of the previous king and his underlings. As a result, people very quickly took to the streets in order to request that all the prisoners should be freed at once, and naturally the goblin was very happy to comply with their demands.\"\r\n\r\n\"Oh, I get it!\" I say. \"And since the people themselves were the ones who asked for the prisoners' release, they could no longer complain about the flying vehicles no longer working, right?\""
+          - source: scene_text_2
+            paragraph: 3
+            text: "\"Obviously, there were still many complaints, but far fewer than there would have been if not for the king of the underground's intervention,\" Eiden says. \"The important part is that the chances of this situation devolving into a civil war are now very slim, which is far more than one could have normally hoped, given the circumstances.\"\r\n\r\n\"Right,\" I say.\r\n\r\nAfter saying this, we both remain silent for about five seconds or so, until I finally decide that I should probably be the one to continue our conversation.\r\n\r\n\"So... is this all you wanted to ask, then?\" I tell Eiden.\r\n\r\n\"Yes,\" Eiden says. \"Regarding this topic, at least.\"\r\n\r\n\"What about the second topic that you wanted to discuss with us?\" Kate says, while frowning.\r\n\r\n\"It's funny that you should ask this question, Kate of the Beacon of Hope,\" Eiden says, \"since the next subject of conversation probably concerns you the most, out of the whole group. The truth of the matter is that I was getting bored waiting for you all to reach your next destination, and I came here in the hopes that I could perhaps ask you to hurry it up a bit, since your next encounter very much concerns me as much as you.\"\r\n\r\n\"What are you talking about?\" Kate says. \"Why would our next destination concern both you and me?\"\r\n\r\n\"...You mean you don't know where you're going?\" Eiden asks, looking rather shocked."
+          - source: scene_text_2
+            paragraph: 4
+            text: "After saying this, we both remain silent for about five seconds or so, until I finally decide that I should probably be the one to continue our conversation.\r\n\r\n\"So... is this all you wanted to ask, then?\" I tell Eiden.\r\n\r\n\"Yes,\" Eiden says. \"Regarding this topic, at least.\"\r\n\r\n\"What about the second topic that you wanted to discuss with us?\" Kate says, while frowning.\r\n\r\n\"It's funny that you should ask this question, Kate of the Beacon of Hope,\" Eiden says, \"since the next subject of conversation probably concerns you the most, out of the whole group. The truth of the matter is that I was getting bored waiting for you all to reach your next destination, and I came here in the hopes that I could perhaps ask you to hurry it up a bit, since your next encounter very much concerns me as much as you.\"\r\n\r\n\"What are you talking about?\" Kate says. \"Why would our next destination concern both you and me?\"\r\n\r\n\"...You mean you don't know where you're going?\" Eiden asks, looking rather shocked.\r\n\r\nHe then turns towards Melindra, who is looking very stressed out right now."
+          - source: scene_3
+            paragraph: 3
+            text: "\"Melindra, you haven't told them?\" Eiden says.\r\n\r\n\"I was going to tell them!\" Melindra says. \"I was just... waiting for the right time, that's all!\"\r\n\r\n\"Then there is no time like the present, wouldn't you say?\" Eiden tells her.\r\n\r\n\"Melindra, what's going on?\" Kate asks. \"Who is this person that you are taking us to, and what does any of this have to do with me?\"\r\n\r\n\"It's.... I... Kate, first of all I need you to remain calm,\" Melindra says, looking as if she were on the verge of panicking herself. \"Can you promise me that?\"\r\n\r\n\"Okay,\" Kate says. \"I promise.\"\r\n\r\n\"Alright,\" Melindra says, \"so, umm... the first thing that I need to mention is that when you and I first met, I honestly had no knowledge of anything related to artificial mages or the Beacon of Hope. I only found out about these things much later, when I heard you guys talking about them.\"\r\n\r\n\"Fair enough,\" Kate says. \"But why are you telling me this all of a sudden?\"\r\n\r\n\"It's because...\" Melindra says, \"you see... the person that I wanted you to meet... my acquaintance who has the pinecone detector is in fact... it's... she is--\"\r\n\r\n\"It's Meridith,\" Eiden says, seeing that Melindra can't bring herself to say the words. \"She is leading you to Meridith.\""
+        effects:
+          - set:
+              ac_b3_ch10_behind: 1
+            achievement:
+              id: ac_b3_ch10_behind
+              title: No man left behind
+            condition: b3_ch4_cut = 0
         choices:
           - position: 1
             text: Continue
@@ -248,7 +296,8 @@ scenes:
               b3_ch10_reason: 0
   - name: b3_ch10c_revenant3
     routes:
-      - texts:
+      - condition: b3_ch10_reason = 1
+        texts:
           - source: scene_text
             paragraph: 14
             text: "\"Think about what you're doing!\" I tell the revenant. \"Is this really what the God of Death wanted? To kill Flower indiscriminately if Eiden doesn't give in to your demands? Do you really want to lose your only hostage? Can you not find any other way to resolve this?\"\r\n\r\n\"Another way...\" the revenant says, as she is gradually loosening her grip on Flower and moving the knife away from her neck. \"Yes... there has to be another way!\"\r\n\r\nSeeing that the revenant is no longer paying full attention to her, Flower takes advantage of the opportunity to duck underneath her arms and to dash away from her captor. She then immediately jumps up and propels herself towards the sky with fire jets coming out of her feet, so that the revenant can no longer reach her."
@@ -258,19 +307,20 @@ scenes:
           - source: scene_3
             paragraph: 6
             text: "What happened afterwards is a complete blur in my mind. I seem to remember some sort of discussion taking place between Eiden, Daren and Kate, but I don't know exactly what it was. I think it had something to do with the revenant and her immortality.\r\n\r\nJust like the time when Daren killed the revenant during the God of Time's ritual, all of this feels like a dream inside my head, but I know for a fact that it was real. Considering that the revenant is now alive and well, standing in the exact same place where she was right before Eiden began strangling her, I can only assume that the automatic spell from the Magium meant to keep her alive activated itself once again, and it reversed time only for the revenant and her attacker, while the rest of the world only remembers what happened before the time reversal as a distant dream, or not at all.\r\n\r\n\"Fascinating!\" Eiden says. \"I always assumed that this was how the Magium keeps time weavers from dying before they finish delivering their prophecies, but seeing it in practice is an entirely different experience! The spell seems to have reversed the time just enough for you to be able to escape using your own powers, but what were to happen if I kept killing you over and over again, I wonder? Can the spell keep up, or does it have limitations? Shall we find out together?\""
-        condition: b3_ch10_reason = 1
-        set:
-          ac_b3_ch10_reasonable: 1
-        achievement:
-          id: ac_b3_ch10_reasonable
-          title: Let's be reasonable!
+        effects:
+          - set:
+              ac_b3_ch10_reasonable: 1
+            achievement:
+              id: ac_b3_ch10_reasonable
+              title: Let's be reasonable!
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch10c_revenant4
-      - texts:
+      - condition: b3_ch10_reason = 0
+        texts:
           - source: scene_text
             paragraph: 15
             text: "\"If you don't remove that knife from her neck right now, you're going to regret it,\" I tell the revenant, in a menacing tone.\r\n\r\n\"Your threats mean nothing to me!\" the revenant says, looking as if my words actually helped her muster up her determination instead of intimidating her. \"The God of Death's will is absolute. If this girl is to die because of it, then it is a necessary sacrifice for--\"\r\n\r\nBefore she gets to finish her sentence, a water whip lashes at the revenant from behind, and it coils itself around the wrist of the arm holding the knife, pulling it back. Taking advantage of this opportunity provided to her by Illuna, Flower ducks underneath her captor's arms and she dashes away from her. She then immediately jumps up and propels herself towards the sky with fire jets coming out of her feet, so that the revenant can no longer reach her."
@@ -280,7 +330,6 @@ scenes:
           - source: scene_3
             paragraph: 6
             text: "What happened afterwards is a complete blur in my mind. I seem to remember some sort of discussion taking place between Eiden, Daren and Kate, but I don't know exactly what it was. I think it had something to do with the revenant and her immortality.\r\n\r\nJust like the time when Daren killed the revenant during the God of Time's ritual, all of this feels like a dream inside my head, but I know for a fact that it was real. Considering that the revenant is now alive and well, standing in the exact same place where she was right before Eiden began strangling her, I can only assume that the automatic spell from the Magium meant to keep her alive activated itself once again, and it reversed time only for the revenant and her attacker, while the rest of the world only remembers what happened before the time reversal as a distant dream, or not at all.\r\n\r\n\"Fascinating!\" Eiden says. \"I always assumed that this was how the Magium keeps time weavers from dying before they finish delivering their prophecies, but seeing it in practice is an entirely different experience! The spell seems to have reversed the time just enough for you to be able to escape using your own powers, but what were to happen if I kept killing you over and over again, I wonder? Can the spell keep up, or does it have limitations? Shall we find out together?\""
-        condition: b3_ch10_reason = 0
         choices:
           - position: 1
             text: Continue
@@ -306,14 +355,14 @@ scenes:
               current_scene: b3_ch10c_condition
   - name: b3_ch10c_condition
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 17
             text: "\"Indeed,\" Eiden says. \"I always do. Farewell.\"\r\n\r\nHe then smiles, puts his hands in his pockets and teleports away.\r\n\r\n\"Arraka, just to be sure, he actually teleported away, right?\" I say. \"He's not just hiding invisibly somewhere close by?\"\r\n\r\n\"Nah, he's gone,\" Arraka says. \"He probably already knows by now that there would be no point in doing something like that while I'm around.\"\r\n\r\n\"We should probably get ready to meet the leader of the lessathi,\" Kate says. \"We don't know who she will bring with her as her bodyguards, so we might want to prepare for a battle, just in case.\"\r\n\r\nWhile Kate, Flower and I dismantle the tents, Hadrik helps Daren with putting his armor pieces in his backpack, like they had discussed previously. Soon after we are all done, Melindra returns to us, with a somewhat displeased look on her face.\r\n\r\n\"I talked with Meridith,\" she says, as soon as she lands on the ground next to us. \"It turns out that she has an EXTRA condition for us before she will agree to meet with us. She said that-- wait a minute, where's Eiden?\""
           - source: scene_text_2
             paragraph: 10
             text: "\"He left while you were gone,\" Kate tells her.\r\n\r\n\"He left?!\" Melindra says, loudly. \"He couldn't even hang around a few more minutes to talk to me after all this time? Not even to say goodbye? I swear I'm going to pay him back for this!\"\r\n\r\n\"Uhm... you were saying something about an extra condition?\" Hadrik says.\r\n\r\n\"Yeah, Meridith wants us to meet her in the lessathi's main base, which can be found somewhere very far underneath the ground,\" Melindra says. \"They have a really powerful teleporting device that can get us there, but they'll first need to send someone up here to guide us to a place where the teleporter can detect our transceivers' signals.\"\r\n\r\n\"She wants us to go into the midst of the lessathi's lair?...\" Daren says. \"I'm not sure how much I like the sound of this.\"\r\n\r\n\"I agree,\" Kate says. \"It would be too risky for all of us to go. Maybe it should be just me. I'm the only one that Meridith specifically asked to meet.\""
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Tell Kate that it's too dangerous to go there alone.
@@ -329,14 +378,14 @@ scenes:
               - set:
                   current_scene: b3_ch10c_brother
                   b3_ch10_worry: 0
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 18
             text: "\"We should probably get ready to meet the leader of the lessathi,\" Kate says. \"We don't know who she will bring with her as her bodyguards, so we might want to prepare for a battle, just in case.\"\r\n\r\nWhile Kate, Flower and I dismantle the tents, Hadrik helps Daren with putting his armor pieces in his backpack, like they had discussed previously. Soon after we are all done, Melindra returns to us, with a somewhat displeased look on her face.\r\n\r\n\"I talked with Meridith,\" she says, as soon as she lands on the ground next to us. \"It turns out that she has an EXTRA condition for us before she will agree to meet with us. She said that-- wait a minute, where's Eiden?\""
           - source: scene_text_2
             paragraph: 10
             text: "\"He left while you were gone,\" Kate tells her.\r\n\r\n\"He left?!\" Melindra says, loudly. \"He couldn't even hang around a few more minutes to talk to me after all this time? Not even to say goodbye? I swear I'm going to pay him back for this!\"\r\n\r\n\"Uhm... you were saying something about an extra condition?\" Hadrik says.\r\n\r\n\"Yeah, Meridith wants us to meet her in the lessathi's main base, which can be found somewhere very far underneath the ground,\" Melindra says. \"They have a really powerful teleporting device that can get us there, but they'll first need to send someone up here to guide us to a place where the teleporter can detect our transceivers' signals.\"\r\n\r\n\"She wants us to go into the midst of the lessathi's lair?...\" Daren says. \"I'm not sure how much I like the sound of this.\"\r\n\r\n\"I agree,\" Kate says. \"It would be too risky for all of us to go. Maybe it should be just me. I'm the only one that Meridith specifically asked to meet.\""
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: Tell Kate that it's too dangerous to go there alone.
@@ -354,7 +403,8 @@ scenes:
                   b3_ch10_worry: 0
   - name: b3_ch10c_brother
     routes:
-      - texts:
+      - condition: b3_ch10_worry = 1 AND b3_ch1_kate3 = 0
+        texts:
           - source: scene_text
             paragraph: 19
             text: "\"You can't go there alone!\" I tell Kate. \"It's too dangerous!\"\r\n\r\n\"I can handle myself,\" Kate says. \"There's no need to worry about me.\"\r\n\r\n\"I'll worry about you as much as I like, thank you very much,\" I say.\r\n\r\nWhen Kate hears my words, her face quickly begins to redden, and she turns her head away from us, in order to hide her embarrassment.\r\n\r\nSeeing her reaction, I quickly realize that she must have been reminded of that time when we were discussing the great toll that the God of Time's ritual took on her, mentally, and I told her that she shouldn't hide such things from me because I 'want' to worry about her.\r\n\r\n\"Barry is right,\" Daren says. \"Letting you go there by yourself is out of the question. The most we can try is to negotiate something with the lessathi that Meridith will be sending to the surface to talk to us, but if there is nothing we can do about it, then we'll just have to accept the risk. We've come too far to give up on that pinecone detector now.\"\r\n\r\nAll of a sudden, one of Illuna's water whips coils itself around Kate's waist, while Kate turns around to understand what's happening.\r\n\r\n\"Illuna, what are you doing?\" Kate asks."
@@ -364,14 +414,14 @@ scenes:
           - source: scene_3
             paragraph: 8
             text: "\"Yes,\" Melindra says. \"He and I were the only half-lessathi who happened to be there when--\"\r\n\r\nShe pauses for a second, realizing that she may have said too much.\r\n\r\n\"We are the only two half-lessathi who became stillwaters,\" Melindra corrects herself. \"Most of the others were human mages, including Eiden.\"\r\n\r\n\"And I do not suppose that you are more inclined to tell us how you all became stillwaters than you were the last time we talked about this subject,\" Daren says.\r\n\r\n\"No,\" Melindra says. \"But you have to understand, I'm doing this for your sakes as well. Eiden has been very thorough in eliminating all traces that could lead anyone to this information, specifically so that a tragedy like the still winter would never happen again. If he were to suspect that you came into possession of this knowledge, there's no telling what he would do to you.\"\r\n\r\n\"You're right,\" Daren says. \"This might be for the best. We already have enough powerful enemies as it is. There's no need to add another one to the list. So, do we go this way, or...?\"\r\n\r\n\"No,\" Melindra says. \"We need to go around these bushes and then to the left. Not much further now.\""
-        condition: b3_ch10_worry = 1 AND b3_ch1_kate3 = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch10c_designated
-      - texts:
+      - condition: b3_ch10_worry = 1 AND b3_ch1_kate3 <> 0
+        texts:
           - source: scene_text
             paragraph: 20
             text: "\"You can't go there alone!\" I tell Kate. \"It's too dangerous!\"\r\n\r\n\"I can handle myself,\" Kate says. \"There's no need to worry about me.\"\r\n\r\n\"I'll worry about you as much as I like, thank you very much,\" I say.\r\n\r\n\"Barry is right,\" Daren says. \"Letting you go there by yourself is out of the question. The most we can try is to negotiate something with the lessathi that Meridith will be sending to the surface to talk to us, but if there is nothing we can do about it, then we'll just have to accept the risk. We've come too far to give up on that pinecone detector now.\"\r\n\r\nAll of a sudden, one of Illuna's water whips coils itself around Kate's waist, while Kate turns around to understand what's happening.\r\n\r\n\"Illuna, what are you doing?\" Kate asks."
@@ -381,14 +431,14 @@ scenes:
           - source: scene_3
             paragraph: 8
             text: "\"Yes,\" Melindra says. \"He and I were the only half-lessathi who happened to be there when--\"\r\n\r\nShe pauses for a second, realizing that she may have said too much.\r\n\r\n\"We are the only two half-lessathi who became stillwaters,\" Melindra corrects herself. \"Most of the others were human mages, including Eiden.\"\r\n\r\n\"And I do not suppose that you are more inclined to tell us how you all became stillwaters than you were the last time we talked about this subject,\" Daren says.\r\n\r\n\"No,\" Melindra says. \"But you have to understand, I'm doing this for your sakes as well. Eiden has been very thorough in eliminating all traces that could lead anyone to this information, specifically so that a tragedy like the still winter would never happen again. If he were to suspect that you came into possession of this knowledge, there's no telling what he would do to you.\"\r\n\r\n\"You're right,\" Daren says. \"This might be for the best. We already have enough powerful enemies as it is. There's no need to add another one to the list. So, do we go this way, or...?\"\r\n\r\n\"No,\" Melindra says. \"We need to go around these bushes and then to the left. Not much further now.\""
-        condition: b3_ch10_worry = 1 AND b3_ch1_kate3 <> 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch10c_designated
-      - texts:
+      - condition: b3_ch10_worry = 0
+        texts:
           - source: scene_text
             paragraph: 21
             text: "\"That is not an option,\" Daren tells Kate. \"Either we all go with you to the underground lair, or nobody does.\"\r\n\r\n\"You think I can't handle myself?\" Kate says, with a frown.\r\n\r\n\"I don't know,\" Daren says. \"Maybe you can, maybe you can't. There is too much of an unknown risk in travelling to a base full of potential enemies for us to split up. Even going there as a group might prove challenging, depending on how our negotiations with Meridith will go.\"\r\n\r\nAll of a sudden, one of Illuna's water whips coils itself around Kate's waist, while Kate turns around to understand what's happening.\r\n\r\n\"Illuna, what are you doing?\" Kate asks."
@@ -398,7 +448,6 @@ scenes:
           - source: scene_3
             paragraph: 8
             text: "\"Yes,\" Melindra says. \"He and I were the only half-lessathi who happened to be there when--\"\r\n\r\nShe pauses for a second, realizing that she may have said too much.\r\n\r\n\"We are the only two half-lessathi who became stillwaters,\" Melindra corrects herself. \"Most of the others were human mages, including Eiden.\"\r\n\r\n\"And I do not suppose that you are more inclined to tell us how you all became stillwaters than you were the last time we talked about this subject,\" Daren says.\r\n\r\n\"No,\" Melindra says. \"But you have to understand, I'm doing this for your sakes as well. Eiden has been very thorough in eliminating all traces that could lead anyone to this information, specifically so that a tragedy like the still winter would never happen again. If he were to suspect that you came into possession of this knowledge, there's no telling what he would do to you.\"\r\n\r\n\"You're right,\" Daren says. \"This might be for the best. We already have enough powerful enemies as it is. There's no need to add another one to the list. So, do we go this way, or...?\"\r\n\r\n\"No,\" Melindra says. \"We need to go around these bushes and then to the left. Not much further now.\""
-        condition: b3_ch10_worry = 0
         choices:
           - position: 1
             text: Continue
@@ -620,28 +669,28 @@ scenes:
               b3_ch10_crystals: 0
   - name: b3_ch10c_brightly
     routes:
-      - texts:
+      - condition: b3_ch10_crystals = 1
+        texts:
           - source: scene_text
             paragraph: 33
             text: "\"We actually know the cause,\" I say. \"The crystals began acting up after the king of Ollendor blew up the underground caves beneath the city in order to kill the rebels.\"\r\n\r\n\"You're saying that the crystals from here were affected by something that happened all the way in Ollendor?\" Meridith asks me.\r\n\r\n\"Yeah, I'm pretty sure of it,\" I say. \"They were behaving in the same way there too. They all had slow rhythmic vibrations, while the light was getting gradually dimmer and then bright again, as if the crystals were all breathing in unison.\"\r\n\r\n\"If what you say is true, then this will be of great help in our quest to better understand the nature of the blue crystals,\" Meridith says. \"Thank you for this invaluable piece of information.\"\r\n\r\n\"You're welcome,\" I say.\r\n\r\n\"Is it just me, or have we not seen a single lessathi since we left the teleporter room?\" Kate asks, as we continue to walk through the brightly lit underground cavern.\r\n\r\n\"These particular corridors are restricted to only the highest ranked members of our community,\" Meridith says. \"Other people cannot come through here without my express permission.\"\r\n\r\n\"So, this is like a place of gathering for the most important lessathi, then?\" Daren says.\r\n\r\n\"No,\" Meridith says, \"but it is a very sacred place that needs to be given proper respect.\""
           - source: scene_text_2
             paragraph: 20
             text: "She then stops in front of the only seredium wall that does not have any crystals embedded into it, and she turns towards us.\r\n\r\n\"We have arrived at our destination,\" Meridith says. \"The one who is awaiting you can be found in the room beyond this wall.\"\r\n\r\n\"So, does this mean that you're finally going to tell us who we're supposed to meet?\" Hadrik says.\r\n\r\n\"Yes,\" Meridith says, as she now turns her back to us again so she can tap the seredium wall several times with her wand. \"It is someone whom you've no doubt heard of before, but have likely never had the chance to meet face to face.\"\r\n\r\nJust like in the previous tunnel, the wall reacts to her wand's touch, and the secret door slowly begins to open, revealing to us what's on the other side.\r\n\r\n\"He is the highest form of existence, and he has guided our people since the oldest of times,\" Meridith continues, as the door has been almost completely opened.\r\n\r\nNow that the inside of the next room is visible to us, we see that the only thing waiting for us over there is a very large sphere of solid blue light that is constantly flowing around a pitch-black center.\r\n\r\n\"Allow me to introduce you to our true Creator,\" Meridith says. \"The Magium!\""
-        condition: b3_ch10_crystals = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch10c_panicked
-      - texts:
+      - condition: b3_ch10_crystals = 0
+        texts:
           - source: scene_text
             paragraph: 34
             text: "After thinking things through, I decide that it's better to not tell Meridith the true cause for the crystals' strange behavior. It's better to not give her more information than necessary until I learn exactly how much she can be trusted.\r\n\r\n\"Is it just me, or have we not seen a single lessathi since we left the teleporter room?\" Kate asks, as we continue to walk through the brightly lit underground cavern.\r\n\r\n\"These particular corridors are restricted to only the highest ranked members of our community,\" Meridith says. \"Other people cannot come through here without my express permission.\"\r\n\r\n\"So, this is like a place of gathering for the most important lessathi, then?\" Daren says.\r\n\r\n\"No,\" Meridith says, \"but it is a very sacred place that needs to be given proper respect.\""
           - source: scene_text_2
             paragraph: 20
             text: "She then stops in front of the only seredium wall that does not have any crystals embedded into it, and she turns towards us.\r\n\r\n\"We have arrived at our destination,\" Meridith says. \"The one who is awaiting you can be found in the room beyond this wall.\"\r\n\r\n\"So, does this mean that you're finally going to tell us who we're supposed to meet?\" Hadrik says.\r\n\r\n\"Yes,\" Meridith says, as she now turns her back to us again so she can tap the seredium wall several times with her wand. \"It is someone whom you've no doubt heard of before, but have likely never had the chance to meet face to face.\"\r\n\r\nJust like in the previous tunnel, the wall reacts to her wand's touch, and the secret door slowly begins to open, revealing to us what's on the other side.\r\n\r\n\"He is the highest form of existence, and he has guided our people since the oldest of times,\" Meridith continues, as the door has been almost completely opened.\r\n\r\nNow that the inside of the next room is visible to us, we see that the only thing waiting for us over there is a very large sphere of solid blue light that is constantly flowing around a pitch-black center.\r\n\r\n\"Allow me to introduce you to our true Creator,\" Meridith says. \"The Magium!\""
-        condition: b3_ch10_crystals = 0
         choices:
           - position: 1
             text: Continue
@@ -705,7 +754,8 @@ scenes:
               b3_ch10_node: 0
   - name: b3_ch10c_colors
     routes:
-      - texts:
+      - condition: b3_ch10_node = 1
+        texts:
           - source: scene_text
             paragraph: 38
             text: "I ignore Daren's warning and touch the blue sphere of darkness and light with my right hand.\r\n\r\nSuddenly, billions of images and voices appear in my head at the same time and for a moment, I get the feeling that I understand everything that there is to know about the universe. However, even though the knowledge seems to be right there, within my reach, it also seems very far away, as if I could take an infinite amount of steps towards it and the distance between us would remain the same.\r\n\r\nI quickly take my hand out, before I am overwhelmed by the immense amount of information that is being flooded into my brain, and then all of the knowledge goes away almost as fast as I had obtained it.\r\n\r\nThat being said, I definitely feel different now from how I was before I touched the sphere. The knowledge itself might not still be there in my head, but there's still... something. I feel like the root of the information is still somehow present in my mind. As if the very origin of those ideas could not be extracted from my mind once I stopped touching the sphere, so it was just abandoned there, in my head.\r\n\r\nIf only I could find some way to reconstruct the rest of the details just from what I have left...\r\n\r\n\"I can't believe it!\" Daren says, as he is pulling me away from the Magium node, and out of the room. \"I can't believe you actually did it! Barry, I swear, one of these days you're going to give me a heart attack!\""
@@ -715,21 +765,20 @@ scenes:
           - source: scene_3
             paragraph: 19
             text: "\"I have a question,\" Kate says, as she is looking somewhat anxiously towards the wall between us and the Magium node. \"Do you think the Magium can still listen to us through the red sphere of light now that the seredium door is shut?\"\r\n\r\n\"Highly unlikely,\" Arraka says. \"But it wouldn't hurt to get a little further from it just to be safe.\"\r\n\r\n\"Wait, wait, wait...\" Hadrik says, as we are moving away from the wall, and in the direction of Meridith's meeting hall. \"Did you just say red sphere? What do you mean red? The only colors I saw on that sphere were yellow and black. Where was the red?\"\r\n\r\n\"The sphere was clearly green for me,\" Daren says, \"so I'm assuming that different people must see it in different colors. Is that right, Arraka?\"\r\n\r\n\"Correct,\" Arraka says. \"Flower, for example sees it as purple, and so does Illuna, since she lives inside Flower's mind. I, on the other hand have been through so many earthen bodies that I've seen the Magium nodes in all colors of the rainbow by now.\"\r\n\r\n\"But the crystals are blue for everyone, right?\" Kate asks. \"I thought they were supposed to be 'crystalized Magium essence'. Why are we not seeing them in different colors, like the node?\""
-        condition: b3_ch10_node = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch10c_common
-      - texts:
+      - condition: b3_ch10_node = 0
+        texts:
           - source: scene_text
             paragraph: 39
             text: "After some careful consideration, I decide to back away from the blue sphere. I should probably at least ask Meridith for some more details about it before I do anything too crazy.\r\n\r\n\"Phew...\" Daren says. \"You had me scared there, for a moment. I thought you were actually going to do it.\"\r\n\r\n\"I was going to at first, but then I decided against it,\" I say. \"I feel like this might be a little too risky, even for me.\"\r\n\r\n\"Pffft,\" Arraka says. \"What a pansy.\"\r\n\r\n\"We should probably close the door before anyone else gets any ideas,\" Daren says, as he taps on the wall five times, like Meridith said, and the secret door slowly slides back into place.\r\n\r\n\"Do you think the Magium can still listen to us through the red sphere of light now that the seredium door is shut?\" Kate says.\r\n\r\n\"Highly unlikely,\" Arraka says. \"But it wouldn't hurt to get a little further from it just to be safe.\""
           - source: scene_text_2
             paragraph: 25
             text: "\"Wait, wait, wait...\" Hadrik says, as we are moving away from the wall, and in the direction of Meridith's meeting hall. \"Did you just say red sphere? What do you mean red? The only colors I saw on that sphere were yellow and black. Where was the red?\"\r\n\r\n\"The sphere was clearly green for me,\" Daren says, \"so I'm assuming that different people must see it in different colors. Is that right, Arraka?\"\r\n\r\n\"Correct,\" Arraka says. \"Flower, for example sees it as purple, and so does Illuna, since she lives inside Flower's mind. I, on the other hand have been through so many earthen bodies that I've seen the Magium nodes in all colors of the rainbow by now.\"\r\n\r\n\"But the crystals are blue for everyone, right?\" Kate asks. \"I thought they were supposed to be 'crystalized Magium essence'. Why are we not seeing them in different colors, like the node?\""
-        condition: b3_ch10_node = 0
         choices:
           - position: 1
             text: Continue
@@ -738,7 +787,8 @@ scenes:
                   current_scene: b3_ch10c_common
   - name: b3_ch10c_common
     routes:
-      - texts:
+      - condition: b3_ch10_node = 1
+        texts:
           - source: scene_text
             paragraph: 40
             text: "\"I'm not entirely sure how the crystals work,\" Arraka says, \"but blue is the most commonly seen color of the Magium nodes from what I've heard, so that might be part the reason. I can also confirm that of all the colors I've seen while I was possessing animals, blue was definitely the color that came up the most often.\"\r\n\r\n\"Yeah, that would make perfect sense, since I see the sphere as blue,\" I say.\r\n\r\n\"Hah!\" Hadrik says. \"A common color for a common name. It's like the universe itself is out to get you sometimes, isn't it?\"\r\n\r\n\"Eh...\" I say. \"Trust me, you get used to it after a while.\"\r\n\r\n\"So, umm... is this a good time to ask what everyone's thoughts are on what just happened to us in the Magium realm?\" Daren says. \"I wouldn't want to awaken unnecessary trauma in anyone, but I feel like this needs to be discussed sooner rather than later.\"\r\n\r\n\"It's fine,\" Kate says. \"At least we were warned in advance by Barry about the void and the erasure from existence, so it wasn't as much of a shock as it could have been. That being said, I'm not exactly sure what there is to discuss. I'd say the encounter was fairly straightforward. The Magium fragment pretty much confirmed to us that Eiden is one of the two old enemies mentioned by the prophecy, and it also more or less confirmed that it wants him dead.\"\r\n\r\n\"So, what, are we going to turn into the Magium's lackeys now?\" Hadrik says. \"Just like that? What power does he have over us anyway? Would we even meet him again if we never approached one of those weird spheres again?\""
@@ -748,21 +798,20 @@ scenes:
           - source: scene_3
             paragraph: 20
             text: "\"Guys... I think I might have figured out something very important,\" I say, after being deep inside my own thoughts for more than a minute, while the others were talking.\r\n\r\n\"Such as?\" Arraka asks me, in a doubtful tone.\r\n\r\n\"When I touched the Magium node, even though it was for a very short while, I could still feel myself connected with the Magium itself,\" I say. \"This was more than just the 'link' that I had with it during the rituals. It was as if the Magium and I were one and the same... I was one... with the source.\"\r\n\r\n\"The source?\" Daren asks me. \"You mean, like the source of all magic?\"\r\n\r\n\"No, no, not ONLY of magic,\" I say. \"I mean the source of the earthen plane, the magical plane, the ethereal plane... the source of all the parallel universes that contain different versions of ourselves... the source of time and space... the source of thoughts and consciousness and free will... In other words... the source of everything.\"\r\n\r\n\"So, you're saying that this is the true nature of the Magium?\" Kate asks me. \"Not the source of all magic, but the source of everything?\""
-        condition: b3_ch10_node = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch10c_informed
-      - texts:
+      - condition: b3_ch10_node = 0
+        texts:
           - source: scene_text
             paragraph: 40
             text: "\"I'm not entirely sure how the crystals work,\" Arraka says, \"but blue is the most commonly seen color of the Magium nodes from what I've heard, so that might be part the reason. I can also confirm that of all the colors I've seen while I was possessing animals, blue was definitely the color that came up the most often.\"\r\n\r\n\"Yeah, that would make perfect sense, since I see the sphere as blue,\" I say.\r\n\r\n\"Hah!\" Hadrik says. \"A common color for a common name. It's like the universe itself is out to get you sometimes, isn't it?\"\r\n\r\n\"Eh...\" I say. \"Trust me, you get used to it after a while.\"\r\n\r\n\"So, umm... is this a good time to ask what everyone's thoughts are on what just happened to us in the Magium realm?\" Daren says. \"I wouldn't want to awaken unnecessary trauma in anyone, but I feel like this needs to be discussed sooner rather than later.\"\r\n\r\n\"It's fine,\" Kate says. \"At least we were warned in advance by Barry about the void and the erasure from existence, so it wasn't as much of a shock as it could have been. That being said, I'm not exactly sure what there is to discuss. I'd say the encounter was fairly straightforward. The Magium fragment pretty much confirmed to us that Eiden is one of the two old enemies mentioned by the prophecy, and it also more or less confirmed that it wants him dead.\"\r\n\r\n\"So, what, are we going to turn into the Magium's lackeys now?\" Hadrik says. \"Just like that? What power does he have over us anyway? Would we even meet him again if we never approached one of those weird spheres again?\""
           - source: scene_text_2
             paragraph: 26
             text: "\"It's not that simple,\" Arraka says. \"Whenever Selkram does his rituals, he links you directly to the Magium, by means of the time weaver delivering the prophecy who is linked to the Magium herself during that time. While you are in that state, you're practically standing on the Magium's doorstep, so yes, there would be a notable risk of you coming into direct contact with a Magium fragment again even if you avoid the nodes.\"\r\n\r\n\"Huh...\" Hadrik says. \"Well, either way, I'm nobody's stooge, so I guess the Magium will just have to erase me, then. If we are forced to fight Eiden at some point in time, it's fine by me, but I won't go out of my way to hunt him down just because some dumb floating sphere of light ordered me to!\"\r\n\r\n\"That's the spirit!\" Arraka says. \"Don't worry, I'll make sure to smuggle some blankets for you when you're serving your time inside the void. I heard that it can get really cold there during the winter.\"\r\n\r\n\"Save the blankets and send me some dwarven ale instead,\" Hadrik says. \"There's nothing that warms you better during a freezing winter than some strong alcohol.\"\r\n\r\n\"Duly noted,\" Arraka says."
-        condition: b3_ch10_node = 0
         choices:
           - position: 1
             text: Continue
@@ -771,7 +820,8 @@ scenes:
                   current_scene: b3_ch10c_informed
   - name: b3_ch10c_informed
     routes:
-      - texts:
+      - condition: b3_ch10_node = 1
+        texts:
           - source: scene_text
             paragraph: 41
             text: "\"Aha-Ahahahahahahaha!\" Arraka laughs very loudly. \"That's it. That is exactly it. 'Source of everything'. Those were the three words that I have been avoiding to say all this time, because they would have divulged the true nature of the Magium. And since you two are still here and have not been erased from before our eyes, then this confirms that we should be able to speak freely of this subject matter from now on, as long as we are not standing right next to a Magium node and as long as we are not in the middle of one of Selkram's rituals. Still, I can't believe it took you THIS long to figure it out.\"\r\n\r\n\"I'm having a bit of trouble understanding the behavior of these Magium fragments,\" Daren says. \"I sort of get why they're not attacking us now, because we're out of their reach, but if one of their main purposes is to keep people from finding out what the Magium's true nature is, then why were you allowed to leave earlier? Shouldn't the fragment have finished the job of erasing you, considering that you already almost gave away the three words once before while you were in the Magium's own backyard?\""
@@ -781,12 +831,12 @@ scenes:
           - source: scene_3
             paragraph: 22
             text: "\"Yes,\" Arraka says, \"and as long as the copy version of me from the past were to be found, the other fragment would not have cared if it destroyed our whole world in the process. It's pretty clear by this point that these fragments will mow down anyone standing in the way of their goals, so the best course of action is probably to avoid contact with them as much as possible.\"\r\n\r\n\"It looks like the meeting room that Meridith told us about is the one over there,\" Kate says, as she points towards a door at the end of the tunnel. \"Should we head in?\"\r\n\r\n\"I think that before entering the meeting room, we should decide if we want to tell Meridith about what the Magium said to us or not,\" Daren says, in a low voice.\r\n\r\n\"You mean, about him heavily implying that you should kill Eiden?\" Melindra says. \"You're not seriously considering doing that, are you? He's going to destroy you!\"\r\n\r\n\"Right now we're only discussing whether we should mention this detail to Meridith or not,\" Daren says. \"Once we hear her side of the story, we might be able to make a more informed decision, but maybe it would be better to let her bring up the subject on her own. What do you guys think?\""
-        condition: b3_ch10_node = 1
-        set:
-          ac_b3_ch10_forbidden: 1
-        achievement:
-          id: ac_b3_ch10_forbidden
-          title: Forbidden knowledge
+        effects:
+          - set:
+              ac_b3_ch10_forbidden: 1
+            achievement:
+              id: ac_b3_ch10_forbidden
+              title: Forbidden knowledge
         choices:
           - position: 1
             text: I think it would be better to mention it to Meridith.
@@ -802,7 +852,8 @@ scenes:
               - set:
                   current_scene: b3_ch10c_decorations
                   b3_ch10_mention: 0
-      - texts:
+      - condition: b3_ch10_node = 0
+        texts:
           - source: scene_text
             paragraph: 42
             text: "\"Why do I suddenly feel like there's some important information that I'm missing?\" I say. \"As if I was one step away from finding out the true nature of the Magium itself, but then I threw away the opportunity?\"\r\n\r\n\"Who knows?\" Arraka tells me. \"Maybe if you hadn't been such a wuss and you would have touched the Magium node you would have known its true nature already. Too late for that now, though. I guess you'll just have to live with your poor decision for the rest of your days.\"\r\n\r\n\"Don't listen to her, Barry!\" Daren says. \"You made the right choice. Who knows what would have happened if you actually touched the node?\""
@@ -812,7 +863,6 @@ scenes:
           - source: scene_3
             paragraph: 21
             text: "\"I think that before entering the meeting room, we should decide if we want to tell Meridith about what the Magium said to us or not,\" Daren says, in a low voice.\r\n\r\n\"You mean, about him heavily implying that you should kill Eiden?\" Melindra says. \"You're not seriously considering doing that, are you? He's going to destroy you!\"\r\n\r\n\"Right now we're only discussing whether we should mention this detail to Meridith or not,\" Daren says. \"Once we hear her side of the story, we might be able to make a more informed decision, but maybe it would be better to let her bring up the subject on her own. What do you guys think?\""
-        condition: b3_ch10_node = 0
         choices:
           - position: 1
             text: I think it would be better to mention it to Meridith.
@@ -830,7 +880,8 @@ scenes:
                   b3_ch10_mention: 0
   - name: b3_ch10c_decorations
     routes:
-      - texts:
+      - condition: b3_ch10_mention = 1
+        texts:
           - source: scene_text
             paragraph: 43
             text: "\"I think it would be better to mention it to Meridith,\" I say. \"She almost certainly already knows about the Magium fragment's plans, so it could be suspicious if we don't tell her about it.\"\r\n\r\n\"You might be right,\" Daren says. \"After all, the Magium did tell us that we should talk to Meridith if we have any questions. Does everyone else agree?\"\r\n\r\n\"It's all the same to me, since I'm not planning to be a part of this manhunt either way,\" Hadrik says.\r\n\r\n\"It's fine,\" Kate says, as Flower also nods.\r\n\r\n\"Then it's settled,\" Daren says. \"Let's go see what Meridith wants.\"\r\n\r\nDaren goes to open the door, and then we all enter the meeting room one by one. The inside of the room is not too different from the hall where we used to meet with the king of the underground back in Ollendor, except for the fact that there are many lessathi decorations on the walls, depicting their much-beloved crest of the hawk holding the sun in its talons.\r\n\r\nThere is a table in the middle of the room, and enough chairs on our side for all of us to sit in. On the other side of the table, there are only two chairs, in which Meridith and Diane are already seated. As soon as we enter, Meridith invites us to sit in the chairs, so we do as she asks and get ourselves seated comfortably on the opposite side of her.\r\n\r\nOnce we're all at the table, Meridith begins to speak."
@@ -840,14 +891,14 @@ scenes:
           - source: scene_3
             paragraph: 23
             text: "For a few seconds, there is only silence, while Meridith and I just keep looking directly at each other, without averting our eyes.\r\n\r\n\"What made you arrive at that conclusion?\" Meridith asks me simply, without showing any change in her facial expression.\r\n\r\n\"Well, for starters,\" I say, \"whoever pulled off that stunt must have been someone with a lot of money, who knew that the stat boosters were more than fortune teller's trinkets, and who needed to get hold of all those devices before the tournament began. I can't think of many people who would fit that description.\"\r\n\r\nI then pause for several moments, to see if the expression on Meridith's face changes in any way, but she is able to control herself perfectly.\r\n\r\n\"Is that it?\" Meridith says. \"Are these the only reasons that led you to believe I was the one who amassed all those devices?\"\r\n\r\n\"No,\" I say. \"There's also the fact that my stat booster has been harnessing considerably less energy in Thilias and Ollendor than outside of the two cities. Aside from this, I know of another person with a stat device who's been in Thilias since the beginning of the tournament, and who has gathered far fewer stat points than me because of that. If there were some other harnessers of magical energy in those cities, like for example let's say... a thousand stat devices, then it would make a lot of sense.\"\r\n\r\n\"What exactly are you implying?\" Meridith asks me."
-        condition: b3_ch10_mention = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch10c_sham
-      - texts:
+      - condition: b3_ch10_mention = 0
+        texts:
           - source: scene_text
             paragraph: 44
             text: "\"We should probably avoid mentioning any of this to Meridith, for now,\" I say. \"If we were to bring up the subject by ourselves, it might give off the wrong impression that we've already accepted the Magium fragment's request. I'd rather hear what she has to say about it first.\"\r\n\r\n\"A fair point,\" Daren says. \"Does anyone else have anything to add, or should we go with Barry's idea?\"\r\n\r\n\"It's all the same to me, since I'm not planning to be a part of this manhunt either way,\" Hadrik says.\r\n\r\n\"It's fine,\" Kate says, as Flower also nods.\r\n\r\n\"Then it's settled,\" Daren says. \"Let's go see what Meridith wants.\"\r\n\r\nDaren goes to open the door, and then we all enter the meeting room one by one. The inside of the room is not too different from the hall where we used to meet with the king of the underground back in Ollendor, except for the fact that there are many lessathi decorations on the walls, depicting their much-beloved crest of the hawk holding the sun in its talons.\r\n\r\nThere is a table in the middle of the room, and enough chairs on our side for all of us to sit in. On the other side of the table, there are only two chairs, in which Meridith and Diane are already seated. As soon as we enter, Meridith invites us to sit in the chairs, so we do as she asks and get ourselves seated comfortably on the opposite side of her.\r\n\r\nOnce we're all at the table, Meridith begins to speak."
@@ -857,7 +908,6 @@ scenes:
           - source: scene_3
             paragraph: 23
             text: "For a few seconds, there is only silence, while Meridith and I just keep looking directly at each other, without averting our eyes.\r\n\r\n\"What made you arrive at that conclusion?\" Meridith asks me simply, without showing any change in her facial expression.\r\n\r\n\"Well, for starters,\" I say, \"whoever pulled off that stunt must have been someone with a lot of money, who knew that the stat boosters were more than fortune teller's trinkets, and who needed to get hold of all those devices before the tournament began. I can't think of many people who would fit that description.\"\r\n\r\nI then pause for several moments, to see if the expression on Meridith's face changes in any way, but she is able to control herself perfectly.\r\n\r\n\"Is that it?\" Meridith says. \"Are these the only reasons that led you to believe I was the one who amassed all those devices?\"\r\n\r\n\"No,\" I say. \"There's also the fact that my stat booster has been harnessing considerably less energy in Thilias and Ollendor than outside of the two cities. Aside from this, I know of another person with a stat device who's been in Thilias since the beginning of the tournament, and who has gathered far fewer stat points than me because of that. If there were some other harnessers of magical energy in those cities, like for example let's say... a thousand stat devices, then it would make a lot of sense.\"\r\n\r\n\"What exactly are you implying?\" Meridith asks me."
-        condition: b3_ch10_mention = 0
         choices:
           - position: 1
             text: Continue
@@ -866,7 +916,8 @@ scenes:
                   current_scene: b3_ch10c_sham
   - name: b3_ch10c_sham
     routes:
-      - texts:
+      - condition: b2_ch7_overheard = 0
+        texts:
           - source: scene_text
             paragraph: 45
             text: "\"Do I really need to spell it out?\" I say. \"What I am 'implying' is that this whole tournament is a sham. You never planned to give anyone access to the Magium. The only reason why you even considered offering it as a prize was because you knew for certain that this was the only thing which could possibly lure so many mages to a single place. The real purpose of this tournament was never to choose a champion to defend Varathia. It was to use all those stat devices that you bought to extract a huge amount of energy from the participants.\"\r\n\r\n\"Oh, now I get it!\" Hadrik says. \"That's why they made us wait for one week before giving us our first objectives. And it's also why they made us run around the whole continent like idiots, looking for pinecones. They were stalling for time so they could get enough energy out of us!\"\r\n\r\n\"Exactly,\" I say. \"Honestly, the only thing I can't figure out for the life of me is why they would even allow the mages to kill each other at all. Why not just make a rule stating that no killing is permitted before the tournament begins, and then delay us indefinitely?\""
@@ -876,14 +927,14 @@ scenes:
           - source: scene_3
             paragraph: 24
             text: "\"However,\" Meridith continues, \"I would like to point out that there were in fact two things that my nephew got wrong in his analysis. First of all, we do not in fact have thousands of stat boosters hidden inside the cities of Varathia. We bought all those devices so that we could disassemble them and use their parts to create energy extractors, which would be far more potent than the stat boosters themselves. And secondly, nobody ever said that we would not grant you access to the Magium.\"\r\n\r\n\"Are you serious?\" I ask Meridith. \"You're saying I'm supposed to believe that you'll give the tournament winner their prize when you've already admitted that the whole contest is just a ruse?\"\r\n\r\n\"You misunderstand me,\" Meridith says. \"Obviously, the tournament winner won't be getting anything. What I was saying is that I am willing to give YOU access to the Magium. You and all of your friends. And all you need to do for this is to provide a little assistance to me.\"\r\n\r\n\"Provide assistance?\" Kate says. \"What kind of assistance, exactly?\"\r\n\r\n\"You see,\" Meridith says, \"the reality is that this whole tournament that you've been part of until now has only been organized because of one person. Ever since the destruction of Olmnar, twenty years ago, the kings of Varathia and the lessathi have been working together for a single, common purpose, and after twenty arduous years, we have finally found a way to achieve it. By the end of this tournament, there will finally be justice. By the end of this tournament, Eiden will be dead.\""
-        condition: b2_ch7_overheard = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch10c_ending
-      - texts:
+      - condition: b2_ch7_overheard = 1
+        texts:
           - source: scene_text
             paragraph: 46
             text: "\"Do I really need to spell it out?\" I say. \"What I am 'implying' is that this whole tournament is a sham. You never planned to give anyone access to the Magium. The only reason why you even considered offering it as a prize was because you knew for certain that this was the only thing which could possibly lure so many mages to a single place. The real purpose of this tournament was never to choose a champion to defend Varathia. It was to use all those stat devices that you bought to extract a huge amount of energy from the participants.\"\r\n\r\n\"Oh, now I get it!\" Hadrik says. \"That's why they made us wait for one week before giving us our first objectives. And it's also why they made us run around the whole continent like idiots, looking for pinecones. They were stalling for time so they could get enough energy out of us!\"\r\n\r\n\"Exactly,\" I say. \"We already know from the lessathi in Thilias that they were the ones who sabotaged the telepathic device meant to transmit the tournament's objectives to us, so it's clear that they wanted to buy as much time as possible. Plus, I even heard one of them being upset about the fact that the kings wouldn't agree to make a rule in which the contestants would be forbidden from killing each other, so I'd say it's pretty obvious that they wanted as many of us to be alive as possible in order to be able to extract more energy from us.\"\r\n\r\n\"The lessathi from Thilias?\" Meridith asks. \"Those idiots... I should have known that they couldn't even be trusted with a simple secret.\""
@@ -893,7 +944,6 @@ scenes:
           - source: scene_3
             paragraph: 24
             text: "\"However,\" Meridith continues, \"I would like to point out that there were in fact two things that my nephew got wrong in his analysis. First of all, we do not in fact have thousands of stat boosters hidden inside the cities of Varathia. We bought all those devices so that we could disassemble them and use their parts to create energy extractors, which would be far more potent than the stat boosters themselves. And secondly, nobody ever said that we would not grant you access to the Magium.\"\r\n\r\n\"Are you serious?\" I ask Meridith. \"You're saying I'm supposed to believe that you'll give the tournament winner their prize when you've already admitted that the whole contest is just a ruse?\"\r\n\r\n\"You misunderstand me,\" Meridith says. \"Obviously, the tournament winner won't be getting anything. What I was saying is that I am willing to give YOU access to the Magium. You and all of your friends. And all you need to do for this is to provide a little assistance to me.\"\r\n\r\n\"Provide assistance?\" Kate says. \"What kind of assistance, exactly?\"\r\n\r\n\"You see,\" Meridith says, \"the reality is that this whole tournament that you've been part of until now has only been organized because of one person. Ever since the destruction of Olmnar, twenty years ago, the kings of Varathia and the lessathi have been working together for a single, common purpose, and after twenty arduous years, we have finally found a way to achieve it. By the end of this tournament, there will finally be justice. By the end of this tournament, Eiden will be dead.\""
-        condition: b2_ch7_overheard = 1
         choices:
           - position: 1
             text: Continue

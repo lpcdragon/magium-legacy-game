@@ -262,14 +262,14 @@ scenes:
               current_scene: ch11a_modest
   - name: ch11a_power
     routes:
-      - texts:
+      - condition: ch11_saved_slave = 1
+        texts:
           - source: scene_text
             paragraph: 16
             text: "\"If Daren won't accept the power, then I will,\" I say.\r\n\r\n\"I was expecting you to say something like that,\" Eiden says, with a smile. \"Very well, then.\"\r\n\r\nThe stillwater then raises his hands, and a powerful wind starts spinning around him for a few seconds. As the wind stops, Eiden lowers his hands, and he looks towards me.\r\n\r\n\"It is done,\" he says. \r\n\r\n\"Weird,\" I say. \"I don't feel any different.\"\r\n\r\n\"Look at the nobleman, and try to imagine yourself hitting him,\" Eiden says. \"You will see that the tournament's spell no longer poses any resistance.\"\r\n\r\nAs I do what he says, I realize that he is right. When I imagined myself hitting the noble before, I definitely felt some sort of force that was trying to stop my very train of thoughts from forming, but none of that happened anymore.\r\n \r\nI waste no time and I run towards the noble, while I ready up my right fist. As soon as I reach him, I punch him hard in the face, which makes him fall on his back."
           - source: scene_text_2
             paragraph: 12
             text: "\"What is the meaning of this?!\" the noble shouts, furious, from the ground. \"How DARE you? Do you know who I am?!\"\r\n\r\n\"Sure,\" I tell him. \"You're just another rich jackass who let all his wealth and social status go to his head. Welcome to the real world, buddy!\"\r\n\r\n\"Do you think you can afford to act cocky just because you somehow managed to break through the tournament's protection spell?\" the noble says. \"You have no idea who you're dealing with here, boy. Being eliminated from the mage tournament will be the least of your worries when I'm done with you.\""
-        condition: ch11_saved_slave = 1
         choices:
           - position: 1
             text: Kill the noble and be done with it.
@@ -283,14 +283,14 @@ scenes:
               - set:
                   current_scene: ch11a_thousands
                   ch11_kill_noble: 0
-      - texts:
+      - condition: ch11_saved_slave = 2
+        texts:
           - source: scene_text
             paragraph: 17
             text: "\"Fine,\" I say. \"Give me the power. I'll go save the girl.\"\r\n\r\n\"Very well!\" Eiden says, with a smile.\r\n\r\nThe stillwater then raises his hands, and a powerful wind starts spinning around him for a few seconds. As the wind stops, Eiden lowers his hands, and he looks towards me.\r\n\r\n\"It is done,\" he says. \r\n\r\n\"Weird,\" I say. \"I don't feel any different.\"\r\n\r\n\"Look at the nobleman, and try to imagine yourself hitting him,\" Eiden says. \"You will see that the tournament's spell no longer poses any resistance.\"\r\n\r\nAs I do what he says, I realize that he is right. When I imagined myself hitting the noble before, I definitely felt some sort of force that was trying to stop my very train of thoughts from forming, but none of that happened anymore.\r\n \r\nI waste no time and I run towards the noble, while I ready up my right fist. As soon as I reach him, I punch him hard in the face, which makes him fall on his back and drop his knife."
           - source: scene_text_2
             paragraph: 12
             text: "\"What is the meaning of this?!\" the noble shouts, furious, from the ground. \"How DARE you? Do you know who I am?!\"\r\n\r\n\"Sure,\" I tell him. \"You're just another rich jackass who let all his wealth and social status go to his head. Welcome to the real world, buddy!\"\r\n\r\n\"Do you think you can afford to act cocky just because you somehow managed to break through the tournament's protection spell?\" the noble says. \"You have no idea who you're dealing with here, boy. Being eliminated from the mage tournament will be the least of your worries when I'm done with you.\""
-        condition: ch11_saved_slave = 2
         choices:
           - position: 1
             text: Kill the noble and be done with it.
@@ -306,14 +306,14 @@ scenes:
                   ch11_kill_noble: 0
   - name: ch11a_thousands
     routes:
-      - texts:
+      - condition: ch11_kill_noble = 1
+        texts:
           - source: scene_text
             paragraph: 18
             text: "Instead of replying to the noble, I calmly take the crossbow out of my backpack, I polish it up a bit, and then I start loading it.\r\n\r\n\"What's this supposed to be?\" the noble says, as he gets up from the ground. \"Some sort of threat? You're not going to kill me, boy. You don't have the guts for it. You're just a little troublemaker, that's all you are. Do you want me to tell you what we do to troublemakers in Varathia?\"\r\n\r\n\"Not really,\" I answer the noble, as I shoot him in the head with a crossbow bolt.\r\n\r\nThe man dies before he even hits the ground, and as he falls, all of the townsfolk who were walking down the street until now are stopping to look at him, with a terrified look in their eyes. As I put the crossbow in my backpack, I hear a sound of hands slowly clapping behind me.\r\n\r\n\"Marvelous!\" says Eiden. \"You have my sincerest congratulations, Barry, on a job well done!\""
           - source: scene_text_2
             paragraph: 13
             text: "He smiles.\r\n\r\n\"Now then,\" Eiden says, \"if you don't mind me asking, what is your plan for saving the other thousands of slaves in this city?\"\r\n\r\n\"I beg your pardon?\" I say.\r\n\r\n\"Surely, you must have realized that this isn't the only slave in Varathia,\" Eiden says. \"There are thousands more just like this girl, who are living through hell as we speak, and who can't even be sure that they'll make it through the day alive. Are you going to save them too, Barry?\"\r\n\r\nEiden smiles widely.\r\n\r\n\"Unless of course, you only plan on saving the ones that cross your path, so you can pat yourself on the back, and pretend that you made a difference.\""
-        condition: ch11_kill_noble = 1
         choices:
           - position: 1
             text: Yes, I'm going to save them all.
@@ -337,14 +337,14 @@ scenes:
               - set:
                   current_scene: ch11a_difference
                   ch11_difference: 3
-      - texts:
+      - condition: ch11_kill_noble = 0 AND ch11_saved_slave = 1
+        texts:
           - source: scene_text
             paragraph: 19
             text: "\"Listen closely, because I'm only going to say this once,\" I say. \"You're going to get the hell out of my sight and you're going to leave the girl with us. Do you understand?\"\r\n\r\n\"The slave girl?!\" the noble says. \"You've just forfeited your life and that of your friends for the sake of a worthless slave? I'm going to give her to you if that's what you want, outsider. But I hope you're not stupid enough to think that I'm going to hand her over in one piece.\"\r\n\r\nThe noble takes a knife out of his pocket, and he tries to stab the girl with it, but before he gets to reach her, I grab his arm with both hands, and I twist it until he drops his weapon on the ground, while screaming in pain.\r\n\r\n\"You're going to pay for this, outsider!\" the noble says, as he jumps back from me. \"You all will! Including you, herbalist girl!\"\r\n\r\nRose is looking a bit scared, as the noble points his finger towards her.\r\n\r\n\"That's right!\" he says. \"I remember who you are! I know where you live! Say goodbye to the peaceful life you've been leading until now. It's only going to be hell for you after I-- AAAARRRGH!\"\r\n\r\nBefore he gets to finish his threat, the noble gets engulfed in flames, and within a matter of seconds, he turns into ashes, while the fire dies out almost as quickly as it appeared. The townsfolk who were walking down the street until now are all stopping to look at the pile of ashes gathering on the ground, with a terrified look in their eyes."
           - source: scene_text_2
             paragraph: 14
             text: "”See, Barry, this is how you get the job done right,\" Eiden says. \"You wouldn't want to cause your lovely host more trouble than you already have, would you?\"\r\n\r\n\"I suppose not...\" I say.\r\n\r\nEiden smiles.\r\n\r\n\"Now then,\" Eiden says, \"if you don't mind me asking, what is your plan for saving the other thousands of slaves in this city?\"\r\n\r\n\"I beg your pardon?\" I say.\r\n\r\n\"Surely, you must have realized that this isn't the only slave in Varathia,\" Eiden says. \"There are thousands more just like this girl, who are living through hell as we speak, and who can't even be sure that they'll make it through the day alive. Are you going to save them too, Barry?\"\r\n\r\nEiden smiles widely.\r\n\r\n\"Unless of course, you only plan on saving the ones that cross your path, so you can pat yourself on the back, and pretend that you made a difference.\""
-        condition: ch11_kill_noble = 0 AND ch11_saved_slave = 1
         choices:
           - position: 1
             text: Yes, I'm going to save them all.
@@ -368,14 +368,14 @@ scenes:
               - set:
                   current_scene: ch11a_difference
                   ch11_difference: 3
-      - texts:
+      - condition: ch11_kill_noble = 0 AND ch11_saved_slave = 2
+        texts:
           - source: scene_text
             paragraph: 20
             text: "\"Listen closely, because I'm only going to say this once,\" I say. \"You're going to get the hell out of my sight and you're going to leave the girl with us. Do you understand?\"\r\n\r\n\"The slave girl?!\" the noble says. \"You've just forfeited your life and that of your friends for the sake of a worthless slave? I'm going to give her to you if that's what you want, outsider. But I hope you're not stupid enough to think that I'm going to hand her over in one piece.\"\r\n\r\nThe noble tries to grab his knife from the ground, but I step on his hand with my boot before he takes the weapon, which makes him scream in pain and retract his arm as quickly as possible.\r\n\r\n\"You're going to pay for this, outsider!\" the noble says, as he jumps back from me. \"You all will! Including you, herbalist girl!\"\r\n\r\nRose is looking a bit scared, as the noble points his finger towards her.\r\n\r\n\"That's right!\" he says. \"I remember who you are! I know where you live! Say goodbye to the peaceful life you've been leading until now. It's only going to be hell for you after I-- AAAARRRGH!!!\"\r\n\r\nBefore he gets to finish his threat, the noble gets engulfed in flames, and within a matter of seconds, he turns into ashes, while the fire dies out almost as quickly as it appeared. The townsfolk who were walking down the street until now are all stopping to look at the pile of ashes gathering on the ground, with a terrified look in their eyes."
           - source: scene_text_2
             paragraph: 14
             text: "”See, Barry, this is how you get the job done right,\" Eiden says. \"You wouldn't want to cause your lovely host more trouble than you already have, would you?\"\r\n\r\n\"I suppose not...\" I say.\r\n\r\nEiden smiles.\r\n\r\n\"Now then,\" Eiden says, \"if you don't mind me asking, what is your plan for saving the other thousands of slaves in this city?\"\r\n\r\n\"I beg your pardon?\" I say.\r\n\r\n\"Surely, you must have realized that this isn't the only slave in Varathia,\" Eiden says. \"There are thousands more just like this girl, who are living through hell as we speak, and who can't even be sure that they'll make it through the day alive. Are you going to save them too, Barry?\"\r\n\r\nEiden smiles widely.\r\n\r\n\"Unless of course, you only plan on saving the ones that cross your path, so you can pat yourself on the back, and pretend that you made a difference.\""
-        condition: ch11_kill_noble = 0 AND ch11_saved_slave = 2
         choices:
           - position: 1
             text: Yes, I'm going to save them all.
@@ -401,14 +401,14 @@ scenes:
                   ch11_difference: 3
   - name: ch11a_difference
     routes:
-      - texts:
+      - condition: ch11_difference = 1
+        texts:
           - source: scene_text
             paragraph: 21
             text: "\"Yes, I'm going to save them all,\" I say. \"I'm going to do what you're not willing to, despite all of your power. I'm going to do it even though I'm not a sage or a stillwater, or some other fancy end-all be-all supreme being that found its way into this tournament. I have no idea how I'm going to do it, but I will find a way, and when I'm done, I'm going to come back to you and shove it in your face. Is this a good enough answer to your question?\"\r\n\r\nAs I was talking, I noticed that Eiden opened his eyes for the first time since I've met him. At first, it appeared to be because of the shock, but then his look slowly turned into one of sorrow and regret, while I continued to speak. When I finished my monologue, Eiden closed back his eyes, and he smiled.\r\n\r\n\"It is indeed,\" he answers me. \"I will be looking forward to seeing you put your words into action. But for now, I believe my job here is done, so I will take my leave.\"\r\n\r\nEiden raises himself in the air and he prepares to teleport out of the city.\r\n\r\n\"Oh, there's one last thing I should tell you before I go,\" the stillwater says, as he turns to Daren and Kate. \"The spell I cast just now on Barry was an area of effect spell and not a targeted one. This means that it affected the whole area around me and not just him, so the two of you have been given the same gift as your friend. The effect of my spell lasts indefinitely, so this power is yours to use as you please from this day forward. With this said and done, I bid you farewell!\""
           - source: scene_text_2
             paragraph: 15
             text: "Eiden then snaps his fingers, and he immediately disappears without a trace.\r\n\r\n\"Sir...\" the slave girl says, as she pulls on my sleeve softly. \"Excuse me, sir...\"\r\n\r\nAs I turn around, the girl takes a bow, and then she introduces herself.\r\n\r\n\"My name is Ella,\" she says, \"but most of my masters simply called me 'slave girl'. I know I may not look like much, but if you will have me, I vow to serve you to the best of my ability, until the day I die. Just give me my first order, and our contract will be complete.\""
-        condition: ch11_difference = 1
         choices:
           - position: 1
             text: >-
@@ -431,14 +431,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch11a_house
-      - texts:
+      - condition: ch11_difference = 2
+        texts:
           - source: scene_text
             paragraph: 22
             text: "\"Do I look like a mage to you? Why don't you save them all if you care so much?\"\r\n\r\nAs he hears my question, Eiden slowly opens his eyes, for the first time since I've met him. I was expecting to see anger in his eyes when he opened them, but the look he had was instead one of sorrow and regret. He then closes his eyes again and he smiles.\r\n\r\n\"Perhaps I will, Barry,\" Eiden says. \"Perhaps I will. At any rate, I believe that for now, my job here is done, so I will take my leave.\"\r\n\r\nEiden raises himself in the air and he prepares to teleport out of the city.\r\n\r\n\"Oh, there's one last thing I should tell you before I go,\" the stillwater says, as he turns to Daren and Kate. \"The spell I cast just now on Barry was an area of effect spell and not a targeted one. This means that it affected the whole area around me and not just him, so the two of you have been given the same gift as your friend. The effect of my spell lasts indefinitely, so this power is yours to use as you please from this day forward. With this said and done, I bid you farewell!\""
           - source: scene_text_2
             paragraph: 15
             text: "Eiden then snaps his fingers, and he immediately disappears without a trace.\r\n\r\n\"Sir...\" the slave girl says, as she pulls on my sleeve softly. \"Excuse me, sir...\"\r\n\r\nAs I turn around, the girl takes a bow, and then she introduces herself.\r\n\r\n\"My name is Ella,\" she says, \"but most of my masters simply called me 'slave girl'. I know I may not look like much, but if you will have me, I vow to serve you to the best of my ability, until the day I die. Just give me my first order, and our contract will be complete.\""
-        condition: ch11_difference = 2
         choices:
           - position: 1
             text: >-
@@ -461,14 +461,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch11a_house
-      - texts:
+      - condition: ch11_difference = 3
+        texts:
           - source: scene_text
             paragraph: 23
             text: "\"Should I just ignore everyone who needs help because I can't save the whole world?\"\r\n\r\nEiden pauses a bit to ponder on my question.\r\n\r\n\"Well, if you put it like that, then I suppose you shouldn't!\" Eiden says. \"Very well, then! I believe that my job here is done, so I will take my leave.\"\r\n\r\nEiden raises himself in the air and he prepares to teleport out of the city.\r\n\r\n\"Oh, there's one last thing I should tell you before I go,\" the stillwater says, as he turns to Daren and Kate. \"The spell I cast just now on Barry was an area of effect spell and not a targeted one. This means that it affected the whole area around me and not just him, so the two of you have been given the same gift as your friend. The effect of my spell lasts indefinitely, so this power is yours to use as you please from this day forward. With this said and done, I bid you farewell!\""
           - source: scene_text_2
             paragraph: 15
             text: "Eiden then snaps his fingers, and he immediately disappears without a trace.\r\n\r\n\"Sir...\" the slave girl says, as she pulls on my sleeve softly. \"Excuse me, sir...\"\r\n\r\nAs I turn around, the girl takes a bow, and then she introduces herself.\r\n\r\n\"My name is Ella,\" she says, \"but most of my masters simply called me 'slave girl'. I know I may not look like much, but if you will have me, I vow to serve you to the best of my ability, until the day I die. Just give me my first order, and our contract will be complete.\""
-        condition: ch11_difference = 3
         choices:
           - position: 1
             text: >-
@@ -596,19 +596,20 @@ scenes:
               ch11_toy: 0
   - name: ch11a_toy
     routes:
-      - texts:
+      - condition: ch11_toy = 1
+        texts:
           - source: scene_text
             paragraph: 30
             text: "\"Uh, Suzie,\" I say, \"can I borrow that toy of yours for a second? I just want to look at something.\"\r\n\r\n\"No!\" the girl says. \"It's mine! You can't have it!\"\r\n\r\nHonestly, I don't know what else I was expecting when I asked that question.\r\n\r\n\"Alright, then how about a trade?\" I say, as I take out my stat booster out of my pocket. \"I'll let you play around with this while I take a look at your toy. Deal?\"\r\n\r\nThe girl tries to feign indifference when she sees my stat device, but it's easy enough to see that I've piqued her interest. Eventually, she gives in and agrees to temporarily trade her device for my own. As I study her toy closely, I notice that there is a small marking on the side which looks much like a bended fork, but aside from that, there is nothing else that stands out. I didn't even feel that faint tingling sensation that I usually get when my stat device tries to attach itself to my aura. Maybe it is only a toy after all.\r\n\r\n\"You sure it's a good idea to just hand your device over to her like that, Barry?\" Hadrik asks me, grinning. \"Aren't you worried that she'll completely mess all of your stats while she plays with it?\"\r\n\r\n\"Nah,\" I say. \"I made sure to lock all the stats before I gave it to her. The only thing she can do with it right now is look at the screen.\"\r\n\r\nOnce I'm done looking at the toy, I give it back to Rose's sister, in exchange for my stat device."
           - source: scene_text_2
             paragraph: 22
             text: "\"You tricked me!\" Suzie says, with a pouty face. \"Your toy is broken. It doesn't do anything. That's not fair!\"\r\n\r\n\"Life is never fair, kid,\" I tell her, as I put my device back in my pocket. \"It's better to learn that while you're young!\"\r\n\r\n\"Don't you listen to him, Suzie!\" Rose says. \"Barry is just grumpy because his parents would only give him broken toys when he was a kid.\"\r\n\r\nSuzie giggles.\r\n\r\n\"Poor Barry!\" she says.\r\n\r\n\"Poor Barry!\" her brother mimics her. \r\n\r\n\"Rose,\" Daren says. \"Could you show me to my room? All I want right now is to lie down in a bed for a while.\"\r\n\r\n\"Certainly!\" Rose says. \"Follow me, I'll show you the way!\"\r\n\r\n\"We'll come too, we'll come too!\" Rose's siblings say, in unison.\r\n\r\n\"Okay, okay, you'll come too!\" Rose says, smiling.\r\n\r\nShe then turns to us.\r\n\r\n\"Please, make yourselves comfortable!\" Rose says. \"You can come inside the house and wait in the main hall if you like.\"\r\n\r\n\"Nah, we're good for now, thanks!\" Hadrik says. \"We'll just sit at one of these picnic tables.\"\r\n\r\n\"I'll be right back!\" Rose says, and then she goes with Daren and her siblings inside the mansion."
-        condition: ch11_toy = 1
-        set:
-          ac_ch11_symbol: 1
-        achievement:
-          id: ac_ch11_symbol
-          title: A mysterious symbol
+        effects:
+          - set:
+              ac_ch11_symbol: 1
+            achievement:
+              id: ac_ch11_symbol
+              title: A mysterious symbol
         choices:
           - position: 1
             text: Continue
@@ -618,11 +619,12 @@ scenes:
                 condition: ch11_saved_slave = 3
               - set:
                   current_scene: ch11a_task
-      - texts:
+                condition: ch11_saved_slave != 3
+      - condition: ch11_toy = 0
+        texts:
           - source: scene_text
             paragraph: 31
             text: "I decide to leave the girl alone. The stat device's resemblance to the toy is probably only a coincidence. \r\n\r\n\"That shield looks so cool!\" Rose's little brother says, when he sees Daren. \"I have a toy soldier with a shield just like that! Can I touch it? Can I touch it?\"\r\n\r\n\"Some other time, kid,\" Daren says. \r\n\r\nHe then turns to Rose.\r\n\r\n\"Rose,\" Daren says. \"Could you show me to my room? All I want right now is to lie down in a bed for a while.\"\r\n\r\n\"Certainly!\" Rose says. \"Follow me, I'll show you the way!\"\r\n\r\n\"We'll come too, we'll come too!\" Rose's siblings say, in unison.\r\n\r\n\"Okay, okay, you'll come too!\" Rose says, smiling.\r\n\r\nShe then turns to us.\r\n\r\n\"Please, make yourselves comfortable!\" Rose says. \"You can come inside the house and wait in the main hall if you like.\"\r\n\r\n\"Nah, we're good for now, thanks!\" Hadrik says. \"We'll just sit at one of these picnic tables.\"\r\n\r\n\"I'll be right back!\" Rose says, and then she goes with Daren and her siblings inside the mansion."
-        condition: ch11_toy = 0
         choices:
           - position: 1
             text: Continue
@@ -632,6 +634,7 @@ scenes:
                 condition: ch11_saved_slave = 3
               - set:
                   current_scene: ch11a_task
+                condition: ch11_saved_slave != 3
   - name: ch11a_prevented
     texts:
       - source: scene_text
@@ -931,11 +934,11 @@ scenes:
             condition: ch6_flirt = 5
   - name: ch11a_feelings
     routes:
-      - texts:
+      - condition: ch6_flirt = 2
+        texts:
           - source: scene_text
             paragraph: 47
             text: "\"I know,\" Rose says, smiling. \"And that's why I'm thanking you. Your selfless actions are what gave me the courage to finally start addressing the problem that I've been trying to ignore for all these years. Seeing that girl's face light up when I told her she could stay here made me happier than any other reward ever could. After all these years, I finally feel like I'm starting to make a difference. And it's all thanks to you, Barry!\"\r\n\r\nRose giggles softly before she continues.\r\n\r\n\"I can't believe that you're the same guy who made that dumb comment about my large breasts on the very first day we met!\" she says.  \r\n\r\n\"Yeah, I'm sorry about that,\" I say. \"I only said it because I really liked you and wanted to appear confident, but I ended up making a fool of myself.\"\r\n\r\n\"You say you did it because you liked me...\"\r\n\r\nRose pauses.\r\n\r\n\"Do you... still feel the same way about me now as you did back then?\" she asks."
-        condition: ch6_flirt = 2
         choices:
           - position: 1
             text: Of course not! I like you a lot more now than I did back then!
@@ -951,11 +954,11 @@ scenes:
               - set:
                   current_scene: ch11a_feelings2
                   ch11_romance_rose: 0
-      - texts:
+      - condition: ch6_flirt <> 2
+        texts:
           - source: scene_text
             paragraph: 48
             text: "\"I know,\" Rose says, smiling. \"And that's why I'm thanking you. Your selfless actions are what gave me the courage to finally start addressing the problem that I've been trying to ignore for all these years. Seeing that girl's face light up when I told her she could stay here made me happier than any other reward ever could. After all these years, I finally feel like I'm starting to make a difference. And it's all thanks to you, Barry!\"\r\n\r\nRose pauses.\r\n\r\n\"Do you remember the discussion we had on the first day we met?\" Rose asks. \"When I asked you if there was anything going on between you and Kate?\"\r\n\r\n\"Yes, I remember,\" I say.\r\n\r\n\"Do you... still feel the same way about me now as you did back then?\""
-        condition: ch6_flirt <> 2
         choices:
           - position: 1
             text: Of course not! I like you a lot more now than I did back then!
@@ -991,7 +994,8 @@ scenes:
               ch11_romance_rose: 0
   - name: ch11a_racing2
     routes:
-      - texts:
+      - condition: ch11_romance_rose = 0
+        texts:
           - source: scene_text
             paragraph: 51
             text: "\"I'm sorry, I didn't mean it like that. Please, forget what I said!\"  \r\n\r\n\"Don't worry about it,\" Rose says, smiling. \"I've already forgotten!\"\r\n\r\nShe then gets up from the bed and takes a bite out of one of the muffins.\r\n\r\n\"Wow, these really are good!\" she says. \"I should make them more often. You won't mind if I take two of these with me, will you? Suzie has always outdone me when it comes to muffins, and I'd like to brag about this a little!\"\r\n\r\n\"Of course not,\" I say. \"They were yours to begin with!\"\r\n\r\nRose smiles again, and she takes two muffins off the tray, before she starts leaving the room. She stops by the door, and she turns to face me one more time.\r\n\r\n\"Thank you again, Barry,\" Rose says. \"For everything you've done. You have no idea how much this all means to me. I hope I'll be able to fully repay you some day.\"\r\n\r\nShe pauses.\r\n\r\n\"Good night, Barry!\" she says, after a few seconds.\r\n\r\n\"Good night, Rose!\" I say, as she turns around and leaves the room.\r\n\r\nAfter she left, I ate a few more muffins, and then I went to sleep. I woke up several hours later, to the sound of Daren's voice."
@@ -1001,14 +1005,14 @@ scenes:
           - source: scene_3
             paragraph: 8
             text: "\"It's safer if we all stick together,\" Hadrik says. \"Just because we're in a city, it doesn't mean that we can let our guards down. We're still in the middle of a deadly tournament, after all.\"\r\n\r\n\"Okay, if everyone's ready, we should get going,\" Rose says. \"We'll be taking the shorter route this time, so be sure to stay close to me so you don't get lost.\""
-        condition: ch11_romance_rose = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch11a_incriminated
-      - texts:
+      - condition: ch11_romance_rose = 1
+        texts:
           - source: scene_text
             paragraph: 53
             text: "\"Of course! I always feel that way when I talk to you.\"\r\n\r\nRose's cheeks have now turned even redder than before.\r\n\r\nShe doesn't say a word for a few seconds, and then she suddenly gets a very determined look on her face.\r\n\r\n\"Alright, then!\" Rose says, as she gets up from the bed, goes to close and lock the bedroom's door and then comes back to place herself right in front of me.\r\n\r\n\"What are you--\" I start to say, but I don't get to finish, as Rose bends over and kisses my lips softly.\r\n\r\nShe then gets on top of me and slowly pushes me onto the bed, as her lips remain pressed against mine.\r\n\r\n\"Wait, wait, wait,\" I say. \"We're doing this now?\"\r\n\r\n\"Why not?\" Rose asks me, with a playful smile. \"Would you rather we do this in some ruins, while fighting a bunch of ogres?\" \r\n\r\n\"Well, no, but... I mean, we're still kind of in the middle of a deadly mage tournament,\" I say.\r\n\r\n\"We're not getting married, Barry,\" Rose says, smiling. \"It's just one night. As long as I drink my tea of infertility in the morning, we may as well part ways tomorrow, and nothing will have changed.\""
@@ -1018,7 +1022,6 @@ scenes:
           - source: scene_3
             paragraph: 9
             text: "With these final thoughts, I put my head on the pillow, I hug Rose tightly in my arms, and I close my eyes. I wake up several hours later, to the sound of Daren's voice.\r\n\r\n\"Barry, wake up!\" he says. \"You're not planning on sleeping in again, are you? Come on, get up, or we'll leave you behind!\"\r\n\r\nAs Daren leaves, I take a look outside my window, and I see that the sun had only just risen about an hour ago. Everyone was already waiting outside, while Rose's siblings were running around the yard, as lively as ever. I guess it wasn't a dream after all."
-        condition: ch11_romance_rose = 1
         choices:
           - position: 1
             text: Continue
@@ -1027,7 +1030,8 @@ scenes:
                   current_scene: ch11a_romance
   - name: ch11a_feelings2
     routes:
-      - texts:
+      - condition: ch11_romance_rose = 0
+        texts:
           - source: scene_text
             paragraph: 50
             text: "\"No, that was just a spur of the moment thing. Don't worry about it!\"\r\n\r\nRose smiles.\r\n\r\n\"If you say that I shouldn't worry about it, then I won't!\" she says.\r\n\r\nShe then gets up from the bed and takes a bite out of one of the muffins.\r\n\r\n\"Wow, these really are good!\" she says. \"I should make them more often. You won't mind if I take two of these with me, will you? Suzie has always outdone me when it comes to muffins, and I'd like to brag about this a little!\"\r\n\r\n\"Of course not,\" I say. \"They were yours to begin with!\"\r\n\r\nRose smiles again, and she takes two muffins off the tray, before she starts leaving the room. She stops by the door, and she turns to face me one more time.\r\n\r\n\"Thank you again, Barry,\" Rose says. \"For everything you've done. You have no idea how much this all means to me. I hope I'll be able to fully repay you some day.\"\r\n\r\nShe pauses.\r\n\r\n\"Good night, Barry!\" she says, after a few seconds.\r\n\r\n\"Good night, Rose!\" I say, as she turns around and leaves the room.\r\n\r\nAfter she left, I ate a few more muffins, and then I went to sleep. I woke up several hours later, to the sound of Daren's voice."
@@ -1037,14 +1041,14 @@ scenes:
           - source: scene_3
             paragraph: 8
             text: "\"It's safer if we all stick together,\" Hadrik says. \"Just because we're in a city, it doesn't mean that we can let our guards down. We're still in the middle of a deadly tournament, after all.\"\r\n\r\n\"Okay, if everyone's ready, we should get going,\" Rose says. \"We'll be taking the shorter route this time, so be sure to stay close to me so you don't get lost.\""
-        condition: ch11_romance_rose = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch11a_incriminated
-      - texts:
+      - condition: ch11_romance_rose = 1
+        texts:
           - source: scene_text
             paragraph: 52
             text: "\"Of course not! I like you a lot more now than I did back then!\"\r\n\r\nRose blushes.\r\n\r\nShe doesn't say a word for a few seconds, and then she suddenly gets a very determined look on her face.\r\n\r\n\"Alright, then!\" Rose says, as she gets up from the bed, goes to close and lock the bedroom's door and then comes back to place herself right in front of me.\r\n\r\n\"What are you--\" I start to say, but I don't get to finish, as Rose bends over and kisses my lips softly.\r\n\r\nShe then gets on top of me and slowly pushes me onto the bed, as her lips remain pressed against mine.\r\n\r\n\"Wait, wait, wait,\" I say. \"We're doing this now?\"\r\n\r\n\"Why not?\" Rose asks me, with a playful smile. \"Would you rather we do this in some ruins, while fighting a bunch of ogres?\" \r\n\r\n\"Well, no, but... I mean, we're still kind of in the middle of a deadly mage tournament,\" I say.\r\n\r\n\"We're not getting married, Barry,\" Rose says, smiling. \"It's just one night. As long as I drink my tea of infertility in the morning, we may as well part ways tomorrow, and nothing will have changed.\""
@@ -1054,7 +1058,6 @@ scenes:
           - source: scene_3
             paragraph: 9
             text: "With these final thoughts, I put my head on the pillow, I hug Rose tightly in my arms, and I close my eyes. I wake up several hours later, to the sound of Daren's voice.\r\n\r\n\"Barry, wake up!\" he says. \"You're not planning on sleeping in again, are you? Come on, get up, or we'll leave you behind!\"\r\n\r\nAs Daren leaves, I take a look outside my window, and I see that the sun had only just risen about an hour ago. Everyone was already waiting outside, while Rose's siblings were running around the yard, as lively as ever. I guess it wasn't a dream after all."
-        condition: ch11_romance_rose = 1
         choices:
           - position: 1
             text: Continue

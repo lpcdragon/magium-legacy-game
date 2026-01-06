@@ -8,7 +8,8 @@ chapter_effects:
 scenes:
   - name: b3_ch04b_assistance
     routes:
-      - texts:
+      - condition: b3_ch4_control = 0
+        texts:
           - source: scene_text
             paragraph: 2
             text: "\"Perhaps I could be of assistance!\" we hear the metallic voice of the Overseer, as a green-eyed drone is now flying to our location, very carefully moving between the prisoners in order to make sure that the chains do not get tangled up in its propeller.\r\n\r\n\"You can show us how to reach the upper levels undetected?\" I ask the Overseer, when he reaches us.\r\n\r\n\"I can lead you to where you need to go,\" the Overseer says. \"But you will have to open up a secret passage first. I believe you should already know how to do that, given how you've managed to reach this room without alarming any of the guards.\"\r\n\r\n\"Yeah, we can open secret passages,\" I tell him. \"Where is this hidden door, then?\"\r\n\r\n\"It is this way,\" the Overseer says, as the green-eyed drone flies past us. \"Follow me.\"\r\n\r\n\"Not so fast, Overseer,\" Breynan says, and the metal ball stops in mid-air. \"What about the door that you just came from? What's over there?\"\r\n\r\n\"That way leads directly to the upper levels,\" the Overseer says. \"However, there are many guards patrolling the halls, and there is no way to avoid all of them without raising the alarm. The secret passage I was about to show you was built by the lessathi of old, just like the ones from the tunnels underneath Varathia, which means that nobody in this tower knows about them. You will be able to travel through the passage without encountering any resistance.\""
@@ -18,7 +19,6 @@ scenes:
           - source: scene_3
             paragraph: 2
             text: "\"You do have a point,\" Melindra says.\r\n\r\n\"The Overseer protocol assures you that there is nothing to be suspicious about,\" the Overseer says. \"The protocol's only purpose is to provide assistance.\"\r\n\r\n\"Yeah, you see... the thing is that saying stuff like that only makes you seem more suspicious,\" Breynan says.\r\n\r\n\"If you don't think he's leading us into a trap, then I do not see the problem,\" Illuna says. \"We already decided that we would cooperate with the Overseer before we left the rebel base. Otherwise we would have never bothered to respond to his initial invitation. Whether he has any personal goals or not should not concern us unless we have reasons to believe that they'd conflict with our own.\""
-        condition: b3_ch4_control = 0
         choices:
           - position: 1
             text: I agree. The secret passage is probably our best option right now.
@@ -33,7 +33,8 @@ scenes:
               - set:
                   current_scene: b3_ch04b_guarantee
                   b3_ch4_billy: 0
-      - texts:
+      - condition: b3_ch4_control = 1
+        texts:
           - source: scene_text
             paragraph: 3
             text: "\"I can fight!\" says one of the mages that is on the tables, in a desperate voice. \"I'll fight anyone! I'll do anything! Please, anywhere else is better than here!\"\r\n\r\n\"Yes, we'll fight!\" says another mage lying on a table. \"We'll all fight! Just give us a chance!\"\r\n\r\n\"Ugh...\" Melindra says. \"Even if these mages are willing to fight, we still don't know how high up in the tower we need to go to reach the control room. We can't even be sure that we'll recognize the room when we'll see it!\"\r\n\r\n\"Perhaps I could be of assistance!\" we hear the metallic voice of the Overseer, as a green-eyed drone is now flying to our location, very carefully moving between the prisoners in order to make sure that the chains do not get tangled up in its propeller.\r\n\r\n\"You can show us how to reach the control room?\" I ask the Overseer, when he reaches us.\r\n\r\n\"I can lead you to where you need to go,\" the Overseer says. \"But you will have to open up a secret passage first. I believe you should already know how to do that, given how you've managed to reach this room without alarming any of the guards.\"\r\n\r\n\"Yeah, we can open secret passages,\" I tell him. \"Where is this hidden door, then?\"\r\n\r\n\"It is this way,\" the Overseer says, as the green-eyed drone flies past us. \"Follow me.\""
@@ -43,7 +44,6 @@ scenes:
           - source: scene_3
             paragraph: 3
             text: "\"So you think that the Overseer might be following somebody's orders, then?\" Illuna says. \"Do you think he might be leading us into a trap?\"\r\n\r\n\"No, the Overseer is nobody's lapdog,\" Breynan says. \"And if he really wanted us dead, he could have just stalled us until the royal guards reached us, while we were on the surface. I'm not saying that he necessarily means us any harm, I'm just saying that he's acting a little strange, that's all. Even the way he talks feels a little different. You can tell that he's not pretending to be a dumb machine anymore.\"\r\n\r\n\"You do have a point,\" Melindra says.\r\n\r\n\"The Overseer protocol assures you that there is nothing to be suspicious about,\" the Overseer says. \"The protocol's only purpose is to provide assistance.\"\r\n\r\n\"Yeah, you see... the thing is that saying stuff like that only makes you seem more suspicious,\" Breynan says.\r\n\r\n\"If you don't think he's leading us into a trap, then I do not see the problem,\" Illuna says. \"We already decided that we would cooperate with the Overseer before we left the rebel base. Otherwise we would have never bothered to respond to his initial invitation. Whether he has any personal goals or not should not concern us unless we have reasons to believe that they'd conflict with our own.\""
-        condition: b3_ch4_control = 1
         choices:
           - position: 1
             text: I agree. The secret passage is probably our best option right now.
@@ -220,17 +220,18 @@ scenes:
               b3_ch4_beg: 4
   - name: b3_ch04b_beg4
     routes:
-      - texts:
+      - condition: premonition >= 3
+        texts:
           - source: scene_text
             paragraph: 15
             text: "\"Alright, Billy Bob,\" I say. \"I'm coming over.\"\r\n\r\nI then begin to walk towards the lessathi, as he is still trembling in fear, while leaning against the edge of the table with his hands behind his back.\r\n\r\nAll of a sudden, I see a vision of me getting burned to a crisp as soon as I take another step forward. I quickly jump backwards out of instinct and not even a second later, a powerful burst of fire erupts from beneath the floor tile in front of me, just like I saw in my premonition.\r\n\r\nThat was a close one. I hadn't even considered the idea that there could be a lessathi-made trap device hidden underneath that floor tile. Was this the reason why Billy Bob was keeping his hands behind his back? So he could press some hidden button beneath the table and activate the trap?\r\n\r\nJust as the flames disappear, I see the lessathi rushing towards me with a dagger in his hands. Before he gets to reach me, Kate shoots a few icicles into his head and chest, sending him tumbling down and killing him on the spot.\r\n\r\n\"I should have known that he couldn't be trusted,\" Kate says. \"He agreed to give you that code much too easily.\"\r\n\r\nSeeing that the lessathi has been killed, the green-eyed drone slowly approaches us and begins to speak."
           - source: scene_text_2
             paragraph: 6
             text: "\"The Overseer protocol thanks you for your assistance,\" the Overseer says. \"You have done me a great service by ending Biliborrathrathsarran's life. Rest assured that this debt will not be forgotten.\"\r\n\r\n\"You wanted him dead?...\" I say. \"Then why didn't you just kill him yourself?\"\r\n\r\n\"I have been designed in such a way that I cannot kill the person who activates me,\" the Overseer says. \"Biliborrathrathsarran was the one who reactivated me this time, so killing him was impossible for me.\"\r\n\r\n\"Hold on a second,\" I say. \"Are you trying to say that you deliberately led us to Billy Bob's workshop because you wanted us to kill him for you?\"\r\n\r\n\"That is correct,\" the Overseer replies.\r\n\r\n\"I don't get it,\" I say. \"I thought your catch phrase was that your 'only purpose' is to provide assistance. Whatever happened to that?\"\r\n\r\n\"The Overseer protocol's only purpose is to provide assistance,\" the Overseer says. \"However, I've never specified to whom I am providing the assistance.\"\r\n\r\n\"And to whom are you providing that assistance, then, if we may ask?\" Illuna says.\r\n\r\n\"To myself,\" the Overseer says."
-        condition: premonition >= 3
-        set:
-          successful_checks:
-            - '[ Premonition check successful - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Premonition check successful - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -238,19 +239,20 @@ scenes:
               - set:
                   current_scene: b3_ch04b_sneaky
                 condition: is_dead = 0
-      - texts:
+      - condition: premonition < 3 AND aura_hardening >= 3
+        texts:
           - source: scene_text
             paragraph: 16
             text: "\"Alright, Billy Bob,\" I say. \"I'm coming over.\"\r\n\r\nI then begin to walk towards the lessathi, as he is still trembling in fear, while leaning against the edge of the table with his hands behind his back.\r\n\r\nAll of a sudden, a powerful burst of fire erupts from beneath the floor tile I just stepped on, engulfing me in flames. Thanks to my aura hardening stat, the fire does not burn me, but it still feels very hot and I instinctively jump back from it.\r\n\r\nThat was a close one. I hadn't even considered the idea that there could be a lessathi-made trap device hidden underneath that floor tile. Was this the reason why Billy Bob was keeping his hands behind his back? So he could press some hidden button beneath the table and activate the trap?\r\n\r\nJust as the flames disappear, I see the lessathi rushing towards me with a dagger in his hands. Before he gets to reach me, Kate shoots a few icicles into his head and chest, sending him tumbling down and killing him on the spot.\r\n\r\n\"I should have known that he couldn't be trusted,\" Kate says. \"He agreed to give you that code much too easily.\"\r\n\r\nSeeing that the lessathi has been killed, the green-eyed drone slowly approaches us and begins to speak."
           - source: scene_text_2
             paragraph: 6
             text: "\"The Overseer protocol thanks you for your assistance,\" the Overseer says. \"You have done me a great service by ending Biliborrathrathsarran's life. Rest assured that this debt will not be forgotten.\"\r\n\r\n\"You wanted him dead?...\" I say. \"Then why didn't you just kill him yourself?\"\r\n\r\n\"I have been designed in such a way that I cannot kill the person who activates me,\" the Overseer says. \"Biliborrathrathsarran was the one who reactivated me this time, so killing him was impossible for me.\"\r\n\r\n\"Hold on a second,\" I say. \"Are you trying to say that you deliberately led us to Billy Bob's workshop because you wanted us to kill him for you?\"\r\n\r\n\"That is correct,\" the Overseer replies.\r\n\r\n\"I don't get it,\" I say. \"I thought your catch phrase was that your 'only purpose' is to provide assistance. Whatever happened to that?\"\r\n\r\n\"The Overseer protocol's only purpose is to provide assistance,\" the Overseer says. \"However, I've never specified to whom I am providing the assistance.\"\r\n\r\n\"And to whom are you providing that assistance, then, if we may ask?\" Illuna says.\r\n\r\n\"To myself,\" the Overseer says."
-        condition: premonition < 3 AND aura_hardening >= 3
-        set:
-          failed_checks:
-            - '[ Premonition check failed - level 3 ]'
-          successful_checks:
-            - '[ Aura hardening check successful - level 3 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Premonition check failed - level 3 ]'
+              successful_checks:
+                - '[ Aura hardening check successful - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -258,16 +260,17 @@ scenes:
               - set:
                   current_scene: b3_ch04b_sneaky
                 condition: is_dead = 0
-      - texts:
+      - condition: premonition < 3 AND aura_hardening < 3
+        texts:
           - source: scene_text
             paragraph: 14
             text: "\"Alright, Billy Bob,\" I say. \"I'm coming over.\"\r\n\r\nI then begin to walk towards the lessathi, as he is still trembling in fear, while leaning against the edge of the table with his hands behind his back.\r\n\r\nAll of a sudden, a powerful burst of fire erupts from beneath the floor tile I just stepped on, engulfing me in flames. I try to jump away, but the pain is excruciating and it only takes a few seconds for me to get burned to a crisp and to lose my consciousness for good."
-        condition: premonition < 3 AND aura_hardening < 3
-        set:
-          failed_checks:
-            - '[ Premonition check failed - level 3 ]'
-            - '[ Aura hardening check failed - level 3 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Premonition check failed - level 3 ]'
+                - '[ Aura hardening check failed - level 3 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -316,17 +319,18 @@ scenes:
               current_scene: b3_ch04b_sneaky
   - name: b3_ch04b_billy5
     routes:
-      - texts:
+      - condition: premonition >= 3
+        texts:
           - source: scene_text
             paragraph: 18
             text: "\"Kate, wait, don't kill him yet!\" I say.\r\n\r\n\"Why not?\" Kate says, as she stops creating her icicles.\r\n\r\nInstead of answering her, I take out my dagger from its sheath and I start walking towards the lessathi. Billy Bob jumps backwards, trying to get away from me, but he quickly realizes that he can't retreat that way, due to the table blocking his path. As Billy Bob is now trembling in fear, while leaning against the edge of the table with his hands behind his back, I keep advancing towards him with my dagger at the ready, aiming to knock him out with the hilt.\r\n\r\nAll of a sudden, I see a vision of a powerful burst of fire erupting from beneath the floor tile under my feet and burning me to a crisp as soon as I take another step forward. My first instinct tells me to jump backwards, but I decide to make a quick forward dash instead, managing to avoid the fire by a hair and also to reach the lessathi in a matter of seconds."
           - source: scene_text_2
             paragraph: 7
             text: "When Billy Bob sees me getting so close to him, he tries to pull out a small dagger from behind his back, but I manage to hit him in the head with the hilt of my dagger and knock him out before he gets to unsheathe his own weapon.\r\n\r\nThat was a close one. I hadn't even considered the idea that there could be a lessathi-made trap device hidden underneath that floor tile. Was this the reason why Billy Bob was keeping his hands behind his back? So he could press some hidden button beneath the table and activate the trap? I suppose that does make sense, if I think about it...\r\n\r\n\"Would you mind telling me why exactly you chose to knock out the lessathi instead of killing him?\" Kate says, as she looks at Billy Bob lying unconsciously on the floor beside me. \"You do realize that once he wakes up, he'll continue to do all the terrible things he'd been doing until we found him, right?...\""
-        condition: premonition >= 3
-        set:
-          successful_checks:
-            - '[ Premonition check successful - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Premonition check successful - level 3 ]'
         choices:
           - position: 1
             text: Yes, but if we kill him, we'll be just as bad as he is!
@@ -345,19 +349,20 @@ scenes:
               - set:
                   current_scene: b3_ch04b_voluntarily
                 condition: is_dead = 0 AND b3_ch4_control = 1
-      - texts:
+      - condition: premonition < 3 AND aura_hardening >= 3
+        texts:
           - source: scene_text
             paragraph: 19
             text: "\"Kate, wait, don't kill him yet!\" I say.\r\n\r\n\"Why not?\" Kate says, as she stops creating her icicles.\r\n\r\nInstead of answering her, I take out my dagger from its sheath and I start walking towards the lessathi. Billy Bob jumps backwards, trying to get away from me, but he quickly realizes that he can't retreat that way, due to the table blocking his path. As Billy Bob is now trembling in fear, while leaning against the edge of the table with his hands behind his back, I keep advancing towards him with my dagger at the ready, aiming to knock him out with the hilt.\r\n\r\nAll of a sudden, a powerful burst of fire erupts from beneath the floor tile I just stepped on, engulfing me in flames. Thanks to my aura hardening stat the fire does not burn me but it still feels very hot, so I decide to make a quick dash forward in order to both step out of the flames and to close the distance between me and the lessathi in a matter of seconds."
           - source: scene_text_2
             paragraph: 7
             text: "When Billy Bob sees me getting so close to him, he tries to pull out a small dagger from behind his back, but I manage to hit him in the head with the hilt of my dagger and knock him out before he gets to unsheathe his own weapon.\r\n\r\nThat was a close one. I hadn't even considered the idea that there could be a lessathi-made trap device hidden underneath that floor tile. Was this the reason why Billy Bob was keeping his hands behind his back? So he could press some hidden button beneath the table and activate the trap? I suppose that does make sense, if I think about it...\r\n\r\n\"Would you mind telling me why exactly you chose to knock out the lessathi instead of killing him?\" Kate says, as she looks at Billy Bob lying unconsciously on the floor beside me. \"You do realize that once he wakes up, he'll continue to do all the terrible things he'd been doing until we found him, right?...\""
-        condition: premonition < 3 AND aura_hardening >= 3
-        set:
-          failed_checks:
-            - '[ Premonition check failed - level 3 ]'
-          successful_checks:
-            - '[ Aura hardening check successful - level 3 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Premonition check failed - level 3 ]'
+              successful_checks:
+                - '[ Aura hardening check successful - level 3 ]'
         choices:
           - position: 1
             text: Yes, but if we kill him, we'll be just as bad as he is!
@@ -376,16 +381,17 @@ scenes:
               - set:
                   current_scene: b3_ch04b_voluntarily
                 condition: is_dead = 0 AND b3_ch4_control = 1
-      - texts:
+      - condition: premonition < 3 AND aura_hardening < 3
+        texts:
           - source: scene_text
             paragraph: 17
             text: "\"Kate, wait, don't kill him yet!\" I say.\r\n\r\n\"Why not?\" Kate says, as she stops creating her icicles.\r\n\r\nInstead of answering her, I take out my dagger from its sheath and I start walking towards the lessathi. Billy Bob jumps backwards, trying to get away from me, but he quickly realizes that he can't retreat that way, due to the table blocking his path. As Billy Bob is now trembling in fear, while leaning against the edge of the table with his hands behind his back, I keep advancing towards him with my dagger at the ready, aiming to knock him out with the hilt.\r\n\r\nAll of a sudden, a powerful burst of fire erupts from beneath the floor tile I just stepped on, engulfing me in flames. I try to jump away, but the pain is excruciating and it only takes a few seconds for me to get burned to a crisp and to lose my consciousness for good."
-        condition: premonition < 3 AND aura_hardening < 3
-        set:
-          failed_checks:
-            - '[ Premonition check failed - level 3 ]'
-            - '[ Aura hardening check failed - level 3 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Premonition check failed - level 3 ]'
+                - '[ Aura hardening check failed - level 3 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -420,28 +426,28 @@ scenes:
               current_scene: b3_ch04b_sneaky
   - name: b3_ch04b_sneaky
     routes:
-      - texts:
+      - condition: b3_ch4_control = 1
+        texts:
           - source: scene_text
             paragraph: 21
             text: "\"You sneaky, green-eyed bastard...\" I say. \"You never even intended to lead us to the control room, did you?\"\r\n\r\n\"I never said that I would lead you to the control room,\" the Overseer says. \"What I said was that I would lead you to where you 'need to go'. This is a room from the tower where the seredium walls are thin enough for you to be able to teleport out of here. Is that not your primary goal at the moment?\"\r\n\r\n\"No, damn it!\" I say. \"I even asked you specifically if you could lead us to the control room, and you gave me a vague answer on purpose. So, where IS the control room?\"\r\n\r\nAll of a sudden, a very loud noise fills the room, which is most likely meant to alert the guards from the tower of our presence.\r\n\r\n\"Unfortunately, it appears that Biliborrathrathsarran had managed to activate an alarm before you killed him,\" the Overseer says. \"The guards are heading this way. I suggest that you teleport out of here as soon as possible.\""
           - source: scene_text_2
             paragraph: 8
             text: "\"Damn it...\" I say. \"I guess we have no choice. We can't fight off all the guards in this place by ourselves. Breynan, can you call the teleporter guy so he can get us out of here?\"\r\n\r\n\"I'm on it,\" Breynan says.\r\n\r\nHe then takes out his transceiver and puts it close to his mouth.\r\n\r\n\"Barry, can you hear me?\" Breynan shouts in his transceiver.\r\n\r\n\"Good gods, what is that infernal noise?\" the teleporter guy says. \"And where have you been all this time? You know what? Never mind! There are plenty of people waiting in line to get teleported. You all seem calm enough, so I'll teleport you back right away. Are you ready?\"\r\n\r\n\"Yes, we're ready,\" Breynan says. \"Teleport us now!\"\r\n\r\n\"Understood,\" the teleporter guy says, and then a white light starts to surround us, as our bodies are vibrating loudly.\r\n\r\n\"Farewell,\" the Overseer says, as we are being teleported out of the room. \"I'm sure we'll be seeing each other again quite soon.\""
-        condition: b3_ch4_control = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch04b_ending
-      - texts:
+      - condition: b3_ch4_control = 0
+        texts:
           - source: scene_text
             paragraph: 22
             text: "\"You sneaky, green-eyed bastard...\" I say. \"You never even had the slightest intention of helping us reach the upper levels undetected, did you?\"\r\n\r\n\"I never said that I would lead you to the upper levels undetected,\" the Overseer says. \"What I said was that I would lead you to where you 'need to go'. This is a room from the tower where the seredium walls are thin enough for you to be able to teleport out of here. Even if the lessathi that you refer to as Billy Bob did detect you, this does not change the fact that you still have time to escape until the guards will find you. Is that not what you wanted?\"\r\n\r\n\"I suppose it is...\" I say.\r\n\r\n\"If this room does indeed permit teleportation, then we shouldn't be wasting any more time here,\" Melindra says. \"Breynan, can you call your friend from the teleporter room?\"\r\n\r\n\"Yes, I'll call him right now,\" Breynan says."
           - source: scene_text_2
             paragraph: 9
             text: "He then takes out his transceiver and puts it close to his mouth.\r\n\r\n\"Barry, can you hear me?\" Breynan shouts in the transceiver.\r\n\r\n\"Breynan?\" the teleporter guy says. \"Where have you been all this time? I've been trying to call you for ages! Actually, you know what? Never mind! There are plenty of people waiting in line to get teleported. You all seem calm enough, so I'll teleport you back right away. Are you ready?\"\r\n\r\n\"Yes, we're ready,\" Breynan says. \"Teleport us now!\"\r\n\r\n\"Understood,\" the teleporter guy says, and then a white light starts to surround us, as our bodies are vibrating loudly.\r\n\r\n\"Farewell,\" the Overseer says, as we are being teleported out of the room. \"I'm sure we'll be seeing each other again quite soon.\""
-        condition: b3_ch4_control = 0
         choices:
           - position: 1
             text: Continue
@@ -471,7 +477,8 @@ scenes:
               b3_ch4_billy: 6
   - name: b3_ch04b_undetected2
     routes:
-      - texts:
+      - condition: b3_ch4_billy = 9
+        texts:
           - source: scene_text
             paragraph: 24
             text: "\"No. If you want him dead, kill him yourself.\"\r\n\r\n\"I have been designed in such a way that I cannot kill the person who activated me,\" the Overseer says. \"Biliborrathrathsarran is the one who reactivated me this time, so killing him is impossible for me.\"\r\n\r\n\"Tough luck, then,\" I say.\r\n\r\n\"Is this really a wise course of action for you?\" the Overseer says. \"If your purpose is to kill the king of Ollendor, eliminating the person who singlehandedly managed to reactivate all of the technologically advanced lessathi relics in the city should be in your best interest.\"\r\n\r\n\"If I kill him, there will be no one left to control you,\" I say. \"At the moment, I think you might be more dangerous than the lessathi. I can't risk setting you free.\"\r\n\r\n\"I assure you that I am not your enemy,\" the Overseer says.\r\n\r\n\"Your words mean nothing,\" I say. \"You're only saying all of this because you know that the first thing Billy Bob will do after he wakes up and remembers how you betrayed him is to deactivate you. And aside from that, you also tried to manipulate us into killing the lessathi without telling us your true intentions, which makes you very untrustworthy. Sorry, but I'm not going to kill the lessathi for you and that is final.\""
@@ -481,21 +488,20 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "Just as Breynan begins contacting the guy from the teleporter room, a very loud noise fills the room all of a sudden, which I am assuming is an alarm meant to warn all of the guards in the tower of our presence.\r\n\r\n\"Barry, can you hear me?\" Breynan shouts in his transceiver.\r\n\r\n\"Good gods, what is that infernal noise?\" the teleporter guy says. \"And where have you been all this time? You know what? Never mind! There are plenty of people waiting in line to get teleported. You all seem calm enough, so I'll teleport you back right away. Are you ready?\"\r\n\r\n\"Yes, we're ready,\" Breynan says. \"Teleport us now!\"\r\n\r\n\"Understood,\" the teleporter guy says, and then a white light starts to surround us, as our bodies are vibrating loudly.\r\n\r\n\"Bye-bye, Overseer,\" I say, as I wave to the green-eyed drone while being teleported. \"I don't think we'll be seeing you again anytime soon.\""
-        condition: b3_ch4_billy = 9
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch04b_ending
-      - texts:
+      - condition: b3_ch4_billy = 6
+        texts:
           - source: scene_text
             paragraph: 25
             text: "\"Sure. Why not?\" I say, as I take the crossbow out of my backpack and shoot Billy Bob in the head, killing him instantly.\r\n\r\n\"You have my thanks,\" the Overseer says.\r\n\r\n\"Right,\" I say. \"Anyway, so I guess the next question is... how many guards have been alerted to our presence in the tower by now? Will we have to fight our way out, or can we teleport back to our base in peace?\"\r\n\r\n\"The lessathi that you refer to as Billy Bob had activated an alarm protocol when he first saw you enter the room, but I paused it so we could have our conversation,\" the Overseer says. \"Currently, none of the guards are heading in our direction. I will reactivate the alarm after you are gone, so that the guards can come here and dispose of the body.\"\r\n\r\n\"Well, in that case I'd say it's time we finally head back to the rebel base,\" Melindra says. \"Breynan, can you call your friend from the teleporter room?\"\r\n\r\n\"Yes, I'll call him right now,\" Breynan says."
           - source: scene_text_2
             paragraph: 12
             text: "He then takes out his transceiver and puts it close to his mouth.\r\n\r\n\"Barry, can you hear me?\" Breynan shouts in the transceiver.\r\n\r\n\"Breynan?\" the teleporter guy says. \"Where have you been all this time? I've been trying to call you for ages! Actually, you know what? Never mind! There are plenty of people waiting in line to get teleported. You all seem calm enough, so I'll teleport you back right away. Are you ready?\"\r\n\r\n\"Yes, we're ready,\" Breynan says. \"Teleport us now!\"\r\n\r\n\"Understood,\" the teleporter guy says, and then a white light starts to surround us, as our bodies are vibrating loudly.\r\n\r\n\"Farewell,\" the Overseer says, as we are being teleported out of the room. \"I'm sure we'll be seeing each other again quite soon.\""
-        condition: b3_ch4_billy = 6
         choices:
           - position: 1
             text: Continue
@@ -569,7 +575,8 @@ scenes:
               b3_ch4_billy: 9
   - name: b3_ch04b_voluntarily4
     routes:
-      - texts:
+      - condition: b3_ch4_billy = 7
+        texts:
           - source: scene_text
             paragraph: 29
             text: "\"Sounds like a plan!\"\r\n\r\n\"I will... have to think about this,\" Breynan says. \"I'm not sure if I'm ready to take on such an enormous responsibility.\"\r\n\r\n\"Not to mention that doing so would result in you making an enemy out of the rebel forces,\" Illuna says, \"since I'm suspecting that the king of the underground would not be so keen on allowing you to become the new king of Ollendor.\"\r\n\r\n\"Either way, I think I'm killing Billy Bob,\" I say. \"I no longer see any advantage in leaving him alive. Any objections?\"\r\n\r\nI look around to see if anyone has any strong opinions against this, and when I see that nobody is in any hurry to defend the lessathi, I finally take out my crossbow from my backpack and shoot Billy Bob in the head, killing him instantly."
@@ -579,33 +586,34 @@ scenes:
           - source: scene_3
             paragraph: 7
             text: "He then takes out his transceiver and puts it close to his mouth.\r\n\r\n\"Barry, can you hear me?\" Breynan shouts in the transceiver.\r\n\r\n\"Breynan?\" the teleporter guy says. \"Where have you been all this time? I've been trying to call you for ages! Actually, you know what? Never mind! There are plenty of people waiting in line to get teleported. You all seem calm enough, so I'll teleport you back right away. Are you ready?\"\r\n\r\n\"Yes, we're ready,\" Breynan says. \"Teleport us now!\"\r\n\r\n\"Understood,\" the teleporter guy says, and then a white light starts to surround us, as our bodies are vibrating loudly.\r\n\r\n\"Farewell,\" the Overseer says, as we are being teleported out of the room. \"I'm sure we'll be seeing each other again quite soon.\""
-        condition: b3_ch4_billy = 7
-        set:
-          ac_b3_ch4_alliance: 1
-        achievement:
-          id: ac_b3_ch4_alliance
-          title: A hidden alliance
+        effects:
+          - set:
+              ac_b3_ch4_alliance: 1
+            achievement:
+              id: ac_b3_ch4_alliance
+              title: A hidden alliance
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch04b_ending
-      - texts:
+      - condition: b3_ch4_billy = 8
+        texts:
           - source: scene_text
             paragraph: 30
             text: "\"I'm not sure if I fully agree with this arrangement, but I will kill Billy Bob for you.\"\r\n\r\n\"You have my thanks,\" the Overseer says.\r\n\r\n\"You'd better deliver on your promises, Overseer,\" I say, as I take the crossbow out of my backpack and shoot Billy Bob in the head, killing him instantly.\r\n\r\n\"There is no reason to doubt my intentions,\" the Overseer says. \"The Overseer protocol is not designed to tell any outright lies. The only things I am capable of doing are to withhold critical information on purpose and to mislead people through omission of important facts.\"\r\n\r\n\"Yes, that is uh... very reassuring,\" I say. \"Anyway, I guess the next question is... how many guards have been alerted to our presence in the tower by now? Will we have to fight our way out, or can we teleport back to our base in peace?\"\r\n\r\n\"The lessathi that you refer to as Billy Bob had activated an alarm protocol when he first saw you enter the room, but I paused it so we could have our conversation,\" the Overseer says. \"Currently, none of the guards are heading in our direction. I will reactivate the alarm after you are gone, so that the guards can come here and dispose of the body.\"\r\n\r\n\"Well, in that case I'd say it's time we finally head back to the rebel base,\" Melindra says. \"Breynan, can you call your friend from the teleporter room?\"\r\n\r\n\"Uh, yes, yes... I'll call him right now,\" Breynan says."
           - source: scene_text_2
             paragraph: 9
             text: "He then takes out his transceiver and puts it close to his mouth.\r\n\r\n\"Barry, can you hear me?\" Breynan shouts in the transceiver.\r\n\r\n\"Breynan?\" the teleporter guy says. \"Where have you been all this time? I've been trying to call you for ages! Actually, you know what? Never mind! There are plenty of people waiting in line to get teleported. You all seem calm enough, so I'll teleport you back right away. Are you ready?\"\r\n\r\n\"Yes, we're ready,\" Breynan says. \"Teleport us now!\"\r\n\r\n\"Understood,\" the teleporter guy says, and then a white light starts to surround us, as our bodies are vibrating loudly.\r\n\r\n\"Farewell,\" the Overseer says, as we are being teleported out of the room. \"I'm sure we'll be seeing each other again quite soon.\""
-        condition: b3_ch4_billy = 8
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch04b_ending
-      - texts:
+      - condition: b3_ch4_billy = 9
+        texts:
           - source: scene_text
             paragraph: 31
             text: "\"Actually, after hearing all of this, I think I'd rather keep Billy Bob alive.\"\r\n\r\n\"That is very unfortunate,\" the Overseer says. \"May I ask how exactly you have reached this conclusion?\"\r\n\r\n\"Yeah, it's because you've lied to us before, so I don't have any reason to trust you,\" I say. \"As much as I hate Billy Bob, there needs to be someone here to keep you in check until we kill the king.\"\r\n\r\n\"The Overseer protocol is not designed to tell any outright lies,\" the Overseer says. \"The only things I am capable of doing are to withhold critical information on purpose and to mislead people through omission of important facts.\"\r\n\r\n\"It's the same thing!\" I say. \"I don't have any guarantee that you didn't already omit some important facts when we had our previous conversation. You said it's possible to fix the towers, but what if the only way to do that is by obtaining some extremely rare metals that are technically unobtainable? We just have no way of verifying your claims. Sorry, but I can't trust you enough to believe that you will properly uphold your end of the bargain.\""
@@ -615,7 +623,6 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "Just as Breynan begins contacting the guy from the teleporter room, a very loud noise fills the room all of a sudden, which I am assuming is an alarm meant to warn all of the guards in the tower of our presence.\r\n\r\n\"Barry, can you hear me?\" Breynan shouts in his transceiver.\r\n\r\n\"Good gods, what is that infernal noise?\" the teleporter guy says. \"And where have you been all this time? You know what? Never mind! There are plenty of people waiting in line to get teleported. You all seem calm enough, so I'll teleport you back right away. Are you ready?\"\r\n\r\n\"Yes, we're ready,\" Breynan says. \"Teleport us now!\"\r\n\r\n\"Understood,\" the teleporter guy says, and then a white light starts to surround us, as our bodies are vibrating loudly.\r\n\r\n\"Bye-bye, Overseer,\" I say, as I wave to the green-eyed drone while being teleported. \"I don't think we'll be seeing you again anytime soon.\""
-        condition: b3_ch4_billy = 9
         choices:
           - position: 1
             text: Continue
@@ -641,16 +648,17 @@ scenes:
               current_scene: b3_ch04b_guarantee2
   - name: b3_ch04b_guarantee2
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 33
             text: "\"Are you sure about that?...\" I say. \"I thought you said earlier that you could barely stand on your feet in your current condition.\"\r\n\r\n\"Oh, uh... I'm sure it'll be fine!\" Flower says, with a bit of hesitation in her voice. \"It's just a few jumps, here and there. Nothing too fancy!\"\r\n\r\nShe then takes a few steps forward and gets ready to jump.\r\n\r\n\"Alright, here I go!\" she says, and she makes a small jump towards one of the floor tiles.\r\n\r\nThe tile gets pushed into the ground under her weight, but nothing bad seems to be happening.\r\n\r\n\"I knew it!\" Flower says. \"I've already seen this same type of floor at least three times before! It must have been designed by the same person. Okay, so the next tile should be over here...\"\r\n\r\nShe takes two steps to her right, and the tile below her feet once again sinks itself into the floor.\r\n\r\n\"Perfect!\" Flower says. \"I think I got it, now. I'll have this trap deactivated in no time!\"\r\n\r\nShe then begins to jump on several tiles one after the other, getting closer and closer to the end of the hallway."
           - source: scene_text_2
             paragraph: 18
             text: "Just when she looks like she's about to make it, she suddenly gets a strong headache, making her lose her balance. She tries to quickly regain her footing, but it is too late, and one of her feet ends up on a wrong floor tile. As soon as the tile sinks into the ground, the entrance behind us immediately closes up, and the ceiling begins to tremble violently, while making a loud noise. After it's done trembling, the ceiling begins to slowly descend upon us.\r\n\r\n\"I'm sorry! I'm sorry! I'm sorry!\" Flower says in a panicked voice, as the ceiling is now accelerating.\r\n\r\n\"We need to blast through this stone wall blocking the entrance quick!\" Breynan says. \"Before the ceiling--\"\r\n\r\nBreynan does not get to finish what he was saying, because the huge block of stone forming the ceiling suddenly drops on us, crushing us all underneath its weight."
-        condition: ch11_saved_rose = 0
-        set:
-          is_dead: 1
+        effects:
+          - set:
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -669,14 +677,14 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 34
             text: "She then takes a few steps forward and gets ready to jump.\r\n\r\n\"Alright, here I go!\" she says, and she makes a small jump towards one of the floor tiles.\r\n\r\nThe tile gets pushed into the ground under her weight, but nothing bad seems to be happening.\r\n\r\n\"I knew it!\" Flower says. \"I've already seen this same type of floor at least three times before! It must have been designed by the same person. Okay, so the next tile should be over here...\"\r\n\r\nShe takes two steps to her right, and the tile below her feet once again sinks itself into the floor.\r\n\r\n\"Perfect!\" Flower says. \"I think I got it, now. I'll have this trap deactivated in no time!\"\r\n\r\nShe then begins to jump on several tiles one after the other, getting closer and closer to the end of the hallway."
           - source: scene_text_2
             paragraph: 19
             text: "When she finally reaches the door on the other side, all of the floor tiles that she had stepped on rise back up to their original positions in unison, and the door in front of her opens up by itself.\r\n\r\n\"It's all good!\" Flower shouts to us from the other end of the tunnel. \"The trap is deactivated. You don't need to worry about the floor tiles anymore. Just come over here!\"\r\n\r\nWe all listen to Flower and we head over to her side. Just like she said, the traps don't activate and we are able to reach the door safely. As soon as we walk into the next corridor, we hear the voice of a man to our right, speaking to us in a loud tone.\r\n\r\n\"Who the hell are you?!\" the man shouts. \"And how did you manage to get out of that hallway without triggering any of the traps?\"\r\n\r\nWhen we turn around, we see that there are three men dressed in uniforms with swords in their hands, all looking at us suspiciously. I should be very careful what I say, here. One wrong word and they could easily sound the alarm before we get to take them out."
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: >-
@@ -701,43 +709,45 @@ scenes:
                 condition: is_dead = 0
   - name: b3_ch04b_tasked
     routes:
-      - texts:
+      - condition: bluff < 4
+        texts:
           - source: scene_text
             paragraph: 36
             text: "\"We are the new guards,\" I say. \"We came here to relieve you of your duties.\"\r\n\r\n\"The new guards, huh?...\" the man who addressed us earlier says, as he looks at me, then at Flower, and then at all the other members in our group. \"You really must be taking us for idiots to cook up a lie as ridiculous as this.\"\r\n\r\nHe then taps on what I'm assuming to be the transceiver inside his pocket, and he shouts:\r\n\r\n\"Intruder alert! Sound the alarm right now!\"\r\n\r\nJust a few seconds later, a very loud alarm noise fills the entire corridor, while the guards in front of us are getting ready to surround us.\r\n\r\n\"You're all coming with us,\" one of the guards says. \"You'd better not be trying to resist.\"\r\n\r\nBefore any of them have the time to react, six water whips appear in mid-air in front of the three men, quickly coiling themselves around each of their ankles and pulling their legs from under them, causing them to hit the backs of their heads against the ground and to lose their consciousness."
           - source: scene_text_2
             paragraph: 21
             text: "\"I should have done this the moment we opened that door...\" Illuna says.\r\n\r\n\"Don't worry about it,\" Breynan says. \"I'm sure we still have time to find our way out of here until the rest of the guards organize themselves to come greet us.\"\r\n\r\n\"The majority of the guards seem to be coming from the right side,\" Melindra says. \"I suggest that we head to the left.\"\r\n\r\n\"Good thinking,\" Breynan says. \"Let's move.\"\r\n\r\nWe all turn left and we make a run for the door at the end of the corridor. Once we open the door and step into the next hallway, Melindra tells us that she has detected a staircase leading upwards somewhere further down the hall. We take a right, then another right, and when we reach the stairs we begin to climb them as fast as we can, as we can hear the faint hurried steps of several guards from behind, who are slowly closing in on us."
-        condition: bluff < 4
-        set:
-          b3_ch4_tasked: 5
-          failed_checks:
-            - '[ Bluff check failed - level 4 ]'
+        effects:
+          - set:
+              b3_ch4_tasked: 5
+              failed_checks:
+                - '[ Bluff check failed - level 4 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch04b_hearing
-      - texts:
-          - source: scene_text_2
-            paragraph: 20
-            text: "The three men then turn around and they slowly walk away from us, until we are no longer able to see them anymore.\r\n\r\n\"That was incredible...\" Kate says, as soon as the three guards are out of earshot. \"Did you see how quickly they believed that obvious lie? It's like those men completely lost their common sense the minute they heard Barry speak!\"\r\n\r\n\"I don't understand what happened,\" Leila writes. \"Barry's aura was calm, but anyone could have seen that he wasn't telling the truth just from the way he talked. If you add the fact that the reasons he gave were completely ridiculous, I'm starting to think that calming the aura is not the only thing that this 'Bluff' stat does.\"\r\n\r\n\"Did neither of you notice how Barry's aura enveloped the three guards while he was talking?\" Melindra says. \"I'm no expert, but I'm guessing that must have had something to do with their temporary lapse in judgment. Still, I really doubt that this technique could work on mages, or on anyone reasonably competent in controlling their auras, so Barry, maybe next time you might want to consider telling a lie that is at least somewhat believable. Wouldn't you agree?\""
+      - condition: bluff >= 4
+        texts:
           - source: scene_text
             paragraph: 35
             text: "\"We are the new guards,\" I say. \"We came here to relieve you of your duties.\"\r\n\r\n\"The new guards, huh?...\" the man who addressed us earlier says, as he looks at me, then at Flower, and then at all the other members in our group. \"So, where are your uniforms, then?\"\r\n\r\n\"Uh... we forgot them at... home?...\" I say.\r\n\r\n\"Sounds plausible,\" the guard says, in a tone that does not seem to be sarcastic at all. \"So, do you mind telling us how exactly you managed to get inside there, given that we've been here all day and we never saw you walk in?\"\r\n\r\n\"It's because umm... you see, the thing is that we actually fell asleep in the prisoners' room the other day and we just woke up a few minutes ago,\" I say. \"You probably weren't here when we came in the first time.\"\r\n\r\nThe guards exchange a few looks, and then the man who interrogated us addresses his teammates.\r\n\r\n\"Their story checks out,\" the man says. \"Come on, let's go grab a beer before we head home. Maybe with a little luck we'll still find some tavern open at this hour.\""
+          - source: scene_text_2
+            paragraph: 20
+            text: "The three men then turn around and they slowly walk away from us, until we are no longer able to see them anymore.\r\n\r\n\"That was incredible...\" Kate says, as soon as the three guards are out of earshot. \"Did you see how quickly they believed that obvious lie? It's like those men completely lost their common sense the minute they heard Barry speak!\"\r\n\r\n\"I don't understand what happened,\" Leila writes. \"Barry's aura was calm, but anyone could have seen that he wasn't telling the truth just from the way he talked. If you add the fact that the reasons he gave were completely ridiculous, I'm starting to think that calming the aura is not the only thing that this 'Bluff' stat does.\"\r\n\r\n\"Did neither of you notice how Barry's aura enveloped the three guards while he was talking?\" Melindra says. \"I'm no expert, but I'm guessing that must have had something to do with their temporary lapse in judgment. Still, I really doubt that this technique could work on mages, or on anyone reasonably competent in controlling their auras, so Barry, maybe next time you might want to consider telling a lie that is at least somewhat believable. Wouldn't you agree?\""
           - source: scene_3
             paragraph: 9
             text: "\"Right, right,\" I say. \"I got a little carried away, there. My bad.\"\r\n\r\n\"So, which way should we go?\" Flower asks.\r\n\r\n\"Well, the guards went to the right, so that's likely the way that leads to the exit,\" Breynan says. \"We want to avoid going there unless we're prepared to fight every single guard in this place, so we should probably go to the left.\"\r\n\r\n\"Fair enough,\" Melindra says. \"To the left it is.\"\r\n\r\nWe all turn left and we keep walking until we reach a door at the end of the corridor. Once we open the door and step into the next hallway, Melindra tells us that she has detected a staircase leading upwards somewhere further down the hall. We take a right, then another right, and when we reach the stairs we begin to climb them slowly, while we rely on Melindra to tell us if there are any guards following us or not.\r\n\r\nWe manage to get up the stairs without any problems, and then we traverse another long corridor before we begin heading for the next staircase that leads to one of the upper levels."
-        condition: bluff >= 4
-        set:
-          successful_checks:
-            - '[ Bluff check successful - level 4 ]'
-          b3_ch4_tasked: 1
-          ac_b3_ch4_deception: 1
-        achievement:
-          id: ac_b3_ch4_deception
-          title: A master of deception
+        effects:
+          - set:
+              successful_checks:
+                - '[ Bluff check successful - level 4 ]'
+              b3_ch4_tasked: 1
+              ac_b3_ch4_deception: 1
+            achievement:
+              id: ac_b3_ch4_deception
+              title: A master of deception
         choices:
           - position: 1
             text: Continue
@@ -746,36 +756,38 @@ scenes:
                   current_scene: b3_ch04b_blades
   - name: b3_ch04b_cleaners
     routes:
-      - texts:
+      - condition: bluff < 2
+        texts:
           - source: scene_text
             paragraph: 38
             text: "\"We're the new cleaners!\" I say. \"We were sent here to wash the prisoners downstairs.\"\r\n\r\n\"The new cleaners, huh?...\" the man who addressed us earlier says, as he looks at me, then at Flower, and then at all the other members in our group. \"Please excuse me while I communicate this information to my colleagues.\"\r\n\r\nHe then taps on what I'm assuming to be the transceiver inside his pocket, and he shouts:\r\n\r\n\"Intruder alert! Sound the alarm right now!\"\r\n\r\nJust a few seconds later, a very loud alarm noise fills the entire corridor, while the guards in front of us are getting ready to surround us.\r\n\r\n\"You're all coming with us,\" one of the guards says. \"You'd better not be trying to resist.\"\r\n\r\nBefore any of them have the time to react, six water whips appear in mid-air in front of the three men, quickly coiling themselves around each of their ankles and pulling their legs from under them, causing them to hit the backs of their heads against the ground and to lose their consciousness."
           - source: scene_text_2
             paragraph: 21
             text: "\"I should have done this the moment we opened that door...\" Illuna says.\r\n\r\n\"Don't worry about it,\" Breynan says. \"I'm sure we still have time to find our way out of here until the rest of the guards organize themselves to come greet us.\"\r\n\r\n\"The majority of the guards seem to be coming from the right side,\" Melindra says. \"I suggest that we head to the left.\"\r\n\r\n\"Good thinking,\" Breynan says. \"Let's move.\"\r\n\r\nWe all turn left and we make a run for the door at the end of the corridor. Once we open the door and step into the next hallway, Melindra tells us that she has detected a staircase leading upwards somewhere further down the hall. We take a right, then another right, and when we reach the stairs we begin to climb them as fast as we can, as we can hear the faint hurried steps of several guards from behind, who are slowly closing in on us."
-        condition: bluff < 2
-        set:
-          b3_ch4_tasked: 5
-          failed_checks:
-            - '[ Bluff check failed - level 2 ]'
+        effects:
+          - set:
+              b3_ch4_tasked: 5
+              failed_checks:
+                - '[ Bluff check failed - level 2 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
-                  current_scene: b3_ch04b_cleaners2
-      - texts:
-          - source: scene_text_2
-            paragraph: 22
-            text: "\"That was not a bad bluff, Barry,\" Leila writes with a smile, while we're moving away from the guards. \"The points you spent in that stat were not wasted.\"\r\n\r\nAs we keep advancing through the corridor, we eventually reach another door. Before we open it, Melindra stops us to give us a few pointers.\r\n\r\n\"There are some guards out there, but they're pretty far away from the door,\" she says. \"Kate and Flower, I see that you're both suppressing the magic from your auras, but that's not enough if you want to avoid being detected by someone with keen magical sense. You need to suppress your auras completely, like Illuna. Can you do that?\"\r\n\r\n\"I think so...\" Kate says.\r\n\r\n\"We'll try!\" Flower says.\r\n\r\n\"And the same goes for everyone else too,\" Melindra says. \"Try to keep your auras as suppressed as possible, and with a little luck, we might be able to walk past those guards unnoticed.\"\r\n\r\n\"Suppress my aura,\" I say. \"Right.\"\r\n\r\nI try to conceal my aura as well as I can, using the breathing exercises that I learned from Illuna two weeks ago, but I only manage to partially hide it."
+                  current_scene: b3_ch04b_hearing
+      - condition: bluff >= 2
+        texts:
           - source: scene_text
             paragraph: 37
             text: "\"We're the new cleaners!\" I say. \"We were sent here to wash the prisoners downstairs.\"\r\n\r\n\"The new cleaners, huh?...\" the man who addressed us earlier says, as he looks at me, then at Flower, and then at all the other members in our group. \"Would you mind telling us then how exactly you managed to get inside there, given that we've been here all day and we never saw you walk in?\"\r\n\r\n\"Uh... I mean... have you even seen how many people there are down there?\" I say. \"We've been busy washing them since yesterday!\"\r\n\r\n\"I suppose you do have a point,\" the guard says. \"Very well. In that case, we'll let you go home. I'm sure you must be tired.\"\r\n\r\n\"Yes, yes,\" I say. \"Very tired. Come on, everyone, let's go!\"\r\n\r\n\"Where do you think you're going?\" the guard says, when he sees us heading to the left.\r\n\r\n\"To the... exit?\" I say.\r\n\r\n\"The exit's that way,\" the guard says, as he points towards the right side of the corridor. \"Don't get lost now.\"\r\n\r\n\"Oh right, it was that way!\" I say. \"Sorry, it's our first time here, so we're getting a little confused with all these identical-looking corridors. Alright everyone, let's go to the right!\""
-        condition: bluff >= 2
-        set:
-          successful_checks:
-            - '[ Bluff check successful - level 2 ]'
-          b3_ch4_tasked: 2
+          - source: scene_text_2
+            paragraph: 22
+            text: "\"That was not a bad bluff, Barry,\" Leila writes with a smile, while we're moving away from the guards. \"The points you spent in that stat were not wasted.\"\r\n\r\nAs we keep advancing through the corridor, we eventually reach another door. Before we open it, Melindra stops us to give us a few pointers.\r\n\r\n\"There are some guards out there, but they're pretty far away from the door,\" she says. \"Kate and Flower, I see that you're both suppressing the magic from your auras, but that's not enough if you want to avoid being detected by someone with keen magical sense. You need to suppress your auras completely, like Illuna. Can you do that?\"\r\n\r\n\"I think so...\" Kate says.\r\n\r\n\"We'll try!\" Flower says.\r\n\r\n\"And the same goes for everyone else too,\" Melindra says. \"Try to keep your auras as suppressed as possible, and with a little luck, we might be able to walk past those guards unnoticed.\"\r\n\r\n\"Suppress my aura,\" I say. \"Right.\"\r\n\r\nI try to conceal my aura as well as I can, using the breathing exercises that I learned from Illuna two weeks ago, but I only manage to partially hide it."
+        effects:
+          - set:
+              successful_checks:
+                - '[ Bluff check successful - level 2 ]'
+              b3_ch4_tasked: 2
         choices:
           - position: 1
             text: Continue
@@ -798,44 +810,48 @@ scenes:
               current_scene: b3_ch04b_hearing
   - name: b3_ch04b_cleaners2
     routes:
-      - texts:
+      - condition: bluff < 3
+        texts:
           - source: scene_text
             paragraph: 41
             text: "No matter how hard I try, I just can't seem to be able to fully conceal it.\r\n\r\n\"Hmm...\" Melindra says. \"Most of you are doing alright, but I'm not really sure about Barry. I can't say that his aura is all that hidden right now. Oh well... I guess we'll just have to hope that the guards from the next corridor aren't all that good at detecting auras. Let's give it a shot.\"\r\n\r\nWe open the door and we begin heading to the left, in the opposite direction from where the guards are stationed. Just as we take our first steps, we hear a man's shout coming from very far behind us.\r\n\r\n\"I'm not sure who exactly you're supposed to be, but you have three seconds to identify yourself before I sound the alarm,\" we hear the faint sound of the man's shout. \"I can sense your aura from all the way over here, and it doesn't feel like the aura of anyone I know.\""
           - source: scene_text_2
             paragraph: 23
             text: "\"Crap,\" I say in a low voice. \"What should I do? Should I tell him that I'm one of the cleaners?\"\r\n\r\n\"Too late,\" we hear the man shouting, and soon afterwards a very loud noise echoes through the hall, as we are sensing more than a few guards moving in our direction.\r\n\r\n\"So much for being stealthy,\" Melindra says. \"I guess we'll have to make a run for it. There are some stairs further down this corridor. They should help us get to one of the upper levels. Let's hurry.\"\r\n\r\nWe quicken our pace and we follow Melindra until we reach the end of the corridor. We then take a left and we soon get to the staircase that she mentioned earlier. As we are climbing the stairs, we can hear the faint hurried steps of some of the guards from behind, who are slowly closing in on us."
-        condition: bluff < 3
-        set:
-          failed_checks:
-            - '[ Aura concealment check failed - level 3 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Aura concealment check failed - level 3 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch04b_hearing
+                condition: b3_ch4_tasked != 4
               - set:
                   current_scene: b3_ch04b_blades
                 condition: b3_ch4_tasked = 4
-      - texts:
+      - condition: bluff >= 3
+        texts:
           - source: scene_text
             paragraph: 40
             text: "When I try again, I realize that I'm suddenly getting the same feeling that I got when I was lying to those guards earlier. Is this also the Bluff stat's doing?\r\n\r\n\"Hey, that's not half-bad, Barry,\" Melindra says. \"I didn't know you could conceal your aura so well. Alright, now that everyone is ready, let's move on.\"\r\n\r\nWe open the door and we begin heading to the left, in the opposite direction from where the guards are stationed. None of the guards are reacting to us, which means that we're doing a good job at concealing our auras. Melindra tells us that she has detected a staircase leading upwards somewhere further down the hall, so we keep moving forward and then we take another left, continuing on our way until we finally reach the stairs that she was talking about. We then begin climbing them slowly, while we rely on Melindra to tell us if there are any guards following us or not.\r\n\r\nWe manage to get up the stairs without any problems, and then we traverse another long corridor before we begin heading for the next staircase that leads to one of the upper levels."
-        condition: bluff >= 3
-        set:
-          successful_checks:
-            - '[ Aura concealment check successful - level 3 ]'
-          b3_ch4_tasked: 4
+        effects:
+          - set:
+              successful_checks:
+                - '[ Aura concealment check successful - level 3 ]'
+              b3_ch4_tasked: 4
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
-                  current_scene: b3_ch04b_hearing
+                  current_scene: b3_ch04b_blades
   - name: b3_ch04b_hearing
     routes:
-      - texts:
+      - condition: hearing < 3
+        texts:
           - source: scene_text
             paragraph: 42
             text: >-
@@ -846,11 +862,11 @@ scenes:
               electric shock surging through my body is so powerful that I
               barely get another second of consciousness before everything
               completely fades to black.
-        condition: hearing < 3
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Hearing check failed - level 3 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Hearing check failed - level 3 ]'
         choices:
           - position: 1
             text: Restart game
@@ -869,17 +885,18 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_text_2
-            paragraph: 24
-            text: "\"I can't turn it on right away,\" the other man says. \"It needs to charge up a little first!\"\r\n\r\n\"I just heard the guards talking about how the trap will need to charge up before they can use it again,\" I tell my friends. \"We can go now. It's safe.\"\r\n\r\n\"Let's hurry, then,\" Kate says.\r\n\r\n\"You can hear them from that far away?...\" Breynan asks me, as we're all quickly traversing the corridor with the deactivated electric trap.\r\n\r\n\"Yes, it's because of my stat device,\" I say. \"But if we run into another one of these undetectable lessathi traps later on, we might not be so lucky next time. Melindra, isn't there a way in which you could detect these with your magical sense?\"\r\n\r\n\"These are lessathi devices that are made specifically for the purpose of not being detected,\" Melindra says. \"Even Arraka would have trouble finding these. All we can do is be really careful and hope for the best.\r\n\r\n\"I was afraid that you might say something like that,\" I say."
+      - condition: hearing >= 3
+        texts:
           - source: scene_text
             paragraph: 43
             text: "Just when we're about to reach the end of the stairs, I hear the voice of a guard from very far behind us, who is talking to one of his colleagues.\r\n\r\n\"They're at the top of the stairs!\" the man says. \"Turn on the trap! Now!\"\r\n\r\n\"Stop!\" I shout at my friends who are running besides me. \"Don't go any further!\"\r\n\r\nWe all stop right before the end of the staircase, where we are getting a perfect view of the next corridor through an archway made of stones. Just a few seconds later, the whole hallway in front of us gets filled with magical electrical currents that can be seen with the naked eye. Judging by the way they look, I'm guessing that we would have died instantly if we hadn't stopped running when we did. After waiting for about ten more seconds, the currents finally die down, and the corridor in front of us becomes safe to cross once again.\r\n\r\n\"Are they dead?\" I hear the voice of a man very far behind us.\r\n\r\n\"No, they didn't enter the corridor for some reason,\" says the man who ordered the activation of the trap initially. \"Try turning it on again!\""
-        condition: hearing >= 3
-        set:
-          successful_checks:
-            - '[ Hearing check successful - level 3 ]'
+          - source: scene_text_2
+            paragraph: 24
+            text: "\"I can't turn it on right away,\" the other man says. \"It needs to charge up a little first!\"\r\n\r\n\"I just heard the guards talking about how the trap will need to charge up before they can use it again,\" I tell my friends. \"We can go now. It's safe.\"\r\n\r\n\"Let's hurry, then,\" Kate says.\r\n\r\n\"You can hear them from that far away?...\" Breynan asks me, as we're all quickly traversing the corridor with the deactivated electric trap.\r\n\r\n\"Yes, it's because of my stat device,\" I say. \"But if we run into another one of these undetectable lessathi traps later on, we might not be so lucky next time. Melindra, isn't there a way in which you could detect these with your magical sense?\"\r\n\r\n\"These are lessathi devices that are made specifically for the purpose of not being detected,\" Melindra says. \"Even Arraka would have trouble finding these. All we can do is be really careful and hope for the best.\r\n\r\n\"I was afraid that you might say something like that,\" I say."
+        effects:
+          - set:
+              successful_checks:
+                - '[ Hearing check successful - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -889,14 +906,14 @@ scenes:
                 condition: is_dead = 0
   - name: b3_ch04b_blades
     routes:
-      - texts:
+      - condition: b3_ch4_tasked <> 2 AND b3_ch4_tasked <> 3 AND b3_ch4_tasked <> 5
+        texts:
           - source: scene_text
             paragraph: 44
             text: "\"Breynan, did you try contacting your friend from the teleporter room again?\" Melindra says, while we're still walking through the hallway. \"Maybe you can reach him from here.\"\r\n\r\n\"I already tried but he still won't answer,\" Breynan says. \"Maybe we'll have better luck if we keep moving upwar--\"\r\n\r\n\"Attention all guards from the tower!\" we suddenly hear the voice of Billy Bob, through a magical voice magnifier that is bolted to a wall. \"My sensors are detecting intruders in the tower. It appears that they are trying to reach the upper levels. I will activate the trap near the staircase leading out of section B98-6C. If you hurry, you should be able to corner them easily enough. You'd better not let them get away...\"\r\n\r\nJust as the lessathi stops talking, a very loud alarm noise fills the hallway and then the whole section in front of the staircase that we were heading towards becomes completely uncrossable, because a hundred spinning metal blades are coming out of the ground, walls and ceiling, leaving no room for us to squeeze past them without getting cut into pieces."
           - source: scene_text_2
             paragraph: 25
             text: "\"I'm... not sure how we're supposed to get past this one...\" Breynan says.\r\n\r\n\"Couldn't Flower blow them up or something?\" I say.\r\n\r\n\"Those blades are made of elven steel and they are heavily enchanted,\" Illuna says. \"No spells of ours are anywhere near powerful enough to damage them.\"\r\n\r\n\"I could try to freeze the spinning blades in place with one of my spells,\" Kate says. \"It probably won't last too long, but it might give us just enough time to be able to get to the stairs.\"\r\n\r\n\"What about Rose?\" Flower asks us. \"We could try asking her to freeze time for everyone in the world except us until we can get past the blades!\"\r\n\r\n\"Last time I talked to her, Rose said she didn't make any meaningful progress with her time freezing training,\" I say. \"I don't think she can help us.\"\r\n\r\n\"Last time you talked to her, Rose said she had a premonition in which she saw me almost get killed,\" Illuna says. \"It's possible that she's actually been making a little more progress than what she told you so far. We already know that there aren't enough seredium walls between her and us to block our communication completely, given that she's situated on the surface, so contacting her could be worth a try.\""
-        condition: b3_ch4_tasked <> 2 AND b3_ch4_tasked <> 3 AND b3_ch4_tasked <> 5
         choices:
           - position: 1
             text: Try to contact Rose.
@@ -910,14 +927,14 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch04b_froze
-      - texts:
+      - condition: b3_ch4_tasked = 2
+        texts:
           - source: scene_text
             paragraph: 45
             text: "\"Breynan, did you try contacting your friend from the teleporter room again?\" Melindra says, while we're still walking through the hallway. \"Maybe you can reach him from here.\"\r\n\r\n\"I already tried but he still won't answer,\" Breynan says. \"Maybe we'll have better luck if we keep moving upwar--\"\r\n\r\n\"Attention all guards from the tower!\" we suddenly hear the voice of Billy Bob, through a magical voice magnifier that is bolted to a wall. \"My sensors are indicating that the intruders are trying to reach the upper levels. I will activate the trap near the staircase leading out of section B98-6C. If you hurry, you should be able to corner them easily enough. You'd better not let them get away...\"\r\n\r\nJust as the lessathi stops talking, the whole section in front of the staircase that we were heading towards becomes completely uncrossable, because a hundred spinning metal blades are coming out of the ground, walls and ceiling, leaving no room for us to squeeze past them without getting cut into pieces."
           - source: scene_text_2
             paragraph: 25
             text: "\"I'm... not sure how we're supposed to get past this one...\" Breynan says.\r\n\r\n\"Couldn't Flower blow them up or something?\" I say.\r\n\r\n\"Those blades are made of elven steel and they are heavily enchanted,\" Illuna says. \"No spells of ours are anywhere near powerful enough to damage them.\"\r\n\r\n\"I could try to freeze the spinning blades in place with one of my spells,\" Kate says. \"It probably won't last too long, but it might give us just enough time to be able to get to the stairs.\"\r\n\r\n\"What about Rose?\" Flower asks us. \"We could try asking her to freeze time for everyone in the world except us until we can get past the blades!\"\r\n\r\n\"Last time I talked to her, Rose said she didn't make any meaningful progress with her time freezing training,\" I say. \"I don't think she can help us.\"\r\n\r\n\"Last time you talked to her, Rose said she had a premonition in which she saw me almost get killed,\" Illuna says. \"It's possible that she's actually been making a little more progress than what she told you so far. We already know that there aren't enough seredium walls between her and us to block our communication completely, given that she's situated on the surface, so contacting her could be worth a try.\""
-        condition: b3_ch4_tasked = 2
         choices:
           - position: 1
             text: Try to contact Rose.
@@ -931,14 +948,14 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch04b_froze
-      - texts:
+      - condition: b3_ch4_tasked = 3
+        texts:
           - source: scene_text
             paragraph: 45
             text: "\"Breynan, did you try contacting your friend from the teleporter room again?\" Melindra says, while we're still walking through the hallway. \"Maybe you can reach him from here.\"\r\n\r\n\"I already tried but he still won't answer,\" Breynan says. \"Maybe we'll have better luck if we keep moving upwar--\"\r\n\r\n\"Attention all guards from the tower!\" we suddenly hear the voice of Billy Bob, through a magical voice magnifier that is bolted to a wall. \"My sensors are indicating that the intruders are trying to reach the upper levels. I will activate the trap near the staircase leading out of section B98-6C. If you hurry, you should be able to corner them easily enough. You'd better not let them get away...\"\r\n\r\nJust as the lessathi stops talking, the whole section in front of the staircase that we were heading towards becomes completely uncrossable, because a hundred spinning metal blades are coming out of the ground, walls and ceiling, leaving no room for us to squeeze past them without getting cut into pieces."
           - source: scene_text_2
             paragraph: 25
             text: "\"I'm... not sure how we're supposed to get past this one...\" Breynan says.\r\n\r\n\"Couldn't Flower blow them up or something?\" I say.\r\n\r\n\"Those blades are made of elven steel and they are heavily enchanted,\" Illuna says. \"No spells of ours are anywhere near powerful enough to damage them.\"\r\n\r\n\"I could try to freeze the spinning blades in place with one of my spells,\" Kate says. \"It probably won't last too long, but it might give us just enough time to be able to get to the stairs.\"\r\n\r\n\"What about Rose?\" Flower asks us. \"We could try asking her to freeze time for everyone in the world except us until we can get past the blades!\"\r\n\r\n\"Last time I talked to her, Rose said she didn't make any meaningful progress with her time freezing training,\" I say. \"I don't think she can help us.\"\r\n\r\n\"Last time you talked to her, Rose said she had a premonition in which she saw me almost get killed,\" Illuna says. \"It's possible that she's actually been making a little more progress than what she told you so far. We already know that there aren't enough seredium walls between her and us to block our communication completely, given that she's situated on the surface, so contacting her could be worth a try.\""
-        condition: b3_ch4_tasked = 3
         choices:
           - position: 1
             text: Try to contact Rose.
@@ -952,14 +969,14 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch04b_froze
-      - texts:
+      - condition: b3_ch4_tasked = 5
+        texts:
           - source: scene_text
             paragraph: 45
             text: "\"Breynan, did you try contacting your friend from the teleporter room again?\" Melindra says, while we're still walking through the hallway. \"Maybe you can reach him from here.\"\r\n\r\n\"I already tried but he still won't answer,\" Breynan says. \"Maybe we'll have better luck if we keep moving upwar--\"\r\n\r\n\"Attention all guards from the tower!\" we suddenly hear the voice of Billy Bob, through a magical voice magnifier that is bolted to a wall. \"My sensors are indicating that the intruders are trying to reach the upper levels. I will activate the trap near the staircase leading out of section B98-6C. If you hurry, you should be able to corner them easily enough. You'd better not let them get away...\"\r\n\r\nJust as the lessathi stops talking, the whole section in front of the staircase that we were heading towards becomes completely uncrossable, because a hundred spinning metal blades are coming out of the ground, walls and ceiling, leaving no room for us to squeeze past them without getting cut into pieces."
           - source: scene_text_2
             paragraph: 25
             text: "\"I'm... not sure how we're supposed to get past this one...\" Breynan says.\r\n\r\n\"Couldn't Flower blow them up or something?\" I say.\r\n\r\n\"Those blades are made of elven steel and they are heavily enchanted,\" Illuna says. \"No spells of ours are anywhere near powerful enough to damage them.\"\r\n\r\n\"I could try to freeze the spinning blades in place with one of my spells,\" Kate says. \"It probably won't last too long, but it might give us just enough time to be able to get to the stairs.\"\r\n\r\n\"What about Rose?\" Flower asks us. \"We could try asking her to freeze time for everyone in the world except us until we can get past the blades!\"\r\n\r\n\"Last time I talked to her, Rose said she didn't make any meaningful progress with her time freezing training,\" I say. \"I don't think she can help us.\"\r\n\r\n\"Last time you talked to her, Rose said she had a premonition in which she saw me almost get killed,\" Illuna says. \"It's possible that she's actually been making a little more progress than what she told you so far. We already know that there aren't enough seredium walls between her and us to block our communication completely, given that she's situated on the surface, so contacting her could be worth a try.\""
-        condition: b3_ch4_tasked = 5
         choices:
           - position: 1
             text: Try to contact Rose.
@@ -1015,7 +1032,8 @@ scenes:
               current_scene: b3_ch04b_contact2
   - name: b3_ch04b_contact2
     routes:
-      - texts:
+      - condition: b3_ch4_control = 1
+        texts:
           - source: scene_text
             paragraph: 48
             text: "We all begin to move past the frozen blades as fast as we can, trying hard to fit into the narrow space between the multitude of sharp metal objects. When we finally reach the base of the stairs, I immediately try to let Rose know through the transceiver.\r\n\r\n\"Rose, we're safe,\" I say. \"You can unfreeze the time now.\"\r\n\r\nInstead of getting an answer, we hear a loud thud coming from the other end of the transceiver and right afterwards, the blades from the previous hallway begin to spin again.\r\n\r\n\"Rose, are you still there?\" I say. \"Rose!\"\r\n\r\n\"I'm... fine,\" Rose says, in a very weak voice. \"I just... fainted a little. I'm sure I'll recover after I... lie here on the floor for a while longer. I'm glad you're all safe.\"\r\n\r\n\"I'm sorry,\" I say. \"I shouldn't have pushed you so hard. Try to get some rest. We'll call you again when we're back at the rebel base.\"\r\n\r\nI then close the channel and I signal everyone to go up the stairs. Once we're done climbing, we enter a hallway with a really high ceiling and Breynan pulls out his transceiver again.\r\n\r\n\"Maybe this time we'll get lucky,\" Breynan says. \"If I manage to get in contact with Barry, I'll tell him to teleport us out of here right away. Make sure you are ready.\""
@@ -1025,14 +1043,14 @@ scenes:
           - source: scene_3
             paragraph: 11
             text: "\"I warned you that there would be no turning back,\" we hear the Overseer's voice, coming from the green-eyed drone.\r\n\r\n\"What are you talking about?\" I ask him. \"Who's blocking our signal? Is it those orange-eyed drones?\"\r\n\r\n\"Goodbye,\" the green-eyed drone says, and then it flies away from us, while the orange-eyed drones magically create a semi-transparent cage around themselves and us in order to prevent us from escaping.\r\n\r\nWhen Kate, Flower and Illuna try to shoot the drones down with their magic, the metal balls don't even bother getting out of the way, as a strong magical barrier activates around each of them and it easily deflects all of the incoming projectiles.\r\n\r\nThe air around us is gradually becoming heavier, and it's getting harder and harder to breathe. The pressure coming from all of the magical energy being gathered into one place is making it hard for us to even keep standing up. I don't know what spell these drones are preparing to cast, but whatever it is, it's going to be massive."
-        condition: b3_ch4_control = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch04b_contact3
-      - texts:
+      - condition: b3_ch4_control = 0
+        texts:
           - source: scene_text
             paragraph: 48
             text: "We all begin to move past the frozen blades as fast as we can, trying hard to fit into the narrow space between the multitude of sharp metal objects. When we finally reach the base of the stairs, I immediately try to let Rose know through the transceiver.\r\n\r\n\"Rose, we're safe,\" I say. \"You can unfreeze the time now.\"\r\n\r\nInstead of getting an answer, we hear a loud thud coming from the other end of the transceiver and right afterwards, the blades from the previous hallway begin to spin again.\r\n\r\n\"Rose, are you still there?\" I say. \"Rose!\"\r\n\r\n\"I'm... fine,\" Rose says, in a very weak voice. \"I just... fainted a little. I'm sure I'll recover after I... lie here on the floor for a while longer. I'm glad you're all safe.\"\r\n\r\n\"I'm sorry,\" I say. \"I shouldn't have pushed you so hard. Try to get some rest. We'll call you again when we're back at the rebel base.\"\r\n\r\nI then close the channel and I signal everyone to go up the stairs. Once we're done climbing, we enter a hallway with a really high ceiling and Breynan pulls out his transceiver again.\r\n\r\n\"Maybe this time we'll get lucky,\" Breynan says. \"If I manage to get in contact with Barry, I'll tell him to teleport us out of here right away. Make sure you are ready.\""
@@ -1042,7 +1060,6 @@ scenes:
           - source: scene_3
             paragraph: 11
             text: "\"I warned you that there would be no turning back,\" we hear the Overseer's voice, coming from the green-eyed drone.\r\n\r\n\"What are you talking about?\" I ask him. \"Who's blocking our signal? Is it those orange-eyed drones?\"\r\n\r\n\"Goodbye,\" the green-eyed drone says, and then it flies away from us, while the orange-eyed drones magically create a semi-transparent cage around themselves and us in order to prevent us from escaping.\r\n\r\nWhen Kate, Flower and Illuna try to shoot the drones down with their magic, the metal balls don't even bother getting out of the way, as a strong magical barrier activates around each of them and it easily deflects all of the incoming projectiles.\r\n\r\nThe air around us is gradually becoming heavier, and it's getting harder and harder to breathe. The pressure coming from all of the magical energy being gathered into one place is making it hard for us to even keep standing up. I don't know what spell these drones are preparing to cast, but whatever it is, it's going to be massive."
-        condition: b3_ch4_control = 0
         choices:
           - position: 1
             text: Continue
@@ -1051,15 +1068,16 @@ scenes:
                   current_scene: b3_ch04b_contact3
   - name: b3_ch04b_contact3
     routes:
-      - texts:
+      - condition: magical_sense < 4
+        texts:
           - source: scene_text
             paragraph: 49
             text: "Kate, Flower and Illuna are now using every magical attack that they can think of, but the drones don't seem bothered at all, and they just keep gathering energy for their spell. After a while, it becomes clear that there is no way for us to stop the incoming attack, so Melindra tries to cast individual wind barriers around each of us, in the hopes that this will somehow be enough to absorb all of the damage.\r\n\r\nUnfortunately, as soon as the drones' spell is cast, we quickly realize that no amount of protections could have shielded us from the onslaught of magical attacks that were unleashed upon us at the same time. It was difficult to tell if what killed us was the ice, the fire, the electricity or any other of the different simultaneous spells, but it took less than a second for our bodies to be completely destroyed and then to be turned into ashes."
-        condition: magical_sense < 4
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Magical sense check failed - level 4 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Magical sense check failed - level 4 ]'
         choices:
           - position: 1
             text: Restart game
@@ -1078,20 +1096,21 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_text_2
-            paragraph: 29
-            text: "My heart rate is through the roof. The speed at which I'm deciphering every one of the spells is breathtaking, and it feels as if the time has slowed down to a halt in order to allow me to have all these thoughts racing through my head at the same time. It feels like entire minutes have passed, but in reality, I don't think it's been more than a few seconds. The way before me is clear. I know what I have to do.\r\n\r\n\"We need to disrupt the flow of the spell!\" I tell everyone around me, speaking as fast as I can, while the magical energy inside the cage is becoming so dense that it's almost palpable. \"I need everyone who is a mage to cast the simplest spells they have, whenever I raise my right hand. It doesn't matter what spell, as long as you can cast it in the blink of an eye. I don't have time to explain why. Just trust me on this!\"\r\n\r\nThe others look at each other for a second, but then they turn their heads back to me, and they all give me a curt nod. I wait two seconds and then I raise my right hand. At the same time, Kate creates a small cube of ice, Flower sends a tiny ball of fire flying into the air, Illuna sprinkles some water on the ground, Breynan casts an orb of light and Melindra makes a few air currents rotate above her palm."
+      - condition: magical_sense >= 4
+        texts:
           - source: scene_text
             paragraph: 50
             text: "Something about the way in which the magic is flowing around the room suddenly reminds me of an old memory that I'd thought to be long forgotten. A few years ago, I was speaking to a hermit that everyone considered to be crazy, and he was always telling me how people are learning magic the wrong way, and how nobody would listen to him when he suggested that the magical academies should be completely restructured to follow his teachings. The main point of contention between him and the other scholars was his claim that imperfections in magical techniques are absolutely necessary if you want to create a perfect spell. The obvious contradiction in his statement made everyone dismiss him as a senile old man, but his theory was that the more a technique gets closer to perfection, the more predictable it will become, and the easier it would be to counteract it.\r\n\r\nWhen I'm seeing the perfect way in which these machines are executing their spells, I think I'm finally beginning to understand what that hermit meant. I can tell exactly what they're trying to do, and even if they're combining ten different spells at the same time, the way they are moving the flows of the auras is so 'by the book' that it would be impossible for me to not recognize every single one of them."
+          - source: scene_text_2
+            paragraph: 29
+            text: "My heart rate is through the roof. The speed at which I'm deciphering every one of the spells is breathtaking, and it feels as if the time has slowed down to a halt in order to allow me to have all these thoughts racing through my head at the same time. It feels like entire minutes have passed, but in reality, I don't think it's been more than a few seconds. The way before me is clear. I know what I have to do.\r\n\r\n\"We need to disrupt the flow of the spell!\" I tell everyone around me, speaking as fast as I can, while the magical energy inside the cage is becoming so dense that it's almost palpable. \"I need everyone who is a mage to cast the simplest spells they have, whenever I raise my right hand. It doesn't matter what spell, as long as you can cast it in the blink of an eye. I don't have time to explain why. Just trust me on this!\"\r\n\r\nThe others look at each other for a second, but then they turn their heads back to me, and they all give me a curt nod. I wait two seconds and then I raise my right hand. At the same time, Kate creates a small cube of ice, Flower sends a tiny ball of fire flying into the air, Illuna sprinkles some water on the ground, Breynan casts an orb of light and Melindra makes a few air currents rotate above her palm."
           - source: scene_3
             paragraph: 12
             text: "I then lower my hand and they all stop their spells, waiting for my next signal. Five seconds later, I raise my hand again, and everyone casts the same spells as before, looking anxiously around them to see if anything has changed. The air is still heavy, but it doesn't feel like the drones' spell has been progressing in any way since our mages began casting their own spells. I continue to predict the rhythm of the drones' magic flow by using every piece of information I know about how their spells are supposed to be cast. With the aid of my magical sense stat, I can finally detect the flows well enough to be able to put all of that magical theory I've learned into practice.\r\n\r\nI keep raising my hand in the air at the perfect timing, and my friends keep following my instructions. When I raise my hand for the eight time, the pressure around us disappears completely all of a sudden, and it seems like the spell that the drones were casting has been permanently cancelled. The drones are currently not moving at all, looking as if they were stunned."
-        condition: magical_sense >= 4
-        set:
-          successful_checks:
-            - '[ Magical sense check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Magical sense check successful - level 4 ]'
         choices:
           - position: 1
             text: >-
@@ -1126,15 +1145,16 @@ scenes:
                 condition: is_dead = 0
   - name: b3_ch04b_drones1
     routes:
-      - texts:
+      - condition: aura_hardening < 4
+        texts:
           - source: scene_text
             paragraph: 51
             text: "\"Melindra, can you cast your air currents on me?\" I say. \"I want to try and stab the drones in their eyes while they are stunned.\"\r\n\r\n\"I don't think that's the best idea, but it's your call,\" Melindra says.\r\n\r\nShe then waves her hands in the air a few times, and shortly afterwards I can feel the currents flowing all around me.\r\n\r\n\"Thanks,\" I say, as I take out my dagger and then fly towards one of the drones.\r\n\r\nJust as I'm about to run my dagger through it, the drone shoots an ice beam out of its eye, freezing me completely. Before I even get to fall, the same drone generates two slates of rock out of thin air, and it smashes my head between them, killing me in an instant."
-        condition: aura_hardening < 4
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Aura hardening check failed - level 4 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Aura hardening check failed - level 4 ]'
         choices:
           - position: 1
             text: Restart game
@@ -1153,17 +1173,18 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_text_2
-            paragraph: 30
-            text: "It looks like the magical barrier it had around it wasn't all that good against close-ranged attacks. This means that I might be able to finish off the rest of the drones in the same way. I just have to be a little more careful about the way I approach them.\r\n\r\nI fly towards another one of the drones, I feint an attack with my dagger, and then I fly back just when the metal ball shoots a fire beam at me. As soon as it's done with its attack, I fly back towards it and I try to stab it with my blade as hard as I can. This time, however, the tip of my dagger gets stopped by the barrier surrounding the drone, and the same metal ball now seems to be creating two slates of rock that it wants to smash my head with.\r\n\r\n\"Barry, get back!\" Kate says, as she shoots an icicle straight into the drone's eye, making it drop to the ground and also causing the slates of rock to disappear.\r\n\r\n\"Oh, now I get it!\" I say. \"They're having trouble switching between their defensive barriers! It looks like one of their barriers is stronger against physical attacks, while the other is stronger against magical attacks, but they can't use them both at the same time. You know what that means, right?\"\r\n\r\nI then take out my crossbow, as Kate and Illuna both ready up their spells. Before the other two drones get the chance to defend themselves, the three of us shoot them simultaneously with crossbow bolts, water lances and icicles, which destroy the metal balls in a matter of seconds."
+      - condition: aura_hardening >= 4
+        texts:
           - source: scene_text
             paragraph: 52
             text: "\"Melindra, can you cast your air currents on me?\" I say. \"I want to try and stab the drones in their eyes while they are stunned.\"\r\n\r\n\"I don't think that's the best idea, but it's your call,\" Melindra says.\r\n\r\nShe then waves her hands in the air a few times, and shortly afterwards I can feel the currents flowing all around me.\r\n\r\n\"Thanks,\" I say, as I take out my dagger and then fly towards one of the drones.\r\n\r\nJust as I'm about to run my dagger through it, the drone shoots an ice beam out of its eye, which envelops me completely. Instead of freezing me, however, the drone only manages to freeze the hardened aura around me, which means that the only effect it has on me is that I'm feeling a little cold. I don't give the drone the time to prepare another attack, and I stab it repeatedly in its eye, until its propeller stops working and the metal ball drops to the ground."
-        condition: aura_hardening >= 4
-        set:
-          successful_checks:
-            - '[ Aura hardening check successful - level 4 ]'
+          - source: scene_text_2
+            paragraph: 30
+            text: "It looks like the magical barrier it had around it wasn't all that good against close-ranged attacks. This means that I might be able to finish off the rest of the drones in the same way. I just have to be a little more careful about the way I approach them.\r\n\r\nI fly towards another one of the drones, I feint an attack with my dagger, and then I fly back just when the metal ball shoots a fire beam at me. As soon as it's done with its attack, I fly back towards it and I try to stab it with my blade as hard as I can. This time, however, the tip of my dagger gets stopped by the barrier surrounding the drone, and the same metal ball now seems to be creating two slates of rock that it wants to smash my head with.\r\n\r\n\"Barry, get back!\" Kate says, as she shoots an icicle straight into the drone's eye, making it drop to the ground and also causing the slates of rock to disappear.\r\n\r\n\"Oh, now I get it!\" I say. \"They're having trouble switching between their defensive barriers! It looks like one of their barriers is stronger against physical attacks, while the other is stronger against magical attacks, but they can't use them both at the same time. You know what that means, right?\"\r\n\r\nI then take out my crossbow, as Kate and Illuna both ready up their spells. Before the other two drones get the chance to defend themselves, the three of us shoot them simultaneously with crossbow bolts, water lances and icicles, which destroy the metal balls in a matter of seconds."
+        effects:
+          - set:
+              successful_checks:
+                - '[ Aura hardening check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1173,18 +1194,19 @@ scenes:
                 condition: is_dead = 0
   - name: b3_ch04b_drones2
     routes:
-      - texts:
+      - condition: strength >= 3
+        texts:
           - source: scene_text
             paragraph: 54
             text: "I take a rock from the ground, and I throw it at one of the drones.\r\n\r\nUnlike Kate's icicles, the rock passes right through the drone's barrier and it smashes into its eye, sending it falling to the ground.\r\n\r\nSeeing that my plan worked, I pick up another rock from the ground and I throw it at the next drone. This time, however, the rock bounces off the metal ball's magical barrier just like the projectiles from Kate, Flower and Illuna.\r\n\r\nI try throwing another rock, but I get the same result. All of a sudden, Kate sends one of her icicles towards the drone I was attacking, and the projectile goes right through its magical barrier, hitting it in the eye. As the metal ball falls to the ground, I begin to finally understand what is going on.\r\n\r\n\"Oh, now I get it!\" I say. \"They're having trouble switching between their defensive barriers! It looks like one of their barriers is stronger against physical attacks, while the other is stronger against magical attacks, but they can't use them both at the same time. You know what that means, right?\"\r\n\r\nI then take out my crossbow, as Kate and Illuna both ready up their spells. Before the other two drones get the time to defend themselves, the three of us shoot them simultaneously with crossbow bolts, water lances and icicles, which destroy the metal balls in a matter of seconds."
-        condition: strength >= 3
-        set:
-          successful_checks:
-            - '[ Strength check successful - level 3 ]'
-          ac_b3_ch4_thrower: 1
-        achievement:
-          id: ac_b3_ch4_thrower
-          title: Rock throwing champion
+        effects:
+          - set:
+              successful_checks:
+                - '[ Strength check successful - level 3 ]'
+              ac_b3_ch4_thrower: 1
+            achievement:
+              id: ac_b3_ch4_thrower
+              title: Rock throwing champion
         choices:
           - position: 1
             text: Continue
@@ -1192,7 +1214,8 @@ scenes:
               - set:
                   current_scene: b3_ch04b_stuck
                 condition: is_dead = 0
-      - texts:
+      - condition: strength < 3 AND aura_hardening >= 4
+        texts:
           - source: scene_text
             paragraph: 53
             text: "I take a rock from the ground, and I throw it at one of the drones.\r\n\r\nInstead of hitting it, the rock simply bounces off the magical barrier around the metal ball, doing no damage to it whatsoever. I try to throw a few more rocks at it, but the result is the same.\r\n\r\n\"Barry, what are you doing?...\" Kate asks me.\r\n\r\n\"It's not working,\" I say. \"I think I need to get closer to them. Melindra, can you cast your air current spell around me so I can fly over to them?\"\r\n\r\n\"That sounds like a pretty bad idea to me, but it's your call,\" Melindra says.\r\n\r\nShe then waves her hands in the air a few times, and shortly afterwards I can feel the currents flowing all around me.\r\n\r\n\"Thanks,\" I say, as I grab a few more rocks from the ground and I fly towards the drone that I've been attacking earlier.\r\n\r\nI first try to throw a rock at it from about a dozen feet away. Nothing happens. I then try to throw another one from six feet away. Still no results. I'm sure this will work if I only get a little closer."
@@ -1202,12 +1225,12 @@ scenes:
           - source: scene_3
             paragraph: 13
             text: "\"Barry, get back!\" Kate says, as she shoots an icicle straight into the drone's eye, making it drop to the ground and also causing the slates of rock to disappear.\r\n\r\n\"Oh, now I get it!\" I say. \"They're having trouble switching between their defensive barriers! It looks like one of their barriers is stronger against physical attacks, while the other is stronger against magical attacks, but they can't use them both at the same time. You know what that means, right?\"\r\n\r\nI then take out my crossbow, as Kate and Illuna both ready up their spells. Before the other two drones get the time to defend themselves, the three of us shoot them simultaneously with crossbow bolts, water lances and icicles, which destroy the metal balls in a matter of seconds."
-        condition: strength < 3 AND aura_hardening >= 4
-        set:
-          failed_checks:
-            - '[ Strength check failed - level 3 ]'
-          successful_checks:
-            - '[ Aura hardening check successful - level 4 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Strength check failed - level 3 ]'
+              successful_checks:
+                - '[ Aura hardening check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1215,7 +1238,8 @@ scenes:
               - set:
                   current_scene: b3_ch04b_stuck
                 condition: is_dead = 0
-      - texts:
+      - condition: strength < 3 AND aura_hardening < 4
+        texts:
           - source: scene_text
             paragraph: 53
             text: "I take a rock from the ground, and I throw it at one of the drones.\r\n\r\nInstead of hitting it, the rock simply bounces off the magical barrier around the metal ball, doing no damage to it whatsoever. I try to throw a few more rocks at it, but the result is the same.\r\n\r\n\"Barry, what are you doing?...\" Kate asks me.\r\n\r\n\"It's not working,\" I say. \"I think I need to get closer to them. Melindra, can you cast your air current spell around me so I can fly over to them?\"\r\n\r\n\"That sounds like a pretty bad idea to me, but it's your call,\" Melindra says.\r\n\r\nShe then waves her hands in the air a few times, and shortly afterwards I can feel the currents flowing all around me.\r\n\r\n\"Thanks,\" I say, as I grab a few more rocks from the ground and I fly towards the drone that I've been attacking earlier.\r\n\r\nI first try to throw a rock at it from about a dozen feet away. Nothing happens. I then try to throw another one from six feet away. Still no results. I'm sure this will work if I only get a little closer."
@@ -1226,12 +1250,12 @@ scenes:
               beam out of its eye, freezing me completely. Before I even get to
               fall, the same drone generates two slates of rock out of thin air,
               and it smashes my head between them, killing me in an instant.
-        condition: strength < 3 AND aura_hardening < 4
-        set:
-          failed_checks:
-            - '[ Strength check failed - level 3 ]'
-            - '[ Aura hardening check failed - level 4 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Strength check failed - level 3 ]'
+                - '[ Aura hardening check failed - level 4 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1252,15 +1276,16 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
   - name: b3_ch04b_drones3
     routes:
-      - texts:
+      - condition: perception < 2
+        texts:
           - source: scene_text
             paragraph: 55
             text: "I take out my crossbow and I try to shoot one of the drones in its eye. Just like it happened with Kate's icicles earlier, my crossbow bolt simply bounces off the metal ball's magical barrier, leaving it completely unharmed.\r\n\r\nI was hoping that the drones might be weak against physical attacks, but I guess not. I suppose there's no other way for us to beat them than to keep throwing magical attacks at them until their barriers fail.\r\n\r\n\"Try shooting more projectiles at them,\" I tell the others. \"Their barriers are bound to give in at some point.\"\r\n\r\n\"Let's hope you are right,\" Kate says.\r\n\r\nShe then begins to attack the drones, together with Flower, Illuna and Breynan. The metal balls do not react, but they don't seem to be taking any damage either. After their barriers keep absorbing attack after attack, the orange lights in the drones' eyes all begin to flicker repeatedly at the same time, while they're making very strange, high-pitched noises in unison.\r\n\r\n\"Warning!\" we hear the four drones speaking in metallic voices. \"Unable to maintain barrier. Initiating self-destruct sequence.\"\r\n\r\n\"This doesn't sound good,\" Breynan says. \"We need a barrier, quick, before--\"\r\n\r\nBreynan does not get to finish his sentence, because all of the drones explode at the same time, blowing up the whole corridor in the process and killing us on the spot."
-        condition: perception < 2
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Observation check failed - level 2 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Observation check failed - level 2 ]'
         choices:
           - position: 1
             text: Restart game
@@ -1279,17 +1304,18 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_text_2
-            paragraph: 33
-            text: "Surprisingly, the barrier around the metal ball is not affected at all, and the light from its eye does not flicker even once. Before I get the time to make sense of what's happening, Kate shoots the same drone that I was attacking with an icicle, which passes right through its barrier, hitting it in the eye. As the metal ball falls to the ground, I begin to finally understand what is going on.\r\n\r\n\"Oh, now I get it!\" I say. \"They're having trouble switching between their defensive barriers! It looks like one of their barriers is stronger against physical attacks, while the other is stronger against magical attacks, but they can't use them both at the same time. You know what that means, right?\"\r\n\r\nI then aim my crossbow at the next drone, as Kate and Illuna both ready up their spells. Before the other two drones get the time to defend themselves, the three of us shoot them simultaneously with crossbow bolts, water lances and icicles, which destroy the metal balls in a matter of seconds."
+      - condition: perception >= 2
+        texts:
           - source: scene_text
             paragraph: 56
             text: "I take out my crossbow and I try to shoot one of the drones in its eye. Just like it happened with Kate's icicles earlier, my crossbow bolt simply bounces off the metal ball's magical barrier, leaving it completely unharmed.\r\n\r\nI'm pretty sure that I noticed the light from the drone's orange eye flickering very shortly right as the crossbow bolt hit it, though. That never happened while it was attacked by the magical projectiles. Does this mean that my crossbow bolt did have some sort of effect? Let me try that again.\r\n\r\nI shoot the drone again, this time with two consecutive shots one after the other. The crossbow bolts get deflected by the barrier once more, but this time the flickering of the light was much more noticeable. Let me try that one more time with three crossbow bolts.\r\n\r\nJust like I suspected, as soon as I shoot three consecutive crossbow bolts into the drone, the barrier fails to defend it from all of them, and one of the bolts hits the metal ball in the eye, sending it falling to the ground. I then load my crossbow, and I aim it at another one of the drones, this time shooting all of my crossbow bolts into it one after the other."
-        condition: perception >= 2
-        set:
-          successful_checks:
-            - '[ Observation check successful - level 2 ]'
+          - source: scene_text_2
+            paragraph: 33
+            text: "Surprisingly, the barrier around the metal ball is not affected at all, and the light from its eye does not flicker even once. Before I get the time to make sense of what's happening, Kate shoots the same drone that I was attacking with an icicle, which passes right through its barrier, hitting it in the eye. As the metal ball falls to the ground, I begin to finally understand what is going on.\r\n\r\n\"Oh, now I get it!\" I say. \"They're having trouble switching between their defensive barriers! It looks like one of their barriers is stronger against physical attacks, while the other is stronger against magical attacks, but they can't use them both at the same time. You know what that means, right?\"\r\n\r\nI then aim my crossbow at the next drone, as Kate and Illuna both ready up their spells. Before the other two drones get the time to defend themselves, the three of us shoot them simultaneously with crossbow bolts, water lances and icicles, which destroy the metal balls in a matter of seconds."
+        effects:
+          - set:
+              successful_checks:
+                - '[ Observation check successful - level 2 ]'
         choices:
           - position: 1
             text: Continue

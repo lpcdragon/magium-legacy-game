@@ -8,7 +8,8 @@ chapter_effects:
 scenes:
   - name: b3_ch05b_refreshed
     routes:
-      - texts:
+      - condition: b3_ch5_moustache = 2
+        texts:
           - source: scene_text
             paragraph: 2
             text: "When our four hours were up, we went back to our room to wake up Kate and Leila. As the two of them were getting ready to take the next shift, Hadrik got up from his bed as well, saying that he wanted to practice his new techniques for a few hours in one of the emptier corridors. Once Hadrik, Kate and Leila left, Flower, Melindra and I went to sleep and we didn't wake up again until roughly four hours later, when everyone was already packing their bags and getting ready to leave. \r\n\r\nAfter quickly packing our bags as well, we called Hadrik on the transceiver and then we all met with him outside our room, so that we could head for the waiting room together.\r\n\r\n\"You doing okay, Hadrik?\" Daren says, as he pats Hadrik on the shoulder while we are walking through one of the corridors. \"Don't forget that you can always talk to us if you feel like there's something you need to get off your chest.\"\r\n\r\n\"I appreciate the concern, Daren, but you don't need to worry about me,\" Hadrik says. \"I was having a bit of a bad day yesterday, but after a good night's sleep I feel completely refreshed and I'm all ready for a rematch! When are we leaving for the surface?\"\r\n\r\n\"We'll leave as soon as we meet up with Kelrim,\" Daren says. \"He's probably in the quarantine zone already, so I'll go get him as soon as we reach the waiting room.\"\r\n\r\n\"Are Illuna and Arraka with us too, or do we need to wake them up?\" I say. \"I haven't heard a word from either of them this morning.\""
@@ -18,12 +19,12 @@ scenes:
           - source: scene_3
             paragraph: 2
             text: "Albert seems to have been waiting for us to arrive, because as soon as he saw us walking out of the corridor, he immediately rushed in our direction. He is now standing in front of us, looking both tired and irritable. He must have been busy guiding refugees all night, without getting any time to sleep.\r\n\r\n\"The king of the underground has requested a meeting with you,\" Albert says, trying to act politely, although you can clearly tell from his tone of voice that he is forcing himself to talk like this. \"He is waiting for you in the throne room. Follow me.\""
-        condition: b3_ch5_moustache = 2
-        set:
-          ac_b3_ch5_passed: 1
-        achievement:
-          id: ac_b3_ch5_passed
-          title: Challenge accepted
+        effects:
+          - set:
+              ac_b3_ch5_passed: 1
+            achievement:
+              id: ac_b3_ch5_passed
+              title: Challenge accepted
         choices:
           - position: 1
             text: Sure thing. Let's go.
@@ -45,7 +46,8 @@ scenes:
               - set:
                   current_scene: b3_ch05b_tension
                   b3_ch5_follow: 2
-      - texts:
+      - condition: b3_ch5_moustache <> 2
+        texts:
           - source: scene_text
             paragraph: 2
             text: "When our four hours were up, we went back to our room to wake up Kate and Leila. As the two of them were getting ready to take the next shift, Hadrik got up from his bed as well, saying that he wanted to practice his new techniques for a few hours in one of the emptier corridors. Once Hadrik, Kate and Leila left, Flower, Melindra and I went to sleep and we didn't wake up again until roughly four hours later, when everyone was already packing their bags and getting ready to leave. \r\n\r\nAfter quickly packing our bags as well, we called Hadrik on the transceiver and then we all met with him outside our room, so that we could head for the waiting room together.\r\n\r\n\"You doing okay, Hadrik?\" Daren says, as he pats Hadrik on the shoulder while we are walking through one of the corridors. \"Don't forget that you can always talk to us if you feel like there's something you need to get off your chest.\"\r\n\r\n\"I appreciate the concern, Daren, but you don't need to worry about me,\" Hadrik says. \"I was having a bit of a bad day yesterday, but after a good night's sleep I feel completely refreshed and I'm all ready for a rematch! When are we leaving for the surface?\"\r\n\r\n\"We'll leave as soon as we meet up with Kelrim,\" Daren says. \"He's probably in the quarantine zone already, so I'll go get him as soon as we reach the waiting room.\"\r\n\r\n\"Are Illuna and Arraka with us too, or do we need to wake them up?\" I say. \"I haven't heard a word from either of them this morning.\""
@@ -55,7 +57,6 @@ scenes:
           - source: scene_3
             paragraph: 2
             text: "Albert seems to have been waiting for us to arrive, because as soon as he saw us walking out of the corridor, he immediately rushed in our direction. He is now standing in front of us, looking both tired and irritable. He must have been busy guiding refugees all night, without getting any time to sleep.\r\n\r\n\"The king of the underground has requested a meeting with you,\" Albert says, trying to act politely, although you can clearly tell from his tone of voice that he is forcing himself to talk like this. \"He is waiting for you in the throne room. Follow me.\""
-        condition: b3_ch5_moustache <> 2
         choices:
           - position: 1
             text: Sure thing. Let's go.
@@ -79,7 +80,8 @@ scenes:
                   b3_ch5_follow: 2
   - name: b3_ch05b_tension
     routes:
-      - texts:
+      - condition: b3_ch5_follow = 0
+        texts:
           - source: scene_text
             paragraph: 3
             text: "\"Sure thing. Let's go.\"\r\n\r\nAlbert nods and then he begins to walk towards the throne room, as the rest of us move to follow him.\r\n\r\nAfter walking for a while, we finally reach the room where the king was waiting for us and we seat ourselves down on the empty chairs that are facing the throne. As we are taking our seats, Albert walks past us and he goes to join Peter, who is currently standing behind the king's throne. It seems that the two guards that are usually by the king's side have not been invited this time around. The only people here except for our group are the king of the underground, Albert and Peter."
@@ -89,14 +91,14 @@ scenes:
           - source: scene_3
             paragraph: 3
             text: "\"Yes,\" Eiden says. \"In here we should be safe from any spies that might be trying to listen to our conversation.\"\r\n\r\n\"I assure you, Creator, that there are no spies in this palace!\" the king of Ollendor says. \"There would be no way for them to get past our guards!\"\r\n\r\n\"I do not doubt your guards' competence, great king,\" Eiden says. \"But still, it is better to be safe than sorry.\"\r\n\r\n\"What is it that you wanted to speak to us about, ambassador?\" the captain of the royal guards says.\r\n\r\n\"I... do not know where to begin...\" the ambassador says. \"It's just so hard for me to put this into words. My king, it is with a heavy heart that I've come to bring you the news that your brother... our beloved earl has been murdered in Thilias.\"\r\n\r\nThe king does not answer the ambassador in any way, and neither do any of the others. After more than five seconds of silence, the ambassador speaks again.\r\n\r\n\"My king?...\" the ambassador says, in a slightly uneasy voice.\r\n\r\n\"Ambassador, I want you to think very carefully about your next words,\" the king of Ollendor says, in a frighteningly calm tone.  \"What you are about to say from now on may well decide whether you live or die today. First of all, I want you to confirm to me one more time what you just told me. Are you absolutely certain that my brother is dead?\""
-        condition: b3_ch5_follow = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch05b_bypass
-      - texts:
+      - condition: b3_ch5_follow = 1
+        texts:
           - source: scene_text
             paragraph: 4
             text: "\"Psst, Albert! You forgot to put on your fake smile when you asked us to come with you.\"\r\n\r\n\"I did not forget,\" Albert says, in an acid tone. \"I see no reason to smile at this moment, and especially not to you. Now, are you going to follow me or not?\"\r\n\r\n\"I suppose the king of the underground wouldn't have asked for a meeting so early in the morning if it weren't important...\" Daren says. \"Alright, let's see what he wants. Lead the way.\"\r\n\r\nAlbert nods and then he begins to walk towards the throne room, as the rest of us move to follow him.\r\n\r\nAfter walking for a while, we finally reach the room where the king was waiting for us and we seat ourselves down on the empty chairs that are facing the throne. As we are taking our seats, Albert walks past us and he goes to join Peter, who is currently standing behind the king's throne. It seems that the two guards that are usually by the king's side have not been invited this time around. The only people here except for our group are the king of the underground, Albert and Peter."
@@ -106,14 +108,14 @@ scenes:
           - source: scene_3
             paragraph: 3
             text: "\"Yes,\" Eiden says. \"In here we should be safe from any spies that might be trying to listen to our conversation.\"\r\n\r\n\"I assure you, Creator, that there are no spies in this palace!\" the king of Ollendor says. \"There would be no way for them to get past our guards!\"\r\n\r\n\"I do not doubt your guards' competence, great king,\" Eiden says. \"But still, it is better to be safe than sorry.\"\r\n\r\n\"What is it that you wanted to speak to us about, ambassador?\" the captain of the royal guards says.\r\n\r\n\"I... do not know where to begin...\" the ambassador says. \"It's just so hard for me to put this into words. My king, it is with a heavy heart that I've come to bring you the news that your brother... our beloved earl has been murdered in Thilias.\"\r\n\r\nThe king does not answer the ambassador in any way, and neither do any of the others. After more than five seconds of silence, the ambassador speaks again.\r\n\r\n\"My king?...\" the ambassador says, in a slightly uneasy voice.\r\n\r\n\"Ambassador, I want you to think very carefully about your next words,\" the king of Ollendor says, in a frighteningly calm tone.  \"What you are about to say from now on may well decide whether you live or die today. First of all, I want you to confirm to me one more time what you just told me. Are you absolutely certain that my brother is dead?\""
-        condition: b3_ch5_follow = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch05b_bypass
-      - texts:
+      - condition: b3_ch5_follow = 2
+        texts:
           - source: scene_text
             paragraph: 5
             text: "\"Your king can wait. First, we need to find Kelrim.\"\r\n\r\n\"I don't think I've made myself clear enough,\" Albert says, in a menacing tone. \"I wasn't giving you an option. You WILL follow me to the throne room.\"\r\n\r\n\"Or what?\" I say.\r\n\r\nWhen he hears me, Albert gets an angry look in his eyes and he begins to walk towards me.\r\n\r\n\"Hey, hey, there's no need to get so upset,\" Daren says, as he places himself in front of Albert to stop him from advancing. \"We're all friends here, right? Or at the very least we're somewhat on the same side. If your king's meeting is so important that it can't be delayed, then I'll just have to talk to Kelrim a little later. I'm guessing that he's in the quarantine area, right?\"\r\n\r\n\"The goblin is indeed in the quarantine zone,\" Albert says. \"You can speak to him after you return. Now follow me.\"\r\n\r\n\"Alright,\" Daren says. \"Lead the way.\"\r\n\r\nAlbert nods and then he begins to walk towards the throne room, as the rest of us move to follow him.\r\n\r\nAfter walking for a while, we finally reach the room where the king was waiting for us and we seat ourselves down on the empty chairs that are facing the throne. As we are taking our seats, Albert walks past us and he goes to join Peter, who is currently standing behind the king's throne. It seems that the two guards that are usually by the king's side have not been invited this time around. The only people here except for our group are the king of the underground, Albert and Peter."
@@ -123,7 +125,6 @@ scenes:
           - source: scene_3
             paragraph: 3
             text: "\"Yes,\" Eiden says. \"In here we should be safe from any spies that might be trying to listen to our conversation.\"\r\n\r\n\"I assure you, Creator, that there are no spies in this palace!\" the king of Ollendor says. \"There would be no way for them to get past our guards!\"\r\n\r\n\"I do not doubt your guards' competence, great king,\" Eiden says. \"But still, it is better to be safe than sorry.\"\r\n\r\n\"What is it that you wanted to speak to us about, ambassador?\" the captain of the royal guards says.\r\n\r\n\"I... do not know where to begin...\" the ambassador says. \"It's just so hard for me to put this into words. My king, it is with a heavy heart that I've come to bring you the news that your brother... our beloved earl has been murdered in Thilias.\"\r\n\r\nThe king does not answer the ambassador in any way, and neither do any of the others. After more than five seconds of silence, the ambassador speaks again.\r\n\r\n\"My king?...\" the ambassador says, in a slightly uneasy voice.\r\n\r\n\"Ambassador, I want you to think very carefully about your next words,\" the king of Ollendor says, in a frighteningly calm tone.  \"What you are about to say from now on may well decide whether you live or die today. First of all, I want you to confirm to me one more time what you just told me. Are you absolutely certain that my brother is dead?\""
-        condition: b3_ch5_follow = 2
         choices:
           - position: 1
             text: Continue
@@ -283,37 +284,48 @@ scenes:
               b3_ch5_fight: 3
   - name: b3_ch05b_hearing
     routes:
-      - texts:
+      - condition: hearing < 4
+        texts:
           - source: scene_text
             paragraph: 13
             text: "No matter how skilled Albert is, his feet still need to touch the ground when he is walking from one place to another. If I listen really carefully, maybe I'll be able to figure out where he'll strike next.\r\n\r\nI attempt to focus on any sound that may resemble footsteps, blocking all other noises from my mind. Unfortunately, it seems that I might have underestimated the assassin's ability, because despite my best efforts I simply cannot hear any sounds coming from the ground."
-        condition: hearing < 4
-        set:
-          failed_checks:
-            - '[ Hearing check failed - level 4 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Hearing check failed - level 4 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch05b_premonition
-      - texts:
+                condition: b3_ch5_fight < 4
+              - set:
+                  current_scene: b3_ch05b_obscure
+                condition: b3_ch5_fight >= 4
+      - condition: hearing >= 4 AND b2_ch6_stat <> 1
+        texts:
           - source: scene_text
             paragraph: 14
             text: "No matter how skilled Albert is, his feet still need to touch the ground when he is walking from one place to another. If I listen really carefully, maybe I'll be able to figure out where he'll strike next.\r\n\r\nI attempt to focus on any sound that may resemble footsteps, blocking all other noises from my mind. Unfortunately, it seems that I might have underestimated the assassin's ability, because even with my Hearing stat maxed I simply cannot hear any sounds coming from the ground.\r\n\r\nIf only I would have some sort of way to temporarily increase my hearing stat beyond its current maximum level, things might be different, but I don't think my stat device is capable of anything like that."
-        condition: hearing >= 4 AND b2_ch6_stat <> 1
-        set:
-          failed_checks:
-            - '[ Hearing check failed - level 7 ]'
-          successful_checks:
-            - '[ Hearing check successful - level 4 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Hearing check failed - level 7 ]'
+              successful_checks:
+                - '[ Hearing check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch05b_premonition
-      - texts:
+                condition: b3_ch5_fight < 4
+              - set:
+                  current_scene: b3_ch05b_obscure
+                condition: b3_ch5_fight >= 4
+      - condition: hearing >= 4 AND b2_ch6_stat = 1
+        texts:
           - source: scene_text
             paragraph: 15
             text: "No matter how skilled Albert is, his feet still need to touch the ground when he is walking from one place to another. If I listen really carefully, maybe I'll be able to figure out where he'll strike next.\r\n\r\nI attempt to focus on any sound that may resemble footsteps, blocking all other noises from my mind. Unfortunately, it seems that I might have underestimated the assassin's ability, because even with my Hearing stat maxed I simply cannot hear any sounds coming from the ground.\r\n\r\nBut what if I were to use the secret code that I know from Melindra in order to temporarily boost my Hearing stat? Would that be enough to hear him moving?\r\n\r\nI quickly take out my stat device from my pocket and my crossbow from my backpack. I then insert the code that Melindra told me about and I immediately grab my crossbow with both hands, knowing that I only have a few seconds to react before the temporary stat boost wears off.\r\n\r\nI can hear the steps now. They're barely audible even with this stat level, but I can hear them. I need to shoot him quickly, before the effect wears off. But I shouldn't hit him in a vital spot. He did his best not to kill Hadrik, after all."
@@ -323,16 +335,16 @@ scenes:
           - source: scene_3
             paragraph: 8
             text: "All of a sudden, Peter extends his hands towards Hadrik and he shoots a powerful lightning attack out of his palms. As Hadrik is being shocked by the electrical current that is passing through his body, Albert tries to free himself, but the dwarf keeps holding onto him tightly and he doesn't let him escape.It seems that the assassin is not being affected at all by the electric attack, even if Hadrik is still holding him by the leg. Does this mean that he has some sort of item granting him immunity against electricity?\r\n\r\n\"You're... going to... have to do better than that!\" Hadrik tells Peter, as he is holding back the pain from the electrical current. \"Compared to the attacks of Kate's elementalist friend, this is like child's play!\"    \r\n\r\n\"What the hell?\" Daren says, as he turns towards the king of the underground. \"Since when is Peter a part of the test? You never told us that he would be shooting lightning at-- NGH!\"\r\n\r\nAs Daren was talking, Peter changed his mind and decided to target him instead of Hadrik, casting a lightning spell on Daren as soon as he exposed his back to him."
-        condition: hearing >= 4 AND b2_ch6_stat = 1
-        set:
-          successful_checks:
-            - '[ Hearing check successful - level 4 ]'
-            - '[ Hearing check successful - level 7 ]'
-          b3_ch5_fight: 4
-          ac_b3_ch5_footsteps: 1
-        achievement:
-          id: ac_b3_ch5_footsteps
-          title: I can hear footsteps.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Hearing check successful - level 4 ]'
+                - '[ Hearing check successful - level 7 ]'
+              b3_ch5_fight: 4
+              ac_b3_ch5_footsteps: 1
+            achievement:
+              id: ac_b3_ch5_footsteps
+              title: I can hear footsteps.
         choices:
           - position: 1
             text: Continue
@@ -341,32 +353,38 @@ scenes:
                   current_scene: b3_ch05b_obscure
   - name: b3_ch05b_bluff
     routes:
-      - texts:
+      - condition: bluff < 4
+        texts:
           - source: scene_text
             paragraph: 16
             text: "\"Hey, Albert, you do realize that I can tell where you are, right?\" I say. \"You might want to try making some less obvious movements, because right now it's like you're begging to be shot with a crossbow in the chest.\"\r\n\r\nNo answer. Not even a sound. It looks like my bluff didn't have any effect on him whatsoever. I guess I'm going to have to find some other way to make him reveal his location."
-        condition: bluff < 4
-        set:
-          failed_checks:
-            - '[ Bluff check failed - level 4 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Bluff check failed - level 4 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch05b_premonition
-      - texts:
-          - source: scene_text_2
-            paragraph: 11
-            text: "\"Hey, all you have to do is 'admit defeat' and I'll let you go, friend!\" Hadrik says, with a smirk. \"There's no need to be so upset. It's only a friendly sparring match, after all!\"\r\n\r\nAll of a sudden, Peter extends his hands towards Hadrik and he shoots a powerful lightning attack out of his palms. As Hadrik is being shocked by the electrical current that is passing through his body, Albert tries to free himself, but the dwarf keeps holding onto him tightly and he doesn't let him escape.It seems that the assassin is not being affected at all by the electric attack, even if Hadrik is still holding him by the leg. Does this mean that he has some sort of item granting him immunity against electricity?\r\n\r\n\"You're... going to... have to do better than that!\" Hadrik tells Peter, as he is holding back the pain from the electrical current. \"Compared to the attacks of Kate's elementalist friend, this is like child's play!\"    \r\n\r\n\"What the hell?\" Daren says, as he turns towards the king of the underground. \"Since when is Peter a part of the test? You never told us that he would be shooting lightning at-- NGH!\"\r\n\r\nAs Daren was talking, Peter changed his mind and decided to target him instead of Hadrik, casting a lightning spell on Daren as soon as he exposed his back to him."
+                condition: b3_ch5_fight < 4
+              - set:
+                  current_scene: b3_ch05b_obscure
+                condition: b3_ch5_fight >= 4
+      - condition: bluff >= 4
+        texts:
           - source: scene_text
             paragraph: 17
             text: "\"Hey, Albert, you do realize that I can tell where you are, right?\" I say. \"You might want to try making some less obvious movements, because right now it's like you're begging to be shot with a crossbow in the chest.\"\r\n\r\nIt looks like my bluff had an effect on him, because all of a sudden we hear several loud steps, as the assassin tries to quickly get away from the position in which he thinks I spotted him. Kate does not miss this opportunity and she shoots an icicle at him as fast as she can. Instead of hitting him, however, the icicle makes a loud clanging noise and it changes direction, falling to the ground. \r\n\r\nRealizing that this was Albert deflecting the projectile with his dagger while still invisible, Hadrik wastes no time and he makes a quick dash towards the assassin, grabbing onto something that at first glance seems to be nothing more than empty air.\r\n\r\n\"Let go of me, damn it!\" Albert says, as he is now slowly coming out of invisibility, revealing to us the fact that Hadrik had apparently grabbed him by his leg. \"Let go of me, or I swear I will stab you for real this time!\""
-        condition: bluff >= 4
-        set:
-          successful_checks:
-            - '[ Bluff check successful - level 4 ]'
-          b3_ch5_fight: 5
+          - source: scene_text_2
+            paragraph: 11
+            text: "\"Hey, all you have to do is 'admit defeat' and I'll let you go, friend!\" Hadrik says, with a smirk. \"There's no need to be so upset. It's only a friendly sparring match, after all!\"\r\n\r\nAll of a sudden, Peter extends his hands towards Hadrik and he shoots a powerful lightning attack out of his palms. As Hadrik is being shocked by the electrical current that is passing through his body, Albert tries to free himself, but the dwarf keeps holding onto him tightly and he doesn't let him escape.It seems that the assassin is not being affected at all by the electric attack, even if Hadrik is still holding him by the leg. Does this mean that he has some sort of item granting him immunity against electricity?\r\n\r\n\"You're... going to... have to do better than that!\" Hadrik tells Peter, as he is holding back the pain from the electrical current. \"Compared to the attacks of Kate's elementalist friend, this is like child's play!\"    \r\n\r\n\"What the hell?\" Daren says, as he turns towards the king of the underground. \"Since when is Peter a part of the test? You never told us that he would be shooting lightning at-- NGH!\"\r\n\r\nAs Daren was talking, Peter changed his mind and decided to target him instead of Hadrik, casting a lightning spell on Daren as soon as he exposed his back to him."
+        effects:
+          - set:
+              successful_checks:
+                - '[ Bluff check successful - level 4 ]'
+              b3_ch5_fight: 5
         choices:
           - position: 1
             text: Continue
@@ -375,49 +393,60 @@ scenes:
                   current_scene: b3_ch05b_obscure
   - name: b3_ch05b_observation
     routes:
-      - texts:
+      - condition: magical_sense < 4
+        texts:
           - source: scene_text
             paragraph: 18
             text: "The king said that Albert is concealing his aura, but maybe if I concentrate as hard as I can I'll be able to catch a glimpse of it. I attempt to block most of my other senses from my mind and I concentrate only on reading the auras around me.\r\n\r\nNo matter how hard I try, it is impossible for me to sense any auras except for the ones of the people that I can already see. I guess I'm going to have to find some other way to make him reveal his location."
-        condition: magical_sense < 4
-        set:
-          failed_checks:
-            - '[ Magical sense check failed - level 4 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Magical sense check failed - level 4 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch05b_premonition
-      - texts:
+                condition: b3_ch5_fight < 4
+              - set:
+                  current_scene: b3_ch05b_obscure
+                condition: b3_ch5_fight >= 4
+      - condition: magical_sense >= 4 AND perception < 4
+        texts:
           - source: scene_text
             paragraph: 19
             text: "The king said that Albert is concealing his aura, but maybe if I concentrate as hard as I can I'll be able to catch a glimpse of it. I attempt to block most of my other senses from my mind and I concentrate only on reading the auras around me.\r\n\r\nIt feels like I can detect some vague traces of his aura around the room, but it's very difficult to pinpoint their exact location.\r\n\r\nAs I look around the room some more, I realize that even at its maximum level, my magical sense stat just isn't enough to help me figure out the assassin's whereabouts in a reliable manner."
-        condition: magical_sense >= 4 AND perception < 4
-        set:
-          failed_checks:
-            - '[ Observation check failed - level 4 ]'
-          successful_checks:
-            - '[ Magical sense check successful - level 4 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Observation check failed - level 4 ]'
+              successful_checks:
+                - '[ Magical sense check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch05b_premonition
-      - texts:
+                condition: b3_ch5_fight < 4
+              - set:
+                  current_scene: b3_ch05b_obscure
+                condition: b3_ch5_fight >= 4
+      - condition: magical_sense >= 4 AND perception >= 4
+        texts:
           - source: scene_text
             paragraph: 20
             text: "The king said that Albert is concealing his aura, but maybe if I concentrate as hard as I can I'll be able to catch a glimpse of it. I attempt to block most of my other senses from my mind and I concentrate only on reading the auras around me.\r\n\r\nIt feels like I can detect some vague traces of his aura around the room, but it's very difficult to pinpoint their exact location.\r\n\r\nAs I look around the room some more, I realize that in a certain area where I've sensed Albert's aura, the miniscule specks of dust flying through the air are moving in an unnatural way. I would have never noticed this if I hadn't been focusing on this specific spot, but now that I've seen them, it should be easy enough for me to figure out in which direction the assassin is heading.\r\n\r\nI quickly pull out my crossbow from my backpack and I shoot at the place where the dust in the air is moving the most erratically, trying to avoid hitting a vital spot as much as possible. To my surprise, instead of hitting my target, the crossbow bolt clangs against a metal surface and it falls to the ground. Realizing that this was Albert deflecting the projectile with his dagger while still invisible, Hadrik wastes no time and he makes a quick dash towards the assassin, grabbing onto something that at first glance seems to be nothing more than empty air."
           - source: scene_text_2
             paragraph: 12
             text: "\"Let go of me, damn it!\" Albert says, as he is now slowly coming out of invisibility, revealing to us the fact that Hadrik had apparently grabbed him by his leg. \"Let go of me, or I swear I will stab you for real this time!\"\r\n\r\n\"Hey, all you have to do is 'admit defeat' and I'll let you go, friend!\" Hadrik says, with a smirk. \"There's no need to be so upset. It's only a friendly sparring match, after all!\"\r\n\r\nAll of a sudden, Peter extends his hands towards Hadrik and he shoots a powerful lightning attack out of his palms. As Hadrik is being shocked by the electrical current that is passing through his body, Albert tries to free himself, but the dwarf keeps holding onto him tightly and he doesn't let him escape.It seems that the assassin is not being affected at all by the electric attack, even if Hadrik is still holding him by the leg. Does this mean that he has some sort of item granting him immunity against electricity?\r\n\r\n\"You're... going to... have to do better than that!\" Hadrik tells Peter, as he is holding back the pain from the electrical current. \"Compared to the attacks of Kate's elementalist friend, this is like child's play!\"    \r\n\r\n\"What the hell?\" Daren says, as he turns towards the king of the underground. \"Since when is Peter a part of the test? You never told us that he would be shooting lightning at-- NGH!\"\r\n\r\nAs Daren was talking, Peter changed his mind and decided to target him instead of Hadrik, casting a lightning spell on Daren as soon as he exposed his back to him."
-        condition: magical_sense >= 4 AND perception >= 4
-        set:
-          successful_checks:
-            - '[ Magical sense check successful - level 4 ]'
-            - '[ Observation check successful - level 4 ]'
-          b3_ch5_fight: 6
+        effects:
+          - set:
+              successful_checks:
+                - '[ Magical sense check successful - level 4 ]'
+                - '[ Observation check successful - level 4 ]'
+              b3_ch5_fight: 6
         choices:
           - position: 1
             text: Continue
@@ -440,66 +469,70 @@ scenes:
               current_scene: b3_ch05b_premonition
   - name: b3_ch05b_premonition
     routes:
-      - texts:
+      - condition: premonition < 2 AND toughness = 0
+        texts:
           - source: scene_text
             paragraph: 22
             text: "While I stand there, thinking of what to do next, Hadrik decides that he's done waiting and he chooses to taunt his opponent instead.\r\n\r\n\"What's the matter, Albert?\" Hadrik says. \"Scared already?\"\r\n\r\nShortly after Hadrik is done speaking, I feel a sharp pain coming from the right side of my abdomen, and when I look down I realize that I am already bleeding. I quickly put some pressure on the wound with my hand to stop the blood from coming out, but it hurts like hell, and it's making it very difficult for me to concentrate.\r\n\r\n\"Ah, crap!\" Daren says. \"Barry, hang on, I'm coming over!\"\r\n\r\nBefore he even takes his first step towards me, we hear a stifled groan coming from Daren as he puts his hand on the back of his left knee, which is now beginning to bleed.\r\n\r\n\"What the hell, man?!\" Daren shouts at Albert. \"I was going to heal-- NGH!\"\r\n\r\nAs he was finishing his sentence, Daren got blasted by a powerful bolt of lightning that made him drop to one knee. It looks like the spell came from Peter, who finally decided to join the battle as well.\r\n\r\n\"Hey, that's not fair!\" Hadrik says. \"Since when is Peter a part of the test?\""
-        condition: premonition < 2 AND toughness = 0
-        set:
-          failed_checks:
-            - '[ Premonition check failed - level 2 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Premonition check failed - level 2 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch05b_obscure
-      - texts:
+      - condition: premonition < 2 AND toughness > 0
+        texts:
           - source: scene_text
             paragraph: 23
             text: "While I stand there, thinking of what to do next, Hadrik decides that he's done waiting and he chooses to taunt his opponent instead.\r\n\r\n\"What's the matter, Albert?\" Hadrik says. \"Scared already?\"\r\n\r\nShortly after Hadrik is done speaking, I feel a sharp pain coming from the right side of my abdomen, and when I look down I realize that I am already bleeding. The assassin's invisible blade was apparently sharp enough that even with my level of toughness it could pass through my skin and muscles as if they were paper. I quickly put some pressure on the wound with my hand to stop the blood from coming out, but it hurts like hell, and it's making it very difficult for me to concentrate.\r\n\r\n\"Ah, crap!\" Daren says. \"Barry, hang on, I'm coming over!\"\r\n\r\nBefore he even takes his first step towards me, we hear a stifled groan coming from Daren as he puts his hand on the back of his left knee, which is now beginning to bleed.\r\n\r\n\"What the hell, man?!\" Daren shouts at Albert. \"I was going to heal-- NGH!\"\r\n\r\nAs he was finishing his sentence, Daren got blasted by a powerful bolt of lightning that made him drop to one knee. It looks like the spell came from Peter, who finally decided to join the battle as well.\r\n\r\n\"Hey, that's not fair!\" Hadrik says. \"Since when is Peter a part of the test?\""
-        condition: premonition < 2 AND toughness > 0
-        set:
-          failed_checks:
-            - '[ Premonition check failed - level 2 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Premonition check failed - level 2 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch05b_obscure
-      - texts:
-          - source: scene_text_2
-            paragraph: 13
-            text: "All of a sudden an intense pain takes hold of me, as I feel a powerful electric current passing through my body. Albert, on the other hand, seems completely unaffected by the lighting attack even though I'm still holding him by the arms, and he takes advantage of my loss of focus to break himself free and to turn invisible again.\r\n\r\nDamn it, I lost sight of him again. How is he still fine after getting shocked like that? Does he have some item that makes him immune against electric attacks?\r\n\r\n\"What the hell?\" Daren says. \"Since when is Peter a part of the test? You never told us that he would be shooting lightning at-- NGH!\"\r\n\r\nAs Daren was talking, Albert apparently took advantage of his confusion to stab him in the back of his knee, because I can see some blood dripping along his ankle."
+      - condition: premonition >= 2 AND aura_hardening < 4
+        texts:
           - source: scene_text
             paragraph: 24
             text: "While I stand there, thinking of what to do next, I suddenly get a premonition in which I see myself being stabbed in the right side of the abdomen by an invisible blade. I'm also pretty sure that Hadrik was about to say something right before I got attacked in the vision.\r\n\r\nMy attacker should be coming from the right side, so as long as I can figure out when exactly he will strike, I should be able to--\r\n\r\n\"What's the matter, Albert?\" Hadrik asks all of a sudden. \"Scared already?\"\r\n\r\nAs soon as I hear Hadrik's words, I know exactly what will happen next, and I immediately turn to my right, extending my arms in front of me in order to grab onto Albert right before he attacks me. My attempt is successful, as the assassin is now slowly turning visible again, while trying to break free of my grasp.\r\n\r\n\"You'd better let go of me if you don't want to lose an arm,\" Albert says, in a menacing tone. \"I'm warning you.\"\r\n\r\n\"Lose an arm?\" I say. \"In a mock battle? Don't you think you're taking this a little too personally?\""
-        condition: premonition >= 2 AND aura_hardening < 4
-        set:
-          failed_checks:
-            - '[ Aura hardening check failed - level 4 ]'
-          successful_checks:
-            - '[ Premonition check successful - level 2 ]'
+          - source: scene_text_2
+            paragraph: 13
+            text: "All of a sudden an intense pain takes hold of me, as I feel a powerful electric current passing through my body. Albert, on the other hand, seems completely unaffected by the lighting attack even though I'm still holding him by the arms, and he takes advantage of my loss of focus to break himself free and to turn invisible again.\r\n\r\nDamn it, I lost sight of him again. How is he still fine after getting shocked like that? Does he have some item that makes him immune against electric attacks?\r\n\r\n\"What the hell?\" Daren says. \"Since when is Peter a part of the test? You never told us that he would be shooting lightning at-- NGH!\"\r\n\r\nAs Daren was talking, Albert apparently took advantage of his confusion to stab him in the back of his knee, because I can see some blood dripping along his ankle."
+        effects:
+          - set:
+              failed_checks:
+                - '[ Aura hardening check failed - level 4 ]'
+              successful_checks:
+                - '[ Premonition check successful - level 2 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch05b_obscure
-      - texts:
+      - condition: premonition >= 2 AND aura_hardening >= 4
+        texts:
           - source: scene_text
             paragraph: 24
             text: "While I stand there, thinking of what to do next, I suddenly get a premonition in which I see myself being stabbed in the right side of the abdomen by an invisible blade. I'm also pretty sure that Hadrik was about to say something right before I got attacked in the vision.\r\n\r\nMy attacker should be coming from the right side, so as long as I can figure out when exactly he will strike, I should be able to--\r\n\r\n\"What's the matter, Albert?\" Hadrik asks all of a sudden. \"Scared already?\"\r\n\r\nAs soon as I hear Hadrik's words, I know exactly what will happen next, and I immediately turn to my right, extending my arms in front of me in order to grab onto Albert right before he attacks me. My attempt is successful, as the assassin is now slowly turning visible again, while trying to break free of my grasp.\r\n\r\n\"You'd better let go of me if you don't want to lose an arm,\" Albert says, in a menacing tone. \"I'm warning you.\"\r\n\r\n\"Lose an arm?\" I say. \"In a mock battle? Don't you think you're taking this a little too personally?\""
           - source: scene_text_2
             paragraph: 14
             text: "All of a sudden, I feel a powerful electric current passing through my body. While this may be a rather painful sensation, it is definitely not unmanageable. I probably have my aura hardening stat to thank for my increased resistance to lightning attacks.\r\n\r\nWhile I'm still being shocked, Albert tries to free himself again but I hold onto him tight and do not let him go. The assassin does not seem to be affected at all by the electric attack, even if I'm holding him by the arms. Does this mean that he has some sort of item granting him immunity against electricity?\r\n\r\n\"What the hell?\" Daren says, as he turns towards the king of the underground. \"Since when is Peter a part of the test? You never told us that he would be shooting lightning at-- NGH!\"\r\n\r\nAs Daren was talking, Peter changed his mind and decided to target him instead of me, casting a lightning spell on Daren as soon as he exposed his back to him."
-        condition: premonition >= 2 AND aura_hardening >= 4
-        set:
-          successful_checks:
-            - '[ Premonition check successful - level 2 ]'
-            - '[ Aura hardening check successful - level 4 ]'
-          b3_ch5_fight: 7
+        effects:
+          - set:
+              successful_checks:
+                - '[ Premonition check successful - level 2 ]'
+                - '[ Aura hardening check successful - level 4 ]'
+              b3_ch5_fight: 7
         choices:
           - position: 1
             text: Continue
@@ -508,7 +541,8 @@ scenes:
                   current_scene: b3_ch05b_obscure
   - name: b3_ch05b_obscure
     routes:
-      - texts:
+      - condition: b3_ch5_fight < 4
+        texts:
           - source: scene_text
             paragraph: 25
             text: "\"Surely you didn't think that you would only be fighting Albert in the second phase of the test, did you?\" the king of the underground says. \"Peter was obviously only giving you a head start. That is the only reason why he hadn't attacked you until now.\"\r\n\r\nWhen Kate hears what the king had to say, she immediately conjures three ice cones out of thin air and she sends them flying towards him. Sadly, the icicles don't even get close to their target, as they are all easily deflected by an invisible force.\r\n\r\n\"A solid effort!\" the king tells Kate. \"But not good enough, I'm afraid.\"\r\n\r\nOnce again, the king pushes every one of us except Melindra and Leila into the ground with his invisible force, but this time he also uses his aura manipulation technique to twist Daren's right wrist until he lets go of his sword. The king then makes the sword float all the way to his position, and he grabs it in his hand.\r\n\r\n\"As Kate has already guessed, phase two was in fact a fight against Albert, Peter and me,\" the king of the underground says. \"We weren't really expecting you to win, but we at least wanted to see how much of a fight you could put up. Unfortunately, even though you were able to undo my aura manipulation technique during the first phase, you weren't able to incapacitate a single one of us in the second part of the test, despite the fact that Peter and I left you plenty of time to do something about Albert. As a result, I am sad to say that you have failed our test.\""
@@ -518,7 +552,6 @@ scenes:
           - source: scene_3
             paragraph: 9
             text: "\"If you don't mind me asking,\" Hadrik says, as he looks at the king, \"how exactly did you come to learn a technique as obscure as aura manipulation? And how did you get so good at it?\"\r\n\r\n\"He most likely learned it from the captain of the royal guards,\" Kate says. \"Their techniques are much too similar for it to be a coincidence.\"\r\n\r\n\"Your friend is correct,\" the king of the underground tells Hadrik. \"The current guard captain and I both used to serve as royal guards a long time ago, and he was the one who taught me everything I know regarding aura manipulation. Sadly, I couldn't convince him to come with me and help me form this underground kingdom when I left the royal guards some twenty-five years ago, so we are not exactly on friendly terms anymore nowadays. From what I've heard, he's still searching for pupils, but to this day he hasn't managed to find anyone else that was talented enough to learn anything beyond the most basic aura manipulation techniques.\"\r\n\r\n\"Well, that's definitely good news for us,\" Daren says. \"We wouldn't have stood a chance against them if they had a whole army of skilled aura manipulators on their side.\"\r\n\r\n\"Indeed,\" the king of the underground says. \"Now, I do not want to be rude, but Albert, Peter and I still have some things that we need to discuss in private in regards to our current refugee situation, so if you have any more questions, I would appreciate it if you could keep them brief.\""
-        condition: b3_ch5_fight < 4
         choices:
           - position: 1
             text: Why did none of you attack Melindra and Leila during the test?
@@ -540,7 +573,8 @@ scenes:
               - set:
                   current_scene: b3_ch05b_tunnel
                   b3_ch5_brief: 2
-      - texts:
+      - condition: b3_ch5_fight >= 4
+        texts:
           - source: scene_text
             paragraph: 26
             text: "\"Surely you didn't think that you would only be fighting Albert in the second phase of the test, did you?\" the king of the underground says. \"Peter was obviously only giving you a head start. That is the only reason why he hadn't attacked you until now.\"\r\n\r\nWhen Kate hears what the king had to say, she immediately conjures three ice cones out of thin air and she sends them flying towards him. Sadly, the icicles don't even get close to their target, as they are all easily deflected by an invisible force.\r\n\r\n\"A solid effort!\" the king tells Kate. \"But not good enough, I'm afraid.\"\r\n\r\nOnce again, the king pushes every one of us except Melindra and Leila into the ground with his invisible force, but this time he also uses his aura manipulation technique to twist Daren's right wrist until he lets go of his sword. The king then makes the sword float all the way to his position, and he grabs it in his hand.\r\n\r\n\"As Kate has already guessed, phase two was in fact a fight against Albert, Peter and me,\" the king of the underground says. \"We weren't really expecting you to win, but we at least wanted to see how much of a fight you could put up. I will say that it was not a bad performance. I wasn't expecting you to be able to both capture and hold onto Albert for as long as you did, and I also didn't think that Daren would be able to use his sword to undo my aura manipulation technique. Seeing you in action made me think that we might actually be able to work together to achieve our common goals. Congratulations! You have passed the test.\""
@@ -550,7 +584,6 @@ scenes:
           - source: scene_3
             paragraph: 9
             text: "\"If you don't mind me asking,\" Hadrik says, as he looks at the king, \"how exactly did you come to learn a technique as obscure as aura manipulation? And how did you get so good at it?\"\r\n\r\n\"He most likely learned it from the captain of the royal guards,\" Kate says. \"Their techniques are much too similar for it to be a coincidence.\"\r\n\r\n\"Your friend is correct,\" the king of the underground tells Hadrik. \"The current guard captain and I both used to serve as royal guards a long time ago, and he was the one who taught me everything I know regarding aura manipulation. Sadly, I couldn't convince him to come with me and help me form this underground kingdom when I left the royal guards some twenty-five years ago, so we are not exactly on friendly terms anymore nowadays. From what I've heard, he's still searching for pupils, but to this day he hasn't managed to find anyone else that was talented enough to learn anything beyond the most basic aura manipulation techniques.\"\r\n\r\n\"Well, that's definitely good news for us,\" Daren says. \"We wouldn't have stood a chance against them if they had a whole army of skilled aura manipulators on their side.\"\r\n\r\n\"Indeed,\" the king of the underground says. \"Now, I do not want to be rude, but Albert, Peter and I still have some things that we need to discuss in private in regards to our current refugee situation, so if you have any more questions, I would appreciate it if you could keep them brief.\""
-        condition: b3_ch5_fight >= 4
         choices:
           - position: 1
             text: Why did none of you attack Melindra and Leila during the test?
@@ -574,113 +607,116 @@ scenes:
                   b3_ch5_brief: 2
   - name: b3_ch05b_tunnel
     routes:
-      - texts:
+      - condition: b3_ch5_brief = 0
+        texts:
           - source: scene_text
             paragraph: 27
             text: "\"Why did none of you attack Melindra and Leila during the test?\"\r\n\r\n\"Well, Melindra invited you here specifically because she couldn't hurt locals herself,\" the king says, \"so testing her would have been a little pointless, don't you think? And as for Leila, she is not one of the people that were involved in the murder of the Earl of Ollendor as far as I am aware, so we were never going to kick her out, especially since she's also the daughter of doctor Reidzek. Whether she wants to stay here or join you in the battle against the king of Ollendor is of course another matter altogether. Anyway, I believe you should all know the way to the teleporter room by now, so hopefully you'll forgive us for not escorting you on your way out. I bid you farewell!\""
           - source: scene_text_2
             paragraph: 17
             text: "\"Right, right,\" I say. \"Goodbye, I guess.\"\r\n\r\nAs we are about to exit the throne room, we hear some whispers behind us, and soon afterwards the king calls out to us."
-        condition: b3_ch5_brief = 0
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch05b_workshop
-      - texts:
-          - source: scene_text
-            paragraph: 28
-            text: "\"Why did you become a royal guard?\"\r\n\r\n\"What can I say?\" the king answers me. \"There was a time when I used to be young and naive. Our schools are made in such a way that they brainwash you from a very young age into thinking that our kingdom is the greatest of them all, that the royalty is always working for the good of the people and that there could be no greater honor than to be a royal guard. My parents avoided telling me their true opinions about our kingdom out of fear that I might give them away to my school teachers by mistake, so I only found out how the world really worked after I began serving as a royal guard. This discovery was of course what led me to leave the royal guards at the age of twenty-nine and to form my very own little kingdom here, in these underground tunnels. Anyway, I hope this answer satisfied your curiosity. I believe you should all know the way to the teleporter room by now, so hopefully you'll forgive us for not escorting you on your way out. I bid you farewell!\""
-        condition: b3_ch5_brief = 1
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch05b_workshop
-      - texts:
-          - source: scene_text
-            paragraph: 29
-            text: "\"Do you and the royal guard captain have mage specializations aside from aura manipulation?\"\r\n\r\n\"Not necessarily specializations, but we can use regular spells like other mages,\" the king of the underground says. \"The captain of the guards likes to use his aura manipulation most of the time, because it's very effective and hard to counter, but he's been known to also use other types of spells whenever he felt like he was being cornered. We don't know exactly how many spells he can cast, so I recommend being careful when you fight with him, even if it feels like you are gaining the upper hand during a battle. Anyway, I hope this has answered your question. I believe you should all know the way to the teleporter room by now, so hopefully you'll forgive us for not escorting you on your way out. I bid you farewell!\""
-        condition: b3_ch5_brief = 2
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch05b_workshop
-      - texts:
           - source: scene_text_2
             paragraph: 17
             text: "\"Right, right,\" I say. \"Goodbye, I guess.\"\r\n\r\nAs we are about to exit the throne room, we hear some whispers behind us, and soon afterwards the king calls out to us."
-        condition: b3_ch5_fight >= 4
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch05b_workshop
-      - texts:
-          - source: scene_text_2
-            paragraph: 18
-            text: "\"Right, right,\" I say. \"Goodbye, I guess.\"\r\n\r\n\"Oh, and just to be clear...\" the king of the underground says. \"Leila was not being tested along with the rest of you earlier. As far as I know, she was not involved in the murder of the Earl of Ollendor, so there is no reason for us to kick her out of our base, especially since she is also the daughter of doctor Reidzek. That being said, she can obviously still join you in the fight against the king of Ollendor, if that is her wish.\"\r\n\r\n\"I understand,\" Leila writes. \"Thank you for letting me know.\"\r\n\r\nAs we are about to exit the throne room, we hear some whispers behind us, and soon afterwards the king calls out to us."
-        condition: b3_ch5_brief <> 0 AND b3_ch5_fight < 4
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch05b_workshop
-      - texts:
+            condition: b3_ch5_fight >= 4
           - source: scene_3
             paragraph: 11
             text: "\"One moment, please…\" the king says. \"Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have stopped patrolling the skies at some point during the night. Most of them are now just hovering somewhere above the city, without moving at all from their positions. I've heard from Breynan that Billy Bob may have had a reason to deactivate the Overseer after finding out about his betrayal, but it is unclear to us if the deactivation actually took place, or if he's just trying to reprogram him to be more obedient. Either way, I would be careful if I were you. There's no telling what the lessathi is thinking.\"\r\n\r\n\"Alright,\" Daren says. \"We'll try to be careful. Farewell!\"\r\n\r\nWe then go out through the door and into the tunnel outside, as we begin to head for the waiting room."
-        condition: b3_ch4_billy = 9
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch05b_workshop
-      - texts:
+            condition: b3_ch4_billy = 9
           - source: scene_3
             paragraph: 10
             text: "\"One moment, please…\" the king says. \"Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have no longer been following their usual patrol routes since yesterday evening, and they've also been behaving quite erratically. I heard from Breynan that you killed Billy Bob yesterday, so this may be a part of the reason, but I would be careful if I were you. Something tells me that the Overseer is planning something big, and you might not want to be caught in the middle of it.\"\r\n\r\n\"Alright,\" Daren says. \"We'll try to be careful. Farewell!\"\r\n\r\nWe then go out through the door and into the tunnel outside, as we begin to head for the waiting room."
-        condition: b3_ch4_billy <= 6 AND b3_ch4_billy <> 0
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch05b_workshop
-      - texts:
+            condition: b3_ch4_billy <= 6 AND b3_ch4_billy != 0
           - source: scene_3
             paragraph: 10
             text: "\"One moment, please…\" the king says. \"Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have no longer been following their usual patrol routes since yesterday evening, and they've also been behaving quite erratically. I heard from Breynan that you killed Billy Bob yesterday, so this may be a part of the reason, but I would be careful if I were you. Something tells me that the Overseer is planning something big, and you might not want to be caught in the middle of it.\"\r\n\r\n\"Alright,\" Daren says. \"We'll try to be careful. Farewell!\"\r\n\r\nWe then go out through the door and into the tunnel outside, as we begin to head for the waiting room."
-        condition: b3_ch4_billy = 7
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch05b_workshop
-      - texts:
+            condition: b3_ch4_billy = 7
           - source: scene_3
             paragraph: 10
             text: "\"One moment, please…\" the king says. \"Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have no longer been following their usual patrol routes since yesterday evening, and they've also been behaving quite erratically. I heard from Breynan that you killed Billy Bob yesterday, so this may be a part of the reason, but I would be careful if I were you. Something tells me that the Overseer is planning something big, and you might not want to be caught in the middle of it.\"\r\n\r\n\"Alright,\" Daren says. \"We'll try to be careful. Farewell!\"\r\n\r\nWe then go out through the door and into the tunnel outside, as we begin to head for the waiting room."
-        condition: b3_ch4_billy = 8
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch05b_workshop
-      - texts:
+            condition: b3_ch4_billy = 8
           - source: scene_3
             paragraph: 12
             text: "\"One moment, please…\" the king says. \"Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have no longer been following their usual patrol routes since yesterday evening, and they've also been behaving quite erratically. Considering that Billy Bob was summoned to the palace last night, it is possible that the king has ordered him and the Overseer to take an active role in pursuing you from now on. I would definitely be careful if I were you. Those two are not the type of enemies that you would want to take lightly.\"\r\n\r\n\"Alright,\" Daren says. \"We'll try to be careful. Farewell!\"\r\n\r\nWe then go out through the door and into the tunnel outside, as we begin to head for the waiting room."
-        condition: b3_ch4_billy = 0
+            condition: b3_ch4_billy = 0
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch05b_workshop
+      - condition: b3_ch5_brief = 1
+        texts:
+          - source: scene_text
+            paragraph: 28
+            text: "\"Why did you become a royal guard?\"\r\n\r\n\"What can I say?\" the king answers me. \"There was a time when I used to be young and naive. Our schools are made in such a way that they brainwash you from a very young age into thinking that our kingdom is the greatest of them all, that the royalty is always working for the good of the people and that there could be no greater honor than to be a royal guard. My parents avoided telling me their true opinions about our kingdom out of fear that I might give them away to my school teachers by mistake, so I only found out how the world really worked after I began serving as a royal guard. This discovery was of course what led me to leave the royal guards at the age of twenty-nine and to form my very own little kingdom here, in these underground tunnels. Anyway, I hope this answer satisfied your curiosity. I believe you should all know the way to the teleporter room by now, so hopefully you'll forgive us for not escorting you on your way out. I bid you farewell!\""
+          - source: scene_text_2
+            paragraph: 17
+            text: "\"Right, right,\" I say. \"Goodbye, I guess.\"\r\n\r\nAs we are about to exit the throne room, we hear some whispers behind us, and soon afterwards the king calls out to us."
+            condition: b3_ch5_fight >= 4
+          - source: scene_text_2
+            paragraph: 18
+            text: "\"Right, right,\" I say. \"Goodbye, I guess.\"\r\n\r\n\"Oh, and just to be clear...\" the king of the underground says. \"Leila was not being tested along with the rest of you earlier. As far as I know, she was not involved in the murder of the Earl of Ollendor, so there is no reason for us to kick her out of our base, especially since she is also the daughter of doctor Reidzek. That being said, she can obviously still join you in the fight against the king of Ollendor, if that is her wish.\"\r\n\r\n\"I understand,\" Leila writes. \"Thank you for letting me know.\"\r\n\r\nAs we are about to exit the throne room, we hear some whispers behind us, and soon afterwards the king calls out to us."
+            condition: b3_ch5_fight < 4 AND b3_ch5_brief != 0
+          - source: scene_3
+            paragraph: 11
+            text: "\"One moment, please…\" the king says. \"Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have stopped patrolling the skies at some point during the night. Most of them are now just hovering somewhere above the city, without moving at all from their positions. I've heard from Breynan that Billy Bob may have had a reason to deactivate the Overseer after finding out about his betrayal, but it is unclear to us if the deactivation actually took place, or if he's just trying to reprogram him to be more obedient. Either way, I would be careful if I were you. There's no telling what the lessathi is thinking.\"\r\n\r\n\"Alright,\" Daren says. \"We'll try to be careful. Farewell!\"\r\n\r\nWe then go out through the door and into the tunnel outside, as we begin to head for the waiting room."
+            condition: b3_ch4_billy = 9
+          - source: scene_3
+            paragraph: 10
+            text: "\"One moment, please…\" the king says. \"Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have no longer been following their usual patrol routes since yesterday evening, and they've also been behaving quite erratically. I heard from Breynan that you killed Billy Bob yesterday, so this may be a part of the reason, but I would be careful if I were you. Something tells me that the Overseer is planning something big, and you might not want to be caught in the middle of it.\"\r\n\r\n\"Alright,\" Daren says. \"We'll try to be careful. Farewell!\"\r\n\r\nWe then go out through the door and into the tunnel outside, as we begin to head for the waiting room."
+            condition: b3_ch4_billy <= 6 AND b3_ch4_billy != 0
+          - source: scene_3
+            paragraph: 10
+            text: "\"One moment, please…\" the king says. \"Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have no longer been following their usual patrol routes since yesterday evening, and they've also been behaving quite erratically. I heard from Breynan that you killed Billy Bob yesterday, so this may be a part of the reason, but I would be careful if I were you. Something tells me that the Overseer is planning something big, and you might not want to be caught in the middle of it.\"\r\n\r\n\"Alright,\" Daren says. \"We'll try to be careful. Farewell!\"\r\n\r\nWe then go out through the door and into the tunnel outside, as we begin to head for the waiting room."
+            condition: b3_ch4_billy = 7
+          - source: scene_3
+            paragraph: 10
+            text: "\"One moment, please…\" the king says. \"Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have no longer been following their usual patrol routes since yesterday evening, and they've also been behaving quite erratically. I heard from Breynan that you killed Billy Bob yesterday, so this may be a part of the reason, but I would be careful if I were you. Something tells me that the Overseer is planning something big, and you might not want to be caught in the middle of it.\"\r\n\r\n\"Alright,\" Daren says. \"We'll try to be careful. Farewell!\"\r\n\r\nWe then go out through the door and into the tunnel outside, as we begin to head for the waiting room."
+            condition: b3_ch4_billy = 8
+          - source: scene_3
+            paragraph: 12
+            text: "\"One moment, please…\" the king says. \"Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have no longer been following their usual patrol routes since yesterday evening, and they've also been behaving quite erratically. Considering that Billy Bob was summoned to the palace last night, it is possible that the king has ordered him and the Overseer to take an active role in pursuing you from now on. I would definitely be careful if I were you. Those two are not the type of enemies that you would want to take lightly.\"\r\n\r\n\"Alright,\" Daren says. \"We'll try to be careful. Farewell!\"\r\n\r\nWe then go out through the door and into the tunnel outside, as we begin to head for the waiting room."
+            condition: b3_ch4_billy = 0
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch05b_workshop
+      - condition: b3_ch5_brief = 2
+        texts:
+          - source: scene_text
+            paragraph: 29
+            text: "\"Do you and the royal guard captain have mage specializations aside from aura manipulation?\"\r\n\r\n\"Not necessarily specializations, but we can use regular spells like other mages,\" the king of the underground says. \"The captain of the guards likes to use his aura manipulation most of the time, because it's very effective and hard to counter, but he's been known to also use other types of spells whenever he felt like he was being cornered. We don't know exactly how many spells he can cast, so I recommend being careful when you fight with him, even if it feels like you are gaining the upper hand during a battle. Anyway, I hope this has answered your question. I believe you should all know the way to the teleporter room by now, so hopefully you'll forgive us for not escorting you on your way out. I bid you farewell!\""
+          - source: scene_text_2
+            paragraph: 17
+            text: "\"Right, right,\" I say. \"Goodbye, I guess.\"\r\n\r\nAs we are about to exit the throne room, we hear some whispers behind us, and soon afterwards the king calls out to us."
+            condition: b3_ch5_fight >= 4
+          - source: scene_text_2
+            paragraph: 18
+            text: "\"Right, right,\" I say. \"Goodbye, I guess.\"\r\n\r\n\"Oh, and just to be clear...\" the king of the underground says. \"Leila was not being tested along with the rest of you earlier. As far as I know, she was not involved in the murder of the Earl of Ollendor, so there is no reason for us to kick her out of our base, especially since she is also the daughter of doctor Reidzek. That being said, she can obviously still join you in the fight against the king of Ollendor, if that is her wish.\"\r\n\r\n\"I understand,\" Leila writes. \"Thank you for letting me know.\"\r\n\r\nAs we are about to exit the throne room, we hear some whispers behind us, and soon afterwards the king calls out to us."
+            condition: b3_ch5_fight < 4 AND b3_ch5_brief != 0
+          - source: scene_3
+            paragraph: 11
+            text: "\"One moment, please…\" the king says. \"Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have stopped patrolling the skies at some point during the night. Most of them are now just hovering somewhere above the city, without moving at all from their positions. I've heard from Breynan that Billy Bob may have had a reason to deactivate the Overseer after finding out about his betrayal, but it is unclear to us if the deactivation actually took place, or if he's just trying to reprogram him to be more obedient. Either way, I would be careful if I were you. There's no telling what the lessathi is thinking.\"\r\n\r\n\"Alright,\" Daren says. \"We'll try to be careful. Farewell!\"\r\n\r\nWe then go out through the door and into the tunnel outside, as we begin to head for the waiting room."
+            condition: b3_ch4_billy = 9
+          - source: scene_3
+            paragraph: 10
+            text: "\"One moment, please…\" the king says. \"Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have no longer been following their usual patrol routes since yesterday evening, and they've also been behaving quite erratically. I heard from Breynan that you killed Billy Bob yesterday, so this may be a part of the reason, but I would be careful if I were you. Something tells me that the Overseer is planning something big, and you might not want to be caught in the middle of it.\"\r\n\r\n\"Alright,\" Daren says. \"We'll try to be careful. Farewell!\"\r\n\r\nWe then go out through the door and into the tunnel outside, as we begin to head for the waiting room."
+            condition: b3_ch4_billy <= 6 AND b3_ch4_billy != 0
+          - source: scene_3
+            paragraph: 10
+            text: "\"One moment, please…\" the king says. \"Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have no longer been following their usual patrol routes since yesterday evening, and they've also been behaving quite erratically. I heard from Breynan that you killed Billy Bob yesterday, so this may be a part of the reason, but I would be careful if I were you. Something tells me that the Overseer is planning something big, and you might not want to be caught in the middle of it.\"\r\n\r\n\"Alright,\" Daren says. \"We'll try to be careful. Farewell!\"\r\n\r\nWe then go out through the door and into the tunnel outside, as we begin to head for the waiting room."
+            condition: b3_ch4_billy = 7
+          - source: scene_3
+            paragraph: 10
+            text: "\"One moment, please…\" the king says. \"Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have no longer been following their usual patrol routes since yesterday evening, and they've also been behaving quite erratically. I heard from Breynan that you killed Billy Bob yesterday, so this may be a part of the reason, but I would be careful if I were you. Something tells me that the Overseer is planning something big, and you might not want to be caught in the middle of it.\"\r\n\r\n\"Alright,\" Daren says. \"We'll try to be careful. Farewell!\"\r\n\r\nWe then go out through the door and into the tunnel outside, as we begin to head for the waiting room."
+            condition: b3_ch4_billy = 8
+          - source: scene_3
+            paragraph: 12
+            text: "\"One moment, please…\" the king says. \"Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have no longer been following their usual patrol routes since yesterday evening, and they've also been behaving quite erratically. Considering that Billy Bob was summoned to the palace last night, it is possible that the king has ordered him and the Overseer to take an active role in pursuing you from now on. I would definitely be careful if I were you. Those two are not the type of enemies that you would want to take lightly.\"\r\n\r\n\"Alright,\" Daren says. \"We'll try to be careful. Farewell!\"\r\n\r\nWe then go out through the door and into the tunnel outside, as we begin to head for the waiting room."
+            condition: b3_ch4_billy = 0
         choices:
           - position: 1
             text: Continue
@@ -712,7 +748,8 @@ scenes:
               b3_ch5_breath: 0
   - name: b3_ch05b_birthday
     routes:
-      - texts:
+      - condition: b3_ch5_breath = 1
+        texts:
           - source: scene_text
             paragraph: 31
             text: "\"Hey, I'm sure we can wait two more minutes for you to catch your breath!\" I say. \"Right, Daren?\"\r\n\r\n\"Oh yeah, sure!\" Daren says. \"It's not a problem.\"\r\n\r\nWe decide to wait a few more minutes until Leila is good to go, and then we begin to head for the exit that leads towards the room with the teleporter. Just as we are about to make our first steps, we hear Flower's voice, as her eyes turn bright blue.\r\n\r\n\"Wait!\" Illuna says, and we all stop in our tracks.\r\n\r\n\"Illuna?\" Flower says. \"Are you finally done practicing that spell?\"\r\n\r\n\"I wouldn't say it's completely done, but at least I managed to get all the letters right,\" Illuna says.\"Step aside. I'm going to be conjuring a lot of plates.\"\r\n\r\nIlluna then makes some gestures with her hands, and a large plate with a chocolate cake appears on the ground in front of us, along with several other small plates that are surrounding the larger plate and that each have a knife and a fork on top of them. There are a lot of unlit candles on top of the cake, and now that I take a better look at it, I see that there are also letters written on its surface with frosting. The letters spell 'Happy birthday Flower!'.\r\n\r\n\"I’m not as good as Flower at using the food creation spell so I needed a little time to make all the preparations, \" Illuna says, \"but I think that--\""
@@ -722,14 +759,14 @@ scenes:
           - source: scene_3
             paragraph: 13
             text: "\"Oh Petal, thank you so much!\" Flower says in a very loud voice, as she now looks like she is hugging herself.\r\n\r\n\"Can you at least control your body when you hug me inside your mind?\" Illuna says. \"Or do you not realize how ridiculous we both look right now?\"\r\n\r\n\"I don't care!\" Flower says, as she still continues to hug herself. \"I don't want to let you go. I don't want to fight with you anymore. Please, please promise me that we won't ever have another fight like this for as long as we live! I swear that I won't try to act like someone I'm not anymore. I won't call you Illuna anymore. Just say that we will never have to go through something like this ever again!\"\r\n\r\n\"We were not fight--\" Illuna begins to say, but then she interrupts herself. \"Ugh... fine, I give up... You win. I promise that we will never have a fight again. Are you happy now?\"\r\n\r\n\"Yes!\" Flower says, beaming, as she finally stops hugging herself. \"You have no idea how happy! Thank you!\"\r\n\r\nShe then comes closer to me and Melindra and she grabs our hands, as she smiles at us.\r\n\r\n\"And thank you both!\" Flower says. \"Thank you for all that you did for us!\""
-        condition: b3_ch5_breath = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch05b_birthday2
-      - texts:
+      - condition: b3_ch5_breath = 0
+        texts:
           - source: scene_text
             paragraph: 32
             text: "\"Well, if you're sure you're fine then I suppose we should get going.\"\r\n\r\nShortly after I'm done talking, we all begin to head for the exit that leads towards the room with the teleporter. Just as we are about to make our first steps, we hear Flower's voice, as her eyes turn bright blue.\r\n\r\n\"Wait!\" Illuna says, and we all stop in our tracks.\r\n\r\n\"Illuna?\" Flower says. \"Are you finally done practicing that spell?\"\r\n\r\n\"Well, I could have used a few more minutes to at least get all the letters right, but let's say it's mostly done,\" Illuna says. \"Step aside. I'm going to be conjuring a lot of plates.\"\r\n\r\nIlluna then makes some gestures with her hands, and a large plate with a chocolate cake appears on the ground in front of us, along with several other small plates that are surrounding the larger plate and that each have a knife and a fork on top of them. There are a lot of unlit candles on top of the cake, and now that I take a better look at it, I see that there are also letters written on its surface with frosting. The letters spell 'Happy birday Flower!'.\r\n\r\n\"Happy 'birday' Flower?\" Hadrik asks.\r\n\r\n\"It's obviously supposed to say 'birthday', but I already said that I didn't have time to--\" Illuna says.\r\n\r\n\"Today is Flower's birthday?!\" Kate asks, shocked.\r\n\r\n\"Yes, that's what the cake is for,\" Illuna says, mildly annoyed."
@@ -739,7 +776,6 @@ scenes:
           - source: scene_3
             paragraph: 13
             text: "\"Oh Petal, thank you so much!\" Flower says in a very loud voice, as she now looks like she is hugging herself.\r\n\r\n\"Can you at least control your body when you hug me inside your mind?\" Illuna says. \"Or do you not realize how ridiculous we both look right now?\"\r\n\r\n\"I don't care!\" Flower says, as she still continues to hug herself. \"I don't want to let you go. I don't want to fight with you anymore. Please, please promise me that we won't ever have another fight like this for as long as we live! I swear that I won't try to act like someone I'm not anymore. I won't call you Illuna anymore. Just say that we will never have to go through something like this ever again!\"\r\n\r\n\"We were not fight--\" Illuna begins to say, but then she interrupts herself. \"Ugh... fine, I give up... You win. I promise that we will never have a fight again. Are you happy now?\"\r\n\r\n\"Yes!\" Flower says, beaming, as she finally stops hugging herself. \"You have no idea how happy! Thank you!\"\r\n\r\nShe then comes closer to me and Melindra and she grabs our hands, as she smiles at us.\r\n\r\n\"And thank you both!\" Flower says. \"Thank you for all that you did for us!\""
-        condition: b3_ch5_breath = 0
         choices:
           - position: 1
             text: Continue
@@ -748,7 +784,8 @@ scenes:
                   current_scene: b3_ch05b_birthday2
   - name: b3_ch05b_birthday2
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 33
             text: "\"Hey, cut it out!\" Melindra says, pulling her hand away, as I see her getting flustered for the first time since I've met her. \"There's no need to thank me! We're friends, remember? And besides, I barely even did anything!\"\r\n\r\n\"That's not true!\" Flower says. \"You helped us a lot! You both did! Petal and I might have still been fighting today if it weren't for you! Thank you so much!\"\r\n\r\n\"Ahem!\" we hear Hadrik's voice, who is standing near the plates.\r\n\r\nIt looks like while the rest of us were busy talking, Hadrik used a tinderbox that he had in his backpack to light all of the candles on the cake.\r\n\r\n\"So, are you going to blow out these candles or what?\" Hadrik asks Flower, as he is now holding the plate with the cake in his hands.\r\n\r\n \"Yes!\" Flower says, excited, as she runs towards the cake. \"Yes, of course!\"\r\n\r\nShe then leans forward and she blows on the candles as hard as she can, until none of them are burning anymore. After we all wish her a happy birthday, she begins to cut slices of the cake and to share them with everyone around."
@@ -758,14 +795,14 @@ scenes:
           - source: scene_3
             paragraph: 14
             text: "\"Alright, I've served all the cake slices now,\" Flower tells us. \"Let's get going!\"\r\n\r\n\"Huh?\" Hadrik says, confused. \"But we're not done eating yet.\"\r\n\r\n\"You can finish eating while we walk!\" Flower says. \"Come on! I don't want anyone in the quarantine zone to die waiting for the cure because of me!\"\r\n\r\n\"Fine, fine,\" Hadrik says. \"Let's head for the teleporter, then.\"\r\n\r\nWe do what Flower says, and we take the small plates with us, as we walk towards the teleporter room. While we are travelling through the corridor, Hadrik pulls out a few very small mugs from his backpack with his free hand and he puts them on his plate, near the cake. He then takes out a bottle of dwarven ale and he begins to fill the mugs.\r\n\r\n\"Can't have a birthday without dwarven ale, right?\" Hadrik says, and once he is done filling them up, he starts handing each of us a mug. \"I've only poured a few sips' worth of ale for each of you. Wouldn't want you all to be getting drunk before a battle! Daren, I'm guessing that you're still not drinking during the day?\"\r\n\r\n\"Of course not!\" Daren says.\r\n\r\n\"As always!\" Hadrik says, while he hands me one of the mugs."
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch05b_ending
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 33
             text: "\"Hey, cut it out!\" Melindra says, pulling her hand away, as I see her getting flustered for the first time since I've met her. \"There's no need to thank me! We're friends, remember? And besides, I barely even did anything!\"\r\n\r\n\"That's not true!\" Flower says. \"You helped us a lot! You both did! Petal and I might have still been fighting today if it weren't for you! Thank you so much!\"\r\n\r\n\"Ahem!\" we hear Hadrik's voice, who is standing near the plates.\r\n\r\nIt looks like while the rest of us were busy talking, Hadrik used a tinderbox that he had in his backpack to light all of the candles on the cake.\r\n\r\n\"So, are you going to blow out these candles or what?\" Hadrik asks Flower, as he is now holding the plate with the cake in his hands.\r\n\r\n \"Yes!\" Flower says, excited, as she runs towards the cake. \"Yes, of course!\"\r\n\r\nShe then leans forward and she blows on the candles as hard as she can, until none of them are burning anymore. After we all wish her a happy birthday, she begins to cut slices of the cake and to share them with everyone around."
@@ -775,7 +812,6 @@ scenes:
           - source: scene_3
             paragraph: 14
             text: "\"Alright, I've served all the cake slices now,\" Flower tells us. \"Let's get going!\"\r\n\r\n\"Huh?\" Hadrik says, confused. \"But we're not done eating yet.\"\r\n\r\n\"You can finish eating while we walk!\" Flower says. \"Come on! I don't want anyone in the quarantine zone to die waiting for the cure because of me!\"\r\n\r\n\"Fine, fine,\" Hadrik says. \"Let's head for the teleporter, then.\"\r\n\r\nWe do what Flower says, and we take the small plates with us, as we walk towards the teleporter room. While we are travelling through the corridor, Hadrik pulls out a few very small mugs from his backpack with his free hand and he puts them on his plate, near the cake. He then takes out a bottle of dwarven ale and he begins to fill the mugs.\r\n\r\n\"Can't have a birthday without dwarven ale, right?\" Hadrik says, and once he is done filling them up, he starts handing each of us a mug. \"I've only poured a few sips' worth of ale for each of you. Wouldn't want you all to be getting drunk before a battle! Daren, I'm guessing that you're still not drinking during the day?\"\r\n\r\n\"Of course not!\" Daren says.\r\n\r\n\"As always!\" Hadrik says, while he hands me one of the mugs."
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: Continue

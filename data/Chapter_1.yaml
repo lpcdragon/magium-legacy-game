@@ -25,14 +25,14 @@ scenes:
               ch1_intro_feeling: 3
   - name: ch1_intro2
     routes:
-      - texts:
+      - condition: ch1_intro_feeling = 1
+        texts:
           - source: scene_text
             paragraph: 2
             text: "...excited about this whole thing.  Maybe I really am completely out of my mind. I would have expected to feel at least a little bit scared about all of this. But instead of that, I get this constant tingling sensation that won't go away. The feeling that I am closer to my dream than ever before in my life.  All of the terrible dangers that await me seem distant to me, and all I can  really think about now is that at the end of the tournament, when I win this, I will finally become a mage.\r\n\r\nThere's an explosion maybe a few hundred feet from my location. The fights have already begun. And one of them is much closer to me than I would have hoped. There's no way I can get in a fight with any of the mages at this point. I need to avoid combat for as long as possible if I am to survive until the end.\r\n\r\nI head in the opposite direction from where I've heard the explosion. As I am heading towards the end of the forest, I start hearing voices. There are two mages talking in a clearing a few feet away from me. I hide behind a tree and take a quick glance towards the clearing. \r\n\r\nIt seems the two mages have just finished fighting. One of them has the appearance of an ordinary thug. He is wearing a simple stained white shirt, leather pants and a belt full of throwing knives. His untrimmed black beard hides a wicked smile. Just by seeing the confidence in his eyes, I can clearly tell he is the victor of the skirmish. The other mage is wearing heavy armor, but his shield lies on the ground besides him and he is barely holding his sword anymore."
           - source: scene_text_2
             paragraph: 3
             text: "Taking a closer look at the mage in armor, I notice his head is bald, his skin is dark, he is likely in his mid forties and he has a scar on his forehead, shaped like an 'X'.  I've read of a mage matching this exact description who went by the name of Daren, and he was quite legendary, but would he lose so easily to some common thug? The mage in the white shirt answers my question as he addresses the one in armor, while casually playing with one of his knives.\r\n\r\n\"The legendary mage Daren! The savior of the Eastern Continent. The healer in armor. They say you've travelled the world, saving countless villages from destruction. That you've once fought ten rock golems by yourself, only to defend a small child. I guess this goes to show, you should never really trust legends, aye? I always knew all of those tales about mages as strong as giants were just codswallop. Hell, if all those 'legendary' mages that joined this tournament are as weak as you, I'm going to win this by sundown!\"\r\n\r\nHe starts laughing but he stops suddenly.\r\n\r\n\"Wait, who's there?\" he says, as he turns towards me.\r\n\r\nI quickly pull my head back behind the tree, and press my back against it, trying to breathe as silently as possible.\r\n\r\n\"I know you're there, coward. Show yourself, or I'll have one of my knives find you!\""
-        condition: ch1_intro_feeling = 1
         choices:
           - position: 1
             text: Stay silent
@@ -56,14 +56,14 @@ scenes:
               - set:
                   current_scene: ch1_cutthroat_dave
                   ch1_show_yourself: 3
-      - texts:
+      - condition: ch1_intro_feeling = 2
+        texts:
           - source: scene_text
             paragraph: 3
             text: "...calm about this whole thing. It must be because I've been getting mentally prepared for this for so long. Or maybe I'm just stronger than I thought myself to be. But even in the face of the mortal danger that awaits me, even against these impossible odds, I feel confident. I know I can do this. I am going to win this tournament and become a mage. I cannot allow myself to fail.\r\n\r\nThere's an explosion maybe a few hundred feet from my location. The fights have already begun. And one of them is much closer to me than I would have hoped. There's no way I can get in a fight with any of the mages at this point. I need to avoid combat for as long as possible if I am to survive until the end.\r\n\r\nI head in the opposite direction from where I've heard the explosion. As I am heading towards the end of the forest, I start hearing voices. There are two mages talking in a clearing a few feet away from me. I hide behind a tree and take a quick glance towards the clearing. \r\n\r\nIt seems the two mages have just finished fighting. One of them has the appearance of an ordinary thug. He is wearing a simple stained white shirt, leather pants and a belt full of throwing knives. His untrimmed black beard hides a wicked smile. Just by seeing the confidence in his eyes, I can clearly tell he is the victor of the skirmish. The other mage is wearing heavy armor, but his shield lies on the ground besides him and he is barely holding his sword anymore."
           - source: scene_text_2
             paragraph: 4
             text: "Taking a closer look at the mage in armor, I notice his head is bald, his skin is dark, he is likely in his mid forties and he has a scar on his forehead, shaped like an 'X'.  I've read of a mage matching this exact description who went by the name of Daren, and he was quite legendary, but would he lose so easily to some common thug? The mage in the white shirt answers my question as he addresses the one in armor, while casually playing with one of his knives.\r\n\r\n\"The legendary mage Daren! The savior of the Eastern Continent. The healer in armor. They say you've travelled the world, saving countless villages from destruction. That you've once fought ten rock golems by yourself, only to defend a small child. I guess this goes to show, you should never really trust legends, aye? I always knew all of those tales about mages as strong as giants were just codswallop. Hell, if all those 'legendary' mages that joined this tournament are as weak as you, I'm going to win this by sundown!\"\r\n\r\nHe starts laughing but he stops suddenly.\r\n\r\n\"Wait, who's there?\" he says, as he turns towards me.\r\n\r\nI quickly pull my head back behind the tree, and press my back against it, trying to breathe as silently as possible.\r\n\r\n\"I know you're there, coward. Show yourself, or I'll have one of my knives find you!\""
-        condition: ch1_intro_feeling = 2
         choices:
           - position: 1
             text: Stay silent
@@ -85,7 +85,8 @@ scenes:
               - set:
                   current_scene: ch1_cutthroat_dave
                   ch1_show_yourself: 3
-      - texts:
+      - condition: ch1_intro_feeling = 3
+        texts:
           - source: scene_text
             paragraph: 4
             text: "...afraid. Deep down, I always knew this would happen. I've been spending the past few weeks getting mentally prepared and making plans. Telling myself I was ready for whatever this tournament is going to throw at me. But once I got here, once I knew there was no way for me to go back, all of my confidence turned to uncertainty, and all of my courage turned to fear. I am going up against the strongest mages in the world. No amount of planning could ever really make me prepared for this. But it's too late to change my mind now. I've had enough time to back out of this before coming here. I am going to win this tournament against all odds. I'm going to do it. I just have to...\r\n\r\nThere's an explosion maybe a few hundred feet from my location. The fights have already begun. And one of them is much closer to me than I would have hoped. There's no way I can get in a fight with any of the mages at this point. I need to avoid combat for as long as possible if I am to survive until the end.\r\n\r\nI head in the opposite direction from where I've heard the explosion. As I am heading towards the end of the forest, I start hearing voices. There are two mages talking in a clearing a few feet away from me. I hide behind a tree and take a quick glance towards the clearing."
@@ -95,7 +96,6 @@ scenes:
           - source: scene_3
             paragraph: 2
             text: "\"Wait, who's there?\" he says, as he turns towards me.\r\n\r\nI quickly pull my head back behind the tree, and press my back against it, trying to breathe as silently as possible.\r\n\r\n\"I know you're there, coward. Show yourself, or I'll have one of my knives find you!\""
-        condition: ch1_intro_feeling = 3
         choices:
           - position: 1
             text: Stay silent
@@ -119,14 +119,14 @@ scenes:
                   ch1_show_yourself: 3
   - name: ch1_cutthroat_dave
     routes:
-      - texts:
+      - condition: ch1_show_yourself = 1
+        texts:
           - source: scene_text
             paragraph: 5
             text: "I keep my breathing as silent as possible and don't say anything. He must be bluffing. He never got the chance to see me. He'll give up once he sees there's no answer.\r\n\r\n\"Have it your way, then,\" the thug says, as I hear him throw a dagger towards me. The dagger whooshes past my head and before I get the chance to react, it turns in midair and flies right into my left shoulder, pinning it against the tree. I let out a muffled groan of pain, as I reach to pull the knife out.\r\n\r\n\"You're not going to get that knife out so easily. My knives have a life of their own, and they only listen to me. Now that I know where you are, I'm going to...\"\r\n\r\nHe pauses.\r\n\r\n\"So you're a stillwater, eh? Trying to get me to lower my guard by acting like an idiot? Trying to lull me into a false sense of security? Is that your plan? Well it ain't gonna work on me. Cause I'm too smart for that, you hear me?!\"\r\n\r\nHis sudden change of attitude towards me is not completely unexpected. The existence of stillwaters is one of the main reasons I've dared to dream that I might have a chance to win this tournament."
           - source: scene_text_2
             paragraph: 6
             text: "Stillwaters are a very rare breed of mages, that are known to be incredibly powerful. One of them is said to have destroyed an entire city in an instant some twenty years ago, with only a flick of his fingers. The city of Olmnar was said to have been one of the greatest cities on this continent, but it was wiped off the map just like that, in a single second. Such is the power of these stillwaters.\r\n\r\nBut what is even more interesting about these stillwaters is that you can't differentiate them from normal humans. Normally, you can sense the magic flowing from every being. You don't need to be a mage to do it. By sensing their magical aura, you can tell how strong mages are before engaging them in a fight. \r\n\r\nStillwaters, however, have the same aura as normal humans. And if you were to run into someone that seems to have almost no magic in the middle of what is essentially the greatest mage tournament in all of history... What would you be more inclined to believe? That an average human was somehow suicidal enough to join the tournament only to get massacred? Or that you are facing one of the strongest and rarest kinds of mages that exist in the world?\r\n\r\n\"You don't scare me, stillwater! I'm going to fill you with holes and you'll end up begging me for mercy! I bet your legends are no more true than they were for this sad excuse for a mage standing next to me.\""
-        condition: ch1_show_yourself = 1
         choices:
           - position: 1
             text: Give him until the count of ten to retreat
@@ -142,14 +142,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch1_imply
-      - texts:
+      - condition: ch1_show_yourself = 2
+        texts:
           - source: scene_text
             paragraph: 6
             text: "I breathe in deeply and try to appear as calm as possible. I step out of the forest and into the clearing, facing the mage with the knives directly.\r\n\r\n\"Who are you calling a coward?\" I ask him.\r\n\r\nThe mage pauses for a bit as he measures me up and down. \r\n\r\n\"A stillwater, eh?\" he says, finally. He tried hard to keep his composure when asking his question, but the tremor in his voice betrayed him. He is afraid.\r\n\r\nHis sudden change of attitude towards me is not completely unexpected. The existence of stillwaters is one of the main reasons I've dared to dream that I might have a chance to win this tournament."
           - source: scene_text_2
             paragraph: 7
             text: "Stillwaters are a very rare breed of mages, that are known to be incredibly powerful. One of them is said to have destroyed an entire city in an instant some twenty years ago, with only a flick of his fingers. The city of Olmnar was said to have been one of the greatest cities on this continent, but it was wiped off the map just like that, in a single second. Such is the power of these stillwaters.\r\n\r\nBut what is even more interesting about these stillwaters is that you can't differentiate them from normal humans. Normally, you can sense the magic flowing from every being. You don't need to be a mage to do it. By sensing their magical aura, you can tell how strong mages are before engaging them in a fight. \r\n\r\nStillwaters, however, have the same aura as normal humans. And if you were to run into someone that seems to have almost no magic in the middle of what is essentially the greatest mage tournament in all of history... What would you be more inclined to believe? That an average human was somehow suicidal enough to join the tournament only to get massacred? Or that you are facing one of the strongest and rarest kinds of mages that exist in the world?\r\n\r\n\"You don't scare me, stillwater! I'm going to fill you with holes and you'll end up begging me for mercy! I bet your legends are no more true than they were for this sad excuse for a mage standing next to me.\""
-        condition: ch1_show_yourself = 2
         choices:
           - position: 1
             text: Give him until the count of ten to retreat
@@ -163,14 +163,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch1_imply
-      - texts:
+      - condition: ch1_show_yourself = 3
+        texts:
           - source: scene_text
             paragraph: 7
             text: "\"I see no reason to show myself to you,\" I tell him.\r\n\r\nAs he pinpoints my location from the sound of my voice, the mage makes a rather long pause before speaking again.\r\n\r\n\"A stillwater, eh?\" he says, finally. He tried hard to keep his composure when asking his question, but the tremor in his voice betrayed him. He is afraid.\r\n\r\nHis sudden change of attitude towards me is not completely unexpected. The existence of stillwaters is one of the main reasons I've dared to dream that I might have a chance to win this tournament."
           - source: scene_text_2
             paragraph: 8
             text: "Stillwaters are a very rare breed of mages, that are known to be incredibly powerful. One of them is said to have destroyed an entire city in an instant some twenty years ago, with only a flick of his fingers. The city of Olmnar was said to have been one of the greatest cities on this continent, but it was wiped off the map just like that, in a single second. Such is the power of these stillwaters.\r\n\r\nBut what is even more interesting about these stillwaters is that you can't differentiate them from normal humans. Normally, you can sense the magic flowing from every being. You don't need to be a mage to do it. By sensing their magical aura, you can tell how strong mages are before engaging them in a fight. \r\n\r\nStillwaters, however, have the same aura as normal humans. And if you were to run into someone that seems to have almost no magic in the middle of what is essentially the greatest mage tournament in all of history... What would you be more inclined to believe? That an average human was somehow suicidal enough to join the tournament only to get massacred? Or that you are facing one of the strongest and rarest kinds of mages that exist in the world?\r\n\r\n\"You don't scare me, stillwater! I'm going to fill you with holes and you'll end up begging me for mercy! I bet your legends are no more true than they were for this sad excuse for a mage standing next to me.\""
-        condition: ch1_show_yourself = 3
         choices:
           - position: 1
             text: Give him until the count of ten to retreat
@@ -186,11 +186,11 @@ scenes:
                   current_scene: ch1_imply
   - name: ch1_retreat
     routes:
-      - texts:
+      - condition: ch1_show_yourself = 1
+        texts:
           - source: scene_text
             paragraph: 8
             text: "\"I'm going to give you until the count of ten to get out of my sight,\" I tell him.\r\n\r\n\"Hah! Empty words. That's all you've got. Arm yourself, fool! Today, I become a legend!\"\r\n\r\nOnce he's done talking, I hear the mage throw several knives towards the forest. I desperately try to pull the knife out of my shoulder, but it's no use. Five of the mage's knives race past me, and turn in midair just like the last one did. I try to somehow get out of their way, but the knife in my shoulder is still keeping me pinned against the tree. \r\n\r\nThe last thing I feel is the sharp pain of all those knives impaling me, as my consciousness slowly starts fading away."
-        condition: ch1_show_yourself = 1
         choices:
           - position: 1
             text: Restart game
@@ -205,11 +205,11 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: ch1_show_yourself = 2
+        texts:
           - source: scene_text
             paragraph: 9
             text: "\"I'm going to give you until the count of ten to get out of my sight,\" I tell him.\r\n\r\n\"Hah! Empty words. That's all you've got. Arm yourself, fool! Today, I become a legend!\"\r\n\r\nOnce he's done talking, the mage throws five daggers simultaneously towards me. I try to dodge them but they're so fast I barely even get the time to blink. It was all over in an instant. As I feel the pain from the daggers, my consciousness slowly starts fading away."
-        condition: ch1_show_yourself = 2
         choices:
           - position: 1
             text: Restart game
@@ -224,11 +224,11 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: ch1_show_yourself = 3
+        texts:
           - source: scene_text
             paragraph: 10
             text: "\"I'm going to give you until the count of ten to get out of my sight,\" I tell him.\r\n\r\n\"Hah! Empty words. That's all you've got. Arm yourself, fool! Today, I become a legend!\"\r\n\r\nOnce he's done talking, I hear the mage throw several knives towards the forest. They all race past me, but before I get the chance to even think what to do next, the knives suddenly turn in midair and fly towards me, impaling me where I stand. It all ended so fast I barely even had the time to realize I was dead."
-        condition: ch1_show_yourself = 3
         choices:
           - position: 1
             text: Restart game
@@ -245,22 +245,22 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
   - name: ch1_imply
     routes:
-      - texts:
+      - condition: ch1_show_yourself = 2
+        texts:
           - source: scene_text
             paragraph: 11
             text: "\"That's funny,\" I tell him. \"That's almost the same thing the people of Olmnar told me. Before I burned their city to the ground.\"\r\n\r\nThe mage was about to go for his knives, but now he stopped. He is looking at me quite intently, without averting his eyes for even a second.\r\n\r\n\"You're bluffing,\" the mage says.\r\n\r\n\"I guess there's only one way to find out, then,\" I tell him, as I feel my heart pounding in my chest.\r\n\r\nThe few seconds of silence that followed felt like the longest seconds in my life. After a long pause, the mage says, finally:\r\n\r\n\"You're in luck, stillwater. I'm feeling merciful today. I'm going to be out of your hair just as soon as I finish this guy here.\"\r\n\r\n\"You do that and you'll regret it,\" I say without thinking.\r\n\r\nMy last sentence seems to have taken him aback.\r\n\r\n\"What, are you kidding me? You're going to defend this lowlife?\"\r\n\r\n\"If I have to. Do I have to?\""
-        condition: ch1_show_yourself = 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch1_imply2
-      - texts:
+      - condition: ch1_show_yourself <> 2
+        texts:
           - source: scene_text
             paragraph: 12
             text: "\"That's funny,\" I tell him. \"That's almost the same thing the people of Olmnar told me. Before I burned their city to the ground.\"\r\n\r\nAfter I say that, there's a long pause in which none of us says anything.\r\n\r\n\"You're bluffing,\" the mage says.\r\n\r\n\"I guess there's only one way to find out, then,\" I tell him, as I feel my heart pounding in my chest.\r\n\r\nThe few seconds of silence that followed felt like the longest seconds in my life. After a long pause, the mage says, finally:\r\n\r\n\"You're in luck, stillwater. I'm feeling merciful today. I'm going to be out of your hair just as soon as I finish this guy here.\"\r\n\r\n\"You do that and you'll regret it,\" I say without thinking.\r\n\r\nMy last sentence seems to have taken him aback.\r\n\r\n\"What, are you kidding me? You're going to defend this lowlife?\"\r\n\r\n\"If I have to. Do I have to?\""
-        condition: ch1_show_yourself <> 2
         choices:
           - position: 1
             text: Continue
@@ -269,14 +269,14 @@ scenes:
                   current_scene: ch1_imply2
   - name: ch1_imply2
     routes:
-      - texts:
+      - condition: ch1_show_yourself = 1
+        texts:
           - source: scene_text
             paragraph: 13
             text: "The mage once again falls silent.  He doesn't seem to want to push his luck any further. After a while, I hear him put his daggers back into his belt and then spit on the ground.\r\n\r\n\"I'll remember this, stillwater. Don't think I won't. You'll rue the day you messed with Cutthroat Dave. And the same goes for you, healer in armor.  I'll be seeing the both of you again soon.\"\r\n\r\nAfter he finishes his speech, he turns away in disgust as he heads into the woods on the opposite side of the clearing. The dagger from my shoulder pulls itself out on its own and hurries to catch up with its master.  \r\n\r\nOnce I can no longer see the mage, I let out a big sigh. That was close. That was really close. I can still feel my heart beating rapidly in my chest.\r\n\r\nYou do that and you'll regret it? What was I even thinking? Was I trying to get myself killed? This is a life and death tournament, Barry.  This is not the time for you to start playing hero.\r\n\r\nAs I try to calm myself down, the mage in armor sheathes his sword, picks up his shield from the ground and starts walking towards me."
           - source: scene_text_2
             paragraph: 9
             text: "\"You had no obligation to save me,\" he says. \"But you did so anyway, at the risk of your own life. I cannot let such selflessness go unrewarded. I, Daren, vow this day that I will offer you my protection from this moment, and until the end of this tournament. Tell me, brave soul, what is your name?\"\r\n\r\nHis speech took me by surprise.\r\n\r\n\"It's, uhh... It's Barry. My name is Barry.\"\r\n\r\n\"Wait, your name's Barry?\"\r\n\r\nHe tries to contain his laughter but fails miserably. He was trying to sound solemn and dignified just a few seconds ago, but it seems it didn't really take him long to drop his act.\r\n\r\n\"Now that's the weirdest name for a mage I've heard in my life. Especially for a stillwater. Do you have something you want to tell me, Barry?\""
-        condition: ch1_show_yourself = 1
         choices:
           - position: 1
             text: Tell him I'm actually an ordinary human
@@ -290,14 +290,14 @@ scenes:
               - set:
                   current_scene: ch1_humor
                   ch1_stillwater: 1
-      - texts:
+      - condition: ch1_show_yourself = 2
+        texts:
           - source: scene_text
             paragraph: 14
             text: "The mage's face contorts into a scowl, but he says nothing. He doesn't seem to want to push his luck any further. He reluctantly puts his daggers back into his belt and then he spits on the ground next to Daren.\r\n\r\n\"I'll remember this, stillwater. Don't think I won't. I never forget a face. You'll rue the day you messed with Cutthroat Dave. And the same goes for you, healer in armor. I'll be seeing the both of you again soon.\"\r\n\r\nAfter he finishes his speech, he turns away in disgust as he heads into the woods on the opposite side of the clearing. \r\n\r\nOnce I can no longer see the mage, I let out a big sigh. That was close. That was really close. I can still feel my heart beating rapidly in my chest.\r\n\r\nYou do that and you'll regret it? What was I even thinking? Was I trying to get myself killed? This is a life and death tournament, Barry.  This is not the time for you to start playing hero.\r\n\r\nAs I try to calm myself down, the mage in armor sheathes his sword, picks up his shield from the ground and starts walking towards me."
           - source: scene_text_2
             paragraph: 10
             text: "\"You had no obligation to save me,\" he says. \"But you did so anyway, at the risk of your own life. I cannot let such selflessness go unrewarded. I, Daren, vow this day that I will offer you my protection from this moment, and until the end of this tournament. Tell me, brave soul, what is your name?\"\r\n\r\nHis speech took me by surprise.\r\n\r\n\"It's, uhh... It's Barry. My name is Barry.\"\r\n\r\n\"Wait, your name's Barry?\"\r\n\r\nHe tries to contain his laughter but fails miserably. He was trying to sound solemn and dignified just a few seconds ago, but it seems it didn't really take him long to drop his act.\r\n\r\n\"Now that's the weirdest name for a mage I've heard in my life. Especially for a stillwater. Do you have something you want to tell me, Barry?\""
-        condition: ch1_show_yourself = 2
         choices:
           - position: 1
             text: Tell him I'm actually an ordinary human
@@ -311,14 +311,14 @@ scenes:
               - set:
                   current_scene: ch1_humor
                   ch1_stillwater: 1
-      - texts:
+      - condition: ch1_show_yourself = 3
+        texts:
           - source: scene_text
             paragraph: 15
             text: "The mage once again falls silent. He doesn't seem to want to push his luck any further. After a while, I hear him put his daggers back into his belt and then spit on the ground.\r\n\r\n\"I'll remember this, stillwater. Don't think I won't. You'll rue the day you messed with Cutthroat Dave. And the same goes for you, healer in armor. I'll be seeing the both of you again soon.\"\r\n\r\nAfter he finishes his speech, he turns away in disgust as he heads into the woods on the opposite side of the clearing. \r\n\r\nOnce I can no longer see the mage, I let out a big sigh. That was close. That was really close. I can still feel my heart beating rapidly in my chest.\r\n\r\nYou do that and you'll regret it? What was I even thinking? Was I trying to get myself killed? This is a life and death tournament, Barry.  This is not the time for you to start playing hero.\r\n\r\nAs I try to calm myself down, the mage in armor sheathes his sword, picks up his shield from the ground and starts walking towards me."
           - source: scene_text_2
             paragraph: 11
             text: "\"You had no obligation to save me,\" he says. \"But you did so anyway, at the risk of your own life. I cannot let such selflessness go unrewarded. I, Daren, vow this day that I will offer you my protection from this moment, and until the end of this tournament. Tell me, brave soul, what is your name?\"\r\n\r\nHis speech took me by surprise.\r\n\r\n\"It's, uhh... It's Barry. My name is Barry.\"\r\n\r\n\"Wait, your name's Barry?\"\r\n\r\nHe tries to contain his laughter but fails miserably. He was trying to sound solemn and dignified just a few seconds ago, but it seems it didn't really take him long to drop his act.\r\n\r\n\"Now that's the weirdest name for a mage I've heard in my life. Especially for a stillwater. Do you have something you want to tell me, Barry?\""
-        condition: ch1_show_yourself = 3
         choices:
           - position: 1
             text: Tell him I'm actually an ordinary human
@@ -334,14 +334,14 @@ scenes:
                   ch1_stillwater: 1
   - name: ch1_humor
     routes:
-      - texts:
+      - condition: ch1_show_yourself = 1
+        texts:
           - source: scene_text
             paragraph: 16
             text: "\"Yes. My parents had a really weird sense of humor. Speaking of names, aren't you supposed to be a hero of legend? How exactly does one as strong as you get bested so easily by someone named Cutthroat Dave?\"\r\n\r\n\"Oh, that...\"\r\n\r\nHe is sounding embarrassed.\r\n\r\n\"You see, Barry. I may be powerful, but that doesn't mean I don't have weaknesses. It turns out one of those weaknesses is that I never really managed to master the shield spell properly...\"\r\n\r\n\"The shield spell? The one that casts an invisible protective layer around yourself? But isn't that one of the first spells any mage learns?\"\r\n\r\n\"It is... But it's not like I can't cast it at all... I can defend from magic just fine. It's normal weapons that I have a problem with. This is why I wear armor. This is why I use a sword and a shield. I first started using them because I couldn't use the shield spell properly, but soon, I started tailoring my magic around them, and my very fighting style. I found a master that would teach me to fight with weapons, and I used my magic to enchant them. Then, after every fight, I'd just use my white magic to heal my wounds. Like so...\""
           - source: scene_text_2
             paragraph: 12
             text: "He demonstrates it by raising his hands in the air and making a white light appear all around him. As the light shines, his wounds start closing, and the blood fades away. He then uses the same magic to heal the shoulder wound I'd gotten from Cutthroat Dave's knife.\r\n\r\n\"The cutthroat's knives had a life of their own, and there were many of them attacking me simultaneously. If I had a proper shield spell to defend against them, defeating him would have been child's play. But defending against all those knives with a shield and sword alone would have been impossible regardless of my combat skill. All armors have their weaknesses. All he had to do was go for the armor's joints repeatedly, until he wore me out.\"\r\n\r\n\"Why are you telling me all of this? Shouldn't you be at least a bit worried about revealing your greatest weakness to someone you just met?\"\r\n\r\n\"Hey, you just saved my life! So you can't be that bad, right?\"\r\n\r\n\"Pardon me for interrupting,\" I hear a woman's voice from behind the trees. \"But would you by any chance be Daren, the legendary savior of the eastern continent?\""
-        condition: ch1_show_yourself = 1
         choices:
           - position: 1
             text: Next chapter
@@ -351,14 +351,14 @@ scenes:
                   chapter_save: 1
                   storyboard_controls: Jump to frame "Save load game"
                   checkpoint_rich: 1
-      - texts:
+      - condition: ch1_show_yourself <> 1
+        texts:
           - source: scene_text
             paragraph: 17
             text: "\"Yes. My parents had a really weird sense of humor. Speaking of names, aren't you supposed to be a hero of legend? How exactly does one as strong as you get bested so easily by someone named Cutthroat Dave?\"\r\n\r\n\"Oh, that...\"\r\n\r\nHe is sounding embarrassed.\r\n\r\n\"You see, Barry. I may be powerful, but that doesn't mean I don't have weaknesses. It turns out one of those weaknesses is that I never really managed to master the shield spell properly...\"\r\n\r\n\"The shield spell? The one that casts an invisible protective layer around yourself? But isn't that one of the first spells any mage learns?\"\r\n\r\n\"It is... But it's not like I can't cast it at all... I can defend from magic just fine. It's normal weapons that I have a problem with. This is why I wear armor. This is why I use a sword and a shield. I first started using them because I couldn't use the shield spell properly, but soon, I started tailoring my magic around them, and my very fighting style. I found a master that would teach me to fight with weapons, and I used my magic to enchant them. Then, after every fight, I'd just use my white magic to heal my wounds. Like so...\""
           - source: scene_text_2
             paragraph: 13
             text: "He demonstrates it by raising his hands in the air and making a white light appear all around him. As the light shines, his wounds start closing, and the blood fades away.\r\n\r\n\"The cutthroat's knives had a life of their own, and there were many of them attacking me simultaneously. If I had a proper shield spell to defend against them, defeating him would have been child's play. But defending against all those knives with a shield and sword alone would have been impossible regardless of my combat skill. All armors have their weaknesses. All he had to do was go for the armor's joints repeatedly, until he wore me out.\"\r\n\r\n\"Why are you telling me all of this? Shouldn't you be at least a bit worried about revealing your greatest weakness to someone you just met?\"\r\n\r\n\"Hey, you just saved my life! So you can't be that bad, right?\"\r\n\r\n\"Pardon me for interrupting,\" I hear a woman's voice from behind the trees. \"But would you by any chance be Daren, the legendary savior of the eastern continent?\""
-        condition: ch1_show_yourself <> 1
         choices:
           - position: 1
             text: Next chapter
@@ -437,14 +437,14 @@ scenes:
               current_scene: ch1_weakness
   - name: ch1_weakness
     routes:
-      - texts:
+      - condition: ch1_show_yourself = 1
+        texts:
           - source: scene_text
             paragraph: 22
             text: "\"It is... But it's not like I can't cast it at all... I can defend from magic just fine. It's normal weapons that I have a problem with. This is why I wear armor. This is why I use a sword and a shield. I first started using them because I couldn't use the shield spell properly, but soon, I started tailoring my magic around them, and my very fighting style. I found a master that would teach me to fight with weapons, and I used my magic to enchant them. Then, after every fight, I'd just use my white magic to heal my wounds. Like so...\"\r\n\r\nHe demonstrates it by raising his hands in the air and making a white light appear all around him. As the light shines, his wounds start closing, and the blood fades away. He then uses the same magic to heal the shoulder wound I'd gotten from Cutthroat Dave's knife.\r\n\r\n\"The cutthroat's knives had a life of their own, and there were many of them attacking me simultaneously. If I had a proper shield spell to defend against them, defeating him would have been child's play. But defending against all those knives with a shield and sword alone would have been impossible regardless of my combat skill. All armors have their weaknesses. All he had to do was go for the armor's joints repeatedly, until he wore me out.\""
           - source: scene_text_2
             paragraph: 16
             text: "\"Why are you telling me all of this? Shouldn't you be at least a bit worried about revealing your greatest weakness to someone you just met?\"\r\n\r\n\"Hey, you just saved my life! So you can't be that bad, right?\"\r\n\r\n\"Pardon me for interrupting,\" I hear a woman's voice from behind the trees. \"But would you by any chance be Daren, the legendary savior of the Eastern Continent?\""
-        condition: ch1_show_yourself = 1
         choices:
           - position: 1
             text: Next chapter
@@ -454,14 +454,14 @@ scenes:
                   chapter_save: 1
                   storyboard_controls: Jump to frame "Save load game"
                   checkpoint_rich: 1
-      - texts:
+      - condition: ch1_show_yourself <> 1
+        texts:
           - source: scene_text
             paragraph: 23
             text: "\"It is... But it's not like I can't cast it at all... I can defend from magic just fine. It's normal weapons that I have a problem with. This is why I wear armor. This is why I use a sword and a shield. I first started using them because I couldn't use the shield spell properly, but soon, I started tailoring my magic around them, and my very fighting style. I found a master that would teach me to fight with weapons, and I used my magic to enchant them. Then, after every fight, I'd just use my white magic to heal my wounds. Like so...\"\r\n\r\nHe demonstrates it by raising his hands in the air and making a white light appear all around him. As the light shines, his wounds start closing, and the blood fades away.\r\n\r\n\"The cutthroat's knives had a life of their own, and there were many of them attacking me simultaneously. If I had a proper shield spell to defend against them, defeating him would have been child's play. But defending against all those knives with a shield and sword alone would have been impossible regardless of my combat skill. All armors have their weaknesses. All he had to do was go for the armor's joints repeatedly, until he wore me out.\""
           - source: scene_text_2
             paragraph: 17
             text: "\"Why are you telling me all of this? Shouldn't you be at least a bit worried about revealing your greatest weakness to someone you just met?\"\r\n\r\n\"Hey, you just saved my life! So you can't be that bad, right?\"\r\n\r\n\"Pardon me for interrupting,\" I hear a woman's voice from behind the trees. \"But would you by any chance be Daren, the legendary savior of the Eastern Continent?\""
-        condition: ch1_show_yourself <> 1
         choices:
           - position: 1
             text: Next chapter

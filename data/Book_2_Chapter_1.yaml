@@ -84,14 +84,14 @@ scenes:
               current_scene: b2_ch01a_spin
   - name: b2_ch01a_spin
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 7
             text: "\"Can I have Arraka back, please?\" Flower asks Hadrik, as we start heading towards the mansion.\r\n\r\n\"Actually, I think I'd rather hold on to her a little longer, if you don't mind!\" Hadrik says.\r\n\r\n\"Well, okay...\" Flower says. \"But make sure you keep an eye on her.\"\r\n\r\n\"Don't worry,\" Hadrik says, as he starts to spin the amulet again. \"I'll be sure to give her all the attention she needs!\"\r\n\r\nWe all follow Daren and go back the way we came, as we slowly begin to leave the slums behind us, and to enter the richer district that Rose's house is situated in.\r\n\r\nNobody said a single word while we walked down the alleys, not even Hadrik. Kate in particular seemed to be the most affected by what had happened, and the expression on her face was very painful to watch. Amidst the silence, an enraged Arraka would occasionally start showering us with a variety of insults and threats, as Hadrik ignored her and kept spinning her amulet despite her never-ending complaints."
           - source: scene_text_2
             paragraph: 4
             text: "\"Will you shut her up?\" Daren says, after a while. \"I've already had enough of Arraka to last me for a week. I don't need to hear her constant yammering the entire trip.\"\r\n\r\n\"Oh, right, sorry...\" Hadrik says, as he closes the amulet and then continues to spin it by the chain.\r\n\r\nArraka's shouting is still audible, but it's more of a mild annoyance now that the noise has become muffled.\r\n\r\n\"I think my wrist is starting to go numb from all the spinning,\" Hadrik says, a few minutes later. \"Barry, what do you say? Do you wanna give this a try? I assure you it's a very rewarding experience!\""
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: Sure, why not?
@@ -105,14 +105,14 @@ scenes:
               - set:
                   current_scene: b2_ch01a_pass_dead
                   b2_ch1_spin: 0
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 8
             text: "\"Can I have Arraka back, please?\" Flower asks Hadrik, as we start heading towards the mansion.\r\n\r\n\"Actually, I think I'd rather hold on to her a little longer, if you don't mind!\" Hadrik says.\r\n\r\n\"Well, okay...\" Flower says. \"But make sure you keep an eye on her.\"\r\n\r\n\"Don't worry,\" Hadrik says, as he starts to spin the amulet again. \"I'll be sure to give her all the attention she needs!\"\r\n\r\nWe all follow Rose and go back the way we came, as we slowly begin to leave the slums behind us, and to enter the richer district that Rose's house is situated in.\r\n\r\nWhile we walked, Arraka would occasionally start showering us with a variety of insults and threats, as Hadrik ignored her and kept spinning her amulet despite her never-ending complaints."
           - source: scene_text_2
             paragraph: 5
             text: "\"Will you shut her up?\" Daren says, after a while. \"I've already had enough of Arraka to last me for a week. I don't need to hear her constant yammering the entire trip.\"\r\n\r\n\"Oh, right, sorry...\" Hadrik says, as he closes the amulet and then continues to spin it by the chain.\r\n\r\nArraka's shouting is still audible, but it's more of a mild annoyance now that the noise has become muffled.\r\n\r\n\"I think my wrist is starting to go numb from all the spinning,\" Hadrik says, a few minutes later. \"Barry, what do you say? Do you wanna give this a try? I assure you it's a very rewarding experience!\""
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Sure, why not?
@@ -184,28 +184,28 @@ scenes:
               current_scene: b2_ch01a_lover
   - name: b2_ch01a_monsters
     routes:
-      - texts:
+      - condition: b2_ch1_volunteer = 0
+        texts:
           - source: scene_text
             paragraph: 13
             text: "When we got closer to the mansion, Rose's siblings noticed us from afar and came running to greet us.\r\n\r\n\"Where's Rose?\" Suzie says, after looking around for a few seconds. \"Did she stay behind at the hospital?\"\r\n\r\nThe others and I exchange uneasy looks, as Daren steps in front of us and places his hand on Suzie's shoulder.\r\n\r\n\"Suzie,\" he says, \"there's something I need to tell you about Rose.\"\r\n\r\n\"Oh gods,\" Suzie says. \"Is she...\"\r\n\r\nShe stops for a second before she continues.\r\n\r\n\"Is she dead?\" she asks.\r\n\r\nDaren looks a bit shocked by the girl's direct question, but he decides that it's no use trying to beat around the bush anymore.\r\n\r\n\"Yes...\" he says. \"I'm sorry. It was my fault. I promised I'd protect her and I--\"\r\n\r\n\"Oh, it's okay,\" Suzie says, forcing herself to smile. \"Rose told us long ago that we should always be prepared for this to happen. She taught us how to cook our own food, and how to clean the house, and everything else we needed to know, in case she never came back from one of her journeys.\"\r\n\r\nWhile Suzie talks, her brother is trying hard to hold back his tears."
           - source: scene_text_2
             paragraph: 10
             text: "\"We promised her that no matter what happened, we wouldn't cry,\" Suzie says. \"We promised her that we'd stay strong and that...\"\r\n\r\nShe stops talking for a second to rub her eyes with her sleeve.\r\n\r\n\"And that we would always remember her with a smile,\" Suzie says, with a much shakier voice than before. \"And that we would keep living our lives and be happy, and... and...\"\r\n\r\nThe girl can't contain her tears anymore and she suddenly breaks down crying. Her brother, who was also at his limit, starts to cry as well, in a much louder voice. \r\n\r\n\"Hey, now,\" we hear a man's voice coming from behind us. \"What kind of monsters would make such a beautiful girl cry like this?\"\r\n\r\nAs we turn around, we see that the man who spoke is almost as tall as Daren, with a well-toned muscular build, wearing a shirt that was half unbuttoned, with long black hair that reached his shoulders, and a bristly moustache covering his whole upper lip. On his left hip, he is wearing a golden scabbard that appears to be holding a rather expensive sword, at least judging by the multitude of gems decorating its hilt. The man stops in front of Suzie, and he wipes her tears gently with his right hand.\r\n\r\n\"Did these mean people upset you, my dear Suzie?\" the man asks her."
-        condition: b2_ch1_volunteer = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch01a_bottle
-      - texts:
+      - condition: b2_ch1_volunteer = 1
+        texts:
           - source: scene_text
             paragraph: 14
             text: "When we got closer to the mansion, Rose's siblings noticed us from afar and came running to greet us.\r\n\r\n\"Where's Rose?\" Suzie says, after looking around for a few seconds. \"Did she stay behind at the hospital?\"\r\n\r\nEverybody looks towards me, as I step forward and clear my throat nervously.\r\n\r\n\"What's wrong?\" Suzie asks, starting to get concerned. \"Did something happen to Rose?\"\r\n\r\n\"Yes,\" I say. \"We were attacked on our way to the hospital. We thought that Rose would be safe, but she...\"\r\n\r\nI pause, not knowing how exactly I should deliver the news to her without causing her a shock.\r\n\r\n\"Oh gods,\" Suzie says. \"Is she...\"\r\n\r\nShe stops for a second before she continues.\r\n\r\n\"Is she dead?\" she asks.\r\n\r\nHer direct question took me by surprise. Before I got the chance to answer, Daren stepped in front of me and he kneeled in front of Suzie, with his head bowed down.\r\n\r\n\"I'm sorry,\" he says. \"It was my fault. I promised I'd protect her and I--\"\r\n\r\n\"Oh, it's okay,\" Suzie says, forcing herself to smile. \"Rose told us long ago that we should always be prepared for this to happen. She taught us how to cook our own food, and how to clean the house, and everything else we needed to know, in case she never came back from one of her journeys.\""
           - source: scene_text_2
             paragraph: 11
             text: "While Suzie talks, her brother is trying hard to hold back his tears.\r\n\r\n\"We promised her that no matter what happened, we wouldn't cry,\" Suzie says. \"We promised her that we'd stay strong and that...\"\r\n\r\nShe stops talking for a second to rub her eyes with her sleeve.\r\n\r\n\"And that we would always remember her with a smile,\" Suzie says, with a much shakier voice than before. \"And that we would keep living our lives and be happy, and... and...\"\r\n\r\nThe girl can't contain her tears anymore and she suddenly breaks down crying. Her brother, who was also at his limit, starts to cry as well, in a much louder voice. \r\n\r\n\"Hey, now,\" we hear a man's voice coming from behind us. \"What kind of monsters would make such a beautiful girl cry like this?\"\r\n\r\nAs we turn around, we see that the man who spoke is almost as tall as Daren, with a well-toned muscular build, wearing a shirt that was half unbuttoned, with long black hair that reached his shoulders, and a bristly moustache covering his whole upper lip. On his left hip, he is wearing a golden scabbard that appears to be holding a rather expensive sword, at least judging by the multitude of gems decorating its hilt. The man stops in front of Suzie, and he wipes her tears gently with his right hand.\r\n\r\n\"Did these mean people upset you, my dear Suzie?\" the man asks her."
-        condition: b2_ch1_volunteer = 1
         choices:
           - position: 1
             text: Continue
@@ -254,6 +254,7 @@ scenes:
         effects:
           - set:
               current_scene: b2_ch01a_ella
+            condition: ch11_saved_slave != 3
           - set:
               current_scene: b2_ch01a_no_ella
             condition: ch11_saved_slave = 3
@@ -271,6 +272,7 @@ scenes:
         effects:
           - set:
               current_scene: b2_ch01a_ella
+            condition: ch11_saved_slave != 3
           - set:
               current_scene: b2_ch01a_no_ella
             condition: ch11_saved_slave = 3
@@ -288,6 +290,7 @@ scenes:
         effects:
           - set:
               current_scene: b2_ch01a_ella
+            condition: ch11_saved_slave != 3
           - set:
               current_scene: b2_ch01a_no_ella
             condition: ch11_saved_slave = 3
@@ -356,7 +359,8 @@ scenes:
               b2_ch1_truth: 0
   - name: b2_ch01a_circumstances
     routes:
-      - texts:
+      - condition: b2_ch1_truth = 1
+        texts:
           - source: scene_text
             paragraph: 23
             text: "\"This is going to be a bit hard to believe,\" I say.\r\n\r\n\"Oh, believe me, I am not a stranger to the world of magic,\" Enrique says. \"I am prepared for anything.\"\r\n\r\n\"Well,\" I say, \"what happened was that after Rose was killed, her body was... taken, by an entity that is called a revenant.\"\r\n\r\n\"When you say her body was taken...\" Enrique starts to say, but Daren answers his question before he finishes it.\r\n\r\n\"He means that an evil spirit took hold of her body, after she died,\" Daren says.\r\n\r\n\"And I suppose that there is no way to bring Rose back, even if you kill this evil spirit?\" Enrique asks.\r\n\r\n\"No, there isn't,\" Daren says. \"I'm sorry.\"\r\n\r\n\"I understand,\" Enrique says. \r\n\r\nHe pauses.\r\n\r\n\"If the children ever ask me what happened to Rose, I will tell them that her body was incinerated,\" Enrique says. \"I would rather have them believe this than give them nightmares.\"\r\n\r\n\"Then we'll make sure to tell them the same story, if they ever ask us,\" Daren says.\r\n\r\n\"Thank you,\" Enrique says. \r\n\r\nHe then turns to face all of us."
@@ -366,21 +370,20 @@ scenes:
           - source: scene_3
             paragraph: 2
             text: "\"Look, there's another one of those signposts,\" Hadrik says. \"We're still on the right track!\"\r\n\r\nIt took us a little less than two hours to reach the castle of Thilias from Rose's mansion. When we reached the front gates, Daren signaled the guards to let us through, and once they confirmed our identities, they opened the doors. We all step inside, slowly, as the gates slam shut behind us."
-        condition: b2_ch1_truth = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch01a_hallway
-      - texts:
+      - condition: b2_ch1_truth = 0
+        texts:
           - source: scene_text
             paragraph: 24
             text: "\"Her body was incinerated by a fire elementalist mage, shortly after we were attacked,\" I say.\r\n\r\n\"I see,\" Enrique says. \"I was afraid that this might be the case. I will try to avoid the subject, when speaking with the children, but if they ever ask me what happened, I will tell them what you said.\"\r\n\r\nHe then turns to face all of us.\r\n\r\n\"My friends, I am sorry that we did not have the chance to meet under better circumstances,\" he says. \"Just know this: whether you decide to remain in the city or to leave before dusk, you will always be welcome here, whenever you decide to come back. May the gods be with you!\"\r\n\r\n\"May they watch over us all,\" Daren says. \"Goodbye, Enrique, and good luck!\"\r\n\r\nOnce we all said our goodbyes to Enrique and to Rose's siblings, we went on our way, taking the shortest route we knew to the castle. According to Enrique, as long as we kept walking in the same general direction, we should be coming across a lot of signposts showing us the right way to our destination, so we shouldn't be too worried about getting lost."
           - source: scene_text_2
             paragraph: 21
             text: "\"I'm not sure if it was such a good idea to tell that lie to Enrique about Rose's death,\" Kate says, as we walk through the alleys. \"He was her ex-husband. I think he deserved to know the truth.\"\r\n\r\n\"That man is not used to the world we live in, Kate,\" Daren says. \"Even for us, it is hard to accept what happened, and we've all seen corpses walking in broad daylight many times before. But imagine what effect it would have had on someone who's lived his entire life within the safety of these walls. Telling Enrique the truth would have only served to give him nightmares for years to come.\"\r\n\r\n\"I... suppose you could be right,\" Kate says. \"I have no way of knowing how this information would have affected him.\"\r\n\r\n\"Look, there's another one of those signposts,\" Hadrik says. \"We're still on the right track!\"\r\n\r\nIt took us a little less than two hours to reach the castle of Thilias from Rose's mansion. When we reached the front gates, Daren signaled the guards to let us through, and once they confirmed our identities, they opened the doors. We all step inside, slowly, as the gates slam shut behind us."
-        condition: b2_ch1_truth = 0
         choices:
           - position: 1
             text: Continue
@@ -551,25 +554,25 @@ scenes:
               b2_ch1_puzzle2: 0
   - name: b2_ch01a_bricks
     routes:
-      - texts:
+      - condition: b2_ch1_puzzle2 = 1
+        texts:
           - source: scene_text
             paragraph: 34
             text: "\"Sure, I'll go.\"\r\n\r\n\"Perfect!\" Flower says. \"Follow me!\"\r\n\r\n\"Oh, come on!\" Daren says. \"What are we supposed to tell that servant guy if he comes back and asks for you?\"\r\n\r\n\"Tell him we'll be right back,\" I say. \"And then give me a call through the transceiver.\"\r\n\r\nDaren shakes his head in disapproval, but he doesn't say anything else. I go catch up to Flower, who seems to have stopped in front of a wall, not far from our original position. After looking at the wall from different angles, the girl starts to knock on the bricks, one by one, as if she were looking for something.\r\n\r\n\"Is there anything special about this wall?\" I ask her.\r\n\r\n\"Shush, I'm trying to listen!\" Flower says, as she continues to knock on the bricks.\r\n\r\nAfter a few more seconds, the girl finally seems to have found what she was looking for, and she starts to pull one of the bricks out of the wall with both her hands. As she puts the brick down, I see that inside the hole left in the wall, there is a small wooden lever.\r\n\r\n\"Wow, you sure know your stuff, huh?\" I tell Flower.\r\n\r\n\"Of course!\" Flower says. \"Petal and I have been through dozens of ruins with hidden passages before! It's sort of our hobby!\""
           - source: scene_text_2
             paragraph: 28
             text: "\"Less of a hobby, and more of a tendency to get into mortal peril on a weekly basis,\" Illuna says, as the girl's eyes turn bright blue again.\r\n\r\n\"I got it!\" Flower says, as she pulls the wooden lever.\r\n\r\nAs soon as she releases the lever, the bricks surrounding it start to get pushed inside the wall, making way for us to pass to the other side. We both go beyond the wall, and enter a small dark room that has a stone pedestal in the middle of it. Upon closer examination, it seems that there is some writing on the top of the pedestal, but it is too dark to make out what it says.\r\n\r\nFlower makes a small orb of fire, which she sends floating above the pedestal, so I can read the writing on it. Now that I get a clear look at it, it appears that the text is written in the Common language.\r\n\r\n\"What does it say?\" Flower asks.\r\n\r\n\"It says: 'Place your palm on this pedestal, if you like discovering secrets.' \"\r\n\r\n\"Oh, I love discovering secrets!\" Flower says, and she quickly places her palm on top of the stone pedestal."
-        condition: b2_ch1_puzzle2 = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch01a_bricks2
-      - texts:
+      - condition: b2_ch1_puzzle2 = 0
+        texts:
           - source: scene_text
             paragraph: 35
             text: "\"No, I'd rather stay here.\"\r\n\r\n\"Suit yourself!\" Flower says. \"Well, if anyone wants to come, just follow me. Otherwise, I'll go by myself.\"\r\n\r\n\"Wait,\" Daren says. \"What are we supposed to tell that servant guy if he asks for you?\"\r\n\r\n\"Just tell him I'll be right back,\" Flower says. \"It's not like the king had anything to discuss with me or anything. I'm not even in the tournament.\"\r\n\r\n\"Well, that's true, I guess...\" Daren says, as Flower stops in front of a wall, and she starts examining it closely.\r\n\r\nAfter a few seconds, the girl begins to knock on each of the bricks in front of her, one by one. \r\n\r\n\"What do you think she's doing?\" Daren asks me.\r\n\r\n\"She's probably looking for a secret passage, or something,\" I say.\r\n\r\nShortly after I stop talking, the girl takes out a brick from the wall, and then she puts her hand in the hole left by the missing brick. The bricks in front of her then suddenly start to get pushed inside the wall, making way for her to pass on the other side.\r\n\r\n\"Wow, she sure knows her stuff, huh?\" I say, as the girl disappears behind the wall.\r\n\r\n\"Well, we did first meet her while she was doing morning exercises in some trap filled ruins,\" Hadrik says."
-        condition: b2_ch1_puzzle2 = 0
         choices:
           - position: 1
             text: Continue
@@ -577,51 +580,50 @@ scenes:
               - set:
                   current_scene: b2_ch01a_bricks2
   - name: b2_ch01a_bricks2
+    effects:
+      - set:
+          ac_b2_ch1_second: 1
+        achievement:
+          id: ac_b2_ch1_second
+          title: Second piece of the puzzle
+        condition: b2_ch1_puzzle2 = 1
     routes:
-      - texts:
+      - condition: b2_ch1_puzzle2 = 1 AND ch8_first_puzzle = 1
+        texts:
           - source: scene_text
             paragraph: 36
             text: "Suddenly, a hole appears at the base of the pedestal, and two small objects get thrown out of it. As I reach to get them, the hole closes itself back up again. Getting a closer look at the two items, I see that one of them is a piece of a puzzle, while the other one is a small parchment. I hold the parchment in my hand, so that both Flower and I can see what's written on it.\r\n\r\nAs I read the text on the parchment, I notice that it's written in the Common language as well, and that it says: \"Find all of the pieces of the puzzle, and I will share with you my greatest secret. I've left one of these in each of the buildings I've designed.\"\r\n\r\nThe parchment is then signed as simply: \"This building's architect.\"\r\n\r\nIt would appear that this castle's architect is also the one who designed the ruins from the forest. I now have two of these puzzle pieces in my possession. I wonder how many of them are left.\r\n   \r\n\"Hey, this sounds like fun!\" Flower says. \"I want one too!\"\r\n\r\nShe puts her palm on the pedestal again, but this time, nothing happens.\r\n\r\n\"It doesn't let me get another one!\" Flower says. \"Barry, you try it!\"\r\n\r\n\"Hey, Barry, can you hear me?\" I hear Daren's voice, coming from the transceiver."
           - source: scene_text_2
             paragraph: 29
             text: "\"Yeah, I hear you,\" I say, as I grab the transceiver in my right hand.\r\n\r\nFlower frowns at me, for ignoring her, and she takes my left hand herself, placing it on the pedestal. Just like before, the base of the pedestal opens up and throws out another puzzle piece and parchment. Flower takes both items and puts them in her pocket.\r\n\r\n\"The castle servant came back,\" Daren says. \"He said the king will see us now. Hurry up and get back here, will you?\"\r\n\r\n\"Yeah, we're on our way,\" I say. \r\n\r\nAfter we make our way out of the dark room behind the wall, Flower pulls on the lever again, and the bricks go back into their original position. She then grabs the brick off the ground, and carefully places it back into the wall.\r\n\r\n\"We wouldn't want anyone else to discover the secret before us, would we, Barry?\" Flower says, with a smile.\r\n\r\n\"I suppose not,\" I say, as we start to head back to where everyone else was waiting for us.\r\n\r\n\"Well?\" Daren says when we reach them. \"Did you find what you were looking for?\"\r\n\r\n\"Yep!\" Flower says, with a cheerful smile.\r\n\r\n\"Spectacular,\" Daren says. \"Now, let's get moving.\""
-        condition: b2_ch1_puzzle2 = 1 AND ch8_first_puzzle = 1
-        set:
-          ac_b2_ch1_second: 1
-        achievement: &ref_0
-          id: ac_b2_ch1_second
-          title: Second piece of the puzzle
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch01a_reason
-      - texts:
+      - condition: b2_ch1_puzzle2 = 1 AND ch8_first_puzzle <> 1
+        texts:
           - source: scene_text
             paragraph: 37
             text: "Suddenly, a hole appears at the base of the pedestal, and two small objects get thrown out of it. As I reach to get them, the hole closes itself back up again. Getting a closer look at the two items, I see that one of them is a piece of a puzzle, while the other one is a small parchment. I hold the parchment in my hand, so that both Flower and I can see what's written on it.\r\n\r\nAs I read the text on the parchment, I notice that it's written in the Common language as well, and that it says: \"Find all of the pieces of the puzzle, and I will share with you my greatest secret. I've left one of these in each of the buildings I've designed.\"\r\n\r\nThe parchment is then signed as simply: \"This building's architect.\"\r\n\r\n\"Hey, this sounds like fun!\" Flower says. \"I want one too!\"\r\n\r\nShe puts her palm on the pedestal again, but this time, nothing happens.\r\n\r\n\"It doesn't let me get another one!\" Flower says. \"Barry, you try it!\"\r\n\r\n\"Hey, Barry, can you hear me?\" I hear Daren's voice, coming from the transceiver."
           - source: scene_text_2
             paragraph: 29
             text: "\"Yeah, I hear you,\" I say, as I grab the transceiver in my right hand.\r\n\r\nFlower frowns at me, for ignoring her, and she takes my left hand herself, placing it on the pedestal. Just like before, the base of the pedestal opens up and throws out another puzzle piece and parchment. Flower takes both items and puts them in her pocket.\r\n\r\n\"The castle servant came back,\" Daren says. \"He said the king will see us now. Hurry up and get back here, will you?\"\r\n\r\n\"Yeah, we're on our way,\" I say. \r\n\r\nAfter we make our way out of the dark room behind the wall, Flower pulls on the lever again, and the bricks go back into their original position. She then grabs the brick off the ground, and carefully places it back into the wall.\r\n\r\n\"We wouldn't want anyone else to discover the secret before us, would we, Barry?\" Flower says, with a smile.\r\n\r\n\"I suppose not,\" I say, as we start to head back to where everyone else was waiting for us.\r\n\r\n\"Well?\" Daren says when we reach them. \"Did you find what you were looking for?\"\r\n\r\n\"Yep!\" Flower says, with a cheerful smile.\r\n\r\n\"Spectacular,\" Daren says. \"Now, let's get moving.\""
-        condition: b2_ch1_puzzle2 = 1 AND ch8_first_puzzle <> 1
-        set:
-          ac_b2_ch1_second: 1
-        achievement: *ref_0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch01a_reason
-      - texts:
+      - condition: b2_ch1_puzzle2 = 0
+        texts:
           - source: scene_text
             paragraph: 38
             text: "While Flower is still inside the wall, the door in front of us opens again, and the same castle servant appears before us.  \r\n\r\n\"Daren, and his team?\" the man says. \"The king will see you now.\"\r\n\r\nHe then closes the doors, just like last time, without another word.\r\n\r\n\"Hey, wait a minute!\" Hadrik says. \"Since when have we become Daren's team? I thought we were running a democracy here!\"\r\n\r\n\"It's a figure of speech,\" Kate says. \"What do you expect them to call us, if they only know Daren's name?\"\r\n\r\n\"Yeah, I'm not buying it,\" Hadrik says. \"They already knew that you were an artificial mage, so it shouldn't have been that hard for them to learn our names. Not to mention that we already gave them our damn names when we signed up for this tournament!\""
           - source: scene_text_2
             paragraph: 30
             text: "\"Flower!\" Daren shouts, ignoring Hadrik's rant. \"Hey, Flower! Are you done, yet? The king is calling for us!\"\r\n\r\n\"Coming!\" Flower says, as she quickly dashes out of the wall, and then places her hand in the small hole again.\r\n\r\nWhile the bricks move back into place, the girl picks up the brick she pulled out of the wall earlier, and she places it back into its original position.\r\n\r\n\"What were you doing there for all that time, anyway?\" Daren asks her.\r\n\r\n\"It's a secret!\" Flower says, with a cheerful smile.\r\n\r\n\"Whatever,\" Daren says. \"Come on, let's get moving!\""
-        condition: b2_ch1_puzzle2 = 0
         choices:
           - position: 1
             text: Continue
@@ -654,33 +656,34 @@ scenes:
               current_scene: b2_ch01a_value
   - name: b2_ch01a_asking
     routes:
-      - texts:
+      - condition: b2_ch1_spin = 0
+        texts:
           - source: scene_text
             paragraph: 40
             text: "\"The guy was asking for it.\"\r\n\r\n\"Do you see?\" the ambassador tells Golmyck. \"Do you see now what kind of people you've invited into your halls?\"\r\n\r\n\"Your majesty,\" Daren interrupts us, as he places himself in front of me, and he bows before the king. \"Please, allow me to explain what happened!\"\r\n\r\n\"Psst!\" I hear Arraka's voice coming from the amulet, as soon as Daren begins to speak. \"Hey, you there! Weakling! Stat wielder guy. Half-lessathi. Come here!\"\r\n\r\n\"Half... lessathi?\" I ask her, as I get closer to Hadrik and the amulet. \r\n\r\n\"Never mind that!\" Arraka says, in a low voice. \"We've got trouble. Eiden just teleported in the middle of the hallway, and he's hiding with that invisibility spell of his.\"\r\n\r\n\"Eiden?\" I ask her. \"Why would he choose to come now, of all times?\"\r\n\r\n\"I don't know and I don't care,\" Arraka says. \"I promised that I'd let you know when Eiden was near, and I've kept my word. Now will you tell this buffoon holding my amulet to stop spinning me with every opportunity he gets???\"\r\n\r\n\"Uh, right...\" I say. \"I'll see what I can do about it.\"\r\n\r\nWhile I was talking with Arraka, it seems that the discussion between the king and the ambassador had gotten a bit more heated."
           - source: scene_text_2
             paragraph: 32
             text: "\"You would defend this filth?!\" the ambassador shouts loudly at the gnome king.\r\n\r\n\"I'm not defending anyone,\" Golmyck answers him, calmly. \"I'm simply saying that before condemning them, they need to be offered a fair trial.\"\r\n\r\n\"These scum do not deserve a trial!\" the ambassador shouts. \"They deserve to be executed on the spot! Do you want war, king of Thilias? Need I remind you that I represent the king of Ollendor himself? I will not stand here to witness this mockery of a trial when we already have all the information we need to pass their sentence this very instant! You will have them killed right here and now, or there will be war! Do you hear me, Golmyck? War!!!\"\r\n\r\n\"I'm afraid that I can't let you execute these people, ambassador,\" we hear Eiden's voice coming from behind us.\r\n\r\nAs we all turn around, Eiden starts to walk slowly towards the ambassador, and he stops right in front of him. The ambassador is now sweating all over, and it looks like he's barely able to maintain his composure.\r\n\r\n\"What's the matter, ambassador?\" Eiden asks, with a smirk. \"Aren't you going to bow before your Creator?\""
-        condition: b2_ch1_spin = 0
-        set:
-          ac_b2_ch1_breed: 1
-        achievement:
-          id: ac_b2_ch1_breed
-          title: Half-breed
+        effects:
+          - set:
+              ac_b2_ch1_breed: 1
+            achievement:
+              id: ac_b2_ch1_breed
+              title: Half-breed
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch01a_creator
-      - texts:
+      - condition: b2_ch1_spin = 1
+        texts:
           - source: scene_text
             paragraph: 41
             text: "\"The guy was asking for it.\"\r\n\r\n\"Do you see?\" the ambassador tells Golmyck. \"Do you see now what kind of people you've invited into your halls?\"\r\n\r\n\"Your majesty,\" Daren interrupts us, as he places himself in front of me, and he bows before the king. \"Please, allow me to explain what happened!\"\r\n\r\n\"No, I've heard enough explaining!\" the ambassador says. \"Your majesty, it is becoming obvious that these riffraff are not worth wasting your time on. If you would just turn them over to my custody, like I asked before this meeting, I would make sure that justice is done, and you wouldn't need to concern yourself with this matter any longer.\"\r\n\r\n\"That will not do, ambassador,\" Golmyck says. \"While it is true that the victim in this case was a citizen of Ollendor, the crime occurred in the city of Thilias, which falls under my jurisdiction. According to the treaty signed six hundred years ago by all of the kingdoms of Varathia, this means that I am the one that must pass judgment upon them, not the king of Ollendor.\"\r\n\r\n\"You would defend this filth?!\" the ambassador shouts loudly at the gnome king.\r\n\r\n\"I'm not defending anyone,\" Golmyck answers him, calmly. \"I'm simply saying that before condemning them, they need to be offered a fair trial.\""
           - source: scene_text_2
             paragraph: 33
             text: "\"These scum do not deserve a trial!\" the ambassador shouts. \"They deserve to be executed on the spot! Do you want war, king of Thilias? Need I remind you that I represent the king of Ollendor himself? I will not stand here to witness this mockery of a trial when we already have all the information we need to pass their sentence this very instant! You will have them killed right here and now, or there will be war! Do you hear me, Golmyck? War!!!\"\r\n\r\n\"I'm afraid that I can't let you execute these people, ambassador,\" we hear Eiden's voice coming from behind us.\r\n\r\nAfter I turn around and see Eiden's face, my first reaction is to grab Arraka's amulet from Hadrik's hand.\r\n\r\n\"You!\" I tell her. \"You said that you'd let us know whenever Eiden would be hiding invisibly around us again!\"\r\n\r\n\"Did I, now?\" Arraka says. \"I must admit that my memory's been a little fuzzy, lately. I wonder why... Oh, I know why! It must be because of all the SPINNING!\"\r\n\r\nEiden looks at me, with his closed eyes and smiles. I only now realize that I might have been speaking a little too loudly. He chooses not to comment on our conversation, and he starts walking slowly towards the ambassador. When he stops in front of him, we can see that the ambassador is sweating all over, and that he's barely able to maintain his composure.\r\n\r\n\"What's the matter, ambassador?\" Eiden asks, with a smirk. \"Aren't you going to bow before your Creator?\""
-        condition: b2_ch1_spin = 1
         choices:
           - position: 1
             text: Continue
@@ -689,33 +692,34 @@ scenes:
                   current_scene: b2_ch01a_creator
   - name: b2_ch01a_value
     routes:
-      - texts:
+      - condition: b2_ch1_spin = 0
+        texts:
           - source: scene_text
             paragraph: 42
             text: "\"We killed him because he placed absolutely no value on human life.\"\r\n\r\n\"Ah,\" Golmyck says. \"I assume that you are talking about the slave girl he was with at the time. Tell me, young lessathi, are you aware of the laws in our city regarding slavery?\"\r\n\r\n\"Your majesty,\" Daren interrupts us, as he places himself in front of me, and he bows before the king. \"Please, allow me to explain what happened!\"\r\n\r\n\"Psst!\" I hear Arraka's voice coming from the amulet, as soon as Daren begins to speak. \"Hey, you there! Weakling! Stat wielder guy. Half-lessathi. Come here!\"\r\n\r\n\"Half... lessathi?\" I ask her, as I get closer to Hadrik and the amulet. \r\n\r\n\"Never mind that!\" Arraka says, in a low voice. \"We've got trouble. Eiden just teleported in the middle of the hallway, and he's hiding with that invisibility spell of his.\"\r\n\r\n\"Eiden?\" I ask her. \"Why would he choose to come now, of all times?\"\r\n\r\n\"I don't know and I don't care,\" Arraka says. \"I promised that I'd let you know when Eiden was near, and I've kept my word. Now will you tell this buffoon holding my amulet to stop spinning me with every opportunity he gets?!\"\r\n\r\n\"Uh, right...\" I say. \"I'll see what I can do about it.\""
           - source: scene_text_2
             paragraph: 34
             text: "While I was talking with Arraka, it seems that the discussion between the king and the ambassador had gotten a bit more heated.\r\n\r\n\"You would defend this filth?!\" the ambassador shouts loudly at the gnome king.\r\n\r\n\"I'm not defending anyone,\" Golmyck answers him, calmly. \"I'm simply saying that before condemning them, they need to be offered a fair trial.\"\r\n\r\n\"These scum do not deserve a trial!!!\" the ambassador shouts. \"They deserve to be executed on the spot! Do you want war, king of Thilias? Need I remind you that I represent the king of Ollendor himself? I will not stand here to witness this mockery of a trial when we already have all the information we need to pass their sentence this very instant! You will have them killed right here and now, or there will be war! Do you hear me, Golmyck? War!!!\"\r\n\r\n\"I'm afraid that I can't let you execute these people, ambassador,\" we hear Eiden's voice coming from behind us.\r\n\r\nAs we all turn around, Eiden starts to walk slowly towards the ambassador, and he stops right in front of him. The ambassador is now sweating all over, and it looks like he's barely able to maintain his composure.\r\n\r\n\"What's the matter, ambassador?\" Eiden asks, with a smirk. \"Aren't you going to bow before your Creator?\""
-        condition: b2_ch1_spin = 0
-        set:
-          ac_b2_ch1_breed: 1
-        achievement:
-          id: ac_b2_ch1_breed
-          title: Half-breed
+        effects:
+          - set:
+              ac_b2_ch1_breed: 1
+            achievement:
+              id: ac_b2_ch1_breed
+              title: Half-breed
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch01a_creator
-      - texts:
+      - condition: b2_ch1_spin = 1
+        texts:
           - source: scene_text
             paragraph: 43
             text: "\"We killed him because he placed absolutely no value on human life.\"\r\n\r\n\"Ah,\" Golmyck says. \"I assume that you are talking about the slave girl he was with at the time. Tell me, young lessathi, are you aware of the laws in our city regarding slavery?\"\r\n\r\n\"Your majesty,\" Daren interrupts us, as he places himself in front of me, and he bows before the king. \"Please, allow me to explain what happened!\"\r\n\r\n\"No, I've heard enough explaining!\" the ambassador says. \"Your majesty, it is becoming obvious that these riffraff are not worth wasting your time on. If you would just turn them over to my custody, like I asked before this meeting, I would make sure that justice is done, and you wouldn't need to concern yourself with this matter any longer.\"\r\n\r\n\"That will not do, ambassador,\" Golmyck says. \"While it is true that the victim in this case was a citizen of Ollendor, the crime occurred in the city of Thilias, which falls under my jurisdiction. According to the treaty signed six hundred years ago by all of the kingdoms of Varathia, this means that I am the one that must pass judgment upon them, not the king of Ollendor.\"\r\n\r\n\"You would defend this filth?!\" the ambassador shouts loudly at the gnome king.\r\n\r\n\"I'm not defending anyone,\" Golmyck answers him, calmly. \"I'm simply saying that before condemning them, they need to be offered a fair trial.\""
           - source: scene_text_2
             paragraph: 35
             text: "\"These scum do not deserve a trial!\" the ambassador shouts. \"They deserve to be executed on the spot! Do you want war, king of Thilias? Need I remind you that I represent the king of Ollendor himself? I will not stand here to witness this mockery of a trial when we already have all the information we need to pass their sentence this very instant! You will have them killed right here and now, or there will be war! Do you hear me, Golmyck? War!!!\"\r\n\r\n\"I'm afraid that I can't let you execute these people, ambassador,\" we hear Eiden's voice coming from behind us.\r\n\r\nAfter I turn around and see Eiden's face, my first reaction is to grab Arraka's amulet from Hadrik's hand.\r\n\r\n\"You!\" I tell her. \"You said that you'd let us know whenever Eiden would be hiding invisibly around us again!\"\r\n\r\n\"Did I, now?\" Arraka says. \"I must admit that my memory's been a little fuzzy, lately. I wonder why... Oh, I know why! It must be because of all the SPINNING!\"\r\n\r\nEiden looks at me, with his closed eyes and smiles. I only now realize that I might have been speaking a little too loudly. He chooses not to comment on our conversation, and he starts walking slowly towards the ambassador. When he stops in front of him, we can see that the ambassador is sweating all over, and that he's barely able to maintain his composure.\r\n\r\n\"What's the matter, ambassador?\" Eiden asks, with a smirk. \"Aren't you going to bow before your Creator?\""
-        condition: b2_ch1_spin = 1
         choices:
           - position: 1
             text: Continue
@@ -723,72 +727,72 @@ scenes:
               - set:
                   current_scene: b2_ch01a_creator
   - name: b2_ch01a_innocent
+    effects:
+      - set:
+          ac_b2_ch1_breed: 1
+        achievement:
+          id: ac_b2_ch1_breed
+          title: Half-breed
+        condition: b2_ch1_spin = 0
     routes:
-      - texts:
+      - condition: b2_ch1_spin = 0 AND ch11_kill_noble = 1
+        texts:
           - source: scene_text
             paragraph: 44
             text: "\"We didn't kill him! We're innocent!\" \r\n\r\n\"Oh?\" Golmyck says, while stroking his chin. \"That's strange. Our reports show that it was you, specifically, who killed the earl of Ollendor. I would have thought that you'd know by now just how hard it is to hide information in my city. Why would you lie to us like this?\"\r\n\r\n\"Your majesty,\" Daren interrupts us, as he places himself in front of me, and he bows before the king. \"Please, allow me to explain what happened!\"\r\n\r\n\"Psst!\" I hear Arraka's voice coming from the amulet, as soon as Daren begins to speak. \"Hey, you there! Weakling! Stat wielder guy. Half-lessathi. Come here!\"\r\n\r\n\"Half... lessathi?\" I ask her, as I get closer to Hadrik and the amulet. \r\n\r\n\"Never mind that!\" Arraka says, in a low voice. \"We've got trouble. Eiden just teleported in the middle of the hallway, and he's hiding with that invisibility spell of his.\"\r\n\r\n\"Eiden?\" I ask her. \"Why would he choose to come now, of all times?\"\r\n\r\n\"I don't know and I don't care,\" Arraka says. \"I promised that I'd let you know when Eiden was near, and I've kept my word. Now will you tell this buffoon holding my amulet to stop spinning me with every opportunity he gets?!\"\r\n\r\n\"Uh, right...\" I say. \"I'll see what I can do about it.\""
           - source: scene_text_2
             paragraph: 36
             text: "While I was talking with Arraka, it seems that the discussion between the king and the ambassador had gotten a bit more heated.\r\n\r\n\"You would defend this filth?!\" the ambassador shouts loudly at the gnome king.\r\n\r\n\"I'm not defending anyone,\" Golmyck answers him, calmly. \"I'm simply saying that before condemning them, they need to be offered a fair trial.\"\r\n\r\n\"These scum do not deserve a trial!\" the ambassador shouts. \"They deserve to be executed on the spot! Do you want war, king of Thilias? Need I remind you that I represent the king of Ollendor himself? I will not stand here to witness this mockery of a trial when we already have all the information we need to pass their sentence this very instant! You will have them killed right here and now, or there will be war! Do you hear me, Golmyck? War!!!\"\r\n\r\n\"I'm afraid that I can't let you execute these people, ambassador,\" we hear Eiden's voice coming from behind us.\r\n\r\nAs we all turn around, Eiden starts to walk slowly towards the ambassador, and he stops right in front of him. The ambassador is now sweating all over, and it looks like he's barely able to maintain his composure.\r\n\r\n\"What's the matter, ambassador?\" Eiden asks, with a smirk. \"Aren't you going to bow before your Creator?\""
-        condition: b2_ch1_spin = 0 AND ch11_kill_noble = 1
-        set:
-          ac_b2_ch1_breed: 1
-        achievement: &ref_1
-          id: ac_b2_ch1_breed
-          title: Half-breed
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch01a_creator
-      - texts:
+      - condition: b2_ch1_spin = 1 AND ch11_kill_noble = 1
+        texts:
           - source: scene_text
             paragraph: 45
             text: "\"We didn't kill him! We're innocent!\" \r\n\r\n\"Oh?\" Golmyck says, while stroking his chin. \"That's strange. Our reports show that it was you, specifically, who killed the earl of Ollendor. I would have thought that you'd know by now just how hard it is to hide information in my city. Why would you lie to us like this?\"\r\n\r\n\"Your majesty,\" Daren interrupts us, as he places himself in front of me, and he bows before the king. \"Please, allow me to explain what happened!\"\r\n\r\n\"No, I've heard enough explaining!\" the ambassador says. \"Your majesty, it is becoming obvious that these riffraff are not worth wasting your time on. If you would just turn them over to my custody, like I asked before this meeting, I would make sure that justice is done, and you wouldn't need to concern yourself with this matter any longer.\"\r\n\r\n\"That will not do, ambassador,\" Golmyck says. \"While it is true that the victim in this case was a citizen of Ollendor, the crime occurred in the city of Thilias, which falls under my jurisdiction. According to the treaty signed six hundred years ago by all of the kingdoms of Varathia, this means that I am the one that must pass judgment upon them, not the king of Ollendor.\"\r\n\r\n\"You would defend this filth?!\" the ambassador shouts loudly at the gnome king.\r\n\r\n\"I'm not defending anyone,\" Golmyck answers him, calmly. \"I'm simply saying that before condemning them, they need to be offered a fair trial.\""
           - source: scene_text_2
             paragraph: 37
             text: "\"These scum do not deserve a trial!\" the ambassador shouts. \"They deserve to be executed on the spot! Do you want war, king of Thilias? Need I remind you that I represent the king of Ollendor himself? I will not stand here to witness this mockery of a trial when we already have all the information we need to pass their sentence this very instant! You will have them killed right here and now, or there will be war! Do you hear me, Golmyck? War!!!\"\r\n\r\n\"I'm afraid that I can't let you execute these people, ambassador,\" we hear Eiden's voice coming from behind us.\r\n\r\nAfter I turn around and see Eiden's face, my first reaction is to grab Arraka's amulet from Hadrik's hand.\r\n\r\n\"You!\" I tell her. \"You said that you'd let us know whenever Eiden would be hiding invisibly around us again!\"\r\n\r\n\"Did I, now?\" Arraka says. \"I must admit that my memory's been a little fuzzy, lately. I wonder why... Oh, I know why! It must be because of all the SPINNING!\"\r\n\r\nEiden looks at me, with his closed eyes and smiles. I only now realize that I might have been speaking a little too loudly. He chooses not to comment on our conversation, and he starts walking slowly towards the ambassador. When he stops in front of him, we can see that the ambassador is sweating all over, and that he's barely able to maintain his composure.\r\n\r\n\"What's the matter, ambassador?\" Eiden asks, with a smirk. \"Aren't you going to bow before your Creator?\""
-        condition: b2_ch1_spin = 1 AND ch11_kill_noble = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch01a_creator
-      - texts:
+      - condition: b2_ch1_spin = 0 AND ch11_saved_slave = 3
+        texts:
           - source: scene_text
             paragraph: 46
             text: "We didn't kill him! We're innocent!\" \r\n\r\n\"Oh?\" Golmyck says, while stroking his chin. \"I would have thought that you'd know by now just how hard it is to hide information in my city. Are you sure you want to be lying to us like this?\"\r\n\r\n\"Your majesty,\" Daren interrupts us, as he places himself in front of me, and he bows before the king. \"Please, allow me to explain what happened!\"\r\n\r\n\"Psst!\" I hear Arraka's voice coming from the amulet, as soon as Daren begins to speak. \"Hey, you there! Weakling! Stat wielder guy. Half-lessathi. Come here!\"\r\n\r\n\"Half... lessathi?\" I ask her, as I get closer to Hadrik and the amulet. \r\n\r\n\"Never mind that!\" Arraka says, in a low voice. \"We've got trouble. Eiden just teleported in the middle of the hallway, and he's hiding with that invisibility spell of his.\"\r\n\r\n\"Eiden?\" I ask her. \"Why would he choose to come now, of all times?\"\r\n\r\n\"I don't know and I don't care,\" Arraka says. \"I promised that I'd let you know when Eiden was near, and I've kept my word. Now will you tell this buffoon holding my amulet to stop spinning me with every opportunity he gets?!\"\r\n\r\n\"Uh, right...\" I say. \"I'll see what I can do about it.\"\r\n\r\nWhile I was talking with Arraka, it seems that the discussion between the king and the ambassador had gotten a bit more heated."
           - source: scene_text_2
             paragraph: 38
             text: "\"You would defend this filth?!\" the ambassador shouts loudly at the gnome king.\r\n\r\n\"I'm not defending anyone,\" Golmyck answers him, calmly. \"I'm simply saying that before condemning them, they need to be offered a fair trial.\"\r\n\r\n\"These scum do not deserve a trial!\" the ambassador shouts. \"They deserve to be executed on the spot! Do you want war, king of Thilias? Need I remind you that I represent the king of Ollendor himself? I will not stand here to witness this mockery of a trial when we already have all the information we need to pass their sentence this very instant! You will have them killed right here and now, or there will be war! Do you hear me, Golmyck? War!!!\"\r\n\r\n\"I'm afraid that I can't let you execute these people, ambassador,\" we hear Eiden's voice coming from behind us.\r\n\r\nAs we all turn around, Eiden starts to walk slowly towards the ambassador, and he stops right in front of him. The ambassador is now sweating all over, and it looks like he's barely able to maintain his composure.\r\n\r\n\"What's the matter, ambassador?\" Eiden asks, with a smirk. \"Aren't you going to bow before your Creator?\""
-        condition: b2_ch1_spin = 0 AND ch11_saved_slave = 3
-        set:
-          ac_b2_ch1_breed: 1
-        achievement: *ref_1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch01a_creator
-      - texts:
+      - condition: b2_ch1_spin = 1 AND ch11_saved_slave = 3
+        texts:
           - source: scene_text
             paragraph: 47
             text: "\"We didn't kill him! We're innocent!\" \r\n\r\n\"Oh?\" Golmyck says, while stroking his chin. \"I would have thought that you'd know by now just how hard it is to hide information in my city. Are you sure you want to be lying to us like this?\"\r\n\r\n\"Your majesty,\" Daren interrupts us, as he places himself in front of me, and he bows before the king. \"Please, allow me to explain what happened!\"\r\n\r\n\"No, I've heard enough explaining!\" the ambassador says. \"Your majesty, it is becoming obvious that these riffraff are not worth wasting your time on. If you would just turn them over to my custody, like I asked before this meeting, I would make sure that justice is done, and you wouldn't need to concern yourself with this matter any longer.\"\r\n\r\n\"That will not do, ambassador,\" Golmyck says. \"While it is true that the victim in this case was a citizen of Ollendor, the crime occurred in the city of Thilias, which falls under my jurisdiction. According to the treaty signed six hundred years ago by all of the kingdoms of Varathia, this means that I am the one that must pass judgment upon them, not the king of Ollendor.\"\r\n\r\n\"You would defend this filth?!\" the ambassador shouts loudly at the gnome king.\r\n\r\n\"I'm not defending anyone,\" Golmyck answers him, calmly. \"I'm simply saying that before condemning them, they need to be offered a fair trial.\""
           - source: scene_text_2
             paragraph: 39
             text: "\"These scum do not deserve a trial!\" the ambassador shouts. \"They deserve to be executed on the spot! Do you want war, king of Thilias? Need I remind you that I represent the king of Ollendor himself? I will not stand here to witness this mockery of a trial when we already have all the information we need to pass their sentence this very instant! You will have them killed right here and now, or there will be war! Do you hear me, Golmyck? War!!!\"\r\n\r\n\"I'm afraid that I can't let you execute these people, ambassador,\" we hear Eiden's voice coming from behind us.\r\n\r\nAfter I turn around and see Eiden's face, my first reaction is to grab Arraka's amulet from Hadrik's hand.\r\n\r\n\"You!\" I tell her. \"You said that you'd let us know whenever Eiden would be hiding invisibly around us again!\"\r\n\r\n\"Did I, now?\" Arraka says. \"I must admit that my memory's been a little fuzzy, lately. I wonder why... Oh, I know why! It must be because of all the SPINNING!\"\r\n\r\nEiden looks at me, with his closed eyes and smiles. I only now realize that I might have been speaking a little too loudly. He chooses not to comment on our conversation, and he starts walking slowly towards the ambassador. When he stops in front of him, we can see that the ambassador is sweating all over, and that he's barely able to maintain his composure.\r\n\r\n\"What's the matter, ambassador?\" Eiden asks, with a smirk. \"Aren't you going to bow before your Creator?\""
-        condition: b2_ch1_spin = 1 AND ch11_saved_slave = 3
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch01a_creator
-      - texts:
+      - condition: b2_ch1_spin = 0 AND ch11_saved_slave <> 3 AND ch11_kill_noble = 0
+        texts:
           - source: scene_text
             paragraph: 48
             text: "\"We didn't kill him! We're innocent!\" \r\n\r\n\"Innocent, you say?\" Golmyck says, while stroking his chin. \"Now that I think about it, our reports did show that there was also another person there with you, when you attacked the earl. Are you saying that this other person is in fact responsible for the earl of Ollendor's death?\"\r\n\r\n\"Yes, exactly!\" I say. \"Eiden was the one who killed him, not us!\"\r\n\r\n\"And who is this Eiden, may I ask?\" Golmyck says.\r\n\r\nRight after hearing me speak Eiden's name, the ambassador let out a squeal, and since then he's been sweating all over, looking quite agitated.\r\n\r\n\"Is there something wrong, ambassador?\" Golmyck asks him.\r\n\r\n\"Lies!\" the ambassador blurts out, suddenly. \"The boy is lying! There's no way that man would have ever associated himself with the likes of them!\"\r\n\r\n\"What man?\" Golmyck asks. \"Are you talking about this Eiden character?\"\r\n\r\n\"Your majesty,\" Daren interrupts us, as he places himself in front of me, and he bows before the king. \"Please, allow me to explain what happened!\"\r\n\r\n\"Psst!\" I hear Arraka's voice coming from the amulet, as soon as Daren begins to speak. \"Hey, you there! Weakling! Stat wielder guy. Half-lessathi. Come here!\"\r\n\r\n\"Half... lessathi?\" I ask her, as I get closer to Hadrik and the amulet."
@@ -798,17 +802,14 @@ scenes:
           - source: scene_3
             paragraph: 5
             text: "\"I'm afraid that I can't let you execute these people, ambassador,\" we hear Eiden's voice coming from behind us.\r\n\r\nAs we all turn around, Eiden starts to walk slowly towards the ambassador, and he stops right in front of him. The ambassador is now sweating all over, and it looks like he's barely able to maintain his composure.\r\n\r\n\"What's the matter, ambassador?\" Eiden asks, with a smirk. \"Aren't you going to bow before your Creator?\""
-        condition: b2_ch1_spin = 0 AND ch11_saved_slave <> 3 AND ch11_kill_noble = 0
-        set:
-          ac_b2_ch1_breed: 1
-        achievement: *ref_1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch01a_creator
-      - texts:
+      - condition: b2_ch1_spin = 1 AND ch11_saved_slave <> 3 AND ch11_kill_noble = 0
+        texts:
           - source: scene_text
             paragraph: 49
             text: "We didn't kill him! We're innocent!\" \r\n\r\n\"Innocent, you say?\" Golmyck says, while stroking his chin. \"Now that I think about it, our reports did show that there was also another person there with you, when you attacked the earl. Are you saying that this other person is in fact responsible for the earl of Ollendor's death?\"\r\n\r\n\"Yes, exactly!\" I say. \"Eiden was the one who killed him, not us!\"\r\n\r\n\"And who is this Eiden, may I ask?\" Golmyck says.\r\n\r\nRight after hearing me speak Eiden's name, the ambassador let out a squeal, and since then he's been sweating all over, looking quite agitated.\r\n\r\n\"Is there something wrong, ambassador?\" Golmyck asks him.\r\n\r\n\"Lies!\" the ambassador blurts out, suddenly. \"The boy is lying! There's no way that man would have ever associated himself with the likes of them!\"\r\n\r\n\"What man?\" Golmyck asks. \"Are you talking about this Eiden character?\"\r\n\r\n\"Your majesty,\" Daren interrupts us, as he places himself in front of me, and he bows before the king. \"Please, allow me to explain what happened!\"\r\n\r\n\"No, I've heard enough explaining!\" the ambassador says. \"Your majesty, it is becoming obvious that these riffraff are not worth wasting your time on. If you would just turn them over to my custody, like I asked before this meeting, I would make sure that justice is done, and you wouldn't need to concern yourself with this matter any longer.\""
@@ -818,7 +819,6 @@ scenes:
           - source: scene_3
             paragraph: 6
             text: "\"Did I, now?\" Arraka says. \"I must admit that my memory's been a little fuzzy, lately. I wonder why... Oh, I know why! It must be because of all the SPINNING!\"\r\n\r\nEiden looks at me, with his closed eyes and smiles. I only now realize that I might have been speaking a little too loudly. He chooses not to comment on our conversation, and he starts walking slowly towards the ambassador. When he stops in front of him, we can see that the ambassador is sweating all over, and that he's barely able to maintain his composure.\r\n\r\n\"What's the matter, ambassador?\" Eiden asks, with a smirk. \"Aren't you going to bow before your Creator?\""
-        condition: b2_ch1_spin = 1 AND ch11_saved_slave <> 3 AND ch11_kill_noble = 0
         choices:
           - position: 1
             text: Continue
@@ -851,11 +851,11 @@ scenes:
             effects:
               - set:
                   current_scene: b2_ch01a_creator3
-      - texts:
+      - condition: ch11_saved_slave <> 3 AND ch11_kill_noble = 0
+        texts:
           - source: scene_text
             paragraph: 51
             text: "\"Oh?\" Eiden says, with an evil smile. \"And what if I told you that I was in fact both the one who gave them the ability to hurt the people of Varathia, and the one who killed your beloved earl?\"\r\n\r\nThe ambassador is now sweating even harder than before, and he seems to be too afraid to give Eiden an answer. Seeing the expression on his face, Eiden starts to laugh.\r\n\r\n\"Do not worry, ambassador,\" he says. \"I never suggested that they should be set free. However, I believe we can all agree that an execution would be a dull way for such powerful mages to meet their demise.\"\r\n\r\n\"What do you... have in mind, then?\" the ambassador asks.\r\n\r\n\"The arenas, of course!\" Eiden says. \"Have them thrown in the arena, and if they somehow manage to survive until the end, then it will mean that the gods have seen fit to acquit them of their crimes. The rules of the arenas state that you may not use magic during fights, so they won't get any unfair advantage over any of the other gladiators. There are even magic detectors placed all around the fighting area, to make sure that there's no cheating.\"\r\n\r\n\"Yes, but,\" the ambassador says, \"if they somehow manage to survive, the king of Ollendor will--\"\r\n\r\n\"Are you trying to say that the fabled arenas of Varathia, the pride of your 'continent', are not enough to stop a mere handful of mages that can't even cast any spells?\" Eiden says, with a wicked smile.\r\n\r\n\"No...\" the ambassador says. \"No, of course not...\""
-        condition: ch11_saved_slave <> 3 AND ch11_kill_noble = 0
         choices:
           - position: 1
             text: Continue
@@ -985,25 +985,25 @@ scenes:
               b2_ch1_interfere: 1
   - name: b2_ch01a_documents
     routes:
-      - texts:
+      - condition: b2_ch1_interfere = 0
+        texts:
           - source: scene_text
             paragraph: 60
             text: "\"Actually, I think we've already filled our quota of rash actions for the week,\" I say.\r\n\r\n\"These lessathi you spoke of...\" Kate tells Golmyck. \"Do you know if they are working with other artificial mages? Is there a woman called Diane, who controls electricity, helping them?\"\r\n\r\n\"As far as I know, the lessathi from my city are not using any mages as bodyguards,\" Golmyck says. \"My spies would have certainly found out by now, if there were any other artificial mages in Thilias.\"\r\n\r\n\"I see...\" Kate says.\r\n\r\n\"There's one more thing I need to tell you all before you leave,\" Golmyck says, as he turns towards the rest of us. \"If you manage to survive the arena and win your freedom, you will need to stop by my castle again, in order to receive some documents which will prove that you've served your sentence for your crimes. While these documents will most likely not be needed in Thilias, they should help you deal with guards that might try to have you arrested in other cities, for the murder of the earl of Ollendor. Now, unless you have anything else to discuss with me, I will start writing on that letter of admission for the dwarf, and then you can be on your way.\""
-        condition: b2_ch1_interfere = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch01a_ending
-      - texts:
+      - condition: b2_ch1_interfere = 1
+        texts:
           - source: scene_text
             paragraph: 61
             text: "\"A few months is too long. Maybe we can take care of your lessathi problem, instead.\"\r\n\r\n\"Oh?\" Golmyck says, while stroking his chin. \"And do you speak for your entire team, when you are making this proposal, young lessathi? Or do you only speak for yourself?\"\r\n\r\nThe gnome's words took me off guard. While we've already been travelling together for a week, I'm not sure if everyone would agree to join me on this potentially suicidal mission.\r\n\r\nAs I stand there, and try to think of an answer to give the gnome, Daren takes my side, and he puts his hand on my shoulder.\r\n\r\n\"He speaks for me as well,\" Daren tells Golmyck. \r\n\r\n\"And for me,\" Hadrik says, as he steps forward. \"After hearing what happened to the slave girl, yesterday, I would be more than happy to teach these bastards a lesson, if they are the ones responsible for what's going on in this city.\"\r\n\r\n\"Interesting,\" Golmyck says, and then he turns towards Kate. \"What about you, artificial mage? Are you volunteering for this mission as well?\"\r\n\r\n\"These lessathi you spoke of...\" Kate says. \"Do you know if they are working with other artificial mages? Is there a woman called Diane, who controls electricity, helping them?\""
           - source: scene_text_2
             paragraph: 50
             text: "\"As far as I know, the lessathi from my city are not using any mages as bodyguards,\" Golmyck says. \"My spies would have certainly found out by now, if there were any other artificial mages in Thilias.\"\r\n\r\n\"I see...\" Kate says, and she pauses for a few seconds. \"Even if Diane is not in this city, there is still a chance that the lessathi might know something about her current whereabouts. If you're all planning to storm their headquarters anyway, then I'm coming as well.\"\r\n\r\n\"Well, if everyone else is going, then I guess we're going too, right Petal?\" Flower says, enthusiastically.\r\n\r\nThe girl's eyes turn blue again, as Illuna takes a deep sigh, but she doesn't say anything.\r\n\r\n\"I'll have to admit that I wasn't expecting you all to offer your help so wholeheartedly,\" Golmyck says.\r\n\r\nHe takes a few moments to clear his thoughts before he continues.\r\n\r\n\"Very well, then,\" Golmyck says. \"I will think about what you've said. We will continue this discussion further, once you return from the arena. After you manage to earn your freedom, you will need to stop by my castle again, in order to receive some documents which will prove that you've served your sentence for your crimes. While these documents will most likely not be needed in Thilias, they should help you deal with guards that might try to have you arrested in other cities, for the murder of the earl of Ollendor. Now, unless you have anything else to discuss with me, I will start writing on that letter of admission for the dwarf, and then you can be on your way.\""
-        condition: b2_ch1_interfere = 1
         choices:
           - position: 1
             text: Continue
@@ -1030,11 +1030,11 @@ scenes:
               storyboard_controls: Jump to frame "Save load game"
   - name: b2_ch01a_credits
     routes:
-      - texts:
+      - condition: second_book_purchased = 0
+        texts:
           - source: scene_text
             paragraph: 63
             text: "The second chapter is now available!\r\n\r\nPress the button below to proceed to the next chapter."
-        condition: second_book_purchased = 0
         choices:
           - position: 1
             text: Go to next chapter
@@ -1045,11 +1045,11 @@ scenes:
                   chapter_save: 1
                   checkpoint_rich: 1
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: second_book_purchased = 1
+        texts:
           - source: scene_text
             paragraph: 64
             text: "The second chapter is now available!\r\n\r\nPress the button below to proceed to the next chapter."
-        condition: second_book_purchased = 1
         choices:
           - position: 1
             text: Go to next chapter

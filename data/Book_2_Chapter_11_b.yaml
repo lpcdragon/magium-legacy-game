@@ -31,32 +31,33 @@ scenes:
               b2_ch11_skip1: 2
   - name: b2_ch11b_skip1
     routes:
-      - texts:
+      - condition: b2_ch11_skip1 = 0
+        texts:
           - source: scene_text
             paragraph: 3
             text: "\"But I want to see it!\"\r\n\r\n\"Fine, whatever...\" Arraka says. \"Don't say I didn't warn you, though.\"\r\n\r\nThe scenery around us changes again, and now we are located in another holding cell, which appears to be Kate's room. Kate is the only one in the cell, and from what I can tell, she is currently having a conversation with a person standing outside of her window. I can't see his face, because he is hiding behind the wall, but I can only guess that it's the lessathi to whom Leila refers as her father.\r\n\r\n\"Those collars will be tricky to deal with,\" I hear the caretaker say, \"but I should be able to remove them, with the right tools. It will take time, however, and it can't be done while organizing an escape. What I could do instead is to disable their electrocuting effects until we are safely out of this place. It would still leave them unable to use their magic, but the important part is that they won't get killed when they will step out of the Beacon.\""
           - source: scene_text_2
             paragraph: 3
             text: "\"Yes, that is exactly what we need!\" Kate says. \"Thank you! There was also something else I wanted to talk to you about. You should stop telling the other orphans about your escape plan. We've been tricked before, by someone who made a similar offer, and many are now reluctant to trust any of the caretakers because of that. If you're not careful, someone is going to report you to the higher ups, and the escape plan will be ruined. I have a plan on how to convince them to trust you, but you will need to give me some time. Come back tomorrow, and we'll talk more about this.\"\r\n\r\n\"Very well,\" the lessathi says. \"I must leave you now, in order to tend to my daily tasks. We will talk again tomorrow.\"\r\n\r\n\"Finally!\" Arraka says. \"I thought they'd never shut up. Now let's move on to the events that actually matter.\""
-        condition: b2_ch11_skip1 = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11b_olivia
-      - texts:
+      - condition: b2_ch11_skip1 = 1
+        texts:
           - source: scene_text
             paragraph: 4
             text: "\"I suppose it would be better to skip it, then.\"\r\n\r\n\"A fine choice,\" Arraka says. \"Let's get out of here.\""
-        condition: b2_ch11_skip1 = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11b_olivia
-      - texts:
+      - condition: b2_ch11_skip1 = 2
+        texts:
           - source: scene_text
             paragraph: 5
             text: "\"Could you show me Diane's discussion with her brother, instead, then?\"\r\n\r\n\"I suppose...\" Arraka says. \"I'm not exactly sure how relevant it's going to be, but at least it shouldn't be a complete waste of our time.\"\r\n\r\nInstead of the scenery changing, this time, we remain in the same room, but Diane is no longer standing where she was before, and it seems that she has a new visitor. This person, who is currently talking with Diane, is a boy in his late teens, with short, blond hair, which I assume is her brother, Jason. His overall physique is not very impressive, but the look in his eyes is much more mature than one would expect from a boy of his age. He looks like the sort of guy who is very confident in his abilities and who knows exactly what he wants. Just like his sister, he is also wearing a collar around his neck, and he is dressed in rags.\r\n\r\n\"Diane,\" Jason says, \"I've told you many times before that you should take everything Kate tells you with a grain of salt. I know that she is your best friend, but that girl is way too trusting for her own good. When you put so much trust into people, it hurts that much more when you inevitably get betrayed. Mark my words, one day, she will get betrayed so badly, that she will never want to trust anyone ever again, and when that happens, you won't be able to tell me that I didn't warn you...\"\r\n\r\n\"So, you're saying, what... that she should be more like you?\" Diane says. \"Ever since I've known you, you've never trusted anyone other than yourself. How is that any better?\""
@@ -66,7 +67,6 @@ scenes:
           - source: scene_3
             paragraph: 3
             text: "\"You know I don't like it when you talk like this...\" Diane says. \"I thought that our goal was to escape this place. Why would we care about the lessathi world, and how they change for the better? Let them rot, for all I care! I only want to be free of this nightmare, so we can live the rest of our lives in peace together. All three of us.\"\r\n\r\n\"And we will!\" Jason says. \"What I'm doing is for the sake of all of us. Kate included. You'll understand when you're older.\"\r\n\r\n\"You always say this!\" Diane says. \"What about Kate's plan, regarding the lessathi caretaker? Are you at least going to consider it?\"\r\n\r\n\"I'll... think about it,\" Jason says. \"Anyway, I need to get going. If I stay too much here, the guards will start to think that we're plotting something. Take care!\"\r\n\r\n\"Well that was, uh... interesting,\" Arraka says. \"Anyway, let's get back to the stuff that's actually somewhat relevant to this ritual.\""
-        condition: b2_ch11_skip1 = 2
         choices:
           - position: 1
             text: Continue
@@ -92,7 +92,8 @@ scenes:
               current_scene: b2_ch11b_malnourished
   - name: b2_ch11b_malnourished
     routes:
-      - texts:
+      - condition: b2_ch11_skip1 = 2
+        texts:
           - source: scene_text
             paragraph: 7
             text: "The orphans are all dressed in the same type of gray rags, and most of them have very tired looks on their faces, as if this place has sucked the life right out of them. They also appear to be very malnourished, and some of them have bruises all over their bodies. The ages of the orphans seem to be no higher than nineteen, and no lower than four, but most of them are aged between six and fifteen years old. The only orphans who are not lined up with the others are Diane and her brother. They are instead standing near the lessathi, likely due to their bodyguard status.\r\n\r\nThe lessathi are currently talking among themselves, but the orphans are all dead silent, and awaiting impatiently for the meeting to begin. From the looks of things, it seems that the lessathi are still waiting for one or two more of their colleagues to arrive, before announcing to everyone the reason why they called them here. \r\n\r\n\"Really?...\" I tell Arraka, after we wait for about ten more seconds. \"You couldn't have brought us any closer in time to the beginning of the meeting? How much longer are we supposed to wait, here?\""
@@ -121,7 +122,6 @@ scenes:
           - source: scene_3
             paragraph: 5
             text: "\"Well, at this moment, you are the one bombarding ME with too much information!\" I say. \"What do you mean the lessathi have an aura that resonates strongly with the Magium? Am I not a lessathi too? Or a half-lessathi, whatever. Are you trying to tell me that I already had the Magium with me all along? Because it sure as hell doesn't feel like it to me!\"\r\n\r\n\"Of course not,\" Arraka says. \"What kind of logic is that? Wasn't the exact wording of the tournament organizers that they would give you 'access' to the Magium if you win? That has nothing to do with simply having an affinity towards it. Leaving aside the fact that you are probably getting far less information from the Magium than a regular lessathi, due to being half human, most of that information is completely useless to you, because you have no way to process it. On the other hand, if you have a way to access the Magium directly, from the earthen plane, then that natural affinity of yours will suddenly become a lot more useful. The lessathi on this continent already HAVE direct access to the Magium. That's why an affinity to it would be helpful for them. But again, this is all just a theory, until I make my test.\""
-        condition: b2_ch11_skip1 = 2
         choices:
           - position: 1
             text: What kind of test are you talking about?
@@ -140,7 +140,8 @@ scenes:
             effects:
               - set:
                   current_scene: b2_ch11b_subconsciously
-      - texts:
+      - condition: b2_ch11_skip1 <> 2
+        texts:
           - source: scene_text
             paragraph: 8
             text: "The orphans are all dressed in the same type of gray rags, and most of them have very tired looks on their faces, as if this place has sucked the life right out of them. They also appear to be very malnourished, and some of them have bruises all over their bodies. The ages of the orphans seem to be no higher than nineteen, and no lower than four, but most of them are aged between six and fifteen years old. The only orphans who are not lined up with the others are Diane and a boy in his late teens, with short, blond hair, who I assume is her brother, Jason. They are instead standing near the lessathi, likely due to their bodyguard status.\r\n\r\nJason's overall physique is not very impressive, but the look in his eyes is much more mature than one would expect from a boy of his age. He looks like the sort of guy who is very confident in his abilities and who knows exactly what he wants. Just like Diane, he is also wearing a collar around his neck, and he is dressed in the same gray rags as all the other orphans.\r\n\r\nThe lessathi are currently talking among themselves, but the orphans are all dead silent, and awaiting impatiently for the meeting to begin. From the looks of things, it seems that the lessathi are still waiting for one or two more of their colleagues to arrive, before announcing to everyone the reason why they called them here. \r\n\r\n\"Really?...\" I tell Arraka, after we wait for about ten more seconds. \"You couldn't have brought us any closer in time to the beginning of the meeting? How much longer are we supposed to wait, here?\""
@@ -169,7 +170,6 @@ scenes:
           - source: scene_3
             paragraph: 5
             text: "\"Well, at this moment, you are the one bombarding ME with too much information!\" I say. \"What do you mean the lessathi have an aura that resonates strongly with the Magium? Am I not a lessathi too? Or a half-lessathi, whatever. Are you trying to tell me that I already had the Magium with me all along? Because it sure as hell doesn't feel like it to me!\"\r\n\r\n\"Of course not,\" Arraka says. \"What kind of logic is that? Wasn't the exact wording of the tournament organizers that they would give you 'access' to the Magium if you win? That has nothing to do with simply having an affinity towards it. Leaving aside the fact that you are probably getting far less information from the Magium than a regular lessathi, due to being half human, most of that information is completely useless to you, because you have no way to process it. On the other hand, if you have a way to access the Magium directly, from the earthen plane, then that natural affinity of yours will suddenly become a lot more useful. The lessathi on this continent already HAVE direct access to the Magium. That's why an affinity to it would be helpful for them. But again, this is all just a theory, until I make my test.\""
-        condition: b2_ch11_skip1 <> 2
         choices:
           - position: 1
             text: What kind of test are you talking about?
@@ -288,7 +288,8 @@ scenes:
               b2_ch11_skip2: 1
   - name: b2_ch11b_individual
     routes:
-      - texts:
+      - condition: b2_ch11_skip2 = 0
+        texts:
           - source: scene_text
             paragraph: 14
             text: "\"Then how about bringing us to the actual start of the lessathi meeting?\" I say. \"We've been wasting enough time here as it is.\"\r\n\r\n\"Yes, I was just about to do that,\" Arraka says.\r\n\r\nShe then accelerates the time, until the last of the lessathi finally make their way into the hallway, to join their colleagues. Once everyone is assembled, the meeting finally begins.\r\n\r\n\"You may all be wondering why we've called you here...\" says a lessathi with gray hair and a long gray beard, who appears to be in his late fifties. \"I will try to keep this brief. It has been brought to our attention that a few of you have been approached by a certain individual, offering to help you escape from our facility. As you all know, the rules state that if someone were to make such an offer, you would immediately be obligated to notify us about it. Unfortunately, not only has this rule not been followed properly, but there have also been a few cases where some children agreed to escape. Needless to say, we are very disappointed. Therefore, this meeting has been called for two main reasons.\""
@@ -298,14 +299,14 @@ scenes:
           - source: scene_3
             paragraph: 8
             text: "After a few seconds of waiting, a six year old boy and a ten year old girl step slowly away from the line of orphans, and they go to join the lessathi in front of them. The girl has a very scared look on her face, and the boy is on the verge of breaking down into tears.\r\n\r\n\"You have made a wise decision to come here,\" the bearded lessathi says, as he puts his hands on both their shoulders. \"Taking responsibility for your mistakes is an important step forward, towards your re-education. However, you are not the only ones who were ready to leave this place, together with the traitor. I am still waiting for them to turn themselves in. I assure you that it would not be in your best interest to keep me waiting for much longer...\"\r\n\r\nAs the whole room stays silent, I can see that Kate's whole body is now shivering uncontrollably from fear, while she is hugging herself, with her arms, in a futile attempt to stop herself from trembling. After waiting for about ten more seconds, the lessathi shakes his head in disapproval.\r\n\r\n\"I was hoping that it would not come to this...\" the lessathi says. \"Very well, then. If you insist on disobeying us even now, then I have no choice but to call your names myself. First of all, I would like to introduce to you the person who has played the most crucial role in allowing us to find all of the culprits. Olivia, will you please step forward?\""
-        condition: b2_ch11_skip2 = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11b_secretly
-      - texts:
+      - condition: b2_ch11_skip2 = 1
+        texts:
           - source: scene_text
             paragraph: 15
             text: "\"Can we just skip directly to the important parts, then?\"\r\n\r\n\"This IS one of the important parts,\" Arraka says. \"Although I suppose there's a discussion between Kate and her friend that could technically be skipped later on, without losing too much context. Let me just fast-forward all the way to the beginning of this meeting, because I'm starting to lose my patience, here.\"\r\n\r\nShe then accelerates the time, until the last of the lessathi finally make their way into the hallway, to join their colleagues. Once everyone is assembled, the meeting finally begins.\r\n\r\n\"You may all be wondering why we've called you here...\" says a lessathi with gray hair and a long gray beard, who appears to be in his late fifties. \"I will try to keep this brief. It has been brought to our attention that a few of you have been approached by a certain individual, offering to help you escape from our facility. As you all know, the rules state that if someone were to make such an offer, you would immediately be obligated to notify us about it. Unfortunately, not only has this rule not been followed properly, but there have also been a few cases where some children agreed to escape. Needless to say, we are very disappointed. Therefore, this meeting has been called for two main reasons.\""
@@ -315,7 +316,6 @@ scenes:
           - source: scene_3
             paragraph: 8
             text: "After a few seconds of waiting, a six year old boy and a ten year old girl step slowly away from the line of orphans, and they go to join the lessathi in front of them. The girl has a very scared look on her face, and the boy is on the verge of breaking down into tears.\r\n\r\n\"You have made a wise decision to come here,\" the bearded lessathi says, as he puts his hands on both their shoulders. \"Taking responsibility for your mistakes is an important step forward, towards your re-education. However, you are not the only ones who were ready to leave this place, together with the traitor. I am still waiting for them to turn themselves in. I assure you that it would not be in your best interest to keep me waiting for much longer...\"\r\n\r\nAs the whole room stays silent, I can see that Kate's whole body is now shivering uncontrollably from fear, while she is hugging herself, with her arms, in a futile attempt to stop herself from trembling. After waiting for about ten more seconds, the lessathi shakes his head in disapproval.\r\n\r\n\"I was hoping that it would not come to this...\" the lessathi says. \"Very well, then. If you insist on disobeying us even now, then I have no choice but to call your names myself. First of all, I would like to introduce to you the person who has played the most crucial role in allowing us to find all of the culprits. Olivia, will you please step forward?\""
-        condition: b2_ch11_skip2 = 1
         choices:
           - position: 1
             text: Continue
@@ -440,14 +440,22 @@ scenes:
               current_scene: b2_ch11b_convincing
   - name: b2_ch11b_convincing
     routes:
-      - texts:
+      - condition: b2_ch11_skip2 = 0
+        texts:
           - source: scene_text
             paragraph: 22
             text: "\"Ah!\" Arraka says. \"I think I get it now. What she needs to do to complete the ritual is to no longer intervene, and to let that caretaker rescue only the children that he got to save in the original timeline. That's going to take her a while to figure out, I guess... Alright, let's move on to the next scene.\"\r\n\r\nWe are then transported into Diane's room, where we see Kate trying yet again to convince her friend that she knows some information from the future, and that they can escape the Beacon together.\r\n\r\n\"This isn't the first time I've been sent back...\" Kate says. \"I can prove to you that I'm coming from the future. I know exactly when the caretakers will be bringing our meals, and what we will have for breakfast. I know when the caretaker who wants to help us escape will contact us, and I know what he will say. I know many things. And I also know that Olivia is an informant to the lessathi... We can't let her know about our escape plan, or she will tell them immediately. I'm going to try and convince the others myself, but you need to be the one to tell your brother about this. He won't trust anyone else...\"\r\n\r\n\"If you're really serious about those things you said,\" Diane says, \"then give me a list of everything you know, and I'll make sure to give it to Jason as soon as possible. I'm sure he would be much more inclined to take you seriously if he sees the proof with his own eyes.\"\r\n\r\n\"Don't worry,\" Kate says. \"You'll have the list. I'm going to make sure that everything goes right this time. I won't fail again!\""
           - source: scene_text_2
             paragraph: 15
             text: "\"Oh, she will fail again!\" Arraka says. \"Have no doubt about that. Let's see if we can speed things up a bit, because there are going to be a lot of rescue attempts to go through.\"\r\n\r\nShe then began to show me the key events that happened next, except this time around, all of the actions were summarized much more succinctly, in order to be able to paint a larger picture.\r\n\r\nFor the first few attempts, Kate tried to focus on two things: getting the elementalist siblings on her side, and trying to convince the other orphans to follow her escape plan, without letting Olivia know.\r\n\r\nEvery time when she was flung back in time, Kate would try to convince Diane and her brother that she was coming from the future, by letting them know about very specific things that were going to happen, before they happened. This was enough to convince Diane, but Jason was always skeptical, no matter how many details she was providing to them, and he thought that she was either using tricks to find out the information, or getting some really lucky guesses."
-        condition: b2_ch11_skip2 = 0
+          - source: scene_3
+            paragraph: 13
+            text: "Convincing the other orphans to follow her rescue plan was even harder, because she couldn't risk telling them about her travels through time, out of fear that they might give this information to the lessathi. Since she couldn't really provide any genuine proof that the lessathi caretaker trying to help them was actually trustworthy, the children would only get more suspicious every time she insisted that there was nothing to worry about. Therefore, by the end of the day, Kate would either get ratted out to the lessathi by one of the orphans, or she would simply get sent back in time, without making any notable progress.\r\n\r\nIt took Kate many tries to finally find a way to get everyone on her side, and to enact their escape plan flawlessly, but what she didn't know was that this was only the beginning of her trial, since saving the orphans was the exact opposite of what she needed to do, if she wanted to complete her ritual. \r\n\r\n\"Wow...\" I say, as we are now watching Kate struggling to find a way out of her time loop. \"I didn't expect her to repeat the ritual so many times. She must have spent at least a few weeks in this place, if not more. How much time has passed in the real world, while Kate's been doing all this stuff?\"\r\n\r\n\"Probably only a few minutes or so,\" Arraka says. \"Time flows completely differently, in each of these worlds that you people were sent to. The dwarf, the mute girl, and the revenant already finished their rituals. The healer is still busy with his, though.\""
+            condition: ch11_saved_rose = 0
+          - source: scene_3
+            paragraph: 14
+            text: "Convincing the other orphans to follow her rescue plan was even harder, because she couldn't risk telling them about her travels through time, out of fear that they might give this information to the lessathi. Since she couldn't really provide any genuine proof that the lessathi caretaker trying to help them was actually trustworthy, the children would only get more suspicious every time she insisted that there was nothing to worry about. Therefore, by the end of the day, Kate would either get ratted out to the lessathi by one of the orphans, or she would simply get sent back in time, without making any notable progress.\r\n\r\nIt took Kate many tries to finally find a way to get everyone on her side, and to enact their escape plan flawlessly, but what she didn't know was that this was only the beginning of her trial, since saving the orphans was the exact opposite of what she needed to do, if she wanted to complete her ritual. \r\n\r\n\"Wow...\" I say, as we are now watching Kate struggling to find a way out of her time loop. \"I didn't expect her to repeat the ritual so many times. She must have spent at least a few weeks in this place, if not more. How much time has passed in the real world, while Kate's been doing all this stuff?\"\r\n\r\n\"Probably only a few minutes or so,\" Arraka says. \"Time flows completely differently, in each of these worlds that you people were sent to. The dwarf and the mute girl already finished their rituals. The healer and the herbalist are still busy with theirs, though.\""
+            condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Continue
@@ -458,7 +466,8 @@ scenes:
               - set:
                   current_scene: b2_ch11b_switching
                 condition: ch11_saved_rose = 1
-      - texts:
+      - condition: b2_ch11_skip2 = 1
+        texts:
           - source: scene_text
             paragraph: 23
             text: >-
@@ -471,7 +480,14 @@ scenes:
           - source: scene_text_2
             paragraph: 16
             text: "She then began to show me the key events that happened next, except this time around, all of the actions were summarized much more succinctly, in order to be able to paint a larger picture.\r\n\r\nFor the first few attempts, Kate tried to focus on two things: getting the elementalist siblings on her side, and trying to convince the other orphans to follow her escape plan, without letting Olivia know.\r\n\r\nEvery time when she was flung back in time, Kate would try to convince Diane and her brother that she was coming from the future, by letting them know about very specific things that were going to happen, before they happened. This was enough to convince Diane, but Jason was always skeptical, no matter how many details she was providing to them, and he thought that she was either using tricks to find out the information, or getting some really lucky guesses."
-        condition: b2_ch11_skip2 = 1
+          - source: scene_3
+            paragraph: 13
+            text: "Convincing the other orphans to follow her rescue plan was even harder, because she couldn't risk telling them about her travels through time, out of fear that they might give this information to the lessathi. Since she couldn't really provide any genuine proof that the lessathi caretaker trying to help them was actually trustworthy, the children would only get more suspicious every time she insisted that there was nothing to worry about. Therefore, by the end of the day, Kate would either get ratted out to the lessathi by one of the orphans, or she would simply get sent back in time, without making any notable progress.\r\n\r\nIt took Kate many tries to finally find a way to get everyone on her side, and to enact their escape plan flawlessly, but what she didn't know was that this was only the beginning of her trial, since saving the orphans was the exact opposite of what she needed to do, if she wanted to complete her ritual. \r\n\r\n\"Wow...\" I say, as we are now watching Kate struggling to find a way out of her time loop. \"I didn't expect her to repeat the ritual so many times. She must have spent at least a few weeks in this place, if not more. How much time has passed in the real world, while Kate's been doing all this stuff?\"\r\n\r\n\"Probably only a few minutes or so,\" Arraka says. \"Time flows completely differently, in each of these worlds that you people were sent to. The dwarf, the mute girl, and the revenant already finished their rituals. The healer is still busy with his, though.\""
+            condition: ch11_saved_rose = 0
+          - source: scene_3
+            paragraph: 14
+            text: "Convincing the other orphans to follow her rescue plan was even harder, because she couldn't risk telling them about her travels through time, out of fear that they might give this information to the lessathi. Since she couldn't really provide any genuine proof that the lessathi caretaker trying to help them was actually trustworthy, the children would only get more suspicious every time she insisted that there was nothing to worry about. Therefore, by the end of the day, Kate would either get ratted out to the lessathi by one of the orphans, or she would simply get sent back in time, without making any notable progress.\r\n\r\nIt took Kate many tries to finally find a way to get everyone on her side, and to enact their escape plan flawlessly, but what she didn't know was that this was only the beginning of her trial, since saving the orphans was the exact opposite of what she needed to do, if she wanted to complete her ritual. \r\n\r\n\"Wow...\" I say, as we are now watching Kate struggling to find a way out of her time loop. \"I didn't expect her to repeat the ritual so many times. She must have spent at least a few weeks in this place, if not more. How much time has passed in the real world, while Kate's been doing all this stuff?\"\r\n\r\n\"Probably only a few minutes or so,\" Arraka says. \"Time flows completely differently, in each of these worlds that you people were sent to. The dwarf and the mute girl already finished their rituals. The healer and the herbalist are still busy with theirs, though.\""
+            condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Continue
@@ -482,28 +498,6 @@ scenes:
               - set:
                   current_scene: b2_ch11b_switching
                 condition: ch11_saved_rose = 1
-      - texts:
-          - source: scene_3
-            paragraph: 13
-            text: "Convincing the other orphans to follow her rescue plan was even harder, because she couldn't risk telling them about her travels through time, out of fear that they might give this information to the lessathi. Since she couldn't really provide any genuine proof that the lessathi caretaker trying to help them was actually trustworthy, the children would only get more suspicious every time she insisted that there was nothing to worry about. Therefore, by the end of the day, Kate would either get ratted out to the lessathi by one of the orphans, or she would simply get sent back in time, without making any notable progress.\r\n\r\nIt took Kate many tries to finally find a way to get everyone on her side, and to enact their escape plan flawlessly, but what she didn't know was that this was only the beginning of her trial, since saving the orphans was the exact opposite of what she needed to do, if she wanted to complete her ritual. \r\n\r\n\"Wow...\" I say, as we are now watching Kate struggling to find a way out of her time loop. \"I didn't expect her to repeat the ritual so many times. She must have spent at least a few weeks in this place, if not more. How much time has passed in the real world, while Kate's been doing all this stuff?\"\r\n\r\n\"Probably only a few minutes or so,\" Arraka says. \"Time flows completely differently, in each of these worlds that you people were sent to. The dwarf, the mute girl, and the revenant already finished their rituals. The healer is still busy with his, though.\""
-        condition: ch11_saved_rose = 0
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11b_denial
-      - texts:
-          - source: scene_3
-            paragraph: 14
-            text: "Convincing the other orphans to follow her rescue plan was even harder, because she couldn't risk telling them about her travels through time, out of fear that they might give this information to the lessathi. Since she couldn't really provide any genuine proof that the lessathi caretaker trying to help them was actually trustworthy, the children would only get more suspicious every time she insisted that there was nothing to worry about. Therefore, by the end of the day, Kate would either get ratted out to the lessathi by one of the orphans, or she would simply get sent back in time, without making any notable progress.\r\n\r\nIt took Kate many tries to finally find a way to get everyone on her side, and to enact their escape plan flawlessly, but what she didn't know was that this was only the beginning of her trial, since saving the orphans was the exact opposite of what she needed to do, if she wanted to complete her ritual. \r\n\r\n\"Wow...\" I say, as we are now watching Kate struggling to find a way out of her time loop. \"I didn't expect her to repeat the ritual so many times. She must have spent at least a few weeks in this place, if not more. How much time has passed in the real world, while Kate's been doing all this stuff?\"\r\n\r\n\"Probably only a few minutes or so,\" Arraka says. \"Time flows completely differently, in each of these worlds that you people were sent to. The dwarf and the mute girl already finished their rituals. The healer and the herbalist are still busy with theirs, though.\""
-        condition: ch11_saved_rose = 1
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11b_switching
   - name: b2_ch11b_denial
     texts:
       - source: scene_text
@@ -666,7 +660,8 @@ scenes:
               current_scene: b2_ch11b_uneasy
   - name: b2_ch11b_scared
     routes:
-      - texts:
+      - condition: ch11_saved_slave <> 3
+        texts:
           - source: scene_text
             paragraph: 31
             text: "\"If you think she's scared now, then you should have seen her earlier...\"\r\n\r\n\"Well, I'll be damned...\" Hadrik says. \"Now I'm starting to regret that I wasn't there with you guys in your ritual. Mine was boring, in comparison.\"\r\n\r\n\"Actually it wasn't our ritual, it was--\" I start to say, but I get interrupted by Arraka.\r\n\r\n\"Oh, your ritual was boring, you say!\" Arraka says, loudly, so that she drowns out my voice. \"Are you sure you're not trying to hide something? Because the way I remember your ritual, it was anything but boring...\"\r\n\r\n\"What do you know about my ritual?...\" Hadrik says, as he regains the uneasiness from before in his eyes.\r\n\r\n\"More than you think, dwarf,\" Arraka says. \"And I'm not talking only about your trial from the God of Time. I've looked through some of your memories too, since they were pretty much out in the open, when you were trapped in there. I saw some very interesting things, while I was looking through the memories that were related to your ritual. Want me to tell you what I found out?\""
@@ -676,14 +671,14 @@ scenes:
           - source: scene_3
             paragraph: 19
             text: "\"Nah,\" Arraka says. \"There were just too many of them for me to have time to see them all. Well, anyway, it's pretty obvious that his ritual wasn't all sunshine and rainbows either, but I guess we're just going to have to wait until he feels like telling us about it, if we want to find out what it was. Personally, I don't mind all that much. It's not like we don't have anything better to do at this point than to listen to his sob story, you know what I'm saying?\"\r\n\r\nNot long after we finish our conversation, Daren's eyes lose their bright yellow color, as he finally exits his trance as well. From the look on his face, I can easily tell that he's pretty upset.\r\n\r\n\"Oh, look, the healer is out!\" Arraka says. \"How's it going, Daren? Had fun in your ritual?\"\r\n\r\nDaren chooses to completely ignore Arraka's question, and he turns to me, instead."
-        condition: ch11_saved_slave <> 3
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11b_fatigue
-      - texts:
+      - condition: ch11_saved_slave = 3
+        texts:
           - source: scene_text
             paragraph: 31
             text: "\"If you think she's scared now, then you should have seen her earlier...\"\r\n\r\n\"Well, I'll be damned...\" Hadrik says. \"Now I'm starting to regret that I wasn't there with you guys in your ritual. Mine was boring, in comparison.\"\r\n\r\n\"Actually it wasn't our ritual, it was--\" I start to say, but I get interrupted by Arraka.\r\n\r\n\"Oh, your ritual was boring, you say!\" Arraka says, loudly, so that she drowns out my voice. \"Are you sure you're not trying to hide something? Because the way I remember your ritual, it was anything but boring...\"\r\n\r\n\"What do you know about my ritual?...\" Hadrik says, as he regains the uneasiness from before in his eyes.\r\n\r\n\"More than you think, dwarf,\" Arraka says. \"And I'm not talking only about your trial from the God of Time. I've looked through some of your memories too, since they were pretty much out in the open, when you were trapped in there. I saw some very interesting things, while I was looking through the memories that were related to your ritual. Want me to tell you what I found out?\""
@@ -693,7 +688,6 @@ scenes:
           - source: scene_3
             paragraph: 20
             text: "\"Nah,\" Arraka says. \"There were just too many of them for me to have time to see them all. Well, anyway, it's pretty obvious that his ritual wasn't all sunshine and rainbows either, but I guess we're just going to have to wait until he feels like telling us about it, if we want to find out what it was. Personally, I don't mind all that much. It's not like we don't have anything better to do at this point than to listen to his sob story, you know what I'm saying?\"\r\n\r\nNot long after we finish our conversation, Daren's eyes lose their bright yellow color, as he finally exits his trance as well. The look that he has now on his face is darker than it's ever been before. And I'm not surprised. From his perspective, it was probably only a few moments ago that he had to willingly let the slave girl die in front of his eyes, so he could complete his trial.\r\n\r\n\"Oh, look, the healer is out!\" Arraka says. \"How's it going, Daren? Had fun in your ritual?\"\r\n\r\nDaren chooses to completely ignore Arraka's question, and he turns to me, instead."
-        condition: ch11_saved_slave = 3
         choices:
           - position: 1
             text: Continue
@@ -702,7 +696,8 @@ scenes:
                   current_scene: b2_ch11b_fatigue
   - name: b2_ch11b_panicking
     routes:
-      - texts:
+      - condition: ch11_saved_slave <> 3
+        texts:
           - source: scene_text
             paragraph: 32
             text: "\"Trust me, if you'd have gone through what we just did, you'd be panicking like that too.\"\r\n\r\n\"Well, you know me, Barry,\" Hadrik says. \"Even if I'm scared out of my wits, I still could never pass up a good challenge!\"\r\n\r\n\"Is that so?\" Arraka says. \"In that case you must have absolutely loved your ritual! Because from what I saw, to say that your trial was a challenge would be quite an understatement.\"\r\n\r\n\"What do you know about my ritual?...\" Hadrik says, as he regains the uneasiness from before in his eyes.\r\n\r\n\"More than you think, dwarf,\" Arraka says. \"And I'm not talking only about your trial from the God of Time. I've looked through some of your memories too, since they were pretty much out in the open, when you were trapped in there. I saw some very interesting things, while I was looking through the memories that were related to your ritual. Want me to tell you what I found out?\""
@@ -712,24 +707,23 @@ scenes:
           - source: scene_3
             paragraph: 19
             text: "\"Nah,\" Arraka says. \"There were just too many of them for me to have time to see them all. Well, anyway, it's pretty obvious that his ritual wasn't all sunshine and rainbows either, but I guess we're just going to have to wait until he feels like telling us about it, if we want to find out what it was. Personally, I don't mind all that much. It's not like we don't have anything better to do at this point than to listen to his sob story, you know what I'm saying?\"\r\n\r\nNot long after we finish our conversation, Daren's eyes lose their bright yellow color, as he finally exits his trance as well. From the look on his face, I can easily tell that he's pretty upset.\r\n\r\n\"Oh, look, the healer is out!\" Arraka says. \"How's it going, Daren? Had fun in your ritual?\"\r\n\r\nDaren chooses to completely ignore Arraka's question, and he turns to me, instead."
-        condition: ch11_saved_slave <> 3
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11b_fatigue
-      - texts:
+      - condition: ch11_saved_slave = 3
+        texts:
+          - source: scene_text
+            paragraph: 32
+            text: "\"Trust me, if you'd have gone through what we just did, you'd be panicking like that too.\"\r\n\r\n\"Well, you know me, Barry,\" Hadrik says. \"Even if I'm scared out of my wits, I still could never pass up a good challenge!\"\r\n\r\n\"Is that so?\" Arraka says. \"In that case you must have absolutely loved your ritual! Because from what I saw, to say that your trial was a challenge would be quite an understatement.\"\r\n\r\n\"What do you know about my ritual?...\" Hadrik says, as he regains the uneasiness from before in his eyes.\r\n\r\n\"More than you think, dwarf,\" Arraka says. \"And I'm not talking only about your trial from the God of Time. I've looked through some of your memories too, since they were pretty much out in the open, when you were trapped in there. I saw some very interesting things, while I was looking through the memories that were related to your ritual. Want me to tell you what I found out?\""
           - source: scene_text_2
             paragraph: 22
             text: "\"You're bluffing,\" Hadrik says, as I see him starting to sweat a little. \"You're just trying to bait me into giving the information away myself. How stupid do you think I am?\"\r\n\r\n\"Well, I don't know, dwarf...\" Arraka says. \"How stupid are you?\"\r\n\r\nFor the next few seconds, the two of them remain completely silent, as Hadrik watches Arraka's amulet intensely, while a few more drops of sweat form on his forehead.\r\n\r\n\"But seriously, though, I was only joking,\" Arraka says, all of a sudden. \"I have absolutely no idea what was going on in your ritual. The only reason why I said all that was because you pissed me off, and I wanted to make you sweat like a pig. Who's the one panicking now, eh? Aha- Ahahahahahaha!\"\r\n\r\n\"Blasted old hag...\" Hadrik says, as he relaxes a little.\r\n\r\n\"So, you really didn't get to see Hadrik's ritual, then?\" I ask Arraka."
           - source: scene_3
             paragraph: 20
             text: "\"Nah,\" Arraka says. \"There were just too many of them for me to have time to see them all. Well, anyway, it's pretty obvious that his ritual wasn't all sunshine and rainbows either, but I guess we're just going to have to wait until he feels like telling us about it, if we want to find out what it was. Personally, I don't mind all that much. It's not like we don't have anything better to do at this point than to listen to his sob story, you know what I'm saying?\"\r\n\r\nNot long after we finish our conversation, Daren's eyes lose their bright yellow color, as he finally exits his trance as well. The look that he has now on his face is darker than it's ever been before. And I'm not surprised. From his perspective, it was probably only a few moments ago that he had to willingly let the slave girl die in front of his eyes, so he could complete his trial.\r\n\r\n\"Oh, look, the healer is out!\" Arraka says. \"How's it going, Daren? Had fun in your ritual?\"\r\n\r\nDaren chooses to completely ignore Arraka's question, and he turns to me, instead."
-          - source: scene_text
-            paragraph: 32
-            text: "\"Trust me, if you'd have gone through what we just did, you'd be panicking like that too.\"\r\n\r\n\"Well, you know me, Barry,\" Hadrik says. \"Even if I'm scared out of my wits, I still could never pass up a good challenge!\"\r\n\r\n\"Is that so?\" Arraka says. \"In that case you must have absolutely loved your ritual! Because from what I saw, to say that your trial was a challenge would be quite an understatement.\"\r\n\r\n\"What do you know about my ritual?...\" Hadrik says, as he regains the uneasiness from before in his eyes.\r\n\r\n\"More than you think, dwarf,\" Arraka says. \"And I'm not talking only about your trial from the God of Time. I've looked through some of your memories too, since they were pretty much out in the open, when you were trapped in there. I saw some very interesting things, while I was looking through the memories that were related to your ritual. Want me to tell you what I found out?\""
-        condition: ch11_saved_slave = 3
         choices:
           - position: 1
             text: Continue
@@ -738,7 +732,8 @@ scenes:
                   current_scene: b2_ch11b_fatigue
   - name: b2_ch11b_uneasy
     routes:
-      - texts:
+      - condition: ch11_saved_slave <> 3
+        texts:
           - source: scene_text
             paragraph: 33
             text: "\"Actually, you have a pretty uneasy look too. Did something happen during your ritual?\"\r\n\r\n\"Well, the only thing that happened during my ritual was that there were not enough battles,\" Hadrik says. \"I was expecting more of a challenge, you know? That's why it was sort of a letdown.\"\r\n\r\n\"Oh, you were expecting more of a challenge, dwarf?\" Arraka says. \"That's funny, because that's not the way it seemed to me, from what I saw during your ritual.\"\r\n\r\n\"What do you know about my ritual?...\" Hadrik says, as he regains the uneasiness from before in his eyes.\r\n\r\n\"More than you think, dwarf,\" Arraka says. \"And I'm not talking only about your trial from the God of Time. I've looked through some of your memories too, since they were pretty much out in the open, when you were trapped in there. I saw some very interesting things, while I was looking through the memories that were related to your ritual. Want me to tell you what I found out?\""
@@ -748,24 +743,23 @@ scenes:
           - source: scene_3
             paragraph: 19
             text: "\"Nah,\" Arraka says. \"There were just too many of them for me to have time to see them all. Well, anyway, it's pretty obvious that his ritual wasn't all sunshine and rainbows either, but I guess we're just going to have to wait until he feels like telling us about it, if we want to find out what it was. Personally, I don't mind all that much. It's not like we don't have anything better to do at this point than to listen to his sob story, you know what I'm saying?\"\r\n\r\nNot long after we finish our conversation, Daren's eyes lose their bright yellow color, as he finally exits his trance as well. From the look on his face, I can easily tell that he's pretty upset.\r\n\r\n\"Oh, look, the healer is out!\" Arraka says. \"How's it going, Daren? Had fun in your ritual?\"\r\n\r\nDaren chooses to completely ignore Arraka's question, and he turns to me, instead."
-        condition: ch11_saved_slave <> 3
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11b_fatigue
-      - texts:
+      - condition: ch11_saved_slave = 3
+        texts:
+          - source: scene_text
+            paragraph: 33
+            text: "\"Actually, you have a pretty uneasy look too. Did something happen during your ritual?\"\r\n\r\n\"Well, the only thing that happened during my ritual was that there were not enough battles,\" Hadrik says. \"I was expecting more of a challenge, you know? That's why it was sort of a letdown.\"\r\n\r\n\"Oh, you were expecting more of a challenge, dwarf?\" Arraka says. \"That's funny, because that's not the way it seemed to me, from what I saw during your ritual.\"\r\n\r\n\"What do you know about my ritual?...\" Hadrik says, as he regains the uneasiness from before in his eyes.\r\n\r\n\"More than you think, dwarf,\" Arraka says. \"And I'm not talking only about your trial from the God of Time. I've looked through some of your memories too, since they were pretty much out in the open, when you were trapped in there. I saw some very interesting things, while I was looking through the memories that were related to your ritual. Want me to tell you what I found out?\""
           - source: scene_text_2
             paragraph: 22
             text: "\"You're bluffing,\" Hadrik says, as I see him starting to sweat a little. \"You're just trying to bait me into giving the information away myself. How stupid do you think I am?\"\r\n\r\n\"Well, I don't know, dwarf...\" Arraka says. \"How stupid are you?\"\r\n\r\nFor the next few seconds, the two of them remain completely silent, as Hadrik watches Arraka's amulet intensely, while a few more drops of sweat form on his forehead.\r\n\r\n\"But seriously, though, I was only joking,\" Arraka says, all of a sudden. \"I have absolutely no idea what was going on in your ritual. The only reason why I said all that was because you pissed me off, and I wanted to make you sweat like a pig. Who's the one panicking now, eh? Aha- Ahahahahahaha!\"\r\n\r\n\"Blasted old hag...\" Hadrik says, as he relaxes a little.\r\n\r\n\"So, you really didn't get to see Hadrik's ritual, then?\" I ask Arraka."
           - source: scene_3
             paragraph: 20
             text: "\"Nah,\" Arraka says. \"There were just too many of them for me to have time to see them all. Well, anyway, it's pretty obvious that his ritual wasn't all sunshine and rainbows either, but I guess we're just going to have to wait until he feels like telling us about it, if we want to find out what it was. Personally, I don't mind all that much. It's not like we don't have anything better to do at this point than to listen to his sob story, you know what I'm saying?\"\r\n\r\nNot long after we finish our conversation, Daren's eyes lose their bright yellow color, as he finally exits his trance as well. The look that he has now on his face is darker than it's ever been before. And I'm not surprised. From his perspective, it was probably only a few moments ago that he had to willingly let the slave girl die in front of his eyes, so he could complete his trial.\r\n\r\n\"Oh, look, the healer is out!\" Arraka says. \"How's it going, Daren? Had fun in your ritual?\"\r\n\r\nDaren chooses to completely ignore Arraka's question, and he turns to me, instead."
-          - source: scene_text
-            paragraph: 33
-            text: "\"Actually, you have a pretty uneasy look too. Did something happen during your ritual?\"\r\n\r\n\"Well, the only thing that happened during my ritual was that there were not enough battles,\" Hadrik says. \"I was expecting more of a challenge, you know? That's why it was sort of a letdown.\"\r\n\r\n\"Oh, you were expecting more of a challenge, dwarf?\" Arraka says. \"That's funny, because that's not the way it seemed to me, from what I saw during your ritual.\"\r\n\r\n\"What do you know about my ritual?...\" Hadrik says, as he regains the uneasiness from before in his eyes.\r\n\r\n\"More than you think, dwarf,\" Arraka says. \"And I'm not talking only about your trial from the God of Time. I've looked through some of your memories too, since they were pretty much out in the open, when you were trapped in there. I saw some very interesting things, while I was looking through the memories that were related to your ritual. Want me to tell you what I found out?\""
-        condition: ch11_saved_slave = 3
         choices:
           - position: 1
             text: Continue
@@ -774,7 +768,8 @@ scenes:
                   current_scene: b2_ch11b_fatigue
   - name: b2_ch11b_fatigue
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 34
             text: "\"How many are still inside their rituals?\" Daren asks me. \"Only Kate and Rose?\"\r\n\r\n\"Yeah, only Kate and Rose,\" I say. \"You can tell from the glowy eyes. I think that we need to wait for everyone to be done with the first stage, before we can pass on to the next one.\"\r\n\r\n\"I can't say that I'm looking forward to it,\" Daren says. \"Where is the God of Time? Is he still watching us?\"\r\n\r\n\"No, he went back to the magical plane,\" I say. \"He'll come back again at the end of the ritual, according to Arraka.\"\r\n\r\nWhile Daren and I were talking, Kate managed to get out of her trance as well, but the expression she has now on her face is very painful to watch. Leaving aside her strong feelings of sadness and regret that can be easily seen at a first glance, I think it's the look of resignation from her eyes that really shows just how much this ritual has gotten to her. Realizing that she is no longer alone, Kate immediately changes the expression on her face to one of only extreme fatigue, as she asks us the same questions that Daren asked, a few moments ago.\r\n\r\n\"Is everyone else already done with their ritual?\" Kate says. \"And where is the God of Time? I thought he was supposed to oversee these trials until their very end.\""
@@ -784,7 +779,6 @@ scenes:
           - source: scene_3
             paragraph: 21
             text: "\"If you say so,\" Melindra says.\r\n\r\nDaren and Melindra don't get to continue their discussion, because Rose has only just finished her ritual as well, and her eyes are no longer shining with light. When we take a look at her, however, we see that she is still staring right in front of her, without taking notice of us, except that instead of a blank expression on her face, like before, she looks completely horrified.\r\n  \r\n\"Rose...\" Daren says, looking very worried. \"Are you alright?\"\r\n\r\nRose gives no sign of having heard him, and she keeps staring in front of her, without saying a word."
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Continue
@@ -792,7 +786,8 @@ scenes:
               - set:
                   current_scene: b2_ch11c_herbalist
                   storyboard_controls: Jump to frame "Book 2 Chapter 11 c"
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 35
             text: "\"How many are still inside their rituals?\" Daren asks me. \"Only Kate?\"\r\n\r\n\"Yeah, only Kate,\" I say. \"You can tell from the glowy eyes. I think that we need to wait for everyone to be done with the first stage, before we can pass on to the next one.\"\r\n\r\n\"I can't say that I'm looking forward to it,\" Daren says. \"Where is the God of Time? Is he still watching us?\"\r\n\r\n\"No, he went back to the magical plane,\" I say. \"He'll come back again at the end of the ritual, according to Arraka.\"\r\n\r\nWhile Daren and I were talking, Kate managed to get out of her trance as well, but the expression she has now on her face is very painful to watch. Leaving aside her strong feelings of sadness and regret that can be easily seen at a first glance, I think it's the look of resignation from her eyes that really shows just how much this ritual has gotten to her. Realizing that she is no longer alone, Kate immediately changes the expression on her face to one of only extreme fatigue, as she asks us the same questions that Daren asked, a few moments ago.\r\n\r\n\"Is everyone else already done with their ritual?\" Kate says. \"And where is the God of Time? I thought he was supposed to oversee these trials until their very end.\""
@@ -802,7 +797,6 @@ scenes:
           - source: scene_3
             paragraph: 22
             text: "\"If you say so,\" Melindra says.\r\n\r\n\"If you're looking to sabotage the ritual, then I might be able to offer some assistance,\" we hear Rose's voice all of a sudden.\r\n\r\nWe'd all been ignoring the revenant until this point, but now that she spoke to us, everyone's eyes immediately turned to her.\r\n\r\n\"And why would we want any help from you, revenant?\" Daren says, in a disgusted tone.\r\n\r\n\"Because this ritual is as much a problem for me as it is for you,\" the revenant says. \"...And also because as much as I've tried to avoid it, there are traces of your friend Rose within me that will always be a part of who I am. At the very least, I know that Rose would have wanted us to work together, despite our differences, since nothing would have been more important to her in this situation than to make sure that you are safe.\""
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: Continue

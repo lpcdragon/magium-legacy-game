@@ -87,14 +87,14 @@ scenes:
               current_scene: ch6_packing
   - name: ch6_packing
     routes:
-      - texts:
+      - condition: ch2_deer_interaction <> 1 AND ch3_treasure = 0
+        texts:
           - source: scene_text
             paragraph: 327
             text: "Before leaving, I make sure to take with me my spoils of war from this morning's skirmishes: a crossbow from one of the crossbowmen who ambushed us and a few daggers from Cutthroat Dave's men.\r\n\r\nWe join back with Rose, and we set off on our long road ahead. \r\n\r\nShortly after we begin our trip, Daren notices that I've strapped my crossbow to the back of my backpack.\r\n\r\n\"Barry, why aren't you just putting that crossbow inside the backpack, like you did with everything else?\"\r\n\r\n\"Well, because it's already full with all my other stuff.\"\r\n\r\n\"Full? Wait a minute, Barry, you're telling me that the backpack you are carrying with you right now is actually a completely regular one?\"\r\n\r\n\"Well, yeah, enchanted backpacks are really hard to come by if you're not a mage.\""
           - source: scene_text_2
             paragraph: 6
             text: "\"You realize you could have asked me to enchant it for you, right? It literally only takes a few minutes. Here, give me that.\"\r\n\r\nDaren grabs my backpack and enters an enchanting trance. His eyes become yellow and the backpack starts to glow. The fact that Daren specializes on item enchanting had completely slipped my mind. Enchanted backpacks are leagues better than normal ones. They have almost infinite space, and people can't see what's inside them, so they can only steal your stuff if they know exactly what they're looking for. Taking an item out of an enchanted backpack is as simple as focusing on its image, and reaching inside for it.\r\n\r\nRose is looking very interested in the enchanting process. She is now studying Daren closely.\r\n\r\n\"Hey, Barry,\" Daren says. \"Do you want to have your backpack extra secure or should I just leave it like this? If I secure it, then only you will be able to take items out of it. The only downside is that you can't really authorize other persons to take items from your backpack once you secure it. Normally, security shouldn't be much of a problem with these backpacks because someone has to actually know what you have inside before taking an item, but it never hurts to be safe.\""
-        condition: ch2_deer_interaction <> 1 AND ch3_treasure = 0
         choices:
           - position: 1
             text: Secure the backpack
@@ -106,14 +106,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch6_enough
-      - texts:
+      - condition: ch2_deer_interaction <> 1 AND ch3_treasure <> 0
+        texts:
           - source: scene_text
             paragraph: 328
             text: "Before leaving, I make sure to take with me my spoils of war from this morning's skirmishes: a crossbow from one of the crossbowmen who ambushed us, a few daggers from Cutthroat Dave's men, and the treasure I took from the duke of Bagelberry.\r\n\r\nWe join back with Rose, and we set off on our long road ahead. \r\n\r\nShortly after we begin our trip, Daren notices that I've strapped my crossbow to the back of my backpack.\r\n\r\n\"Barry, why aren't you just putting that crossbow inside the backpack, like you did with everything else?\"\r\n\r\n\"Well, because it's already full with all my other stuff.\"\r\n\r\n\"Full? Wait a minute, Barry, you're telling me that the backpack you are carrying with you right now is actually a completely regular one?\"\r\n\r\n\"Well, yeah, enchanted backpacks are really hard to come by if you're not a mage.\""
           - source: scene_text_2
             paragraph: 7
             text: "\"You realize you could have asked me to enchant it for you, right? It literally only takes a few minutes. Here, give me that.\"\r\n\r\nDaren grabs my backpack and enters an enchanting trance. His eyes become yellow and the backpack starts to glow. The fact that Daren specializes on item enchanting had completely slipped my mind. Enchanted backpacks are leagues better than normal ones. They have almost infinite space, and people can't see what's inside them, so they can only steal your stuff if they know exactly what they're looking for. Taking an item out of an enchanted backpack is as simple as focusing on its image, and reaching inside for it.\r\n\r\nRose is looking very interested in the enchanting process. She is now studying Daren closely.\r\n\r\n\"Hey, Barry,\" Daren says. \"Do you want to have your backpack extra secure or should I just leave it like this? If I secure it, then only you will be able to take items out of it. The only downside is that you can't really authorize other persons to take items from your backpack once you secure it. Normally, security shouldn't be much of a problem with these backpacks because someone has to actually know what you have inside before taking an item, but it never hurts to be safe.\""
-        condition: ch2_deer_interaction <> 1 AND ch3_treasure <> 0
         choices:
           - position: 1
             text: Secure the backpack
@@ -125,14 +125,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch6_enough
-      - texts:
+      - condition: ch2_deer_interaction = 1 AND ch3_treasure = 0
+        texts:
           - source: scene_text
             paragraph: 329
             text: "Just as we reach the cave's entrance, we see Molan, the deer fawn, jumping up and down, looking very excited.\r\n\r\n\"Mommy, mommy, come quick! It's aunt Rose! Aunt Rose came to visit us!\"\r\n\r\nRose's usual warm smile perished from her face when she saw the deer fawn and was replaced by a sad expression in her eyes. \r\n\r\n\"Rose?\" says Elaria as she exits the cave. \"Rose, is that you?\"\r\n\r\n\"Yes...\" Rose answers in the deer's language, not bringing herself to look her in the eyes. \"It's been a while.\"\r\n\r\n\"It has. We haven't seen you in months. And you used to visit us so often. Rose, you know you'll always be welcome in our home, right?\"\r\n\r\n\"I know... I'm sorry, I have to go now.\"\r\n\r\n\"Aunt Rose, you're not staying?\" the deer fawn asks her.\r\n\r\n\"Don't worry, little one,\" Elaria tells her son. \"I'm sure she'll come back and stay longer when she'll be ready. She must have something important to do. You know how she is, always busy helping people.\""
           - source: scene_text_2
             paragraph: 8
             text: "\"Thank you... and I'm sorry,\" Rose says, as she bows, and then turns away from the deer.\r\n\r\n\"Here are your things,\" Elaria says, as she shows us our backpacks. \"I took the liberty of making some more food for you, in case you get hungry and want to eat something other than roots and berries.\"\r\n\r\n\"Thank you for all your help,\" I tell her. \"I hope we meet again!\"\r\n\r\n\"It's a small continent. I'm sure our paths will cross again someday.\"\r\n\r\nKate and I say our goodbyes to the two deer, and we go on our way.\r\n\r\nBefore leaving, I make sure to take with me my spoils of war from this morning's skirmishes: a crossbow from one of the crossbowmen who ambushed us and a dagger from one of Cutthroat Dave's men.\r\n\r\nWe join back with Rose, and we set off on our long road ahead. \r\n\r\nRose is looking a little distraught after her discussion with Elaria. I wonder if I should say something to her, given the circumstances?"
-        condition: ch2_deer_interaction = 1 AND ch3_treasure = 0
         choices:
           - position: 1
             text: Leave her alone
@@ -149,14 +149,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch6_happened
-      - texts:
+      - condition: ch2_deer_interaction = 1 AND ch3_treasure <> 0
+        texts:
           - source: scene_text
             paragraph: 330
             text: "Just as we reach the cave's entrance, we see Molan, the deer fawn, jumping up and down, looking very excited.\r\n\r\n\"Mommy, mommy, come quick! It's aunt Rose! Aunt Rose came to visit us!\"\r\n\r\nRose's usual warm smile perished from her face when she saw the deer fawn and was replaced by a sad expression in her eyes. \r\n\r\n\"Rose?\" says Elaria as she exits the cave. \"Rose, is that you?\"\r\n\r\n\"Yes...\" Rose answers in the deer's language, not bringing herself to look her in the eyes. \"It's been a while.\"\r\n\r\n\"It has. We haven't seen you in months. And you used to visit us so often. Rose, you know you'll always be welcome in our home, right?\"\r\n\r\n\"I know... I'm sorry, I have to go now.\"\r\n\r\n\"Aunt Rose, you're not staying?\" the deer fawn asks her.\r\n\r\n\"Don't worry, little one,\" Elaria tells her son. \"I'm sure she'll come back and stay longer when she'll be ready. She must have something important to do. You know how she is, always busy helping people.\""
           - source: scene_text_2
             paragraph: 9
             text: "\"Thank you... and I'm sorry,\" Rose says, as she bows, and then turns away from the deer.\r\n\r\n\"Here are your things,\" Elaria says, as she shows us our backpacks. \"I took the liberty of making some more food for you, in case you get hungry and want to eat something other than roots and berries.\"\r\n\r\n\"Thank you for all your help,\" I tell her. \"I hope we meet again!\"\r\n\r\n\"It's a small continent. I'm sure our paths will cross again someday.\"\r\n\r\nKate and I say our goodbyes to the two deer, and we go on our way.\r\n\r\nBefore leaving, I make sure to take with me my spoils of war from this morning's skirmishes: a crossbow from one of the crossbowmen who ambushed us, a dagger from one of Cutthroat Dave's men, and the treasure I took from the duke of Bagelberry.\r\n\r\nWe join back with Rose, and we set off on our long road ahead. \r\n\r\nRose is looking a little distraught after her discussion with Elaria. I wonder if I should say something to her, given the circumstances?"
-        condition: ch2_deer_interaction = 1 AND ch3_treasure <> 0
         choices:
           - position: 1
             text: Leave her alone
@@ -337,11 +337,11 @@ scenes:
       - set:
           ch6_secure: 1
     routes:
-      - texts:
+      - condition: ch2_human_reason = 1 AND ch3_kate_badly_hurt = 0
+        texts:
           - source: scene_text
             paragraph: 339
             text: "\"Secure it. Better to be safe than sorry.\"\r\n\r\n\"As you wish.\"\r\n\r\nOnce he's done enchanting my backpack, he hands it back to me and then turns to Rose.\r\n\r\n\"I can see you're very interested in my craft. Would you perhaps like to have your backpack enchanted as well?\"\r\n\r\nRose blushes, realizing she'd been a bit too obvious in her curiosity.\r\n\r\n\"I would be honored!\" she answers.\r\n\r\nOnce he's done with her backpack too, we continue on our way.\r\n\r\nWe spent the next few hours travelling south, taking the most direct route available to Rose's town. Her usual route was designed to avoid most areas that are known to be frequented by monsters, but Daren insisted on delivering the cure to the sick as soon as possible, and said that our group should be more than able to handle a few monster attacks.\r\n\r\nThe scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far."
-        condition: ch2_human_reason = 1 AND ch3_kate_badly_hurt = 0
         choices:
           - position: 1
             text: Continue
@@ -351,11 +351,11 @@ scenes:
               - set:
                   current_scene: ch6_travel
                 condition: ch5_admit_lie = 1
-      - texts:
+      - condition: ch5_admit_lie = 1 AND ch3_kate_badly_hurt = 0
+        texts:
           - source: scene_text
             paragraph: 339
             text: "\"Secure it. Better to be safe than sorry.\"\r\n\r\n\"As you wish.\"\r\n\r\nOnce he's done enchanting my backpack, he hands it back to me and then turns to Rose.\r\n\r\n\"I can see you're very interested in my craft. Would you perhaps like to have your backpack enchanted as well?\"\r\n\r\nRose blushes, realizing she'd been a bit too obvious in her curiosity.\r\n\r\n\"I would be honored!\" she answers.\r\n\r\nOnce he's done with her backpack too, we continue on our way.\r\n\r\nWe spent the next few hours travelling south, taking the most direct route available to Rose's town. Her usual route was designed to avoid most areas that are known to be frequented by monsters, but Daren insisted on delivering the cure to the sick as soon as possible, and said that our group should be more than able to handle a few monster attacks.\r\n\r\nThe scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far."
-        condition: ch5_admit_lie = 1 AND ch3_kate_badly_hurt = 0
         choices:
           - position: 1
             text: Continue
@@ -365,14 +365,14 @@ scenes:
                 condition: ch2_human_reason = 1
               - set:
                   current_scene: ch6_travel
-      - texts:
+      - condition: ch2_human_reason = 1 AND ch3_kate_badly_hurt = 1
+        texts:
           - source: scene_text
             paragraph: 340
             text: "\"Secure it. Better to be safe than sorry.\"\r\n\r\n\"As you wish.\"\r\n\r\nOnce he's done enchanting my backpack, he hands it back to me and then turns to Rose.\r\n\r\n\"I can see you're very interested in my craft. Would you perhaps like to have your backpack enchanted as well?\"\r\n\r\nRose blushes, realizing she'd been a bit too obvious in her curiosity.\r\n\r\n\"I would be honored!\" she answers.\r\n\r\nOnce he's done with her backpack too, we continue on our way."
           - source: scene_text_2
             paragraph: 15
             text: "We spent the next few hours travelling south, taking the most direct route available to Rose's town. Her usual route was designed to avoid most areas that are known to be frequented by monsters, but Daren insisted on delivering the cure to the sick as soon as possible, and said that our group should be more than able to handle a few monster attacks.\r\n\r\nThe scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far. \r\n\r\nKate seems to have somewhat recovered since this morning, but she still looks weak, and she almost lost her balance a few times while we were walking. When Rose asked her if she'd rather we take a break, she said that she'll be fine and that we should keep going without worrying about her."
-        condition: ch2_human_reason = 1 AND ch3_kate_badly_hurt = 1
         choices:
           - position: 1
             text: Continue
@@ -382,14 +382,14 @@ scenes:
               - set:
                   current_scene: ch6_travel
                 condition: ch5_admit_lie = 1
-      - texts:
+      - condition: ch5_admit_lie = 1 AND ch3_kate_badly_hurt = 1
+        texts:
           - source: scene_text
             paragraph: 340
             text: "\"Secure it. Better to be safe than sorry.\"\r\n\r\n\"As you wish.\"\r\n\r\nOnce he's done enchanting my backpack, he hands it back to me and then turns to Rose.\r\n\r\n\"I can see you're very interested in my craft. Would you perhaps like to have your backpack enchanted as well?\"\r\n\r\nRose blushes, realizing she'd been a bit too obvious in her curiosity.\r\n\r\n\"I would be honored!\" she answers.\r\n\r\nOnce he's done with her backpack too, we continue on our way."
           - source: scene_text_2
             paragraph: 15
             text: "We spent the next few hours travelling south, taking the most direct route available to Rose's town. Her usual route was designed to avoid most areas that are known to be frequented by monsters, but Daren insisted on delivering the cure to the sick as soon as possible, and said that our group should be more than able to handle a few monster attacks.\r\n\r\nThe scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far. \r\n\r\nKate seems to have somewhat recovered since this morning, but she still looks weak, and she almost lost her balance a few times while we were walking. When Rose asked her if she'd rather we take a break, she said that she'll be fine and that we should keep going without worrying about her."
-        condition: ch5_admit_lie = 1 AND ch3_kate_badly_hurt = 1
         choices:
           - position: 1
             text: Continue
@@ -399,14 +399,14 @@ scenes:
                 condition: ch2_human_reason = 1
               - set:
                   current_scene: ch6_travel
-      - texts:
+      - condition: ch2_human_reason = 2 AND ch5_admit_lie = 0
+        texts:
           - source: scene_text
             paragraph: 341
             text: "\"Secure it. Better to be safe than sorry.\"\r\n\r\n\"As you wish.\"\r\n\r\nOnce he's done enchanting my backpack, he hands it back to me and then turns to Rose.\r\n\r\n\"I can see you're very interested in my craft. Would you perhaps like to have your backpack enchanted as well?\"\r\n\r\nRose blushes, realizing she'd been a bit too obvious in her curiosity.\r\n\r\n\"I would be honored!\" she answers.\r\n\r\nOnce he's done with her backpack too, Daren turns to me, with a very excited look on his face.\r\n\r\n\"Barry, I just realized something. Remember how I said that we'd have to travel all the way to a city in order to find a local you could attack so that you'd get sent home? Well, we don't need to do that anymore! Now we've got Rose.\"\r\n\r\nI hadn't thought of that. How did I not think of that? I should have known this would happen the moment we'd met her.\r\n\r\n\"No, I couldn't. Even if it means getting back home, I can't just attack Rose like that.\" \r\n\r\n\"You don't need to worry about that,\" Rose says, smiling. \"I'd be glad to help! And besides, we already know the spell would stop you before actually touching me thanks to that mage that attacked me this morning.\""
           - source: scene_text_2
             paragraph: 16
             text: "I realize I'm sweating. Kate is watching me intently.\r\n\r\n\"But, uh... what about escorting Rose home?\"\r\n\r\n\"What about it?\" Daren asks. \"Me and Kate should be more than enough to deal with a few monsters.\"\r\n\r\n\"Yes but, I...\"\r\n\r\nWords fail me. I can't think up an excuse fast enough.\r\n\r\n\"I don't...\"\r\n\r\nAs I struggle to find my words, Daren finally starts to understand what's going on. His expression is getting darker, and more serious.\r\n\r\n\"Barry, you didn't really come here against your will, did you?\"\r\n\r\n\"No... No I didn't.\"\r\n\r\n\"Then what are you doing here?\"\r\n\r\n\"I... joined for the same reason as everyone else. I'm after the Magium. It's been my dream to become a mage for as long as I can remember.\"\r\n\r\n\"When were you planning on telling me this?\""
-        condition: ch2_human_reason = 2 AND ch5_admit_lie = 0
         choices:
           - position: 1
             text: I wasn't going to.
@@ -425,14 +425,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch6_beginning
-      - texts:
+      - condition: ch2_human_reason = 3 AND ch5_admit_lie = 0
+        texts:
           - source: scene_text
             paragraph: 342
             text: "\"Secure it. Better to be safe than sorry.\"\r\n\r\n\"As you wish.\"\r\n\r\nOnce he's done enchanting my backpack, he hands it back to me and then turns to Rose.\r\n\r\n\"I can see you're very interested in my craft. Would you perhaps like to have your backpack enchanted as well?\"\r\n\r\nRose blushes, realizing she'd been a bit too obvious in her curiosity.\r\n\r\n\"I would be honored!\" she answers.\r\n\r\nOnce he's done with her backpack too, Daren turns to me, with a very excited look on his face.\r\n\r\n\"Barry, I just realized something. Rose is a herbalist! She can help you find the plants you need to cure your sister! I bet she knows this continent in and out when it comes to medicinal herbs.\"\r\n\r\n\"Uh, I don't think--\"\r\n\r\n\"Barry, your sister is ill?\" Rose asks me, concerned. \"I'm so sorry to hear that. What kind of herbs are you looking for, exactly?\"\r\n\r\n\"I'm, uh... looking for a kind of plant that has long leaves with crenate margins, and little purple fruit with white spots.\"\r\n\r\n\"I know of the plants you're talking about but... those aren't medicinal herbs. They're used to make a kind of tea. Are you sure you aren't mistaken?\""
           - source: scene_text_2
             paragraph: 17
             text: "I realize I'm sweating. Kate is watching me intently.\r\n\r\n\"Oh, now that you mention it, I think the fruits were blue with white spots, not purple.\"\r\n\r\n\"I'm pretty sure that plants with blue spotted fruits cannot have long leaves. What kind of medicine do you need these plants for? Maybe I can help you make it.\"\r\n\r\n\"It's, uh.. a medicine for, uh...\"\r\n\r\nWords fail me. I can't think up a name fast enough.\r\n\r\n\"I don't...\"\r\n\r\nAs I struggle to find my words, Daren finally starts to understand what's going on. His expression is getting darker, and more serious.\r\n\r\n\"Barry, you didn't really come here looking for medicinal herbs, did you?\"\r\n\r\n\"No... No I didn't.\"\r\n\r\n\"Then what are you doing here?\"\r\n\r\n\"I... joined for the same reason as everyone else. I'm after the Magium. It's been my dream to become a mage for as long as I can remember.\"\r\n\r\n\"And that story about your sister, that was all a lie too?\"\r\n\r\n\"Yes...\"\r\n\r\n\"When were you planning on telling me this?\""
-        condition: ch2_human_reason = 3 AND ch5_admit_lie = 0
         choices:
           - position: 1
             text: I wasn't going to.
@@ -456,11 +456,11 @@ scenes:
       - set:
           ch6_secure: 0
     routes:
-      - texts:
+      - condition: ch2_human_reason = 1 AND ch3_kate_badly_hurt = 0
+        texts:
           - source: scene_text
             paragraph: 343
             text: "\"No, leave it like that. It's secure enough as it is.\"\r\n\r\n\"As you wish.\"\r\n\r\nOnce he's done enchanting my backpack, he hands it back to me and then turns to Rose.\r\n\r\n\"I can see you're very interested in my craft. Would you perhaps like to have your backpack enchanted as well?\"\r\n\r\nRose blushes, realizing she'd been a bit too obvious in her curiosity.\r\n\r\n\"I would be honored!\" she answers.\r\n\r\nOnce he's done with her backpack too, we continue on our way.\r\n\r\nWe spent the next few hours travelling south, taking the most direct route available to Rose's town. Her usual route was designed to avoid most areas that are known to be frequented by monsters, but Daren insisted on delivering the cure to the sick as soon as possible, and said that our group should be more than able to handle a few monster attacks.\r\n\r\nThe scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far."
-        condition: ch2_human_reason = 1 AND ch3_kate_badly_hurt = 0
         choices:
           - position: 1
             text: Continue
@@ -470,11 +470,11 @@ scenes:
               - set:
                   current_scene: ch6_travel
                 condition: ch5_admit_lie = 1
-      - texts:
+      - condition: ch5_admit_lie = 1 AND ch3_kate_badly_hurt = 0
+        texts:
           - source: scene_text
             paragraph: 343
             text: "\"No, leave it like that. It's secure enough as it is.\"\r\n\r\n\"As you wish.\"\r\n\r\nOnce he's done enchanting my backpack, he hands it back to me and then turns to Rose.\r\n\r\n\"I can see you're very interested in my craft. Would you perhaps like to have your backpack enchanted as well?\"\r\n\r\nRose blushes, realizing she'd been a bit too obvious in her curiosity.\r\n\r\n\"I would be honored!\" she answers.\r\n\r\nOnce he's done with her backpack too, we continue on our way.\r\n\r\nWe spent the next few hours travelling south, taking the most direct route available to Rose's town. Her usual route was designed to avoid most areas that are known to be frequented by monsters, but Daren insisted on delivering the cure to the sick as soon as possible, and said that our group should be more than able to handle a few monster attacks.\r\n\r\nThe scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far."
-        condition: ch5_admit_lie = 1 AND ch3_kate_badly_hurt = 0
         choices:
           - position: 1
             text: Continue
@@ -484,14 +484,14 @@ scenes:
                 condition: ch2_human_reason = 1
               - set:
                   current_scene: ch6_travel
-      - texts:
+      - condition: ch2_human_reason = 1 AND ch3_kate_badly_hurt = 1
+        texts:
           - source: scene_text
             paragraph: 344
             text: "\"No, leave it like that. It's secure enough as it is.\"\r\n\r\n\"As you wish.\"\r\n\r\nOnce he's done enchanting my backpack, he hands it back to me and then turns to Rose.\r\n\r\n\"I can see you're very interested in my craft. Would you perhaps like to have your backpack enchanted as well?\"\r\n\r\nRose blushes, realizing she'd been a bit too obvious in her curiosity.\r\n\r\n\"I would be honored!\" she answers.\r\n\r\nOnce he's done with her backpack too, we continue on our way."
           - source: scene_text_2
             paragraph: 18
             text: "We spent the next few hours travelling south, taking the most direct route available to Rose's town. Her usual route was designed to avoid most areas that are known to be frequented by monsters, but Daren insisted on delivering the cure to the sick as soon as possible, and said that our group should be more than able to handle a few monster attacks.\r\n\r\nThe scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far. \r\n\r\nKate seems to have somewhat recovered since this morning, but she still looks weak, and she almost lost her balance a few times while we were walking. When Rose asked her if she'd rather we take a break, she said that she'll be fine and that we should keep going without worrying about her."
-        condition: ch2_human_reason = 1 AND ch3_kate_badly_hurt = 1
         choices:
           - position: 1
             text: Continue
@@ -501,14 +501,14 @@ scenes:
               - set:
                   current_scene: ch6_travel
                 condition: ch5_admit_lie = 1
-      - texts:
+      - condition: ch5_admit_lie = 1 AND ch3_kate_badly_hurt = 1
+        texts:
           - source: scene_text
             paragraph: 344
             text: "\"No, leave it like that. It's secure enough as it is.\"\r\n\r\n\"As you wish.\"\r\n\r\nOnce he's done enchanting my backpack, he hands it back to me and then turns to Rose.\r\n\r\n\"I can see you're very interested in my craft. Would you perhaps like to have your backpack enchanted as well?\"\r\n\r\nRose blushes, realizing she'd been a bit too obvious in her curiosity.\r\n\r\n\"I would be honored!\" she answers.\r\n\r\nOnce he's done with her backpack too, we continue on our way."
           - source: scene_text_2
             paragraph: 18
             text: "We spent the next few hours travelling south, taking the most direct route available to Rose's town. Her usual route was designed to avoid most areas that are known to be frequented by monsters, but Daren insisted on delivering the cure to the sick as soon as possible, and said that our group should be more than able to handle a few monster attacks.\r\n\r\nThe scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far. \r\n\r\nKate seems to have somewhat recovered since this morning, but she still looks weak, and she almost lost her balance a few times while we were walking. When Rose asked her if she'd rather we take a break, she said that she'll be fine and that we should keep going without worrying about her."
-        condition: ch5_admit_lie = 1 AND ch3_kate_badly_hurt = 1
         choices:
           - position: 1
             text: Continue
@@ -518,14 +518,14 @@ scenes:
                 condition: ch2_human_reason = 1
               - set:
                   current_scene: ch6_travel
-      - texts:
+      - condition: ch2_human_reason = 2 AND ch5_admit_lie = 0
+        texts:
           - source: scene_text
             paragraph: 345
             text: "\"No, leave it like that. It's secure enough as it is.\"\r\n\r\n\"As you wish.\"\r\n\r\nOnce he's done enchanting my backpack, he hands it back to me and then turns to Rose.\r\n\r\n\"I can see you're very interested in my craft. Would you perhaps like to have your backpack enchanted as well?\"\r\n\r\nRose blushes, realizing she'd been a bit too obvious in her curiosity.\r\n\r\n\"I would be honored!\" she answers.\r\n\r\nOnce he's done with her backpack too, Daren turns to me, with a very excited look on his face.\r\n\r\n\"Barry, I just realized something. Remember how I said that we'd have to travel all the way to a city in order to find a local you could attack so that you'd get sent home? Well, we don't need to do that anymore! Now we've got Rose.\"\r\n\r\nI hadn't thought of that. How did I not think of that? I should have known this would happen the moment we'd met her.\r\n\r\n\"No, I couldn't. Even if it means getting back home, I can't just attack Rose like that.\" \r\n\r\n\"You don't need to worry about that,\" Rose says, smiling. \"I'd be glad to help! And besides, we already know the spell would stop you before actually touching me thanks to that mage that attacked me this morning.\""
           - source: scene_text_2
             paragraph: 19
             text: "I realize I'm sweating. Kate is watching me intently.\r\n\r\n\"But, uh... what about escorting Rose home?\"\r\n\r\n\"What about it?\" Daren asks. \"Kate and I should be more than enough to deal with a few monsters.\"\r\n\r\n\"Yes but, I...\"\r\n\r\nWords fail me. I can't think up an excuse fast enough.\r\n\r\n\"I don't...\"\r\n\r\nAs I struggle to find my words, Daren finally starts to understand what's going on. His expression is getting darker, and more serious.\r\n\r\n\"Barry, you didn't really come here against your will, did you?\"\r\n\r\n\"No... No I didn't.\"\r\n\r\n\"Then what are you doing here?\"\r\n\r\n\"I... joined for the same reason as everyone else. I'm after the Magium. It's been my dream to become a mage for as long as I can remember.\"\r\n\r\n\"When were you planning on telling me this?\""
-        condition: ch2_human_reason = 2 AND ch5_admit_lie = 0
         choices:
           - position: 1
             text: I wasn't going to.
@@ -544,14 +544,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch6_beginning
-      - texts:
+      - condition: ch2_human_reason = 3 AND ch5_admit_lie = 0
+        texts:
           - source: scene_text
             paragraph: 346
             text: "\"No, leave it like that. It's secure enough as it is.\"\r\n\r\n\"As you wish.\"\r\n\r\nOnce he's done enchanting my backpack, he hands it back to me and then turns to Rose.\r\n\r\n\"I can see you're very interested in my craft. Would you perhaps like to have your backpack enchanted as well?\"\r\n\r\nRose blushes, realizing she'd been a bit too obvious in her curiosity.\r\n\r\n\"I would be honored!\" she answers.\r\n\r\nOnce he's done with her backpack too, Daren turns to me, with a very excited look on his face.\r\n\r\n\"Barry, I just realized something. Rose is a herbalist! She can help you find the plants you need to cure your sister! I bet she knows this continent in and out when it comes to medicinal herbs.\"\r\n\r\n\"Uh, I don't think--\"\r\n\r\n\"Barry, your sister is ill?\" Rose asks me, concerned. \"I'm so sorry to hear that. What kind of herbs are you looking for, exactly?\"\r\n\r\n\"I'm, uh... looking for a kind of plant that has long leaves with crenate margins, and little purple fruit with white spots.\"\r\n\r\n\"I know of the plants you're talking about but... those aren't medicinal herbs. They're used to make a kind of tea. Are you sure you aren't mistaken?\""
           - source: scene_text_2
             paragraph: 20
             text: "I realize I'm sweating. Kate is watching me intently.\r\n\r\n\"Oh, now that you mention it, I think the fruits were blue with white spots, not purple.\"\r\n\r\n\"I'm pretty sure that plants with blue spotted fruits cannot have long leaves. What kind of medicine do you need these plants for? Maybe I can help you make it.\"\r\n\r\n\"It's, uh.. a medicine for, uh...\"\r\n\r\nWords fail me. I can't think up a name fast enough.\r\n\r\n\"I don't...\"\r\n\r\nAs I struggle to find my words, Daren finally starts to understand what's going on. His expression is getting darker, and more serious.\r\n\r\n\"Barry, you didn't really come here looking for medicinal herbs, did you?\"\r\n\r\n\"No... No I didn't.\"\r\n\r\n\"Then what are you doing here?\"\r\n\r\n\"I... joined for the same reason as everyone else. I'm after the Magium. It's been my dream to become a mage for as long as I can remember.\"\r\n\r\n\"And that story about your sister, that was all a lie too?\"\r\n\r\n\"Yes...\"\r\n\r\n\"When were you planning on telling me this?\""
-        condition: ch2_human_reason = 3 AND ch5_admit_lie = 0
         choices:
           - position: 1
             text: I wasn't going to.
@@ -572,25 +572,25 @@ scenes:
                   current_scene: ch6_beginning
   - name: ch6_wasnt
     routes:
-      - texts:
+      - condition: ch3_kate_badly_hurt = 0
+        texts:
           - source: scene_text
             paragraph: 347
             text: "\"I wasn't going to. I just kind of figured I'd manage to wing it until the end of the tournament.\"\r\n\r\n\"I see,\" Daren says.\r\n\r\nHe then walks past me, and does not say another word.\r\n\r\n\"Oh no, did I say something I shouldn't have?\" Rose asks Kate.\r\n\r\n\"No, this is entirely Barry's fault. Don't worry about it.\"\r\n\r\nWe spent the next few hours travelling south, taking the most direct route available to Rose's town. Her usual route was designed to avoid most areas that are known to be frequented by monsters, but Daren insisted on delivering the cure to the sick as soon as possible, and said that our group should be more than able to handle a few monster attacks.\r\n\r\nThe scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far."
-        condition: ch3_kate_badly_hurt = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_travel
-      - texts:
+      - condition: ch3_kate_badly_hurt = 1
+        texts:
           - source: scene_text
             paragraph: 348
             text: "\"I wasn't going to. I just kind of figured I'd manage to wing it until the end of the tournament.\"\r\n\r\n\"I see,\" Daren says.\r\n\r\nHe then walks past me, and does not say another word.\r\n\r\n\"Oh no, did I say something I shouldn't have?\" Rose asks Kate.\r\n\r\n\"No, this is entirely Barry's fault. Don't worry about it.\""
           - source: scene_text_2
             paragraph: 21
             text: "We spent the next few hours travelling south, taking the most direct route available to Rose's town. Her usual route was designed to avoid most areas that are known to be frequented by monsters, but Daren insisted on delivering the cure to the sick as soon as possible, and said that our group should be more than able to handle a few monster attacks.\r\n\r\nThe scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far. \r\n\r\nKate seems to have somewhat recovered since this morning, but she still looks weak, and she almost lost her balance a few times while we were walking. When Rose asked her if she'd rather we take a break, she said that she'll be fine and that we should keep going without worrying about her."
-        condition: ch3_kate_badly_hurt = 1
         choices:
           - position: 1
             text: Continue
@@ -599,25 +599,25 @@ scenes:
                   current_scene: ch6_travel
   - name: ch6_upset
     routes:
-      - texts:
+      - condition: ch3_kate_badly_hurt = 0
+        texts:
           - source: scene_text
             paragraph: 349
             text: "\"I'm sorry, I meant to tell you sooner, but I was afraid you'd get upset.\"\r\n\r\n\"So you figured that the best way to go at it was to keep lying to me?\"\r\n\r\n\"No, it's--\"\r\n\r\n\"I've heard enough. Let's keep moving. We shouldn't be wasting any more time.\"\r\n\r\nHe then walks past me, and does not say another word.\r\n\r\n\"Oh no, did I say something I shouldn't have?\" Rose asks Kate.\r\n\r\n\"No, this is entirely Barry's fault. Don't worry about it.\"\r\n\r\nWe spent the next few hours travelling south, taking the most direct route available to Rose's town. Her usual route was designed to avoid most areas that are known to be frequented by monsters, but Daren insisted on delivering the cure to the sick as soon as possible, and said that our group should be more than able to handle a few monster attacks.\r\n\r\nThe scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far."
-        condition: ch3_kate_badly_hurt = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_travel
-      - texts:
+      - condition: ch3_kate_badly_hurt = 1
+        texts:
           - source: scene_text
             paragraph: 350
             text: "\"I'm sorry, I meant to tell you sooner, but I was afraid you'd get upset.\"\r\n\r\n\"So you figured that the best way to go at it was to keep lying to me?\"\r\n\r\n\"No, it's--\"\r\n\r\n\"I've heard enough. Let's keep moving. We shouldn't be wasting any more time.\"\r\n\r\nHe then walks past me, and does not say another word.\r\n\r\n\"Oh no, did I say something I shouldn't have?\" Rose asks Kate.\r\n\r\n\"No, this is entirely Barry's fault. Don't worry about it.\""
           - source: scene_text_2
             paragraph: 22
             text: "We spent the next few hours travelling south, taking the most direct route available to Rose's town. Her usual route was designed to avoid most areas that are known to be frequented by monsters, but Daren insisted on delivering the cure to the sick as soon as possible, and said that our group should be more than able to handle a few monster attacks.\r\n\r\nThe scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far. \r\n\r\nKate seems to have somewhat recovered since this morning, but she still looks weak, and she almost lost her balance a few times while we were walking. When Rose asked her if she'd rather we take a break, she said that she'll be fine and that we should keep going without worrying about her."
-        condition: ch3_kate_badly_hurt = 1
         choices:
           - position: 1
             text: Continue
@@ -626,25 +626,25 @@ scenes:
                   current_scene: ch6_travel
   - name: ch6_beginning
     routes:
-      - texts:
+      - condition: ch3_kate_badly_hurt = 0
+        texts:
           - source: scene_text
             paragraph: 351
             text: "\"I'm sorry, I should have told you the truth from the beginning.\"\r\n\r\n\"Yes, you should have,\" Daren says.\r\n\r\nHe then walks past me, and does not say another word.\r\n\r\n\"Oh no, did I say something I shouldn't have?\" Rose asks Kate.\r\n\r\n\"No, this is entirely Barry's fault. Don't worry about it.\"\r\n\r\nWe spent the next few hours travelling south, taking the most direct route available to Rose's town. Her usual route was designed to avoid most areas that are known to be frequented by monsters, but Daren insisted on delivering the cure to the sick as soon as possible, and said that our group should be more than able to handle a few monster attacks.\r\n\r\nThe scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far."
-        condition: ch3_kate_badly_hurt = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_travel
-      - texts:
+      - condition: ch3_kate_badly_hurt = 1
+        texts:
           - source: scene_text
             paragraph: 352
             text: "\"I'm sorry, I should have told you the truth from the beginning.\"\r\n\r\n\"Yes, you should have,\" Daren says.\r\n\r\nHe then walks past me, and does not say another word.\r\n\r\n\"Oh no, did I say something I shouldn't have?\" Rose asks Kate.\r\n\r\n\"No, this is entirely Barry's fault. Don't worry about it.\""
           - source: scene_text_2
             paragraph: 23
             text: "We spent the next few hours travelling south, taking the most direct route available to Rose's town. Her usual route was designed to avoid most areas that are known to be frequented by monsters, but Daren insisted on delivering the cure to the sick as soon as possible, and said that our group should be more than able to handle a few monster attacks.\r\n\r\nThe scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far. \r\n\r\nKate seems to have somewhat recovered since this morning, but she still looks weak, and she almost lost her balance a few times while we were walking. When Rose asked her if she'd rather we take a break, she said that she'll be fine and that we should keep going without worrying about her."
-        condition: ch3_kate_badly_hurt = 1
         choices:
           - position: 1
             text: Continue
@@ -653,11 +653,11 @@ scenes:
                   current_scene: ch6_travel
   - name: ch6_travel
     routes:
-      - texts:
+      - condition: ch2_human_reason = 1
+        texts:
           - source: scene_text
             paragraph: 353
             text: "Kate has opened up a bit since her last discussion with me. When we first met yesterday, she looked very tense, and it seemed as though she was expecting us to try and kill her the moment she turns her back on us. Now she seems calmer, and she allows herself to smile a little more often, even if only faintly, especially when she's talking with Rose. \r\n\r\nWe've been keeping a steady pace so far, and there's been no breaks except for occasionally stopping to get some fruits from the trees, or to fill our gourds with water from a river. During one of these small breaks, Rose approached me in private to ask me about the discussion I had with Kate this morning.\r\n\r\n\"Barry, I've been meaning to ask, did we actually interrupt an important discussion between you and Kate this morning? Kate's been acting evasive every time I brought up the subject. I'd feel terrible if you two lost the chance to confess your feelings for each other because Daren and I couldn't read the mood.\""
-        condition: ch2_human_reason = 1
         choices:
           - position: 1
             text: Don't worry, that wasn't what our discussion was about.
@@ -697,11 +697,11 @@ scenes:
               - set:
                   current_scene: ch6_flirt
                   ch6_flirt: 6
-      - texts:
+      - condition: ch2_human_reason <> 1 AND ch5_admit_lie = 0
+        texts:
           - source: scene_text
             paragraph: 354
             text: "Kate has opened up a bit since her last discussion with me. When we first met yesterday, she looked very tense, and it seemed as though she was expecting us to try and kill her the moment she turns her back on us. Now she seems calmer, and she allows herself to smile a little more often, even if only faintly, especially when she's talking with Rose. \r\n\r\nDaren, on the other hand has not said a single word to me ever since we started our journey. He must still be upset because I lied to him about my true reasons for being here.\r\n\r\nI can only hope that he won't be like this for the rest of our trip. Rose tried several times to get the two of us to talk to each other, but the most that she managed to get out of Daren were short and concise answers to her questions, nothing more.\r\n\r\nWe've been keeping a steady pace so far, and there's been no breaks except for occasionally stopping to get some fruits from the trees, or to fill our gourds with water from a river. During one of these small breaks, Rose approached me in private to ask me about the discussion I had with Kate this morning.\r\n\r\n\"Barry, I've been meaning to ask, did we actually interrupt an important discussion between you and Kate this morning? Kate's been acting evasive every time I brought up the subject. I'd feel terrible if you two lost the chance to confess your feelings for each other because Daren and I couldn't read the mood.\""
-        condition: ch2_human_reason <> 1 AND ch5_admit_lie = 0
         choices:
           - position: 1
             text: Don't worry, that wasn't what our discussion was about.
@@ -741,11 +741,11 @@ scenes:
               - set:
                   current_scene: ch6_flirt
                   ch6_flirt: 6
-      - texts:
+      - condition: ch2_human_reason <> 1 AND ch5_admit_lie = 1 AND ch5_ignore_scream = 1
+        texts:
           - source: scene_text
             paragraph: 355
             text: "Kate has opened up a bit since her last discussion with me. When we first met yesterday, she looked very tense, and it seemed as though she was expecting us to try and kill her the moment she turns her back on us. Now she seems calmer, and she allows herself to smile a little more often, even if only faintly, especially when she's talking with Rose. \r\n\r\nDaren, on the other hand has not said a single word to me ever since we started our journey. His words from this morning are still ringing in my ears: \"I feel like I don't even know you anymore.\"\r\n\r\nI can only hope that he won't be like this for the rest of our trip. Rose tried several times to get the two of us to talk to each other, but the most that she managed to get out of Daren were short and concise answers to her questions, nothing more.\r\n\r\nWe've been keeping a steady pace so far, and there's been no breaks except for occasionally stopping to get some fruits from the trees, or to fill our gourds with water from a river. During one of these small breaks, Rose approached me in private to ask me about the discussion I had with Kate this morning.\r\n\r\n\"Barry, I've been meaning to ask, did we actually interrupt an important discussion between you and Kate this morning? Kate's been acting evasive every time I brought up the subject. I'd feel terrible if you two lost the chance to confess your feelings for each other because Daren and I couldn't read the mood.\""
-        condition: ch2_human_reason <> 1 AND ch5_admit_lie = 1 AND ch5_ignore_scream = 1
         choices:
           - position: 1
             text: Don't worry, that wasn't what our discussion was about.
@@ -785,11 +785,11 @@ scenes:
               - set:
                   current_scene: ch6_flirt
                   ch6_flirt: 6
-      - texts:
+      - condition: ch2_human_reason <> 1 AND ch5_admit_lie = 1 AND ch5_ignore_scream = 0
+        texts:
           - source: scene_text
             paragraph: 356
             text: "Kate has opened up a bit since her last discussion with me. When we first met yesterday, she looked very tense, and it seemed as though she was expecting us to try and kill her the moment she turns her back on us. Now she seems calmer, and she allows herself to smile a little more often, even if only faintly, especially when she's talking with Rose. \r\n\r\nDaren on the other hand has been a lot colder with me ever since he found out that I lied about my true intentions for coming here. We're still on speaking terms, but he's nowhere near as friendly as he was yesterday. I can only hope that he'll get over it by the end of our trip.\r\n\r\nWe've been keeping a steady pace so far, and there's been no breaks except for occasionally stopping to get some fruits from the trees, or to fill our gourds with water from a river. During one of these small breaks, Rose approached me in private to ask me about the discussion I had with Kate this morning.\r\n\r\n\"Barry, I've been meaning to ask, did we actually interrupt an important discussion between you and Kate this morning? Kate's been acting evasive every time I brought up the subject. I'd feel terrible if you two lost the chance to confess your feelings for each other because Daren and I couldn't read the mood.\""
-        condition: ch2_human_reason <> 1 AND ch5_admit_lie = 1 AND ch5_ignore_scream = 0
         choices:
           - position: 1
             text: Don't worry, that wasn't what our discussion was about.
@@ -831,22 +831,22 @@ scenes:
                   ch6_flirt: 6
   - name: ch6_flirt
     routes:
-      - texts:
+      - condition: ch6_flirt = 1
+        texts:
           - source: scene_text
             paragraph: 357
             text: "\"Don't worry, that wasn't what our discussion was about.\"\r\n\r\n\"Oh?\" Rose says, in a manner that suggests she doesn't really believe me. \"Well, if both you and Kate say nothing happened, then I won't insist anymore! Come on, we should help the others with picking fruits. We'll need all the food we can get for the long journey ahead of us.\""
-        condition: ch6_flirt = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_backstory
-      - texts:
+      - condition: ch6_flirt = 2
+        texts:
           - source: scene_text
             paragraph: 358
             text: "\"Actually, I prefer women with larger breasts like yourself.\"\r\n\r\nRose chuckles.\r\n\r\n\"Oh my, how bold!\" she says. \"I'm curious, did this line ever work for you in the past?\""
-        condition: ch6_flirt = 2
         choices:
           - position: 1
             text: Every single time.
@@ -858,11 +858,11 @@ scenes:
             effects:
               - set:
                   current_scene: ch6_really
-      - texts:
+      - condition: ch6_flirt = 3
+        texts:
           - source: scene_text
             paragraph: 359
             text: "\"I'm still available, if that's what you're asking.\"\r\n\r\nRose smiles.\r\n\r\n\"That's not what I was asking, but it does answer my question. I doubt you'd be making a pass at me like this if there were actually something between you and Kate. As for your advances, I'm not married, so I have no reason to outright turn you down before I get to know you, but I'd rather we postpone this conversation until a later date. Does that sound okay to you?\""
-        condition: ch6_flirt = 3
         choices:
           - position: 1
             text: Of course.
@@ -874,11 +874,11 @@ scenes:
             effects:
               - set:
                   current_scene: ch6_answer
-      - texts:
+      - condition: ch6_flirt = 4
+        texts:
           - source: scene_text
             paragraph: 360
             text: "\"You've got it all wrong! My only feelings are for you.\"\r\n\r\n\"Oh my, how flattering! Although, I'm not exactly sure how seriously I can take someone who announces his feelings for me a mere few hours after we've first met. Perhaps we should take this a bit slower? Get to know each other first?\""
-        condition: ch6_flirt = 4
         choices:
           - position: 1
             text: Maybe you're right. I'm sorry for getting ahead of myself.
@@ -890,22 +890,22 @@ scenes:
             effects:
               - set:
                   current_scene: ch6_passion
-      - texts:
+      - condition: ch6_flirt = 5
+        texts:
           - source: scene_text
             paragraph: 361
             text: "\"Don't worry, we got to say all we needed before you interrupted.\"\r\n\r\n\"Oh?\" Rose says, smiling. \"I'm beginning to understand why Kate was avoiding the subject, then. I'm glad that the two of you are being honest with each other. I won't ask any more questions, if that's the case. However, I will tell you this: I've only known Kate for a few hours, but I can tell that she's been through a lot. So please, try not to hurt her. She has a good heart.\"\r\n\r\n\"I'll... keep that in mind.\"\r\n\r\nRose smiles.\r\n\r\n\"Now then, I think we should start helping the others with picking fruits. We'll need all the food we can get for the long journey ahead of us.\""
-        condition: ch6_flirt = 5
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_backstory
-      - texts:
+      - condition: ch6_flirt = 6
+        texts:
           - source: scene_text
             paragraph: 362
             text: "\"Actually, you're the one that stunned me with your beauty when I first saw you.\"\r\n\r\n\"Oh... Thank you for the compliment, but I thought--\"\r\n\r\n\"There's nothing going on between me and Kate. In fact, the purpose of our discussion this morning was to clear things up between us, because of Daren's joke that I was smitten with her.\"\r\n\r\n\"I see. I guess I misunderstood the situation, then. Listen, about what you said earlier, I don't--\"\r\n\r\n\"There's no need to say anything. I wasn't making a pass at you, I was just being sincere. I barely even know you besides the fact that you seem really nice and kind. I think we should continue this conversation after we've known each other a little better.\"\r\n\r\nRose smiles.\r\n\r\n\"Yeah, we should do that!\"\r\n\r\nShe pauses.\r\n\r\n\"I think we should go help the others with picking fruits. We'll need all the food we can get for the long journey ahead of us.\""
-        condition: ch6_flirt = 6
         choices:
           - position: 1
             text: Continue
@@ -1054,14 +1054,14 @@ scenes:
               available_points_aux: available_points_aux + 4
   - name: ch6_stats
     routes:
-      - texts:
+      - condition: ch2_human_reason = 1
+        texts:
           - source: scene_text
             paragraph: 374
             text: "As Rose talks, I hear three loud beeps coming from my pocket. I pull out my stat device, and am surprised to see that the maximum numbers for my stats have now been increased to four.\r\n\r\n\"What's that?\" Rose asks.\r\n\r\n\"It's a toy,\" Daren says before I get a chance to reply. \"You know those magical devices that simulate a pet in order to teach little kids about responsibilities? Those beeps you heard were Barry's pet getting hungry.\"\r\n\r\n\"Oh, I love those toys! Ever since I got one for my little sister I just couldn't keep her apart from it!\"\r\n\r\n\"Ignore Daren,\" Kate says. \"He was just being a smartass. What Barry has there is a stat booster. He's using it to harness magical energy from the air which he can then use to augment his physical abilities.\"\r\n\r\nRose looks impressed.\r\n\r\n\"Wow, I did not know such a thing was possible. So that device is basically turning you into a mage?\""
           - source: scene_text_2
             paragraph: 25
             text: "I never thought about it this way. It's true that there are some mages that actually use their magic to augment their powers, in a similar way that this device does. Does that make me one of them?\r\n\r\n\"I suppose...\" I answer her. \"But it's only temporary. The device will run out of energy once I'm no longer surrounded by all these powerful mages to extract it from.\"\r\n\r\nI take a look at my stat booster and start to think of what I should spend my newly acquired points on."
-        condition: ch2_human_reason = 1
         choices:
           - position: 1
             text: Invest points now
@@ -1076,11 +1076,11 @@ scenes:
             effects:
               - set:
                   current_scene: ch6_dragon
-      - texts:
+      - condition: ch2_human_reason <> 1
+        texts:
           - source: scene_text
             paragraph: 375
             text: "As Rose talks, I hear three loud beeps coming from my pocket. I pull out my stat device, and am surprised to see that the maximum numbers for my stats have now been increased to four.\r\n\r\n\"What's that?\" Rose asks.\r\n\r\nI was half expecting Daren to butt in and make fun of my stat booster before I get a chance to reply, but then I remembered he must still be upset at me for lying to him. I never thought I'd actually start to miss his sarcastic remarks.\r\n\r\n\"It's a stat device. It harnesses magical energy from the air which I can then use to augment my physical abilities.\"\r\n\r\nRose looks impressed.\r\n\r\n\"Wow, I did not know such a thing was possible. So that device is basically turning you into a mage?\"\r\n\r\nI never thought about it this way. It's true that there are some mages that actually use their magic to augment their powers, in a similar way that this device does. Does that make me one of them?\r\n\r\n\"I suppose...\" I answer her. \"But it's only temporary. The device will run out of energy once I'm no longer surrounded by all these powerful mages to extract it from.\"\r\n\r\nI take a look at my stat booster and start to think of what I should spend my newly acquired points on."
-        condition: ch2_human_reason <> 1
         choices:
           - position: 1
             text: Invest points now
@@ -1097,25 +1097,25 @@ scenes:
                   current_scene: ch6_dragon
   - name: ch6_stats_spent
     routes:
-      - texts:
+      - condition: ch2_human_reason = 1
+        texts:
           - source: scene_text
             paragraph: 374
             text: "As Rose talks, I hear three loud beeps coming from my pocket. I pull out my stat device, and am surprised to see that the maximum numbers for my stats have now been increased to four.\r\n\r\n\"What's that?\" Rose asks.\r\n\r\n\"It's a toy,\" Daren says before I get a chance to reply. \"You know those magical devices that simulate a pet in order to teach little kids about responsibilities? Those beeps you heard were Barry's pet getting hungry.\"\r\n\r\n\"Oh, I love those toys! Ever since I got one for my little sister I just couldn't keep her apart from it!\"\r\n\r\n\"Ignore Daren,\" Kate says. \"He was just being a smartass. What Barry has there is a stat booster. He's using it to harness magical energy from the air which he can then use to augment his physical abilities.\"\r\n\r\nRose looks impressed.\r\n\r\n\"Wow, I did not know such a thing was possible. So that device is basically turning you into a mage?\""
           - source: scene_text_2
             paragraph: 25
             text: "I never thought about it this way. It's true that there are some mages that actually use their magic to augment their powers, in a similar way that this device does. Does that make me one of them?\r\n\r\n\"I suppose...\" I answer her. \"But it's only temporary. The device will run out of energy once I'm no longer surrounded by all these powerful mages to extract it from.\"\r\n\r\nI take a look at my stat booster and start to think of what I should spend my newly acquired points on."
-        condition: ch2_human_reason = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_dragon
-      - texts:
+      - condition: ch2_human_reason <> 1
+        texts:
           - source: scene_text
             paragraph: 375
             text: "As Rose talks, I hear three loud beeps coming from my pocket. I pull out my stat device, and am surprised to see that the maximum numbers for my stats have now been increased to four.\r\n\r\n\"What's that?\" Rose asks.\r\n\r\nI was half expecting Daren to butt in and make fun of my stat booster before I get a chance to reply, but then I remembered he must still be upset at me for lying to him. I never thought I'd actually start to miss his sarcastic remarks.\r\n\r\n\"It's a stat device. It harnesses magical energy from the air which I can then use to augment my physical abilities.\"\r\n\r\nRose looks impressed.\r\n\r\n\"Wow, I did not know such a thing was possible. So that device is basically turning you into a mage?\"\r\n\r\nI never thought about it this way. It's true that there are some mages that actually use their magic to augment their powers, in a similar way that this device does. Does that make me one of them?\r\n\r\n\"I suppose...\" I answer her. \"But it's only temporary. The device will run out of energy once I'm no longer surrounded by all these powerful mages to extract it from.\"\r\n\r\nI take a look at my stat booster and start to think of what I should spend my newly acquired points on."
-        condition: ch2_human_reason <> 1
         choices:
           - position: 1
             text: Continue
@@ -1151,21 +1151,22 @@ scenes:
               current_scene: ch6_looking
   - name: ch6_morning
     routes:
-      - texts:
+      - condition: ch3_star_message <> 2
+        texts:
           - source: scene_text
             paragraph: 377
             text: "\"If you're talking about Eiden, he left this morning.\" \r\n\r\n\"I asked you where he is, not when he left, you stupid lowly creature.\"\r\n\r\n\"We don't know where he went, he didn't tell us.\"\r\n\r\n\"Then you are useless to me.\"\r\n\r\nThe dragon growls before it continues.\r\n\r\n\"I should have known that I'd be wasting my time by trying to communicate with the likes of you. If only that stillwater would have minded his own business after he returned to the continent instead of writing that accursed message in the sky, I'd have left him be. But he had the incredible nerve to involve the dragon hunters in all of this?\"\r\n\r\n\"Wait, we're not dragon hunters. Please, if you could just let us explain--\"\r\n\r\n\"Silence, mongrel! I've watched your pathetic human race fumble their way through life ever since they stopped walking on four legs. I could have killed or enslaved you all at any point in your miserable existence, if it weren't beneath me. But now your kind dares to rise against me? Your charred remains will serve as my gift for Eiden, to welcome him back to my realm.\"\r\n\r\nThe dragon soars to the sky, as it shouts its final words to us.\r\n\r\n\"Pray to your gods, humans! They're the only ones that can save you from the onslaught that will follow.\""
           - source: scene_text_2
             paragraph: 27
             text: "\"Quick, everyone get behind me!\" Daren shouts, as he raises his shield, and a semi-transparent magical barrier starts to form around us.\r\n\r\nKate doubles up our protection by also making a dome of thick ice to surround us. The dragon, who has now raised himself to a sufficiently high altitude unleashes a downpour of flames upon us. As the flames collide with our protections, we start to feel the air heating up all around us. Kate's ice has already melted away, and all that's standing between us and the torrent of fire is Daren's magical barrier.\r\n\r\nRose is now sitting on the ground, with a terrified look in her eyes, hugging her legs and shaking violently.\r\n\r\n\"Rose!\" Kate yells at her. \"Snap out of it! We'll need to be ready to get out of here as soon as Daren's barrier breaks. Do you hear me?!\"\r\n\r\nThe dragon's flames have suddenly stopped. Looking up to see what happened, I am terrified to learn that the monster is now quickly diving towards us. Kate tries to make another wall of ice between us and the dragon, but it breaks through it in a second, and then clashes with Daren's magical barrier, shattering it in an instant. The dragon then grabs Daren in one of its claws, and soars back up into the sky. We can hear Daren's screams as the giant lizard tries to crush him."
-        condition: ch3_star_message <> 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_villain
-      - texts:
+      - condition: ch3_star_message = 2
+        texts:
           - source: scene_text
             paragraph: 378
             text: "\"If you're talking about Eiden, he left this morning.\" \r\n\r\n\"I asked you where he is, not when he left, you stupid lowly creature.\"\r\n\r\n\"We don't know where he went, he didn't tell us.\"\r\n\r\n\"Then you are useless to me.\"\r\n\r\nThe dragon growls before it continues.\r\n\r\n\"I should have known that I'd be wasting my time by trying to communicate with the likes of you. If only that stillwater would have minded his own business after he returned to the continent instead of writing that accursed message in the sky, I'd have left him be.\"\r\n\r\nI suddenly remember the message that was written in the stars last night. That was Eiden's doing?\r\n\r\n\"Wait, so you actually do know the location of the Magium?\"\r\n\r\nThe dragon stops, and he eyes me for a few seconds before he continues.\r\n\r\n\"So you're a dragon hunter, then.\"\r\n\r\n\"Wait, what?...\""
@@ -1175,7 +1176,6 @@ scenes:
           - source: scene_3
             paragraph: 3
             text: "\"Rose!\" Kate yells at her. \"Snap out of it! We'll need to be ready to get out of here as soon as Daren's barrier breaks. Do you hear me?!\"\r\n\r\nThe dragon's flames have suddenly stopped. Looking up to see what happened, I am terrified to learn that the monster is now quickly diving towards us. Kate tries to make another wall of ice between us and the dragon, but it breaks through it in a second, and then clashes with Daren's magical barrier, shattering it in an instant. The dragon then grabs Daren in one of its claws, and soars back up into the sky. We can hear Daren's screams as the giant lizard tries to crush him."
-        condition: ch3_star_message = 2
         choices:
           - position: 1
             text: Continue
@@ -1184,21 +1184,22 @@ scenes:
                   current_scene: ch6_villain
   - name: ch6_working
     routes:
-      - texts:
+      - condition: ch3_star_message <> 2
+        texts:
           - source: scene_text
             paragraph: 379
             text: "\"We're not working with him, we only just met him a few hours ago.\"\r\n\r\n\"Lies. What reason would he have had to leave you alive if he didn't have a use for you?\"\r\n\r\n\"I, uh... Well, he did ask us to deliver a message for him.\"\r\n\r\n\"A message?\"\r\n\r\nThe dragon laughs.\r\n\r\n\"I see he's reduced himself to using lowborn mongrels to do his menial tasks nowadays. If you're just lowly messengers, then you are useless to me.\"\r\n\r\nThe dragon growls before it continues.\r\n\r\n\"I should have known that I'd be wasting my time by trying to communicate with the likes of you. If only that stillwater would have minded his own business after he returned to the continent instead of writing that accursed message in the sky, I'd have left him be. But he had the incredible nerve to involve the dragon hunters in all of this?\"\r\n\r\n\"Wait, we're not dragon hunters. Please, if you could just let us explain--\"\r\n\r\n\"Silence, mongrel! I've watched your pathetic human race fumble their way through life ever since they stopped walking on four legs. I could have killed or enslaved you all at any point in your miserable existence, if it weren't beneath me. But now your kind dares to rise against me? Your charred remains will serve as my gift for Eiden, to welcome him back to my realm.\""
           - source: scene_text_2
             paragraph: 29
             text: "The dragon soars to the sky, as it shouts its final words to us.\r\n\r\n\"Pray to your gods, humans! They're the only ones that can save you from the onslaught that will follow.\"\r\n\r\n\"Quick, everyone get behind me!\" Daren shouts, as he raises his shield, and a semi-transparent magical barrier starts to form around us.\r\n\r\nKate doubles up our protection by also making a dome of thick ice to surround us. The dragon, who has now raised himself to a sufficiently high altitude unleashes a downpour of flames upon us. As the flames collide with our protections, we start to feel the air heating up all around us. Kate's ice has already melted away, and all that's standing between us and the torrent of fire is Daren's magical barrier.\r\n\r\nRose is now sitting on the ground, with a terrified look in her eyes, hugging her legs and shaking violently.\r\n\r\n\"Rose!\" Kate yells at her. \"Snap out of it! We'll need to be ready to get out of here as soon as Daren's barrier breaks. Do you hear me?!\"\r\n\r\nThe dragon's flames have suddenly stopped. Looking up to see what happened, I am terrified to learn that the monster is now quickly diving towards us. Kate tries to make another wall of ice between us and the dragon, but it breaks through it in a second, and then clashes with Daren's magical barrier, shattering it in an instant. The dragon then grabs Daren in one of its claws, and soars back up into the sky. We can hear Daren's screams as the giant lizard tries to crush him."
-        condition: ch3_star_message <> 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_villain
-      - texts:
+      - condition: ch3_star_message = 2
+        texts:
           - source: scene_text
             paragraph: 380
             text: "\"We're not working with him, we only just met him a few hours ago.\"\r\n\r\n\"Lies. What reason would he have had to leave you alive if he didn't have a use for you?\"\r\n\r\n\"I, uh... Well, he did ask us to deliver a message for him.\"\r\n\r\n\"A message?\"\r\n\r\nThe dragon laughs.\r\n\r\n\"I see he's reduced himself to using lowborn mongrels to do his menial tasks nowadays. If you're just lowly messengers, then you are useless to me.\"\r\n\r\nThe dragon growls before it continues.\r\n\r\n\"I should have known that I'd be wasting my time by trying to communicate with the likes of you. If only that stillwater would have minded his own business after he returned to the continent instead of writing that accursed message in the sky, I'd have left him be.\"\r\n\r\nI suddenly remember the message that was written in the stars last night. That was Eiden's doing?\r\n\r\n\"Wait, so you actually do know the location of the Magium?\"\r\n\r\nThe dragon stops, and he eyes me for a few seconds before he continues.\r\n\r\n\"So you're a dragon hunter, then.\"\r\n\r\n\"Wait, what?...\""
@@ -1208,7 +1209,6 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "\"Rose!\" Kate yells at her. \"Snap out of it! We'll need to be ready to get out of here as soon as Daren's barrier breaks. Do you hear me?!\"\r\n\r\nThe dragon's flames have suddenly stopped. Looking up to see what happened, I am terrified to learn that the monster is now quickly diving towards us. Kate tries to make another wall of ice between us and the dragon, but it breaks through it in a second, and then clashes with Daren's magical barrier, shattering it in an instant. The dragon then grabs Daren in one of its claws, and soars back up into the sky. We can hear Daren's screams as the giant lizard tries to crush him."
-        condition: ch3_star_message = 2
         choices:
           - position: 1
             text: Continue
@@ -1217,21 +1217,22 @@ scenes:
                   current_scene: ch6_villain
   - name: ch6_looking
     routes:
-      - texts:
+      - condition: ch3_star_message <> 2
+        texts:
           - source: scene_text
             paragraph: 381
             text: "\"Why are you looking for him?\"\r\n\r\n\"You dare question me??? I should rip off your head for your insolence, you little wretch.\"\r\n\r\n\"Uh, I was only curious, I didn't mean any offense. We don't know where he went, he never told us.\"\r\n\r\n\"Then you are useless to me.\"\r\n\r\nThe dragon growls before it continues.\r\n\r\n\"I should have known that I'd be wasting my time by trying to communicate with the likes of you. If only that stillwater would have minded his own business after he returned to the continent instead of writing that accursed message in the sky, I'd have left him be. But he had the incredible nerve to involve the dragon hunters in all of this?\"\r\n\r\n\"Wait, we're not dragon hunters. Please, if you could just let us explain--\"\r\n\r\n\"Silence, mongrel! I've watched your pathetic human race fumble their way through life ever since they stopped walking on four legs. I could have killed or enslaved you all at any point in your miserable existence, if it weren't beneath me. But now your kind dares to rise against me? Your charred remains will serve as my gift for Eiden, to welcome him back to my realm.\""
           - source: scene_text_2
             paragraph: 31
             text: "The dragon soars to the sky, as it shouts its final words to us.\r\n\r\n\"Pray to your gods, humans! They're the only ones that can save you from the onslaught that will follow.\"\r\n\r\n\"Quick, everyone get behind me!\" Daren shouts, as he raises his shield, and a semi-transparent magical barrier starts to form around us.\r\n\r\nKate doubles up our protection by also making a dome of thick ice to surround us. The dragon, who has now raised himself to a sufficiently high altitude unleashes a downpour of flames upon us. As the flames collide with our protections, we start to feel the air heating up all around us. Kate's ice has already melted away, and all that's standing between us and the torrent of fire is Daren's magical barrier.\r\n\r\nRose is now sitting on the ground, with a terrified look in her eyes, hugging her legs and shaking violently.\r\n\r\n\"Rose!\" Kate yells at her. \"Snap out of it! We'll need to be ready to get out of here as soon as Daren's barrier breaks. Do you hear me?!\"\r\n\r\nThe dragon's flames have suddenly stopped. Looking up to see what happened, I am terrified to learn that the monster is now quickly diving towards us. Kate tries to make another wall of ice between us and the dragon, but it breaks through it in a second, and then clashes with Daren's magical barrier, shattering it in an instant. The dragon then grabs Daren in one of its claws, and soars back up into the sky. We can hear Daren's screams as the giant lizard tries to crush him."
-        condition: ch3_star_message <> 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_villain
-      - texts:
+      - condition: ch3_star_message = 2
+        texts:
           - source: scene_text
             paragraph: 382
             text: "\"Why are you looking for him?\"\r\n\r\n\"You dare question me??? I should rip off your head for your insolence, you little wretch.\"\r\n\r\n\"Uh, I was only curious, I didn't mean any offense. We don't know where he went, he never told us.\"\r\n\r\n\"Then you are useless to me.\"\r\n\r\nThe dragon growls before it continues.\r\n\r\n\"I should have known that I'd be wasting my time by trying to communicate with the likes of you. If only that stillwater would have minded his own business after he returned to the continent instead of writing that accursed message in the sky, I'd have left him be.\"\r\n\r\nI suddenly remember the message that was written in the stars last night. That was Eiden's doing?\r\n\r\n\"Wait, so you actually do know the location of the Magium?\"\r\n\r\nThe dragon stops, and he eyes me for a few seconds before he continues.\r\n\r\n\"So you're a dragon hunter, then.\"\r\n\r\n\"Wait, what?...\""
@@ -1241,7 +1242,6 @@ scenes:
           - source: scene_3
             paragraph: 5
             text: "\"Rose!\" Kate yells at her. \"Snap out of it! We'll need to be ready to get out of here as soon as Daren's barrier breaks. Do you hear me?!\"\r\n\r\nThe dragon's flames have suddenly stopped. Looking up to see what happened, I am terrified to learn that the monster is now quickly diving towards us. Kate tries to make another wall of ice between us and the dragon, but it breaks through it in a second, and then clashes with Daren's magical barrier, shattering it in an instant. The dragon then grabs Daren in one of its claws, and soars back up into the sky. We can hear Daren's screams as the giant lizard tries to crush him."
-        condition: ch3_star_message = 2
         choices:
           - position: 1
             text: Continue
@@ -1250,14 +1250,14 @@ scenes:
                   current_scene: ch6_villain
   - name: ch6_villain
     routes:
-      - texts:
+      - condition: ch3_kate_badly_hurt = 0
+        texts:
           - source: scene_text
             paragraph: 383
             text: "Kate launches several hundred sharp ice blades towards the dragon, but they simply bounce off its armored scales. \r\n\r\n\"Kate!\" Daren shouts from the distance. \"Can you-- NGHHH--- Can you make a slide for me?\"\r\n\r\n\"Yes,\" Kate shouts back, as she quickly builds an ice slide that starts below him and ends on the ground next to us. Once he sees the slide finished, Daren furiously thrusts his sword into the dragon's claw, as it starts to scream in pain and drops him right on the slide that's been custom made for him. \r\n\r\nJust as Daren finishes sliding down, the dragon uses his fire breath again, this time aiming directly for Kate. She makes a large thick shield of ice float above her in order to provide her cover. As the flames and the ice clash, I can see that Kate is making a great effort to keep the fire back. \r\n\r\nDaren quickly rushes to her position and provides her with cover before her ice melts away. Unfortunately, the fight has weakened him as well, and he does not manage to hold the barrier for long. His barrier breaks, and his shield drops to the ground, right when the dragon finishes its attack. The explosion of air generated by the destruction of Daren's barrier sent Rose flying, and she hit her head on a rock. She is now lying on the ground, motionless.\r\n\r\nThink, Barry. Think. What can you do to turn the tide? There has to be something. There has to be a way to use everything you know to your advantage. There has to be a way. Think!"
           - source: scene_text_2
             paragraph: 33
             text: "\"It's over, humans,\" the dragon shouts triumphantly from high above. \"Your era is at an end. I am going to exterminate every single one of you, until all that remains of your race is a forgotten memory. And I'm saving Eiden for last.\"\r\n\r\nIt's no use. My stat device is worthless here. Even if I had all of my stats maxed out I wouldn't stand a chance. This was all over before it began.\r\n\r\nAs the dragon's flames pour down on us, I close my eyes, awaiting for my impending doom. After a few seconds of keeping my eyes closed, I realize that I'm still alive. I open my eyes back up and find out to my surprise that the dragon's flames have stopped in mid-air, a few inches before reaching us, as if they were frozen. But that is not all. Looking around me, I see that everything else is frozen too. Daren, Kate and Rose are all standing completely still, and I can't even feel the wind anymore. \r\n\r\n\"Seriously, now,\" I hear a familiar voice behind me. \"How could I have let him win after saying a line like that?\"\r\n\r\nI quickly turn around and see Eiden standing behind me, with his eyes closed as usual and a smile on his face.\r\n\r\n\"I mean, I don't think I've even read a children's book where the main villain gloats to such an extent. It's embarrassing, really.\""
-        condition: ch3_kate_badly_hurt = 0
         choices:
           - position: 1
             text: Where have you been hiding all this time?
@@ -1277,7 +1277,8 @@ scenes:
               - set:
                   current_scene: ch6_time_weaver
                   ch6_eiden_answer: 3
-      - texts:
+      - condition: ch3_kate_badly_hurt = 1
+        texts:
           - source: scene_text
             paragraph: 384
             text: "Kate launches several hundred sharp ice blades towards the dragon, but they simply bounce off its armored scales. \r\n\r\n\"Kate!\" Daren shouts from the distance. \"Can you-- NGHHH--- Can you make a slide for me?\"\r\n\r\n\"Yes,\" Kate shouts back, as she quickly builds an ice slide that starts below him and ends on the ground next to us. Once he sees the slide finished, Daren furiously thrusts his sword into the dragon's claw, as it starts to scream in pain and drops him right on the slide that's been custom made for him. \r\n\r\nCasting so many spells one after the other has taken its toll on Kate, who still hadn't recovered fully after this morning's skirmish with the crossbowmen. She is breathing heavily, and her right hand is trembling.\r\n\r\nJust as Daren finishes sliding down, the dragon uses his fire breath again, this time aiming directly for Kate. She makes a large thick shield of ice float above her in order to provide her cover.\r\n\r\nAs the flames and the ice clash, I can see Kate struggling to keep her shield intact, but it is too much for her, in her current state. The shield melts, and the flames engulf her entire left arm and half of her face. She starts to scream from the pain, but quickly stops herself, and uses ice to put out the fire. The flames have left a hideous red mark covering the whole left side of her face, but her resolve has not wavered. She looks more determined than ever.\r\n\r\nShe readies a new ice shield and prepares to block the dragon's next breath attack."
@@ -1287,7 +1288,6 @@ scenes:
           - source: scene_3
             paragraph: 6
             text: "\"Seriously, now,\" I hear a familiar voice behind me. \"How could I have let him win after saying a line like that?\"\r\n\r\nI quickly turn around and see Eiden standing behind me, with his eyes closed as usual and a smile on his face.\r\n\r\n\"I mean, I don't think I've even read a children's book where the main villain gloats to such an extent. It's embarrassing, really.\""
-        condition: ch3_kate_badly_hurt = 1
         choices:
           - position: 1
             text: Where have you been hiding all this time?
@@ -1309,14 +1309,14 @@ scenes:
                   ch6_eiden_answer: 3
   - name: ch6_time_weaver
     routes:
-      - texts:
+      - condition: ch6_eiden_answer = 1
+        texts:
           - source: scene_text
             paragraph: 385
             text: "\"Where have you been hiding all this time?\"\r\n\r\n\"Now, now, Barry, is this any way to talk to your savior? To answer your question, I've been following this dragon for a while now. I've been masking my presence so that he couldn't find  me by using his sight, smell, hearing or magical sense. I've been watching your battle since it began and I must say, I am not very impressed.\"\r\n\r\n\"Are you kidding me? What do you expect me to do against a dragon?\"\r\n\r\n\"How about using that device you're holding in your hand?\"\r\n\r\n\"Yeah? And what would you have me do? Max my strength and punch him to death?\"\r\n\r\n\"Um... excuse me... sir...\"\r\n\r\nMe and Eiden both turn around at the same time and see that Rose is standing up and looking at Eiden, confused.\r\n\r\n\"Um... Hi... My name is Rose. Are you a friend of Barry?\"\r\n\r\nEiden furrows his brows, and makes a hand gesture towards Rose."
           - source: scene_text_2
             paragraph: 35
             text: "\"W-What are you doing?\" Rose asks him.\r\n\r\n\"Interesting,\" Eiden says. \"Rose, I've cast a spell that is supposed to freeze time for everyone except me and Barry. Have you by any chance studied time magic in your lifetime?\"\r\n\r\n\"Uh.. no, I can't cast any magic at all. I'm not a mage.\"\r\n\r\nEiden's smile widens.\r\n\r\n\"Then I offer you my sincerest congratulations. As of this moment, you are officially a time weaver!\"\r\n\r\n\"A... what?\"\r\n\r\nEiden turns to me.\r\n\r\n\"Barry, I must admit, I don't think I've ever seen such diversity in a team before. A time weaver, a healer in armor, a survivor from the Beacon of Hope and a stat device wielder. I think I'm starting to root for you!\""
-        condition: ch6_eiden_answer = 1
         choices:
           - position: 1
             text: Good, then maybe you can finish off that dragon for us.
@@ -1336,14 +1336,14 @@ scenes:
               - set:
                   current_scene: ch6_power_up
                   ch6_eiden_answer: 3
-      - texts:
+      - condition: ch6_eiden_answer = 2
+        texts:
           - source: scene_text
             paragraph: 386
             text: "\"What did you do?\"\r\n\r\n\"I'd say this should all be self explanatory. I've frozen time.\"\r\n\r\n\"Frozen ti-- How is that even possible?\"\r\n\r\n\"There is no such thing as impossible, Barry. As long as you never stop believing in yourself, you can overcome any limits. Remember this advice!\"\r\n\r\n\"Is this all a joke to you?\"\r\n\r\n\"No, but your fight with the dragon was. I've been watching your battle since it began and I must say, I am not very impressed.\"\r\n\r\n\"Are you kidding me? What do you expect me to do against a dragon?\"\r\n\r\n\"How about using that device you're holding in your hand?\"\r\n\r\n\"Yeah? And what would you have me do? Max my strength and punch him to death?\"\r\n\r\n\"Um... excuse me... sir...\"\r\n\r\nEiden and I both turn around at the same time and see that Rose is standing up and looking at Eiden, confused."
           - source: scene_text_2
             paragraph: 36
             text: "\"Um... Hi... My name is Rose. Are you a friend of Barry?\"\r\n\r\nEiden furrows his brows, and makes a hand gesture towards Rose.\r\n\r\n\"W-What are you doing?\" Rose asks him.\r\n\r\n\"Interesting,\" Eiden says. \"Rose, I've cast a spell that is supposed to freeze time for everyone except me and Barry. Have you by any chance studied time magic in your lifetime?\"\r\n\r\n\"Uh.. no, I can't cast any magic at all. I'm not a mage.\"\r\n\r\nEiden's smile widens.\r\n\r\n\"Then I offer you my sincerest congratulations. As of this moment, you are officially a time weaver!\"\r\n\r\n\"A... what?\"\r\n\r\nEiden turns to me.\r\n\r\n\"Barry, I must admit, I don't think I've ever seen such diversity in a team before. A time weaver, a healer in armor, a survivor from the Beacon of Hope and a stat device wielder. I think I'm starting to root for you!\""
-        condition: ch6_eiden_answer = 2
         choices:
           - position: 1
             text: Good, then maybe you can finish off that dragon for us.
@@ -1363,14 +1363,14 @@ scenes:
               - set:
                   current_scene: ch6_power_up
                   ch6_eiden_answer: 3
-      - texts:
+      - condition: ch6_eiden_answer = 3
+        texts:
           - source: scene_text
             paragraph: 387
             text: "\"Why did you save us?\"\r\n\r\n\"I'll be honest with you, Barry, I never really liked one sided battles. It takes away all the fun when you already know who's going to win. I've been watching your fight since it began and I must say, I am not very impressed.\"\r\n\r\n\"Are you kidding me? What do you expect me to do against a dragon?\"\r\n\r\n\"How about using that device you're holding in your hand?\"\r\n\r\n\"Yeah? And what would you have me do? Max my strength and punch him to death?\"\r\n\r\n\"Um... excuse me... sir...\"\r\n\r\nMe and Eiden both turn around at the same time and see that Rose is standing up and looking at Eiden, confused.\r\n\r\n\"Um... Hi... My name is Rose. Are you a friend of Barry?\""
           - source: scene_text_2
             paragraph: 37
             text: "Eiden furrows his brows, and makes a hand gesture towards Rose.\r\n\r\n\"W-What are you doing?\" Rose asks him.\r\n\r\n\"Interesting,\" Eiden says. \"Rose, I've cast a spell that is supposed to freeze time for everyone except me and Barry. Have you by any chance studied time magic in your lifetime?\"\r\n\r\n\"Uh.. no, I can't cast any magic at all. I'm not a mage.\"\r\n\r\nEiden's smile widens.\r\n\r\n\"Then I offer you my sincerest congratulations. As of this moment, you are officially a time weaver!\"\r\n\r\n\"A... what?\"\r\n\r\nEiden turns to me.\r\n\r\n\"Barry, I must admit, I don't think I've ever seen such diversity in a team before. A time weaver, a healer in armor, a survivor from the Beacon of Hope and a stat device wielder. I think I'm starting to root for you!\""
-        condition: ch6_eiden_answer = 3
         choices:
           - position: 1
             text: Good, then maybe you can finish off that dragon for us.
@@ -1392,42 +1392,42 @@ scenes:
                   ch6_eiden_answer: 3
   - name: ch6_power_up
     routes:
-      - texts:
+      - condition: ch6_eiden_answer = 1
+        texts:
           - source: scene_text
             paragraph: 388
             text: "\"Good, then maybe you can finish off that dragon for us.\"\r\n\r\n\"No, Barry, YOU are going to finish off that dragon.\"\r\n\r\nEiden snaps his fingers and my stat device flies out of my hand and into his. The device then suddenly starts glowing and it looks like it's accumulating a massive amount of energy in a very short amount of time.\r\n\r\n\"Hey!!!\"\r\n\r\n\"I realize this must all be very confusing for you, Barry, so I'm going to provide you with a little bit of context. The beast that just attacked you is Tyrath, the self proclaimed king of all dragons. The reason he's looking for me is because I wrote a message in the stars last night in an ancient language used primarily by dragon hunters. The message's purpose was to let all dragon hunters who entered this contest know that a dragon exists on this island, and to give them all a little extra incentive to hunt him down. I very much doubt that any of them will pose a realistic threat to him, but it will be fun to watch.\"\r\n\r\nHe finishes charging up my stat device and then hands it back to me. As I hold it in my hand, I can feel a powerful surge of magical energy run through me and flow through all of my body."
           - source: scene_text_2
             paragraph: 38
             text: "\"I believe your ultimate goal was to win this tournament and become a mage, was it not? Well, Barry, I am now giving you a taste of that power. For about five minutes, you will have magical powers comparable to mine. More than enough to drive off the dragon, I'd wager. All of the information you need in order to use your powers should have been transferred into your mind by the stat device. I'm looking forward to watching your battle!\"\r\n\r\nEiden then starts to fade into thin air. When only his outline is visible anymore, he says:\r\n\r\n\"Oh, and I'd recommend starting with a magical barrier. Your friends don't seem to be doing very well.\""
-        condition: ch6_eiden_answer = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_think
-      - texts:
+      - condition: ch6_eiden_answer = 2
+        texts:
           - source: scene_text
             paragraph: 389
             text: "\"What's a time weaver?\"\r\n\r\n\"I could tell you, but, wouldn't you rather find out by yourself? Would you not rather live the thrill of unraveling this mystery on your own?\r\n\r\n\"No, thanks. I'm the kind of guy that always spoils the ending for himself before finishing a book.\"\r\n\r\n\"Fair enough. You see, Barry, a time weaver is a person with a natural talent for manipulating time. They are immune to all time affecting spells, they can freeze time, slow down time and even reverse it with enough practice. They also have a gift of seeing into the future, although it's more blurred visions than anything else. Time weavers are extremely rare, and are said to only appear at the dawn of a new age. They usually lead normal lives until their powers awaken suddenly. The last known appearance of a time weaver occurred some six hundred years ago.\"\r\n\r\nFor a moment, it seemed like time was starting to resume its course again. I could hear Daren's shouting, the dragon's roar, the wind blowing in my ear, and I could see the grass start moving. Then everything froze back again, as if nothing had happened.\r\n\r\n\"Time is running out, Barry,\" Eiden says. \"The time freezing spell won't last much longer.\"\r\n\r\nEiden snaps his fingers and my stat device flies out of my hand and into his. The device then suddenly starts glowing and it looks like it's accumulating a massive amount of energy in a very short amount of time."
           - source: scene_text_2
             paragraph: 39
             text: "\"Hey!!!\"\r\n\r\n\"I realize this must all be very confusing for you, Barry, so I'm going to provide you with a little bit of context. The beast that just attacked you is Tyrath, the self proclaimed king of all dragons. The reason he's looking for me is because I wrote a message in the stars last night in an ancient language used primarily by dragon hunters. The message's purpose was to let all dragon hunters who entered this contest know that a dragon exists on this island, and to give them all a little extra incentive to hunt him down. I very much doubt that any of them will pose a realistic threat to him, but it will be fun to watch.\"\r\n\r\nHe finishes charging up my stat device and then hands it back to me. As I hold it in my hand, I can feel a powerful surge of magical energy run through me and flow through all of my body. \r\n\r\n\"I believe your ultimate goal was to win this tournament and become a mage, was it not? Well, Barry, I am now giving you a taste of that power. For about five minutes, you will have magical powers comparable to mine. More than enough to drive off the dragon, I'd wager. All of the information you need in order to use your powers should have been transferred into your mind by the stat device. I'm looking forward to watching your battle!\"\r\n\r\nEiden then starts to fade into thin air. When only his outline is visible anymore, he says:\r\n\r\n\"Oh, and I'd recommend starting with a magical barrier. Your friends don't seem to be doing very well.\""
-        condition: ch6_eiden_answer = 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_think
-      - texts:
+      - condition: ch6_eiden_answer = 3
+        texts:
           - source: scene_text
             paragraph: 390
             text: "\"What's so special about being a stat device wielder?\"\r\n\r\n\"It's more special than you think! You are one of the rare cases that can utilize this device to its full potential. Not many can boast such a feat. Allow me to demonstrate.\"\r\n\r\nEiden snaps his fingers and my stat device flies out of my hand and into his. The device then suddenly starts glowing and it looks like it's accumulating a massive amount of energy in a very short amount of time.\r\n\r\n\"Hey!!!\"\r\n\r\n\"I realize this must all be very confusing for you, Barry, so I'm going to provide you with a little bit of context. The beast that just attacked you is Tyrath, the self proclaimed king of all dragons. The reason he's looking for me is because I wrote a message in the stars last night in an ancient language used primarily by dragon hunters. The message's purpose was to let all dragon hunters who entered this contest know that a dragon exists on this island, and to give them all a little extra incentive to hunt him down. I very much doubt that any of them will pose a realistic threat to him, but it will be fun to watch.\"\r\n\r\nHe finishes charging up my stat device and then hands it back to me. As I hold it in my hand, I can feel a powerful surge of magical energy run through me and flow through all of my body."
           - source: scene_text_2
             paragraph: 40
             text: "\"I believe your ultimate goal was to win this tournament and become a mage, was it not? Well, Barry, I am now giving you a taste of that power. For about five minutes, you will have magical powers comparable to mine. More than enough to drive off the dragon, I'd wager. All of the information you need in order to use your powers should have been transferred into your mind by the stat device. I'm looking forward to watching your battle!\"\r\n\r\nEiden then starts to fade into thin air. When only his outline is visible anymore, he says:\r\n\r\n\"Oh, and I'd recommend starting with a magical barrier. Your friends don't seem to be doing very well.\""
-        condition: ch6_eiden_answer = 3
         choices:
           - position: 1
             text: Continue
@@ -1524,25 +1524,25 @@ scenes:
               ch6_offense: 3
   - name: ch6_elemental
     routes:
-      - texts:
+      - condition: ch6_defense = 1
+        texts:
           - source: scene_text
             paragraph: 395
             text: "I start off by casting protection from fire and a flight spell on myself.\r\n\r\nI then fly out of the barrier, and right through the scorching flames. It feels as if I were in an oven, but at least I'm not getting any visible burns. The dragon sees me fly through his fire and lets out an intimidating roar.  I position myself at the same level of height as him, a few dozen feet from where he's hovering and I stop in mid-air.\r\n\r\nLet's try acid first. I make a ball of acid and send it flying towards the dragon. Tyrath claps his wings together, which generates a strong gust of wind that scatters the acid, and sends me spinning backwards. That disoriented me a bit, so it took me a few seconds to figure out where the dragon went. Once I locate him, I send a powerful jet of water in his direction. The dragon gets pushed back by the force of the impact, but aside from that, it does not look like he took any damage."
-        condition: ch6_defense = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_stat_checks
-      - texts:
+      - condition: ch6_defense = 2
+        texts:
           - source: scene_text
             paragraph: 396
             text: "I start off by casting protection from fire, wind and physical damage on myself, as well as a flight spell.\r\n\r\nI then fly out of the barrier, and right through the scorching flames. It feels as if I were in an oven, but at least I'm not getting any visible burns. The dragon sees me fly through his fire and lets out an intimidating roar.  I position myself at the same level of height as him, a few dozen feet from where he's hovering and I stop in mid-air.\r\n\r\nLet's try acid first. I make a ball of acid and send it flying towards the dragon. Tyrath claps his wings together, which generates a strong gust of wind that scatters the acid, but my protection from wind spell prevents me from being blown away. \r\n\r\nFor a moment, I could see the dragon appear in two places at the same time, as if he'd cloned himself, but then the clone disappears. Wait a minute. I know this effect! That's what happens when someone casts an illusion right in front of you. Was that gust of wind from before meant to disorient me so that I wouldn't see this?\r\n\r\nI cast a spell on myself that allows me to see through illusions. Sure enough, the dragon in front of me disappears as soon as I cast the spell, and I see the real Tyrath closing in on me from the right."
           - source: scene_text_2
             paragraph: 44
             text: "I mimic his earlier move and clap my hands, which creates an incredibly strong blast of air in front of me, sending the dragon back about fifty feet. \r\n\r\n\"I don't know how you were able to see through my illusion, human, but I'm not going to take it easy on you anymore.\"\r\n\r\nAfter finishing his phrase, the dragon immediately appears in front of me and swings one of his claws at my chest. It was all I could do to teleport out of harm's way in time, with a short range spell suited for combat. \r\n\r\nThe dragon and I spend the next few seconds teleporting one after the other and trying to take each  other by surprise.\r\n\r\nDamn it! If only I could cast my big spells now, I'd make short work of him. I think I can still make it if I go and cast the protection spells on the others right now."
-        condition: ch6_defense = 2
         choices:
           - position: 1
             text: Continue fighting with safe elemental spells
@@ -1554,14 +1554,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch6_big_not_planned
-      - texts:
+      - condition: ch6_defense = 3
+        texts:
           - source: scene_text
             paragraph: 397
             text: "I start off by freezing time, and then I proceed to cast every single protection spell I know on myself, as well as a flight spell.\r\n\r\nNext, I fly out of the barrier, and right through the scorching flames. It feels as if I were in an oven, but at least I'm not getting any visible burns. The dragon sees me fly through his fire and lets out an intimidating roar.  I position myself at the same level of height as him, a few dozen feet from where he's hovering and I stop in mid-air.\r\n\r\nLet's try acid first. I make a ball of acid and send it flying towards the dragon. Tyrath claps his wings together, which generates a strong gust of wind that scatters the acid, but my protection from wind spell prevents me from being blown away. \r\n\r\nThe dragon is now casting an illusion of himself, and leaving it behind, while he tries to approach me from the right. It's a good thing I already cast a protection from illusions before starting this fight. He can't surprise me like this.\r\n\r\nI mimic his earlier move and clap my hands, which creates an incredibly strong blast of air in front of me, sending the dragon back about fifty feet."
           - source: scene_text_2
             paragraph: 45
             text: "\"I don't know how you were able to see through my illusion, human, but I'm not going to take it easy on you anymore.\"\r\n\r\nAfter finishing his phrase, the dragon immediately appears in front of me and swings one of his claws at my chest. It was all I could do to teleport out of harm's way in time, with a short range spell suited for combat. \r\n\r\nThe dragon and I spend the next few seconds teleporting one after the other and trying to take each  other by surprise. \r\n\r\nDamn it! If only I could cast my big spells now, I'd make short work of him. I think I can still make it if I go and cast the protection spells on the others right now."
-        condition: ch6_defense = 3
         choices:
           - position: 1
             text: Continue fighting with safe elemental spells
@@ -1575,33 +1575,33 @@ scenes:
                   current_scene: ch6_big_not_planned
   - name: ch6_sword
     routes:
-      - texts:
+      - condition: ch6_defense = 1
+        texts:
           - source: scene_text
             paragraph: 398
             text: "I start off by casting protection from fire and a flight spell on myself.\r\n\r\nNext, I head directly for Daren and Kate. \r\n\r\n\"Barry, what happened?\" Daren asks me as I reach them. \"This magic power radiating from you... It's insane!\"\r\n\r\n\"I'm sorry, there's no time to explain. But I think I have enough power to beat the dragon on my own. Can I borrow your sword for a few minutes?\"\r\n\r\n\"Beat the dragon on your own?... Barry, I don't...\"\r\n\r\nDaren pauses for a bit to think about what I've said.\r\n\r\n\"Fine, here's the sword. Just don't do anything too crazy.\"\r\n\r\nI take his sword and prepare to fly out of the barrier to face the dragon. \r\n\r\n\"Hey, Barry!\" Daren calls out to me, as I turn back and see an unusually serious expression on his face. \"Good luck...\"\r\n\r\nI nod to him, as I fly out of the barrier, and right through the scorching flames. It feels as if I were in an oven, but at least I'm not getting any visible burns. Tyrath sees me fly through his fire and lets out a powerful roar. I do not let him intimidate me and lunge at him fiercely with my sword in hand."
-        condition: ch6_defense = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_sword_strength
-      - texts:
+      - condition: ch6_defense = 2
+        texts:
           - source: scene_text
             paragraph: 399
             text: "I start off by casting protection from fire, wind and physical damage on myself, as well as a flight spell.\r\n\r\nNext, I head directly for Daren and Kate. \r\n\r\n\"Barry, what happened?\" Daren asks me as I reach them. \"This magic power radiating from you... It's insane!\"\r\n\r\n\"I'm sorry, there's no time to explain. But I think I have enough power to beat the dragon on my own. Can I borrow your sword for a few minutes?\"\r\n\r\n\"Beat the dragon on your own?... Barry, I don't...\"\r\n\r\nDaren pauses for a bit to think about what I've said.\r\n\r\n\"Fine, here's the sword. Just don't do anything too crazy.\"\r\n\r\nI take his sword and prepare to fly out of the barrier to face the dragon. \r\n\r\n\"Hey, Barry!\" Daren calls out to me, as I turn back and see an unusually serious expression on his face. \"Good luck...\"\r\n\r\nI nod to him, as I fly out of the barrier, and right through the scorching flames. It feels as if I were in an oven, but at least I'm not getting any visible burns. Tyrath sees me fly through his fire and lets out a powerful roar. I do not let him intimidate me and lunge at him fiercely with my sword in hand."
-        condition: ch6_defense = 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_sword_strength
-      - texts:
+      - condition: ch6_defense = 3
+        texts:
           - source: scene_text
             paragraph: 400
             text: "I start off by freezing time, and then I proceed to cast every single protection spell I know on myself, as well as a flight spell.\r\n\r\nNext, I head directly for Daren and Kate. \r\n\r\n\"Barry, what happened?\" Daren asks me as I reach them. \"This magic power radiating from you... It's insane!\"\r\n\r\n\"I'm sorry, there's no time to explain. But I think I have enough power to beat the dragon on my own. Can I borrow your sword for a few minutes?\"\r\n\r\n\"Beat the dragon on your own?... Barry, I don't...\"\r\n\r\nDaren pauses for a bit to think about what I've said.\r\n\r\n\"Fine, here's the sword. Just don't do anything too crazy.\"\r\n\r\nI take his sword and prepare to fly out of the barrier to face the dragon. \r\n\r\n\"Hey, Barry!\" Daren calls out to me, as I turn back and see an unusually serious expression on his face. \"Good luck...\"\r\n\r\nI nod to him, as I fly out of the barrier, and right through the scorching flames. It feels as if I were in an oven, but at least I'm not getting any visible burns. Tyrath sees me fly through his fire and lets out a powerful roar. I do not let him intimidate me and lunge at him fiercely with my sword in hand."
-        condition: ch6_defense = 3
         choices:
           - position: 1
             text: Continue
@@ -1610,33 +1610,33 @@ scenes:
                   current_scene: ch6_sword_strength
   - name: ch6_big_spells
     routes:
-      - texts:
+      - condition: ch6_defense = 1
+        texts:
           - source: scene_text
             paragraph: 401
             text: "I start off by casting protection from fire and a flight spell on myself.\r\n\r\nNext, I cast the necessary protection spells on Rose, and head for Daren and Kate. \r\n\r\n\"Barry, what happened?\" Daren asks me as I reach them. \"This magic power radiating from you... It's insane!\"\r\n\r\n\"I'll explain later. I don't have much time, and I'll need to concentrate as much as possible on casting these protection spells.\"\r\n\r\nAfter I finish casting the spells on the three of us, I fly out of the barrier to face the dragon. Finally, I can go all out now."
-        condition: ch6_defense = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_big_spells2
-      - texts:
+      - condition: ch6_defense = 2
+        texts:
           - source: scene_text
             paragraph: 402
             text: "I start off by casting protection from fire, wind and physical damage on myself, as well as a flight spell.\r\n\r\nNext, I cast the necessary protection spells on Rose, and head for Daren and Kate. \r\n\r\n\"Barry, what happened?\" Daren asks me as I reach them. \"This magic power radiating from you... It's insane!\"\r\n\r\n\"I'll explain later. I don't have much time, and I'll need to concentrate as much as possible on casting these protection spells.\"\r\n\r\nAfter I finish casting the spells on the three of us, I fly out of the barrier to face the dragon. Finally, I can go all out now."
-        condition: ch6_defense = 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_big_spells2
-      - texts:
+      - condition: ch6_defense = 3
+        texts:
           - source: scene_text
             paragraph: 403
             text: "I start off by freezing time, and then I proceed to cast every single protection spell I know on myself, as well as a flight spell.\r\n\r\nNext, I cast the necessary protection spells on Rose, and head for Daren and Kate. \r\n\r\n\"Barry, what happened?\" Daren asks me as I reach them. \"This magic power radiating from you... It's insane!\"\r\n\r\n\"I'll explain later. I don't have much time, and I'll need to concentrate as much as possible on casting these protection spells.\"\r\n\r\nAfter I finish casting the spells on the three of us, I fly out of the barrier to face the dragon. Finally, I can go all out now."
-        condition: ch6_defense = 3
         choices:
           - position: 1
             text: Continue
@@ -1645,84 +1645,90 @@ scenes:
                   current_scene: ch6_big_spells2
   - name: ch6_sword_strength
     routes:
-      - texts:
+      - condition: ch6_defense = 1 AND strength < 4
+        texts:
           - source: scene_text
             paragraph: 404
             text: "The power of my strike was not enough to break through his armored scales. The dragon immediately swings one of his claws at me, and I am forced to teleport away from him.\r\n\r\nHe then claps his wings together, which generates a strong gust of wind that sends me spinning backwards. That disoriented me a bit, so it took me a few seconds to locate the dragon again."
-        condition: ch6_defense = 1 AND strength < 4
-        set:
-          failed_checks:
-            - '[ Strength check failed - level 4 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Strength check failed - level 4 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_stat_checks
-      - texts:
+      - condition: ch6_defense = 2 AND strength < 4
+        texts:
           - source: scene_text
             paragraph: 405
             text: "The power of my strike was not enough to break through his armored scales. The dragon immediately swings one of his claws at me, and I am forced to teleport away from him.\r\n\r\nHe then claps his wings together, generating a strong gust of wind in an attempt to blow me away from him, but my protection from wind spell makes it seem like a simple breeze.\r\n\r\nFor a moment, I could see the dragon appear in two places at the same time, as if he'd cloned himself, but then the clone disappears. Wait a minute. I know this effect! That's what happens when someone casts an illusion right in front of you. Was that gust of wind from before meant to disorient me so that I wouldn't see this?\r\n\r\nI cast a spell on myself that allows me to see through illusions. Sure enough, the dragon in front of me disappears as soon as I cast the spell, and I see the real Tyrath closing in on me from the right.\r\n\r\nI teleport next to the dragon, and swing my sword at him. He gets taken by surprise, and he teleports away to avoid taking any damage."
-        condition: ch6_defense = 2 AND strength < 4
-        set:
-          failed_checks:
-            - '[ Strength check failed - level 4 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Strength check failed - level 4 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_sword2
-      - texts:
+      - condition: ch6_defense = 3 AND strength < 4
+        texts:
           - source: scene_text
             paragraph: 406
             text: "The power of my strike was not enough to break through his armored scales. The dragon immediately swings one of his claws at me, and I am forced to teleport away from him.\r\n\r\nHe then claps his wings together, generating a strong gust of wind in an attempt to blow me away from him, but my protection from wind spell makes it seem like a simple breeze.\r\n\r\nThe dragon is now casting an illusion of himself, and leaving it behind, while he tries to approach me from the right. It's a good thing I already cast a protection from illusions before starting this fight. He can't surprise me like this.\r\n\r\nI teleport next to the dragon, and swing my sword at him. He gets taken by surprise, and he teleports away to avoid taking any damage."
-        condition: ch6_defense = 3 AND strength < 4
-        set:
-          failed_checks:
-            - '[ Strength check failed - level 4 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Strength check failed - level 4 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_sword2
-      - texts:
+      - condition: ch6_defense = 1 AND strength = 4
+        texts:
           - source: scene_text
             paragraph: 407
             text: "My strike was powerful enough that I managed to break one of his armored scales and the sword went through the dragon's tough skin. Tyrath roars in pain, and he teleports ten feet away from me. \r\n\r\nHe then claps his wings together, which generates a strong gust of wind that sends me spinning backwards. That disoriented me a bit, so it took me a few seconds to locate the dragon again."
-        condition: ch6_defense = 1 AND strength = 4
-        set:
-          successful_checks:
-            - '[ Strength check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Strength check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_stat_checks
-      - texts:
+      - condition: ch6_defense = 2 AND strength = 4
+        texts:
           - source: scene_text
             paragraph: 408
             text: "My strike was powerful enough that I managed to break one of his armored scales and the sword went through the dragon's tough skin. Tyrath roars in pain, and he teleports ten feet away from me. \r\n\r\nHe then claps his wings together, generating a strong gust of wind in an attempt to blow me away from him, but my protection from wind spell makes it seem like a simple breeze.\r\n\r\nFor a moment, I could see the dragon appear in two places at the same time, as if he'd cloned himself, but then the clone disappears. Wait a minute. I know this effect! That's what happens when someone casts an illusion right in front of you. Was that gust of wind from before meant to disorient me so that I wouldn't see this?\r\n\r\nI cast a spell on myself that allows me to see through illusions. Sure enough, the dragon in front of me disappears as soon as I cast the spell, and I see the real Tyrath closing in on me from the right.\r\n\r\nI teleport next to the dragon, and swing my sword at him. He gets taken by surprise, and he teleports away to avoid taking any damage."
-        condition: ch6_defense = 2 AND strength = 4
-        set:
-          successful_checks:
-            - '[ Strength check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Strength check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_sword2
-      - texts:
+      - condition: ch6_defense = 3 AND strength = 4
+        texts:
           - source: scene_text
             paragraph: 409
             text: "My strike was powerful enough that I managed to break one of his armored scales and the sword went through the dragon's tough skin. Tyrath roars in pain, and he teleports ten feet away from me. \r\n\r\nHe then claps his wings together, generating a strong gust of wind in an attempt to blow me away from him, but my protection from wind spell makes it seem like a simple breeze.\r\n\r\nThe dragon is now casting an illusion of himself, and leaving it behind, while he tries to approach me from the right. It's a good thing I already cast a protection from illusions before starting this fight. He can't surprise me like this.\r\n\r\nI teleport next to the dragon, and swing my sword at him. He gets taken by surprise, and he teleports away to avoid taking any damage."
-        condition: ch6_defense = 3 AND strength = 4
-        set:
-          successful_checks:
-            - '[ Strength check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Strength check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1731,14 +1737,15 @@ scenes:
                   current_scene: ch6_sword2
   - name: ch6_stat_checks
     routes:
-      - texts:
+      - condition: perception = 4 AND ch6_improvise = 1
+        texts:
           - source: scene_text
             paragraph: 410
             text: "I notice that there's something off about the way the sun is shining on the dragon's scales. It's as if the light is coming from the wrong direction. Could it be that the dragon I'm looking at is an illusion? If that's the case, then where's the real dragon?\r\n\r\nI cast a spell on myself that allows me to see through illusions. Sure enough, the dragon in front of me disappears as soon as I cast the spell, and I see the real Tyrath closing in on me from the right.\r\n\r\nI mimic his earlier move and clap my hands, which creates an incredibly strong blast of air in front of me, sending the dragon back about fifty feet."
-        condition: perception = 4 AND ch6_improvise = 1
-        set:
-          successful_checks:
-            - '[ Observation check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Observation check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1752,14 +1759,15 @@ scenes:
               - set:
                   current_scene: ch6_sword2
                 condition: ch6_offense = 2 AND ch6_defense = 1 AND is_dead = 0
-      - texts:
+      - condition: perception = 4 AND ch6_offense = 1
+        texts:
           - source: scene_text
             paragraph: 410
             text: "I notice that there's something off about the way the sun is shining on the dragon's scales. It's as if the light is coming from the wrong direction. Could it be that the dragon I'm looking at is an illusion? If that's the case, then where's the real dragon?\r\n\r\nI cast a spell on myself that allows me to see through illusions. Sure enough, the dragon in front of me disappears as soon as I cast the spell, and I see the real Tyrath closing in on me from the right.\r\n\r\nI mimic his earlier move and clap my hands, which creates an incredibly strong blast of air in front of me, sending the dragon back about fifty feet."
-        condition: perception = 4 AND ch6_offense = 1
-        set:
-          successful_checks:
-            - '[ Observation check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Observation check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1770,14 +1778,15 @@ scenes:
               - set:
                   current_scene: ch6_elemental2
                 condition: ch6_defense = 1 AND is_dead = 0
-      - texts:
+      - condition: perception = 4 AND ch6_offense = 2
+        texts:
           - source: scene_text
             paragraph: 411
             text: "I notice that there's something off about the way the sun is shining on the dragon's scales. It's as if the light is coming from the wrong direction. Could it be that the dragon I'm looking at is an illusion? If that's the case, then where's the real dragon?\r\n\r\nI cast a spell on myself that allows me to see through illusions. Sure enough, the dragon in front of me disappears as soon as I cast the spell, and I see the real Tyrath closing in on me from the right.\r\n\r\nI teleport next to the dragon, and swing my sword at him. He gets taken by surprise, and he teleports away to avoid taking any damage."
-        condition: perception = 4 AND ch6_offense = 2
-        set:
-          successful_checks:
-            - '[ Observation check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Observation check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1788,16 +1797,17 @@ scenes:
               - set:
                   current_scene: ch6_sword2
                 condition: ch6_defense = 1 AND is_dead = 0
-      - texts:
+      - condition: perception < 4 AND premonition = 4 AND ch6_improvise = 1
+        texts:
           - source: scene_text
             paragraph: 412
             text: "I suddenly see a vision of the dragon in front of me slowly fading away, and a different dragon appearing behind me. My premonition sense is trying to warn me of something. Could it be that I'm currently looking at an illusion?\r\n\r\nI cast a spell on myself that allows me to see through illusions. Sure enough, the dragon in front of me disappears as soon as I cast the spell, and I see the real Tyrath closing in on me from the right.\r\n\r\nI mimic his earlier move and clap my hands, which creates an incredibly strong blast of air in front of me, sending the dragon back about fifty feet."
-        condition: perception < 4 AND premonition = 4 AND ch6_improvise = 1
-        set:
-          successful_checks:
-            - '[ Premonition check successful - level 4 ]'
-          failed_checks:
-            - '[ Observation check failed - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Premonition check successful - level 4 ]'
+              failed_checks:
+                - '[ Observation check failed - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1811,16 +1821,17 @@ scenes:
               - set:
                   current_scene: ch6_sword2
                 condition: ch6_offense = 2 AND ch6_defense = 1 AND is_dead = 0
-      - texts:
+      - condition: perception < 4 AND premonition = 4 AND ch6_offense = 1
+        texts:
           - source: scene_text
             paragraph: 412
             text: "I suddenly see a vision of the dragon in front of me slowly fading away, and a different dragon appearing behind me. My premonition sense is trying to warn me of something. Could it be that I'm currently looking at an illusion?\r\n\r\nI cast a spell on myself that allows me to see through illusions. Sure enough, the dragon in front of me disappears as soon as I cast the spell, and I see the real Tyrath closing in on me from the right.\r\n\r\nI mimic his earlier move and clap my hands, which creates an incredibly strong blast of air in front of me, sending the dragon back about fifty feet."
-        condition: perception < 4 AND premonition = 4 AND ch6_offense = 1
-        set:
-          successful_checks:
-            - '[ Premonition check successful - level 4 ]'
-          failed_checks:
-            - '[ Observation check failed - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Premonition check successful - level 4 ]'
+              failed_checks:
+                - '[ Observation check failed - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1831,16 +1842,17 @@ scenes:
               - set:
                   current_scene: ch6_elemental2
                 condition: ch6_defense = 1 AND is_dead = 0
-      - texts:
+      - condition: perception < 4 AND premonition = 4 AND ch6_offense = 2
+        texts:
           - source: scene_text
             paragraph: 413
             text: "I suddenly see a vision of the dragon in front of me slowly fading away, and a different dragon appearing behind me. My premonition sense is trying to warn me of something. Could it be that I'm currently looking at an illusion?\r\n\r\nI cast a spell on myself that allows me to see through illusions. Sure enough, the dragon in front of me disappears as soon as I cast the spell, and I see the real Tyrath closing in on me from the right.\r\n\r\nI teleport next to the dragon, and swing my sword at him. He gets taken by surprise, and he teleports away to avoid taking any damage."
-        condition: perception < 4 AND premonition = 4 AND ch6_offense = 2
-        set:
-          successful_checks:
-            - '[ Premonition check successful - level 4 ]'
-          failed_checks:
-            - '[ Observation check failed - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Premonition check successful - level 4 ]'
+              failed_checks:
+                - '[ Observation check failed - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1851,17 +1863,18 @@ scenes:
               - set:
                   current_scene: ch6_sword2
                 condition: ch6_defense = 1 AND is_dead = 0
-      - texts:
+      - condition: perception < 4 AND premonition < 4 AND reflexes < 4
+        texts:
           - source: scene_text
             paragraph: 415
             text: "I shoot a bolt of lightning at him, which hits him head on, although it doesn't seem to have affected him in any way. Suddenly, the dragon in front of me disappears and a different dragon appears behind me.\r\n\r\nTyrath quickly whips his tail towards me and grabs me with it. The force with which he's gripping me is suffocating. What is this? What just happened? Was that an illusion?\r\n\r\n\"You're not the only one who can cast magic, human,\" the dragon says.\r\n\r\nThe force of his tail's grip is so strong that I can feel it crushing my internal organs. As I cough up some blood, I can feel my vision starting to blur. The last thing I see is the dragon's hideous face, as he laughs triumphantly."
-        condition: perception < 4 AND premonition < 4 AND reflexes < 4
-        set:
-          failed_checks:
-            - '[ Observation check failed - level 4 ]'
-            - '[ Premonition check failed - level 4 ]'
-            - '[ Reflexes check failed - level 4 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Observation check failed - level 4 ]'
+                - '[ Premonition check failed - level 4 ]'
+                - '[ Reflexes check failed - level 4 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1880,19 +1893,20 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: >-
+          perception < 4 AND premonition < 4 AND reflexes = 4 AND ch6_improvise
+          = 1
+        texts:
           - source: scene_text
             paragraph: 416
             text: "I shoot a bolt of lightning at him, which hits him head on, although it doesn't seem to have affected him in any way. Suddenly, the dragon in front of me disappears and a different dragon appears behind me.\r\n\r\nTyrath whips his tail towards me and attempts to grab me with it. There was no time for me to dodge the hit, so I instinctively cast the time freezing spell that Eiden used earlier, stopping his tail a few inches before reaching me. My heart is beating like crazy. What is this? What just happened? Was that an illusion?\r\n\r\nDamn it! I completely let my guard down. I won't be able to cast the time freezing spell again until the end of the battle, so I'd better make the most of this. \r\n\r\nI cast a spell that allows me to see through illusions, as well as a spell to protect me from wind, and another one to protect me from physical damage. This should be enough for now. \r\n\r\nI mimic the dragon's earlier move and clap my hands, which immediately cancels my time freezing spell and creates an incredibly strong blast of air in front of me, sending the dragon back about fifty feet."
-        condition: >-
-          perception < 4 AND premonition < 4 AND reflexes = 4 AND ch6_improvise
-          = 1
-        set:
-          failed_checks:
-            - '[ Observation check failed - level 4 ]'
-            - '[ Premonition check failed - level 4 ]'
-          successful_checks:
-            - '[ Reflexes check successful - level 4 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Observation check failed - level 4 ]'
+                - '[ Premonition check failed - level 4 ]'
+              successful_checks:
+                - '[ Reflexes check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1906,19 +1920,20 @@ scenes:
               - set:
                   current_scene: ch6_sword2
                 condition: ch6_offense = 2 AND ch6_defense = 1 AND is_dead = 0
-      - texts:
+      - condition: >-
+          perception < 4 AND premonition < 4 AND reflexes = 4 AND ch6_offense =
+          1
+        texts:
           - source: scene_text
             paragraph: 416
             text: "I shoot a bolt of lightning at him, which hits him head on, although it doesn't seem to have affected him in any way. Suddenly, the dragon in front of me disappears and a different dragon appears behind me.\r\n\r\nTyrath whips his tail towards me and attempts to grab me with it. There was no time for me to dodge the hit, so I instinctively cast the time freezing spell that Eiden used earlier, stopping his tail a few inches before reaching me. My heart is beating like crazy. What is this? What just happened? Was that an illusion?\r\n\r\nDamn it! I completely let my guard down. I won't be able to cast the time freezing spell again until the end of the battle, so I'd better make the most of this. \r\n\r\nI cast a spell that allows me to see through illusions, as well as a spell to protect me from wind, and another one to protect me from physical damage. This should be enough for now. \r\n\r\nI mimic the dragon's earlier move and clap my hands, which immediately cancels my time freezing spell and creates an incredibly strong blast of air in front of me, sending the dragon back about fifty feet."
-        condition: >-
-          perception < 4 AND premonition < 4 AND reflexes = 4 AND ch6_offense =
-          1
-        set:
-          failed_checks:
-            - '[ Observation check failed - level 4 ]'
-            - '[ Premonition check failed - level 4 ]'
-          successful_checks:
-            - '[ Reflexes check successful - level 4 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Observation check failed - level 4 ]'
+                - '[ Premonition check failed - level 4 ]'
+              successful_checks:
+                - '[ Reflexes check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1929,19 +1944,20 @@ scenes:
               - set:
                   current_scene: ch6_elemental2
                 condition: ch6_defense = 1 AND is_dead = 0
-      - texts:
+      - condition: >-
+          perception < 4 AND premonition < 4 AND reflexes = 4 AND ch6_offense =
+          2
+        texts:
           - source: scene_text
             paragraph: 417
             text: "I shoot a bolt of lightning at him, which hits him head on, although it doesn't seem to have affected him in any way. Suddenly, the dragon in front of me disappears and a different dragon appears behind me.\r\n\r\nTyrath whips his tail towards me and attempts to grab me with it. There was no time for me to dodge the hit, so I instinctively cast the time freezing spell that Eiden used earlier, stopping his tail a few inches before reaching me. My heart is beating like crazy. What is this? What just happened? Was that an illusion?\r\n\r\nDamn it! I completely let my guard down. I won't be able to cast the time freezing spell again until the end of the battle, so I'd better make the most of this. \r\n\r\nI cast a spell that allows me to see through illusions, as well as a spell to protect me from wind, and another one to protect me from physical damage. This should be enough for now. \r\n\r\nI use my sword to slash at the dragon's tail, which immediately unfreezes time, and the dragon screams in pain as I draw blood with my blade. He then teleports back twenty feet and shouts to me."
-        condition: >-
-          perception < 4 AND premonition < 4 AND reflexes = 4 AND ch6_offense =
-          2
-        set:
-          failed_checks:
-            - '[ Observation check failed - level 4 ]'
-            - '[ Premonition check failed - level 4 ]'
-          successful_checks:
-            - '[ Reflexes check successful - level 4 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Observation check failed - level 4 ]'
+                - '[ Premonition check failed - level 4 ]'
+              successful_checks:
+                - '[ Reflexes check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -2005,28 +2021,28 @@ scenes:
               current_scene: ch6_sword_simple
   - name: ch6_elemental3
     routes:
-      - texts:
+      - condition: ch6_defense <> 3
+        texts:
           - source: scene_text
             paragraph: 421
             text: "Casting protection spells on everyone would waste too much time. I'll just have to make better use of my offensive spells. \r\n\r\nI use my earth magic to break the rocky soil into pieces, and make the big chunks of rock fly all the way to my position. I then get all the rocks to spin around me at great speed, using them as a shield against the dragon. If he tries any more surprise teleports, he's going to get pummeled. \r\n\r\nI pull more chunks of rock out of the ground and send them all flying at Tyrath. He tries to teleport out of their way, but there's too many of them, and he gets hit by a few. He roars furiously. Finally, I did some damage to him. \r\n\r\nI take out even more rocks from the ground and make them all follow him, as he tries to fly out of their way. The rocks are only increasing in number, because he can't take them out with his claws faster than I can make them. \r\n\r\nAfter getting hit a few more times, Tyrath shoots out flames hotter than ever before, turning all of my rocks into molten lava. He then flies right through the lava and heads for me again. He breathes his fire towards me, and turns all of the rocks rotating around me into lava as well. This is no good. Lava isn't solid enough to inconvenience him, and he can simply shrug off the hotness of it given his resistance to fire."
           - source: scene_text_2
             paragraph: 47
             text: "I let go of the lava that's rotating around me, and shoot a beam of lightning out of my hands, big enough to engulf the whole dragon in it. This does not stop Tyrath from his flight, and I'm forced to again teleport out of his way when he reaches me. Lightning doesn't work either. If he can melt rock that easily, then he'll have no trouble against water. What the hell am I supposed to use against him? Acid?\r\n\r\nI surround the dragon with a sphere of acid, and I try to envelop him in it. Tyrath lets out a much more powerful roar than before. So powerful, in fact that it creates an explosion of air all around him, and sends my acid flying all over the place. His roar was so loud that I had to use a spell to avoid losing consciousness. I can only hope that Daren and the others have access to sonic protection as well. \r\n\r\n\"Insolent wretch!\" the dragon screams. \"There won't be a single speck of dust left of you when I'm finished!\"\r\n\r\nTyrath starts teleporting for me again, but this time he's doing it faster. I can barely keep up with him anymore. What the hell am I doing? I am in control of more magical power than I ever dreamed would be possible, but I can't hold off a single dragon?!"
-        condition: ch6_defense <> 3
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_lose_fight
-      - texts:
+      - condition: ch6_defense = 3
+        texts:
           - source: scene_text
             paragraph: 422
             text: "Casting protection spells on everyone would waste too much time. I'll just have to make better use of my offensive spells. \r\n\r\nI use my earth magic to break the rocky soil into pieces, and make the big chunks of rock fly all the way to my position. I then get all the rocks to spin around me at great speed, using them as a shield against the dragon. If he tries any more surprise teleports, he's going to get pummeled. \r\n\r\nI pull more chunks of rock out of the ground and send them all flying at Tyrath. He tries to teleport out of their way, but there's too many of them, and he gets hit by a few. He roars furiously. Finally, I did some damage to him. \r\n\r\nI take out even more rocks from the ground and make them all follow him, as he tries to fly out of their way. The rocks are only increasing in number, because he can't take them out with his claws faster than I can make them. \r\n\r\nAfter getting hit a few more times, Tyrath shoots out flames hotter than ever before, turning all of my rocks into molten lava. He then flies right through the lava and heads for me again. He breathes his fire towards me, and turns all of the rocks rotating around me into lava as well. This is no good. Lava isn't solid enough to inconvenience him, and he can simply shrug off the hotness of it given his resistance to fire."
           - source: scene_text_2
             paragraph: 48
             text: "I let go of the lava that's rotating around me, and shoot a beam of lightning out of my hands, big enough to engulf the whole dragon in it. This does not stop Tyrath from his flight, and I'm forced to again teleport out of his way when he reaches me. Lightning doesn't work either. If he can melt rock that easily, then he'll have no trouble against water. What the hell am I supposed to use against him? Acid?\r\n\r\nI surround the dragon with a sphere of acid, and I try to envelop him in it. Tyrath lets out a much more powerful roar than before. So powerful, in fact that it creates an explosion of air all around him, and sends my acid flying all over the place. His roar was loud enough that it could have made me lose consciousness, were it not for my protections against sonic attacks. I can only hope that Daren and the others have access to sonic protection as well. \r\n\r\n\"Insolent wretch!\" the dragon screams. \"There won't be a single speck of dust left of you when I'm finished!\"\r\n\r\nTyrath starts teleporting for me again, but this time he's doing it faster. I can barely keep up with him anymore. What the hell am I doing? I am in control of more magical power than I ever dreamed would be possible, but I can't hold off a single dragon?!"
-        condition: ch6_defense = 3
         choices:
           - position: 1
             text: Continue
@@ -2050,28 +2066,30 @@ scenes:
               ch6_won_dragon: 1
   - name: ch6_sword_simple
     routes:
-      - texts:
+      - condition: strength < 4
+        texts:
           - source: scene_text
             paragraph: 424
             text: "I've already decided that I need Daren's sword to win this fight. The risk to lose the blade by casting acid on it is much too great to be worth it.\r\n\r\nI'm going to have to make this quick. I teleport next to the dragon and thrust my blade into his chest.\r\n\r\nThe sword barely scratches his armored scales, and the dragon takes advantage of my failed attack to swing his right claw at me. I manage to block his strike with my sword, but he then almost immediately whips his tail at me, forcing me to teleport away from him.\r\n\r\nI spend the next twenty seconds teleporting in and out of the dragon's range, trying to shatter his armored scales, but it's no use. I can't even get close to reaching his skin with my blade. \r\n\r\nNow Tyrath has gone on the offensive. He's teleporting faster and forcing me to spend my time dodging his attacks instead of looking for openings. I can barely even keep up with him anymore. What the hell am I doing? I am in control of more magical power than I ever dreamed would be possible, but I can't hold off a single dragon?!"
-        condition: strength < 4
-        set:
-          failed_checks:
-            - '[ Strength check failed - level 4 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Strength check failed - level 4 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_lose_fight
-      - texts:
+      - condition: strength = 4
+        texts:
           - source: scene_text
             paragraph: 425
             text: "I've already decided that I need Daren's sword to win this fight. The risk to lose the blade by casting acid on it is much too great to be worth it.\r\n\r\nI'm going to have to make this quick. I teleport next to the dragon and thrust my blade into his chest.\r\n\r\nThe sword shatters his armored scales and manages to break through his thick skin. The dragon holds back the pain, and swings his right claw at me. I quickly take the sword out of him and block his attack just in time, but he then almost immediately whips his tail at me, forcing me to teleport away from him.\r\n\r\nThis isn't going to be easy. The dragon and I spend the next minute teleporting one after the other, trying to take each other by surprise. Tyrath keeps breathing fire at me, but I use my sword to absorb his flames every time, and then I send them back at him. The dragon and I seem to be quite evenly matched, and I've drawn blood more than a few times, but I'm starting to wonder if I've got what it takes to finish him in the little time I have left."
-        condition: strength = 4
-        set:
-          successful_checks:
-            - '[ Strength check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Strength check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -2092,14 +2110,14 @@ scenes:
               current_scene: ch6_big_spells2
   - name: ch6_big_spells2
     routes:
-      - texts:
+      - condition: ch6_defense <> 3
+        texts:
           - source: scene_text
             paragraph: 427
             text: "I raise my hands in the air and feel all of my magical power flow through me. This is what I've always wanted. This is what I've been looking for all my life. I'm not going to let one single dragon stand in my way.\r\n\r\nI start by creating a tornado. The wind around me is now so strong that it's literally breaking chunks of rock from the ground and making them fly around me, clashing with the trees that are getting uprooted one by one. It's almost like a scenario from a horror book. \r\n\r\nThe dragon is struggling to keep himself airborne, while my protections from wind are allowing me to fly through the currents with ease. Next, I use my earth magic to animate a giant made out of rock. The ground trembles violently, as an enormous rock golem rises from it slowly, making it seem like it had been simply sleeping all of this time. Once it gets up, I can see that the giant measures at an impressive two hundred feet, and once it spots the dragon, it uses its huge hands to crush him between them.\r\n\r\nTyrath lets out a deafening roar. A roar so powerful that it creates an explosion of air all around him, and it actually shatters the giant's hands, setting the dragon free. That was so loud that I had to use a spell to avoid losing my consciousness. I can only hope that Daren and the others have access to sonic protection as well."
           - source: scene_text_2
             paragraph: 50
             text: "Even though he managed to get out, it's clear that Tyrath has taken a lot of damage from my last attack. He's now breathing fire hotter than ever before, engulfing my rock giant in flames and turning him into molten lava.\r\n\r\nTry all you want, little dragon, but you won't escape my grasp. Nothing can stop me now. \r\n\r\nDozens of volcanoes are starting to erupt from the earth below as I use even more magical power, this time to call upon a rain of acid. The dragon screams as the acid burns through its wings, and he starts to desperately shoot fire everywhere above him, in order to burn all of the acid before it reaches him. I teleport next to Tyrath and point my palms towards him,  blowing him away with a powerful explosion of air that stuns him for a few seconds. Since I've interrupted him from burning the drops of acid, the rain is now once more pouring on him, and the dragon starts to scream in pain again.\r\n\r\nIt's over. He's no match for me. The time I have left will be more than enough to finish him off for good."
-        condition: ch6_defense <> 3
         choices:
           - position: 1
             text: Continue
@@ -2107,14 +2125,14 @@ scenes:
               - set:
                   current_scene: ch6_win_fight
                   ch6_won_dragon: 1
-      - texts:
+      - condition: ch6_defense = 3
+        texts:
           - source: scene_text
             paragraph: 428
             text: "I raise my hands in the air and feel all of my magical power flow through me. This is what I've always wanted. This is what I've been looking for all my life. I'm not going to let one single dragon stand in my way.\r\n\r\nI start by creating a tornado. The wind around me is now so strong that it's literally breaking chunks of rock from the ground and making them fly around me, clashing with the trees that are getting uprooted one by one. It's almost like a scenario from a horror book. \r\n\r\nThe dragon is struggling to keep himself airborne, while my protections from wind are allowing me to fly through the currents with ease. Next, I use my earth magic to animate a giant made out of rock. The ground trembles violently, as an enormous rock golem rises from it slowly, making it seem like it had been simply sleeping all of this time. Once it gets up, I can see that the giant measures at an impressive two hundred feet, and once it spots the dragon, it uses its huge hands to crush him between them.\r\n\r\nTyrath lets out a deafening roar. A roar so powerful that it creates an explosion of air all around him, and it actually shatters the giant's hands, setting the dragon free. That was so loud it could have made me lose consciousness, were it not for my protections against sonic attacks. I can only hope that Daren and the others have access to sonic protection as well."
           - source: scene_text_2
             paragraph: 51
             text: "Even though he managed to get out, it's clear that Tyrath has taken a lot of damage from my last attack. He's now breathing fire hotter than ever before, engulfing my rock giant in flames and turning him into molten lava.\r\n\r\nTry all you want, little dragon, but you won't escape my grasp. Nothing can stop me now. \r\n\r\nDozens of volcanoes are starting to erupt from the earth below as I use even more magical power, this time to call upon a rain of acid. The dragon screams as the acid burns through its wings, and he starts to desperately shoot fire everywhere above him, in order to burn all of the acid before it reaches him. I teleport next to Tyrath and point my palms towards him,  blowing him away with a powerful explosion of air that stuns him for a few seconds. Since I've interrupted him from burning the drops of acid, the rain is now once more pouring on him, and the dragon starts to scream in pain again.\r\n\r\nIt's over. He's no match for me. The time I have left will be more than enough to finish him off for good."
-        condition: ch6_defense = 3
         choices:
           - position: 1
             text: Continue
@@ -2130,14 +2148,14 @@ scenes:
           id: ac_ch6_berserker
           title: Berserker mode activated
     routes:
-      - texts:
+      - condition: ch6_offense = 1 AND ch6_improvise = 2
+        texts:
           - source: scene_text
             paragraph: 429
             text: "Now I'm the one starting to get angry. I can feel my body starting to radiate heat. I can even see steam coming out of me. Suddenly, I can feel my speed increase by the tenfold. What kind of spell did I just cast? My stat device never told me I had access to anything like this. I feel like I can never lose to anyone ever again.\r\n\r\nEverything seems to be moving much slower all of a sudden. Or am I just the one moving faster? I can predict the dragon's attack before he even teleports in front of me, but I don't feel the need to dodge anymore. Instead, I simply block Tyrath's next claw strike with my left hand.\r\n\r\n\"No...\" the dragon says, dumbfounded.\r\n\r\nWhile I keep a grip on him with my left hand, I punch him in the chest with my right fist. The impact of my strike was so strong that I could feel some of his armored scales shatter from the force of my blow, as the dragon gets sent flying more than twenty feet backwards. Tyrath coughs up blood, and starts to speak, but I do not let him. I instantly teleport next to him and grab him by the tail. I then throw him into the ground, and when he collides with the earth he creates a huge crater and sends clouds of dust flying in all directions. \r\n\r\nOne more hit should settle this. As I prepare to dash towards Tyrath to deliver the finishing blow, I can feel my powers starting to leave me."
           - source: scene_text_2
             paragraph: 52
             text: "No! Not now! I was going to finish this. I was winning! I'm nowhere near my five minutes limit. How did I expend all of my magical energy in just a few seconds? Was it because of the sudden power up I got just now?\r\n\r\nPlease, it can't all end like this. I just need to deliver one more strike. One more strike is all I need. Please...\r\n\r\nIt's too late. I can't even maintain my flight spell anymore. I'm falling. There's no way I'll survive a fall from this height. Daren and Kate are too far to help me. Is this it for me? After all that's happened, am I simply going to die pathetically like this?\r\n\r\nJust before I reach the ground, I suddenly stop in mid-air and then I fall flat on my face, from a height of about three feet. How did I do that? Did I manage to gather my last few drops of power in order to save myself?\r\n\r\n\"How disappointing,\" I hear Eiden's voice from high above in the sky. \"How very disappointing. Barry, I was expecting a lot more from you. I didn't give you all of that magical energy just so you could waste it by activating your device's temporary maximized mode.\""
-        condition: ch6_offense = 1 AND ch6_improvise = 2
         choices:
           - position: 1
             text: I don't know what that means.
@@ -2157,14 +2175,14 @@ scenes:
               - set:
                   current_scene: ch6_eiden_vs_dragon
                   ch6_big_plans: 3
-      - texts:
+      - condition: ch6_improvise = 2 AND ch6_offense = 2
+        texts:
           - source: scene_text
             paragraph: 430
             text: "I'm starting to get angry. I can feel my body starting to radiate heat. I can even see steam coming out of me. Suddenly, I can feel my speed increase by the tenfold. What kind of spell did I just cast? My stat device never told me I had access to anything like this. I feel like I can never lose to anyone ever again. I don't need this sword anymore.\r\n\r\nAs I sheath my sword, I notice that everything seems to be moving much slower all of a sudden. Or am I just the one moving faster? I can predict the dragon's attack before he even teleports in front of me, but I don't feel the need to dodge anymore. Instead, I simply block Tyrath's next claw strike with my left hand.\r\n\r\n\"No...\" the dragon says, dumbfounded.\r\n\r\nWhile I keep a grip on him with my left hand, I punch him in the chest with my right fist. The impact of my strike was so strong that I could feel some of his armored scales shatter from the force of my blow, as the dragon gets sent flying more than twenty feet backwards. Tyrath coughs up blood, and starts to speak, but I do not let him. I instantly teleport next to him and grab him by the tail. I then throw him into the ground, and when he collides with the earth he creates a huge crater and sends clouds of dust flying in all directions. \r\n\r\nOne more hit should settle this. As I prepare to dash towards Tyrath to deliver the finishing blow, I can feel my powers starting to leave me."
           - source: scene_text_2
             paragraph: 53
             text: "No! Not now! I was going to finish this. I was winning! I'm nowhere near my five minutes limit. How did I expend all of my magical energy in just a few seconds? Was it because of the sudden power up I got just now?\r\n\r\nPlease, it can't all end like this. I just need to deliver one more strike. One more strike is all I need. Please...\r\n\r\nIt's too late. I can't even maintain my flight spell anymore. I'm falling. There's no way I'll survive a fall from this height. Daren and Kate are too far to help me. Is this it for me? After all that's happened, am I simply going to die pathetically like this?\r\n\r\nJust before I reach the ground, I suddenly stop in mid-air and then I fall flat on my face, from a height of about three feet. How did I do that? Did I manage to gather my last few drops of power in order to save myself?\r\n\r\n\"How disappointing,\" I hear Eiden's voice from high above in the sky. \"How very disappointing. Barry, I was expecting a lot more from you. I didn't give you all of that magical energy just so you could waste it by activating your device's temporary maximized mode.\""
-        condition: ch6_improvise = 2 AND ch6_offense = 2
         choices:
           - position: 1
             text: I don't know what that means.
@@ -2184,14 +2202,14 @@ scenes:
               - set:
                   current_scene: ch6_eiden_vs_dragon
                   ch6_big_plans: 3
-      - texts:
+      - condition: ch6_improvise = 1
+        texts:
           - source: scene_text
             paragraph: 429
             text: "Now I'm the one starting to get angry. I can feel my body starting to radiate heat. I can even see steam coming out of me. Suddenly, I can feel my speed increase by the tenfold. What kind of spell did I just cast? My stat device never told me I had access to anything like this. I feel like I can never lose to anyone ever again.\r\n\r\nEverything seems to be moving much slower all of a sudden. Or am I just the one moving faster? I can predict the dragon's attack before he even teleports in front of me, but I don't feel the need to dodge anymore. Instead, I simply block Tyrath's next claw strike with my left hand.\r\n\r\n\"No...\" the dragon says, dumbfounded.\r\n\r\nWhile I keep a grip on him with my left hand, I punch him in the chest with my right fist. The impact of my strike was so strong that I could feel some of his armored scales shatter from the force of my blow, as the dragon gets sent flying more than twenty feet backwards. Tyrath coughs up blood, and starts to speak, but I do not let him. I instantly teleport next to him and grab him by the tail. I then throw him into the ground, and when he collides with the earth he creates a huge crater and sends clouds of dust flying in all directions. \r\n\r\nOne more hit should settle this. As I prepare to dash towards Tyrath to deliver the finishing blow, I can feel my powers starting to leave me."
           - source: scene_text_2
             paragraph: 52
             text: "No! Not now! I was going to finish this. I was winning! I'm nowhere near my five minutes limit. How did I expend all of my magical energy in just a few seconds? Was it because of the sudden power up I got just now?\r\n\r\nPlease, it can't all end like this. I just need to deliver one more strike. One more strike is all I need. Please...\r\n\r\nIt's too late. I can't even maintain my flight spell anymore. I'm falling. There's no way I'll survive a fall from this height. Daren and Kate are too far to help me. Is this it for me? After all that's happened, am I simply going to die pathetically like this?\r\n\r\nJust before I reach the ground, I suddenly stop in mid-air and then I fall flat on my face, from a height of about three feet. How did I do that? Did I manage to gather my last few drops of power in order to save myself?\r\n\r\n\"How disappointing,\" I hear Eiden's voice from high above in the sky. \"How very disappointing. Barry, I was expecting a lot more from you. I didn't give you all of that magical energy just so you could waste it by activating your device's temporary maximized mode.\""
-        condition: ch6_improvise = 1
         choices:
           - position: 1
             text: I don't know what that means.
@@ -2213,14 +2231,14 @@ scenes:
                   ch6_big_plans: 3
   - name: ch6_eiden_vs_dragon
     routes:
-      - texts:
+      - condition: ch6_big_plans = 1
+        texts:
           - source: scene_text
             paragraph: 431
             text: "\"I don't know what that means.\"\r\n\r\nEiden sighs. \r\n\r\n\"Of course you don't,\" he says. \"Take a look at your stat device. You'll understand when you see for yourself.\"\r\n\r\nI take the stat device out of my pocket and look at its screen. What... What am I looking at here, exactly?\r\n\r\nThe numbers are all over the place. Every single one of my stats is far exceeding its maximum number, but they're dropping at a very fast rate. Now I understand what happened. I must have accidentally used all of the energy that Eiden pumped into my device in order to temporarily maximize all of the stats. That's why I suddenly got so powerful. That's why I didn't recognize the spell. \r\n\r\n\"Do you understand now, Barry? The energy I gave you was never meant to be used like that. Magical energy doesn't grow on trees, you know? You should use it with more care.\""
           - source: scene_text_2
             paragraph: 54
             text: "\"Eiden...\" the dragon says, as he gets up and soars into the air again. \"I've been looking for you.\" \r\n\r\nThe stillwater smiles.\r\n\r\n\"Tyrath! It feels like it's been a century since I last saw you! Or has it really been that long? I don't remember. Come give your old friend a hug!\"\r\n\r\n\"I was going to bait you out using the bodies of your lackeys, but it looks like that is no longer necessary. Today we end this, once and for all.\"\r\n\r\n\"Come now, Tyrath! Don't be so melodramatic. You're ruining our happy reunion!\"\r\n\r\nInstead of replying, the dragon blasts Eiden with his fire breath. The stillwater points his finger at the flames, and they stop in front of him. He then gestures towards the dragon with his hand, and the flames head back towards Tyrath, hitting him head on.\r\n\r\n\"I see you're still up to your old tricks,\" the dragon says. \"But I've become a lot more powerful since you left. This won't be like the last time.\""
-        condition: ch6_big_plans = 1
         choices:
           - position: 1
             text: Continue
@@ -2228,14 +2246,14 @@ scenes:
               - set:
                   current_scene: ch6_eiden_vs_dragon2
                   ch6_won_dragon: 3
-      - texts:
+      - condition: ch6_big_plans = 2
+        texts:
           - source: scene_text
             paragraph: 432
             text: "\"I didn't activate anything.\"\r\n\r\nEiden sighs. \r\n\r\n\"Yes, you did,\" he says. \"You're just not aware of it. Take a look at your stat device. You'll understand when you see for yourself.\"\r\n\r\nI take the stat device out of my pocket and look at its screen. What... What am I looking at here, exactly?\r\n\r\nThe numbers are all over the place. Every single one of my stats is far exceeding its maximum number, but they're dropping at a very fast rate. Now I understand what happened. I must have accidentally used all of the energy that Eiden pumped into my device in order to temporarily maximize all of the stats. That's why I suddenly got so powerful. That's why I didn't recognize the spell. \r\n\r\n\"Do you understand now, Barry? The energy I gave you was never meant to be used like that. Magical energy doesn't grow on trees, you know? You should use it with more care.\""
           - source: scene_text_2
             paragraph: 55
             text: "\"Eiden...\" the dragon says, as he gets up and soars into the air again. \"I've been looking for you.\" \r\n\r\nThe stillwater smiles.\r\n\r\n\"Tyrath! It feels like it's been a century since I last saw you! Or has it really been that long? I don't remember. Come give your old friend a hug!\"\r\n\r\n\"I was going to bait you out using the bodies of your lackeys, but it looks like that is no longer necessary. Today we end this, once and for all.\"\r\n\r\n\"Come now, Tyrath! Don't be so melodramatic. You're ruining our happy reunion!\"\r\n\r\nInstead of replying, the dragon blasts Eiden with his fire breath. The stillwater points his finger at the flames, and they stop in front of him. He then gestures towards the dragon with his hand, and the flames head back towards Tyrath, hitting him head on.\r\n\r\n\"I see you're still up to your old tricks,\" the dragon says. \"But I've become a lot more powerful since you left. This won't be like the last time.\""
-        condition: ch6_big_plans = 2
         choices:
           - position: 1
             text: Continue
@@ -2243,14 +2261,14 @@ scenes:
               - set:
                   current_scene: ch6_eiden_vs_dragon2
                   ch6_won_dragon: 3
-      - texts:
+      - condition: ch6_big_plans = 3
+        texts:
           - source: scene_text
             paragraph: 433
             text: "\"Why do you keep saving me?\"\r\n\r\n\"I'm doing it because I see great potential in you, Barry. I have big plans for you!\"\r\n\r\nBig plans for me, huh? That sounds ominous...\r\n\r\n\"Of course, I'm starting to question my opinion of you when you do stupid things like this.\"\r\n\r\n\"I didn't do anything.\"\r\n\r\nEiden sighs.\r\n\r\n\"Of course you didn't,\" he says. \"Just take a look at your stat device. You'll understand what I'm talking about when you see for yourself.\"\r\n\r\nI take the stat device out of my pocket and look at its screen. What... What am I looking at here, exactly?\r\n\r\nThe numbers are all over the place. Every single one of my stats is far exceeding its maximum number, but they're dropping at a very fast rate. Now I understand what happened. I must have accidentally used all of the energy that Eiden pumped into my device in order to temporarily maximize all of the stats. That's why I suddenly got so powerful. That's why I didn't recognize the spell."
           - source: scene_text_2
             paragraph: 56
             text: "\"Do you understand now, Barry? The energy I gave you was never meant to be used like that. Magical energy doesn't grow on trees, you know? You should use it with more care.\"\r\n\r\n\"Eiden...\" the dragon says, as he gets up and soars into the air again. \"I've been looking for you.\" \r\n\r\nThe stillwater smiles.\r\n\r\n\"Tyrath! It feels like it's been a century since I last saw you! Or has it really been that long? I don't remember. Come give your old friend a hug!\"\r\n\r\n\"I was going to bait you out using the bodies of your lackeys, but it looks like that is no longer necessary. Today we end this, once and for all.\"\r\n\r\n\"Come now, Tyrath! Don't be so melodramatic. You're ruining our happy reunion!\"\r\n\r\nInstead of replying, the dragon blasts Eiden with his fire breath. The stillwater points his finger at the flames, and they stop in front of him. He then gestures towards the dragon with his hand, and the flames head back towards Tyrath, hitting him head on.\r\n\r\n\"I see you're still up to your old tricks,\" the dragon says. \"But I've become a lot more powerful since you left. This won't be like the last time.\""
-        condition: ch6_big_plans = 3
         choices:
           - position: 1
             text: Continue
@@ -2287,14 +2305,14 @@ scenes:
           id: ac_ch6_tyrath
           title: Defeated Tyrath
     routes:
-      - texts:
+      - condition: ch6_offense <> 2
+        texts:
           - source: scene_text
             paragraph: 435
             text: "Suddenly, the whole area gets covered in a blue light, and I'm starting to feel an immense magical power coming from the air all around us.\r\n\r\n\"What's... What's happening?...\" Tyrath says, trying to hold back the pain.\r\n\r\n\"Has it been so long you've forgotten, old friend?\" I hear Eiden's voice coming from the left.\r\n\r\nI turn around and see the stillwater floating in the air next to us, with his usual smile on his face.\r\n\r\n\"Eiden...\" the dragon says.\r\n\r\n\"Just because these traps haven't been activated in more than a millennia does not mean they are out of function,\" Eiden continues. \"The lessathi of old were anything but shoddy craftsmen. This trap was just a bit out of tune, that's all. Luckily, your continuous use of flames and Barry's volcanoes were just enough to warm it up!\" \r\n\r\nAs the two of them speak, the ground is shaking violently, and the blue light is intensifying."
           - source: scene_text_2
             paragraph: 58
             text: "\"You'll... pay for this... Both of you... I will not rest until I hunt you down. Nowhere on this continent will be safe for you ever again. Do you hear me?! I will hunt you down! Wipe that smile off your face, you lowborn little--\"\r\n\r\nAll of the magic in the air gets unleashed in a single moment, and the dragon gets teleported away, as the blue light disappears and the earthquake slowly stops. The energy from my device is gone. I could sense it disappear the moment the dragon was teleported away.\r\n\r\nEiden turns back to me.\r\n\r\n\"Well done, Barry! You have far exceeded my expectations!\""
-        condition: ch6_offense <> 2
         choices:
           - position: 1
             text: What just happened?
@@ -2308,14 +2326,14 @@ scenes:
               - set:
                   current_scene: ch6_win_fight2
                   ch6_lessathi: 2
-      - texts:
+      - condition: ch6_offense = 2 AND ch6_won_dragon = 1
+        texts:
           - source: scene_text
             paragraph: 436
             text: "Suddenly, the whole area gets covered in a blue light, and I'm starting to feel an immense magical power coming from the air all around us.\r\n\r\n\"What's... What's happening?...\" Tyrath says, trying to hold back the pain.\r\n\r\n\"Has it been so long you've forgotten, old friend?\" I hear Eiden's voice coming from the left.\r\n\r\nI turn around and see the stillwater floating in the air next to us, with his usual smile on his face.\r\n\r\n\"Eiden...\" the dragon says.\r\n\r\n\"Just because these traps haven't been activated in more than a millennia does not mean they are out of function,\" Eiden continues. \"The lessathi of old were anything but shoddy craftsmen. This trap was just a bit out of tune, that's all. Luckily, your continuous use of flames was just enough to warm it up!\" \r\n\r\nAs the two of them speak, the ground is shaking violently, and the blue light is intensifying."
           - source: scene_text_2
             paragraph: 59
             text: "\"You'll... pay for this... Both of you... I will not rest until I hunt you down. Nowhere on this continent will be safe for you ever again. Do you hear me?! I will hunt you down! Wipe that smile off your face, you lowborn little--\"\r\n\r\nAll of the magic in the air gets unleashed in a single moment, and the dragon gets teleported away, as the blue light disappears and the earthquake slowly stops. The energy from my device is gone. I could sense it disappear the moment the dragon was teleported away.\r\n\r\nEiden turns back to me.\r\n\r\n\"Well done, Barry! I'll be honest with you, I was hoping you'd be using more spectacular spells in this skirmish, but I cannot blame you for wanting to be efficient!\""
-        condition: ch6_offense = 2 AND ch6_won_dragon = 1
         choices:
           - position: 1
             text: What just happened?
@@ -2329,14 +2347,14 @@ scenes:
               - set:
                   current_scene: ch6_win_fight2
                   ch6_lessathi: 2
-      - texts:
+      - condition: ch6_offense = 2 AND ch6_won_dragon = 2
+        texts:
           - source: scene_text
             paragraph: 437
             text: "Suddenly, the whole area gets covered in a blue light, and I'm starting to feel an immense magical power coming from the air all around us.\r\n\r\n\"What's... What's happening?...\" Tyrath says.\r\n\r\n\"Has it been so long you've forgotten, old friend?\" I hear Eiden's voice coming from the left.\r\n\r\nI turn around and see the stillwater floating in the air next to us, with his usual smile on his face.\r\n\r\n\"Eiden...\" the dragon says.\r\n\r\n\"Just because these traps haven't been activated in more than a millennia does not mean they are out of function,\" Eiden continues. \"The lessathi of old were anything but shoddy craftsmen. This trap was just a bit out of tune, that's all. Luckily, your continuous use of flames was just enough to warm it up!\""
           - source: scene_text_2
             paragraph: 60
             text: "As the two of them speak, the ground is shaking violently, and the blue light is intensifying.\r\n\r\n\"You'll... pay for this... Both of you... I will not rest until I hunt you down. Nowhere on this continent will be safe for you ever again. Do you hear me?! I will hunt you down! Wipe that smile off your face, you lowborn little--\"\r\n\r\nAll of the magic in the air gets unleashed in a single moment, and the dragon gets teleported away, as the blue light disappears and the earthquake slowly stops. The energy from my device is gone. I could sense it disappear the moment the dragon was teleported away.\r\n\r\nEiden turns back to me.\r\n\r\n\"Well done, Barry! I'll be honest with you, I was hoping you'd be using more spectacular spells in this skirmish, but I cannot blame you for wanting to be efficient!\""
-        condition: ch6_offense = 2 AND ch6_won_dragon = 2
         choices:
           - position: 1
             text: What just happened?
@@ -2352,22 +2370,22 @@ scenes:
                   ch6_lessathi: 2
   - name: ch6_win_fight2
     routes:
-      - texts:
+      - condition: ch6_lessathi = 1
+        texts:
           - source: scene_text
             paragraph: 438
             text: "\"What just happened?\"\r\n\r\n\"I'm sorry about your duel, Barry. I'm afraid you'll have to resume it some other time. Tyrath was caught in an old dragon trap that's been around for a few thousand years. The trap was supposed to get activated at the first sign of flames, but because it's been at least a thousand years since it was last used, its mechanism was a little rusty. That's why it needed some warming up before it could get triggered. That discharge of energy from the trap must have surely fried your stat device, but don't worry, it'll recover in a few minutes with all of your previous stats!\"\r\n\r\n\"What did the trap do to the dragon?\"\r\n\r\n\"It transported him to a dragon prison on this island. Since I doubt there's anyone actually guarding it at this point I imagine that he won't have much trouble escaping, but even so, he'll still have to destroy the prison's automatic defenses and he'll have to travel all the way back here. So it should be at least a few days before he comes back.\""
-        condition: ch6_lessathi = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_eiden_leaves
-      - texts:
+      - condition: ch6_lessathi = 2
+        texts:
           - source: scene_text
             paragraph: 439
             text: "\"Who are the lessathi?\"\r\n\r\n\"The lessathi are the most ancient race on this continent. Although the name is a bit hard to remember so most people prefer to call them simply \"the ancients\". Their talent at crafting magical artifacts and devices was unmatched a thousand years ago, and we still use many of those artifacts to this day. The trap that just got triggered was also made by them some two thousand years ago. It was supposed to get activated at the first sign of flames, but because it's been at least a thousand years since it was last used, its mechanism was a little rusty. That's why it needed to be warmed up a bit first. That discharge of energy from the trap must have surely fried your stat device, but don't worry, it'll recover in a few minutes with all of your previous stats!\"\r\n\r\n\"What did the trap do to the dragon?\"\r\n\r\n\"It transported him to a dragon prison on this island. Since I doubt there's anyone actually guarding it at this point I imagine that he won't have much trouble escaping, but even so, he'll still have to destroy the prison's automatic defenses and he'll have to travel all the way back here. So it should be at least a few days before he comes back.\""
-        condition: ch6_lessathi = 2
         choices:
           - position: 1
             text: Continue
@@ -2376,22 +2394,22 @@ scenes:
                   current_scene: ch6_eiden_leaves
   - name: ch6_lose_fight2
     routes:
-      - texts:
+      - condition: ch6_lessathi = 1
+        texts:
           - source: scene_text
             paragraph: 440
             text: "\"What did you do to him?\"\r\n\r\n\"Me? I didn't do anything to him. He was just caught in an old dragon trap that's been around for a few thousand years. The trap was supposed to get activated at the first sign of flames, but because it's been at least a thousand years since it was last used, its mechanism was a little rusty. That's why I warmed it up with my fire spells.\"\r\n\r\n\"What happened to the dragon, then?\"\r\n\r\n\"He was transported to a dragon prison on this island. Since I doubt there's anyone actually guarding it at this point I imagine that he won't have much trouble escaping, but even so, he'll still have to destroy the prison's automatic defenses and he'll have to travel all the way back here. So it should be at least a few days before he comes back.\""
-        condition: ch6_lessathi = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_eiden_leaves
-      - texts:
+      - condition: ch6_lessathi = 2
+        texts:
           - source: scene_text
             paragraph: 441
             text: "\"Who are the lessathi?\"\r\n\r\n\"The lessathi are the most ancient race on this continent. Although the name is a bit hard to remember so most people prefer to call them simply \"the ancients\". Their talent at crafting magical artifacts and devices was unmatched a thousand years ago, and we still use many of those artifacts to this day. The trap I just triggered was also made by them some two thousand years ago. It was supposed to get activated at the first sign of flames, but because it's been at least a thousand years since it was last used, its mechanism was a little rusty. That's why I warmed it up with my fire spells.\"\r\n\r\n\"What happened to the dragon, then?\"\r\n\r\n\"He was transported to a dragon prison on this island. Since I doubt there's anyone actually guarding it at this point I imagine that he won't have much trouble escaping, but even so, he'll still have to destroy the prison's automatic defenses and he'll have to travel all the way back here. So it should be at least a few days before he comes back.\""
-        condition: ch6_lessathi = 2
         choices:
           - position: 1
             text: Continue
@@ -2477,36 +2495,36 @@ scenes:
               current_scene: ch6_healing
   - name: ch6_healing
     routes:
-      - texts:
+      - condition: ch6_eiden_answer <> 2 AND ch3_kate_badly_hurt = 0
+        texts:
           - source: scene_text
             paragraph: 446
             text: "\"He didn't tell us. But judging by the name, I'd say it's a person that can use time altering magic,\" I tell her.\r\n\r\n\"Rose, did you start feeling any different after having withstood Eiden's spell?\" Daren asks her. \r\n\r\n\"No... I feel exactly the same as before. I think he was mistaken. I can't have time powers. His spell must have just malfunctioned, that's all.\"\r\n\r\n\"Hmm... Perhaps you're right,\" Daren says. \"At any rate, we should be thankful enough that we somehow managed to make it out of this alive. I've heard stories about how dangerous this place was, but I never imagined it would be as bad as this. We're all in terrible shape. Here, let me start casting some healing spells.\""
-        condition: ch6_eiden_answer <> 2 AND ch3_kate_badly_hurt = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_ending
-      - texts:
+      - condition: ch6_eiden_answer = 2 AND ch3_kate_badly_hurt = 0
+        texts:
           - source: scene_text
             paragraph: 447
             text: "\"According to Eiden, it's a person that isn't a mage, but has all sorts of time powers like stopping or rewinding time, and even seeing into the future,\" I tell her.\r\n\r\n\"Rose, did you start feeling any different after having withstood Eiden's spell?\" Daren asks her. \r\n\r\n\"No... I feel exactly the same as before. I think he was mistaken. I can't have time powers. His spell must have just malfunctioned, that's all.\"\r\n\r\n\"Hmm... Perhaps you're right,\" Daren says. \"At any rate, we should be thankful enough that we somehow managed to make it out of this alive. I've heard stories about how dangerous this place was, but I never imagined it would be as bad as this. We're all in terrible shape. Here, let me start casting some healing spells.\""
-        condition: ch6_eiden_answer = 2 AND ch3_kate_badly_hurt = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch6_ending
-      - texts:
+      - condition: ch6_eiden_answer <> 2 AND ch3_kate_badly_hurt = 1
+        texts:
           - source: scene_text
             paragraph: 448
             text: "\"He didn't tell us. But judging by the name, I'd say it's a person that can use time altering magic,\" I tell her.\r\n\r\n\"Rose, did you start feeling any different after having withstood Eiden's spell?\" Daren asks her. \r\n\r\n\"No... I feel exactly the same as before. I think he was mistaken. I can't have time powers. His spell must have just malfunctioned, that's all.\"\r\n\r\n\"Hmm... Perhaps you're right,\" Daren says. \"At any rate, we should be thankful enough that we somehow managed to make it out of this alive. I've heard stories about how dangerous this place was, but I never imagined it would be as bad as this. We're all in terrible shape. Here, let me start casting some healing spells.\"\r\n\r\nDaren proceeds to heal us all in turn. When he starts healing Kate, I can clearly see that he's having some difficulty."
           - source: scene_text_2
             paragraph: 64
             text: "\"I'm sorry, Kate,\" Daren says, as he finishes his spell. \"This is all I can do for you. Your wounds were just too deep to heal completely.\"\r\n\r\nLooking at Kate, I can see that Daren has healed most of the damage made by the dragon's fire, but the left side of her face is still lightly scarred. Surprisingly, it does not look bad on her. Kate, after all, never really had a very feminine look to begin with. Her beauty was always more feral in nature, and her newly acquired scars complement it nicely. \r\n\r\n\"It's no problem,\" Kate tells Daren while looking at her face through a mirror made of ice. \"Most people were already calling me a monster and running away when they first saw me. At least now they'll have a legitimate reason for it.\""
-        condition: ch6_eiden_answer <> 2 AND ch3_kate_badly_hurt = 1
         choices:
           - position: 1
             text: >-
@@ -2525,14 +2543,14 @@ scenes:
             effects:
               - set:
                   current_scene: ch6_mask
-      - texts:
+      - condition: ch6_eiden_answer = 2 AND ch3_kate_badly_hurt = 1
+        texts:
           - source: scene_text
             paragraph: 449
             text: "\"According to Eiden, it's a person that isn't a mage, but has all sorts of time powers like stopping or rewinding time, and even seeing into the future,\" I tell her.\r\n\r\n\"Rose, did you start feeling any different after having withstood Eiden's spell?\" Daren asks her. \r\n\r\n\"No... I feel exactly the same as before. I think he was mistaken. I can't have time powers. His spell must have just malfunctioned, that's all.\"\r\n\r\n\"Hmm... Perhaps you're right,\" Daren says. \"At any rate, we should be thankful enough that we somehow managed to make it out of this alive. I've heard stories about how dangerous this place was, but I never imagined it would be as bad as this. We're all in terrible shape. Here, let me start casting some healing spells.\"\r\n\r\nDaren proceeds to heal us all in turn. When he starts healing Kate, I can clearly see that he's having some difficulty."
           - source: scene_text_2
             paragraph: 65
             text: "\"I'm sorry, Kate,\" Daren says, as he finishes his spell. \"This is all I can do for you. Your wounds were just too deep to heal completely.\"\r\n\r\nLooking at Kate, I can see that Daren has healed most of the damage made by the dragon's fire, but the left side of her face is still lightly scarred. Surprisingly, it does not look bad on her. Kate, after all, never really had a very feminine look to begin with. Her beauty was always more feral in nature, and her newly acquired scars complement it nicely. \r\n\r\n\"It's no problem,\" Kate tells Daren while looking at her face through a mirror made of ice. \"Most people were already calling me a monster and running away when they first saw me. At least now they'll have a legitimate reason for it.\""
-        condition: ch6_eiden_answer = 2 AND ch3_kate_badly_hurt = 1
         choices:
           - position: 1
             text: >-

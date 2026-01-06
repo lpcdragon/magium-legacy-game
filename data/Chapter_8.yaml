@@ -143,7 +143,8 @@ scenes:
               current_scene: ch8_escape
   - name: ch8_escape
     routes:
-      - texts:
+      - condition: ch8_talk = 1
+        texts:
           - source: scene_text
             paragraph: 8
             text: "\"Hold on,\" Kate says. \"Does this mean that the leopard expects us to escape and is giving us directions?\"\r\n\r\n\"So, Barry,\" Daren says in a particularly loud voice, even though we're all very close to each other, \"what do you figure we should do next? Do you think we should wait until tomorrow and see if the golden fox has a change of heart? Maybe we should hold another vote to decide our best course of action! What do you say, Barry? Should we hold another vote?\"\r\n\r\nThe smug grin he has on his face is getting a little irritating.\r\n\r\n\"That's enough, Daren,\" Kate says. \"None of us could have known what the fox's intentions were beforehand. They still left no guards to watch over us, so no harm was done. In fact, we may even be in a better position than we were before, judging by the contents of the note that Rose is holding in her hands.\"\r\n\r\n\"Aye!\" Hadrik says, \"We all agreed to hear the fox out before trying to escape. It was a good idea while it lasted!\"\r\n\r\nHaving been left with no other alternative than to break out of our cell, we waited for a few minutes to make sure that the fox and her lieutenants were out of hearing range, and then Hadrik shattered the wall of our prison with his fist."
@@ -153,35 +154,43 @@ scenes:
           - source: scene_3
             paragraph: 6
             text: "\"You can read ancient languages, right? Can you tell me what this says?\"\r\n\r\n\"Hmm...\" Rose says, as she looks at the text and furrows her eyebrows. \"I'm afraid that this is a bit too advanced for me. I can tell that it's written in the language used by the lessathi of old, but I cannot understand any of the words.\"\r\n\r\n\"Barry,\" Daren says, \"didn't that trinket of yours have a stat named 'ancient languages'? Come over here and see if you can translate this!\""
-        condition: ch8_talk = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch8_languages_failed
-      - texts:
+                condition: ancient_languages < 3
+              - set:
+                  current_scene: ch8_languages_success
+                condition: ancient_languages >= 3
+      - condition: ch8_talk = 0
+        texts:
           - source: scene_text
             paragraph: 9
             text: "\"Perfect! Then let's not waste any more time here.\"\r\n\r\n\"Alright, then!\" Hadrik says. \"Here I go!\"\r\n\r\nThe dwarf punches the wall with all of his might, which shatters it into tiny pieces. \r\n\r\nAs we step over the rubble and take a good look outside of our cell, we see that the corridor we've just entered is completely deserted. If it weren't for a few lit torches here and there, it wouldn't be too far-fetched to assume that this building had been abandoned a long time ago. Our cell seems to have been placed at the far end of the corridor, which means that the only way for us to go is left. \r\n\r\n\"I don't like this,\" says Kate, as we walk down the corridor. \"This is the same direction in which the bear and the tiger went to look for their fox leader. The last thing we want is to run into her or her followers while we're escaping.\"\r\n\r\n\"Well, it's not like we were given much of a choice,\" Hadrik says. \"There was only one way to go after we walked out of our cell, and there haven't been any forks in the road since then. What intrigues me most is that we haven't passed by a single cell since we got out. Isn't this supposed to be a dungeon of some sort? Where are all the other prisoners?\""
           - source: scene_text_2
             paragraph: 12
             text: "\"Maybe they only have one cell per corridor?\" Rose suggests.\r\n\r\n\"Forget the prisoners,\" I say. \"I'm more worried about the complete lack of guards in this place. Did they seriously think that we couldn't bring down these frail old walls without magic?\"\r\n\r\n\"Hey, Rose,\" Daren calls out, as he's studying the writing on a wall. \"Can you come over here for a second?\"\r\n\r\n\"Certainly!\" Rose says, and she heads over to his side.\r\n\r\n\"You can read ancient languages, right? Can you tell me what this says?\"\r\n\r\n\"Hmm...\" Rose says, as she looks at the text and furrows her eyebrows. \"I'm afraid that this is a bit too advanced for me. I can tell that it's written in the language used by the lessathi of old, but I cannot understand any of the words.\"\r\n\r\n\"Barry,\" Daren says, \"didn't that trinket of yours have a stat named 'ancient languages'? Come over here and see if you can translate this!\""
-        condition: ch8_talk = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch8_languages_failed
+                condition: ancient_languages < 3
+              - set:
+                  current_scene: ch8_languages_success
+                condition: ancient_languages >= 3
   - name: ch8_languages_failed
     texts:
       - source: scene_text
         paragraph: 10
         text: "As I approach the glyphs on the wall, I attempt to decipher them, but the words used are too complicated for me to understand at my current level of knowledge. I might stand a better chance if I max out my ancient languages stat, however.\r\n\r\n\"I'm sorry,\" I say. \"I don't have enough levels in my ancient languages stat to understand what it says.\"\r\n\r\n\"So?...\" Daren asks. \"Just level up your stat and see what it says! Isn't that what your device is for?\""
-    set:
-      failed_checks:
-        - '[ Ancient languages check failed - level 3 ]'
+    effects:
+      - set:
+          failed_checks:
+            - '[ Ancient languages check failed - level 3 ]'
     choices:
       - position: 1
         text: Tell him that I don't have enough available points to level it up
@@ -200,6 +209,7 @@ scenes:
         effects:
           - set:
               current_scene: ch8_languages_success
+            condition: ancient_languages >= 3
   - name: ch8_available
     texts:
       - source: scene_text
@@ -233,9 +243,10 @@ scenes:
       - source: scene_text
         paragraph: 13
         text: "As I start to decipher the glyphs on the wall, I realize that the writing says: \"If you like discovering secrets, tap each of these glyphs in rapid succession.\"\r\n\r\n\"Well?\" Daren asks me. \"What does it say?\""
-    set:
-      successful_checks:
-        - '[ Ancient languages check successful - level 3 ]'
+    effects:
+      - set:
+          successful_checks:
+            - '[ Ancient languages check successful - level 3 ]'
     choices:
       - position: 1
         text: Follow the instructions written on the wall
@@ -456,15 +467,16 @@ scenes:
               ch8_smash: 0
   - name: ch8_smash
     routes:
-      - texts:
+      - condition: reflexes < 2
+        texts:
           - source: scene_text
             paragraph: 23
             text: "\"Hadrik, there's no time! Just tear down that wall, and we'll worry about the consequences later.\"\r\n\r\n\"Hah!\" Hadrik says. \"That's exactly what I wanted to hear! Here goes nothing!\"\r\n\r\nThe dwarf uses his full force to punch a hole through one of the walls closing in on us. The moment the wall collapses, several sharp spears start shooting out of it, and straight towards us. \r\n\r\nI didn't have any time to react, and one of the spears hit me right in the face, killing me instantly."
-        condition: reflexes < 2
-        set:
-          failed_checks:
-            - '[ Reflexes check failed - level 2 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Reflexes check failed - level 2 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -483,17 +495,18 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: reflexes >= 2
+        texts:
           - source: scene_text
             paragraph: 24
             text: "\"Hadrik, there's no time! Just tear down that wall, and we'll worry about the consequences later.\"\r\n\r\n\"Hah!\" Hadrik says. \"That's exactly what I wanted to hear! Here goes nothing!\"\r\n\r\nThe dwarf uses his full force to punch a hole through one of the walls closing in on us. The moment the wall collapses, several sharp spears start shooting out of it, and straight towards us. \r\n\r\nI realize that one of them is about to hit me in the face, so I step to the side just in time and feel a light breeze on my cheeks as the spear whooshes past my head and pierces the wall behind me. The others somehow managed to get out of this unscathed as well. Hadrik and Kate dodged the spears, while Daren protected Rose and himself with his shield.\r\n\r\nThe walls are now starting to slow down, and soon they come to a complete halt. It doesn't take long for Flower to make her appearance again, with a victorious smile on her face.\r\n\r\n\"Haha, I did it!\" she says, soon after she drops from the hole in the ceiling. \"But I think I should also tell you-- OH MY GODS, what happened here? Did you smash one of the walls? I TOLD you not to smash the walls!\""
           - source: scene_text_2
             paragraph: 23
             text: "\"Yeah, we all heard you,\" Kate says, \"But it seems that some of the members in our group have slower brains, and it takes them a while longer than average to process information in critical situations.\"\r\n\r\n\"Oh, I'm sorry, I didn't know that!\" Flower says, looking genuinely concerned. \"I should have warned you earlier. Is anyone hurt? Petal knows a bit of healing magic, so we should be able to help if it's nothing too serious.\"\r\n\r\n\"Uh, no, I think we're all okay, for now,\" Hadrik says. \"Sorry about that, I got a little impatient back there.\"\r\n\r\n\"Okay,\" Flower says. \"Then, I guess I should tell you about the bad news now. See, when I was fiddling around with those complex mechanisms upstairs, I... maaay have accidentally activated all of the traps on this corridor.\"\r\n\r\n\"You what?!\" Kate asks her.\r\n\r\n\"Don't worry, I can still fix this!\" Flower says. \"I think I know where most of the traps are, so as long as you follow my instructions you should be fine. I just need to do a quick test run and make sure that I'm not remembering anything wrong.\""
-        condition: reflexes >= 2
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 2 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 2 ]'
         choices:
           - position: 1
             text: Continue
@@ -570,6 +583,7 @@ scenes:
         effects:
           - set:
               current_scene: ch8_hearing_fail
+            condition: hearing < 4
           - set:
               current_scene: ch8_hearing_success
             condition: hearing = 4
@@ -578,9 +592,10 @@ scenes:
       - source: scene_text
         paragraph: 30
         text: "\"Well,\" Hadrik says. \"If it's not going to come to us...\"\r\n\r\nHe doesn't finish his sentence and rushes straight for the nine-headed creature. The monster attacks the dwarf with four of its heads, but he jumps out of their way and manages to place himself below the hydra's body. Hadrik then flexes all of his muscles and starts lifting the hydra off the ground, as he roars loudly and his face turns almost red from the effort. \r\n\r\nBefore the hydra has the time to react, the dwarf sends it crashing into the nearest wall. The creature is now staggering clumsily, trying to get back up.\r\n\r\n\"I guess I can't just let a good opportunity like this go to waste,\" Daren says. \"Barry, you take care of Rose. I'll go fight the hydra with Hadrik.\"\r\n\r\n\"Uh, okay...\" I tell him, as he rushes towards the monster and starts slashing at its enormous body.\r\n\r\nI turn around, and see that Rose is sitting on the floor, with her back leaning against the wall and her arms holding her legs, trying in vain to control her shivering."
-    set:
-      failed_checks:
-        - '[ Hearing check failed - level 4 ]'
+    effects:
+      - set:
+          failed_checks:
+            - '[ Hearing check failed - level 4 ]'
     choices:
       - position: 1
         text: Try to help her shake off the fear
@@ -602,9 +617,10 @@ scenes:
       - source: scene_text
         paragraph: 31
         text: "I can hear someone's heart pounding very rapidly. Trying to locate the source of the sound, I realize that it isn't coming from one of us, but from the hydra. I start to block out all other sounds with my mind and focus solely on the loud beating of the monster's heart, in order to pinpoint its exact location. It takes me a few seconds, but in the end I manage to trace the sound back to its origin: the tip of the hydra's tail. So that's where it was hiding its weak point!\r\n\r\n\"Well,\" Hadrik says. \"If it's not going to come to us...\"\r\n\r\nHe doesn't finish his sentence and rushes straight for the nine-headed creature. The monster attacks the dwarf with four of its heads, but he jumps out of their way and manages to place himself below the hydra's body. Hadrik then flexes all of his muscles and starts lifting the hydra off the ground, as he roars loudly and his face turns almost red from the effort. \r\n\r\nBefore the hydra has the time to react, the dwarf sends it crashing into the nearest wall. The creature is now staggering clumsily, trying to get back up."
-    set:
-      successful_checks:
-        - '[ Hearing check successful - level 4 ]'
+    effects:
+      - set:
+          successful_checks:
+            - '[ Hearing check successful - level 4 ]'
     choices:
       - position: 1
         text: Use this opportunity to rush towards the hydra and cut off its heart
@@ -657,15 +673,16 @@ scenes:
               current_scene: ch8_awakened
   - name: ch8_rush
     routes:
-      - texts:
+      - condition: agility < 3
+        texts:
           - source: scene_text
             paragraph: 35
             text: "I waste no time and rush towards the monster now, while it's still disoriented. \r\n\r\nEven while staggering, the hydra still hasn't let its guard down. As I approach it, two of the heads lunge at me, and I am forced to jump to the side in order to avoid them. I then make a rush directly for the heart and attempt to stab it, but the monster moves its tail out of my reach, and lifts it high into the air.\r\n\r\nSo, the hydra is aware of its own weak spot. I was careless. The monster has now regained its balance and it is using all of its heads to drive me into a corner. I manage to successfully dodge its first two attacks, but the third one caught me off guard. As the hydra's fangs sank through my flesh, I could see my life flash before my eyes for a few seconds, before falling to the floor and losing my consciousness for good."
-        condition: agility < 3
-        set:
-          failed_checks:
-            - '[ Speed check failed - level 3 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Speed check failed - level 3 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -684,21 +701,22 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: agility >= 3
+        texts:
           - source: scene_text
             paragraph: 36
             text: "I waste no time and rush towards the monster now, while it's still disoriented. \r\n\r\nEven while staggering, the hydra still hasn't let its guard down. As I approach it, two of the heads lunge at me, but I was so fast that they missed me by far. Just as the monster's heart is within reach of my dagger, the hydra moves its tail away from me, and lifts it high into the air.\r\n\r\nSo, the hydra is aware of its own weak spot. I was careless. The monster has now regained its balance and is using all of its heads in an attempt to drive me into a corner. However, at my current speed, dodging all of these slow overgrown snakes seems like child's play.\r\n\r\n\"Boy, what in the blazes do you think you're doing?\" the dwarf asks me.\r\n\r\n\"Hadrik!\" I say. \"The creature's heart is in the tip of its tail. If you can pull its tail back down here, I'll deal the finishing blow with my dagger.\"\r\n\r\n\"Oooh, now I get it!\" Hadrik says, grinning. \"Consider it done.\"\r\n\r\nThe dwarf then jumps behind the hydra, and grabs it by the tail, pulling it down with all of his force.\r\n\r\n\"Okay, Barry!\" the dwarf says as he struggles to keep a hold of the tail. \"Whenever you're ready!\""
           - source: scene_text_2
             paragraph: 29
             text: "I put all of my speed into this one sprint, and I arrive near the tip of the hydra's tail in an instant, stabbing it with all of the force I could muster. The screams of all the snake heads as I pierced through the heart were painful to hear, but once I twisted the knife, their howls started to fade, and then the whole creature came crashing down on the floor with a loud thump. The hydra now lies dead besides me, but I almost feel like it's still watching me with its lifeless eyes, waiting for me to let my guard down in order to deal one last strike.\r\n\r\n\"Barry, you sly bastard!\" Daren tells me as he walks towards me. \"You could have told me about the hydra's weak spot, but you wanted to hog all the glory for yourself. Well, how does it feel to have slain your first hydra? You're not going to let this go to your head, are you?\"\r\n\r\n\"Of course not!\" I tell him. \"I always meant to go on an epic monster slaying quest right after winning this tournament. A minor victory like this changes nothing!\"\r\n\r\nDaren grins.\r\n\r\n\"You cheeky little--\" he starts to say, but he gets interrupted by Flower, who is now descending towards us and using two small jets of fire coming out of her feet to slow down her fall.\r\n\r\n\"Oh gods, I didn't know that there was a hydra down here!\" she says. \"I would have come sooner, but those traps upstairs just kept going and going!\"\r\n\r\nShe then lands and looks at the monster, surprised, trying to see if it's really dead or just sleeping."
-        condition: agility >= 3
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 3 ]'
-          ac_ch8_hydra: 1
-        achievement:
-          id: ac_ch8_hydra
-          title: Hydra slayer
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 3 ]'
+              ac_ch8_hydra: 1
+            achievement:
+              id: ac_ch8_hydra
+              title: Hydra slayer
         choices:
           - position: 1
             text: Continue
@@ -722,7 +740,8 @@ scenes:
               current_scene: ch8_awakened_win
   - name: ch8_awakened
     routes:
-      - texts:
+      - condition: ch8_smash = 0
+        texts:
           - source: scene_text
             paragraph: 38
             text: "\"Oh, gods,\" she says, as she lands somewhere near us. \"I didn't know there was a hydra down here. I would have come sooner, but those traps upstairs just kept going and going! Is anyone hurt? Petal knows a bit of healing magic, so we should be able to help if it's nothing too serious.\"\r\n\r\nThe way she casually dealt with that hydra and the calm manner in which she's talking now makes me think that this girl has dealt with far stronger enemies in the past. I'm not sure what the situation would be if we were all at our full strength, but the way we are now, making an enemy of this little girl would be nothing short of suicide. We need to choose our words carefully, if we want to get out of here in one piece.\r\n\r\n\"Actually, I could use some healing right about now,\" Hadrik says. \"This wound on my leg in particular is killing me!\"\r\n\r\n\"We're on it!\" the girl says, as she approaches the dwarf and puts her hands on his wound.\r\n\r\n\"Petal?\" she asks, and then she pauses for a few moments.\r\n\r\nThe girl's eyes then start shining with a bright blue light, as her expression becomes a lot colder, and a warm light starts coming out of her hands, slowly healing Hadrik's wound.\r\n\r\n\"So...\" Hadrik says, while grinning. \"You must be the banshee inhabiting the girl's body. Petal, is it?\""
@@ -732,21 +751,20 @@ scenes:
           - source: scene_3
             paragraph: 11
             text: "\"Yeah, I've seen a banshee awaken before, remember? That doesn't, however, change the fact that this banshee has already awakened, in spite of all that, since she is clearly no longer in a dormant state. Why don't you try your purification technique on her if you don't believe me?\"\r\n\r\n\"Hmph...\" Daren says. \"I was going to do that anyway.\""
-        condition: ch8_smash = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch8_purification
-      - texts:
+      - condition: ch8_smash = 1
+        texts:
           - source: scene_text
             paragraph: 39
             text: "\"Oh, gods,\" she says, as she lands somewhere near us. \"I didn't know there was a hydra down here. I would have come sooner, but those traps upstairs just kept going and going! Is anyone in need of healing?\"\r\n\r\nThe way she casually dealt with that hydra and the calm manner in which she's talking now makes me think that this girl has dealt with far stronger enemies in the past. I'm not sure what the situation would be if we were all at our full strength, but the way we are now, making an enemy of this little girl would be nothing short of suicide. We need to choose our words carefully, if we want to get out of here in one piece.\r\n\r\n\"Actually, I could use some healing right about now,\" Hadrik says. \"This wound on my leg in particular is killing me!\"\r\n\r\n\"We're on it!\" the girl says, as she approaches the dwarf and puts her hands on his wound.\r\n\r\n\"Petal?\" she asks, and then she pauses for a few moments.\r\n\r\nThe girl's eyes then start shining with a bright blue light, as her expression becomes a lot colder, and a warm light starts coming out of her hands, slowly healing Hadrik's wound.\r\n\r\n\"So...\" Hadrik says, while grinning. \"You must be the banshee inhabiting the girl's body. Petal, is it?\"\r\n\r\nThe girl looks the dwarf in the eye without changing her cold expression, but she doesn't say anything. She then shifts her gaze back to his wound and continues to heal it diligently."
           - source: scene_text_2
             paragraph: 32
             text: "\"Not really the talkative sort, are you?\" Hadrik asks, still grinning.\r\n\r\nAs the wound heals completely, the girl's eyes turn back to their normal green color, and her warm expression returns as well.\r\n\r\n\"Oh, she's usually not this silent,\" Flower says. \"I think she's just shy around strangers...\"\r\n\r\n\"Well, I think this farce has gone on long enough,\" Daren says, as he starts approaching Flower. \"I really am sorry that I have to ruin this beautiful friendship, but I'm afraid the banshee has to go.\"\r\n\r\n\"Actually, I don't think that will be possible,\" I tell him.\r\n\r\n\"Oh yeah?\" Daren says. \"And why is that? Please, enlighten us, oh, great banshee expert!\"\r\n\r\n\"Because the banshee has already awakened. In fact, I think she's been in this state for a very long time.\"\r\n\r\n\"Impossible! Everyone knows that an awakened banshee is supposed to look like a genuine monster. Almost nothing should remain of their human host's appearance.\"\r\n\r\n\"Yeah, I've seen a banshee awaken before, remember? That doesn't, however, change the fact that this banshee has already awakened, in spite of all that, since she is clearly no longer in a dormant state. Why don't you try your purification technique on her if you don't believe me?\"\r\n\r\n\"Hmph...\" Daren says. \"I was going to do that anyway.\""
-        condition: ch8_smash = 1
         choices:
           - position: 1
             text: Continue
@@ -755,28 +773,28 @@ scenes:
                   current_scene: ch8_purification
   - name: ch8_awakened_win
     routes:
-      - texts:
+      - condition: ch8_smash = 0
+        texts:
           - source: scene_text
             paragraph: 40
             text: "\"Wow, I can't believe you guys actually took down a hydra by yourselves without any magic!\" she says. \"Is anyone hurt? Petal knows a bit of healing magic, so we should be able to help if it's nothing too serious.\"\r\n\r\n\"Actually, I could use some healing right about now,\" Hadrik says. \"This wound on my leg in particular is killing me!\"\r\n\r\n\"We're on it!\" the girl says, as she approaches the dwarf and puts her hands on his wound.\r\n\r\n\"Petal?\" she asks, and then she pauses for a few moments.\r\n\r\nThe girl's eyes then start shining with a bright blue light, as her expression becomes a lot colder, and a warm light starts coming out of her hands, slowly healing Hadrik's wound.\r\n\r\n\"So...\" Hadrik says, while grinning. \"You must be the banshee inhabiting the girl's body. Petal, is it?\"\r\n\r\nThe girl looks the dwarf in the eye without changing her cold expression, but she doesn't say anything. She then shifts her gaze back to his wound and continues to heal it diligently."
           - source: scene_text_2
             paragraph: 33
             text: "\"Not really the talkative sort, are you?\" Hadrik asks, still grinning.\r\n\r\nAs the wound heals completely, the girl's eyes turn back to their normal green color, and her warm expression returns as well.\r\n\r\n\"Oh, she's usually not this silent,\" Flower says. \"I think she's just shy around strangers...\"\r\n\r\n\"Well, I think this farce has gone on long enough,\" Daren says, as he starts approaching Flower. \"I really am sorry that I have to ruin this beautiful friendship, but I'm afraid the banshee has to go.\"\r\n\r\n\"Actually, I don't think that will be possible,\" I tell him.\r\n\r\n\"Oh yeah?\" Daren says. \"And why is that? Please, enlighten us, oh, great banshee expert!\"\r\n\r\n\"Because the banshee has already awakened. In fact, I think she's been in this state for a very long time.\"\r\n\r\n\"Impossible! Everyone knows that an awakened banshee is supposed to look like a genuine monster. Almost nothing should remain of their human host's appearance.\"\r\n\r\n\"Yeah, I've seen a banshee awaken before, remember? That doesn't, however, change the fact that this banshee has already awakened, in spite of all that, since she is clearly no longer in a dormant state. Why don't you try your purification technique on her if you don't believe me?\"\r\n\r\n\"Hmph...\" Daren says. \"I was going to do that anyway.\""
-        condition: ch8_smash = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch8_purification
-      - texts:
+      - condition: ch8_smash = 1
+        texts:
           - source: scene_text
             paragraph: 41
             text: "\"Wow, I can't believe you guys actually took down a hydra by yourselves without any magic!\" she says. \"Is anyone in need of healing?\"\r\n\r\n\"Actually, I could use some healing right about now,\" Hadrik says. \"This wound on my leg in particular is killing me!\"\r\n\r\n\"We're on it!\" the girl says, as she approaches the dwarf and puts her hands on his wound.\r\n\r\n\"Petal?\" she asks, and then she pauses for a few moments.\r\n\r\nThe girl's eyes then start shining with a bright blue light, as her expression becomes a lot colder, and a warm light starts coming out of her hands, slowly healing Hadrik's wound.\r\n\r\n\"So...\" Hadrik says, while grinning. \"You must be the banshee inhabiting the girl's body. Petal, is it?\"\r\n\r\nThe girl looks the dwarf in the eye without changing her cold expression, but she doesn't say anything. She then shifts her gaze back to his wound and continues to heal it diligently."
           - source: scene_text_2
             paragraph: 34
             text: "\"Not really the talkative sort, are you?\" Hadrik asks, still grinning.\r\n\r\nAs the wound heals completely, the girl's eyes turn back to their normal green color, and her warm expression returns as well.\r\n\r\n\"Oh, she's usually not this silent,\" Flower says. \"I think she's just shy around strangers...\"\r\n\r\n\"Well, I think this farce has gone on long enough,\" Daren says, as he starts approaching Flower. \"I really am sorry that I have to ruin this beautiful friendship, but I'm afraid the banshee has to go.\"\r\n\r\n\"Actually, I don't think that will be possible,\" I tell him.\r\n\r\n\"Oh yeah?\" Daren says. \"And why is that? Please, enlighten us, oh, great banshee expert!\"\r\n\r\n\"Because the banshee has already awakened. In fact, I think she's been in this state for a very long time.\"\r\n\r\n\"Impossible! Everyone knows that an awakened banshee is supposed to look like a genuine monster. Almost nothing should remain of their human host's appearance.\"\r\n\r\n\"Yeah, I've seen a banshee awaken before, remember? That doesn't, however, change the fact that this banshee has already awakened, in spite of all that, since she is clearly no longer in a dormant state. Why don't you try your purification technique on her if you don't believe me?\"\r\n\r\n\"Hmph...\" Daren says. \"I was going to do that anyway.\""
-        condition: ch8_smash = 1
         choices:
           - position: 1
             text: Continue
@@ -874,11 +892,11 @@ scenes:
               current_scene: ch8_corridors
   - name: ch8_corridors
     routes:
-      - texts:
+      - condition: ch8_talk = 0
+        texts:
           - source: scene_text
             paragraph: 48
             text: "\"Noooooooooooooooo!\" the girl yells, as we reach the place where the path splits into three directions.\r\n\r\nLooking at the markings on the three walls, I start to understand the source of the girl's frustration. She was not mistaken when she remembered that the correct corridor had an insect marked on it. What she failed to remember, however, was that the other two corridors had insects marked on them as well.\r\n\r\n\"A dragonfly, a beetle and a wasp...\" Kate says, as she studies the markings on the walls. \"Flower, you're saying that one of these three paths will lead us directly to the control room?\"\r\n\r\n\"Yes, as long as we choose the correct path, there won't be any more obstacles between us and the room with buttons,\" the girl says. \"Oooooh! If only I could remember which way is the right one!\""
-        condition: ch8_talk = 0
         choices:
           - position: 1
             text: Suggest taking the path marked with a dragonfly
@@ -895,11 +913,11 @@ scenes:
             effects:
               - set:
                   current_scene: ch8_wasp
-      - texts:
+      - condition: ch8_talk = 1
+        texts:
           - source: scene_text
             paragraph: 49
             text: "\"Noooooooooooooooo!\" the girl yells, as we reach the place where the path splits into three directions.\r\n\r\nLooking at the markings on the three walls, I start to understand the source of the girl's frustration. She was not mistaken when she remembered that the correct corridor had an insect marked on it. What she failed to remember, however, was that the other two corridors had insects marked on them as well.\r\n\r\n\"Wait a minute...\" Kate says. \"Didn't that note from the leopard say something about three corridors with insects marked on them? I see a dragonfly, a beetle and a wasp. The leopard told us that the path with the beetle is the correct one.\"\r\n\r\n\"Leopard?...\" Flower asks us. \"You mean Leo, the leopard?\"\r\n\r\n\"Yes!\" Kate answers her. \"Do you know him?\"\r\n\r\n\"Yeah, I know him, but... I don't understand why he'd help you. He really hates humans...\"\r\n\r\n\"You think it might be a trap, then?\" Kate asks.\r\n\r\n\"I don't know...\" the girl says. \"Oooooh! If only I could remember which way is the right one!\""
-        condition: ch8_talk = 1
         choices:
           - position: 1
             text: Suggest taking the path marked with a dragonfly
@@ -918,28 +936,28 @@ scenes:
                   current_scene: ch8_wasp
   - name: ch8_dragonfly
     routes:
-      - texts:
+      - condition: ch8_talk = 0
+        texts:
           - source: scene_text
             paragraph: 50
             text: "\"If we know that at least one of these paths is the correct one, then we may as well just pick one at random and if we trigger any traps, we get out of there as soon as possible. I say we try the corridor marked with a dragonfly first.\"\r\n\r\n\"To me, any path is as good as any other,\" Daren says. \"Actually, come to think of it, I'd rather go specifically with Barry's suggestion, because then if we run into a trap, I can just blame it all on him afterwards!\"\r\n\r\nOnce everyone's agreed to have me carry the blame for our potential failure, we all started walking down the corridor marked with a dragonfly. \r\n\r\nBefore we even take five steps inside the corridor, we hear a loud noise behind us, as our way back gets sealed shut by a newly erected stone wall. Immediately afterwards, the ceiling starts descending towards us, little by little.\r\n\r\n\"Oh no...\" Flower says. \"Now I remember! It was the beetle! The beetle marked the correct path! Why didn't I remember this sooner?\"\r\n\r\n\"Well, it's not like it's the end of the world, or anything,\" Hadrik says. \"The ceiling is barely even moving. I'll just smash this wall blocking the exit and we can all go back to the right path.\"\r\n\r\n\"No!\" Flower shouts. \"If you smash that wall, there's going to be dozens of poisoned arrows coming out of it!\""
           - source: scene_text_2
             paragraph: 38
             text: "\"Hmm...\" Hadrik says. \"I'm pretty sure that the beetle corridor was the one in the middle. That means that if I smash this wall on our left, we can just enter the beetle corridor directly, without having to go back.\"\r\n\r\nHe pauses.\r\n\r\n\"That is to say... If, uh... If everyone else is also okay with this.\"\r\n\r\n\"There are no traps inside the wall between the two corridors as far as I know,\" Flower says.\r\n\r\n\"It's okay, Hadrik,\" Kate says. \"Feel free to smash the wall to your heart's content.\"\r\n\r\n\"Roger!\" Hadrik says, with a grin, as he punches the wall with all of his might.\r\n\r\nWe then make our way through the hole in the wall, and we enter the beetle corridor, just as planned. \r\n\r\nAfter a few minutes of walking through the corridor, we finally start to see some light at the end of the tunnel. \r\n\r\n\"This is it!\" Flower says, excited, as she points towards the exit. \"I remember this part! Once we're past that door, nothing will stand between us and the control room! I told you we'd make it there safely! Come on, follow me!\""
-        condition: ch8_talk = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch8_control_room
-      - texts:
+      - condition: ch8_talk = 1
+        texts:
           - source: scene_text
             paragraph: 51
             text: "\"To me, it sounds like the leopard is trying to lure us into a trap,\" I say. \"At least that only leaves us with two other corridors to choose from. I say we just go with the dragonfly corridor, and if we trigger any traps, we get out of there as soon as possible.\"\r\n\r\n\"I'll be honest, here,\" Daren says, \"I don't think we have enough information to arrive at any conclusion. So, if it's going to be a guessing game either way, I'd rather go with Barry's instincts, because then if he's wrong, I can blame it all on him afterwards!\"\r\n\r\nOnce everyone's agreed to have me carry the blame for our potential failure, we all started walking down the corridor marked with a dragonfly. \r\n\r\nBefore we even take five steps inside the corridor, we hear a loud noise behind us, as our way back gets sealed shut by a newly erected stone wall. Immediately afterwards, the ceiling starts descending towards us, little by little.\r\n\r\n\"Oh no...\" Flower says. \"Now I finally remember. Leo was right. We really should have taken the path with the beetle on it.\"\r\n\r\n\"Well, it's not like it's the end of the world, or anything,\" Hadrik says. \"The ceiling is barely even moving. I'll just smash this wall blocking the exit and we can all go back to the right path.\"\r\n\r\n\"No!\" Flower shouts. \"If you smash that wall, there's going to be dozens of poisoned arrows coming out of it!\""
           - source: scene_text_2
             paragraph: 39
             text: "\"Hmm...\" Hadrik says. \"I'm pretty sure that the beetle corridor was the one in the middle. That means that if I smash this wall on our left, we can just enter the beetle corridor directly, without having to go back.\"\r\n\r\nHe pauses.\r\n\r\n\"That is to say... If, uh... If everyone else is also okay with this.\"\r\n\r\n\"There are no traps inside the wall between the two corridors as far as I know,\" Flower says.\r\n\r\n\"It's okay, Hadrik,\" Kate says. \"Feel free to smash the wall to your heart's content.\"\r\n\r\n\"Roger!\" Hadrik says, with a grin, as he punches the wall with all of his might.\r\n\r\nWe then make our way through the hole in the wall, and we enter the beetle corridor, just as planned. \r\n\r\nAfter a few minutes of walking through the corridor, we finally start to see some light at the end of the tunnel. \r\n\r\n\"This is it!\" Flower says, excited, as she points towards the exit. \"I remember this part! Once we're past that door, nothing will stand between us and the control room! I told you we'd make it there safely! Come on, follow me!\""
-        condition: ch8_talk = 1
         choices:
           - position: 1
             text: Continue
@@ -948,15 +966,16 @@ scenes:
                   current_scene: ch8_control_room
   - name: ch8_wasp
     routes:
-      - texts:
+      - condition: premonition < 4 AND ch8_talk = 0
+        texts:
           - source: scene_text
             paragraph: 52
             text: "\"If we know that at least one of these paths is the correct one, then we may as well just pick one at random and if we trigger any traps, we get out of there as soon as possible. I say we try the corridor marked with a wasp first.\"\r\n\r\n\"To me, any path is as good as any other,\" Daren says. \"Actually, come to think of it, I'd rather go specifically with Barry's suggestion, because then if we run into a trap, I can just blame it all on him afterwards!\"\r\n\r\nOnce everyone's agreed to have me carry the blame for our potential failure, we all started walking down the corridor marked with a wasp. \r\n\r\nBefore we even take five steps inside the corridor, we hear a loud noise behind us, as our way back gets sealed shut by a newly erected stone wall. \r\n\r\nWe all start looking around ourselves, trying to figure out where the traps will start coming from.\r\n\r\n\"Maybe there are no traps this time around?\" Hadrik asks.\r\n\r\nImmediately after finishing his question, the floor crumbles beneath us, and we all start falling into the pit below. At the very bottom of the pit, a hundred sharp spikes were waiting for us. I was impaled by five of them as I fell. I only had a few seconds to feel the pain before everything slowly started to fade away, and I began to lose my consciousness for good."
-        condition: premonition < 4 AND ch8_talk = 0
-        set:
-          failed_checks:
-            - '[ Premonition check failed - level 4 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Premonition check failed - level 4 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -975,15 +994,16 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: premonition < 4 AND ch8_talk = 1
+        texts:
           - source: scene_text
             paragraph: 53
             text: "\"To me, it sounds like the leopard is trying to lure us into a trap,\" I say. \"At least that only leaves us with two other corridors to choose from. I say we just go with the wasp corridor, and if we trigger any traps, we get out of there as soon as possible.\"\r\n\r\n\"I'll be honest, here,\" Daren says, \"I don't think we have enough information to arrive at any conclusion. So, if it's going to be a guessing game either way, I'd rather go with Barry's instincts, because then if he's wrong, I can blame it all on him afterwards!\"\r\n\r\nOnce everyone's agreed to have me carry the blame for our potential failure, we all started walking down the corridor marked with a wasp. \r\n\r\nBefore we even take five steps inside the corridor, we hear a loud noise behind us, as our way back gets sealed shut by a newly erected stone wall. \r\n\r\nWe all start looking around ourselves, trying to figure out where the traps will start coming from.\r\n\r\n\"Maybe there are no traps this time around?\" Hadrik asks.\r\n\r\nImmediately after finishing his question, the floor crumbles beneath us, and we all start falling into the pit below. At the very bottom of the pit, a hundred sharp spikes were waiting for us. I was impaled by five of them as I fell. I only had a few seconds to feel the pain before everything slowly started to fade away, and I began to lose my consciousness for good."
-        condition: premonition < 4 AND ch8_talk = 1
-        set:
-          failed_checks:
-            - '[ Premonition check failed - level 4 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Premonition check failed - level 4 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1002,7 +1022,8 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: premonition = 4 AND ch8_talk = 0
+        texts:
           - source: scene_text
             paragraph: 54
             text: "\"If we know that at least one of these paths is the correct one, then we may as well just pick one at random and if we trigger any traps, we get out of there as soon as possible. I say we try the corridor marked with a wasp first.\"\r\n\r\n\"To me, any path is as good as any other,\" Daren says. \"Actually, come to think of it, I'd rather go specifically with Barry's suggestion, because then if we run into a trap, I can just blame it all on him afterwards!\"\r\n\r\nOnce everyone's agreed to have me carry the blame for our potential failure, we all started walking down the corridor marked with a wasp. \r\n\r\nBefore we even take five steps inside the corridor, we hear a loud noise behind us, as our way back gets sealed shut by a newly erected stone wall. \r\n\r\nI suddenly get a vision of the floor crumbling beneath us, and the six of us falling into a pit filled with spikes.\r\n\r\n\"Everyone, listen closely!\" I start to say. \"The floor in the middle of the corridor is going to crumble beneath us any second now. Get as close to the walls as possible, and don't move until I say so! Do it!\"\r\n\r\n\"Huh?\" Flower asks, while all the others follow my instructions, without question.\r\n\r\nSuddenly, the whole floor in the middle of the corridor collapses, and the girl starts falling into the pit below.\r\n\r\n\"Flower!\" Kate shouts, but the little girl uses her fire jets to propel herself back up, as if nothing had happened."
@@ -1012,10 +1033,10 @@ scenes:
           - source: scene_3
             paragraph: 2
             text: "\"There are no traps inside the wall between the two corridors as far as I know,\" Flower says.\r\n\r\n\"It's okay, Hadrik,\" Kate says. \"Feel free to smash the wall to your heart's content.\"\r\n\r\n\"Roger!\" Hadrik says, with a grin, as he punches the wall with all of his might.\r\n\r\nWe then make our way through the hole in the wall, and we enter the beetle corridor, just as planned. \r\n\r\nAfter a few minutes of walking through the corridor, we finally start to see some light at the end of the tunnel. \r\n\r\n\"This is it!\" Flower says, excited, as she points towards the exit. \"I remember this part! Once we're past that door, nothing will stand between us and the control room! I told you we'd make it there safely! Come on, follow me!\""
-        condition: premonition = 4 AND ch8_talk = 0
-        set:
-          successful_checks:
-            - '[ Premonition check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Premonition check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1023,7 +1044,8 @@ scenes:
               - set:
                   current_scene: ch8_control_room
                 condition: is_dead = 0
-      - texts:
+      - condition: premonition = 4 AND ch8_talk = 1
+        texts:
           - source: scene_text
             paragraph: 55
             text: "\"To me, it sounds like the leopard is trying to lure us into a trap,\" I say. \"At least that only leaves us with two other corridors to choose from. I say we just go with the wasp corridor, and if we trigger any traps, we get out of there as soon as possible.\"\r\n\r\n\"I'll be honest, here,\" Daren says, \"I don't think we have enough information to arrive at any conclusion. So, if it's going to be a guessing game either way, I'd rather go with Barry's instincts, because then if he's wrong, I can blame it all on him afterwards!\"\r\n\r\nOnce everyone's agreed to have me carry the blame for our potential failure, we all started walking down the corridor marked with a wasp. \r\n\r\nBefore we even take five steps inside the corridor, we hear a loud noise behind us, as our way back gets sealed shut by a newly erected stone wall. \r\n\r\nI suddenly get a vision of the floor crumbling beneath us, and the six of us falling into a pit filled with spikes.\r\n\r\n\"Everyone, listen closely!\" I start to say. \"The floor in the middle of the corridor is going to crumble beneath us any second now. Get as close to the walls as possible, and don't move until I say so! Do it!\"\r\n\r\n\"Huh?\" Flower asks, while all the others follow my instructions, without question.\r\n\r\nSuddenly, the whole floor in the middle of the corridor collapses, and the girl starts falling into the pit below."
@@ -1033,10 +1055,10 @@ scenes:
           - source: scene_3
             paragraph: 3
             text: "\"That is to say... If, uh... If everyone else is also okay with this.\"\r\n\r\n\"There are no traps inside the wall between the two corridors as far as I know,\" Flower says.\r\n\r\n\"It's okay, Hadrik,\" Kate says. \"Feel free to smash the wall to your heart's content.\"\r\n\r\n\"Roger!\" Hadrik says, with a grin, as he punches the wall with all of his might.\r\n\r\nWe then make our way through the hole in the wall, and we enter the beetle corridor, just as planned. \r\n\r\nAfter a few minutes of walking through the corridor, we finally start to see some light at the end of the tunnel. \r\n\r\n\"This is it!\" Flower says, excited, as she points towards the exit. \"I remember this part! Once we're past that door, nothing will stand between us and the control room! I told you we'd make it there safely! Come on, follow me!\""
-        condition: premonition = 4 AND ch8_talk = 1
-        set:
-          successful_checks:
-            - '[ Premonition check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Premonition check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1046,22 +1068,22 @@ scenes:
                 condition: is_dead = 0
   - name: ch8_beetle
     routes:
-      - texts:
+      - condition: ch8_talk = 0
+        texts:
           - source: scene_text
             paragraph: 56
             text: "\"If we know that at least one of these paths is the correct one, then we may as well just pick one at random and if we trigger any traps, we get out of there as soon as possible. I say we try the corridor marked with a beetle first.\"\r\n\r\n\"To me, any path is as good as any other,\" Daren says. \"Actually, come to think of it, I'd rather go specifically with Barry's suggestion, because then if we run into a trap, I can just blame it all on him afterwards!\"\r\n\r\nOnce everyone's agreed to have me carry the blame for our potential failure, we all started walking down the corridor marked with a beetle. \r\n\r\nAfter a few minutes of walking through the corridor, we finally start to see some light at the end of the tunnel. \r\n\r\n\"This is it!\" Flower says, excited, as she points towards the exit. \"I remember this part! Once we're past that door, nothing will stand between us and the control room! I told you we'd make it there safely! Come on, follow me!\""
-        condition: ch8_talk = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch8_control_room
-      - texts:
+      - condition: ch8_talk = 1
+        texts:
           - source: scene_text
             paragraph: 57
             text: "\"I don't think the leopard would have chosen such a roundabout way of having us killed when he could have simply told the fox that we were planning to escape, and have her execute us instead. I say we go with the corridor marked with a beetle, and if we trigger any traps, we get out of there as soon as possible.\"\r\n\r\n\"I'll be honest, here,\" Daren says, \"I don't think we have enough information to arrive at any conclusion. So, if it's going to be a guessing game either way, I'd rather go with Barry's instincts, because then if he's wrong, I can blame it all on him afterwards!\"\r\n\r\nOnce everyone's agreed to have me carry the blame for our potential failure, we all started walking down the corridor marked with a beetle. \r\n\r\nAfter a few minutes of walking through the corridor, we finally start to see some light at the end of the tunnel. \r\n\r\n\"This is it!\" Flower says, excited, as she points towards the exit. \"I remember this part! Once we're past that door, nothing will stand between us and the control room! I told you we'd make it there safely! Come on, follow me!\""
-        condition: ch8_talk = 1
         choices:
           - position: 1
             text: Continue
@@ -1070,7 +1092,8 @@ scenes:
                   current_scene: ch8_control_room
   - name: ch8_control_room
     routes:
-      - texts:
+      - condition: ch8_talk = 0
+        texts:
           - source: scene_text
             paragraph: 58
             text: "Flower rushes out of the tunnel, but her momentum fades immediately after she enters the control room, and she stops right in front of the corridor's exit. As I reach the end of the corridor myself, it takes a few moments for my eyes to adjust to the really bright light in this room.\r\n\r\n\"Congratulations!\" I hear a female voice say to us, while my vision is still a little blurry. \"You've made it to the control room. Now you can all die in peace, knowing that you've achieved your goal.\"\r\n\r\nI suddenly realize where all the light was coming from. The great golden fox is standing right before us, and her insanely strong magical aura is shining so brightly that it's hard to even look at her. Her shape may be that of a normal fox, but her aura gives off an outworldly vibe. A similar vibe in fact to that of a banshee. Could she originate from the magical plane as well?\r\n\r\nAs I look around, I see that the room we are in is filled with levers and buttons of all shapes and sizes, just like Flower said, and there are strange writings on all of the walls. Besides the fox, there is also a leopard in the room, who appears to be one of the fox's followers."
@@ -1080,21 +1103,20 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "The magical power coming from her is like nothing I've ever witnessed before. I haven't even felt so much pressure when I was in the presence of Azarius. The hopelessness I'm feeling right now can only be compared with the feeling I got when we first met Eiden. Are we all just going to die like this, without even getting a chance to offer the slightest amount of resistance?\r\n\r\n\"Eleya, wait!\" the girl says, as she puts herself between us and the spirit fox. \"You can't hurt them! They're not bad people!\"\r\n\r\n\"Do not stand in my way, Flower,\" the fox says. \"These people broke our sacred rules, and they must be punished.\"\r\n\r\n\"Yeah, but can't you like, give them a slap on the wrist or something?\"\r\n\r\n\"I am not going to have you question our methods or our punishments, little girl. You may have helped us in the past, but if you insist on defending these criminals, I will not hesitate to execute you along with them.\"\r\n\r\n\"Ooooooh! You are always so stubborn!\" the girl says, as her eyes turn a bright red, and her magical aura starts to radiate strongly from her body. \"Fine! If you want a fight, I'll give you your fight! Get ready, Petal!\""
-        condition: ch8_talk = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch8_golden_rule
-      - texts:
+      - condition: ch8_talk = 1
+        texts:
           - source: scene_text
             paragraph: 59
             text: "Flower rushes out of the tunnel, but her momentum fades immediately after she enters the control room, and she stops right in front of the corridor's exit. As I reach the end of the corridor myself, it takes a few moments for my eyes to adjust to the really bright light in this room.\r\n\r\n\"Congratulations!\" I hear a familiar voice say to us, while my vision is still a little blurry. \"You've made it to the control room. Now you can all die in peace, knowing that you've achieved your goal.\"\r\n\r\nI suddenly realize where all the light was coming from. The spirit fox is standing right before us, and her insanely strong magical aura is shining so brightly that it's hard to even look at her. Leo, the leopard is also at her side, but the bull appears to be missing this time around. The room is filled with levers and buttons of all shapes and sizes, just like Flower said, and there are strange writings on all of the walls.\r\n\r\n\"Once I learned that you escaped from the dungeon,\" the fox says, \"I knew that there was only one place where you could be heading, so instead of chasing you down, I decided to simply wait for you here.\"\r\n\r\nSuddenly, a golden cage pops out of nowhere and surrounds every one of us except Flower.\r\n\r\n\"It seems that my benevolence was wasted on the likes of you,\" the fox says. \"I am going to execute you here and now and be done with this once and for all.\""
           - source: scene_text_2
             paragraph: 40
             text: "The magical power coming from her is like nothing I've ever witnessed before. I haven't even felt so much pressure when I was in the presence of Azarius. The hopelessness I'm feeling right now can only be compared with the feeling I got when we first met Eiden. Are we all just going to die like this, without even getting a chance to offer the slightest amount of resistance?\r\n\r\n\"Eleya, wait!\" the girl says, as she puts herself between us and the spirit fox. \"You can't hurt them! They're not bad people!\"\r\n\r\n\"Do not stand in my way, Flower,\" the fox says. \"These people broke our sacred rules, and they must be punished.\"\r\n\r\n\"Yeah, but can't you like, give them a slap on the wrist or something?\"\r\n\r\n\"I am not going to have you question our methods or our punishments, little girl. You may have helped us in the past, but if you insist on defending these criminals, I will not hesitate to execute you along with them.\"\r\n\r\n\"Ooooooh! You are always so stubborn!\" the girl says, as her eyes turn a bright red, and her magical aura starts to radiate strongly from her body. \"Fine! If you want a fight, I'll give you your fight! Get ready, Petal!\""
-        condition: ch8_talk = 1
         choices:
           - position: 1
             text: Continue

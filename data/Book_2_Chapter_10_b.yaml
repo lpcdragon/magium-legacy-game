@@ -1,7 +1,8 @@
 scenes:
   - name: b2_ch10b_blame
     routes:
-      - texts:
+      - condition: hearing >= 2
+        texts:
           - source: scene_text
             paragraph: 2
             text: "As we get closer to our destination, I notice that there are no sounds whatsoever coming from the camp, even though with the level I have in my Hearing stat, I would have expected to hear people talking by now. I can only suspect that they must have cast a silencing spell around their base of operations, similar to the spell that Melindra cast when she came into my tent the other night.\r\n\r\nWhen we finally get close enough to the camp, we see that the whole area around it is surrounded by four large, twenty foot tall walls, made of rock. By the looks of it, the walls were probably created by an earth elementalist.\r\n\r\n\"There's the entrance, over there,\" Nolderan says, as he points towards a door, which also seems to be made out of stone.\r\n\r\n\"Quite the impressive camp fortifications you have here, Nolderan,\" Hadrik says.\r\n\r\n\"Yes, we have a very talented earth elementalist in our team,\" Nolderan says. \"Step right in.\"\r\n\r\nHe then opens the door for us, and we all step inside, one by one. As soon as we enter the camp, we all finally get to see the faces of the five mages from Nolderan's team. One of them is a dwarf, who is sitting on a stone chair, behind a stone table, some two hundred feet away from us, while drinking a bottle of dwarven ale. The other four are all standing behind him, watching over him, as bodyguards."
@@ -11,10 +12,10 @@ scenes:
           - source: scene_3
             paragraph: 2
             text: "\"Master Nolderan...\" Daren says, still in a state of shock. \"Why didn't you tell us about the sage being in your team?\"\r\n\r\n\"If I had told you this, would you have followed me here, boy?\" Nolderan says.\r\n\r\n\"You should not blame him for this, healer in armor,\" Talmak says in a loud voice, as he puts his bottle of ale on the table in front of him. \"Your old master works for me, now. He does what I tell him. But do not worry, I did not call you here to fight. I called you here because I wanted to talk. Now, come closer. All of you. I don't like it when I need to shout to make myself heard.\"\r\n\r\nWe all exchange a few looks, and then we get ready to traverse the large, empty area between ourselves and the sage's table, together with Nolderan. Just as we were beginning to walk, Melindra pulls both Flower and me by the arm, in order to stop us. When we look at her, we see that she has an unusually serious expression on her face.\r\n\r\n\"After I snap my fingers, I'm going to need you two to pull me out,\" Melindra tells us, in a low voice. \"Do you understand?\""
-        condition: hearing >= 2
-        set:
-          successful_checks:
-            - '[ Hearing check successful - level 2 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Hearing check successful - level 2 ]'
         choices:
           - position: 1
             text: I guess so...
@@ -26,7 +27,8 @@ scenes:
             effects:
               - set:
                   current_scene: b2_ch10b_pull
-      - texts:
+      - condition: hearing < 2
+        texts:
           - source: scene_text
             paragraph: 3
             text: "When we finally get close enough to the camp, we see that the whole area around it is surrounded by four large, twenty foot tall walls, made of rock. By the looks of it, the walls were probably created by an earth elementalist.\r\n\r\n\"There's the entrance, over there,\" Nolderan says, as he points towards a door, which also seems to be made out of stone.\r\n\r\n\"Quite the impressive camp fortifications you have here, Nolderan,\" Hadrik says.\r\n\r\n\"Yes, we have a very talented earth elementalist in our team,\" Nolderan says. \"Step right in.\"\r\n\r\nHe then opens the door for us, and we all step inside, one by one. As soon as we enter the camp, we all finally get to see the faces of the five mages from Nolderan's team. One of them is a dwarf, who is sitting on a stone chair, behind a stone table, some two hundred feet away from us, while drinking a bottle of dwarven ale. The other four are all standing behind him, watching over him, as bodyguards."
@@ -36,10 +38,10 @@ scenes:
           - source: scene_3
             paragraph: 2
             text: "\"Master Nolderan...\" Daren says, still in a state of shock. \"Why didn't you tell us about the sage being in your team?\"\r\n\r\n\"If I had told you this, would you have followed me here, boy?\" Nolderan says.\r\n\r\n\"You should not blame him for this, healer in armor,\" Talmak says in a loud voice, as he puts his bottle of ale on the table in front of him. \"Your old master works for me, now. He does what I tell him. But do not worry, I did not call you here to fight. I called you here because I wanted to talk. Now, come closer. All of you. I don't like it when I need to shout to make myself heard.\"\r\n\r\nWe all exchange a few looks, and then we get ready to traverse the large, empty area between ourselves and the sage's table, together with Nolderan. Just as we were beginning to walk, Melindra pulls both Flower and me by the arm, in order to stop us. When we look at her, we see that she has an unusually serious expression on her face.\r\n\r\n\"After I snap my fingers, I'm going to need you two to pull me out,\" Melindra tells us, in a low voice. \"Do you understand?\""
-        condition: hearing < 2
-        set:
-          failed_checks:
-            - '[ Hearing check failed - level 2 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Hearing check failed - level 2 ]'
         choices:
           - position: 1
             text: I guess so...
@@ -123,7 +125,8 @@ scenes:
               b2_ch10_advisor: 2
   - name: b2_ch10b_compete
     routes:
-      - texts:
+      - condition: b2_ch10_advisor = 0
+        texts:
           - source: scene_text
             paragraph: 7
             text: "\"Yeah, Daren, you should quit the tournament. Less competition for me, that way.\"\r\n\r\n\"You won't get rid of me that easily, you opportunistic bastard,\" Daren says, with a grin.\r\n\r\n\"Is this supposed to be some sort of joke?\" Talmak says. \"Please tell me that you are not seriously planning to participate in this tournament against me as well...\"\r\n\r\n\"It's not a joke...\" Kate says. \"Take a good look at them, and you will see from their eyes that they are not bluffing. They really did both come here to win the tournament.\"\r\n\r\nAfter hearing Kate's words, Talmak keeps turning his head between me and Daren, looking at each of us in turn, as if he is simply refusing to believe what is happening before his eyes. Once he finally understands that we are indeed being serious, he completely loses his temper, and his face contorts into a snarl."
@@ -133,14 +136,14 @@ scenes:
           - source: scene_3
             paragraph: 5
             text: "\"Is that so?\" Talmak says, as he calms down a bit. \"Well, Nolderan, I hope you won't hate me too much if I kill your old disciple. He is simply leaving me no choice, at this point.\"\r\n\r\n\"The boy chose this path on his own,\" Nolderan says. \"He was given ample opportunities to see reason, but he wouldn't listen. I am sad that it has come to this, but there is no other way.\"\r\n\r\n\"It's good to see that you still care, master Nolderan,\" Daren says, with a dark look in his eyes.\r\n\r\n\"These two fools have already sealed their fate!\" Talmak shouts, as he faces the other members of our team. \"But the rest of you do not need to die together with them. If you join my side now, you will be allowed to live.\""
-        condition: b2_ch10_advisor = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch10b_denied
-      - texts:
+      - condition: b2_ch10_advisor = 1
+        texts:
           - source: scene_text
             paragraph: 8
             text: "\"Daren's servant? Do you have any idea how many times I saved this guy's neck?\"\r\n\r\n\"Not as many times as I saved yours,\" Daren says.\r\n\r\n\"Really, now?\" I say, with a grin. \"Well, maybe we should start keeping count from now on! What do you say?\"\r\n\r\n\"Sounds good to me,\" Daren says.\r\n\r\n\"What are you two blabbering about?\" Talmak says. \"If this person isn't Daren's servant or advisor, then what did he come here for?\"\r\n\r\n\"He came here to win the Magium,\" Daren says. \"Just like I did.\"\r\n\r\n\"Is this supposed to be some sort of joke?\" Talmak says, as he turns his gaze to me, measuring me up and down. \"Please tell me that you are not seriously planning to participate in this tournament against me as well...\"\r\n\r\n\"It's not a joke...\" Kate says. \"Take a good look at them, and you will see from their eyes that they are not bluffing. They really did both come here to win the tournament.\"\r\n\r\nAfter hearing Kate's words, Talmak keeps turning his head between me and Daren, looking at each of us in turn, as if he is simply refusing to believe what is happening before his eyes. Once he finally understands that we are indeed being serious, he completely loses his temper, and his face contorts into a snarl."
@@ -150,14 +153,14 @@ scenes:
           - source: scene_3
             paragraph: 5
             text: "\"Is that so?\" Talmak says, as he calms down a bit. \"Well, Nolderan, I hope you won't hate me too much if I kill your old disciple. He is simply leaving me no choice, at this point.\"\r\n\r\n\"The boy chose this path on his own,\" Nolderan says. \"He was given ample opportunities to see reason, but he wouldn't listen. I am sad that it has come to this, but there is no other way.\"\r\n\r\n\"It's good to see that you still care, master Nolderan,\" Daren says, with a dark look in his eyes.\r\n\r\n\"These two fools have already sealed their fate!\" Talmak shouts, as he faces the other members of our team. \"But the rest of you do not need to die together with them. If you join my side now, you will be allowed to live.\""
-        condition: b2_ch10_advisor = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch10b_denied
-      - texts:
+      - condition: b2_ch10_advisor = 2
+        texts:
           - source: scene_text
             paragraph: 9
             text: "\"Did anyone ever tell you that your dwarf henchmen look more intimidating than you?\"\r\n\r\n\"What are you, some sort of clown?...\" Talmak says. \"Daren, if you're going to bring your personal jester to a tournament like this, then at least dress him accordingly. That way, people would know not to talk to him.\"\r\n\r\n\"Hey, you can ignore me all you want, but that won't make the truth go away,\" I say.\r\n\r\n\"Actually, Barry didn't come here with me,\" Daren says. \"He joined the tournament by himself, and he is also aiming to win the Magium. He is a participant, just like the rest of us.\"\r\n\r\n\"Please tell me that you are joking...\" Talmak says. \"This has to be a joke!\"\r\n\r\n\"It's not a joke...\" Kate says. \"Take a good look at them, and you will see from their eyes that they are not bluffing. They really did both come here to win the tournament.\"\r\n\r\nAfter hearing Kate's words, Talmak keeps turning his head between me and Daren, looking at each of us in turn, as if he is simply refusing to believe what is happening before his eyes. Once he finally understands that we are indeed being serious, he completely loses his temper, and his face contorts into a snarl."
@@ -167,7 +170,6 @@ scenes:
           - source: scene_3
             paragraph: 5
             text: "\"Is that so?\" Talmak says, as he calms down a bit. \"Well, Nolderan, I hope you won't hate me too much if I kill your old disciple. He is simply leaving me no choice, at this point.\"\r\n\r\n\"The boy chose this path on his own,\" Nolderan says. \"He was given ample opportunities to see reason, but he wouldn't listen. I am sad that it has come to this, but there is no other way.\"\r\n\r\n\"It's good to see that you still care, master Nolderan,\" Daren says, with a dark look in his eyes.\r\n\r\n\"These two fools have already sealed their fate!\" Talmak shouts, as he faces the other members of our team. \"But the rest of you do not need to die together with them. If you join my side now, you will be allowed to live.\""
-        condition: b2_ch10_advisor = 2
         choices:
           - position: 1
             text: Continue
@@ -295,18 +297,19 @@ scenes:
               b2_ch10_target: 1
   - name: b2_ch10b_dwarf
     routes:
-      - texts:
+      - condition: toughness < 4 AND b2_ch5_scimitar = 0
+        texts:
           - source: scene_text
             paragraph: 16
             text: "Trying to attack Talmak with my crossbow would be meaningless, since I already know for a fact that the magical protection against physical damage that he's using is powerful enough to make crossbow bolts bounce right off him. I'll need to attack him from close range if I want to have a chance.\r\n\r\nAs Talmak's bodyguards leave their employer's side to engage my friends in battle, I signal my air currents to take me off the ground once more, and then I fly as fast as I can, straight for the sage, with my dagger at the ready. \r\n\r\nTalmak sees me coming, and he raises a wall of rock from the ground, to stop me in my tracks. I try to cut through the rock with my weapon, but the blade isn't sharp enough, and it gets stuck inside the stone. As I pull my dagger out, I realize that the rock forming the wall has been hardened through magic, similarly to how Kate often reinforces her icicles before she shoots them at her enemies.\r\n\r\nIf I had both my strength and my toughness stats maxed out, maybe I would have been able to smash this wall with my fist, like Hadrik, but with my current levels, I don't want to risk breaking my arm. I guess I'm going to have to keep flying around these rock-made obstacles until I find an opening."
           - source: scene_text_2
             paragraph: 12
             text: "\"Hah!\" Hadrik says. \"I was hoping that you'd be coming this way, Barry. Let's see if you can keep up!\"\r\n\r\nHe then starts attacking the sage even faster, while I try to do an aerial assault from above. Talmak suddenly unleashes an explosion of air, which pushes both me and Hadrik away from him, and then he begins to raise himself high up in the sky, with the aid of the stone platform at his feet.\r\n\r\n\"So, he can also cast air magic to some extent...\" Hadrik says, after we recover from the sudden blast of air from earlier. \"That bastard. Come on, Barry, let's catch up to him!\"\r\n\r\nI begin to fly upwards, while Hadrik turns himself into a giant eagle, soaring into the sky as well. Just as I'm about to reach Talmak, two giant platforms made out of rock materialize out of thin air, above and below me, and they both immediately try to crush me between them. \r\n\r\nI find myself unable to do anything, as the large stone slates quickly flatten me, and cause me to lose my consciousness for good."
-        condition: toughness < 4 AND b2_ch5_scimitar = 0
-        set:
-          failed_checks:
-            - '[ Toughness check failed - level 4 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Toughness check failed - level 4 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -325,20 +328,21 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: toughness = 4 AND strength < 4 AND b2_ch5_scimitar = 0
+        texts:
           - source: scene_text
             paragraph: 17
             text: "Trying to attack Talmak with my crossbow would be meaningless, since I already know for a fact that the magical protection against physical damage that he's using is powerful enough to make crossbow bolts bounce right off him. I'll need to attack him from close range if I want to have a chance.\r\n\r\nAs Talmak's bodyguards leave their employer's side to engage my friends in battle, I signal my air currents to take me off the ground once more, and then I fly as fast as I can, straight for the sage, with my dagger at the ready. \r\n\r\nTalmak sees me coming, and he raises a wall of rock from the ground, to stop me in my tracks. I try to cut through the rock with my weapon, but the blade isn't sharp enough, and it gets stuck inside the stone. As I pull my dagger out, I realize that the rock forming the wall has been hardened through magic, similarly to how Kate often reinforces her icicles before she shoots them at her enemies.\r\n\r\nIf I had both my strength and my toughness stats maxed out, maybe I would have been able to smash this wall with my fist, like Hadrik, but with my current levels, I don't want to risk breaking my arm. I guess I'm going to have to keep flying around these rock-made obstacles until I find an opening."
           - source: scene_text_2
             paragraph: 13
             text: "\"Hah!\" Hadrik says. \"I was hoping that you'd be coming this way, Barry. Let's see if you can keep up!\"\r\n\r\nHe then starts attacking the sage even faster, while I try to do an aerial assault from above. Talmak suddenly unleashes an explosion of air, which pushes both me and Hadrik away from him, and then he begins to raise himself high up in the sky, with the aid of the stone platform at his feet.\r\n\r\n\"So, he can also cast air magic to some extent...\" Hadrik says, after we recover from the sudden blast of air from earlier. \"That bastard. Come on, Barry, let's catch up to him!\"\r\n\r\nI begin to fly upwards, while Hadrik turns himself into a giant eagle, soaring into the sky as well. Just as I'm about to reach Talmak, two giant platforms made out of rock materialize out of thin air, above and below me, and they both immediately try to crush me between them. \r\n\r\nAs I find myself stuck between the two large stone slates, I try to push them away from me so that I can escape, but I'm just not strong enough to do it. Seeing that he has me where he wants me, the sage creates two more rock platforms, and he smashes them into the other two with full force, this time managing to crush my internal organs, and to kill me for good."
-        condition: toughness = 4 AND strength < 4 AND b2_ch5_scimitar = 0
-        set:
-          failed_checks:
-            - '[ Strength check failed - level 4 ]'
-          successful_checks:
-            - '[ Toughness check successful - level 4 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Strength check failed - level 4 ]'
+              successful_checks:
+                - '[ Toughness check successful - level 4 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -357,37 +361,39 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: toughness = 4 AND strength = 4 AND b2_ch5_scimitar = 0
+        texts:
           - source: scene_text
             paragraph: 18
             text: "Trying to attack Talmak with my crossbow would be meaningless, since I already know for a fact that the magical protection against physical damage that he's using is powerful enough to make crossbow bolts bounce right off him. I'll need to attack him from close range if I want to have a chance.\r\n\r\nAs Talmak's bodyguards leave their employer's side to engage my friends in battle, I signal my air currents to take me off the ground once more, and then I fly as fast as I can, straight for the sage, with my dagger at the ready. \r\n\r\nTalmak sees me coming, and he raises a wall of rock from the ground, to stop me in my tracks. I try to cut through the rock with my weapon, but the blade isn't sharp enough, and it gets stuck inside the stone. As I pull my dagger out, I realize that the rock forming the wall has been hardened through magic, similarly to how Kate often reinforces her icicles before she shoots them at her enemies.\r\n\r\nSeeing that my blade is of no use to me, I decide to put it back in its sheath, and then I use my fist to smash through the rock, just like Hadrik."
           - source: scene_text_2
             paragraph: 14
             text: "\"Hah!\" Hadrik says. \"I was hoping that you'd be coming this way, Barry. Let's see if you can keep up!\"\r\n\r\nHe then starts attacking the sage even faster, while I try to do an aerial assault from above. Talmak suddenly unleashes an explosion of air, which pushes both me and Hadrik away from him, and then he begins to raise himself high up in the sky, with the aid of the stone platform at his feet.\r\n\r\n\"So, he can also cast air magic to some extent...\" Hadrik says, after we recover from the sudden blast of air from earlier. \"That bastard. Come on, Barry, let's catch up to him!\"\r\n\r\nI begin to fly upwards, while Hadrik turns himself into a giant eagle, soaring into the sky as well. Just as I'm about to reach Talmak, two giant platforms made out of rock materialize out of thin air, above and below me, and they both immediately try to crush me between them. \r\n\r\nAs I find myself stuck between the two large stone slates, I push one of them away from me with both my hands, and then I quickly use my right fist to smash right through the platform in front of me, allowing me to escape. Afterwards, I resume my flight towards Talmak, who is apparently trying to use the same tactic against Hadrik as well."
-        condition: toughness = 4 AND strength = 4 AND b2_ch5_scimitar = 0
-        set:
-          successful_checks:
-            - '[ Toughness check successful - level 4 ]'
-            - '[ Strength check successful - level 4 ]'
-          is_dead: 0
+        effects:
+          - set:
+              successful_checks:
+                - '[ Toughness check successful - level 4 ]'
+                - '[ Strength check successful - level 4 ]'
+              is_dead: 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch10b_trouble
-      - texts:
+      - condition: toughness < 4 AND b2_ch5_scimitar <> 0
+        texts:
           - source: scene_text
             paragraph: 19
             text: "Trying to attack Talmak with my crossbow would be meaningless, since I already know for a fact that the magical protection against physical damage that he's using is powerful enough to make crossbow bolts bounce right off him. I'll need to attack him from close range if I want to have a chance.\r\n\r\nAs Talmak's bodyguards leave their employer's side to engage my friends in battle, I signal my air currents to take me off the ground once more, and then I fly as fast as I can, straight for the sage, with my scimitar at the ready. \r\n\r\nTalmak sees me coming, and he raises a wall of rock from the ground, to stop me in my tracks. I try to cut through the rock with my weapon, but the blade isn't sharp enough, and it gets stuck inside the stone. As I pull my scimitar out, I realize that the rock forming the wall has been hardened through magic, similarly to how Kate often reinforces her icicles before she shoots them at her enemies.\r\n\r\nIf I had both my strength and my toughness stats maxed out, maybe I would have been able to smash this wall with my fist, like Hadrik, but with my current levels, I don't want to risk breaking my arm. I guess I'm going to have to keep flying around these rock-made obstacles until I find an opening."
           - source: scene_text_2
             paragraph: 12
             text: "\"Hah!\" Hadrik says. \"I was hoping that you'd be coming this way, Barry. Let's see if you can keep up!\"\r\n\r\nHe then starts attacking the sage even faster, while I try to do an aerial assault from above. Talmak suddenly unleashes an explosion of air, which pushes both me and Hadrik away from him, and then he begins to raise himself high up in the sky, with the aid of the stone platform at his feet.\r\n\r\n\"So, he can also cast air magic to some extent...\" Hadrik says, after we recover from the sudden blast of air from earlier. \"That bastard. Come on, Barry, let's catch up to him!\"\r\n\r\nI begin to fly upwards, while Hadrik turns himself into a giant eagle, soaring into the sky as well. Just as I'm about to reach Talmak, two giant platforms made out of rock materialize out of thin air, above and below me, and they both immediately try to crush me between them. \r\n\r\nI find myself unable to do anything, as the large stone slates quickly flatten me, and cause me to lose my consciousness for good."
-        condition: toughness < 4 AND b2_ch5_scimitar <> 0
-        set:
-          failed_checks:
-            - '[ Toughness check failed - level 4 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Toughness check failed - level 4 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -406,20 +412,21 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: toughness = 4 AND strength < 4 AND b2_ch5_scimitar <> 0
+        texts:
           - source: scene_text
             paragraph: 20
             text: "Trying to attack Talmak with my crossbow would be meaningless, since I already know for a fact that the magical protection against physical damage that he's using is powerful enough to make crossbow bolts bounce right off him. I'll need to attack him from close range if I want to have a chance.\r\n\r\nAs Talmak's bodyguards leave their employer's side to engage my friends in battle, I signal my air currents to take me off the ground once more, and then I fly as fast as I can, straight for the sage, with my scimitar at the ready. \r\n\r\nTalmak sees me coming, and he raises a wall of rock from the ground, to stop me in my tracks. I try to cut through the rock with my weapon, but the blade isn't sharp enough, and it gets stuck inside the stone. As I pull my scimitar out, I realize that the rock forming the wall has been hardened through magic, similarly to how Kate often reinforces her icicles before she shoots them at her enemies.\r\n\r\nIf I had both my strength and my toughness stats maxed out, maybe I would have been able to smash this wall with my fist, like Hadrik, but with my current levels, I don't want to risk breaking my arm. I guess I'm going to have to keep flying around these rock-made obstacles until I find an opening."
           - source: scene_text_2
             paragraph: 13
             text: "\"Hah!\" Hadrik says. \"I was hoping that you'd be coming this way, Barry. Let's see if you can keep up!\"\r\n\r\nHe then starts attacking the sage even faster, while I try to do an aerial assault from above. Talmak suddenly unleashes an explosion of air, which pushes both me and Hadrik away from him, and then he begins to raise himself high up in the sky, with the aid of the stone platform at his feet.\r\n\r\n\"So, he can also cast air magic to some extent...\" Hadrik says, after we recover from the sudden blast of air from earlier. \"That bastard. Come on, Barry, let's catch up to him!\"\r\n\r\nI begin to fly upwards, while Hadrik turns himself into a giant eagle, soaring into the sky as well. Just as I'm about to reach Talmak, two giant platforms made out of rock materialize out of thin air, above and below me, and they both immediately try to crush me between them. \r\n\r\nAs I find myself stuck between the two large stone slates, I try to push them away from me so that I can escape, but I'm just not strong enough to do it. Seeing that he has me where he wants me, the sage creates two more rock platforms, and he smashes them into the other two with full force, this time managing to crush my internal organs, and to kill me for good."
-        condition: toughness = 4 AND strength < 4 AND b2_ch5_scimitar <> 0
-        set:
-          failed_checks:
-            - '[ Strength check failed - level 4 ]'
-          successful_checks:
-            - '[ Toughness check successful - level 4 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Strength check failed - level 4 ]'
+              successful_checks:
+                - '[ Toughness check successful - level 4 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -438,19 +445,20 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: toughness = 4 AND strength = 4 AND b2_ch5_scimitar <> 0
+        texts:
           - source: scene_text
             paragraph: 21
             text: "Trying to attack Talmak with my crossbow would be meaningless, since I already know for a fact that the magical protection against physical damage that he's using is powerful enough to make crossbow bolts bounce right off him. I'll need to attack him from close range if I want to have a chance.\r\n\r\nAs Talmak's bodyguards leave their employer's side to engage my friends in battle, I signal my air currents to take me off the ground once more, and then I fly as fast as I can, straight for the sage, with my scimitar at the ready. \r\n\r\nTalmak sees me coming, and he raises a wall of rock from the ground, to stop me in my tracks. I try to cut through the rock with my weapon, but the blade isn't sharp enough, and it gets stuck inside the stone. As I pull my scimitar out, I realize that the rock forming the wall has been hardened through magic, similarly to how Kate often reinforces her icicles before she shoots them at her enemies.\r\n\r\nSeeing that my blade is of no use to me, I decide to put it back in its sheath, and then I use my fist to smash through the rock, just like Hadrik."
           - source: scene_text_2
             paragraph: 14
             text: "\"Hah!\" Hadrik says. \"I was hoping that you'd be coming this way, Barry. Let's see if you can keep up!\"\r\n\r\nHe then starts attacking the sage even faster, while I try to do an aerial assault from above. Talmak suddenly unleashes an explosion of air, which pushes both me and Hadrik away from him, and then he begins to raise himself high up in the sky, with the aid of the stone platform at his feet.\r\n\r\n\"So, he can also cast air magic to some extent...\" Hadrik says, after we recover from the sudden blast of air from earlier. \"That bastard. Come on, Barry, let's catch up to him!\"\r\n\r\nI begin to fly upwards, while Hadrik turns himself into a giant eagle, soaring into the sky as well. Just as I'm about to reach Talmak, two giant platforms made out of rock materialize out of thin air, above and below me, and they both immediately try to crush me between them. \r\n\r\nAs I find myself stuck between the two large stone slates, I push one of them away from me with both my hands, and then I quickly use my right fist to smash right through the platform in front of me, allowing me to escape. Afterwards, I resume my flight towards Talmak, who is apparently trying to use the same tactic against Hadrik as well."
-        condition: toughness = 4 AND strength = 4 AND b2_ch5_scimitar <> 0
-        set:
-          successful_checks:
-            - '[ Toughness check successful - level 4 ]'
-            - '[ Strength check successful - level 4 ]'
-          is_dead: 0
+        effects:
+          - set:
+              successful_checks:
+                - '[ Toughness check successful - level 4 ]'
+                - '[ Strength check successful - level 4 ]'
+              is_dead: 0
         choices:
           - position: 1
             text: Continue
@@ -483,7 +491,8 @@ scenes:
               b2_ch10_tactic: 2
   - name: b2_ch10b_technique
     routes:
-      - texts:
+      - condition: combat_technique < 4
+        texts:
           - source: scene_text
             paragraph: 23
             text: "It's time to stop playing games, and to start going on the offensive. Let's see... What can I use against him?\r\n\r\nI take a quick look below myself, and I notice that the rocks which were pulled out from the ground are moving slower than the ones that Talmak created himself. He also seems to have a little less control over them, from the way they are shaking. I'm not sure why he'd want to use those rocks if he can't control them properly, but my guess is that he's trying to save energy. Creating large stones out of nothing can be a pretty costly process, after all. Either way, I think I may have just found what I was looking for.\r\n\r\nThe rocks from below are starting to get closer, now. If only I could find a way to bring them where I want...\r\n\r\nI start to punch all of the stone slates that are magically created, while making sure to only dodge the rocks that are coming from the earth below. Soon enough, there is a whole army of boulders following me around, and trying to surround me. The sage is really busy trying to keep Hadrik at bay, so he hasn't yet noticed what I'm doing. This is all working nicely, so far, but I can't afford to make a move until the sage is completely distracted. If he figures out my plan, I'm going to be totally screwed.\r\n\r\nI keep dodging and punching rocks until it looks as if Talmak has all of his focus on Hadrik, and then I start flying as fast as I can, straight towards the sage and his platform, which are both right below me."
@@ -496,11 +505,11 @@ scenes:
               hitting the obstacle, but the rocks that were following right
               behind me hit me at full speed, and they crush me against the
               stone slate, killing me instantly.
-        condition: combat_technique < 4
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Combat technique check failed - level 4 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Combat technique check failed - level 4 ]'
         choices:
           - position: 1
             text: Restart game
@@ -519,20 +528,21 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_text_2
-            paragraph: 16
-            text: "As I look behind me, I am pleased to see that the boulders which have been following me around for the past thirty seconds are still right on my tail. I keep a steady course until I'm almost at the platform's level, and at the very last second before hitting it, I quickly change my direction and propel myself out of the way, as the sage is still completely oblivious to what's happening right above him. Just as I predicted, the boulders that were following me could not change their direction quickly enough, so they all crashed right into Talmak's flying platform. \r\n\r\nWhile the sage noticed the rocks too late to be able to stop them directly, he was still able to conjure a small dome made out of stone all around him, which lessened the impact of the boulders on his own person by quite a bit. That still didn't stop his platform from getting completely destroyed, however, which sent Talmak falling towards the ground, along with all the rubble.\r\n\r\nHe doesn't get to fall for long, though, because he almost immediately makes another platform below his feet, out of thin air, while blowing all of the debris away in a single move. Looking at his face, he seems to be in a pretty bad mood, right now.\r\n\r\n\"He's looking pretty pissed, Barry,\" Hadrik tells me, as he hovers into the air next to me, in his giant eagle form. \"You think you can handle him, while I go get Daren? He's the one that specializes against elementalists, after all. Aerial battles are just not my thing.\"\r\n\r\n\"Yeah, go get him,\" I say. \"But do it quick. I'm not sure how much longer I can keep this up.\""
+      - condition: combat_technique = 4
+        texts:
           - source: scene_text
             paragraph: 23
             text: "It's time to stop playing games, and to start going on the offensive. Let's see... What can I use against him?\r\n\r\nI take a quick look below myself, and I notice that the rocks which were pulled out from the ground are moving slower than the ones that Talmak created himself. He also seems to have a little less control over them, from the way they are shaking. I'm not sure why he'd want to use those rocks if he can't control them properly, but my guess is that he's trying to save energy. Creating large stones out of nothing can be a pretty costly process, after all. Either way, I think I may have just found what I was looking for.\r\n\r\nThe rocks from below are starting to get closer, now. If only I could find a way to bring them where I want...\r\n\r\nI start to punch all of the stone slates that are magically created, while making sure to only dodge the rocks that are coming from the earth below. Soon enough, there is a whole army of boulders following me around, and trying to surround me. The sage is really busy trying to keep Hadrik at bay, so he hasn't yet noticed what I'm doing. This is all working nicely, so far, but I can't afford to make a move until the sage is completely distracted. If he figures out my plan, I'm going to be totally screwed.\r\n\r\nI keep dodging and punching rocks until it looks as if Talmak has all of his focus on Hadrik, and then I start flying as fast as I can, straight towards the sage and his platform, which are both right below me."
+          - source: scene_text_2
+            paragraph: 16
+            text: "As I look behind me, I am pleased to see that the boulders which have been following me around for the past thirty seconds are still right on my tail. I keep a steady course until I'm almost at the platform's level, and at the very last second before hitting it, I quickly change my direction and propel myself out of the way, as the sage is still completely oblivious to what's happening right above him. Just as I predicted, the boulders that were following me could not change their direction quickly enough, so they all crashed right into Talmak's flying platform. \r\n\r\nWhile the sage noticed the rocks too late to be able to stop them directly, he was still able to conjure a small dome made out of stone all around him, which lessened the impact of the boulders on his own person by quite a bit. That still didn't stop his platform from getting completely destroyed, however, which sent Talmak falling towards the ground, along with all the rubble.\r\n\r\nHe doesn't get to fall for long, though, because he almost immediately makes another platform below his feet, out of thin air, while blowing all of the debris away in a single move. Looking at his face, he seems to be in a pretty bad mood, right now.\r\n\r\n\"He's looking pretty pissed, Barry,\" Hadrik tells me, as he hovers into the air next to me, in his giant eagle form. \"You think you can handle him, while I go get Daren? He's the one that specializes against elementalists, after all. Aerial battles are just not my thing.\"\r\n\r\n\"Yeah, go get him,\" I say. \"But do it quick. I'm not sure how much longer I can keep this up.\""
           - source: scene_3
             paragraph: 9
             text: "As Hadrik heads over to Daren, Talmak ignores him completely, and he uses his platform to come back up to my level. It seems that this time, I've finally gotten his undivided attention.\r\n\r\nThe sage begins to create even more rocks than before, and he keeps throwing them at me, one after the other. However, his aim seems a little worse than before. It would appear that he isn't able to concentrate as well as he'd want to, when he is this angry."
-        condition: combat_technique = 4
-        set:
-          successful_checks:
-            - '[ Combat technique check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Combat technique check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -545,15 +555,16 @@ scenes:
                   title: Demolition man
   - name: b2_ch10b_reaction
     routes:
-      - texts:
+      - condition: reflexes < 4
+        texts:
           - source: scene_text
             paragraph: 24
             text: "It's time to stop playing games, and to start going on the offensive. If I just keep looking out for every single rock, I'll never reach Talmak. Let's see how well I can handle myself when I take a few more risks.\r\n\r\nI begin to focus more on reaching the sage, than on dodging boulders and platforms.\r\n\r\nFor a while, this works well, but unfortunately there are just so many rocks that it's impossible for me to keep track of them all, while focusing on something else. Eventually, one of the boulders hits me right in the head, and before I get to recover, I get squashed between several layers of rock, which makes me die almost instantly."
-        condition: reflexes < 4
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Reflexes check failed - level 4 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Reflexes check failed - level 4 ]'
         choices:
           - position: 1
             text: Restart game
@@ -572,17 +583,18 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: reflexes = 4
+        texts:
           - source: scene_text
             paragraph: 25
             text: "It's time to stop playing games, and to start going on the offensive. If I just keep looking out for every single rock, I'll never reach Talmak. Let's see how well I can handle myself when I take a few more risks.\r\n\r\nI begin to focus more on reaching the sage, than on dodging boulders and platforms.\r\n\r\nRelying on my reflexes to dodge all the incoming rocks at the very last second allows me to be much more reckless with my flying, which helps me get a lot closer to Talmak than before. After a few failed attempts, I finally manage to sneak up on him while he is too busy keeping Hadrik at bay to notice me, and before he gets the time to react, I punch him hard in the face, sending him flying right off the platform.\r\n\r\nNormally, that kind of punch should have smashed his head in, but thanks to all of his magical protections, he got away with only a bloody nose. Talmak falls towards the ground for a while, but then he conjures another floating platform below him, to stop him in his tracks. Judging by the look on his face, he seems to be in a pretty bad mood, right now.\r\n\r\n\"He's looking pretty pissed, Barry,\" Hadrik tells me, as he hovers into the air next to me, in his giant eagle form. \"You think you can handle him, while I go get Daren? He's the one that specializes against elementalists, after all. Aerial battles are just not my thing.\"\r\n\r\n\"Yeah, go get him,\" I say. \"But do it quick. I'm not sure how much longer I can keep this up.\""
           - source: scene_text_2
             paragraph: 19
             text: "As Hadrik heads over to Daren, Talmak ignores him completely, and he uses his platform to come back up to my level. It seems that this time, I've finally gotten his undivided attention.\r\n\r\nThe sage begins to create even more rocks than before, and he keeps throwing them at me, one after the other. However, his aim seems a little worse than before. It would appear that he isn't able to concentrate as well as he'd want to, when he is this angry."
-        condition: reflexes = 4
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -592,7 +604,8 @@ scenes:
                 condition: is_dead = 0
   - name: b2_ch10b_observe
     routes:
-      - texts:
+      - condition: perception < 4
+        texts:
           - source: scene_text
             paragraph: 26
             text: "It's time to stop playing games, and to start going on the offensive. But in order to do that, I'm going to need to pay a little more attention to my surroundings.\r\n\r\nAs I take a look around myself, I make a mental note of where all the rocks are, so I can be sure that no platforms or boulders will take me by surprise, except for the ones that will be created from this point onwards. I then begin to formulate a strategy in my head, based on how I've seen the sage attack me so far.\r\n\r\nGiven that Talmak always tries to anticipate where I'm going, while continuously putting obstacles in my way, I should probably change my flying patterns, so that I'm a bit more unpredictable. That way, I'll make him waste his energy on generating stone slates at wrong locations, and he'll be forced to make them chase me, just like he's doing with the boulders that come out of the earth below.\r\n\r\nI begin to fly in circles, without any aim or purpose, so that the sage would have a harder time predicting what I will do. This is working, to a certain extent, but it's not really helping me get anywhere near him. I need to keep watching the rocks and to see if I can't find any patterns in how he moves them, that I might be able to exploit."
@@ -605,11 +618,11 @@ scenes:
               the time to recover, the sage creates even more stone slates, and
               I quickly get squashed between several layers of rock, which makes
               me die almost instantly.
-        condition: perception < 4
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Observation check failed - level 4 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Observation check failed - level 4 ]'
         choices:
           - position: 1
             text: Restart game
@@ -628,7 +641,8 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: perception = 4
+        texts:
           - source: scene_text
             paragraph: 26
             text: "It's time to stop playing games, and to start going on the offensive. But in order to do that, I'm going to need to pay a little more attention to my surroundings.\r\n\r\nAs I take a look around myself, I make a mental note of where all the rocks are, so I can be sure that no platforms or boulders will take me by surprise, except for the ones that will be created from this point onwards. I then begin to formulate a strategy in my head, based on how I've seen the sage attack me so far.\r\n\r\nGiven that Talmak always tries to anticipate where I'm going, while continuously putting obstacles in my way, I should probably change my flying patterns, so that I'm a bit more unpredictable. That way, I'll make him waste his energy on generating stone slates at wrong locations, and he'll be forced to make them chase me, just like he's doing with the boulders that come out of the earth below.\r\n\r\nI begin to fly in circles, without any aim or purpose, so that the sage would have a harder time predicting what I will do. This is working, to a certain extent, but it's not really helping me get anywhere near him. I need to keep watching the rocks and to see if I can't find any patterns in how he moves them, that I might be able to exploit."
@@ -638,10 +652,10 @@ scenes:
           - source: scene_3
             paragraph: 9
             text: "As Hadrik heads over to Daren, Talmak ignores him completely, and he uses his platform to come back up to my level. It seems that this time, I've finally gotten his undivided attention.\r\n\r\nThe sage begins to create even more rocks than before, and he keeps throwing them at me, one after the other. However, his aim seems a little worse than before. It would appear that he isn't able to concentrate as well as he'd want to, when he is this angry."
-        condition: perception = 4
-        set:
-          successful_checks:
-            - '[ Observation check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Observation check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -668,7 +682,8 @@ scenes:
               current_scene: b2_ch10b_intensely
   - name: b2_ch10b_henchmen
     routes:
-      - texts:
+      - condition: b2_ch5_scimitar <> 0
+        texts:
           - source: scene_text
             paragraph: 28
             text: "I quickly take my crossbow out of the backpack, and start shooting at all of the enemies except for the sage, since I already know for a fact that the magical protection against physical damage that he's using is powerful enough to make crossbow bolts bounce right off him. Sadly, it seems that he's already cast the same protection on his allies as well, because none of the bolts harmed them in any way. Seeing that this weapon is useless to me, I return it to my backpack, and then I unsheathe my scimitar.\r\n\r\nAs the henchmen head towards us, Talmak knocks Hadrik away from him, with a large boulder, and then he uses the platform below his feet to raise himself high into the air. As soon as he recovers, Hadrik transforms himself into a giant eagle, and he soars into the sky, after the sage.\r\n\r\nNolderan is the first one of the henchmen to attack, and he goes directly for Daren. While the old master and disciple commence their duel, Kate quickly conjures a semi-transparent ice dome around me, her and Leila, just in time to defend us against a barrage of flames, coming from the two dwarves, who are apparently both fire elementalists.\r\n\r\n\"Don't kill them, yet!\" the banshee shouts. \"I need to have some answers.\"\r\n\r\n\"To hell with your answers, abomination!\" the dwarf with the eye patch says. \"You should be thankful enough that our master took you under his wing. Do not presume to think that you can give us orders!\""
@@ -678,14 +693,14 @@ scenes:
           - source: scene_3
             paragraph: 11
             text: "\"Could we perhaps continue this argument at a more opportune moment?\" the elf says, with a forced smile. \"See, if I hadn't shielded you just now, you would have all been dead, already.\"\r\n\r\n\"As if!\" the banshee says. \"Maybe these fools would have died, but I was well aware of those icicles, and was already preparing to dodge them.\"\r\n\r\n\"Is that why you haven't even moved an inch, when you were attacked, despite not knowing about my invisible barrier?\" the elf says, still forcing himself to smile.\r\n\r\n\"Shut up,\" the banshee says, looking a little flustered. \"I obviously knew about the barrier!\"\r\n\r\n\"Of course you did...\" the elf says. \"Listen, just ask your question, quickly, so we can finally start murdering each other, will you?\" \r\n\r\n\"You there, in the ice dome!\" the banshee shouts at us. \"I have a question for you. What is the name of the banshee in the amulet?\""
-        condition: b2_ch5_scimitar <> 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch10b_henchmen2
-      - texts:
+      - condition: b2_ch5_scimitar = 0
+        texts:
           - source: scene_text
             paragraph: 29
             text: "I quickly take my crossbow out of the backpack, and start shooting at all of the enemies except for the sage, since I already know for a fact that the magical protection against physical damage that he's using is powerful enough to make crossbow bolts bounce right off him. Sadly, it seems that he's already cast the same protection on his allies as well, because none of the bolts harmed them in any way. Seeing that this weapon is useless to me, I return it to my backpack, and then I unsheathe my dagger.\r\n\r\nAs the henchmen head towards us, Talmak knocks Hadrik away from him, with a large boulder, and then he uses the platform below his feet to raise himself high into the air. As soon as he recovers, Hadrik transforms himself into a giant eagle, and he soars into the sky, after the sage.\r\n\r\nNolderan is the first one of the henchmen to attack, and he goes directly for Daren. While the old master and disciple commence their duel, Kate quickly conjures a semi-transparent ice dome around me, her and Leila, just in time to defend us against a barrage of flames, coming from the two dwarves, who are apparently both fire elementalists.\r\n\r\n\"Don't kill them, yet!\" the banshee shouts. \"I need to have some answers.\"\r\n\r\n\"To hell with your answers, abomination!\" the dwarf with the eye patch says. \"You should be thankful enough that our master took you under his wing. Do not presume to think that you can give us orders!\""
@@ -695,7 +710,6 @@ scenes:
           - source: scene_3
             paragraph: 11
             text: "\"Could we perhaps continue this argument at a more opportune moment?\" the elf says, with a forced smile. \"See, if I hadn't shielded you just now, you would have all been dead, already.\"\r\n\r\n\"As if!\" the banshee says. \"Maybe these fools would have died, but I was well aware of those icicles, and was already preparing to dodge them.\"\r\n\r\n\"Is that why you haven't even moved an inch, when you were attacked, despite not knowing about my invisible barrier?\" the elf says, still forcing himself to smile.\r\n\r\n\"Shut up,\" the banshee says, looking a little flustered. \"I obviously knew about the barrier!\"\r\n\r\n\"Of course you did...\" the elf says. \"Listen, just ask your question, quickly, so we can finally start murdering each other, will you?\" \r\n\r\n\"You there, in the ice dome!\" the banshee shouts at us. \"I have a question for you. What is the name of the banshee in the amulet?\""
-        condition: b2_ch5_scimitar = 0
         choices:
           - position: 1
             text: Continue
@@ -753,15 +767,16 @@ scenes:
               current_scene: b2_ch10b_fly_dwarves
   - name: b2_ch10b_run_dwarves
     routes:
-      - texts:
+      - condition: agility < 3
+        texts:
           - source: scene_text
             paragraph: 32
             text: "\"I'm on it,\" Leila writes.\r\n\r\n\"Me too,\" I say. \"Open the dome.\"\r\n\r\nOnce she gets our confirmation, Kate waves her right hand towards the side of the dome, and she makes an exit for us, which is just the right size for the two of us to fit through.\r\n\r\n\"Let's target the dwarves, first,\" I tell Leila. \"They seem like the types that focus more on offense than defense, and that elf won't be able to shield them forever. We could try to flank them from two sides. I'll go left.\"\r\n\r\nLeila nods, and then we both walk out of the dome, as Kate closes up the exit behind us. As soon as we're out, Leila starts running towards our enemies, from the right side, while I begin to approach them from the left. When they see us get out of the dome, the two dwarves quickly switch their targets, and they begin to aim for Leila and me, instead. The dwarf with the eye patch seems to be the one focusing on me, while the one with the scars is currently throwing fireballs towards Leila.\r\n\r\nAs I try to dodge the dwarf's attacks, I suddenly run into an invisible barrier, which blocks my path. I quickly try to run the other way, but I'm too slow, and one of the flames manages to hit me head on, burning me to a crisp, and killing me on the spot."
-        condition: agility < 3
-        set:
-          failed_checks:
-            - '[ Speed check failed - level 3 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Speed check failed - level 3 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -780,20 +795,21 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: agility >= 3 AND reflexes < 3
+        texts:
           - source: scene_text
             paragraph: 33
             text: "\"I'm on it,\" Leila writes.\r\n\r\n\"Me too,\" I say. \"Open the dome.\"\r\n\r\nOnce she gets our confirmation, Kate waves her right hand towards the side of the dome, and she makes an exit for us, which is just the right size for the two of us to fit through.\r\n\r\n\"Let's target the dwarves, first,\" I tell Leila. \"They seem like the types that focus more on offense than defense, and that elf won't be able to shield them forever. We could try to flank them from two sides. I'll go left.\"\r\n\r\nLeila nods, and then we both walk out of the dome, as Kate closes up the exit behind us. As soon as we're out, Leila starts running towards our enemies, from the right side, while I begin to approach them from the left. When they see us get out of the dome, the two dwarves quickly switch their targets, and they begin to aim for Leila and me, instead. The dwarf with the eye patch seems to be the one focusing on me, while the one with the scars is currently throwing fireballs towards Leila.\r\n\r\nAs I dodge the dwarf's attacks, the elf also tries to block my path with several invisible barriers, but he is clearly having difficulty keeping up with my speed. He is, however, quite efficient in managing to keep Leila and me away from his allies, because he is greatly limiting our mobility, while we already need to avoid the fire barrages coming from the dwarves."
           - source: scene_text_2
             paragraph: 24
             text: "Just as I was trying to get around another one of the barriers, Kate shoots dozens of icicles towards the elf, coming from all directions, which forces him to dismiss all the barriers and to make a new one, around himself.\r\n\r\nThis allows Leila and me to finally reach the dwarves, but it also allows our adversaries to shoot us with rays of fire from a point-blank range.\r\n\r\nLeila instinctively dodged the attack, thanks to her reflexes stat, but I wasn't so lucky. I was too slow to react in time, and the ray of fire burnt me into a crisp, killing me on the spot."
-        condition: agility >= 3 AND reflexes < 3
-        set:
-          failed_checks:
-            - '[ Reflexes check failed - level 3 ]'
-          successful_checks:
-            - '[ Speed check successful - level 3 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Reflexes check failed - level 3 ]'
+              successful_checks:
+                - '[ Speed check successful - level 3 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -812,7 +828,8 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: agility >= 3 AND reflexes >= 3
+        texts:
           - source: scene_text
             paragraph: 34
             text: "\"I'm on it,\" Leila writes.\r\n\r\n\"Me too,\" I say. \"Open the dome.\"\r\n\r\nOnce she gets our confirmation, Kate waves her right hand towards the side of the dome, and she makes an exit for us, which is just the right size for the two of us to fit through.\r\n\r\n\"Let's target the dwarves, first,\" I tell Leila. \"They seem like the types that focus more on offense than defense, and that elf won't be able to shield them forever. We could try to flank them from two sides. I'll go left.\"\r\n\r\nLeila nods, and then we both walk out of the dome, as Kate closes up the exit behind us. As soon as we're out, Leila starts running towards our enemies, from the right side, while I begin to approach them from the left. When they see us get out of the dome, the two dwarves quickly switch their targets, and they begin to aim for Leila and me, instead. The dwarf with the eye patch seems to be the one focusing on me, while the one with the scars is currently throwing fireballs towards Leila.\r\n\r\nAs I dodge the dwarf's attacks, the elf also tries to block my path with several invisible barriers, but he is clearly having difficulty keeping up with my speed. He is, however, quite efficient in managing to keep Leila and me away from his allies, because he is greatly limiting our mobility, while we already need to avoid the fire barrages coming from the dwarves."
@@ -822,12 +839,12 @@ scenes:
           - source: scene_3
             paragraph: 14
             text: "\"Right...\" I say, as I begin to attack him, along with Leila.\r\n\r\nWhile we're dealing with the elf, I can't help but notice that the sky above us is currently filled with big, floating rocks, which Talmak is using to chase Hadrik around, in his eagle form. It looks like Hadrik is at a bit of a disadvantage when fighting aerial battles, due to the fact that the flying creatures which he can morph into are too weak, compared to his regular dwarf form, and he needs to switch back to being a dwarf every time he wants to smash one of the rocks into pieces.\r\n\r\nSomewhere below, at a much lower altitude, Illuna and Flower are still busy fighting the black-haired banshee, in mid-flight, although they seem to be very evenly matched, and neither of them has managed to do any significant damage to the other. Flower and Illuna may have the upper hand, in terms of raw power, because there are two of them, but the banshee working for the sage is making good use of the multitude of spells she has at her disposal to compensate for her disadvantage."
-        condition: agility >= 3 AND reflexes >= 3
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 3 ]'
-            - '[ Reflexes check successful - level 3 ]'
-          is_dead: 0
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 3 ]'
+                - '[ Reflexes check successful - level 3 ]'
+              is_dead: 0
         choices:
           - position: 1
             text: Continue
@@ -836,18 +853,19 @@ scenes:
                   current_scene: b2_ch10b_specialty
   - name: b2_ch10b_fly_dwarves
     routes:
-      - texts:
+      - condition: reflexes < 3
+        texts:
           - source: scene_text
             paragraph: 35
             text: "\"I'm on it,\" Leila writes.\r\n\r\n\"Me too,\" I say. \"Open the dome.\"\r\n\r\nOnce she gets our confirmation, Kate waves her right hand towards the side of the dome, and she makes an exit for us, which is just the right size for the two of us to fit through.\r\n\r\n\"Let's target the dwarves, first,\" I tell Leila. \"They seem like the types that focus more on offense than defense, and that elf won't be able to shield them forever. I'll attack them from above, and you can attack them from the ground at the same time.\"\r\n\r\nLeila nods, and then we both walk out of the dome, as Kate closes up the exit behind us. As soon as we're out, Leila starts running towards our enemies, while I begin flying in the dwarves' direction as well. When they see us get out of the dome, the two dwarves quickly switch their targets, and they begin to aim for Leila and me, instead. The dwarf with the eye patch seems to be the one focusing on me, while the one with the scars is currently throwing fireballs towards Leila.\r\n\r\nI easily dodge the flame attacks coming from the dwarf, in mid-air, and then I prepare to dive towards him, but just as I'm getting closer, a large, flat, semi-transparent barrier appears right in front of me, blocking my way. When I try to get around it, the barrier just moves along with me, and it doesn't allow me to get past it. I don't get to do this for much longer, because a new barrage of flames forces me to distance myself from the mages, once more."
           - source: scene_text_2
             paragraph: 26
             text: "In the meantime, Leila seems to be having her own problems with barriers, although the ones that she's bumping into are completely invisible, and can only be detected if you really focus on them with your magical sense. I try to make another dive for the dwarves, but my path gets blocked by one of the elf's barriers yet again. Just as I was trying to get around it, Kate shoots dozens of icicles towards the elf, coming from all directions, which forces him to dismiss all the barriers and to make a new one, around himself.\r\n\r\nThis allows Leila and me to finally reach the dwarves, but it also allows our adversaries to shoot us with rays of fire from a point-blank range.\r\n\r\nLeila instinctively dodged the attack, thanks to her reflexes stat, but I wasn't so lucky. I was too slow to react in time, and the ray of fire burnt me into a crisp, killing me on the spot."
-        condition: reflexes < 3
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Reflexes check failed - level 3 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Reflexes check failed - level 3 ]'
         choices:
           - position: 1
             text: Restart game
@@ -866,7 +884,8 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: reflexes >= 3
+        texts:
           - source: scene_text
             paragraph: 35
             text: "\"I'm on it,\" Leila writes.\r\n\r\n\"Me too,\" I say. \"Open the dome.\"\r\n\r\nOnce she gets our confirmation, Kate waves her right hand towards the side of the dome, and she makes an exit for us, which is just the right size for the two of us to fit through.\r\n\r\n\"Let's target the dwarves, first,\" I tell Leila. \"They seem like the types that focus more on offense than defense, and that elf won't be able to shield them forever. I'll attack them from above, and you can attack them from the ground at the same time.\"\r\n\r\nLeila nods, and then we both walk out of the dome, as Kate closes up the exit behind us. As soon as we're out, Leila starts running towards our enemies, while I begin flying in the dwarves' direction as well. When they see us get out of the dome, the two dwarves quickly switch their targets, and they begin to aim for Leila and me, instead. The dwarf with the eye patch seems to be the one focusing on me, while the one with the scars is currently throwing fireballs towards Leila.\r\n\r\nI easily dodge the flame attacks coming from the dwarf, in mid-air, and then I prepare to dive towards him, but just as I'm getting closer, a large, flat, semi-transparent barrier appears right in front of me, blocking my way. When I try to get around it, the barrier just moves along with me, and it doesn't allow me to get past it. I don't get to do this for much longer, because a new barrage of flames forces me to distance myself from the mages, once more."
@@ -876,10 +895,10 @@ scenes:
           - source: scene_3
             paragraph: 15
             text: "\"The sage?\" I ask him. \"Not you?\"\r\n\r\n\"I am only in charge of defense,\" the elf says. \"I have no spells that could help me fight you in any way. I'm just going to keep this barrier up until you either tire yourselves out, or get bored. You won't be able to break it anytime soon at this rate.\"\r\n\r\n\"Right...\" I say, as I begin to attack him, along with Leila.\r\n\r\nWhile we're dealing with the elf, I can't help but notice that the sky above us is currently filled with big, floating rocks, which Talmak is using to chase Hadrik around, in his eagle form. It looks like Hadrik is at a bit of a disadvantage when fighting aerial battles, due to the fact that the flying creatures which he can morph into are too weak, compared to his regular dwarf form, and he needs to switch back to being a dwarf every time he wants to smash one of the rocks into pieces.\r\n\r\nSomewhere below, at a much lower altitude, Illuna and Flower are still busy fighting the black-haired banshee, in mid-flight, although they seem to be very evenly matched, and neither of them has managed to do any significant damage to the other. Flower and Illuna may have the upper hand, in terms of raw power, because there are two of them, but the banshee working for the sage is making good use of the multitude of spells she has at her disposal to compensate for her disadvantage."
-        condition: reflexes >= 3
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -889,15 +908,16 @@ scenes:
                 condition: is_dead = 0
   - name: b2_ch10b_run_elf
     routes:
-      - texts:
+      - condition: agility < 3
+        texts:
           - source: scene_text
             paragraph: 37
             text: "\"I'm on it,\" Leila writes.\r\n\r\n\"Me too,\" I say. \"Open the dome.\"\r\n\r\nOnce she gets our confirmation, Kate waves her right hand towards the side of the dome, and she makes an exit for us, which is just the right size for the two of us to fit through.\r\n\r\n\"Let's target the elf, first,\" I tell Leila. \"If we both attack him at the same time, we might force him to focus the barriers more on himself, than on the dwarves, which will leave his allies defenseless against Kate's icicles. We could try to flank him from two sides. I'll go left.\"\r\n\r\nLeila nods, and then we both walk out of the dome, as Kate closes up the exit behind us. As soon as we're out, Leila starts running towards our enemy, from the right side, while I begin to approach him from the left. When they see us get out of the dome, the two dwarves quickly switch their targets, and they begin to aim for Leila and me, instead. The dwarf with the eye patch seems to be the one focusing on me, while the one with the scars is currently throwing fireballs towards Leila.\r\n\r\nAs I try to dodge the dwarf's attacks, I suddenly run into an invisible barrier, which blocks my path. I quickly try to run the other way, but I'm too slow, and one of the flames manages to hit me head on, burning me to a crisp, and killing me on the spot."
-        condition: agility < 3
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Speed check failed - level 3 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Speed check failed - level 3 ]'
         choices:
           - position: 1
             text: Restart game
@@ -916,7 +936,8 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: agility >= 3
+        texts:
           - source: scene_text
             paragraph: 38
             text: "\"I'm on it,\" Leila writes.\r\n\r\n\"Me too,\" I say. \"Open the dome.\"\r\n\r\nOnce she gets our confirmation, Kate waves her right hand towards the side of the dome, and she makes an exit for us, which is just the right size for the two of us to fit through.\r\n\r\n\"Let's target the elf, first,\" I tell Leila. \"If we both attack him at the same time, we might force him to focus the barriers more on himself, than on the dwarves, which will leave his allies defenseless against Kate's icicles. We could try to flank him from two sides. I'll go left.\"\r\n\r\nLeila nods, and then we both walk out of the dome, as Kate closes up the exit behind us. As soon as we're out, Leila starts running towards our enemy, from the right side, while I begin to approach him from the left. When they see us get out of the dome, the two dwarves quickly switch their targets, and they begin to aim for Leila and me, instead. The dwarf with the eye patch seems to be the one focusing on me, while the one with the scars is currently throwing fireballs towards Leila.\r\n\r\nAs I dodge the dwarf's attacks, the elf also tries to block my path with several invisible barriers, but he is clearly having difficulty keeping up with my speed. He is, however, quite efficient in managing to keep Leila and me away from him, because he is greatly limiting our mobility, while we already need to avoid the fire barrages coming from the dwarves."
@@ -926,10 +947,10 @@ scenes:
           - source: scene_3
             paragraph: 16
             text: "While we're dealing with the elf, I can't help but notice that the sky above us is currently filled with big, floating rocks, which Talmak is using to chase Hadrik around, in his eagle form. It looks like Hadrik is at a bit of a disadvantage when fighting aerial battles, due to the fact that the flying creatures which he can morph into are too weak, compared to his regular dwarf form, and he needs to switch back to being a dwarf every time he wants to smash one of the rocks into pieces.\r\n\r\nSomewhere below, at a much lower altitude, Illuna and Flower are still busy fighting the black-haired banshee, in mid-flight, although they seem to be very evenly matched, and neither of them has managed to do any significant damage to the other. Flower and Illuna may have the upper hand, in terms of raw power, because there are two of them, but the banshee working for the sage is making good use of the multitude of spells she has at her disposal to compensate for her disadvantage."
-        condition: agility >= 3
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -1045,7 +1066,8 @@ scenes:
               current_scene: b2_ch10b_shocked
   - name: b2_ch10b_shocked
     routes:
-      - texts:
+      - condition: b2_ch10_target = 0
+        texts:
           - source: scene_text
             paragraph: 46
             text: "The elf immediately makes a floating magical barrier below his feet, and another one for Nolderan, while Kate makes several floating ice platforms, right below us, in order to save us from the fall. Just before we reach the platforms, Kate, Leila, Daren, Hadrik and I all find ourselves suddenly floating in mid-air, as we are getting slowly raised from the chasm.\r\n\r\nWhen we look up, we see Melindra, floating a few dozen feet above us, with that serious expression in her eyes again, while she's making slow hand movements, to aid her in directing the air currents that are keeping us afloat.\r\n\r\n\"Melindra!\" Flower says, as she is still being chased by the black-haired banshee in mid-air. \"You shouldn't be casting powerful spells so soon after being healed!\"\r\n\r\n\"I'm fine,\" Melindra says, while she pulls us out of the pit. \"Don't worry about me. You should be worrying about what the sage is doing up there, instead.\"\r\n\r\nAs we all take a look to see what's happening, we are shocked to find out that all of the rocks which were being pulled from the ground are now gathering up, to form a fifty foot tall golem, made out of stone, with the sage standing inside its head, on his floating platform from before.\r\n\r\n\"Why don't you try absorbing this golem with your sword, Daren?\" Talmak shouts from above. \"Maybe you'll manage to scratch the sole of its foot, before it stomps you to death!\""
@@ -1055,7 +1077,6 @@ scenes:
           - source: scene_3
             paragraph: 20
             text: "\"Okay!\" Flower says. \"Follow me, banshee! This way!\"\r\n\r\nShe then propels herself in the direction opposite to the golem, with her fire jets, as the black-haired banshee rushes to follow her. When Flower is safely out of the way, Melindra casts a spell, and suddenly we can see hundreds of sharp looking blades made of wind rotate around her, at great speed. The wind blades are likely sharpened in the same way that Illuna or Kate sharpen their own elements, and they are mostly transparent, except for when the light of the sun shines on them.\r\n\r\nWhile Melindra is raising herself higher up, the giant made of stone begins to move forward, at a slow pace, and the sage's henchmen are now hurrying to get out of the golem's way, so that they won't get stepped on.\r\n\r\nAll of a sudden, Melindra loses control of one of her wind blades, which flies at an incredible speed right into the ground in front of us, cutting through it as if it were made from paper.\r\n\r\n\"Damn...\" Daren says, as he looks at the hole in the ground left by the blade from earlier. \"I really hope that my barrier is strong enough to protect us from one of these, if it hits us...\""
-        condition: b2_ch10_target = 0
         choices:
           - position: 1
             text: >-
@@ -1069,7 +1090,8 @@ scenes:
             effects:
               - set:
                   current_scene: b2_ch10b_absorb
-      - texts:
+      - condition: b2_ch10_target = 1
+        texts:
           - source: scene_text
             paragraph: 45
             text: "The elf immediately makes a floating magical barrier below his feet, and a few more for the two dwarves and Nolderan, while Kate makes several floating ice platforms, right below us, in order to save us from the fall. Just before we reach the platforms, Kate, Leila, Daren, Hadrik and I all find ourselves suddenly floating in mid-air, as we are getting slowly raised from the chasm.\r\n\r\nWhen we look up, we see Melindra, floating a few dozen feet above us, with that serious expression in her eyes again, while she's making slow hand movements, to aid her in directing the air currents that are keeping us afloat.\r\n\r\n\"Melindra!\" Flower says, as she is still being chased by the black-haired banshee in mid-air. \"You shouldn't be casting powerful spells so soon after being healed!\"\r\n\r\n\"I'm fine,\" Melindra says, while she pulls us out of the pit. \"Don't worry about me. You should be worrying about what the sage is doing up there, instead.\"\r\n\r\nAs we all take a look to see what's happening, we are shocked to find out that all of the rocks which were being pulled from the ground are now gathering up, to form a fifty foot tall golem, made out of stone, with the sage standing inside its head, on his floating platform from before.\r\n\r\n\"Why don't you try absorbing this golem with your sword, Daren?\" Talmak shouts from above. \"Maybe you'll manage to scratch the sole of its foot, before it stomps you to death!\""
@@ -1079,7 +1101,6 @@ scenes:
           - source: scene_3
             paragraph: 20
             text: "\"Okay!\" Flower says. \"Follow me, banshee! This way!\"\r\n\r\nShe then propels herself in the direction opposite to the golem, with her fire jets, as the black-haired banshee rushes to follow her. When Flower is safely out of the way, Melindra casts a spell, and suddenly we can see hundreds of sharp looking blades made of wind rotate around her, at great speed. The wind blades are likely sharpened in the same way that Illuna or Kate sharpen their own elements, and they are mostly transparent, except for when the light of the sun shines on them.\r\n\r\nWhile Melindra is raising herself higher up, the giant made of stone begins to move forward, at a slow pace, and the sage's henchmen are now hurrying to get out of the golem's way, so that they won't get stepped on.\r\n\r\nAll of a sudden, Melindra loses control of one of her wind blades, which flies at an incredible speed right into the ground in front of us, cutting through it as if it were made from paper.\r\n\r\n\"Damn...\" Daren says, as he looks at the hole in the ground left by the blade from earlier. \"I really hope that my barrier is strong enough to protect us from one of these, if it hits us...\""
-        condition: b2_ch10_target = 1
         choices:
           - position: 1
             text: >-
@@ -1129,7 +1150,8 @@ scenes:
               current_scene: b2_ch10b_misinterpreting
   - name: b2_ch10b_misinterpreting
     routes:
-      - texts:
+      - condition: b2_ch10_target = 0
+        texts:
           - source: scene_text
             paragraph: 50
             text: "\"As you wish, Sage Talmak...\" the elf says, and then he starts casting a teleportation spell, on himself, and all of his allies.\r\n\r\nWhen she hears the elf, Melindra sends a few blades his way as well, but the mage raises a barrier in front of him, which deflects all of her attacks.\r\n\r\n\"No!\" the banshee shouts, as her body is beginning to vibrate, and to shine with a bright light, while the same thing is happening to all of her companions. \"Don't take me with you! Leave me here, damn it! I'm not done with--\"\r\n\r\nBefore she gets to finish what she had to say, the banshee gets teleported out of the area, and the same happens to Talmak, Nolderan, and the elf. As soon as our enemies disappear, Melindra dismisses all of her wind blades, and she begins to descend towards us, while Flower is also flying our way.\r\n\r\n\"Wow...\" Daren says, when Melindra gets close to us. \"That was... really impressive.\"\r\n\r\n\"Nice try, healer,\" Melindra says, as she lands on the ground, next to us. \"But I think we both know that this isn't what you are really thinking, at this moment. Now that the cat's out of the bag, and you know about the problems I have with controlling my powers, you must already be thinking up some strategies of how you can avoid to be put in such a dangerous situation again, aren't you?\"\r\n\r\n\"Sure, I guess...\" Daren says, confused. \"But I don't see why--\""
@@ -1139,7 +1161,6 @@ scenes:
           - source: scene_3
             paragraph: 23
             text: "She then turns to Melindra, with a hesitant look in her eyes.\r\n\r\n\"And I'd like to say that I'm... sorry for misinterpreting some of your intentions in the past few days,\" Kate says. \"I understand now that you were only trying to look out for yourself, and that you meant us no harm.\"\r\n\r\n\"Barry, what did you do to them?\" Melindra asks me, while looking somewhat terrified. \"They're not acting like themselves! Does your stat device have some mind-affecting spell that I don't know of?\"\r\n\r\n\"They're just trying to be nice, Melindra,\" I say. \"There's no need to act so shocked about it. Also, could we maybe move away from this camp? I have a feeling that we're going to start getting attacked by a hundred pinecone-collecting underlings if we stay in this place much longer...\""
-        condition: b2_ch10_target = 0
         choices:
           - position: 1
             text: Continue
@@ -1147,7 +1168,8 @@ scenes:
               - set:
                   current_scene: b2_ch10b_empty
                   b2_ch11_added_hearing: 0
-      - texts:
+      - condition: b2_ch10_target = 1
+        texts:
           - source: scene_text
             paragraph: 49
             text: "\"As you wish, Sage Talmak...\" the elf says, and then he starts casting a teleportation spell, on himself, and all of his allies.\r\n\r\nWhen she hears the elf, Melindra sends a few blades his way as well, but the mage raises a barrier in front of him, which deflects all of her attacks.\r\n\r\n\"No!\" the banshee shouts, as her body is beginning to vibrate, and to shine with a bright light, while the same thing is happening to all of her companions. \"Don't take me with you! Leave me here, damn it! I'm not done with--\"\r\n\r\nBefore she gets to finish what she had to say, the banshee gets teleported out of the area, and the same happens to Talmak, Nolderan, the elf, and the two dwarves. As soon as our enemies disappear, Melindra dismisses all of her wind blades, and she begins to descend towards us, while Flower is also flying our way.\r\n\r\n\"Wow...\" Daren says, when Melindra gets close to us. \"That was... really impressive.\"\r\n\r\n\"Nice try, healer,\" Melindra says, as she lands on the ground, next to us. \"But I think we both know that this isn't what you are really thinking, at this moment. Now that the cat's out of the bag, and you know about the problems I have with controlling my powers, you must already be thinking up some strategies of how you can avoid to be put in such a dangerous situation again, aren't you?\"\r\n\r\n\"Sure, I guess...\" Daren says, confused. \"But I don't see why--\""
@@ -1157,7 +1179,6 @@ scenes:
           - source: scene_3
             paragraph: 23
             text: "She then turns to Melindra, with a hesitant look in her eyes.\r\n\r\n\"And I'd like to say that I'm... sorry for misinterpreting some of your intentions in the past few days,\" Kate says. \"I understand now that you were only trying to look out for yourself, and that you meant us no harm.\"\r\n\r\n\"Barry, what did you do to them?\" Melindra asks me, while looking somewhat terrified. \"They're not acting like themselves! Does your stat device have some mind-affecting spell that I don't know of?\"\r\n\r\n\"They're just trying to be nice, Melindra,\" I say. \"There's no need to act so shocked about it. Also, could we maybe move away from this camp? I have a feeling that we're going to start getting attacked by a hundred pinecone-collecting underlings if we stay in this place much longer...\""
-        condition: b2_ch10_target = 1
         choices:
           - position: 1
             text: Continue
@@ -1213,19 +1234,34 @@ scenes:
   - name: b2_ch10b_boost
     effects:
       - set:
-          hearing_aux: hearing_aux + 3
-          hearing: hearing + 3
-          b2_ch11_added_hearing: 1
-        condition: b2_ch11_added_hearing = 0 AND b2_ch10_activate = 1
+          ac_b2_ch10_stalker: 1
+        achievement:
+          id: ac_b2_ch10_stalker
+          title: Stalker detected
+        condition: ch4_spared_dave = 1
     routes:
-      - texts:
+      - condition: b2_ch10_activate = 1
+        texts:
           - source: scene_text
             paragraph: 53
             text: "I decide to take out my device, and to activate the secret code that Melindra taught me a few days ago, just like the revenant asked. Once I'm done, I put my device back in my pocket, and I continue to walk alongside the others.\r\n\r\n\"Was that the revenant again?\" Daren asks, as he gets closer to me. \"What did she want?\"\r\n\r\n\"She wanted me to enter my secret code in the stat device, so I can boost my hearing,\" I say. \"I didn't really see a reason why I shouldn't do it, so I did what she said.\"\r\n\r\n\"Huh...\" Daren says. \"Well, I sure hope that this isn't a trap of some sort.\"\r\n\r\n\"I don't think so,\" I say. \"I mean, this code just boosts my hearing for a short while. I don't really see what--\"\r\n\r\nAs I was talking, I suddenly realized something that I hadn't noticed before. According to Melindra, the secret code should have only improved my hearing for a few seconds, but for some reason, my hearing is still better than it was before I used the code. Did the revenant use some sort of trick?"
           - source: scene_text_2
             paragraph: 36
             text: "\"What's the matter, Barry?\" Daren says. \"Why did you stop talking?\r\n\r\n\"The hearing stat...\" I say. \"It's still being boosted. It was supposed to go back to its original level, after a few seconds, but for some reason, that didn't happen.\"\r\n\r\n\"Well, maybe your device is broken, or something,\" Daren says.\r\n\r\n\"I don't know...\" I say. \"I feel like that would be too big of a coincidence.\"\r\n\r\nSuddenly, I start to hear Illuna talking with Arraka, at the back of our group.\r\n\r\n\"Arraka, are there any mages in this area left, except for us?\" Illuna says."
-        condition: b2_ch10_activate = 1
+          - source: scene_3
+            paragraph: 25
+            text: "\"Mages?\" Arraka says. \"No, not any mages...\"\r\n\r\n\"What do you mean, not any mages?\" Illuna asks her. \"Are you saying that there's someone else? Monsters? Animals?\"\r\n\r\n\"Maybe,\" Arraka says.\r\n\r\n\"You really are starting to get on my nerves, lately...\" Illuna says.\r\n\r\nJust as Illuna is done talking, I notice the fact that the wind hasn't been blowing at all, for a while. I'm also not hearing any sounds, coming from outside of our group, and now that I look a little closer around me, I notice that there are a few insects, floating in mid-air, as if they've been frozen. Oh, boy... I think I'm starting to understand what's going on, here.\r\n\r\nBefore I get to finish my train of thought, Hadrik is the one to hit the nail on the head, as he poses a question to all of us.\r\n\r\n\"So, I've been wondering about something for a while... maybe you guys can clear it up for me,\" Hadrik says. \"Does the time look frozen to anyone else? Or is it just me?...\""
+            condition: ch4_spared_dave = 0
+          - source: scene_3
+            paragraph: 26
+            text: "\"Mages?\" Arraka says. \"Oh, yeah, there is one! It's the same guy that's been following us invisibly, from a distance, since we were at our camp this morning.\"\r\n\r\n\"What?!\" Illuna says. \"There's been someone following us since this morning? Why didn't you tell us about this?\"\r\n\r\n\"Well, it's not like he has any chance of defeating any of you,\" Arraka says. \"Even the half-lessathi could probably beat him with his hands tied behind his back. I was curious to see what his deal was, so I let him be, for a while.\"\r\n\r\n\"You know, you really are starting to get on my nerves, lately...\" Illuna says.\r\n\r\nJust as Illuna is done talking, I notice the fact that the wind hasn't been blowing at all, for a while. I'm also not hearing any sounds, coming from outside of our group, and now that I look a little closer around me, I notice that there are a few insects, floating in mid-air, as if they've been frozen. Oh, boy... I think I'm starting to understand what's going on, here.\r\n\r\nBefore I get to finish my train of thought, Hadrik is the one to hit the nail on the head, as he poses a question to all of us.\r\n\r\n\"So, I've been wondering about something for a while... maybe you guys can clear it up for me,\" Hadrik says. \"Does the time look frozen to anyone else? Or is it just me?...\""
+            condition: ch4_spared_dave = 1
+        effects:
+          - set:
+              hearing_aux: hearing_aux + 3
+              hearing: hearing + 3
+              b2_ch11_added_hearing: 1
+            condition: b2_ch11_added_hearing = 0
         choices:
           - position: 1
             text: Next chapter
@@ -1236,7 +1272,8 @@ scenes:
                   chapter_save: 1
                   checkpoint_rich: 1
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: b2_ch10_activate = 0
+        texts:
           - source: scene_text
             paragraph: 54
             text: "I decide to not listen to the revenant, and to leave the stat device in my pocket. If she's not planning to explain her intentions to me, then I see no reason why I should trust her.\r\n\r\n\"Was that the revenant again?\" Daren asks, as he gets closer to me. \"What did she want?\"\r\n\r\n\"She wanted me to activate a secret code from my stat device, but she didn't tell me why,\" I say. \"So, I just ignored her, and closed the transceiver.\"\r\n\r\n\"Huh...\" Daren says. \"Well, if she calls again, let me know.\"\r\n\r\n\"Sure,\" I say.\r\n\r\nAs we walk for a while longer, I hear Illuna starting to talk with Arraka, at the back of our group."
@@ -1245,42 +1282,14 @@ scenes:
             text: >-
               "Arraka, are there any mages in this area left, except for us?"
               Illuna says.
-        condition: b2_ch10_activate = 0
-        choices:
-          - position: 1
-            text: Next chapter
-            effects:
-              - set:
-                  next_chapter_crash: 1
-                  current_scene: b2_ch11a_intro
-                  chapter_save: 1
-                  checkpoint_rich: 1
-                  storyboard_controls: Jump to frame "Save load game"
-      - texts:
           - source: scene_3
             paragraph: 25
             text: "\"Mages?\" Arraka says. \"No, not any mages...\"\r\n\r\n\"What do you mean, not any mages?\" Illuna asks her. \"Are you saying that there's someone else? Monsters? Animals?\"\r\n\r\n\"Maybe,\" Arraka says.\r\n\r\n\"You really are starting to get on my nerves, lately...\" Illuna says.\r\n\r\nJust as Illuna is done talking, I notice the fact that the wind hasn't been blowing at all, for a while. I'm also not hearing any sounds, coming from outside of our group, and now that I look a little closer around me, I notice that there are a few insects, floating in mid-air, as if they've been frozen. Oh, boy... I think I'm starting to understand what's going on, here.\r\n\r\nBefore I get to finish my train of thought, Hadrik is the one to hit the nail on the head, as he poses a question to all of us.\r\n\r\n\"So, I've been wondering about something for a while... maybe you guys can clear it up for me,\" Hadrik says. \"Does the time look frozen to anyone else? Or is it just me?...\""
-        condition: ch4_spared_dave = 0
-        choices:
-          - position: 1
-            text: Next chapter
-            effects:
-              - set:
-                  next_chapter_crash: 1
-                  current_scene: b2_ch11a_intro
-                  chapter_save: 1
-                  checkpoint_rich: 1
-                  storyboard_controls: Jump to frame "Save load game"
-      - texts:
+            condition: ch4_spared_dave = 0
           - source: scene_3
             paragraph: 26
             text: "\"Mages?\" Arraka says. \"Oh, yeah, there is one! It's the same guy that's been following us invisibly, from a distance, since we were at our camp this morning.\"\r\n\r\n\"What?!\" Illuna says. \"There's been someone following us since this morning? Why didn't you tell us about this?\"\r\n\r\n\"Well, it's not like he has any chance of defeating any of you,\" Arraka says. \"Even the half-lessathi could probably beat him with his hands tied behind his back. I was curious to see what his deal was, so I let him be, for a while.\"\r\n\r\n\"You know, you really are starting to get on my nerves, lately...\" Illuna says.\r\n\r\nJust as Illuna is done talking, I notice the fact that the wind hasn't been blowing at all, for a while. I'm also not hearing any sounds, coming from outside of our group, and now that I look a little closer around me, I notice that there are a few insects, floating in mid-air, as if they've been frozen. Oh, boy... I think I'm starting to understand what's going on, here.\r\n\r\nBefore I get to finish my train of thought, Hadrik is the one to hit the nail on the head, as he poses a question to all of us.\r\n\r\n\"So, I've been wondering about something for a while... maybe you guys can clear it up for me,\" Hadrik says. \"Does the time look frozen to anyone else? Or is it just me?...\""
-        condition: ch4_spared_dave = 1
-        set:
-          ac_b2_ch10_stalker: 1
-        achievement:
-          id: ac_b2_ch10_stalker
-          title: Stalker detected
+            condition: ch4_spared_dave = 1
         choices:
           - position: 1
             text: Next chapter
@@ -1292,117 +1301,75 @@ scenes:
                   checkpoint_rich: 1
                   storyboard_controls: Jump to frame "Save load game"
   - name: b2_ch10b_details
-    routes:
-      - texts:
-          - source: scene_text
-            paragraph: 52
-            text: "Not long after we are done talking, I suddenly hear Rose's voice through the transceiver. As soon as I hear her, I immediately remember the last time when the revenant contacted me, and how she asked me to keep the transceiver open, so she could call me again.\r\n\r\n\"Barry, do you hear me?\" the revenant says.\r\n\r\n\"I hear you,\" I tell her simply, after I tap the transceiver.\r\n\r\n\"Listen to me,\" the revenant says. \"You need to take out your stat device, and to enter the secret code that boosts your hearing stat. Do you understand?\"\r\n\r\n\"What?...\" I say.\r\n\r\n\"There's no time to explain!\" the revenant says. \"Just do it! Quick!\"\r\n\r\nShe then closes the channel again, and there is no more way for me to contact her."
-          - source: scene_text_2
-            paragraph: 38
-            text: "What was she even talking about? Why would I know anything about any secret codes? Either way, if she's not planning to give me any more details, then there's nothing I can do.\r\n\r\n\"Was that the revenant again?\" Daren asks, as he gets closer to me. \"What did she want?\"\r\n\r\n\"No idea,\" I say. \"She was saying something about the stat device, and a secret code, but I don't know any codes for the stat device.\"\r\n\r\n\"Huh...\" Daren says. \"Well, if she calls again, let me know.\"\r\n\r\n\"Sure,\" I say.\r\n\r\nAs we walk for a while longer, I hear Illuna starting to talk with Arraka, at the back of our group.\r\n\r\n\"Arraka, are there any mages in this area left, except for us?\" Illuna says."
-        choices:
-          - position: 1
-            text: Next chapter
-            effects:
-              - set:
-                  next_chapter_crash: 1
-                  current_scene: b2_ch11a_intro
-                  chapter_save: 1
-                  checkpoint_rich: 1
-                  storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_3
-            paragraph: 25
-            text: "\"Mages?\" Arraka says. \"No, not any mages...\"\r\n\r\n\"What do you mean, not any mages?\" Illuna asks her. \"Are you saying that there's someone else? Monsters? Animals?\"\r\n\r\n\"Maybe,\" Arraka says.\r\n\r\n\"You really are starting to get on my nerves, lately...\" Illuna says.\r\n\r\nJust as Illuna is done talking, I notice the fact that the wind hasn't been blowing at all, for a while. I'm also not hearing any sounds, coming from outside of our group, and now that I look a little closer around me, I notice that there are a few insects, floating in mid-air, as if they've been frozen. Oh, boy... I think I'm starting to understand what's going on, here.\r\n\r\nBefore I get to finish my train of thought, Hadrik is the one to hit the nail on the head, as he poses a question to all of us.\r\n\r\n\"So, I've been wondering about something for a while... maybe you guys can clear it up for me,\" Hadrik says. \"Does the time look frozen to anyone else? Or is it just me?...\""
+    texts:
+      - source: scene_text
+        paragraph: 52
+        text: "Not long after we are done talking, I suddenly hear Rose's voice through the transceiver. As soon as I hear her, I immediately remember the last time when the revenant contacted me, and how she asked me to keep the transceiver open, so she could call me again.\r\n\r\n\"Barry, do you hear me?\" the revenant says.\r\n\r\n\"I hear you,\" I tell her simply, after I tap the transceiver.\r\n\r\n\"Listen to me,\" the revenant says. \"You need to take out your stat device, and to enter the secret code that boosts your hearing stat. Do you understand?\"\r\n\r\n\"What?...\" I say.\r\n\r\n\"There's no time to explain!\" the revenant says. \"Just do it! Quick!\"\r\n\r\nShe then closes the channel again, and there is no more way for me to contact her."
+      - source: scene_text_2
+        paragraph: 38
+        text: "What was she even talking about? Why would I know anything about any secret codes? Either way, if she's not planning to give me any more details, then there's nothing I can do.\r\n\r\n\"Was that the revenant again?\" Daren asks, as he gets closer to me. \"What did she want?\"\r\n\r\n\"No idea,\" I say. \"She was saying something about the stat device, and a secret code, but I don't know any codes for the stat device.\"\r\n\r\n\"Huh...\" Daren says. \"Well, if she calls again, let me know.\"\r\n\r\n\"Sure,\" I say.\r\n\r\nAs we walk for a while longer, I hear Illuna starting to talk with Arraka, at the back of our group.\r\n\r\n\"Arraka, are there any mages in this area left, except for us?\" Illuna says."
+      - source: scene_3
+        paragraph: 25
+        text: "\"Mages?\" Arraka says. \"No, not any mages...\"\r\n\r\n\"What do you mean, not any mages?\" Illuna asks her. \"Are you saying that there's someone else? Monsters? Animals?\"\r\n\r\n\"Maybe,\" Arraka says.\r\n\r\n\"You really are starting to get on my nerves, lately...\" Illuna says.\r\n\r\nJust as Illuna is done talking, I notice the fact that the wind hasn't been blowing at all, for a while. I'm also not hearing any sounds, coming from outside of our group, and now that I look a little closer around me, I notice that there are a few insects, floating in mid-air, as if they've been frozen. Oh, boy... I think I'm starting to understand what's going on, here.\r\n\r\nBefore I get to finish my train of thought, Hadrik is the one to hit the nail on the head, as he poses a question to all of us.\r\n\r\n\"So, I've been wondering about something for a while... maybe you guys can clear it up for me,\" Hadrik says. \"Does the time look frozen to anyone else? Or is it just me?...\""
         condition: ch4_spared_dave = 0
-        choices:
-          - position: 1
-            text: Next chapter
-            effects:
-              - set:
-                  next_chapter_crash: 1
-                  current_scene: b2_ch11a_intro
-                  chapter_save: 1
-                  checkpoint_rich: 1
-                  storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_3
-            paragraph: 26
-            text: "\"Mages?\" Arraka says. \"Oh, yeah, there is one! It's the same guy that's been following us invisibly, from a distance, since we were at our camp this morning.\"\r\n\r\n\"What?!\" Illuna says. \"There's been someone following us since this morning? Why didn't you tell us about this?\"\r\n\r\n\"Well, it's not like he has any chance of defeating any of you,\" Arraka says. \"Even the half-lessathi could probably beat him with his hands tied behind his back. I was curious to see what his deal was, so I let him be, for a while.\"\r\n\r\n\"You know, you really are starting to get on my nerves, lately...\" Illuna says.\r\n\r\nJust as Illuna is done talking, I notice the fact that the wind hasn't been blowing at all, for a while. I'm also not hearing any sounds, coming from outside of our group, and now that I look a little closer around me, I notice that there are a few insects, floating in mid-air, as if they've been frozen. Oh, boy... I think I'm starting to understand what's going on, here.\r\n\r\nBefore I get to finish my train of thought, Hadrik is the one to hit the nail on the head, as he poses a question to all of us.\r\n\r\n\"So, I've been wondering about something for a while... maybe you guys can clear it up for me,\" Hadrik says. \"Does the time look frozen to anyone else? Or is it just me?...\""
+      - source: scene_3
+        paragraph: 26
+        text: "\"Mages?\" Arraka says. \"Oh, yeah, there is one! It's the same guy that's been following us invisibly, from a distance, since we were at our camp this morning.\"\r\n\r\n\"What?!\" Illuna says. \"There's been someone following us since this morning? Why didn't you tell us about this?\"\r\n\r\n\"Well, it's not like he has any chance of defeating any of you,\" Arraka says. \"Even the half-lessathi could probably beat him with his hands tied behind his back. I was curious to see what his deal was, so I let him be, for a while.\"\r\n\r\n\"You know, you really are starting to get on my nerves, lately...\" Illuna says.\r\n\r\nJust as Illuna is done talking, I notice the fact that the wind hasn't been blowing at all, for a while. I'm also not hearing any sounds, coming from outside of our group, and now that I look a little closer around me, I notice that there are a few insects, floating in mid-air, as if they've been frozen. Oh, boy... I think I'm starting to understand what's going on, here.\r\n\r\nBefore I get to finish my train of thought, Hadrik is the one to hit the nail on the head, as he poses a question to all of us.\r\n\r\n\"So, I've been wondering about something for a while... maybe you guys can clear it up for me,\" Hadrik says. \"Does the time look frozen to anyone else? Or is it just me?...\""
         condition: ch4_spared_dave = 1
-        set:
+    effects:
+      - set:
           ac_b2_ch10_stalker: 1
         achievement:
           id: ac_b2_ch10_stalker
           title: Stalker detected
-        choices:
-          - position: 1
-            text: Next chapter
-            effects:
-              - set:
-                  next_chapter_crash: 1
-                  current_scene: b2_ch11a_intro
-                  chapter_save: 1
-                  checkpoint_rich: 1
-                  storyboard_controls: Jump to frame "Save load game"
+        condition: ch4_spared_dave = 1
+    choices:
+      - position: 1
+        text: Next chapter
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: b2_ch11a_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"
   - name: b2_ch10b_except
-    routes:
-      - texts:
-          - source: scene_text
-            paragraph: 55
-            text: "We walk for a while longer, following Melindra, and at a certain point, I can hear Illuna talking to Arraka, somewhere at the back of the group.\r\n\r\n\"Arraka, are there any mages in this area left, except for us?\" Illuna says."
-        choices:
-          - position: 1
-            text: Next chapter
-            effects:
-              - set:
-                  next_chapter_crash: 1
-                  current_scene: b2_ch11a_intro
-                  chapter_save: 1
-                  checkpoint_rich: 1
-                  storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_text_2
-            paragraph: 39
-            text: "\"Mages?\" Arraka says. \"No, not any mages...\"\r\n\r\n\"What do you mean, not any mages?\" Illuna asks her. \"Are you saying that there's someone else? Monsters? Animals?\"\r\n\r\n\"Maybe,\" Arraka says.\r\n\r\n\"You really are starting to get on my nerves, lately...\" Illuna says.\r\n\r\nJust as Illuna is done talking, I notice the fact that the wind hasn't been blowing at all, for a while. I'm also not hearing any sounds, coming from outside of our group, and now that I look a little closer around me, I notice that there are a few insects, floating in mid-air, as if they've been frozen. Oh, boy... I think I'm starting to understand what's going on, here.\r\n\r\nBefore I get to finish my train of thought, Hadrik is the one to hit the nail on the head, as he poses a question to all of us.\r\n\r\n\"So, I've been wondering about something for a while... maybe you guys can clear it up for me,\" Hadrik says. \"Does the time look frozen to anyone else? Or is it just me?...\""
+    texts:
+      - source: scene_text
+        paragraph: 55
+        text: "We walk for a while longer, following Melindra, and at a certain point, I can hear Illuna talking to Arraka, somewhere at the back of the group.\r\n\r\n\"Arraka, are there any mages in this area left, except for us?\" Illuna says."
+      - source: scene_text_2
+        paragraph: 39
+        text: "\"Mages?\" Arraka says. \"No, not any mages...\"\r\n\r\n\"What do you mean, not any mages?\" Illuna asks her. \"Are you saying that there's someone else? Monsters? Animals?\"\r\n\r\n\"Maybe,\" Arraka says.\r\n\r\n\"You really are starting to get on my nerves, lately...\" Illuna says.\r\n\r\nJust as Illuna is done talking, I notice the fact that the wind hasn't been blowing at all, for a while. I'm also not hearing any sounds, coming from outside of our group, and now that I look a little closer around me, I notice that there are a few insects, floating in mid-air, as if they've been frozen. Oh, boy... I think I'm starting to understand what's going on, here.\r\n\r\nBefore I get to finish my train of thought, Hadrik is the one to hit the nail on the head, as he poses a question to all of us.\r\n\r\n\"So, I've been wondering about something for a while... maybe you guys can clear it up for me,\" Hadrik says. \"Does the time look frozen to anyone else? Or is it just me?...\""
         condition: ch4_spared_dave = 0
-        choices:
-          - position: 1
-            text: Next chapter
-            effects:
-              - set:
-                  next_chapter_crash: 1
-                  current_scene: b2_ch11a_intro
-                  chapter_save: 1
-                  checkpoint_rich: 1
-                  storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_text_2
-            paragraph: 40
-            text: "\"Mages?\" Arraka says. \"Oh, yeah, there is one! It's the same guy that's been following us invisibly, from a distance, since we were at our camp this morning.\"\r\n\r\n\"What?!\" Illuna says. \"There's been someone following us since this morning? Why didn't you tell us about this?\"\r\n\r\n\"Well, it's not like he has any chance of defeating any of you,\" Arraka says. \"Even the half-lessathi could probably beat him with his hands tied behind his back. I was curious to see what his deal was, so I let him be, for a while.\"\r\n\r\n\"You know, you really are starting to get on my nerves, lately...\" Illuna says.\r\n\r\nJust as Illuna is done talking, I notice the fact that the wind hasn't been blowing at all, for a while. I'm also not hearing any sounds, coming from outside of our group, and now that I look a little closer around me, I notice that there are a few insects, floating in mid-air, as if they've been frozen. Oh, boy... I think I'm starting to understand what's going on, here.\r\n\r\nBefore I get to finish my train of thought, Hadrik is the one to hit the nail on the head, as he poses a question to all of us.\r\n\r\n\"So, I've been wondering about something for a while... maybe you guys can clear it up for me,\" Hadrik says. \"Does the time look frozen to anyone else? Or is it just me?...\""
+      - source: scene_text_2
+        paragraph: 40
+        text: "\"Mages?\" Arraka says. \"Oh, yeah, there is one! It's the same guy that's been following us invisibly, from a distance, since we were at our camp this morning.\"\r\n\r\n\"What?!\" Illuna says. \"There's been someone following us since this morning? Why didn't you tell us about this?\"\r\n\r\n\"Well, it's not like he has any chance of defeating any of you,\" Arraka says. \"Even the half-lessathi could probably beat him with his hands tied behind his back. I was curious to see what his deal was, so I let him be, for a while.\"\r\n\r\n\"You know, you really are starting to get on my nerves, lately...\" Illuna says.\r\n\r\nJust as Illuna is done talking, I notice the fact that the wind hasn't been blowing at all, for a while. I'm also not hearing any sounds, coming from outside of our group, and now that I look a little closer around me, I notice that there are a few insects, floating in mid-air, as if they've been frozen. Oh, boy... I think I'm starting to understand what's going on, here.\r\n\r\nBefore I get to finish my train of thought, Hadrik is the one to hit the nail on the head, as he poses a question to all of us.\r\n\r\n\"So, I've been wondering about something for a while... maybe you guys can clear it up for me,\" Hadrik says. \"Does the time look frozen to anyone else? Or is it just me?...\""
         condition: ch4_spared_dave = 1
-        set:
+    effects:
+      - set:
           ac_b2_ch10_stalker: 1
         achievement:
           id: ac_b2_ch10_stalker
           title: Stalker detected
-        choices:
-          - position: 1
-            text: Next chapter
-            effects:
-              - set:
-                  next_chapter_crash: 1
-                  current_scene: b2_ch11a_intro
-                  chapter_save: 1
-                  checkpoint_rich: 1
-                  storyboard_controls: Jump to frame "Save load game"
+        condition: ch4_spared_dave = 1
+    choices:
+      - position: 1
+        text: Next chapter
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: b2_ch11a_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"
   - name: b2_ch10b_credits
     routes:
-      - texts:
+      - condition: second_book_purchased = 0
+        texts:
           - source: scene_text
             paragraph: 56
             text: "The eleventh chapter is now available.\r\n\r\nTap the button below to proceed."
-        condition: second_book_purchased = 0
         choices:
           - position: 1
             text: Go to next chapter
@@ -1413,11 +1380,11 @@ scenes:
                   chapter_save: 1
                   checkpoint_rich: 1
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: second_book_purchased = 1
+        texts:
           - source: scene_text
             paragraph: 57
             text: "The eleventh chapter is now available.\r\n\r\nTap the button below to proceed."
-        condition: second_book_purchased = 1
         choices:
           - position: 1
             text: Go to next chapter

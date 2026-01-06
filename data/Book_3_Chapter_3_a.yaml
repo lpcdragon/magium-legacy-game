@@ -14,9 +14,9 @@ scenes:
       - source: scene_text_2
         paragraph: 2
         text: "\"Well, I don't know your name,\" the king says, \"but I've had informants in the palace for quite some time, and eight years ago they told me how a stillwater girl wearing pajamas was banished from our continent by the mad king. Luckily for me, you are still wearing the same type of clothes, so it was easy for me to recognize you even after having been given such a vague description.\"\r\n\r\n\"Hey!\" Melindra says. \"I'll have you know that these clothes are in no way similar to what you people wear as pajamas! Tell me... what pajamas have you ever seen with such an elegant design and high quality fabric? Do you have any idea how long it took me to find someone capable of custom tailoring these clothes for me? Six hundred years ago, the only people who didn't wear these types of garments were servants and prisoners, but nowadays people can't even tell that they are not meant to be sleepwear. It's outrageous!\"\r\n\r\n\"My apologies!\" the king of the underground says. \"I did not mean to insult your clothing. I was simply repeating what my men have told me. I imagine that most clothes would start to feel uncomfortable, once you've gotten used to wearing only garments made of such fine silk.\"\r\n\r\n\"Yes!\" Melindra says. \"That is exactly why I can't bring myself to wear any other types of clothes. Finally, someone gets it!\""
-    set:
-      b3_ch3_stats_unavailable: 0
     effects:
+      - set:
+          b3_ch3_stats_unavailable: 0
       - set:
           successful_checks:
             - 'Checkpoint reached: Game saved.'
@@ -50,7 +50,8 @@ scenes:
               b3_ch3_interest: 1
   - name: b3_ch03a_interest
     routes:
-      - texts:
+      - condition: b3_ch3_interest = 0
+        texts:
           - source: scene_text
             paragraph: 4
             text: "\"We only care about killing the king. Nothing else.\"\r\n\r\n\"I see,\" the king of the underground says. \"In that case, I suppose you won't mind if someone from our group will become the next ruler after the death of king Undriel, will you?\"\r\n\r\n\"Someone from your group?...\" Illuna says. \"Don't you mean yourself?\"\r\n\r\n\"Well, no... not necessarily,\" the king of the underground says. \"There are many good people here, both among my followers and among the rebels, who would make suitable candidates. We could even try to elect a council, in order to avoid giving one person too much power again. However, these matters will be discussed in more detail once we achieve our primary goal of dethroning the mad king. Everything else comes second.\"\r\n\r\n\"So, is this the reason why you called us here?\" Kate says. \"You want our two groups to join forces?\""
@@ -60,14 +61,14 @@ scenes:
           - source: scene_3
             paragraph: 2
             text: "\"So, what do you propose, then?\" Melindra says.\r\n\r\n\"We propose that you follow one of our plans, instead,\" the king says. \"Recently, our listening devices from the palace picked up an interesting conversation that I think you might want to hear. Albert, do you still have the recording from yesterday?\"\r\n\r\n\"Yes, your majesty,\" Albert says, as he approaches the king and then hands him a small metal cube-shaped device with several buttons on it.\r\n\r\nThe king picks up the device and then presses on one of the buttons. Immediately afterwards, we begin to hear two voices coming from the cube, although we can't really make out what they are saying just yet.\r\n\r\n\"This is a conversation between Billy Bob and the Overseer,\" the king says. \"The Overseer is the one with the more metallic-sounding voice, in case you couldn't tell. Please tell me what you think of this discussion, once you're done listening to it.\""
-        condition: b3_ch3_interest = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch03a_assistance
-      - texts:
+      - condition: b3_ch3_interest = 1
+        texts:
           - source: scene_text
             paragraph: 5
             text: "\"We do care about what happens with the city after the king's death, actually.\" \r\n\r\n\"Oh?\" the king of the underground says. \"Does this mean that you would seek to make yourselves rulers of this kingdom once you've rid yourselves of the current king?\"\r\n\r\n\"No, no, nothing of the sort!\" Daren says. \"We simply want to make sure that whoever takes on the mantle of leadership next will have the people of Ollendor's best interests at heart.\"\r\n\r\n\"Hmm...\" the king of the underground says. \"Well, it hasn't yet been decided who will become the next ruler after we deal with the king, but I assure you that we only want what's best for Ollendor. We've all had to suffer the consequences of king Undriel's tyranny in one way or another, and we do not intend to make the same mistakes as him.\"\r\n\r\n\"You said that it hasn't yet been decided who will become the next ruler,\" Illuna says. \"Does this mean that you are not planning to become king yourself?\"\r\n\r\n\"Well, no... not necessarily,\" the king of the underground says. \"There are many good people here, both among my followers and among the rebels, who would make suitable candidates. We could even try to elect a council, in order to avoid giving one person too much power again. However, these matters will be discussed in more detail once we achieve our primary goal of dethroning the mad king. Everything else comes second.\"\r\n\r\n\"So, is this the reason why you called us here?\" Kate says. \"You want our two groups to join forces?\""
@@ -77,7 +78,6 @@ scenes:
           - source: scene_3
             paragraph: 2
             text: "\"So, what do you propose, then?\" Melindra says.\r\n\r\n\"We propose that you follow one of our plans, instead,\" the king says. \"Recently, our listening devices from the palace picked up an interesting conversation that I think you might want to hear. Albert, do you still have the recording from yesterday?\"\r\n\r\n\"Yes, your majesty,\" Albert says, as he approaches the king and then hands him a small metal cube-shaped device with several buttons on it.\r\n\r\nThe king picks up the device and then presses on one of the buttons. Immediately afterwards, we begin to hear two voices coming from the cube, although we can't really make out what they are saying just yet.\r\n\r\n\"This is a conversation between Billy Bob and the Overseer,\" the king says. \"The Overseer is the one with the more metallic-sounding voice, in case you couldn't tell. Please tell me what you think of this discussion, once you're done listening to it.\""
-        condition: b3_ch3_interest = 1
         choices:
           - position: 1
             text: Continue
@@ -129,245 +129,193 @@ scenes:
           - set:
               current_scene: b3_ch03a_guided
   - name: b3_ch03a_food
-    routes:
-      - texts:
-          - source: scene_text
-            paragraph: 8
-            text: "\"What kind of food do you guys have in this place?\"\r\n\r\n\"We have many kinds of food here, actually,\" the king of the underground says. \"Our city's high priest is rather good at conjuring even the most extravagant cuisine, and he also managed to teach this technique to several of his disciples, so fortunately our kingdom has never had to deal with food shortage problems, unlike some of the other cities in Varathia. If you want to know what we currently have in stock, you are free to visit our pantry at any time, so you can see for yourself.\"\r\n\r\n\"I only have one question,\" Daren says. \"Are there any non-beginner white mages around here that could cast a quick healing spell on me and Hadrik? I'm still too tired to be able to cast any decent healing spells, and these wounds are beginning to feel a little uncomfortable...\"\r\n\r\n\"Ah, yes, of course,\" the king says. \"I will arrange for one of our healers to come see you as soon as he is done with his current patients. In the meantime, you can go back to the room where we came from and wait for him there, unless you have any other questions to ask of me.\"\r\n\r\n\"Nah, I think we're good for now,\" Hadrik says.\r\n\r\n\"Alright then,\" the king says. \"Well, in that case, I hope you will all have a pleasant stay, and we will be resuming our discussion tomorrow, after you've made your decision.\""
-          - source: scene_text_2
-            paragraph: 6
-            text: "He pauses for a second to take a quick glance at Kate, but then he addresses one of the rebels instead.\r\n\r\n\"Oh, and one more thing,\" the king says. \"Breynan, I know that this won't seem fair to you, but I want you to stay behind tomorrow, when our men visit the Overseer.\"\r\n\r\n\"My king?...\" Breynan says, apparently in a state of shock.\r\n\r\n\"I realize that I am going against your wishes, but I hope you will respect my decision,\" the king of the underground says, in a more firm tone of voice.\r\n\r\n\"But, your majesty...\" Breynan says. \"Of all the people in this place, I am by far the one who knows the Overseer the best! I also interacted directly with him on numerous occasions!\"\r\n\r\n\"And that is precisely why I don't want you to be part of that team, tomorrow,\" the king says. \"You are too emotionally involved in this matter to be able to keep a cool head. I want to make sure that the negotiations will be done in a professional manner, by people who are in no danger of letting their feelings cloud their judgment. Rest assured that I've read all of your reports concerning the Overseer, and I will make sure that the negotiations team tomorrow will be taking all of your notes into account. You will, however, not be joining this team, and that is my final decision. Is that clear?\"\r\n\r\n\"Yes... your highness,\" Breynan says, looking rather upset."
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_goblins
-                  b3_ch3_monsters: 0
-                condition: b3_ch2_goblins = 1
-              - set:
-                  current_scene: b3_ch03a_hag
-                  b3_ch3_monsters: 0
-      - texts:
-          - source: scene_3
-            paragraph: 6
-            text: "\"Good,\" the king of the underground says. \"I will be seeing each of you later, then. I trust that you can all make your way back to the waiting room, yes?\"\r\n\r\n\"We'll handle ourselves,\" Daren says. \"Come on, let's go.\"\r\n\r\nHe then limps ahead of us and we all follow him, except for Albert, who seems to still have something that he wants to discuss in private with the king. As we make our way back into the waiting room, we all place ourselves near the chairs from the exit that leads towards the teleporter, waiting patiently for the healers to arrive. In the meantime, Peter went to get our rooms ready, while Breynan also went on his own way, without even saying goodbye to us, still looking pretty affected by what the king of the underground had said to him.\r\n\r\n\"I guess that Kelrim went back to the quarantine area,\" Daren says, after he takes a quick look around and sees that the goblin is nowhere to be found.\r\n\r\n\"Either that, or he went to look for his friends,\" Hadrik says.\r\n\r\n\"Yeah, I guess that might actually be more likely, if I think about it,\" Daren says.\r\n\r\n\"Forget about the damn goblin!\" Arraka says. \"We have far more pressing issues to concern ourselves with!\""
-        condition: b3_ch2_goblins <> 1
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_hag
-                  b3_ch3_monsters: 0
-      - texts:
-          - source: scene_3
-            paragraph: 5
-            text: "\"Good,\" the king of the underground says. \"I will be seeing each of you later, then. I trust that you can all make your way back to the waiting room, yes?\"\r\n\r\n\"We'll handle ourselves,\" Daren says. \"Come on, let's go.\"\r\n\r\nHe then limps ahead of us and we all follow him, except for Albert, who seems to still have something that he wants to discuss in private with the king. As we make our way back into the waiting room, we all place ourselves near the chairs from the exit that leads towards the teleporter, waiting patiently for the healers to arrive. In the meantime, Peter went to get our rooms ready, while Breynan also went on his own way, without even saying goodbye to us, still looking pretty affected by what the king of the underground had said to him.\r\n\r\n\"I guess that Kelrim went back to the quarantine area,\" Daren says, after he takes a quick look around and sees that the goblin is nowhere to be found.\r\n\r\n\"Oh yeah...\" Hadrik says. \"I almost forgot about the goblin. It's going to be a little hard to face him from now on, considering what we did to his friends...\"\r\n\r\n\"At least you didn't actually kill any of them yourself,\" Daren says. \"When I realized that the goblin I killed was one of Kelrim's friends, I felt like the lowest of scum. I never thought I'd ever feel that way about killing a monster...\"\r\n\r\nKate isn't saying anything, but she's looking away from us. She seems to be more in control of her emotions this time around, even though she's definitely still troubled about this whole situation."
+    texts:
+      - source: scene_text
+        paragraph: 8
+        text: "\"What kind of food do you guys have in this place?\"\r\n\r\n\"We have many kinds of food here, actually,\" the king of the underground says. \"Our city's high priest is rather good at conjuring even the most extravagant cuisine, and he also managed to teach this technique to several of his disciples, so fortunately our kingdom has never had to deal with food shortage problems, unlike some of the other cities in Varathia. If you want to know what we currently have in stock, you are free to visit our pantry at any time, so you can see for yourself.\"\r\n\r\n\"I only have one question,\" Daren says. \"Are there any non-beginner white mages around here that could cast a quick healing spell on me and Hadrik? I'm still too tired to be able to cast any decent healing spells, and these wounds are beginning to feel a little uncomfortable...\"\r\n\r\n\"Ah, yes, of course,\" the king says. \"I will arrange for one of our healers to come see you as soon as he is done with his current patients. In the meantime, you can go back to the room where we came from and wait for him there, unless you have any other questions to ask of me.\"\r\n\r\n\"Nah, I think we're good for now,\" Hadrik says.\r\n\r\n\"Alright then,\" the king says. \"Well, in that case, I hope you will all have a pleasant stay, and we will be resuming our discussion tomorrow, after you've made your decision.\""
+      - source: scene_text_2
+        paragraph: 6
+        text: "He pauses for a second to take a quick glance at Kate, but then he addresses one of the rebels instead.\r\n\r\n\"Oh, and one more thing,\" the king says. \"Breynan, I know that this won't seem fair to you, but I want you to stay behind tomorrow, when our men visit the Overseer.\"\r\n\r\n\"My king?...\" Breynan says, apparently in a state of shock.\r\n\r\n\"I realize that I am going against your wishes, but I hope you will respect my decision,\" the king of the underground says, in a more firm tone of voice.\r\n\r\n\"But, your majesty...\" Breynan says. \"Of all the people in this place, I am by far the one who knows the Overseer the best! I also interacted directly with him on numerous occasions!\"\r\n\r\n\"And that is precisely why I don't want you to be part of that team, tomorrow,\" the king says. \"You are too emotionally involved in this matter to be able to keep a cool head. I want to make sure that the negotiations will be done in a professional manner, by people who are in no danger of letting their feelings cloud their judgment. Rest assured that I've read all of your reports concerning the Overseer, and I will make sure that the negotiations team tomorrow will be taking all of your notes into account. You will, however, not be joining this team, and that is my final decision. Is that clear?\"\r\n\r\n\"Yes... your highness,\" Breynan says, looking rather upset."
+      - source: scene_3
+        paragraph: 6
+        text: "\"Good,\" the king of the underground says. \"I will be seeing each of you later, then. I trust that you can all make your way back to the waiting room, yes?\"\r\n\r\n\"We'll handle ourselves,\" Daren says. \"Come on, let's go.\"\r\n\r\nHe then limps ahead of us and we all follow him, except for Albert, who seems to still have something that he wants to discuss in private with the king. As we make our way back into the waiting room, we all place ourselves near the chairs from the exit that leads towards the teleporter, waiting patiently for the healers to arrive. In the meantime, Peter went to get our rooms ready, while Breynan also went on his own way, without even saying goodbye to us, still looking pretty affected by what the king of the underground had said to him.\r\n\r\n\"I guess that Kelrim went back to the quarantine area,\" Daren says, after he takes a quick look around and sees that the goblin is nowhere to be found.\r\n\r\n\"Either that, or he went to look for his friends,\" Hadrik says.\r\n\r\n\"Yeah, I guess that might actually be more likely, if I think about it,\" Daren says.\r\n\r\n\"Forget about the damn goblin!\" Arraka says. \"We have far more pressing issues to concern ourselves with!\""
+        condition: b3_ch2_goblins != 1
+      - source: scene_3
+        paragraph: 5
+        text: "\"Good,\" the king of the underground says. \"I will be seeing each of you later, then. I trust that you can all make your way back to the waiting room, yes?\"\r\n\r\n\"We'll handle ourselves,\" Daren says. \"Come on, let's go.\"\r\n\r\nHe then limps ahead of us and we all follow him, except for Albert, who seems to still have something that he wants to discuss in private with the king. As we make our way back into the waiting room, we all place ourselves near the chairs from the exit that leads towards the teleporter, waiting patiently for the healers to arrive. In the meantime, Peter went to get our rooms ready, while Breynan also went on his own way, without even saying goodbye to us, still looking pretty affected by what the king of the underground had said to him.\r\n\r\n\"I guess that Kelrim went back to the quarantine area,\" Daren says, after he takes a quick look around and sees that the goblin is nowhere to be found.\r\n\r\n\"Oh yeah...\" Hadrik says. \"I almost forgot about the goblin. It's going to be a little hard to face him from now on, considering what we did to his friends...\"\r\n\r\n\"At least you didn't actually kill any of them yourself,\" Daren says. \"When I realized that the goblin I killed was one of Kelrim's friends, I felt like the lowest of scum. I never thought I'd ever feel that way about killing a monster...\"\r\n\r\nKate isn't saying anything, but she's looking away from us. She seems to be more in control of her emotions this time around, even though she's definitely still troubled about this whole situation."
         condition: b3_ch2_goblins = 1
-        choices:
-          - position: 1
-            text: >-
-              Listen, there was no way we could have known those were good
-              goblins!
-            effects:
-              - set:
-                  current_scene: b3_ch03a_goblins
-                  b3_ch3_monsters: 0
-          - position: 2
-            text: All we can really do now is try and make it up to him in some way.
-            effects:
-              - set:
-                  current_scene: b3_ch03a_goblins
-                  b3_ch3_monsters: 1
-          - position: 3
-            text: >-
-              Does it really matter that much? They were all monsters, after
-              all.
-            effects:
-              - set:
-                  current_scene: b3_ch03a_goblins
-                  b3_ch3_monsters: 2
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: b3_ch03a_goblins
+              b3_ch3_monsters: 0
+            condition: b3_ch2_goblins = 1
+          - set:
+              current_scene: b3_ch03a_hag
+              b3_ch3_monsters: 0
+            condition: b3_ch2_goblins != 1
+      - position: 2
+        text: Listen, there was no way we could have known those were good goblins!
+        effects:
+          - set:
+              current_scene: b3_ch03a_goblins
+              b3_ch3_monsters: 1
+            condition: b3_ch2_goblins = 1
+      - position: 3
+        text: All we can really do now is try and make it up to him in some way.
+        effects:
+          - set:
+              current_scene: b3_ch03a_goblins
+              b3_ch3_monsters: 2
+            condition: b3_ch2_goblins = 1
   - name: b3_ch03a_roam
-    routes:
-      - texts:
-          - source: scene_text
-            paragraph: 9
-            text: "\"Are we free to roam around as we please, while we're here?\"\r\n\r\n\"Yes, you can go wherever you want, except for a few areas that are off limits,\" the king of the underground says. \"You will immediately know where those are, because there's usually at least one guard posted outside each door. You are also free to go to the surface, if you want, although I wouldn't really recommend it until you've at least fully recovered from your earlier battle.\"\r\n\r\n\"I only have one question,\" Daren says. \"Are there any non-beginner white mages around here that could cast a quick healing spell on me and Hadrik? I'm still too tired to be able to cast any decent healing spells, and these wounds are beginning to feel a little uncomfortable...\"\r\n\r\n\"Ah, yes, of course,\" the king says. \"I will arrange for one of our healers to come see you as soon as he is done with his current patients. In the meantime, you can go back to the room where we came from and wait for him there, unless you have any other questions to ask of me.\"\r\n\r\n\"Nah, I think we're good for now,\" Hadrik says.\r\n\r\n\"Alright then,\" the king says. \"Well, in that case, I hope you will all have a pleasant stay, and we will be resuming our discussion tomorrow, after you've made your decision.\""
-          - source: scene_text_2
-            paragraph: 6
-            text: "He pauses for a second to take a quick glance at Kate, but then he addresses one of the rebels instead.\r\n\r\n\"Oh, and one more thing,\" the king says. \"Breynan, I know that this won't seem fair to you, but I want you to stay behind tomorrow, when our men visit the Overseer.\"\r\n\r\n\"My king?...\" Breynan says, apparently in a state of shock.\r\n\r\n\"I realize that I am going against your wishes, but I hope you will respect my decision,\" the king of the underground says, in a more firm tone of voice.\r\n\r\n\"But, your majesty...\" Breynan says. \"Of all the people in this place, I am by far the one who knows the Overseer the best! I also interacted directly with him on numerous occasions!\"\r\n\r\n\"And that is precisely why I don't want you to be part of that team, tomorrow,\" the king says. \"You are too emotionally involved in this matter to be able to keep a cool head. I want to make sure that the negotiations will be done in a professional manner, by people who are in no danger of letting their feelings cloud their judgment. Rest assured that I've read all of your reports concerning the Overseer, and I will make sure that the negotiations team tomorrow will be taking all of your notes into account. You will, however, not be joining this team, and that is my final decision. Is that clear?\"\r\n\r\n\"Yes... your highness,\" Breynan says, looking rather upset."
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_goblins
-                  b3_ch3_monsters: 0
-                condition: b3_ch2_goblins = 1
-              - set:
-                  current_scene: b3_ch03a_hag
-                  b3_ch3_monsters: 0
-      - texts:
-          - source: scene_3
-            paragraph: 6
-            text: "\"Good,\" the king of the underground says. \"I will be seeing each of you later, then. I trust that you can all make your way back to the waiting room, yes?\"\r\n\r\n\"We'll handle ourselves,\" Daren says. \"Come on, let's go.\"\r\n\r\nHe then limps ahead of us and we all follow him, except for Albert, who seems to still have something that he wants to discuss in private with the king. As we make our way back into the waiting room, we all place ourselves near the chairs from the exit that leads towards the teleporter, waiting patiently for the healers to arrive. In the meantime, Peter went to get our rooms ready, while Breynan also went on his own way, without even saying goodbye to us, still looking pretty affected by what the king of the underground had said to him.\r\n\r\n\"I guess that Kelrim went back to the quarantine area,\" Daren says, after he takes a quick look around and sees that the goblin is nowhere to be found.\r\n\r\n\"Either that, or he went to look for his friends,\" Hadrik says.\r\n\r\n\"Yeah, I guess that might actually be more likely, if I think about it,\" Daren says.\r\n\r\n\"Forget about the damn goblin!\" Arraka says. \"We have far more pressing issues to concern ourselves with!\""
-        condition: b3_ch2_goblins <> 1
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_hag
-                  b3_ch3_monsters: 0
-      - texts:
-          - source: scene_3
-            paragraph: 5
-            text: "\"Good,\" the king of the underground says. \"I will be seeing each of you later, then. I trust that you can all make your way back to the waiting room, yes?\"\r\n\r\n\"We'll handle ourselves,\" Daren says. \"Come on, let's go.\"\r\n\r\nHe then limps ahead of us and we all follow him, except for Albert, who seems to still have something that he wants to discuss in private with the king. As we make our way back into the waiting room, we all place ourselves near the chairs from the exit that leads towards the teleporter, waiting patiently for the healers to arrive. In the meantime, Peter went to get our rooms ready, while Breynan also went on his own way, without even saying goodbye to us, still looking pretty affected by what the king of the underground had said to him.\r\n\r\n\"I guess that Kelrim went back to the quarantine area,\" Daren says, after he takes a quick look around and sees that the goblin is nowhere to be found.\r\n\r\n\"Oh yeah...\" Hadrik says. \"I almost forgot about the goblin. It's going to be a little hard to face him from now on, considering what we did to his friends...\"\r\n\r\n\"At least you didn't actually kill any of them yourself,\" Daren says. \"When I realized that the goblin I killed was one of Kelrim's friends, I felt like the lowest of scum. I never thought I'd ever feel that way about killing a monster...\"\r\n\r\nKate isn't saying anything, but she's looking away from us. She seems to be more in control of her emotions this time around, even though she's definitely still troubled about this whole situation."
+    texts:
+      - source: scene_text
+        paragraph: 9
+        text: "\"Are we free to roam around as we please, while we're here?\"\r\n\r\n\"Yes, you can go wherever you want, except for a few areas that are off limits,\" the king of the underground says. \"You will immediately know where those are, because there's usually at least one guard posted outside each door. You are also free to go to the surface, if you want, although I wouldn't really recommend it until you've at least fully recovered from your earlier battle.\"\r\n\r\n\"I only have one question,\" Daren says. \"Are there any non-beginner white mages around here that could cast a quick healing spell on me and Hadrik? I'm still too tired to be able to cast any decent healing spells, and these wounds are beginning to feel a little uncomfortable...\"\r\n\r\n\"Ah, yes, of course,\" the king says. \"I will arrange for one of our healers to come see you as soon as he is done with his current patients. In the meantime, you can go back to the room where we came from and wait for him there, unless you have any other questions to ask of me.\"\r\n\r\n\"Nah, I think we're good for now,\" Hadrik says.\r\n\r\n\"Alright then,\" the king says. \"Well, in that case, I hope you will all have a pleasant stay, and we will be resuming our discussion tomorrow, after you've made your decision.\""
+      - source: scene_text_2
+        paragraph: 6
+        text: "He pauses for a second to take a quick glance at Kate, but then he addresses one of the rebels instead.\r\n\r\n\"Oh, and one more thing,\" the king says. \"Breynan, I know that this won't seem fair to you, but I want you to stay behind tomorrow, when our men visit the Overseer.\"\r\n\r\n\"My king?...\" Breynan says, apparently in a state of shock.\r\n\r\n\"I realize that I am going against your wishes, but I hope you will respect my decision,\" the king of the underground says, in a more firm tone of voice.\r\n\r\n\"But, your majesty...\" Breynan says. \"Of all the people in this place, I am by far the one who knows the Overseer the best! I also interacted directly with him on numerous occasions!\"\r\n\r\n\"And that is precisely why I don't want you to be part of that team, tomorrow,\" the king says. \"You are too emotionally involved in this matter to be able to keep a cool head. I want to make sure that the negotiations will be done in a professional manner, by people who are in no danger of letting their feelings cloud their judgment. Rest assured that I've read all of your reports concerning the Overseer, and I will make sure that the negotiations team tomorrow will be taking all of your notes into account. You will, however, not be joining this team, and that is my final decision. Is that clear?\"\r\n\r\n\"Yes... your highness,\" Breynan says, looking rather upset."
+      - source: scene_3
+        paragraph: 6
+        text: "\"Good,\" the king of the underground says. \"I will be seeing each of you later, then. I trust that you can all make your way back to the waiting room, yes?\"\r\n\r\n\"We'll handle ourselves,\" Daren says. \"Come on, let's go.\"\r\n\r\nHe then limps ahead of us and we all follow him, except for Albert, who seems to still have something that he wants to discuss in private with the king. As we make our way back into the waiting room, we all place ourselves near the chairs from the exit that leads towards the teleporter, waiting patiently for the healers to arrive. In the meantime, Peter went to get our rooms ready, while Breynan also went on his own way, without even saying goodbye to us, still looking pretty affected by what the king of the underground had said to him.\r\n\r\n\"I guess that Kelrim went back to the quarantine area,\" Daren says, after he takes a quick look around and sees that the goblin is nowhere to be found.\r\n\r\n\"Either that, or he went to look for his friends,\" Hadrik says.\r\n\r\n\"Yeah, I guess that might actually be more likely, if I think about it,\" Daren says.\r\n\r\n\"Forget about the damn goblin!\" Arraka says. \"We have far more pressing issues to concern ourselves with!\""
+        condition: b3_ch2_goblins != 1
+      - source: scene_3
+        paragraph: 5
+        text: "\"Good,\" the king of the underground says. \"I will be seeing each of you later, then. I trust that you can all make your way back to the waiting room, yes?\"\r\n\r\n\"We'll handle ourselves,\" Daren says. \"Come on, let's go.\"\r\n\r\nHe then limps ahead of us and we all follow him, except for Albert, who seems to still have something that he wants to discuss in private with the king. As we make our way back into the waiting room, we all place ourselves near the chairs from the exit that leads towards the teleporter, waiting patiently for the healers to arrive. In the meantime, Peter went to get our rooms ready, while Breynan also went on his own way, without even saying goodbye to us, still looking pretty affected by what the king of the underground had said to him.\r\n\r\n\"I guess that Kelrim went back to the quarantine area,\" Daren says, after he takes a quick look around and sees that the goblin is nowhere to be found.\r\n\r\n\"Oh yeah...\" Hadrik says. \"I almost forgot about the goblin. It's going to be a little hard to face him from now on, considering what we did to his friends...\"\r\n\r\n\"At least you didn't actually kill any of them yourself,\" Daren says. \"When I realized that the goblin I killed was one of Kelrim's friends, I felt like the lowest of scum. I never thought I'd ever feel that way about killing a monster...\"\r\n\r\nKate isn't saying anything, but she's looking away from us. She seems to be more in control of her emotions this time around, even though she's definitely still troubled about this whole situation."
         condition: b3_ch2_goblins = 1
-        choices:
-          - position: 1
-            text: >-
-              Listen, there was no way we could have known those were good
-              goblins!
-            effects:
-              - set:
-                  current_scene: b3_ch03a_goblins
-                  b3_ch3_monsters: 0
-          - position: 2
-            text: All we can really do now is try and make it up to him in some way.
-            effects:
-              - set:
-                  current_scene: b3_ch03a_goblins
-                  b3_ch3_monsters: 1
-          - position: 3
-            text: >-
-              Does it really matter that much? They were all monsters, after
-              all.
-            effects:
-              - set:
-                  current_scene: b3_ch03a_goblins
-                  b3_ch3_monsters: 2
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: b3_ch03a_goblins
+              b3_ch3_monsters: 0
+            condition: b3_ch2_goblins = 1
+          - set:
+              current_scene: b3_ch03a_hag
+              b3_ch3_monsters: 0
+            condition: b3_ch2_goblins != 1
+      - position: 2
+        text: Listen, there was no way we could have known those were good goblins!
+        effects:
+          - set:
+              current_scene: b3_ch03a_goblins
+              b3_ch3_monsters: 1
+            condition: b3_ch2_goblins = 1
+      - position: 3
+        text: All we can really do now is try and make it up to him in some way.
+        effects:
+          - set:
+              current_scene: b3_ch03a_goblins
+              b3_ch3_monsters: 2
+            condition: b3_ch2_goblins = 1
   - name: b3_ch03a_guided
-    routes:
-      - texts:
-          - source: scene_text
-            paragraph: 10
-            text: "\"Could we get a guided tour of your underground base?\"\r\n\r\n\"Well, most of our men are rather busy at this time,\" the king of the underground says, \"but if there is anything specific you want to know about a certain area, you can ask around, and I'm sure that someone will answer your question.\"\r\n\r\n\"I only have one question,\" Daren says. \"Are there any non-beginner white mages around here that could cast a quick healing spell on me and Hadrik? I'm still too tired to be able to cast any decent healing spells, and these wounds are beginning to feel a little uncomfortable...\"\r\n\r\n\"Ah, yes, of course,\" the king says. \"I will arrange for one of our healers to come see you as soon as he is done with his current patients. In the meantime, you can go back to the room where we came from and wait for him there, unless you have any other questions to ask of me.\"\r\n\r\n\"Nah, I think we're good for now,\" Hadrik says.\r\n\r\n\"Alright then,\" the king says. \"Well, in that case, I hope you will all have a pleasant stay, and we will be resuming our discussion tomorrow, after you've made your decision.\""
-          - source: scene_text_2
-            paragraph: 6
-            text: "He pauses for a second to take a quick glance at Kate, but then he addresses one of the rebels instead.\r\n\r\n\"Oh, and one more thing,\" the king says. \"Breynan, I know that this won't seem fair to you, but I want you to stay behind tomorrow, when our men visit the Overseer.\"\r\n\r\n\"My king?...\" Breynan says, apparently in a state of shock.\r\n\r\n\"I realize that I am going against your wishes, but I hope you will respect my decision,\" the king of the underground says, in a more firm tone of voice.\r\n\r\n\"But, your majesty...\" Breynan says. \"Of all the people in this place, I am by far the one who knows the Overseer the best! I also interacted directly with him on numerous occasions!\"\r\n\r\n\"And that is precisely why I don't want you to be part of that team, tomorrow,\" the king says. \"You are too emotionally involved in this matter to be able to keep a cool head. I want to make sure that the negotiations will be done in a professional manner, by people who are in no danger of letting their feelings cloud their judgment. Rest assured that I've read all of your reports concerning the Overseer, and I will make sure that the negotiations team tomorrow will be taking all of your notes into account. You will, however, not be joining this team, and that is my final decision. Is that clear?\"\r\n\r\n\"Yes... your highness,\" Breynan says, looking rather upset."
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_goblins
-                  b3_ch3_monsters: 0
-                condition: b3_ch2_goblins = 1
-              - set:
-                  current_scene: b3_ch03a_hag
-                  b3_ch3_monsters: 0
-      - texts:
-          - source: scene_3
-            paragraph: 6
-            text: "\"Good,\" the king of the underground says. \"I will be seeing each of you later, then. I trust that you can all make your way back to the waiting room, yes?\"\r\n\r\n\"We'll handle ourselves,\" Daren says. \"Come on, let's go.\"\r\n\r\nHe then limps ahead of us and we all follow him, except for Albert, who seems to still have something that he wants to discuss in private with the king. As we make our way back into the waiting room, we all place ourselves near the chairs from the exit that leads towards the teleporter, waiting patiently for the healers to arrive. In the meantime, Peter went to get our rooms ready, while Breynan also went on his own way, without even saying goodbye to us, still looking pretty affected by what the king of the underground had said to him.\r\n\r\n\"I guess that Kelrim went back to the quarantine area,\" Daren says, after he takes a quick look around and sees that the goblin is nowhere to be found.\r\n\r\n\"Either that, or he went to look for his friends,\" Hadrik says.\r\n\r\n\"Yeah, I guess that might actually be more likely, if I think about it,\" Daren says.\r\n\r\n\"Forget about the damn goblin!\" Arraka says. \"We have far more pressing issues to concern ourselves with!\""
-        condition: b3_ch2_goblins <> 1
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_hag
-                  b3_ch3_monsters: 0
-      - texts:
-          - source: scene_3
-            paragraph: 5
-            text: "\"Good,\" the king of the underground says. \"I will be seeing each of you later, then. I trust that you can all make your way back to the waiting room, yes?\"\r\n\r\n\"We'll handle ourselves,\" Daren says. \"Come on, let's go.\"\r\n\r\nHe then limps ahead of us and we all follow him, except for Albert, who seems to still have something that he wants to discuss in private with the king. As we make our way back into the waiting room, we all place ourselves near the chairs from the exit that leads towards the teleporter, waiting patiently for the healers to arrive. In the meantime, Peter went to get our rooms ready, while Breynan also went on his own way, without even saying goodbye to us, still looking pretty affected by what the king of the underground had said to him.\r\n\r\n\"I guess that Kelrim went back to the quarantine area,\" Daren says, after he takes a quick look around and sees that the goblin is nowhere to be found.\r\n\r\n\"Oh yeah...\" Hadrik says. \"I almost forgot about the goblin. It's going to be a little hard to face him from now on, considering what we did to his friends...\"\r\n\r\n\"At least you didn't actually kill any of them yourself,\" Daren says. \"When I realized that the goblin I killed was one of Kelrim's friends, I felt like the lowest of scum. I never thought I'd ever feel that way about killing a monster...\"\r\n\r\nKate isn't saying anything, but she's looking away from us. She seems to be more in control of her emotions this time around, even though she's definitely still troubled about this whole situation."
+    texts:
+      - source: scene_text
+        paragraph: 10
+        text: "\"Could we get a guided tour of your underground base?\"\r\n\r\n\"Well, most of our men are rather busy at this time,\" the king of the underground says, \"but if there is anything specific you want to know about a certain area, you can ask around, and I'm sure that someone will answer your question.\"\r\n\r\n\"I only have one question,\" Daren says. \"Are there any non-beginner white mages around here that could cast a quick healing spell on me and Hadrik? I'm still too tired to be able to cast any decent healing spells, and these wounds are beginning to feel a little uncomfortable...\"\r\n\r\n\"Ah, yes, of course,\" the king says. \"I will arrange for one of our healers to come see you as soon as he is done with his current patients. In the meantime, you can go back to the room where we came from and wait for him there, unless you have any other questions to ask of me.\"\r\n\r\n\"Nah, I think we're good for now,\" Hadrik says.\r\n\r\n\"Alright then,\" the king says. \"Well, in that case, I hope you will all have a pleasant stay, and we will be resuming our discussion tomorrow, after you've made your decision.\""
+      - source: scene_text_2
+        paragraph: 6
+        text: "He pauses for a second to take a quick glance at Kate, but then he addresses one of the rebels instead.\r\n\r\n\"Oh, and one more thing,\" the king says. \"Breynan, I know that this won't seem fair to you, but I want you to stay behind tomorrow, when our men visit the Overseer.\"\r\n\r\n\"My king?...\" Breynan says, apparently in a state of shock.\r\n\r\n\"I realize that I am going against your wishes, but I hope you will respect my decision,\" the king of the underground says, in a more firm tone of voice.\r\n\r\n\"But, your majesty...\" Breynan says. \"Of all the people in this place, I am by far the one who knows the Overseer the best! I also interacted directly with him on numerous occasions!\"\r\n\r\n\"And that is precisely why I don't want you to be part of that team, tomorrow,\" the king says. \"You are too emotionally involved in this matter to be able to keep a cool head. I want to make sure that the negotiations will be done in a professional manner, by people who are in no danger of letting their feelings cloud their judgment. Rest assured that I've read all of your reports concerning the Overseer, and I will make sure that the negotiations team tomorrow will be taking all of your notes into account. You will, however, not be joining this team, and that is my final decision. Is that clear?\"\r\n\r\n\"Yes... your highness,\" Breynan says, looking rather upset."
+      - source: scene_3
+        paragraph: 6
+        text: "\"Good,\" the king of the underground says. \"I will be seeing each of you later, then. I trust that you can all make your way back to the waiting room, yes?\"\r\n\r\n\"We'll handle ourselves,\" Daren says. \"Come on, let's go.\"\r\n\r\nHe then limps ahead of us and we all follow him, except for Albert, who seems to still have something that he wants to discuss in private with the king. As we make our way back into the waiting room, we all place ourselves near the chairs from the exit that leads towards the teleporter, waiting patiently for the healers to arrive. In the meantime, Peter went to get our rooms ready, while Breynan also went on his own way, without even saying goodbye to us, still looking pretty affected by what the king of the underground had said to him.\r\n\r\n\"I guess that Kelrim went back to the quarantine area,\" Daren says, after he takes a quick look around and sees that the goblin is nowhere to be found.\r\n\r\n\"Either that, or he went to look for his friends,\" Hadrik says.\r\n\r\n\"Yeah, I guess that might actually be more likely, if I think about it,\" Daren says.\r\n\r\n\"Forget about the damn goblin!\" Arraka says. \"We have far more pressing issues to concern ourselves with!\""
+        condition: b3_ch2_goblins != 1
+      - source: scene_3
+        paragraph: 5
+        text: "\"Good,\" the king of the underground says. \"I will be seeing each of you later, then. I trust that you can all make your way back to the waiting room, yes?\"\r\n\r\n\"We'll handle ourselves,\" Daren says. \"Come on, let's go.\"\r\n\r\nHe then limps ahead of us and we all follow him, except for Albert, who seems to still have something that he wants to discuss in private with the king. As we make our way back into the waiting room, we all place ourselves near the chairs from the exit that leads towards the teleporter, waiting patiently for the healers to arrive. In the meantime, Peter went to get our rooms ready, while Breynan also went on his own way, without even saying goodbye to us, still looking pretty affected by what the king of the underground had said to him.\r\n\r\n\"I guess that Kelrim went back to the quarantine area,\" Daren says, after he takes a quick look around and sees that the goblin is nowhere to be found.\r\n\r\n\"Oh yeah...\" Hadrik says. \"I almost forgot about the goblin. It's going to be a little hard to face him from now on, considering what we did to his friends...\"\r\n\r\n\"At least you didn't actually kill any of them yourself,\" Daren says. \"When I realized that the goblin I killed was one of Kelrim's friends, I felt like the lowest of scum. I never thought I'd ever feel that way about killing a monster...\"\r\n\r\nKate isn't saying anything, but she's looking away from us. She seems to be more in control of her emotions this time around, even though she's definitely still troubled about this whole situation."
         condition: b3_ch2_goblins = 1
-        choices:
-          - position: 1
-            text: >-
-              Listen, there was no way we could have known those were good
-              goblins!
-            effects:
-              - set:
-                  current_scene: b3_ch03a_goblins
-                  b3_ch3_monsters: 0
-          - position: 2
-            text: All we can really do now is try and make it up to him in some way.
-            effects:
-              - set:
-                  current_scene: b3_ch03a_goblins
-                  b3_ch3_monsters: 1
-          - position: 3
-            text: >-
-              Does it really matter that much? They were all monsters, after
-              all.
-            effects:
-              - set:
-                  current_scene: b3_ch03a_goblins
-                  b3_ch3_monsters: 2
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: b3_ch03a_goblins
+              b3_ch3_monsters: 0
+            condition: b3_ch2_goblins = 1
+          - set:
+              current_scene: b3_ch03a_hag
+              b3_ch3_monsters: 0
+            condition: b3_ch2_goblins != 1
+      - position: 2
+        text: Listen, there was no way we could have known those were good goblins!
+        effects:
+          - set:
+              current_scene: b3_ch03a_goblins
+              b3_ch3_monsters: 1
+            condition: b3_ch2_goblins = 1
+      - position: 3
+        text: All we can really do now is try and make it up to him in some way.
+        effects:
+          - set:
+              current_scene: b3_ch03a_goblins
+              b3_ch3_monsters: 2
+            condition: b3_ch2_goblins = 1
   - name: b3_ch03a_goblins
     routes:
-      - texts:
+      - condition: b3_ch3_monsters = 0
+        texts:
           - source: scene_text
             paragraph: 12
             text: "\"Listen, there was no way we could have known those were good goblins! It wasn't our fault!\"\r\n\r\n\"It was our fault...\" Daren says. \"We should have known better. We had all the hints we needed to realize that they weren't our enemies, but we killed them anyway. Just because they were monsters. I feel so ashamed...\"\r\n\r\n\"Forget about the damn goblins!\" Arraka says, all of a sudden. \"We have far more pressing issues to concern ourselves with!\"\r\n\r\n\"Like what?\" Illuna says.\r\n\r\n\"Like the fact that none of you idiots were able to counteract a simple aura manipulation technique!\" Arraka says. \"How are we going to take down a god if you people can't even deal with basic techniques?\"\r\n\r\n\"Take down a... god?...\" Leila's father asks.\r\n\r\n\"We'll explain later,\" I tell Leila's father.\r\n\r\n\"Listen here, you old hag,\" Hadrik tells Arraka, \"I don't know how you do things in your spirit world, but over here on the earthen plane, people don't normally use their auras to attack people. Hell, it took me years to develop my aura hardening technique, and I'm not even sure if I've ever seen someone use anything similar in my travels.\""
           - source: scene_text_2
             paragraph: 7
             text: "\"Hadrik is right,\" I say. \"I've been travelling all across the Western Continent, in search for a way to become a mage ever since I was seventeen, and even the most obscure tomes that I've read did not contain any information about aura manipulation techniques.\"\r\n\r\n\"Oh yeah?\" Arraka says. \"Well, too bad! Even if you can't do it, the gods most certainly can, and the same goes for Eiden, the golden fox and Tyrath, although the lizard probably can't do it when he's not in his molten lava form. I'm willing to bet that Azarius can do it too, and probably also every other sage except for that moron, Talmak. This isn't something you can just ignore. Not being able to counter these types of techniques gives your opponent an enormous advantage over you. Hell, you saw what that frail old man was doing to you earlier. You can't keep relying on me to point out the weaknesses of these techniques every time they are used against you! You need to learn to deal with them yourselves.\"\r\n\r\n\"And how are we supposed to do that?\" I say.\r\n\r\n\"With training, obviously,\" Arraka says. \"I'm going to hammer that knowledge into your useless heads, even if it kills me. Mark my words!\"\r\n\r\n\"Right,\" I say. \"Speaking of training, I just remembered that I had something important to discuss with Leila's father about my stat device.\"\r\n\r\n\"Yes, Barry, what is it?\" Leila's father says."
-        condition: b3_ch3_monsters = 0
+          - source: scene_3
+            paragraph: 7
+            text: "\"Well, first of all, I was wondering if you could help me unlock my device,\" I say. \"We got it locked by accident yesterday, while we were trying to unlock the hidden aura stats.\"\r\n\r\n\"Oh!\" Leila's father says. \"The aura stats lock! That brings back memories. It also happened to me once, when I first began tinkering with Leila's stat device in order to make it translate her thoughts into words. To answer your question, yes, I can unlock it easily.\"\r\n\r\n\"Wow, that's great!\" I say. \"Will the secret stats get unlocked too, after you do it?\"\r\n\r\n\"Not exactly,\" Leila's father says. \"But it shouldn't be that hard to unlock them manually, once I'm done fixing your device. I would have made these stats available on Leila's device as well, but I had to sort of permanently deactivate them on her stat booster, in order to get her magical writing feature to work properly.\"\r\n\r\n\"So, can we do it now?...\" I say.\r\n\r\n\"Right now?\" Leila's father says. \"I suppose it wouldn't be a problem. I should probably be doing some maintenance for Leila's device too, now that I think about it. It's been far too long since I last had a good look at it. Let us go to my workshop, and we'll see what we can do.\"\r\n\r\n\"Alright,\" I say, and then I turn to the others. \"I'll see you all around in a bit!\""
+            condition: b3_ch1_unlock = 2
+          - source: scene_3
+            paragraph: 8
+            text: "\"Well, I was wondering if you could help me unlock the hidden aura stats from my device,\" I say.\r\n\r\n\"You mean the Aura Hardening, Bluff and Magical Sense stats?\" Leila's father says. \"Of course! It shouldn't be that hard to do. Frankly, I probably would have made those stats available on Leila's device as well, if I hadn't needed to deactivate them in order to get her magical writing feature to work properly.\"\r\n\r\n\"So, can we do it now?...\" I say.\r\n\r\n\"Right now?\" Leila's father says. \"I suppose it wouldn't be a problem. I should probably be doing some maintenance for Leila's device too, now that I think about it. It's been far too long since I last had a good look at it. Let us go to my workshop, and we'll see what we can do.\"\r\n\r\n\"Alright,\" I say, and then I turn to the others. \"I'll see you all around in a bit!\""
+            condition: b3_ch1_unlock != 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch03a_mundane
-      - texts:
+      - condition: b3_ch3_monsters = 1
+        texts:
           - source: scene_text
             paragraph: 13
             text: "\"All we can really do now is try and make it up to him in some way.\"\r\n\r\n\"But how?...\" Daren says. \"How could we ever make it up to him after murdering all his friends in cold blood? There's no way for us to bring them back from the dead...\"\r\n\r\n\"We'll find a way,\" I say. \"Even if we can't bring back his friends, there still has to be something we can do. Maybe if we talk to him about it, we could--\"\r\n\r\n\"Forget about the damn goblins!\" Arraka says, all of a sudden. \"We have far more pressing issues to concern ourselves with!\"\r\n\r\n\"Like what?\" Illuna says.\r\n\r\n\"Like the fact that none of you idiots were able to counteract a simple aura manipulation technique!\" Arraka says. \"How are we going to take down a god if you people can't even deal with basic techniques?\"\r\n\r\n\"Take down a... god?...\" Leila's father asks.\r\n\r\n\"We'll explain later,\" I tell Leila's father.\r\n\r\n\"Listen here, you old hag,\" Hadrik tells Arraka, \"I don't know how you do things in your spirit world, but over here on the earthen plane, people don't normally use their auras to attack people. Hell, it took me years to develop my aura hardening technique, and I'm not even sure if I've ever seen someone use anything similar in my travels.\""
           - source: scene_text_2
             paragraph: 7
             text: "\"Hadrik is right,\" I say. \"I've been travelling all across the Western Continent, in search for a way to become a mage ever since I was seventeen, and even the most obscure tomes that I've read did not contain any information about aura manipulation techniques.\"\r\n\r\n\"Oh yeah?\" Arraka says. \"Well, too bad! Even if you can't do it, the gods most certainly can, and the same goes for Eiden, the golden fox and Tyrath, although the lizard probably can't do it when he's not in his molten lava form. I'm willing to bet that Azarius can do it too, and probably also every other sage except for that moron, Talmak. This isn't something you can just ignore. Not being able to counter these types of techniques gives your opponent an enormous advantage over you. Hell, you saw what that frail old man was doing to you earlier. You can't keep relying on me to point out the weaknesses of these techniques every time they are used against you! You need to learn to deal with them yourselves.\"\r\n\r\n\"And how are we supposed to do that?\" I say.\r\n\r\n\"With training, obviously,\" Arraka says. \"I'm going to hammer that knowledge into your useless heads, even if it kills me. Mark my words!\"\r\n\r\n\"Right,\" I say. \"Speaking of training, I just remembered that I had something important to discuss with Leila's father about my stat device.\"\r\n\r\n\"Yes, Barry, what is it?\" Leila's father says."
-        condition: b3_ch3_monsters = 1
+          - source: scene_3
+            paragraph: 7
+            text: "\"Well, first of all, I was wondering if you could help me unlock my device,\" I say. \"We got it locked by accident yesterday, while we were trying to unlock the hidden aura stats.\"\r\n\r\n\"Oh!\" Leila's father says. \"The aura stats lock! That brings back memories. It also happened to me once, when I first began tinkering with Leila's stat device in order to make it translate her thoughts into words. To answer your question, yes, I can unlock it easily.\"\r\n\r\n\"Wow, that's great!\" I say. \"Will the secret stats get unlocked too, after you do it?\"\r\n\r\n\"Not exactly,\" Leila's father says. \"But it shouldn't be that hard to unlock them manually, once I'm done fixing your device. I would have made these stats available on Leila's device as well, but I had to sort of permanently deactivate them on her stat booster, in order to get her magical writing feature to work properly.\"\r\n\r\n\"So, can we do it now?...\" I say.\r\n\r\n\"Right now?\" Leila's father says. \"I suppose it wouldn't be a problem. I should probably be doing some maintenance for Leila's device too, now that I think about it. It's been far too long since I last had a good look at it. Let us go to my workshop, and we'll see what we can do.\"\r\n\r\n\"Alright,\" I say, and then I turn to the others. \"I'll see you all around in a bit!\""
+            condition: b3_ch1_unlock = 2
+          - source: scene_3
+            paragraph: 8
+            text: "\"Well, I was wondering if you could help me unlock the hidden aura stats from my device,\" I say.\r\n\r\n\"You mean the Aura Hardening, Bluff and Magical Sense stats?\" Leila's father says. \"Of course! It shouldn't be that hard to do. Frankly, I probably would have made those stats available on Leila's device as well, if I hadn't needed to deactivate them in order to get her magical writing feature to work properly.\"\r\n\r\n\"So, can we do it now?...\" I say.\r\n\r\n\"Right now?\" Leila's father says. \"I suppose it wouldn't be a problem. I should probably be doing some maintenance for Leila's device too, now that I think about it. It's been far too long since I last had a good look at it. Let us go to my workshop, and we'll see what we can do.\"\r\n\r\n\"Alright,\" I say, and then I turn to the others. \"I'll see you all around in a bit!\""
+            condition: b3_ch1_unlock != 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch03a_mundane
-      - texts:
+      - condition: b3_ch3_monsters = 2
+        texts:
           - source: scene_text
             paragraph: 14
             text: "\"Does it really matter that much? They were all monsters, after all.\"\r\n\r\n\"It does matter...\" Daren says. \"If a goblin like Kelrim is capable of risking his own life to help complete strangers that are not even part of his own race, then what of his friends? What if they were all like him too? Now we'll never know, because we murdered them all in cold blood without even giving it a second thought. Just because they were monsters. I feel so ashamed...\"\r\n\r\n\"Forget about the damn goblins!\" Arraka says, all of a sudden. \"We have far more pressing issues to concern ourselves with!\"\r\n\r\n\"Like what?\" Illuna says.\r\n\r\n\"Like the fact that none of you idiots were able to counteract a simple aura manipulation technique!\" Arraka says. \"How are we going to take down a god if you people can't even deal with basic techniques?\"\r\n\r\n\"Take down a... god?...\" Leila's father asks.\r\n\r\n\"We'll explain later,\" I tell Leila's father.\r\n\r\n\"Listen here, you old hag,\" Hadrik tells Arraka, \"I don't know how you do things in your spirit world, but over here on the earthen plane, people don't normally use their auras to attack people. Hell, it took me years to develop my aura hardening technique, and I'm not even sure if I've ever seen someone use anything similar in my travels.\""
           - source: scene_text_2
             paragraph: 7
             text: "\"Hadrik is right,\" I say. \"I've been travelling all across the Western Continent, in search for a way to become a mage ever since I was seventeen, and even the most obscure tomes that I've read did not contain any information about aura manipulation techniques.\"\r\n\r\n\"Oh yeah?\" Arraka says. \"Well, too bad! Even if you can't do it, the gods most certainly can, and the same goes for Eiden, the golden fox and Tyrath, although the lizard probably can't do it when he's not in his molten lava form. I'm willing to bet that Azarius can do it too, and probably also every other sage except for that moron, Talmak. This isn't something you can just ignore. Not being able to counter these types of techniques gives your opponent an enormous advantage over you. Hell, you saw what that frail old man was doing to you earlier. You can't keep relying on me to point out the weaknesses of these techniques every time they are used against you! You need to learn to deal with them yourselves.\"\r\n\r\n\"And how are we supposed to do that?\" I say.\r\n\r\n\"With training, obviously,\" Arraka says. \"I'm going to hammer that knowledge into your useless heads, even if it kills me. Mark my words!\"\r\n\r\n\"Right,\" I say. \"Speaking of training, I just remembered that I had something important to discuss with Leila's father about my stat device.\"\r\n\r\n\"Yes, Barry, what is it?\" Leila's father says."
-        condition: b3_ch3_monsters = 2
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_mundane
-      - texts:
           - source: scene_3
             paragraph: 7
             text: "\"Well, first of all, I was wondering if you could help me unlock my device,\" I say. \"We got it locked by accident yesterday, while we were trying to unlock the hidden aura stats.\"\r\n\r\n\"Oh!\" Leila's father says. \"The aura stats lock! That brings back memories. It also happened to me once, when I first began tinkering with Leila's stat device in order to make it translate her thoughts into words. To answer your question, yes, I can unlock it easily.\"\r\n\r\n\"Wow, that's great!\" I say. \"Will the secret stats get unlocked too, after you do it?\"\r\n\r\n\"Not exactly,\" Leila's father says. \"But it shouldn't be that hard to unlock them manually, once I'm done fixing your device. I would have made these stats available on Leila's device as well, but I had to sort of permanently deactivate them on her stat booster, in order to get her magical writing feature to work properly.\"\r\n\r\n\"So, can we do it now?...\" I say.\r\n\r\n\"Right now?\" Leila's father says. \"I suppose it wouldn't be a problem. I should probably be doing some maintenance for Leila's device too, now that I think about it. It's been far too long since I last had a good look at it. Let us go to my workshop, and we'll see what we can do.\"\r\n\r\n\"Alright,\" I say, and then I turn to the others. \"I'll see you all around in a bit!\""
-        condition: b3_ch1_unlock = 2
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_mundane
-      - texts:
+            condition: b3_ch1_unlock = 2
           - source: scene_3
             paragraph: 8
             text: "\"Well, I was wondering if you could help me unlock the hidden aura stats from my device,\" I say.\r\n\r\n\"You mean the Aura Hardening, Bluff and Magical Sense stats?\" Leila's father says. \"Of course! It shouldn't be that hard to do. Frankly, I probably would have made those stats available on Leila's device as well, if I hadn't needed to deactivate them in order to get her magical writing feature to work properly.\"\r\n\r\n\"So, can we do it now?...\" I say.\r\n\r\n\"Right now?\" Leila's father says. \"I suppose it wouldn't be a problem. I should probably be doing some maintenance for Leila's device too, now that I think about it. It's been far too long since I last had a good look at it. Let us go to my workshop, and we'll see what we can do.\"\r\n\r\n\"Alright,\" I say, and then I turn to the others. \"I'll see you all around in a bit!\""
-        condition: b3_ch1_unlock <> 2
+            condition: b3_ch1_unlock != 2
         choices:
           - position: 1
             text: Continue
@@ -375,42 +323,27 @@ scenes:
               - set:
                   current_scene: b3_ch03a_mundane
   - name: b3_ch03a_hag
-    routes:
-      - texts:
-          - source: scene_text
-            paragraph: 15
-            text: "\"Like what?\" Illuna says.\r\n\r\n\"Like the fact that none of you idiots were able to counteract a simple aura manipulation technique!\" Arraka says. \"How are we going to take down a god if you people can't even deal with basic techniques?\"\r\n\r\n\"Take down a... god?...\" Leila's father asks.\r\n\r\n\"We'll explain later,\" I tell Leila's father.\r\n\r\n\"Listen here, you old hag,\" Hadrik tells Arraka, \"I don't know how you do things in your spirit world, but over here on the earthen plane, people don't normally use their auras to attack people. Hell, it took me years to develop my aura hardening technique, and I'm not even sure if I've ever seen someone use anything similar in my travels.\""
-          - source: scene_text_2
-            paragraph: 7
-            text: "\"Hadrik is right,\" I say. \"I've been travelling all across the Western Continent, in search for a way to become a mage ever since I was seventeen, and even the most obscure tomes that I've read did not contain any information about aura manipulation techniques.\"\r\n\r\n\"Oh yeah?\" Arraka says. \"Well, too bad! Even if you can't do it, the gods most certainly can, and the same goes for Eiden, the golden fox and Tyrath, although the lizard probably can't do it when he's not in his molten lava form. I'm willing to bet that Azarius can do it too, and probably also every other sage except for that moron, Talmak. This isn't something you can just ignore. Not being able to counter these types of techniques gives your opponent an enormous advantage over you. Hell, you saw what that frail old man was doing to you earlier. You can't keep relying on me to point out the weaknesses of these techniques every time they are used against you! You need to learn to deal with them yourselves.\"\r\n\r\n\"And how are we supposed to do that?\" I say.\r\n\r\n\"With training, obviously,\" Arraka says. \"I'm going to hammer that knowledge into your useless heads, even if it kills me. Mark my words!\"\r\n\r\n\"Right,\" I say. \"Speaking of training, I just remembered that I had something important to discuss with Leila's father about my stat device.\"\r\n\r\n\"Yes, Barry, what is it?\" Leila's father says."
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_mundane
-      - texts:
-          - source: scene_3
-            paragraph: 7
-            text: "\"Well, first of all, I was wondering if you could help me unlock my device,\" I say. \"We got it locked by accident yesterday, while we were trying to unlock the hidden aura stats.\"\r\n\r\n\"Oh!\" Leila's father says. \"The aura stats lock! That brings back memories. It also happened to me once, when I first began tinkering with Leila's stat device in order to make it translate her thoughts into words. To answer your question, yes, I can unlock it easily.\"\r\n\r\n\"Wow, that's great!\" I say. \"Will the secret stats get unlocked too, after you do it?\"\r\n\r\n\"Not exactly,\" Leila's father says. \"But it shouldn't be that hard to unlock them manually, once I'm done fixing your device. I would have made these stats available on Leila's device as well, but I had to sort of permanently deactivate them on her stat booster, in order to get her magical writing feature to work properly.\"\r\n\r\n\"So, can we do it now?...\" I say.\r\n\r\n\"Right now?\" Leila's father says. \"I suppose it wouldn't be a problem. I should probably be doing some maintenance for Leila's device too, now that I think about it. It's been far too long since I last had a good look at it. Let us go to my workshop, and we'll see what we can do.\"\r\n\r\n\"Alright,\" I say, and then I turn to the others. \"I'll see you all around in a bit!\""
+    texts:
+      - source: scene_text
+        paragraph: 15
+        text: "\"Like what?\" Illuna says.\r\n\r\n\"Like the fact that none of you idiots were able to counteract a simple aura manipulation technique!\" Arraka says. \"How are we going to take down a god if you people can't even deal with basic techniques?\"\r\n\r\n\"Take down a... god?...\" Leila's father asks.\r\n\r\n\"We'll explain later,\" I tell Leila's father.\r\n\r\n\"Listen here, you old hag,\" Hadrik tells Arraka, \"I don't know how you do things in your spirit world, but over here on the earthen plane, people don't normally use their auras to attack people. Hell, it took me years to develop my aura hardening technique, and I'm not even sure if I've ever seen someone use anything similar in my travels.\""
+      - source: scene_text_2
+        paragraph: 7
+        text: "\"Hadrik is right,\" I say. \"I've been travelling all across the Western Continent, in search for a way to become a mage ever since I was seventeen, and even the most obscure tomes that I've read did not contain any information about aura manipulation techniques.\"\r\n\r\n\"Oh yeah?\" Arraka says. \"Well, too bad! Even if you can't do it, the gods most certainly can, and the same goes for Eiden, the golden fox and Tyrath, although the lizard probably can't do it when he's not in his molten lava form. I'm willing to bet that Azarius can do it too, and probably also every other sage except for that moron, Talmak. This isn't something you can just ignore. Not being able to counter these types of techniques gives your opponent an enormous advantage over you. Hell, you saw what that frail old man was doing to you earlier. You can't keep relying on me to point out the weaknesses of these techniques every time they are used against you! You need to learn to deal with them yourselves.\"\r\n\r\n\"And how are we supposed to do that?\" I say.\r\n\r\n\"With training, obviously,\" Arraka says. \"I'm going to hammer that knowledge into your useless heads, even if it kills me. Mark my words!\"\r\n\r\n\"Right,\" I say. \"Speaking of training, I just remembered that I had something important to discuss with Leila's father about my stat device.\"\r\n\r\n\"Yes, Barry, what is it?\" Leila's father says."
+      - source: scene_3
+        paragraph: 7
+        text: "\"Well, first of all, I was wondering if you could help me unlock my device,\" I say. \"We got it locked by accident yesterday, while we were trying to unlock the hidden aura stats.\"\r\n\r\n\"Oh!\" Leila's father says. \"The aura stats lock! That brings back memories. It also happened to me once, when I first began tinkering with Leila's stat device in order to make it translate her thoughts into words. To answer your question, yes, I can unlock it easily.\"\r\n\r\n\"Wow, that's great!\" I say. \"Will the secret stats get unlocked too, after you do it?\"\r\n\r\n\"Not exactly,\" Leila's father says. \"But it shouldn't be that hard to unlock them manually, once I'm done fixing your device. I would have made these stats available on Leila's device as well, but I had to sort of permanently deactivate them on her stat booster, in order to get her magical writing feature to work properly.\"\r\n\r\n\"So, can we do it now?...\" I say.\r\n\r\n\"Right now?\" Leila's father says. \"I suppose it wouldn't be a problem. I should probably be doing some maintenance for Leila's device too, now that I think about it. It's been far too long since I last had a good look at it. Let us go to my workshop, and we'll see what we can do.\"\r\n\r\n\"Alright,\" I say, and then I turn to the others. \"I'll see you all around in a bit!\""
         condition: b3_ch1_unlock = 2
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_mundane
-      - texts:
-          - source: scene_3
-            paragraph: 8
-            text: "\"Well, I was wondering if you could help me unlock the hidden aura stats from my device,\" I say.\r\n\r\n\"You mean the Aura Hardening, Bluff and Magical Sense stats?\" Leila's father says. \"Of course! It shouldn't be that hard to do. Frankly, I probably would have made those stats available on Leila's device as well, if I hadn't needed to deactivate them in order to get her magical writing feature to work properly.\"\r\n\r\n\"So, can we do it now?...\" I say.\r\n\r\n\"Right now?\" Leila's father says. \"I suppose it wouldn't be a problem. I should probably be doing some maintenance for Leila's device too, now that I think about it. It's been far too long since I last had a good look at it. Let us go to my workshop, and we'll see what we can do.\"\r\n\r\n\"Alright,\" I say, and then I turn to the others. \"I'll see you all around in a bit!\""
-        condition: b3_ch1_unlock <> 2
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_mundane
+      - source: scene_3
+        paragraph: 8
+        text: "\"Well, I was wondering if you could help me unlock the hidden aura stats from my device,\" I say.\r\n\r\n\"You mean the Aura Hardening, Bluff and Magical Sense stats?\" Leila's father says. \"Of course! It shouldn't be that hard to do. Frankly, I probably would have made those stats available on Leila's device as well, if I hadn't needed to deactivate them in order to get her magical writing feature to work properly.\"\r\n\r\n\"So, can we do it now?...\" I say.\r\n\r\n\"Right now?\" Leila's father says. \"I suppose it wouldn't be a problem. I should probably be doing some maintenance for Leila's device too, now that I think about it. It's been far too long since I last had a good look at it. Let us go to my workshop, and we'll see what we can do.\"\r\n\r\n\"Alright,\" I say, and then I turn to the others. \"I'll see you all around in a bit!\""
+        condition: b3_ch1_unlock != 2
+    choices:
+      - position: 1
+        text: Continue
+        effects:
+          - set:
+              current_scene: b3_ch03a_mundane
   - name: b3_ch03a_mundane
     texts:
       - source: scene_text
@@ -430,11 +363,11 @@ scenes:
               current_scene: b3_ch03a_travelling
   - name: b3_ch03a_travelling
     routes:
-      - texts:
+      - condition: b2_ch8_energizer = 1
+        texts:
           - source: scene_text
             paragraph: 17
             text: "\"You two seem to be getting along quite well...\" Leila's father says, as he turns to take a quick look at us, before he begins opening the first lock on the door to his workshop. \"How long have you been travelling together, again?\"\r\n\r\n\"Uhm... I guess it's been around five days, now,\" I say. \"But we also spent a lot of time together in the days before the arena, coming up with strategies and trying to sabotage the event.\"\r\n\r\n\"Right, right...\" Leila's father says, as he is now looking for an additional key that he seems to have misplaced. \"So, have you made any plans for the wedding, yet?\"\r\n\r\n\"Father!\" Leila writes, with her eyebrows furrowed. \"It's not like that! Barry is just a friend. And besides, he's already in a relationship with Melindra.\""
-        condition: b2_ch8_energizer = 1
         choices:
           - position: 1
             text: Melindra and I are not in a relationship.
@@ -450,13 +383,13 @@ scenes:
               - set:
                   current_scene: b3_ch03a_plans
                   b3_ch3_plans: 1
-      - texts:
+      - condition: >-
+          b2_ch8_energizer <> 1 AND ch11_saved_rose = 1 AND ch11_romance_rose =
+          1
+        texts:
           - source: scene_text
             paragraph: 18
             text: "\"You two seem to be getting along quite well...\" Leila's father says, as he turns to take a quick look at us, before he begins opening the first lock on the door to his workshop. \"How long have you been travelling together, again?\"\r\n\r\n\"Uhm... I guess it's been around five days, now,\" I say. \"But we also spent a lot of time together in the days before the arena, coming up with strategies and trying to sabotage the event.\"\r\n\r\n\"Right, right...\" Leila's father says, as he is now looking for an additional key that he seems to have misplaced. \"So, have you made any plans for the wedding, yet?\"\r\n\r\n\"Father!\" Leila writes, with her eyebrows furrowed. \"It's not like that! Barry already has someone waiting for him in Thilias. Her name is Rose, and she's very beautiful.\"\r\n\r\n\"Oh, I see!\" Leila's father says, as he seems to have finally found the key he was looking for. \"My mistake, then!\""
-        condition: >-
-          b2_ch8_energizer <> 1 AND ch11_saved_rose = 1 AND ch11_romance_rose =
-          1
         choices:
           - position: 1
             text: It's no problem!
@@ -472,11 +405,11 @@ scenes:
               - set:
                   current_scene: b3_ch03a_plans
                   b3_ch3_plans: 3
-      - texts:
+      - condition: b2_ch8_energizer <> 1 AND ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 19
             text: "\"You two seem to be getting along quite well...\" Leila's father says, as he turns to take a quick look at us, before he begins opening the first lock on the door to his workshop. \"How long have you been travelling together, again?\"\r\n\r\n\"Uhm... I guess it's been around five days, now,\" I say. \"But we also spent a lot of time together in the days before the arena, coming up with strategies and trying to sabotage the event.\"\r\n\r\n\"Right, right...\" Leila's father says, as he is now looking for an additional key that he seems to have misplaced. \"So, have you made any plans for the wedding, yet?\"\r\n\r\n\"Father!\" Leila writes, with her eyebrows furrowed. \"It's not like that! Barry likes Kate. You know... my friend from the Beacon with the long black hair and the ice magic.\"\r\n\r\n\"Oh, I see!\" Leila's father says, as he seems to have finally found the key he was looking for. \"My mistake, then!\""
-        condition: b2_ch8_energizer <> 1 AND ch11_saved_rose = 0
         choices:
           - position: 1
             text: It's no problem!
@@ -498,13 +431,13 @@ scenes:
               - set:
                   current_scene: b3_ch03a_plans
                   b3_ch3_plans: 6
-      - texts:
+      - condition: >-
+          b2_ch8_energizer <> 1 AND ch11_saved_rose = 1 AND ch11_romance_rose =
+          0
+        texts:
           - source: scene_text
             paragraph: 19
             text: "\"You two seem to be getting along quite well...\" Leila's father says, as he turns to take a quick look at us, before he begins opening the first lock on the door to his workshop. \"How long have you been travelling together, again?\"\r\n\r\n\"Uhm... I guess it's been around five days, now,\" I say. \"But we also spent a lot of time together in the days before the arena, coming up with strategies and trying to sabotage the event.\"\r\n\r\n\"Right, right...\" Leila's father says, as he is now looking for an additional key that he seems to have misplaced. \"So, have you made any plans for the wedding, yet?\"\r\n\r\n\"Father!\" Leila writes, with her eyebrows furrowed. \"It's not like that! Barry likes Kate. You know... my friend from the Beacon with the long black hair and the ice magic.\"\r\n\r\n\"Oh, I see!\" Leila's father says, as he seems to have finally found the key he was looking for. \"My mistake, then!\""
-        condition: >-
-          b2_ch8_energizer <> 1 AND ch11_saved_rose = 1 AND ch11_romance_rose =
-          0
         choices:
           - position: 1
             text: It's no problem!
@@ -527,136 +460,34 @@ scenes:
                   current_scene: b3_ch03a_plans
                   b3_ch3_plans: 6
   - name: b3_ch03a_plans
-    routes:
-      - texts:
-          - source: scene_text
-            paragraph: 20
-            text: "\"Melindra and I are not in a relationship,\" I say, as Leila's father takes a key out of his pocket and finally unlocks the door. \r\n\r\n\"Sure you're not,\" Leila writes, while rolling her eyes.\r\n\r\n\"I'm serious!\" I say.\r\n\r\n\"Whatever you say, Barry,\" Leila writes, looking thoroughly unconvinced.\r\n\r\n\"Shall we go in?\" Leila's father says, as he opens the door to his workshop.\r\n\r\n\"After you,\" Leila writes, and then we both follow her father inside the room.\r\n\r\nAs doctor Reidzek closes the door behind us, I take a quick look around, and I see that this workshop is not much different from the one that king Golmyck had beneath his throne room. Various tools and gadgets are thrown around on the floor and there is a workbench in the middle, with a rectangular metal device right on top of it and a few enchanting tools laid down on each side of the table. \r\n\r\nLeila's father takes the rectangular device off the table in order to clear some space, and then he asks me to give him my stat booster."
-        condition: b3_ch3_plans = 0
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_brinhorn
-                  b3_ch3_stats_unavailable: 1
-      - texts:
-          - source: scene_text
-            paragraph: 21
-            text: "\"Uh, yes... of course!\" I say, as Leila's father takes a key out of his pocket and finally unlocks the door. \"A relationship is exactly what we are in, Melindra and I!\"\r\n\r\n\"Shall we go in?\" Leila's father says, as he opens the door to his workshop.\r\n\r\n\"After you,\" Leila writes, and then we both follow her father inside the room.\r\n\r\nAs doctor Reidzek closes the door behind us, I take a quick look around, and I see that this workshop is not much different from the one that king Golmyck had beneath his throne room. Various tools and gadgets are thrown around on the floor and there is a workbench in the middle, with a rectangular metal device right on top of it and a few enchanting tools laid down on each side of the table. \r\n\r\nLeila's father takes the rectangular device off the table in order to clear some space, and then he asks me to give him my stat booster."
-        condition: b3_ch3_plans = 1
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_brinhorn
-                  b3_ch3_stats_unavailable: 1
-      - texts:
-          - source: scene_text
-            paragraph: 22
-            text: "\"It's no problem!\"\r\n\r\n\"Shall we go in?\" Leila's father says, as he opens the door to his workshop.\r\n\r\n\"After you,\" Leila writes, and then we both follow her father inside the room.\r\n\r\nAs doctor Reidzek closes the door behind us, I take a quick look around, and I see that this workshop is not much different from the one that king Golmyck had beneath his throne room. Various tools and gadgets are thrown around on the floor and there is a workbench in the middle, with a rectangular metal device right on top of it and a few enchanting tools laid down on each side of the table. \r\n\r\nLeila's father takes the rectangular device off the table in order to clear some space, and then he asks me to give him my stat booster."
-        condition: b3_ch3_plans = 2
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_brinhorn
-                  b3_ch3_stats_unavailable: 1
-      - texts:
-          - source: scene_text
-            paragraph: 23
-            text: "\"Well, technically it's just a vague promise. Anything could still happen!\"\r\n\r\n\"Barry, don't be absurd!\" Leila writes. \"I've only gotten to meet Rose for a short while, but from what Kate told me, she isn't the type to make a promise like that if she doesn't actually mean it. If she said that she will wait for you until the tournament is over, then she will do it.\"\r\n\r\n\"Of course...\" I say. \"You're right. I don't know what I was thinking.\"\r\n\r\n\"Shall we go in?\" Leila's father says, as he opens the door to his workshop.\r\n\r\n\"After you,\" Leila writes, and then we both follow her father inside the room.\r\n\r\nAs doctor Reidzek closes the door behind us, I take a quick look around, and I see that this workshop is not much different from the one that king Golmyck had beneath his throne room. Various tools and gadgets are thrown around on the floor and there is a workbench in the middle, with a rectangular metal device right on top of it and a few enchanting tools laid down on each side of the table. \r\n\r\nLeila's father takes the rectangular device off the table in order to clear some space, and then he asks me to give him my stat booster."
-        condition: b3_ch3_plans = 3
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_brinhorn
-                  b3_ch3_stats_unavailable: 1
-      - texts:
-          - source: scene_text
-            paragraph: 24
-            text: "\"It's no problem!\"\r\n\r\n\"Shall we go in?\" Leila's father says, as he opens the door to his workshop.\r\n\r\n\"After you,\" Leila writes, and then we both follow her father inside the room.\r\n\r\nAs doctor Reidzek closes the door behind us, I take a quick look around, and I see that this workshop is not much different from the one that king Golmyck had beneath his throne room. Various tools and gadgets are thrown around on the floor and there is a workbench in the middle, with a rectangular metal device right on top of it and a few enchanting tools laid down on each side of the table. \r\n\r\nLeila's father takes the rectangular device off the table in order to clear some space, and then he asks me to give him my stat booster."
-        condition: b3_ch3_plans = 4
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_brinhorn
-                  b3_ch3_stats_unavailable: 1
-      - texts:
-          - source: scene_text
-            paragraph: 25
-            text: "\"Actually, Kate and I are just friends.\"\r\n\r\n\"You are?...\" Leila writes, confused. \"But Daren said--\"\r\n\r\n\"Forget what Daren said,\" I say. \"He's been getting the wrong idea about me and Kate from the first day we met. Trust me, there's nothing between us.\"\r\n\r\n\"Oh...\" Leila writes, now looking somewhat embarrassed. \"Well... I guess it was a misunderstanding, then. Never mind what I said.\"\r\n\r\n\"Shall we go in?\" Leila's father says, as he opens the door to his workshop.\r\n\r\n\"After you,\" Leila writes, and then we both follow her father inside the room.\r\n\r\nAs doctor Reidzek closes the door behind us, I take a quick look around, and I see that this workshop is not much different from the one that king Golmyck had beneath his throne room. Various tools and gadgets are thrown around on the floor and there is a workbench in the middle, with a rectangular metal device right on top of it and a few enchanting tools laid down on each side of the table. \r\n\r\nLeila's father takes the rectangular device off the table in order to clear some space, and then he asks me to give him my stat booster."
-        condition: b3_ch3_plans = 5
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_brinhorn
-                  b3_ch3_stats_unavailable: 1
-      - texts:
-          - source: scene_text
-            paragraph: 26
-            text: "\"Actually, I'd prefer to focus on winning the Magium, without any distractions.\"\r\n\r\n\"Without any distractions?...\" Leila writes. \"Oh, you mean without getting romantically involved with anyone. Yes, I suppose that would make sense.\"\r\n\r\n\"Shall we go in?\" Leila's father says, as he opens the door to his workshop.\r\n\r\n\"After you,\" Leila writes, and then we both follow her father inside the room.\r\n\r\nAs doctor Reidzek closes the door behind us, I take a quick look around, and I see that this workshop is not much different from the one that king Golmyck had beneath his throne room. Various tools and gadgets are thrown around on the floor and there is a workbench in the middle, with a rectangular metal device right on top of it and a few enchanting tools laid down on each side of the table. \r\n\r\nLeila's father takes the rectangular device off the table in order to clear some space, and then he asks me to give him my stat booster."
-        condition: b3_ch3_plans = 6
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_brinhorn
-                  b3_ch3_stats_unavailable: 1
-      - texts:
-          - source: scene_text_2
-            paragraph: 10
-            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
-        condition: b3_ch1_unlock = 2
-        set:
-          failed_checks:
-            - '[ Stat device locked - check failed ]'
-          b3_ch3_chains: 0
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_brinhorn
-                  b3_ch3_stats_unavailable: 1
-      - texts:
-          - source: scene_text_2
-            paragraph: 10
-            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
-        condition: premonition < 4 AND b3_ch1_unlock <> 2
-        set:
-          failed_checks:
-            - '[ Premonition check failed - level 4 ]'
-          b3_ch3_chains: 0
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03a_brinhorn
-                  b3_ch3_stats_unavailable: 1
-      - texts:
-          - source: scene_text_2
-            paragraph: 9
-            text: "Just before I hand it to him I suddenly get a vision, but this time everything is blurry and all I can make out are some vague noises. At first, I hear the sound of some chains rattling. Then, I hear a young boy screaming in the distance. And finally, right before the vision ends, I hear Melindra shouting loudly, in a panicked tone: \"Barry, wait! Don't do it!\"\r\n\r\nWhen the vision ends, I am left confused and somewhat disturbed. I have never had such a vague premonition before. What could this possibly have been warning me about? And when are these events going to happen?\r\n\r\n\"Is everything alright, Barry?\" Leila's father asks, as he sees me just standing there, with my device in my hand.\r\n\r\n\"What?...\" I say. \"Oh, yeah, I'm fine. Here's the device.\"\r\n\r\nI hand him my stat booster and he places it on the workbench. He then pulls out two sharp metal enchanting tools from the table, which he uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
-        condition: premonition = 4 AND b3_ch1_unlock <> 2
-        set:
-          successful_checks:
-            - '[ Premonition check successful - level 4 ]'
-          b3_ch3_chains: 1
+    effects:
+      - set:
           ac_b3_ch3_ominous: 1
         achievement:
           id: ac_b3_ch3_ominous
           title: Ominous foreshadowing
+        condition: premonition = 4 AND b3_ch1_unlock <> 2
+    routes:
+      - condition: b3_ch3_plans = 0
+        texts:
+          - source: scene_text
+            paragraph: 20
+            text: "\"Melindra and I are not in a relationship,\" I say, as Leila's father takes a key out of his pocket and finally unlocks the door. \r\n\r\n\"Sure you're not,\" Leila writes, while rolling her eyes.\r\n\r\n\"I'm serious!\" I say.\r\n\r\n\"Whatever you say, Barry,\" Leila writes, looking thoroughly unconvinced.\r\n\r\n\"Shall we go in?\" Leila's father says, as he opens the door to his workshop.\r\n\r\n\"After you,\" Leila writes, and then we both follow her father inside the room.\r\n\r\nAs doctor Reidzek closes the door behind us, I take a quick look around, and I see that this workshop is not much different from the one that king Golmyck had beneath his throne room. Various tools and gadgets are thrown around on the floor and there is a workbench in the middle, with a rectangular metal device right on top of it and a few enchanting tools laid down on each side of the table. \r\n\r\nLeila's father takes the rectangular device off the table in order to clear some space, and then he asks me to give him my stat booster."
+          - source: scene_text_2
+            paragraph: 10
+            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: b3_ch1_unlock = 2
+          - source: scene_text_2
+            paragraph: 10
+            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: premonition < 4 AND b3_ch1_unlock != 2
+          - source: scene_text_2
+            paragraph: 9
+            text: "Just before I hand it to him I suddenly get a vision, but this time everything is blurry and all I can make out are some vague noises. At first, I hear the sound of some chains rattling. Then, I hear a young boy screaming in the distance. And finally, right before the vision ends, I hear Melindra shouting loudly, in a panicked tone: \"Barry, wait! Don't do it!\"\r\n\r\nWhen the vision ends, I am left confused and somewhat disturbed. I have never had such a vague premonition before. What could this possibly have been warning me about? And when are these events going to happen?\r\n\r\n\"Is everything alright, Barry?\" Leila's father asks, as he sees me just standing there, with my device in my hand.\r\n\r\n\"What?...\" I say. \"Oh, yeah, I'm fine. Here's the device.\"\r\n\r\nI hand him my stat booster and he places it on the workbench. He then pulls out two sharp metal enchanting tools from the table, which he uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: premonition = 4 AND b3_ch1_unlock != 2
+          - source: scene_3
+            paragraph: 10
+            text: "\"Splendid!\" Leila's father says, as he sets my device aside. \"Leila, can you hand me your device, please?\"\r\n\r\nAs soon as Leila gives her stat booster to her father, he puts it on the table and begins working on it with the same enchanting tools that he was using before. For about twenty seconds or so, both Leila and I watch doctor Reidzek in complete silence, as he continues to move his tools very carefully above the device's surface.\r\n\r\n\"There's no need for you to be so quiet, you know,\" Leila's father says, as he slightly raises his head to look at us. \"I can concentrate even if you two are having a little chat in the meantime.\"\r\n\r\n\"Oh,\" Leila writes. \"Well, in that case, I suppose I wouldn't mind hearing a little more about Barry's life before the tournament. Tell us more about your adventures, Barry!\"\r\n\r\n\"I told you, there isn't really anything all that interesting to talk about...\" I say.\r\n\r\n\"I think you're only saying this because you've been reading too many mage stories,\" Leila writes. \"By most people's standards, even the fact of getting out of your own hometown and exploring the world is an adventure in itself. Here, let me help you. Why don't you tell us more about those mages to whom you've served as an apprentice? There has to be at least one interesting story you could tell us from the time when you were working for them, right?\""
         choices:
           - position: 1
             text: Continue
@@ -664,7 +495,158 @@ scenes:
               - set:
                   current_scene: b3_ch03a_brinhorn
                   b3_ch3_stats_unavailable: 1
-      - texts:
+      - condition: b3_ch3_plans = 1
+        texts:
+          - source: scene_text
+            paragraph: 21
+            text: "\"Uh, yes... of course!\" I say, as Leila's father takes a key out of his pocket and finally unlocks the door. \"A relationship is exactly what we are in, Melindra and I!\"\r\n\r\n\"Shall we go in?\" Leila's father says, as he opens the door to his workshop.\r\n\r\n\"After you,\" Leila writes, and then we both follow her father inside the room.\r\n\r\nAs doctor Reidzek closes the door behind us, I take a quick look around, and I see that this workshop is not much different from the one that king Golmyck had beneath his throne room. Various tools and gadgets are thrown around on the floor and there is a workbench in the middle, with a rectangular metal device right on top of it and a few enchanting tools laid down on each side of the table. \r\n\r\nLeila's father takes the rectangular device off the table in order to clear some space, and then he asks me to give him my stat booster."
+          - source: scene_text_2
+            paragraph: 10
+            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: b3_ch1_unlock = 2
+          - source: scene_text_2
+            paragraph: 10
+            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: premonition < 4 AND b3_ch1_unlock != 2
+          - source: scene_text_2
+            paragraph: 9
+            text: "Just before I hand it to him I suddenly get a vision, but this time everything is blurry and all I can make out are some vague noises. At first, I hear the sound of some chains rattling. Then, I hear a young boy screaming in the distance. And finally, right before the vision ends, I hear Melindra shouting loudly, in a panicked tone: \"Barry, wait! Don't do it!\"\r\n\r\nWhen the vision ends, I am left confused and somewhat disturbed. I have never had such a vague premonition before. What could this possibly have been warning me about? And when are these events going to happen?\r\n\r\n\"Is everything alright, Barry?\" Leila's father asks, as he sees me just standing there, with my device in my hand.\r\n\r\n\"What?...\" I say. \"Oh, yeah, I'm fine. Here's the device.\"\r\n\r\nI hand him my stat booster and he places it on the workbench. He then pulls out two sharp metal enchanting tools from the table, which he uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: premonition = 4 AND b3_ch1_unlock != 2
+          - source: scene_3
+            paragraph: 10
+            text: "\"Splendid!\" Leila's father says, as he sets my device aside. \"Leila, can you hand me your device, please?\"\r\n\r\nAs soon as Leila gives her stat booster to her father, he puts it on the table and begins working on it with the same enchanting tools that he was using before. For about twenty seconds or so, both Leila and I watch doctor Reidzek in complete silence, as he continues to move his tools very carefully above the device's surface.\r\n\r\n\"There's no need for you to be so quiet, you know,\" Leila's father says, as he slightly raises his head to look at us. \"I can concentrate even if you two are having a little chat in the meantime.\"\r\n\r\n\"Oh,\" Leila writes. \"Well, in that case, I suppose I wouldn't mind hearing a little more about Barry's life before the tournament. Tell us more about your adventures, Barry!\"\r\n\r\n\"I told you, there isn't really anything all that interesting to talk about...\" I say.\r\n\r\n\"I think you're only saying this because you've been reading too many mage stories,\" Leila writes. \"By most people's standards, even the fact of getting out of your own hometown and exploring the world is an adventure in itself. Here, let me help you. Why don't you tell us more about those mages to whom you've served as an apprentice? There has to be at least one interesting story you could tell us from the time when you were working for them, right?\""
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch03a_brinhorn
+                  b3_ch3_stats_unavailable: 1
+      - condition: b3_ch3_plans = 2
+        texts:
+          - source: scene_text
+            paragraph: 22
+            text: "\"It's no problem!\"\r\n\r\n\"Shall we go in?\" Leila's father says, as he opens the door to his workshop.\r\n\r\n\"After you,\" Leila writes, and then we both follow her father inside the room.\r\n\r\nAs doctor Reidzek closes the door behind us, I take a quick look around, and I see that this workshop is not much different from the one that king Golmyck had beneath his throne room. Various tools and gadgets are thrown around on the floor and there is a workbench in the middle, with a rectangular metal device right on top of it and a few enchanting tools laid down on each side of the table. \r\n\r\nLeila's father takes the rectangular device off the table in order to clear some space, and then he asks me to give him my stat booster."
+          - source: scene_text_2
+            paragraph: 10
+            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: b3_ch1_unlock = 2
+          - source: scene_text_2
+            paragraph: 10
+            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: premonition < 4 AND b3_ch1_unlock != 2
+          - source: scene_text_2
+            paragraph: 9
+            text: "Just before I hand it to him I suddenly get a vision, but this time everything is blurry and all I can make out are some vague noises. At first, I hear the sound of some chains rattling. Then, I hear a young boy screaming in the distance. And finally, right before the vision ends, I hear Melindra shouting loudly, in a panicked tone: \"Barry, wait! Don't do it!\"\r\n\r\nWhen the vision ends, I am left confused and somewhat disturbed. I have never had such a vague premonition before. What could this possibly have been warning me about? And when are these events going to happen?\r\n\r\n\"Is everything alright, Barry?\" Leila's father asks, as he sees me just standing there, with my device in my hand.\r\n\r\n\"What?...\" I say. \"Oh, yeah, I'm fine. Here's the device.\"\r\n\r\nI hand him my stat booster and he places it on the workbench. He then pulls out two sharp metal enchanting tools from the table, which he uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: premonition = 4 AND b3_ch1_unlock != 2
+          - source: scene_3
+            paragraph: 10
+            text: "\"Splendid!\" Leila's father says, as he sets my device aside. \"Leila, can you hand me your device, please?\"\r\n\r\nAs soon as Leila gives her stat booster to her father, he puts it on the table and begins working on it with the same enchanting tools that he was using before. For about twenty seconds or so, both Leila and I watch doctor Reidzek in complete silence, as he continues to move his tools very carefully above the device's surface.\r\n\r\n\"There's no need for you to be so quiet, you know,\" Leila's father says, as he slightly raises his head to look at us. \"I can concentrate even if you two are having a little chat in the meantime.\"\r\n\r\n\"Oh,\" Leila writes. \"Well, in that case, I suppose I wouldn't mind hearing a little more about Barry's life before the tournament. Tell us more about your adventures, Barry!\"\r\n\r\n\"I told you, there isn't really anything all that interesting to talk about...\" I say.\r\n\r\n\"I think you're only saying this because you've been reading too many mage stories,\" Leila writes. \"By most people's standards, even the fact of getting out of your own hometown and exploring the world is an adventure in itself. Here, let me help you. Why don't you tell us more about those mages to whom you've served as an apprentice? There has to be at least one interesting story you could tell us from the time when you were working for them, right?\""
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch03a_brinhorn
+                  b3_ch3_stats_unavailable: 1
+      - condition: b3_ch3_plans = 3
+        texts:
+          - source: scene_text
+            paragraph: 23
+            text: "\"Well, technically it's just a vague promise. Anything could still happen!\"\r\n\r\n\"Barry, don't be absurd!\" Leila writes. \"I've only gotten to meet Rose for a short while, but from what Kate told me, she isn't the type to make a promise like that if she doesn't actually mean it. If she said that she will wait for you until the tournament is over, then she will do it.\"\r\n\r\n\"Of course...\" I say. \"You're right. I don't know what I was thinking.\"\r\n\r\n\"Shall we go in?\" Leila's father says, as he opens the door to his workshop.\r\n\r\n\"After you,\" Leila writes, and then we both follow her father inside the room.\r\n\r\nAs doctor Reidzek closes the door behind us, I take a quick look around, and I see that this workshop is not much different from the one that king Golmyck had beneath his throne room. Various tools and gadgets are thrown around on the floor and there is a workbench in the middle, with a rectangular metal device right on top of it and a few enchanting tools laid down on each side of the table. \r\n\r\nLeila's father takes the rectangular device off the table in order to clear some space, and then he asks me to give him my stat booster."
+          - source: scene_text_2
+            paragraph: 10
+            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: b3_ch1_unlock = 2
+          - source: scene_text_2
+            paragraph: 10
+            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: premonition < 4 AND b3_ch1_unlock != 2
+          - source: scene_text_2
+            paragraph: 9
+            text: "Just before I hand it to him I suddenly get a vision, but this time everything is blurry and all I can make out are some vague noises. At first, I hear the sound of some chains rattling. Then, I hear a young boy screaming in the distance. And finally, right before the vision ends, I hear Melindra shouting loudly, in a panicked tone: \"Barry, wait! Don't do it!\"\r\n\r\nWhen the vision ends, I am left confused and somewhat disturbed. I have never had such a vague premonition before. What could this possibly have been warning me about? And when are these events going to happen?\r\n\r\n\"Is everything alright, Barry?\" Leila's father asks, as he sees me just standing there, with my device in my hand.\r\n\r\n\"What?...\" I say. \"Oh, yeah, I'm fine. Here's the device.\"\r\n\r\nI hand him my stat booster and he places it on the workbench. He then pulls out two sharp metal enchanting tools from the table, which he uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: premonition = 4 AND b3_ch1_unlock != 2
+          - source: scene_3
+            paragraph: 10
+            text: "\"Splendid!\" Leila's father says, as he sets my device aside. \"Leila, can you hand me your device, please?\"\r\n\r\nAs soon as Leila gives her stat booster to her father, he puts it on the table and begins working on it with the same enchanting tools that he was using before. For about twenty seconds or so, both Leila and I watch doctor Reidzek in complete silence, as he continues to move his tools very carefully above the device's surface.\r\n\r\n\"There's no need for you to be so quiet, you know,\" Leila's father says, as he slightly raises his head to look at us. \"I can concentrate even if you two are having a little chat in the meantime.\"\r\n\r\n\"Oh,\" Leila writes. \"Well, in that case, I suppose I wouldn't mind hearing a little more about Barry's life before the tournament. Tell us more about your adventures, Barry!\"\r\n\r\n\"I told you, there isn't really anything all that interesting to talk about...\" I say.\r\n\r\n\"I think you're only saying this because you've been reading too many mage stories,\" Leila writes. \"By most people's standards, even the fact of getting out of your own hometown and exploring the world is an adventure in itself. Here, let me help you. Why don't you tell us more about those mages to whom you've served as an apprentice? There has to be at least one interesting story you could tell us from the time when you were working for them, right?\""
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch03a_brinhorn
+                  b3_ch3_stats_unavailable: 1
+      - condition: b3_ch3_plans = 4
+        texts:
+          - source: scene_text
+            paragraph: 24
+            text: "\"It's no problem!\"\r\n\r\n\"Shall we go in?\" Leila's father says, as he opens the door to his workshop.\r\n\r\n\"After you,\" Leila writes, and then we both follow her father inside the room.\r\n\r\nAs doctor Reidzek closes the door behind us, I take a quick look around, and I see that this workshop is not much different from the one that king Golmyck had beneath his throne room. Various tools and gadgets are thrown around on the floor and there is a workbench in the middle, with a rectangular metal device right on top of it and a few enchanting tools laid down on each side of the table. \r\n\r\nLeila's father takes the rectangular device off the table in order to clear some space, and then he asks me to give him my stat booster."
+          - source: scene_text_2
+            paragraph: 10
+            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: b3_ch1_unlock = 2
+          - source: scene_text_2
+            paragraph: 10
+            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: premonition < 4 AND b3_ch1_unlock != 2
+          - source: scene_text_2
+            paragraph: 9
+            text: "Just before I hand it to him I suddenly get a vision, but this time everything is blurry and all I can make out are some vague noises. At first, I hear the sound of some chains rattling. Then, I hear a young boy screaming in the distance. And finally, right before the vision ends, I hear Melindra shouting loudly, in a panicked tone: \"Barry, wait! Don't do it!\"\r\n\r\nWhen the vision ends, I am left confused and somewhat disturbed. I have never had such a vague premonition before. What could this possibly have been warning me about? And when are these events going to happen?\r\n\r\n\"Is everything alright, Barry?\" Leila's father asks, as he sees me just standing there, with my device in my hand.\r\n\r\n\"What?...\" I say. \"Oh, yeah, I'm fine. Here's the device.\"\r\n\r\nI hand him my stat booster and he places it on the workbench. He then pulls out two sharp metal enchanting tools from the table, which he uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: premonition = 4 AND b3_ch1_unlock != 2
+          - source: scene_3
+            paragraph: 10
+            text: "\"Splendid!\" Leila's father says, as he sets my device aside. \"Leila, can you hand me your device, please?\"\r\n\r\nAs soon as Leila gives her stat booster to her father, he puts it on the table and begins working on it with the same enchanting tools that he was using before. For about twenty seconds or so, both Leila and I watch doctor Reidzek in complete silence, as he continues to move his tools very carefully above the device's surface.\r\n\r\n\"There's no need for you to be so quiet, you know,\" Leila's father says, as he slightly raises his head to look at us. \"I can concentrate even if you two are having a little chat in the meantime.\"\r\n\r\n\"Oh,\" Leila writes. \"Well, in that case, I suppose I wouldn't mind hearing a little more about Barry's life before the tournament. Tell us more about your adventures, Barry!\"\r\n\r\n\"I told you, there isn't really anything all that interesting to talk about...\" I say.\r\n\r\n\"I think you're only saying this because you've been reading too many mage stories,\" Leila writes. \"By most people's standards, even the fact of getting out of your own hometown and exploring the world is an adventure in itself. Here, let me help you. Why don't you tell us more about those mages to whom you've served as an apprentice? There has to be at least one interesting story you could tell us from the time when you were working for them, right?\""
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch03a_brinhorn
+                  b3_ch3_stats_unavailable: 1
+      - condition: b3_ch3_plans = 5
+        texts:
+          - source: scene_text
+            paragraph: 25
+            text: "\"Actually, Kate and I are just friends.\"\r\n\r\n\"You are?...\" Leila writes, confused. \"But Daren said--\"\r\n\r\n\"Forget what Daren said,\" I say. \"He's been getting the wrong idea about me and Kate from the first day we met. Trust me, there's nothing between us.\"\r\n\r\n\"Oh...\" Leila writes, now looking somewhat embarrassed. \"Well... I guess it was a misunderstanding, then. Never mind what I said.\"\r\n\r\n\"Shall we go in?\" Leila's father says, as he opens the door to his workshop.\r\n\r\n\"After you,\" Leila writes, and then we both follow her father inside the room.\r\n\r\nAs doctor Reidzek closes the door behind us, I take a quick look around, and I see that this workshop is not much different from the one that king Golmyck had beneath his throne room. Various tools and gadgets are thrown around on the floor and there is a workbench in the middle, with a rectangular metal device right on top of it and a few enchanting tools laid down on each side of the table. \r\n\r\nLeila's father takes the rectangular device off the table in order to clear some space, and then he asks me to give him my stat booster."
+          - source: scene_text_2
+            paragraph: 10
+            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: b3_ch1_unlock = 2
+          - source: scene_text_2
+            paragraph: 10
+            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: premonition < 4 AND b3_ch1_unlock != 2
+          - source: scene_text_2
+            paragraph: 9
+            text: "Just before I hand it to him I suddenly get a vision, but this time everything is blurry and all I can make out are some vague noises. At first, I hear the sound of some chains rattling. Then, I hear a young boy screaming in the distance. And finally, right before the vision ends, I hear Melindra shouting loudly, in a panicked tone: \"Barry, wait! Don't do it!\"\r\n\r\nWhen the vision ends, I am left confused and somewhat disturbed. I have never had such a vague premonition before. What could this possibly have been warning me about? And when are these events going to happen?\r\n\r\n\"Is everything alright, Barry?\" Leila's father asks, as he sees me just standing there, with my device in my hand.\r\n\r\n\"What?...\" I say. \"Oh, yeah, I'm fine. Here's the device.\"\r\n\r\nI hand him my stat booster and he places it on the workbench. He then pulls out two sharp metal enchanting tools from the table, which he uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: premonition = 4 AND b3_ch1_unlock != 2
+          - source: scene_3
+            paragraph: 10
+            text: "\"Splendid!\" Leila's father says, as he sets my device aside. \"Leila, can you hand me your device, please?\"\r\n\r\nAs soon as Leila gives her stat booster to her father, he puts it on the table and begins working on it with the same enchanting tools that he was using before. For about twenty seconds or so, both Leila and I watch doctor Reidzek in complete silence, as he continues to move his tools very carefully above the device's surface.\r\n\r\n\"There's no need for you to be so quiet, you know,\" Leila's father says, as he slightly raises his head to look at us. \"I can concentrate even if you two are having a little chat in the meantime.\"\r\n\r\n\"Oh,\" Leila writes. \"Well, in that case, I suppose I wouldn't mind hearing a little more about Barry's life before the tournament. Tell us more about your adventures, Barry!\"\r\n\r\n\"I told you, there isn't really anything all that interesting to talk about...\" I say.\r\n\r\n\"I think you're only saying this because you've been reading too many mage stories,\" Leila writes. \"By most people's standards, even the fact of getting out of your own hometown and exploring the world is an adventure in itself. Here, let me help you. Why don't you tell us more about those mages to whom you've served as an apprentice? There has to be at least one interesting story you could tell us from the time when you were working for them, right?\""
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch03a_brinhorn
+                  b3_ch3_stats_unavailable: 1
+      - condition: b3_ch3_plans = 6
+        texts:
+          - source: scene_text
+            paragraph: 26
+            text: "\"Actually, I'd prefer to focus on winning the Magium, without any distractions.\"\r\n\r\n\"Without any distractions?...\" Leila writes. \"Oh, you mean without getting romantically involved with anyone. Yes, I suppose that would make sense.\"\r\n\r\n\"Shall we go in?\" Leila's father says, as he opens the door to his workshop.\r\n\r\n\"After you,\" Leila writes, and then we both follow her father inside the room.\r\n\r\nAs doctor Reidzek closes the door behind us, I take a quick look around, and I see that this workshop is not much different from the one that king Golmyck had beneath his throne room. Various tools and gadgets are thrown around on the floor and there is a workbench in the middle, with a rectangular metal device right on top of it and a few enchanting tools laid down on each side of the table. \r\n\r\nLeila's father takes the rectangular device off the table in order to clear some space, and then he asks me to give him my stat booster."
+          - source: scene_text_2
+            paragraph: 10
+            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: b3_ch1_unlock = 2
+          - source: scene_text_2
+            paragraph: 10
+            text: "Once I take it out of my pocket and hand it to him, he places it on the workbench and he pulls out two sharp metal enchanting tools from under the table, which he then uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: premonition < 4 AND b3_ch1_unlock != 2
+          - source: scene_text_2
+            paragraph: 9
+            text: "Just before I hand it to him I suddenly get a vision, but this time everything is blurry and all I can make out are some vague noises. At first, I hear the sound of some chains rattling. Then, I hear a young boy screaming in the distance. And finally, right before the vision ends, I hear Melindra shouting loudly, in a panicked tone: \"Barry, wait! Don't do it!\"\r\n\r\nWhen the vision ends, I am left confused and somewhat disturbed. I have never had such a vague premonition before. What could this possibly have been warning me about? And when are these events going to happen?\r\n\r\n\"Is everything alright, Barry?\" Leila's father asks, as he sees me just standing there, with my device in my hand.\r\n\r\n\"What?...\" I say. \"Oh, yeah, I'm fine. Here's the device.\"\r\n\r\nI hand him my stat booster and he places it on the workbench. He then pulls out two sharp metal enchanting tools from the table, which he uses to carefully manipulate the aura around the device.\r\n\r\n\"Hmm...\" Leila's father says. \"It has been a while since I've worked with a non-modified stat device. It's going to take me a bit of time to get used to it again. Barry, would you mind if I worked on Leila's stat booster before yours? I only need to do a few minor adjustments for her device, but it's going to take at least a few hours to finish working on yours.\"\r\n\r\n\"It's alright, you can work on Leila's device first,\" I say. \"I'm not in that much of a hurry.\""
+            condition: premonition = 4 AND b3_ch1_unlock != 2
           - source: scene_3
             paragraph: 10
             text: "\"Splendid!\" Leila's father says, as he sets my device aside. \"Leila, can you hand me your device, please?\"\r\n\r\nAs soon as Leila gives her stat booster to her father, he puts it on the table and begins working on it with the same enchanting tools that he was using before. For about twenty seconds or so, both Leila and I watch doctor Reidzek in complete silence, as he continues to move his tools very carefully above the device's surface.\r\n\r\n\"There's no need for you to be so quiet, you know,\" Leila's father says, as he slightly raises his head to look at us. \"I can concentrate even if you two are having a little chat in the meantime.\"\r\n\r\n\"Oh,\" Leila writes. \"Well, in that case, I suppose I wouldn't mind hearing a little more about Barry's life before the tournament. Tell us more about your adventures, Barry!\"\r\n\r\n\"I told you, there isn't really anything all that interesting to talk about...\" I say.\r\n\r\n\"I think you're only saying this because you've been reading too many mage stories,\" Leila writes. \"By most people's standards, even the fact of getting out of your own hometown and exploring the world is an adventure in itself. Here, let me help you. Why don't you tell us more about those mages to whom you've served as an apprentice? There has to be at least one interesting story you could tell us from the time when you were working for them, right?\""
@@ -761,7 +743,8 @@ scenes:
               b3_ch3_magical: 2
   - name: b3_ch03a_workbench
     routes:
-      - texts:
+      - condition: b3_ch3_magical = 0
+        texts:
           - source: scene_text
             paragraph: 30
             text: "\"Isn't there a way to crack the code without using brute force?\"\r\n\r\n\"If you limit yourself to only cracking the code, without trying to unlock the stats by force, you shouldn't be under any risk of damaging your device,\" Leila's father says. \"However, you should keep in mind that a method like this could take a very long time to yield you any results. It all depends on your luck.\"\r\n  \r\n\"Let's hope we are really lucky, then...\" I say."
@@ -771,14 +754,14 @@ scenes:
           - source: scene_3
             paragraph: 13
             text: "\"Of course,\" Leila writes, as she picks up her stat device from the workbench. \"In that case, we'll leave you to your work. Come on, Barry, let's go back to the waiting room, for now.\"\r\n\r\nLeila and I both say goodbye to doctor Reidzek, and then we head back towards our friends, through the same corridor that we used to come here. \r\n\r\nOn our way back we run into Peter and also into a few other people that we don't recognize, who were using the same corridor to arrive in different areas from the underground rebel base, and while we're walking, Leila takes the opportunity to ask me a few more questions about my past. After walking for a few minutes, we finally make it back to the waiting room, where we see that Daren and Hadrik have already been healed, and that they were now waiting for us to return."
-        condition: b3_ch3_magical = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch03a_technique
-      - texts:
+      - condition: b3_ch3_magical = 1
+        texts:
           - source: scene_text
             paragraph: 31
             text: "\"Is there anyone aside from the higher ranked lessathi who might know the code?\"\r\n\r\n\"It's possible,\" Leila's father says. \"Especially if they are well acquainted with some of the higher ranked staff, or if they are working directly under them and heard it by accident at some point. Unfortunately, this is all speculation on my part, and I don't have any specific person in mind.\"\r\n\r\n\"Yeah, I figured this might be the case,\" I say. \"Thanks, anyway!\""
@@ -788,14 +771,14 @@ scenes:
           - source: scene_3
             paragraph: 13
             text: "\"Of course,\" Leila writes, as she picks up her stat device from the workbench. \"In that case, we'll leave you to your work. Come on, Barry, let's go back to the waiting room, for now.\"\r\n\r\nLeila and I both say goodbye to doctor Reidzek, and then we head back towards our friends, through the same corridor that we used to come here. \r\n\r\nOn our way back we run into Peter and also into a few other people that we don't recognize, who were using the same corridor to arrive in different areas from the underground rebel base, and while we're walking, Leila takes the opportunity to ask me a few more questions about my past. After walking for a few minutes, we finally make it back to the waiting room, where we see that Daren and Hadrik have already been healed, and that they were now waiting for us to return."
-        condition: b3_ch3_magical = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch03a_technique
-      - texts:
+      - condition: b3_ch3_magical = 2
+        texts:
           - source: scene_text
             paragraph: 32
             text: "\"Why do you think the aura stats are less protected than the magical stats?\"\r\n\r\n\"These devices were made a very long time ago, so I couldn't tell you for sure,\" Leila's father says, \"but if I were to take a guess, I'd say it's likely because they were locked away for different reasons. The magical stats were probably first created in the hopes that they would work for regular lessathi. Half-lessathi were never really seen as equal to pure-blood lessathi, so the locking of the magical stats was almost certainly put in place in order to make sure that a half-lessathi would never get access to these stats by accident. On the other hand, the aura stats were hidden as a safety precaution, because they were still in an experimental state when the lessathi stopped working on these devices, and they never got to finish all the tests. That being said, from what I could gather, the three stats seemed for the most part functional, so you shouldn't worry too much about them failing on you in a crucial moment.\"\r\n\r\n\"Right...\" I say, in a not entirely convinced tone."
@@ -805,7 +788,6 @@ scenes:
           - source: scene_3
             paragraph: 13
             text: "\"Of course,\" Leila writes, as she picks up her stat device from the workbench. \"In that case, we'll leave you to your work. Come on, Barry, let's go back to the waiting room, for now.\"\r\n\r\nLeila and I both say goodbye to doctor Reidzek, and then we head back towards our friends, through the same corridor that we used to come here. \r\n\r\nOn our way back we run into Peter and also into a few other people that we don't recognize, who were using the same corridor to arrive in different areas from the underground rebel base, and while we're walking, Leila takes the opportunity to ask me a few more questions about my past. After walking for a few minutes, we finally make it back to the waiting room, where we see that Daren and Hadrik have already been healed, and that they were now waiting for us to return."
-        condition: b3_ch3_magical = 2
         choices:
           - position: 1
             text: Continue
@@ -1159,7 +1141,8 @@ scenes:
               b3_ch3_assassin: 2
   - name: b3_ch03a_affiliation
     routes:
-      - texts:
+      - condition: b3_ch3_assassin = 0
+        texts:
           - source: scene_text
             paragraph: 49
             text: "\"It's because Wilhelm was a wimp. Just like every other assassin.\"\r\n\r\n\"You are saying this now, but surely you must have had at least a little trouble in dealing with him...\" Albert says.\r\n\r\n\"Nah, he was weak, in the same way that every assassin is weak,\" I say. \"He didn't have what it takes to fight me face to face, so he tried petty tricks and paid the price. That's all there is to it.\"\r\n\r\n\"I see,\" Albert says, with a polite smile. \"Well, let us hope that the two of us will never need to cross blades in the future, then. I would hate to have to prove you wrong.\"\r\n\r\n\"I hope so too,\" I say. \"For your sake.\"\r\n\r\nAlbert nods to me, with the same smile as before, and then he walks past me. As I turn around to look for him, I realize that he's already gone. I'm going to need to look out for this one. My instincts tell me that he is quite a bit more dangerous than Wilhelm, so I shouldn't underestimate him."
@@ -1186,7 +1169,6 @@ scenes:
               metal ball there on purpose because he knew that one of our
               listening devices was planted nearby. So, now I ask you again...
               What exactly is your affiliation with Eiden?"
-        condition: b3_ch3_assassin = 0
         choices:
           - position: 1
             text: >-
@@ -1205,7 +1187,8 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch03a_whim
-      - texts:
+      - condition: b3_ch3_assassin = 1
+        texts:
           - source: scene_text
             paragraph: 50
             text: "\"It's because I am simply unbeatable.\"\r\n\r\n\"And very modest as well, it would seem!\" Albert says.\r\n\r\n\"Of course,\" I say. \"Even when it comes to modesty, nobody can surpass me!\"\r\n\r\n\"No doubt,\" Albert says. \"Well, if you truly are as unbeatable as you say, then let us hope we never become enemies. I would hope to have to prove you wrong.\"\r\n\r\nHe then smiles politely and he walks past me, without saying another word. As I turn around to look for him, I realize that he's already gone. I'm going to need to look out for this one. My instincts tell me that he is quite a bit more dangerous than Wilhelm, so I shouldn't underestimate him."
@@ -1232,7 +1215,6 @@ scenes:
               metal ball there on purpose because he knew that one of our
               listening devices was planted nearby. So, now I ask you again...
               What exactly is your affiliation with Eiden?"
-        condition: b3_ch3_assassin = 1
         choices:
           - position: 1
             text: >-
@@ -1251,7 +1233,8 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch03a_whim
-      - texts:
+      - condition: b3_ch3_assassin = 2
+        texts:
           - source: scene_text
             paragraph: 51
             text: "\"There were far bigger threats than an assassin on that battlefield, I assure you.\"\r\n\r\n\"Still...\" Albert says, \"dealing with an assassin requires an entirely different skillset than what you would normally need in order to defeat some gladiators or some beasts. Even if he may not have been as strong as your other adversaries, surviving an assassination attempt is definitely an impressive achievement in itself. You have my sincerest congratulations.\"\r\n\r\n\"You're not going to try to kill me too, are you?\" I say.\r\n\r\nAlbert laughs.\r\n\r\n\"Only if you force me to, Barry,\" he says. \"However, at this point in time we are allies, not enemies, so you don't need to worry about such things. Anyway, I think I've held you long enough. Have fun with your exploring. I'm sure that we will be seeing each other again soon.\"\r\n\r\nAlbert then smiles politely and he walks past me, without saying another word. As I turn around to look for him, I realize that he's already gone. I'm going to need to look out for this one. My instincts tell me that he is quite a bit more dangerous than Wilhelm, so I shouldn't underestimate him."
@@ -1278,7 +1261,6 @@ scenes:
               metal ball there on purpose because he knew that one of our
               listening devices was planted nearby. So, now I ask you again...
               What exactly is your affiliation with Eiden?"
-        condition: b3_ch3_assassin = 2
         choices:
           - position: 1
             text: >-

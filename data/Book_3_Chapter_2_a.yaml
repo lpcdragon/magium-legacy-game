@@ -88,86 +88,58 @@ scenes:
           - set:
               current_scene: b3_ch02a_unimpressed
   - name: b3_ch02a_unimpressed
-    routes:
-      - texts:
-          - source: scene_text
-            paragraph: 6
-            text: "\"Good morning!\" Daren says in a loud tone, to make sure that the man in front of the gate could hear him. \"Are you the one that I need to talk to in order to gain access inside the city?\"\r\n\r\nThe guard doesn't answer him right away. He was sitting on a chair when we arrived, measuring us up and down with a rather unimpressed look on his face, and while Daren was talking, it looked as if the gate keeper was only paying attention to about half of what he was saying.\r\n\r\nDaren waits patiently for the guard to slowly get up from his chair and to walk towards him, while two metal golems that were standing in front of the gate seemed to be studying us attentively.\r\n\r\n\"What business do you have here?\" the guard asks, as he stops in front of Daren, eying him suspiciously.\r\n\r\n\"I've come to sell some goods,\" Daren says. \"I'm not sure if you know who I am, but I am a very famous enchanter outside Varathia. Daren, the healer in armor is what they call me.\"\r\n\r\n\"Never heard of you,\" the guard says, in an uninterested tone."
-          - source: scene_text_2
-            paragraph: 5
-            text: "\"Well, I can't blame you,\" Daren says. \"This continent is pretty isolated from the rest of the world. Anyway, I have a client who wants to remain anonymous that would like to buy my wares, and I've arranged to meet them inside the city. Could you please open the gates to let me through?\"\r\n\r\nAgain, the guard does not answer him immediately, and he just looks at him with a frown on his face, while he is continuously chewing on what seems to be some kind of plant. I say that he's frowning, although in reality it's a bit difficult to tell if he's genuinely upset about something or if that's just the way his eyebrows work, because I'm pretty sure that he's had them furrowed from before he even noticed us.\r\n\r\n\"What's the password?\" the guard says, after a while.\r\n\r\n\"Password?...\" Daren asks, confused.\r\n\r\n\"Aye,\" the guard says. \"Password. If you were invited here by someone, then they must have given you a password. That is the only way in which you can enter the city without filing for the usual paperwork. So, what's the password, then?\""
-        choices:
-          - position: 1
-            text: >-
-              Uh, the guy we were supposed to meet didn't tell us about any
-              passwords.
-            effects:
-              - set:
-                  current_scene: b3_ch02a_resort
-                  b3_ch2_pass2: 0
-          - position: 2
-            text: 'The password is ''shut your mouth and open the gate'' '
-            effects:
-              - set:
-                  current_scene: b3_ch02a_resort
-                  b3_ch2_pass2: 1
-          - position: 3
-            text: We forgot the password.
-            effects:
-              - set:
-                  current_scene: b3_ch02a_resort
-                  b3_ch2_pass2: 2
-          - position: 4
-            text: 'The password is ''a drunk orangutan wearing a party hat'' '
-            effects:
-              - set:
-                  current_scene: b3_ch02a_resort
-                  b3_ch2_pass2: 3
-      - texts:
-          - source: scene_3
-            paragraph: 3
-            text: >-
-              As the guard talks, I suddenly remember the text on that rock from
-              Melindra's collection, which said that 'The password is griffin
-              beak'. Could it be possible that it was referring to the password
-              required to enter the city of Ollendor?
+    texts:
+      - source: scene_text
+        paragraph: 6
+        text: "\"Good morning!\" Daren says in a loud tone, to make sure that the man in front of the gate could hear him. \"Are you the one that I need to talk to in order to gain access inside the city?\"\r\n\r\nThe guard doesn't answer him right away. He was sitting on a chair when we arrived, measuring us up and down with a rather unimpressed look on his face, and while Daren was talking, it looked as if the gate keeper was only paying attention to about half of what he was saying.\r\n\r\nDaren waits patiently for the guard to slowly get up from his chair and to walk towards him, while two metal golems that were standing in front of the gate seemed to be studying us attentively.\r\n\r\n\"What business do you have here?\" the guard asks, as he stops in front of Daren, eying him suspiciously.\r\n\r\n\"I've come to sell some goods,\" Daren says. \"I'm not sure if you know who I am, but I am a very famous enchanter outside Varathia. Daren, the healer in armor is what they call me.\"\r\n\r\n\"Never heard of you,\" the guard says, in an uninterested tone."
+      - source: scene_text_2
+        paragraph: 5
+        text: "\"Well, I can't blame you,\" Daren says. \"This continent is pretty isolated from the rest of the world. Anyway, I have a client who wants to remain anonymous that would like to buy my wares, and I've arranged to meet them inside the city. Could you please open the gates to let me through?\"\r\n\r\nAgain, the guard does not answer him immediately, and he just looks at him with a frown on his face, while he is continuously chewing on what seems to be some kind of plant. I say that he's frowning, although in reality it's a bit difficult to tell if he's genuinely upset about something or if that's just the way his eyebrows work, because I'm pretty sure that he's had them furrowed from before he even noticed us.\r\n\r\n\"What's the password?\" the guard says, after a while.\r\n\r\n\"Password?...\" Daren asks, confused.\r\n\r\n\"Aye,\" the guard says. \"Password. If you were invited here by someone, then they must have given you a password. That is the only way in which you can enter the city without filing for the usual paperwork. So, what's the password, then?\""
+      - source: scene_3
+        paragraph: 3
+        text: >-
+          As the guard talks, I suddenly remember the text on that rock from
+          Melindra's collection, which said that 'The password is griffin beak'.
+          Could it be possible that it was referring to the password required to
+          enter the city of Ollendor?
         condition: b3_ch1_password = 1
-        choices:
-          - position: 1
-            text: >-
-              Uh, the guy we were supposed to meet didn't tell us about any
-              passwords.
-            effects:
-              - set:
-                  current_scene: b3_ch02a_resort
-                  b3_ch2_pass2: 0
-          - position: 2
-            text: 'The password is ''shut your mouth and open the gate'' '
-            effects:
-              - set:
-                  current_scene: b3_ch02a_resort
-                  b3_ch2_pass2: 1
-          - position: 3
-            text: We forgot the password.
-            effects:
-              - set:
-                  current_scene: b3_ch02a_resort
-                  b3_ch2_pass2: 2
-          - position: 4
-            text: 'The password is ''a drunk orangutan wearing a party hat'' '
-            effects:
-              - set:
-                  current_scene: b3_ch02a_resort
-                  b3_ch2_pass2: 3
-          - position: 5
-            text: 'The password is ''griffin beak'' '
-            effects:
-              - set:
-                  current_scene: b3_ch02a_resort
-                  b3_ch2_pass2: 4
+    choices:
+      - position: 1
+        text: >-
+          Uh, the guy we were supposed to meet didn't tell us about any
+          passwords.
+        effects:
+          - set:
+              current_scene: b3_ch02a_resort
+              b3_ch2_pass2: 0
+      - position: 2
+        text: 'The password is ''shut your mouth and open the gate'' '
+        effects:
+          - set:
+              current_scene: b3_ch02a_resort
+              b3_ch2_pass2: 1
+      - position: 3
+        text: We forgot the password.
+        effects:
+          - set:
+              current_scene: b3_ch02a_resort
+              b3_ch2_pass2: 2
+      - position: 4
+        text: 'The password is ''a drunk orangutan wearing a party hat'' '
+        effects:
+          - set:
+              current_scene: b3_ch02a_resort
+              b3_ch2_pass2: 3
+      - position: 5
+        text: 'The password is ''griffin beak'' '
+        effects:
+          - set:
+              current_scene: b3_ch02a_resort
+              b3_ch2_pass2: 4
   - name: b3_ch02a_resort
     routes:
-      - texts:
+      - condition: b3_ch2_pass2 = 0
+        texts:
           - source: scene_text
             paragraph: 7
             text: "\"Uh, the guy we were supposed to meet didn't tell us about any passwords.\"\r\n\r\n\"I doubt it,\" the guard says. \"Everyone in this city knows that you need a password to enter. If he really didn't give you a password, then it must mean that he didn't have any urgent need of the goods you are selling him, and he was fine with you filing for the required paperwork, like any other outsider.\""
@@ -177,7 +149,6 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "\"Using brute force is our absolute last resort,\" Daren says. \"Didn't you see those golems? Those are just one of their many defenses. Who knows what else they will be pulling out of their sleeves, while we try to fight our way to the palace. Anyway, it's not like we're completely out of options. We just found out that we need some sort of password to get in. All we need now is a plan to find out the password, and we will be right back on track.\" \r\n\r\n\"Maybe we could obtain that information from the villagers, somehow,\" Leila writes. \"I'm guessing that the farmers should know the password, since they would need to enter the city on a daily basis to shop for supplies.\"\r\n\r\n\"Leila makes a good point,\" Illuna says. \"We could try to bribe one of the villagers. I'm guessing that it shouldn't be too hard to find someone willing to break the rules for some extra money in a village full of impoverished people.\"\r\n\r\n\"It's not as easy as you might think,\" Melindra says. \"This city isn't like Thilias. Breaking the law here may well get your entire family murdered, or worse. Most people wouldn't take that risk, no matter how much money was at stake.\""
-        condition: b3_ch2_pass2 = 0
         choices:
           - position: 1
             text: What if we tried to get one of them drunk, instead?
@@ -224,8 +195,9 @@ scenes:
                   combat_technique: ${combat_technique_aux}
                   premonition: ${premonition_aux}
                   available_points: ${available_points_aux}
-                condition: hearing_aux = 4
-      - texts:
+                condition: hearing_aux = 4 AND b3_ch1_unlock != 2
+      - condition: b3_ch2_pass2 = 1
+        texts:
           - source: scene_text
             paragraph: 8
             text: "\"The password is 'shut your mouth and open the gate' \"\r\n\r\n\"It looks like your companion has quite the refined sense of humor,\" the guard tells Daren, after throwing me a short glance. \"I heard that those two big golems behind me have a pretty good sense of humor too. Maybe your friend would like me to introduce him to them? I'm sure they would get along.\"\r\n\r\n\"Please ignore my bodyguard,\" Daren says. \"He sometimes doesn't know when to keep his mouth shut. I assure you that he does not speak for me in any way. Unfortunately, I do not know the password that you ask of me.\"\r\n\r\n\"If you don't know the password, then you will need to file for the required paperwork, like any other outsider,\" the guard says."
@@ -235,7 +207,6 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "\"Using brute force is our absolute last resort,\" Daren says. \"Didn't you see those golems? Those are just one of their many defenses. Who knows what else they will be pulling out of their sleeves, while we try to fight our way to the palace. Anyway, it's not like we're completely out of options. We just found out that we need some sort of password to get in. All we need now is a plan to find out the password, and we will be right back on track.\" \r\n\r\n\"Maybe we could obtain that information from the villagers, somehow,\" Leila writes. \"I'm guessing that the farmers should know the password, since they would need to enter the city on a daily basis to shop for supplies.\"\r\n\r\n\"Leila makes a good point,\" Illuna says. \"We could try to bribe one of the villagers. I'm guessing that it shouldn't be too hard to find someone willing to break the rules for some extra money in a village full of impoverished people.\"\r\n\r\n\"It's not as easy as you might think,\" Melindra says. \"This city isn't like Thilias. Breaking the law here may well get your entire family murdered, or worse. Most people wouldn't take that risk, no matter how much money was at stake.\""
-        condition: b3_ch2_pass2 = 1
         choices:
           - position: 1
             text: What if we tried to get one of them drunk, instead?
@@ -282,8 +253,9 @@ scenes:
                   combat_technique: ${combat_technique_aux}
                   premonition: ${premonition_aux}
                   available_points: ${available_points_aux}
-                condition: hearing_aux = 4
-      - texts:
+                condition: hearing_aux = 4 AND b3_ch1_unlock != 2
+      - condition: b3_ch2_pass2 = 2
+        texts:
           - source: scene_text
             paragraph: 9
             text: "\"We forgot the password.\"\r\n\r\n\"In that case, how about you call this 'anonymous person' through a transceiver and ask them for the password again?\" the guard says.\r\n\r\n\"We... tried to contact him shortly before we got here, but we couldn't reach him,\" Daren says.\r\n\r\n\"Well, if you don't have the password, then you're going to have to file for the required paperwork, like any other outsider,\" the guard says."
@@ -293,7 +265,6 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "\"Using brute force is our absolute last resort,\" Daren says. \"Didn't you see those golems? Those are just one of their many defenses. Who knows what else they will be pulling out of their sleeves, while we try to fight our way to the palace. Anyway, it's not like we're completely out of options. We just found out that we need some sort of password to get in. All we need now is a plan to find out the password, and we will be right back on track.\" \r\n\r\n\"Maybe we could obtain that information from the villagers, somehow,\" Leila writes. \"I'm guessing that the farmers should know the password, since they would need to enter the city on a daily basis to shop for supplies.\"\r\n\r\n\"Leila makes a good point,\" Illuna says. \"We could try to bribe one of the villagers. I'm guessing that it shouldn't be too hard to find someone willing to break the rules for some extra money in a village full of impoverished people.\"\r\n\r\n\"It's not as easy as you might think,\" Melindra says. \"This city isn't like Thilias. Breaking the law here may well get your entire family murdered, or worse. Most people wouldn't take that risk, no matter how much money was at stake.\""
-        condition: b3_ch2_pass2 = 2
         choices:
           - position: 1
             text: What if we tried to get one of them drunk, instead?
@@ -340,8 +311,9 @@ scenes:
                   combat_technique: ${combat_technique_aux}
                   premonition: ${premonition_aux}
                   available_points: ${available_points_aux}
-                condition: hearing_aux = 4
-      - texts:
+                condition: hearing_aux = 4 AND b3_ch1_unlock != 2
+      - condition: b3_ch2_pass2 = 3
+        texts:
           - source: scene_text
             paragraph: 10
             text: "\"The password is 'a drunk orangutan wearing a party hat'. \"\r\n\r\n\"A drunk orangutan wearing a party hat?...\" the guard says. \"What are you, stupid? We haven't used that password in more than a year! You didn't seriously think we'd let you in by giving me that old password, did you?\"\r\n\r\n\"Uh... no, of course not,\" I tell him, slightly taken aback by the fact that such a ridiculous sounding password could have ever been used by anyone in a serious manner.\r\n\r\n\"If you don't know the password, then you're going to have to file for the required paperwork, like any other outsider,\" the guard says."
@@ -351,7 +323,6 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "\"Using brute force is our absolute last resort,\" Daren says. \"Didn't you see those golems? Those are just one of their many defenses. Who knows what else they will be pulling out of their sleeves, while we try to fight our way to the palace. Anyway, it's not like we're completely out of options. We just found out that we need some sort of password to get in. All we need now is a plan to find out the password, and we will be right back on track.\" \r\n\r\n\"Maybe we could obtain that information from the villagers, somehow,\" Leila writes. \"I'm guessing that the farmers should know the password, since they would need to enter the city on a daily basis to shop for supplies.\"\r\n\r\n\"Leila makes a good point,\" Illuna says. \"We could try to bribe one of the villagers. I'm guessing that it shouldn't be too hard to find someone willing to break the rules for some extra money in a village full of impoverished people.\"\r\n\r\n\"It's not as easy as you might think,\" Melindra says. \"This city isn't like Thilias. Breaking the law here may well get your entire family murdered, or worse. Most people wouldn't take that risk, no matter how much money was at stake.\""
-        condition: b3_ch2_pass2 = 3
         choices:
           - position: 1
             text: What if we tried to get one of them drunk, instead?
@@ -398,8 +369,9 @@ scenes:
                   combat_technique: ${combat_technique_aux}
                   premonition: ${premonition_aux}
                   available_points: ${available_points_aux}
-                condition: hearing_aux = 4
-      - texts:
+                condition: hearing_aux = 4 AND b3_ch1_unlock != 2
+      - condition: b3_ch2_pass2 = 4
+        texts:
           - source: scene_text
             paragraph: 11
             text: "\"The password is 'griffin beak'. \"\r\n\r\n\"No it isn't,\" the guard says. \"I'm not sure if you were guessing randomly just now or if somebody actually misled you, but if you want to enter the city without knowing the actual password, then you're going to have to file for the required paperwork, like any other outsider.\""
@@ -409,7 +381,6 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "\"Using brute force is our absolute last resort,\" Daren says. \"Didn't you see those golems? Those are just one of their many defenses. Who knows what else they will be pulling out of their sleeves, while we try to fight our way to the palace. Anyway, it's not like we're completely out of options. We just found out that we need some sort of password to get in. All we need now is a plan to find out the password, and we will be right back on track.\" \r\n\r\n\"Maybe we could obtain that information from the villagers, somehow,\" Leila writes. \"I'm guessing that the farmers should know the password, since they would need to enter the city on a daily basis to shop for supplies.\"\r\n\r\n\"Leila makes a good point,\" Illuna says. \"We could try to bribe one of the villagers. I'm guessing that it shouldn't be too hard to find someone willing to break the rules for some extra money in a village full of impoverished people.\"\r\n\r\n\"It's not as easy as you might think,\" Melindra says. \"This city isn't like Thilias. Breaking the law here may well get your entire family murdered, or worse. Most people wouldn't take that risk, no matter how much money was at stake.\""
-        condition: b3_ch2_pass2 = 4
         choices:
           - position: 1
             text: What if we tried to get one of them drunk, instead?
@@ -456,7 +427,7 @@ scenes:
                   combat_technique: ${combat_technique_aux}
                   premonition: ${premonition_aux}
                   available_points: ${available_points_aux}
-                condition: hearing_aux = 4
+                condition: hearing_aux = 4 AND b3_ch1_unlock != 2
   - name: b3_ch02a_drunk
     texts:
       - source: scene_text
@@ -519,28 +490,28 @@ scenes:
               b3_ch2_infiltration: 3
   - name: b3_ch02a_shrewd
     routes:
-      - texts:
+      - condition: b3_ch2_infiltration = 0
+        texts:
           - source: scene_text
             paragraph: 15
             text: "\"That's a good idea! Let's go, Hadrik!\"\r\n\r\n\"Uh... okay,\" Hadrik says, as we both get up from the floor. \"I suppose I could finish my drink on the road, then.\"\r\n\r\n\"Goodbye, friends!\" the drunkard says. \"I wish you all the best!\"\r\n\r\nAs we leave the abandoned building, we wave goodbye to our drunk friend, and then we take the main road back towards where Daren and the others were waiting in the woods.\r\n\r\n\"You know... we could have at least waited for the guy to be done with his drink...\" Hadrik tells me, as we walk.\r\n\r\n\"And risk giving ourselves away?\" I tell him. \"No, thanks. The more we talked to him, the more likely it would have been for him to start asking us uncomfortable questions.\"\r\n\r\n\"If you say so,\" Hadrik says. \"Anyway, I'm calling Daren. We should get ready to head for the city gates.\"\r\n\r\nHadrik then pulls out his transceiver and he uses the dial on the right side of it, in order to switch it to Daren's frequency before he calls out to him.\r\n\r\n\"Hey, Daren, you listening?\" Hadrik says."
           - source: scene_text_2
             paragraph: 10
             text: "\"Yeah,\" Daren says. \"Where are you?\"\r\n\r\n\"We're on the main road,\" Hadrik says. \"You should be able to see us if you come out of the forest. We got what we were looking for. Let's head for the gates.\"\r\n\r\n\"You did?\" Daren asks, surprised. \"That's great! Hold on, we'll be right there!\"\r\n\r\nAs Daren and the others are coming out of the woods one by one, I put the lid on my dwarven ale bottle and hand it back to Hadrik, telling him that I'm done drinking for now.\r\n\r\n\"You shrewd bastard!\" Hadrik says with a grin, as he feels the weight of the bottle in his hand. \"You barely even took a few sips out of this bottle. No wonder you didn't seem to be affected by it. And here I was, thinking that you finally managed to build up a bit of tolerance to dwarven ale.\"\r\n\r\n\"Some other day, Hadrik,\" I say. \"Some other day.\"\r\n\r\nOnce our friends reach us, we all begin heading for the city gates together, in the hopes that this time around we will be more successful. However, just as we are making our first steps, we hear an unfamiliar voice calling to us from inside the woods."
-        condition: b3_ch2_infiltration = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch02a_information
-      - texts:
+      - condition: b3_ch2_infiltration = 3
+        texts:
           - source: scene_text
             paragraph: 16
             text: "\"We can still wait for you to finish your drink. We're not in THAT much of a hurry.\"\r\n\r\n\"Yeah, I'm sure our friends won't mind if we keep them waiting for a few more minutes,\" Hadrik says. \"Take your time and enjoy the drink.\"\r\n\r\n\"Well, in that case, bottoms up!\" the drunkard says, and then we clink the bottles again.\r\n\r\nOnce we're finally done with the drinks and we decide to leave, we see that the drunkard can barely walk anymore, so Hadrik and I hurry to support him as we exit the building. Not long after we get out, the drunkard suddenly remembers something important and he struggles to articulate his words, while keeping his voice low.\r\n\r\n\"I... almost forgot...\" the drunkard tells us. \"The password isn't enough... You also need to... wink three times with your left eye while you say it. New set of rules.... in order to prevent eavesdropping.\"\r\n\r\n\"Oooh!\" Hadrik says, also in a low voice. \"Good thing you remembered, then! We might have had a bit of trouble if you didn't.\"\r\n\r\n\"Yeah, my bad...\" the drunkard says. \"They keep changing these rules every so often, and I just can't keep up with them anymore... My house is over there. You can leave me in front of the yard. I'll crawl my way to the front door by myself.\"\r\n\r\n\"Alright, then,\" Hadrik says, as the drunkard continues to lean on the two of us while he walks."
           - source: scene_text_2
             paragraph: 11
             text: "As soon as we reach his house, we wave goodbye to our drunk friend, and then we take the main road back towards where Daren and the others were waiting in the woods.\r\n\r\n\"Hey, Daren, you listening?\" Hadrik says, after he pulls out his transceiver and sets it to Daren's frequency.\r\n\r\n\"Yeah,\" Daren says. \"Where are you?\"\r\n\r\n\"We're on the main road,\" Hadrik says. \"You should be able to see us if you come out of the forest. We got what we were looking for. Let's head for the gates.\"\r\n\r\n\"You did?\" Daren asks, surprised. \"That's great! Hold on, we'll be right there!\"\r\n\r\nAs Daren and the others are coming out of the woods one by one, I put the lid on my dwarven ale bottle and hand it back to Hadrik, telling him that I'm done drinking for now.\r\n\r\n\"You shrewd bastard!\" Hadrik says with a grin, as he feels the weight of the bottle in his hand. \"You barely even took a few sips out of this bottle. No wonder you didn't seem to be affected by it. And here I was, thinking that you finally managed to build up a bit of tolerance to dwarven ale.\"\r\n\r\n\"Some other day, Hadrik,\" I say. \"Some other day.\"\r\n\r\nOnce our friends reach us, we all begin heading for the city gates together, in the hopes that this time around we will be more successful. However, just as we are making our first steps, we hear an unfamiliar voice calling to us from inside the woods."
-        condition: b3_ch2_infiltration = 3
         choices:
           - position: 1
             text: Continue
@@ -583,9 +554,10 @@ scenes:
       - source: scene_text_2
         paragraph: 14
         text: "I then walk all the way to the end of the forest and I hide behind one of the trees, to make sure that nobody from the village can see me. I spend the next few minutes trying to concentrate on hearing what each individual person is saying, although given how many people seem to be talking at the same time, this is by no means an easy task. Most of the conversations are about mundane stuff, which is not useful to me in any way, though I can't help but notice that most of the people are talking in a very tired tone and that almost all of them seem to have a very pessimistic attitude, no matter the subject of discussion.\r\n\r\nSometimes, an isolated husband would vent his frustration towards the king or the city guards to his wife, but then he would stop suddenly, out of fear that someone might overhear him. Otherwise, the discussions of the villagers revolved mainly around their daily activities, and they wouldn't really talk about much else."
-    set:
-      successful_checks:
-        - '[ Hearing check successful - level 4 ]'
+    effects:
+      - set:
+          successful_checks:
+            - '[ Hearing check successful - level 4 ]'
     choices:
       - position: 1
         text: Continue
@@ -659,6 +631,7 @@ scenes:
             condition: b3_ch2_infiltration = 3
           - set:
               current_scene: b3_ch02a_insane
+            condition: b3_ch2_infiltration != 3
   - name: b3_ch02a_kill
     texts:
       - source: scene_text
@@ -676,6 +649,7 @@ scenes:
             condition: b3_ch2_infiltration = 3
           - set:
               current_scene: b3_ch02a_insane
+            condition: b3_ch2_infiltration != 3
   - name: b3_ch02a_talk
     texts:
       - source: scene_text
@@ -714,6 +688,7 @@ scenes:
             condition: b3_ch2_infiltration = 3
           - set:
               current_scene: b3_ch02a_insane
+            condition: b3_ch2_infiltration != 3
   - name: b3_ch02a_dialect
     texts:
       - source: scene_text
@@ -730,14 +705,14 @@ scenes:
               current_scene: b3_ch02a_dialect2
   - name: b3_ch02a_dialect2
     routes:
-      - texts:
+      - condition: b3_ch2_infiltration = 0
+        texts:
           - source: scene_text
             paragraph: 27
             text: "\"What do you mean 'gargoyle wings'?...\" I ask him, confused. \"Doesn't that writing say 'griffin beak'?\"\r\n\r\n\"Ah... I see you can read our old dialect!\" the old goblin says, surprised. \"Quite impressive! As for your question, the symbols describing the password can indeed be directly translated as 'griffin beak', but we have a code with our friend that we always use when we transmit messages to each other. If we rearrange those symbols according to our secret code, the meaning of the words changes completely, and it reads as 'gargoyle wings' instead. Do you understand now?\"\r\n\r\n\"Yeah, I guess that makes sense,\" I say. \"So, was this the information that you wanted to give us in exchange for the rock?\"\r\n\r\n\"No, actually the information in question was about the fact that the password is not the only thing required, if you want to enter the city,\" the old goblin says. \"You also need to wink three times with your left eye while saying it, or they won't let you in. This was added a while ago as an extra precaution, in order to prevent eavesdropping. The passwords change every week, but the number of winks do not change, as far as I'm aware.\""
           - source: scene_text_2
             paragraph: 21
             text: "\"Now that is indeed something we did not know...\" I say. \"We'll keep that in mind. Thanks!\"\r\n\r\n\"Umm... excuse me!\" Melindra says to the goblins, this time adopting one of her more pleasant smiles. \"Would you perhaps be interested in a trade for that purple rock with the scribbles on it? I really took a liking to it, and would hate to lose it from my collection.\"\r\n\r\n\"Pardon?...\" the old goblin says, as he is suddenly reminded of the rock that he was still holding in his hand. \"Oh, you can take back the rock. All we needed from it was the password.\"\r\n\r\n\"That's very generous of you!\" Melindra says, as the goblin hands her back the rock. \"Many thanks!\"\r\n\r\n\"Well, now that our business is done, I believe it's time we head towards the city,\" the old goblin says. \"It might not be the best idea for us to go all at once, though, as we may seem suspicious. You can go first, if you want, and then we'll be following you soon afterwards.\""
-        condition: b3_ch2_infiltration = 0
         choices:
           - position: 1
             text: Sounds good. Let's go!
@@ -751,14 +726,14 @@ scenes:
               - set:
                   current_scene: b3_ch02a_trouble
                   b3_ch2_goblins: 4
-      - texts:
+      - condition: b3_ch2_infiltration = 2
+        texts:
           - source: scene_text
             paragraph: 27
             text: "\"What do you mean 'gargoyle wings'?...\" I ask him, confused. \"Doesn't that writing say 'griffin beak'?\"\r\n\r\n\"Ah... I see you can read our old dialect!\" the old goblin says, surprised. \"Quite impressive! As for your question, the symbols describing the password can indeed be directly translated as 'griffin beak', but we have a code with our friend that we always use when we transmit messages to each other. If we rearrange those symbols according to our secret code, the meaning of the words changes completely, and it reads as 'gargoyle wings' instead. Do you understand now?\"\r\n\r\n\"Yeah, I guess that makes sense,\" I say. \"So, was this the information that you wanted to give us in exchange for the rock?\"\r\n\r\n\"No, actually the information in question was about the fact that the password is not the only thing required, if you want to enter the city,\" the old goblin says. \"You also need to wink three times with your left eye while saying it, or they won't let you in. This was added a while ago as an extra precaution, in order to prevent eavesdropping. The passwords change every week, but the number of winks do not change, as far as I'm aware.\""
           - source: scene_text_2
             paragraph: 21
             text: "\"Now that is indeed something we did not know...\" I say. \"We'll keep that in mind. Thanks!\"\r\n\r\n\"Umm... excuse me!\" Melindra says to the goblins, this time adopting one of her more pleasant smiles. \"Would you perhaps be interested in a trade for that purple rock with the scribbles on it? I really took a liking to it, and would hate to lose it from my collection.\"\r\n\r\n\"Pardon?...\" the old goblin says, as he is suddenly reminded of the rock that he was still holding in his hand. \"Oh, you can take back the rock. All we needed from it was the password.\"\r\n\r\n\"That's very generous of you!\" Melindra says, as the goblin hands her back the rock. \"Many thanks!\"\r\n\r\n\"Well, now that our business is done, I believe it's time we head towards the city,\" the old goblin says. \"It might not be the best idea for us to go all at once, though, as we may seem suspicious. You can go first, if you want, and then we'll be following you soon afterwards.\""
-        condition: b3_ch2_infiltration = 2
         choices:
           - position: 1
             text: Sounds good. Let's go!
@@ -772,14 +747,14 @@ scenes:
               - set:
                   current_scene: b3_ch02a_trouble
                   b3_ch2_goblins: 4
-      - texts:
+      - condition: b3_ch2_infiltration = 1
+        texts:
           - source: scene_text
             paragraph: 27
             text: "\"What do you mean 'gargoyle wings'?...\" I ask him, confused. \"Doesn't that writing say 'griffin beak'?\"\r\n\r\n\"Ah... I see you can read our old dialect!\" the old goblin says, surprised. \"Quite impressive! As for your question, the symbols describing the password can indeed be directly translated as 'griffin beak', but we have a code with our friend that we always use when we transmit messages to each other. If we rearrange those symbols according to our secret code, the meaning of the words changes completely, and it reads as 'gargoyle wings' instead. Do you understand now?\"\r\n\r\n\"Yeah, I guess that makes sense,\" I say. \"So, was this the information that you wanted to give us in exchange for the rock?\"\r\n\r\n\"No, actually the information in question was about the fact that the password is not the only thing required, if you want to enter the city,\" the old goblin says. \"You also need to wink three times with your left eye while saying it, or they won't let you in. This was added a while ago as an extra precaution, in order to prevent eavesdropping. The passwords change every week, but the number of winks do not change, as far as I'm aware.\""
           - source: scene_text_2
             paragraph: 22
             text: "\"Wow, that is quite a number of precautions they are taking to keep strangers out of their city,\" I say. \"Do these people really hate outsiders that much?\"\r\n\r\n\"From what we heard, their current king is quite paranoid, and he thinks everyone is out to get him,\" the old goblin says. \"Seeing those big golems patrolling outside their walls, I'm assuming that those rumors must have been at least somewhat true.\"\r\n\r\n\"Umm... excuse me!\" Melindra says to the goblins, this time adopting one of her more pleasant smiles. \"Would you perhaps be interested in a trade for that purple rock with the scribbles on it? I really took a liking to it, and would hate to lose it from my collection.\"\r\n\r\n\"Pardon?...\" the old goblin says, as he is suddenly reminded of the rock that he was still holding in his hand. \"Oh, you can take back the rock. All we needed from it was the password.\"\r\n\r\n\"That's very generous of you!\" Melindra says, as the goblin hands her back the rock. \"Many thanks!\"\r\n\r\n\"Well, now that our business is done, I believe it's time we head towards the city,\" the old goblin says. \"It might not be the best idea for us to go all at once, though, as we may seem suspicious. You can go first, if you want, and then we'll be following you soon afterwards.\""
-        condition: b3_ch2_infiltration = 1
         choices:
           - position: 1
             text: Sounds good. Let's go!
@@ -793,14 +768,14 @@ scenes:
               - set:
                   current_scene: b3_ch02a_trouble
                   b3_ch2_goblins: 4
-      - texts:
+      - condition: b3_ch2_infiltration = 3
+        texts:
           - source: scene_text
             paragraph: 27
             text: "\"What do you mean 'gargoyle wings'?...\" I ask him, confused. \"Doesn't that writing say 'griffin beak'?\"\r\n\r\n\"Ah... I see you can read our old dialect!\" the old goblin says, surprised. \"Quite impressive! As for your question, the symbols describing the password can indeed be directly translated as 'griffin beak', but we have a code with our friend that we always use when we transmit messages to each other. If we rearrange those symbols according to our secret code, the meaning of the words changes completely, and it reads as 'gargoyle wings' instead. Do you understand now?\"\r\n\r\n\"Yeah, I guess that makes sense,\" I say. \"So, was this the information that you wanted to give us in exchange for the rock?\"\r\n\r\n\"No, actually the information in question was about the fact that the password is not the only thing required, if you want to enter the city,\" the old goblin says. \"You also need to wink three times with your left eye while saying it, or they won't let you in. This was added a while ago as an extra precaution, in order to prevent eavesdropping. The passwords change every week, but the number of winks do not change, as far as I'm aware.\""
           - source: scene_text_2
             paragraph: 23
             text: "\"Well, I guess we didn't really find out anything new, but at least we got some confirmation that our information was already correct,\" I say.\r\n\r\n\"Umm... excuse me!\" Melindra says to the goblins, this time adopting one of her more pleasant smiles. \"Would you perhaps be interested in a trade for that purple rock with the scribbles on it? I really took a liking to it, and would hate to lose it from my collection.\"\r\n\r\n\"Pardon?...\" the old goblin says, as he is suddenly reminded of the rock that he was still holding in his hand. \"Oh, you can take back the rock. All we needed from it was the password.\"\r\n\r\n\"That's very generous of you!\" Melindra says, as the goblin hands her back the rock. \"Many thanks!\"\r\n\r\n\"Well, now that our business is done, I believe it's time we head towards the city,\" the old goblin says. \"It might not be the best idea for us to go all at once, though, as we may seem suspicious. You can go first, if you want, and then we'll be following you soon afterwards.\""
-        condition: b3_ch2_infiltration = 3
         choices:
           - position: 1
             text: Sounds good. Let's go!
@@ -816,56 +791,56 @@ scenes:
                   b3_ch2_goblins: 4
   - name: b3_ch02a_trouble
     routes:
-      - texts:
+      - condition: b3_ch2_goblins = 4 AND b3_ch2_infiltration <> 2
+        texts:
           - source: scene_text
             paragraph: 28
             text: "\"It's fine, we're not in a hurry. You can go first instead.\"\r\n\r\n\"Very well,\" the old goblin says. \"In that case, we will be off. Take care!\"\r\n\r\n\"Good thinking, Barry!\" Hadrik says, once the goblins are too far away to hear us anymore. \"If they're the ones to go first, we won't have to look like idiots in case the password is wrong.\"\r\n\r\n\"Well, there's that,\" I say, \"but more importantly, there's also the fact that they can probably afford to get the password wrong once, since this is only their first time trying to pass through the gates. On the other hand, if we were to get the password wrong a second time, we would likely not be let inside their city ever again.\"\r\n\r\n\"We will find out if the password is fake or not soon enough,\" Daren says. \"The goblins don't have long to go until they reach the gates.\"\r\n\r\nWe wait for a while longer until we see the goblins reach the entrance of the city, far in the distance. After a short discussion with the guard at the entrance, the gates are opening, and the three goblins get inside the city without any trouble."
           - source: scene_text_2
             paragraph: 24
             text: "\"Huh...\" Hadrik says. \"I guess the password worked, then? Come on, we should get going too. We've spent enough time in this forest, already.\"\r\n\r\nIt takes us a while, but once we're done traversing the village again, we eventually reach the gates for a second time. The guard at the gates is now staring at us with the same suspicious look that he had the first time, and he addresses us as soon as we stop in front of him.\r\n\r\n\"I see you're back,\" the guard says. \"Should I take it that you've finally managed to get that 'client' of yours to give you the password?...\"\r\n\r\n\"Yeah, we reached him through the transceiver eventually, and he told us the password,\" I say, as I wink three times with my left eye. \"It's 'gargoyle wings'. \"\r\n\r\n\"Hmm...\" the guard says. \"That is indeed the correct password.\"\r\n\r\nHe then gives a signal to the two metal golems behind him, who immediately open the large gates for us.\r\n\r\n\"I'm not sure what you came here to do exactly, but you'd better not cause any trouble,\" the guard tells us.\r\n\r\n\"No, sir!\" I say. \"We won't be bothering you at all!\"\r\n\r\n\"Go on,\" the guard says. \"Get moving.\"\r\n\r\nWe all move past the guard and enter the city, and as soon as we're inside, the gates behind us slam shut."
-        condition: b3_ch2_goblins = 4 AND b3_ch2_infiltration <> 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch02a_communicating
-      - texts:
+      - condition: b3_ch2_goblins = 4 AND b3_ch2_infiltration = 2
+        texts:
           - source: scene_text
             paragraph: 47
             text: "\"It's fine, we're not in a hurry. You can go first instead.\"\r\n\r\n\"Very well,\" the old goblin says. \"In that case, we will be off. Take care!\"\r\n\r\n\"Good thinking, Barry!\" Hadrik says, once the goblins are too far away to hear us anymore. \"If they're the ones to go first, we won't have to look like idiots in case the password is wrong.\"\r\n\r\n\"I doubt the password itself is wrong, because I already overheard someone using it to enter the city,\" I say. \"I just want to see if their information about the winking was correct or not. It never hurts to be extra safe.\"   \r\n\r\n\"We will find that out soon enough,\" Daren says. \"The goblins don't have long to go until they reach the gates.\"\r\n\r\nWe wait for a while longer until we see the goblins reach the entrance of the city, far in the distance. After a short discussion with the guard at the entrance, the gates are opening, and the three goblins get inside the city without any trouble."
           - source: scene_text_2
             paragraph: 37
             text: "\"Well, I guess that answers our question,\" Hadrik says. \"Come on, we should get going too. We've spent enough time in this forest, already.\"\r\n\r\nIt takes us a while, but once we're done traversing the village again, we eventually reach the gates for a second time. The guard at the gates is now staring at us with the same suspicious look that he had the first time, and he addresses us as soon as we stop in front of him.\r\n\r\n\"I see you're back,\" the guard says. \"Should I take it that you've finally managed to get that 'client' of yours to give you the password?...\"\r\n\r\n\"Yeah, we reached him through the transceiver eventually, and he told us the password,\" I say, as I wink three times with my left eye. \"It's 'gargoyle wings'. \"\r\n\r\n\"Hmm...\" the guard says. \"That is indeed the correct password.\"\r\n\r\nHe then gives a signal to the two metal golems behind him, who immediately open the large gates for us.\r\n\r\n\"I'm not sure what you came here to do exactly, but you'd better not cause any trouble,\" the guard tells us.\r\n\r\n\"No, sir!\" I say. \"We won't be bothering you at all!\"\r\n\r\n\"Go on,\" the guard says. \"Get moving.\"\r\n\r\nWe all move past the guard and enter the city, and as soon as we're inside, the gates behind us slam shut."
-        condition: b3_ch2_goblins = 4 AND b3_ch2_infiltration = 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch02a_communicating
-      - texts:
+      - condition: b3_ch2_infiltration <> 1 AND b3_ch2_goblins = 3
+        texts:
           - source: scene_text
             paragraph: 29
             text: "\"Sounds good. Let's go!\"\r\n\r\n\"Take care!\" the old goblin says, as we make our way back towards the main road.\r\n\r\nIt takes us a while, but once we're done traversing the village again, we eventually reach the gates for a second time. The guard at the gates is now staring at us with the same suspicious look that he had the first time, and he addresses us as soon as we stop in front of him.\r\n\r\n\"I see you're back,\" the guard says. \"Should I take it that you've finally managed to get that 'client' of yours to give you the password?...\""
           - source: scene_text_2
             paragraph: 25
             text: "\"Yeah, we reached him through the transceiver eventually, and he told us the password,\" I say, as I wink three times with my left eye. \"It's 'gargoyle wings'. \"\r\n\r\n\"Hmm...\" the guard says. \"That is indeed the correct password.\"\r\n\r\nHe then gives a signal to the two metal golems behind him, who immediately open the large gates for us.\r\n\r\n\"I'm not sure what you came here to do exactly, but you'd better not cause any trouble,\" the guard tells us.\r\n\r\n\"No, sir!\" I say. \"We won't be bothering you at all!\"\r\n\r\n\"Go on,\" the guard says. \"Get moving.\"\r\n\r\nWe all move past the guard and enter the city, and as soon as we're inside, the gates behind us slam shut."
-        condition: b3_ch2_infiltration <> 1 AND b3_ch2_goblins = 3
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch02a_communicating
-      - texts:
+      - condition: b3_ch2_infiltration = 1 AND b3_ch2_goblins = 3
+        texts:
           - source: scene_text
             paragraph: 30
             text: "\"Sounds good. Let's go!\"\r\n\r\n\"Take care!\" the old goblin says, as we make our way back towards the main road.\r\n\r\n\"Just making sure we're all on the same page here,\" Hadrik says, once we're out of the goblins' hearing range, \"but if that password from the goblins turns out to be fake, we're going back to our plan of smashing through their gates, right?\"\r\n\r\n\"Of course,\" I say.\r\n\r\n\"Alright, then,\" Hadrik says.\r\n\r\nIt takes us a while, but once we're done traversing the village again, we eventually reach the gates for a second time. The guard at the gates is now staring at us with the same suspicious look that he had the first time, and he addresses us as soon as we stop in front of him.\r\n\r\n\"I see you're back,\" the guard says. \"Should I take it that you've finally managed to get that 'client' of yours to give you the password?...\""
           - source: scene_text_2
             paragraph: 25
             text: "\"Yeah, we reached him through the transceiver eventually, and he told us the password,\" I say, as I wink three times with my left eye. \"It's 'gargoyle wings'. \"\r\n\r\n\"Hmm...\" the guard says. \"That is indeed the correct password.\"\r\n\r\nHe then gives a signal to the two metal golems behind him, who immediately open the large gates for us.\r\n\r\n\"I'm not sure what you came here to do exactly, but you'd better not cause any trouble,\" the guard tells us.\r\n\r\n\"No, sir!\" I say. \"We won't be bothering you at all!\"\r\n\r\n\"Go on,\" the guard says. \"Get moving.\"\r\n\r\nWe all move past the guard and enter the city, and as soon as we're inside, the gates behind us slam shut."
-        condition: b3_ch2_infiltration = 1 AND b3_ch2_goblins = 3
         choices:
           - position: 1
             text: Continue
@@ -904,39 +879,39 @@ scenes:
               storyboard_controls: Jump to frame "Book 3 Chapter 2 b"
   - name: b3_ch02a_insane
     routes:
-      - texts:
+      - condition: b3_ch2_infiltration = 0
+        texts:
           - source: scene_text
             paragraph: 33
             text: "\"Yeah, we reached him through the transceiver eventually, and he told us the password,\" I say. \"It's 'gargoyle wings'. \"\r\n\r\n\"You're saying that the password is 'gargoyle wings'?\" the guard says. \"You sure about that?\"\r\n\r\n\"Uh, yes...\" I say. \"Yes, of course!\"\r\n\r\n\"Alright, then,\" the guard says. \"You're all under arrest. We're going to keep you in a cell until this mystery client of yours shows up to confirm that he invited you here. If he doesn't show up in a few weeks, then you're going to get executed for attempting to illegally infiltrate the city.\"\r\n\r\n\"What?!\" I say. \"But we gave you the password!\"\r\n\r\n\"That's not the full password,\" the guard says. \"You also needed to wink several times while saying the words. It's a measure that we've taken against people trying to eavesdrop. I don't know if you ever actually had a client or not, but breaking our laws is not something that should be taken lightly. Now follow me. I hope you won't be stupid enough to resist arrest in this situation.\"\r\n\r\nAs soon as the guard turns around to lead us into the city, Hadrik looks at Daren, who gives him a curt nod.\r\n\r\n\"Hey, wait a second!\" Daren says, as he puts his hand on the guard's shoulder. \"I think there's still something that you might not have considered.\""
           - source: scene_text_2
             paragraph: 28
             text: "\"Oh, yeah?\" the guard says, as he turns to face Daren. \"Like what?\"\r\n\r\nJust as the guard is turning, Hadrik runs right past him and he heads towards one of the two big golems that were stationed about a dozen feet in front of the gates.\r\n\r\nAs soon as he gets close enough, Hadrik jumps high up into the air and with one strong punch to the face, he knocks one of the golems off its feet and sends it flying into the large gates behind it. The doors could not withstand the impact of the crash and they got blown out of their hinges, but now the large golem that fell on top of them is struggling to get back up. Hadrik gives the golem no time to recover and he quickly jumps on its big head, battering it with a quick flurry of punches, until the giant metal construct stops moving completely.\r\n\r\n\"Have you gone completely insane?!\" the guard shouts at us, but before he gets to say anything else, Daren bashes him in the head with his shield, knocking him unconscious.\r\n\r\n\"Everyone, get inside my barrier, now!\" Daren says.\r\n\r\nHe then raises his shield, and a semi-transparent magical barrier appears all around us. Several of the golems that were further away from us have already noticed that something is wrong, and they are all preparing to shoot beams of fire out of their mouths towards us, in unison.\r\n\r\n\"Brace yourselves,\" Daren says. \"It's going to get hot.\""
-        condition: b3_ch2_infiltration = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch02a_insane2
-      - texts:
+      - condition: b3_ch2_infiltration = 2
+        texts:
           - source: scene_text
             paragraph: 33
             text: "\"Yeah, we reached him through the transceiver eventually, and he told us the password,\" I say. \"It's 'gargoyle wings'. \"\r\n\r\n\"You're saying that the password is 'gargoyle wings'?\" the guard says. \"You sure about that?\"\r\n\r\n\"Uh, yes...\" I say. \"Yes, of course!\"\r\n\r\n\"Alright, then,\" the guard says. \"You're all under arrest. We're going to keep you in a cell until this mystery client of yours shows up to confirm that he invited you here. If he doesn't show up in a few weeks, then you're going to get executed for attempting to illegally infiltrate the city.\"\r\n\r\n\"What?!\" I say. \"But we gave you the password!\"\r\n\r\n\"That's not the full password,\" the guard says. \"You also needed to wink several times while saying the words. It's a measure that we've taken against people trying to eavesdrop. I don't know if you ever actually had a client or not, but breaking our laws is not something that should be taken lightly. Now follow me. I hope you won't be stupid enough to resist arrest in this situation.\"\r\n\r\nAs soon as the guard turns around to lead us into the city, Hadrik looks at Daren, who gives him a curt nod.\r\n\r\n\"Hey, wait a second!\" Daren says, as he puts his hand on the guard's shoulder. \"I think there's still something that you might not have considered.\""
           - source: scene_text_2
             paragraph: 28
             text: "\"Oh, yeah?\" the guard says, as he turns to face Daren. \"Like what?\"\r\n\r\nJust as the guard is turning, Hadrik runs right past him and he heads towards one of the two big golems that were stationed about a dozen feet in front of the gates.\r\n\r\nAs soon as he gets close enough, Hadrik jumps high up into the air and with one strong punch to the face, he knocks one of the golems off its feet and sends it flying into the large gates behind it. The doors could not withstand the impact of the crash and they got blown out of their hinges, but now the large golem that fell on top of them is struggling to get back up. Hadrik gives the golem no time to recover and he quickly jumps on its big head, battering it with a quick flurry of punches, until the giant metal construct stops moving completely.\r\n\r\n\"Have you gone completely insane?!\" the guard shouts at us, but before he gets to say anything else, Daren bashes him in the head with his shield, knocking him unconscious.\r\n\r\n\"Everyone, get inside my barrier, now!\" Daren says.\r\n\r\nHe then raises his shield, and a semi-transparent magical barrier appears all around us. Several of the golems that were further away from us have already noticed that something is wrong, and they are all preparing to shoot beams of fire out of their mouths towards us, in unison.\r\n\r\n\"Brace yourselves,\" Daren says. \"It's going to get hot.\""
-        condition: b3_ch2_infiltration = 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch02a_insane2
-      - texts:
+      - condition: b3_ch2_infiltration = 1
+        texts:
           - source: scene_text
             paragraph: 34
             text: "\"Not exactly,\" I say, as Hadrik runs right past the guard and towards one of the two big golems that were stationed about a dozen feet in front of the gates.\r\n\r\nAs soon as he gets close enough, Hadrik jumps high up into the air and with one strong punch to the face, he knocks one of the golems off its feet and sends it flying into the large gates behind it. The doors could not withstand the impact of the crash and they got blown out of their hinges, but now the large golem that fell on top of them is struggling to get back up. Hadrik gives the golem no time to recover and he quickly jumps on its big head, battering it with a quick flurry of punches, until the giant metal construct stops moving completely.\r\n\r\n\"Have you gone completely insane?!\" the guard shouts at us, but before he gets to say anything else, Daren bashes him in the head with his shield, knocking him unconscious.\r\n\r\n\"Everyone, get inside my barrier, now!\" Daren says.\r\n\r\nHe then raises his shield, and a semi-transparent magical barrier appears all around us. Several of the golems that were further away from us have already noticed that something is wrong, and they are all preparing to shoot beams of fire out of their mouths towards us, in unison.\r\n\r\n\"Brace yourselves,\" Daren says. \"It's going to get hot.\""
-        condition: b3_ch2_infiltration = 1
         choices:
           - position: 1
             text: Continue
@@ -978,15 +953,16 @@ scenes:
               b3_ch2_golems: 3
   - name: b3_ch02a_observation
     routes:
-      - texts:
+      - condition: b3_ch1_unlock = 2
+        texts:
           - source: scene_text
             paragraph: 36
             text: "\"I'll go help Illuna,\" I say. \"The sooner we deal with the crossbowmen, the better.\"\r\n\r\nI take the crossbow out of my backpack, I raise my arms in the air in order to tell the air currents that I want to go up, and then I begin heading above the walls, so I can get a good view of my enemies. One of the golems notices me flying out of Daren's barrier and he quickly switches his targets, now shooting his fire beam straight at me. I dodge the beam, but several of the crossbowmen on the walls have now also noticed me and they are currently shooting dozens of bolts in my direction.\r\n\r\nAs I struggle to evade the beam and the arrows in mid-air by flying as unpredictably as possible, Illuna fires a torrent of water out of her hands, flooding some of the crossbowmen that were shooting at me and her.\r\n\r\nHowever, what I didn't realize was that a second golem from behind me was also readying his fire beam at the time, and I never even got to see the attack coming, before I was turned into ashes."
-        condition: b3_ch1_unlock = 2
-        set:
-          failed_checks:
-            - '[ Stat device locked - check failed ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Stat device locked - check failed ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1005,15 +981,16 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: perception < 4 AND b3_ch1_unlock <> 2
+        texts:
           - source: scene_text
             paragraph: 36
             text: "\"I'll go help Illuna,\" I say. \"The sooner we deal with the crossbowmen, the better.\"\r\n\r\nI take the crossbow out of my backpack, I raise my arms in the air in order to tell the air currents that I want to go up, and then I begin heading above the walls, so I can get a good view of my enemies. One of the golems notices me flying out of Daren's barrier and he quickly switches his targets, now shooting his fire beam straight at me. I dodge the beam, but several of the crossbowmen on the walls have now also noticed me and they are currently shooting dozens of bolts in my direction.\r\n\r\nAs I struggle to evade the beam and the arrows in mid-air by flying as unpredictably as possible, Illuna fires a torrent of water out of her hands, flooding some of the crossbowmen that were shooting at me and her.\r\n\r\nHowever, what I didn't realize was that a second golem from behind me was also readying his fire beam at the time, and I never even got to see the attack coming, before I was turned into ashes."
-        condition: perception < 4 AND b3_ch1_unlock <> 2
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Observation check failed - level 4 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Observation check failed - level 4 ]'
         choices:
           - position: 1
             text: Restart game
@@ -1032,20 +1009,21 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_text_2
-            paragraph: 30
-            text: "Seeing that the golems aren't planning on leaving me alone, I decide to place myself between them and the crossbowmen, and I wait to see what happens. My plan seems to be working, as the golems have immediately stopped using their beam attacks, in order to avoid hurting their own troops by accident, and they are now simply looking at me without doing anything. I make sure to maintain the exact same level of height and I begin flying horizontally, shooting the crossbowmen in their legs one at a time, while also dodging the crossbow bolts that they're shooting at me. When they realize that I'm not planning to move away from their allies, the two golems that were shooting at me decide to switch their targets, and to go after Hadrik, who is already done with the golem at the gate and is now rushing towards one of the others.\r\n\r\nIn the meantime Daren, who now has less fire attacks focusing him, can finally move with his barrier a little, so he is heading slowly for the gates, along with Kate, Leila and Melindra. As Illuna and I deal with a few more of the crossbowmen and archers, Kate decides that she can now dismiss some of her defensive ice platforms, and she is focusing on reinforcing a large icicle in the sky, making sure that the projectile is strong enough to go through the golems' anti-magical armor."
+      - condition: perception = 4 AND b3_ch1_unlock <> 2
+        texts:
           - source: scene_text
             paragraph: 37
             text: "\"I'll go help Illuna,\" I say. \"The sooner we deal with the crossbowmen, the better.\"\r\n\r\nI take the crossbow out of my backpack, I raise my arms in the air in order to tell the air currents that I want to go up, and then I begin heading above the walls, so I can get a good view of my enemies. One of the golems notices me flying out of Daren's barrier and he quickly switches his targets, now shooting his fire beam straight at me. I dodge the beam, but several of the crossbowmen on the walls have now also noticed me and they are currently shooting dozens of bolts in my direction.\r\n\r\nAs I struggle to evade the beam and the arrows in mid-air by flying as unpredictably as possible, Illuna fires a torrent of water out of her hands, flooding some of the crossbowmen that were shooting at me and her.\r\n\r\nHowever, it seems that the golem in front of me and the crossbowmen are not my only problems. With the tail of my eye, I somehow manage to see another golem readying his fire beam from behind me, which gives me just enough time to fly out of its way and to avoid death by a mere few inches."
+          - source: scene_text_2
+            paragraph: 30
+            text: "Seeing that the golems aren't planning on leaving me alone, I decide to place myself between them and the crossbowmen, and I wait to see what happens. My plan seems to be working, as the golems have immediately stopped using their beam attacks, in order to avoid hurting their own troops by accident, and they are now simply looking at me without doing anything. I make sure to maintain the exact same level of height and I begin flying horizontally, shooting the crossbowmen in their legs one at a time, while also dodging the crossbow bolts that they're shooting at me. When they realize that I'm not planning to move away from their allies, the two golems that were shooting at me decide to switch their targets, and to go after Hadrik, who is already done with the golem at the gate and is now rushing towards one of the others.\r\n\r\nIn the meantime Daren, who now has less fire attacks focusing him, can finally move with his barrier a little, so he is heading slowly for the gates, along with Kate, Leila and Melindra. As Illuna and I deal with a few more of the crossbowmen and archers, Kate decides that she can now dismiss some of her defensive ice platforms, and she is focusing on reinforcing a large icicle in the sky, making sure that the projectile is strong enough to go through the golems' anti-magical armor."
           - source: scene_3
             paragraph: 9
             text: "After we incapacitate a few more of the crossbowmen, Kate shoots her giant icicle with an incredible force, causing an explosion of air behind it and going straight through one of the golems' heads, immediately sending it falling to the ground with a loud thud. At the same time, Hadrik also finishes off another one of the golems and he is moving on to his fourth.\r\n\r\nUnfortunately, while we were busy dealing with the few golems that were near enough to engage us immediately, about a dozen more large golems that heard the commotion have been slowly getting closer to us, and they will soon be within firing range of their beam attacks. As Hadrik grabs the attention of one of the two golems that are close enough to attack us, and the last golem who was attacking Daren's barrier begins to target Illuna and Flower instead, Daren and the others quickly rush out of the barrier towards the gates, and they call out to us as soon as they reach them.\r\n\r\n\"Over here!\" Daren shouts to us. \"Leave the golems and come here! Quick, before the other ones reach us!\""
-        condition: perception = 4 AND b3_ch1_unlock <> 2
-        set:
-          successful_checks:
-            - '[ Observation check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Observation check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1055,15 +1033,16 @@ scenes:
                 condition: is_dead = 0
   - name: b3_ch02a_reflexes
     routes:
-      - texts:
+      - condition: b3_ch1_unlock = 2
+        texts:
           - source: scene_text
             paragraph: 38
             text: "\"I'll go distract some of the golems,\" I say. \"You guys try to get closer to the city entrance in the meantime. I'll join you when you're at the gates.\"\r\n\r\nI take the crossbow out of my backpack, I raise my arms in the air in order to tell the air currents that I want to go up, and then I begin heading towards the area where there are more golems close to each other, so I can distract as many of them as possible. While flying, I make sure to stay as far away from the walls as I can, because the last thing I would want is to also be focused by the crossbowmen while I'm dealing with the golems. I'll let Illuna handle the guards on the wall. I have enough enemies to worry about as it is.\r\n\r\nOnce I get close enough to the golems, I shoot a few crossbow bolts at them, in order to grab their attention. As I suspected, the bolts do no damage to them whatsoever, but at least it looks like I've succeeded in my primary purpose of providing a good distraction. All three of the golems close to me have already stopped targeting Daren's barrier and they are turning their heads towards me, preparing to charge up their fire beams. As soon as they start shooting at me, I begin flying around erratically, trying to make it as difficult as possible for them to predict my moves.\r\n\r\nDodging three beams of fire constantly proved to be a little more than I could handle, however, and it only took one minor slip-up on my part to make me miss my timing and get incinerated in an instant."
-        condition: b3_ch1_unlock = 2
-        set:
-          failed_checks:
-            - '[ Stat device locked - check failed ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Stat device locked - check failed ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1082,15 +1061,16 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: reflexes < 4 AND b3_ch1_unlock <> 2
+        texts:
           - source: scene_text
             paragraph: 38
             text: "\"I'll go distract some of the golems,\" I say. \"You guys try to get closer to the city entrance in the meantime. I'll join you when you're at the gates.\"\r\n\r\nI take the crossbow out of my backpack, I raise my arms in the air in order to tell the air currents that I want to go up, and then I begin heading towards the area where there are more golems close to each other, so I can distract as many of them as possible. While flying, I make sure to stay as far away from the walls as I can, because the last thing I would want is to also be focused by the crossbowmen while I'm dealing with the golems. I'll let Illuna handle the guards on the wall. I have enough enemies to worry about as it is.\r\n\r\nOnce I get close enough to the golems, I shoot a few crossbow bolts at them, in order to grab their attention. As I suspected, the bolts do no damage to them whatsoever, but at least it looks like I've succeeded in my primary purpose of providing a good distraction. All three of the golems close to me have already stopped targeting Daren's barrier and they are turning their heads towards me, preparing to charge up their fire beams. As soon as they start shooting at me, I begin flying around erratically, trying to make it as difficult as possible for them to predict my moves.\r\n\r\nDodging three beams of fire constantly proved to be a little more than I could handle, however, and it only took one minor slip-up on my part to make me miss my timing and get incinerated in an instant."
-        condition: reflexes < 4 AND b3_ch1_unlock <> 2
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Reflexes check failed - level 4 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Reflexes check failed - level 4 ]'
         choices:
           - position: 1
             text: Restart game
@@ -1109,20 +1089,21 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_text_2
-            paragraph: 31
-            text: "As the three beams of fire keep following me through the sky, I am often required to make full use of my superhuman reflexes to dodge the enemies' attacks effectively. Luckily for me, I don't need to keep this up for too long, because Hadrik soon manages to finish off the golem at the gates, and then he comes over to my side to engage one of my opponents in combat, forcing it to cancel its beam attack and to fight more defensively. \r\n\r\nAfter spending a bit more time flying around, I take a look towards Daren's barrier and I am happy to see that my efforts were not in vain, and that even though Daren, Kate, Melindra and Leila are still being attacked by one of the fire beams, they have nevertheless gotten quite a lot closer to the gate while I've been keeping these golems company. Furthermore, given that Illuna also managed to deal with some of the guards on the wall in the meantime, Kate decided that she could dismiss some of her defensive ice platforms, and she is currently focusing on reinforcing a large icicle in the sky, making sure that the projectile is strong enough to go through the golems' anti-magical armor."
+      - condition: reflexes = 4 AND b3_ch1_unlock <> 2
+        texts:
           - source: scene_text
             paragraph: 39
             text: "\"I'll go distract some of the golems,\" I say. \"You guys try to get closer to the city entrance in the meantime. I'll join you when you're at the gates.\"\r\n\r\nI take the crossbow out of my backpack, I raise my arms in the air in order to tell the air currents that I want to go up, and then I begin heading towards the area where there are more golems close to each other, so I can distract as many of them as possible. While flying, I make sure to stay as far away from the walls as I can, because the last thing I would want is to also be focused by the crossbowmen while I'm dealing with the golems. I'll let Illuna handle the guards on the wall. I have enough enemies to worry about as it is.\r\n\r\nOnce I get close enough to the golems, I shoot a few crossbow bolts at them, in order to grab their attention. As I suspected, the bolts do no damage to them whatsoever, but at least it looks like I've succeeded in my primary purpose of providing a good distraction. All three of the golems close to me have already stopped targeting Daren's barrier and they are turning their heads towards me, preparing to charge up their fire beams. As soon as they start shooting at me, I begin flying around erratically, trying to make it as difficult as possible for them to predict my moves."
+          - source: scene_text_2
+            paragraph: 31
+            text: "As the three beams of fire keep following me through the sky, I am often required to make full use of my superhuman reflexes to dodge the enemies' attacks effectively. Luckily for me, I don't need to keep this up for too long, because Hadrik soon manages to finish off the golem at the gates, and then he comes over to my side to engage one of my opponents in combat, forcing it to cancel its beam attack and to fight more defensively. \r\n\r\nAfter spending a bit more time flying around, I take a look towards Daren's barrier and I am happy to see that my efforts were not in vain, and that even though Daren, Kate, Melindra and Leila are still being attacked by one of the fire beams, they have nevertheless gotten quite a lot closer to the gate while I've been keeping these golems company. Furthermore, given that Illuna also managed to deal with some of the guards on the wall in the meantime, Kate decided that she could dismiss some of her defensive ice platforms, and she is currently focusing on reinforcing a large icicle in the sky, making sure that the projectile is strong enough to go through the golems' anti-magical armor."
           - source: scene_3
             paragraph: 10
             text: "Once the preparations are complete, Kate shoots her giant icicle with an incredible force, causing an explosion of air behind it and going straight through the head of one of the golems on my side, immediately sending it falling to the ground with a loud thud. At the same time, Hadrik also finishes off the golem he was fighting, and he is now moving on to his fourth.\r\n\r\nUnfortunately, while we were busy dealing with the few golems that were near enough to engage us immediately, about a dozen more large golems that heard the commotion have been slowly getting closer to us, and they will soon be within firing range of their beam attacks. As Hadrik grabs the attention of one of the two golems that are close enough to attack us, and the last golem who was attacking Daren's barrier begins to target Illuna and Flower instead, Daren and the others quickly rush out of the barrier towards the gates, and they call out to us as soon as they reach them.\r\n\r\n\"Over here!\" Daren shouts to us. \"Leave the golems and come here! Quick, before the other ones reach us!\""
-        condition: reflexes = 4 AND b3_ch1_unlock <> 2
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1132,15 +1113,16 @@ scenes:
                 condition: is_dead = 0
   - name: b3_ch02a_speed
     routes:
-      - texts:
+      - condition: b3_ch1_unlock = 2
+        texts:
           - source: scene_text
             paragraph: 40
             text: "\"I'll go distract some of the golems,\" I say. \"You guys try to get closer to the city entrance in the meantime. I'll join you when you're at the gates.\"\r\n\r\nI take the crossbow out of my backpack, I dash out of Daren's barrier, and then I begin heading towards the area where there are more golems close to each other, so I can distract as many of them as possible. While running, I make sure to stay as far away from the walls as I can, because the last thing I would want is to also be focused by the crossbowmen while I'm dealing with the golems. I'll let Illuna handle the guards on the wall. I have enough enemies to worry about as it is.\r\n\r\nOnce I get close enough to the golems, I shoot a few crossbow bolts at them, in order to grab their attention. As I suspected, the bolts do no damage to them whatsoever, but at least it looks like I've succeeded in my primary purpose of providing a good distraction. All three of the golems close to me have already stopped targeting Daren's barrier and they are turning their heads towards me, preparing to charge up their fire beams. As soon as they start shooting at me, I begin running around erratically, trying to make it as difficult as possible for them to predict my moves.\r\n\r\nSadly, I wasn't fast enough to be able to avoid three fire beams targeting me at the same time, and I was very soon overwhelmed by my enemies and incinerated on the spot."
-        condition: b3_ch1_unlock = 2
-        set:
-          failed_checks:
-            - '[ Stat device locked - check failed ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Stat device locked - check failed ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1159,15 +1141,16 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: agility < 4 AND b3_ch1_unlock <> 2
+        texts:
           - source: scene_text
             paragraph: 40
             text: "\"I'll go distract some of the golems,\" I say. \"You guys try to get closer to the city entrance in the meantime. I'll join you when you're at the gates.\"\r\n\r\nI take the crossbow out of my backpack, I dash out of Daren's barrier, and then I begin heading towards the area where there are more golems close to each other, so I can distract as many of them as possible. While running, I make sure to stay as far away from the walls as I can, because the last thing I would want is to also be focused by the crossbowmen while I'm dealing with the golems. I'll let Illuna handle the guards on the wall. I have enough enemies to worry about as it is.\r\n\r\nOnce I get close enough to the golems, I shoot a few crossbow bolts at them, in order to grab their attention. As I suspected, the bolts do no damage to them whatsoever, but at least it looks like I've succeeded in my primary purpose of providing a good distraction. All three of the golems close to me have already stopped targeting Daren's barrier and they are turning their heads towards me, preparing to charge up their fire beams. As soon as they start shooting at me, I begin running around erratically, trying to make it as difficult as possible for them to predict my moves.\r\n\r\nSadly, I wasn't fast enough to be able to avoid three fire beams targeting me at the same time, and I was very soon overwhelmed by my enemies and incinerated on the spot."
-        condition: agility < 4 AND b3_ch1_unlock <> 2
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Speed check failed - level 4 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Speed check failed - level 4 ]'
         choices:
           - position: 1
             text: Restart game
@@ -1186,20 +1169,21 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_text_2
-            paragraph: 32
-            text: "Avoiding three fire beams that are targeting me at the same time is by no means an easy task, but thanks to my incredible speed I am always one step ahead of my enemies, even when the odds are very clearly not stacked in my favor. Luckily for me, I don't need to keep this up for too long, because Hadrik soon manages to finish off the golem at the gates, and then he comes over to my side to engage one of my opponents in combat, forcing it to cancel its beam attack and to fight more defensively.\r\n\r\nAfter spending a bit more time running around, I take a look towards Daren's barrier and I am happy to see that my efforts were not in vain, and that even though Daren, Kate, Melindra and Leila are still being attacked by one of the fire beams, they have nevertheless gotten quite a lot closer to the gate while I've been keeping these golems company. Furthermore, given that Illuna also managed to deal with some of the guards on the wall in the meantime, Kate decided that she could dismiss some of her defensive ice platforms, and she is currently focusing on reinforcing a large icicle in the sky, making sure that the projectile is strong enough to go through the golems' anti-magical armor."
+      - condition: agility = 4 AND b3_ch1_unlock <> 2
+        texts:
           - source: scene_text
             paragraph: 41
             text: "\"I'll go distract some of the golems,\" I say. \"You guys try to get closer to the city entrance in the meantime. I'll join you when you're at the gates.\"\r\n\r\nI take the crossbow out of my backpack, I dash out of Daren's barrier, and then I begin heading towards the area where there are more golems close to each other, so I can distract as many of them as possible. While running, I make sure to stay as far away from the walls as I can, because the last thing I would want is to also be focused by the crossbowmen while I'm dealing with the golems. I'll let Illuna handle the guards on the wall. I have enough enemies to worry about as it is.\r\n\r\nOnce I get close enough to the golems, I shoot a few crossbow bolts at them, in order to grab their attention. As I suspected, the bolts do no damage to them whatsoever, but at least it looks like I've succeeded in my primary purpose of providing a good distraction. All three of the golems close to me have already stopped targeting Daren's barrier and they are turning their heads towards me, preparing to charge up their fire beams. As soon as they start shooting at me, I begin running around erratically, trying to make it as difficult as possible for them to predict my moves."
+          - source: scene_text_2
+            paragraph: 32
+            text: "Avoiding three fire beams that are targeting me at the same time is by no means an easy task, but thanks to my incredible speed I am always one step ahead of my enemies, even when the odds are very clearly not stacked in my favor. Luckily for me, I don't need to keep this up for too long, because Hadrik soon manages to finish off the golem at the gates, and then he comes over to my side to engage one of my opponents in combat, forcing it to cancel its beam attack and to fight more defensively.\r\n\r\nAfter spending a bit more time running around, I take a look towards Daren's barrier and I am happy to see that my efforts were not in vain, and that even though Daren, Kate, Melindra and Leila are still being attacked by one of the fire beams, they have nevertheless gotten quite a lot closer to the gate while I've been keeping these golems company. Furthermore, given that Illuna also managed to deal with some of the guards on the wall in the meantime, Kate decided that she could dismiss some of her defensive ice platforms, and she is currently focusing on reinforcing a large icicle in the sky, making sure that the projectile is strong enough to go through the golems' anti-magical armor."
           - source: scene_3
             paragraph: 11
             text: "Once the preparations are complete, Kate shoots her giant icicle with an incredible force, causing an explosion of air behind it and going straight through the head of one of the golems on my side, immediately sending it falling to the ground with a loud thud. At the same time, Hadrik also finishes off the golem he was fighting, and he is now moving on to his fourth.\r\n\r\nUnfortunately, while we were busy dealing with the few golems that were near enough to engage us immediately, about a dozen more large golems that heard the commotion have been slowly getting closer to us, and they will soon be within firing range of their beam attacks. As Hadrik grabs the attention of one of the two golems that are close enough to attack us, and the last golem who was attacking Daren's barrier begins to target Illuna and Flower instead, Daren and the others quickly rush out of the barrier towards the gates, and they call out to us as soon as they reach them.\r\n\r\n\"Over here!\" Daren shouts to us. \"Leave the golems and come here! Quick, before the other ones reach us!\""
-        condition: agility = 4 AND b3_ch1_unlock <> 2
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 4 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 4 ]'
         choices:
           - position: 1
             text: Continue
@@ -1209,15 +1193,16 @@ scenes:
                 condition: is_dead = 0
   - name: b3_ch02a_strength
     routes:
-      - texts:
+      - condition: b3_ch1_unlock = 2
+        texts:
           - source: scene_text
             paragraph: 42
             text: "\"I'll try to deal with one of the golems,\" I say. \"The quicker we take them out, the better.\"\r\n\r\n\"Wait, you're planning to attack one of them on your own?...\" Daren says. \"I really hope you're not being serious right n--\"\r\n\r\nI don't let Daren finish his sentence, and I raise my arms in the air, in order to tell the air currents that I want to go up into the sky. I then fly out of the barrier, trying to go as high up as possible, so that I don't make myself into a target for either the golems or the guards on the wall. I take a good long look at the battlefield, and I decide that my best bet is to attack the golem that is currently the most isolated out of the four who are attacking Daren's barrier.\r\n\r\nI dive down from the sky as fast as I can, putting both my fists in front of me, in order to tell my currents to keep accelerating. Then, when I arrive close enough to the golem I was targeting, I put all of my strength behind my punch, and I hit my enemy directly in the face, before it gets the chance to react.\r\n\r\nSadly for me, hitting the hard metal surface of the golem with my frail arm had about as much effect on it as if I were to hit it with a small twig. Trying to ignore the pain from my fist, I immediately fly backwards in an attempt to retreat, but the golem quickly turns its beam of fire upon me, and I am much too close to it to be able to avoid it in any way. It only takes a second for the beam to completely incinerate me and to turn me into ashes."
-        condition: b3_ch1_unlock = 2
-        set:
-          failed_checks:
-            - '[ Stat device locked - check failed ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Stat device locked - check failed ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1236,15 +1221,16 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: toughness < 4 AND b3_ch1_unlock <> 2
+        texts:
           - source: scene_text
             paragraph: 42
             text: "\"I'll try to deal with one of the golems,\" I say. \"The quicker we take them out, the better.\"\r\n\r\n\"Wait, you're planning to attack one of them on your own?...\" Daren says. \"I really hope you're not being serious right n--\"\r\n\r\nI don't let Daren finish his sentence, and I raise my arms in the air, in order to tell the air currents that I want to go up into the sky. I then fly out of the barrier, trying to go as high up as possible, so that I don't make myself into a target for either the golems or the guards on the wall. I take a good long look at the battlefield, and I decide that my best bet is to attack the golem that is currently the most isolated out of the four who are attacking Daren's barrier.\r\n\r\nI dive down from the sky as fast as I can, putting both my fists in front of me, in order to tell my currents to keep accelerating. Then, when I arrive close enough to the golem I was targeting, I put all of my strength behind my punch, and I hit my enemy directly in the face, before it gets the chance to react.\r\n\r\nSadly for me, hitting the hard metal surface of the golem with my frail arm had about as much effect on it as if I were to hit it with a small twig. Trying to ignore the pain from my fist, I immediately fly backwards in an attempt to retreat, but the golem quickly turns its beam of fire upon me, and I am much too close to it to be able to avoid it in any way. It only takes a second for the beam to completely incinerate me and to turn me into ashes."
-        condition: toughness < 4 AND b3_ch1_unlock <> 2
-        set:
-          failed_checks:
-            - '[ Toughness check failed - level 4 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Toughness check failed - level 4 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1263,17 +1249,18 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: toughness = 4 AND strength < 4 AND b3_ch1_unlock <> 2
+        texts:
           - source: scene_text
             paragraph: 43
             text: "\"I'll try to deal with one of the golems,\" I say. \"The quicker we take them out, the better.\"\r\n\r\n\"Wait, you're planning to attack one of them on your own?...\" Daren says. \"I really hope you're not being serious right n--\"\r\n\r\nI don't let Daren finish his sentence, and I raise my arms in the air, in order to tell the air currents that I want to go up into the sky. I then fly out of the barrier, trying to go as high up as possible, so that I don't make myself into a target for either the golems or the guards on the wall. I take a good long look at the battlefield, and I decide that my best bet is to attack the golem that is currently the most isolated out of the four who are attacking Daren's barrier.\r\n\r\nI dive down from the sky as fast as I can, putting both my fists in front of me, in order to tell my currents to keep accelerating. Then, when I arrive close enough to the golem I was targeting, I put all of my strength behind my punch, and I hit my enemy directly in the face, before it gets the chance to react.\r\n\r\nSadly for me, my strength is not enough to make the golem budge, and I am forced to fly backwards right after the punch, in an attempt to retreat. The golem, however, immediately turns its beam of fire upon me, and I am much too close to it to be able to avoid it in any way. It only takes a second for the beam to completely incinerate me and to turn me into ashes."
-        condition: toughness = 4 AND strength < 4 AND b3_ch1_unlock <> 2
-        set:
-          failed_checks:
-            - '[ Strength check failed - level 4 ]'
-          successful_checks:
-            - '[ Toughness check successful - level 4 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Strength check failed - level 4 ]'
+              successful_checks:
+                - '[ Toughness check successful - level 4 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1292,7 +1279,8 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: toughness = 4 AND strength = 4 AND b3_ch1_unlock <> 2
+        texts:
           - source: scene_text
             paragraph: 44
             text: "\"I'll try to deal with one of the golems,\" I say. \"The quicker we take them out, the better.\"\r\n\r\n\"Wait, you're planning to attack one of them on your own?...\" Daren says. \"I really hope you're not being serious right n--\"\r\n\r\nI don't let Daren finish his sentence, and I raise my arms in the air, in order to tell the air currents that I want to go up into the sky. I then fly out of the barrier, trying to go as high up as possible, so that I don't make myself into a target for either the golems or the guards on the wall. I take a good long look at the battlefield, and I decide that my best bet is to attack the golem that is currently the most isolated out of the four who are attacking Daren's barrier.\r\n\r\nI dive down from the sky as fast as I can, putting both my fists in front of me, in order to tell my currents to keep accelerating. Then, when I arrive close enough to the golem I was targeting, I put all of my strength behind my punch, and I hit my enemy directly in the face, before it gets the chance to react."
@@ -1302,16 +1290,16 @@ scenes:
           - source: scene_3
             paragraph: 12
             text: "Once I get close enough to the two golems, I shoot them both with my crossbow, which causes them to immediately stop attacking Daren's barrier and to focus on me instead. Seeing that they are no longer being targeted by any of the fire beams, Daren and the others quickly take advantage of this opportunity to make a rush for the city gates, while Hadrik manages to finish off yet another golem, now moving on to his fourth.\r\n\r\nUnfortunately, it seems that while we were busy dealing with the few golems that were near enough to engage us immediately, about a dozen more large golems that heard the commotion have been slowly getting closer to us, and they will soon be within firing range of their beam attacks.\r\n\r\n\"Over here!\" Daren shouts to us, as soon as he and the others reach the gates. \"Leave the golems and come here! Quick, before the other ones reach us!\""
-        condition: toughness = 4 AND strength = 4 AND b3_ch1_unlock <> 2
-        set:
-          successful_checks:
-            - '[ Toughness check successful - level 4 ]'
-            - '[ Strength check successful - level 4 ]'
-          is_dead: 0
-          ac_b3_ch2_metal: 1
-        achievement:
-          id: ac_b3_ch2_metal
-          title: Metal golem slayer
+        effects:
+          - set:
+              successful_checks:
+                - '[ Toughness check successful - level 4 ]'
+                - '[ Strength check successful - level 4 ]'
+              is_dead: 0
+              ac_b3_ch2_metal: 1
+            achievement:
+              id: ac_b3_ch2_metal
+              title: Metal golem slayer
         choices:
           - position: 1
             text: Continue

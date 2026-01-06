@@ -6,14 +6,14 @@ scenes:
             - 'Checkpoint reached: Game saved.'
         condition: checkpoint_rich = 1
     routes:
-      - texts:
+      - condition: ch3_kate_badly_hurt = 0
+        texts:
           - source: scene_text
             paragraph: 453
             text: "\"Barry, I would like to have a word with you, in private,\" Kate tells me, as the four of us are taking a small break near a river.\r\n\r\nI knew this was coming. I've been expecting it ever since we had that discussion about my stat device two hours ago. She barely spoke a word to me after that, and the look she's been giving me for the past hour has been sending chills down my spine. Whatever the reason for her sudden change of attitude towards me, I can't let things go on like this. We need to clear this up, one way or the other.\r\n\r\n\"Alright,\" I say. \"Lead the way.\"\r\n\r\nKate goes on ahead and I start to follow her, but before I take my first step, Daren grabs me by the shoulder.\r\n\r\n\"Remember, Barry... Three taps.\"\r\n\r\nThe look in his eyes is dead serious. I realize he's talking about the magical transceiver he gave me last night, which I'm still carrying in my pocket. He told me to tap it three times in case I'm in danger. I guess he must have also noticed that something was wrong with the way Kate's been acting for the past two hours."
           - source: scene_text_2
             paragraph: 3
             text: "I nod to him and he lets go of me. I then go on to follow Kate, who is heading deeper into the forest. We walk in silence for about a minute. \r\n\r\n\"How far are we going, exactly?\" I ask her, but she gives no answer and continues to walk forward.\r\n\r\nAfter about another minute, she finally stops and turns to me, with the same cold look in her eyes that she's been giving me ever since we fought the dragon.\r\n\r\n\"Are you planning to tell me what--\"\r\n\r\nKate doesn't let me finish my sentence and suddenly makes an ice dagger appear in her right hand, which she then almost immediately puts to my throat. I try to step back, but I realize there's a tree right behind me. She is now pressing her blade hard against my throat, and I can feel a trickle of blood running down my neck, as my back is being pushed against the tree's trunk.\r\n\r\n\"If you make any kind of noise, I will slit your throat here and now. Do you understand?\""
-        condition: ch3_kate_badly_hurt = 0
         choices:
           - position: 1
             text: Yes.
@@ -40,14 +40,14 @@ scenes:
                   current_scene: ch7_tap
                   checkpoint_rich: 0
                   ch7_tap: 1
-      - texts:
+      - condition: ch3_kate_badly_hurt = 1
+        texts:
           - source: scene_text
             paragraph: 454
             text: "\"Barry, I would like to have a word with you, in private,\" Kate tells me, as the four of us are taking a small break near a river.\r\n\r\nI knew this was coming. I've been expecting it ever since we had that discussion about my stat device two hours ago. She barely spoke a word to me after that, and the look she's been giving me for the past hour has been sending chills down my spine. Whatever the reason for her sudden change of attitude towards me, I can't let things go on like this. We need to clear this up, one way or the other.\r\n\r\n\"Alright,\" I say. \"Lead the way.\"\r\n\r\nKate goes on ahead and I start to follow her, but before I take my first step, Daren grabs me by the shoulder.\r\n\r\n\"Remember, Barry... Three taps.\"\r\n\r\nThe look in his eyes is dead serious. I realize he's talking about the magical transceiver he gave me last night, which I'm still carrying in my pocket. He told me to tap it three times in case I'm in danger. I guess he must have also noticed that something was wrong with the way Kate's been acting for the past two hours."
           - source: scene_text_2
             paragraph: 4
             text: "I nod to him and he lets go of me. I then go on to follow Kate, who is heading deeper into the forest. We walk in silence for about a minute. She isn't breathing heavily anymore. Her movements look much more natural as well. I'm glad to see that she's finally recovered, at least.\r\n\r\n\"How far are we going, exactly?\" I ask her, but she gives no answer and continues to walk forward.\r\n\r\nAfter about another minute, she finally stops and turns to me, with the same cold look in her eyes that she's been giving me ever since we fought the dragon.\r\n\r\n\"Are you planning to tell me what--\"\r\n\r\nKate doesn't let me finish my sentence and suddenly makes an ice dagger appear in her right hand, which she then almost immediately puts to my throat. I try to step back, but I realize there's a tree right behind me. She is now pressing her blade hard against my throat, and I can feel a trickle of blood running down my neck, as my back is being pushed against the tree's trunk.\r\n\r\n\"If you make any kind of noise, I will slit your throat here and now. Do you understand?\""
-        condition: ch3_kate_badly_hurt = 1
         choices:
           - position: 1
             text: Yes.
@@ -109,11 +109,11 @@ scenes:
               current_scene: ch7_diane
   - name: ch7_diane
     routes:
-      - texts:
+      - condition: ch7_tap = 0
+        texts:
           - source: scene_text
             paragraph: 458
             text: "\"Damn it, Kate, I don't know what's gotten into you, but I'm not a lessathi. Do you think I'd be wasting my time here trying to become a mage if I had the ability to build powerful magical traps and devices?\"\r\n\r\n\"You're lying!\" Kate yells at me. \"You are lying through your teeth! Humans could not survive with such a weak magical aura, and there is no other race that looks exactly like humans and possesses so little magical energy.\"\r\n\r\n\"Even if I am somehow a lessathi, that doesn't deny the fact that I've been raised by humans and have never met these guys who captured you. Does this have something to do with the Beacon of Hope? I'm not working with any of them. Please, trust me on this!\"\r\n\r\n\"Why?!\" she screams while a tear slides down her face. \"Why should I trust you? What makes you any different from the rest of them? Why should I believe that you won't simply betray me, like everyone else I've ever met in my life?\""
-        condition: ch7_tap = 0
         choices:
           - position: 1
             text: Because I'm in love with you!
@@ -125,11 +125,11 @@ scenes:
             effects:
               - set:
                   current_scene: ch7_helped
-      - texts:
+      - condition: ch7_tap = 1
+        texts:
           - source: scene_text
             paragraph: 459
             text: "\"Damn it, Kate, I don't know what's gotten into you, but I'm not a lessathi. Do you think I'd be wasting my time here trying to become a mage if I had the ability to build powerful magical traps and devices?\"\r\n\r\n\"You're lying!\" Kate yells at me. \"You are lying through your teeth! Humans could not survive with such a weak magical aura, and there is no other race that looks exactly like humans and possesses so little magical energy.\"\r\n\r\n\"Even if I am somehow a lessathi, that doesn't deny the fact that I've been raised by humans and have never met these guys who captured you. Does this have something to do with the Beacon of Hope? I'm not working with any of them. Please, trust me on this!\"\r\n\r\n\"Why?!\" she screams while a tear slides down her face. \"Why should I trust you? What makes you any different from the rest of them? Why should I believe that you won't simply betray me, like everyone else I've ever met in my life?\"\r\n\r\n\"Kate, I would never do anything to hurt you...\"\r\n\r\n\"You LIAR! Did you think I wouldn't notice? Do you take me for a fool? Daren's been slowly getting closer to us from the moment I put my knife to your throat. He's moving quietly, and trying to suppress his magical aura, but I can still sense him. You called him here, didn't you? You were planning to have him kill me!\""
-        condition: ch7_tap = 1
         choices:
           - position: 1
             text: I didn't call him here to kill you.
@@ -473,11 +473,11 @@ scenes:
               current_scene: ch7_shelter
   - name: ch7_shelter
     routes:
-      - texts:
+      - condition: ch7_tap = 0
+        texts:
           - source: scene_text
             paragraph: 482
             text: "\"Hey, Barry, can you hear me?\" I hear Daren's voice coming from the transceiver.\r\n\r\nI tap the device once and answer him.\r\n\r\n\"Yes, Daren, I can hear you loud and clear. What is it?\"\r\n\r\n\"I really hate to interrupt you and all, but if we want to get to any kind of shelter before the sun sets, we should get going right now.\"\r\n\r\nKate and I exchange a look.\r\n\r\n\"Alright,\" I say. \"We'll be right there.\"\r\n\r\nI tap the transceiver again, in order to deactivate it, and we start heading towards Daren.\r\n\r\n\"What are you going to tell Daren?\" Kate asks me as we make our way back."
-        condition: ch7_tap = 0
         choices:
           - position: 1
             text: I'm not going to tell him anything.
@@ -489,11 +489,11 @@ scenes:
             effects:
               - set:
                   current_scene: ch7_trust_truth
-      - texts:
+      - condition: ch7_tap = 1
+        texts:
           - source: scene_text
             paragraph: 483
             text: "\"Hey, Barry, can you hear me?\" I hear Daren's voice coming from the transceiver.\r\n\r\nKate takes a short glance towards my pocket to see where the noise is coming from, but she doesn't ask me any questions. She must have realized that this was how I managed to secretly communicate with Daren earlier.\r\n\r\nI tap the device once and answer him.\r\n\r\n\"Yes, Daren, I can hear you loud and clear. What is it?\"\r\n\r\n\"I really hate to interrupt you and all, but if we want to get to any kind of shelter before the sun sets, we should get going right now.\"\r\n\r\nKate and I exchange a look.\r\n\r\n\"Alright,\" I say. \"We'll be right there.\"\r\n\r\nI tap the transceiver again, in order to deactivate it, and we start heading towards Daren.\r\n\r\n\"What are you going to tell Daren?\" Kate asks me as we make our way back."
-        condition: ch7_tap = 1
         choices:
           - position: 1
             text: I'm going to tell him the truth.
@@ -803,14 +803,14 @@ scenes:
               current_scene: ch7_not_convince
   - name: ch7_go_call
     routes:
-      - texts:
+      - condition: ch7_tap = 0
+        texts:
           - source: scene_text
             paragraph: 501
             text: "\"Alright, let's go.\"\r\n\r\nThe three of us start heading out of the clearing. Kate is wearing her hood and covering herself in her green cloak, in order to hide the fact that she is a woman, while moving very cautiously, to avoid attracting any attention to herself.  As we make our way out of the crowd, most people are simply ignoring us, while they try to make their way to the center, in order to get a better view of the fight. At this rate, we'll be out of here in no time!\r\n\r\n\"Hey, watch where you're going you little runt!\"\r\n\r\nI look behind me, to see what the commotion is about. A very large man that is at least a head taller than Daren is now furiously looking towards Kate, who seems to have bumped into him by accident. She tries to move silently past him, but the man grabs her by the cloak and lifts her into the air.\r\n\r\n\"Don't you dare ignore me, you son of a--\"\r\n\r\nAs the hood drops from Kate's head and her face is revealed, the large mage paralyzes with fear for a few seconds. He then immediately drops her, backs away three feet and starts screaming at the top of his lungs.\r\n\r\n\"Aaaaah! Stay away from me, monster! Stay away!\"\r\n\r\nEveryone's attention has now been directed towards us. Even Eiden and Hadrik have stopped their fight to look in our direction."
           - source: scene_text_2
             paragraph: 31
             text: "\"Not this again,\" says Daren, exasperated.\r\n\r\n\"What are you screaming so loud about, you imbecile?\" asks a mage who is wearing red robes and has a particularly crazy look in his eyes. \"It's just a banshee. There are dozens of us here. She doesn't stand a chance.\"\r\n\r\n\"It's not just a banshee,\" says another mage. \"She has allies. I saw her speak to those two over there a few seconds ago.\"\r\n\r\n\"What kind of a banshee allies herself with mages, you fools?\" Kate shouts at them, with a very determined look on her face. \"Don't insult me. I've come here alone. And I'm going to end you all by myself as well.\"\r\n\r\nFor a moment, her words confused me, but then I realized she must be trying to protect us. When I try to step towards Kate, Daren stops me.\r\n\r\n\"Hey, now, let's not get ahead of ourselves,\" he whispers to me. \"Why should we risk our lives just because she refuses to get purified? We can't go on like this forever.\"\r\n\r\n\"How can you say something like this? Isn't she our friend?\"\r\n\r\n\"I don't know, is she? When you came back from your little meeting in the woods a few minutes ago you had a bruise on your neck that wasn't there before you left. That was from Kate, wasn't it? You tried to hide it from me for some reason, but you should know as well as I do that she's more trouble than she's worth.\""
-        condition: ch7_tap = 0
         choices:
           - position: 1
             text: Help Kate
@@ -824,14 +824,14 @@ scenes:
               - set:
                   current_scene: ch7_no_help
                   ch7_help_kate: 0
-      - texts:
+      - condition: ch7_tap = 1
+        texts:
           - source: scene_text
             paragraph: 502
             text: "\"Alright, let's go.\"\r\n\r\nThe three of us start heading out of the clearing. Kate is wearing her hood and covering herself in her green cloak, in order to hide the fact that she is a woman, while moving very cautiously, to avoid attracting any attention to herself.  As we make our way out of the crowd, most people are simply ignoring us, while they try to make their way to the center, in order to get a better view of the fight. At this rate, we'll be out of here in no time!\r\n\r\n\"Hey, watch where you're going you little runt!\"\r\n\r\nI look behind me, to see what the commotion is about. A very large man that is at least a head taller than Daren is now furiously looking towards Kate, who seems to have bumped into him by accident. She tries to move silently past him, but the man grabs her by the cloak and lifts her into the air.\r\n\r\n\"Don't you dare ignore me, you son of a--\"\r\n\r\nAs the hood drops from Kate's head and her face is revealed, the large mage paralyzes with fear for a few seconds. He then immediately drops her, backs away three feet and starts screaming at the top of his lungs."
           - source: scene_text_2
             paragraph: 32
             text: "\"Aaaaaaah! Stay away from me, monster! Stay away!\"\r\n\r\nEveryone's attention has now been directed towards us. Even Eiden and Hadrik have stopped their fight to look in our direction.\r\n\r\n\"Not this again,\" says Daren, exasperated.\r\n\r\n\"What are you screaming so loud about, you imbecile?\" asks a mage who is wearing red robes and has a particularly crazy look in his eyes. \"It's just a banshee. There are dozens of us here. She doesn't stand a chance.\"\r\n\r\n\"It's not just a banshee,\" says another mage. \"She has allies. I saw her speak to those two over there a few seconds ago.\"\r\n\r\n\"What kind of a banshee allies herself with mages, you fools?\" Kate shouts at them, with a very determined look on her face. \"Don't insult me. I've come here alone. And I'm going to end you all by myself as well.\"\r\n\r\nFor a moment, her words confused me, but then I realized she must be trying to protect us. When I try to step towards Kate, Daren stops me.\r\n\r\n\"Hey, now, let's not get ahead of ourselves,\" he whispers to me. \"Why should we risk our lives just because she refuses to get purified? We can't go on like this forever.\""
-        condition: ch7_tap = 1
         choices:
           - position: 1
             text: Help Kate
@@ -952,14 +952,14 @@ scenes:
               current_scene: ch7_vulnerable
   - name: ch7_vulnerable
     routes:
-      - texts:
+      - condition: ch7_call_rose = 0
+        texts:
           - source: scene_text
             paragraph: 512
             text: "\"You're all pathetic!\" says a mage who is wearing red robes and has a particularly crazy look in his eyes. \"There are dozens of you, and you're still hesitating? If you lot are too craven to attack him, then I'll do it myself.\"\r\n\r\nThe mage in red robes steps out of the crowd and takes his battle stance.\r\n\r\n\"I hope you will live up to my expectations, stillwater. I intend to take your head as a trophy!\"\r\n\r\n\"Not if I have something to say about it,\" Daren says, as he steps in front of me, with his sword pointing towards the mage who was just talking.\r\n\r\n\"The healer in armor stands against me?\" asks the fire elementalist. \"This is getting better and better! At this rate, I'm going to win this tournament well before they announce the first objectives.\"\r\n\r\nHe raises his hands in the air, and an enormous spinning column of fire starts forming around him.\r\n\r\n\"Behold, hero. Behold, the power of Felran, the strongest fire elementalist on the Eastern Continent!\"\r\n  \r\nThe pillar of fire is getting bigger and bigger, and the other mages are starting to get out of its way, to avoid getting burnt to a crisp."
           - source: scene_text_2
             paragraph: 36
             text: "\"I see you've both already accepted your fate. You're not even trying to raise magical barriers around yourselves. Don't worry, I'll make this quick. I can't really guarantee you it will be painless, though. YAHAHAHAHAHAHAH!\"\r\n\r\nHis laugh is just as crazy as the look in his eyes. Daren does not say anything, but he's watching the fire elementalist intently, with his sword in front of him.\r\n\r\n\"DIE!\" the mage screams, as he sends all of the fire towards us in the form of a beam. Just as the flames reach us, with one quick slash of his sword Daren sends all of the flames back to their owner, incinerating him on the spot and turning him into ashes.\r\n\r\n\"Did you see that?!\" shouts one of the mages. \"His sword absorbed the flames and sent them right back at the other mage. They're too strong! We can't hope to beat them!\"\r\n\r\n\"It doesn't matter how strong they are,\" says a mage in white robes and with long blond hair who appears to be some sort of a healer. \"We came to this tournament to win. We knew what we were getting into. And besides, the stillwater hasn't cast any sort of spell since we laid eyes on him. Do you think that's a coincidence? Stillwater or no, you can't possibly fully replenish your magical energy in just over two hours after a fight with a dragon. He must be in a vulnerable state. Now is the best time to strike!\""
-        condition: ch7_call_rose = 0
         choices:
           - position: 1
             text: Are you willing to bet your life on that, white mage?
@@ -973,7 +973,8 @@ scenes:
               - set:
                   current_scene: ch7_intimidate
                   ch7_intimidate: 1
-      - texts:
+      - condition: ch7_call_rose = 1 AND ch7_watch_fight = 1
+        texts:
           - source: scene_text
             paragraph: 511
             text: >-
@@ -984,7 +985,6 @@ scenes:
               coincidence? No one can possibly fully replenish their magical
               energy in just over two hours after a fight with a dragon. He must
               be in a vulnerable state. Now is the best time to strike!"
-        condition: ch7_call_rose = 1 AND ch7_watch_fight = 1
         choices:
           - position: 1
             text: Are you willing to bet your life on that, white mage?
@@ -1043,17 +1043,18 @@ scenes:
               current_scene: ch7_avoid
   - name: ch7_surprise
     routes:
-      - texts:
+      - condition: agility >= 3
+        texts:
           - source: scene_text
             paragraph: 515
             text: "\"Alright,\" I tell him. \"Then, I'll just go kill the healer real quick.\"\r\n\r\n\"Barry, don't be stupid. The healer is obviously going to be heavily protected once we start figh--\"\r\n\r\nI don't let him finish his sentence and rush towards the white mage with all of my speed, while he's still undefended.\r\n\r\nThe mages never had a chance to react. I was much too fast for them. Before they even get the chance to blink, I arrive behind the healer and stab him straight through his heart, killing him instantly. As he drops to the ground, his henchmen get paralyzed with fear for a few seconds. It doesn't take them long, however, to snap out of it and unanimously decide to flee the battlefield as fast as they can.\r\n\r\nAs the cowards run away with their tails between their legs, Daren walks slowly towards me, while shaking his head in disapproval."
           - source: scene_text_2
             paragraph: 38
             text: "\"Really, Barry, couldn't you at least announce me before you do something this risky? What if the enemies decided to surround you after your little stunt instead of running for the hills?\"\r\n\r\nAs I prepare to answer his question, I suddenly realize that about ten rock golems have spawned out of nowhere and are now completely surrounding us, each of them being at least twice the size of me.  \r\n\r\nSo there was also a powerful summoner amongst these mages. I was careless to let my guard down just because I scared off a few weaklings.\r\n\r\n\"What's the matter, stillwater?\" I hear a voice coming from behind the wall of golems. \"Aren't you going to stab the golems with your little knife as well?\"\r\n\r\nThis isn't good. Daren won't be able to fight all these golems by himself while also defending me. I need to do something."
-        condition: agility >= 3
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 3 ]'
         choices:
           - position: 1
             text: Try to fight the golems head on
@@ -1067,7 +1068,8 @@ scenes:
               - set:
                   current_scene: ch7_avoid
                 condition: is_dead = 0
-      - texts:
+      - condition: agility < 3 AND premonition >= 3
+        texts:
           - source: scene_text
             paragraph: 516
             text: "\"Alright,\" I tell him. \"Then, I'll just go kill the healer real quick.\"\r\n\r\n\"Barry, don't be stupid. The healer is obviously going to be heavily protected once we start figh--\"\r\n\r\nI don't let him finish his sentence and rush towards the white mage with all of my speed, while he's still undefended.\r\n\r\nUnfortunately, I was too slow, and one of the healer's henchmen managed to place himself in front of me before I reached my target.  \r\n\r\nI suddenly get a vision of an enemy stabbing me through the chest from behind. I quickly step to the side and manage to avoid the incoming attack right in the nick of time. I then distance myself from the healer's henchmen as much as I can and pull out my crossbow from my backpack. Daren takes full advantage of the diversion I've created and rushes straight into the cluster of troops standing on the left side of the battlefield, directing everyone's attention towards himself. \r\n\r\nThere's nine of them on his side and three on mine, not counting the healer. I can do this."
@@ -1077,12 +1079,12 @@ scenes:
           - source: scene_3
             paragraph: 6
             text: "\"What's the matter, stillwater?\" I hear a voice coming from behind the wall of golems. \"Aren't you going to shoot the golems with your little crossbow as well?\"\r\n\r\nThis isn't good. Daren won't be able to fight all these golems by himself while also defending me. I need to do something."
-        condition: agility < 3 AND premonition >= 3
-        set:
-          successful_checks:
-            - '[ Premonition check successful - level 3 ]'
-          failed_checks:
-            - '[ Speed check failed - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Premonition check successful - level 3 ]'
+              failed_checks:
+                - '[ Speed check failed - level 3 ]'
         choices:
           - position: 1
             text: Try to fight the golems head on
@@ -1096,16 +1098,17 @@ scenes:
               - set:
                   current_scene: ch7_avoid
                 condition: is_dead = 0
-      - texts:
+      - condition: premonition < 3 AND agility < 3
+        texts:
           - source: scene_text
             paragraph: 517
             text: "\"Alright,\" I tell him. \"Then, I'll just go kill the healer real quick.\"\r\n\r\n\"Barry, don't be stupid. The healer is obviously going to be heavily protected once we start figh--\"\r\n\r\nI don't let him finish his sentence and rush towards the white mage with all of my speed, while he's still undefended.\r\n\r\nUnfortunately, I was too slow, and one of the healer's henchmen managed to place himself in front of me before I reached my target.  \r\n\r\nAs I try to retreat, I suddenly feel a sharp pain in my chest, and when I look down, I can see a knife's blade sticking out of it, all covered in blood. Before I even get the chance to scream in pain, the henchman in front of me rushes towards me with his dagger in hand and impales me in the head, killing me on the spot."
-        condition: premonition < 3 AND agility < 3
-        set:
-          failed_checks:
-            - '[ Speed check failed - level 3 ]'
-            - '[ Premonition check failed - level 3 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Speed check failed - level 3 ]'
+                - '[ Premonition check failed - level 3 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1145,35 +1148,37 @@ scenes:
               current_scene: ch7_avoid
   - name: ch7_fight
     routes:
-      - texts:
+      - condition: strength < 3 AND agility >= 2
+        texts:
           - source: scene_text
             paragraph: 519
             text: "It's all or nothing. I take out my dagger and lunge at one of the golems in front of me.\r\n\r\nMy dagger barely even scratches the surface of the golem's rock hide. There was definitely not enough power behind my blow. The creature seizes the opportunity and brings one of its huge fists down upon me. \r\n\r\nLuckily for me, I am fast enough to get out of its way and manage to escape unharmed. Daren is mowing down the golems a lot faster than I would have expected. He already downed three of them, and he's moving on to the fourth. There's now enough room for me to maneuver around, and these golems are pretty slow, so they shouldn't be a danger to me anymore.\r\n\r\nThere's several loud and painful bird screams coming from above us and almost immediately afterwards, we see five large hawks falling on the ground at the same time, each of them having been impaled with at least one icicle through their chests."
           - source: scene_text_2
             paragraph: 41
             text: "Kate is standing behind us, with her hood off her head, and her signature cold look in her eyes.\r\n\r\n\"Typical summoner tactics,\" she says. \"Distract the enemies with cannon fodder and then use a surprise attack from above. I am surprised that you actually managed to survive this long without knowing this, Daren. You must have been living quite a sheltered life while you were out on your heroic campaigns.\"\r\n\r\n\"Shut up!\" Daren says as he cuts through another rock golem. \"I was going to deal with those birds once they came down. Not everyone has fancy unlimited ranged attacks to use at their leisure.\""
-        condition: strength < 3 AND agility >= 2
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 2 ]'
-          failed_checks:
-            - '[ Strength check failed - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 2 ]'
+              failed_checks:
+                - '[ Strength check failed - level 3 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch7_summoner_vs_dwarf
-      - texts:
+      - condition: strength < 3 AND agility < 2
+        texts:
           - source: scene_text
             paragraph: 520
             text: "It's all or nothing. I take out my dagger and lunge at one of the golems in front of me.\r\n\r\nMy dagger barely even scratches the surface of the golem's rock hide. There was definitely not enough power behind my blow. The creature seizes the opportunity and brings one of its huge fists down upon me. \r\n\r\nThere was no time for me to react. There was barely even enough time for me to feel the immense power behind the creature's strike, as it smashed me against the ground, and then casually moved away from me as if nothing had happened."
-        condition: strength < 3 AND agility < 2
-        set:
-          failed_checks:
-            - '[ Strength check failed - level 3 ]'
-            - '[ Speed check failed- level 2 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Strength check failed - level 3 ]'
+                - '[ Speed check failed- level 2 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1192,90 +1197,94 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: strength >= 3 AND toughness = 4
+        texts:
           - source: scene_text
             paragraph: 521
             text: "It's all or nothing. I take out my dagger and lunge at one of the golems in front of me.\r\n\r\nMy strike was definitely powerful enough to cut through the golem's rock hide, but my dagger was not. My weapon shatters before my eyes, and the creature seizes the opportunity to bring one of its huge fists down upon me.\r\n\r\nBeing confident in both my strength and toughness abilities, I raise both my arms and stop the hit with my bare hands. The force of the blow buried me two feet in the ground, but I quickly jumped away and went on the offensive. If my weapons are not strong enough to pierce through its rocky surface, then I will just have to use my fists. \r\n\r\nI punch a big hole through the golem's chest, which makes it wobble aimlessly for a few seconds, before finally falling to the ground, lifeless. Hah! I got one. Time to see how Daren is holding up.\r\n\r\nI am pleasantly surprised to see that while I was busy fighting that one golem, Daren managed to take down three by himself, and is now going for his fourth. There's now enough room for me to maneuver around, and these golems are pretty slow, so they shouldn't be a danger to me anymore."
           - source: scene_text_2
             paragraph: 42
             text: "There's several loud and painful bird screams coming from above us and almost immediately afterwards, we see five large hawks falling on the ground at the same time, each of them having been impaled with at least one icicle through their chests. \r\n\r\nKate is standing behind us, with her hood off her head, and her signature cold look in her eyes.\r\n\r\n\"Typical summoner tactics,\" she says. \"Distract the enemies with cannon fodder and then use a surprise attack from above. I am surprised that you actually managed to survive this long without knowing this, Daren. You must have been living quite a sheltered life while you were out on your heroic campaigns.\"\r\n\r\n\"Shut up!\" Daren says as he cuts through another rock golem. \"I was going to deal with those birds once they came down. Not everyone has fancy unlimited ranged attacks to use at their leisure.\""
-        condition: strength >= 3 AND toughness = 4
-        set:
-          successful_checks:
-            - '[ Strength check successful - level 3 ]'
-            - '[ Toughness check successful - level 4 ]'
-          ac_ch7_crusher: 1
-        achievement:
-          id: ac_ch7_crusher
-          title: Golem crusher
+        effects:
+          - set:
+              successful_checks:
+                - '[ Strength check successful - level 3 ]'
+                - '[ Toughness check successful - level 4 ]'
+              ac_ch7_crusher: 1
+            achievement:
+              id: ac_ch7_crusher
+              title: Golem crusher
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch7_summoner_vs_dwarf
-      - texts:
+      - condition: strength >= 3 AND toughness < 4 AND combat_technique >= 3
+        texts:
           - source: scene_text
             paragraph: 522
             text: "It's all or nothing. I take out my dagger and lunge at one of the golems in front of me.\r\n\r\nMy strike was definitely powerful enough to cut through the golem's rock hide, but my dagger was not. My weapon shatters before my eyes, and the creature seizes the opportunity to bring one of its huge fists down upon me.\r\n\r\nIf I try to block this outright, the force of the impact will break my bones, regardless of my strength. However, I know of a combat technique that will allow me to use the golem's own strength against it. \r\n\r\nAs the creature's fist approaches me, I sidestep out of its way, I grab the golem by the arm, and then I throw it right into another one of the golems, smashing them both to bits. Hah! I got two of them. Time to see how Daren is holding up.\r\n\r\nI am pleasantly surprised to see that while I was busy fighting that one golem, Daren managed to take down three by himself, and is now going for his fourth. There's now enough room for me to maneuver around, and these golems are pretty slow, so they shouldn't be a danger to me anymore."
           - source: scene_text_2
             paragraph: 43
             text: "There's several loud and painful bird screams coming from above us and almost immediately afterwards, we see five large hawks falling on the ground at the same time, each of them having been impaled with at least one icicle through their chests. \r\n\r\nKate is standing behind us, with her hood off her head, and her signature cold look in her eyes.\r\n\r\n\"Typical summoner tactics,\" she says. \"Distract the enemies with cannon fodder and then use a surprise attack from above. I am surprised that you actually managed to survive this long without knowing this, Daren. You must have been living quite a sheltered life while you were out on your heroic campaigns.\"\r\n\r\n\"Shut up!\" Daren says as he cuts through another rock golem. \"I was going to deal with those birds once they came down. Not everyone has fancy unlimited ranged attacks to use at their leisure.\""
-        condition: strength >= 3 AND toughness < 4 AND combat_technique >= 3
-        set:
-          successful_checks:
-            - '[ Strength check successful - level 3 ]'
-            - '[ Combat technique check successful - level 3 ]'
-          failed_checks:
-            - '[ Toughness check failed - level 4 ]'
-          ac_ch7_crusher: 1
-        achievement:
-          id: ac_ch7_crusher
-          title: Golem crusher
+        effects:
+          - set:
+              successful_checks:
+                - '[ Strength check successful - level 3 ]'
+                - '[ Combat technique check successful - level 3 ]'
+              failed_checks:
+                - '[ Toughness check failed - level 4 ]'
+              ac_ch7_crusher: 1
+            achievement:
+              id: ac_ch7_crusher
+              title: Golem crusher
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch7_summoner_vs_dwarf
-      - texts:
+      - condition: >-
+          strength >= 3 AND toughness < 4 AND combat_technique < 3 AND agility
+          >= 2
+        texts:
           - source: scene_text
             paragraph: 523
             text: "It's all or nothing. I take out my dagger and lunge at one of the golems in front of me.\r\n\r\nMy strike was definitely powerful enough to cut through the golem's rock hide, but my dagger was not. My weapon shatters before my eyes, and the creature seizes the opportunity to bring one of its huge fists down upon me.\r\n\r\nLuckily for me, I am fast enough to get out of its way and manage to escape unharmed. Daren is mowing down the golems a lot faster than I would have expected. He already downed three of them, and he's moving on to the fourth. There's now enough room for me to maneuver around, and these golems are pretty slow, so they shouldn't be a danger to me anymore.\r\n\r\nThere's several loud and painful bird screams coming from above us and almost immediately afterwards, we see five large hawks falling on the ground at the same time, each of them having been impaled with at least one icicle through their chests."
           - source: scene_text_2
             paragraph: 44
             text: "Kate is standing behind us, with her hood off her head, and her signature cold look in her eyes.\r\n\r\n\"Typical summoner tactics,\" she says. \"Distract the enemies with cannon fodder and then use a surprise attack from above. I am surprised that you actually managed to survive this long without knowing this, Daren. You must have been living quite a sheltered life while you were out on your heroic campaigns.\"\r\n\r\n\"Shut up!\" Daren says as he cuts through another rock golem. \"I was going to deal with those birds once they came down. Not everyone has fancy unlimited ranged attacks to use at their leisure.\""
-        condition: >-
-          strength >= 3 AND toughness < 4 AND combat_technique < 3 AND agility
-          >= 2
-        set:
-          successful_checks:
-            - '[ Strength check successful - level 3 ]'
-            - '[ Speed check successful - level 2 ]'
-          failed_checks:
-            - '[ Toughness check failed - level 4 ]'
-            - '[ Combat technique check failed - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Strength check successful - level 3 ]'
+                - '[ Speed check successful - level 2 ]'
+              failed_checks:
+                - '[ Toughness check failed - level 4 ]'
+                - '[ Combat technique check failed - level 3 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch7_summoner_vs_dwarf
-      - texts:
+      - condition: >-
+          strength >= 3 AND toughness < 4 AND combat_technique < 3 AND agility <
+          2
+        texts:
           - source: scene_text
             paragraph: 524
             text: "It's all or nothing. I take out my dagger and lunge at one of the golems in front of me.\r\n\r\nMy strike was definitely powerful enough to cut through the golem's rock hide, but my dagger was not. My weapon shatters before my eyes, and the creature seizes the opportunity to bring one of its huge fists down upon me.\r\n\r\nThere was no time for me to react. There was barely even enough time for me to feel the immense power behind the creature's strike, as it smashed me against the ground, and then casually moved away from me as if nothing had happened."
-        condition: >-
-          strength >= 3 AND toughness < 4 AND combat_technique < 3 AND agility <
-          2
-        set:
-          successful_checks:
-            - '[ Strength check successful - level 3 ]'
-          failed_checks:
-            - '[ Toughness check failed - level 4 ]'
-            - '[ Combat technique check failed - level 3 ]'
-            - '[ Speed check failed - level 2 ]'
-          is_dead: 1
+        effects:
+          - set:
+              successful_checks:
+                - '[ Strength check successful - level 3 ]'
+              failed_checks:
+                - '[ Toughness check failed - level 4 ]'
+                - '[ Combat technique check failed - level 3 ]'
+                - '[ Speed check failed - level 2 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1296,52 +1305,55 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
   - name: ch7_avoid
     routes:
-      - texts:
+      - condition: agility >= 1
+        texts:
           - source: scene_text
             paragraph: 525
             text: "I'm not going to win an arm wrestling match against one of these monsters anytime soon. There's no use trying to fight them head on. I'll just let Daren do his thing and try to avoid getting hit as long as possible.\r\n\r\nFortunately, my speed is more than enough to effectively dodge the rock golems' strikes. They have very slow movements, and it's easy to predict how they will attack next. \r\n\r\nAfter dodging a few golems, I take a look towards Daren to see how he's doing, and I am pleasantly surprised to find out that he's already dispatched four of them, and is moving on to his fifth. There's now enough room for me to maneuver around, and these golems are pretty slow, so they shouldn't be a danger to me anymore.\r\n\r\nThere's several loud and painful bird screams coming from above us and almost immediately afterwards, we see five large hawks falling on the ground at the same time, each of them having been impaled with at least one icicle through their chests."
           - source: scene_text_2
             paragraph: 45
             text: "Kate is standing behind us, with her hood off her head, and her signature cold look in her eyes.\r\n\r\n\"Typical summoner tactics,\" she says. \"Distract the enemies with cannon fodder and then use a surprise attack from above. I am surprised that you actually managed to survive this long without knowing this, Daren. You must have been living quite a sheltered life while you were out on your heroic campaigns.\"\r\n\r\n\"Shut up!\" Daren says as he cuts through another rock golem. \"I was going to deal with those birds once they came down. Not everyone has fancy unlimited ranged attacks to use at their leisure.\""
-        condition: agility >= 1
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 1 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 1 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch7_summoner_vs_dwarf
-      - texts:
+      - condition: agility = 0 AND perception >= 2
+        texts:
           - source: scene_text
             paragraph: 526
             text: "I'm not going to win an arm wrestling match against one of these monsters anytime soon. There's no use trying to fight them head on. I'll just let Daren do his thing and try to avoid getting hit as long as possible.\r\n\r\nEven taking into account the golems' very slow movements, the sheer number of them makes it quite difficult to dodge them all just by using my speed. Luckily, I've spent a few points in my observation skill, which makes it possible for me to pay attention to several golems at the same time, even in these conditions. \r\n\r\nAfter dodging a few golems, I take a look towards Daren to see how he's doing, and I am pleasantly surprised to find out that he's already dispatched four of them, and is moving on to his fifth. There's now enough room for me to maneuver around, and these golems are pretty slow, so they shouldn't be a danger to me anymore.\r\n\r\nThere's several loud and painful bird screams coming from above us and almost immediately afterwards, we see five large hawks falling on the ground at the same time, each of them having been impaled with at least one icicle through their chests."
           - source: scene_text_2
             paragraph: 46
             text: "Kate is standing behind us, with her hood off her head, and her signature cold look in her eyes.\r\n\r\n\"Typical summoner tactics,\" she says. \"Distract the enemies with cannon fodder and then use a surprise attack from above. I am surprised that you actually managed to survive this long without knowing this, Daren. You must have been living quite a sheltered life while you were out on your heroic campaigns.\"\r\n\r\n\"Shut up!\" Daren says as he cuts through another rock golem. \"I was going to deal with those birds once they came down. Not everyone has fancy unlimited ranged attacks to use at their leisure.\""
-        condition: agility = 0 AND perception >= 2
-        set:
-          successful_checks:
-            - '[ Observation check successful - level 2 ]'
-          failed_checks:
-            - '[ Speed check failed - level 1 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Observation check successful - level 2 ]'
+              failed_checks:
+                - '[ Speed check failed - level 1 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch7_summoner_vs_dwarf
-      - texts:
+      - condition: perception < 2 AND agility = 0
+        texts:
           - source: scene_text
             paragraph: 527
             text: "I'm not going to win an arm wrestling match against one of these monsters anytime soon. There's no use trying to fight them head on. I'll just let Daren do his thing and try to avoid getting hit as long as possible.\r\n\r\nAs I start moving around to dodge the golems, I realize that this isn't nearly as easy as I may have expected. They might be extremely slow, but the sheer number of them  makes it almost impossible to avoid their attacks by just using my speed. I need to get out of here fast, or I'll get pummeled to death. \r\n\r\nI suddenly see an opening in their formation, probably made when Daren killed one of them. I rush towards it with all the speed I can muster, but one of the golems sees me and intercepts me before I escape. One punch is all it took to completely smash my skull, as my body fell to the ground, lifeless."
-        condition: perception < 2 AND agility = 0
-        set:
-          failed_checks:
-            - '[ Speed check failed - level 1 ]'
-            - '[ Observation check failed - level 2 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Speed check failed - level 1 ]'
+                - '[ Observation check failed - level 2 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1362,28 +1374,28 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
   - name: ch7_summoner_vs_dwarf
     routes:
-      - texts:
+      - condition: ch7_intimidate = 0
+        texts:
           - source: scene_text
             paragraph: 528
             text: "One of the mages starts to scream very loudly, while pointing at Kate.\r\n\r\n\"Aaaaaaah! A banshee! It's a banshee! Quick, kill her before she fully awakens!\"\r\n\r\nA lot of the mages who seemed to be on the fence about this whole fight until now are slowly starting to join the battle as well, in order to kill Kate. Eiden seems to have teleported away while we were fighting the golems, and Hadrik, who now lost his dueling partner, is also running towards us, probably looking to join in on the fun.\r\n\r\nThe summoner mage is beyond himself with joy thanks to this latest turn of events. Now that I get a clear look at him, I see that he is about six feet tall,  and that he has long, pointy ears, green eyes and blond hair. I've travelled a lot in my life, but this is the first time I've actually seen an elf in the flesh. Usually, they are very isolated from the rest of the world and rarely go outside the Elven Nation from the Eastern Continent. I heard that they've been invited here too, but I wasn't actually expecting any of them to show up. I guess this goes to show just how much of an importance the Magium holds for mages all around the world. \r\n\r\n\"Hah!\" he says, triumphantly. \"This is what you all get for siding with a banshee, you lowly peasants. It's time for me to prove to you why us elves are superior to you in every way. And I'm going to start by dealing with that monstrosity that killed my poor little hawks.\""
           - source: scene_text_2
             paragraph: 47
             text: "The summoner prepares to call more creatures into battle, but before he can act, Hadrik places himself between Kate and her attacker and starts panting heavily.\r\n\r\n\"Hold on... Just... give me a sec...\" he says, while everyone looks at him, confused. \"Man... I just can't get used to running with these short legs...\"\r\n\r\n\"Is this supposed to be some sort of a joke?\" asks the elf. \"You dwarves have always had a sense of humor beyond my understanding. Step aside, if you know what's best for you.\"\r\n  \r\n\"No can do, I'm afraid,\" Hadrik says. \"I can't just stand idly by and let you hoodlums treat a lady with disrespect!\"\r\n\r\n\"A lady?! I must admit, I've heard the rumors about dwarves drinking so much that they have ale running through their veins instead of blood, but I never thought them to be true.\"\r\n\r\n\"Aye! And I never expected that old saying about elves never leaving home without a stick up their arse to turn out to be true, either. It's a crazy world we're living in, I'll tell you that!\""
-        condition: ch7_intimidate = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch7_azarius_vs_summoner
-      - texts:
+      - condition: ch7_intimidate = 1
+        texts:
           - source: scene_text
             paragraph: 529
             text: "One of the mages starts to scream very loudly, while pointing at Kate.\r\n\r\n\"Aaaaaaah! A banshee! It's a banshee! Quick, kill her before she fully awakens!\"\r\n\r\nA lot of the mages who seemed to be on the fence about this whole fight until now are slowly starting to join the battle as well, in order to kill Kate. Hadrik is also quickly running towards us, probably looking to join in on the fun.\r\n\r\nThe summoner mage is beyond himself with joy thanks to this latest turn of events. Now that I get a clear look at him, I see that he is about six feet tall,  and that he has long, pointy ears, green eyes and blond hair. I've travelled a lot in my life, but this is the first time I've actually seen an elf in the flesh. Usually, they are very isolated from the rest of the world and rarely go outside the Elven Nation from the Eastern Continent. I heard that they've been invited here too, but I wasn't actually expecting any of them to show up. I guess this goes to show just how much of an importance the Magium holds for mages all around the world. \r\n\r\n\"Hah!\" he says, triumphantly. \"This is what you all get for siding with a banshee, you lowly peasants. It's time for me to prove to you why us elves are superior to you in every way. And I'm going to start by dealing with that monstrosity that killed my poor little hawks.\""
           - source: scene_text_2
             paragraph: 48
             text: "The summoner prepares to call more creatures into battle, but before he can act, Hadrik places himself between Kate and her attacker and starts panting heavily.\r\n\r\n\"Hold on... Just... give me a sec...\" he says, while everyone looks at him, confused. \"Man... I just can't get used to running with these short legs...\"\r\n\r\n\"Is this supposed to be some sort of a joke?\" asks the elf. \"You dwarves have always had a sense of humor beyond my understanding. Step aside, if you know what's best for you.\"\r\n  \r\n\"No can do, I'm afraid,\" Hadrik says. \"I can't just stand idly by and let you hoodlums treat a lady with disrespect!\"\r\n\r\n\"A lady?! I must admit, I've heard the rumors about dwarves drinking so much that they have ale running through their veins instead of blood, but I never thought them to be true.\"\r\n\r\n\"Aye! And I never expected that old saying about elves never leaving home without a stick up their arse to turn out to be true, either. It's a crazy world we're living in, I'll tell you that!\""
-        condition: ch7_intimidate = 1
         choices:
           - position: 1
             text: Continue
@@ -1439,28 +1451,28 @@ scenes:
               current_scene: ch7_god_of_death
   - name: ch7_wrong_leave
     routes:
-      - texts:
+      - condition: ch7_help_kate = 0
+        texts:
           - source: scene_text
             paragraph: 533
             text: "\"You've got it all wrong, we're not with her!\"\r\n\r\nUpon hearing my words, Kate turns to look at me. She has a very sad expression in her eyes, but she doesn't say anything, and then quickly turns her head away.\r\n\r\n\"Now that's not a very nice thing to say about your friend!\" Azarius says. \"Especially not after she tried to cover for you in order to keep you safe.\"\r\n\r\nHe turns towards Kate.\r\n\r\n\"Young lady, are you unharmed?\"\r\n\r\n\"Young... lady?\" Kate asks, looking as if she's having a hard time understanding his words.\r\n\r\nBefore they get to finish their conversation, a mage dressed in black robes and with a snake tattoo on his bald head interrupts them by making a loud tsk-tsk sound.\r\n\r\n\"This will not do, Sage of the West,\" he says. \"This simply will not do.\"\r\n\r\nAzarius turns to him, smiling calmly.\r\n\r\n\"A follower of the God of Death honors us with his presence?\" he says. \"If I did anything to offend you, then by all means, please state your complaint!\""
           - source: scene_text_2
             paragraph: 52
             text: "\"My complaint is simple, sage. My god requires more sacrifices to be had this day, and you deprived him of them by interrupting this fight.\"\r\n\r\n\"Oh? But I was quite sure that despite his title, Ulruk, the God of Death only delves in necromancy and is not actually ruling the realm of the dead. Why did he suddenly begin to take an interest in the affairs of people who are still alive? If you are simply in search of fresh corpses, I assure you that there are plenty to be found lying around these parts after yesterday's events.\"\r\n\r\n\"Do not question the great Ulruk's judgment, heathen. Your actions have angered my god, and now you will feel his wrath!\"\r\n\r\nA mage who is wearing a silver circlet on his head and green robes grabs the necromancer by the arm.\r\n\r\n\"Calm down, Zack,\" he says. \"There's plenty of time left till the end of the day. We can just kill some more people after we get out of here and the number of deaths will be the same.\"\r\n\r\n\"Unhand me, fool! I'm only travelling with you because my god ordered me to. Do not presume to tell me what to do! This matter has nothing to do with you or your God of Fate.\""
-        condition: ch7_help_kate = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch7_god_of_death
-      - texts:
+      - condition: ch7_help_kate = 1
+        texts:
           - source: scene_text
             paragraph: 534
             text: "\"You've got this all wrong, we're not allied with the banshee!\"\r\n\r\nI suddenly feel the back of my head being smacked hard with something very cold. When I turn around, I see Kate holding an improvised club fashioned out of ice in her hands.\r\n\r\n\"That one was long overdue...\" she says.\r\n\r\nThe sage laughs.\r\n\r\n\"No need to be alarmed, my friends,\" he says. \"The only reason I decided to intervene was because I couldn't just sit by and watch these overgrown bullies attack a defenseless young lady.\"\r\n\r\n\"Defenseless?!\" Kate shouts.\r\n\r\n\"Young lady?...\" Daren asks, confused.\r\n\r\nBefore they get to finish their conversation, a mage dressed in black robes and with a snake tattoo on his bald head interrupts them by making a loud tsk-tsk sound.\r\n\r\n\"This will not do, Sage of the West,\" he says. \"This simply will not do.\""
           - source: scene_text_2
             paragraph: 53
             text: "Azarius turns to him, smiling calmly.\r\n\r\n\"A follower of the God of Death honors us with his presence?\" he says. \"If I did anything to offend you, then by all means, please state your complaint!\"\r\n\r\n\"My complaint is simple, sage. My god requires more sacrifices to be had this day, and you deprived him of them by interrupting this fight.\"\r\n\r\n\"Oh? But I was quite sure that despite his title, Ulruk, the God of Death only delves in necromancy and is not actually ruling the realm of the dead. Why did he suddenly begin to take an interest in the affairs of people who are still alive? If you are simply in search of fresh corpses, I assure you that there are plenty to be found lying around these parts after yesterday's events.\"\r\n\r\n\"Do not question the great Ulruk's judgment, heathen. Your actions have angered my god, and now you will feel his wrath!\"\r\n\r\nA mage who is wearing a silver circlet on his head and green robes grabs the necromancer by the arm.\r\n\r\n\"Calm down, Zack,\" he says. \"There's plenty of time left till the end of the day. We can just kill some more people after we get out of here and the number of deaths will be the same.\"\r\n\r\n\"Unhand me, fool! I'm only travelling with you because my god ordered me to. Do not presume to tell me what to do! This matter has nothing to do with you or your God of Fate.\""
-        condition: ch7_help_kate = 1
         choices:
           - position: 1
             text: Continue
@@ -1621,42 +1633,42 @@ scenes:
               current_scene: ch7_refuse
   - name: ch7_accept
     routes:
-      - texts:
+      - condition: ch7_call_rose = 0
+        texts:
           - source: scene_text
             paragraph: 549
             text: "\"Sure, why not? I'll give it a shot.\"\r\n\r\n\"Hah! That's the spirit!\" Hadrik says.\r\n\r\n\"Barry, wait!\" Kate says. \"You'll get yourself killed!\"\r\n\r\n\"I'll be fine!\" I tell her as I move to align myself with the dwarf, leaving about twenty feet of distance between us.\r\n\r\nKate doesn't try to stop me anymore, but I can see that she has an uneasy look in her eyes. The others are now stepping aside in order to give us the space we need to begin our fight. \r\n\r\nThere's something that's been bothering me ever since we got teleported here. I'm not sure if anyone else noticed this, but the dwarf has been shapeshifting this entire time. I can tell by the feel of his magical aura. This is not his original form. As far as I know, shapeshifting magic can only be used to change your size, or to transform yourself into another creature. It cannot be used to disguise yourself as someone else. What possible benefit could Hadrik get from transforming himself into a dwarf?\r\n\r\nI then suddenly remember his first appearance. Of course! Now it all makes sense! Why didn't I realize this sooner? Shapeshifting magic cannot be used to turn yourself into a giant, but it can be used to turn yourself into a dwarf. He didn't use magic to become fifty foot tall, he just reverted to his original form. Hadrik is a giant! The reason he is masquerading as a dwarf is likely because giants were never invited to this tournament, and he fears that they will kick him out if they find out the truth."
           - source: scene_text_2
             paragraph: 64
             text: "This must mean that he has inhuman strength! When shapeshifting into something smaller than yourself, you usually retain a small part of your original mass and most of your original strength. A single punch from him could blow me to bits. I need to be extra careful here. Even if he said this was going to be a sparring match, he doesn't really look like the kind of guy who knows how to hold back.\r\n\r\nNow that I know that he is a giant, I can use this information to my advantage! Since he chose to transform into a dwarf and not a human, his body proportions are completely different from those of his normal body. He even said himself that he wasn't used to running with short legs. I'm willing to bet that this is affecting his sense of balance somehow. I just need to use techniques that aim specifically to knock him off balance.\r\n\r\nHadrik is now grinning and cracking his knuckles.\r\n\r\n\"Well, Barry,\" he says after a while. \"Here I come!\"\r\n\r\nThe dwarf comes charging directly towards me, without bothering to use any evasive maneuvers. Just before he reaches me, he picks up speed and appears right in front of me, almost as if he'd used teleportation. \r\n\r\nInstead of going for a punch, however, he attempts to prod me with his index finger."
-        condition: ch7_call_rose = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch7_accept2
-      - texts:
+      - condition: ch7_call_rose = 1 AND ch7_watch_fight = 0
+        texts:
           - source: scene_text
             paragraph: 549
             text: "\"Sure, why not? I'll give it a shot.\"\r\n\r\n\"Hah! That's the spirit!\" Hadrik says.\r\n\r\n\"Barry, wait!\" Kate says. \"You'll get yourself killed!\"\r\n\r\n\"I'll be fine!\" I tell her as I move to align myself with the dwarf, leaving about twenty feet of distance between us.\r\n\r\nKate doesn't try to stop me anymore, but I can see that she has an uneasy look in her eyes. The others are now stepping aside in order to give us the space we need to begin our fight. \r\n\r\nThere's something that's been bothering me ever since we got teleported here. I'm not sure if anyone else noticed this, but the dwarf has been shapeshifting this entire time. I can tell by the feel of his magical aura. This is not his original form. As far as I know, shapeshifting magic can only be used to change your size, or to transform yourself into another creature. It cannot be used to disguise yourself as someone else. What possible benefit could Hadrik get from transforming himself into a dwarf?\r\n\r\nI then suddenly remember his first appearance. Of course! Now it all makes sense! Why didn't I realize this sooner? Shapeshifting magic cannot be used to turn yourself into a giant, but it can be used to turn yourself into a dwarf. He didn't use magic to become fifty foot tall, he just reverted to his original form. Hadrik is a giant! The reason he is masquerading as a dwarf is likely because giants were never invited to this tournament, and he fears that they will kick him out if they find out the truth."
           - source: scene_text_2
             paragraph: 64
             text: "This must mean that he has inhuman strength! When shapeshifting into something smaller than yourself, you usually retain a small part of your original mass and most of your original strength. A single punch from him could blow me to bits. I need to be extra careful here. Even if he said this was going to be a sparring match, he doesn't really look like the kind of guy who knows how to hold back.\r\n\r\nNow that I know that he is a giant, I can use this information to my advantage! Since he chose to transform into a dwarf and not a human, his body proportions are completely different from those of his normal body. He even said himself that he wasn't used to running with short legs. I'm willing to bet that this is affecting his sense of balance somehow. I just need to use techniques that aim specifically to knock him off balance.\r\n\r\nHadrik is now grinning and cracking his knuckles.\r\n\r\n\"Well, Barry,\" he says after a while. \"Here I come!\"\r\n\r\nThe dwarf comes charging directly towards me, without bothering to use any evasive maneuvers. Just before he reaches me, he picks up speed and appears right in front of me, almost as if he'd used teleportation. \r\n\r\nInstead of going for a punch, however, he attempts to prod me with his index finger."
-        condition: ch7_call_rose = 1 AND ch7_watch_fight = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch7_accept2
-      - texts:
+      - condition: ch7_call_rose = 1 AND ch7_watch_fight = 1
+        texts:
           - source: scene_text
             paragraph: 544
             text: "\"Sure, why not? I'll give it a shot.\"\r\n\r\n\"Hah! That's the spirit!\" Hadrik says.\r\n\r\n\"Barry, wait!\" Kate says. \"You'll get yourself killed!\"\r\n\r\n\"I'll be fine!\" I tell her as I move to align myself with the dwarf, leaving about twenty feet of distance between us.\r\n\r\nKate doesn't try to stop me anymore, but I can see that she has an uneasy look in her eyes. The others are now stepping aside in order to give us the space we need to begin our fight. \r\n\r\nThere's something that's been bothering me ever since we got teleported here. I'm not sure if anyone else noticed this, but the dwarf has been shapeshifting this entire time. I can tell by the feel of his magical aura. This is not his original form. As far as I know, shapeshifting magic can only be used to change your size, or to transform yourself into another creature. It cannot be used to disguise yourself as someone else. What possible benefit could Hadrik get from transforming himself into a dwarf?\r\n\r\nI then suddenly remember his first appearance. Of course! Now it all makes sense! Why didn't I realize this sooner? Shapeshifting magic cannot be used to turn yourself into a giant, but it can be used to turn yourself into a dwarf. He didn't use magic to become fifty foot tall, he just reverted to his original form. Hadrik is a giant! The reason he is masquerading as a dwarf is likely because giants were never invited to this tournament, and he fears that they will kick him out if they find out the truth."
           - source: scene_text_2
             paragraph: 63
             text: "This explains his inhuman strength from before. When shapeshifting into something smaller than yourself, you usually retain a small part of your original mass and most of your original strength. A single punch from him could blow me to bits. I need to be extra careful here. Even if he said this was going to be a sparring match, he doesn't really look like the kind of guy who knows how to hold back.\r\n\r\nNow that I know that he is a giant, I can use this information to my advantage! Since he chose to transform into a dwarf and not a human, his body proportions are completely different from those of his normal body. He even said himself that he wasn't used to running with short legs. I'm willing to bet that this is affecting his sense of balance somehow. I just need to use techniques that aim specifically to knock him off balance.\r\n\r\nHadrik is now grinning and cracking his knuckles.\r\n\r\n\"Well, Barry,\" he says after a while. \"Here I come!\"\r\n\r\nThe dwarf comes charging directly towards me, without bothering to use any evasive maneuvers. Just before he reaches me, he picks up speed and appears right in front of me, almost as if he'd used teleportation. \r\n\r\nInstead of going for a punch, however, he attempts to prod me with his index finger."
-        condition: ch7_call_rose = 1 AND ch7_watch_fight = 1
         choices:
           - position: 1
             text: Continue
@@ -1665,15 +1677,16 @@ scenes:
                   current_scene: ch7_accept2
   - name: ch7_accept2
     routes:
-      - texts:
+      - condition: reflexes < 3
+        texts:
           - source: scene_text
             paragraph: 545
             text: "Even for a prod, his strike was so fast that I couldn't even dream of dodging it. Instead, I get thrown back about four feet before falling to the ground with a big thump.\r\n\r\n\"Barry, are you okay?\" Daren shouts as he rushes towards me.\r\n\r\n\"I'm fine,\" I answer him. \"Maybe just a little shaken up.\"\r\n\r\n\"Well, that was underwhelming,\" Hadrik says, disappointed. \"I guess I was getting my hopes up a little too much for this fight.\""
-        condition: reflexes < 3
-        set:
-          failed_checks:
-            - '[ Reflexes check failed - level 3 ]'
-          ch7_win_vs_hadrik: 0
+        effects:
+          - set:
+              failed_checks:
+                - '[ Reflexes check failed - level 3 ]'
+              ch7_win_vs_hadrik: 0
         choices:
           - position: 1
             text: How about a rematch?
@@ -1687,17 +1700,18 @@ scenes:
             effects:
               - set:
                   current_scene: ch7_caught
-      - texts:
+      - condition: reflexes >= 3 AND combat_technique < 4
+        texts:
           - source: scene_text
             paragraph: 546
             text: "Prod or no, if that hit connects it will most certainly throw me off my feet. I manage to sidestep away at the last moment, and I try to take advantage of his momentum to grab him by the arm and pull him to the ground. Instead of letting himself get pulled, Hadrik grabs onto me, spins himself, and throws me to the ground, sending me rolling for about two seconds before I come to a full stop.\r\n\r\n\"Barry, are you okay?\" Daren shouts as he rushes towards me.\r\n\r\n\"I'm fine,\" I answer him. \"Maybe just a little shaken up.\"\r\n\r\n\"Well, that was underwhelming,\" Hadrik says, disappointed. \"I guess I was getting my hopes up a little too much for this fight.\""
-        condition: reflexes >= 3 AND combat_technique < 4
-        set:
-          failed_checks:
-            - '[ Combat technique check failed - level 4 ]'
-          successful_checks:
-            - '[ Reflexes check successful - level 3 ]'
-          ch7_win_vs_hadrik: 0
+        effects:
+          - set:
+              failed_checks:
+                - '[ Combat technique check failed - level 4 ]'
+              successful_checks:
+                - '[ Reflexes check successful - level 3 ]'
+              ch7_win_vs_hadrik: 0
         choices:
           - position: 1
             text: How about a rematch?
@@ -1711,18 +1725,19 @@ scenes:
             effects:
               - set:
                   current_scene: ch7_caught
-      - texts:
+      - condition: reflexes >= 3 AND combat_technique = 4 AND strength < 2
+        texts:
           - source: scene_text
             paragraph: 547
             text: "Prod or no, if that hit connects it will most certainly throw me off my feet. I manage to sidestep away at the last moment, I pull his right arm with my left hand and then I push his left shoulder with my right hand in order to make him lose his balance. Hadrik was almost about to fall for a moment there, but he managed to regain his balance by grabbing onto me. As he keeps a good grip on me, the dwarf starts spinning himself, and then he throws me to the ground, sending me rolling for about two seconds before I come to a full stop.\r\n\r\n\"Barry, are you okay?\" Daren shouts as he rushes towards me.\r\n\r\n\"I'm fine,\" I answer him. \"Maybe just a little shaken up.\"\r\n\r\n\"Well, that was underwhelming,\" Hadrik says, disappointed. \"I guess I was getting my hopes up a little too much for this fight.\""
-        condition: reflexes >= 3 AND combat_technique = 4 AND strength < 2
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 3 ]'
-            - '[ Combat technique check successful - level 4 ]'
-          failed_checks:
-            - '[ Strength check failed - level 2 ]'
-          ch7_win_vs_hadrik: 0
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 3 ]'
+                - '[ Combat technique check successful - level 4 ]'
+              failed_checks:
+                - '[ Strength check failed - level 2 ]'
+              ch7_win_vs_hadrik: 0
         choices:
           - position: 1
             text: How about a rematch?
@@ -1736,21 +1751,22 @@ scenes:
             effects:
               - set:
                   current_scene: ch7_caught
-      - texts:
+      - condition: reflexes >= 3 AND combat_technique = 4 AND strength >= 2
+        texts:
           - source: scene_text
             paragraph: 548
             text: "Prod or no, if that hit connects it will most certainly throw me off my feet. I manage to sidestep away at the last moment, I pull his right arm with my left hand and then I push his left shoulder with my right hand in order to make him lose his balance. As he trips over his feet, Hadrik tries to grab onto me in order to regain his balance, but he can't latch on in time. Without any way to stop his momentum, the dwarf falls on his back with a loud thump.\r\n\r\n\"Well, I'll be damned!\" Hadrik says. \"You totally caught me off guard there, Barry. Well fought!\"\r\n\r\n\"Haha, I can't believe you actually did it!\" says Daren as he comes from behind and pats me hard on the back. \"Maybe I've been wrong about you all this time. That move you did there was really impressive!\"\r\n\r\n\"Aye!\" the dwarf says. \"This wasn't really the exciting fight I've been looking for, but a deal's a deal. Pack your bags, Kate, I'm going to lead you to your friend.\"\r\n\r\nKate looks as if she's about to cry.\r\n\r\n\"Barry, I don't know what to say,\" she says. \"Thank you so much...\""
-        condition: reflexes >= 3 AND combat_technique = 4 AND strength >= 2
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 3 ]'
-            - '[ Combat technique check successful - level 4 ]'
-            - '[ Strength check successful - level 2 ]'
-          ch7_win_vs_hadrik: 1
-          ac_ch7_hadrik: 1
-        achievement:
-          id: ac_ch7_hadrik
-          title: Defeated Hadrik
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 3 ]'
+                - '[ Combat technique check successful - level 4 ]'
+                - '[ Strength check successful - level 2 ]'
+              ch7_win_vs_hadrik: 1
+              ac_ch7_hadrik: 1
+            achievement:
+              id: ac_ch7_hadrik
+              title: Defeated Hadrik
         choices:
           - position: 1
             text: You're welcome.

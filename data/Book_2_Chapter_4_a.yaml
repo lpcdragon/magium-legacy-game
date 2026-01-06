@@ -6,14 +6,14 @@ scenes:
             - 'Checkpoint reached: Game saved.'
         condition: checkpoint_rich = 1
     routes:
-      - texts:
+      - condition: b2_ch2_cell = 1
+        texts:
           - source: scene_text
             paragraph: 2
             text: "The trapdoor above us opens up, allowing the platform to slowly lift us through the thick layer of rock making up the cave's ceiling. Once we get close to the height level of our division's cells, a second trapdoor opens up, and the platform slows down to a halt, as we finally reach our destination. Almost immediately after it stops, the elevator changes its course, and it starts to descend back towards the lower levels. We jump off the platform and onto the cell's floor, while the trapdoor closes itself back up, blocking the elevator from our view.\r\n\r\nAs I take a look around, I realize that the room we've arrived in is not in fact Leila's room, but my own. I guess it's a good thing that I chose cell number three when I was asked about it by the desk worker. If I'd chosen cell number five instead, this room would have likely been taken by the mage who got locked here yesterday. \r\n\r\nAs we stand in the middle of my room, a small puddle is beginning to form below our feet, due to the water that is dripping from our clothes."
           - source: scene_text_2
             paragraph: 2
             text: "\"We should get changed,\" I say, as I take my room's key out of my pocket, and go to open the door. \"I also want to take a look through my notebook, to see if I can find any useful information on the creatures we've seen in the caverns. I'll see you in a few hours, to tell you what I found.\"\r\n\r\nLeila nods.\r\n\r\n\"See you later,\" Leila writes, and she exits my room, heading towards her own.\r\n\r\nThe first thing I do after she leaves is to search my backpack for a dry shirt and a new pair of pants."
-        condition: b2_ch2_cell = 1
         choices:
           - position: 1
             text: Continue
@@ -21,14 +21,14 @@ scenes:
               - set:
                   current_scene: b2_ch04a_technically
                   checkpoint_rich: 0
-      - texts:
+      - condition: b2_ch2_cell <> 1
+        texts:
           - source: scene_text
             paragraph: 3
             text: "The trapdoor above us opens up, allowing the platform to slowly lift us through the thick layer of rock making up the cave's ceiling. Once we get close to the height level of our division's cells, a second trapdoor opens up, and the platform slows down to a halt, as we finally reach our destination. Almost immediately after it stops, the elevator changes its course, and it starts to descend back towards the lower levels. We jump off the platform and onto the cell's floor, while the trapdoor closes itself back up, blocking the elevator from our view.\r\n\r\n\"W-w-what's going on?\" we hear a voice coming from behind us. \"How did you get here? And how in the gods' names did you get so bloody wet?\"\r\n\r\nAs both Leila and I turn around, we quickly realize that the elevator did not in fact lead us back to Leila's room. Instead, it led us to cell number three, which is one of the rooms that the desk worker offered me to choose from when I first got here, and also the room that is currently being inhabited by the mage who got locked up in this place yesterday."
           - source: scene_text_2
             paragraph: 3
             text: "The mage is looking at us with a somewhat frightened look, while a trickle of sweat is running down his forehead, and he appears to be hiding something behind his back. \r\n\r\n\"Sorry to bother you,\" I tell the mage. \"We went out for a swim and we got lost on our way back. We'll be out of your hair as soon as you unlock that door for us.\"\r\n\r\n\"Out for a swim?\" the mage asks, shocked. \"You were trying to escape, weren't you? Give me one good reason why I shouldn't call the guards right now, and tell them what you were doing.\""
-        condition: b2_ch2_cell <> 1
         choices:
           - position: 1
             text: >-
@@ -211,28 +211,28 @@ scenes:
               current_scene: b2_ch04a_knowledge
   - name: b2_ch04a_knowledge
     routes:
-      - texts:
+      - condition: b2_ch2_deal = 3
+        texts:
           - source: scene_text
             paragraph: 15
             text: "No, I definitely should not. Most of them would probably not agree with me helping the lessathi, and they'd likely get upset about it. It's better to keep this to myself. Still, I can't help but wonder who the last minute addition to our division is going to be, and just how they're planning to have him fix all my problems. Surely, they're not expecting some lessathi to take care of all those beasts by himself, do they?\r\n\r\nAs I am lost in thought, while mechanically turning the pages of my notebook one by one, my eyes chance upon a paragraph that I seem to have skipped the last few times I was skimming through these texts. This paragraph mentions a theory that is not very popular among scholars, which states that the high regeneration of some creatures may be a result of an innate difference between their auras and ours. \r\n\r\nI suddenly remember Eiden's lecture, before we entered the city, when he was telling me that if you mess enough with a person's aura, you can even stop them from aging. If what he told me is true, then it wouldn't be that far of a stretch to assume that a special type of aura could grant someone a high regeneration rate. If that is the case, then could this aura perhaps also help in keeping the limbs functional, even if they are severed from the body?"
           - source: scene_text_2
             paragraph: 10
             text: "I'll admit that my knowledge about auras is limited, but from the little I know, a person's aura is not supposed to have unlimited range.  What were to happen, then, if the troll's head would be taken too far away from the body after it's been cut off? Would his consciousness fade away? Would that make him die for good? If we ever manage to cut that troll's head off again, this is definitely something that's worth testing out.\r\n\r\nI ended up spending the day trying to look for more information to confirm my theory. Unfortunately, not a lot of research has been done on this subject, since most people can barely even read the level of magic power in someone's aura, so the theory that an aura could influence a body's regeneration has been deemed as 'not grounded in facts' by most respectable groups of scholars, and the few who wanted to pursue this theory did not receive the appropriate funding to do so.\r\n\r\nI spent my whole day researching this, and all I have to show for it is an outlandish theory, based on another outlandish theory whose validity hinges mostly on one of Eiden's offhanded remarks. Better than nothing, I guess...\r\n\r\nI put my notebook back in my backpack, and I prepare to go to sleep. I'll have more time to study tomorrow."
-        condition: b2_ch2_deal = 3
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_cards
-      - texts:
+      - condition: b2_ch2_deal <> 3
+        texts:
           - source: scene_text
             paragraph: 16
             text: "No, I shouldn't make them worry needlessly. If I am to tell them of this, then it will be after the arena, when everyone will be safe. \r\n\r\nAs I am lost in thought, while mechanically turning the pages of my notebook one by one, my eyes chance upon a paragraph that I seem to have skipped the last few times I was skimming through these texts. This paragraph mentions a theory that is not very popular among scholars, which states that the high regeneration of some creatures may be a result of an innate difference between their auras and ours. \r\n\r\nI suddenly remember Eiden's lecture, before we entered the city, when he was telling me that if you mess enough with a person's aura, you can even stop them from aging. If what he told me is true, then it wouldn't be that far of a stretch to assume that a special type of aura could grant someone a high regeneration rate. If that is the case, then could this aura perhaps also help in keeping the limbs functional, even if they are severed from the body?"
           - source: scene_text_2
             paragraph: 10
             text: "I'll admit that my knowledge about auras is limited, but from the little I know, a person's aura is not supposed to have unlimited range.  What were to happen, then, if the troll's head would be taken too far away from the body after it's been cut off? Would his consciousness fade away? Would that make him die for good? If we ever manage to cut that troll's head off again, this is definitely something that's worth testing out.\r\n\r\nI ended up spending the day trying to look for more information to confirm my theory. Unfortunately, not a lot of research has been done on this subject, since most people can barely even read the level of magic power in someone's aura, so the theory that an aura could influence a body's regeneration has been deemed as 'not grounded in facts' by most respectable groups of scholars, and the few who wanted to pursue this theory did not receive the appropriate funding to do so.\r\n\r\nI spent my whole day researching this, and all I have to show for it is an outlandish theory, based on another outlandish theory whose validity hinges mostly on one of Eiden's offhanded remarks. Better than nothing, I guess...\r\n\r\nI put my notebook back in my backpack, and I prepare to go to sleep. I'll have more time to study tomorrow."
-        condition: b2_ch2_deal <> 3
         choices:
           - position: 1
             text: Continue
@@ -318,8 +318,16 @@ scenes:
         paragraph: 22
         text: "As Wilhelm stops talking, a blue writing appears in the middle of us, with large characters, so that we can all see it clearly.\r\n\r\n\"Please excuse me,\" the text says, \"but I would like to begin discussing our strategy for tomorrow, now, if you all don't mind.\"\r\n\r\nWe all turn towards Leila, who is staring at us with an upset look on her face.\r\n\r\n\"Oh, uh...\" Bruce says. \"Of course, of course... Maybe we should start doing that.\"\r\n\r\n\"I could not agree more,\" Wilhelm says.\r\n\r\n\"And just what are we supposed to talk about, exactly?\" the mage says. \"We still haven't been given any information in regards to tomorrow's events. The only thing we know so far is that we're likely going to be battling mythical creatures of some kind, in one of the rounds.\"  \r\n\r\nLeila gives me a look. \r\n\r\nI think she's trying to tell me that this would be the best moment for me to let everyone know about what we found out in the caverns. Then again, I suppose it's still not too late to change my mind, either."
     routes:
-      - texts: []
-        condition: b2_ch2_threatened <> 2
+      - condition: b2_ch2_threatened <> 2
+        texts:
+          - source: scene_text
+            paragraph: 21
+            text: "As Wilhelm stops talking, a blue writing appears in the middle of us, with large characters, so that we can all see it clearly.\r\n\r\n\"Please excuse me,\" the text says, \"but I would like to begin discussing our strategy for tomorrow, now, if you all don't mind.\"\r\n\r\nWe all turn towards Leila, who is staring at us with an upset look on her face.\r\n\r\n\"Oh, uh...\" Bruce says. \"Of course, of course... Maybe we should start doing that.\"\r\n\r\n\"I could not agree more,\" Wilhelm says.\r\n\r\n\"And just what are we supposed to talk about, exactly?\" the mage says. \"We still haven't been given any information in regards to tomorrow's events. The only thing we know so far is that we're likely going to be battling mythical creatures of some kind, in one of the rounds.\"  \r\n\r\nLeila gives me a look. \r\n\r\nI wonder if she's having second thoughts about us not telling them of what we found out in the caverns. If I were to change my mind, then there would definitely not be a better moment than this."
+            condition: b2_ch4_inform = 0
+          - source: scene_text
+            paragraph: 22
+            text: "As Wilhelm stops talking, a blue writing appears in the middle of us, with large characters, so that we can all see it clearly.\r\n\r\n\"Please excuse me,\" the text says, \"but I would like to begin discussing our strategy for tomorrow, now, if you all don't mind.\"\r\n\r\nWe all turn towards Leila, who is staring at us with an upset look on her face.\r\n\r\n\"Oh, uh...\" Bruce says. \"Of course, of course... Maybe we should start doing that.\"\r\n\r\n\"I could not agree more,\" Wilhelm says.\r\n\r\n\"And just what are we supposed to talk about, exactly?\" the mage says. \"We still haven't been given any information in regards to tomorrow's events. The only thing we know so far is that we're likely going to be battling mythical creatures of some kind, in one of the rounds.\"  \r\n\r\nLeila gives me a look. \r\n\r\nI think she's trying to tell me that this would be the best moment for me to let everyone know about what we found out in the caverns. Then again, I suppose it's still not too late to change my mind, either."
+            condition: b2_ch4_inform = 1
         choices:
           - position: 1
             text: >-
@@ -336,8 +344,16 @@ scenes:
                   current_scene: b2_ch04a_caverns
                   b2_ch4_inform2: 1
                   b2_ch4_inform3: 0
-      - texts: []
-        condition: b2_ch2_threatened = 2
+      - condition: b2_ch2_threatened = 2
+        texts:
+          - source: scene_text
+            paragraph: 21
+            text: "As Wilhelm stops talking, a blue writing appears in the middle of us, with large characters, so that we can all see it clearly.\r\n\r\n\"Please excuse me,\" the text says, \"but I would like to begin discussing our strategy for tomorrow, now, if you all don't mind.\"\r\n\r\nWe all turn towards Leila, who is staring at us with an upset look on her face.\r\n\r\n\"Oh, uh...\" Bruce says. \"Of course, of course... Maybe we should start doing that.\"\r\n\r\n\"I could not agree more,\" Wilhelm says.\r\n\r\n\"And just what are we supposed to talk about, exactly?\" the mage says. \"We still haven't been given any information in regards to tomorrow's events. The only thing we know so far is that we're likely going to be battling mythical creatures of some kind, in one of the rounds.\"  \r\n\r\nLeila gives me a look. \r\n\r\nI wonder if she's having second thoughts about us not telling them of what we found out in the caverns. If I were to change my mind, then there would definitely not be a better moment than this."
+            condition: b2_ch4_inform = 0
+          - source: scene_text
+            paragraph: 22
+            text: "As Wilhelm stops talking, a blue writing appears in the middle of us, with large characters, so that we can all see it clearly.\r\n\r\n\"Please excuse me,\" the text says, \"but I would like to begin discussing our strategy for tomorrow, now, if you all don't mind.\"\r\n\r\nWe all turn towards Leila, who is staring at us with an upset look on her face.\r\n\r\n\"Oh, uh...\" Bruce says. \"Of course, of course... Maybe we should start doing that.\"\r\n\r\n\"I could not agree more,\" Wilhelm says.\r\n\r\n\"And just what are we supposed to talk about, exactly?\" the mage says. \"We still haven't been given any information in regards to tomorrow's events. The only thing we know so far is that we're likely going to be battling mythical creatures of some kind, in one of the rounds.\"  \r\n\r\nLeila gives me a look. \r\n\r\nI think she's trying to tell me that this would be the best moment for me to let everyone know about what we found out in the caverns. Then again, I suppose it's still not too late to change my mind, either."
+            condition: b2_ch4_inform = 1
         choices:
           - position: 1
             text: >-
@@ -356,7 +372,8 @@ scenes:
                   b2_ch4_inform3: 0
   - name: b2_ch04a_caverns
     routes:
-      - texts:
+      - condition: b2_ch2_heard = 1
+        texts:
           - source: scene_text
             paragraph: 23
             text: "\"Actually there is some information that I would like to share with you,\" I say. \"But you'd better brace yourselves, because this is going to get long.\"\r\n\r\nI then start telling everyone about our trip to the underground caverns, and what we discovered there. I omitted to tell them how exactly we reached the tunnels, and I did not tell them about our encounter with Flower and Illuna either, but I tried to describe the rest of our adventure to them in as much detail as possible, while simultaneously avoiding to tell them any information that might lead them to know that we are lessathi, and that we are using stat devices. After I got done with the story, I also gave them a quick summary of what I know about each of the creatures we've met, including their behaviors and their weaknesses, and I also told them my theory about the troll's unusual regeneration ability.\r\n\r\n\"This is all very useful information,\" Wilhelm says. \"I happened to overhear the guards last night saying that we'd be fighting a troll named Velgos in the second round, but I would have never imagined him to be so powerful. What I would like to add is that I've also heard them talk about manticores, which I don't believe you've met in the underground caverns. If your notebook has as much information in it as you've claimed, maybe you should do some research about them as well.\"\r\n\r\n\"I actually already did some research about them,\" I say. \"I forgot to mention it before, but I also managed to overhear the guards talking about some of the monsters we might have to fight in the arena. In that discussion they mentioned manticores and giant scorpions. I'll give you the briefing on them later.\""
@@ -373,14 +390,14 @@ scenes:
               monsters that I've read about in my notes. We even agreed to have
               a second meeting later, after we'd spend some time alone in our
               rooms, mulling over the information that we had at our disposal.
-        condition: b2_ch2_heard = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_leaving
-      - texts:
+      - condition: b2_ch2_heard = 0
+        texts:
           - source: scene_text
             paragraph: 24
             text: "\"Actually there is some information that I would like to share with you,\" I say. \"But you'd better brace yourselves, because this is going to get long.\"\r\n\r\nI then start telling everyone about our trip to the underground caverns, and what we discovered there. I omitted to tell them how exactly we reached the tunnels, and I did not tell them about our encounter with Flower and Illuna either, but I tried to describe the rest of our adventure to them in as much detail as possible, while simultaneously avoiding to tell them any information that might lead them to know that we are lessathi, and that we are using stat devices. After I got done with the story, I also gave them a quick summary of what I know about each of the creatures we've met, including their behaviors and their weaknesses, and I also told them my theory about the troll's unusual regeneration ability.\r\n\r\n\"This is all very useful information,\" Wilhelm says. \"I happened to overhear the guards last night saying that we'd be fighting a troll named Velgos in the second round, but I would have never imagined him to be so powerful. What I would like to add is that I've also heard them talk about manticores, which I don't believe you've met in the underground caverns. If your notebook has as much information in it as you've claimed, maybe you should do some research about them as well.\"\r\n\r\nI'll definitely look into it,\" I say. \"Thanks for letting me know.\""
@@ -397,7 +414,6 @@ scenes:
               monsters that I've read about in my notes. We even agreed to have
               a second meeting later, after we'd spend some time alone in our
               rooms, mulling over the information that we had at our disposal.
-        condition: b2_ch2_heard = 0
         choices:
           - position: 1
             text: Continue
@@ -406,14 +422,14 @@ scenes:
                   current_scene: b2_ch04a_leaving
   - name: b2_ch04a_overheard
     routes:
-      - texts:
+      - condition: b2_ch4_inform = 0 AND b2_ch2_threatened <> 2
+        texts:
           - source: scene_text
             paragraph: 25
             text: "\"Hey, Wilhelm,\" I say. \"Did you happen to overhear the guards saying anything about the arena events?\"\r\n\r\n\"As a matter of fact, I did,\" Wilhelm says. \"Last night, while I was trying to fall asleep, I heard two of the guards mention that there might be some harpies and some manticores in the first round. I think I might have also overheard them saying something about gargoyles, but I'm not completely sure.\"\r\n\r\n\"That actually sounds better than what I was expecting,\" Bruce says. \"I mean, gargoyles are bad, sure, but they're nowhere near as dangerous as a hydra, for instance.\"\r\n\r\n\"Except for the fact that a hydra can't fly,\" the mage says. \"I'd much rather fight a hydra on the ground, than fight a horde of flying creatures without magic or ranged weaponry.\"\r\n\r\n\"This is not all I've heard the guards say about the arena,\" Wilhelm says. \"I also heard them speak about who we'd be facing in the second round. Apparently it's some famous troll mercenary known by the name of Velgos. They were saying that he's fought in the arena before, and that he is considered to be on par with the undefeated champion of the arena.\""
           - source: scene_text_2
             paragraph: 14
             text: "\"Velgos?\" Bruce says. \"Never heard of him.\"\r\n\r\n\"Neither have I,\" the mage says.\r\n\r\n\"If a troll is the best they've got,\" Bruce says, \"then maybe I've been overestimating the organizers a little. I've killed plenty of trolls before. All you need to do is cut off their heads. It's as simple as that.\"\r\n\r\n\"Forget the troll,\" the mage says. \"We need to focus on the creatures. Does anyone know of any weaknesses we can use against them?\""
-        condition: b2_ch4_inform = 0 AND b2_ch2_threatened <> 2
         choices:
           - position: 1
             text: Tell them the creatures' weaknesses
@@ -427,14 +443,14 @@ scenes:
               - set:
                   current_scene: b2_ch04a_weaknesses
                   b2_ch4_inform3: 0
-      - texts:
+      - condition: b2_ch4_inform = 1 AND b2_ch2_threatened <> 2
+        texts:
           - source: scene_text
             paragraph: 26
             text: "\"Hey, Wilhelm,\" I say. \"Did you happen to overhear the guards saying anything about the arena events?\"\r\n\r\nRealizing that I'm not planning to tell them about the creatures anymore, Leila gives me a disappointed look, but she decides to remain silent.\r\n\r\n\"As a matter of fact, I did,\" Wilhelm says. \"Last night, while I was trying to fall asleep, I heard two of the guards mention that there might be some harpies and some manticores in the first round. I think I might have also overheard them saying something about gargoyles, but I'm not completely sure.\"\r\n\r\n\"That actually sounds better than what I was expecting,\" Bruce says. \"I mean, gargoyles are bad, sure, but they're nowhere near as dangerous as a hydra, for instance.\"\r\n\r\n\"Except for the fact that a hydra can't fly,\" the mage says. \"I'd much rather fight a hydra on the ground, than fight a horde of flying creatures without magic or ranged weaponry.\"\r\n\r\n\"This is not all I've heard the guards say about the arena,\" Wilhelm says. \"I also heard them speak about who we'd be facing in the second round. Apparently it's some famous troll mercenary known by the name of Velgos. They were saying that he's fought in the arena before, and that he is considered to be on par with the undefeated champion of the arena.\""
           - source: scene_text_2
             paragraph: 14
             text: "\"Velgos?\" Bruce says. \"Never heard of him.\"\r\n\r\n\"Neither have I,\" the mage says.\r\n\r\n\"If a troll is the best they've got,\" Bruce says, \"then maybe I've been overestimating the organizers a little. I've killed plenty of trolls before. All you need to do is cut off their heads. It's as simple as that.\"\r\n\r\n\"Forget the troll,\" the mage says. \"We need to focus on the creatures. Does anyone know of any weaknesses we can use against them?\""
-        condition: b2_ch4_inform = 1 AND b2_ch2_threatened <> 2
         choices:
           - position: 1
             text: Tell them the creatures' weaknesses
@@ -448,14 +464,14 @@ scenes:
               - set:
                   current_scene: b2_ch04a_weaknesses
                   b2_ch4_inform3: 0
-      - texts:
+      - condition: b2_ch4_inform = 0 AND b2_ch2_threatened = 2
+        texts:
           - source: scene_text
             paragraph: 27
             text: "\"Did anyone happen to overhear the guards saying anything about the arena events, by any chance?\"\r\n\r\n\"As a matter of fact, I did,\" Wilhelm says. \"Last night, while I was trying to fall asleep, I heard two of the guards mention that there might be some harpies and some manticores in the first round. I think I might have also overheard them saying something about gargoyles, but I'm not completely sure.\"\r\n\r\n\"That actually sounds better than what I was expecting,\" Bruce says. \"I mean, gargoyles are bad, sure, but they're nowhere near as dangerous as a hydra, for instance.\"\r\n\r\n\"Except for the fact that a hydra can't fly,\" the mage says. \"I'd much rather fight a hydra on the ground, than fight a horde of flying creatures without magic or ranged weaponry.\"\r\n\r\n\"This is not all I've heard the guards say about the arena,\" Wilhelm says. \"I also heard them speak about who we'd be facing in the second round. Apparently it's some famous troll mercenary known by the name of Velgos. They were saying that he's fought in the arena before, and that he is considered to be on par with the undefeated champion of the arena.\""
           - source: scene_text_2
             paragraph: 14
             text: "\"Velgos?\" Bruce says. \"Never heard of him.\"\r\n\r\n\"Neither have I,\" the mage says.\r\n\r\n\"If a troll is the best they've got,\" Bruce says, \"then maybe I've been overestimating the organizers a little. I've killed plenty of trolls before. All you need to do is cut off their heads. It's as simple as that.\"\r\n\r\n\"Forget the troll,\" the mage says. \"We need to focus on the creatures. Does anyone know of any weaknesses we can use against them?\""
-        condition: b2_ch4_inform = 0 AND b2_ch2_threatened = 2
         choices:
           - position: 1
             text: Tell them the creatures' weaknesses
@@ -469,14 +485,14 @@ scenes:
               - set:
                   current_scene: b2_ch04a_weaknesses
                   b2_ch4_inform3: 0
-      - texts:
+      - condition: b2_ch4_inform = 1 AND b2_ch2_threatened = 2
+        texts:
           - source: scene_text
             paragraph: 28
             text: "\"Did anyone happen to overhear the guards saying anything about the arena events, by any chance?\"\r\n\r\nRealizing that I'm not planning to tell them about the creatures anymore, Leila gives me a disappointed look, but she decides to remain silent.\r\n\r\n\"As a matter of fact, I did,\" Wilhelm says. \"Last night, while I was trying to fall asleep, I heard two of the guards mention that there might be some harpies and some manticores in the first round. I think I might have also overheard them saying something about gargoyles, but I'm not completely sure.\"\r\n\r\n\"That actually sounds better than what I was expecting,\" Bruce says. \"I mean, gargoyles are bad, sure, but they're nowhere near as dangerous as a hydra, for instance.\"\r\n\r\n\"Except for the fact that a hydra can't fly,\" the mage says. \"I'd much rather fight a hydra on the ground, than fight a horde of flying creatures without magic or ranged weaponry.\"\r\n\r\n\"This is not all I've heard the guards say about the arena,\" Wilhelm says. \"I also heard them speak about who we'd be facing in the second round. Apparently it's some famous troll mercenary known by the name of Velgos. They were saying that he's fought in the arena before, and that he is considered to be on par with the undefeated champion of the arena.\""
           - source: scene_text_2
             paragraph: 14
             text: "\"Velgos?\" Bruce says. \"Never heard of him.\"\r\n\r\n\"Neither have I,\" the mage says.\r\n\r\n\"If a troll is the best they've got,\" Bruce says, \"then maybe I've been overestimating the organizers a little. I've killed plenty of trolls before. All you need to do is cut off their heads. It's as simple as that.\"\r\n\r\n\"Forget the troll,\" the mage says. \"We need to focus on the creatures. Does anyone know of any weaknesses we can use against them?\""
-        condition: b2_ch4_inform = 1 AND b2_ch2_threatened = 2
         choices:
           - position: 1
             text: Tell them the creatures' weaknesses
@@ -492,22 +508,22 @@ scenes:
                   b2_ch4_inform3: 0
   - name: b2_ch04a_weaknesses
     routes:
-      - texts:
+      - condition: b2_ch4_inform3 = 1
+        texts:
           - source: scene_text
             paragraph: 29
             text: "\"I've been reading a lot about mythical creatures these past few days,\" I say. \"During my studies, I've also come across some valuable information regarding the weaknesses of harpies and manticores.\"\r\n\r\n\"But what about the other creatures you've read about?\" the mage says. \"Did you also find out their weaknesses?\"\r\n\r\n\"I am also interested to hear about whatever other creatures Barry's come upon in his studies,\" Wilhelm says.\r\n\r\n\"Well, alright, then,\" I say. \"But you'd better brace yourselves, because this is going to get long.\"\r\n\r\nI ended up telling them a lot more than I was originally planning. I gave them most of the information they needed regarding the creatures I knew we might be facing, and also about many others. We spent the rest of the recreation period discussing strategies for all kinds of different scenarios that may occur in the arena. We even agreed to have a second meeting later, after we'd spend some time alone in our rooms, mulling over the information that we had at our disposal."
-        condition: b2_ch4_inform3 = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_leaving
-      - texts:
+      - condition: b2_ch4_inform3 = 0
+        texts:
           - source: scene_text
             paragraph: 30
             text: "There's a brief pause during which nobody says anything. To our surprise, the one to break the silence was none other than the thug from the Tilirius family.\r\n\r\n\"I know a thing or two about mythical creatures,\" the thug says. \"I've been reading about them in my free time, before they threw me out of the mansion. Harpies and manticores used to come up very often in these types of books.\"\r\n\r\n\"So there are advantages to being an ex-noble!\" Bruce says. \"Who would have thought? Well come on, don't be shy and tell us everything you know! We're going to need as much information as we can get, if we want to live through tomorrow.\"\r\n\r\n\"For once, I agree with Bruce,\" Wilhelm says. \"Make sure you give us all the details you can remember. We'll also try to chip in, when we can, if we happen to remember any extra information from myths and legends that might be of help.\"\r\n\r\nThe rest of the recreation period was spent discussing about the creatures described by the thug, and also about various strategies that we could employ to defeat them. I didn't really get involved much in their discussion, since I can't say that I'd trust any of them to have my back during a fight. A few hours after the recreation period, I went to Leila's room so we could have our own separate strategy meeting, discussing about all the possible creatures that we may encounter, and about how we could deal with them."
-        condition: b2_ch4_inform3 = 0
         choices:
           - position: 1
             text: Continue
@@ -516,56 +532,56 @@ scenes:
                   current_scene: b2_ch04a_leaving
   - name: b2_ch04a_leaving
     routes:
-      - texts:
+      - condition: b2_ch2_threatened = 0
+        texts:
           - source: scene_text
             paragraph: 31
             text: "By the end of the day, we didn't manage to come up with better plans against the troll than our original ones, so all we could do was hope that at least one of them would work out alright.\r\n\r\nOnce I get back to my room, late in the evening, I lay down on my bed, and I fall asleep like a rock.\r\n\r\nThe next day, I get woken up in the morning by one of the guards, telling me to pack my bags, because we're leaving in twenty minutes. I put all my stuff back in my backpack, and then I walk out the door and into the recreation room, where the other members of my division were slowly starting to gather up. As soon as we're all set to go, we begin to leave our division's area one by one, and we stop outside the door, where we are greeted by an employee of the arena, who collects all of our keys, and tells us to follow him."
           - source: scene_text_2
             paragraph: 15
             text: "As we all walk through the dimly lit tunnels, members from other divisions are slowly beginning to walk out of their division areas as well, and follow their guides through the corridors. When we finally reach the upper levels, we are told to line up in an orderly fashion, so that the guards who were sent to escort us to the arena will have an easier time keeping an eye on us. I didn't get to see any of my friends as we advanced towards the arena, but I did see a pretty big crowd of people making its way to the arena to see the show, and a very long line at the ticket booth. \r\n\r\nThe guards lead us through the gladiator entrance of the arena, and they show us to our locker rooms, where we get to store our belongings for the duration of the show. After we're done putting our backpacks in the lockers, the guards tell us that we're allowed to roam freely through the area designated for the gladiators until the events begin, but that we will need to gather up in the waiting area of our division after the sound of the first horn."
-        condition: b2_ch2_threatened = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_trace
-      - texts:
+      - condition: b2_ch2_threatened = 1
+        texts:
           - source: scene_text
             paragraph: 32
             text: "By the end of the day, we didn't manage to come up with better plans against the troll than our original ones, so all we could do was hope that at least one of them would work out alright.\r\n\r\nAfter going back to my room in the evening and laying down on my bed, my last thoughts before going to sleep went to the vision that I had about Wilhelm stabbing me in the back, during the arena event.\r\n\r\nIt's going to be fine. I already know what he's up to. As long as I never take my eyes off him, he won't be able to surprise me. I decide to think no further about this, and I go to sleep.  \r\n\r\nThe next day, I get woken up in the morning by one of the guards, telling me to pack my bags, because we're leaving in twenty minutes. I put all my stuff back in my backpack, and then I walk out the door and into the recreation room, where the other members of my division were slowly starting to gather up. As soon as we're all set to go, we begin to leave our division's area one by one, and we stop outside the door, where we are greeted by an employee of the arena, who collects all of our keys, and tells us to follow him."
           - source: scene_text_2
             paragraph: 15
             text: "As we all walk through the dimly lit tunnels, members from other divisions are slowly beginning to walk out of their division areas as well, and follow their guides through the corridors. When we finally reach the upper levels, we are told to line up in an orderly fashion, so that the guards who were sent to escort us to the arena will have an easier time keeping an eye on us. I didn't get to see any of my friends as we advanced towards the arena, but I did see a pretty big crowd of people making its way to the arena to see the show, and a very long line at the ticket booth. \r\n\r\nThe guards lead us through the gladiator entrance of the arena, and they show us to our locker rooms, where we get to store our belongings for the duration of the show. After we're done putting our backpacks in the lockers, the guards tell us that we're allowed to roam freely through the area designated for the gladiators until the events begin, but that we will need to gather up in the waiting area of our division after the sound of the first horn."
-        condition: b2_ch2_threatened = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_trace
-      - texts:
+      - condition: b2_ch2_threatened = 2 AND b2_ch2_lessathi = 0
+        texts:
           - source: scene_text
             paragraph: 33
             text: "By the end of the day, we didn't manage to come up with better plans against the troll than our original ones, so all we could do was hope that at least one of them would work out alright.\r\n\r\nAfter going back to my room in the evening and laying down on my bed, my last thoughts before going to sleep went to the vision that I had about Wilhelm stabbing me in the back, during the arena event.\r\n\r\nIt's going to be fine. I don't think he'll try anything anymore after the scare I gave him two days ago. And even if he does, I'll be waiting for it, so he won't be able to catch me by surprise. I decide to think no further about this, and I go to sleep.  \r\n\r\nThe next day, I get woken up in the morning by one of the guards, telling me to pack my bags, because we're leaving in twenty minutes. I put all my stuff back in my backpack, and then I walk out the door and into the recreation room, where the other members of my division were slowly starting to gather up. As soon as we're all set to go, we begin to leave our division's area one by one, and we stop outside the door, where we are greeted by an employee of the arena, who collects all of our keys, and tells us to follow him."
           - source: scene_text_2
             paragraph: 15
             text: "As we all walk through the dimly lit tunnels, members from other divisions are slowly beginning to walk out of their division areas as well, and follow their guides through the corridors. When we finally reach the upper levels, we are told to line up in an orderly fashion, so that the guards who were sent to escort us to the arena will have an easier time keeping an eye on us. I didn't get to see any of my friends as we advanced towards the arena, but I did see a pretty big crowd of people making its way to the arena to see the show, and a very long line at the ticket booth. \r\n\r\nThe guards lead us through the gladiator entrance of the arena, and they show us to our locker rooms, where we get to store our belongings for the duration of the show. After we're done putting our backpacks in the lockers, the guards tell us that we're allowed to roam freely through the area designated for the gladiators until the events begin, but that we will need to gather up in the waiting area of our division after the sound of the first horn."
-        condition: b2_ch2_threatened = 2 AND b2_ch2_lessathi = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_trace
-      - texts:
+      - condition: b2_ch2_threatened = 2 AND b2_ch2_lessathi = 1
+        texts:
           - source: scene_text
             paragraph: 34
             text: "By the end of the day, we didn't manage to come up with better plans against the troll than our original ones, so all we could do was hope that at least one of them would work out alright. \r\n\r\nAfter going back to my room in the evening and laying down on my bed, my last thoughts before going to sleep went to the vision that I had about Wilhelm stabbing me in the back, during the arena event.\r\n\r\nNormally, I don't think he'd try anything anymore after the scare I gave him two days ago, but I'm a little worried that he might have seen Leila's comment about me being a lessathi when he was spying on us, before I went to her room for the first time. I'll definitely have to keep an eye on him so he doesn't take me by surprise. I decide to think no further about this, and I go to sleep.\r\n\r\nThe next day, I get woken up in the morning by one of the guards, telling me to pack my bags, because we're leaving in twenty minutes. I put all my stuff back in my backpack, and then I walk out the door and into the recreation room, where the other members of my division were slowly starting to gather up. As soon as we're all set to go, we begin to leave our division's area one by one, and we stop outside the door, where we are greeted by an employee of the arena, who collects all of our keys, and tells us to follow him."
           - source: scene_text_2
             paragraph: 15
             text: "As we all walk through the dimly lit tunnels, members from other divisions are slowly beginning to walk out of their division areas as well, and follow their guides through the corridors. When we finally reach the upper levels, we are told to line up in an orderly fashion, so that the guards who were sent to escort us to the arena will have an easier time keeping an eye on us. I didn't get to see any of my friends as we advanced towards the arena, but I did see a pretty big crowd of people making its way to the arena to see the show, and a very long line at the ticket booth. \r\n\r\nThe guards lead us through the gladiator entrance of the arena, and they show us to our locker rooms, where we get to store our belongings for the duration of the show. After we're done putting our backpacks in the lockers, the guards tell us that we're allowed to roam freely through the area designated for the gladiators until the events begin, but that we will need to gather up in the waiting area of our division after the sound of the first horn."
-        condition: b2_ch2_threatened = 2 AND b2_ch2_lessathi = 1
         choices:
           - position: 1
             text: Continue
@@ -574,28 +590,28 @@ scenes:
                   current_scene: b2_ch04a_trace
   - name: b2_ch04a_trace
     routes:
-      - texts:
+      - condition: b2_ch2_kate = 0
+        texts:
           - source: scene_text
             paragraph: 35
             text: "I figured that this would be the best moment to arrange a meeting between Leila and Kate, so I told Leila that I wanted her to meet some of my friends before the event, and asked her to follow me. She seemed a bit suspicious of my motives at first, but in the end, she decided to come with me.\r\n\r\nThe area that we were given access to was the area right below the spectator seats, circling the area where the fighting is about to take place. The fighting area reserved for the gladiators looks much larger than those from the arenas that I've read about before, in history books. The amphitheater surrounding the arena seems big enough to host thirty thousand spectators, if not more, and yet, it does not seem that the seats are in any danger of not being filled. Even at this early hour in the morning, there are thousands of spectators pouring in through all the entrances, and then making their way through the rising tiers of seats, eager to reach their reserved spots, and to watch the event of the century. \r\n\r\nIt seems that three days were more than enough to spread the word throughout the city about today's event.  We make our way through the lower level of the coliseum, while I look around, scanning the groups of gladiators to see if I can spot anyone I know."
           - source: scene_text_2
             paragraph: 16
             text: "Half an hour later, we are still nowhere close to finding any trace of them. I tried reaching them through Daren's transceiver as well, but I've had no luck. There must be too many people trying to use transceivers in the area to be able to lock onto the correct signals. Where could they all be? The horn that announces the start of the events could be sounding any minute now.\r\n\r\n\"Leila?\" I hear Kate's voice behind me. \"Leila, is that really you?\"\r\n\r\nLeila turns around, at the sound of Kate's voice, but when she sees her face, she appears frozen by shock.\r\n\r\n\"Kate?...\" Leila writes, but she doesn't have the time to write anything else, because Kate comes rushing towards her, and then she hugs her as tightly as she can."
-        condition: b2_ch2_kate = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_safe
-      - texts:
+      - condition: b2_ch2_kate = 1
+        texts:
           - source: scene_text
             paragraph: 36
             text: "I figured that this would be the best moment to arrange a meeting between Leila and Kate, so I told Leila about my idea, and asked her to follow me. She seemed a bit hesitant at first, but in the end, she decided to come with me. \r\n\r\nThe area that we were given access to was the area right below the spectator seats, circling the  area where the fighting is about to take place. The fighting area reserved for the gladiators looks much larger than those from the arenas that I've read about before, in history books. The amphitheater surrounding the arena seems big enough to host thirty thousand spectators, if not more, and yet, it does not seem that the seats are in any danger of not being filled. Even at this early hour in the morning, there are thousands of spectators pouring in through all the entrances, and then making their way through the rising tiers of seats, eager to reach their reserved spots, and to watch the event of the century. \r\n\r\nIt seems that three days were more than enough to spread the word throughout the city about today's event.  We make our way through the lower level of the coliseum, while I look around, scanning the groups of gladiators to see if I can spot anyone I know."
           - source: scene_text_2
             paragraph: 17
             text: "Half an hour later, we are still nowhere close to finding any trace of them. I tried reaching them through Daren's transceiver as well, but I've had no luck. There must be too many people trying to use transceivers in the area to be able to lock onto the correct signals. Where could they all be? The horn that announces the start of the events could be sounding any minute now.\r\n\r\n\"Leila?\" I hear Kate's voice behind me. \"Leila, is that really you?\"\r\n\r\nLeila turns around, at the sound of Kate's voice, but when she sees her face, she hesitates to write anything, for a few moments.\r\n\r\n\"Kate, I...\" Leila starts to write, but she gets interrupted by Kate rushing towards her, and hugging her as tightly as she can."
-        condition: b2_ch2_kate = 1
         choices:
           - position: 1
             text: Continue
@@ -622,14 +638,14 @@ scenes:
               b2_ch4_called_kate: 0
   - name: b2_ch04a_reunion
     routes:
-      - texts:
+      - condition: b2_ch4_called_kate = 1 AND b2_ch2_kate = 0
+        texts:
           - source: scene_text
             paragraph: 38
             text: "\"Hey, Kate!\" I shout loudly, to make sure that she hears me.\r\n\r\nKate stops in her tracks, and she turns around, confused. Seeing that Leila doesn't do anything, I give her a nudge with my elbow. She finally understands what I was doing, and she quickly makes a message out of blue text, with very large letters, so that Kate can see them from a distance.\r\n\r\n\"Kate, I'm sorry too,\" the text says. \"I'm sorry for having thought that you would never want to see me again because I was a lessathi!  So, now that we're both sorry, let's win the arena and get out of here alive so we can continue being sorry together!\"\r\n\r\nAt first, Kate had a bit of a shock when she saw the writing, but then she realized who it was coming from, and she managed to smile.\r\n\r\n\"It's a promise!\" she shouts at Leila, and then she turns around, to hurry back towards her division."
           - source: scene_text_2
             paragraph: 18
             text: "\"Knock 'em dead, Barry!\" Hadrik says, with his usual grin, as he also heads towards his own designated area.\r\n\r\n\"Or better yet, don't get killed,\" Daren tells me. \"We only need to survive the arena, not win it. I'll see you again after the end of the event. Remember, no need to do anything crazy. Just stay alive. Got it?\"\r\n\r\n\"Got it,\" I say.\r\n\r\nOnce Daren is also gone, Leila and I decide to head towards our division as well. \r\n\r\n\"So...\" I say, as the two of us walk side by side. \"Now are you glad that you decided to follow me to meet my friends?\" I say.\r\n\r\nLeila looks at me surprised for a few moments, until she realizes that it was in fact Kate that I wanted her to meet from the very beginning.\r\n\r\n\"Yes,\" she then writes, smiling. \"I'm glad. Thank you...\""
-        condition: b2_ch4_called_kate = 1 AND b2_ch2_kate = 0
         choices:
           - position: 1
             text: Continue
@@ -638,14 +654,14 @@ scenes:
                   current_scene: b2_ch04a_stats
                   available_points: available_points + 3
                   available_points_aux: available_points_aux + 3
-      - texts:
+      - condition: b2_ch4_called_kate = 1 AND b2_ch2_kate = 1
+        texts:
           - source: scene_text
             paragraph: 39
             text: "\"Hey, Kate!\" I shout loudly, to make sure that she hears me.\r\n\r\nKate stops in her tracks, and she turns around, confused. Seeing that Leila doesn't do anything, I give her a nudge with my elbow. She finally understands what I was doing, and she quickly makes a message out of blue text, with very large letters, so that Kate can see them from a distance.\r\n\r\n\"Kate, I'm sorry too,\" the text says. \"I'm sorry for having thought that you would never want to see me again because I was a lessathi!  So, now that we're both sorry, let's win the arena and get out of here alive so we can continue being sorry together!\"\r\n\r\nAt first, Kate had a bit of a shock when she saw the writing, but then she realized who it was coming from, and she managed to smile.\r\n\r\n\"It's a promise!\" she shouts at Leila, and then she turns around, to hurry back towards her division."
           - source: scene_text_2
             paragraph: 19
             text: "\"Knock 'em dead, Barry!\" Hadrik says, with his usual grin, as he also heads towards his own designated area.\r\n\r\n\"Or better yet, don't get killed,\" Daren tells me. \"We only need to survive the arena, not win it. I'll see you again after the end of the event. Remember, no need to do anything crazy. Just stay alive. Got it?\"\r\n\r\n\"Got it,\" I say.\r\n\r\nOnce Daren is also gone, Leila and I decide to head towards our division as well. \r\n\r\n\"So...\" I say, as the two of us walk side by side. \"Now are you glad that you decided to follow me to meet Kate after all?\" I say.\r\n\r\nLeila smiles, faintly.\r\n\r\n\"Yes...\" she writes. \"Yes, I am glad. Thank you...\""
-        condition: b2_ch4_called_kate = 1 AND b2_ch2_kate = 1
         choices:
           - position: 1
             text: Continue
@@ -654,11 +670,11 @@ scenes:
                   current_scene: b2_ch04a_stats
                   available_points: available_points + 3
                   available_points_aux: available_points_aux + 3
-      - texts:
+      - condition: b2_ch4_called_kate = 0 AND b2_ch2_kate = 0
+        texts:
           - source: scene_text
             paragraph: 40
             text: "I decide not to call after Kate. The two of them can talk more after we're done with the arena.\r\n\r\n\"Knock 'em dead, Barry!\" Hadrik says, with his usual grin, as he also heads towards his own designated area.\r\n\r\n\"Or better yet, don't get killed,\" Daren tells me. \"We only need to survive the arena, not win it. I'll see you again after the end of the event. Remember, no need to do anything crazy. Just stay alive. Got it?\"\r\n\r\n\"Got it,\" I say.\r\n\r\nOnce Daren is also gone, Leila and I decide to head towards our division as well. \r\n\r\nWhile we walk, I can't help but notice that Leila is looking a bit distracted.\r\n\r\n\"Don't worry,\" I tell her. \"You'll have time to talk with Kate as much as you want after the arena is over!\"\r\n\r\n\"Yes...\" Leila writes. \"Of course...\"\r\n\r\n\"So... now are you glad that you decided to follow me to meet my friends?\" I say.\r\n\r\nLeila looks at me surprised for a few moments, until she realizes that it was in fact Kate that I wanted her to meet from the very beginning.\r\n\r\n\"Yes,\" she then writes, smiling. \"I'm glad. Thank you...\""
-        condition: b2_ch4_called_kate = 0 AND b2_ch2_kate = 0
         choices:
           - position: 1
             text: Continue
@@ -667,11 +683,11 @@ scenes:
                   current_scene: b2_ch04a_stats
                   available_points: available_points + 3
                   available_points_aux: available_points_aux + 3
-      - texts:
+      - condition: b2_ch4_called_kate = 0 AND b2_ch2_kate = 1
+        texts:
           - source: scene_text
             paragraph: 41
             text: "I decide not to call after Kate. The two of them can talk more after we're done with the arena.\r\n\r\n\"Knock 'em dead, Barry!\" Hadrik says, with his usual grin, as he also heads towards his own designated area.\r\n\r\n\"Or better yet, don't get killed,\" Daren tells me. \"We only need to survive the arena, not win it. I'll see you again after the end of the event. Remember, no need to do anything crazy. Just stay alive. Got it?\"\r\n\r\n\"Got it,\" I say.\r\n\r\nOnce Daren is also gone, Leila and I decide to head towards our division as well. \r\n\r\nWhile we walk, I can't help but notice that Leila is looking a bit distracted.\r\n\r\n\"Don't worry,\" I tell her. \"You'll have time to talk with Kate as much as you want after the arena is over!\"\r\n\r\n\"Yes...\" Leila writes. \"Of course...\"\r\n\r\n\"So... now are you glad that you decided to follow me to meet Kate after all?\" I say.\r\n\r\nLeila smiles, faintly.\r\n\r\n\"Yes...\" she writes. \"Yes, I am glad. Thank you...\""
-        condition: b2_ch4_called_kate = 0 AND b2_ch2_kate = 1
         choices:
           - position: 1
             text: Continue
@@ -682,11 +698,11 @@ scenes:
                   available_points_aux: available_points_aux + 3
   - name: b2_ch04a_stats
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 42
             text: "We make our way to our division area, where all of our other teammates were already gathered. We then take our places next to the iron gratings blocking our access to the fighting area, in order to have a better view of what's happening in the arena. Apparently, there are still some people who are making their way towards their seats, but most of the spectators seem to have found their places, and are now restlessly waiting for the show to begin. I take a look to see if I can spot Flower or Rose, but the seats are too far away from me to be able to make out any details. The announcer is now verifying his magical voice magnifier, in preparation for the event. He is situated on an elevated platform, above the spectator seats.\r\n\r\nAs we all wait for the events to begin, I suddenly hear a familiar beeping noise, coming from my pocket. At the same time, a similar beeping noise comes from the direction of Leila as well.\r\n\r\nFinally. I've been waiting for this for a while."
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Invest points now
@@ -701,11 +717,11 @@ scenes:
             effects:
               - set:
                   current_scene: b2_ch04a_private
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 43
             text: "We make our way to our division area, where all of our other teammates were already gathered. We then take our places next to the iron gratings blocking our access to the fighting area, in order to have a better view of what's happening in the arena. Apparently, there are still some people who are making their way towards their seats, but most of the spectators seem to have found their places, and are now restlessly waiting for the show to begin. I take a look to see if I can spot Flower, but the seats are too far away from me to be able to make out any details. The announcer is now verifying his magical voice magnifier, in preparation for the event. He is situated on an elevated platform, above the spectator seats.\r\n\r\nAs we all wait for the events to begin, I suddenly hear a familiar beeping noise, coming from my pocket. At the same time, a similar beeping noise comes from the direction of Leila as well.\r\n\r\nFinally. I've been waiting for this for a while."
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: Invest points now
@@ -722,22 +738,22 @@ scenes:
                   current_scene: b2_ch04a_private
   - name: b2_ch04a_stats_spent
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 42
             text: "We make our way to our division area, where all of our other teammates were already gathered. We then take our places next to the iron gratings blocking our access to the fighting area, in order to have a better view of what's happening in the arena. Apparently, there are still some people who are making their way towards their seats, but most of the spectators seem to have found their places, and are now restlessly waiting for the show to begin. I take a look to see if I can spot Flower or Rose, but the seats are too far away from me to be able to make out any details. The announcer is now verifying his magical voice magnifier, in preparation for the event. He is situated on an elevated platform, above the spectator seats.\r\n\r\nAs we all wait for the events to begin, I suddenly hear a familiar beeping noise, coming from my pocket. At the same time, a similar beeping noise comes from the direction of Leila as well.\r\n\r\nFinally. I've been waiting for this for a while."
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_private
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 43
             text: "We make our way to our division area, where all of our other teammates were already gathered. We then take our places next to the iron gratings blocking our access to the fighting area, in order to have a better view of what's happening in the arena. Apparently, there are still some people who are making their way towards their seats, but most of the spectators seem to have found their places, and are now restlessly waiting for the show to begin. I take a look to see if I can spot Flower, but the seats are too far away from me to be able to make out any details. The announcer is now verifying his magical voice magnifier, in preparation for the event. He is situated on an elevated platform, above the spectator seats.\r\n\r\nAs we all wait for the events to begin, I suddenly hear a familiar beeping noise, coming from my pocket. At the same time, a similar beeping noise comes from the direction of Leila as well.\r\n\r\nFinally. I've been waiting for this for a while."
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: Continue
@@ -790,49 +806,50 @@ scenes:
               current_scene: b2_ch04a_manticores
   - name: b2_ch04a_manticores
     routes:
-      - texts:
+      - condition: b2_ch2_heard = 1 AND b2_ch4_inform2 = 0 AND b2_ch4_inform3 = 0
+        texts:
           - source: scene_text
             paragraph: 46
             text: "There is a mixed sound of applause and shouts coming from the spectator seats, as the gladiators from the first division make their way out of the gates, and towards the center of the arena. I do not recognize any of the warriors in this division, but judging by the continued cheers of the crowd, I'd say that most of the spectators have seen them perform at least once before. Some of the gladiators seem a little bit too confident. Former victors, perhaps? Either way, they'd better get their act together, and quick. From what Bruce said on my first day here, the events until now could not even begin to compare with what's coming. \r\n\r\nA large iron gate on the opposite side of the arena makes a loud creaking noise as it opens. From beyond the gate, a lion with black wings, red eyes, two horns on its head and a scorpion's tail is making its way into the fighting area. The manticore wastes no time, and it soars directly into the sky. Two more manticores follow its lead, and they all start circling the skies above the arena, watching their prey intently. Seeing the beasts leave the fighting area with such ease, some of the spectators in the crowd are beginning to show signs of uneasiness.\r\n\r\n\"Do not worry,\" the announcer says, trying to calm down the crowd. \"These beasts have been well trained. They would not dare to lay their claws on anyone other than the gladiators in the arena.\"\r\n\r\nSeveral giant scorpions are now also joining the arena, coming from beyond the same gate that the manticores entered from. They are slowly advancing towards the warriors, in a straight line, without any attempt to surround them."
           - source: scene_text_2
             paragraph: 22
             text: "It's a good thing that I heard the guards talking about the scorpions while I was in my cell.  I've had all the time in the world to prepare against them, and I've also told Leila all the information she needed to know about them.\r\n\r\nAt least as far as the giant scorpions are concerned, we shouldn't have any... Hey, wait a minute! Those aren't giant scorpions... Those aren't giant scorpions at all. Those are desert marauders. Damn those idiot guards! Could they not tell the difference?\r\n\r\nOkay... Calm down! Desert marauders are pretty much just giant scorpions with smaller heads. They should have more or less the same behaviors. But do they also have the same weaknesses? I think they do, but I'm not completely certain. If only I had my notebook with me now..."
-        condition: b2_ch2_heard = 1 AND b2_ch4_inform2 = 0 AND b2_ch4_inform3 = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_backpack
-      - texts:
+      - condition: b2_ch2_heard = 1 AND b2_ch4_inform2 = 1
+        texts:
           - source: scene_text
             paragraph: 46
             text: "There is a mixed sound of applause and shouts coming from the spectator seats, as the gladiators from the first division make their way out of the gates, and towards the center of the arena. I do not recognize any of the warriors in this division, but judging by the continued cheers of the crowd, I'd say that most of the spectators have seen them perform at least once before. Some of the gladiators seem a little bit too confident. Former victors, perhaps? Either way, they'd better get their act together, and quick. From what Bruce said on my first day here, the events until now could not even begin to compare with what's coming. \r\n\r\nA large iron gate on the opposite side of the arena makes a loud creaking noise as it opens. From beyond the gate, a lion with black wings, red eyes, two horns on its head and a scorpion's tail is making its way into the fighting area. The manticore wastes no time, and it soars directly into the sky. Two more manticores follow its lead, and they all start circling the skies above the arena, watching their prey intently. Seeing the beasts leave the fighting area with such ease, some of the spectators in the crowd are beginning to show signs of uneasiness.\r\n\r\n\"Do not worry,\" the announcer says, trying to calm down the crowd. \"These beasts have been well trained. They would not dare to lay their claws on anyone other than the gladiators in the arena.\"\r\n\r\nSeveral giant scorpions are now also joining the arena, coming from beyond the same gate that the manticores entered from. They are slowly advancing towards the warriors, in a straight line, without any attempt to surround them."
           - source: scene_text_2
             paragraph: 23
             text: "It's a good thing that I heard the guards talking about the scorpions while I was in my cell.  I've had all the time in the world to prepare against them, and I've also told everyone else all the information they needed to know about them.\r\n\r\nAt least as far as the giant scorpions are concerned, we shouldn't have any... Hey, wait a minute! Those aren't giant scorpions... Those aren't giant scorpions at all. Those are desert marauders. Damn those idiot guards! Could they not tell the difference?\r\n\r\nOkay... Calm down! Desert marauders are pretty much just giant scorpions with smaller heads. They should have more or less the same behaviors. But do they also have the same weaknesses? I think they do, but I'm not completely certain. If only I had my notebook with me now..."
-        condition: b2_ch2_heard = 1 AND b2_ch4_inform2 = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_backpack
-      - texts:
+      - condition: b2_ch2_heard = 1 AND b2_ch4_inform3 = 1
+        texts:
           - source: scene_text
             paragraph: 46
             text: "There is a mixed sound of applause and shouts coming from the spectator seats, as the gladiators from the first division make their way out of the gates, and towards the center of the arena. I do not recognize any of the warriors in this division, but judging by the continued cheers of the crowd, I'd say that most of the spectators have seen them perform at least once before. Some of the gladiators seem a little bit too confident. Former victors, perhaps? Either way, they'd better get their act together, and quick. From what Bruce said on my first day here, the events until now could not even begin to compare with what's coming. \r\n\r\nA large iron gate on the opposite side of the arena makes a loud creaking noise as it opens. From beyond the gate, a lion with black wings, red eyes, two horns on its head and a scorpion's tail is making its way into the fighting area. The manticore wastes no time, and it soars directly into the sky. Two more manticores follow its lead, and they all start circling the skies above the arena, watching their prey intently. Seeing the beasts leave the fighting area with such ease, some of the spectators in the crowd are beginning to show signs of uneasiness.\r\n\r\n\"Do not worry,\" the announcer says, trying to calm down the crowd. \"These beasts have been well trained. They would not dare to lay their claws on anyone other than the gladiators in the arena.\"\r\n\r\nSeveral giant scorpions are now also joining the arena, coming from beyond the same gate that the manticores entered from. They are slowly advancing towards the warriors, in a straight line, without any attempt to surround them."
           - source: scene_text_2
             paragraph: 23
             text: "It's a good thing that I heard the guards talking about the scorpions while I was in my cell.  I've had all the time in the world to prepare against them, and I've also told everyone else all the information they needed to know about them.\r\n\r\nAt least as far as the giant scorpions are concerned, we shouldn't have any... Hey, wait a minute! Those aren't giant scorpions... Those aren't giant scorpions at all. Those are desert marauders. Damn those idiot guards! Could they not tell the difference?\r\n\r\nOkay... Calm down! Desert marauders are pretty much just giant scorpions with smaller heads. They should have more or less the same behaviors. But do they also have the same weaknesses? I think they do, but I'm not completely certain. If only I had my notebook with me now..."
-        condition: b2_ch2_heard = 1 AND b2_ch4_inform3 = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_backpack
-      - texts:
+      - condition: b2_ch2_heard = 0
+        texts:
           - source: scene_text
             paragraph: 46
             text: "There is a mixed sound of applause and shouts coming from the spectator seats, as the gladiators from the first division make their way out of the gates, and towards the center of the arena. I do not recognize any of the warriors in this division, but judging by the continued cheers of the crowd, I'd say that most of the spectators have seen them perform at least once before. Some of the gladiators seem a little bit too confident. Former victors, perhaps? Either way, they'd better get their act together, and quick. From what Bruce said on my first day here, the events until now could not even begin to compare with what's coming. \r\n\r\nA large iron gate on the opposite side of the arena makes a loud creaking noise as it opens. From beyond the gate, a lion with black wings, red eyes, two horns on its head and a scorpion's tail is making its way into the fighting area. The manticore wastes no time, and it soars directly into the sky. Two more manticores follow its lead, and they all start circling the skies above the arena, watching their prey intently. Seeing the beasts leave the fighting area with such ease, some of the spectators in the crowd are beginning to show signs of uneasiness.\r\n\r\n\"Do not worry,\" the announcer says, trying to calm down the crowd. \"These beasts have been well trained. They would not dare to lay their claws on anyone other than the gladiators in the arena.\"\r\n\r\nSeveral giant scorpions are now also joining the arena, coming from beyond the same gate that the manticores entered from. They are slowly advancing towards the warriors, in a straight line, without any attempt to surround them."
@@ -845,7 +862,6 @@ scenes:
               that their weakness was behind one of the scales on their back,
               but I can't remember which one. If only I had my notebook with me
               now...
-        condition: b2_ch2_heard = 0
         choices:
           - position: 1
             text: Continue
@@ -854,11 +870,11 @@ scenes:
                   current_scene: b2_ch04a_backpack
   - name: b2_ch04a_backpack
     routes:
-      - texts:
+      - condition: ch6_secure = 1
+        texts:
           - source: scene_text
             paragraph: 47
             text: "Should I go and get it? If they're going by order of the division number, then there should still be plenty of time until it's our turn to enter the arena. But if I leave now, I'm going to miss the fights. If I'm going to fight against these creatures, observing them in action may be crucial to my survival. \r\n\r\nDamn it! If only I hadn't told Daren to secure my backpack, I could have sent Leila to check out the notebook for me. I guess there's no use in thinking about that now. What's done is done. There are only two choices to be made. Either I go read my notebook, or I stay here and watch the fights."
-        condition: ch6_secure = 1
         choices:
           - position: 1
             text: Stay here and watch the fights.
@@ -875,11 +891,11 @@ scenes:
               - set:
                   current_scene: b2_ch04a_read
                   b2_ch4_backpack: 2
-      - texts:
+      - condition: ch6_secure = 0
+        texts:
           - source: scene_text
             paragraph: 48
             text: "Should I go and get it? If they're going by order of the division number, then there should still be plenty of time until it's our turn to enter the arena. But if I leave now, I'm going to miss the fights. If I'm going to fight against these creatures, observing them in action may be crucial to my survival. \r\n\r\nHold on, I also have another choice! I could send Leila to go read my notebook, and rip the pages I need out of it, so she can bring them back to me. But would she be able to find the pages? I did make a page index at the beginning, but people have had trouble understanding my ugly handwriting in the past. I can't just tell her to bring me the notebook, because then she might not have the time to return it to my backpack before our round begins. Either way, I don't have much time. I'm going to need to decide what I want to do."
-        condition: ch6_secure = 0
         choices:
           - position: 1
             text: Stay here and watch the fights.
@@ -902,28 +918,28 @@ scenes:
                   b2_ch4_backpack: 3
   - name: b2_ch04a_read
     routes:
-      - texts:
+      - condition: ch6_secure = 1
+        texts:
           - source: scene_text
             paragraph: 49
             text: "I'll go read the notebook. It's safer that way.\r\n\r\n\"Hey, Leila,\" I say. \"I need to go check my notebook real quick. Could you please give me a summary of the fights when I get back?\"\r\n\r\nLeila nods.\r\n\r\n\"Alright,\" I say. \"I'll be right back.\"\r\n\r\nI leave the area of our division and hurry towards the locker rooms. Shortly after I exit the room, one of the guards sees me and he calls after me.\r\n\r\n\"You there,\" the guard says. \"Why did you leave the area of your division?\"\r\n\r\n\"I'm sorry,\" I say. \"I forgot something in my backpack and I was heading towards the locker room.\"\r\n\r\n\"You're not supposed to leave your designated area without permission,\" the guard tells me.\r\n\r\n\"Okay,\" I say. \"How do I ask for permission, then?\""
           - source: scene_text_2
             paragraph: 25
             text: "The guard scratches his head. I don't think anyone's ever asked him this question before.\r\n\r\n\"Wait here,\" the guard says. \"I'll go ask the owner. You'd better not move from this spot till I come back, or you'll be in trouble.\"\r\n\r\nThe guard goes to climb a flight of stairs, and then he disappears from my sight. He returns a few minutes later, with a paper in his hand.\r\n\r\n\"Here is a free pass, signed by the owner,\" the guard says, as he hands me the piece of paper. \"If any other guards try to stop you, you show them this paper. When you're done, you come back here, and you hand this paper to me. Is that clear?\"\r\n\r\n\"Crystal,\" I say, and then I head towards the locker room.\r\n\r\nWhen I finally reach my locker, I open it with my key, and then I get the notebook out of my backpack. I quickly rip out the pages I need, then I place my notebook back in my backpack and I close the locker."
-        condition: ch6_secure = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_himself
-      - texts:
+      - condition: ch6_secure = 0
+        texts:
           - source: scene_text
             paragraph: 50
             text: "I'll go read the notebook myself. It's safer that way.\r\n\r\n\"Hey, Leila,\" I say. \"I need to go check my notebook real quick. Could you please give me a summary of the fights when I get back?\"\r\n\r\nLeila nods.\r\n\r\n\"Alright,\" I say. \"I'll be right back.\"\r\n\r\nI leave the area of our division and hurry towards the locker rooms. Shortly after I exit the room, one of the guards sees me and he calls after me.\r\n\r\n\"You there,\" the guard says. \"Why did you leave the area of your division?\"\r\n\r\n\"I'm sorry,\" I say. \"I forgot something in my backpack and I was heading towards the locker room.\"\r\n\r\n\"You're not supposed to leave your designated area without permission,\" the guard tells me.\r\n\r\n\"Okay,\" I say. \"How do I ask for permission, then?\""
           - source: scene_text_2
             paragraph: 25
             text: "The guard scratches his head. I don't think anyone's ever asked him this question before.\r\n\r\n\"Wait here,\" the guard says. \"I'll go ask the owner. You'd better not move from this spot till I come back, or you'll be in trouble.\"\r\n\r\nThe guard goes to climb a flight of stairs, and then he disappears from my sight. He returns a few minutes later, with a paper in his hand.\r\n\r\n\"Here is a free pass, signed by the owner,\" the guard says, as he hands me the piece of paper. \"If any other guards try to stop you, you show them this paper. When you're done, you come back here, and you hand this paper to me. Is that clear?\"\r\n\r\n\"Crystal,\" I say, and then I head towards the locker room.\r\n\r\nWhen I finally reach my locker, I open it with my key, and then I get the notebook out of my backpack. I quickly rip out the pages I need, then I place my notebook back in my backpack and I close the locker."
-        condition: ch6_secure = 0
         choices:
           - position: 1
             text: Continue
@@ -932,28 +948,28 @@ scenes:
                   current_scene: b2_ch04a_himself
   - name: b2_ch04a_himself
     routes:
-      - texts:
+      - condition: b2_ch2_heard = 1
+        texts:
           - source: scene_text
             paragraph: 51
             text: "As I study the information on my way back from the locker room, I realize that the desert marauders were indeed not much different from giant scorpions. Even their weaknesses are the same. I guess this whole trip was nothing but a huge waste of time.\r\n\r\nWhen I get close to my division area, I notice the guard waiting for me where I left him, and I hand him back his paper.\r\n\r\nI then re-enter the area designated for my division, and I go back towards the iron grating, where everyone is watching the fights.\r\n\r\nIt seems that both the first and the second division fights have already ended. All of the manticores and the scorpions are dead, and there are also some archer porcupine corpses lying on the ground beside them. Hadrik is now being thrown up and down by his teammates, while they are repeatedly chanting his name, and the crowds are cheering at the top of their lungs.\r\n\r\n\"What's going on, here?\" I ask Leila.\r\n\r\n\"Your dwarf friend just defeated all those monsters by himself,\" Leila writes."
           - source: scene_text_2
             paragraph: 26
             text: "\"By himself?\" I ask, surprised. \"What about the first division?\"\r\n\r\n\"They were all killed,\" Leila writes. \"You can see their bodies over there.\"\r\n\r\nShe then points towards several dead gladiators that are hidden behind some marauder carcasses.\r\n\r\n\"Damn...\" I say. \"We'd better get ourselves ready, then. It will be our turn after the next division.\"\r\n\r\nIt takes about another minute for the cheering to finally die down, and for Hadrik and the others to step off the stage, so that the next division can enter the fighting area."
-        condition: b2_ch2_heard = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_daft
-      - texts:
+      - condition: b2_ch2_heard = 0
+        texts:
           - source: scene_text
             paragraph: 52
             text: "As I study the information on my way back from the locker room, I notice the guard waiting for me where I left him, and I hand him back his paper.\r\n\r\nI then re-enter the area designated for my division, and I go back towards the iron grating, where everyone is watching the fights.\r\n\r\nIt seems that both the first and the second division fights have already ended. All of the manticores and the scorpions are dead, and there are also some archer porcupine corpses lying on the ground beside them. Hadrik is now being thrown up and down by his teammates, while they are repeatedly chanting his name, and the crowds are cheering at the top of their lungs.\r\n\r\n\"What's going on, here?\" I ask Leila.\r\n\r\n\"Your dwarf friend just defeated all those monsters by himself,\" Leila writes."
           - source: scene_text_2
             paragraph: 26
             text: "\"By himself?\" I ask, surprised. \"What about the first division?\"\r\n\r\n\"They were all killed,\" Leila writes. \"You can see their bodies over there.\"\r\n\r\nShe then points towards several dead gladiators that are hidden behind some marauder carcasses.\r\n\r\n\"Damn...\" I say. \"We'd better get ourselves ready, then. It will be our turn after the next division.\"\r\n\r\nIt takes about another minute for the cheering to finally die down, and for Hadrik and the others to step off the stage, so that the next division can enter the fighting area."
-        condition: b2_ch2_heard = 0
         choices:
           - position: 1
             text: Continue
@@ -962,25 +978,25 @@ scenes:
                   current_scene: b2_ch04a_daft
   - name: b2_ch04a_remain
     routes:
-      - texts:
+      - condition: b2_ch4_backpack = 1
+        texts:
           - source: scene_text
             paragraph: 53
             text: "Forget the notebook. For all I know, they might not even use the marauders for our division, and I'd just be wasting time.\r\n\r\nThe marauders are now getting closer and closer to the gladiators, while the manticores are still flying in circles, waiting for the best opportunity to strike.  \r\n\r\nThe warriors seem to be rather well organized, and they're not letting the monsters intimidate them. On their leader's signal, three of the men jump to attack the left-most marauder, while the rest of the gladiators try to distract the others. One of the warriors remains behind, and he watches the manticores attentively. He must have been tasked to observe the battlefield, so that he can warn his teammates if the situation changes.\r\n\r\nThe scorpion-like creatures are at least five times bigger than the gladiators, and they could probably crush any single one of them in their giant claws. The warriors seem to be experienced in battle, however, and they manage to remain unharmed, by anticipating the marauders' movements, and by covering for each other in their time of need. The group from the left in particular seems to be doing surprisingly well. They've managed to weaken the creature with a few well-timed strikes, and they're already moving in for the kill. \r\n\r\nThe most agile of the three jumps on the creature's back and he stabs it fiercely in the back of its head. The marauder screams in pain and it tries to attack the warrior with its tail, but the gladiator jumps off, while the other two make a rush for it and stab the monster in both its eyes with their swords, at the same time."
-        condition: b2_ch4_backpack = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_mercy
-      - texts:
+      - condition: b2_ch4_backpack = 3
+        texts:
           - source: scene_text
             paragraph: 54
             text: "\"Hey, Leila,\" I say. \"Can I ask you a favor?\"\r\n\r\nLeila turns towards me, with a curious look in her eyes, waiting to see what I have to say.\r\n\r\n\"There was some information written about desert marauders in my notebook,\" I say, \"but I don't remember some important details. Could you please go get the notebook out of my backpack, rip the pages about the marauders out and bring them to me? There's an index at the beginning of the notebook where you can find the numbers of the pages you're looking for. I'd go myself, but I'm the one who's studied about mythical creatures the most, and I'm afraid that I'll miss something important if I don't watch the fights.\"\r\n\r\n\"Okay, I'll go,\" Leila writes. \"Give me the key.\"\r\n\r\nI take the key of my locker out of my pocket, and I hand it to Leila.\r\n\r\n\"The number of the locker is written on the key,\" I say. \"You've seen what my notebook looks like, right? You'll need to have a clear image of it in your head if you want to retrieve it from the backpack.\"\r\n\r\n\"Yes, I've seen it,\" Leila writes. \"I'll be right back.\"\r\n\r\nShe then leaves the area of our division and heads towards the locker room.\r\n\r\nWhile I'd been talking with Leila, the marauders had gotten closer to the gladiators. The manticores are still flying in circles, waiting for the best opportunity to strike."
           - source: scene_text_2
             paragraph: 27
             text: "The warriors seem to be rather well organized, and they're not letting the monsters intimidate them. On their leader's signal, three of the men jump to attack the left-most marauder, while the rest of the gladiators try to distract the others. One of the warriors remains behind, and he watches the manticores attentively. He must have been tasked to observe the battlefield, so that he can warn his teammates if the situation changes.\r\n\r\nThe scorpion-like creatures are at least five times bigger than the gladiators, and they could probably crush any single one of them in their giant claws. The warriors seem to be experienced in battle, however, and they manage to remain unharmed, by anticipating the marauders' movements, and by covering for each other in their time of need. The group from the left in particular seems to be doing surprisingly well. They've managed to weaken the creature with a few well-timed strikes, and they're already moving in for the kill. \r\n\r\nThe most agile of the three jumps on the creature's back and he stabs it fiercely in the back of its head. The marauder screams in pain and it tries to attack the warrior with its tail, but the gladiator jumps off, while the other two make a rush for it and stab the monster in both its eyes with their swords, at the same time."
-        condition: b2_ch4_backpack = 3
         choices:
           - position: 1
             text: Continue
@@ -1038,21 +1054,22 @@ scenes:
               b2_ch4_beer: 0
   - name: b2_ch04a_lullaby
     routes:
-      - texts:
+      - condition: b2_ch4_beer = 1
+        texts:
           - source: scene_text
             paragraph: 58
             text: "\"Hey, Hadrik!\" I shout. \"Behind you!\"\r\n\r\nHadrik looks back, and he sees the porcupines getting ready to attack him. He waits for them to shoot, and he dodges at the last moment, causing the quills to hit a desert marauder instead. He then dashes towards his ranged attackers, not leaving them any time to ready up a second shot, and he pummels them repeatedly with his fists, until they're all either dead, or unable to move. \r\n\r\n\"Nice one, Barry!\" Hadrik then says. \"I owe you a beer.\"\r\n\r\nThe marauder who got hit by the quills was the last one standing, and the damage it took was enough to send it falling down.\r\n\r\nThe manticores have all abandoned their meals when Hadrik started his rampage, and they're now back to circling the skies, trying to find the right time to strike. One of the braver manticores dives down quickly, in an attempt to surprise the dwarf, but when it sees him react, the monster quickly soars back up into the sky, and out of his reach.\r\n\r\n\"Damn it!\" Hadrik says. \"Come back here, you coward! Come back here and fight!\"\r\n\r\n\"Hey, dwarf!\" I hear Arraka's voice coming from the crowd. \"Why don't you try singing them a lullaby? Maybe they'll get sleepy and come back down. AHAHAHAHAHAHA!\""
           - source: scene_text_2
             paragraph: 31
             text: "Following the sound of Arraka's voice, I manage to identify Flower in the crowd of spectators. The people around her all have their heads turned towards her, and are watching her curiously. They must think that the amulet around her neck is some new type of transceiver.\r\n\r\n\"Shut up, you blasted old hag!\" Hadrik shouts back at her. \"When I get out of here, I swear I'm going to double your spinning sessions!\"\r\n\r\n\"Yeah, I've got a better idea!\" Arraka says. \"How about you stop wasting everyone's time and get back to fighting? Do you have any idea how much this ticket cost?\"\r\n\r\n\"I can't fight them, you moron!\" Hadrik shouts, exasperated. \"I'm not allowed to use ranged weapons in the arena.\"\r\n\r\n\"Then throw some spears!\" Arraka shouts. \"Do I really have to tell you everything? You've got spears mounted on the walls. Use them.\"\r\n\r\nNow that Arraka mentions it, I see that there are indeed spears and various other weapons mounted on the walls of the arena. They must have been placed there to give people who didn't have any weapons when they got captured an equal chance in the fighting event. Hadrik mumbles something under his breath, and he goes to get one of the spears. He then tosses it at one of the manticores, and the spear lodges itself into its chest, causing blood to spray out while the creature falls towards the ground. Before the creature reaches the soil, the dwarf grabs two more spears, and he throws them in quick succession towards two of the other manticores, killing them as well."
-        condition: b2_ch4_beer = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_chanting
-      - texts:
+      - condition: b2_ch4_beer = 0
+        texts:
           - source: scene_text
             paragraph: 59
             text: "I shouldn't interrupt his fight. He knows what he's doing.\r\n\r\nWhile Hadrik sends the last of the marauders crashing to the ground, three of the archer porcupines aim their shots towards him, and six of their sharp quills stick themselves into the dwarf's back.\r\n\r\n\"Huh,\" Hadrik says, with the tone of a man who's just been bitten by a mosquito.\r\n\r\nHe then takes all of the quills out one by one with his hands and he throws them on the ground. The quills seem to have barely gotten through his skin, and there is hardly any blood coming out of the wounds. I don't know why I'm surprised. If regular unenchanted elven steel is not sharp enough to pass through a giant's skin, then why would it be any different for porcupine quills?\r\n\r\nHadrik does not give the archer porcupines the chance to aim their second shot, as he dashes towards them, and then pummels them repeatedly with his fists until they're all either dead, or unable to move.\r\n\r\nThe manticores have all abandoned their meals when Hadrik started his rampage, and they're now back to circling the skies, trying to find the right time to strike. One of the braver manticores dives down quickly, in an attempt to surprise the dwarf, but when it sees him react, the monster quickly soars back up into the sky, and out of his reach.\r\n\r\n\"Damn it!\" Hadrik says. \"Come back here, you coward! Come back here and fight!\""
@@ -1073,7 +1090,6 @@ scenes:
               creature reaches the soil, the dwarf grabs two more spears, and he
               throws them in quick succession towards two of the other
               manticores, killing them as well.
-        condition: b2_ch4_beer = 0
         choices:
           - position: 1
             text: Continue
@@ -1082,15 +1098,16 @@ scenes:
                   current_scene: b2_ch04a_chanting
   - name: b2_ch04a_chanting
     routes:
-      - texts:
+      - condition: hearing < 3
+        texts:
           - source: scene_text
             paragraph: 61
             text: "The last remaining manticore decides that the skies are no longer safe, so it quickly dives down towards Hadrik, to end the fight with one big final clash. Hadrik does not wait for the creature to reach him, and he makes a jump, grabbing it from the air, and doing a spinning drop, crushing the beast's head into the ground.\r\n\r\nHe did it... The crazy bastard did it. He took both waves of monsters down all by himself, and he barely even got scratched.\r\n\r\nThe crowds are now cheering louder than ever before. Hadrik's teammates, who had been hiding this whole time, come running towards the dwarf, and they raise him in the air, while chanting his name repeatedly.\r\n\r\n\"Hadrik! Hadrik! Hadrik!\" they keep saying, while the crowds are all cheering. \r\n\r\n\"Don't think that you're getting off that easy, you cowardly dogs,\" Hadrik says, with a grin, while his teammates are throwing him up and down. \"When we get out of here, you're going to buy me a year's worth of drinks.\"\r\n\r\nIt takes two more minutes for the crowd's cheers to finally die down, and for Hadrik and the others to step off the stage, so that the next division can enter the fighting area."
-        condition: hearing < 3
-        set:
-          failed_checks:
-            - '[ Hearing check failed - level 3 ]'
-          b2_ch4_hearing1: 0
+        effects:
+          - set:
+              failed_checks:
+                - '[ Hearing check failed - level 3 ]'
+              b2_ch4_hearing1: 0
         choices:
           - position: 1
             text: Continue
@@ -1100,18 +1117,20 @@ scenes:
                 condition: b2_ch4_backpack = 3
               - set:
                   current_scene: b2_ch04a_daft
-      - texts:
+                condition: b2_ch4_backpack != 3
+      - condition: hearing >= 3
+        texts:
           - source: scene_text
             paragraph: 60
             text: "The last remaining manticore decides that the skies are no longer safe, so it quickly dives down towards Hadrik, to end the fight with one big final clash. Hadrik does not wait for the creature to reach him, and he makes a jump, grabbing it from the air, and doing a spinning drop, crushing the beast's head into the ground.\r\n\r\nHe did it... The crazy bastard did it. He took both waves of monsters down all by himself, and he barely even got scratched.\r\n\r\nThe crowds are now cheering louder than ever before. Hadrik's teammates, who had been hiding this whole time, come running towards the dwarf, and they raise him in the air, while chanting his name repeatedly.\r\n\r\n\"Hadrik! Hadrik! Hadrik!\" they keep saying, while the crowds are all cheering. \r\n\r\n\"Don't think that you're getting off that easy, you cowardly dogs,\" Hadrik says, with a grin, while his teammates are throwing him up and down. \"When we get out of here, you're going to buy me a year's worth of drinks.\"\r\n\r\n\"What is the meaning of this?!\" I hear the ambassador of Ollendor shout from above.\r\n\r\n\"Ambassador!\" says Venard, the owner of the arena. \"I see that you've decided to join us after all! Would you like some wine?\"\r\n\r\nThe two of them seem to be talking from a private room above our division's area. It doesn't appear like any of my teammates are able to hear them."
           - source: scene_text_2
             paragraph: 33
             text: "\"Why is the dwarf here?\" the ambassador says. \"He wasn't supposed to be here! He's going to ruin everything!\"\r\n\r\n\"Calm down, ambassador,\" Venard says. \"The dwarf came here with a letter of admission signed by the king himself. We couldn't just turn him down.\"\r\n\r\n\"Just because you couldn't turn him down,\" the ambassador says, \"it doesn't mean that you have to let him make a mockery of your entire arena!\"\r\n\r\n\"But he hasn't done that at all, ambassador,\" the owner says. \"Quite the contrary, in fact. He has provided us with a spectacle that this arena has not seen for ages, and the crowds love it. The show has only just started, and it's already exceeded all of my expectations!\"\r\n\r\n\"I don't care about your expectations!\" the ambassador shouts. \"I want him out, do you understand? I do not want him to set foot in that arena ever again!\"\r\n\r\n\"Hmm,\" Venard says. \"Truth be told, I also think that allowing the dwarf to wreak havoc any longer than he already has would make the show too predictable and boring. Very well, ambassador. I will speak with the staff in charge of arranging the fights to make some modifications in the schedule. You will not be seeing him again.\"\r\n\r\nAfter they've finished their discussion, the room above falls silent again. Meanwhile, on the outside, the crowds have still not stopped cheering, since the end of the previous fight. It takes about another minute for the cheering to finally die down, and for Hadrik and the others to step off the stage, so that the next division can enter the fighting area."
-        condition: hearing >= 3
-        set:
-          successful_checks:
-            - '[ Hearing check successful - level 3 ]'
-          b2_ch4_hearing1: 1
+        effects:
+          - set:
+              successful_checks:
+                - '[ Hearing check successful - level 3 ]'
+              b2_ch4_hearing1: 1
         choices:
           - position: 1
             text: Continue
@@ -1121,24 +1140,25 @@ scenes:
                 condition: b2_ch4_backpack = 3
               - set:
                   current_scene: b2_ch04a_daft
+                condition: b2_ch4_backpack != 3
   - name: b2_ch04a_retained
     routes:
-      - texts:
+      - condition: b2_ch2_heard = 1
+        texts:
           - source: scene_text
             paragraph: 62
             text: "Shortly before the next division gets announced, Leila finally comes back from the locker room, with a few pages of my notebook in her hand.\r\n\r\n\"Sorry I'm late,\" Leila writes. \"I got retained by a guard on my way to the lockers. He had to go and get me a pass from the owner before I could proceed.\"\r\n\r\n\"No problem,\" I tell her. \"Are those all the pages?\"\r\n\r\n\"This is all I could find,\" Leila writes. \"Behaviors, weaknesses, and some diagrams.\"\r\n\r\n\"Perfect,\" I tell her. \"That's all we need.\"\r\n\r\nI take the notes from her hands and I study them closely. \r\n\r\nIt doesn't take me long to realize that the desert marauders were indeed not much different from giant scorpions. Even their weaknesses are the same. I guess this whole trip that I sent Leila on turned out to be nothing but a huge waste of time."
-        condition: b2_ch2_heard = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_daft
-      - texts:
+      - condition: b2_ch2_heard = 0
+        texts:
           - source: scene_text
             paragraph: 63
             text: "Shortly before the next division gets announced, Leila finally comes back from the locker room, with a few pages of my notebook in her hand.\r\n\r\n\"Sorry I'm late,\" Leila writes. \"I got retained by a guard on my way to the lockers. He had to go and get me a pass from the owner before I could proceed.\"\r\n\r\n\"No problem,\" I tell her. \"Are those all the pages?\"\r\n\r\n\"This is all I could find,\" Leila writes. \"Behaviors, weaknesses, and some diagrams.\"\r\n\r\n\"Perfect,\" I tell her. \"That's all we need.\"\r\n\r\nI take the notes from her hands and I study them closely. \r\n\r\nThe information written here is definitely useful. I'll make sure to put it to good use if the need arises."
-        condition: b2_ch2_heard = 0
         choices:
           - position: 1
             text: Continue
@@ -1200,42 +1220,42 @@ scenes:
               current_scene: b2_ch04a_concentrate
   - name: b2_ch04a_concentrate
     routes:
-      - texts:
+      - condition: b2_ch4_inform3 = 0 AND b2_ch4_inform2 = 0
+        texts:
           - source: scene_text
             paragraph: 67
             text: "The tramplers have finished their first tour of the arena, and they're now coming back towards Daren for a second round. Some of his teammates have managed to evade the stampede, but two of them were not so lucky, and they got trampled to death before they could get out of harm's way. Daren waits patiently until the last moment yet again, and then he runs his blade through the side of the creature, slicing it in half. The crowds are going wild once more.\r\n\r\nSeeing that the first wave of beasts is already being dealt with, the announcer signals the beginning of the second wave. Three giant cobras are now making their way towards Daren, while the tramplers decide to try chasing some of the easier prey. The cobras are both taller and wider than Daren, but their size is not the only dangerous thing about them. By the looks of the black spots on their necks, I'm almost certain that these are in fact acid-spitting cobras, and not regular ones. \r\n\r\nAcid that comes from cobras is not as strong as the acid from mage spells, but it's definitely not something to be sneezed at. While it may not significantly damage weapons and armor that have been sufficiently enchanted, the acid from a cobra can still burn through most regular metals in a matter of minutes, and it can burn through human flesh in a matter of seconds."
           - source: scene_text_2
             paragraph: 36
             text: "Being now faced with ranged attackers, Daren decides that it is no longer safe to maintain his position, and he switches to the offensive. Advancing slowly, with his shield in front, Daren gradually closes the gap between himself and the cobras, until he gets near enough to be able to make a dash attack. The cobras have been spitting at him all this time, but judging by the impact it's had on Daren's shield, they may as well have been spraying water.\r\n\r\nDaren makes a dash towards one of the cobras, and he slices its head off in one strike. Before the other two get to attack him, he bashes one with his shield, while stabbing the other through the mouth with his sword. He then makes sure that the third cobra is still dizzy, and he finishes it off as well, with one well-timed slash of his blade.\r\n\r\nWhile Daren was busy with the cobras, the other gladiators had somehow managed to bring down one of the tramplers by themselves. Seeing that the other tramplers are not planning to attack him anymore, Daren decides to go help the others kill off the remaining creatures.\r\n\r\n\"If none of you are going to listen to reason, then I'll fight on my own!\" Bruce shouts again, this time louder than before. \"I don't plan on getting killed to save your sorry behinds!\"\r\n\r\n\"I very much doubt that anyone was counting on your help to begin with,\" Wilhelm says. \"Now could you please keep quiet? Our battle will begin shortly, and I would like to concentrate.\"\r\n\r\nGreat. Our fight didn't even start yet, and our team is already falling apart. I knew from the beginning that these people couldn't be trusted."
-        condition: b2_ch4_inform3 = 0 AND b2_ch4_inform2 = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_silence
-      - texts:
+      - condition: b2_ch4_inform3 = 1
+        texts:
           - source: scene_text
             paragraph: 67
             text: "The tramplers have finished their first tour of the arena, and they're now coming back towards Daren for a second round. Some of his teammates have managed to evade the stampede, but two of them were not so lucky, and they got trampled to death before they could get out of harm's way. Daren waits patiently until the last moment yet again, and then he runs his blade through the side of the creature, slicing it in half. The crowds are going wild once more.\r\n\r\nSeeing that the first wave of beasts is already being dealt with, the announcer signals the beginning of the second wave. Three giant cobras are now making their way towards Daren, while the tramplers decide to try chasing some of the easier prey. The cobras are both taller and wider than Daren, but their size is not the only dangerous thing about them. By the looks of the black spots on their necks, I'm almost certain that these are in fact acid-spitting cobras, and not regular ones. \r\n\r\nAcid that comes from cobras is not as strong as the acid from mage spells, but it's definitely not something to be sneezed at. While it may not significantly damage weapons and armor that have been sufficiently enchanted, the acid from a cobra can still burn through most regular metals in a matter of minutes, and it can burn through human flesh in a matter of seconds."
           - source: scene_text_2
             paragraph: 37
             text: "Being now faced with ranged attackers, Daren decides that it is no longer safe to maintain his position, and he switches to the offensive. Advancing slowly, with his shield in front, Daren gradually closes the gap between himself and the cobras, until he gets near enough to be able to make a dash attack. The cobras have been spitting at him all this time, but judging by the impact it's had on Daren's shield, they may as well have been spraying water.\r\n\r\nDaren makes a dash towards one of the cobras, and he slices its head off in one strike. Before the other two get to attack him, he bashes one with his shield, while stabbing the other through the mouth with his sword. He then makes sure that the third cobra is still dizzy, and he finishes it off as well, with one well-timed slash of his blade.\r\n\r\nWhile Daren was busy with the cobras, the other gladiators had somehow managed to bring down one of the tramplers by themselves. Seeing that the other tramplers are not planning to attack him anymore, Daren decides to go help the others kill off the remaining creatures.\r\n\r\n\"If none of you are going to listen to reason, then I'll fight on my own!\" Bruce shouts again, this time louder than before. \"I don't plan on getting killed to save your sorry behinds!\"\r\n\r\n\"I very much doubt that anyone was counting on your help to begin with,\" Wilhelm says. \"Now could you please keep quiet? Our battle will begin shortly, and I would like to concentrate.\"\r\n\r\nGreat. Our fight didn't even start yet, and our team is already falling apart. I should have known from the beginning that these people couldn't be trusted."
-        condition: b2_ch4_inform3 = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch04a_silence
-      - texts:
+      - condition: b2_ch4_inform2 = 1
+        texts:
           - source: scene_text
             paragraph: 67
             text: "The tramplers have finished their first tour of the arena, and they're now coming back towards Daren for a second round. Some of his teammates have managed to evade the stampede, but two of them were not so lucky, and they got trampled to death before they could get out of harm's way. Daren waits patiently until the last moment yet again, and then he runs his blade through the side of the creature, slicing it in half. The crowds are going wild once more.\r\n\r\nSeeing that the first wave of beasts is already being dealt with, the announcer signals the beginning of the second wave. Three giant cobras are now making their way towards Daren, while the tramplers decide to try chasing some of the easier prey. The cobras are both taller and wider than Daren, but their size is not the only dangerous thing about them. By the looks of the black spots on their necks, I'm almost certain that these are in fact acid-spitting cobras, and not regular ones. \r\n\r\nAcid that comes from cobras is not as strong as the acid from mage spells, but it's definitely not something to be sneezed at. While it may not significantly damage weapons and armor that have been sufficiently enchanted, the acid from a cobra can still burn through most regular metals in a matter of minutes, and it can burn through human flesh in a matter of seconds."
           - source: scene_text_2
             paragraph: 37
             text: "Being now faced with ranged attackers, Daren decides that it is no longer safe to maintain his position, and he switches to the offensive. Advancing slowly, with his shield in front, Daren gradually closes the gap between himself and the cobras, until he gets near enough to be able to make a dash attack. The cobras have been spitting at him all this time, but judging by the impact it's had on Daren's shield, they may as well have been spraying water.\r\n\r\nDaren makes a dash towards one of the cobras, and he slices its head off in one strike. Before the other two get to attack him, he bashes one with his shield, while stabbing the other through the mouth with his sword. He then makes sure that the third cobra is still dizzy, and he finishes it off as well, with one well-timed slash of his blade.\r\n\r\nWhile Daren was busy with the cobras, the other gladiators had somehow managed to bring down one of the tramplers by themselves. Seeing that the other tramplers are not planning to attack him anymore, Daren decides to go help the others kill off the remaining creatures.\r\n\r\n\"If none of you are going to listen to reason, then I'll fight on my own!\" Bruce shouts again, this time louder than before. \"I don't plan on getting killed to save your sorry behinds!\"\r\n\r\n\"I very much doubt that anyone was counting on your help to begin with,\" Wilhelm says. \"Now could you please keep quiet? Our battle will begin shortly, and I would like to concentrate.\"\r\n\r\nGreat. Our fight didn't even start yet, and our team is already falling apart. I should have known from the beginning that these people couldn't be trusted."
-        condition: b2_ch4_inform2 = 1
         choices:
           - position: 1
             text: Continue
@@ -1244,7 +1264,8 @@ scenes:
                   current_scene: b2_ch04a_silence
   - name: b2_ch04a_silence
     routes:
-      - texts:
+      - condition: b2_ch2_deal = 1
+        texts:
           - source: scene_text
             paragraph: 68
             text: "There is a very loud burst of cheering coming from the outside. It appears that Daren and the other surviving gladiators have finally defeated all of the creatures. The announcer is signaling them to leave the fighting area, so that the show can proceed. \r\n\r\nAs Daren and the others are getting ready to leave, a man dressed in a dark blue robe with a hood on his head comes from behind me, and he joins my side by the iron grating.\r\n\r\n\"Who are you?\" I ask him, even though I can probably already guess the answer.\r\n\r\n\"I am a last minute addition to your division,\" the man says. \"I've been sent here to solve your troubles.\"\r\n\r\nThe man is carrying two scythes in his hands, that both have sapphires encrusted into their hilts.\r\n\r\n\"You were sent here by the lessathi?\" I ask him in a low voice, in order to make sure that none of the others hear me. \"What were they thinking? Don't tell me that you plan to fight all of the monsters by yourself?\"\r\n\r\n\"I will uphold our end of the bargain,\" the lessathi says. \"Make sure that you uphold yours when the time comes.\"\r\n\r\n\"Uh, yes,\" I say. \"Yes, of course...\"\r\n\r\nThe lessathi suddenly turns his head towards me, with an expression of shock and rage in his eyes.\r\n\r\n\"You are lying!\" he says.\r\n\r\n\"What?\" I ask him. \"No, I was telling the truth!\""
@@ -1254,7 +1275,6 @@ scenes:
           - source: scene_3
             paragraph: 6
             text: "\"Ladies and gentlemen, I give you the fourth division!\" the announcer says.\r\n\r\nThe crowd watches us in complete silence, as we make our way past all the animal carcasses, in order to reach our destination. It's clear that they do not recognize anyone from our division. They're probably already thinking that we're going to get butchered, like that first division from earlier. I hope we won't end up proving them right."
-        condition: b2_ch2_deal = 1
         choices:
           - position: 1
             text: Continue
@@ -1262,11 +1282,11 @@ scenes:
               - set:
                   current_scene: b2_ch04b_bastard
                   storyboard_controls: Jump to frame "Book 2 Chapter 4 b"
-      - texts:
+      - condition: b2_ch2_deal = 2
+        texts:
           - source: scene_text
             paragraph: 69
             text: "There is a very loud burst of cheering coming from the outside. It appears that Daren and the other surviving gladiators have finally defeated all of the creatures. The announcer is signaling them to leave the fighting area, so that the show can proceed. \r\n\r\nOnce Daren and the others leave the stage, the iron grating in front of us finally begins to get raised. We all make our way towards the center of the arena, like all the divisions before us. \r\n\r\n\"Ladies and gentlemen, I give you the fourth division!\" the announcer says.\r\n\r\nThe crowd watches us in complete silence, as we make our way past all the animal carcasses, in order to reach our destination. It's clear that they do not recognize anyone from our division. They're probably already thinking that we're going to get butchered, like that first division from earlier. I hope we won't end up proving them right."
-        condition: b2_ch2_deal = 2
         choices:
           - position: 1
             text: Continue
@@ -1274,11 +1294,11 @@ scenes:
               - set:
                   current_scene: b2_ch04b_bastard
                   storyboard_controls: Jump to frame "Book 2 Chapter 4 b"
-      - texts:
+      - condition: b2_ch2_deal = 4
+        texts:
           - source: scene_text
             paragraph: 69
             text: "There is a very loud burst of cheering coming from the outside. It appears that Daren and the other surviving gladiators have finally defeated all of the creatures. The announcer is signaling them to leave the fighting area, so that the show can proceed. \r\n\r\nOnce Daren and the others leave the stage, the iron grating in front of us finally begins to get raised. We all make our way towards the center of the arena, like all the divisions before us. \r\n\r\n\"Ladies and gentlemen, I give you the fourth division!\" the announcer says.\r\n\r\nThe crowd watches us in complete silence, as we make our way past all the animal carcasses, in order to reach our destination. It's clear that they do not recognize anyone from our division. They're probably already thinking that we're going to get butchered, like that first division from earlier. I hope we won't end up proving them right."
-        condition: b2_ch2_deal = 4
         choices:
           - position: 1
             text: Continue
@@ -1286,14 +1306,14 @@ scenes:
               - set:
                   current_scene: b2_ch04b_bastard
                   storyboard_controls: Jump to frame "Book 2 Chapter 4 b"
-      - texts:
+      - condition: b2_ch2_deal = 3
+        texts:
           - source: scene_text
             paragraph: 70
             text: "There is a very loud burst of cheering coming from the outside. It appears that Daren and the other surviving gladiators have finally defeated all of the creatures. The announcer is signaling them to leave the fighting area, so that the show can proceed. \r\n\r\nAs Daren and the others are getting ready to leave, a man dressed in a dark blue robe with a hood on his head comes from behind me, and he joins my side by the iron grating.\r\n\r\n\"Who are you?\" I ask him, even though I can probably already guess the answer.\r\n\r\n\"I am a last minute addition to your division,\" the man says. \"I've been sent here to solve your troubles.\"\r\n\r\nThe man is carrying two scythes in his hands, that both have sapphires encrusted into their hilts.\r\n\r\n\"You were sent here by the lessathi?\" I ask him in a low voice, in order to make sure that none of the others hear me. \"What were they thinking? Don't tell me that you plan to fight all of the monsters by yourself?\"\r\n\r\n\"I will uphold our end of the bargain,\" the lessathi says. \"Make sure that you uphold yours when the time comes.\""
           - source: scene_text_2
             paragraph: 39
             text: "\"Uh, yes,\" I say. \"Yes, of course...\"\r\n\r\nThe lessathi readies his scythes, and he waits for us to be granted access to the arena. Once Daren and the others are out of the fighting area, the iron grating in front of us finally begins to get raised. \r\n\r\nWe all make our way towards the center of the arena, like all the divisions before us. \r\n\r\n\"Ladies and gentlemen, I give you the fourth division!\" the announcer says.\r\n\r\nThe crowd watches us in complete silence, as we make our way past all the animal carcasses, in order to reach our destination. It's clear that they do not recognize anyone from our division. They're probably already thinking that we're going to get butchered, like that first division from earlier. I hope we won't end up proving them right."
-        condition: b2_ch2_deal = 3
         choices:
           - position: 1
             text: Continue

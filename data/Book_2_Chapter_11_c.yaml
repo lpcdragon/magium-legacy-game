@@ -12,8 +12,8 @@ scenes:
         paragraph: 49
         text: "This marks the end of the second Magium book.\r\n\r\nOnly the first eleven chapters of the 3rd book are available so far, but the rest of the chapters will be released one by one, as I write them. (the main series will likely have 5 books in total)\r\n\r\nMy current estimate is that the 12th chapter of the third book should be released within the next few months.\r\n\r\nIf you already paid to unlock the 3rd book, you can tap on the button below to proceed. Otherwise, you will need to complete 25 achievements from the second book in order to unlock the third one.\r\n\r\nYou can see how many more achievements you need to complete in the achievements menu. \r\n\r\nI would also like to add that I strongly suggest you save the game now on a save slot you won't overwrite, if you're planning to start completing achievements, since otherwise you'll lose the progress of your current playthrough and you'll have to finish the game again in order to be able to progress to the next book.\r\n\r\nYou should also be careful to not uninstall the game, since all of the next books will be uploaded within the same app, and if you uninstall the game, all your local progress, including your achievements, will be lost.\r\n\r\nThank you for playing!\r\n\r\nP.S. If you enjoyed the game, don't forget to recommend it to your friends."
     routes:
-      - texts: []
-        condition: second_book_purchased = 1
+      - condition: second_book_purchased = 1
+        texts: []
         choices:
           - position: 1
             text: Proceed to book 3
@@ -34,8 +34,8 @@ scenes:
                   current_scene: b3_ch01a_intro
                   chapter_save: 1
                   checkpoint_rich: 1
-      - texts: []
-        condition: nb_of_unlocked_achievements >= 25 AND second_book_purchased = 0
+      - condition: nb_of_unlocked_achievements >= 25 AND second_book_purchased = 0
+        texts: []
         choices:
           - position: 1
             text: Proceed to book 3
@@ -56,8 +56,8 @@ scenes:
                   current_scene: b3_ch01a_intro
                   chapter_save: 1
                   checkpoint_rich: 1
-      - texts: []
-        condition: nb_of_unlocked_achievements < 25 AND second_book_purchased = 0
+      - condition: nb_of_unlocked_achievements < 25 AND second_book_purchased = 0
+        texts: []
         choices:
           - position: 1
             text: Restart game
@@ -78,7 +78,8 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
   - name: b2_ch11c_herbalist
     routes:
-      - texts:
+      - condition: ch11_saved_slave <> 3
+        texts:
           - source: scene_text
             paragraph: 2
             text: "\"Rose, listen to me,\" I say, as I place myself in front of her. \"Arraka showed me your ritual. I know that it's going to be hard, but you'll need to--\"\r\n\r\n\"It's not enough...\" Rose says, all of a sudden, as she continues to look in front of her.\r\n\r\n\"What?...\" I ask her, confused.\r\n\r\n\"Barry, it's not enough!\" Rose says, as she finally looks me in the eyes. \"Nothing that I've been doing so far in my life has been anywhere near enough. I can't just keep hiding behind my powerlessness anymore. I can't keep living like this. I need to do more!\"\r\n\r\n\"What do you mean?\" I say. \"Do more for whom? The slaves?\"\r\n\r\n\"Not only for the slaves...\" Rose says. \"But for everyone that I've ever ignored in my life, thinking that I couldn't make a difference. I can't close my eyes to their suffering anymore. I want to help them all!\""
@@ -88,7 +89,6 @@ scenes:
           - source: scene_3
             paragraph: 2
             text: "\"Hey, that was not half-bad, herbalist girl,\" Melindra says, with an impressed smile. \"Not half-bad.\"\r\n\r\n\"Rose, that was incredible!\" Kate says, as her fatigued expression disappears from her face. \"How did you do it?\"\r\n\r\n\"I don't know,\" Rose says. \"I feel... different. As if my head is being constantly flooded with information that I can barely process. I still can't use all my time powers, but everything feels so much more natural to me right now!\"\r\n\r\n\"Hah!\" Arraka says. \"Don't get your hopes too high up, herbalist. This is only happening because you are still linked to the Magium. Once you'll be done with the prophecy, you will forget all about how to use these powers, and you will become the same boring, powerless girl as before.\"\r\n\r\n\"If I will forget how to use my powers, then I'll just have to learn them all over again,\" Rose says, with a very determined look in her eyes. \"I will practice day and night, until I'll be able to use them perfectly. I don't want to go back to the way I was. This time, I want to make a real difference!\""
-        condition: ch11_saved_slave <> 3
         choices:
           - position: 1
             text: Encourage Rose in her decision
@@ -108,7 +108,8 @@ scenes:
               - set:
                   current_scene: b2_ch11c_encourage
                   b2_ch11_encourage: 2
-      - texts:
+      - condition: ch11_saved_slave = 3
+        texts:
           - source: scene_text
             paragraph: 2
             text: "\"Rose, listen to me,\" I say, as I place myself in front of her. \"Arraka showed me your ritual. I know that it's going to be hard, but you'll need to--\"\r\n\r\n\"It's not enough...\" Rose says, all of a sudden, as she continues to look in front of her.\r\n\r\n\"What?...\" I ask her, confused.\r\n\r\n\"Barry, it's not enough!\" Rose says, as she finally looks me in the eyes. \"Nothing that I've been doing so far in my life has been anywhere near enough. I can't just keep hiding behind my powerlessness anymore. I can't keep living like this. I need to do more!\"\r\n\r\n\"What do you mean?\" I say. \"Do more for whom? The slaves?\"\r\n\r\n\"Not only for the slaves...\" Rose says. \"But for everyone that I've ever ignored in my life, thinking that I couldn't make a difference. I can't close my eyes to their suffering anymore. I want to help them all!\""
@@ -118,7 +119,6 @@ scenes:
           - source: scene_3
             paragraph: 2
             text: "\"Hey, that was not half-bad, herbalist girl,\" Melindra says, with an impressed smile. \"Not half-bad.\"\r\n\r\n\"Rose, that was incredible!\" Kate says, as her fatigued expression disappears from her face. \"How did you do it?\"\r\n\r\n\"I don't know,\" Rose says. \"I feel... different. As if my head is being constantly flooded with information that I can barely process. I still can't use all my time powers, but everything feels so much more natural to me right now!\"\r\n\r\n\"Hah!\" Arraka says. \"Don't get your hopes too high up, herbalist. This is only happening because you are still linked to the Magium. Once you'll be done with the prophecy, you will forget all about how to use these powers, and you will become the same boring, powerless girl as before.\"\r\n\r\n\"If I will forget how to use my powers, then I'll just have to learn them all over again,\" Rose says, with a very determined look in her eyes. \"I will practice day and night, until I'll be able to use them perfectly. I don't want to go back to the way I was. This time, I want to make a real difference!\""
-        condition: ch11_saved_slave = 3
         choices:
           - position: 1
             text: Encourage Rose in her decision
@@ -140,7 +140,8 @@ scenes:
                   b2_ch11_encourage: 2
   - name: b2_ch11c_encourage
     routes:
-      - texts:
+      - condition: b2_ch11_encourage = 1
+        texts:
           - source: scene_text
             paragraph: 3
             text: "\"Don't listen to Arraka,\" I tell Rose. \"I'm sure you'll be able to master your powers in no time, with enough practice!\"\r\n\r\n\"Thank you, Barry,\" Rose says, smiling. \"I will try hard to make you all proud of me!\"\r\n\r\n\"I don't mean to interrupt or anything,\" Melindra says, \"but didn't you guys say that you were going to try and sabotage the ritual? Because if that's what you are planning to do, then you might want to hurry up a little. We don't know how long it will be until the next stage begins.\"\r\n\r\n\"You're right,\" Daren says. \"And I think I might have an idea. Rose, could you try to unfreeze the time for the world around us by using your powers? It might just be enough to cancel the ritual.\"\r\n\r\n\"I don't know if I can, but I'll try,\" Rose says.\r\n\r\nShe then closes her eyes and tries to concentrate, as the rest of us fall completely silent, in order to avoid distracting her. After a while, Rose disappears from her spot, and she reappears several feet to the left of her original position. She then disappears and reappears again a few more times, in different places, until Daren finally decides to break the silence."
@@ -150,19 +151,20 @@ scenes:
           - source: scene_3
             paragraph: 3
             text: "\"Ahahahahahaha!\" Arraka laughs all of a sudden. \"So, you're telling me that these chumps are the ones who are the most likely to influence the prophecy? Ahahahahaha! That's it. Pack your bags, everyone. This continent is doomed!\"\r\n\r\n\"What is she talking about?\" Daren asks Melindra, as Arraka is still laughing in the background. \"Why would we be the 'most likely' to influence the prophecy? Are there others who will be receiving the same prophecy after us?\"\r\n\r\n\"Yes,\" Melindra says. \"You are only the first group to be visited by the time weaver. Once the God of Time is done with his ritual, you will be frozen in time once more, and then the prophecy and the ritual will be repeated for other groups of people as well. Not only that, but this same prophecy will be delivered to you and the others at least two more times, before the events prophesized will come to pass, in order to announce you if any progress has been made, towards your goal of averting the disaster. The reason why Arraka said that you were the most likely ones to influence the prophecy is because the time weavers always visit their targets in order of priority, which means that your group may have the most decisive role in the events to come, depending on your choices.\""
-        condition: b2_ch11_encourage = 1
-        set:
-          ac_b2_ch11_supportive: 1
-        achievement:
-          id: ac_b2_ch11_supportive
-          title: Supportive friend
+        effects:
+          - set:
+              ac_b2_ch11_supportive: 1
+            achievement:
+              id: ac_b2_ch11_supportive
+              title: Supportive friend
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11c_practice
-      - texts:
+      - condition: b2_ch11_encourage = 0
+        texts:
           - source: scene_text
             paragraph: 4
             text: "\"I really think that you should consider things a bit more, before you choose to go on this path,\" I tell Rose. \"Even if you manage to fully master your time powers, you will still be placing yourself in a lot of danger, by going through with this plan.\"\r\n\r\n\"I was hoping that you would be taking my side on this matter, Barry,\" Rose says, looking a little disappointed. \"But I appreciate the fact that you are trying to look out for me. Don't worry, I'll make sure to not do anything too reckless!\"\r\n\r\n\"I don't mean to interrupt or anything,\" Melindra says, \"but didn't you guys say that you were going to try and sabotage the ritual? Because if that's what you are planning to do, then you might want to hurry up a little. We don't know how long it will be until the next stage begins.\"\r\n\r\n\"You're right,\" Daren says. \"And I think I might have an idea. Rose, could you try to unfreeze the time for the world around us by using your powers? It might just be enough to cancel the ritual.\"\r\n\r\n\"I don't know if I can, but I'll try,\" Rose says.\r\n\r\nShe then closes her eyes and tries to concentrate, as the rest of us fall completely silent, in order to avoid distracting her. After a while, Rose disappears from her spot, and she reappears several feet to the left of her original position. She then disappears and reappears again a few more times, in different places, until Daren finally decides to break the silence."
@@ -172,14 +174,14 @@ scenes:
           - source: scene_3
             paragraph: 3
             text: "\"Ahahahahahaha!\" Arraka laughs all of a sudden. \"So, you're telling me that these chumps are the ones who are the most likely to influence the prophecy? Ahahahahaha! That's it. Pack your bags, everyone. This continent is doomed!\"\r\n\r\n\"What is she talking about?\" Daren asks Melindra, as Arraka is still laughing in the background. \"Why would we be the 'most likely' to influence the prophecy? Are there others who will be receiving the same prophecy after us?\"\r\n\r\n\"Yes,\" Melindra says. \"You are only the first group to be visited by the time weaver. Once the God of Time is done with his ritual, you will be frozen in time once more, and then the prophecy and the ritual will be repeated for other groups of people as well. Not only that, but this same prophecy will be delivered to you and the others at least two more times, before the events prophesized will come to pass, in order to announce you if any progress has been made, towards your goal of averting the disaster. The reason why Arraka said that you were the most likely ones to influence the prophecy is because the time weavers always visit their targets in order of priority, which means that your group may have the most decisive role in the events to come, depending on your choices.\""
-        condition: b2_ch11_encourage = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11c_practice
-      - texts:
+      - condition: b2_ch11_encourage = 2
+        texts:
           - source: scene_text
             paragraph: 5
             text: "\"I'm sorry, but your plan sounds a little dumb, to me,\" I say. \"Are you sure you don't want to think things through a little more, before embarking on such a reckless journey?\"\r\n\r\n\"Out of all the people here, you were the last person I would have expected to criticize me about my recklessness, Barry,\" Rose says. \"But to answer your question, no, I've already made up my mind, and I'm not going back on what I said. Even if it will take me years to do it, I will learn to control these powers, and then I will use them to change this world for the better.\"\r\n\r\n\"I don't mean to interrupt or anything,\" Melindra says, \"but didn't you guys say that you were going to try and sabotage the ritual? Because if that's what you are planning to do, then you might want to hurry up a little. We don't know how long it will be until the next stage begins.\"\r\n\r\n\"You're right,\" Daren says. \"And I think I might have an idea. Rose, could you try to unfreeze the time for the world around us by using your powers? It might just be enough to cancel the ritual.\"\r\n\r\n\"I don't know if I can, but I'll try,\" Rose says.\r\n\r\nShe then closes her eyes and tries to concentrate, as the rest of us fall completely silent, in order to avoid distracting her. After a while, Rose disappears from her spot, and she reappears several feet to the left of her original position. She then disappears and reappears again a few more times, in different places, until Daren finally decides to break the silence."
@@ -189,7 +191,6 @@ scenes:
           - source: scene_3
             paragraph: 3
             text: "\"Ahahahahahaha!\" Arraka laughs all of a sudden. \"So, you're telling me that these chumps are the ones who are the most likely to influence the prophecy? Ahahahahaha! That's it. Pack your bags, everyone. This continent is doomed!\"\r\n\r\n\"What is she talking about?\" Daren asks Melindra, as Arraka is still laughing in the background. \"Why would we be the 'most likely' to influence the prophecy? Are there others who will be receiving the same prophecy after us?\"\r\n\r\n\"Yes,\" Melindra says. \"You are only the first group to be visited by the time weaver. Once the God of Time is done with his ritual, you will be frozen in time once more, and then the prophecy and the ritual will be repeated for other groups of people as well. Not only that, but this same prophecy will be delivered to you and the others at least two more times, before the events prophesized will come to pass, in order to announce you if any progress has been made, towards your goal of averting the disaster. The reason why Arraka said that you were the most likely ones to influence the prophecy is because the time weavers always visit their targets in order of priority, which means that your group may have the most decisive role in the events to come, depending on your choices.\""
-        condition: b2_ch11_encourage = 2
         choices:
           - position: 1
             text: Continue
@@ -215,14 +216,14 @@ scenes:
               current_scene: b2_ch11c_slowing
   - name: b2_ch11c_slowing
     routes:
-      - texts:
+      - condition: ch4_spared_dave = 1
+        texts:
           - source: scene_text
             paragraph: 7
             text: "Since Leila didn't really feel like talking at the moment, I decided to give her some space, so she could be alone, with her own thoughts.\r\n\r\nAs I went back to my original spot, I saw that Flower was now busy talking with Melindra, while Kate was still helping Rose with her tests. Apparently, Rose had already found a way to use her time-slowing powers, and now she was trying to see if she could un-slow Kate as well, so that she could benefit from the effects of her spell. I tried to help Rose too, but after spending more than fifteen minutes doing tests, it didn't look like we were making any progress.\r\n\r\n\"Wow, it sure has been a while since we finished our first trials,\" Daren says, after some time. \"I wonder why it's taking so long for the second stage to start...\"\r\n\r\n\"I'll tell you why,\" Arraka says. \"It's because you shmucks gave Selkram so much raw material to work with in the first stage, that he's still busy converting it all into energy.\"\r\n\r\n\"What?...\" Daren says.\r\n\r\n\"Your negative emotions!\" Arraka says. \"That's the raw material that Selkram is using to convert into magical energy. And while you losers were busy repeating those rituals over and over, sinking into the depths of despair or cursing the God of Time, you were giving him exactly what he wanted. Honestly, I think he got so much energy from you people, that he might not even NEED a second stage from your group. I guess we'll see about that soon enough.\""
           - source: scene_text_2
             paragraph: 6
             text: "\"Well, I'm happy to have been of assistance,\" Daren says, in a dry tone. \"I suppose this gives us more time to investigate the area, then. Come on, Hadrik, let's try interacting with more of these frozen insects and trees. Maybe we'll be able to find one that isn't protected by an invisible, impenetrable shield, so we can finally cancel this damned time-freezing spell.\"\r\n\r\nShortly after Daren and Hadrik begin their new patrol of the area, we hear a familiar voice, screaming horrified, about a hundred feet away from us. When we all turn around to find out who the voice belonged to, we see Cutthroat Dave, with sweat all over his face, looking around him, confused, as he's trying to figure out what's going on. I suddenly realize that Cutthroat Dave must have been the person watching us invisibly from afar that Arraka and the God of Time were talking about, earlier. With all the crazy stuff that's been going on since the prophecy started, I had completely forgotten about him.\r\n\r\n\"Oh, so you were our invisible stalker!\" Melindra says, with a smirk, as she casts a spell on the cutthroat, to lift him in the air. \"Why don't you come over here, so we can see you a little better?\"\r\n\r\nShe then makes the air currents slowly carry Cutthroat Dave towards our position, as he is struggling in vain to break himself free.\r\n\r\n\"Let me go, you wench!\" Cutthroat Dave says, as he sends some of his knives to attack Melindra.\r\n\r\nMelindra uses a wind spell to effortlessly deflect the knives, and then she continues to bring the cutthroat closer to us."
-        condition: ch4_spared_dave = 1
         choices:
           - position: 1
             text: Continue
@@ -230,7 +231,8 @@ scenes:
               - set:
                   current_scene: b2_ch11c_jewelry
                   b2_ch11_echoes: 0
-      - texts:
+      - condition: ch4_spared_dave = 0
+        texts:
           - source: scene_text
             paragraph: 7
             text: "Since Leila didn't really feel like talking at the moment, I decided to give her some space, so she could be alone, with her own thoughts.\r\n\r\nAs I went back to my original spot, I saw that Flower was now busy talking with Melindra, while Kate was still helping Rose with her tests. Apparently, Rose had already found a way to use her time-slowing powers, and now she was trying to see if she could un-slow Kate as well, so that she could benefit from the effects of her spell. I tried to help Rose too, but after spending more than fifteen minutes doing tests, it didn't look like we were making any progress.\r\n\r\n\"Wow, it sure has been a while since we finished our first trials,\" Daren says, after some time. \"I wonder why it's taking so long for the second stage to start...\"\r\n\r\n\"I'll tell you why,\" Arraka says. \"It's because you shmucks gave Selkram so much raw material to work with in the first stage, that he's still busy converting it all into energy.\"\r\n\r\n\"What?...\" Daren says.\r\n\r\n\"Your negative emotions!\" Arraka says. \"That's the raw material that Selkram is using to convert into magical energy. And while you losers were busy repeating those rituals over and over, sinking into the depths of despair or cursing the God of Time, you were giving him exactly what he wanted. Honestly, I think he got so much energy from you people, that he might not even NEED a second stage from your group. I guess we'll see about that soon enough.\""
@@ -252,7 +254,6 @@ scenes:
               repeated is: 'All non-lessathi citizens are to present themselves
               to the military reserve area immediately. We are under attack. I
               repeat, we are under attack!'.
-        condition: ch4_spared_dave = 0
         choices:
           - position: 1
             text: Continue
@@ -286,7 +287,8 @@ scenes:
               b2_ch11_defend: 0
   - name: b2_ch11c_defend
     routes:
-      - texts:
+      - condition: b2_ch11_defend = 1
+        texts:
           - source: scene_text
             paragraph: 9
             text: "As soon as Hadrik stops talking, Daren resumes his walk towards the revenant, with the sword in his hand, but before he gets to reach her, I place myself between the two of them, facing Daren.\r\n\r\n\"Barry, what do you think you're doing?\" Daren asks, as he stops in front of me.\r\n\r\n\"What does it look like I'm doing?\" I tell Daren, as I pull out my dagger.\r\n\r\n\"We're not seriously going to do this again, are we?\" Daren says. \"This isn't like that time with Illuna. The revenant literally said that she'll kill us with the first opportunity she has, if her god tells her to do it. She's a danger to us all. Why are you defending her?\"\r\n\r\n\"She'll only be a danger to us if her god turns out to be our enemy,\" I say. \"As it stands, we could really use her time powers right about now. Especially if the next stage of the ritual requires us to work as a group.\"\r\n\r\n\"If we'll need to work as a group, then there's all the more reason to deal with her now!\" Daren says. \"What is to say that she won't backstab us in the middle of the trial? We don't know her true intentions. And even if we knew for sure that she won't betray us this time, this may be the only opportunity we have to face her alone. What if the next time when she comes, she will have an entire team of mages, given to her by the God of Death to hunt us down?\"\r\n\r\n\"But what if you fail to kill her?\" I say. \"What then? Do you realize that attacking her unprovoked would be akin to declaring war on the God of Death himself? Do you want us to have two gods as our enemies at the same time?\""
@@ -296,14 +298,14 @@ scenes:
           - source: scene_3
             paragraph: 7
             text: "He then immediately rushes towards the revenant, at great speed, and tries to punch her, but she just disappears, right before he lands his strike, and she reappears much further away from him, while looking at him with her usual lack of human emotion in her eyes. Hadrik doesn't let himself get intimidated, and he tries to dash for her yet again, even though this yields him the same results. The third time, it is Daren who tries to slash at her with his sword, but she effortlessly evades his attack as well, by disappearing and reappearing, like the last two times.\r\n\r\n\"What the hell?...\" Hadrik says. \"How do you keep doing that? I thought that the time was already frozen!\"\r\n\r\n\"It is frozen for the rest of the world, but not for you,\" the revenant says. \"All I need is to freeze you in time along with the rest of the world, and then I'll have plenty of time to move out of your way before you get to land your blow. But these powers are not good only for defense. They are also very useful for offense. Like so.\"\r\n\r\nShe then disappears again, but this time, she reappears right behind Daren, holding a knife at his throat.\r\n\r\n\"Do you surrender, healer, or do we need to continue?\" the revenant says."
-        condition: b2_ch11_defend = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11c_asleep
-      - texts:
+      - condition: b2_ch11_defend = 0
+        texts:
           - source: scene_text
             paragraph: 10
             text: "Instead of intervening, I choose to remain silent, and to let Daren and Hadrik handle the situation.\r\n\r\n\"Don't get any closer to her,\" Kate tells Daren, as he is still approaching the revenant. \"I'm warning you!\"\r\n\r\n\"What would you have me do?\" Daren says, as he temporarily stops in his tracks and turns towards Kate. \"Treat her as if she were our ally? You know I can't do that. Not after what she said.\"\r\n\r\n\"I'm just saying that we shouldn't attack her unprovoked,\" Kate says. \"I see no reason to antagonize her and her god unless it is absolutely necessary.\"\r\n\r\n\"But this may be our only chance to fight her while she's alone!\" Daren says. \"What if the next time we meet her, she will have a whole army of undead, given to her by the God of Death to hunt us down? We can't risk that!\"\r\n\r\n\"Daren is right,\" Hadrik says, as he approaches Daren. \"If we're going to fight her, then this is our best chance. Even those time spells of hers must have their limitations. If we all work together, we should be able to figure out what they are.\"\r\n\r\nAll of a sudden, a large ice wall forms itself in front of Daren, separating him and Hadrik from the revenant."
@@ -313,7 +315,6 @@ scenes:
           - source: scene_3
             paragraph: 7
             text: "He then immediately rushes towards the revenant, at great speed, and tries to punch her, but she just disappears, right before he lands his strike, and she reappears much further away from him, while looking at him with her usual lack of human emotion in her eyes. Hadrik doesn't let himself get intimidated, and he tries to dash for her yet again, even though this yields him the same results. The third time, it is Daren who tries to slash at her with his sword, but she effortlessly evades his attack as well, by disappearing and reappearing, like the last two times.\r\n\r\n\"What the hell?...\" Hadrik says. \"How do you keep doing that? I thought that the time was already frozen!\"\r\n\r\n\"It is frozen for the rest of the world, but not for you,\" the revenant says. \"All I need is to freeze you in time along with the rest of the world, and then I'll have plenty of time to move out of your way before you get to land your blow. But these powers are not good only for defense. They are also very useful for offense. Like so.\"\r\n\r\nShe then disappears again, but this time, she reappears right behind Daren, holding a knife at his throat.\r\n\r\n\"Do you surrender, healer, or do we need to continue?\" the revenant says."
-        condition: b2_ch11_defend = 0
         choices:
           - position: 1
             text: Continue
@@ -373,149 +374,39 @@ scenes:
               b2_ch11_paranoid: 2
   - name: b2_ch11c_channel
     routes:
-      - texts:
+      - condition: b2_ch11_paranoid = 0
+        texts:
           - source: scene_text
             paragraph: 13
             text: "\"Why is Ulruk so suspicious, when it comes to the God of Time?\"\r\n\r\n\"Oh, those two have never really gotten along,\" Arraka says. \"And since Selkram is the only god who does not have any followers, Ulruk has always been obsessed with the idea that the God of Time's plan is to kill him, so he could then take his place, and steal all his followers. Obviously, Selkram is much too proud to ever stoop to such a level, but the God of Death has always been a bit of a nutcase, much like his own followers, so nobody managed to convince him that his fears have no basis in reality.\"\r\n\r\n\"We're wasting time,\" Melindra says. \"Revenant, you said that you knew a way to sabotage the next stage of the ritual. What were you going to tell us?\""
-        condition: b2_ch11_paranoid = 0
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11c_enough
-                condition: hearing_aux = 7
-              - set:
-                  current_scene: b2_ch11c_maximum
-                condition: >-
-                  b2_ch6_stat = 1 AND b2_ch9_channel = 1 AND b2_ch10_activate =
-                  1
-              - set:
-                  current_scene: b2_ch11c_maximum2
-                condition: b2_ch6_stat = 0
-              - set:
-                  current_scene: b2_ch11c_maximum2
-                condition: b2_ch9_channel = 0
-              - set:
-                  current_scene: b2_ch11c_maximum2
-                condition: b2_ch10_activate = 0
-      - texts:
-          - source: scene_text
-            paragraph: 14
-            text: "\"Can't Ulruk just read the revenant's aura, to see if she's lying, like Eiden does?\"\r\n\r\n\"Yeah, good luck trying to read the aura of a revenant,\" Arraka says. \"She's an undead. Reading the flow of her aura to detect her lies will do you as much good as trying to read the aura of a rock. There's barely even any flow in her aura to speak of. Maybe there would be a chance to get a decent reading in those rare cases when she exhibits some form of emotion, but I wouldn't exactly bet money on that.\"\r\n\r\n\"We're wasting time,\" Melindra says. \"Revenant, you said that you knew a way to sabotage the next stage of the ritual. What were you going to tell us?\""
-        condition: b2_ch11_paranoid = 1
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11c_enough
-                condition: hearing_aux = 7
-              - set:
-                  current_scene: b2_ch11c_maximum
-                condition: >-
-                  b2_ch6_stat = 1 AND b2_ch9_channel = 1 AND b2_ch10_activate =
-                  1
-              - set:
-                  current_scene: b2_ch11c_maximum2
-                condition: b2_ch6_stat = 0
-              - set:
-                  current_scene: b2_ch11c_maximum2
-                condition: b2_ch9_channel = 0
-              - set:
-                  current_scene: b2_ch11c_maximum2
-                condition: b2_ch10_activate = 0
-      - texts:
-          - source: scene_text
-            paragraph: 15
-            text: "\"How did the revenant manage to come here, if she was locked inside a temple?\"\r\n\r\n\"That trance with the glowy eyes that she was in earlier allows her to pass through any objects, and even through living beings,\" Arraka says. \"It would have been pretty ridiculous if there was a mechanism in place to revive her from death, but not one to help her escape from a prison, don't you think? You can't stop these prophecies from happening. The Magium has made sure of that.\"\r\n\r\n\"We're wasting time,\" Melindra says. \"Revenant, you said that you knew a way to sabotage the next stage of the ritual. What were you going to tell us?\""
-        condition: b2_ch11_paranoid = 2
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11c_enough
-                condition: hearing_aux = 7
-              - set:
-                  current_scene: b2_ch11c_maximum
-                condition: >-
-                  b2_ch6_stat = 1 AND b2_ch9_channel = 1 AND b2_ch10_activate =
-                  1
-              - set:
-                  current_scene: b2_ch11c_maximum2
-                condition: b2_ch6_stat = 0
-              - set:
-                  current_scene: b2_ch11c_maximum2
-                condition: b2_ch9_channel = 0
-              - set:
-                  current_scene: b2_ch11c_maximum2
-                condition: b2_ch10_activate = 0
-      - texts:
           - source: scene_text_2
             paragraph: 13
             text: "\"Well, there is a way to acquire hints about what will happen in the next trial,\" the revenant says. \"The easiest method to obtain these hints would have been to make use of Barry's hearing stat, but unfortunately, that is not an option anymore.\"\r\n\r\n\"Why not?\" I ask.\r\n\r\n\"Because you refused to keep the communication channel between our two transceivers open, like I asked you to,\" the revenant says. \"There was an important action that needed to be taken on your part right before the time-freeze, but I couldn't be too specific about it, because otherwise the God of Death might have overheard our conversation, and arrived to the conclusion that I was conspiring with the enemy. Either way, it's too late for that now. There is another way to find out the information we need, but it is less effective. Does anyone in this group have a particularly keen magical sense?\""
-          - source: scene_3
-            paragraph: 10
-            text: "As soon as the revenant finishes her sentence, we all turn towards Arraka's amulet.\r\n\r\n\"Arraka, will you--\" Illuna starts to say, but she is interrupted.\r\n\r\n\"Yeah, yeah, I get it,\" Arraka says. \"What do I need to do?\"\r\n\r\n\"First of all, you're going to need to get as close as you can to the place where the God of Time first materialized into this world,\" the revenant says.\r\n\r\n\"I'm on it!\" Flower says, as she jumps into the air and starts her fire jets.\r\n\r\nShe then flies all the way up to where the God of Time was floating when he first made his appearance, and she stops, turning her head towards the revenant.\r\n\r\n\"I'm here,\" Flower says. \"Now what?\""
-        condition: b2_ch9_channel = 0
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11c_enough
-                condition: hearing_aux = 7
-              - set:
-                  current_scene: b2_ch11c_maximum2
-                condition: b2_ch6_stat = 0
-              - set:
-                  current_scene: b2_ch11c_maximum2
-              - set:
-                  current_scene: b2_ch11c_maximum2
-                condition: b2_ch10_activate = 0
-      - texts:
+            condition: b2_ch9_channel = 0
           - source: scene_text_2
             paragraph: 14
             text: "\"Well, there is a way to acquire hints about what will happen in the next trial,\" the revenant says. \"The easiest method to obtain these hints is to make use of Barry's hearing stat, but unfortunately I was not able to communicate too much information to your group about this subject, out of fear that the God of Death would overhear our discussion, and come to the conclusion that I was conspiring with the enemy. I'm not sure how much of my message got through to you. Barry, did you manage to activate your stat device's secret code before the time froze?\"\r\n\r\n\"Sorry,\" I say. \"I don't know any secret codes for the stat device. I didn't even know it had any.\"\r\n\r\n\"I see...\" the revenant says. \"I was hoping that you would have known what the code was, given how much you've researched about stat devices in the past. If you had used that code right before the time-freeze, your hearing stat would have remained boosted, for the duration of the time-freezing spell. Unfortunately, that is not an option anymore. There is also another way to find out the information we need, but it is less effective. Does anyone in this group have a particularly keen magical sense?\""
-          - source: scene_3
-            paragraph: 10
-            text: "As soon as the revenant finishes her sentence, we all turn towards Arraka's amulet.\r\n\r\n\"Arraka, will you--\" Illuna starts to say, but she is interrupted.\r\n\r\n\"Yeah, yeah, I get it,\" Arraka says. \"What do I need to do?\"\r\n\r\n\"First of all, you're going to need to get as close as you can to the place where the God of Time first materialized into this world,\" the revenant says.\r\n\r\n\"I'm on it!\" Flower says, as she jumps into the air and starts her fire jets.\r\n\r\nShe then flies all the way up to where the God of Time was floating when he first made his appearance, and she stops, turning her head towards the revenant.\r\n\r\n\"I'm here,\" Flower says. \"Now what?\""
-        condition: b2_ch9_channel = 1 AND b2_ch6_stat = 0
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11c_enough
-                condition: hearing_aux = 7
-              - set:
-                  current_scene: b2_ch11c_maximum2
-              - set:
-                  current_scene: b2_ch11c_maximum2
-                condition: b2_ch10_activate = 0
-      - texts:
+            condition: b2_ch9_channel = 1 AND b2_ch6_stat = 0
           - source: scene_text_2
             paragraph: 15
             text: "\"Well, there is a way to acquire hints about what will happen in the next trial,\" the revenant says. \"The easiest method to obtain these hints is to make use of Barry's hearing stat, but unfortunately I was not able to communicate too much information to your group about this subject, out of fear that the God of Death would overhear our discussion, and come to the conclusion that I was conspiring with the enemy. I'm not sure how much of my message got through to you. Barry, did you manage to activate your stat device's secret code before the time froze?\"\r\n\r\n\"Sorry,\" I say. \"I didn't know why you wanted me to activate it, so I didn't want to risk it, in case it was a trap of some kind. Can I activate it now, instead?\"\r\n\r\n\"No,\" the revenant says. \"If you try to activate it now, it will only take effect right after the time-freezing spell ends, and it won't be of any use to us. The temporary stat boost that gets activated with your secret code is entirely dependent upon a short magical timer, which won't set itself off as long as the world is frozen in time. However, if you had managed to activate it right before the time froze, the timer would have frozen as well, and it would have granted you extra hearing capabilities for the whole duration of this time-freezing spell.\"\r\n\r\n\"So, when you called me, the time wasn't frozen, yet?\" I say."
-          - source: scene_3
-            paragraph: 11
-            text: "\"No,\" the revenant says. \"But I knew that it would freeze in a matter of seconds, because I had a few time-freezing spells go off without my control, right before I was put in the trance. Something similar to this also happened before the previous time I called you, except back then the time only froze once, without my control, and I was not put in a trance during that time, so I knew that it was only a small test, before the main event. This is why I asked you to keep your communications channel open, so that I could later tell you to activate the code, right before the prophecy started. Unfortunately, that is not an option anymore. There is also another way to find out the information we need, but it is less effective. Does anyone in this group have a particularly keen magical sense?\"\r\n\r\nAs soon as the revenant finishes her sentence, we all turn towards Arraka's amulet.\r\n\r\n\"Arraka, will you--\" Illuna starts to say, but she is interrupted.\r\n\r\n\"Yeah, yeah, I get it,\" Arraka says. \"What do I need to do?\"\r\n\r\n\"First of all, you're going to need to get as close as you can to the place where the God of Time first materialized into this world,\" the revenant says.\r\n\r\n\"I'm on it!\" Flower says, as she jumps into the air and starts her fire jets.\r\n\r\nShe then flies all the way up to where the God of Time was floating when he first made his appearance, and she stops, turning her head towards the revenant.\r\n\r\n\"I'm here,\" Flower says. \"Now what?\""
-        condition: b2_ch9_channel = 1 AND b2_ch6_stat = 1 AND b2_ch10_activate = 0
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11c_enough
-                condition: hearing_aux = 7
-              - set:
-                  current_scene: b2_ch11c_maximum2
-      - texts:
+            condition: b2_ch9_channel = 1 AND b2_ch6_stat = 1 AND b2_ch10_activate = 0
           - source: scene_text_2
             paragraph: 16
             text: "\"Well, there is a way to acquire hints about what will happen in the next trial,\" the revenant says. \"The easiest method to obtain these hints is to make use of Barry's hearing stat, but unfortunately I was not able to communicate too much information to your group about this subject, out of fear that the God of Death would overhear our discussion, and come to the conclusion that I was conspiring with the enemy. I'm not sure how much of my message got through to you. Barry, did you manage to activate your stat device's secret code before the time froze?\"\r\n\r\n\"Yes, I activated it,\" I say. \"I also noticed that I still have those temporary points in my hearing stat that were technically only supposed to last for a few seconds. I'm guessing that you knew this would happen, and that's why you told me to do it?\""
-        condition: b2_ch9_channel = 1 AND b2_ch6_stat = 1 AND b2_ch10_activate = 1
+            condition: b2_ch9_channel = 1 AND b2_ch6_stat = 1 AND b2_ch10_activate = 1
+          - source: scene_3
+            paragraph: 10
+            text: "As soon as the revenant finishes her sentence, we all turn towards Arraka's amulet.\r\n\r\n\"Arraka, will you--\" Illuna starts to say, but she is interrupted.\r\n\r\n\"Yeah, yeah, I get it,\" Arraka says. \"What do I need to do?\"\r\n\r\n\"First of all, you're going to need to get as close as you can to the place where the God of Time first materialized into this world,\" the revenant says.\r\n\r\n\"I'm on it!\" Flower says, as she jumps into the air and starts her fire jets.\r\n\r\nShe then flies all the way up to where the God of Time was floating when he first made his appearance, and she stops, turning her head towards the revenant.\r\n\r\n\"I'm here,\" Flower says. \"Now what?\""
+            condition: b2_ch9_channel = 0
+          - source: scene_3
+            paragraph: 10
+            text: "As soon as the revenant finishes her sentence, we all turn towards Arraka's amulet.\r\n\r\n\"Arraka, will you--\" Illuna starts to say, but she is interrupted.\r\n\r\n\"Yeah, yeah, I get it,\" Arraka says. \"What do I need to do?\"\r\n\r\n\"First of all, you're going to need to get as close as you can to the place where the God of Time first materialized into this world,\" the revenant says.\r\n\r\n\"I'm on it!\" Flower says, as she jumps into the air and starts her fire jets.\r\n\r\nShe then flies all the way up to where the God of Time was floating when he first made his appearance, and she stops, turning her head towards the revenant.\r\n\r\n\"I'm here,\" Flower says. \"Now what?\""
+            condition: b2_ch9_channel = 1 AND b2_ch6_stat = 0
+          - source: scene_3
+            paragraph: 11
+            text: "\"No,\" the revenant says. \"But I knew that it would freeze in a matter of seconds, because I had a few time-freezing spells go off without my control, right before I was put in the trance. Something similar to this also happened before the previous time I called you, except back then the time only froze once, without my control, and I was not put in a trance during that time, so I knew that it was only a small test, before the main event. This is why I asked you to keep your communications channel open, so that I could later tell you to activate the code, right before the prophecy started. Unfortunately, that is not an option anymore. There is also another way to find out the information we need, but it is less effective. Does anyone in this group have a particularly keen magical sense?\"\r\n\r\nAs soon as the revenant finishes her sentence, we all turn towards Arraka's amulet.\r\n\r\n\"Arraka, will you--\" Illuna starts to say, but she is interrupted.\r\n\r\n\"Yeah, yeah, I get it,\" Arraka says. \"What do I need to do?\"\r\n\r\n\"First of all, you're going to need to get as close as you can to the place where the God of Time first materialized into this world,\" the revenant says.\r\n\r\n\"I'm on it!\" Flower says, as she jumps into the air and starts her fire jets.\r\n\r\nShe then flies all the way up to where the God of Time was floating when he first made his appearance, and she stops, turning her head towards the revenant.\r\n\r\n\"I'm here,\" Flower says. \"Now what?\""
+            condition: b2_ch9_channel = 1 AND b2_ch6_stat = 1 AND b2_ch10_activate = 0
         choices:
           - position: 1
             text: Continue
@@ -525,6 +416,126 @@ scenes:
                 condition: hearing_aux = 7
               - set:
                   current_scene: b2_ch11c_maximum
+                condition: >-
+                  b2_ch6_stat = 1 AND b2_ch9_channel = 1 AND b2_ch10_activate =
+                  1 AND hearing_aux < 7
+              - set:
+                  current_scene: b2_ch11c_maximum2
+                condition: b2_ch6_stat = 0
+              - set:
+                  current_scene: b2_ch11c_maximum2
+                condition: b2_ch9_channel = 0
+              - set:
+                  current_scene: b2_ch11c_maximum2
+                condition: b2_ch10_activate = 0
+      - condition: b2_ch11_paranoid = 1
+        texts:
+          - source: scene_text
+            paragraph: 14
+            text: "\"Can't Ulruk just read the revenant's aura, to see if she's lying, like Eiden does?\"\r\n\r\n\"Yeah, good luck trying to read the aura of a revenant,\" Arraka says. \"She's an undead. Reading the flow of her aura to detect her lies will do you as much good as trying to read the aura of a rock. There's barely even any flow in her aura to speak of. Maybe there would be a chance to get a decent reading in those rare cases when she exhibits some form of emotion, but I wouldn't exactly bet money on that.\"\r\n\r\n\"We're wasting time,\" Melindra says. \"Revenant, you said that you knew a way to sabotage the next stage of the ritual. What were you going to tell us?\""
+          - source: scene_text_2
+            paragraph: 13
+            text: "\"Well, there is a way to acquire hints about what will happen in the next trial,\" the revenant says. \"The easiest method to obtain these hints would have been to make use of Barry's hearing stat, but unfortunately, that is not an option anymore.\"\r\n\r\n\"Why not?\" I ask.\r\n\r\n\"Because you refused to keep the communication channel between our two transceivers open, like I asked you to,\" the revenant says. \"There was an important action that needed to be taken on your part right before the time-freeze, but I couldn't be too specific about it, because otherwise the God of Death might have overheard our conversation, and arrived to the conclusion that I was conspiring with the enemy. Either way, it's too late for that now. There is another way to find out the information we need, but it is less effective. Does anyone in this group have a particularly keen magical sense?\""
+            condition: b2_ch9_channel = 0
+          - source: scene_text_2
+            paragraph: 14
+            text: "\"Well, there is a way to acquire hints about what will happen in the next trial,\" the revenant says. \"The easiest method to obtain these hints is to make use of Barry's hearing stat, but unfortunately I was not able to communicate too much information to your group about this subject, out of fear that the God of Death would overhear our discussion, and come to the conclusion that I was conspiring with the enemy. I'm not sure how much of my message got through to you. Barry, did you manage to activate your stat device's secret code before the time froze?\"\r\n\r\n\"Sorry,\" I say. \"I don't know any secret codes for the stat device. I didn't even know it had any.\"\r\n\r\n\"I see...\" the revenant says. \"I was hoping that you would have known what the code was, given how much you've researched about stat devices in the past. If you had used that code right before the time-freeze, your hearing stat would have remained boosted, for the duration of the time-freezing spell. Unfortunately, that is not an option anymore. There is also another way to find out the information we need, but it is less effective. Does anyone in this group have a particularly keen magical sense?\""
+            condition: b2_ch9_channel = 1 AND b2_ch6_stat = 0
+          - source: scene_text_2
+            paragraph: 15
+            text: "\"Well, there is a way to acquire hints about what will happen in the next trial,\" the revenant says. \"The easiest method to obtain these hints is to make use of Barry's hearing stat, but unfortunately I was not able to communicate too much information to your group about this subject, out of fear that the God of Death would overhear our discussion, and come to the conclusion that I was conspiring with the enemy. I'm not sure how much of my message got through to you. Barry, did you manage to activate your stat device's secret code before the time froze?\"\r\n\r\n\"Sorry,\" I say. \"I didn't know why you wanted me to activate it, so I didn't want to risk it, in case it was a trap of some kind. Can I activate it now, instead?\"\r\n\r\n\"No,\" the revenant says. \"If you try to activate it now, it will only take effect right after the time-freezing spell ends, and it won't be of any use to us. The temporary stat boost that gets activated with your secret code is entirely dependent upon a short magical timer, which won't set itself off as long as the world is frozen in time. However, if you had managed to activate it right before the time froze, the timer would have frozen as well, and it would have granted you extra hearing capabilities for the whole duration of this time-freezing spell.\"\r\n\r\n\"So, when you called me, the time wasn't frozen, yet?\" I say."
+            condition: b2_ch9_channel = 1 AND b2_ch6_stat = 1 AND b2_ch10_activate = 0
+          - source: scene_text_2
+            paragraph: 16
+            text: "\"Well, there is a way to acquire hints about what will happen in the next trial,\" the revenant says. \"The easiest method to obtain these hints is to make use of Barry's hearing stat, but unfortunately I was not able to communicate too much information to your group about this subject, out of fear that the God of Death would overhear our discussion, and come to the conclusion that I was conspiring with the enemy. I'm not sure how much of my message got through to you. Barry, did you manage to activate your stat device's secret code before the time froze?\"\r\n\r\n\"Yes, I activated it,\" I say. \"I also noticed that I still have those temporary points in my hearing stat that were technically only supposed to last for a few seconds. I'm guessing that you knew this would happen, and that's why you told me to do it?\""
+            condition: b2_ch9_channel = 1 AND b2_ch6_stat = 1 AND b2_ch10_activate = 1
+          - source: scene_3
+            paragraph: 10
+            text: "As soon as the revenant finishes her sentence, we all turn towards Arraka's amulet.\r\n\r\n\"Arraka, will you--\" Illuna starts to say, but she is interrupted.\r\n\r\n\"Yeah, yeah, I get it,\" Arraka says. \"What do I need to do?\"\r\n\r\n\"First of all, you're going to need to get as close as you can to the place where the God of Time first materialized into this world,\" the revenant says.\r\n\r\n\"I'm on it!\" Flower says, as she jumps into the air and starts her fire jets.\r\n\r\nShe then flies all the way up to where the God of Time was floating when he first made his appearance, and she stops, turning her head towards the revenant.\r\n\r\n\"I'm here,\" Flower says. \"Now what?\""
+            condition: b2_ch9_channel = 0
+          - source: scene_3
+            paragraph: 10
+            text: "As soon as the revenant finishes her sentence, we all turn towards Arraka's amulet.\r\n\r\n\"Arraka, will you--\" Illuna starts to say, but she is interrupted.\r\n\r\n\"Yeah, yeah, I get it,\" Arraka says. \"What do I need to do?\"\r\n\r\n\"First of all, you're going to need to get as close as you can to the place where the God of Time first materialized into this world,\" the revenant says.\r\n\r\n\"I'm on it!\" Flower says, as she jumps into the air and starts her fire jets.\r\n\r\nShe then flies all the way up to where the God of Time was floating when he first made his appearance, and she stops, turning her head towards the revenant.\r\n\r\n\"I'm here,\" Flower says. \"Now what?\""
+            condition: b2_ch9_channel = 1 AND b2_ch6_stat = 0
+          - source: scene_3
+            paragraph: 11
+            text: "\"No,\" the revenant says. \"But I knew that it would freeze in a matter of seconds, because I had a few time-freezing spells go off without my control, right before I was put in the trance. Something similar to this also happened before the previous time I called you, except back then the time only froze once, without my control, and I was not put in a trance during that time, so I knew that it was only a small test, before the main event. This is why I asked you to keep your communications channel open, so that I could later tell you to activate the code, right before the prophecy started. Unfortunately, that is not an option anymore. There is also another way to find out the information we need, but it is less effective. Does anyone in this group have a particularly keen magical sense?\"\r\n\r\nAs soon as the revenant finishes her sentence, we all turn towards Arraka's amulet.\r\n\r\n\"Arraka, will you--\" Illuna starts to say, but she is interrupted.\r\n\r\n\"Yeah, yeah, I get it,\" Arraka says. \"What do I need to do?\"\r\n\r\n\"First of all, you're going to need to get as close as you can to the place where the God of Time first materialized into this world,\" the revenant says.\r\n\r\n\"I'm on it!\" Flower says, as she jumps into the air and starts her fire jets.\r\n\r\nShe then flies all the way up to where the God of Time was floating when he first made his appearance, and she stops, turning her head towards the revenant.\r\n\r\n\"I'm here,\" Flower says. \"Now what?\""
+            condition: b2_ch9_channel = 1 AND b2_ch6_stat = 1 AND b2_ch10_activate = 0
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b2_ch11c_enough
+                condition: hearing_aux = 7
+              - set:
+                  current_scene: b2_ch11c_maximum
+                condition: >-
+                  b2_ch6_stat = 1 AND b2_ch9_channel = 1 AND b2_ch10_activate =
+                  1 AND hearing_aux < 7
+              - set:
+                  current_scene: b2_ch11c_maximum2
+                condition: b2_ch6_stat = 0
+              - set:
+                  current_scene: b2_ch11c_maximum2
+                condition: b2_ch9_channel = 0
+              - set:
+                  current_scene: b2_ch11c_maximum2
+                condition: b2_ch10_activate = 0
+      - condition: b2_ch11_paranoid = 2
+        texts:
+          - source: scene_text
+            paragraph: 15
+            text: "\"How did the revenant manage to come here, if she was locked inside a temple?\"\r\n\r\n\"That trance with the glowy eyes that she was in earlier allows her to pass through any objects, and even through living beings,\" Arraka says. \"It would have been pretty ridiculous if there was a mechanism in place to revive her from death, but not one to help her escape from a prison, don't you think? You can't stop these prophecies from happening. The Magium has made sure of that.\"\r\n\r\n\"We're wasting time,\" Melindra says. \"Revenant, you said that you knew a way to sabotage the next stage of the ritual. What were you going to tell us?\""
+          - source: scene_text_2
+            paragraph: 13
+            text: "\"Well, there is a way to acquire hints about what will happen in the next trial,\" the revenant says. \"The easiest method to obtain these hints would have been to make use of Barry's hearing stat, but unfortunately, that is not an option anymore.\"\r\n\r\n\"Why not?\" I ask.\r\n\r\n\"Because you refused to keep the communication channel between our two transceivers open, like I asked you to,\" the revenant says. \"There was an important action that needed to be taken on your part right before the time-freeze, but I couldn't be too specific about it, because otherwise the God of Death might have overheard our conversation, and arrived to the conclusion that I was conspiring with the enemy. Either way, it's too late for that now. There is another way to find out the information we need, but it is less effective. Does anyone in this group have a particularly keen magical sense?\""
+            condition: b2_ch9_channel = 0
+          - source: scene_text_2
+            paragraph: 14
+            text: "\"Well, there is a way to acquire hints about what will happen in the next trial,\" the revenant says. \"The easiest method to obtain these hints is to make use of Barry's hearing stat, but unfortunately I was not able to communicate too much information to your group about this subject, out of fear that the God of Death would overhear our discussion, and come to the conclusion that I was conspiring with the enemy. I'm not sure how much of my message got through to you. Barry, did you manage to activate your stat device's secret code before the time froze?\"\r\n\r\n\"Sorry,\" I say. \"I don't know any secret codes for the stat device. I didn't even know it had any.\"\r\n\r\n\"I see...\" the revenant says. \"I was hoping that you would have known what the code was, given how much you've researched about stat devices in the past. If you had used that code right before the time-freeze, your hearing stat would have remained boosted, for the duration of the time-freezing spell. Unfortunately, that is not an option anymore. There is also another way to find out the information we need, but it is less effective. Does anyone in this group have a particularly keen magical sense?\""
+            condition: b2_ch9_channel = 1 AND b2_ch6_stat = 0
+          - source: scene_text_2
+            paragraph: 15
+            text: "\"Well, there is a way to acquire hints about what will happen in the next trial,\" the revenant says. \"The easiest method to obtain these hints is to make use of Barry's hearing stat, but unfortunately I was not able to communicate too much information to your group about this subject, out of fear that the God of Death would overhear our discussion, and come to the conclusion that I was conspiring with the enemy. I'm not sure how much of my message got through to you. Barry, did you manage to activate your stat device's secret code before the time froze?\"\r\n\r\n\"Sorry,\" I say. \"I didn't know why you wanted me to activate it, so I didn't want to risk it, in case it was a trap of some kind. Can I activate it now, instead?\"\r\n\r\n\"No,\" the revenant says. \"If you try to activate it now, it will only take effect right after the time-freezing spell ends, and it won't be of any use to us. The temporary stat boost that gets activated with your secret code is entirely dependent upon a short magical timer, which won't set itself off as long as the world is frozen in time. However, if you had managed to activate it right before the time froze, the timer would have frozen as well, and it would have granted you extra hearing capabilities for the whole duration of this time-freezing spell.\"\r\n\r\n\"So, when you called me, the time wasn't frozen, yet?\" I say."
+            condition: b2_ch9_channel = 1 AND b2_ch6_stat = 1 AND b2_ch10_activate = 0
+          - source: scene_text_2
+            paragraph: 16
+            text: "\"Well, there is a way to acquire hints about what will happen in the next trial,\" the revenant says. \"The easiest method to obtain these hints is to make use of Barry's hearing stat, but unfortunately I was not able to communicate too much information to your group about this subject, out of fear that the God of Death would overhear our discussion, and come to the conclusion that I was conspiring with the enemy. I'm not sure how much of my message got through to you. Barry, did you manage to activate your stat device's secret code before the time froze?\"\r\n\r\n\"Yes, I activated it,\" I say. \"I also noticed that I still have those temporary points in my hearing stat that were technically only supposed to last for a few seconds. I'm guessing that you knew this would happen, and that's why you told me to do it?\""
+            condition: b2_ch9_channel = 1 AND b2_ch6_stat = 1 AND b2_ch10_activate = 1
+          - source: scene_3
+            paragraph: 10
+            text: "As soon as the revenant finishes her sentence, we all turn towards Arraka's amulet.\r\n\r\n\"Arraka, will you--\" Illuna starts to say, but she is interrupted.\r\n\r\n\"Yeah, yeah, I get it,\" Arraka says. \"What do I need to do?\"\r\n\r\n\"First of all, you're going to need to get as close as you can to the place where the God of Time first materialized into this world,\" the revenant says.\r\n\r\n\"I'm on it!\" Flower says, as she jumps into the air and starts her fire jets.\r\n\r\nShe then flies all the way up to where the God of Time was floating when he first made his appearance, and she stops, turning her head towards the revenant.\r\n\r\n\"I'm here,\" Flower says. \"Now what?\""
+            condition: b2_ch9_channel = 0
+          - source: scene_3
+            paragraph: 10
+            text: "As soon as the revenant finishes her sentence, we all turn towards Arraka's amulet.\r\n\r\n\"Arraka, will you--\" Illuna starts to say, but she is interrupted.\r\n\r\n\"Yeah, yeah, I get it,\" Arraka says. \"What do I need to do?\"\r\n\r\n\"First of all, you're going to need to get as close as you can to the place where the God of Time first materialized into this world,\" the revenant says.\r\n\r\n\"I'm on it!\" Flower says, as she jumps into the air and starts her fire jets.\r\n\r\nShe then flies all the way up to where the God of Time was floating when he first made his appearance, and she stops, turning her head towards the revenant.\r\n\r\n\"I'm here,\" Flower says. \"Now what?\""
+            condition: b2_ch9_channel = 1 AND b2_ch6_stat = 0
+          - source: scene_3
+            paragraph: 11
+            text: "\"No,\" the revenant says. \"But I knew that it would freeze in a matter of seconds, because I had a few time-freezing spells go off without my control, right before I was put in the trance. Something similar to this also happened before the previous time I called you, except back then the time only froze once, without my control, and I was not put in a trance during that time, so I knew that it was only a small test, before the main event. This is why I asked you to keep your communications channel open, so that I could later tell you to activate the code, right before the prophecy started. Unfortunately, that is not an option anymore. There is also another way to find out the information we need, but it is less effective. Does anyone in this group have a particularly keen magical sense?\"\r\n\r\nAs soon as the revenant finishes her sentence, we all turn towards Arraka's amulet.\r\n\r\n\"Arraka, will you--\" Illuna starts to say, but she is interrupted.\r\n\r\n\"Yeah, yeah, I get it,\" Arraka says. \"What do I need to do?\"\r\n\r\n\"First of all, you're going to need to get as close as you can to the place where the God of Time first materialized into this world,\" the revenant says.\r\n\r\n\"I'm on it!\" Flower says, as she jumps into the air and starts her fire jets.\r\n\r\nShe then flies all the way up to where the God of Time was floating when he first made his appearance, and she stops, turning her head towards the revenant.\r\n\r\n\"I'm here,\" Flower says. \"Now what?\""
+            condition: b2_ch9_channel = 1 AND b2_ch6_stat = 1 AND b2_ch10_activate = 0
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b2_ch11c_enough
+                condition: hearing_aux = 7
+              - set:
+                  current_scene: b2_ch11c_maximum
+                condition: >-
+                  b2_ch6_stat = 1 AND b2_ch9_channel = 1 AND b2_ch10_activate =
+                  1 AND hearing_aux < 7
+              - set:
+                  current_scene: b2_ch11c_maximum2
+                condition: b2_ch6_stat = 0
+              - set:
+                  current_scene: b2_ch11c_maximum2
+                condition: b2_ch9_channel = 0
+              - set:
+                  current_scene: b2_ch11c_maximum2
+                condition: b2_ch10_activate = 0
   - name: b2_ch11c_enough
     texts:
       - source: scene_text
@@ -533,9 +544,10 @@ scenes:
       - source: scene_text_2
         paragraph: 17
         text: "\"Yeah, I already have my hearing stat maxed,\" I say. \"What do I need it for?\"\r\n\r\n\"First of all, you're going to need to get as close as you can to the place where the God of Time first materialized into this world,\" the revenant says.\r\n\r\n\"Oh, okay,\" I say. \"Melindra, can you--\"\r\n\r\nBefore I even got to start my sentence, Melindra had already cast her magical air currents on me, which are now slowly raising me into the air.\r\n\r\n\"Yeah, that's what I wanted to ask,\" I say. \"Thanks!\"\r\n\r\nI then raise my arms in the air, and I fly all the way up to where the God of Time was floating when he first made his appearance.\r\n\r\n\"Alright, I'm here,\" I say, as I stop in mid-air and turn towards the revenant. \"Now what?\""
-    set:
-      successful_checks:
-        - '[ Hearing check successful - level 7 ]'
+    effects:
+      - set:
+          successful_checks:
+            - '[ Hearing check successful - level 7 ]'
     choices:
       - position: 1
         text: Continue
@@ -553,9 +565,10 @@ scenes:
       - source: scene_3
         paragraph: 12
         text: "As soon as the revenant finishes her sentence, we all turn towards Arraka's amulet.\r\n\r\n\"Arraka, will you--\" Illuna starts to say, but she is interrupted.\r\n\r\n\"Yeah, yeah, I get it,\" Arraka says. \"What do I need to do?\"\r\n\r\n\"First of all, you're going to need to get as close as you can to the place where the God of Time first materialized into this world,\" the revenant says.\r\n\r\n\"I'm on it!\" Flower says, as she jumps into the air and starts her fire jets.\r\n\r\nShe then flies all the way up to where the God of Time was floating when he first made his appearance, and she stops, turning her head towards the revenant.\r\n\r\n\"I'm here,\" Flower says. \"Now what?\""
-    set:
-      failed_checks:
-        - '[ Hearing check failed - level 7 ]'
+    effects:
+      - set:
+          failed_checks:
+            - '[ Hearing check failed - level 7 ]'
     choices:
       - position: 1
         text: Continue
@@ -621,7 +634,8 @@ scenes:
               b2_ch11_explain: 0
   - name: b2_ch11c_explain
     routes:
-      - texts:
+      - condition: b2_ch11_explain = 1
+        texts:
           - source: scene_text
             paragraph: 20
             text: "\"Hey, Flower,\" I say.\r\n\r\n\"Yeah?\" Flower says.\r\n\r\n\"Just so you know, the revenant wasn't bothered by you, or anything,\" I say. \"It's just the way she talks, due to being an undead. You should probably ignore her tone of voice altogether, if you want to avoid any more misunderstandings.\"\r\n\r\n\"Oh!\" Flower says, as she suddenly turns towards the revenant. \"Sorry! I thought you were mad at me for asking stupid questions. I didn't mean to upset you!\"\r\n\r\n\"You did not upset me,\" the revenant says. \"And you weren't asking stupid questions.\"\r\n\r\n\"Glad to hear it!\" Flower says, with a smile.\r\n\r\nShe then approaches the revenant, and holds out her hand to her.\r\n\r\n\"Friends?\" Flower asks her.\r\n\r\n\"I... already said earlier that if the God of Death were to order me to kill you, I would--\"\r\n\r\n\"It doesn't matter,\" Flower says. \"We can still be friends despite that fact! But only if you want to, of course...\"\r\n\r\nThe revenant hesitates for a second, but then she slowly grabs Flower's hand, and she grips it firmly, as a sign of their newly formed friendship.\r\n\r\n\"Great!\" Flower says. \"Remember, friends always look out for each other! If you ever need my help, just call. Uh, unless you have been ordered to kill me or something...\""
@@ -631,14 +645,14 @@ scenes:
           - source: scene_3
             paragraph: 15
             text: "\"Leila, is everything alright?\" I say, as I get a little closer to her.\r\n\r\nLeila looks surprised, when she hears my voice. I think she has gotten used to being ignored in these situations, due to her quiet nature and her generally weak sense of presence.\r\n\r\nShe raises her head, to look me in the eyes, and then she nods, slightly, in order to answer my question.\r\n\r\n\"I'm fine,\" Leila writes. \"Just a little shaken up, that's all.\"\r\n\r\n\"Do you want to talk about it?...\" I ask her.\r\n\r\nAgain, Leila looks at me surprised, for a second, but then she smiles faintly, as she writes a new text in the air, in front of me.\r\n\r\n\"Not now,\" Leila writes. \"But maybe later...\"\r\n\r\nSince Leila didn't really feel like talking at the moment, I decided to give her some space, so she could be alone, with her own thoughts. As I was going back to my original spot, I saw the revenant displaying a bit of emotion in her eyes again, as she was preparing herself to ask Kate a question.\r\n\r\n\"I... have a question to ask,\" the revenant tells Kate, with hesitation in her voice. \"What happened with Kevin and Suzie? Did you have to leave them at an orphanage, or--\"\r\n\r\n\"No, we didn't need to do that,\" Kate says. \"We left them with Enrique. He offered to move in with the children, after he found out about Rose's death, so he will be taking care of them, from now on.\""
-        condition: b2_ch11_explain = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11c_anxiousness
-      - texts:
+      - condition: b2_ch11_explain = 0
+        texts:
           - source: scene_text
             paragraph: 21
             text: >-
@@ -650,7 +664,6 @@ scenes:
           - source: scene_3
             paragraph: 15
             text: "\"Leila, is everything alright?\" I say, as I get a little closer to her.\r\n\r\nLeila looks surprised, when she hears my voice. I think she has gotten used to being ignored in these situations, due to her quiet nature and her generally weak sense of presence.\r\n\r\nShe raises her head, to look me in the eyes, and then she nods, slightly, in order to answer my question.\r\n\r\n\"I'm fine,\" Leila writes. \"Just a little shaken up, that's all.\"\r\n\r\n\"Do you want to talk about it?...\" I ask her.\r\n\r\nAgain, Leila looks at me surprised, for a second, but then she smiles faintly, as she writes a new text in the air, in front of me.\r\n\r\n\"Not now,\" Leila writes. \"But maybe later...\"\r\n\r\nSince Leila didn't really feel like talking at the moment, I decided to give her some space, so she could be alone, with her own thoughts. As I was going back to my original spot, I saw the revenant displaying a bit of emotion in her eyes again, as she was preparing herself to ask Kate a question.\r\n\r\n\"I... have a question to ask,\" the revenant tells Kate, with hesitation in her voice. \"What happened with Kevin and Suzie? Did you have to leave them at an orphanage, or--\"\r\n\r\n\"No, we didn't need to do that,\" Kate says. \"We left them with Enrique. He offered to move in with the children, after he found out about Rose's death, so he will be taking care of them, from now on.\""
-        condition: b2_ch11_explain = 0
         choices:
           - position: 1
             text: Continue
@@ -659,21 +672,22 @@ scenes:
                   current_scene: b2_ch11c_anxiousness
   - name: b2_ch11c_anxiousness
     routes:
-      - texts:
+      - condition: ch4_spared_dave = 1
+        texts:
           - source: scene_text
             paragraph: 22
             text: "\"Enrique...\" the revenant says, as she seems to be recalling some distant memories. \"Yes, Enrique is a good man... I'm sure he will take good care of the children. Thank you.\"\r\n\r\nThe feeling of anxiousness that could be seen in the revenant's eyes is now turning into one of relief. Those human emotions do not last long, however, because soon afterwards, the look in her eyes turns back to the empty, expressionless gaze that she had before.\r\n\r\n\"Wow, it sure has been a while since we finished our first trials,\" Daren says, after some time. \"I wonder why it's taking so long for the second stage to start...\"\r\n\r\n\"I'll tell you why,\" Arraka says. \"It's because you shmucks gave Selkram so much raw material to work with in the first stage, that he's still busy converting it all into energy.\"\r\n\r\n\"What?...\" Daren says.\r\n\r\n\"Your negative emotions!\" Arraka says. \"That's the raw material that Selkram is using to convert into magical energy. And while you losers were busy repeating those rituals over and over, sinking into the depths of despair or cursing the God of Time, you were giving him exactly what he wanted. Honestly, I think he got so much energy from you people, that he might not even NEED a second stage from your group. I guess we'll see about that soon enough.\""
           - source: scene_text_2
             paragraph: 25
             text: "\"Well, I'm happy to have been of assistance,\" Daren says, in a dry tone. \"I suppose this gives us more time to investigate the area, then. Come on, Hadrik, let's try interacting with more of these frozen insects and trees. Maybe we'll be able to find one that isn't protected by an invisible, impenetrable shield, so we can finally cancel this damned time-freezing spell.\"\r\n\r\nShortly after Daren and Hadrik begin their new patrol of the area, we hear a familiar voice, screaming horrified, about a hundred feet away from us. When we all turn around to find out who the voice belonged to, we see Cutthroat Dave, with sweat all over his face, looking around him, confused, as he's trying to figure out what's going on. I suddenly realize that Cutthroat Dave must have been the person watching us invisibly from afar that Arraka and the God of Time were talking about, earlier. With all the crazy stuff that's been going on since the prophecy started, I had completely forgotten about him.\r\n\r\n\"Oh, so you were our invisible stalker!\" Melindra says, with a smirk, as she casts a spell on the cutthroat, to lift him in the air. \"Why don't you come over here, so we can see you a little better?\"\r\n\r\nShe then makes the air currents slowly carry Cutthroat Dave towards our position, as he is struggling in vain to break himself free.\r\n\r\n\"Let me go, you wench!\" Cutthroat Dave says, as he sends some of his knives to attack Melindra.\r\n\r\nMelindra uses a wind spell to effortlessly deflect the knives, and then she continues to bring the cutthroat closer to us."
-        condition: ch4_spared_dave = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11c_jewelry
-      - texts:
+      - condition: ch4_spared_dave = 0
+        texts:
           - source: scene_text
             paragraph: 23
             text: "\"Enrique...\" the revenant says, as she seems to be recalling some distant memories. \"Yes, Enrique is a good man... I'm sure he will take good care of the children. Thank you.\"\r\n\r\nThe feeling of anxiousness that could be seen in the revenant's eyes is now turning into one of relief. Those human emotions do not last long, however, because soon afterwards, the look in her eyes turns back to the empty, expressionless gaze that she had before.\r\n\r\n\"Wow, it sure has been a while since we finished our first trials,\" Daren says, after some time. \"I wonder why it's taking so long for the second stage to start...\"\r\n\r\n\"I'll tell you why,\" Arraka says. \"It's because you shmucks gave Selkram so much raw material to work with in the first stage, that he's still busy converting it all into energy.\"\r\n\r\n\"What?...\" Daren says.\r\n\r\n\"Your negative emotions!\" Arraka says. \"That's the raw material that Selkram is using to convert into magical energy. And while you losers were busy repeating those rituals over and over, sinking into the depths of despair or cursing the God of Time, you were giving him exactly what he wanted. Honestly, I think he got so much energy from you people, that he might not even NEED a second stage from your group. I guess we'll see about that soon enough.\""
@@ -695,7 +709,6 @@ scenes:
               repeated is: 'All non-lessathi citizens are to present themselves
               to the military reserve area immediately. We are under attack. I
               repeat, we are under attack!'.
-        condition: ch4_spared_dave = 0
         choices:
           - position: 1
             text: Continue
@@ -727,56 +740,52 @@ scenes:
               current_scene: b2_ch11c_items
               b2_ch11_items: 0
   - name: b2_ch11c_items
+    effects:
+      - set:
+          ac_b2_ch11_elephant: 1
+        achievement:
+          id: ac_b2_ch11_elephant
+          title: The elephant in the room
+        condition: ch3_kate_badly_hurt = 1
     routes:
-      - texts:
+      - condition: b2_ch11_items = 1
+        texts:
           - source: scene_text
             paragraph: 25
             text: "\"Hey, Melindra,\" I say. \"Can I have those items?\"\r\n\r\n\"Sure,\" Melindra says, as she hands me the scrolls and the elixir. \"Knock yourself out.\"\r\n\r\nThe fact that she didn't think twice before giving me the items made me a little suspicious, so the first thing I did once I got them was to read what was written on the scrolls. As I suspected, the scrolls seem to be tailored specifically for the cutthroat, and they can't be cast by anyone other than him. I can't say much about the elixir, but considering how Cutthroat Dave went out of his way to get scrolls that would work only for him, I wouldn't be surprised if this green liquid acted in a similar manner.\r\n\r\nMelindra gives me a smirk, when she sees that I'm done reading the scrolls.\r\n\r\n\"As you've probably figured out by now, those scrolls are completely useless to us,\" Melindra tells me. \"The elixir might work, but I personally wouldn't risk it. Who knows what nasty side-effects it might have, if it were used by the wrong person?\"\r\n\r\n\"Well, it's still better than nothing,\" I say. \"I'll keep it for now.\"\r\n\r\nI then put the flask inside my backpack, and I tear the teleportation scrolls into pieces, to make sure that the cutthroat won't be able to use them anymore."
           - source: scene_text_2
             paragraph: 28
             text: "\"You're all going to pay for this,\" Cutthroat Dave says, as he is looking at us, furiously. \"You think you can just mess with Cutthroat Dave and get away with it? You're looking at the future winner of this tournament! You have no idea just how big of a mistake you've made.\"\r\n\r\n\"The future winner of the tournament?\" Arraka says. \"Damn! Barry, it looks like you've finally found yourself some worthy competition!\"\r\n\r\n\"Shut up,\" I tell her.\r\n\r\n\"I think I've heard enough,\" Kate says, as she sends three ice cones straight for the cutthroat's face.\r\n\r\nCutthroat Dave reacts almost instantly, and he sends three of the knives that he had in his belt, to deflect the ice cones at the very last second."
-        condition: b2_ch11_items = 1
+          - source: scene_3
+            paragraph: 18
+            text: "\"Whoa, there...\" Cutthroat Dave says, as he's now sweating a little. \"Is attacking a man while he's defenseless the only thing you can-- what the hell?! Damn, woman, what is wrong with your face? That is one UGLY burn scar. What in the blazes did you do, pick a fight with a dragon?\"\r\n\r\nThe cutthroat's words only serve to piss Kate off even more, and now she's preparing some extra ice cones, to make sure that he can't deflect them anymore."
+            condition: ch3_kate_badly_hurt = 1
+          - source: scene_3
+            paragraph: 19
+            text: "\"Whoa, there...\" Cutthroat Dave says, as he's now sweating a little. \"Is attacking a man while he's defenseless the only thing you can do? How about we make this a fair fight, instead of you all ganging up on me, like some street thugs?\"\r\n\r\nKate ignores the cutthroat's request, and she is now preparing some extra ice cones, to make sure that he can't deflect them anymore."
+            condition: ch3_kate_badly_hurt = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11c_unleashes
-      - texts:
+      - condition: b2_ch11_items = 0
+        texts:
           - source: scene_text
             paragraph: 26
             text: "\"What are you planning to do with those items?\" I ask Melindra.\r\n\r\n\"Why?\" Melindra says. \"Do you want them?\"\r\n\r\n\"Not really,\" I say.\r\n\r\n\"Well, in that case, what I'm planning to do is this!\" Melindra says.\r\n\r\nShe then tears both the teleportation scrolls into pieces, and she opens the flask, spilling all of its contents on the ground, as she smiles at the cutthroat, who is currently shaking with rage.\r\n\r\n\"What did you do that for?\" Daren asks her. \"We could have used those teleportation scrolls to get to Ollendor!\"\r\n\r\n\"No, you couldn't,\" Melindra says. \"They were both tailored specifically for the cutthroat, so that only he could use them. And that elixir of invisibility was likely made in a similar way. Those items would have been completely useless to us.\"\r\n\r\n\"Oh,\" Daren says. \"Well, in that case, it's better that you got rid of them, I suppose...\""
           - source: scene_text_2
             paragraph: 28
             text: "\"You're all going to pay for this,\" Cutthroat Dave says, as he is looking at us, furiously. \"You think you can just mess with Cutthroat Dave and get away with it? You're looking at the future winner of this tournament! You have no idea just how big of a mistake you've made.\"\r\n\r\n\"The future winner of the tournament?\" Arraka says. \"Damn! Barry, it looks like you've finally found yourself some worthy competition!\"\r\n\r\n\"Shut up,\" I tell her.\r\n\r\n\"I think I've heard enough,\" Kate says, as she sends three ice cones straight for the cutthroat's face.\r\n\r\nCutthroat Dave reacts almost instantly, and he sends three of the knives that he had in his belt, to deflect the ice cones at the very last second."
-        condition: b2_ch11_items = 0
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11c_unleashes
-      - texts:
           - source: scene_3
             paragraph: 18
             text: "\"Whoa, there...\" Cutthroat Dave says, as he's now sweating a little. \"Is attacking a man while he's defenseless the only thing you can-- what the hell?! Damn, woman, what is wrong with your face? That is one UGLY burn scar. What in the blazes did you do, pick a fight with a dragon?\"\r\n\r\nThe cutthroat's words only serve to piss Kate off even more, and now she's preparing some extra ice cones, to make sure that he can't deflect them anymore."
-        condition: ch3_kate_badly_hurt = 1
-        set:
-          ac_b2_ch11_elephant: 1
-        achievement:
-          id: ac_b2_ch11_elephant
-          title: The elephant in the room
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11c_unleashes
-      - texts:
+            condition: ch3_kate_badly_hurt = 1
           - source: scene_3
             paragraph: 19
             text: "\"Whoa, there...\" Cutthroat Dave says, as he's now sweating a little. \"Is attacking a man while he's defenseless the only thing you can do? How about we make this a fair fight, instead of you all ganging up on me, like some street thugs?\"\r\n\r\nKate ignores the cutthroat's request, and she is now preparing some extra ice cones, to make sure that he can't deflect them anymore."
-        condition: ch3_kate_badly_hurt = 0
+            condition: ch3_kate_badly_hurt = 0
         choices:
           - position: 1
             text: Continue
@@ -785,21 +794,22 @@ scenes:
                   current_scene: b2_ch11c_unleashes
   - name: b2_ch11c_unleashes
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 27
             text: "Before Cutthroat Dave has the time to say any more words, Kate unleashes all of her ice cones, and two of them go right through his head, killing him instantly.\r\n\r\n\"So much for the cutthroat, I guess,\" Melindra says, as she drops his corpse on the ground.\r\n\r\n\"And good riddance, I say,\" Hadrik says. \"We've wasted enough time with him as it is. Let's get back to work. We don't know how much time we have left.\"\r\n\r\nAfter we were done with Cutthroat Dave, we all got back to what we were doing initially, but shortly afterwards, the area around us got covered in a bright white light again, and this time, I could feel my whole body being transported somewhere else, not just my consciousness."
           - source: scene_text_2
             paragraph: 29
             text: "When the light fades away, we all find ourselves in the middle of a city which is... unusual, to say the least. The first thing that catches my attention is that there is one very large black tower in every corner of the city,  and on top of each of these four towers, there is an incredible amount of magical energy, that can be seen even with the naked eye. The energy has a purple color, and it is moving wildly in every direction, as if it were trying to escape its prison. On each side of these thousand foot tall towers, there are big, floating platforms, that keep going up and down at a slow speed, and they seem to be carrying hundreds of people towards the levels of the towers that they need to reach.\r\n\r\nLeaving these strange, tall buildings aside, what is even more peculiar is what's happening directly above us. Currently, there are hundreds of metal, horseless carriages, flying through the air, with people inside them. While these carriages are flying around, there are large holographic screens floating above us, picturing a man that is relaying the same message, over and over, in the Common language. The holographic screens look just like the ones that were created by Golmyck's illusion-casting device, when he announced our first objectives. The message that keeps getting repeated is: 'All non-lessathi citizens are to present themselves to the military reserve area immediately. We are under attack. I repeat, we are under attack!'."
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11c_frenzy
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 28
             text: "\"Wait,\" the revenant says. \"Don't kill him.\"\r\n\r\n\"Why shouldn't I?\" Kate says.\r\n\r\n\"He could still be useful, in the upcoming ritual,\" the revenant says. \"Let me ask him a few questions.\"\r\n\r\n\"Ask your questions,\" Kate says, \"but I'm not guaranteeing that I'll leave him alive afterwards. He might do more harm than good in the ritual, after all.\"\r\n\r\nThe revenant nods, and she approaches the cutthroat, so she can look directly in his eyes.\r\n\r\n\"Tell me, cutthroat,\" the revenant says, \"why were you following this group, invisibly? Did someone send you here to spy on them?\"\r\n\r\n\"Cutthroat Dave don't work for no one,\" the cutthroat says, in disgust. \"I was following them invisibly, because I couldn't manage to get close enough to their camp this morning to slit their throats in their sleep!\""
@@ -809,7 +819,6 @@ scenes:
           - source: scene_3
             paragraph: 20
             text: "When the light fades away, we all find ourselves in the middle of a city which is... unusual, to say the least. The first thing that catches my attention is that there is one very large black tower in every corner of the city,  and on top of each of these four towers, there is an incredible amount of magical energy, that can be seen even with the naked eye. The energy has a purple color, and it is moving wildly in every direction, as if it were trying to escape its prison. On each side of these thousand foot tall towers, there are big, floating platforms, that keep going up and down at a slow speed, and they seem to be carrying hundreds of people towards the levels of the towers that they need to reach.\r\n\r\nLeaving these strange, tall buildings aside, what is even more peculiar is what's happening directly above us. Currently, there are hundreds of metal, horseless carriages, flying through the air, with people inside them. While these carriages are flying around, there are large holographic screens floating above us, picturing a man that is relaying the same message, over and over, in the Common language. The holographic screens look just like the ones that were created by Golmyck's illusion-casting device, when he announced our first objectives. The message that keeps getting repeated is: 'All non-lessathi citizens are to present themselves to the military reserve area immediately. We are under attack. I repeat, we are under attack!'."
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: Continue
@@ -818,191 +827,19 @@ scenes:
                   current_scene: b2_ch11c_frenzy
   - name: b2_ch11c_frenzy
     routes:
-      - texts:
+      - condition: ancient_languages = 4
+        texts:
           - source: scene_text
             paragraph: 31
             text: "The flying carriages are moving in a frenzy, while people around us are all hurrying in the same direction, which I'm guessing is the way to the military reserve area. As if this wasn't already unsettling enough, I can't help but notice that the whole city is filled to the brim with dark blue banners, having a hawk holding the sun in its talons drawn on each of them.\r\n\r\nVery shortly after being transported here, I also heard someone talking loudly in the lessathi language, through a magical voice magnifier, and the message he was transmitting was: 'Please stay clear of the eastern district. The lessathi high council are having an important meeting in the great hall, and do not want to be disturbed.'\r\n\r\nI'm not really sure what kind of an attacker could make a whole city panic like this, but something tells me that we are about to find out, very soon."
-        condition: ancient_languages = 4
-        set:
-          successful_checks:
-            - '[ Ancient languages check successful - level 4 ]'
-          b2_ch11_district: 1
-        choices:
-          - position: 1
-            text: >-
-              Never mind the history lesson. Any idea who might be attacking the
-              city?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 0
-          - position: 2
-            text: Should I take it that we are still in Varathia, then?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 1
-          - position: 3
-            text: How do these towers work, exactly?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 2
-      - texts:
-          - source: scene_text
-            paragraph: 29
-            text: "The flying carriages are moving in a frenzy, while people around us are all hurrying in the same direction, which I'm guessing is the way to the military reserve area. As if this wasn't already unsettling enough, I can't help but notice that the whole city is filled to the brim with dark blue banners, having a hawk holding the sun in its talons drawn on each of them.\r\n\r\nVery shortly after being transported here, I also heard someone talking loudly through a magical voice magnifier, although I couldn't understand the language he was speaking in.\r\n\r\nI'm not really sure what kind of an attacker could make a whole city panic like this, but something tells me that we are about to find out, very soon."
-        condition: ancient_languages = 0
-        set:
-          failed_checks:
-            - '[ Ancient languages check failed - level 4 ]'
-          b2_ch11_district: 0
-        choices:
-          - position: 1
-            text: >-
-              Never mind the history lesson. Any idea who might be attacking the
-              city?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 0
-          - position: 2
-            text: Should I take it that we are still in Varathia, then?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 1
-          - position: 3
-            text: How do these towers work, exactly?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 2
-      - texts:
-          - source: scene_text
-            paragraph: 30
-            text: "The flying carriages are moving in a frenzy, while people around us are all hurrying in the same direction, which I'm guessing is the way to the military reserve area. As if this wasn't already unsettling enough, I can't help but notice that the whole city is filled to the brim with dark blue banners, having a hawk holding the sun in its talons drawn on each of them.\r\n\r\nVery shortly after being transported here, I also heard someone talking loudly in the lessathi language, through a magical voice magnifier, although the words he was using were too complicated for me to understand with my current level of ancient languages.\r\n\r\nI'm not really sure what kind of an attacker could make a whole city panic like this, but something tells me that we are about to find out, very soon."
-        condition: ancient_languages = 1
-        set:
-          failed_checks:
-            - '[ Ancient languages check failed - level 4 ]'
-          b2_ch11_district: 0
-        choices:
-          - position: 1
-            text: >-
-              Never mind the history lesson. Any idea who might be attacking the
-              city?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 0
-          - position: 2
-            text: Should I take it that we are still in Varathia, then?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 1
-          - position: 3
-            text: How do these towers work, exactly?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 2
-      - texts:
-          - source: scene_text
-            paragraph: 30
-            text: "The flying carriages are moving in a frenzy, while people around us are all hurrying in the same direction, which I'm guessing is the way to the military reserve area. As if this wasn't already unsettling enough, I can't help but notice that the whole city is filled to the brim with dark blue banners, having a hawk holding the sun in its talons drawn on each of them.\r\n\r\nVery shortly after being transported here, I also heard someone talking loudly in the lessathi language, through a magical voice magnifier, although the words he was using were too complicated for me to understand with my current level of ancient languages.\r\n\r\nI'm not really sure what kind of an attacker could make a whole city panic like this, but something tells me that we are about to find out, very soon."
-        condition: ancient_languages = 2
-        set:
-          failed_checks:
-            - '[ Ancient languages check failed - level 4 ]'
-          b2_ch11_district: 0
-        choices:
-          - position: 1
-            text: >-
-              Never mind the history lesson. Any idea who might be attacking the
-              city?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 0
-          - position: 2
-            text: Should I take it that we are still in Varathia, then?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 1
-          - position: 3
-            text: How do these towers work, exactly?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 2
-      - texts:
-          - source: scene_text
-            paragraph: 30
-            text: "The flying carriages are moving in a frenzy, while people around us are all hurrying in the same direction, which I'm guessing is the way to the military reserve area. As if this wasn't already unsettling enough, I can't help but notice that the whole city is filled to the brim with dark blue banners, having a hawk holding the sun in its talons drawn on each of them.\r\n\r\nVery shortly after being transported here, I also heard someone talking loudly in the lessathi language, through a magical voice magnifier, although the words he was using were too complicated for me to understand with my current level of ancient languages.\r\n\r\nI'm not really sure what kind of an attacker could make a whole city panic like this, but something tells me that we are about to find out, very soon."
-        condition: ancient_languages = 3
-        set:
-          failed_checks:
-            - '[ Ancient languages check failed - level 4 ]'
-          b2_ch11_district: 0
-        choices:
-          - position: 1
-            text: >-
-              Never mind the history lesson. Any idea who might be attacking the
-              city?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 0
-          - position: 2
-            text: Should I take it that we are still in Varathia, then?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 1
-          - position: 3
-            text: How do these towers work, exactly?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 2
-      - texts:
           - source: scene_text_2
             paragraph: 31
             text: "As I look around, I suddenly notice that my hearing is no longer as good as it was before we were brought to this place. I quickly check my stat device, in order to confirm my suspicions, and I see that the three extra levels in Hearing granted to me by the secret code have indeed been lost.\r\n\r\n\"I can't believe this...\" Melindra says, as she looks at the black towers in the distance. \"Those towers coated in seredium dust look exactly like the kind of buildings the lessathi empire used to have thousands of years ago. I've only read about them in books. Even six hundred years ago, before the lessathi empire fell, you would not see something like this in their cities. The closest I've ever come to seeing anything resembling these towers was in Ollendor, where they are still preserving old relics from the lessathi empire's days of glory, but still, those were only ruins. For these towers to be in such good condition, we would need to have been sent back to when the lessathi empire was at its very peak. Four thousand, or even five thousand years ago! What is the God of Time thinking?\""
-        condition: b2_ch11_added_hearing = 1
-        set:
-          b2_ch11_added_hearing: 2
-        choices: []
-      - texts:
+            condition: b2_ch11_added_hearing = 1
           - source: scene_text_2
             paragraph: 31
             text: "As I look around, I suddenly notice that my hearing is no longer as good as it was before we were brought to this place. I quickly check my stat device, in order to confirm my suspicions, and I see that the three extra levels in Hearing granted to me by the secret code have indeed been lost.\r\n\r\n\"I can't believe this...\" Melindra says, as she looks at the black towers in the distance. \"Those towers coated in seredium dust look exactly like the kind of buildings the lessathi empire used to have thousands of years ago. I've only read about them in books. Even six hundred years ago, before the lessathi empire fell, you would not see something like this in their cities. The closest I've ever come to seeing anything resembling these towers was in Ollendor, where they are still preserving old relics from the lessathi empire's days of glory, but still, those were only ruins. For these towers to be in such good condition, we would need to have been sent back to when the lessathi empire was at its very peak. Four thousand, or even five thousand years ago! What is the God of Time thinking?\""
-        condition: b2_ch11_added_hearing = 2
-        choices:
-          - position: 1
-            text: >-
-              Never mind the history lesson. Any idea who might be attacking the
-              city?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 0
-          - position: 2
-            text: Should I take it that we are still in Varathia, then?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 1
-          - position: 3
-            text: How do these towers work, exactly?
-            effects:
-              - set:
-                  current_scene: b2_ch11c_history
-                  b2_ch11_towers: 2
-      - texts:
+            condition: b2_ch11_added_hearing = 2
           - source: scene_text_2
             paragraph: 32
             text: >-
@@ -1019,7 +856,236 @@ scenes:
               have been sent back to when the lessathi empire was at its very
               peak. Four thousand, or even five thousand years ago! What is the
               God of Time thinking?"
-        condition: b2_ch11_added_hearing = 0
+            condition: b2_ch11_added_hearing = 0
+        effects:
+          - set:
+              successful_checks:
+                - '[ Ancient languages check successful - level 4 ]'
+              b2_ch11_district: 1
+        choices:
+          - position: 1
+            text: >-
+              Never mind the history lesson. Any idea who might be attacking the
+              city?
+            effects:
+              - set:
+                  current_scene: b2_ch11c_history
+                  b2_ch11_towers: 0
+          - position: 2
+            text: Should I take it that we are still in Varathia, then?
+            effects:
+              - set:
+                  current_scene: b2_ch11c_history
+                  b2_ch11_towers: 1
+          - position: 3
+            text: How do these towers work, exactly?
+            effects:
+              - set:
+                  current_scene: b2_ch11c_history
+                  b2_ch11_towers: 2
+      - condition: ancient_languages = 0
+        texts:
+          - source: scene_text
+            paragraph: 29
+            text: "The flying carriages are moving in a frenzy, while people around us are all hurrying in the same direction, which I'm guessing is the way to the military reserve area. As if this wasn't already unsettling enough, I can't help but notice that the whole city is filled to the brim with dark blue banners, having a hawk holding the sun in its talons drawn on each of them.\r\n\r\nVery shortly after being transported here, I also heard someone talking loudly through a magical voice magnifier, although I couldn't understand the language he was speaking in.\r\n\r\nI'm not really sure what kind of an attacker could make a whole city panic like this, but something tells me that we are about to find out, very soon."
+          - source: scene_text_2
+            paragraph: 31
+            text: "As I look around, I suddenly notice that my hearing is no longer as good as it was before we were brought to this place. I quickly check my stat device, in order to confirm my suspicions, and I see that the three extra levels in Hearing granted to me by the secret code have indeed been lost.\r\n\r\n\"I can't believe this...\" Melindra says, as she looks at the black towers in the distance. \"Those towers coated in seredium dust look exactly like the kind of buildings the lessathi empire used to have thousands of years ago. I've only read about them in books. Even six hundred years ago, before the lessathi empire fell, you would not see something like this in their cities. The closest I've ever come to seeing anything resembling these towers was in Ollendor, where they are still preserving old relics from the lessathi empire's days of glory, but still, those were only ruins. For these towers to be in such good condition, we would need to have been sent back to when the lessathi empire was at its very peak. Four thousand, or even five thousand years ago! What is the God of Time thinking?\""
+            condition: b2_ch11_added_hearing = 1
+          - source: scene_text_2
+            paragraph: 31
+            text: "As I look around, I suddenly notice that my hearing is no longer as good as it was before we were brought to this place. I quickly check my stat device, in order to confirm my suspicions, and I see that the three extra levels in Hearing granted to me by the secret code have indeed been lost.\r\n\r\n\"I can't believe this...\" Melindra says, as she looks at the black towers in the distance. \"Those towers coated in seredium dust look exactly like the kind of buildings the lessathi empire used to have thousands of years ago. I've only read about them in books. Even six hundred years ago, before the lessathi empire fell, you would not see something like this in their cities. The closest I've ever come to seeing anything resembling these towers was in Ollendor, where they are still preserving old relics from the lessathi empire's days of glory, but still, those were only ruins. For these towers to be in such good condition, we would need to have been sent back to when the lessathi empire was at its very peak. Four thousand, or even five thousand years ago! What is the God of Time thinking?\""
+            condition: b2_ch11_added_hearing = 2
+          - source: scene_text_2
+            paragraph: 32
+            text: >-
+              "I can't believe this..." Melindra says, as she looks at the black
+              towers in the distance. "Those towers coated in seredium dust look
+              exactly like the kind of buildings the lessathi empire used to
+              have thousands of years ago. I've only read about them in books.
+              Even six hundred years ago, before the lessathi empire fell, you
+              would not see something like this in their cities. The closest
+              I've ever come to seeing anything resembling these towers was in
+              Ollendor, where they are still preserving old relics from the
+              lessathi empire's days of glory, but still, those were only ruins.
+              For these towers to be in such good condition, we would need to
+              have been sent back to when the lessathi empire was at its very
+              peak. Four thousand, or even five thousand years ago! What is the
+              God of Time thinking?"
+            condition: b2_ch11_added_hearing = 0
+        effects:
+          - set:
+              failed_checks:
+                - '[ Ancient languages check failed - level 4 ]'
+              b2_ch11_district: 0
+        choices:
+          - position: 1
+            text: >-
+              Never mind the history lesson. Any idea who might be attacking the
+              city?
+            effects:
+              - set:
+                  current_scene: b2_ch11c_history
+                  b2_ch11_towers: 0
+          - position: 2
+            text: Should I take it that we are still in Varathia, then?
+            effects:
+              - set:
+                  current_scene: b2_ch11c_history
+                  b2_ch11_towers: 1
+          - position: 3
+            text: How do these towers work, exactly?
+            effects:
+              - set:
+                  current_scene: b2_ch11c_history
+                  b2_ch11_towers: 2
+      - condition: ancient_languages = 1
+        texts:
+          - source: scene_text
+            paragraph: 30
+            text: "The flying carriages are moving in a frenzy, while people around us are all hurrying in the same direction, which I'm guessing is the way to the military reserve area. As if this wasn't already unsettling enough, I can't help but notice that the whole city is filled to the brim with dark blue banners, having a hawk holding the sun in its talons drawn on each of them.\r\n\r\nVery shortly after being transported here, I also heard someone talking loudly in the lessathi language, through a magical voice magnifier, although the words he was using were too complicated for me to understand with my current level of ancient languages.\r\n\r\nI'm not really sure what kind of an attacker could make a whole city panic like this, but something tells me that we are about to find out, very soon."
+          - source: scene_text_2
+            paragraph: 31
+            text: "As I look around, I suddenly notice that my hearing is no longer as good as it was before we were brought to this place. I quickly check my stat device, in order to confirm my suspicions, and I see that the three extra levels in Hearing granted to me by the secret code have indeed been lost.\r\n\r\n\"I can't believe this...\" Melindra says, as she looks at the black towers in the distance. \"Those towers coated in seredium dust look exactly like the kind of buildings the lessathi empire used to have thousands of years ago. I've only read about them in books. Even six hundred years ago, before the lessathi empire fell, you would not see something like this in their cities. The closest I've ever come to seeing anything resembling these towers was in Ollendor, where they are still preserving old relics from the lessathi empire's days of glory, but still, those were only ruins. For these towers to be in such good condition, we would need to have been sent back to when the lessathi empire was at its very peak. Four thousand, or even five thousand years ago! What is the God of Time thinking?\""
+            condition: b2_ch11_added_hearing = 1
+          - source: scene_text_2
+            paragraph: 31
+            text: "As I look around, I suddenly notice that my hearing is no longer as good as it was before we were brought to this place. I quickly check my stat device, in order to confirm my suspicions, and I see that the three extra levels in Hearing granted to me by the secret code have indeed been lost.\r\n\r\n\"I can't believe this...\" Melindra says, as she looks at the black towers in the distance. \"Those towers coated in seredium dust look exactly like the kind of buildings the lessathi empire used to have thousands of years ago. I've only read about them in books. Even six hundred years ago, before the lessathi empire fell, you would not see something like this in their cities. The closest I've ever come to seeing anything resembling these towers was in Ollendor, where they are still preserving old relics from the lessathi empire's days of glory, but still, those were only ruins. For these towers to be in such good condition, we would need to have been sent back to when the lessathi empire was at its very peak. Four thousand, or even five thousand years ago! What is the God of Time thinking?\""
+            condition: b2_ch11_added_hearing = 2
+          - source: scene_text_2
+            paragraph: 32
+            text: >-
+              "I can't believe this..." Melindra says, as she looks at the black
+              towers in the distance. "Those towers coated in seredium dust look
+              exactly like the kind of buildings the lessathi empire used to
+              have thousands of years ago. I've only read about them in books.
+              Even six hundred years ago, before the lessathi empire fell, you
+              would not see something like this in their cities. The closest
+              I've ever come to seeing anything resembling these towers was in
+              Ollendor, where they are still preserving old relics from the
+              lessathi empire's days of glory, but still, those were only ruins.
+              For these towers to be in such good condition, we would need to
+              have been sent back to when the lessathi empire was at its very
+              peak. Four thousand, or even five thousand years ago! What is the
+              God of Time thinking?"
+            condition: b2_ch11_added_hearing = 0
+        effects:
+          - set:
+              failed_checks:
+                - '[ Ancient languages check failed - level 4 ]'
+              b2_ch11_district: 0
+        choices:
+          - position: 1
+            text: >-
+              Never mind the history lesson. Any idea who might be attacking the
+              city?
+            effects:
+              - set:
+                  current_scene: b2_ch11c_history
+                  b2_ch11_towers: 0
+          - position: 2
+            text: Should I take it that we are still in Varathia, then?
+            effects:
+              - set:
+                  current_scene: b2_ch11c_history
+                  b2_ch11_towers: 1
+          - position: 3
+            text: How do these towers work, exactly?
+            effects:
+              - set:
+                  current_scene: b2_ch11c_history
+                  b2_ch11_towers: 2
+      - condition: ancient_languages = 2
+        texts:
+          - source: scene_text
+            paragraph: 30
+            text: "The flying carriages are moving in a frenzy, while people around us are all hurrying in the same direction, which I'm guessing is the way to the military reserve area. As if this wasn't already unsettling enough, I can't help but notice that the whole city is filled to the brim with dark blue banners, having a hawk holding the sun in its talons drawn on each of them.\r\n\r\nVery shortly after being transported here, I also heard someone talking loudly in the lessathi language, through a magical voice magnifier, although the words he was using were too complicated for me to understand with my current level of ancient languages.\r\n\r\nI'm not really sure what kind of an attacker could make a whole city panic like this, but something tells me that we are about to find out, very soon."
+          - source: scene_text_2
+            paragraph: 31
+            text: "As I look around, I suddenly notice that my hearing is no longer as good as it was before we were brought to this place. I quickly check my stat device, in order to confirm my suspicions, and I see that the three extra levels in Hearing granted to me by the secret code have indeed been lost.\r\n\r\n\"I can't believe this...\" Melindra says, as she looks at the black towers in the distance. \"Those towers coated in seredium dust look exactly like the kind of buildings the lessathi empire used to have thousands of years ago. I've only read about them in books. Even six hundred years ago, before the lessathi empire fell, you would not see something like this in their cities. The closest I've ever come to seeing anything resembling these towers was in Ollendor, where they are still preserving old relics from the lessathi empire's days of glory, but still, those were only ruins. For these towers to be in such good condition, we would need to have been sent back to when the lessathi empire was at its very peak. Four thousand, or even five thousand years ago! What is the God of Time thinking?\""
+            condition: b2_ch11_added_hearing = 1
+          - source: scene_text_2
+            paragraph: 31
+            text: "As I look around, I suddenly notice that my hearing is no longer as good as it was before we were brought to this place. I quickly check my stat device, in order to confirm my suspicions, and I see that the three extra levels in Hearing granted to me by the secret code have indeed been lost.\r\n\r\n\"I can't believe this...\" Melindra says, as she looks at the black towers in the distance. \"Those towers coated in seredium dust look exactly like the kind of buildings the lessathi empire used to have thousands of years ago. I've only read about them in books. Even six hundred years ago, before the lessathi empire fell, you would not see something like this in their cities. The closest I've ever come to seeing anything resembling these towers was in Ollendor, where they are still preserving old relics from the lessathi empire's days of glory, but still, those were only ruins. For these towers to be in such good condition, we would need to have been sent back to when the lessathi empire was at its very peak. Four thousand, or even five thousand years ago! What is the God of Time thinking?\""
+            condition: b2_ch11_added_hearing = 2
+          - source: scene_text_2
+            paragraph: 32
+            text: >-
+              "I can't believe this..." Melindra says, as she looks at the black
+              towers in the distance. "Those towers coated in seredium dust look
+              exactly like the kind of buildings the lessathi empire used to
+              have thousands of years ago. I've only read about them in books.
+              Even six hundred years ago, before the lessathi empire fell, you
+              would not see something like this in their cities. The closest
+              I've ever come to seeing anything resembling these towers was in
+              Ollendor, where they are still preserving old relics from the
+              lessathi empire's days of glory, but still, those were only ruins.
+              For these towers to be in such good condition, we would need to
+              have been sent back to when the lessathi empire was at its very
+              peak. Four thousand, or even five thousand years ago! What is the
+              God of Time thinking?"
+            condition: b2_ch11_added_hearing = 0
+        effects:
+          - set:
+              failed_checks:
+                - '[ Ancient languages check failed - level 4 ]'
+              b2_ch11_district: 0
+        choices:
+          - position: 1
+            text: >-
+              Never mind the history lesson. Any idea who might be attacking the
+              city?
+            effects:
+              - set:
+                  current_scene: b2_ch11c_history
+                  b2_ch11_towers: 0
+          - position: 2
+            text: Should I take it that we are still in Varathia, then?
+            effects:
+              - set:
+                  current_scene: b2_ch11c_history
+                  b2_ch11_towers: 1
+          - position: 3
+            text: How do these towers work, exactly?
+            effects:
+              - set:
+                  current_scene: b2_ch11c_history
+                  b2_ch11_towers: 2
+      - condition: ancient_languages = 3
+        texts:
+          - source: scene_text
+            paragraph: 30
+            text: "The flying carriages are moving in a frenzy, while people around us are all hurrying in the same direction, which I'm guessing is the way to the military reserve area. As if this wasn't already unsettling enough, I can't help but notice that the whole city is filled to the brim with dark blue banners, having a hawk holding the sun in its talons drawn on each of them.\r\n\r\nVery shortly after being transported here, I also heard someone talking loudly in the lessathi language, through a magical voice magnifier, although the words he was using were too complicated for me to understand with my current level of ancient languages.\r\n\r\nI'm not really sure what kind of an attacker could make a whole city panic like this, but something tells me that we are about to find out, very soon."
+          - source: scene_text_2
+            paragraph: 31
+            text: "As I look around, I suddenly notice that my hearing is no longer as good as it was before we were brought to this place. I quickly check my stat device, in order to confirm my suspicions, and I see that the three extra levels in Hearing granted to me by the secret code have indeed been lost.\r\n\r\n\"I can't believe this...\" Melindra says, as she looks at the black towers in the distance. \"Those towers coated in seredium dust look exactly like the kind of buildings the lessathi empire used to have thousands of years ago. I've only read about them in books. Even six hundred years ago, before the lessathi empire fell, you would not see something like this in their cities. The closest I've ever come to seeing anything resembling these towers was in Ollendor, where they are still preserving old relics from the lessathi empire's days of glory, but still, those were only ruins. For these towers to be in such good condition, we would need to have been sent back to when the lessathi empire was at its very peak. Four thousand, or even five thousand years ago! What is the God of Time thinking?\""
+            condition: b2_ch11_added_hearing = 1
+          - source: scene_text_2
+            paragraph: 31
+            text: "As I look around, I suddenly notice that my hearing is no longer as good as it was before we were brought to this place. I quickly check my stat device, in order to confirm my suspicions, and I see that the three extra levels in Hearing granted to me by the secret code have indeed been lost.\r\n\r\n\"I can't believe this...\" Melindra says, as she looks at the black towers in the distance. \"Those towers coated in seredium dust look exactly like the kind of buildings the lessathi empire used to have thousands of years ago. I've only read about them in books. Even six hundred years ago, before the lessathi empire fell, you would not see something like this in their cities. The closest I've ever come to seeing anything resembling these towers was in Ollendor, where they are still preserving old relics from the lessathi empire's days of glory, but still, those were only ruins. For these towers to be in such good condition, we would need to have been sent back to when the lessathi empire was at its very peak. Four thousand, or even five thousand years ago! What is the God of Time thinking?\""
+            condition: b2_ch11_added_hearing = 2
+          - source: scene_text_2
+            paragraph: 32
+            text: >-
+              "I can't believe this..." Melindra says, as she looks at the black
+              towers in the distance. "Those towers coated in seredium dust look
+              exactly like the kind of buildings the lessathi empire used to
+              have thousands of years ago. I've only read about them in books.
+              Even six hundred years ago, before the lessathi empire fell, you
+              would not see something like this in their cities. The closest
+              I've ever come to seeing anything resembling these towers was in
+              Ollendor, where they are still preserving old relics from the
+              lessathi empire's days of glory, but still, those were only ruins.
+              For these towers to be in such good condition, we would need to
+              have been sent back to when the lessathi empire was at its very
+              peak. Four thousand, or even five thousand years ago! What is the
+              God of Time thinking?"
+            condition: b2_ch11_added_hearing = 0
+        effects:
+          - set:
+              failed_checks:
+                - '[ Ancient languages check failed - level 4 ]'
+              b2_ch11_district: 0
         choices:
           - position: 1
             text: >-
@@ -1043,75 +1109,105 @@ scenes:
                   b2_ch11_towers: 2
   - name: b2_ch11c_history
     routes:
-      - texts:
+      - condition: b2_ch11_towers = 0
+        texts:
           - source: scene_text
             paragraph: 32
             text: "\"Never mind the history lesson. Any idea who might be attacking the city?\"\r\n\r\n\"A rogue city, perhaps?...\" Melindra says. \"The history of the lessathi empire hasn't been very well preserved, so I'm not sure if they had any conflicts between their own cities in the past. It's also possible that they might be getting attacked by some very powerful mages of their times. Maybe we'll get more details if we keep listening to their announcements.\""
-        condition: b2_ch11_towers = 0
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11c_mountain
-      - texts:
-          - source: scene_text
-            paragraph: 33
-            text: "\"Should I take it that we are still in Varathia, then?\"\r\n\r\n\"Well, technically it wasn't named Varathia back then, but yes, we're on the same continent,\" Melindra says. \"The Varathian towns from our present time have been built on the ruins of the old lessathi cities, and the only place where the lessathi ever had an empire was on this continent, so there's no doubt about it.\""
-        condition: b2_ch11_towers = 1
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11c_mountain
-      - texts:
-          - source: scene_text
-            paragraph: 34
-            text: "\"How do these towers work, exactly?\"\r\n\r\n\"From what I know,\" Melindra says, \"the energy from these towers was supposedly charged by mages from the city, who worked voluntarily every day to keep the energy alive, and who would receive monthly payments from the empire as a reward for their contributions to their society. This energy would then be used to power up these flying vehicles that you see above us, and also other technologically advanced devices that would make life easier for every citizen.\""
-        condition: b2_ch11_towers = 2
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11c_mountain
-      - texts:
           - source: scene_text_2
             paragraph: 33
             text: "\"What the hell are you two talking about?...\" Cutthroat Dave says, as he now seems to no longer be constrained by Melindra's air currents, and he is looking at all the flying carriages with apprehension in his eyes. \"What is this place?\"\r\n\r\n\"It's a city from the old lessathi empire!\" Melindra says. \"Haven't you been paying attention?\"\r\n\r\n\"So, if we've been sent to the past again, does this mean that there are some events we have to repeat?...\" Hadrik asks.\r\n\r\n\"No, this is a different type of ritual!\" Arraka says. \"Can't you see that you've been transported here with your bodies, instead of just your consciousness?\"\r\n\r\n\"You're saying that this time we're allowed to change something that happened in the past?\" Daren says.\r\n\r\n\"No, that's not what I'm saying,\" Arraka says. \"The only way you can change the past is through a time reversal spell. This is obviously not our world. Neither of you were here five thousand years ago. We are in a parallel world, similar to ours, where the future hasn't happened yet. No matter what we change, here, it won't affect our reality.\"\r\n\r\n\"But then, what is the purpose of this trial?\" Daren says.\r\n\r\n\"No idea,\" Arraka says. \"But I do think I've managed to figure out why we've been sent here, of all places.\"\r\n\r\n\"What do you mean?\" Illuna says."
+            condition: ch4_spared_dave = 1 AND ch11_saved_rose = 0
+          - source: scene_text_2
+            paragraph: 34
+            text: "\"So, if we've been sent to the past again, does this mean that there are some events we have to repeat?...\" Hadrik asks.\r\n\r\n\"No, this is a different type of ritual!\" Arraka says. \"Can't you see that you've been transported here with your bodies, instead of just your consciousness?\"\r\n\r\n\"You're saying that this time we're allowed to change something that happened in the past?\" Daren says.\r\n\r\n\"No, that's not what I'm saying,\" Arraka says. \"The only way you can change the past is through a time reversal spell. This is obviously not our world. Neither of you were here five thousand years ago. We are in a parallel world, similar to ours, where the future hasn't happened yet. No matter what we change, here, it won't affect our reality.\"\r\n\r\n\"But then, what is the purpose of this trial?\" Daren says.\r\n\r\n\"No idea,\" Arraka says. \"But I do think I've managed to figure out why we've been sent here, of all places.\"\r\n\r\n\"What do you mean?\" Illuna says."
+            condition: ch4_spared_dave = 0
+          - source: scene_text_2
+            paragraph: 34
+            text: "\"So, if we've been sent to the past again, does this mean that there are some events we have to repeat?...\" Hadrik asks.\r\n\r\n\"No, this is a different type of ritual!\" Arraka says. \"Can't you see that you've been transported here with your bodies, instead of just your consciousness?\"\r\n\r\n\"You're saying that this time we're allowed to change something that happened in the past?\" Daren says.\r\n\r\n\"No, that's not what I'm saying,\" Arraka says. \"The only way you can change the past is through a time reversal spell. This is obviously not our world. Neither of you were here five thousand years ago. We are in a parallel world, similar to ours, where the future hasn't happened yet. No matter what we change, here, it won't affect our reality.\"\r\n\r\n\"But then, what is the purpose of this trial?\" Daren says.\r\n\r\n\"No idea,\" Arraka says. \"But I do think I've managed to figure out why we've been sent here, of all places.\"\r\n\r\n\"What do you mean?\" Illuna says."
+            condition: ch11_saved_rose = 1
           - source: scene_3
             paragraph: 21
             text: "\"Remember how in every one of the rituals so far, Selkram has sent you to relive events from your own pasts?\" Arraka says. \"Well, like I said before, neither of you have lived anywhere near long enough to have experienced these current events. So by process of elimination, the past that we are now exploring is most likely... mine.\"\r\n\r\nNot long after Arraka is done talking, the whole sky gradually darkens, as a powerful, sinister aura envelops the area above us. The flying metal vehicles are now falling one by one, and crashing into the buildings below, while a woman in her late thirties is emerging from the dark clouds, and descending towards us. The robes she is wearing are similar to the traditional wizard robes that used to be worn hundreds of years ago, back when mages were still being called wizards, and that only traditionalist mages like Azarius are still wearing nowadays. As the woman gets closer to us, I see that her eyes are pitch black, and that she has a very familiar looking malicious grin on her face.\r\n\r\n\"Well, well, well...\" the woman says, as she looks towards Arraka's amulet. \"It looks like Selkram sent me a little present. You're all coming from the future, I presume? Let me check my future self's aura, for a second. Wow... So, you're five thousand years older than me, huh? I guess I must have gotten really senile with old age, if I managed to get myself captured in an amulet by a glorified circus troupe. Seriously, what even are you people? A little girl dressed like a clown? A giant masquerading as a dwarf?  A woman dressed in pajamas? It's like you're trying to compete for the most ridiculously dressed wizard group of the century.\""
-        condition: ch4_spared_dave = 1 AND ch11_saved_rose = 0
+            condition: ch4_spared_dave = 1 AND ch11_saved_rose = 0
+          - source: scene_3
+            paragraph: 21
+            text: "\"Remember how in every one of the rituals so far, Selkram has sent you to relive events from your own pasts?\" Arraka says. \"Well, like I said before, neither of you have lived anywhere near long enough to have experienced these current events. So by process of elimination, the past that we are now exploring is most likely... mine.\"\r\n\r\nNot long after Arraka is done talking, the whole sky gradually darkens, as a powerful, sinister aura envelops the area above us. The flying metal vehicles are now falling one by one, and crashing into the buildings below, while a woman in her late thirties is emerging from the dark clouds, and descending towards us. The robes she is wearing are similar to the traditional wizard robes that used to be worn hundreds of years ago, back when mages were still being called wizards, and that only traditionalist mages like Azarius are still wearing nowadays. As the woman gets closer to us, I see that her eyes are pitch black, and that she has a very familiar looking malicious grin on her face.\r\n\r\n\"Well, well, well...\" the woman says, as she looks towards Arraka's amulet. \"It looks like Selkram sent me a little present. You're all coming from the future, I presume? Let me check my future self's aura, for a second. Wow... So, you're five thousand years older than me, huh? I guess I must have gotten really senile with old age, if I managed to get myself captured in an amulet by a glorified circus troupe. Seriously, what even are you people? A little girl dressed like a clown? A giant masquerading as a dwarf?  A woman dressed in pajamas? It's like you're trying to compete for the most ridiculously dressed wizard group of the century.\""
+            condition: ch4_spared_dave = 0
+          - source: scene_3
+            paragraph: 21
+            text: "\"Remember how in every one of the rituals so far, Selkram has sent you to relive events from your own pasts?\" Arraka says. \"Well, like I said before, neither of you have lived anywhere near long enough to have experienced these current events. So by process of elimination, the past that we are now exploring is most likely... mine.\"\r\n\r\nNot long after Arraka is done talking, the whole sky gradually darkens, as a powerful, sinister aura envelops the area above us. The flying metal vehicles are now falling one by one, and crashing into the buildings below, while a woman in her late thirties is emerging from the dark clouds, and descending towards us. The robes she is wearing are similar to the traditional wizard robes that used to be worn hundreds of years ago, back when mages were still being called wizards, and that only traditionalist mages like Azarius are still wearing nowadays. As the woman gets closer to us, I see that her eyes are pitch black, and that she has a very familiar looking malicious grin on her face.\r\n\r\n\"Well, well, well...\" the woman says, as she looks towards Arraka's amulet. \"It looks like Selkram sent me a little present. You're all coming from the future, I presume? Let me check my future self's aura, for a second. Wow... So, you're five thousand years older than me, huh? I guess I must have gotten really senile with old age, if I managed to get myself captured in an amulet by a glorified circus troupe. Seriously, what even are you people? A little girl dressed like a clown? A giant masquerading as a dwarf?  A woman dressed in pajamas? It's like you're trying to compete for the most ridiculously dressed wizard group of the century.\""
+            condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11c_mountain
-      - texts:
+      - condition: b2_ch11_towers = 1
+        texts:
+          - source: scene_text
+            paragraph: 33
+            text: "\"Should I take it that we are still in Varathia, then?\"\r\n\r\n\"Well, technically it wasn't named Varathia back then, but yes, we're on the same continent,\" Melindra says. \"The Varathian towns from our present time have been built on the ruins of the old lessathi cities, and the only place where the lessathi ever had an empire was on this continent, so there's no doubt about it.\""
+          - source: scene_text_2
+            paragraph: 33
+            text: "\"What the hell are you two talking about?...\" Cutthroat Dave says, as he now seems to no longer be constrained by Melindra's air currents, and he is looking at all the flying carriages with apprehension in his eyes. \"What is this place?\"\r\n\r\n\"It's a city from the old lessathi empire!\" Melindra says. \"Haven't you been paying attention?\"\r\n\r\n\"So, if we've been sent to the past again, does this mean that there are some events we have to repeat?...\" Hadrik asks.\r\n\r\n\"No, this is a different type of ritual!\" Arraka says. \"Can't you see that you've been transported here with your bodies, instead of just your consciousness?\"\r\n\r\n\"You're saying that this time we're allowed to change something that happened in the past?\" Daren says.\r\n\r\n\"No, that's not what I'm saying,\" Arraka says. \"The only way you can change the past is through a time reversal spell. This is obviously not our world. Neither of you were here five thousand years ago. We are in a parallel world, similar to ours, where the future hasn't happened yet. No matter what we change, here, it won't affect our reality.\"\r\n\r\n\"But then, what is the purpose of this trial?\" Daren says.\r\n\r\n\"No idea,\" Arraka says. \"But I do think I've managed to figure out why we've been sent here, of all places.\"\r\n\r\n\"What do you mean?\" Illuna says."
+            condition: ch4_spared_dave = 1 AND ch11_saved_rose = 0
           - source: scene_text_2
             paragraph: 34
             text: "\"So, if we've been sent to the past again, does this mean that there are some events we have to repeat?...\" Hadrik asks.\r\n\r\n\"No, this is a different type of ritual!\" Arraka says. \"Can't you see that you've been transported here with your bodies, instead of just your consciousness?\"\r\n\r\n\"You're saying that this time we're allowed to change something that happened in the past?\" Daren says.\r\n\r\n\"No, that's not what I'm saying,\" Arraka says. \"The only way you can change the past is through a time reversal spell. This is obviously not our world. Neither of you were here five thousand years ago. We are in a parallel world, similar to ours, where the future hasn't happened yet. No matter what we change, here, it won't affect our reality.\"\r\n\r\n\"But then, what is the purpose of this trial?\" Daren says.\r\n\r\n\"No idea,\" Arraka says. \"But I do think I've managed to figure out why we've been sent here, of all places.\"\r\n\r\n\"What do you mean?\" Illuna says."
+            condition: ch4_spared_dave = 0
+          - source: scene_text_2
+            paragraph: 34
+            text: "\"So, if we've been sent to the past again, does this mean that there are some events we have to repeat?...\" Hadrik asks.\r\n\r\n\"No, this is a different type of ritual!\" Arraka says. \"Can't you see that you've been transported here with your bodies, instead of just your consciousness?\"\r\n\r\n\"You're saying that this time we're allowed to change something that happened in the past?\" Daren says.\r\n\r\n\"No, that's not what I'm saying,\" Arraka says. \"The only way you can change the past is through a time reversal spell. This is obviously not our world. Neither of you were here five thousand years ago. We are in a parallel world, similar to ours, where the future hasn't happened yet. No matter what we change, here, it won't affect our reality.\"\r\n\r\n\"But then, what is the purpose of this trial?\" Daren says.\r\n\r\n\"No idea,\" Arraka says. \"But I do think I've managed to figure out why we've been sent here, of all places.\"\r\n\r\n\"What do you mean?\" Illuna says."
+            condition: ch11_saved_rose = 1
           - source: scene_3
             paragraph: 21
             text: "\"Remember how in every one of the rituals so far, Selkram has sent you to relive events from your own pasts?\" Arraka says. \"Well, like I said before, neither of you have lived anywhere near long enough to have experienced these current events. So by process of elimination, the past that we are now exploring is most likely... mine.\"\r\n\r\nNot long after Arraka is done talking, the whole sky gradually darkens, as a powerful, sinister aura envelops the area above us. The flying metal vehicles are now falling one by one, and crashing into the buildings below, while a woman in her late thirties is emerging from the dark clouds, and descending towards us. The robes she is wearing are similar to the traditional wizard robes that used to be worn hundreds of years ago, back when mages were still being called wizards, and that only traditionalist mages like Azarius are still wearing nowadays. As the woman gets closer to us, I see that her eyes are pitch black, and that she has a very familiar looking malicious grin on her face.\r\n\r\n\"Well, well, well...\" the woman says, as she looks towards Arraka's amulet. \"It looks like Selkram sent me a little present. You're all coming from the future, I presume? Let me check my future self's aura, for a second. Wow... So, you're five thousand years older than me, huh? I guess I must have gotten really senile with old age, if I managed to get myself captured in an amulet by a glorified circus troupe. Seriously, what even are you people? A little girl dressed like a clown? A giant masquerading as a dwarf?  A woman dressed in pajamas? It's like you're trying to compete for the most ridiculously dressed wizard group of the century.\""
-        condition: ch4_spared_dave = 0
+            condition: ch4_spared_dave = 1 AND ch11_saved_rose = 0
+          - source: scene_3
+            paragraph: 21
+            text: "\"Remember how in every one of the rituals so far, Selkram has sent you to relive events from your own pasts?\" Arraka says. \"Well, like I said before, neither of you have lived anywhere near long enough to have experienced these current events. So by process of elimination, the past that we are now exploring is most likely... mine.\"\r\n\r\nNot long after Arraka is done talking, the whole sky gradually darkens, as a powerful, sinister aura envelops the area above us. The flying metal vehicles are now falling one by one, and crashing into the buildings below, while a woman in her late thirties is emerging from the dark clouds, and descending towards us. The robes she is wearing are similar to the traditional wizard robes that used to be worn hundreds of years ago, back when mages were still being called wizards, and that only traditionalist mages like Azarius are still wearing nowadays. As the woman gets closer to us, I see that her eyes are pitch black, and that she has a very familiar looking malicious grin on her face.\r\n\r\n\"Well, well, well...\" the woman says, as she looks towards Arraka's amulet. \"It looks like Selkram sent me a little present. You're all coming from the future, I presume? Let me check my future self's aura, for a second. Wow... So, you're five thousand years older than me, huh? I guess I must have gotten really senile with old age, if I managed to get myself captured in an amulet by a glorified circus troupe. Seriously, what even are you people? A little girl dressed like a clown? A giant masquerading as a dwarf?  A woman dressed in pajamas? It's like you're trying to compete for the most ridiculously dressed wizard group of the century.\""
+            condition: ch4_spared_dave = 0
+          - source: scene_3
+            paragraph: 21
+            text: "\"Remember how in every one of the rituals so far, Selkram has sent you to relive events from your own pasts?\" Arraka says. \"Well, like I said before, neither of you have lived anywhere near long enough to have experienced these current events. So by process of elimination, the past that we are now exploring is most likely... mine.\"\r\n\r\nNot long after Arraka is done talking, the whole sky gradually darkens, as a powerful, sinister aura envelops the area above us. The flying metal vehicles are now falling one by one, and crashing into the buildings below, while a woman in her late thirties is emerging from the dark clouds, and descending towards us. The robes she is wearing are similar to the traditional wizard robes that used to be worn hundreds of years ago, back when mages were still being called wizards, and that only traditionalist mages like Azarius are still wearing nowadays. As the woman gets closer to us, I see that her eyes are pitch black, and that she has a very familiar looking malicious grin on her face.\r\n\r\n\"Well, well, well...\" the woman says, as she looks towards Arraka's amulet. \"It looks like Selkram sent me a little present. You're all coming from the future, I presume? Let me check my future self's aura, for a second. Wow... So, you're five thousand years older than me, huh? I guess I must have gotten really senile with old age, if I managed to get myself captured in an amulet by a glorified circus troupe. Seriously, what even are you people? A little girl dressed like a clown? A giant masquerading as a dwarf?  A woman dressed in pajamas? It's like you're trying to compete for the most ridiculously dressed wizard group of the century.\""
+            condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11c_mountain
-      - texts:
+      - condition: b2_ch11_towers = 2
+        texts:
+          - source: scene_text
+            paragraph: 34
+            text: "\"How do these towers work, exactly?\"\r\n\r\n\"From what I know,\" Melindra says, \"the energy from these towers was supposedly charged by mages from the city, who worked voluntarily every day to keep the energy alive, and who would receive monthly payments from the empire as a reward for their contributions to their society. This energy would then be used to power up these flying vehicles that you see above us, and also other technologically advanced devices that would make life easier for every citizen.\""
+          - source: scene_text_2
+            paragraph: 33
+            text: "\"What the hell are you two talking about?...\" Cutthroat Dave says, as he now seems to no longer be constrained by Melindra's air currents, and he is looking at all the flying carriages with apprehension in his eyes. \"What is this place?\"\r\n\r\n\"It's a city from the old lessathi empire!\" Melindra says. \"Haven't you been paying attention?\"\r\n\r\n\"So, if we've been sent to the past again, does this mean that there are some events we have to repeat?...\" Hadrik asks.\r\n\r\n\"No, this is a different type of ritual!\" Arraka says. \"Can't you see that you've been transported here with your bodies, instead of just your consciousness?\"\r\n\r\n\"You're saying that this time we're allowed to change something that happened in the past?\" Daren says.\r\n\r\n\"No, that's not what I'm saying,\" Arraka says. \"The only way you can change the past is through a time reversal spell. This is obviously not our world. Neither of you were here five thousand years ago. We are in a parallel world, similar to ours, where the future hasn't happened yet. No matter what we change, here, it won't affect our reality.\"\r\n\r\n\"But then, what is the purpose of this trial?\" Daren says.\r\n\r\n\"No idea,\" Arraka says. \"But I do think I've managed to figure out why we've been sent here, of all places.\"\r\n\r\n\"What do you mean?\" Illuna says."
+            condition: ch4_spared_dave = 1 AND ch11_saved_rose = 0
           - source: scene_text_2
             paragraph: 34
             text: "\"So, if we've been sent to the past again, does this mean that there are some events we have to repeat?...\" Hadrik asks.\r\n\r\n\"No, this is a different type of ritual!\" Arraka says. \"Can't you see that you've been transported here with your bodies, instead of just your consciousness?\"\r\n\r\n\"You're saying that this time we're allowed to change something that happened in the past?\" Daren says.\r\n\r\n\"No, that's not what I'm saying,\" Arraka says. \"The only way you can change the past is through a time reversal spell. This is obviously not our world. Neither of you were here five thousand years ago. We are in a parallel world, similar to ours, where the future hasn't happened yet. No matter what we change, here, it won't affect our reality.\"\r\n\r\n\"But then, what is the purpose of this trial?\" Daren says.\r\n\r\n\"No idea,\" Arraka says. \"But I do think I've managed to figure out why we've been sent here, of all places.\"\r\n\r\n\"What do you mean?\" Illuna says."
+            condition: ch4_spared_dave = 0
+          - source: scene_text_2
+            paragraph: 34
+            text: "\"So, if we've been sent to the past again, does this mean that there are some events we have to repeat?...\" Hadrik asks.\r\n\r\n\"No, this is a different type of ritual!\" Arraka says. \"Can't you see that you've been transported here with your bodies, instead of just your consciousness?\"\r\n\r\n\"You're saying that this time we're allowed to change something that happened in the past?\" Daren says.\r\n\r\n\"No, that's not what I'm saying,\" Arraka says. \"The only way you can change the past is through a time reversal spell. This is obviously not our world. Neither of you were here five thousand years ago. We are in a parallel world, similar to ours, where the future hasn't happened yet. No matter what we change, here, it won't affect our reality.\"\r\n\r\n\"But then, what is the purpose of this trial?\" Daren says.\r\n\r\n\"No idea,\" Arraka says. \"But I do think I've managed to figure out why we've been sent here, of all places.\"\r\n\r\n\"What do you mean?\" Illuna says."
+            condition: ch11_saved_rose = 1
           - source: scene_3
             paragraph: 21
             text: "\"Remember how in every one of the rituals so far, Selkram has sent you to relive events from your own pasts?\" Arraka says. \"Well, like I said before, neither of you have lived anywhere near long enough to have experienced these current events. So by process of elimination, the past that we are now exploring is most likely... mine.\"\r\n\r\nNot long after Arraka is done talking, the whole sky gradually darkens, as a powerful, sinister aura envelops the area above us. The flying metal vehicles are now falling one by one, and crashing into the buildings below, while a woman in her late thirties is emerging from the dark clouds, and descending towards us. The robes she is wearing are similar to the traditional wizard robes that used to be worn hundreds of years ago, back when mages were still being called wizards, and that only traditionalist mages like Azarius are still wearing nowadays. As the woman gets closer to us, I see that her eyes are pitch black, and that she has a very familiar looking malicious grin on her face.\r\n\r\n\"Well, well, well...\" the woman says, as she looks towards Arraka's amulet. \"It looks like Selkram sent me a little present. You're all coming from the future, I presume? Let me check my future self's aura, for a second. Wow... So, you're five thousand years older than me, huh? I guess I must have gotten really senile with old age, if I managed to get myself captured in an amulet by a glorified circus troupe. Seriously, what even are you people? A little girl dressed like a clown? A giant masquerading as a dwarf?  A woman dressed in pajamas? It's like you're trying to compete for the most ridiculously dressed wizard group of the century.\""
-        condition: ch11_saved_rose = 1
+            condition: ch4_spared_dave = 1 AND ch11_saved_rose = 0
+          - source: scene_3
+            paragraph: 21
+            text: "\"Remember how in every one of the rituals so far, Selkram has sent you to relive events from your own pasts?\" Arraka says. \"Well, like I said before, neither of you have lived anywhere near long enough to have experienced these current events. So by process of elimination, the past that we are now exploring is most likely... mine.\"\r\n\r\nNot long after Arraka is done talking, the whole sky gradually darkens, as a powerful, sinister aura envelops the area above us. The flying metal vehicles are now falling one by one, and crashing into the buildings below, while a woman in her late thirties is emerging from the dark clouds, and descending towards us. The robes she is wearing are similar to the traditional wizard robes that used to be worn hundreds of years ago, back when mages were still being called wizards, and that only traditionalist mages like Azarius are still wearing nowadays. As the woman gets closer to us, I see that her eyes are pitch black, and that she has a very familiar looking malicious grin on her face.\r\n\r\n\"Well, well, well...\" the woman says, as she looks towards Arraka's amulet. \"It looks like Selkram sent me a little present. You're all coming from the future, I presume? Let me check my future self's aura, for a second. Wow... So, you're five thousand years older than me, huh? I guess I must have gotten really senile with old age, if I managed to get myself captured in an amulet by a glorified circus troupe. Seriously, what even are you people? A little girl dressed like a clown? A giant masquerading as a dwarf?  A woman dressed in pajamas? It's like you're trying to compete for the most ridiculously dressed wizard group of the century.\""
+            condition: ch4_spared_dave = 0
+          - source: scene_3
+            paragraph: 21
+            text: "\"Remember how in every one of the rituals so far, Selkram has sent you to relive events from your own pasts?\" Arraka says. \"Well, like I said before, neither of you have lived anywhere near long enough to have experienced these current events. So by process of elimination, the past that we are now exploring is most likely... mine.\"\r\n\r\nNot long after Arraka is done talking, the whole sky gradually darkens, as a powerful, sinister aura envelops the area above us. The flying metal vehicles are now falling one by one, and crashing into the buildings below, while a woman in her late thirties is emerging from the dark clouds, and descending towards us. The robes she is wearing are similar to the traditional wizard robes that used to be worn hundreds of years ago, back when mages were still being called wizards, and that only traditionalist mages like Azarius are still wearing nowadays. As the woman gets closer to us, I see that her eyes are pitch black, and that she has a very familiar looking malicious grin on her face.\r\n\r\n\"Well, well, well...\" the woman says, as she looks towards Arraka's amulet. \"It looks like Selkram sent me a little present. You're all coming from the future, I presume? Let me check my future self's aura, for a second. Wow... So, you're five thousand years older than me, huh? I guess I must have gotten really senile with old age, if I managed to get myself captured in an amulet by a glorified circus troupe. Seriously, what even are you people? A little girl dressed like a clown? A giant masquerading as a dwarf?  A woman dressed in pajamas? It's like you're trying to compete for the most ridiculously dressed wizard group of the century.\""
+            condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Continue
@@ -1146,64 +1242,28 @@ scenes:
               b2_ch11_dagger: 0
   - name: b2_ch11c_shelter
     routes:
-      - texts:
+      - condition: b2_ch11_dagger = 1 AND b2_ch11_echoes = 1
+        texts:
           - source: scene_text
             paragraph: 37
             text: "\"You won't be able to take us down that easily,\" I say, as I take out my dagger and begin to approach her.\r\n\r\n\"I'm not here to play games with you, boy,\" past-Arraka says. \"If I want you dead... then you're dead.\"\r\n\r\nShe then begins to wave her hand towards me, but she suddenly stops, as she gets frozen in time along with everyone who isn't part of our group.\r\n\r\n\"I managed to freeze her...\" the revenant says, as she seems to be having a headache. \"But I'm not sure how much I can maintain my concentration. We need to move away from here, and find some shelter.\"\r\n\r\n\"Let's see if we can find some buildings coated with seredium dust nearby,\" Melindra says. \"Magical sense doesn't work through seredium, so we should be able to hide in there for a while.\"\r\n\r\nWe all rush out of the area where we were first transported into, and we look all around us, trying to find a house with black dust on its walls."
-        condition: b2_ch11_dagger = 1 AND b2_ch11_echoes = 1
-        set:
-          ac_b2_ch11_madman: 1
-        achievement:
-          id: ac_b2_ch11_madman
-          title: Madman
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11c_avalanche
-                condition: is_dead = 0
-      - texts:
-          - source: scene_text
-            paragraph: 36
-            text: "\"Are you sure you want to kill us?\" I say. \"Think about it for a second. The Arraka from our present time probably won't give you any more information than she already did. But the rest of us have been travelling with her for a long while. We know some of her secrets. We could trade you that information... in exchange for our freedom.\"\r\n\r\n\"You've got nerves of steel, trying to barter with me, I'll give you that,\" past-Arraka says, with her malicious grin back on her face. \"But what kind of information could you possibly give me that--\"\r\n\r\nAs she was talking, past-Arraka suddenly stopped mid-sentence, because she apparently got frozen in time, along with everyone who wasn't part of our group.\r\n\r\n\"I managed to freeze her...\" the revenant says, as she seems to be having a headache. \"But I'm not sure how much I can maintain my concentration. We need to move away from here, and find some shelter.\"\r\n\r\n\"Let's see if we can find some buildings coated with seredium dust nearby,\" Melindra says. \"Magical sense doesn't work through seredium, so we should be able to hide in there for a while.\"\r\n\r\nWe all rush out of the area where we were first transported into, and we look all around us, trying to find a house with black dust on its walls."
-        condition: b2_ch11_dagger = 0 AND b2_ch11_echoes = 1
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11c_avalanche
-                condition: is_dead = 0
-      - texts:
           - source: scene_text_2
             paragraph: 36
             text: "\"Man, I'm so pissed off, right now!\" present-Arraka says, as we run through the alleys. \"If only I had a way of getting out of this amulet, I would rip that fake version of myself in half, and throw her to the dogs.\"\r\n\r\n\"Arraka, aren't there some houses in the vicinity that have walls you can't see through with your magical sense?\" Illuna says.\r\n\r\n\"Huh?...\" Arraka says, looking as if she's only now realized what we were trying to do. \"Oh, right, let me check... Yeah, there is one. But it's pretty far from here. Take a left at the next crossroads, and go straight ahead. I'll tell you when to stop.\"\r\n\r\n\"Wouldn't it be faster for Melindra to fly us all the way there?\" I say, as we keep running.\r\n\r\n\"No offense,\" Kate says, \"but I think we can run faster than Melindra can carry us with her air currents.\"\r\n\r\n\"There aren't that many obstacles anyway,\" Arraka says. \"It's just a long way until we get there.\"\r\n\r\n\"Where did that cutthroat run off to?\" Daren says.\r\n\r\n\"He never came with us,\" Arraka says. \"He ran in the opposite direction as soon as the time froze. That's probably a smart move. My past self will most certainly be coming for us, after all.\""
-        condition: b2_ch11_echoes = 1 AND ch4_spared_dave = 1
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11c_avalanche
-                condition: is_dead = 0
-      - texts:
+            condition: ch4_spared_dave = 1
           - source: scene_text_2
             paragraph: 37
             text: "\"Man, I'm so pissed off, right now!\" present-Arraka says, as we run through the alleys. \"If only I had a way of getting out of this amulet, I would rip that fake version of myself in half, and throw her to the dogs.\"\r\n\r\n\"Arraka, aren't there some houses in the vicinity that have walls you can't see through with your magical sense?\" Illuna says.\r\n\r\n\"Huh?...\" Arraka says, looking as if she's only now realized what we were trying to do. \"Oh, right, let me check... Yeah, there is one. But it's pretty far from here. Take a left at the next crossroads, and go straight ahead. I'll tell you when to stop.\"\r\n\r\n\"Wouldn't it be faster for Melindra to fly us all the way there?\" I say, as we keep running.\r\n\r\n\"No offense,\" Kate says, \"but I think we can run faster than Melindra can carry us with her air currents.\"\r\n\r\n\"There aren't that many obstacles anyway,\" Arraka says. \"It's just a long way until we get there.\""
-        condition: b2_ch11_echoes = 1 AND ch4_spared_dave = 0
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b2_ch11c_avalanche
-                condition: is_dead = 0
-      - texts:
+            condition: ch4_spared_dave = 0
           - source: scene_3
             paragraph: 23
             text: "As we keep running, the revenant suddenly gets a strong headache, which makes her lose control over her time-freezing spell. Once the time gets unfrozen, it unfortunately takes past-Arraka no longer than three seconds to teleport herself right in front of us, and to block our path.\r\n\r\n\"Such a shame,\" past-Arraka says. \"You were so close to escaping. It's too bad that the time weaver couldn't hold on to the spell for just a little longer. Frankly, I'm surprised that she held out as much as she did. After all, the first thing I did when I arrived, earlier, was to cast a spell that prevented everyone in the area from using time powers. I'm guessing that she must have had a protection from dizziness of some sort? Well, no matter. In the end, it didn't help you in any way. The time weaver is too tired to concentrate now, so all you can do is--\""
-        condition: b2_ch11_echoes = 1
+        effects:
+          - set:
+              ac_b2_ch11_madman: 1
+            achievement:
+              id: ac_b2_ch11_madman
+              title: Madman
         choices:
           - position: 1
             text: Continue
@@ -1211,14 +1271,37 @@ scenes:
               - set:
                   current_scene: b2_ch11c_avalanche
                 condition: is_dead = 0
-      - texts:
+      - condition: b2_ch11_dagger = 0 AND b2_ch11_echoes = 1
+        texts:
+          - source: scene_text
+            paragraph: 36
+            text: "\"Are you sure you want to kill us?\" I say. \"Think about it for a second. The Arraka from our present time probably won't give you any more information than she already did. But the rest of us have been travelling with her for a long while. We know some of her secrets. We could trade you that information... in exchange for our freedom.\"\r\n\r\n\"You've got nerves of steel, trying to barter with me, I'll give you that,\" past-Arraka says, with her malicious grin back on her face. \"But what kind of information could you possibly give me that--\"\r\n\r\nAs she was talking, past-Arraka suddenly stopped mid-sentence, because she apparently got frozen in time, along with everyone who wasn't part of our group.\r\n\r\n\"I managed to freeze her...\" the revenant says, as she seems to be having a headache. \"But I'm not sure how much I can maintain my concentration. We need to move away from here, and find some shelter.\"\r\n\r\n\"Let's see if we can find some buildings coated with seredium dust nearby,\" Melindra says. \"Magical sense doesn't work through seredium, so we should be able to hide in there for a while.\"\r\n\r\nWe all rush out of the area where we were first transported into, and we look all around us, trying to find a house with black dust on its walls."
+          - source: scene_text_2
+            paragraph: 36
+            text: "\"Man, I'm so pissed off, right now!\" present-Arraka says, as we run through the alleys. \"If only I had a way of getting out of this amulet, I would rip that fake version of myself in half, and throw her to the dogs.\"\r\n\r\n\"Arraka, aren't there some houses in the vicinity that have walls you can't see through with your magical sense?\" Illuna says.\r\n\r\n\"Huh?...\" Arraka says, looking as if she's only now realized what we were trying to do. \"Oh, right, let me check... Yeah, there is one. But it's pretty far from here. Take a left at the next crossroads, and go straight ahead. I'll tell you when to stop.\"\r\n\r\n\"Wouldn't it be faster for Melindra to fly us all the way there?\" I say, as we keep running.\r\n\r\n\"No offense,\" Kate says, \"but I think we can run faster than Melindra can carry us with her air currents.\"\r\n\r\n\"There aren't that many obstacles anyway,\" Arraka says. \"It's just a long way until we get there.\"\r\n\r\n\"Where did that cutthroat run off to?\" Daren says.\r\n\r\n\"He never came with us,\" Arraka says. \"He ran in the opposite direction as soon as the time froze. That's probably a smart move. My past self will most certainly be coming for us, after all.\""
+            condition: ch4_spared_dave = 1
+          - source: scene_text_2
+            paragraph: 37
+            text: "\"Man, I'm so pissed off, right now!\" present-Arraka says, as we run through the alleys. \"If only I had a way of getting out of this amulet, I would rip that fake version of myself in half, and throw her to the dogs.\"\r\n\r\n\"Arraka, aren't there some houses in the vicinity that have walls you can't see through with your magical sense?\" Illuna says.\r\n\r\n\"Huh?...\" Arraka says, looking as if she's only now realized what we were trying to do. \"Oh, right, let me check... Yeah, there is one. But it's pretty far from here. Take a left at the next crossroads, and go straight ahead. I'll tell you when to stop.\"\r\n\r\n\"Wouldn't it be faster for Melindra to fly us all the way there?\" I say, as we keep running.\r\n\r\n\"No offense,\" Kate says, \"but I think we can run faster than Melindra can carry us with her air currents.\"\r\n\r\n\"There aren't that many obstacles anyway,\" Arraka says. \"It's just a long way until we get there.\""
+            condition: ch4_spared_dave = 0
+          - source: scene_3
+            paragraph: 23
+            text: "As we keep running, the revenant suddenly gets a strong headache, which makes her lose control over her time-freezing spell. Once the time gets unfrozen, it unfortunately takes past-Arraka no longer than three seconds to teleport herself right in front of us, and to block our path.\r\n\r\n\"Such a shame,\" past-Arraka says. \"You were so close to escaping. It's too bad that the time weaver couldn't hold on to the spell for just a little longer. Frankly, I'm surprised that she held out as much as she did. After all, the first thing I did when I arrived, earlier, was to cast a spell that prevented everyone in the area from using time powers. I'm guessing that she must have had a protection from dizziness of some sort? Well, no matter. In the end, it didn't help you in any way. The time weaver is too tired to concentrate now, so all you can do is--\""
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b2_ch11c_avalanche
+                condition: is_dead = 0
+      - condition: b2_ch11_dagger = 0 AND b2_ch11_echoes = 0
+        texts:
           - source: scene_text
             paragraph: 38
             text: "\"Are you sure you want to kill us?\" I say. \"Think about it for a second. The Arraka from our present time probably won't give you any more information than she already did. But the rest of us have been travelling with her for a long while. We know some of her secrets. We could trade you that information... in exchange for our freedom.\"\r\n\r\n\"You've got nerves of steel, trying to barter with me, I'll give you that,\" past-Arraka says, with her malicious grin back on her face. \"But what kind of information could you possibly give me that I couldn't find out by myself?\""
           - source: scene_text_2
             paragraph: 38
             text: "\"Well, there are certain events from your future that didn't exactly turn out the best for you,\" I say. \"Wouldn't you rather have an edge, by knowing these things in advance? It costs us nothing to give you this information. This is not our world, after all. No matter what you choose to do in here, it will not affect us.\"\r\n\r\n\"Your offer would be much more tempting, if your real intentions weren't so transparent, boy,\" past-Arraka says. \"I know what you're trying to do. You're trying to stall for time until your time weaver friend can use her powers to freeze me. It's not going to work. The first thing I did after I arrived in this place was to cast a spell that prevented everyone in the area from using time powers. I figured that one of you had to be a time weaver, given that Selkram was involved. Your friend over there has been trying to cast a time-freezing spell for the past minute, but she gets hit with a huge headache every time she begins to concentrate. Your desperate attempts to delay the inevitable have had no effect on your current situation. None, whatsoever--\""
-        condition: b2_ch11_dagger = 0 AND b2_ch11_echoes = 0
         choices:
           - position: 1
             text: Continue
@@ -1226,13 +1309,14 @@ scenes:
               - set:
                   current_scene: b2_ch11c_avalanche
                 condition: is_dead = 0
-      - texts:
+      - condition: b2_ch11_dagger = 1 AND b2_ch11_echoes = 0
+        texts:
           - source: scene_text
             paragraph: 39
             text: "\"You won't be able to take us down that easily,\" I say, as I take out my dagger and begin to approach her.\r\n\r\n\"I'm not here to play games with you, boy,\" past-Arraka says. \"If I want you dead... then you're dead.\"\r\n\r\nShe then waves her hand towards me, and I can feel every part of my body drying up quickly, as my vision starts to blur.\r\n\r\n\"Oh, and you can forget about trying to use your powers to save him, time weaver,\" I hear Arraka saying, as I'm slowly losing my consciousness. \"The first thing I did when I arrived was to cast a spell that prevented everyone in the area from using time powers. Your friend is dead, and you will all follow him soon enough.\"\r\n\r\nThe last thing I get to see is Arraka waving her hand towards the others as well, and then I lose my consciousness completely, while I turn into dust."
-        condition: b2_ch11_dagger = 1 AND b2_ch11_echoes = 0
-        set:
-          is_dead: 1
+        effects:
+          - set:
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1389,7 +1473,8 @@ scenes:
               current_scene: b2_ch11c_forehead
   - name: b2_ch11c_forehead
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 46
             text: "My friends and I exchange a few looks, but in the end, we all choose to stand our ground. Seeing that none of us are planning to kneel, Melindra starts slowly massaging her forehead, with her eyes closed, out of frustration. Since she knows that no matter what she does, the result will be the same, she decides to stand her ground as well, this time around.\r\n\r\n\"Have it your way, then,\" the God of Time says, as a powerful force pushes all of us except the revenant to the ground, in a horizontal position, and then he begins to slowly squash us, with the same magical force.\r\n\r\nAs I am being pushed against the soil, I start getting flashbacks of my first ritual, and of my parents begging me to save them, while I just stood there and watched, with the pitchfork in my hands. A sudden feeling of rage takes hold of me, and for the whole duration of the god's spell, a single thought goes through my head, over and over.\r\n\r\n'I will make him pay.'\r\n\r\n'I will make him pay.'\r\n\r\n'I will make him pay.'\r\n\r\nWhile we were still being pressed against the ground, the revenant's eyes suddenly became bright yellow again, and she slowly started walking away from us, while gazing into the distance, with an empty look in her eyes.\r\n\r\n\"It looks like our time is up,\" the God of Time says. \"I will be seeing you all again, soon. Make sure not to get killed in the meantime. Your future contributions to my ritual are highly anticipated.\""
@@ -1399,14 +1484,14 @@ scenes:
           - source: scene_3
             paragraph: 27
             text: "\"I... think we should all take a small break, so we can clear our minds a little,\" Daren says, with a very tired look on his face. \"Shall we all meet back here in twenty minutes?\"\r\n\r\n\"Yeah,\" Hadrik says. \"I could use a break right about now.\"\r\n\r\nAs everyone goes to find a place where they can be alone, for a while, Daren goes to sit on a tree stump, and begins to sharpen his blade, in order to make himself look busy."
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch11c_ending
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 47
             text: "My friends and I exchange a few looks, but in the end, we all choose to stand our ground. Seeing that none of us are planning to kneel, Melindra starts slowly massaging her forehead, with her eyes closed, out of frustration. Since she knows that no matter what she does, the result will be the same, she decides to stand her ground as well, this time around.\r\n\r\n\"Have it your way, then,\" the God of Time says, as a powerful force pushes all of us except Rose to the ground, in a horizontal position, and then he begins to slowly squash us, with the same magical force.\r\n\r\nAs I am being pushed against the soil, I start getting flashbacks of my first ritual, and of my parents begging me to save them, while I just stood there and watched, with the pitchfork in my hands. A sudden feeling of rage takes hold of me, and for the whole duration of the god's spell, a single thought goes through my head, over and over.\r\n\r\n'I will make him pay.'\r\n\r\n'I will make him pay.'\r\n\r\n'I will make him pay.'\r\n\r\nWhile we were still being pressed against the ground, Rose's eyes suddenly became bright yellow again, and she slowly started walking away from us, while gazing into the distance, with an empty look in her eyes.\r\n\r\n\"It looks like our time is up,\" the God of Time says. \"I will be seeing you all again, soon. Make sure not to get killed in the meantime. Your future contributions to my ritual are highly anticipated.\""
@@ -1416,7 +1501,6 @@ scenes:
           - source: scene_3
             paragraph: 27
             text: "\"I... think we should all take a small break, so we can clear our minds a little,\" Daren says, with a very tired look on his face. \"Shall we all meet back here in twenty minutes?\"\r\n\r\n\"Yeah,\" Hadrik says. \"I could use a break right about now.\"\r\n\r\nAs everyone goes to find a place where they can be alone, for a while, Daren goes to sit on a tree stump, and begins to sharpen his blade, in order to make himself look busy."
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Continue
@@ -1434,6 +1518,13 @@ scenes:
       - source: scene_3
         paragraph: 28
         text: "There is a short pause, after I ask my question, during which neither of us says anything.\r\n\r\n\"You want me to tell you how you can kill a god?...\" Arraka says, as she seems to still be recovering from the shock of what I've just asked her.\r\n\r\nShe waits for a few more seconds, to try and figure out if I'm joking or not, and when she finally understands that I'm being serious, she starts to laugh. \r\n\r\nShe laughs, and she laughs, as loud as she can, with all three of her voices, and it doesn't look like she's planning to stop anytime soon. However, I am not upset. This isn't one of her usual, mocking laughs. This laughter is one of excitement. She is enjoying this.\r\n\r\nArraka's laugh manages to grab the attention of everyone in the area, and they're now all looking at us, curiously. I pay them no mind, and I keep waiting patiently for Arraka to stop laughing. When she finally falls silent, she waits for a few more seconds, and then she gives me her answer.\r\n\r\n\"Barry, my boy...\" Arraka says. \"I thought you'd never ask!\"\r\n\r\n-----End of book 2-----"
+    effects:
+      - set:
+          ac_b2_ch11_average2: 1
+        achievement:
+          id: ac_b2_ch11_average2
+          title: Average Joe 2
+        condition: available_points = 25
     choices:
       - position: 1
         text: Continue

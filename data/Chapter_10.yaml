@@ -195,28 +195,28 @@ scenes:
               ch10_gems: 0
   - name: ch10_ambush
     routes:
-      - texts:
+      - condition: ch10_gems = 1
+        texts:
           - source: scene_text
             paragraph: 14
             text: "I open one of the coffers, and start filling my pockets with diamonds and rubies. \r\n\r\n\"Seriously, Barry?\" Daren says. \"We came here to get the chalice, not to rob the ogres blind!\"\r\n\r\n\"This whole room is full of treasure,\" I tell him. \"A few missing gems here and there aren't going to make much of a difference.\"\r\n\r\nAfter I'm done with the gems, I join the others, who are now standing in front of a marble pedestal, on top of which lies the chalice we've come here to retrieve.\r\n\r\n\"Don't make any loud noises!\" Illuna tells us, in a low voice. \"The ogre captain and his troops are standing right beyond that wall from behind the chalice.\"\r\n\r\n\"Which one's the ogre captain?\" Hadrik asks, as he stares at the fort hologram.\r\n\r\n\"The purple dot,\" Illuna says. \"The red dots scattered around him are his troops.\"\r\n\r\n\"How come the room they are in isn't marked on the map?\" Kate asks.\r\n\r\n\"It's because it didn't appear in any of the building plans that we studied in the library,\" Illuna says. \"It's probably a hidden room that they use for their top secret meetings.\""
           - source: scene_text_2
             paragraph: 13
             text: "\"The way they placed the chalice on top of a pedestal like that just screams 'trap' to me,\" Daren says. \"Was there any documentation regarding the traps they're using to defend this room?\"\r\n\r\n\"Unfortunately, no,\" Illuna says. \"And I'm not sensing any magic around it either. If there are any traps, they're going to be similar in nature to those from the ruins.\"\r\n\r\n\"Can we even be sure that we've got the right chalice?\" Hadrik says. \"I mean, it looks like it, but they could have easily made a fake one and placed it in plain sight to throw us off course.\"\r\n\r\n\"There's an easy way to test its authenticity,\" Illuna says, and she uses her water magic to fill the chalice with water. \r\n\r\nAfter a few seconds, the water inside it starts to radiate magic, and then it begins to shine brightly as if there was a small sun floating right above it. \r\n\r\n\"That settles it,\" Illuna says. \"This is the chalice we are looking for.\"\r\n\r\nShe then grabs it off the pedestal and empties it of water, as we all look around us, to see if any traps get activated."
-        condition: ch10_gems = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch10_ambush2
-      - texts:
+      - condition: ch10_gems = 0
+        texts:
           - source: scene_text
             paragraph: 15
             text: "I resist the urge to fill my pockets with priceless gems, and continue forward. A few moments later, the six of us stop in front of a marble pedestal, on top of which lies the chalice we've come here to retrieve.\r\n\r\n\"Don't make any loud noises!\" Illuna tells us, in a low voice. \"The ogre captain and his troops are standing right beyond that wall from behind the chalice.\"\r\n\r\n\"Which one's the ogre captain?\" Hadrik asks, as he stares at the fort hologram.\r\n\r\n\"The purple dot,\" Illuna says. \"The red dots scattered around him are his troops.\"\r\n\r\n\"How come the room they are in isn't marked on the map?\" Kate asks.\r\n\r\n\"It's because it didn't appear in any of the building plans that we studied in the library,\" Illuna says. \"It's probably a hidden room that they use for their top secret meetings.\"\r\n\r\n\"The way they placed the chalice on top of a pedestal like that just screams 'trap' to me,\" Daren says. \"Was there any documentation regarding the traps they're using to defend this room?\""
           - source: scene_text_2
             paragraph: 14
             text: "\"Unfortunately, no,\" Illuna says. \"And I'm not sensing any magic around it either. If there are any traps, they're going to be similar in nature to those from the ruins.\"\r\n\r\n\"Can we even be sure that we've got the right chalice?\" Hadrik says. \"I mean, it looks like it, but they could have easily made a fake one and placed it in plain sight to throw us off course.\"\r\n\r\n\"There's an easy way to test its authenticity,\" Illuna says, and she uses her water magic to fill the chalice with water. \r\n\r\nAfter a few seconds, the water inside it starts to radiate magic, and then it begins to shine brightly as if there was a small sun floating right above it. \r\n\r\n\"That settles it,\" Illuna says. \"This is the chalice we are looking for.\"\r\n\r\nShe then grabs it off the pedestal and empties it of water, as we all look around us, to see if any traps get activated."
-        condition: ch10_gems = 0
         choices:
           - position: 1
             text: Continue
@@ -244,17 +244,18 @@ scenes:
               current_scene: ch10_maintain
   - name: ch10_rush
     routes:
-      - texts:
+      - condition: premonition >= 2
+        texts:
           - source: scene_text
             paragraph: 17
             text: "As Kate, Rose and I hurry to reach Illuna's position, the ogre captain smashes his club into the ground and the floor begins to shatter.\r\n\r\nI suddenly get a vision of the three of us reaching Illuna, and the floor crumbling below us, while the ground near the entrance of the room remains intact.\r\n\r\n\"Turn back!\" I tell Kate and Rose. \"I just got a premonition! This area is not safe! Turn back now!\"\r\n\r\nThe three of us make a run for it, and we manage to get back to our original position right in the nick of time. Illuna, who wasn't completely convinced, waited until the very last moment, and then she jumped on a wall, using it to propel herself to our position before the floor crumbled beneath her feet.\r\n\r\n\"Well, what do you know,\" she says. \"You were actually right.\"\r\n\r\n\"Daren!\" Rose shouts, while looking down inside the chasm that had formed in the middle of the room."
           - source: scene_text_2
             paragraph: 16
             text: "Looking inside the pit, I see that Daren is hanging from a wooden beam which is beginning to crack under his weight. I had completely forgotten that he got thrown into a wall at the beginning of the fight. He must have still been in a dazed state when the floor started crumbling. As I look below to see if there are any footholds I could use to get to him, I realize that even if I managed to somehow reach his position, there's just no way that I could climb back up. The wooden scaffolding is practically unusable at this point. All that's left of it are some support pillars and a few beams here and there that look like they could break any second.\r\n\r\n\"Stay where you are!\" Daren shouts at us. \"Whatever you do, don't come down here! Don't worry, I have everything under control!\"\r\n\r\nHe's lying. At most, he's got half a minute before that beam breaks under his weight, and he has no way of climbing back up. He must be trying to protect us.\r\n\r\n\"You bastard!\" Hadrik shouts at the ogre captain, as he clashes with him once again. \"You were the one who told the ogres that the middle of the room was a safe area, weren't you? Were those soldiers' lives worth nothing to you?\"\r\n\r\n\"Hah!\" the captain says. \"Those weren't my finest warriors. They were just cannon fodder. All of them replaceable. I alone strong enough to deal with the lot of you. Look below! One of your friends already at end of his rope. The rest of you are going follow him soon.\""
-        condition: premonition >= 2
-        set:
-          successful_checks:
-            - '[ Premonition check successful - level 2 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Premonition check successful - level 2 ]'
         choices:
           - position: 1
             text: Continue
@@ -262,19 +263,20 @@ scenes:
               - set:
                   current_scene: ch10_teleport
                 condition: is_dead = 0
-      - texts:
+      - condition: premonition < 2 AND perception >= 2
+        texts:
           - source: scene_text
             paragraph: 18
             text: "As Kate, Rose and I hurry to reach Illuna's position, the ogre captain smashes his club into the ground and the floor begins to shatter. \r\n\r\nI suddenly notice that the cracks from the floor are spreading throughout the entire middle area of the room, but not in the area that we just left.\r\n\r\n\"Turn back!\" I tell Kate and Rose. \"Look at the floor! This area is not safe! Turn back now!\"\r\n\r\nThe three of us make a run for it, and we manage to get back to our original position right in the nick of time. Illuna, who wasn't completely convinced, waited until the very last moment, and then she jumped on a wall, using it to propel herself to our position before the floor crumbled beneath her feet.\r\n\r\n\"Well, what do you know,\" she says. \"You were actually right.\"\r\n\r\n\"Daren!\" Rose shouts, while looking down inside the chasm that had formed in the middle of the room."
           - source: scene_text_2
             paragraph: 16
             text: "Looking inside the pit, I see that Daren is hanging from a wooden beam which is beginning to crack under his weight. I had completely forgotten that he got thrown into a wall at the beginning of the fight. He must have still been in a dazed state when the floor started crumbling. As I look below to see if there are any footholds I could use to get to him, I realize that even if I managed to somehow reach his position, there's just no way that I could climb back up. The wooden scaffolding is practically unusable at this point. All that's left of it are some support pillars and a few beams here and there that look like they could break any second.\r\n\r\n\"Stay where you are!\" Daren shouts at us. \"Whatever you do, don't come down here! Don't worry, I have everything under control!\"\r\n\r\nHe's lying. At most, he's got half a minute before that beam breaks under his weight, and he has no way of climbing back up. He must be trying to protect us.\r\n\r\n\"You bastard!\" Hadrik shouts at the ogre captain, as he clashes with him once again. \"You were the one who told the ogres that the middle of the room was a safe area, weren't you? Were those soldiers' lives worth nothing to you?\"\r\n\r\n\"Hah!\" the captain says. \"Those weren't my finest warriors. They were just cannon fodder. All of them replaceable. I alone strong enough to deal with the lot of you. Look below! One of your friends already at end of his rope. The rest of you are going follow him soon.\""
-        condition: premonition < 2 AND perception >= 2
-        set:
-          successful_checks:
-            - '[ Observation check successful - level 2 ]'
-          failed_checks:
-            - '[ Premonition check failed - level 2 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Observation check successful - level 2 ]'
+              failed_checks:
+                - '[ Premonition check failed - level 2 ]'
         choices:
           - position: 1
             text: Continue
@@ -282,16 +284,17 @@ scenes:
               - set:
                   current_scene: ch10_teleport
                 condition: is_dead = 0
-      - texts:
+      - condition: premonition < 2 AND perception < 2
+        texts:
           - source: scene_text
             paragraph: 19
             text: "As Kate, Rose and I hurry to reach Illuna's position, the ogre captain smashes his club into the ground and the floor begins to shatter. \r\n\r\nWe manage to reach the safe area before the floor crumbles beneath us, but the cracks in the floor are not stopping, and they're spreading at a fast rate all around us.\r\n\r\nSomething is wrong. Why would the ogres have fled to this area if it wasn't safe? Unless...\r\n\r\n\"Turn back!\" I shout. \"Turn back, now! We've been fooled! We need to--\"\r\n\r\nBefore I get to finish my sentence, the whole floor collapses underneath us, and we all fall into the pit below. We died almost as soon as we reached the ground."
-        condition: premonition < 2 AND perception < 2
-        set:
-          failed_checks:
-            - '[ Premonition check failed - level 2 ]'
-            - '[ Observation check failed - level 2 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Premonition check failed - level 2 ]'
+                - '[ Observation check failed - level 2 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -411,15 +414,16 @@ scenes:
               current_scene: ch10_waste
   - name: ch10_waste
     routes:
-      - texts:
+      - condition: premonition < 3
+        texts:
           - source: scene_text
             paragraph: 26
             text: "\"Screw Arraka! We can't afford to waste any more time here.\"\r\n\r\n\"I agree,\" Daren says. \"She can figure it out while we're on the move. Let's go.\"\r\n\r\nAs we get closer to our goal, I'm starting to get second thoughts about Arraka's warning. Maybe it would have been wiser to wait for a little while and hear what she had to say. We were far enough ahead of the ogres to afford wasting one minute of our time.\r\n\r\nMy thought process gets interrupted by a sudden explosion. I never got the chance to find out where it came from, because I died the very next second after the boom."
-        condition: premonition < 3
-        set:
-          failed_checks:
-            - '[ Premonition check failed - level 3 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Premonition check failed - level 3 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -438,17 +442,18 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: premonition >= 3
+        texts:
           - source: scene_text
             paragraph: 27
             text: "\"Screw Arraka! We can't afford to waste any more time here.\"\r\n\r\n\"I agree,\" Daren says. \"She can figure it out while we're on the move. Let's go.\"\r\n\r\nAs we get closer to our goal, I suddenly get a vision of us walking straight into an explosion, and then being buried under a mass of rubble.\r\n\r\n\"Stop!\" I shout immediately, and everyone gets frozen in place. \"If we walk any further, we're going to get blown to bits!\"\r\n\r\n\"Are you sure?\" Hadrik asks me. \r\n\r\n\"Yeah, there's no mistaking it,\" I say. \"The vision I saw was very clear.\"\r\n\r\n\"I've got it!\" Arraka says, all of a sudden. \"There's a very powerful magical explosion trap right in front of us. Here, I'll highlight the area so you know where it is.\"\r\n\r\nSoon after she's done talking, a small area in front of us gets covered in blue light.\r\n\r\n\"What are you talking about?\" Daren says. \"I'm not sensing any traps.\""
           - source: scene_text_2
             paragraph: 22
             text: "\"That's because it's really well hidden,\" Arraka says. \"I can barely sense any magic coming from it, but it's there. Feel free to walk into it if you don't believe me. Actually, I think you should walk into it either way. It would be absolutely hilarious to watch!\"\r\n\r\nDaren gets closer to the lighted area, and he starts waving his sword in the air, as if he were trying to catch the light with it. \r\n\r\n\"Well, I'll be damned...\" Daren says. \"Stand back. I'm going to disarm the trap.\"\r\n\r\nHe then starts slicing through the air in a triangular motion, a few times in a row. Suddenly, we hear a loud popping noise, and then there's smoke coming out of nowhere. The smoke soon disappears, and Arraka's blue light fades along with it. \r\n\r\n\"I think that should about cover it,\" Daren says.\r\n\r\n\"Yeah, the trap's gone,\" Arraka says. \"Only the ogres are left. Give me a sec. I'll highlight them too.\"\r\n\r\n\"Enough!\" we hear the shaman's voice, and soon he materializes out of thin air, along with the five ogre mages accompanying him. \"I don't know how you were able to see through my trap and through my invisibility spell, but now I know why you've been able to avoid all of the patrols on your way to the treasure room.\""
-        condition: premonition >= 3
-        set:
-          successful_checks:
-            - '[ Premonition check successful - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Premonition check successful - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -539,17 +544,18 @@ scenes:
               current_scene: ch10_someone_else
   - name: ch10_volunteer
     routes:
-      - texts:
+      - condition: perception >= 3
+        texts:
           - source: scene_text
             paragraph: 33
             text: "\"I volunteer for the job,\" I say. \"I should be able to handle the shaman by myself if he can only cast spells from his staff.\"\r\n\r\n\"Are you sure?\" Daren says.\r\n\r\n\"We don't know how many wolves are going to come out of that forest,\" I say. \"You and Hadrik should both stay here in case things get really bad. I'll try to end this as quickly as possible. Wish me luck.\"\r\n\r\nI then start running towards the woods, in the direction of the shaman's footsteps. As I enter the forest, I start to slow down my pace, making sure that there are no traps or ambushes set up ahead of me. \r\n\r\nThe footsteps have been leading me in the same direction since I started following them, and there have been no obstacles of any kind in my path since I walked into the woods. Could it be that the shaman was too busy getting as far away as possible from the wolves to lay down any kind of traps?\r\n\r\nI start to pick up my pace, while at the same time trying to remain as vigilant as possible. When it looks as if I am finally starting to catch up with the shaman, I hide behind a tree, and then I take a good long look ahead of me. The trail of footsteps ends abruptly, in the middle of the snow, and there is no one in sight. He must still be invisible. But why isn't he moving? Did he see me before I hid behind the tree?"
           - source: scene_text_2
             paragraph: 28
             text: "I suddenly realize that the snow is not completely uniform on the right side near the end of the trail of footsteps. It's barely noticeable, but it's definitely different from the rest of the snow.\r\n\r\nThat's it! That's why he's not moving. He must have purposely made his tracks so easy to follow in order to boost my confidence and to make me attack without hesitation. He's trying to trick me into rushing towards the end of the trail, while in reality, he's covered his last set of tracks, and he's waiting to attack me from behind. Judging by the looks of the snow, I think I can guess accurately enough where the shaman is actually standing.\r\n\r\nI grab my dagger firmly in both hands, and I start rushing towards the shaman. The ogre panics and he dismisses his invisibility spell automatically as he prepares to attack me."
-        condition: perception >= 3
-        set:
-          successful_checks:
-            - '[ Observation check successful - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Observation check successful - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -557,19 +563,20 @@ scenes:
               - set:
                   current_scene: ch10_volunteer2
                 condition: is_dead = 0
-      - texts:
+      - condition: perception < 3 AND reflexes >= 3
+        texts:
           - source: scene_text
             paragraph: 34
             text: "\"I volunteer for the job,\" I say. \"I should be able to handle the shaman by myself if he can only cast spells from his staff.\"\r\n\r\n\"Are you sure?\" Daren says.\r\n\r\n\"We don't know how many wolves are going to come out of that forest,\" I say. \"You and Hadrik should both stay here in case things get really bad. I'll try to end this as quickly as possible. Wish me luck.\"\r\n\r\nI then start running towards the woods, in the direction of the shaman's footsteps. As I enter the forest, I start to slow down my pace, making sure that there are no traps or ambushes set up ahead of me. \r\n\r\nThe footsteps have been leading me in the same direction since I started following them, and there have been no obstacles of any kind in my path since I walked into the woods. Could it be that the shaman was too busy getting as far away as possible from the wolves to lay down any kind of traps?"
           - source: scene_text_2
             paragraph: 29
             text: "I start to pick up my pace, while at the same time trying to remain as vigilant as possible. When it looks as if I am finally starting to catch up with the shaman, I hide behind a tree, and then I take a good long look ahead of me. The trail of footsteps ends abruptly, in the middle of the snow, and there is no one in sight. He must still be invisible. But why isn't he moving? Did he see me before I hid behind the tree?\r\n\r\nIt doesn't matter. If he saw me, then I'll just have to make sure to dodge whatever spell he decides to throw at me. If he didn't, then it means I still have the element of surprise. I move quickly and silently from tree to tree, until I get close enough to the shaman, and then I rush towards him, with my knife in front of me. To my surprise, there was no one waiting for me at the end of the trail of footsteps, and all I got to stab was empty air. Does this mean that he teleported away? No, that can't be it! He wouldn't have walked such a long distance if he could have just teleported right away. That only leaves one possibility. He must have covered his last set of footprints and hidden himself somewhere close, waiting for the right moment to strike.\r\n\r\nI turn around and see the shaman standing several feet behind me, with his staff fully charged and a wicked grin on his face.  A bright blue magical projectile shoots out of his staff and straight for my face.\r\n\r\nI barely had the time to react, but luckily my fast reflexes helped me get out of its way just in time. The shaman frowns, and he starts charging up his staff yet again, in order to cast another spell. I grab my dagger firmly in both hands, and I start rushing towards the ogre."
-        condition: perception < 3 AND reflexes >= 3
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 3 ]'
-          failed_checks:
-            - '[ Observation check failed - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 3 ]'
+              failed_checks:
+                - '[ Observation check failed - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -577,19 +584,20 @@ scenes:
               - set:
                   current_scene: ch10_volunteer2
                 condition: is_dead = 0
-      - texts:
+      - condition: perception < 3 AND reflexes < 3
+        texts:
           - source: scene_text
             paragraph: 35
             text: "\"I volunteer for the job,\" I say. \"I should be able to handle the shaman by myself if he can only cast spells from his staff.\"\r\n\r\n\"Are you sure?\" Daren says.\r\n\r\n\"We don't know how many wolves are going to come out of that forest,\" I say. \"You and Hadrik should both stay here in case things get really bad. I'll try to end this as quickly as possible. Wish me luck.\"\r\n\r\nI then start running towards the woods, in the direction of the shaman's footsteps. As I enter the forest, I start to slow down my pace, making sure that there are no traps or ambushes set up ahead of me. \r\n\r\nThe footsteps have been leading me in the same direction since I started following them, and there have been no obstacles of any kind in my path since I walked into the woods. Could it be that the shaman was too busy getting as far away as possible from the wolves to lay down any kind of traps?"
           - source: scene_text_2
             paragraph: 30
             text: "I start to pick up my pace, while at the same time trying to remain as vigilant as possible. When it looks as if I am finally starting to catch up with the shaman, I hide behind a tree, and then I take a good long look ahead of me. The trail of footsteps ends abruptly, in the middle of the snow, and there is no one in sight. He must still be invisible. But why isn't he moving? Did he see me before I hid behind the tree?\r\n\r\nIt doesn't matter. If he saw me, then I'll just have to make sure to dodge whatever spell he decides to throw at me. If he didn't, then it means I still have the element of surprise. I move quickly and silently from tree to tree, until I get close enough to the shaman, and then I rush towards him, with my knife in front of me. To my surprise, there was no one waiting for me at the end of the trail of footsteps, and all I got to stab was empty air. Does this mean that he teleported away? No, that can't be it! He wouldn't have walked such a long distance if he could have just teleported right away. That only leaves one possibility. He must have covered his last set of footprints and hidden himself somewhere close, waiting for the right moment to strike.\r\n\r\nI turn around and see the shaman standing several feet behind me, with his staff fully charged and a wicked grin on his face.  A bright blue magical projectile shoots out of his staff and straight for my face.\r\n\r\nI had no time to get out of its way, and the projectile went straight through my head, killing me on the spot."
-        condition: perception < 3 AND reflexes < 3
-        set:
-          failed_checks:
-            - '[ Observation check failed - level 3 ]'
-            - '[ Reflexes check failed - level 3 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Observation check failed - level 3 ]'
+                - '[ Reflexes check failed - level 3 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -610,21 +618,22 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
   - name: ch10_volunteer2
     routes:
-      - texts:
+      - condition: agility >= 2
+        texts:
           - source: scene_text
             paragraph: 36
             text: "His staff takes too long to charge up, and I manage to stick my knife in his chest. The shaman spits out blood, and as I prepare to land the finishing blow, the world suddenly starts spinning around me, and then I soon find myself standing in the middle of a cave again, with all of my friends besides me. They also seem to have just woken up, because they are now looking around themselves to confirm that we are indeed back in the abandoned mines below the ogre fort.\r\n\r\nBefore I get the time to fully regain my senses, a bright green light envelops Illuna, and then it disappears almost as quickly as it appeared. The shaman then starts laughing hoarsely, before coughing some blood on the cave's floor.\r\n\r\n\"This is the end, banshee,\" the shaman says, as he coughs some more. \"For both of us. That spell I just cast on you was a curse of death. A shamanic spell that kills both the caster and its target. You likely have less than an hour left to live. My life was forfeited the moment I managed to get myself cornered within my own shaman ritual, but at least now I'll get the satisfaction of dragging the traitor who started all of this mess to the underworld with me!\"\r\n\r\nHe then laughs hoarsely again, and he starts to turn into ashes.\r\n\r\n\"Damn it!\" Hadrik says, as he jumps towards the shaman, but all he gets to punch are his ashes, which are now slowly piling up on the floor of the caverns."
           - source: scene_text_2
             paragraph: 31
             text: "Illuna was in a brief state of shock after the shaman's reveal, but then her expression darkened, and she went to sit herself down on the floor, with her back leaning against one of the cave's walls.\r\n\r\n\"What are you waiting for?\" she asks, when she sees us looking at her. \"Get going. I'll hold the ogres off here. It's not like there's much else I can do in the little time I have left.\"\r\n\r\n\"It's true, then?\" Rose asks. \"What the ogre said?\"\r\n\r\n\"Yes,\" Illuna says. \"The curse is much too powerful for me to break with any of the spells I know. The shaman was being generous when he said that I'd get to live for another hour. From what I can tell, the curse will likely kill me in the next fifteen minutes.\"\r\n\r\n\"No!\" Rose shouts. \"You can't give up! You can't give up like this! There has to be a way to--\"\r\n\r\nRose stops mid-sentence because she sees Daren starting to move towards Illuna. When he reaches her, he lifts his sword and looks at the banshee, without uttering a word. Illuna looks back at him and she laughs."
-        condition: agility >= 2
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 2 ]'
-          ac_ch10_shaman: 1
-        achievement:
-          id: ac_ch10_shaman
-          title: Defeated ogre shaman
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 2 ]'
+              ac_ch10_shaman: 1
+            achievement:
+              id: ac_ch10_shaman
+              title: Defeated ogre shaman
         choices:
           - position: 1
             text: Continue
@@ -632,7 +641,8 @@ scenes:
               - set:
                   current_scene: ch10_curse
                 condition: is_dead = 0
-      - texts:
+      - condition: agility < 2 AND strength >= 3
+        texts:
           - source: scene_text
             paragraph: 37
             text: "Just as I reach him, I hear a very loud screeching sound and a semi-transparent barrier gets raised around him, which stops my dagger within inches of reaching him. The shaman grins maliciously at me, and then he starts charging up his staff again. \r\n\r\nHe clearly thinks that I can't get through his barrier without using magic. I wonder why that is? I've studied many books about barriers in my life and this one definitely doesn't look like it's impervious to physical attacks. In any case, I don't have the time to think this through. I'll use my full strength and try to get past his barrier before he finishes charging up his staff.\r\n\r\nI raise my arm and I put as much force behind my blow as I possibly can. When my dagger hits the barrier, I start feeling a strong vibration for about a second, but then the whole thing shatters just like a dome made of glass, and I manage to stab the shaman in the chest before he could cast his offensive spell. The shaman spits out blood, and as I prepare to land the finishing blow, the world suddenly starts spinning around me, and then I soon find myself standing in the middle of a cave again, with all of my friends besides me. They also seem to have just woken up, because they are now looking around themselves to confirm that we are indeed back in the abandoned mines below the ogre fort."
@@ -642,16 +652,16 @@ scenes:
           - source: scene_3
             paragraph: 3
             text: "\"It's true, then?\" Rose asks. \"What the ogre said?\"\r\n\r\n\"Yes,\" Illuna says. \"The curse is much too powerful for me to break with any of the spells I know. The shaman was being generous when he said that I'd get to live for another hour. From what I can tell, the curse will likely kill me in the next fifteen minutes.\"\r\n\r\n\"No!\" Rose shouts. \"You can't give up! You can't give up like this! There has to be a way to--\"\r\n\r\nRose stops mid-sentence because she sees Daren starting to move towards Illuna. When he reaches her, he lifts his sword and looks at the banshee, without uttering a word. Illuna looks back at him and she laughs."
-        condition: agility < 2 AND strength >= 3
-        set:
-          successful_checks:
-            - '[ Strength check successful - level 3 ]'
-          failed_checks:
-            - '[ Speed check failed - level 2 ]'
-          ac_ch10_shaman: 1
-        achievement:
-          id: ac_ch10_shaman
-          title: Defeated ogre shaman
+        effects:
+          - set:
+              successful_checks:
+                - '[ Strength check successful - level 3 ]'
+              failed_checks:
+                - '[ Speed check failed - level 2 ]'
+              ac_ch10_shaman: 1
+            achievement:
+              id: ac_ch10_shaman
+              title: Defeated ogre shaman
         choices:
           - position: 1
             text: Continue
@@ -659,16 +669,17 @@ scenes:
               - set:
                   current_scene: ch10_curse
                 condition: is_dead = 0
-      - texts:
+      - condition: agility < 2 AND strength < 3
+        texts:
           - source: scene_text
             paragraph: 38
             text: "Just as I reach him, I hear a very loud screeching sound and a semi-transparent barrier gets raised around him, which stops my dagger within inches of reaching him. The shaman grins maliciously at me, and then he starts charging up his staff again. \r\n\r\nHe clearly thinks that I can't get through his barrier without using magic. I wonder why that is? I've studied many books about barriers in my life and this one definitely doesn't look like it's impervious to physical attacks. In any case, I don't have the time to think this through. I'll use my full strength and try to get past his barrier before he finishes charging up his staff.\r\n\r\nI raise my arm and I put as much force behind my blow as I possibly can. When my dagger hits the barrier, I start feeling a strong vibration, and after a few seconds, my hand gets repelled with a force similar to the one behind my strike. My dagger flies from my hand, and before I have the time to go back and get it, the shaman finishes charging up his staff, while his whole barrier explodes outwards, with a powerful wave of light, obliterating anything in its path. The last thing I got to see before I died was the light enveloping me, as I felt the flesh and meat being burned off my bones."
-        condition: agility < 2 AND strength < 3
-        set:
-          failed_checks:
-            - '[ Speed check failed - level 2 ]'
-            - '[ Strength check failed - level 3 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Speed check failed - level 2 ]'
+                - '[ Strength check failed - level 3 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -700,14 +711,15 @@ scenes:
               current_scene: ch10_catch
   - name: ch10_catch
     routes:
-      - texts:
+      - condition: agility >= 3
+        texts:
           - source: scene_text
             paragraph: 41
             text: "I succeed in taking it by surprise, as I cut its throat and then quickly remove my knife, while the beast takes a few more steps and then falls on the ground in a pool of its own blood. At the same time, Kate gets behind another wolf, and she sticks her knife into the back of its head, killing it instantly.  \r\n\r\nWhile we were busy fighting, Illuna had gotten herself cornered by three of the wolves. She has her back pinned against a big rock, and the wolves are closing in on her, preparing to strike.\r\n\r\n\"Illuna, catch!\" Kate shouts, and she throws the banshee her dagger.\r\n\r\nIlluna catches it from the air, and she quickly slides below one of the wolves, holding her dagger with both hands, and splitting the beast's belly in half as she passed beneath it. She then jumps on the back of another wolf, and she sticks her knife in the back of its neck. As the animal falls, she jumps off it, landing with a quick roll, and then she stabs the last of the wolves in its right eye. The banshee doesn't get any chance to rest, because four other wolves are already coming her way.\r\n\r\nIn the meantime, three of the wolves have managed to get past Daren, and are now steadily approaching me and Kate."
-        condition: agility >= 3
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 3 ]'
         choices:
           - position: 1
             text: Give Kate my dagger
@@ -727,17 +739,18 @@ scenes:
               - set:
                   current_scene: ch10_rocks
                   ch10_kate_scratched: 0
-      - texts:
+      - condition: agility < 3
+        texts:
           - source: scene_text
             paragraph: 40
             text: "The wolf jumps out of my way effortlessly, and then it almost immediately dashes back at me with its fangs bared. Before it gets the chance to sink its teeth in my skin, I see a dagger passing through its head, and the beast falls lifeless on the ground soon afterwards. Kate pulls out her dagger from the wolf's head, and she gives me an accusatory look.\r\n\r\n\"If you aren't used to dealing with wild animals, you should stay out of this and leave the fighting to the rest of us,\" Kate says. \"These beasts won't show you any mercy.\"\r\n\r\nShe then gets behind another wolf, and she sticks her knife into the back of its head, killing it instantly. \r\n\r\nWhile we were busy fighting, Illuna had gotten herself cornered by three of the wolves. She has her back pinned against a big rock, and the wolves are closing in on her, preparing to strike."
           - source: scene_text_2
             paragraph: 33
             text: "\"Illuna, catch!\" Kate shouts, and she throws the banshee her dagger.\r\n\r\nIlluna catches it from the air, and she quickly slides below one of the wolves, holding her dagger with both hands, and splitting the beast's belly in half as she passed beneath it. She then jumps on the back of another wolf, and she sticks her knife in the back of its neck. As the animal falls, she jumps off it, landing with a quick roll, and then she stabs the last of the wolves in its right eye. The banshee doesn't get any chance to rest, because four other wolves are already coming her way.\r\n\r\nIn the meantime, three of the wolves have managed to get past Daren, and are now steadily approaching me and Kate."
-        condition: agility < 3
-        set:
-          failed_checks:
-            - '[ Speed check failed - level 3 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Speed check failed - level 3 ]'
         choices:
           - position: 1
             text: Give Kate my dagger
@@ -759,7 +772,8 @@ scenes:
                   ch10_kate_scratched: 0
   - name: ch10_rocks
     routes:
-      - texts:
+      - condition: strength >= 3
+        texts:
           - source: scene_text
             paragraph: 42
             text: "\"Here, take this,\" I tell Kate as I hand her my dagger. \"You'll probably put it to better use than me. I'll try to provide support by throwing rocks at the wolves.\"\r\n\r\n\"Understood,\" she says, curtly, as she takes my weapon.\r\n\r\nKate then starts walking slowly towards the three wolves. When she gets close enough, she dashes to her right, in order to confuse the animals, and then she runs her knife through one of the wolves' heads. After pulling out her dagger from the beast's skull, she rushes towards the other and kills it as well, with a swift strike of her blade. I see that the third wolf is about to catch Kate off her guard, so I quickly throw a rock at it, aiming for its head. \r\n\r\nThe rock was too fast for the wolf to manage to get out of its way in time, and the force behind the boulder was so great that it completely smashed the wolf's head on impact.\r\n\r\nAll of a sudden, the whole world starts spinning around me, and then I soon find myself standing in the middle of a cave again, with all of my friends besides me. They also seem to have just woken up, because they are now looking around themselves to confirm that we are indeed back in the abandoned mines below the ogre fort. \r\n\r\nAt last, the illusion is broken! Hadrik must have found the shaman and forced him to cancel his spell!"
@@ -769,17 +783,18 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "\"Yes,\" Illuna says. \"The curse is much too powerful for me to break with any of the spells I know. The shaman was being generous when he said that I'd get to live for another hour. From what I can tell, the curse will likely kill me in the next fifteen minutes.\"\r\n\r\n\"No!\" Rose shouts. \"You can't give up! You can't give up like this! There has to be a way to--\"\r\n\r\nRose stops mid-sentence because she sees Daren starting to move towards Illuna. When he reaches her, he lifts his sword and looks at the banshee, without uttering a word. Illuna looks back at him and she laughs."
-        condition: strength >= 3
-        set:
-          successful_checks:
-            - '[ Strength check successful - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Strength check successful - level 3 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch10_curse
-      - texts:
+      - condition: strength < 3
+        texts:
           - source: scene_text
             paragraph: 43
             text: "\"Here, take this,\" I tell Kate as I hand her my dagger. \"You'll probably put it to better use than me. I'll try to provide support by throwing rocks at the wolves.\"\r\n\r\n\"Understood,\" she says, curtly, as she takes my weapon.\r\n\r\nKate then starts walking slowly towards the three wolves. When she gets close enough, she dashes to her right, in order to confuse the animals, and then she runs her knife through one of the wolves' heads. After pulling out her dagger from the beast's skull, she rushes towards the other and kills it as well, with a swift strike of her blade. I see that the third wolf is about to catch Kate off her guard, so I quickly throw a rock at it, aiming for its head. \r\n\r\nThe wolf manages to get out of the rock's way, but it loses its momentum, which gives Kate the opportunity to dash towards it and finish it off with one clean strike.\r\n\r\nAll of a sudden, the whole world starts spinning around me, and then I soon find myself standing in the middle of a cave again, with all of my friends besides me. They also seem to have just woken up, because they are now looking around themselves to confirm that we are indeed back in the abandoned mines below the ogre fort. \r\n\r\nAt last, the illusion is broken! Hadrik must have found the shaman and forced him to cancel his spell!"
@@ -789,10 +804,10 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "\"Yes,\" Illuna says. \"The curse is much too powerful for me to break with any of the spells I know. The shaman was being generous when he said that I'd get to live for another hour. From what I can tell, the curse will likely kill me in the next fifteen minutes.\"\r\n\r\n\"No!\" Rose shouts. \"You can't give up! You can't give up like this! There has to be a way to--\"\r\n\r\nRose stops mid-sentence because she sees Daren starting to move towards Illuna. When he reaches her, he lifts his sword and looks at the banshee, without uttering a word. Illuna looks back at him and she laughs."
-        condition: strength < 3
-        set:
-          failed_checks:
-            - '[ Strength check failed - level 3 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Strength check failed - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -801,17 +816,18 @@ scenes:
                   current_scene: ch10_curse
   - name: ch10_keep
     routes:
-      - texts:
+      - condition: agility >= 3
+        texts:
           - source: scene_text
             paragraph: 44
             text: "I rush towards one of the wolves, and I slit its throat before it has a chance to react. One of the other two lunges for me, but I dash out of its way, and circle around the third wolf in order to stab it in the back of its neck. Once I kill my second wolf, the last one standing pounces towards me again, but I step to the side and run my knife through its skull.\r\n\r\nAll of a sudden, the whole world starts spinning around me, and then I soon find myself standing in the middle of a cave again, with all of my friends besides me. They also seem to have just woken up, because they are now looking around themselves to confirm that we are indeed back in the abandoned mines below the ogre fort. \r\n\r\nAt last, the illusion is broken! Hadrik must have found the shaman and forced him to cancel his spell!\r\n\r\nBefore I get the time to fully regain my senses, a bright green light envelops Illuna, and then it disappears almost as quickly as it appeared. The shaman then starts laughing hoarsely, before coughing some blood on the cave's floor.\r\n\r\n\"This is the end, banshee,\" the shaman says, as he coughs some more. \"For both of us. That spell I just cast on you was a curse of death. A shamanic spell that kills both the caster and its target. You likely have less than an hour left to live. My life was forfeited the moment I managed to get myself cornered within my own shaman ritual, but at least now I'll get the satisfaction of dragging the traitor who started all of this mess to the underworld with me!\""
           - source: scene_text_2
             paragraph: 35
             text: "He then laughs hoarsely again, and he starts to turn into ashes.\r\n\r\n\"Damn it!\" Hadrik says, as he jumps towards the shaman, but all he gets to punch are his ashes, which are now slowly piling up on the floor of the caverns.\r\n\r\nIlluna was in a brief state of shock after the shaman's reveal, but then her expression darkened, and she went to sit herself down on the floor, with her back leaning against one of the cave's walls.\r\n\r\n\"What are you waiting for?\" she asks, when she sees us looking at her. \"Get going. I'll hold the ogres off here. It's not like there's much else I can do in the little time I have left.\"\r\n\r\n\"It's true, then?\" Rose asks. \"What the ogre said?\"\r\n\r\n\"Yes,\" Illuna says. \"The curse is much too powerful for me to break with any of the spells I know. The shaman was being generous when he said that I'd get to live for another hour. From what I can tell, the curse will likely kill me in the next fifteen minutes.\"\r\n\r\n\"No!\" Rose shouts. \"You can't give up! You can't give up like this! There has to be a way to--\"\r\n\r\nRose stops mid-sentence because she sees Daren starting to move towards Illuna. When he reaches her, he lifts his sword and looks at the banshee, without uttering a word. Illuna looks back at him and she laughs."
-        condition: agility >= 3
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -819,7 +835,8 @@ scenes:
               - set:
                   current_scene: ch10_curse
                 condition: is_dead = 0
-      - texts:
+      - condition: agility < 3 AND reflexes >= 4
+        texts:
           - source: scene_text
             paragraph: 45
             text: "I rush towards one of the wolves, but this time, instead of going directly for its throat, I start with a feint. The wolf instinctively jumps back, and then it dashes right back at me, except this time I was waiting for it, so I stabbed it in the eye with my knife.\r\n\r\nOne of the other wolves tries to bite my right leg from behind, but I react in time and turn to face it, while at the same time pulling my leg out of its range. The beast lunges for me, but my reflexes allow me to step out of its way and at the same time launch a counter-attack. While the creature is still trying to regain its balance, I run my knife through its head, and then I turn around to face my last enemy. I know full well that I am not fast enough to be able to harm it if I am the one that attacks, so I let the wolf come to me instead. As it rushes towards me, I wait until the last moment and I step to the side, while at the same time sticking my knife in the back of its head.\r\n\r\nAll of a sudden, the whole world starts spinning around me, and then I soon find myself standing in the middle of a cave again, with all of my friends besides me. They also seem to have just woken up, because they are now looking around themselves to confirm that we are indeed back in the abandoned mines below the ogre fort. \r\n\r\nAt last, the illusion is broken! Hadrik must have found the shaman and forced him to cancel his spell!"
@@ -829,12 +846,12 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "\"Yes,\" Illuna says. \"The curse is much too powerful for me to break with any of the spells I know. The shaman was being generous when he said that I'd get to live for another hour. From what I can tell, the curse will likely kill me in the next fifteen minutes.\"\r\n\r\n\"No!\" Rose shouts. \"You can't give up! You can't give up like this! There has to be a way to--\"\r\n\r\nRose stops mid-sentence because she sees Daren starting to move towards Illuna. When he reaches her, he lifts his sword and looks at the banshee, without uttering a word. Illuna looks back at him and she laughs."
-        condition: agility < 3 AND reflexes >= 4
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 4 ]'
-          failed_checks:
-            - '[ Speed check failed - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 4 ]'
+              failed_checks:
+                - '[ Speed check failed - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -842,16 +859,17 @@ scenes:
               - set:
                   current_scene: ch10_curse
                 condition: is_dead = 0
-      - texts:
+      - condition: agility < 3 AND reflexes < 4
+        texts:
           - source: scene_text
             paragraph: 46
             text: "I rush towards one of the wolves, but this time, instead of going directly for its throat, I start with a feint. The wolf instinctively jumps back, and then it dashes right back at me, except this time I was waiting for it, so I stabbed it in the eye with my knife.\r\n\r\nOne of the other wolves seizes the opportunity and bites my right leg from behind. I try to turn around and stab it, but the creature pulls on my leg while holding it with its teeth, and it makes me fall on my back. I try to get up, but the beast jumps on me and pins me down. The last thing I saw before I died was the image of its sharp fangs, as they slowly descended towards my face."
-        condition: agility < 3 AND reflexes < 4
-        set:
-          failed_checks:
-            - '[ Speed check failed - level 3 ]'
-            - '[ Reflexes check failed - level 4 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Speed check failed - level 3 ]'
+                - '[ Reflexes check failed - level 4 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -908,22 +926,22 @@ scenes:
               current_scene: ch10_kill
   - name: ch10_spare
     routes:
-      - texts:
+      - condition: ch10_kate_scratched = 0
+        texts:
           - source: scene_text
             paragraph: 49
             text: "\"Let them be,\" I say. \"We shouldn't be wasting any more time here. We already got what we came for. Even if they decide to ambush us, Arraka can still detect them, so it's not like they'll be taking us by surprise.\"\r\n\r\n\"Aye,\" Hadrik says. \"The sooner we get out of here, the better. Let's get going!\"\r\n\r\nAs soon as we're all agreed to ignore the two ogres, we head towards the forest, in order to retrieve our backpacks.\r\n\r\nOnce we dig up all of our belongings, we waste no time and we begin our long journey back to the sacred woods ruins. We've been keeping a relatively fast pace for the first hour, in order to make sure that we put enough distance between ourselves and the ogres, but after confirming several times that we weren't being followed, we started to slow down a bit. The sun had already set when we left the stronghold, but there were many stars in the sky, and the moon was almost full, so we decided to keep going until we were comfortable enough with the distance between ourselves and the ogres' territory.\r\n\r\n\"Healer,' Illuna says, as we walk through the woods. \"After I released you from your cell, you promised that you wouldn't attack me until we escaped the fort. Now that we're at a safe enough distance from the ogres, you are no longer bound by that promise. Should I start to prepare my defenses?\"\r\n\r\n\"No, I...\" Daren starts to say, but he pauses. \"I don't really feel like fighting anymore today...\"\r\n\r\n\"I see,\" Illuna says, eying him suspiciously."
-        condition: ch10_kate_scratched = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch10_toast
-      - texts:
+      - condition: ch10_kate_scratched = 1
+        texts:
           - source: scene_text
             paragraph: 50
             text: "\"Let them be,\" I say. \"We shouldn't be wasting any more time here. We already got what we came for. Even if they decide to ambush us, Arraka can still detect them, so it's not like they'll be taking us by surprise.\"\r\n\r\n\"Aye,\" Hadrik says. \"The sooner we get out of here, the better. Let's get going!\"\r\n\r\nAs soon as we're all agreed to ignore the two ogres, we head towards the forest, in order to retrieve our backpacks.\r\n\r\nOnce we dig up all of our belongings and Illuna heals Kate's leg injury, we waste no time and we begin our long journey back to the sacred woods ruins. We've been keeping a relatively fast pace for the first hour, in order to make sure that we put enough distance between ourselves and the ogres, but after confirming several times that we weren't being followed, we started to slow down a bit. The sun had already set when we left the stronghold, but there were many stars in the sky, and the moon was almost full, so we decided to keep going until we were comfortable enough with the distance between ourselves and the ogres' territory.\r\n\r\n\"Healer,' Illuna says, as we walk through the woods. \"After I released you from your cell, you promised that you wouldn't attack me until we escaped the fort. Now that we're at a safe enough distance from the ogres, you are no longer bound by that promise. Should I start to prepare my defenses?\"\r\n\r\n\"No, I...\" Daren starts to say, but he pauses. \"I don't really feel like fighting anymore today...\"\r\n\r\n\"I see,\" Illuna says, eying him suspiciously."
-        condition: ch10_kate_scratched = 1
         choices:
           - position: 1
             text: Continue
@@ -932,28 +950,28 @@ scenes:
                   current_scene: ch10_toast
   - name: ch10_kill
     routes:
-      - texts:
+      - condition: ch10_kate_scratched = 0
+        texts:
           - source: scene_text
             paragraph: 51
             text: "\"I think it's better to get rid of them,\" I say. \"If we let them live, they'll see which way we went and tell the other ogres when they get out of the mines.\"\r\n\r\n\"Maybe you're right,\" Daren says. \"One can never be too careful. Let's get this done real quick and then head for our backpacks.\"\r\n\r\nWe follow Arraka's directions and reach the two ogres in less than a minute. When they saw that we'd discovered them, the ogres dismissed their invisibility spell and tried to attack us with their clubs, but Illuna beheaded them both with a single motion of her water whip, and then we all went back and headed towards the place where we'd buried our backpacks.\r\n\r\nOnce we dig up all of our belongings, we waste no time and we begin our long journey back to the sacred woods ruins. We've been keeping a relatively fast pace for the first hour, in order to make sure that we put enough distance between ourselves and the ogres, but after confirming several times that we weren't being followed, we started to slow down a bit. The sun had already set when we left the stronghold, but there were many stars in the sky, and the moon was almost full, so we decided to keep going until we were comfortable enough with the distance between ourselves and the ogres' territory."
           - source: scene_text_2
             paragraph: 37
             text: "\"Healer,' Illuna says, as we walk through the woods. \"After I released you from your cell, you promised that you wouldn't attack me until we escaped the fort. Now that we're at a safe enough distance from the ogres, you are no longer bound by that promise. Should I start to prepare my defenses?\"\r\n\r\n\"No, I...\" Daren starts to say, but he pauses. \"I don't really feel like fighting anymore today...\"\r\n\r\n\"I see,\" Illuna says, eying him suspiciously."
-        condition: ch10_kate_scratched = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch10_toast
-      - texts:
+      - condition: ch10_kate_scratched = 1
+        texts:
           - source: scene_text
             paragraph: 52
             text: "\"I think it's better to get rid of them,\" I say. \"If we let them live, they'll see which way we went and tell the other ogres when they get out of the mines.\"\r\n\r\n\"Maybe you're right,\" Daren says. \"One can never be too careful. Let's get this done real quick and then head for our backpacks.\"\r\n\r\nWe follow Arraka's directions and reach the two ogres in less than a minute. When they saw that we'd discovered them, the ogres dismissed their invisibility spell and tried to attack us with their clubs, but Illuna beheaded them both with a single motion of her water whip, and then we all went back and headed towards the place where we'd buried our backpacks.\r\n\r\nOnce we dig up all of our belongings and Illuna heals Kate's leg injury, we waste no time and we begin our long journey back to the sacred woods ruins. We've been keeping a relatively fast pace for the first hour, in order to make sure that we put enough distance between ourselves and the ogres, but after confirming several times that we weren't being followed, we started to slow down a bit. The sun had already set when we left the stronghold, but there were many stars in the sky, and the moon was almost full, so we decided to keep going until we were comfortable enough with the distance between ourselves and the ogres' territory."
           - source: scene_text_2
             paragraph: 37
             text: "\"Healer,' Illuna says, as we walk through the woods. \"After I released you from your cell, you promised that you wouldn't attack me until we escaped the fort. Now that we're at a safe enough distance from the ogres, you are no longer bound by that promise. Should I start to prepare my defenses?\"\r\n\r\n\"No, I...\" Daren starts to say, but he pauses. \"I don't really feel like fighting anymore today...\"\r\n\r\n\"I see,\" Illuna says, eying him suspiciously."
-        condition: ch10_kate_scratched = 1
         choices:
           - position: 1
             text: Continue
@@ -1094,84 +1112,84 @@ scenes:
               ch10_magium: 6
   - name: ch10_magium
     routes:
-      - texts:
+      - condition: ch10_magium = 1
+        texts:
           - source: scene_text
             paragraph: 60
             text: "\"I want to start going on adventures!\"\r\n\r\nHadrik laughs.\r\n\r\n\"That's the spirit!\" he says. \"I'm sure you're going to love the adventuring life! If you're ever out of ideas, or you just need some information about places to go, hit me up! Assuming that we both make it out of here alive, of course!\"\r\n\r\n\"If you're looking for more adventures after finishing the tournament, you could always come back to Varathia!\" I hear Rose's voice coming from behind me. \"I could write a formal invitation for you, which would make it a lot easier for you to return!\"\r\n\r\nHadrik grins, as he looks at Rose.\r\n\r\n\"Should I take it that you've finally changed your mind and decided to join us?\" he says. \"I've got many more bottles of ale stashed up in my backpack so there's no need for you to hold back!\"\r\n\r\n\"Actually, no,\" Rose says. \"I only came here because I had a few things to say to Barry before going to sleep!\"\r\n\r\n\"Say no more!\" Hadrik says, and he gets up from his rock. \"Please, take my seat! I was just about to go back to my tent.\"\r\n\r\nHe then raises his bottle again.\r\n\r\n\"Cheers, Barry!\" he says, as we both clink our bottles once more, and then we chug down the last of our ale."
           - source: scene_text_2
             paragraph: 39
             text: "\"Okay, Barry, listen closely!\" Rose says in a low voice, as Hadrik heads for his tent. \"I think you might have already realized by now that--\" \r\n\r\nShe pauses mid-sentence and she looks at my face.\r\n\r\n\"Barry, are you drunk?\" she asks.\r\n\r\n\"Maybe a little,\" I answer her.\r\n\r\nRose giggles.\r\n\r\n\"Hold on,\" she says. \"I've got some herbs in my backpack that will get you back in shape in no time, and you won't have to worry about a hangover either. I'll be right back!\"\r\n\r\nAfter she's done searching her backpack, she comes back with a fistful of red leaves, and she tells me that I need to chew on them for thirty seconds. Once I'm done, I realize that my dizziness is completely gone, and I can think clearly again.\r\n\r\n\"So, as I was saying,\" Rose says, \"you might have already realized by now that Kate, Hadrik and I had a little discussion before voting for you and Daren to take the first night shift. I'm sorry that we didn't invite you as well, but someone needed to stay with Daren so that he wouldn't get suspicious.\"\r\n\r\n\"Yeah, I kind of figured that something was wrong when I saw how well in sync you three were,\" I say. \"So, what's this all about, then?\"\r\n\r\n\"Well, you know how Illuna said that Flower still needs to remain in stasis until at least tomorrow evening?\"\r\n\r\n\"Yeah, I remember.\""
-        condition: ch10_magium = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch10_unconscious
-      - texts:
+      - condition: ch10_magium = 2
+        texts:
           - source: scene_text
             paragraph: 61
             text: "\"I want to gain fame and glory!\"\r\n\r\n\"Fame and glory, eh?\" Hadrik says. \"Well, you'll most certainly become famous if you win this tournament without being a mage, that's for sure! As for the glory, you're going to have a lot of competition in this area, since there will be many experienced mages you'll be going up against, but I'm sure you'll find a way to come out on top eventually!\"\r\n\r\n\"I don't think that Barry has anything to worry about,\" I hear Rose's voice coming from behind me. \"He's always found a way to succeed against all odds until now, so I don't see why that should stop after the tournament!\"\r\n\r\nHadrik grins, as he looks at Rose.\r\n\r\n\"Should I take it that you've finally changed your mind and decided to join us?\" he says. \"I've got many more bottles of ale stashed up in my backpack so there's no need for you to hold back!\"\r\n\r\n\"Actually, no,\" Rose says. \"I only came here because I had a few things to say to Barry before going to sleep!\"\r\n\r\n\"Say no more!\" Hadrik says, and he gets up from his rock. \"Please, take my seat! I was just about to go back to my tent.\"\r\n\r\nHe then raises his bottle again.\r\n\r\n\"Cheers, Barry!\" he says, as we both clink our bottles once more, and then we chug down the last of our ale."
           - source: scene_text_2
             paragraph: 39
             text: "\"Okay, Barry, listen closely!\" Rose says in a low voice, as Hadrik heads for his tent. \"I think you might have already realized by now that--\" \r\n\r\nShe pauses mid-sentence and she looks at my face.\r\n\r\n\"Barry, are you drunk?\" she asks.\r\n\r\n\"Maybe a little,\" I answer her.\r\n\r\nRose giggles.\r\n\r\n\"Hold on,\" she says. \"I've got some herbs in my backpack that will get you back in shape in no time, and you won't have to worry about a hangover either. I'll be right back!\"\r\n\r\nAfter she's done searching her backpack, she comes back with a fistful of red leaves, and she tells me that I need to chew on them for thirty seconds. Once I'm done, I realize that my dizziness is completely gone, and I can think clearly again.\r\n\r\n\"So, as I was saying,\" Rose says, \"you might have already realized by now that Kate, Hadrik and I had a little discussion before voting for you and Daren to take the first night shift. I'm sorry that we didn't invite you as well, but someone needed to stay with Daren so that he wouldn't get suspicious.\"\r\n\r\n\"Yeah, I kind of figured that something was wrong when I saw how well in sync you three were,\" I say. \"So, what's this all about, then?\"\r\n\r\n\"Well, you know how Illuna said that Flower still needs to remain in stasis until at least tomorrow evening?\"\r\n\r\n\"Yeah, I remember.\""
-        condition: ch10_magium = 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch10_unconscious
-      - texts:
+      - condition: ch10_magium = 3
+        texts:
           - source: scene_text
             paragraph: 62
             text: "\"I want to use my magic to help people.\"\r\n\r\n\"Helping people, eh?\" Hadrik says. \"That sounds a lot like something Daren would say. I hadn't really pegged you as the do-gooder type, but then again I might have gotten the wrong first impression! Helping people is all well and good, but you should take care to not overdo it. You should never start completely putting aside your needs and desires for the sake of others, or you'll risk ending up as boring as Daren!\"\r\n\r\n\"Now, that's just mean!\" I hear Rose's voice coming from behind me. \"What would Daren say if he heard you talk about him like that?\"\r\n\r\n\"Well, it's not like I've been keeping my opinion of him a secret,\" Hadrik says. \"Plus, that doesn't mean that I don't respect him, or anything, it's just that him and I aren't all that compatible, personality-wise. In fact, you'd probably find out that his opinion of me isn't that stellar either, if you'd ask him directly. But enough about that! You've come here to join us, I hope? I've got many more bottles of ale stashed up in my backpack so there's no need for you to hold back!\"\r\n\r\n\"Actually, no,\" Rose says. \"I only came here because I had a few things to say to Barry before going to sleep!\"\r\n\r\n\"Say no more!\" Hadrik says, and he gets up from his rock. \"Please, take my seat! I was just about to go back to my tent.\"\r\n\r\nHe then raises his bottle again.\r\n\r\n\"Cheers, Barry!\" he says, as we both clink our bottles once more, and then we chug down the last of our ale."
           - source: scene_text_2
             paragraph: 39
             text: "\"Okay, Barry, listen closely!\" Rose says in a low voice, as Hadrik heads for his tent. \"I think you might have already realized by now that--\" \r\n\r\nShe pauses mid-sentence and she looks at my face.\r\n\r\n\"Barry, are you drunk?\" she asks.\r\n\r\n\"Maybe a little,\" I answer her.\r\n\r\nRose giggles.\r\n\r\n\"Hold on,\" she says. \"I've got some herbs in my backpack that will get you back in shape in no time, and you won't have to worry about a hangover either. I'll be right back!\"\r\n\r\nAfter she's done searching her backpack, she comes back with a fistful of red leaves, and she tells me that I need to chew on them for thirty seconds. Once I'm done, I realize that my dizziness is completely gone, and I can think clearly again.\r\n\r\n\"So, as I was saying,\" Rose says, \"you might have already realized by now that Kate, Hadrik and I had a little discussion before voting for you and Daren to take the first night shift. I'm sorry that we didn't invite you as well, but someone needed to stay with Daren so that he wouldn't get suspicious.\"\r\n\r\n\"Yeah, I kind of figured that something was wrong when I saw how well in sync you three were,\" I say. \"So, what's this all about, then?\"\r\n\r\n\"Well, you know how Illuna said that Flower still needs to remain in stasis until at least tomorrow evening?\"\r\n\r\n\"Yeah, I remember.\""
-        condition: ch10_magium = 3
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch10_unconscious
-      - texts:
+      - condition: ch10_magium = 4
+        texts:
           - source: scene_text
             paragraph: 63
             text: "\"I want to conquer the world!\"\r\n\r\n\"Is that so?\" the dwarf says, with a grin. \"Then maybe I should hold off on my proposal to Arraka for the time being. It pains me to let her go like this, but the two of you would make a much better couple!\"\r\n\r\n\"Barry, you never told me that you fancied Arraka!\" I hear Rose's voice coming from behind me. \"I could talk with Illuna to give you some time alone with her to confess your feelings if you want!\"\r\n\r\n\"That's very kind of you,\" I say, as I turn towards her, \"but I'd rather do things at my own pace, for now. I'm very shy, and I might end up ruining the moment if it's just me and her!\"\r\n\r\nHadrik grins, as he looks at Rose.\r\n\r\n\"Should I take it that you've finally changed your mind and decided to join us?\" he says. \"I've got many more bottles of ale stashed up in my backpack so there's no need for you to hold back!\"\r\n\r\n\"Actually, no,\" Rose says. \"I only came here because I had a few things to say to Barry before going to sleep!\"\r\n\r\n\"Say no more!\" Hadrik says, and he gets up from his rock. \"Please, take my seat! I was just about to go back to my tent.\"\r\n\r\nHe then raises his bottle again.\r\n\r\n\"Cheers, Barry!\" he says, as we both clink our bottles once more, and then we chug down the last of our ale."
           - source: scene_text_2
             paragraph: 39
             text: "\"Okay, Barry, listen closely!\" Rose says in a low voice, as Hadrik heads for his tent. \"I think you might have already realized by now that--\" \r\n\r\nShe pauses mid-sentence and she looks at my face.\r\n\r\n\"Barry, are you drunk?\" she asks.\r\n\r\n\"Maybe a little,\" I answer her.\r\n\r\nRose giggles.\r\n\r\n\"Hold on,\" she says. \"I've got some herbs in my backpack that will get you back in shape in no time, and you won't have to worry about a hangover either. I'll be right back!\"\r\n\r\nAfter she's done searching her backpack, she comes back with a fistful of red leaves, and she tells me that I need to chew on them for thirty seconds. Once I'm done, I realize that my dizziness is completely gone, and I can think clearly again.\r\n\r\n\"So, as I was saying,\" Rose says, \"you might have already realized by now that Kate, Hadrik and I had a little discussion before voting for you and Daren to take the first night shift. I'm sorry that we didn't invite you as well, but someone needed to stay with Daren so that he wouldn't get suspicious.\"\r\n\r\n\"Yeah, I kind of figured that something was wrong when I saw how well in sync you three were,\" I say. \"So, what's this all about, then?\"\r\n\r\n\"Well, you know how Illuna said that Flower still needs to remain in stasis until at least tomorrow evening?\"\r\n\r\n\"Yeah, I remember.\""
-        condition: ch10_magium = 4
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch10_unconscious
-      - texts:
+      - condition: ch10_magium = 5
+        texts:
           - source: scene_text
             paragraph: 64
             text: "\"I'm just in it for the money.\"\r\n\r\n\"I'm finding that a bit hard to believe!\" Hadrik says with a grin. \"Even if you do end up winning the tournament, this seems like a really roundabout way of doing things if you're just aiming to become rich. I think there's a little more to this than you're letting on!\"\r\n\r\n\"I don't think that Barry really thought so far ahead, Hadrik,\" I hear Rose's voice coming from behind me. \"He's probably only going to seriously think about it after he's become a mage.\"\r\n\r\n\"Aye,\" Hadrik says. \"That's what I'm guessing, as well. So, should I take it that you've finally decided to join us? I've got many more bottles of ale stashed up in my backpack so there's no need for you to hold back!\"\r\n\r\n\"Actually, no,\" Rose says. \"I only came here because I had a few things to say to Barry before going to sleep!\"\r\n\r\n\"Say no more!\" Hadrik says, and he gets up from his rock. \"Please, take my seat! I was just about to go back to my tent.\"\r\n\r\nHe then raises his bottle again.\r\n\r\n\"Cheers, Barry!\" he says, as we both clink our bottles once more, and then we chug down the last of our ale."
           - source: scene_text_2
             paragraph: 39
             text: "\"Okay, Barry, listen closely!\" Rose says in a low voice, as Hadrik heads for his tent. \"I think you might have already realized by now that--\" \r\n\r\nShe pauses mid-sentence and she looks at my face.\r\n\r\n\"Barry, are you drunk?\" she asks.\r\n\r\n\"Maybe a little,\" I answer her.\r\n\r\nRose giggles.\r\n\r\n\"Hold on,\" she says. \"I've got some herbs in my backpack that will get you back in shape in no time, and you won't have to worry about a hangover either. I'll be right back!\"\r\n\r\nAfter she's done searching her backpack, she comes back with a fistful of red leaves, and she tells me that I need to chew on them for thirty seconds. Once I'm done, I realize that my dizziness is completely gone, and I can think clearly again.\r\n\r\n\"So, as I was saying,\" Rose says, \"you might have already realized by now that Kate, Hadrik and I had a little discussion before voting for you and Daren to take the first night shift. I'm sorry that we didn't invite you as well, but someone needed to stay with Daren so that he wouldn't get suspicious.\"\r\n\r\n\"Yeah, I kind of figured that something was wrong when I saw how well in sync you three were,\" I say. \"So, what's this all about, then?\"\r\n\r\n\"Well, you know how Illuna said that Flower still needs to remain in stasis until at least tomorrow evening?\"\r\n\r\n\"Yeah, I remember.\""
-        condition: ch10_magium = 5
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch10_unconscious
-      - texts:
+      - condition: ch10_magium = 6
+        texts:
           - source: scene_text
             paragraph: 65
             text: "\"I haven't really thought about that, yet.\"\r\n\r\nHadrik laughs.\r\n\r\n\"I thought that might be the case!\" he says. \"Well, there's no need to worry about it now. You'll figure it out when the time comes!\"\r\n\r\n\"I completely agree!\" I hear Rose's voice coming from behind me. \"If becoming a mage was important enough for Barry to risk coming here, then he should focus all of his energy on accomplishing his goal, and worry about the details afterwards! He can decide what he wants to do with his powers after he gets them.\"\r\n\r\nHadrik grins, as he looks at Rose.\r\n\r\n\"Should I take it that you've finally changed your mind and decided to join us?\" he says. \"I've got many more bottles of ale stashed up in my backpack so there's no need for you to hold back!\"\r\n\r\n\"Actually, no,\" Rose says. \"I only came here because I had a few things to say to Barry before going to sleep!\"\r\n\r\n\"Say no more!\" Hadrik says, and he gets up from his rock. \"Please, take my seat! I was just about to go back to my tent.\"\r\n\r\nHe then raises his bottle again.\r\n\r\n\"Cheers, Barry!\" he says, as we both clink our bottles once more, and then we chug down the last of our ale."
           - source: scene_text_2
             paragraph: 39
             text: "\"Okay, Barry, listen closely!\" Rose says in a low voice, as Hadrik heads for his tent. \"I think you might have already realized by now that--\" \r\n\r\nShe pauses mid-sentence and she looks at my face.\r\n\r\n\"Barry, are you drunk?\" she asks.\r\n\r\n\"Maybe a little,\" I answer her.\r\n\r\nRose giggles.\r\n\r\n\"Hold on,\" she says. \"I've got some herbs in my backpack that will get you back in shape in no time, and you won't have to worry about a hangover either. I'll be right back!\"\r\n\r\nAfter she's done searching her backpack, she comes back with a fistful of red leaves, and she tells me that I need to chew on them for thirty seconds. Once I'm done, I realize that my dizziness is completely gone, and I can think clearly again.\r\n\r\n\"So, as I was saying,\" Rose says, \"you might have already realized by now that Kate, Hadrik and I had a little discussion before voting for you and Daren to take the first night shift. I'm sorry that we didn't invite you as well, but someone needed to stay with Daren so that he wouldn't get suspicious.\"\r\n\r\n\"Yeah, I kind of figured that something was wrong when I saw how well in sync you three were,\" I say. \"So, what's this all about, then?\"\r\n\r\n\"Well, you know how Illuna said that Flower still needs to remain in stasis until at least tomorrow evening?\"\r\n\r\n\"Yeah, I remember.\""
-        condition: ch10_magium = 6
         choices:
           - position: 1
             text: Continue
@@ -1255,6 +1273,7 @@ scenes:
             condition: ch2_deer_interaction = 1
           - set:
               current_scene: ch10_minimize
+            condition: ch2_deer_interaction != 1
   - name: ch10_subconsciously
     texts:
       - source: scene_text
@@ -1283,6 +1302,7 @@ scenes:
             condition: ch2_deer_interaction = 1
           - set:
               current_scene: ch10_minimize
+            condition: ch2_deer_interaction != 1
   - name: ch10_apologize
     texts:
       - source: scene_text
@@ -1311,20 +1331,22 @@ scenes:
             condition: ch2_deer_interaction = 1
           - set:
               current_scene: ch10_minimize
+            condition: ch2_deer_interaction != 1
   - name: ch10_elaria
     routes:
-      - texts:
+      - condition: ch6_rose_deer = 0
+        texts:
           - source: scene_text
             paragraph: 72
             text: "A few minutes after leaving the ruins, we hear the leopard calling out to us.  \r\n\r\n\"Wait!\" he says, in the common tongue. \"I forgot to ask. Is one of you named Rose, by any chance?\"\r\n\r\n\"I am Rose…\" Rose says. \"Why do you ask?\"\r\n\r\n\"A doe named Elaria has been waiting impatiently for your return,\" the leopard says. \"She seemed very worried about you. Would you like me to transmit a message to her?\"\r\n\r\n\"I...\" Rose starts to say and she pauses. \"Yes... Tell her that I'm safe, that I'm deeply grateful for her concern, and that I wish her all the best...\"\r\n\r\n\"Very well,\" Leo says. \"I will tell her what you said.\"\r\n\r\nHe then wishes us all safe travels and he goes back towards the ruins, while the rest of us resume our journey."
-        condition: ch6_rose_deer = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: ch10_minimize
-      - texts:
+      - condition: ch6_rose_deer = 1
+        texts:
           - source: scene_text
             paragraph: 73
             text: "A few minutes after leaving the ruins, we hear the leopard calling out to us.  \r\n\r\n\"Wait!\" he says, in the common tongue. \"I forgot to ask. Is one of you named Rose, by any chance?\"\r\n\r\n\"I am Rose…\" Rose says. \"Why do you ask?\"\r\n\r\n\"A doe named Elaria has been waiting impatiently for your return,\" the leopard says. \"She seemed very worried about you. Would you like me to transmit a message to her?\"\r\n\r\n\"I...\" Rose starts to say and she pauses. \"No, I'd rather talk to her myself. Could you please tell her to come here? I'll be waiting for her.\"\r\n\r\n\"As you wish,\" Leo says. \"She'll be with you momentarily.\"\r\n\r\n\"So you've finally decided to grab the bull by the horns, then?\" I ask Rose, after the leopard leaves.\r\n\r\n\"There's no time like the present, don't you think?\" Rose says, smiling.\r\n\r\n\"Wait, what's this all about?\" Daren asks us.\r\n\r\n\"It's a secret!\" Rose tells him, smiling playfully.\r\n\r\n\"Right...\" Daren says.\r\n\r\nAbout ten minutes later, Elaria finally shows up, and she pauses for a few moments to catch her breath before she begins to speak."
@@ -1334,12 +1356,12 @@ scenes:
           - source: scene_3
             paragraph: 6
             text: "\"I will!\" Rose says. \"I'll see you again, soon! Goodbye, Elaria, and thank you again, for everything!\"\r\n\r\nShe waves goodbye to the doe, and then we all resume our journey, while Rose looks as if a great burden had been lifted off her chest."
-        condition: ch6_rose_deer = 1
-        set:
-          ac_ch10_reunion: 1
-        achievement:
-          id: ac_ch10_reunion
-          title: A touching reunion
+        effects:
+          - set:
+              ac_ch10_reunion: 1
+            achievement:
+              id: ac_ch10_reunion
+              title: A touching reunion
         choices:
           - position: 1
             text: Continue

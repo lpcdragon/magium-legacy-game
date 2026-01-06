@@ -29,7 +29,8 @@ scenes:
           hearing = 0 AND perception = 0 AND ancient_languages = 0 AND
           combat_technique = 0 AND premonition = 0
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 2
             text: "\"Barry!\" I hear Rose's voice through the transceiver. \"--happened-- everyone alright?--\"\r\n\r\n\"Rose, I can only hear bits and pieces of what you're saying!\" I say. \"It must be because of all the seredium in the cave's ceiling. We're all fine, but we're not exactly sure where we are yet.\"\r\n\r\n\"I'm sorry, I couldn't-- all that,\" Rose says. \"Where did you-- teleported?\"\r\n\r\n\"We don't know yet!\" I say. \"Some underground caverns that I can't recognize. We're going to need to explore a bit to find out more. I'll call you again once we're out of here.\"\r\n\r\n\"Okay, Barry,\" Rose says. \"-- careful!\"\r\n\r\n\"You don't think this is one of the corridors from the rebel base?\" Kate asks me, as I close the communications channel and put the transceiver back in my pocket.\r\n\r\n\"No, I spent all my day exploring their tunnels and this place doesn't seem familiar to me at all,\" I say. \"I think we're still somewhere below the city, though.\"\r\n\r\n\"I agree with Barry,\" Breynan says. \"I know all of the corridors from our base, including the ones from the restricted areas, and this is certainly not part of our territory. There might be enemies nearby. We need to stay alert.\""
@@ -39,7 +40,6 @@ scenes:
           - source: scene_3
             paragraph: 2
             text: "\"Arraka can cast dispelling magic from inside her amulet?...\" Kate asks. \"I thought the spells she could cast were very limited in her current state.\"\r\n\r\n\"Dispelling magic does not require a great deal of magical energy to cast,\" Illuna says. \"Arraka's main problem while she's inside the amulet is that she can only store a very small amount of energy within her aura at any given moment, so the only way in which she can cast any reasonably powerful spells is to channel the energy outside the amulet for hours on end, without being interrupted by anyone. It's not like she suddenly forgot how to cast spells when she got trapped in there. She still has all of her knowledge. That's why she can cast complex spells like detailed holograms, targets made of solid light and dispelling magic but she can't manage to cast a simple explosion spell to break herself out of her amulet. It would take her three whole hours to channel the energy required to generate a small explosion, as opposed to the half hour or so she usually needs to dispel a trap.\""
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Continue
@@ -47,7 +47,8 @@ scenes:
               - set:
                   current_scene: b3_ch04a_intro2
                   checkpoint_rich: 0
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 3
             text: "\"What's happening?\" Kate asks Breynan in an anxious tone, as she watches him healing Illuna. \"Why isn't she waking up?\"\r\n\r\n\"Unlike your friend in heavy armor, I am no healer,\" Breynan says, as he wipes a drop of sweat from his forehead. \"I've never had to heal anything more than superficial wounds in the past, and my spells are not at all suited for something as serious as this. Please don't break my focus. It's already hard enough for me to keep her stabilized as it is.\"\r\n\r\n\"I understand...\" Kate says. \"I will let you work.\"\r\n\r\nAfter we all wait for about a minute in silence, Breynan finally gets up from the ground and he gives us his verdict.\r\n\r\n\"I've done all I could,\" Breynan says. \"She should no longer be in any life-threatening danger, but she's lost a lot of blood. It will take her a long time to fully recover.\"\r\n\r\n\"Do you have any idea what this place might be?\" I ask Breynan, as I nod my head towards the cavern walls surrounding us. \"I don't recognize it at all, and I've been through most of the tunnels from your rebel base.\""
@@ -57,7 +58,6 @@ scenes:
           - source: scene_3
             paragraph: 3
             text: "\"Magical traps, huh?...\" I say. \"Damn, we could have really used Daren's help right about now. Does anyone else here even know how to disarm a trap?\"\r\n\r\n\"I've tried my hand at disarming a few magical traps in the past,\" Breynan says. \"But I will need to see these traps up-close before I can tell if my skills would be of use here or not.\"\r\n\r\n\"We still need to wait until Illuna wakes up before we can leave,\" Kate says. \"We can't risk carrying her around while she is in her current condition. If we're not careful, her wound might re-open.\"\r\n\r\n\"I'm... already awake...\" Illuna says in an exhausted tone, as she struggles to raise herself from the ground.\r\n\r\nHer face is almost white and she looks as if she were only seconds away from fainting again. It is clear that she is expending a great amount of effort just to keep her consciousness.\r\n\r\n\"Illuna, you can't get up yet!\" Kate says. \"You need to rest!\""
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: Continue
@@ -67,7 +67,8 @@ scenes:
                   checkpoint_rich: 0
   - name: b3_ch04a_intro2
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 4
             text: "\"Well, Arraka is not here with us to help with the traps, so you're our best bet right now,\" I say. \"You've seen her use the dispelling technique many times before, so you must know how it works by now, right?\"\r\n\r\n\"Knowing how it works and being able to perform it successfully are two entirely different things...\" Illuna says.\r\n\r\n\"I've tried my hand at disarming magical traps a few times before as well, so maybe the two of us could work together,\" Breynan says. \"Either way, I think we should get moving. I've been trying to contact Barry from the teleporter room ever since we got here but I've had no luck, so I'm guessing that there are just too many seredium walls between us and him for the signal to get through, considering that we're likely at the same altitude as him at the moment. We're probably going to need to reach the surface before he can teleport us again.\""
@@ -77,7 +78,6 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "After Breynan heals Leila's concussion that she got from hitting her head against the pavement earlier, we all begin to head in the direction that seems the most likely to lead us towards the surface. With Melindra's help, we manage to avoid the paths leading directly to magical traps for a while, although according to her own words, we will probably be forced to start disarming some of them rather soon.\r\n\r\nWhile we're walking down the corridors, I suddenly hear a long beep coming from my pocket. I immediately realize that the sound is coming from my stat device and I take it out as quickly as I can, in order to get a good look at it. What I'm currently seeing on the screen is a text message, notifying me about the experimental stat activation and asking me if I want to see a quick introduction about what these stats can do.\r\n\r\nIt looks like I won't be able to see any of my stats until I answer the question on this screen."
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: See the introduction
@@ -107,13 +107,10 @@ scenes:
                   combat_technique_aux: 0
                   premonition: 0
                   premonition_aux: 0
-                  available_points: 26
-                  available_points_aux: 26
-                condition: b3_ch1_unlock = 2
+                  available_points: 25
+                  available_points_aux: 25
+                condition: b3_ch1_unlock != 2
               - set:
-                  current_scene: b3_ch04a_introduction2
-                  b3_ch4_introduction: 0
-                  b3_ch3_stats_unavailable: 0
                   strength: 0
                   strength_aux: 0
                   agility: 0
@@ -132,9 +129,15 @@ scenes:
                   combat_technique_aux: 0
                   premonition: 0
                   premonition_aux: 0
-                  available_points: 25
-                  available_points_aux: 25
-      - texts:
+                  available_points: 26
+                  available_points_aux: 26
+                condition: b3_ch1_unlock = 2
+              - set:
+                  current_scene: b3_ch04a_introduction2
+                  b3_ch4_introduction: 0
+                  b3_ch3_stats_unavailable: 0
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 5
             text: "\"There is... no time to rest,\" Illuna says, as she slowly gets up on her feet and then nearly falls back to the ground. \"For all we know, we could be inside enemy territory right now. We need to keep moving.\"\r\n\r\nIlluna tries to take a few steps forward, but she trips again, as Kate and I rush to support her.\r\n\r\n\"It's fine,\" Illuna says, in a weak tone of voice, as she manages to regain her balance by herself. \"I can walk on my own.\"\r\n\r\n\"What your banshee friend said earlier is true,\" Breynan tells us. \"We really can't afford to waste any more time here. I tried to contact Barry from the teleporter room just now, but I'm having no luck. There must be too many seredium walls between us and him for us to be able to reach him, given that we are likely situated at the same altitude as the rebel base. We're probably going to need to get to the surface before he can teleport us again.\""
@@ -144,7 +147,6 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "After Breynan heals Leila's concussion that she got from hitting her head against the pavement earlier, we all begin to head in the direction that seems the most likely to lead us towards the surface. With Melindra's help, we manage to avoid the paths leading directly to magical traps for a while, although according to her own words, we will probably be forced to start disarming some of them rather soon.\r\n\r\nWhile we're walking down the corridors, I suddenly hear a long beep coming from my pocket. I immediately realize that the sound is coming from my stat device and I take it out as quickly as I can, in order to get a good look at it. What I'm currently seeing on the screen is a text message, notifying me about the experimental stat activation and asking me if I want to see a quick introduction about what these stats can do.\r\n\r\nIt looks like I won't be able to see any of my stats until I answer the question on this screen."
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: See the introduction
@@ -174,13 +176,10 @@ scenes:
                   combat_technique_aux: 0
                   premonition: 0
                   premonition_aux: 0
-                  available_points: 26
-                  available_points_aux: 26
-                condition: b3_ch1_unlock = 2
+                  available_points: 25
+                  available_points_aux: 25
+                condition: b3_ch1_unlock != 2
               - set:
-                  current_scene: b3_ch04a_introduction2
-                  b3_ch4_introduction: 0
-                  b3_ch3_stats_unavailable: 0
                   strength: 0
                   strength_aux: 0
                   agility: 0
@@ -199,8 +198,13 @@ scenes:
                   combat_technique_aux: 0
                   premonition: 0
                   premonition_aux: 0
-                  available_points: 25
-                  available_points_aux: 25
+                  available_points: 26
+                  available_points_aux: 26
+                condition: b3_ch1_unlock = 2
+              - set:
+                  current_scene: b3_ch04a_introduction2
+                  b3_ch4_introduction: 0
+                  b3_ch3_stats_unavailable: 0
   - name: b3_ch04a_introduction
     texts:
       - source: scene_text
@@ -235,12 +239,10 @@ scenes:
               combat_technique_aux: 0
               premonition: 0
               premonition_aux: 0
-              available_points: 26
-              available_points_aux: 26
-            condition: b3_ch1_unlock = 2
+              available_points: 25
+              available_points_aux: 25
+            condition: b3_ch1_unlock != 2
           - set:
-              current_scene: b3_ch04a_introduction2
-              b3_ch3_stats_unavailable: 0
               strength: 0
               strength_aux: 0
               agility: 0
@@ -259,18 +261,22 @@ scenes:
               combat_technique_aux: 0
               premonition: 0
               premonition_aux: 0
-              available_points: 25
-              available_points_aux: 25
+              available_points: 26
+              available_points_aux: 26
+            condition: b3_ch1_unlock = 2
+          - set:
+              current_scene: b3_ch04a_introduction2
+              b3_ch3_stats_unavailable: 0
   - name: b3_ch04a_introduction2
     routes:
-      - texts:
+      - condition: b3_ch4_introduction = 1 AND b3_ch1_unlock <> 2
+        texts:
           - source: scene_text
             paragraph: 7
             text: "'The Bluff or Aura Concealment stat is designed to help you control your aura,\" the text says. \"It has two primary purposes. First of all, this stat will allow you to keep the flow of your aura stable enough to avoid lie detection if your level is high enough. Just like with the Magical Sense stat, the effects it will have on you will highly depend on your own ability to control your aura. If your aura control is very poor, then you will need to invest more points in this stat to make it reasonably effective.'\r\n\r\n'The second utility of this stat was discovered during testing,' the next page says. 'While the initial purpose of this stat was only to keep the aura flow stable, a few of the test subjects found out that with enough practice it could also be used to hide their auras completely, making themselves undetectable in terms of magical sense. After receiving this new information, we made a few adjustments to the Bluff stat and also gave it a secondary name, in order to better reflect its potential. If you are unable to use this stat to conceal your aura, please contact the person in charge of your stat activation, so they can readjust your device.'"
           - source: scene_text_2
             paragraph: 7
             text: "When I press on the 'next page' button one more time, I am shown one final text before I can proceed to my usual stat screen.\r\n\r\n'This concludes the introduction of the experimental aura stats,' the text says. 'Pressing on the next page button will now return you to your stat screen. Don't forget that if you had any points invested into your stats before the activation you will need to reinvest them, as they have been reset.'\r\n\r\nAs soon as I press the button, the stat screen finally appears and I can see that my three new stats have been added right below the other stats, which are currently all at level zero. I'll have to think whether I want to start investing my points now, or if I should wait until later before I make my decision."
-        condition: b3_ch4_introduction = 1 AND b3_ch1_unlock <> 2
         choices:
           - position: 1
             text: Invest points now
@@ -293,80 +299,80 @@ scenes:
                   = 0 AND magical_sense_aux = 0 AND aura_hardening_aux = 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND strength_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND agility_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND toughness_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND reflexes_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND hearing_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND perception_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND ancient_languages_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND combat_technique_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND premonition_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested4
                 condition: >-
                   b3_ch4_average_joe = 0 AND bluff_aux = 0 AND magical_sense_aux
                   = 0 AND aura_hardening_aux = 0
-      - texts:
+      - condition: b3_ch4_introduction = 1 AND b3_ch1_unlock = 2
+        texts:
           - source: scene_text
             paragraph: 7
             text: "'The Bluff or Aura Concealment stat is designed to help you control your aura,\" the text says. \"It has two primary purposes. First of all, this stat will allow you to keep the flow of your aura stable enough to avoid lie detection if your level is high enough. Just like with the Magical Sense stat, the effects it will have on you will highly depend on your own ability to control your aura. If your aura control is very poor, then you will need to invest more points in this stat to make it reasonably effective.'\r\n\r\n'The second utility of this stat was discovered during testing,' the next page says. 'While the initial purpose of this stat was only to keep the aura flow stable, a few of the test subjects found out that with enough practice it could also be used to hide their auras completely, making themselves undetectable in terms of magical sense. After receiving this new information, we made a few adjustments to the Bluff stat and also gave it a secondary name, in order to better reflect its potential. If you are unable to use this stat to conceal your aura, please contact the person in charge of your stat activation, so they can readjust your device.'"
           - source: scene_text_2
             paragraph: 8
             text: "When I press on the 'next page' button one more time, I am shown one final text before I can proceed to my usual stat screen.\r\n\r\n'This concludes the introduction of the experimental aura stats,' the text says. 'Pressing on the next page button will now return you to your stat screen. Don't forget that if you had any points invested into your stats before the activation you will need to reinvest them, as they have been reset.'\r\n\r\nAs soon as I press the button, the stat screen finally appears and I can see that my three new stats have been added right below the other stats, which are currently all at level zero. I'm also noticing that I have an extra available point to spend. This must be the 'bonus' point that Leila's father said I would gain because of locking my stats by accident. The one that would cause me to gain one less point when I'll be getting my next batch. I'll have to think whether I want to start investing my points now, or if I should wait until later before I make my decision."
-        condition: b3_ch4_introduction = 1 AND b3_ch1_unlock = 2
         choices:
           - position: 1
             text: Invest points now
@@ -389,77 +395,77 @@ scenes:
                   = 0 AND magical_sense_aux = 0 AND aura_hardening_aux = 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND strength_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND agility_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND toughness_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND reflexes_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND hearing_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND perception_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND ancient_languages_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND combat_technique_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND premonition_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested4
                 condition: >-
                   b3_ch4_average_joe = 0 AND bluff_aux = 0 AND magical_sense_aux
                   = 0 AND aura_hardening_aux = 0
-      - texts:
+      - condition: b3_ch4_introduction = 0 AND b3_ch1_unlock <> 2
+        texts:
           - source: scene_text
             paragraph: 8
             text: "I decide that I want to skip the introduction so I press the corresponding button on my device, which makes a new text appear on the screen.\r\n\r\n'You have chosen to skip the introduction of the aura stats,' the text says. 'If you ever want to read the introduction text at a later date, you can always find it in the instructions manual that was given to you along with your stat device. Pressing on the next page button will now return you to your stat screen. Don't forget that if you had any points invested into your stats before the activation you will need to reinvest them, as they have been reset.'\r\n\r\nOh, so they used to have instructions manuals back when they were first handing out these stat devices a thousand years ago. Interesting... \r\n\r\nAs soon as I press the next page button, the stat screen finally appears and I can see that my three new stats have been added right below the other stats, which are currently all at level zero. I guess I'll have to think whether I want to start investing my points now, or if I should wait until later before I make my decision."
-        condition: b3_ch4_introduction = 0 AND b3_ch1_unlock <> 2
         choices:
           - position: 1
             text: Invest points now
@@ -482,77 +488,77 @@ scenes:
                   = 0 AND magical_sense_aux = 0 AND aura_hardening_aux = 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND strength_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND agility_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND toughness_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND reflexes_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND hearing_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND perception_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND ancient_languages_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND combat_technique_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND premonition_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested4
                 condition: >-
                   b3_ch4_average_joe = 0 AND bluff_aux = 0 AND magical_sense_aux
                   = 0 AND aura_hardening_aux = 0
-      - texts:
+      - condition: b3_ch4_introduction = 0 AND b3_ch1_unlock = 2
+        texts:
           - source: scene_text
             paragraph: 9
             text: "I decide that I want to skip the introduction so I press the corresponding button on my device, which makes a new text appear on the screen.\r\n\r\n'You have chosen to skip the introduction of the aura stats,' the text says. 'If you ever want to read the introduction text at a later date, you can always find it in the instructions manual that was given to you along with your stat device. Pressing on the next page button will now return you to your stat screen. Don't forget that if you had any points invested into your stats before the activation you will need to reinvest them, as they have been reset.'\r\n\r\nOh, so they used to have instructions manuals back when they were first handing out these stat devices a thousand years ago. Interesting... \r\n\r\nAs soon as I press the next page button, the stat screen finally appears and I can see that my three new stats have been added right below the other stats, which are currently all at level zero. I'm also noticing that I have an extra available point to spend. This must be the 'bonus' point that Leila's father said I would gain because of locking my stats by accident. The one that would cause me to gain one less point when I'll be getting my next batch.\r\n\r\nI guess I'll have to think whether I want to start investing my points now, or if I should wait until later before I make my decision."
-        condition: b3_ch4_introduction = 0 AND b3_ch1_unlock = 2
         choices:
           - position: 1
             text: Invest points now
@@ -575,67 +581,67 @@ scenes:
                   = 0 AND magical_sense_aux = 0 AND aura_hardening_aux = 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND strength_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND agility_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND toughness_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND reflexes_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND hearing_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND perception_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND ancient_languages_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND combat_technique_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND premonition_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested4
                 condition: >-
@@ -643,14 +649,14 @@ scenes:
                   = 0 AND aura_hardening_aux = 0
   - name: b3_ch04a_stats_spent
     routes:
-      - texts:
+      - condition: b3_ch4_introduction = 1 AND b3_ch1_unlock <> 2
+        texts:
           - source: scene_text
             paragraph: 7
             text: "'The Bluff or Aura Concealment stat is designed to help you control your aura,\" the text says. \"It has two primary purposes. First of all, this stat will allow you to keep the flow of your aura stable enough to avoid lie detection if your level is high enough. Just like with the Magical Sense stat, the effects it will have on you will highly depend on your own ability to control your aura. If your aura control is very poor, then you will need to invest more points in this stat to make it reasonably effective.'\r\n\r\n'The second utility of this stat was discovered during testing,' the next page says. 'While the initial purpose of this stat was only to keep the aura flow stable, a few of the test subjects found out that with enough practice it could also be used to hide their auras completely, making themselves undetectable in terms of magical sense. After receiving this new information, we made a few adjustments to the Bluff stat and also gave it a secondary name, in order to better reflect its potential. If you are unable to use this stat to conceal your aura, please contact the person in charge of your stat activation, so they can readjust your device.'"
           - source: scene_text_2
             paragraph: 7
             text: "When I press on the 'next page' button one more time, I am shown one final text before I can proceed to my usual stat screen.\r\n\r\n'This concludes the introduction of the experimental aura stats,' the text says. 'Pressing on the next page button will now return you to your stat screen. Don't forget that if you had any points invested into your stats before the activation you will need to reinvest them, as they have been reset.'\r\n\r\nAs soon as I press the button, the stat screen finally appears and I can see that my three new stats have been added right below the other stats, which are currently all at level zero. I'll have to think whether I want to start investing my points now, or if I should wait until later before I make my decision."
-        condition: b3_ch4_introduction = 1 AND b3_ch1_unlock <> 2
         choices:
           - position: 1
             text: Continue
@@ -665,80 +671,80 @@ scenes:
                   = 0 AND magical_sense_aux = 0 AND aura_hardening_aux = 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND strength_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND agility_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND toughness_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND reflexes_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND hearing_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND perception_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND ancient_languages_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND combat_technique_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND premonition_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested4
                 condition: >-
                   b3_ch4_average_joe = 0 AND bluff_aux = 0 AND magical_sense_aux
                   = 0 AND aura_hardening_aux = 0
-      - texts:
+      - condition: b3_ch4_introduction = 1 AND b3_ch1_unlock = 2
+        texts:
           - source: scene_text
             paragraph: 7
             text: "'The Bluff or Aura Concealment stat is designed to help you control your aura,\" the text says. \"It has two primary purposes. First of all, this stat will allow you to keep the flow of your aura stable enough to avoid lie detection if your level is high enough. Just like with the Magical Sense stat, the effects it will have on you will highly depend on your own ability to control your aura. If your aura control is very poor, then you will need to invest more points in this stat to make it reasonably effective.'\r\n\r\n'The second utility of this stat was discovered during testing,' the next page says. 'While the initial purpose of this stat was only to keep the aura flow stable, a few of the test subjects found out that with enough practice it could also be used to hide their auras completely, making themselves undetectable in terms of magical sense. After receiving this new information, we made a few adjustments to the Bluff stat and also gave it a secondary name, in order to better reflect its potential. If you are unable to use this stat to conceal your aura, please contact the person in charge of your stat activation, so they can readjust your device.'"
           - source: scene_text_2
             paragraph: 8
             text: "When I press on the 'next page' button one more time, I am shown one final text before I can proceed to my usual stat screen.\r\n\r\n'This concludes the introduction of the experimental aura stats,' the text says. 'Pressing on the next page button will now return you to your stat screen. Don't forget that if you had any points invested into your stats before the activation you will need to reinvest them, as they have been reset.'\r\n\r\nAs soon as I press the button, the stat screen finally appears and I can see that my three new stats have been added right below the other stats, which are currently all at level zero. I'm also noticing that I have an extra available point to spend. This must be the 'bonus' point that Leila's father said I would gain because of locking my stats by accident. The one that would cause me to gain one less point when I'll be getting my next batch. I'll have to think whether I want to start investing my points now, or if I should wait until later before I make my decision."
-        condition: b3_ch4_introduction = 1 AND b3_ch1_unlock = 2
         choices:
           - position: 1
             text: Continue
@@ -753,77 +759,77 @@ scenes:
                   = 0 AND magical_sense_aux = 0 AND aura_hardening_aux = 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND strength_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND agility_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND toughness_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND reflexes_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND hearing_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND perception_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND ancient_languages_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND combat_technique_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND premonition_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested4
                 condition: >-
                   b3_ch4_average_joe = 0 AND bluff_aux = 0 AND magical_sense_aux
                   = 0 AND aura_hardening_aux = 0
-      - texts:
+      - condition: b3_ch4_introduction = 0 AND b3_ch1_unlock <> 2
+        texts:
           - source: scene_text
             paragraph: 8
             text: "I decide that I want to skip the introduction so I press the corresponding button on my device, which makes a new text appear on the screen.\r\n\r\n'You have chosen to skip the introduction of the aura stats,' the text says. 'If you ever want to read the introduction text at a later date, you can always find it in the instructions manual that was given to you along with your stat device. Pressing on the next page button will now return you to your stat screen. Don't forget that if you had any points invested into your stats before the activation you will need to reinvest them, as they have been reset.'\r\n\r\nOh, so they used to have instructions manuals back when they were first handing out these stat devices a thousand years ago. Interesting... \r\n\r\nAs soon as I press the next page button, the stat screen finally appears and I can see that my three new stats have been added right below the other stats, which are currently all at level zero. I guess I'll have to think whether I want to start investing my points now, or if I should wait until later before I make my decision."
-        condition: b3_ch4_introduction = 0 AND b3_ch1_unlock <> 2
         choices:
           - position: 1
             text: Continue
@@ -838,77 +844,77 @@ scenes:
                   = 0 AND magical_sense_aux = 0 AND aura_hardening_aux = 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND strength_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND agility_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND toughness_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND reflexes_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND hearing_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND perception_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND ancient_languages_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND combat_technique_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND premonition_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested4
                 condition: >-
                   b3_ch4_average_joe = 0 AND bluff_aux = 0 AND magical_sense_aux
                   = 0 AND aura_hardening_aux = 0
-      - texts:
+      - condition: b3_ch4_introduction = 0 AND b3_ch1_unlock = 2
+        texts:
           - source: scene_text
             paragraph: 9
             text: "I decide that I want to skip the introduction so I press the corresponding button on my device, which makes a new text appear on the screen.\r\n\r\n'You have chosen to skip the introduction of the aura stats,' the text says. 'If you ever want to read the introduction text at a later date, you can always find it in the instructions manual that was given to you along with your stat device. Pressing on the next page button will now return you to your stat screen. Don't forget that if you had any points invested into your stats before the activation you will need to reinvest them, as they have been reset.'\r\n\r\nOh, so they used to have instructions manuals back when they were first handing out these stat devices a thousand years ago. Interesting... \r\n\r\nAs soon as I press the next page button, the stat screen finally appears and I can see that my three new stats have been added right below the other stats, which are currently all at level zero. I'm also noticing that I have an extra available point to spend. This must be the 'bonus' point that Leila's father said I would gain because of locking my stats by accident. The one that would cause me to gain one less point when I'll be getting my next batch.\r\n\r\nI guess I'll have to think whether I want to start investing my points now, or if I should wait until later before I make my decision."
-        condition: b3_ch4_introduction = 0 AND b3_ch1_unlock = 2
         choices:
           - position: 1
             text: Continue
@@ -923,67 +929,67 @@ scenes:
                   = 0 AND magical_sense_aux = 0 AND aura_hardening_aux = 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested
-                condition: b3_ch4_average_joe = 1
+                condition: b3_ch4_average_joe = 1 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND strength_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND agility_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND toughness_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND reflexes_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND hearing_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND perception_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND ancient_languages_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND combat_technique_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested2
                 condition: >-
                   b3_ch4_average_joe = 1 AND bluff_aux = 0 AND magical_sense_aux
-                  = 0 AND aura_hardening_aux = 0
+                  = 0 AND aura_hardening_aux = 0 AND premonition_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND bluff_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND magical_sense_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested3
-                condition: b3_ch4_average_joe = 0
+                condition: b3_ch4_average_joe = 0 AND aura_hardening_aux > 0
               - set:
                   current_scene: b3_ch04a_avg_joe_invested4
                 condition: >-
@@ -1021,51 +1027,52 @@ scenes:
               b3_ch4_demolisher: 3
   - name: b3_ch04a_avg_joe2
     routes:
-      - texts:
+      - condition: b3_ch4_demolisher = 1 AND b3_ch1_unlock <> 2
+        texts:
           - source: scene_text
             paragraph: 12
             text: "\"I'm not spending any points. I'll only start investing them when it's absolutely necessary.\"\r\n\r\n\"Of course you would say something like that,\" Kate tells me. \"I don't know why I even bothered asking.\"\r\n\r\n\"Barry, aren't you even a little bit curious to see what those new stats can do?\" Leila writes.\r\n\r\n\"Maybe a little,\" I say. \"But at the moment I'm just glad to have the stat device functional again. At least now I know that if things get really bad, I'll have twenty-five points that I can immediately put in whatever combination of stats I may need to get us out of trouble.\"\r\n\r\n\"Well... I suppose that's one way of putting it...\" Leila writes.\r\n\r\n\"Given how much time it's already been since we came to Varathia, I'm starting to doubt that he'll ever level up any of his stats,\" Kate says. \"He's probably going to end up holding onto those points until the very end of the tournament at this rate.\"\r\n\r\n\"Look on the bright side,\" I say. \"If we ever make it to that point, then you'll have both the satisfaction of having survived one of the deadliest mage tournaments in the world, and the satisfaction of being able to say 'I told you so!' \"  \r\n\r\n\"Right...\" Kate says."
-        condition: b3_ch4_demolisher = 1 AND b3_ch1_unlock <> 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch04a_disarm
-      - texts:
+      - condition: b3_ch4_demolisher = 1 AND b3_ch1_unlock = 2
+        texts:
           - source: scene_text
             paragraph: 14
             text: "\"I'm not spending any points. I'll only start investing them when it's absolutely necessary.\"\r\n\r\n\"Of course you would say something like that,\" Kate tells me. \"I don't know why I even bothered asking.\"\r\n\r\n\"Barry, aren't you even a little bit curious to see what those new stats can do?\" Leila writes.\r\n\r\n\"Maybe a little,\" I say. \"But at the moment I'm just glad to have the stat device functional again. At least now I know that if things get really bad, I'll have twenty-six points that I can immediately put in whatever combination of stats I may need to get us out of trouble.\"\r\n\r\n\"Well... I suppose that's one way of putting it...\" Leila writes.\r\n\r\n\"Given how much time it's already been since we came to Varathia, I'm starting to doubt that he'll ever level up any of his stats,\" Kate says. \"He's probably going to end up holding onto those points until the very end of the tournament at this rate.\"\r\n\r\n\"Look on the bright side,\" I say. \"If we ever make it to that point, then you'll have both the satisfaction of having survived one of the deadliest mage tournaments in the world, and the satisfaction of being able to say 'I told you so!' \"  \r\n\r\n\"Right...\" Kate says."
-        condition: b3_ch4_demolisher = 1 AND b3_ch1_unlock = 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch04a_disarm
-      - texts:
+      - condition: b3_ch4_demolisher = 2 AND b3_ch1_unlock <> 2
+        texts:
           - source: scene_text
             paragraph: 13
             text: "\"Listen, the stat device was always just a backup plan. I don't want to start relying on it.\"\r\n\r\n\"Of course you would say something like that,\" Kate tells me. \"I don't know why I even bothered asking.\"\r\n\r\n\"Barry, aren't you even a little bit curious to see what those new stats can do?\" Leila writes.\r\n\r\n\"Maybe a little,\" I say. \"But at the moment I'm just glad to have the stat device functional again. At least now I know that if things get really bad, I'll have twenty-five points that I can immediately put in whatever combination of stats I may need to get us out of trouble.\"\r\n\r\n\"Well... I suppose that's one way of putting it...\" Leila writes.\r\n\r\n\"Given how much time it's already been since we came to Varathia, I'm starting to doubt that he'll ever level up any of his stats,\" Kate says. \"He's probably going to end up holding onto those points until the very end of the tournament at this rate.\"\r\n\r\n\"Look on the bright side,\" I say. \"If we ever make it to that point, then you'll have both the satisfaction of having survived one of the deadliest mage tournaments in the world, and the satisfaction of being able to say 'I told you so!' \"  \r\n\r\n\"Right...\" Kate says."
-        condition: b3_ch4_demolisher = 2 AND b3_ch1_unlock <> 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch04a_disarm
-      - texts:
+      - condition: b3_ch4_demolisher = 2 AND b3_ch1_unlock = 2
+        texts:
           - source: scene_text
             paragraph: 15
             text: "\"Listen, the stat device was always just a backup plan. I don't want to start relying on it.\"\r\n\r\n\"Of course you would say something like that,\" Kate tells me. \"I don't know why I even bothered asking.\"\r\n\r\n\"Barry, aren't you even a little bit curious to see what those new stats can do?\" Leila writes.\r\n\r\n\"Maybe a little,\" I say. \"But at the moment I'm just glad to have the stat device functional again. At least now I know that if things get really bad, I'll have twenty-six points that I can immediately put in whatever combination of stats I may need to get us out of trouble.\"\r\n\r\n\"Well... I suppose that's one way of putting it...\" Leila writes.\r\n\r\n\"Given how much time it's already been since we came to Varathia, I'm starting to doubt that he'll ever level up any of his stats,\" Kate says. \"He's probably going to end up holding onto those points until the very end of the tournament at this rate.\"\r\n\r\n\"Look on the bright side,\" I say. \"If we ever make it to that point, then you'll have both the satisfaction of having survived one of the deadliest mage tournaments in the world, and the satisfaction of being able to say 'I told you so!' \"  \r\n\r\n\"Right...\" Kate says."
-        condition: b3_ch4_demolisher = 2 AND b3_ch1_unlock = 2
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch04a_disarm
-      - texts:
+      - condition: b3_ch4_demolisher = 3
+        texts:
           - source: scene_text
             paragraph: 11
             text: "\"Not on this save slot. I'm using this one for the Average Joe achievement.\"\r\n\r\n\"What?...\" Kate says and she stops in her tracks, while looking at me as if I'd suddenly begun speaking in a foreign language.\r\n\r\n\"Sorry,\" I say. \"I meant to say that I'm not going to start investing the points until it's absolutely necessary.\"\r\n\r\n\"No, that's not what you said...\" Kate tells me. \"You were talking about a 'save slot' and an 'Average Joe' achievement. What did you mean by that?\"\r\n\r\n\"I was...\" I begin to tell her, but I can't seem to find the right words and I'm just standing there, trying in vain to formulate a coherent sentence. \"I was just...\"\r\n\r\nWhy did I even say those things? Was I trying to make a joke? Why is it so hard for me to remember?...\r\n\r\nEveryone else has now stopped moving as well and they're all just looking at me and Kate in turn, not entirely sure what to make of us.\r\n\r\n\"Kate, there's no need to have him interrogated like this,\" Leila writes, after she sees the way I'm struggling to think of an answer. \"I'm sure it was just another one of his jokes. He wasn't being serious.\"\r\n\r\n\"I know the way Barry jokes, and this wasn't anything like his usual sarcastic quips,\" Kate says. \"This was something else. In fact, it didn't even feel like I was speaking to Barry at all. It almost felt like I was talking to a... completely different person.\""
@@ -1075,12 +1082,12 @@ scenes:
           - source: scene_3
             paragraph: 6
             text: "\"Yes!\" I say. \"That's it! That's what I was trying to say!\"\r\n\r\nThis must have been it... Her explanation makes perfect sense. I was just trying to make a joke. That's all it was...\r\n\r\n\"I figured it was something like that, but I didn't know about the new type of pet devices,\" Leila writes. \"I'm glad that Melindra cleared it all up!\"\r\n\r\n\"So, are we all done here?...\" Breynan asks us. \"Can we move on?\"\r\n\r\n\"I... suppose...\" Kate says, with a somewhat hesitant look in her eyes.\r\n\r\n\"Good,\" Breynan says. \"I know that there are no enemies nearby, but I still don't feel comfortable staying too long in one place unless we really need to. Let's go!\"\r\n\r\nAs we all move ahead one by one, I notice that Illuna is still staring at me with that serious expression that she always has and with her blue eyes shining brightly. When I look back at her, she does not turn her gaze from me at all and she just keeps looking me right in the eye, in complete silence. As I walk past her to go after the others, her gaze follows me for a few more seconds, but then she finally joins us as well, without saying a word."
-        condition: b3_ch4_demolisher = 3
-        set:
-          ac_b3_ch4_demolisher: 1
-        achievement:
-          id: ac_b3_ch4_demolisher
-          title: Fourth wall demolisher
+        effects:
+          - set:
+              ac_b3_ch4_demolisher: 1
+            achievement:
+              id: ac_b3_ch4_demolisher
+              title: Fourth wall demolisher
         choices:
           - position: 1
             text: Continue
@@ -1133,7 +1140,8 @@ scenes:
               current_scene: b3_ch04a_disarm
   - name: b3_ch04a_disarm
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 20
             text: "We travel through the underground corridors for another twenty minutes or so until we finally reach a dead end, in the sense that no matter which way we go from here we will be forced to disarm one of the magical traps. As we get closer to a tunnel entrance where one of the traps has been placed, Breynan steps to the front so he can have a good look at it. \r\n\r\nThe trap is practically invisible to the naked eye, but we can all feel its presence even if we don't see it. Still, it is difficult to tell what triggering it would do just from sensing the aura and magical energy around it.\r\n\r\n\"I recognize some of these spells,\" Breynan says. \"One of them is a mind affecting spell and there are also around three different types of earth spells thrown in there. That being said, I can't say that I'd feel very confident trying to disarm this just with the knowledge that I have. Maybe we could try studying some of the traps in the other corridors to see if we'll get luckier with those.\"\r\n\r\n\"I doubt it,\" Melindra says. \"The reason why I brought you to this corridor, specifically, is because the trap over here seemed to be the easiest one to dispel. The other ones are much more complicated.\"\r\n\r\n\"Well, I'm telling you that I can't deal with this one on my own,\" Breynan says. \"Even if it's supposed to be 'easy', disarming traps has never been one of my specialties. I don't have anywhere near the level of skill required to dispel it.\""
@@ -1143,21 +1151,20 @@ scenes:
           - source: scene_3
             paragraph: 7
             text: "\"Dispelling magic does not require a great deal of magical energy to cast,\" Illuna says. \"Arraka's main problem while she's inside the amulet is that she can only store a very small amount of energy within her aura at any given moment, so the only way in which she can cast any reasonably powerful spells is to channel the energy outside the amulet for hours on end, without being interrupted by anyone. It's not like she suddenly forgot how to cast spells when she got trapped in there. She still has all of her knowledge. That's why she can cast complex spells like detailed holograms, targets made of solid light and dispelling magic but she can't manage to cast a simple explosion spell to break herself out of her amulet. It would take her three whole hours to channel the energy required to generate a small explosion, as opposed to the half hour or so she usually needs to dispel a trap.\"\r\n\r\n\"Well, Arraka is not here with us to help with the traps, so you're our best bet right now,\" I say. \"You've seen her use the dispelling technique many times before, so you must know how it works by now, right?\"\r\n\r\n\"Knowing how it works and being able to perform it successfully are two entirely different things...\" Illuna says."
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch04a_inventor
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 20
             text: "We travel through the underground corridors for another twenty minutes or so until we finally reach a dead end, in the sense that no matter which way we go from here we will be forced to disarm one of the magical traps. As we get closer to a tunnel entrance where one of the traps has been placed, Breynan steps to the front so he can have a good look at it. \r\n\r\nThe trap is practically invisible to the naked eye, but we can all feel its presence even if we don't see it. Still, it is difficult to tell what triggering it would do just from sensing the aura and magical energy around it.\r\n\r\n\"I recognize some of these spells,\" Breynan says. \"One of them is a mind affecting spell and there are also around three different types of earth spells thrown in there. That being said, I can't say that I'd feel very confident trying to disarm this just with the knowledge that I have. Maybe we could try studying some of the traps in the other corridors to see if we'll get luckier with those.\"\r\n\r\n\"I doubt it,\" Melindra says. \"The reason why I brought you to this corridor, specifically, is because the trap over here seemed to be the easiest one to dispel. The other ones are much more complicated.\"\r\n\r\n\"Well, I'm telling you that I can't deal with this one on my own,\" Breynan says. \"Even if it's supposed to be 'easy', disarming traps has never been one of my specialties. I don't have anywhere near the level of skill required to dispel it.\""
           - source: scene_text_2
             paragraph: 11
             text: "\"But what if Illuna were to help you?\" I say. \"Do you think you might be able to handle it then?\"\r\n\r\n\"I already told you that I'm not good at disarming magical traps,\" Illuna says. \"Even if I were to try helping him, we still wouldn't get anywhere.\""
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Continue
@@ -1166,14 +1173,14 @@ scenes:
                   current_scene: b3_ch04a_inventor
   - name: b3_ch04a_inventor
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 24
             text: "\"Well then, I guess it's a good thing we have an expert in dispelling magic right here with us!\" Melindra says, as she pats me hard on the back. \"Wouldn't you agree, mister inventor of the Brinhorn dispelling technique?\"\r\n\r\n\"I'm not an expert or anything,\" I say. \"Like I already mentioned before, I only invented that technique on a whim.\"\r\n\r\n\"Of course, of course,\" Melindra says, and then she pushes both Illuna and me from behind, in order to get us closer to Breynan. \"Now you two go over there and see what you can do to help. It won't hurt you if you just give it one try, will it?\"\r\n\r\n\"I suppose not,\" I say, and then I begin to slowly advance towards Breynan, alongside Illuna."
           - source: scene_text_2
             paragraph: 14
             text: "As I briefly walk beside her, I immediately notice that Illuna is breathing very heavily and that her walking is in fact a lot more uneven than she lets on. I could have sworn that she had already mostly recovered from her previous injury, but now that I get a closer look I'm beginning to think that she's only pretending to be fine in order to avoid getting us too worried. I really hope that she knows what she's doing.\r\n\r\n\"I'm not sure what that whole 'Brinhorn dispelling technique inventor' thing was about, but come take a look here,\" Breynan says, as he points at the empty air in front of him. \"You see this weird flow that keeps going back and forth? This must be coming from an electricity spell of some kind, but I'm not familiar at all with it.\"\r\n\r\n\"It's not electricity, it's acid,\" Illuna says. \"I recognize it because Arraka has taught me about this spell in the past, back when she was acting as my mentor.\""
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: Did she also teach you how to cast it?
@@ -1187,14 +1194,14 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch04a_manuals
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 24
             text: "\"Well then, I guess it's a good thing we have an expert in dispelling magic right here with us!\" Melindra says, as she pats me hard on the back. \"Wouldn't you agree, mister inventor of the Brinhorn dispelling technique?\"\r\n\r\n\"I'm not an expert or anything,\" I say. \"Like I already mentioned before, I only invented that technique on a whim.\"\r\n\r\n\"Of course, of course,\" Melindra says, and then she pushes both Illuna and me from behind, in order to get us closer to Breynan. \"Now you two go over there and see what you can do to help. It won't hurt you if you just give it one try, will it?\"\r\n\r\n\"I suppose not,\" I say, and then I begin to slowly advance towards Breynan, alongside Illuna."
           - source: scene_text_2
             paragraph: 15
             text: "\"I'm not sure what that whole 'Brinhorn dispelling technique inventor' thing was about, but come take a look here,\" Breynan says, as he points at the empty air in front of him. \"You see this weird flow that keeps going back and forth? This must be coming from an electricity spell of some kind, but I'm not familiar at all with it.\"\r\n\r\n\"It's not electricity, it's acid,\" Illuna says. \"I recognize it because Arraka has taught me about this spell in the past, back when she was acting as my mentor.\""
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Did she also teach you how to cast it?
@@ -1279,7 +1286,8 @@ scenes:
               b3_ch4_insist: 1
   - name: b3_ch04a_insist
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 26
             text: "\"Even if she casts spells instinctively, I still think it will be less risky than if two of you use the dispelling technique at the same time,\" I say. \"Look, if anything bad happens while she's doing the dispelling, I'll tell her to stop. I'll make sure to monitor the trap's aura closely so that there are no dangerous fluctuations. And if you don't feel like talking to Flower, it's fine. I can teach her all of the motions and incantations myself. You won't have to interact with her at all if you don't want to.\"\r\n\r\n\"Really?\" Illuna says, while raising an eyebrow. \"You'll teach her the motions yourself? With no help from me whatsoever?\"\r\n\r\n\"Yeah, sure,\" I say. \"How hard can it be?\"\r\n\r\n\"Very well, then,\" Illuna says. \"In that case, I will wake her up. She will be with you shortly.\"\r\n\r\nAfter a few seconds of silence, the blue light in Illuna's eyes disappears, and Flower's eyes regain their natural green color.\r\n\r\n\"Okay, I'm up, I'm up...\" Flower says in a sleepy voice. \"What's going on-- Whoa!\"\r\n\r\nWhile she was talking, Flower suddenly looked like she was about to faint and fall to the ground, but she managed to regain her balance at the last second.\r\n\r\n\"Illuna, how did you manage to get hurt this badly?\" Flower asks, shocked. \"I can barely even stand up! And how did we get here?... This doesn't look like the rebel base at all!\""
@@ -1289,14 +1297,14 @@ scenes:
           - source: scene_3
             paragraph: 9
             text: "\"Palm facing down, elbow bent, got it!\" Flower says, as she follows my instructions while looking straight ahead, without so much as even a glance in my direction.\r\n\r\n\"You don't need to memorize everything I say...\" I tell her. \"You can just look at what I'm doing and imitate my movements.\"\r\n\r\n\"You're right, sorry!\" Flower says, as she turns her head towards me and begins staring at my arms with an extremely focused look in her eyes. \"So, what's next?\"\r\n\r\n\"Uh... now you need to do a circular motion with your left arm, while you rotate your right elbow so that it points to your right side.\"\r\n\r\nWhen Flower tries to imitate me, she somehow gets the movements completely wrong and she ends up with her left elbow bent as well.\r\n\r\n\"Flower, that's not-- my arms didn't move like that,\" I say.\r\n\r\n\"I'm sorry!\" Flower says, in a panicky voice. \"Can you do it again? I'll get it right this time!\"\r\n\r\n\"I think it would be better to start off again from the beginning,\" I say.\r\n\r\n\"Okay...\" Flower says, as she puts her arms back down, while all her body looks completely stiff.\r\n\r\n\"Right, so with both of your knees slightly bent, you first put the arm on your left side in front like this,\" I say.\r\n\r\n\"Got it!\" Flower says, as she tries to copy my movements again."
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch04a_coach
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 27
             text: "\"Even if she casts spells instinctively, I still think it will be less risky than if two of you use the dispelling technique at the same time,\" I say. \"Look, if anything bad happens while she's doing the dispelling, I'll tell her to stop. I'll make sure to monitor the trap's aura closely so that there are no dangerous fluctuations. And if you don't feel like talking to Flower, it's fine. I can teach her all of the motions and incantations myself. You won't have to interact with her at all if you don't want to.\"\r\n\r\n\"Really?\" Illuna says, while raising an eyebrow. \"You'll teach her the motions yourself? With no help from me whatsoever?\"\r\n\r\n\"Yeah, sure,\" I say. \"How hard can it be?\"\r\n\r\n\"Very well, then,\" Illuna says. \"In that case, I will wake her up. She will be with you shortly.\"\r\n\r\nAfter a few seconds of silence, the blue light in Illuna's eyes disappears, and Flower's eyes regain their natural green color.\r\n\r\n\"Okay, I'm up, I'm up...\" Flower says in a sleepy voice. \"What's going on-- wait what is this place? I don't recognize it at all! When did we get out of the rebel base?\""
@@ -1306,7 +1314,6 @@ scenes:
           - source: scene_3
             paragraph: 9
             text: "\"Palm facing down, elbow bent, got it!\" Flower says, as she follows my instructions while looking straight ahead, without so much as even a glance in my direction.\r\n\r\n\"You don't need to memorize everything I say...\" I tell her. \"You can just look at what I'm doing and imitate my movements.\"\r\n\r\n\"You're right, sorry!\" Flower says, as she turns her head towards me and begins staring at my arms with an extremely focused look in her eyes. \"So, what's next?\"\r\n\r\n\"Uh... now you need to do a circular motion with your left arm, while you rotate your right elbow so that it points to your right side.\"\r\n\r\nWhen Flower tries to imitate me, she somehow gets the movements completely wrong and she ends up with her left elbow bent as well.\r\n\r\n\"Flower, that's not-- my arms didn't move like that,\" I say.\r\n\r\n\"I'm sorry!\" Flower says, in a panicky voice. \"Can you do it again? I'll get it right this time!\"\r\n\r\n\"I think it would be better to start off again from the beginning,\" I say.\r\n\r\n\"Okay...\" Flower says, as she puts her arms back down, while all her body looks completely stiff.\r\n\r\n\"Right, so with both of your knees slightly bent, you first put the arm on your left side in front like this,\" I say.\r\n\r\n\"Got it!\" Flower says, as she tries to copy my movements again."
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Continue
@@ -1332,16 +1339,17 @@ scenes:
               current_scene: b3_ch04a_glimpse
   - name: b3_ch04a_cooperate
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 29
             text: "\"Fine,\" I say. \"If you really think you can handle this without Flower's help, then I won't insist anymore. But I'm warning you... one small mistake and you may well blow us all to smithereens.\"\r\n\r\n\"We'll be careful,\" Illuna says. \"Breynan, let us begin by practicing our magical flow synchronization. Once we are comfortable enough with the basics, we can start practicing the actual spells.\"\r\n\r\nFor the next half of an hour or so, Illuna and Breynan spend their time practicing their movements and their magic flows, under my direct guidance. Knowing what works best for the multi-step dispelling technique, I was able to give them a few pointers that sped up the process, and eventually the two of them became confident enough that they could pull off the technique without making any mistakes.\r\n\r\nThat being said, the amount of concentration required for the actual dispelling of such a complex spell is much greater than what you would need when you're just practicing, so I can't say that I'm not at least a little bit worried about how well they will pull this off. What worries me the most is the fact that Illuna still doesn't seem to have recovered from her injury, even if she doesn't let it show, so I'm not sure how capable she truly is to correctly perform her part of the dispelling technique. Hopefully she'll be cautious enough to cancel her technique in time, if she thinks she won't be able to handle it."
           - source: scene_text_2
             paragraph: 19
             text: "Once all their preparations are complete, Illuna and Breynan finally begin their synchronous dispelling technique, as the rest of us watch them with bated breath.\r\n\r\nFor the first few spells, everything goes smoothly. Both Illuna and Breynan are executing their movements perfectly, and the trap is reacting exactly how it should. After their fourth spell, however, I can already see a change in Illuna's breathing. It's fine. Everything will be fine. As long as she keeps her concentration, she should be able to--\r\n\r\nI don't get the time to finish my train of thought, as a slight break in Illuna's concentration causes her to lose control over her magic flow, which immediately triggers the trap in front of her. None of us get the time to react and before we even know it, the explosion from the trap envelops us all, killing us in a matter of seconds."
-        condition: ch11_saved_rose = 0
-        set:
-          is_dead: 1
+        effects:
+          - set:
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1360,11 +1368,11 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 30
             text: "\"Fine,\" I say. \"If you really think you can handle this without Flower's help, then I won't insist anymore. But I'm warning you... one small mistake and you may well blow us all to smithereens.\"\r\n\r\n\"We'll be careful,\" Illuna says. \"Breynan, let us begin by practicing our magical flow synchronization. Once we are comfortable enough with the basics, we can start practicing the actual spells.\"\r\n\r\nFor the next half of an hour or so, Illuna and Breynan spend their time practicing their movements and their magic flows, under my direct guidance. Knowing what works best for the multi-step dispelling technique, I was able to give them a few pointers that sped up the process, and eventually the two of them became confident enough that they could pull off the technique without making any mistakes.\r\n\r\nThat being said, the amount of concentration required for the actual dispelling of such a complex spell is much greater than what you would need when you're just practicing, so I can't say that I'm not at least a little bit worried about how well they will pull this off.\r\n\r\nOnce all their preparations are complete, Illuna and Breynan finally begin their synchronous dispelling technique, as the rest of us watch them with bated breath."
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Continue
@@ -1374,15 +1382,16 @@ scenes:
                 condition: is_dead = 0
   - name: b3_ch04a_cooperate2
     routes:
-      - texts:
+      - condition: magical_sense < 3
+        texts:
           - source: scene_text
             paragraph: 31
             text: "For the first few spells, everything goes smoothly. Both Illuna and Breynan are executing their movements perfectly, and the trap is reacting exactly how it should. As they keep casting their spells, however, I can't help but feel that something is wrong. But how can that be? They are not making any mistakes. Their movements are all flawless. Surely it must all be my imagination.\r\n\r\nEverything keeps going as planned until the very last spell. Unfortunately, just as Illuna and Breynan are about to finish their dispelling, the trap somehow gets triggered and the explosion coming from it envelops us all, killing us in a matter of seconds."
-        condition: magical_sense < 3
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Magical sense check failed - level 3 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Magical sense check failed - level 3 ]'
         choices:
           - position: 1
             text: Restart game
@@ -1401,17 +1410,18 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_text_2
-            paragraph: 20
-            text: "\"There was a very subtle trembling in the aura that I could detect thanks to my magical sense stat,\" I say. \"I don't think your two flows were synchronized enough. You should try slowing down your movements when you're doing the dispelling. That should help with your focus.\"\r\n\r\n\"Slow down the movements?...\" Breynan says. \"But the motions need to be done at a certain speed in order for the spells to have any effect!\"\r\n\r\n\"Again, it doesn't matter if your spells wouldn't normally have an effect, since you're only dispelling a trap,\" I say. \"The motions will still be correct even if you perform them at a slower pace. Try doing what I said and you'll see what I mean.\"\r\n\r\n\"Very well,\" Illuna says. \"Let us start over, then.\"\r\n\r\nBreynan and Illuna begin dispelling the trap once more, at a much slower pace. I make sure to study the trap's aura very closely while they're doing the casting, but I'm not seeing any trembling this time around. Eventually, they manage to reach the very last spell without any problems and the magical energy radiating from the trap slowly disappears, indicating that the trap has been successfully disarmed."
+      - condition: magical_sense >= 3
+        texts:
           - source: scene_text
             paragraph: 32
             text: "For the first few spells, everything goes smoothly. Both Illuna and Breynan are executing their movements perfectly, and the trap is reacting exactly how it should. As they keep casting their spells, however, I can't help but feel that something is wrong. But how can that be? They are not making any mistakes. Their movements are all flawless. Surely it must all be my imagination.\r\n\r\nAll of a sudden, I notice a very subtle trembling in the aura of the magical trap. I probably wouldn't have noticed this if I hadn't invested any points in my magical sense, but I'm pretty sure that the trap shouldn't be behaving like that while it's being dispelled. If I let things go on like this, they may well trigger the trap without realizing it. I need to stop them.\r\n\r\n\"Stop the dispelling!\" I shout at Illuna and Breynan. \"Something is wrong!\"\r\n\r\n\"What do you mean?\" Illuna says, as both her and Breynan cancel their technique and the trap's aura stabilizes once again. \"Everything was going smoothly. There were no fluctuations in the trap's aura that I could see.\""
-        condition: magical_sense >= 3
-        set:
-          successful_checks:
-            - '[ Magical sense check successful - level 3 ]'
+          - source: scene_text_2
+            paragraph: 20
+            text: "\"There was a very subtle trembling in the aura that I could detect thanks to my magical sense stat,\" I say. \"I don't think your two flows were synchronized enough. You should try slowing down your movements when you're doing the dispelling. That should help with your focus.\"\r\n\r\n\"Slow down the movements?...\" Breynan says. \"But the motions need to be done at a certain speed in order for the spells to have any effect!\"\r\n\r\n\"Again, it doesn't matter if your spells wouldn't normally have an effect, since you're only dispelling a trap,\" I say. \"The motions will still be correct even if you perform them at a slower pace. Try doing what I said and you'll see what I mean.\"\r\n\r\n\"Very well,\" Illuna says. \"Let us start over, then.\"\r\n\r\nBreynan and Illuna begin dispelling the trap once more, at a much slower pace. I make sure to study the trap's aura very closely while they're doing the casting, but I'm not seeing any trembling this time around. Eventually, they manage to reach the very last spell without any problems and the magical energy radiating from the trap slowly disappears, indicating that the trap has been successfully disarmed."
+        effects:
+          - set:
+              successful_checks:
+                - '[ Magical sense check successful - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -1488,7 +1498,8 @@ scenes:
               current_scene: b3_ch04a_crystals
   - name: b3_ch04a_crystals
     routes:
-      - texts:
+      - condition: b3_ch4_insist = 0
+        texts:
           - source: scene_text
             paragraph: 37
             text: "\"Should we not be waking up Flower before we go in?\" Kate says. \"If we run into an ambush on our way out, we're going to need all the help we can get.\"\r\n\r\n\"Perhaps you are right,\" Illuna says. \"...Very well, I'll wake her up. She will be with you shortly.\"\r\n\r\nAfter a few seconds of silence, the blue light in Illuna's eyes disappears, and Flower's eyes regain their natural green color.\r\n\r\n\"Okay, I'm up, I'm up...\" Flower says in a sleepy voice. \"What's going on-- wait what is this place? I don't recognize it at all! When did we get out of the rebel base?\"\r\n\r\n\"Uh, we're kind of in a bit of a hurry right now,\" I say. \"We'll explain all the details when we get out of here. The short version is that we went outside but when we tried heading back, the teleportation went wrong so we got stuck in these empty underground tunnels that we've never seen before. We think that this secret tunnel in front of us may lead to the surface, but there could also be enemies waiting for us at the end of it, so we need to be prepared for anything.\"\r\n\r\n\"Got it!\" Flower says. \"Okay, I'm ready. Let's go!\"\r\n\r\nOnce we are all inside the hidden passage, Illuna touches the wall from before with her hand, causing it to slowly slide back into its original position. We then begin climbing up the stairs, which are being lit by bright blue crystals embedded into the cavern walls, just like the tunnels outside, but also like the tunnels from the rebel base and the ones below the arena from Thilias."
@@ -1498,14 +1509,14 @@ scenes:
           - source: scene_3
             paragraph: 11
             text: "Once Illuna closes the secret door behind us, she steps to the front of the group again and she starts walking towards the next room, which appears to be full of people, judging by what I can sense of their auras from here.\r\n\r\n\"I think you've already sensed this by now, but the room that we are about to enter is filled with mages,\" Melindra tells us in a low voice. \"If they try to attack us when we walk out of here, I suggest that Kate blocks their way with a wall of ice and then we retreat back into the tunnels. By the time they'll figure out how to open the secret door, we'll already be--\"\r\n\r\nMelindra is suddenly interrupted by Flower, who just opened the door leading outside the room and let out a loud gasp, while covering her mouth with her hand.\r\n\r\n\"What happened?\" Kate asks, as we all rush towards her. \"Is it the royal guards?\"\r\n\r\n\"No, it's not the royal guards,\" Flower says in a shaky voice, as she tries to control her body from trembling. \"It's... It's...\"\r\n\r\nWhen we reach the door and we take a look inside the next room, we immediately understand why Flower was having such a hard time finding her words."
-        condition: b3_ch4_insist = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch04a_machine
-      - texts:
+      - condition: b3_ch4_insist = 1
+        texts:
           - source: scene_text
             paragraph: 38
             text: >-
@@ -1521,7 +1532,6 @@ scenes:
           - source: scene_3
             paragraph: 11
             text: "Once Illuna closes the secret door behind us, she steps to the front of the group again and she starts walking towards the next room, which appears to be full of people, judging by what I can sense of their auras from here.\r\n\r\n\"I think you've already sensed this by now, but the room that we are about to enter is filled with mages,\" Melindra tells us in a low voice. \"If they try to attack us when we walk out of here, I suggest that Kate blocks their way with a wall of ice and then we retreat back into the tunnels. By the time they'll figure out how to open the secret door, we'll already be--\"\r\n\r\nMelindra is suddenly interrupted by Flower, who just opened the door leading outside the room and let out a loud gasp, while covering her mouth with her hand.\r\n\r\n\"What happened?\" Kate asks, as we all rush towards her. \"Is it the royal guards?\"\r\n\r\n\"No, it's not the royal guards,\" Flower says in a shaky voice, as she tries to control her body from trembling. \"It's... It's...\"\r\n\r\nWhen we reach the door and we take a look inside the next room, we immediately understand why Flower was having such a hard time finding her words."
-        condition: b3_ch4_insist = 1
         choices:
           - position: 1
             text: Continue
@@ -1530,7 +1540,8 @@ scenes:
                   current_scene: b3_ch04a_machine
   - name: b3_ch04a_machine
     routes:
-      - texts:
+      - condition: b3_ch3_chains = 0
+        texts:
           - source: scene_text
             paragraph: 39
             text: "What we are looking at right now is a large hall filled with hundreds of men and young boys dressed in dirty rags who are hanging from the ceiling by long iron chains that are tied to their wrists, while their feet are barely touching the ground. All of them have such pale skin and such lifeless looks in their eyes that it's honestly a wonder they are still alive. \r\n\r\nAs we all enter the hall, I realize that the ceiling from which the chains are hanging is in fact made of metal and that the metal ceiling is actually part of a large structure that covers the entire room. This structure is all tied to a metal container in the middle of the hall, which simply radiates magical energy. After studying the whole room for a few more seconds, I finally realize what is going on here and I get a strong sudden feeling of wanting to vomit.\r\n\r\nThose chains are not just there to hold the prisoners in place. I can sense magical energy travelling through them and sending it towards the metal container through the ceiling. This whole room was built with the sole purpose of extracting as much magical energy as possible from these people, to the point where it leaves them as these empty husks who barely even have enough strength left to breathe.\r\n\r\nNone of these men or boys are reacting in any way as we are advancing through the room, looking as if they were barely even aware of their surroundings anymore. However, every once in a while some of the people in the hall seem to be waking up at random to scream in pain for a few seconds, only to return to their nearly lifeless states once again after they're done."
@@ -1540,7 +1551,6 @@ scenes:
           - source: scene_3
             paragraph: 12
             text: "\"Did... this happen recently?\" I ask him. \"Is your daughter's name 'Alice', by any chance?\"\r\n\r\n\"Yes!\" the man shouts, somewhat excitedly. \"That's her name! You've met her? Is she safe?\"\r\n\r\n\"She is safe, for now,\" I say. \"She's been looking for you.\"\r\n\r\n\"You have to take me to her!\" the man says. \"Please, you need to cut off these chains and set me free! I beg you!\"\r\n\r\nKate, Leila and I exchange a look and then I walk forward, in order to get closer to the chains that are tied to the man's wrists. The chains don't look very strong. I'm pretty confident that my enchanted dagger should be able to slice through these as through butter.\r\n\r\nI take my dagger out of its sheath and I hold it in my hand for a few seconds, considering my options, while the scream of a young boy echoes faintly in the distance."
-        condition: b3_ch3_chains = 0
         choices:
           - position: 1
             text: Cut the chains with my dagger and free Alice's father.
@@ -1554,7 +1564,8 @@ scenes:
               - set:
                   current_scene: b3_ch04a_container
                   b3_ch4_cut: 0
-      - texts:
+      - condition: b3_ch3_chains = 1
+        texts:
           - source: scene_text
             paragraph: 39
             text: "What we are looking at right now is a large hall filled with hundreds of men and young boys dressed in dirty rags who are hanging from the ceiling by long iron chains that are tied to their wrists, while their feet are barely touching the ground. All of them have such pale skin and such lifeless looks in their eyes that it's honestly a wonder they are still alive. \r\n\r\nAs we all enter the hall, I realize that the ceiling from which the chains are hanging is in fact made of metal and that the metal ceiling is actually part of a large structure that covers the entire room. This structure is all tied to a metal container in the middle of the hall, which simply radiates magical energy. After studying the whole room for a few more seconds, I finally realize what is going on here and I get a strong sudden feeling of wanting to vomit.\r\n\r\nThose chains are not just there to hold the prisoners in place. I can sense magical energy travelling through them and sending it towards the metal container through the ceiling. This whole room was built with the sole purpose of extracting as much magical energy as possible from these people, to the point where it leaves them as these empty husks who barely even have enough strength left to breathe.\r\n\r\nNone of these men or boys are reacting in any way as we are advancing through the room, looking as if they were barely even aware of their surroundings anymore. However, every once in a while some of the people in the hall seem to be waking up at random to scream in pain for a few seconds, only to return to their nearly lifeless states once again after they're done."
@@ -1564,7 +1575,6 @@ scenes:
           - source: scene_3
             paragraph: 13
             text: "\"Did... this happen recently?\" I ask him. \"Is your daughter's name 'Alice', by any chance?\"\r\n\r\n\"Yes!\" the man shouts, somewhat excitedly. \"That's her name! You've met her? Is she safe?\"\r\n\r\n\"She is safe, for now,\" I say. \"She's been looking for you.\"\r\n\r\n\"You have to take me to her!\" the man says. \"Please, you need to cut off these chains and set me free! I beg you!\"\r\n\r\nKate, Leila and I exchange a look and then I walk forward, in order to get closer to the chains that are tied to the man's wrists. The chains don't look very strong. I'm pretty confident that my enchanted dagger should be able to slice through these as through butter.\r\n\r\nI take my dagger out of its sheath and I hold it in my hand for a few seconds, considering my options, while the scream of a young boy echoes faintly in the distance.\r\n\r\nThat scream... I've heard that scream before. And the rattling sound of the chains as well. I've heard them both in that premonition! The one I saw right before giving Leila's father my stat device. But if this is true, then the next thing that should happen is--\r\n\r\n\"Barry, wait! Don't do it!\" I suddenly hear Melindra, shouting loudly in a panicked tone."
-        condition: b3_ch3_chains = 1
         choices:
           - position: 1
             text: Cut the chains with my dagger.
@@ -1580,7 +1590,8 @@ scenes:
                   b3_ch4_cut: 0
   - name: b3_ch04a_container
     routes:
-      - texts:
+      - condition: b3_ch4_cut = 1 AND b3_ch3_chains = 0
+        texts:
           - source: scene_text
             paragraph: 40
             text: "\"Barry, wait! Don't do it!\" Melindra shouts suddenly in a panicked tone, just as my blade slices through the chains.\r\n\r\nHer warning came too late, as there was simply no time for me to stop the slash of my dagger. As soon as the chains are cut, Alice's father begins to have violent seizures, making his body shake uncontrollably for five seconds. Immediately afterwards, his body stops moving completely but so does his breathing, while his aura begins to slowly fade away.\r\n\r\nAfter a few seconds of simply staring in shock at the dead man in front of me, I finally manage to muster up enough strength to speak.\r\n\r\n\"What... what happened?...\" I ask Melindra, in a weak tone of voice. \"I don't understand...\"\r\n\r\n\"The metal that these chains are made of is special,\" Melindra says, as she slowly approaches the table and then grabs one of the chains in her hand. \"If it stays in contact with a person's aura for too long, it forms a symbiotic relationship with them. You can't just remove it by force, because it would be the same as if you were removing one of their vital organs. I'm sorry that I didn't realize this sooner.\""
@@ -1590,7 +1601,6 @@ scenes:
           - source: scene_3
             paragraph: 14
             text: "\"Then we could try to reach that room quickly, before any of the guards--\" Kate starts to say, but Melindra interrupts her.\r\n\r\n\"We have absolutely no way of knowing where they might have placed the control room in this place,\" Melindra says. \"And given the importance of that room, it is no doubt going to be very heavily guarded. We're all weakened after that last fight, and we don't even have all our team members here with us, let alone any of the rebels except Breynan. What we should be focusing on right now is finding a way out. This is no time to be playing hero.\"   \r\n\r\n\"No, no, no...\" I say, as I frantically grab the severed chains and try to reattach them by hand. \"There has to be some kind of way to bring him back. I was only trying to save him! He couldn't have died just like that! How am I going to tell that little girl that I killed her father after she begged me to save him?... I have to find some way to reverse--\"\r\n\r\nBefore I get to finish my sentence, the metal container and all of the chains suddenly begin shining with a bright blue light, as the prisoners from the entire room start screaming in unison."
-        condition: b3_ch4_cut = 1 AND b3_ch3_chains = 0
         choices:
           - position: 1
             text: Continue
@@ -1601,7 +1611,8 @@ scenes:
                   b3_ch4_billy: 0
                   b3_ch4_tasked: 0
                   b3_ch4_drones: 0
-      - texts:
+      - condition: b3_ch4_cut = 1 AND b3_ch3_chains = 1
+        texts:
           - source: scene_text
             paragraph: 41
             text: "I instinctively cut the chains off before giving Melindra the chance to say anything else.\r\n\r\nI'm sure this was the right decision. If I were to have reacted any slower, she would have probably cast an air barrier or something to stop me from saving this person, just because she wouldn't want us to carry any dead weight with us while we're escaping. This must be what the premonition was warning me about. It has to be.\r\n\r\nUnfortunately for me, my rushed decision costs me dearly. Not long after the chains are cut, Alice's father begins to have violent seizures, making his body shake uncontrollably for five seconds. Immediately afterwards, his body stops moving completely but so does his breathing, while his aura begins to slowly fade away. \r\n\r\nAfter a few seconds of simply staring in shock at the dead man in front of me, I finally manage to muster up enough strength to speak.\r\n\r\n\"What... what happened?...\" I ask Melindra, in a weak tone of voice. \"I don't understand...\"\r\n\r\n\"The metal that these chains are made of is special,\" Melindra says, as she slowly approaches the table and then grabs one of the chains in her hand. \"If it stays in contact with a person's aura for too long, it forms a symbiotic relationship with them. You can't just remove it by force, because it would be the same as if you were removing one of their vital organs. I'm sorry that I didn't realize this sooner.\""
@@ -1611,7 +1622,6 @@ scenes:
           - source: scene_3
             paragraph: 14
             text: "\"Then we could try to reach that room quickly, before any of the guards--\" Kate starts to say, but Melindra interrupts her.\r\n\r\n\"We have absolutely no way of knowing where they might have placed the control room in this place,\" Melindra says. \"And given the importance of that room, it is no doubt going to be very heavily guarded. We're all weakened after that last fight, and we don't even have all our team members here with us, let alone any of the rebels except Breynan. What we should be focusing on right now is finding a way out. This is no time to be playing hero.\"   \r\n\r\n\"No, no, no...\" I say, as I frantically grab the severed chains and try to reattach them by hand. \"There has to be some kind of way to bring him back. I was only trying to save him! He couldn't have died just like that! How am I going to tell that little girl that I killed her father after she begged me to save him?... I have to find some way to reverse--\"\r\n\r\nBefore I get to finish my sentence, the metal container and all of the chains suddenly begin shining with a bright blue light, as the prisoners from the entire room start screaming in unison."
-        condition: b3_ch4_cut = 1 AND b3_ch3_chains = 1
         choices:
           - position: 1
             text: Continue
@@ -1622,7 +1632,8 @@ scenes:
                   b3_ch4_billy: 0
                   b3_ch4_tasked: 0
                   b3_ch4_drones: 0
-      - texts:
+      - condition: b3_ch4_cut = 0 AND b3_ch3_chains = 0
+        texts:
           - source: scene_text
             paragraph: 42
             text: "\"Barry, wait! Don't do it!\" Melindra shouts suddenly in a panicked tone, just as I was deciding to leave the man chained for now.\r\n\r\n\"I wasn't going to do anything, yet,\" I tell Melindra. \"What's wrong?\"\r\n\r\n\"Do you remember how I said earlier that these chains looked familiar?\" Melindra says, as she approaches the table and then grabs one of the chains in her hand. \"Well, I just realized why. It's because of the metal they are made of. This metal seems to be a heavily modified version of the old prototypes that Billy Bob used to play with the last time I was here, which is why it took me so long to recognize it, but the basic principles should still be the same. In short, if this metal stays in contact with a person's aura for too long, it forms a symbiotic relationship with them. If you were to remove it by force, it would be the same as if you were removing one of their vital organs. It would kill them in a matter of seconds.\"\r\n\r\n\"Are you serious?...\" I say. \"Then how exactly are you supposed to take off these chains without killing the prisoners?\"\r\n\r\n\"You'd have to find the control room, and deactivate them manually from there,\" Melindra says. \"That would be the only way.\""
@@ -1632,7 +1643,6 @@ scenes:
           - source: scene_3
             paragraph: 15
             text: "\"So you're just going to leave me here, then?\" Alice's father says, with fear in his voice. \"If you're just going to abandon me, then at least try cutting the chains! You can't know for sure that I'll die. You can't know! Oh no, I can feel the container activating itself again. Cut the chains! Cut the chains, quick before-- AAGHHH!\"\r\n\r\nSuddenly, the metal container and all of the chains begin shining with a bright blue light, as the prisoners from the entire room start screaming in unison."
-        condition: b3_ch4_cut = 0 AND b3_ch3_chains = 0
         choices:
           - position: 1
             text: Continue
@@ -1643,17 +1653,17 @@ scenes:
                   b3_ch4_billy: 0
                   b3_ch4_tasked: 0
                   b3_ch4_drones: 0
-      - texts:
+      - condition: b3_ch4_cut = 0 AND b3_ch3_chains = 1
+        texts:
           - source: scene_text
             paragraph: 43
             text: "\"Why?\" I ask Melindra. \"What's wrong?\"\r\n\r\n\"Do you remember how I said earlier that these chains looked familiar?\" Melindra says, as she approaches the table and then grabs one of the chains in her hand. \"Well, I just realized why. It's because of the metal they are made of. This metal seems to be a heavily modified version of the old prototypes that Billy Bob used to play with the last time I was here, which is why it took me so long to recognize it, but the basic principles should still be the same. In short, if this metal stays in contact with a person's aura for too long, it forms a symbiotic relationship with them. If you were to remove it by force, it would be the same as if you were removing one of their vital organs. It would kill them in a matter of seconds.\"\r\n\r\n\"Are you serious?...\" I say. \"Then how exactly are you supposed to take off these chains without killing the prisoners?\"\r\n\r\n\"You'd have to find the control room, and deactivate them manually from there,\" Melindra says. \"That would be the only way.\""
-          - source: scene_3
-            paragraph: 15
-            text: "\"So you're just going to leave me here, then?\" Alice's father says, with fear in his voice. \"If you're just going to abandon me, then at least try cutting the chains! You can't know for sure that I'll die. You can't know! Oh no, I can feel the container activating itself again. Cut the chains! Cut the chains, quick before-- AAGHHH!\"\r\n\r\nSuddenly, the metal container and all of the chains begin shining with a bright blue light, as the prisoners from the entire room start screaming in unison."
           - source: scene_text_2
             paragraph: 26
             text: "\"What if we tried to destroy the metal container?\" Leila writes. \"Would that not have the same effect as deactivating the chains?\"\r\n\r\n\"If you try to destroy that energy-filled container, it's going to cause an explosion large enough to kill every single person in this room, including us,\" Melindra says, as she drops the chain from her hand. \"Like I said before, deactivating the chains from the control room is the only way to free the prisoners.\"\r\n\r\n\"Then we could try to reach that room quickly, before any of the guards--\" Kate starts to say, but Melindra interrupts her.\r\n\r\n\"We have absolutely no way of knowing where they might have placed the control room in this place,\" Melindra says. \"And given the importance of that room, it is no doubt going to be very heavily guarded. We're all weakened after that last fight, and we don't even have all our team members here with us, let alone any of the rebels except Breynan. What we should be focusing on right now is finding a way out. This is no time to be playing hero.\""
-        condition: b3_ch4_cut = 0 AND b3_ch3_chains = 1
+          - source: scene_3
+            paragraph: 15
+            text: "\"So you're just going to leave me here, then?\" Alice's father says, with fear in his voice. \"If you're just going to abandon me, then at least try cutting the chains! You can't know for sure that I'll die. You can't know! Oh no, I can feel the container activating itself again. Cut the chains! Cut the chains, quick before-- AAGHHH!\"\r\n\r\nSuddenly, the metal container and all of the chains begin shining with a bright blue light, as the prisoners from the entire room start screaming in unison."
         choices:
           - position: 1
             text: Continue
@@ -1692,7 +1702,8 @@ scenes:
               b3_ch4_control: 1
   - name: b3_ch04a_attention
     routes:
-      - texts:
+      - condition: b3_ch4_control = 0
+        texts:
           - source: scene_text
             paragraph: 45
             text: "\"I say we should focus on finding the exit, for the time being.\"\r\n\r\n\"As much as I'd want to free all these people right here and now, I'm afraid that I must agree with Barry,\" Breynan says. \"We simply do not have enough people here with us to conduct a rescue mission of this magnitude--\"\r\n\r\n\"Attention! Attention all prisoners from below the tower!\" we suddenly hear the voice of Billy Bob, the lessathi, coming from what appears to be a voice magnifier tied to some sort of transceiver, placed in an upper corner of the room. \"The cleaners will be visiting you in about an hour. Prepare yourselves. If I hear about any more incidents, you will not be getting any more food today. Let that be clear. This means no more kicking the employees while they are washing you, no more struggling, and absolutely no biting! One of the old cleaners is still healing from the last time you--\"\r\n\r\n\"Master Biliborrathrathsaran, I apologize for interrupting you, but--\" we hear another man's voice coming from the voice magnifier.\r\n\r\n\"The name is Biliborrathrathsarran, you buffoon!\" Billy Bob says. \"You pronounced the last 'r' wrong. How idiotic do you have to be to not be able to pronounce one name right?\"\r\n\r\n\"Sir, please, this is a very urgent matter,\" the servant says. \"The king has requested your presence in the castle immediately and--\""
@@ -1702,7 +1713,6 @@ scenes:
           - source: scene_3
             paragraph: 17
             text: "We then hear a clicking noise coming from the voice magnifier, and the communications channel gets closed.\r\n\r\n\"Okay...\" I say. \"So I heard Billy Bob mentioning at the beginning of his announcement that the prisoners are situated 'below the tower'. Is it safe to assume that he was referring to one of the black towers from the four corners of the city?\"\r\n\r\n\"Yes, we are almost certainly located below one of the black seredium towers,\" Breynan says. \"Which means that the reason why Billy Bob had all these mages kidnapped over the last few years was so he could use that energy container over there to power up the 'drones', flying metal vehicles, giant golems and all the other technologically advanced lessathi-made artifacts from this city. It also means that if we try to get out of this place through the main door, we'll be greeted by a small battalion of guards, all equipped with anti-magic armor and magical artifacts. If we're going to escape from here, we'll need to reach a higher level of the tower and find a place where the seredium walls are thin enough to be able to contact Barry from the teleporter room.\"\r\n\r\n\"But the question is how will we get to the upper levels of the tower without running into any of the guards?...\" I say."
-        condition: b3_ch4_control = 0
         choices:
           - position: 1
             text: Continue
@@ -1710,7 +1720,8 @@ scenes:
               - set:
                   current_scene: b3_ch04b_assistance
                   storyboard_controls: Jump to frame "Book 3 Chapter 4 b"
-      - texts:
+      - condition: b3_ch4_control = 1
+        texts:
           - source: scene_text
             paragraph: 46
             text: "\"We have to find the control room, first. We can't just leave these people here like this.\"\r\n\r\n\"I agree,\" Kate says. \"But we need to remain undetected as much as possible. We should avoid starting any fights unless it's absolutely necessary or else--\r\n\r\n\"Attention! Attention all prisoners from below the tower!\" we suddenly hear the voice of Billy Bob, the lessathi, coming from what appears to be a voice magnifier tied to some sort of transceiver, placed in an upper corner of the room. \"The cleaners will be visiting you in about an hour. Prepare yourselves. If I hear about any more incidents, you will not be getting any more food today. Let that be clear. This means no more kicking the employees while they are washing you, no more struggling, and absolutely no biting! One of the old cleaners is still healing from the last time you--\"\r\n\r\n\"Master Biliborrathrathsaran, I apologize for interrupting you, but--\" we hear another man's voice coming from the voice magnifier.\r\n\r\n\"The name is Biliborrathrathsarran, you buffoon!\" Billy Bob says. \"You pronounced the last 'r' wrong. How idiotic do you have to be to not be able to pronounce one name right?\"\r\n\r\n\"Sir, please, this is a very urgent matter,\" the servant says. \"The king has requested your presence in the castle immediately and--\"\r\n\r\n\"Let him wait,\" Billy Bob says. \"I have an important experiment that I must finish first. I will visit him after I'm done.\""
@@ -1720,7 +1731,6 @@ scenes:
           - source: scene_3
             paragraph: 18
             text: "\"Yes, we are almost certainly located below one of the black seredium towers,\" Breynan says. \"Which means that the reason why Billy Bob had all these mages kidnapped over the last few years was so he could use that energy container over there to power up the 'drones', flying metal vehicles, giant golems and all the other technologically advanced lessathi-made artifacts from this city. It also means that if we try to get out of this place through the main door, we'll be greeted by a small battalion of guards, all equipped with anti-magic armor and magical artifacts. If we're going to escape from here, we'll need to reach a higher level of the tower and find a place where the seredium walls are thin enough to be able to contact Barry from the teleporter room.\"\r\n\r\n\"I thought we'd already agreed that we were going to the control room first,\" Kate says.\r\n\r\n\"No, we didn't,\" Melindra says. \"Only you and Barry agreed. Have you two even thought about how we're supposed to evacuate all these prisoners when there are hundreds of guards waiting for us outside? Do these people look to you like they would be able to fight their own way out? Or even walk, for that matter?\""
-        condition: b3_ch4_control = 1
         choices:
           - position: 1
             text: Continue

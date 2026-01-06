@@ -183,15 +183,16 @@ scenes:
               current_scene: b2_ch05b_tactic4
   - name: b2_ch05b_tactic1
     routes:
-      - texts:
+      - condition: agility >= 2 AND b2_ch5_scimitar <> 0 AND strength >= 1
+        texts:
           - source: scene_text
             paragraph: 12
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nIt's going to be a bit hard to take him by surprise, when he's trying to do the exact same thing to me at the same time, but it's a bit late to change tactics now. I charge towards the gladiator as well, and I attempt to catch him off-guard with my speed, so that I can quickly disarm him before he recovers.\r\n\r\nI somehow manage to surprise him even when he was the one who initiated the attack, and I use my scimitar like a hook, to pull his battle-axe out of his hands by its head.\r\n\r\nOnce my opponent gets disarmed, I make a quick rush towards him with my weapon, and in an attempt to dodge me, he falls on his back. I then immediately put my blade to his throat, not giving him a chance to get back up."
-        condition: agility >= 2 AND b2_ch5_scimitar <> 0 AND strength >= 1
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 2 ]'
-            - '[ Strength check successful - level 1 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 2 ]'
+                - '[ Strength check successful - level 1 ]'
         choices:
           - position: 1
             text: Continue
@@ -199,15 +200,16 @@ scenes:
               - set:
                   current_scene: b2_ch05b_mercy
                 condition: is_dead = 0
-      - texts:
+      - condition: agility >= 2 AND b2_ch5_scimitar = 0 AND strength >= 2
+        texts:
           - source: scene_text
             paragraph: 13
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nIt's going to be a bit hard to take him by surprise, when he's trying to do the exact same thing to me at the same time, but it's a bit late to change tactics now. I charge towards the gladiator as well, and I attempt to catch him off-guard with my speed, so that I can quickly disarm him before he recovers.\r\n\r\nI somehow manage to surprise him even when he was the one who initiated the attack, and I use my dagger to make a powerful slash at his battle-axe's handle, knocking the weapon out of his hands.\r\n\r\nOnce my opponent gets disarmed, I make a quick rush towards him with my weapon, and in an attempt to dodge me, he falls on his back. I then immediately put my blade to his throat, not giving him a chance to get back up."
-        condition: agility >= 2 AND b2_ch5_scimitar = 0 AND strength >= 2
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 2 ]'
-            - '[ Strength check successful - level 2 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 2 ]'
+                - '[ Strength check successful - level 2 ]'
         choices:
           - position: 1
             text: Continue
@@ -215,15 +217,16 @@ scenes:
               - set:
                   current_scene: b2_ch05b_mercy
                 condition: is_dead = 0
-      - texts:
+      - condition: agility < 2
+        texts:
           - source: scene_text
             paragraph: 14
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nIt's going to be a bit hard to take him by surprise, when he's trying to do the exact same thing to me at the same time, but it's a bit late to change tactics now. I charge towards the gladiator as well, and I attempt to catch him off-guard with my speed, so that I can quickly disarm him before he recovers.\r\n\r\nRushing straight into the enemy's attack was not one of my better ideas. Instead of surprising him, I ended up right where he wanted me, and the gladiator swung his axe straight at me, killing me in one blow."
-        condition: agility < 2
-        set:
-          failed_checks:
-            - '[ Speed check failed - level 2 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Speed check failed - level 2 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -242,17 +245,18 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: agility >= 2 AND b2_ch5_scimitar <> 0 AND strength = 0
+        texts:
           - source: scene_text
             paragraph: 15
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nIt's going to be a bit hard to take him by surprise, when he's trying to do the exact same thing to me at the same time, but it's a bit late to change tactics now. I charge towards the gladiator as well, and I attempt to catch him off-guard with my speed, so that I can quickly disarm him before he recovers.\r\n\r\nI somehow manage to surprise him even when he was the one who initiated the attack, and I try using my scimitar like a hook, in order to pull his battle-axe out of his hands by its head, but I'm not strong enough to pull it out of his grasp. The loss of momentum from my failed attack is enough for the warrior to swing his axe straight at me, and he kills me in one blow."
-        condition: agility >= 2 AND b2_ch5_scimitar <> 0 AND strength = 0
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 2 ]'
-          failed_checks:
-            - '[ Strength check failed - level 1 ]'
-          is_dead: 1
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 2 ]'
+              failed_checks:
+                - '[ Strength check failed - level 1 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -271,17 +275,18 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: agility >= 2 AND b2_ch5_scimitar = 0 AND strength < 2
+        texts:
           - source: scene_text
             paragraph: 16
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nIt's going to be a bit hard to take him by surprise, when he's trying to do the exact same thing to me at the same time, but it's a bit late to change tactics now. I charge towards the gladiator as well, and I attempt to catch him off-guard with my speed, so that I can quickly disarm him before he recovers.\r\n\r\nI somehow manage to surprise him even when he was the one who initiated the attack, and I slash at his battle-axe's handle with my dagger as hard as I can, but it is not enough to knock it out of his hands. The loss of momentum from my failed attack is enough for the warrior to swing his axe straight at me, and he kills me in one blow."
-        condition: agility >= 2 AND b2_ch5_scimitar = 0 AND strength < 2
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 2 ]'
-          failed_checks:
-            - '[ Strength check failed - level 2 ]'
-          is_dead: 1
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 2 ]'
+              failed_checks:
+                - '[ Strength check failed - level 2 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -302,14 +307,15 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
   - name: b2_ch05b_tactic2
     routes:
-      - texts:
+      - condition: agility >= 2 AND b2_ch5_scimitar <> 0
+        texts:
           - source: scene_text
             paragraph: 17
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nIt's going to be a bit hard to take him by surprise, when he's trying to do the exact same thing to me at the same time, but it's a bit late to change tactics now. I charge towards the gladiator as well, and I attempt to catch him off-guard with my speed, so that I can attack him before he gets a chance to block.\r\n\r\nI somehow manage to surprise him even when he was the one who initiated the attack, and I use my scimitar to stab him between his ribs. Given the curved nature of my weapon, the cut does not go very deep, but it is enough for the gladiator to panic and to jump back, in order to get away from my blade. I quickly follow him, and I slash at him again, which makes him trip and fall on his back, while dropping the battle-axe from his hands. I then kick the weapon away from him, and I put my scimitar to his throat, to make sure that he won't try to get up anymore."
-        condition: agility >= 2 AND b2_ch5_scimitar <> 0
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 2 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 2 ]'
         choices:
           - position: 1
             text: Continue
@@ -317,15 +323,16 @@ scenes:
               - set:
                   current_scene: b2_ch05b_mercy
                 condition: is_dead = 0
-      - texts:
+      - condition: agility >= 2 AND b2_ch5_scimitar = 0 AND combat_technique >= 2
+        texts:
           - source: scene_text
             paragraph: 18
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nIt's going to be a bit hard to take him by surprise, when he's trying to do the exact same thing to me at the same time, but it's a bit late to change tactics now. I charge towards the gladiator as well, and I attempt to catch him off-guard with my speed, so that I can attack him before he gets a chance to block.\r\n\r\nI somehow manage to surprise him even when he was the one who initiated the attack, and I make sure to stab him with my dagger in the left side of the abdomen, which is the most undefended part of his body at the time I reach him. The cut does not go very deep, but it is enough for the gladiator to panic and to jump back, in order to get away from my blade. I quickly follow him, and I slash at him again, which makes him trip and fall on his back, while dropping the battle-axe from his hands. I then kick the weapon away from him, and I put my dagger to his throat, to make sure that he won't try to get up anymore."
-        condition: agility >= 2 AND b2_ch5_scimitar = 0 AND combat_technique >= 2
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 2 ]'
-            - '[ Combat technique check successful - level 2 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 2 ]'
+                - '[ Combat technique check successful - level 2 ]'
         choices:
           - position: 1
             text: Continue
@@ -333,15 +340,16 @@ scenes:
               - set:
                   current_scene: b2_ch05b_mercy
                 condition: is_dead = 0
-      - texts:
+      - condition: agility < 2
+        texts:
           - source: scene_text
             paragraph: 19
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nIt's going to be a bit hard to take him by surprise, when he's trying to do the exact same thing to me at the same time, but it's a bit late to change tactics now. I charge towards the gladiator as well, and I attempt to catch him off-guard with my speed, so that I can attack him before he gets a chance to block.\r\n\r\nRushing straight into the enemy's attack was not one of my better ideas. Instead of surprising him, I ended up right where he wanted me, and the gladiator swung his axe straight at me, killing me in one blow."
-        condition: agility < 2
-        set:
-          failed_checks:
-            - '[ Speed check failed - level 2 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Speed check failed - level 2 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -360,17 +368,18 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: agility >= 2 AND b2_ch5_scimitar = 0 AND combat_technique < 2
+        texts:
           - source: scene_text
             paragraph: 20
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nIt's going to be a bit hard to take him by surprise, when he's trying to do the exact same thing to me at the same time, but it's a bit late to change tactics now. I charge towards the gladiator as well, and I attempt to catch him off-guard with my speed, so that I can attack him before he gets a chance to block.\r\n\r\nI somehow manage to surprise him even when he was the one who initiated the attack, and I attempt to stab him in the chest with my dagger. To my shock and dismay, in a miraculous turn of events, the gladiator manages to parry my hit with the handle of his axe at the very last moment, and then he uses it to hit me in the head, stunning me for a brief moment. That one moment was all he needed, and he quickly brings down his battle-axe upon me, killing me in one blow."
-        condition: agility >= 2 AND b2_ch5_scimitar = 0 AND combat_technique < 2
-        set:
-          successful_checks:
-            - '[ Speed check successful - level 2 ]'
-          failed_checks:
-            - '[ Combat technique check failed - level 2 ]'
-          is_dead: 1
+        effects:
+          - set:
+              successful_checks:
+                - '[ Speed check successful - level 2 ]'
+              failed_checks:
+                - '[ Combat technique check failed - level 2 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -391,15 +400,16 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
   - name: b2_ch05b_tactic3
     routes:
-      - texts:
+      - condition: reflexes >= 2 AND b2_ch5_scimitar <> 0 AND strength >= 1
+        texts:
           - source: scene_text
             paragraph: 22
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nI wait for him to reach me, and I begin dodging his attacks, trying to find the right moment to disarm him.\r\n\r\nEvading the warrior's attacks is definitely not easy, due to the large size of his battle-axe, and there are more than a few times when I almost feel like I'm not going to make it. Fortunately, the long reach of my scimitar gives me a little bit more space to maneuver, and it also allows me to parry some of the strikes that might have hit me otherwise. As soon as I catch my opponent on the wrong footing, I use my scimitar like a hook, to pull his battle-axe out of his hands by its head, sending it flying away and out of his reach.\r\n\r\nOnce my opponent gets disarmed, I make a quick rush towards him with my weapon, and in an attempt to dodge me, he falls on his back. I then immediately put my blade to his throat, not giving him a chance to get back up."
-        condition: reflexes >= 2 AND b2_ch5_scimitar <> 0 AND strength >= 1
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 2 ]'
-            - '[ Strength check successful - level 1 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 2 ]'
+                - '[ Strength check successful - level 1 ]'
         choices:
           - position: 1
             text: Continue
@@ -407,15 +417,16 @@ scenes:
               - set:
                   current_scene: b2_ch05b_mercy
                 condition: is_dead = 0
-      - texts:
+      - condition: reflexes >= 2 AND b2_ch5_scimitar = 0 AND strength >= 2
+        texts:
           - source: scene_text
             paragraph: 23
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nI wait for him to reach me, and I begin dodging his attacks, trying to find the right moment to disarm him.\r\n\r\nEvading the warrior's attacks is definitely not easy, due to the large size of his battle-axe, and there are more than a few times when I almost feel like I'm not going to make it. Fortunately, my reflexes do not fail me, and I always manage to somehow slip away, even in situations when it would have seemed almost impossible for me to have the time to react. I dance around the warrior enough to get him a bit tired, and as soon as I catch him on the wrong footing, I use my dagger to make a powerful slash at his battle-axe's handle, knocking the weapon out of his hands.\r\n\r\nOnce my opponent gets disarmed, I make a quick rush towards him with my weapon, and in an attempt to dodge me, he falls on his back. I then immediately put my blade to his throat, not giving him a chance to get back up."
-        condition: reflexes >= 2 AND b2_ch5_scimitar = 0 AND strength >= 2
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 2 ]'
-            - '[ Strength check successful - level 2 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 2 ]'
+                - '[ Strength check successful - level 2 ]'
         choices:
           - position: 1
             text: Continue
@@ -423,15 +434,16 @@ scenes:
               - set:
                   current_scene: b2_ch05b_mercy
                 condition: is_dead = 0
-      - texts:
+      - condition: reflexes < 2
+        texts:
           - source: scene_text
             paragraph: 21
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nI wait for him to reach me, and I begin dodging his attacks, trying to find the right moment to disarm him.\r\n\r\nUnfortunately, dodging a large battle-axe wielded by a seasoned warrior proved to be a little more difficult than I was hoping. I do not even manage to evade the gladiator's first strike properly, and he finishes me off in one blow."
-        condition: reflexes < 2
-        set:
-          failed_checks:
-            - '[ Reflexes check failed - level 2 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Reflexes check failed - level 2 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -450,17 +462,18 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: reflexes >= 2 AND b2_ch5_scimitar <> 0 AND strength = 0
+        texts:
           - source: scene_text
             paragraph: 24
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nI wait for him to reach me, and I begin dodging his attacks, trying to find the right moment to disarm him.\r\n\r\nEvading the warrior's attacks is definitely not easy, due to the large size of his battle-axe, and there are more than a few times when I almost feel like I'm not going to make it. Fortunately, the long reach of my scimitar gives me a little bit more space to maneuver, and it also allows me to parry some of the strikes that might have hit me otherwise. \r\n\r\nAs soon as I catch my opponent on the wrong footing, I try using my scimitar like a hook, in order to pull his battle-axe out of his hands by its head, but I'm not strong enough to pull it out of his grasp. The loss of momentum from my failed attack is enough for the warrior to swing his axe straight at me, and he kills me in one blow."
-        condition: reflexes >= 2 AND b2_ch5_scimitar <> 0 AND strength = 0
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 2 ]'
-          failed_checks:
-            - '[ Strength check failed - level 1 ]'
-          is_dead: 1
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 2 ]'
+              failed_checks:
+                - '[ Strength check failed - level 1 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -479,17 +492,18 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: reflexes >= 2 AND b2_ch5_scimitar = 0 AND strength < 2
+        texts:
           - source: scene_text
             paragraph: 25
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nI wait for him to reach me, and I begin dodging his attacks, trying to find the right moment to disarm him.\r\n\r\nEvading the warrior's attacks is definitely not easy, due to the large size of his battle-axe, and there are more than a few times when I almost feel like I'm not going to make it. Fortunately, my reflexes do not fail me, and I always manage to somehow slip away, even in situations when it would have seemed almost impossible for me to have the time to react. \r\n\r\nI dance around the warrior enough to get him a bit tired, and as soon as I catch him on the wrong footing, I slash at his battle-axe's handle with my dagger as hard as I can, in an attempt to disarm him, but the force of the blow is not enough to knock the weapon out of his hands. The loss of momentum from my failed attack is enough for the warrior to swing his axe straight at me, and he kills me in one blow."
-        condition: reflexes >= 2 AND b2_ch5_scimitar = 0 AND strength < 2
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 2 ]'
-          failed_checks:
-            - '[ Strength check failed - level 2 ]'
-          is_dead: 1
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 2 ]'
+              failed_checks:
+                - '[ Strength check failed - level 2 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -510,14 +524,15 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
   - name: b2_ch05b_tactic4
     routes:
-      - texts:
+      - condition: reflexes >= 2 AND b2_ch5_scimitar <> 0
+        texts:
           - source: scene_text
             paragraph: 27
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nI wait for him to reach me, and I begin dodging his attacks, trying to find the right opportunity to strike back at him.\r\n\r\nEvading the warrior's attacks is definitely not easy, due to the large size of his battle-axe, and there are more than a few times when I almost feel like I'm not going to make it. Fortunately, the long reach of my scimitar gives me a little bit more space to maneuver, and it also allows me to parry some of the strikes that might have hit me otherwise. \r\n\r\nAs soon as I catch my opponent on the wrong footing, I use my scimitar to stab him in an undefended area to the right side of his chest. Given the curved nature of my weapon, the cut does not go very deep, but it is enough for the gladiator to panic and to jump back, in order to get away from my blade. I quickly follow him, and I slash at him again, which makes him trip and fall on his back, while dropping the battle-axe from his hands. I then kick the weapon away from him, and I put my scimitar to his throat, to make sure that he won't try to get up anymore."
-        condition: reflexes >= 2 AND b2_ch5_scimitar <> 0
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 2 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 2 ]'
         choices:
           - position: 1
             text: Continue
@@ -525,7 +540,8 @@ scenes:
               - set:
                   current_scene: b2_ch05b_mercy
                 condition: is_dead = 0
-      - texts:
+      - condition: reflexes >= 2 AND b2_ch5_scimitar = 0 AND combat_technique >= 2
+        texts:
           - source: scene_text
             paragraph: 28
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nI wait for him to reach me, and I begin dodging his attacks, trying to find the right opportunity to strike back at him.\r\n\r\nEvading the warrior's attacks is definitely not easy, due to the large size of his battle-axe, and there are more than a few times when I almost feel like I'm not going to make it. Fortunately, my reflexes do not fail me, and I always manage to somehow slip away, even in situations when it would have seemed almost impossible for me to have the time to react."
@@ -542,11 +558,11 @@ scenes:
               his back, while dropping the battle-axe from his hands. I then
               kick the weapon away from him, and I put my dagger to his throat,
               to make sure that he won't try to get up anymore.
-        condition: reflexes >= 2 AND b2_ch5_scimitar = 0 AND combat_technique >= 2
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 2 ]'
-            - '[ Combat technique check successful - level 2 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 2 ]'
+                - '[ Combat technique check successful - level 2 ]'
         choices:
           - position: 1
             text: Continue
@@ -554,15 +570,16 @@ scenes:
               - set:
                   current_scene: b2_ch05b_mercy
                 condition: is_dead = 0
-      - texts:
+      - condition: reflexes < 2
+        texts:
           - source: scene_text
             paragraph: 26
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nI wait for him to reach me, and I begin dodging his attacks, trying to find the right opportunity to strike back at him.\r\n\r\nUnfortunately, dodging a large battle-axe wielded by a seasoned warrior proved to be a little more difficult than I was hoping. I do not even manage to evade the gladiator's first strike properly, and he finishes me off in one blow."
-        condition: reflexes < 2
-        set:
-          failed_checks:
-            - '[ Reflexes check failed - level 2 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Reflexes check failed - level 2 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -581,17 +598,18 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: reflexes >= 2 AND b2_ch5_scimitar = 0 AND combat_technique < 2
+        texts:
           - source: scene_text
             paragraph: 29
             text: "As I finish planning my attack, the man reaches my position, and he stops about a dozen feet away from me, measuring me up with an arrogant smile on his face. He doesn't say anything, but it's pretty obvious what he's thinking. He clearly cannot picture himself losing this fight. \r\n\r\nWe both wait for the announcer to give us the signal, and once our battle officially begins, the gladiator charges at me directly, with his axe raised in the air, ready to strike.\r\n\r\nI wait for him to reach me, and I begin dodging his attacks, trying to find the right opportunity to strike back at him.\r\n\r\nEvading the warrior's attacks is definitely not easy, due to the large size of his battle-axe, and there are more than a few times when I almost feel like I'm not going to make it. Fortunately, my reflexes do not fail me, and I always manage to somehow slip away, even in situations when it would have seemed almost impossible for me to have the time to react. \r\n\r\nI dance around the warrior enough to get him a bit tired, and as soon as I catch him on the wrong footing, I attempt to stab him in the chest with my dagger. Unfortunately, even from his unfavorable position, the warrior still manages to parry my hit with the handle of his axe, and then he uses the same handle to hit me in the head, stunning me for a brief moment. That one moment was all he needed, and he quickly brings down his battle-axe upon me, killing me in one blow."
-        condition: reflexes >= 2 AND b2_ch5_scimitar = 0 AND combat_technique < 2
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 2 ]'
-          failed_checks:
-            - '[ Combat technique check failed - level 2 ]'
-          is_dead: 1
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 2 ]'
+              failed_checks:
+                - '[ Combat technique check failed - level 2 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -630,30 +648,31 @@ scenes:
               b2_ch5_spare: 1
   - name: b2_ch05b_spare
     routes:
-      - texts:
+      - condition: b2_ch5_spare = 0
+        texts:
           - source: scene_text
             paragraph: 32
             text: "I take my weapon away from the man's throat, and then I use it to stab him directly in the heart, granting him a quick death.\r\n\r\nThe crowds cheer for me, as the announcer officially declares me the victor of the fight. I then get back to my division area, and once the iron gate closes behind me, I turn around and begin watching the next fights in silence."
-        condition: b2_ch5_spare = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch05b_undesirables
-      - texts:
+      - condition: b2_ch5_spare = 1
+        texts:
           - source: scene_text
             paragraph: 31
             text: "I ignore the crowds, and I use my blade to stab the gladiator in his right leg. This should be enough to make sure that he won't be fighting me in the final round.\r\n\r\nI then turn my back on him and start walking away. \r\n\r\n\"What do you think you are doing?\" the announcer says.\r\n\r\n\"I'm going back to my division room,\" I say. \"The fight is over. I won.\"\r\n\r\n\"No, the fight is not over until I say it is over,\" the announcer says, angrily. \"Now, get back there and finish the job!\"\r\n\r\n\"Nah,\" I say.\r\n\r\n\"What is your problem?\" the announcer says. \"This man isn't your friend! I bet you've never even seen him before this arena event. Why are you not killing him?\"\r\n\r\n\"I refuse to kill a guy I've just met for the sole purpose of your entertainment,\" I say. \"My only goal was to incapacitate him in order to not have to fight him in the final round. If you want to kill him, do it yourselves.\"\r\n\r\n\"I'm not going to announce your win until you kill this man,\" the announcer says.\r\n\r\n\"Then make him the winner,\" I say. \"I don't care. I'm done, here.\"\r\n\r\nAs I take my leave, the crowds begin booing me. Their shouts and insults are only getting louder as I approach my division room.\r\n\r\n\"Shut up!\" I shout at them, as I finally snap."
           - source: scene_text_2
             paragraph: 8
             text: "The noise from the crowd slowly dies down, as the spectators are all looking at me, curiously, to see what I have to say.\r\n\r\n\"What the hell is wrong with you?\" I continue. \"Is this what you consider entertainment? Watching people murder each other and get mauled by wild beasts? How sick in the head do you have to be to get enjoyment out of something like this? You're all pathetic! Does it make you feel good to know that some people have even worse lives than you? Is this why you're watching this crap? Well, I've got news for you! As soon as you walk out of here, it's going to be the same crappy lives waiting for you, outside! And you all deserve it! The way you are all treating these gladiators is the same way that the nobles are treating you. You have no right to complain about anything that is going on in your lives. How about you all take a small break and do a bit of self-reflection before you start booing me again like a bunch of mindless sheep? I'm going back to my cell. I'm done with you idiots.\"\r\n\r\nUnsurprisingly, as soon as I finish my speech, the booing from the crowd gets louder than ever before, and the swearing is now a lot more diverse, as well. I ignore the sheep, and I return to my division area without as much as a single glance towards any of them.\r\n\r\n\"Wow,\" Leila writes, when the iron gate closes behind me. \"That was... quite the speech.\"\r\n\r\n\"Yeah,\" I say, simply, and then we both watch the next fights in silence."
-        condition: b2_ch5_spare = 1
-        set:
-          ac_b2_ch5_speaker: 1
-        achievement:
-          id: ac_b2_ch5_speaker
-          title: Public speaker
+        effects:
+          - set:
+              ac_b2_ch5_speaker: 1
+            achievement:
+              id: ac_b2_ch5_speaker
+              title: Public speaker
         choices:
           - position: 1
             text: Continue
@@ -673,56 +692,56 @@ scenes:
               current_scene: b2_ch05b_undesirables
   - name: b2_ch05b_undesirables
     routes:
-      - texts:
+      - condition: b2_ch5_wilhelm = 0 AND b2_ch2_creatures = 0
+        texts:
           - source: scene_text
             paragraph: 34
             text: "The rest of the battles went by without any particular incidents, and without any of the gladiators standing out in any way. However, there seemed to be something of a pattern forming with the scheduling of the duels. First of all, neither me, nor Daren, nor Hadrik were being called anymore for any of the fights. Kate was scheduled to fight a few times, but she refused every time, taking full advantage of her undesirable status. Secondly, there have been no more fights to the death whatsoever, after my last battle. Most of the battles ended with light scratches, or with gladiators surrendering before the fight even began, due to obvious differences in power levels.\r\n\r\nBy the time the third round ended, it was getting pretty obvious that these changes had been specifically requested by the ambassador, with the purpose of keeping as many of the gladiators alive as possible, in order to get us to fight them all in the penalty round.\r\n\r\nThe winner of the third round was some guy from the seventh division that didn't really do anything special, but had the luck of running into a lot of cowards who surrendered before their fights even began. Once the winner received his prize, the announcer called for all the gladiators to assemble in the fighting area one last time, so the penalty round could finally begin.\r\n\r\n\"Will the undesirables please form a line and face the rest of the gladiators?\" the announcer says."
           - source: scene_text_2
             paragraph: 9
             text: "Daren, Hadrik, Kate and I all head towards the center of the arena, and we stand side by side, preparing our weapons. \r\n\r\n\"Now, who is ready to participate in the final--\" the announcer starts to say, but he stops, when he sees Leila and Bruce both move at the same time, in order to join our side.\r\n\r\n\"What are you doing?\" the announcer says. \"You are on the wrong side! Neither of you are undesirables!\"\r\n\r\n\"Yet!\" Bruce says.\r\n\r\n\"You are saying,\" the announcer says, \"that you are voluntarily turning yourselves into undesirables after the event has already ended, just to stand by these gladiators' side?\"\r\n\r\n\"The true members of the fourth division shall stand united until the very last blow of the horn,\" Bruce says.\r\n\r\nWilhelm frowns at Bruce, who was looking straight at him when he said those last words. The assassin, however, chooses not to respond to Bruce's provocation, and he remains in his spot."
-        condition: b2_ch5_wilhelm = 0 AND b2_ch2_creatures = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch05b_caliber
-      - texts:
+      - condition: b2_ch5_wilhelm = 1 AND b2_ch2_creatures = 0
+        texts:
+          - source: scene_text
+            paragraph: 34
+            text: "The rest of the battles went by without any particular incidents, and without any of the gladiators standing out in any way. However, there seemed to be something of a pattern forming with the scheduling of the duels. First of all, neither me, nor Daren, nor Hadrik were being called anymore for any of the fights. Kate was scheduled to fight a few times, but she refused every time, taking full advantage of her undesirable status. Secondly, there have been no more fights to the death whatsoever, after my last battle. Most of the battles ended with light scratches, or with gladiators surrendering before the fight even began, due to obvious differences in power levels.\r\n\r\nBy the time the third round ended, it was getting pretty obvious that these changes had been specifically requested by the ambassador, with the purpose of keeping as many of the gladiators alive as possible, in order to get us to fight them all in the penalty round.\r\n\r\nThe winner of the third round was some guy from the seventh division that didn't really do anything special, but had the luck of running into a lot of cowards who surrendered before their fights even began. Once the winner received his prize, the announcer called for all the gladiators to assemble in the fighting area one last time, so the penalty round could finally begin.\r\n\r\n\"Will the undesirables please form a line and face the rest of the gladiators?\" the announcer says."
           - source: scene_text_2
             paragraph: 10
             text: "Daren, Hadrik, Kate and I all head towards the center of the arena, and we stand side by side, preparing our weapons. \r\n\r\n\"Now, who is ready to participate in the final--\" the announcer starts to say, but he stops, when he sees Leila and Bruce both move at the same time, in order to join our side.\r\n\r\n\"What are you doing?\" the announcer says. \"You are on the wrong side! Neither of you are undesirables!\"\r\n\r\n\"Yet!\" Bruce says.\r\n\r\n\"You are saying,\" the announcer says, \"that you are voluntarily turning yourselves into undesirables after the event has already ended, just to stand by these gladiators' side?\"\r\n\r\n\"The true members of the fourth division shall stand united until the very last blow of the horn,\" Bruce says.\r\n\r\nWilhelm frowns at Bruce, who was looking straight at him when he said those last words. After a few seconds of silence, the assassin moves from his spot and then joins our side as well."
-          - source: scene_text
-            paragraph: 34
-            text: "The rest of the battles went by without any particular incidents, and without any of the gladiators standing out in any way. However, there seemed to be something of a pattern forming with the scheduling of the duels. First of all, neither me, nor Daren, nor Hadrik were being called anymore for any of the fights. Kate was scheduled to fight a few times, but she refused every time, taking full advantage of her undesirable status. Secondly, there have been no more fights to the death whatsoever, after my last battle. Most of the battles ended with light scratches, or with gladiators surrendering before the fight even began, due to obvious differences in power levels.\r\n\r\nBy the time the third round ended, it was getting pretty obvious that these changes had been specifically requested by the ambassador, with the purpose of keeping as many of the gladiators alive as possible, in order to get us to fight them all in the penalty round.\r\n\r\nThe winner of the third round was some guy from the seventh division that didn't really do anything special, but had the luck of running into a lot of cowards who surrendered before their fights even began. Once the winner received his prize, the announcer called for all the gladiators to assemble in the fighting area one last time, so the penalty round could finally begin.\r\n\r\n\"Will the undesirables please form a line and face the rest of the gladiators?\" the announcer says."
-        condition: b2_ch5_wilhelm = 1 AND b2_ch2_creatures = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch05b_caliber
-      - texts:
+      - condition: b2_ch5_wilhelm = 0 AND b2_ch2_creatures = 1
+        texts:
+          - source: scene_text
+            paragraph: 34
+            text: "The rest of the battles went by without any particular incidents, and without any of the gladiators standing out in any way. However, there seemed to be something of a pattern forming with the scheduling of the duels. First of all, neither me, nor Daren, nor Hadrik were being called anymore for any of the fights. Kate was scheduled to fight a few times, but she refused every time, taking full advantage of her undesirable status. Secondly, there have been no more fights to the death whatsoever, after my last battle. Most of the battles ended with light scratches, or with gladiators surrendering before the fight even began, due to obvious differences in power levels.\r\n\r\nBy the time the third round ended, it was getting pretty obvious that these changes had been specifically requested by the ambassador, with the purpose of keeping as many of the gladiators alive as possible, in order to get us to fight them all in the penalty round.\r\n\r\nThe winner of the third round was some guy from the seventh division that didn't really do anything special, but had the luck of running into a lot of cowards who surrendered before their fights even began. Once the winner received his prize, the announcer called for all the gladiators to assemble in the fighting area one last time, so the penalty round could finally begin.\r\n\r\n\"Will the undesirables please form a line and face the rest of the gladiators?\" the announcer says."
           - source: scene_text_2
             paragraph: 11
             text: "Daren, Kate and I all head towards the center of the arena, and we stand side by side, preparing our weapons. \r\n\r\n\"Now, who is ready to participate in the final--\" the announcer starts to say, but he stops, when he sees Hadrik, Leila and Bruce all move at the same time, in order to join our side.\r\n\r\n\"What are you doing?\" the announcer says. \"You are on the wrong side! Neither of you are undesirables!\"\r\n\r\n\"Yet!\" Bruce says.\r\n\r\n\"You are saying,\" the announcer says, \"that you are voluntarily turning yourselves into undesirables after the event has already ended, just to stand by these gladiators' side?\"\r\n\r\n\"The true members of the fourth division shall stand united until the very last blow of the horn,\" Bruce says.\r\n\r\nWilhelm frowns at Bruce, who was looking straight at him when he said those last words. The assassin, however, chooses not to respond to Bruce's provocation, and he remains in his spot.\r\n\r\n\"And what about you, dwarf?\" the announcer asks Hadrik.\r\n\r\n\"Well, you know me,\" Hadrik says. \"I always like a good challenge!\""
-          - source: scene_text
-            paragraph: 34
-            text: "The rest of the battles went by without any particular incidents, and without any of the gladiators standing out in any way. However, there seemed to be something of a pattern forming with the scheduling of the duels. First of all, neither me, nor Daren, nor Hadrik were being called anymore for any of the fights. Kate was scheduled to fight a few times, but she refused every time, taking full advantage of her undesirable status. Secondly, there have been no more fights to the death whatsoever, after my last battle. Most of the battles ended with light scratches, or with gladiators surrendering before the fight even began, due to obvious differences in power levels.\r\n\r\nBy the time the third round ended, it was getting pretty obvious that these changes had been specifically requested by the ambassador, with the purpose of keeping as many of the gladiators alive as possible, in order to get us to fight them all in the penalty round.\r\n\r\nThe winner of the third round was some guy from the seventh division that didn't really do anything special, but had the luck of running into a lot of cowards who surrendered before their fights even began. Once the winner received his prize, the announcer called for all the gladiators to assemble in the fighting area one last time, so the penalty round could finally begin.\r\n\r\n\"Will the undesirables please form a line and face the rest of the gladiators?\" the announcer says."
-        condition: b2_ch5_wilhelm = 0 AND b2_ch2_creatures = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch05b_caliber
-      - texts:
-          - source: scene_text_2
-            paragraph: 12
-            text: "Daren, Kate and I all head towards the center of the arena, and we stand side by side, preparing our weapons. \r\n\r\n\"Now, who is ready to participate in the final--\" the announcer starts to say, but he stops, when he sees Hadrik, Leila and Bruce all move at the same time, in order to join our side.\r\n\r\n\"What are you doing?\" the announcer says. \"You are on the wrong side! Neither of you are undesirables!\"\r\n\r\n\"Yet!\" Bruce says.\r\n\r\n\"You are saying,\" the announcer says, \"that you are voluntarily turning yourselves into undesirables after the event has already ended, just to stand by these gladiators' side?\"\r\n\r\n\"The true members of the fourth division shall stand united until the very last blow of the horn,\" Bruce says.\r\n\r\nWilhelm frowns at Bruce, who was looking straight at him when he said those last words. After a few seconds of silence, the assassin moves from his spot and then joins our side as well.\r\n\r\n\"And what about you, dwarf?\" the announcer asks Hadrik.\r\n\r\n\"Well, you know me,\" Hadrik says. \"I always like a good challenge!\""
+      - condition: b2_ch5_wilhelm = 1 AND b2_ch2_creatures = 1
+        texts:
           - source: scene_text
             paragraph: 34
             text: "The rest of the battles went by without any particular incidents, and without any of the gladiators standing out in any way. However, there seemed to be something of a pattern forming with the scheduling of the duels. First of all, neither me, nor Daren, nor Hadrik were being called anymore for any of the fights. Kate was scheduled to fight a few times, but she refused every time, taking full advantage of her undesirable status. Secondly, there have been no more fights to the death whatsoever, after my last battle. Most of the battles ended with light scratches, or with gladiators surrendering before the fight even began, due to obvious differences in power levels.\r\n\r\nBy the time the third round ended, it was getting pretty obvious that these changes had been specifically requested by the ambassador, with the purpose of keeping as many of the gladiators alive as possible, in order to get us to fight them all in the penalty round.\r\n\r\nThe winner of the third round was some guy from the seventh division that didn't really do anything special, but had the luck of running into a lot of cowards who surrendered before their fights even began. Once the winner received his prize, the announcer called for all the gladiators to assemble in the fighting area one last time, so the penalty round could finally begin.\r\n\r\n\"Will the undesirables please form a line and face the rest of the gladiators?\" the announcer says."
-        condition: b2_ch5_wilhelm = 1 AND b2_ch2_creatures = 1
+          - source: scene_text_2
+            paragraph: 12
+            text: "Daren, Kate and I all head towards the center of the arena, and we stand side by side, preparing our weapons. \r\n\r\n\"Now, who is ready to participate in the final--\" the announcer starts to say, but he stops, when he sees Hadrik, Leila and Bruce all move at the same time, in order to join our side.\r\n\r\n\"What are you doing?\" the announcer says. \"You are on the wrong side! Neither of you are undesirables!\"\r\n\r\n\"Yet!\" Bruce says.\r\n\r\n\"You are saying,\" the announcer says, \"that you are voluntarily turning yourselves into undesirables after the event has already ended, just to stand by these gladiators' side?\"\r\n\r\n\"The true members of the fourth division shall stand united until the very last blow of the horn,\" Bruce says.\r\n\r\nWilhelm frowns at Bruce, who was looking straight at him when he said those last words. After a few seconds of silence, the assassin moves from his spot and then joins our side as well.\r\n\r\n\"And what about you, dwarf?\" the announcer asks Hadrik.\r\n\r\n\"Well, you know me,\" Hadrik says. \"I always like a good challenge!\""
         choices:
           - position: 1
             text: Continue
@@ -731,28 +750,35 @@ scenes:
                   current_scene: b2_ch05b_caliber
   - name: b2_ch05b_caliber
     routes:
-      - texts:
+      - condition: b2_ch5_spare = 0
+        texts:
           - source: scene_text
             paragraph: 35
             text: "\"Very well,\" the announcer says. \"While we're at it, is there anyone else who would like to join the undesirables' side?\"\r\n\r\nThe gladiators fall silent, and it seems that nobody else is planning to join us anymore.\r\n\r\n\"Good!\" the announcer says. \"Then it's about time that we get this round started, don't you think? Volunteers, please step forward, so that you may join this optional round.\"\r\n\r\nOne of the gladiators begins to move forward, but another one pulls him back, from behind.\r\n\r\n\"Do you have a death wish?\" the gladiator from behind says. \"Don't you see who you're up against? That dwarf pulverized half of the manticores and the scorpions all by himself! And that healer in armor pretty much fought all the monsters by himself too, and he doesn't even have a scratch. You'd have to be insane to want to fight them!\"\r\n\r\nHearing the gladiator's speech, the few other warriors who were planning to join the final round are now all starting to have second thoughts."
           - source: scene_text_2
             paragraph: 13
             text: "\"Really?\" the announcer asks, shocked, as he sees that none of the gladiators are volunteering to fight. \"No one? Do you people realize what you can gain if you kill either one of those warriors in front of you? You can be freed just like that, or get showered with riches!\"\r\n\r\n\"Better to be poor than dead,\" one of the gladiators says, while many of the others nod in agreement.\r\n\r\n\"What do you all think you are doing?\" the ambassador shouts furiously, as he comes running into the fighting area once more. \"Why aren't you fighting them? There are dozens of you! Dozens!\"\r\n\r\n\"Numbers don't mean anything when you're up against enemies of that caliber,\" one of the gladiators says."
-        condition: b2_ch5_spare = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch05b_cancelled
-      - texts:
+      - condition: b2_ch5_spare = 1
+        texts:
           - source: scene_text
             paragraph: 36
             text: "\"Very well,\" the announcer says. \"While we're at it, is there anyone else who would like to join the undesirables' side?\"\r\n\r\n\"I will!\" says the gladiator that I defeated in the third round. \"I do not intend to leave this arena before settling my debt from the third round.\"\r\n\r\n\"Well, okay, then...\" the announcer says, starting to get a bit annoyed. \"Anyone else?\"\r\n\r\nThe gladiators fall silent, and it seems that nobody else is planning to join us anymore.\r\n\r\n\"Finally!\" the announcer says. \"Then it's about time that we get this round started, don't you think? Volunteers, please step forward, so that you may join this optional round.\"\r\n\r\nOne of the gladiators begins to move forward, but another one pulls him back, from behind.\r\n\r\n\"Do you have a death wish?\" the gladiator from behind says. \"Don't you see who you're up against? That dwarf pulverized half of the manticores and the scorpions all by himself! And that healer in armor pretty much fought all the monsters by himself too, and he doesn't even have a scratch. You'd have to be insane to want to fight them!\"\r\n\r\nHearing the gladiator's speech, the few other warriors who were planning to join the final round are now all starting to have second thoughts."
           - source: scene_text_2
             paragraph: 13
             text: "\"Really?\" the announcer asks, shocked, as he sees that none of the gladiators are volunteering to fight. \"No one? Do you people realize what you can gain if you kill either one of those warriors in front of you? You can be freed just like that, or get showered with riches!\"\r\n\r\n\"Better to be poor than dead,\" one of the gladiators says, while many of the others nod in agreement.\r\n\r\n\"What do you all think you are doing?\" the ambassador shouts furiously, as he comes running into the fighting area once more. \"Why aren't you fighting them? There are dozens of you! Dozens!\"\r\n\r\n\"Numbers don't mean anything when you're up against enemies of that caliber,\" one of the gladiators says."
-        condition: b2_ch5_spare = 1
+        effects:
+          - set:
+              ac_b2_ch5_united: 1
+            achievement:
+              id: ac_b2_ch5_united
+              title: United we stand
+            condition: b2_ch5_wilhelm = 1
         choices:
           - position: 1
             text: Continue
@@ -923,28 +949,28 @@ scenes:
               b2_ch5_pilot: 0
   - name: b2_ch05b_trapped
     routes:
-      - texts:
+      - condition: b2_ch5_pilot = 1
+        texts:
           - source: scene_text
             paragraph: 47
             text: "\"I've piloted gnomish flying machines before,\" I say. \"I could give it a try.\"\r\n\r\n\"Splendid!\" Golmyck says. \"Come over here, uh... Barry, was it? I'll teach you the basics.\"\r\n\r\n\"I'll go help the soldiers,\" Daren says. \"They'll need all the protection they can get if they're planning to start shooting at the dragon.\"\r\n\r\nHe then rushes towards one of the gates, in order to reach the upper levels, where the soldiers are currently located.\r\n\r\n\"Now, Barry, listen closely,\" Golmyck says, once I reach him. \"These are your flight controls.\"\r\n\r\nHe then points towards the cockpit.\r\n\r\n\"Over here you have the control stick,\" Golmyck continues. \"The rudder pedals are down below. You should only change the rudder's direction for making minor adjustments, and not for actually turning the aircraft. Turning should only be done by using the control stick.\"\r\n\r\n\"Yes, I know,\" I tell him.\r\n\r\n\"This lever over here,\" Golmyck says, as he points towards a lever on the left side of the cockpit, \"is used to adjust the pitch for the rotor blades. Increasing the pitch will make you gain altitude, but it will decrease your forward speed. Decreasing the pitch will make you lose altitude. Does this all look familiar to you?\"\r\n\r\n\"Yeah,\" I say. \"It's pretty similar to what I've piloted in the past. I can handle it.\""
           - source: scene_text_2
             paragraph: 21
             text: "\"Perfect!\" Golmyck says. \"When I designed these machines, I tried to make the controls as intuitive as possible for people who have piloted other gnomish machines in the past. I'm glad to see that my efforts were not wasted!\"\r\n\r\nThe gnome looks up at the dragon trapped in the golden cage, with a thoughtful expression on his face.\r\n\r\n\"Barry,\" Golmyck says, \"you wouldn't happen to know how much longer that cage is going to last, would you?\"\r\n\r\n\"Uh...\" I say. \"About two more minutes, I guess?...\"\r\n\r\n\"Good,\" Golmyck says. \"We have plenty of time. Hop in. I'll give you the rest of the instructions during our flight. Make sure to strap yourself in tight. Also, you should wear these goggles.\"\r\n\r\nGolmyck gives me a pair of protective goggles, which I immediately put on, and then I enter the cockpit, strapping myself in. There are only two chairs in the cockpit, one for the gunner and one for the pilot, back to back. The gnome enters the cockpit as well, seating himself on the chair behind me and then putting on his straps."
-        condition: b2_ch5_pilot = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch05b_cargo
-      - texts:
+      - condition: b2_ch5_pilot = 0
+        texts:
           - source: scene_text
             paragraph: 48
             text: "\"I can't say that I've used guns from an aircraft before, but I could give it a try,\" I say.\r\n\r\n\"Splendid!\" Golmyck says. \"Come over here, uh... Barry, was it? I'll teach you the basics.\"\r\n\r\n\"I'll go help the soldiers,\" Daren says. \"They'll need all the protection they can get if they're planning to start shooting at the dragon.\"\r\n\r\nHe then rushes towards one of the gates, in order to reach the upper levels, where the soldiers are currently located.\r\n\r\n\"Now, Barry, listen closely,\" Golmyck says, once I reach him. \"This right here is the main gun you'll be using.\"\r\n\r\nHe points towards a small turret that is located at the base of the machine's tail.\r\n\r\n\"You can turn this left and right by using these handles,\" Golmyck continues. \"You can also pull on the same handles to turn the turret up and down. The trigger is over here. The mechanism is somewhat similar to the regular cannons that are being used on ships, except this turret magically loads itself with bullets and black powder, so you only need to worry about aiming and shooting. Do try to use these bullets sparingly, though. Our ammunition is not unlimited.\"\r\n\r\n\"Uh...\" I say. \"I may be stating the obvious, here, but you do realize that normal bullets will not work on this dragon, right?\""
           - source: scene_text_2
             paragraph: 22
             text: "\"Of course, of course,\" Golmyck says. \"That's why we won't be using regular bullets. The bullets that I've loaded into this turret are made of a metal that is highly resistant to acid, and they have all been coated with acid, which we know for a fact that the dragon is weak against. We've had these prepared for a while, since Tyrath has been a looming threat for quite some time, now. Obviously, even with the acid coating, the bullets will likely only moderately inconvenience him, but that's fine, since they are only meant as a distraction.\"\r\n\r\nThe gnome looks up at the dragon trapped in the golden cage, with a thoughtful expression on his face.\r\n\r\n\"Barry,\" Golmyck says, \"you wouldn't happen to know how much longer that cage is going to last, would you?\"\r\n\r\n\"Uh...\" I say. \"About two more minutes, I guess?...\"\r\n\r\n\"Good,\" Golmyck says. \"We have plenty of time. Hop in. I'll give you the rest of the instructions during our flight. Make sure to strap yourself in tight. Also, you should wear these goggles.\"\r\n\r\nGolmyck gives me a pair of protective goggles, which I immediately put on, and then I enter the cockpit, strapping myself in. There are only two chairs in the cockpit, one for the gunner and one for the pilot, back to back. The gnome enters the cockpit as well, seating himself on the chair behind me and then putting on his straps."
-        condition: b2_ch5_pilot = 0
         choices:
           - position: 1
             text: Continue
@@ -953,28 +979,28 @@ scenes:
                   current_scene: b2_ch05b_cargo
   - name: b2_ch05b_cargo
     routes:
-      - texts:
+      - condition: b2_ch5_pilot = 1
+        texts:
           - source: scene_text
             paragraph: 49
             text: "\"So, uh...\" I say, as I see the gnome adjusting the turret that is located at the base of the machine's tail. \"I may be stating the obvious, here, but you do realize that normal bullets will not work on this dragon, right?\"\r\n\r\n\"Of course, of course,\" Golmyck says. \"That's why we won't be using regular bullets. The bullets that I've loaded into this turret are made of a metal that is highly resistant to acid, and they have all been coated with acid, which we know for a fact that the dragon is weak against. We've had these prepared for a while, since Tyrath has been a looming threat for quite some time, now. Obviously, even with the acid coating, the bullets will likely only moderately inconvenience him, but that's fine, since they are only meant as a distraction.\"\r\n\r\nThe gnome then points towards a button on my control panel.\r\n\r\n\"You also have your own weaponry, by the way,\" Golmyck says. \"Just press that button, and the bullets will shoot themselves. Both the front gun and the turret operate on a mechanism similar to cannons that are used on ships, except for the fact that they magically load themselves with black powder and bullets, so you only need to worry about aiming and shooting. Do try to use these bullets sparingly, though. Our ammunition is not unlimited, and these bullets cost a lot to make.\"\r\n\r\nAs soon as the two of us are ready to take off, the gnome signals an air elementalist nearby, and he casts a spell on the machine's propeller in order to make it rotate."
           - source: scene_text_2
             paragraph: 23
             text: "I pull on the lever to my left side in order to increase the pitch, and the flying machine begins to slowly gain altitude.\r\n\r\n\"So, you were saying before that the bullets are only a distraction,\" I say, rather loudly, in order to compensate for the sound of the propeller. \"What did you mean by that?\"\r\n\r\n\"Oh, the real purpose of this machine is not to shoot down the dragon,\" Golmyck says. \"What we are in fact aiming to do is to manage to place ourselves above him, and then to drop a spinning rope on him.\"\r\n\r\n\"A spinning rope?\" I ask him, confused.\r\n\r\n\"Yes,\" the gnome says. \"Our enchanters designed a magical rope that is made to unfurl itself and then to start spinning once it gets dropped from our small cargo hold below. The rope has been enchanted to be nearly unbreakable, and it is long enough to tie down the dragon's wings, in order to prevent him from flying. The only problem is that the dragon will need to hover in one place for quite a while and not be paying attention to us in order for this setup to work. We can't do it after the cage is dismissed, because there will be too many explosions, and the dragon will try to get away from there as soon as possible. We only have one cargo hold, and only one rope, so we can't afford to miss our chance. We shouldn't use it unless we are absolutely certain that our plan will succeed. Until then, we'll only be using bullets to attack him, in order to provide assistance to your friends and my soldiers that will be attacking the dragon at the same time.\"\r\n\r\n\"And what if the dragon starts breathing fire at us?\" I say."
-        condition: b2_ch5_pilot = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch05b_barrier
-      - texts:
+      - condition: b2_ch5_pilot = 0
+        texts:
           - source: scene_text
             paragraph: 50
             text: "As soon as the two of us are ready to take off, the gnome signals an air elementalist nearby, and he casts a spell on the machine's propeller in order to make it rotate.\r\n\r\nThe gnome pulls on a lever to his left side in order to increase the pitch for the rotor blades, and the flying machine begins to slowly gain altitude.\r\n\r\n\"So, you were saying before that the bullets are only a distraction,\" I say, rather loudly, in order to compensate for the sound of the propeller. \"What did you mean by that?\"\r\n\r\n\"Oh, the real purpose of this machine is not to shoot down the dragon,\" Golmyck says. \"What we are in fact aiming to do is to manage to place ourselves above him, and then to drop a spinning rope on him.\"\r\n\r\n\"A spinning rope?\" I ask him, confused."
           - source: scene_text_2
             paragraph: 24
             text: "\"Yes,\" the gnome says. \"Our enchanters designed a magical rope that is made to unfurl itself and then to start spinning once it gets dropped from our small cargo hold below. The rope has been enchanted to be nearly unbreakable, and it is long enough to tie down the dragon's wings, in order to prevent him from flying. The only problem is that the dragon will need to hover in one place for quite a while and not be paying attention to us in order for this setup to work. We can't do it after the cage is dismissed, because there will be too many explosions, and the dragon will try to get away from there as soon as possible. We only have one cargo hold, and only one rope, so we can't afford to miss our chance. We shouldn't use it unless we are absolutely certain that our plan will succeed. Until then, we'll only be using bullets to attack him, in order to provide assistance to your friends and my soldiers that will be attacking the dragon at the same time.\"\r\n\r\n\"And what if the dragon starts breathing fire at us?\" I say."
-        condition: b2_ch5_pilot = 0
         choices:
           - position: 1
             text: Continue
@@ -983,7 +1009,8 @@ scenes:
                   current_scene: b2_ch05b_barrier
   - name: b2_ch05b_barrier
     routes:
-      - texts:
+      - condition: b2_ch5_pilot = 1
+        texts:
           - source: scene_text
             paragraph: 51
             text: "\"This aircraft is using lessathi technology,\" Golmyck says, \"to provide us with some rather effective shielding against fire attacks. Of course, this does not make us invulnerable, and I'm not sure how long the shields can hold against flames that are as hot as the dragon's, so we should try evading his fire breath as much as possible.\"\r\n\r\nAs we reach a high enough level of altitude, the golden cage surrounding the dragon is slowly starting to fade.\r\n\r\n\"Get ready,\" the gnome tells me.\r\n\r\nAs soon as the cage disappears, all of Flower's fireballs explode at the same time, sending a very powerful gust of wind towards us, and Kate's ice cones also get launched into the dragon soon afterwards. The protections that Tyrath cast on himself during all this time help him to survive the damage, but it's clear that he didn't get out of that unscathed. What's more, the amount of damage that he needed to absorb with his magical shields also seems to have drained him of his magical energy for the time being, because he is no longer using teleportation to move around and has gone back to using his wings to fly."
@@ -993,7 +1020,6 @@ scenes:
           - source: scene_3
             paragraph: 3
             text: "This information will really help me while I pilot the aircraft, because I don't think that I'd have time to maneuver out of the way otherwise.\r\n\r\nTyrath seems to have changed his mind again, and he's now chasing after Hadrik, who is currently in his eagle form. Even with Hadrik's speed, it still seems like the dragon is going to catch up to him soon. Maybe now would be a good time to make use of those acid coated bullets?"
-        condition: b2_ch5_pilot = 1
         choices:
           - position: 1
             text: Attack the dragon
@@ -1005,7 +1031,8 @@ scenes:
             effects:
               - set:
                   current_scene: b2_ch05b_death
-      - texts:
+      - condition: b2_ch5_pilot = 0
+        texts:
           - source: scene_text
             paragraph: 52
             text: "\"This aircraft is using lessathi technology,\" Golmyck says, \"to provide us with some rather effective shielding against fire attacks. Of course, this does not make us invulnerable, and I'm not sure how long the shields can hold against flames that are as hot as the dragon's, so we should try evading his fire breath as much as possible.\"\r\n\r\nAs we reach a high enough level of altitude, the golden cage surrounding the dragon is slowly starting to fade.\r\n\r\n\"Get ready,\" the gnome tells me.\r\n\r\nAs soon as the cage disappears, all of Flower's fireballs explode at the same time, sending a very powerful gust of wind towards us, and Kate's ice cones also get launched into the dragon soon afterwards. The protections that Tyrath cast on himself during all this time help him to survive the damage, but it's clear that he didn't get out of that unscathed. What's more, the amount of damage that he needed to absorb with his magical shields also seems to have drained him of his magical energy for the time being, because he is no longer using teleportation to move around and has gone back to using his wings to fly."
@@ -1015,7 +1042,6 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "\"Nice catch,\" Golmyck says. \"I will definitely keep that in mind, while I pilot the aircraft.\"\r\n\r\nTyrath seems to have changed his mind again, and he's now chasing after Hadrik, who is currently in his eagle form. Even with Hadrik's speed, it still seems like the dragon is going to catch up to him soon. Maybe now would be a good time to make use of those acid coated bullets?"
-        condition: b2_ch5_pilot = 0
         choices:
           - position: 1
             text: Attack the dragon
@@ -1029,11 +1055,11 @@ scenes:
                   current_scene: b2_ch05b_death
   - name: b2_ch05b_death
     routes:
-      - texts:
+      - condition: b2_ch5_pilot = 1
+        texts:
           - source: scene_text
             paragraph: 53
             text: "I keep watching Tyrath while he chases Hadrik, waiting for a better moment to attack. As I watch them fly, the two of them eventually start heading our way, and when the dragon notices me, he stops in his tracks, looking at me furiously.\r\n\r\n\"Are you mocking me, half-lessathi?\" Tyrath shouts. \"Do you think that using some flying toy will be enough to defeat me? I've had it with your insolence! If you're not going to activate your powers, then so be it. I'm not wasting any more time for the likes of you.\"\r\n\r\nThe dragon then inhales as much air in his lungs as he can, preparing to breathe his fire at us. \r\n\r\nI anticipate his attack, and I quickly push the control stick forward, to make us dive down, in order to evade the incoming flames. The fire breath misses us by a fair margin, but the dragon is already on our tail, and he is gaining on us. \r\n\r\nDamn it, move faster, you stupid machine. Move faster!\r\n\r\nI turn the plane to the left, trying to shake the dragon off, but he easily switches his direction and he reaches us within seconds. Tyrath then dives directly towards our cockpit, and he grabs me in his hind claws, crushing me between them, and killing me on the spot."
-        condition: b2_ch5_pilot = 1
         choices:
           - position: 1
             text: Restart game
@@ -1052,14 +1078,14 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: b2_ch5_pilot = 0
+        texts:
           - source: scene_text
             paragraph: 54
             text: "I keep watching Tyrath while he chases Hadrik, waiting for a better moment to attack. As I watch them fly, the two of them eventually start heading our way, and when the dragon notices me, he stops in his tracks, looking at me furiously.\r\n\r\n\"Are you mocking me, half-lessathi?\" Tyrath shouts. \"Do you think that using some flying toy will be enough to defeat me? I've had it with your insolence! If you're not going to activate your powers, then so be it. I'm not wasting any more time for the likes of you.\"\r\n\r\nThe dragon then inhales as much air in his lungs as he can, preparing to breathe his fire at us. \r\n\r\nGolmyck anticipates his attack, and he quickly pushes the control stick forward, to make us dive down, in order to evade the incoming flames. The fire breath misses us by a fair margin, but the dragon is already on our tail, and he is gaining on us.\r\n\r\nI attempt to shoot at him, but Tyrath adeptly dodges most of my bullets while in mid-air, by paying attention to the way I move the turret. Only a few of the acid coated bullets hit him, and they don't seem to do much damage."
           - source: scene_text_2
             paragraph: 27
             text: "\"Can't this thing go any faster?\" I ask Golmyck.\r\n\r\n\"I'm afraid not,\" Golmyck says. \"I'll try to shake him off.\"\r\n\r\nGolmyck pulls on the control stick as hard as he can, and the plane quickly changes its direction. This does not fool the dragon, however, who immediately matches our trajectory, without falling behind. When he reaches us, Tyrath dives directly towards our cockpit, and he grabs me in his hind claws, crushing me between them, and killing me on the spot."
-        condition: b2_ch5_pilot = 0
         choices:
           - position: 1
             text: Restart game
@@ -1094,7 +1120,8 @@ scenes:
               current_scene: b2_ch05b_glowing
   - name: b2_ch05b_gunner
     routes:
-      - texts:
+      - condition: combat_technique >= 2
+        texts:
           - source: scene_text
             paragraph: 57
             text: "\"I'm about to attack Tyrath,\" I tell Golmyck. \"Get ready.\"\r\n\r\n\"Understood,\" Golmyck says, as he grabs the control stick firmly in his hands.\r\n\r\nI start aiming the turret by the handles, attempting to target the dragon's wings. Once I feel that I've got a clear shot at him, I press the trigger, and I shoot about half a dozen bullets towards my target.\r\n\r\nAll six of my bullets penetrate the dragon's right wing, which makes him scream in pain and stop in his tracks. He then flies out of the way, in order to avoid getting hit by any more bullets. Before heading towards us, the dragon inhales a lot of air in his chest, preparing to breathe his fire at us. \r\n\r\nGolmyck anticipates his attack, and he quickly pushes the control stick forward, to make us dive down, in order to evade the incoming flames. The fire breath misses us by a fair margin, but the dragon is already on our tail, and he is gaining on us.\r\n\r\nI attempt to shoot at him again, but Tyrath adeptly dodges most of my bullets while in mid-air, by paying attention to the way I move the turret. Only a few of the acid coated bullets hit him, and they don't seem to do much damage.\r\n\r\nTyrath seems to be having a bit of trouble with the wing that I shot earlier, however, which is causing him to fly a little slower than before."
@@ -1104,10 +1131,10 @@ scenes:
           - source: scene_3
             paragraph: 5
             text: "\"There's no use fighting it,\" Illuna tells the dragon, in a cold voice. \"That water won't go away. And you can't burn it with your flame breath either, as long as you can't get rid of all that water in your lungs. Stop struggling and accept your fate.\"\r\n\r\n\"Hah!\" Arraka says. \"How do you like drowning in mid-air, Tyrath? I'm the one who taught this technique to Illuna, you know. You were blowing all that hot air just now, but in the end it turns out you can't even defeat one of my disciples! I guess you were never a match for me after all. Aha- AHAHAHAHA!\""
-        condition: combat_technique >= 2
-        set:
-          successful_checks:
-            - '[ Combat technique check successful - level 2 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Combat technique check successful - level 2 ]'
         choices:
           - position: 1
             text: Continue
@@ -1115,18 +1142,19 @@ scenes:
               - set:
                   current_scene: b2_ch05b_glowing
                 condition: is_dead = 0
-      - texts:
+      - condition: combat_technique < 2
+        texts:
           - source: scene_text
             paragraph: 56
             text: "\"I'm about to attack Tyrath,\" I tell Golmyck. \"Get ready.\"\r\n\r\n\"Understood,\" Golmyck says, as he grabs the control stick firmly in his hands.\r\n\r\nI start aiming the turret by the handles, attempting to target the dragon's wings. Once I feel that I've got a clear shot at him, I press the trigger, and I shoot about half a dozen bullets towards my target.\r\n\r\nShooting a moving target with a mounted turret proves to be a little more difficult than I thought, and I end up completely missing half of my shots, while the other half hit the dragon in the chest, instead of his wings.\r\n\r\nTyrath screams in pain, and then he flies out of the way, in order to avoid being hit by more bullets. Before heading towards us, the dragon inhales a lot of air in his chest, preparing to breathe his fire at us. \r\n\r\nGolmyck anticipates his attack, and he quickly pushes the control stick forward, to make us dive down, in order to evade the incoming flames. The fire breath misses us by a fair margin, but the dragon is already on our tail, and he is gaining on us.\r\n\r\nI attempt to shoot at him again, but Tyrath adeptly dodges most of my bullets while in mid-air, by paying attention to the way I move the turret. Only a few of the acid coated bullets hit him, and they don't seem to do much damage."
           - source: scene_text_2
             paragraph: 29
             text: "\"Can't this thing go any faster?\" I ask Golmyck.\r\n\r\n\"I'm afraid not,\" Golmyck says. \"I'll try to shake him off.\"\r\n\r\nGolmyck pulls on the control stick as hard as he can, and the plane quickly changes its direction. This does not fool the dragon, however, who immediately matches our trajectory, without falling behind. When he reaches us, Tyrath dives directly towards our cockpit, and he grabs me in his hind claws, crushing me between them, and killing me on the spot."
-        condition: combat_technique < 2
-        set:
-          failed_checks:
-            - '[ Combat technique check failed - level 2 ]'
-          is_dead: 1
+        effects:
+          - set:
+              failed_checks:
+                - '[ Combat technique check failed - level 2 ]'
+              is_dead: 1
         choices:
           - position: 1
             text: Restart game
@@ -1147,7 +1175,8 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
   - name: b2_ch05b_glowing
     routes:
-      - texts:
+      - condition: b2_ch5_pilot = 1
+        texts:
           - source: scene_text
             paragraph: 58
             text: "Tyrath's eyes start glowing bright red all of a sudden, and he looks more pissed off than ever. He now seems to be voluntarily increasing his body temperature to an alarming degree, because I'm beginning to see steam coming out from all over him. He must be trying to evaporate all the water from his body, in order to be able to breathe fire again. \r\n\r\nWhile Tyrath is busy heating up his body, Golmyck and I manage to position ourselves right above the dragon, and we ready ourselves to drop the rope on him.  As soon as the dragon achieves his purpose of evaporating all of the water inside him, he uses the last of his breath to exhale a large flame from his mouth, eliminating all of the water that was surrounding his head until now.\r\n\r\n\"I'm dropping the rope!\" Golmyck says, as we watch the dragon gasp for air.\r\n\r\nHe then pulls on a lever to his right, and the cargo hold opens below us, dropping the rope."
@@ -1157,14 +1186,14 @@ scenes:
           - source: scene_3
             paragraph: 6
             text: "Following the explosion, the dragon's body changes completely, and it starts looking like it is now covered by molten lava, and not by regular scales anymore. He is also now emanating an intimidating fiery aura that is completely different from the one he had before. But that is not all. The magic power that I am now sensing from him is simply insane. If I were to compare it with anything I've felt before, I'd say that it's on a pretty similar level to the magical power of the golden fox. Is this seriously the true form of the red dragon, Tyrath? The one that Arraka was talking about earlier, before we began the fight? How are we even supposed to fight something like this? \r\n\r\nThe rope that was tying the dragon's wings has already been burned into ashes by the dragon's transformation. Tyrath now soars back into the sky, looking more menacing than ever before.\r\n\r\n\"This is all my fault,\" Tyrath says, in an unusually calm tone. \"I alone am to blame for having given you the illusion that you could actually stand a chance against me. I am now going to fix that mistake. Instead of continuing to fight you individually, I will simply destroy this whole city and everyone in it with a single spell. This way, there will be no more misunderstandings.\""
-        condition: b2_ch5_pilot = 1
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch05b_serious
-      - texts:
+      - condition: b2_ch5_pilot = 0
+        texts:
           - source: scene_text
             paragraph: 59
             text: "Tyrath's eyes start glowing bright red all of a sudden, and he looks more pissed off than ever. He now seems to be voluntarily increasing his body temperature to an alarming degree, because I'm beginning to see steam coming out from all over him. He must be trying to evaporate all the water from his body, in order to be able to breathe fire again. \r\n\r\nWhile Tyrath is busy heating up his body, Golmyck and I manage to position ourselves right above the dragon, and we ready ourselves to drop the rope on him.  As soon as the dragon achieves his purpose of evaporating all of the water inside him, he uses the last of his breath to exhale a large flame from his mouth, eliminating all of the water that was surrounding his head until now.\r\n\r\n\"Now!\" Golmyck says, as we watch the dragon gasp for air.\r\n\r\n\"Aye, aye, sir!\" I say, and I pull on the lever to my right, which opens the cargo hold below us, dropping the rope."
@@ -1174,7 +1203,6 @@ scenes:
           - source: scene_3
             paragraph: 6
             text: "Following the explosion, the dragon's body changes completely, and it starts looking like it is now covered by molten lava, and not by regular scales anymore. He is also now emanating an intimidating fiery aura that is completely different from the one he had before. But that is not all. The magic power that I am now sensing from him is simply insane. If I were to compare it with anything I've felt before, I'd say that it's on a pretty similar level to the magical power of the golden fox. Is this seriously the true form of the red dragon, Tyrath? The one that Arraka was talking about earlier, before we began the fight? How are we even supposed to fight something like this? \r\n\r\nThe rope that was tying the dragon's wings has already been burned into ashes by the dragon's transformation. Tyrath now soars back into the sky, looking more menacing than ever before.\r\n\r\n\"This is all my fault,\" Tyrath says, in an unusually calm tone. \"I alone am to blame for having given you the illusion that you could actually stand a chance against me. I am now going to fix that mistake. Instead of continuing to fight you individually, I will simply destroy this whole city and everyone in it with a single spell. This way, there will be no more misunderstandings.\""
-        condition: b2_ch5_pilot = 0
         choices:
           - position: 1
             text: Continue
@@ -1241,28 +1269,28 @@ scenes:
               current_scene: b2_ch05b_exit
   - name: b2_ch05b_exit
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 64
             text: "\"Come on,\" Daren tells us. \"I think I saw Enrique spectating us from somewhere around here, and I'm pretty sure that he left through one of these gates when the evacuation started. He must be waiting for us outside.\"\r\n\r\nWe all exit through the gate, trying to find Enrique , but before we get to even look around, we are greeted by a young girl with a pleasant smile on her face. I recognize her immediately as being the same girl who was calling out to Eiden, earlier.\r\n\r\n\"Hello!\" the girl says. \"I hope I'm not bothering you. It's just that I watched you fighting during the arena event, and I was very impressed! I was wondering if you all could help me out with something.\"\r\n\r\n\"Sorry, kid,\" Daren says, as he pats the girl on the shoulder, briefly. \"We're not giving autographs.\"\r\n\r\nHe then turns his back on her and heads towards Enrique who was waiting for us not far from the gate. The girl looks mildly irritated by Daren's remark, but it does not look like she's planning to give up just yet. Taking a better look at her, I notice that her clothes, while aesthetically pleasing, do not look much different from the pajamas that they sell on the Western Continent. They remind me quite a lot of the type of clothing that Eiden likes to wear."
           - source: scene_text_2
             paragraph: 34
             text: "Wait a minute... This girl knows Eiden... And she wears similar clothing to him... So, does this mean that... No, no, no, what am I even thinking about? It's just a coincidence. There's no way that this girl could be a--\r\n\r\n\"Hey, Barry, are you coming?\" Daren tells me.\r\n\r\n\"Oh, yeah, yeah, I'll be right there,\" I say, as I throw the young girl one last hesitant look, and then I head towards Daren."
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch05b_ending
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 65
             text: "\"Come on,\" Daren tells us. \"I think this is the gate that Rose went through when the evacuation started. She must be waiting for us outside.\"\r\n\r\nWe all exit through the gate, trying to find Rose , but before we get to even look around, we are greeted by a young girl with a pleasant smile on her face. I recognize her immediately as being the same girl who was calling out to Eiden, earlier.\r\n\r\n\"Hello!\" the girl says. \"I hope I'm not bothering you. It's just that I watched you fighting during the arena event, and I was very impressed! I was wondering if you all could help me out with something.\"\r\n\r\n\"Sorry, kid,\" Daren says, as he pats the girl on the shoulder, briefly. \"We're not giving autographs.\"\r\n\r\nHe then turns his back on her and heads towards Rose who was waiting for us not far from the gate. The girl looks mildly irritated by Daren's remark, but it does not look like she's planning to give up just yet. Taking a better look at her, I notice that her clothes, while aesthetically pleasing, do not look much different from the pajamas that they sell on the Western Continent. They remind me quite a lot of the type of clothing that Eiden likes to wear."
           - source: scene_text_2
             paragraph: 34
             text: "Wait a minute... This girl knows Eiden... And she wears similar clothing to him... So, does this mean that... No, no, no, what am I even thinking about? It's just a coincidence. There's no way that this girl could be a--\r\n\r\n\"Hey, Barry, are you coming?\" Daren tells me.\r\n\r\n\"Oh, yeah, yeah, I'll be right there,\" I say, as I throw the young girl one last hesitant look, and then I head towards Daren."
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Continue
@@ -1271,14 +1299,14 @@ scenes:
                   current_scene: b2_ch05b_ending
   - name: b2_ch05b_ending
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 66
             text: "\"My friends,\" Enrique says. \"That was fantastic! Simply magnificent! I have no words! I thought I'd already seen everything when you were done battling those creatures in the arena, but then you went and defeated a dragon! And to top it all off, you've survived the encounter with barely any scratches. This calls for a celebration! Tonight, we will have a feast. I will not accept 'no' for an answer!\"\r\n\r\n\"Um... excuse me, sir?\" we hear the young girl from before, calling out to Daren from behind us.\r\n\r\n\"Listen, Enrique,\" Daren says, ignoring the girl behind him, \"I really appreciate all of this, but this arena event already puts us three days behind all of the other participants in the mage tournament, so I really don't think it would be a good idea for us to be spending yet another night in Thilias.\"\r\n\r\n\"Umm, sir?...\" the young girl asks again, but nobody pays attention to her.\r\n\r\n\"Come on, Daren,\" Hadrik says. \"Don't be a stick in the mud! They never gave us a time limit for completing the first objectives. It's not like they're going to disqualify us if we don't start looking for the pine cones right away.\"\r\n\r\n\"Damn it, Hadrik!\" Daren says. \"You are the last person that I want to hear this from. You don't even care about winning the tournament! Didn't you say that you only came here for the challenge? I bet you're only trying to postpone this because you hate the idea of having to go search for pine cones.\""
           - source: scene_text_2
             paragraph: 35
             text: "All of a sudden, Kate, Daren and I slowly begin to get raised from the ground, and as we are floating, we all get turned around, simultaneously, to face the opposite way. Standing in front of us now is the young girl in pajamas from before, smiling pleasantly at us.\r\n\r\n\"Well, then!\" the girl says, with a smile, while clapping her hands together. \"Now that I've got your attention, perhaps we could have a little chat? I promise you that this won't take any longer than a few minutes!\""
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: Next chapter
@@ -1289,14 +1317,14 @@ scenes:
                   chapter_save: 1
                   checkpoint_rich: 1
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 67
             text: "\"Thank the gods you are all alive!\" Rose says. \"When I saw the dragon, I tried to return to the arena immediately, but they wouldn't let me back in! All I could do was watch Kate, Hadrik, Flower and that plane fight the dragon in the sky from out here, but I had no idea what had happened to Barry and Daren, or even if they were still alive!\"\r\n\r\n\"Um... excuse me, sir?\" we hear the young girl from before, calling out to Daren from behind us.\r\n\r\n\"Well, believe it or not,\" Daren tells Rose, ignoring the girl behind him, \"the ones flying that plane were none other than Barry and the king.\"\r\n\r\n\"Umm, sir?...\" the young girl asks again, but nobody pays attention to her.\r\n\r\n\"The king?\" Rose asks Daren, shocked.\r\n\r\n\"Yeah, I couldn't believe my eyes, either,\" Daren says. \"I think I'm slowly starting to understand why this guy got elected as your king by such a large majority.\""
           - source: scene_text_2
             paragraph: 35
             text: "All of a sudden, Kate, Daren and I slowly begin to get raised from the ground, and as we are floating, we all get turned around, simultaneously, to face the opposite way. Standing in front of us now is the young girl in pajamas from before, smiling pleasantly at us.\r\n\r\n\"Well, then!\" the girl says, with a smile, while clapping her hands together. \"Now that I've got your attention, perhaps we could have a little chat? I promise you that this won't take any longer than a few minutes!\""
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Next chapter
@@ -1309,11 +1337,11 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
   - name: b2_ch05b_credits
     routes:
-      - texts:
+      - condition: second_book_purchased = 0
+        texts:
           - source: scene_text
             paragraph: 68
             text: "The sixth chapter is now available.\r\n\r\nTap the button below to proceed."
-        condition: second_book_purchased = 0
         choices:
           - position: 1
             text: Go to next chapter
@@ -1324,11 +1352,11 @@ scenes:
                   chapter_save: 1
                   checkpoint_rich: 1
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: second_book_purchased = 1
+        texts:
           - source: scene_text
             paragraph: 69
             text: "The sixth chapter is now available.\r\n\r\nTap the button below to proceed."
-        condition: second_book_purchased = 1
         choices:
           - position: 1
             text: Go to next chapter

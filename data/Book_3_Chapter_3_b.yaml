@@ -48,68 +48,71 @@ scenes:
               current_scene: b3_ch03b_functional
               b3_ch3_functional: 2
   - name: b3_ch03b_functional
-    routes:
-      - texts:
-          - source: scene_text
-            paragraph: 4
-            text: "\"Did you manage to unlock all of the aura stats?\"\r\n\r\n\"Yes, the Magical Sense, Bluff and Aura Hardening stats should all be available to you once your device starts working again,\" Leila's father says. \"Also, I think I should let you know that the stat devices are made in such a way that your stat point distribution gets automatically reset when you unlock the hidden aura stats. In other words, as soon as your device starts working again, your stats will all be at zero, and you will have all of your available points to spend at your leisure once more.\"\r\n\r\n\"Wow, that's amazing!\" I say. \"Does this mean that it's possible to reset the stats multiple times, if you hide the aura stats and then unlock them again?\"\r\n\r\n\"To be quite honest, I wouldn't risk it,\" Leila's father says. \"These devices are very old, and a full stat reset puts a lot of strain on them. That's the reason why you aren't given the option to just remove points from your stats at will after you've already spent them. The only reason why I even let the stat reset happen is because I wasn't given a choice in the matter, but trying to reset your stats multiple times on purpose may well cause some of your points to become unusable, or it may even cause your stat device to stop working altogether. My advice is to be happy that no damage was done with this reset, and to be very careful when you choose what stats to level up from now on, because you likely won't be getting another chance like this again.\"\r\n\r\n\"Got it,\" I say. \"Anything else that I should know about?\""
-        condition: b3_ch3_functional = 0
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03b_inconvenience
-      - texts:
-          - source: scene_text
-            paragraph: 5
-            text: "\"How long should it normally take until it starts working again?\"\r\n\r\n\"It probably won't take any more than a few hours,\" Leila's father says. \"You'll know when it becomes usable again, because it will notify you with a long beep. Also, I think I should let you know that the stat devices are made in such a way that your stat point distribution gets automatically reset when you unlock the hidden aura stats. In other words, as soon as your device starts working again, your stats will all be at zero, and you will have all of your available points to spend at your leisure once more.\" \r\n\r\n\"Wow, that's amazing!\" I say. \"Does this mean that it's possible to reset the stats multiple times, if you hide the aura stats and then unlock them again?\"\r\n\r\n\"To be quite honest, I wouldn't risk it,\" Leila's father says. \"These devices are very old, and a full stat reset puts a lot of strain on them. That's the reason why you aren't given the option to just remove points from your stats at will after you've already spent them. The only reason why I even let the stat reset happen is because I wasn't given a choice in the matter, but trying to reset your stats multiple times on purpose may well cause some of your points to become unusable, or it may even cause your stat device to stop working altogether. My advice is to be happy that no damage was done with this reset, and to be very careful when you choose what stats to level up from now on, because you likely won't be getting another chance like this again.\"\r\n\r\n\"Got it,\" I say. \"Anything else that I should know about?\""
-        condition: b3_ch3_functional = 1
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03b_inconvenience
-      - texts:
-          - source: scene_text
-            paragraph: 6
-            text: "\"Are there any unwanted side-effects that I should be worrying about?\"\r\n\r\n\"None that I can think of,\" Leila's father says. \"However, there is a side-effect that I think you might find beneficial. The stat devices are made in such a way that your stat point distribution gets automatically reset when you unlock the hidden aura stats. In other words, as soon as your device starts working again, your stats will all be at zero, and you will have all of your available points to spend at your leisure once more.\"\r\n\r\n\"Wow, that's amazing!\" I say. \"Does this mean that it's possible to reset the stats multiple times, if you hide the aura stats and then unlock them again?\"\r\n\r\n\"To be quite honest, I wouldn't risk it,\" Leila's father says. \"These devices are very old, and a full stat reset puts a lot of strain on them. That's the reason why you aren't given the option to just remove points from your stats at will after you've already spent them. The only reason why I even let the stat reset happen is because I wasn't given a choice in the matter, but trying to reset your stats multiple times on purpose may well cause some of your points to become unusable, or it may even cause your stat device to stop working altogether. My advice is to be happy that no damage was done with this reset, and to be very careful when you choose what stats to level up from now on, because you likely won't be getting another chance like this again.\"\r\n\r\n\"Got it,\" I say. \"Anything else that I should know about?\""
-        condition: b3_ch3_functional = 2
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03b_inconvenience
-      - texts:
-          - source: scene_text_2
-            paragraph: 4
-            text: "\"Yes, there was one last thing I wanted to tell you about your device,\" Leila's father says. \"When I removed your stat booster from its locked state, the process that is dedicated to converting magical energy into available stat points was reset, so you will be getting one of your stat points earlier than normal. This also means that you will be getting one less point with your next batch, but I think you'd much rather have the stat point available now than later. If I'm not mistaken, your extra point should be available to you as soon as your stat device becomes functional again.\"\r\n\r\n\"Alright,\" I say, as I put the device in my pocket. \"I'll make sure to keep that in mind. Thank you for all your help!\"\r\n\r\n\"You're welcome!\" Leila's father says. \"Oh, and while we're still on the topic of stat boosters... Leila, would you mind coming to my workshop again for a bit? There's one last maintenance check that I forgot to do for your stat device, and I'd prefer to do it now, while I've got some free time.\"\r\n\r\n\"Okay,\" Leila writes. \"See you, Barry!\"\r\n\r\n\"See you both later,\" I say, as the two of them are heading back towards doctor Reidzek's workshop."
-        condition: b3_ch1_unlock = 2
-        set:
+    effects:
+      - set:
           ac_b3_ch3_unexpected: 1
         achievement:
           id: ac_b3_ch3_unexpected
           title: An unexpected bonus
-        choices:
-          - position: 1
-            text: Continue
-            effects:
-              - set:
-                  current_scene: b3_ch03b_inconvenience
-      - texts:
+        condition: b3_ch1_unlock = 2
+    routes:
+      - condition: b3_ch3_functional = 0
+        texts:
+          - source: scene_text
+            paragraph: 4
+            text: "\"Did you manage to unlock all of the aura stats?\"\r\n\r\n\"Yes, the Magical Sense, Bluff and Aura Hardening stats should all be available to you once your device starts working again,\" Leila's father says. \"Also, I think I should let you know that the stat devices are made in such a way that your stat point distribution gets automatically reset when you unlock the hidden aura stats. In other words, as soon as your device starts working again, your stats will all be at zero, and you will have all of your available points to spend at your leisure once more.\"\r\n\r\n\"Wow, that's amazing!\" I say. \"Does this mean that it's possible to reset the stats multiple times, if you hide the aura stats and then unlock them again?\"\r\n\r\n\"To be quite honest, I wouldn't risk it,\" Leila's father says. \"These devices are very old, and a full stat reset puts a lot of strain on them. That's the reason why you aren't given the option to just remove points from your stats at will after you've already spent them. The only reason why I even let the stat reset happen is because I wasn't given a choice in the matter, but trying to reset your stats multiple times on purpose may well cause some of your points to become unusable, or it may even cause your stat device to stop working altogether. My advice is to be happy that no damage was done with this reset, and to be very careful when you choose what stats to level up from now on, because you likely won't be getting another chance like this again.\"\r\n\r\n\"Got it,\" I say. \"Anything else that I should know about?\""
+          - source: scene_text_2
+            paragraph: 4
+            text: "\"Yes, there was one last thing I wanted to tell you about your device,\" Leila's father says. \"When I removed your stat booster from its locked state, the process that is dedicated to converting magical energy into available stat points was reset, so you will be getting one of your stat points earlier than normal. This also means that you will be getting one less point with your next batch, but I think you'd much rather have the stat point available now than later. If I'm not mistaken, your extra point should be available to you as soon as your stat device becomes functional again.\"\r\n\r\n\"Alright,\" I say, as I put the device in my pocket. \"I'll make sure to keep that in mind. Thank you for all your help!\"\r\n\r\n\"You're welcome!\" Leila's father says. \"Oh, and while we're still on the topic of stat boosters... Leila, would you mind coming to my workshop again for a bit? There's one last maintenance check that I forgot to do for your stat device, and I'd prefer to do it now, while I've got some free time.\"\r\n\r\n\"Okay,\" Leila writes. \"See you, Barry!\"\r\n\r\n\"See you both later,\" I say, as the two of them are heading back towards doctor Reidzek's workshop."
+            condition: b3_ch1_unlock = 2
           - source: scene_text_2
             paragraph: 5
             text: "\"Not in particular, no,\" Leila's father says. \"I've already given you all the information that I had. How you choose to use your stat device from now on is entirely up to you.\"\r\n\r\n\"Alright,\" I say, as I put the device in my pocket. \"I'll make sure to keep all of your advice in mind. Thank you for all your help!\"\r\n\r\n\"You're welcome!\" Leila's father says. \"Oh, and while we're still on the topic of stat boosters... Leila, would you mind coming to my workshop again for a bit? There's one last maintenance check that I forgot to do for your stat device, and I'd prefer to do it now, while I've got some free time.\"\r\n\r\n\"Okay,\" Leila writes. \"See you, Barry!\"\r\n\r\n\"See you both later,\" I say, as the two of them are heading back towards doctor Reidzek's workshop."
-        condition: b3_ch1_unlock <> 2
+            condition: b3_ch1_unlock != 2
+          - source: scene_3
+            paragraph: 2
+            text: "As I look around the room to decide what I'm going to do next, one particular corridor catches my attention. It is the corridor that Kate and Melindra walked into when they decided to continue their training. Now that I take a better look, I realize that it's not the same corridor as the one they were using to train before the king of the underground called us to his throne room. Why would they choose a different corridor than last time? Wouldn't it make more sense for them to train in a place that they are already familiar with?\r\n\r\nWait a minute... I'm pretty sure that there was a way to get from that corridor right into the tunnel that leads to the teleporter room. Could this be where the two of them are actually headed? I guess there's only one way to find out.\r\n\r\nI begin heading towards the tunnel that leads directly to the teleporter room at a rapid pace. If I hurry up, I should still be able to catch up to them. This tunnel takes a more direct route towards the teleporter than the one they took, so the distance is much shorter. I rush through the door leading into the corridor, and then I head straight for the teleporter, without looking back. It's fine. If they really went this way, they can't be much further ahead. I should be seeing them any minute now. Any minute now...\r\n\r\nMy predictions turn out to be true, as I soon catch a glimpse of Kate's green cloak in the distance, and then I slow down my pace, so I can follow her and Melindra without getting noticed. Unfortunately, my plan gets shot to pieces almost immediately, when Melindra suddenly stops walking and calls out to me in a loud voice."
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch03b_inconvenience
-      - texts:
+      - condition: b3_ch3_functional = 1
+        texts:
+          - source: scene_text
+            paragraph: 5
+            text: "\"How long should it normally take until it starts working again?\"\r\n\r\n\"It probably won't take any more than a few hours,\" Leila's father says. \"You'll know when it becomes usable again, because it will notify you with a long beep. Also, I think I should let you know that the stat devices are made in such a way that your stat point distribution gets automatically reset when you unlock the hidden aura stats. In other words, as soon as your device starts working again, your stats will all be at zero, and you will have all of your available points to spend at your leisure once more.\" \r\n\r\n\"Wow, that's amazing!\" I say. \"Does this mean that it's possible to reset the stats multiple times, if you hide the aura stats and then unlock them again?\"\r\n\r\n\"To be quite honest, I wouldn't risk it,\" Leila's father says. \"These devices are very old, and a full stat reset puts a lot of strain on them. That's the reason why you aren't given the option to just remove points from your stats at will after you've already spent them. The only reason why I even let the stat reset happen is because I wasn't given a choice in the matter, but trying to reset your stats multiple times on purpose may well cause some of your points to become unusable, or it may even cause your stat device to stop working altogether. My advice is to be happy that no damage was done with this reset, and to be very careful when you choose what stats to level up from now on, because you likely won't be getting another chance like this again.\"\r\n\r\n\"Got it,\" I say. \"Anything else that I should know about?\""
+          - source: scene_text_2
+            paragraph: 4
+            text: "\"Yes, there was one last thing I wanted to tell you about your device,\" Leila's father says. \"When I removed your stat booster from its locked state, the process that is dedicated to converting magical energy into available stat points was reset, so you will be getting one of your stat points earlier than normal. This also means that you will be getting one less point with your next batch, but I think you'd much rather have the stat point available now than later. If I'm not mistaken, your extra point should be available to you as soon as your stat device becomes functional again.\"\r\n\r\n\"Alright,\" I say, as I put the device in my pocket. \"I'll make sure to keep that in mind. Thank you for all your help!\"\r\n\r\n\"You're welcome!\" Leila's father says. \"Oh, and while we're still on the topic of stat boosters... Leila, would you mind coming to my workshop again for a bit? There's one last maintenance check that I forgot to do for your stat device, and I'd prefer to do it now, while I've got some free time.\"\r\n\r\n\"Okay,\" Leila writes. \"See you, Barry!\"\r\n\r\n\"See you both later,\" I say, as the two of them are heading back towards doctor Reidzek's workshop."
+            condition: b3_ch1_unlock = 2
+          - source: scene_text_2
+            paragraph: 5
+            text: "\"Not in particular, no,\" Leila's father says. \"I've already given you all the information that I had. How you choose to use your stat device from now on is entirely up to you.\"\r\n\r\n\"Alright,\" I say, as I put the device in my pocket. \"I'll make sure to keep all of your advice in mind. Thank you for all your help!\"\r\n\r\n\"You're welcome!\" Leila's father says. \"Oh, and while we're still on the topic of stat boosters... Leila, would you mind coming to my workshop again for a bit? There's one last maintenance check that I forgot to do for your stat device, and I'd prefer to do it now, while I've got some free time.\"\r\n\r\n\"Okay,\" Leila writes. \"See you, Barry!\"\r\n\r\n\"See you both later,\" I say, as the two of them are heading back towards doctor Reidzek's workshop."
+            condition: b3_ch1_unlock != 2
+          - source: scene_3
+            paragraph: 2
+            text: "As I look around the room to decide what I'm going to do next, one particular corridor catches my attention. It is the corridor that Kate and Melindra walked into when they decided to continue their training. Now that I take a better look, I realize that it's not the same corridor as the one they were using to train before the king of the underground called us to his throne room. Why would they choose a different corridor than last time? Wouldn't it make more sense for them to train in a place that they are already familiar with?\r\n\r\nWait a minute... I'm pretty sure that there was a way to get from that corridor right into the tunnel that leads to the teleporter room. Could this be where the two of them are actually headed? I guess there's only one way to find out.\r\n\r\nI begin heading towards the tunnel that leads directly to the teleporter room at a rapid pace. If I hurry up, I should still be able to catch up to them. This tunnel takes a more direct route towards the teleporter than the one they took, so the distance is much shorter. I rush through the door leading into the corridor, and then I head straight for the teleporter, without looking back. It's fine. If they really went this way, they can't be much further ahead. I should be seeing them any minute now. Any minute now...\r\n\r\nMy predictions turn out to be true, as I soon catch a glimpse of Kate's green cloak in the distance, and then I slow down my pace, so I can follow her and Melindra without getting noticed. Unfortunately, my plan gets shot to pieces almost immediately, when Melindra suddenly stops walking and calls out to me in a loud voice."
+        choices:
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch03b_inconvenience
+      - condition: b3_ch3_functional = 2
+        texts:
+          - source: scene_text
+            paragraph: 6
+            text: "\"Are there any unwanted side-effects that I should be worrying about?\"\r\n\r\n\"None that I can think of,\" Leila's father says. \"However, there is a side-effect that I think you might find beneficial. The stat devices are made in such a way that your stat point distribution gets automatically reset when you unlock the hidden aura stats. In other words, as soon as your device starts working again, your stats will all be at zero, and you will have all of your available points to spend at your leisure once more.\"\r\n\r\n\"Wow, that's amazing!\" I say. \"Does this mean that it's possible to reset the stats multiple times, if you hide the aura stats and then unlock them again?\"\r\n\r\n\"To be quite honest, I wouldn't risk it,\" Leila's father says. \"These devices are very old, and a full stat reset puts a lot of strain on them. That's the reason why you aren't given the option to just remove points from your stats at will after you've already spent them. The only reason why I even let the stat reset happen is because I wasn't given a choice in the matter, but trying to reset your stats multiple times on purpose may well cause some of your points to become unusable, or it may even cause your stat device to stop working altogether. My advice is to be happy that no damage was done with this reset, and to be very careful when you choose what stats to level up from now on, because you likely won't be getting another chance like this again.\"\r\n\r\n\"Got it,\" I say. \"Anything else that I should know about?\""
+          - source: scene_text_2
+            paragraph: 4
+            text: "\"Yes, there was one last thing I wanted to tell you about your device,\" Leila's father says. \"When I removed your stat booster from its locked state, the process that is dedicated to converting magical energy into available stat points was reset, so you will be getting one of your stat points earlier than normal. This also means that you will be getting one less point with your next batch, but I think you'd much rather have the stat point available now than later. If I'm not mistaken, your extra point should be available to you as soon as your stat device becomes functional again.\"\r\n\r\n\"Alright,\" I say, as I put the device in my pocket. \"I'll make sure to keep that in mind. Thank you for all your help!\"\r\n\r\n\"You're welcome!\" Leila's father says. \"Oh, and while we're still on the topic of stat boosters... Leila, would you mind coming to my workshop again for a bit? There's one last maintenance check that I forgot to do for your stat device, and I'd prefer to do it now, while I've got some free time.\"\r\n\r\n\"Okay,\" Leila writes. \"See you, Barry!\"\r\n\r\n\"See you both later,\" I say, as the two of them are heading back towards doctor Reidzek's workshop."
+            condition: b3_ch1_unlock = 2
+          - source: scene_text_2
+            paragraph: 5
+            text: "\"Not in particular, no,\" Leila's father says. \"I've already given you all the information that I had. How you choose to use your stat device from now on is entirely up to you.\"\r\n\r\n\"Alright,\" I say, as I put the device in my pocket. \"I'll make sure to keep all of your advice in mind. Thank you for all your help!\"\r\n\r\n\"You're welcome!\" Leila's father says. \"Oh, and while we're still on the topic of stat boosters... Leila, would you mind coming to my workshop again for a bit? There's one last maintenance check that I forgot to do for your stat device, and I'd prefer to do it now, while I've got some free time.\"\r\n\r\n\"Okay,\" Leila writes. \"See you, Barry!\"\r\n\r\n\"See you both later,\" I say, as the two of them are heading back towards doctor Reidzek's workshop."
+            condition: b3_ch1_unlock != 2
           - source: scene_3
             paragraph: 2
             text: "As I look around the room to decide what I'm going to do next, one particular corridor catches my attention. It is the corridor that Kate and Melindra walked into when they decided to continue their training. Now that I take a better look, I realize that it's not the same corridor as the one they were using to train before the king of the underground called us to his throne room. Why would they choose a different corridor than last time? Wouldn't it make more sense for them to train in a place that they are already familiar with?\r\n\r\nWait a minute... I'm pretty sure that there was a way to get from that corridor right into the tunnel that leads to the teleporter room. Could this be where the two of them are actually headed? I guess there's only one way to find out.\r\n\r\nI begin heading towards the tunnel that leads directly to the teleporter room at a rapid pace. If I hurry up, I should still be able to catch up to them. This tunnel takes a more direct route towards the teleporter than the one they took, so the distance is much shorter. I rush through the door leading into the corridor, and then I head straight for the teleporter, without looking back. It's fine. If they really went this way, they can't be much further ahead. I should be seeing them any minute now. Any minute now...\r\n\r\nMy predictions turn out to be true, as I soon catch a glimpse of Kate's green cloak in the distance, and then I slow down my pace, so I can follow her and Melindra without getting noticed. Unfortunately, my plan gets shot to pieces almost immediately, when Melindra suddenly stops walking and calls out to me in a loud voice."
@@ -383,11 +386,11 @@ scenes:
         paragraph: 14
         text: "\"King Undriel used to spend most of his days in the palace until recently,\" the Overseer says, \"but ever since Eiden made his appearance, his royal highness has begun visiting many important facilities from Ollendor, in order to personally inspect them and make sure that everything is in order. The king is afraid that Eiden might leave again if he finds the smallest imperfection within his city, so he is constantly going out of his way to ensure that everything is running as smoothly as possible. This puts him in a position of vulnerability, as it is more difficult for the royal guards to defend him while he's on the move than when he's sitting on his throne inside the palace. As long as you know the king's schedule and the routes he is planning to take in advance, the possibility of succeeding in an assassination attempt increases considerably.\"\r\n\r\n\"And could you provide us with this schedule of his?\" Breynan says.\r\n\r\n\"Negative,\" the Overseer says. \"That information is classified.\"\r\n\r\n\"Classified, huh?...\" Breynan says. \"Well, is there any sort of unclassified information regarding the king's schedule or his routes that you could disclose to us? Or any information whatsoever that could be useful to us when organizing an assassination while he is moving from one place to another?\""
     routes:
-      - texts:
+      - condition: b3_ch2_name = 0
+        texts:
           - source: scene_3
             paragraph: 9
             text: "\"The king likes to send scouts in advance to check the routes for potential traps,\" the Overseer says. \"If you can identify who these scouts are, you could easily figure out which route king Undriel is planning to take next. The scouts are typically sent one day in advance, and then they are sent again a few hours before the actual trip, to see if anything has changed in the meantime. Knowing this information, you should be able to make reasonably accurate predictions of when the king and his guards would be leaving the palace. Another strategy that could be used is to simply wait for the king to visit one of the facilities, and then try to ambush him on his way back, but it is not advisable, because the king's inspections are usually very short, and there would be no time to set up any proper traps that wouldn't immediately be neutralized by the royal guards.\" \r\n\r\n\"Hey, now that's quite the useful information you gave us there, Overseer,\" Breynan says. \"Many thanks!\"\r\n\r\n\"Happy to be of assistance, Breynan,\" the Overseer says. \"Would the group named 'Felran, the strongest fire elementalist on the Eastern Continent' like to ask a question of me as well?\""
-        condition: b3_ch2_name = 0
         choices:
           - position: 1
             text: Yes, can you stop calling us Felran?
@@ -406,11 +409,11 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch03b_interrupt
-      - texts:
+      - condition: b3_ch2_name = 1
+        texts:
           - source: scene_3
             paragraph: 10
             text: "\"The king likes to send scouts in advance to check the routes for potential traps,\" the Overseer says. \"If you can identify who these scouts are, you could easily figure out which route king Undriel is planning to take next. The scouts are typically sent one day in advance, and then they are sent again a few hours before the actual trip, to see if anything has changed in the meantime. Knowing this information, you should be able to make reasonably accurate predictions of when the king and his guards would be leaving the palace. Another strategy that could be used is to simply wait for the king to visit one of the facilities, and then try to ambush him on his way back, but it is not advisable, because the king's inspections are usually very short, and there would be no time to set up any proper traps that wouldn't immediately be neutralized by the royal guards.\" \r\n\r\n\"Hey, now that's quite the useful information you gave us there, Overseer,\" Breynan says. \"Many thanks!\"\r\n\r\n\"Happy to be of assistance, Breynan,\" the Overseer says. \"Would the group named 'Cutthroat Dave' like to ask a question of me as well?\""
-        condition: b3_ch2_name = 1
         choices:
           - position: 1
             text: Yes, can you stop calling us Cutthroat Dave?
@@ -429,11 +432,11 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch03b_interrupt
-      - texts:
+      - condition: b3_ch2_name = 2
+        texts:
           - source: scene_3
             paragraph: 11
             text: "\"The king likes to send scouts in advance to check the routes for potential traps,\" the Overseer says. \"If you can identify who these scouts are, you could easily figure out which route king Undriel is planning to take next. The scouts are typically sent one day in advance, and then they are sent again a few hours before the actual trip, to see if anything has changed in the meantime. Knowing this information, you should be able to make reasonably accurate predictions of when the king and his guards would be leaving the palace. Another strategy that could be used is to simply wait for the king to visit one of the facilities, and then try to ambush him on his way back, but it is not advisable, because the king's inspections are usually very short, and there would be no time to set up any proper traps that wouldn't immediately be neutralized by the royal guards.\" \r\n\r\n\"Hey, now that's quite the useful information you gave us there, Overseer,\" Breynan says. \"Many thanks!\"\r\n\r\n\"Happy to be of assistance, Breynan,\" the Overseer says. \"Would the group named 'Barry' like to ask a question of me as well?\""
-        condition: b3_ch2_name = 2
         choices:
           - position: 1
             text: Yes, can you stop calling us Barry?
@@ -452,11 +455,11 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch03b_interrupt
-      - texts:
+      - condition: b3_ch2_name = 3
+        texts:
           - source: scene_3
             paragraph: 12
             text: "\"The king likes to send scouts in advance to check the routes for potential traps,\" the Overseer says. \"If you can identify who these scouts are, you could easily figure out which route king Undriel is planning to take next. The scouts are typically sent one day in advance, and then they are sent again a few hours before the actual trip, to see if anything has changed in the meantime. Knowing this information, you should be able to make reasonably accurate predictions of when the king and his guards would be leaving the palace. Another strategy that could be used is to simply wait for the king to visit one of the facilities, and then try to ambush him on his way back, but it is not advisable, because the king's inspections are usually very short, and there would be no time to set up any proper traps that wouldn't immediately be neutralized by the royal guards.\" \r\n\r\n\"Hey, now that's quite the useful information you gave us there, Overseer,\" Breynan says. \"Many thanks!\"\r\n\r\n\"Happy to be of assistance, Breynan,\" the Overseer says. \"Would the group named 'Unidentified' like to ask a question of me as well?\""
-        condition: b3_ch2_name = 3
         choices:
           - position: 1
             text: Yes, can you stop calling us Unidentified?
@@ -475,11 +478,11 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch03b_interrupt
-      - texts:
+      - condition: b3_ch2_name = 4
+        texts:
           - source: scene_3
             paragraph: 13
             text: "\"The king likes to send scouts in advance to check the routes for potential traps,\" the Overseer says. \"If you can identify who these scouts are, you could easily figure out which route king Undriel is planning to take next. The scouts are typically sent one day in advance, and then they are sent again a few hours before the actual trip, to see if anything has changed in the meantime. Knowing this information, you should be able to make reasonably accurate predictions of when the king and his guards would be leaving the palace. Another strategy that could be used is to simply wait for the king to visit one of the facilities, and then try to ambush him on his way back, but it is not advisable, because the king's inspections are usually very short, and there would be no time to set up any proper traps that wouldn't immediately be neutralized by the royal guards.\" \r\n\r\n\"Hey, now that's quite the useful information you gave us there, Overseer,\" Breynan says. \"Many thanks!\"\r\n\r\n\"Happy to be of assistance, Breynan,\" the Overseer says. \"Would the group named 'Da-ren' like to ask a question of me as well?\""
-        condition: b3_ch2_name = 4
         choices:
           - position: 1
             text: Yes, can you stop calling us Daren?
@@ -500,85 +503,85 @@ scenes:
                   current_scene: b3_ch03b_interrupt
   - name: b3_ch03b_calling
     routes:
-      - texts:
-          - source: scene_3
-            paragraph: 14
-            text: "\"So, can we know for sure that anything of what the Overseer told us is true?\" I say, as we're all moving towards the exit.\r\n\r\n\"Not yet, but we should be able to easily verify all this information,\" Breynan says. \"As soon as we get back to our base, we can start by--\"\r\n\r\nBreynan suddenly interrupts himself, because right before we reach the end of the alley, three men dressed in rags place themselves in front of us, while holding daggers in their hands. Two of them have very scared looks in their eyes and they are shaking with fear, but even so, they don't seem like they're planning to step aside.\r\n\r\n\"Listen... I don't know who sent you here, but we don't mean to hurt you,\" Breynan tells the three men. \"Please, get out of the way.\""
+      - condition: b3_ch2_name = 0
+        texts:
           - source: scene_text
             paragraph: 23
             text: "\"Yes, can you stop calling us Felran?\"\r\n\r\n\"Unfortunately, changing your group's designation is not possible at this time,\" the Overseer says. \"We apologize for the inconvenience.\"\r\n\r\n\"Of course,\" I say. \"I don't know why I was expecting anything different.\""
           - source: scene_text_2
             paragraph: 15
             text: "\"Does anyone else have any questions for the Overseer?\" Breynan says.\r\n\r\n\"I don't know if there's any use in interrogating him further,\" Kate says. \"It seems to me that he already told us all the information he had regarding the king of Ollendor's weaknesses.\"\r\n\r\n\"I think so too,\" Breynan says. \"Maybe we should get ready to head back, then. Alright, Overseer, that will be all for today. Have a safe trip.\"\r\n\r\n\"Goodbye, Breynan,\" the Overseer says, and then the metal ball flies into the air once more, in order to continue its patrols.\r\n\r\n\"Let's go this way,\" Breynan says, and then he heads back the way we came."
-        condition: b3_ch2_name = 0
+          - source: scene_3
+            paragraph: 14
+            text: "\"So, can we know for sure that anything of what the Overseer told us is true?\" I say, as we're all moving towards the exit.\r\n\r\n\"Not yet, but we should be able to easily verify all this information,\" Breynan says. \"As soon as we get back to our base, we can start by--\"\r\n\r\nBreynan suddenly interrupts himself, because right before we reach the end of the alley, three men dressed in rags place themselves in front of us, while holding daggers in their hands. Two of them have very scared looks in their eyes and they are shaking with fear, but even so, they don't seem like they're planning to step aside.\r\n\r\n\"Listen... I don't know who sent you here, but we don't mean to hurt you,\" Breynan tells the three men. \"Please, get out of the way.\""
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch03b_platform
-      - texts:
+      - condition: b3_ch2_name = 1
+        texts:
           - source: scene_text
             paragraph: 24
             text: "\"Yes, can you stop calling us Cutthroat Dave?\"\r\n\r\n\"Unfortunately, changing your group's designation is not possible at this time,\" the Overseer says. \"We apologize for the inconvenience.\"\r\n\r\n\"Of course,\" I say. \"I don't know why I was expecting anything different.\""
-          - source: scene_3
-            paragraph: 14
-            text: "\"So, can we know for sure that anything of what the Overseer told us is true?\" I say, as we're all moving towards the exit.\r\n\r\n\"Not yet, but we should be able to easily verify all this information,\" Breynan says. \"As soon as we get back to our base, we can start by--\"\r\n\r\nBreynan suddenly interrupts himself, because right before we reach the end of the alley, three men dressed in rags place themselves in front of us, while holding daggers in their hands. Two of them have very scared looks in their eyes and they are shaking with fear, but even so, they don't seem like they're planning to step aside.\r\n\r\n\"Listen... I don't know who sent you here, but we don't mean to hurt you,\" Breynan tells the three men. \"Please, get out of the way.\""
           - source: scene_text_2
             paragraph: 15
             text: "\"Does anyone else have any questions for the Overseer?\" Breynan says.\r\n\r\n\"I don't know if there's any use in interrogating him further,\" Kate says. \"It seems to me that he already told us all the information he had regarding the king of Ollendor's weaknesses.\"\r\n\r\n\"I think so too,\" Breynan says. \"Maybe we should get ready to head back, then. Alright, Overseer, that will be all for today. Have a safe trip.\"\r\n\r\n\"Goodbye, Breynan,\" the Overseer says, and then the metal ball flies into the air once more, in order to continue its patrols.\r\n\r\n\"Let's go this way,\" Breynan says, and then he heads back the way we came."
-        condition: b3_ch2_name = 1
+          - source: scene_3
+            paragraph: 14
+            text: "\"So, can we know for sure that anything of what the Overseer told us is true?\" I say, as we're all moving towards the exit.\r\n\r\n\"Not yet, but we should be able to easily verify all this information,\" Breynan says. \"As soon as we get back to our base, we can start by--\"\r\n\r\nBreynan suddenly interrupts himself, because right before we reach the end of the alley, three men dressed in rags place themselves in front of us, while holding daggers in their hands. Two of them have very scared looks in their eyes and they are shaking with fear, but even so, they don't seem like they're planning to step aside.\r\n\r\n\"Listen... I don't know who sent you here, but we don't mean to hurt you,\" Breynan tells the three men. \"Please, get out of the way.\""
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch03b_platform
-      - texts:
+      - condition: b3_ch2_name = 2
+        texts:
           - source: scene_text
             paragraph: 25
             text: "\"Yes, can you stop calling us Barry?\"\r\n\r\n\"Unfortunately, changing your group's designation is not possible at this time,\" the Overseer says. \"We apologize for the inconvenience.\"\r\n\r\n\"Of course,\" I say. \"I don't know why I was expecting anything different.\""
-          - source: scene_3
-            paragraph: 14
-            text: "\"So, can we know for sure that anything of what the Overseer told us is true?\" I say, as we're all moving towards the exit.\r\n\r\n\"Not yet, but we should be able to easily verify all this information,\" Breynan says. \"As soon as we get back to our base, we can start by--\"\r\n\r\nBreynan suddenly interrupts himself, because right before we reach the end of the alley, three men dressed in rags place themselves in front of us, while holding daggers in their hands. Two of them have very scared looks in their eyes and they are shaking with fear, but even so, they don't seem like they're planning to step aside.\r\n\r\n\"Listen... I don't know who sent you here, but we don't mean to hurt you,\" Breynan tells the three men. \"Please, get out of the way.\""
           - source: scene_text_2
             paragraph: 15
             text: "\"Does anyone else have any questions for the Overseer?\" Breynan says.\r\n\r\n\"I don't know if there's any use in interrogating him further,\" Kate says. \"It seems to me that he already told us all the information he had regarding the king of Ollendor's weaknesses.\"\r\n\r\n\"I think so too,\" Breynan says. \"Maybe we should get ready to head back, then. Alright, Overseer, that will be all for today. Have a safe trip.\"\r\n\r\n\"Goodbye, Breynan,\" the Overseer says, and then the metal ball flies into the air once more, in order to continue its patrols.\r\n\r\n\"Let's go this way,\" Breynan says, and then he heads back the way we came."
-        condition: b3_ch2_name = 2
+          - source: scene_3
+            paragraph: 14
+            text: "\"So, can we know for sure that anything of what the Overseer told us is true?\" I say, as we're all moving towards the exit.\r\n\r\n\"Not yet, but we should be able to easily verify all this information,\" Breynan says. \"As soon as we get back to our base, we can start by--\"\r\n\r\nBreynan suddenly interrupts himself, because right before we reach the end of the alley, three men dressed in rags place themselves in front of us, while holding daggers in their hands. Two of them have very scared looks in their eyes and they are shaking with fear, but even so, they don't seem like they're planning to step aside.\r\n\r\n\"Listen... I don't know who sent you here, but we don't mean to hurt you,\" Breynan tells the three men. \"Please, get out of the way.\""
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch03b_platform
-      - texts:
+      - condition: b3_ch2_name = 3
+        texts:
           - source: scene_text
             paragraph: 26
             text: "\"Yes, can you stop calling us Unidentified?\"\r\n\r\n\"Unfortunately, changing your group's designation is not possible at this time,\" the Overseer says. \"We apologize for the inconvenience.\"\r\n\r\n\"Of course,\" I say. \"I don't know why I was expecting anything different.\""
-          - source: scene_3
-            paragraph: 14
-            text: "\"So, can we know for sure that anything of what the Overseer told us is true?\" I say, as we're all moving towards the exit.\r\n\r\n\"Not yet, but we should be able to easily verify all this information,\" Breynan says. \"As soon as we get back to our base, we can start by--\"\r\n\r\nBreynan suddenly interrupts himself, because right before we reach the end of the alley, three men dressed in rags place themselves in front of us, while holding daggers in their hands. Two of them have very scared looks in their eyes and they are shaking with fear, but even so, they don't seem like they're planning to step aside.\r\n\r\n\"Listen... I don't know who sent you here, but we don't mean to hurt you,\" Breynan tells the three men. \"Please, get out of the way.\""
           - source: scene_text_2
             paragraph: 15
             text: "\"Does anyone else have any questions for the Overseer?\" Breynan says.\r\n\r\n\"I don't know if there's any use in interrogating him further,\" Kate says. \"It seems to me that he already told us all the information he had regarding the king of Ollendor's weaknesses.\"\r\n\r\n\"I think so too,\" Breynan says. \"Maybe we should get ready to head back, then. Alright, Overseer, that will be all for today. Have a safe trip.\"\r\n\r\n\"Goodbye, Breynan,\" the Overseer says, and then the metal ball flies into the air once more, in order to continue its patrols.\r\n\r\n\"Let's go this way,\" Breynan says, and then he heads back the way we came."
-        condition: b3_ch2_name = 3
+          - source: scene_3
+            paragraph: 14
+            text: "\"So, can we know for sure that anything of what the Overseer told us is true?\" I say, as we're all moving towards the exit.\r\n\r\n\"Not yet, but we should be able to easily verify all this information,\" Breynan says. \"As soon as we get back to our base, we can start by--\"\r\n\r\nBreynan suddenly interrupts himself, because right before we reach the end of the alley, three men dressed in rags place themselves in front of us, while holding daggers in their hands. Two of them have very scared looks in their eyes and they are shaking with fear, but even so, they don't seem like they're planning to step aside.\r\n\r\n\"Listen... I don't know who sent you here, but we don't mean to hurt you,\" Breynan tells the three men. \"Please, get out of the way.\""
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch03b_platform
-      - texts:
+      - condition: b3_ch2_name = 4
+        texts:
           - source: scene_text
             paragraph: 27
             text: "\"Yes, can you stop calling us Daren?\"\r\n\r\n\"Unfortunately, changing your group's designation is not possible at this time,\" the Overseer says. \"We apologize for the inconvenience.\"\r\n\r\n\"Of course,\" I say. \"I don't know why I was expecting anything different.\""
-          - source: scene_3
-            paragraph: 14
-            text: "\"So, can we know for sure that anything of what the Overseer told us is true?\" I say, as we're all moving towards the exit.\r\n\r\n\"Not yet, but we should be able to easily verify all this information,\" Breynan says. \"As soon as we get back to our base, we can start by--\"\r\n\r\nBreynan suddenly interrupts himself, because right before we reach the end of the alley, three men dressed in rags place themselves in front of us, while holding daggers in their hands. Two of them have very scared looks in their eyes and they are shaking with fear, but even so, they don't seem like they're planning to step aside.\r\n\r\n\"Listen... I don't know who sent you here, but we don't mean to hurt you,\" Breynan tells the three men. \"Please, get out of the way.\""
           - source: scene_text_2
             paragraph: 15
             text: "\"Does anyone else have any questions for the Overseer?\" Breynan says.\r\n\r\n\"I don't know if there's any use in interrogating him further,\" Kate says. \"It seems to me that he already told us all the information he had regarding the king of Ollendor's weaknesses.\"\r\n\r\n\"I think so too,\" Breynan says. \"Maybe we should get ready to head back, then. Alright, Overseer, that will be all for today. Have a safe trip.\"\r\n\r\n\"Goodbye, Breynan,\" the Overseer says, and then the metal ball flies into the air once more, in order to continue its patrols.\r\n\r\n\"Let's go this way,\" Breynan says, and then he heads back the way we came."
-        condition: b3_ch2_name = 4
+          - source: scene_3
+            paragraph: 14
+            text: "\"So, can we know for sure that anything of what the Overseer told us is true?\" I say, as we're all moving towards the exit.\r\n\r\n\"Not yet, but we should be able to easily verify all this information,\" Breynan says. \"As soon as we get back to our base, we can start by--\"\r\n\r\nBreynan suddenly interrupts himself, because right before we reach the end of the alley, three men dressed in rags place themselves in front of us, while holding daggers in their hands. Two of them have very scared looks in their eyes and they are shaking with fear, but even so, they don't seem like they're planning to step aside.\r\n\r\n\"Listen... I don't know who sent you here, but we don't mean to hurt you,\" Breynan tells the three men. \"Please, get out of the way.\""
         choices:
           - position: 1
             text: Continue
@@ -587,15 +590,15 @@ scenes:
                   current_scene: b3_ch03b_platform
   - name: b3_ch03b_helping
     texts:
-      - source: scene_3
-        paragraph: 14
-        text: "\"So, can we know for sure that anything of what the Overseer told us is true?\" I say, as we're all moving towards the exit.\r\n\r\n\"Not yet, but we should be able to easily verify all this information,\" Breynan says. \"As soon as we get back to our base, we can start by--\"\r\n\r\nBreynan suddenly interrupts himself, because right before we reach the end of the alley, three men dressed in rags place themselves in front of us, while holding daggers in their hands. Two of them have very scared looks in their eyes and they are shaking with fear, but even so, they don't seem like they're planning to step aside.\r\n\r\n\"Listen... I don't know who sent you here, but we don't mean to hurt you,\" Breynan tells the three men. \"Please, get out of the way.\""
       - source: scene_text
         paragraph: 21
         text: "\"Why are you helping us assassinate your own king?\"\r\n\r\n\"The Overseer protocol's only purpose is to provide assistance,\" the Overseer says.\r\n\r\n\"Okay, I get that,\" I say. \"But you just provided us with assistance against your own master. Don't you think it would have helped the king if you didn't give us this information?\"\r\n\r\n\"Question unclear,\" the Overseer says. \"Unfortunately, the Overseer protocol cannot provide you with a correct answer if your question is too vague. Please rephrase your previous query.\"\r\n\r\n\"How was that unclear?...\" I say. \"That question was as direct as they come!\"\r\n\r\nThe Overseer says nothing, and it just continues to hover above the ground, in silence.\r\n\r\n\"You're not going to get anything else out of him,\" Breynan tells me. \"He's just going to keep repeating 'Question unclear' until you give up. It's the standard phrase that he always uses when he doesn't want to answer someone's question.\"\r\n\r\n\"So that's how it's going to be, then...\" I say."
       - source: scene_text_2
         paragraph: 15
         text: "\"Does anyone else have any questions for the Overseer?\" Breynan says.\r\n\r\n\"I don't know if there's any use in interrogating him further,\" Kate says. \"It seems to me that he already told us all the information he had regarding the king of Ollendor's weaknesses.\"\r\n\r\n\"I think so too,\" Breynan says. \"Maybe we should get ready to head back, then. Alright, Overseer, that will be all for today. Have a safe trip.\"\r\n\r\n\"Goodbye, Breynan,\" the Overseer says, and then the metal ball flies into the air once more, in order to continue its patrols.\r\n\r\n\"Let's go this way,\" Breynan says, and then he heads back the way we came."
+      - source: scene_3
+        paragraph: 14
+        text: "\"So, can we know for sure that anything of what the Overseer told us is true?\" I say, as we're all moving towards the exit.\r\n\r\n\"Not yet, but we should be able to easily verify all this information,\" Breynan says. \"As soon as we get back to our base, we can start by--\"\r\n\r\nBreynan suddenly interrupts himself, because right before we reach the end of the alley, three men dressed in rags place themselves in front of us, while holding daggers in their hands. Two of them have very scared looks in their eyes and they are shaking with fear, but even so, they don't seem like they're planning to step aside.\r\n\r\n\"Listen... I don't know who sent you here, but we don't mean to hurt you,\" Breynan tells the three men. \"Please, get out of the way.\""
     choices:
       - position: 1
         text: Continue
@@ -604,15 +607,15 @@ scenes:
               current_scene: b3_ch03b_platform
   - name: b3_ch03b_interrupt
     texts:
-      - source: scene_3
-        paragraph: 14
-        text: "\"So, can we know for sure that anything of what the Overseer told us is true?\" I say, as we're all moving towards the exit.\r\n\r\n\"Not yet, but we should be able to easily verify all this information,\" Breynan says. \"As soon as we get back to our base, we can start by--\"\r\n\r\nBreynan suddenly interrupts himself, because right before we reach the end of the alley, three men dressed in rags place themselves in front of us, while holding daggers in their hands. Two of them have very scared looks in their eyes and they are shaking with fear, but even so, they don't seem like they're planning to step aside.\r\n\r\n\"Listen... I don't know who sent you here, but we don't mean to hurt you,\" Breynan tells the three men. \"Please, get out of the way.\""
       - source: scene_text
         paragraph: 22
         text: "\"Why did you interrupt your conversation with Eiden all of a sudden, earlier today?\"\r\n\r\n\"The Overseer protocol does not recall having interrupted any conversation with Eiden today,\" the Overseer says. \"Could you please be more specific?\"\r\n\r\n\"You know what conversation I'm talking about...\" I say. \"It's the one where Eiden kept questioning you about your true motives. Right at the end, Eiden asked you what you were truly after, and then you cut him off by giving him an automated answer. Why did you stop the discussion there?\"\r\n\r\n\"Question unclear,\" the Overseer says. \"Unfortunately, the Overseer protocol cannot provide you with a correct answer if your question is too vague. Please rephrase your previous query.\"\r\n\r\n\"How was that unclear?...\" I say. \"That question was as direct as they come!\"\r\n\r\nThe Overseer says nothing, and it just continues to hover above the ground, in silence.\r\n\r\n\"You're not going to get anything else out of him,\" Breynan tells me. \"He's just going to keep repeating 'Question unclear' until you give up. It's the standard phrase that he always uses when he doesn't want to answer someone's question.\"\r\n \r\n\"So that's how it's going to be, then...\" I say."
       - source: scene_text_2
         paragraph: 15
         text: "\"Does anyone else have any questions for the Overseer?\" Breynan says.\r\n\r\n\"I don't know if there's any use in interrogating him further,\" Kate says. \"It seems to me that he already told us all the information he had regarding the king of Ollendor's weaknesses.\"\r\n\r\n\"I think so too,\" Breynan says. \"Maybe we should get ready to head back, then. Alright, Overseer, that will be all for today. Have a safe trip.\"\r\n\r\n\"Goodbye, Breynan,\" the Overseer says, and then the metal ball flies into the air once more, in order to continue its patrols.\r\n\r\n\"Let's go this way,\" Breynan says, and then he heads back the way we came."
+      - source: scene_3
+        paragraph: 14
+        text: "\"So, can we know for sure that anything of what the Overseer told us is true?\" I say, as we're all moving towards the exit.\r\n\r\n\"Not yet, but we should be able to easily verify all this information,\" Breynan says. \"As soon as we get back to our base, we can start by--\"\r\n\r\nBreynan suddenly interrupts himself, because right before we reach the end of the alley, three men dressed in rags place themselves in front of us, while holding daggers in their hands. Two of them have very scared looks in their eyes and they are shaking with fear, but even so, they don't seem like they're planning to step aside.\r\n\r\n\"Listen... I don't know who sent you here, but we don't mean to hurt you,\" Breynan tells the three men. \"Please, get out of the way.\""
     choices:
       - position: 1
         text: Continue
@@ -621,15 +624,15 @@ scenes:
               current_scene: b3_ch03b_platform
   - name: b3_ch03b_platform
     texts:
-      - source: scene_3
-        paragraph: 15
-        text: "She then begins to lift us all into the air very slowly, but one of the men in rags starts running towards us and he tries to attack Melindra.\r\n\r\n\"No, I won't let you get away!\" the man says, but he is intercepted by Breynan, who pulls his sword out and clashes with him.\r\n\r\nAt the same time, the two other men also come running towards us, while Leila and I are forced to pull out or weapons and engage them as well.\r\n\r\n\"I can't focus on lifting you if you're all fighting!\" Melindra says, as we are all being lowered back to the ground. \"Finish your fights quickly, so we can get out of here!\"\r\n\r\nWhile Melindra was talking, three more men were entering the alley from the other side, and it seems that they're now trying to flank us. It looks like I can't afford to hesitate anymore. I'll need to decide what to do about these men, and quick."
       - source: scene_text
         paragraph: 28
         text: "\"We can't!\" says one of the men, in a trembling voice. \"The man in black robes told us that we need to make sure you don't leave the alley. He said he'll kill our families if we don't listen to him. We can't let you pass!\"\r\n\r\n\"You don't have to do this!\" Breynan says, as he tries to slowly approach him. \"Come with us, and we'll shelter you and your families in the underground tunnels below the city. I am with the rebels. I can keep them safe!\"\r\n\r\n\"Stay back!\" the man with the trembling voice says, as he swings his dagger towards Breynan. \"Don't come any closer! I'm warning you!\"\r\n\r\n\"We don't have time for this,\" Kate says, and then she conjures several tall bars of ice between us and the men in rags, in order to block them from reaching us.\r\n\r\n\"What are you doing?\" Breynan says. \"Now they have us right where they want us.\"\r\n\r\n\"No, they don't,\" Kate says, as she's now conjuring an ice platform right below our feet. \"If we can't get past them, then we'll just need to fly over them.\""
       - source: scene_text_2
         paragraph: 16
         text: "Before the ice platform even has the chance to raise us from the ground, both the ice bars and the platform suddenly disappear, and Kate presses her hands against her forehead, apparently trying to suppress a severe headache.\r\n\r\n\"What happened?\" I ask her.\r\n\r\n\"I don't know...\" Kate says, as she is keeping her eyes closed, still trying to get rid of her headache. \"I can't... concentrate... Barely able to... form sentences.\"\r\n\r\n\"She's been hit with a really powerful dizziness spell,\" Melindra says. \"It blew right past her magical protections. I don't get it. There are no mages in the vicinity. Who could have cast this spell?\"\r\n\r\n\"It must be someone using a lessathi device,\" Breynan says. \"Maybe even a royal guard. Not all of them are mages.\"\r\n\r\n\"If they're not a mage, then I have no way of distinguishing them from every other civilian around our area!\" Melindra says. \"We shouldn't have let our guard down. I'm taking us out of here.\""
+      - source: scene_3
+        paragraph: 15
+        text: "She then begins to lift us all into the air very slowly, but one of the men in rags starts running towards us and he tries to attack Melindra.\r\n\r\n\"No, I won't let you get away!\" the man says, but he is intercepted by Breynan, who pulls his sword out and clashes with him.\r\n\r\nAt the same time, the two other men also come running towards us, while Leila and I are forced to pull out or weapons and engage them as well.\r\n\r\n\"I can't focus on lifting you if you're all fighting!\" Melindra says, as we are all being lowered back to the ground. \"Finish your fights quickly, so we can get out of here!\"\r\n\r\nWhile Melindra was talking, three more men were entering the alley from the other side, and it seems that they're now trying to flank us. It looks like I can't afford to hesitate anymore. I'll need to decide what to do about these men, and quick."
     choices:
       - position: 1
         text: Aim to incapacitate, without killing anyone.
@@ -651,51 +654,51 @@ scenes:
               b3_ch3_civilians: 2
   - name: b3_ch03b_glance
     routes:
-      - texts:
-          - source: scene_3
-            paragraph: 16
-            text: "\"Let's get out of here before anyone else tries to attack us,\" Breynan tells us, as soon as he finishes casting his healing spell.\r\n\r\nWe walk past the father and the boy and we make our way out of the alley, while carefully checking our surroundings to see if there isn't another ambush waiting for us on the larger street right outside. As we make our way back towards the place where we first got teleported, we catch a glimpse of a woman heading into the alley we just left, who is likely the 'mother' that the man I shot mentioned earlier."
+      - condition: b3_ch3_civilians = 0
+        texts:
           - source: scene_text
             paragraph: 29
             text: "Just from a glance, I can tell that these men have never held a blade before in their lives. Even without my stats, I should be able to deal with them easily.\r\n\r\nI waste no time and I use my dagger to stab the man in front of me in the leg. I then kick him in the stomach and make him fall on his back, as I quickly pull the crossbow out of my backpack and begin shooting the men behind me in their legs as well, in order to immobilize them.\r\n\r\nJust as the three men who were trying to flank us are falling to the ground, the man that I stabbed earlier recovers much faster than I anticipated, and he immediately dashes at me with his knife held firmly in his hands.\r\n\r\nI quickly shoot him in the other leg, in order to try and slow his momentum, but before he falls to the ground, the man still manages to stab me in the left side of my abdomen. \r\n\r\n\"Looks like you could use some healing,\" Breynan tells me, as I am pressing my hand against my wound in order to stop it from bleeding too hard, while the man that stabbed me is screaming in pain on the ground, unable to get back up."
           - source: scene_text_2
             paragraph: 17
             text: "As I take a look towards Breynan, I see that both he and Leila have managed to knock out their adversaries, and they are now approaching me. When Breynan gets close enough to me, he puts his hands on my wound and then a white light comes out of them, while I'm beginning to slowly feel the pain going away thanks to the effects of the healing.\r\n\r\n\"Father!\" a ten year old boy shouts, as he is now running towards the man that stabbed me, who is still lying on the ground.\r\n\r\n\"I'm alright,\" the man says, when the boy reaches him. \"Please, go back to your mother. It's not safe here.\"\r\n\r\n\"But father, we need to take you to a doctor!\" the boy says. \"You are bleeding!\""
-        condition: b3_ch3_civilians = 0
+          - source: scene_3
+            paragraph: 16
+            text: "\"Let's get out of here before anyone else tries to attack us,\" Breynan tells us, as soon as he finishes casting his healing spell.\r\n\r\nWe walk past the father and the boy and we make our way out of the alley, while carefully checking our surroundings to see if there isn't another ambush waiting for us on the larger street right outside. As we make our way back towards the place where we first got teleported, we catch a glimpse of a woman heading into the alley we just left, who is likely the 'mother' that the man I shot mentioned earlier."
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch03b_uniforms
-      - texts:
-          - source: scene_3
-            paragraph: 17
-            text: "\"I will never forgive you...\" the boy says, while gripping the clothes of the dead body in front of him even harder than before.\r\n\r\nHe then says the same words in a much louder voice, as the look in his eyes now turns into one full of hatred.\r\n\r\n\"I will never forgive you!\" the boy shouts.\r\n\r\n\"This way,\" Breynan tells me, when he sees that I've stopped moving.\r\n\r\nI take one last look at the boy, and then I follow Breyan out of the alley, without turning back. When we exit the alleyway, I catch a glimpse of a woman right outside, covering her eyes with one of her hands, while tears are slowly running down her face. I quickly realize that she must be the wife of the man I just killed. We all walk right past her without saying a word, and we begin heading back towards the place where we first got teleported."
+      - condition: b3_ch3_civilians = 1
+        texts:
           - source: scene_text
             paragraph: 30
             text: "Just from a glance, I can tell that these men have never held a blade before in their lives. Even without my stats, I should be able to deal with them easily.\r\n\r\nI waste no time and I use my dagger to stab the man in front of me in the leg. I then kick him in the stomach and make him fall on his back, as I quickly pull the crossbow out of my backpack and begin shooting the men behind me in their legs as well, in order to immobilize them.\r\n\r\nJust as the three men who were trying to flank us are falling to the ground, the man that I stabbed earlier recovers much faster than I anticipated, and he immediately dashes at me with his knife held firmly in his hands.\r\n\r\nI quickly realize that simply shooting him in the leg will not prevent me from getting stabbed, so I panic, and I use my crossbow to fire a bolt straight into the man's chest. Upon getting shot, my attacker drops his dagger and he tries to pull the crossbow bolt out with his bare hands, but he quickly loses the strength from both his arms and legs and he falls flat on the ground. After failing to get back up a few times, the man in rags finally stops moving and he slowly succumbs to his death. As I take a look around, I see that both Breynan and Leila have managed to knock out their adversaries, and they are now approaching me."
           - source: scene_text_2
             paragraph: 18
             text: "\"We need to get out of here before anyone else tries to attack us,\" Breynan says. \"I don't want any more innocent lives to be lost today--\"\r\n\r\n\"Father?...\" we hear the voice of a ten year old boy, as he is now entering the alley.\r\n\r\nWhen he sees the dead man lying at my feet, the boy rushes towards him as fast as he can, and then he places himself on his knees beside him, trying to wake him up.\r\n\r\n\"No...\" the boy says, as he sees the lifeless gaze in his father's eyes. \"No, no, no, you can't be dead. You said everything would be fine. You said we'd be going back home together after all this was over. Please, tell me that you're just sleeping. Please...\"\r\n\r\nThe boy then grips his father's shirt tightly with both hands, as he is trying very hard to hold back his tears.\r\n\r\n\"Let's go,\" Breynan tells us. \"There's nothing else we can do here.\"\r\n\r\n\"You...\" the boy says, just as we are about to move past him. \"You did this...\"\r\n\r\nWhen I turn my head back towards him, I see that the boy is now looking directly into my eyes, with a pained but determined look on his face. As he keeps staring at me, I suddenly realize that I am still holding the crossbow that fired the bolt which is now lodged in his father's chest."
-        condition: b3_ch3_civilians = 1
+          - source: scene_3
+            paragraph: 17
+            text: "\"I will never forgive you...\" the boy says, while gripping the clothes of the dead body in front of him even harder than before.\r\n\r\nHe then says the same words in a much louder voice, as the look in his eyes now turns into one full of hatred.\r\n\r\n\"I will never forgive you!\" the boy shouts.\r\n\r\n\"This way,\" Breynan tells me, when he sees that I've stopped moving.\r\n\r\nI take one last look at the boy, and then I follow Breyan out of the alley, without turning back. When we exit the alleyway, I catch a glimpse of a woman right outside, covering her eyes with one of her hands, while tears are slowly running down her face. I quickly realize that she must be the wife of the man I just killed. We all walk right past her without saying a word, and we begin heading back towards the place where we first got teleported."
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b3_ch03b_uniforms
-      - texts:
-          - source: scene_3
-            paragraph: 17
-            text: "\"I will never forgive you...\" the boy says, while gripping the clothes of the dead body in front of him even harder than before.\r\n\r\nHe then says the same words in a much louder voice, as the look in his eyes now turns into one full of hatred.\r\n\r\n\"I will never forgive you!\" the boy shouts.\r\n\r\n\"This way,\" Breynan tells me, when he sees that I've stopped moving.\r\n\r\nI take one last look at the boy, and then I follow Breyan out of the alley, without turning back. When we exit the alleyway, I catch a glimpse of a woman right outside, covering her eyes with one of her hands, while tears are slowly running down her face. I quickly realize that she must be the wife of the man I just killed. We all walk right past her without saying a word, and we begin heading back towards the place where we first got teleported."
+      - condition: b3_ch3_civilians = 2
+        texts:
           - source: scene_text
             paragraph: 31
             text: "Just from a glance, I can tell that these men have never held a blade before in their lives. Even without my stats, I should be able to deal with them easily.\r\n\r\nI waste no time and I use my dagger to stab the man in front of me in the lower side of his abdomen. I then kick him in the stomach and make him fall on his back, as I quickly pull the crossbow out of my backpack and shoot all the men behind me in their heads, killing them in a matter of seconds. \r\n\r\nJust as the three men who were trying to flank us are falling to the ground, the man that I stabbed earlier recovers much faster than I anticipated, and he immediately dashes at me with his knife held firmly in his hands.\r\n\r\nLuckily, I react fast enough, and I use my crossbow to fire a bolt straight into the man's chest. Upon getting shot, my attacker drops his dagger and he tries to pull the crossbow bolt out with his bare hands, but he quickly loses the strength from both his arms and legs and he falls flat on the ground. After failing to get back up a few times, the man in rags finally stops moving and he slowly succumbs to his death. As I take a look around, I see that both Breynan and Leila have managed to knock out their adversaries, and they are now approaching me."
           - source: scene_text_2
             paragraph: 18
             text: "\"We need to get out of here before anyone else tries to attack us,\" Breynan says. \"I don't want any more innocent lives to be lost today--\"\r\n\r\n\"Father?...\" we hear the voice of a ten year old boy, as he is now entering the alley.\r\n\r\nWhen he sees the dead man lying at my feet, the boy rushes towards him as fast as he can, and then he places himself on his knees beside him, trying to wake him up.\r\n\r\n\"No...\" the boy says, as he sees the lifeless gaze in his father's eyes. \"No, no, no, you can't be dead. You said everything would be fine. You said we'd be going back home together after all this was over. Please, tell me that you're just sleeping. Please...\"\r\n\r\nThe boy then grips his father's shirt tightly with both hands, as he is trying very hard to hold back his tears.\r\n\r\n\"Let's go,\" Breynan tells us. \"There's nothing else we can do here.\"\r\n\r\n\"You...\" the boy says, just as we are about to move past him. \"You did this...\"\r\n\r\nWhen I turn my head back towards him, I see that the boy is now looking directly into my eyes, with a pained but determined look on his face. As he keeps staring at me, I suddenly realize that I am still holding the crossbow that fired the bolt which is now lodged in his father's chest."
-        condition: b3_ch3_civilians = 2
+          - source: scene_3
+            paragraph: 17
+            text: "\"I will never forgive you...\" the boy says, while gripping the clothes of the dead body in front of him even harder than before.\r\n\r\nHe then says the same words in a much louder voice, as the look in his eyes now turns into one full of hatred.\r\n\r\n\"I will never forgive you!\" the boy shouts.\r\n\r\n\"This way,\" Breynan tells me, when he sees that I've stopped moving.\r\n\r\nI take one last look at the boy, and then I follow Breyan out of the alley, without turning back. When we exit the alleyway, I catch a glimpse of a woman right outside, covering her eyes with one of her hands, while tears are slowly running down her face. I quickly realize that she must be the wife of the man I just killed. We all walk right past her without saying a word, and we begin heading back towards the place where we first got teleported."
         choices:
           - position: 1
             text: Continue
@@ -704,15 +707,15 @@ scenes:
                   current_scene: b3_ch03b_uniforms
   - name: b3_ch03b_uniforms
     texts:
-      - source: scene_3
-        paragraph: 18
-        text: "\"That's why you'll always remain a trainee, Derek,\" the first man says. \"You're never going to become a full-time royal guard if you keep waiting for the captain to come and clean up your mess.\"\r\n\r\nWhen the three men get close enough for us to see what they look like, I realize that they are all wearing the same type of blue-colored uniforms as Gontrok and the other royal guards, except for the fact that their uniforms have much fewer markings on them, likely as a result of being only trainees. Each one of them is holding a different weapon in his hands, and each of their weapons has a different colored gem embedded into its hilt. \r\n\r\nThe man behind us has a trident with a brown topaz embedded into it, the man on the rooftop is holding a sword with a diamond in its hilt, and the man who made the wall of fire is wearing a metal glove decorated with a ruby. It doesn't take me long to realize that their weapons are in fact lessathi-made artifacts, and that these are the kinds of tools they are using to cast all of their spells.\r\n\r\n\"None of them are mages...\" Melindra tells us in a low voice, while the three men are still talking amongst themselves. \"I could sense their auras from afar, but I had no idea that they were royal guard trainees... Kate, can you fight?\"\r\n\r\n\"I... don't know...\" Kate says, as she's still struggling to get rid of her headache. \"But I'll have to try.\""
       - source: scene_text
         paragraph: 32
         text: "\"We have to find a place where we can calm down, so we can teleport back to our base,\" Breynan says, as we are now quickly moving through a large empty street with many alleyway entrances on its sides. \"For now, let's try to get as far away from here as possible.\"\r\n\r\n\"We still haven't figured out who cast the dizziness spell on Kate,\" Melindra says. \"As long as they are still around, we're not safe.\"\r\n\r\n\"We don't need to be safe,\" Breynan says. \"We just need to be calm enough for the teleporter to be able to lock onto our auras.\"\r\n\r\n\"Okay,\" Melindra says. \"In that case, I could try to fly us all away from here, so we can--\"\r\n\r\n\"No, we can't risk flying,\" Breynan says. \"The metal balls patrolling the skies will begin attacking us as soon as you do that. Their orders are to prioritize aerial targets above all else.\"\r\n\r\n\"Well, we can't risk a fight with the guards either!\" Melindra says. \"Kate is still unable to concentrate on her spells, I can't attack any of the locals, and Barry's stat device is not working. Do you seriously think that you and Leila will be able to hold off the royal guards all by yourselves?\"\r\n\r\n\"As long as we can get far enough away from here, there will be no need for a fight,\" Breynan says. \"We just need to reach the end of this street, and then we can--\""
       - source: scene_text_2
         paragraph: 19
         text: "\"Watch out!\" Melindra shouts and then she quickly pulls Breynan back, with both her hands.\r\n\r\nThere is a sudden blast of fire coming from one of the alleys on the side of the street, and then the whole area in front of us gets immediately engulfed in flames. The large wall of fire that now blocks our path is apparently only inches away from Breynan's face. Had Melindra not pulled him away in time, he would have likely been completely incinerated.\r\n\r\n\"You missed,\" I hear a man's voice, as he is making his way out of an alley behind us. \"I can't believe you actually missed. Could you not wait for another second until you cast that spell?\"\r\n\r\n\"It's not my damn fault,\" I hear another man's voice, coming from the alley where the wall of fire originated from. \"That wench stopped them right before they were about to enter my line of sight. It doesn't matter, though. They've got a huge wall of fire in front of them now. They're not going anywhere.\"\r\n\r\n\"I told you both that engaging them by ourselves would be a stupid idea,\" says another man, who is apparently situated on the rooftop of a weirdly shaped building on the side of the street. \"We are only trainees. We should have waited for the real royal guards to come and back us up.\""
+      - source: scene_3
+        paragraph: 18
+        text: "\"That's why you'll always remain a trainee, Derek,\" the first man says. \"You're never going to become a full-time royal guard if you keep waiting for the captain to come and clean up your mess.\"\r\n\r\nWhen the three men get close enough for us to see what they look like, I realize that they are all wearing the same type of blue-colored uniforms as Gontrok and the other royal guards, except for the fact that their uniforms have much fewer markings on them, likely as a result of being only trainees. Each one of them is holding a different weapon in his hands, and each of their weapons has a different colored gem embedded into its hilt. \r\n\r\nThe man behind us has a trident with a brown topaz embedded into it, the man on the rooftop is holding a sword with a diamond in its hilt, and the man who made the wall of fire is wearing a metal glove decorated with a ruby. It doesn't take me long to realize that their weapons are in fact lessathi-made artifacts, and that these are the kinds of tools they are using to cast all of their spells.\r\n\r\n\"None of them are mages...\" Melindra tells us in a low voice, while the three men are still talking amongst themselves. \"I could sense their auras from afar, but I had no idea that they were royal guard trainees... Kate, can you fight?\"\r\n\r\n\"I... don't know...\" Kate says, as she's still struggling to get rid of her headache. \"But I'll have to try.\""
     choices:
       - position: 1
         text: Continue
@@ -721,15 +724,15 @@ scenes:
               current_scene: b3_ch03b_summoner
   - name: b3_ch03b_summoner
     texts:
-      - source: scene_3
-        paragraph: 19
-        text: "Just as she's about to reach her target so she can stab him from behind, the man with the trident turns towards her instantly with a malicious grin on his face, and he once again sticks his trident into the flat rocks below his feet. Before she gets the time to react, a huge fist made of stone suddenly comes out of the ground and it punches Leila so hard that it sends her flying on her back, causing her to hit her head on the pavement and to lose her consciousness.\r\n\r\n\"Did you really think I was so stupid as to not realize that those manticores were illusions?\" the man with the trident says as he removes his weapon from the ground, while the large stone fist crumbles into pieces like the wall from before. \"I was just waiting for one of you to be dumb enough to enter the range of my rock fist attack. Say goodbye to your friend.\"\r\n\r\nHe then tries to advance towards Leila, but he hits what appears to be an invisible barrier, which is blocking his path.\r\n\r\n\"What the hell?...\" the man with the trident says, as he is placing his hands on the barrier, trying to see how far it stretches.\r\n\r\nWhile the royal guard trainee is still trying to get around the invisible wall, I suddenly feel Melindra's air currents flowing all around my body.\r\n\r\n\"Bring her back here!\" Melindra tells me as she is pointing towards Leila, who is still lying unconscious on the ground. \"Quick! I can't hold this wind barrier for much longer.\""
       - source: scene_text
         paragraph: 33
         text: "\"I didn't spend two whole years mastering this weapon just so I could act as a glorified lookout,\" the first man says. \"Today, I'm going to show all of the royal guards what I am capable of, and you two are going to help me!\"\r\n\r\n\"Not like we have much of a choice at this point,\" Derek says. \"Let's get this over with.\"\r\n\r\n\"Get ready!\" Breynan tells us.\r\n\r\nKate does not wait for the men to attack, and she sends several icicles towards the guy behind us. The trainee quickly thrusts his trident into the ground, and a wall of rock raises itself from the pavement in front of him, blocking all of the projectiles that were about to hit him. The man then raises his trident from the ground, and the wall crumbles to pieces. \r\n\r\nAt the same time, the man on the rooftop raises his sword, and he begins to slowly lift himself in the air, while the man in front of us points his glove in our direction, and a beam of fire comes out of it, heading straight for our group.\r\n\r\nKate immediately makes a wall of ice in front of us which shields us from the flames, but as soon as the fire is gone, the wall quickly disappears and Kate puts her hand on her forehead, trying once again to suppress the effects of her headache. All of a sudden, Breynan hits the ground with his staff, and a very bright white light fills the area next to us. When the light disappears, we see that three manticores have now appeared out of nowhere and that they are already taking to the air, each of them heading for a different target."
       - source: scene_text_2
         paragraph: 20
         text: "\"Damn it!\" the man with the trident says, as he sees one of the winged lions quickly approaching him. \"I didn't know they had a summoner!\"\r\n\r\n\"Take down the summons!\" Derek, the man with the sword says, in a panicky voice, when he sees one of the manticores flying towards him. \"Quick! I can't outmaneuver a manticore while I'm in the air.\"\r\n\r\n\"Then get back on the ground and fight it!\" the man with the trident says, as he is trying to shoot down the manticore closest to him with rock projectiles. \"I already have my hands full, here!\"\r\n\r\nThe man with the metal glove does not say anything, but he is constantly sending blasts of fire towards the manticore above him, even though he can't seem to hit it even once.\r\n\r\n\"I'll try to take one of them down while they're distracted,\" Leila writes, and then she rushes towards the man with the trident.\r\n\r\n\"No, wait!\" Melindra shouts, but Leila doesn't hear her, and she keeps pressing forward."
+      - source: scene_3
+        paragraph: 19
+        text: "Just as she's about to reach her target so she can stab him from behind, the man with the trident turns towards her instantly with a malicious grin on his face, and he once again sticks his trident into the flat rocks below his feet. Before she gets the time to react, a huge fist made of stone suddenly comes out of the ground and it punches Leila so hard that it sends her flying on her back, causing her to hit her head on the pavement and to lose her consciousness.\r\n\r\n\"Did you really think I was so stupid as to not realize that those manticores were illusions?\" the man with the trident says as he removes his weapon from the ground, while the large stone fist crumbles into pieces like the wall from before. \"I was just waiting for one of you to be dumb enough to enter the range of my rock fist attack. Say goodbye to your friend.\"\r\n\r\nHe then tries to advance towards Leila, but he hits what appears to be an invisible barrier, which is blocking his path.\r\n\r\n\"What the hell?...\" the man with the trident says, as he is placing his hands on the barrier, trying to see how far it stretches.\r\n\r\nWhile the royal guard trainee is still trying to get around the invisible wall, I suddenly feel Melindra's air currents flowing all around my body.\r\n\r\n\"Bring her back here!\" Melindra tells me as she is pointing towards Leila, who is still lying unconscious on the ground. \"Quick! I can't hold this wind barrier for much longer.\""
     choices:
       - position: 1
         text: Fly towards Leila and carry her back to our group.
@@ -745,20 +748,21 @@ scenes:
               b3_ch3_carry: 0
   - name: b3_ch03b_trident
     routes:
-      - texts:
+      - condition: b2_ch7_dizziness = 1
+        texts:
           - source: scene_text
             paragraph: 34
             text: "\"I'm on it!\" I say, and then I fly up high in the sky, in order to make sure that I can get over Melindra's invisible barrier so that I can start shooting at the man with the trident.\r\n\r\nAs I get past the barrier, I position myself somewhere above the royal guard trainee, and I begin firing my crossbow in his direction. Unfortunately, the man anticipates my shots and he manages to get out of the way in time, while he also prepares a counter attack by using his weapon to create a few boulders out of thin air. When he's done making his rock projectiles, he points his trident towards me and he sends all of his boulders flying at me with great speed.\r\n\r\nI dodge the projectiles easily in mid-air and then I shoot a few more crossbow bolts at him, but this time the man doesn't even bother to step aside and he just conjures a wall of rock to block them.\r\n\r\n\"Stop wasting your time with him and grab Leila!\"  Melindra shouts, as I am reloading my crossbow. \"The 'droons' are going to notice you! Damn it, they're already coming down!\"\r\n\r\nWhen I hear what Melindra is saying, I look up and I see that there are now six red-eyed metal balls that are quickly heading towards me. I attempt to shoot them from a distance, but they dodge my attacks without much effort and then they continue to advance in my direction. In the meantime, the man with the trident takes advantage of this situation and he begins to send even more boulders my way, so he can keep me distracted."
           - source: scene_text_2
             paragraph: 21
             text: "As I am busy dodging boulders in mid-air while reloading my crossbow, I suddenly get a strong headache and a feeling of intense disorientation, which causes me to stop moving and to grab my forehead with both hands, in an attempt to make the pain go away.\r\n\r\nI quickly realize that this must be a spell similar to the one that was cast on Kate, and that the only thing I can do is to endure it. While I am struggling to regain my balance, a boulder comes out of nowhere and it hits me right in the head, cracking my skull open and killing me on the spot."
-        condition: b2_ch7_dizziness = 1
-        set:
-          is_dead: 1
-          ac_b3_ch3_job: 1
-        achievement:
-          id: ac_b3_ch3_job
-          title: A job well done!
+        effects:
+          - set:
+              is_dead: 1
+              ac_b3_ch3_job: 1
+            achievement:
+              id: ac_b3_ch3_job
+              title: A job well done!
         choices:
           - position: 1
             text: Restart game
@@ -777,17 +781,17 @@ scenes:
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
-          - source: scene_3
-            paragraph: 20
-            text: "\"As if I would be stupid enough to risk getting mauled to death just based on your intuition,\" Derek says, as he's still flying in the air, while swinging his sword in order to send powerful blasts of wind towards the manticore that is chasing him. \"If you really think that these are illusions, then prove it!\"\r\n\r\n\"Have you never seen a manticore before in your life?\" the man with the trident says. \"Can you not see that their movements are unnatural? Actually, you know what? Never mind that. Just look at the manticore I was fighting. All this time it could have attacked me, but ever since I called it an illusion, it completely stopped trying to dive for me and now it's just circling the skies. Do you think that's a coincidence?\"\r\n\r\n\"I can't--\" Derek starts to say but he gets interrupted.\r\n\r\n\"Also, didn't you notice that the red-eyed metal balls aren't attacking them?\" the man with the trident says. \"Why would they ignore such big flying unidentified targets unless they knew that they were illusions?\"\r\n\r\n\"Okay, you've convinced me,\" says the man with the metal glove and then he stops trying to dodge, just as one of the manticores was diving for him.\r\n\r\nSeeing that he is no longer trying to evade its attacks, the manticore suddenly flaps its wings and it soars right back into the sky, as it begins to circle around aimlessly just like the manticore that was fighting the man with the trident before."
+      - condition: b2_ch7_dizziness = 0
+        texts:
           - source: scene_text
             paragraph: 34
             text: "\"I'm on it!\" I say, and then I fly up high in the sky, in order to make sure that I can get over Melindra's invisible barrier so that I can start shooting at the man with the trident.\r\n\r\nAs I get past the barrier, I position myself somewhere above the royal guard trainee, and I begin firing my crossbow in his direction. Unfortunately, the man anticipates my shots and he manages to get out of the way in time, while he also prepares a counter attack by using his weapon to create a few boulders out of thin air. When he's done making his rock projectiles, he points his trident towards me and he sends all of his boulders flying at me with great speed.\r\n\r\nI dodge the projectiles easily in mid-air and then I shoot a few more crossbow bolts at him, but this time the man doesn't even bother to step aside and he just conjures a wall of rock to block them.\r\n\r\n\"Stop wasting your time with him and grab Leila!\"  Melindra shouts, as I am reloading my crossbow. \"The 'droons' are going to notice you! Damn it, they're already coming down!\"\r\n\r\nWhen I hear what Melindra is saying, I look up and I see that there are now six red-eyed metal balls that are quickly heading towards me. I attempt to shoot them from a distance, but they dodge my attacks without much effort and then they continue to advance in my direction. In the meantime, the man with the trident takes advantage of this situation and he begins to send even more boulders my way, so he can keep me distracted."
           - source: scene_text_2
             paragraph: 22
             text: "As I am busy dodging boulders in mid-air while reloading my crossbow, I suddenly get a light headache and a slight feeling of nausea. I quickly realize that this must be happening because the same person who cast the dizziness spell on Kate earlier used a similar, but weaker version of the spell on me to make me lose my balance. Luckily, I still have the magical protection against dizziness that Illuna cast on me a week ago, so the effects of the spell are not too severe.\r\n\r\nI continue to dodge the incoming boulders successfully, despite the minor headache, and I manage to shoot down two of the metal balls before they reach me. As soon as the 'droons' get closer to me, however, they immediately begin to attack me with fire and ice beams, which forces me to distance myself from them while still being cautious of the rock projectiles coming from below.\r\n\r\nAll of a sudden, four icicles penetrate the remaining metal balls, which get sent crashing down to the ground while Kate is gesturing at me to come back down. I decide to take her advice and to get back to a lower altitude before any more 'droons' have the time to spot me. On my way back, I also grab Leila in my arms and I fly with her towards Melindra and Kate, while the royal guard trainee begins to shout furiously at his teammates.\r\n\r\n\"What are you two doing?!\" the man with the trident says. \"Why are you still fighting those manticore illusions? Don't you understand that they're not real? Just stop moving around and let them hit you!\""
-        condition: b2_ch7_dizziness = 0
+          - source: scene_3
+            paragraph: 20
+            text: "\"As if I would be stupid enough to risk getting mauled to death just based on your intuition,\" Derek says, as he's still flying in the air, while swinging his sword in order to send powerful blasts of wind towards the manticore that is chasing him. \"If you really think that these are illusions, then prove it!\"\r\n\r\n\"Have you never seen a manticore before in your life?\" the man with the trident says. \"Can you not see that their movements are unnatural? Actually, you know what? Never mind that. Just look at the manticore I was fighting. All this time it could have attacked me, but ever since I called it an illusion, it completely stopped trying to dive for me and now it's just circling the skies. Do you think that's a coincidence?\"\r\n\r\n\"I can't--\" Derek starts to say but he gets interrupted.\r\n\r\n\"Also, didn't you notice that the red-eyed metal balls aren't attacking them?\" the man with the trident says. \"Why would they ignore such big flying unidentified targets unless they knew that they were illusions?\"\r\n\r\n\"Okay, you've convinced me,\" says the man with the metal glove and then he stops trying to dodge, just as one of the manticores was diving for him.\r\n\r\nSeeing that he is no longer trying to evade its attacks, the manticore suddenly flaps its wings and it soars right back into the sky, as it begins to circle around aimlessly just like the manticore that was fighting the man with the trident before."
         choices:
           - position: 1
             text: Continue
@@ -959,11 +963,11 @@ scenes:
               storyboard_controls: Jump to frame "Save load game"
   - name: b3_ch03b_credits
     routes:
-      - texts:
+      - condition: ch11_saved_rose = 0
+        texts:
           - source: scene_text
             paragraph: 43
             text: "The 4th chapter of Book 3 is now available.\r\n\r\nTap on the button below to proceed."
-        condition: ch11_saved_rose = 0
         choices:
           - position: 1
             text: Proceed towards next chapter
@@ -974,11 +978,11 @@ scenes:
                   chapter_save: 1
                   checkpoint_rich: 1
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: ch11_saved_rose = 1
+        texts:
           - source: scene_text
             paragraph: 44
             text: "The 4th chapter of Book 3 is now available.\r\n\r\nTap on the button below to proceed."
-        condition: ch11_saved_rose = 1
         choices:
           - position: 1
             text: Proceed towards next chapter

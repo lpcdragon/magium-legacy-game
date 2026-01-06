@@ -163,19 +163,20 @@ scenes:
               current_scene: b2_ch08a_trailing
   - name: b2_ch08a_trailing
     routes:
-      - texts:
+      - condition: b2_ch8_tickle = 0
+        texts:
           - source: scene_text
             paragraph: 13
             text: "\"Because Eiden decided after the still winter that we should keep what happened to us a secret,\" Melindra says. \"He was worried that if people found out how we became stillwaters, certain individuals might try to exploit that knowledge for their own benefit.\"\r\n\r\n\"Wait,\" Hadrik says. \"Are you saying that all the stillwaters got created during the still winter?\"\r\n \r\n\"Sort of,\" Melindra says. \"At any rate, I think it would be very unlikely for you to meet any stillwaters that are younger than six hundred years old.\"\r\n\r\n\"Does this mean that all stillwaters are immortal?\" Kate asks.\r\n\r\n\"No, not immortal!\" Melindra says. \"We can be killed just fine. It's just that we stopped aging as soon as we turned into stillwaters. We also became sterile, and mostly immune to diseases, but that's beside the point.\"\r\n \r\n\"So, none of the stillwaters can have kids?\" Hadrik says.\r\n\r\n\"Yes, that's what I just said,\" Melindra says.\r\n\r\n\"But where are all the other stillwaters?\" Daren says."
           - source: scene_text_2
             paragraph: 13
             text: "\"Dead, most likely,\" Melindra says. \"Most of them got killed by Eiden, but there were also some of them that went wild and got hunted down by various mercenaries. I think there may have been others I don't remember, but either way, I haven't met other stillwaters aside from Eiden in ages. I heard he's been travelling around the world for a while, so I'm guessing that most legends you know about stillwaters were actually about him.\"\r\n\r\n\"Did you just say that Eiden killed most of the other stillwaters?\" Daren says. \"Why did he do that? And when?\"\r\n\r\n\"Well...\" Melindra says. \"To be quite honest, I think I may have already said too much on this subject. If you want to know more, you'll have to ask Eiden directly.\"\r\n\r\n\"Could you at least tell us how you met Eiden, and what is your affiliation with him?\" Kate asks. \"Are you related by any chance?\"\r\n\r\n\"Oh, no, we're not related,\" Melindra says.\r\n\r\n\"Ex-lovers, then?\" Hadrik asks.\r\n\r\n\"Not really,\" Melindra says.\r\n\r\n\"Then why did Arraka say that you were trailing behind him and the fox during the still winter?\" Kate says.\r\n\r\n\"Well,\" Melindra says, \"we sort of became friends while he was being imprisoned. Actually, we were more like trading partners than friends, but I guess we also became friends, afterwards.\""
-        condition: b2_ch8_tickle = 0
-        set:
-          ac_b2_ch8_trivia: 1
-        achievement:
-          id: ac_b2_ch8_trivia
-          title: Stillwater trivia
+        effects:
+          - set:
+              ac_b2_ch8_trivia: 1
+            achievement:
+              id: ac_b2_ch8_trivia
+              title: Stillwater trivia
         choices:
           - position: 1
             text: >-
@@ -189,14 +190,14 @@ scenes:
             effects:
               - set:
                   current_scene: b2_ch08a_powers
-      - texts:
+      - condition: b2_ch8_tickle = 1
+        texts:
           - source: scene_text
             paragraph: 12
             text: "\"Listen,\" Melindra says, \"if you wanted to get information from me, maybe you should have thought about that before getting on my bad side.\"\r\n\r\n\"Getting on your bad side?...\" I say. \"Wait a minute, are you talking about the tickling?\"\r\n\r\n\"Yes,\" Melindra says.\r\n\r\n\"Oh, come on,\" I say. \"You're not going to hold a grudge just because of some harmless tickling, are you?\"\r\n\r\n\"Yes, I am,\" Melindra says.\r\n\r\n\"Well, could you at least give us some hints, then?\" I say."
           - source: scene_text_2
             paragraph: 12
             text: "\"Stop asking,\" Melindra says. \"I'm not telling you anything.\"\r\n\r\n\"Could you at least tell us how you met Eiden, and what is your affiliation with him?\" Kate asks. \"Are you related by any chance?\"\r\n\r\n\"Oh, no, we're not related,\" Melindra says.\r\n\r\n\"Ex-lovers, then?\" Hadrik asks.\r\n\r\n\"Not really,\" Melindra says.\r\n\r\n\"Then why did Arraka say that you were trailing behind him and the fox during the still winter?\" Kate says.\r\n\r\n\"Well,\" Melindra says, \"we sort of became friends while he was being imprisoned. Actually, we were more like trading partners than friends, but I guess we also became friends, afterwards.\""
-        condition: b2_ch8_tickle = 1
         choices:
           - position: 1
             text: >-
@@ -334,15 +335,16 @@ scenes:
               current_scene: b2_ch08a_crossbow
   - name: b2_ch08a_crossbow
     routes:
-      - texts:
+      - condition: combat_technique >= 1
+        texts:
           - source: scene_text
             paragraph: 22
             text: "The crossbow bolt hits him right in his forehead, and it passes through his skull, as the monster falls to the ground, dropping his sword.\r\n\r\nAs I make sure that the orc is dead, I suddenly realize that the two goblin mages that Melindra talked about earlier have still not made their appearance. Should I go look for them?\r\n\r\nIf I stay here, I'm probably not going to get much use out of this crossbow against those three orcs using shields, and I'd rather not risk hitting Daren and Hadrik by trying to attack the monsters that they're already busy fighting.\r\n\r\nI could fight the orcs at close range, but would it be a good idea to let those mages unchecked? I'm going to have to think carefully about this."
-        condition: combat_technique >= 1
-        set:
-          successful_checks:
-            - '[ Combat technique check successful - level 1 ]'
-          b2_ch8_saved: 0
+        effects:
+          - set:
+              successful_checks:
+                - '[ Combat technique check successful - level 1 ]'
+              b2_ch8_saved: 0
         choices:
           - position: 1
             text: Fight the orcs and send Flower to look for the goblins.
@@ -358,15 +360,16 @@ scenes:
                   current_scene: b2_ch08a_assess
                   b2_ch8_goblins: 1
                 condition: is_dead = 0
-      - texts:
+      - condition: combat_technique = 0 AND b2_ch6_crossbow = 1
+        texts:
           - source: scene_text
             paragraph: 23
             text: "My aim was a little off, and the crossbow bolt didn't go exactly where I wanted, but it still hit the monster's head, and due to the power behind the shot, it passed right through the orc's helmet and through his skull, making him stop his movements and drop to the ground like a log.\r\n\r\nAs I make sure that the orc is dead, I suddenly realize that the two goblin mages that Melindra talked about earlier have still not made their appearance. Should I go look for them?\r\n\r\nIf I stay here, I'm probably not going to get much use out of this crossbow against those three orcs using shields, and I'd rather not risk hitting Daren and Hadrik by trying to attack the monsters that they're already busy fighting.\r\n\r\nI could fight the orcs at close range, but would it be a good idea to let those mages unchecked? I'm going to have to think carefully about this."
-        condition: combat_technique = 0 AND b2_ch6_crossbow = 1
-        set:
-          failed_checks:
-            - '[ Combat technique check failed - level 1 ]'
-          b2_ch8_saved: 0
+        effects:
+          - set:
+              failed_checks:
+                - '[ Combat technique check failed - level 1 ]'
+              b2_ch8_saved: 0
         choices:
           - position: 1
             text: Fight the orcs and send Flower to look for the goblins.
@@ -382,17 +385,18 @@ scenes:
                   current_scene: b2_ch08a_assess
                   b2_ch8_goblins: 1
                 condition: is_dead = 0
-      - texts:
+      - condition: combat_technique = 0 AND b2_ch6_crossbow = 0 AND reflexes >= 2
+        texts:
           - source: scene_text
             paragraph: 24
             text: "Unfortunately, I miss my shot, and the crossbow bolt bounces right off his enchanted helmet.\r\n\r\nThe orc looks pissed, and he immediately switches his target, charging towards me at breathtaking speed. I've never really fought against an enemy with such a long-ranged melee weapon before, and his sword's reach managed to take me completely off-guard.\r\n\r\nFortunately for me, my reflexes did not fail me, and I managed to step out of the way in time, if only just barely. I then take advantage of his loss of momentum to quickly stick my enchanted dagger through the visor of his helmet, which makes him stop his movements, and drop to the ground like a log.\r\n\r\nAs I make sure that the orc is dead, I suddenly realize that the two goblin mages that Melindra talked about earlier have still not made their appearance. Should I go look for them?\r\n\r\nIf I stay here, I'm probably not going to get much use out of this crossbow against those three orcs using shields, and I'd rather not risk hitting Daren and Hadrik by trying to attack the monsters that they're already busy fighting.\r\n\r\nI could fight the orcs at close range, but would it be a good idea to let those mages unchecked? I'm going to have to think carefully about this."
-        condition: combat_technique = 0 AND b2_ch6_crossbow = 0 AND reflexes >= 2
-        set:
-          failed_checks:
-            - '[ Combat technique check failed - level 1 ]'
-          successful_checks:
-            - '[ Reflexes check successful - level 2 ]'
-          b2_ch8_saved: 0
+        effects:
+          - set:
+              failed_checks:
+                - '[ Combat technique check failed - level 1 ]'
+              successful_checks:
+                - '[ Reflexes check successful - level 2 ]'
+              b2_ch8_saved: 0
         choices:
           - position: 1
             text: Fight the orcs and send Flower to look for the goblins.
@@ -408,25 +412,26 @@ scenes:
                   current_scene: b2_ch08a_assess
                   b2_ch8_goblins: 1
                 condition: is_dead = 0
-      - texts:
+      - condition: >-
+          combat_technique = 0 AND b2_ch6_crossbow = 0 AND reflexes < 2 AND
+          b2_ch8_tornado = 0
+        texts:
           - source: scene_text
             paragraph: 25
             text: "Unfortunately, I miss my shot, and the crossbow bolt bounces right off his enchanted helmet.\r\n\r\nThe orc looks pissed, and he immediately switches his target, charging towards me at breathtaking speed. I've never really fought against an enemy with such a long-ranged melee weapon before, and his sword's reach managed to take me completely off-guard.\r\n\r\nI stumble out of his way clumsily, managing to avoid getting hit, but falling on my back in the process. The orc does not give me the opportunity to get back up, and he immediately swings his sword towards me, in order to finish me off.\r\n\r\n\"You idiot!\" Melindra shouts, loudly, as she points her palm towards the orc that is attacking me, in order to shoot a powerful gust of wind at him.\r\n\r\nThe wind that erupts from her hand hits the orc head on, making him lose his balance and drop to the ground as well. I take advantage of the opportunity and I jump on top of him with my dagger, aiming directly for his face, and stabbing him through his helmet's visor."
           - source: scene_text_2
             paragraph: 19
             text: "As I make sure that the orc is dead, I suddenly realize that the two goblin mages that Melindra talked about earlier have still not made their appearance. Should I go look for them?\r\n\r\nIf I stay here, I'm probably not going to get much use out of this crossbow against those three orcs using shields, and I'd rather not risk hitting Daren and Hadrik by trying to attack the monsters that they're already busy fighting.\r\n\r\nI could fight the orcs at close range, but would it be a good idea to let those mages unchecked? I'm going to have to think carefully about this."
-        condition: >-
-          combat_technique = 0 AND b2_ch6_crossbow = 0 AND reflexes < 2 AND
-          b2_ch8_tornado = 0
-        set:
-          failed_checks:
-            - '[ Combat technique check failed - level 1 ]'
-            - '[ Reflexes check failed - level 2 ]'
-          b2_ch8_saved: 1
-          ac_b2_ch8_savior: 1
-        achievement:
-          id: ac_b2_ch8_savior
-          title: Unexpected savior
+        effects:
+          - set:
+              failed_checks:
+                - '[ Combat technique check failed - level 1 ]'
+                - '[ Reflexes check failed - level 2 ]'
+              b2_ch8_saved: 1
+              ac_b2_ch8_savior: 1
+            achievement:
+              id: ac_b2_ch8_savior
+              title: Unexpected savior
         choices:
           - position: 1
             text: Fight the orcs and send Flower to look for the goblins.
@@ -442,18 +447,19 @@ scenes:
                   current_scene: b2_ch08a_assess
                   b2_ch8_goblins: 1
                 condition: is_dead = 0
-      - texts:
+      - condition: >-
+          combat_technique = 0 AND b2_ch6_crossbow = 0 AND reflexes < 2 AND
+          b2_ch8_tornado = 1
+        texts:
           - source: scene_text
             paragraph: 26
             text: "Unfortunately, I miss my shot, and the crossbow bolt bounces right off his enchanted helmet.\r\n\r\nThe orc looks pissed, and he immediately switches his target, charging towards me at breathtaking speed. I've never really fought against an enemy with such a long-ranged melee weapon before, and his sword's reach managed to take me completely off-guard.\r\n\r\nI stumble out of his way clumsily, managing to avoid getting hit, but falling on my back in the process. The orc does not give me the opportunity to get back up, and he immediately swings his sword towards me, in order to finish me off.\r\n\r\n\"You idiot!\" Melindra shouts, loudly, as she points her palm towards the orc that is attacking me, in order to shoot a powerful gust of wind at him.\r\n\r\nJust as she is about to take the shot, the girl suddenly loses her balance, and she almost faints, just like she did earlier, after she cast that tornado. I don't get to see if she managed to regain her consciousness, because this window of opportunity was all the orc needed to swing his sword at me and to slice my head straight off my shoulders."
-        condition: >-
-          combat_technique = 0 AND b2_ch6_crossbow = 0 AND reflexes < 2 AND
-          b2_ch8_tornado = 1
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Combat technique check failed - level 1 ]'
-            - '[ Reflexes check failed - level 2 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Combat technique check failed - level 1 ]'
+                - '[ Reflexes check failed - level 2 ]'
         choices:
           - position: 1
             text: Restart game
@@ -493,13 +499,14 @@ scenes:
           - set:
               current_scene: b2_ch08a_trees
               b2_ch8_goblins: 2
-            condition: b2_ch8_goblins = 0
+            condition: b2_ch8_goblins = 0 AND strength_aux >= 3
           - set:
               current_scene: b2_ch08a_fight
-            condition: b2_ch8_goblins = 0
+            condition: b2_ch8_goblins = 0 AND strength_aux < 3
   - name: b2_ch08a_goblins
     routes:
-      - texts:
+      - condition: b2_ch7_dizziness = 0
+        texts:
           - source: scene_text
             paragraph: 28
             text: "\"Flower! Illuna!\" I say. \"I want to go check why the two goblin mages haven't attacked us yet. Could you come with me? We should be able to find where they're hiding, with a little help from Arraka.\"\r\n\r\n\"Oh, right, the goblins!\" Flower says. \"I completely forgot about them. I think I may have actually sensed one of them cast a spell when the orcs attacked us. Follow me, it's this way!\"\r\n\r\nShe then heads into the woods, and I rush to follow her, leaving the others behind, for now. After about twenty seconds of running, for some reason, I'm feeling that we aren't making a lot of progress, and some of the trees we are passing look oddly familiar.\r\n\r\n\"What the hell are you doing?\" Arraka asks us, after a while. \"Are you completely incapable of running in a straight line for more than five seconds? How many times are you going to keep circling around this area before you decide to finally head towards those goblins?\"\r\n\r\n\"What are you talking about?\" I say. \"We've been heading in the same direction this whole time.\"\r\n\r\n\"You've been running in circles, you moron!\" Arraka says. \"Do I need to draw you a map? Hold on, let me show you.\"\r\n\r\nShe then conjures one of her map holograms into the air, and she starts drawing a line on it, showing us the direction in which we've been going since we began heading for the goblins. The line goes into one direction for a while, but after that, the trajectory changes completely, going through the same area over and over again."
@@ -509,26 +516,26 @@ scenes:
           - source: scene_3
             paragraph: 3
             text: "\"Wow...\" I say. \"I guess you weren't kidding when you said that your protection from dizziness would make me vulnerable to suggestion spells. The spell's effect on me was so strong that I could barely manage to think of anything other than getting away from that area, until I was at a far enough distance from it.\"\r\n\r\n\"Yes,\" Illuna says. \"But sleep spells and dizziness spells are far more widely used than suggestion spells, so it's not that bad of a trade. Either way, we're not going to get past this area unless we get a very detailed description of the environment that those two goblins are situated in, so we can imagine that location as we move forward. Arraka, what can you tell us about the area around these goblins?\""
-        condition: b2_ch7_dizziness = 0
-        set:
-          ac_b2_ch8_effects: 1
-        achievement:
-          id: ac_b2_ch8_effects
-          title: Side effects
+        effects:
+          - set:
+              ac_b2_ch8_effects: 1
+            achievement:
+              id: ac_b2_ch8_effects
+              title: Side effects
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch08a_goblins2
-      - texts:
+      - condition: b2_ch7_dizziness = 1
+        texts:
           - source: scene_text
             paragraph: 29
             text: "\"Flower! Illuna!\" I say. \"I want to go check why the two goblin mages haven't attacked us yet. Could you come with me? We should be able to find where they're hiding, with a little help from Arraka.\"\r\n\r\n\"Oh, right, the goblins!\" Flower says. \"I completely forgot about them. I think I may have actually sensed one of them cast a spell when the orcs attacked us. Follow me, it's this way!\"\r\n\r\nShe then heads into the woods, and I rush to follow her, leaving the others behind, for now. After about twenty seconds of running, for some reason, I'm feeling that we aren't making a lot of progress, and some of the trees we are passing look oddly familiar.\r\n\r\n\"What the hell are you doing?\" Arraka asks us, after a while. \"Are you completely incapable of running in a straight line for more than five seconds? How many times are you going to keep circling around this area before you decide to finally head towards those goblins?\"\r\n\r\n\"What are you talking about?\" I say. \"We've been heading in the same direction this whole time.\"\r\n\r\n\"You've been running in circles, you moron!\" Arraka says. \"Do I need to draw you a map? Hold on, let me show you.\"\r\n\r\nShe then conjures one of her map holograms into the air, and she starts drawing a line on it, showing us the direction in which we've been going since we began heading for the goblins. The line goes into one direction for a while, but after that, the trajectory changes completely, going through the same area over and over again."
           - source: scene_text_2
             paragraph: 22
             text: "\"See?\" Arraka says. \"This is you. This is how stupid you looked. And do you see those two dots over there? That's where the goblins are. Now stop wasting time and get going. I'm getting second-hand embarrassment just from watching you people.\"\r\n\r\nI try to head into the exact direction where the goblins are drawn on Arraka's map, but for some reason, I simply can't advance further than a few steps. Every time I get too close to the goblins, I instinctively turn away from them, without realizing, and then I see myself going in the opposite direction on the map.\r\n\r\n\"There is a suggestion spell cast on this area,\" Illuna says, as she studies the area in front of us closely. \"Arraka is probably not as affected by it as we are because she's inside the amulet, but the spell seems to have a similar effect to the one that Kate is using to protect our camp. We're not going to get past this area unless we get a very detailed description of the environment that those two goblins are situated in, so we can imagine that location as we move forward. Arraka, what can you tell us about the area around these goblins?\""
-        condition: b2_ch7_dizziness = 1
         choices:
           - position: 1
             text: Continue
@@ -551,7 +558,8 @@ scenes:
               current_scene: b2_ch08a_dispatches
   - name: b2_ch08a_trees
     routes:
-      - texts:
+      - condition: b2_ch5_scimitar <> 0
+        texts:
           - source: scene_text
             paragraph: 31
             text: "\"Flower! Illuna!\" I say. \"Could you go see why the two goblin mages haven't attacked us yet? You should be able to find where they're hiding, with a little help from Arraka.\"\r\n\r\n\"Oh, right, the goblins!\" Flower says. \"I completely forgot about them. I think I may have actually sensed one of them cast a spell when the orcs attacked us. Come on, Petal. It was this way!\"\r\n\r\nNot long after Flower and Illuna disappear into the woods, I decide that it's time to finally make my move.\r\n\r\nI pull my scimitar out of its sheath, and I hurry towards one of the trees surrounding our area. I then use my weapon to cut the tree in a single movement, and just as the tree begins to fall to the ground, I sheathe my blade and I grab the tree with both my hands, in order to use it as my new weapon.\r\n\r\nAs I take a look towards the three orcs that were fighting Leila, all of the combatants from the battleground seem to have briefly stopped fighting, to look towards me, with shocked expressions on their faces. I take advantage of their momentary bewilderment to make a dash towards the three orcs with the maces, and I immediately crush one of them underneath the weight of the tree's trunk.\r\n\r\n\"Leila, step away from the orcs,\" I say."
@@ -561,17 +569,18 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "The orc does not let himself get intimidated, and he swings his flaming axes so fast that he cuts my tree into six pieces before it even reaches him. As the now burning pieces of wood fall on the ground beside him, the orc is looking straight at me, with a very pissed off look on his face.\r\n\r\n\"Damn...\" I say, as I look at the big chunk of wood that I still have left in my hands.\r\n\r\nInstead of engaging me, however, the orc captain reaches for a horn that he was wearing around his neck, and he blows in it as loud as he can. As soon as he does this, the ogres step back from Hadrik, and a very bright white light begins to engulf all of the monsters, while their bodies start to vibrate loudly."
-        condition: b2_ch5_scimitar <> 0
-        set:
-          successful_checks:
-            - '[ Strength check successful - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Strength check successful - level 3 ]'
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch08a_retreat
-      - texts:
+      - condition: b2_ch5_scimitar = 0
+        texts:
           - source: scene_text
             paragraph: 32
             text: "\"Flower! Illuna!\" I say. \"Could you go see why the two goblin mages haven't attacked us yet? You should be able to find where they're hiding, with a little help from Arraka.\"\r\n\r\n\"Oh, right, the goblins!\" Flower says. \"I completely forgot about them. I think I may have actually sensed one of them cast a spell when the orcs attacked us. Come on, Petal. It was this way!\"\r\n\r\nNot long after Flower and Illuna disappear into the woods, I decide that it's time to finally make my move.\r\n\r\nI pull my dagger out of its sheath, and I hurry towards one of the trees surrounding our area. I then use my weapon to cut the tree, although it takes me several slices to do it. As soon as the tree begins to fall to the ground, I sheathe my blade and I grab the tree with both my hands, in order to use it as my new weapon.\r\n\r\nAs I take a look towards the three orcs that were fighting Leila, all of the combatants from the battleground seem to have briefly stopped fighting, to look towards me, with shocked expressions on their faces. I take advantage of their momentary bewilderment to make a dash towards the three orcs with the maces, and I immediately crush one of them underneath the weight of the tree's trunk.\r\n\r\n\"Leila, step away from the orcs,\" I say."
@@ -581,10 +590,10 @@ scenes:
           - source: scene_3
             paragraph: 4
             text: "The orc does not let himself get intimidated, and he swings his flaming axes so fast that he cuts my tree into six pieces before it even reaches him. As the now burning pieces of wood fall on the ground beside him, the orc is looking straight at me, with a very pissed off look on his face.\r\n\r\n\"Damn...\" I say, as I look at the big chunk of wood that I still have left in my hands.\r\n\r\nInstead of engaging me, however, the orc captain reaches for a horn that he was wearing around his neck, and he blows in it as loud as he can. As soon as he does this, the ogres step back from Hadrik, and a very bright white light begins to engulf all of the monsters, while their bodies start to vibrate loudly."
-        condition: b2_ch5_scimitar = 0
-        set:
-          successful_checks:
-            - '[ Strength check successful - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Strength check successful - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -593,16 +602,17 @@ scenes:
                   current_scene: b2_ch08a_retreat
   - name: b2_ch08a_fight
     routes:
-      - texts:
+      - condition: agility >= 3 AND b2_ch5_scimitar = 0
+        texts:
           - source: scene_text
             paragraph: 33
             text: "\"Flower! Illuna!\" I say. \"Could you go see why the two goblin mages haven't attacked us yet? You should be able to find where they're hiding, with a little help from Arraka.\"\r\n\r\n\"Oh, right, the goblins!\" Flower says. \"I completely forgot about them. I think I may have actually sensed one of them cast a spell when the orcs attacked us. Come on, Petal. It was this way!\"\r\n\r\nNot long after Flower and Illuna disappear into the woods, I decide that it's time to finally make my move.\r\n\r\nI specifically target the orc that had already been injured by Leila, and I make a quick dash towards him, not giving him the time to turn around and defend himself, as I drive my dagger straight through his heart and kill him while he's still standing.\r\n\r\nAs soon as the orc drops to the ground, one of the other orcs that were attacking Leila jumps straight at me, with his mace high in the air, ready to bring it down upon my head."
-        condition: agility >= 3 AND b2_ch5_scimitar = 0
-        set:
-          failed_checks:
-            - '[ Strength check failed - level 3 ]'
-          successful_checks:
-            - '[ Speed check successful - level 3 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Strength check failed - level 3 ]'
+              successful_checks:
+                - '[ Speed check successful - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -610,16 +620,17 @@ scenes:
               - set:
                   current_scene: b2_ch08a_fight2
                 condition: is_dead = 0
-      - texts:
+      - condition: agility >= 3 AND b2_ch5_scimitar <> 0
+        texts:
           - source: scene_text
             paragraph: 34
             text: "\"Flower! Illuna!\" I say. \"Could you go see why the two goblin mages haven't attacked us yet? You should be able to find where they're hiding, with a little help from Arraka.\"\r\n\r\n\"Oh, right, the goblins!\" Flower says. \"I completely forgot about them. I think I may have actually sensed one of them cast a spell when the orcs attacked us. Come on, Petal. It was this way!\"\r\n\r\nNot long after Flower and Illuna disappear into the woods, I decide that it's time to finally make my move.\r\n\r\nI specifically target the orc that had already been injured by Leila, and I make a quick dash towards him, not giving him the time to turn around and defend himself, as I drive my scimitar straight through his heart and kill him while he's still standing.\r\n\r\nAs soon as the orc drops to the ground, one of the other orcs that were attacking Leila jumps straight at me, with his mace high in the air, ready to bring it down upon my head."
-        condition: agility >= 3 AND b2_ch5_scimitar <> 0
-        set:
-          failed_checks:
-            - '[ Strength check failed - level 3 ]'
-          successful_checks:
-            - '[ Speed check successful - level 3 ]'
+        effects:
+          - set:
+              failed_checks:
+                - '[ Strength check failed - level 3 ]'
+              successful_checks:
+                - '[ Speed check successful - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -627,17 +638,18 @@ scenes:
               - set:
                   current_scene: b2_ch08a_fight2
                 condition: is_dead = 0
-      - texts:
+      - condition: agility < 3 AND b2_ch5_scimitar = 0 AND reflexes >= 2
+        texts:
           - source: scene_text
             paragraph: 35
             text: "\"Flower! Illuna!\" I say. \"Could you go see why the two goblin mages haven't attacked us yet? You should be able to find where they're hiding, with a little help from Arraka.\"\r\n\r\n\"Oh, right, the goblins!\" Flower says. \"I completely forgot about them. I think I may have actually sensed one of them cast a spell when the orcs attacked us. Come on, Petal. It was this way!\"\r\n\r\nNot long after Flower and Illuna disappear into the woods, I decide that it's time to finally make my move.\r\n\r\nI specifically target the orc that had already been injured by Leila, and I make a dash towards him, in an attempt to catch him by surprise. As the monster sees me approach him, he quickly turns around, and he swings his mace at my head with all of his strength, just as I reach him.\r\n\r\nFor a moment, it feels like the whole world suddenly went in slow-motion, as I duck under the orc's weapon, and I stab him in the heart before he has the time to swing his mace back towards me. The orc dies as soon as I run my dagger through him, and his arms both drop to his side, as the shield and mace fall to the ground with a loud clang.\r\n\r\nAs soon as the orc drops to the ground as well, one of the other orcs that were attacking Leila jumps straight at me, with his mace high in the air, ready to bring it down upon my head."
-        condition: agility < 3 AND b2_ch5_scimitar = 0 AND reflexes >= 2
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 2 ]'
-          failed_checks:
-            - '[ Strength check failed - level 3 ]'
-            - '[ Speed check failed - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 2 ]'
+              failed_checks:
+                - '[ Strength check failed - level 3 ]'
+                - '[ Speed check failed - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -645,17 +657,18 @@ scenes:
               - set:
                   current_scene: b2_ch08a_fight2
                 condition: is_dead = 0
-      - texts:
+      - condition: agility < 3 AND b2_ch5_scimitar <> 0 AND reflexes >= 2
+        texts:
           - source: scene_text
             paragraph: 36
             text: "\"Flower! Illuna!\" I say. \"Could you go see why the two goblin mages haven't attacked us yet? You should be able to find where they're hiding, with a little help from Arraka.\"\r\n\r\n\"Oh, right, the goblins!\" Flower says. \"I completely forgot about them. I think I may have actually sensed one of them cast a spell when the orcs attacked us. Come on, Petal. It was this way!\"\r\n\r\nNot long after Flower and Illuna disappear into the woods, I decide that it's time to finally make my move.\r\n\r\nI specifically target the orc that had already been injured by Leila, and I make a dash towards him, in an attempt to catch him by surprise. As the monster sees me approach him, he quickly turns around, and he swings his mace at my head with all of his strength, just as I reach him.\r\n\r\nFor a moment, it feels like the whole world suddenly went in slow-motion, as I duck under the orc's weapon, and I stab him in the heart before he has the time to swing his mace back towards me. The orc dies as soon as I run my scimitar through him, and his arms both drop to his side, as the shield and mace fall to the ground with a loud clang.\r\n\r\nAs soon as the orc drops to the ground as well, one of the other orcs that were attacking Leila jumps straight at me, with his mace high in the air, ready to bring it down upon my head."
-        condition: agility < 3 AND b2_ch5_scimitar <> 0 AND reflexes >= 2
-        set:
-          successful_checks:
-            - '[ Reflexes check successful - level 2 ]'
-          failed_checks:
-            - '[ Strength check failed - level 3 ]'
-            - '[ Speed check failed - level 3 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Reflexes check successful - level 2 ]'
+              failed_checks:
+                - '[ Strength check failed - level 3 ]'
+                - '[ Speed check failed - level 3 ]'
         choices:
           - position: 1
             text: Continue
@@ -663,17 +676,18 @@ scenes:
               - set:
                   current_scene: b2_ch08a_fight2
                 condition: is_dead = 0
-      - texts:
+      - condition: agility < 3 AND reflexes < 2
+        texts:
           - source: scene_text
             paragraph: 37
             text: "\"Flower! Illuna!\" I say. \"Could you go see why the two goblin mages haven't attacked us yet? You should be able to find where they're hiding, with a little help from Arraka.\"\r\n\r\n\"Oh, right, the goblins!\" Flower says. \"I completely forgot about them. I think I may have actually sensed one of them cast a spell when the orcs attacked us. Come on, Petal. It was this way!\"\r\n\r\nNot long after Flower and Illuna disappear into the woods, I decide that it's time to finally make my move.\r\n\r\nI specifically target the orc that had already been injured by Leila, and I make a dash towards him, in an attempt to catch him by surprise. As the monster sees me approach him, he quickly turns around, and he swings his mace at my head with all of his strength, just as I reach him.\r\n\r\nI try to jump out of its way, but I am not able to react fast enough, and his weapon bashes my head in, killing me instantly."
-        condition: agility < 3 AND reflexes < 2
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Strength check failed - level 3 ]'
-            - '[ Speed check failed - level 3 ]'
-            - '[ Reflexes check failed - level 2 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Strength check failed - level 3 ]'
+                - '[ Speed check failed - level 3 ]'
+                - '[ Reflexes check failed - level 2 ]'
         choices:
           - position: 1
             text: Restart game
@@ -694,14 +708,15 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
   - name: b2_ch08a_fight2
     routes:
-      - texts:
+      - condition: combat_technique >= 2
+        texts:
           - source: scene_text
             paragraph: 38
             text: "Luckily for me, his posture gives away his true intentions, and I manage to call his bluff, as I completely ignore his mace, and focus solely on his shield. Just as I guessed, the orc tries to bash my head in with his shield as soon as he gets near me, but I step out of the way at the very last second, making him lose his balance, which allows me to deliver a swift and lethal blow with my blade to the back of his neck.\r\n\r\nBeing left with only one enemy to fight, Leila immediately goes on the offensive, and she easily manages to dispose of him, by getting in his blind spot, and then assassinating him with a single blow to the side of his head.\r\n\r\nWhen he sees what happened with his underlings, the orc captain pushes Daren away from him, he takes a few steps back, he reaches for a horn that he was wearing around his neck, and he blows in it as loud as he can. As soon as he does this, the ogres also step back from Hadrik, and a very bright white light begins to engulf all of the monsters, while their bodies start to vibrate loudly."
-        condition: combat_technique >= 2
-        set:
-          successful_checks:
-            - '[ Combat technique check successful - level 2 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Combat technique check successful - level 2 ]'
         choices:
           - position: 1
             text: Continue
@@ -709,16 +724,17 @@ scenes:
               - set:
                   current_scene: b2_ch08a_retreat
                 condition: is_dead = 0
-      - texts:
+      - condition: combat_technique < 2 AND toughness >= 3
+        texts:
           - source: scene_text
             paragraph: 39
             text: "I try to get out of his mace's way, but I realize too late that his first attack was only a feint, meant to leave me vulnerable to a second attack, with his shield.\r\n\r\nAs the orc hits me hard in the head with his shield, I feel some pain, but I manage to retain my senses, and I take advantage of the opening that the orc created, in order to slice his neck wide open.\r\n\r\nBeing left with only one enemy to fight, Leila immediately goes on the offensive, and she easily manages to dispose of him, by getting in his blind spot, and then assassinating him with a single blow to the side of his head.\r\n\r\nWhen he sees what happened with his underlings, the orc captain pushes Daren away from him, he takes a few steps back, he reaches for a horn that he was wearing around his neck, and he blows in it as loud as he can. As soon as he does this, the ogres also step back from Hadrik, and a very bright white light begins to engulf all of the monsters, while their bodies start to vibrate loudly."
-        condition: combat_technique < 2 AND toughness >= 3
-        set:
-          successful_checks:
-            - '[ Toughness check successful - level 3 ]'
-          failed_checks:
-            - '[ Combat technique check failed - level 2 ]'
+        effects:
+          - set:
+              successful_checks:
+                - '[ Toughness check successful - level 3 ]'
+              failed_checks:
+                - '[ Combat technique check failed - level 2 ]'
         choices:
           - position: 1
             text: Continue
@@ -726,16 +742,17 @@ scenes:
               - set:
                   current_scene: b2_ch08a_retreat
                 condition: is_dead = 0
-      - texts:
+      - condition: combat_technique < 2 AND toughness < 3
+        texts:
           - source: scene_text
             paragraph: 40
             text: "I try to get out of his mace's way, but I realize too late that his first attack was only a feint, meant to leave me vulnerable to a second attack, with his shield.\r\n\r\nAs the orc hits me hard in the head with his shield, I can feel my skull crack under the pressure, and then I immediately lose my consciousness for good."
-        condition: combat_technique < 2 AND toughness < 3
-        set:
-          is_dead: 1
-          failed_checks:
-            - '[ Combat technique check failed - level 2 ]'
-            - '[ Toughness check failed - level 3 ]'
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Combat technique check failed - level 2 ]'
+                - '[ Toughness check failed - level 3 ]'
         choices:
           - position: 1
             text: Restart game
@@ -756,21 +773,22 @@ scenes:
                   storyboard_controls: Jump to frame "Save load game"
   - name: b2_ch08a_retreat
     routes:
-      - texts:
+      - condition: b2_ch8_goblins = 0
+        texts:
           - source: scene_text
             paragraph: 41
             text: "\"Crap, they're getting away!\" Daren says, as he rushes towards the captain, but it is too late.\r\n\r\nMere seconds after the white light appears, the orc and the ogres get teleported out of the area, quite likely alongside the two goblins that were hiding in the forest until now.\r\n\r\n\"So that's what the goblins were doing,\" Kate says. \"They didn't join the battle because they needed to be calm and collected, in order to be able to cast the teleportation spell if there was a need to retreat.\"\r\n\r\n\"Where are the orcs?\" Flower says, all of a sudden, as she appears from behind the trees. \"Did they manage to get away? Oh, you've killed the three with the shields and maces...\"\r\n\r\n\"Their captain still got away, though,\" Illuna says. \"And so did the ogres, by the looks of it.\"\r\n\r\n\"What happened to the goblins?\" I say. \"Didn't you manage to reach them in time?\""
           - source: scene_text_2
             paragraph: 25
             text: "\"No,\" Illuna answers me. \"One of the goblins had cast a suggestion spell similar to the one Kate is using to keep enemies away from our camp. The spell wouldn't let us get near them unless we knew their exact location, because we needed to focus on it while heading towards them. We tried to get Arraka to describe the scenery around them for us, but it took too long, and they eventually teleported out of the area.\"\r\n\r\n\"So, where did they go?\" I say. \"Are they planning to ambush us again?\"\r\n\r\n\"I doubt it,\" Illuna says. \"From what Arraka told us, she can no longer sense any monsters around us, and given the relatively wide area she can cover with her magic sense, I am suspecting that the monsters went back to their main headquarters for now.\""
-        condition: b2_ch8_goblins = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch08a_dispatches
-      - texts:
+      - condition: b2_ch8_goblins = 2
+        texts:
           - source: scene_text
             paragraph: 42
             text: "\"Crap, they're getting away!\" Daren says, as he rushes towards the captain, but it is too late.\r\n\r\nMere seconds after the white light appears, the orc and the ogres get teleported out of the area, quite likely alongside the two goblins that were hiding in the forest until now.\r\n\r\n\"So that's what the goblins were doing,\" Kate says. \"They didn't join the battle because they needed to be calm and collected, in order to be able to cast the teleportation spell if there was a need to retreat.\"\r\n\r\n\"Where are the orcs?\" Flower says, all of a sudden, as she appears from behind the trees. \"Did they manage to get away? Oh, you've killed the three with the shields and maces...\"\r\n\r\n\"Their captain still got away, though,\" Illuna says. \"And so did the ogres, by the looks of it.\"\r\n\r\n\"What happened to the goblins?\" I say. \"Didn't you manage to reach them in time?\"\r\n\r\n\"Whoa...\" Flower says, as she suddenly sees me holding the tree trunk in my hands, and she instinctively takes a step back."
@@ -780,12 +798,12 @@ scenes:
           - source: scene_3
             paragraph: 5
             text: "\"Also, I'd really appreciate it if you avoided using trees as weapons from now on,\" Daren says. \"It's hard enough to focus on all the enemies at once without having to also look out for where you guys are swinging those huge oversized clubs with hundreds of branches on top of them.\"\r\n\r\n\"Oh, yeah, don't worry about it!\" Hadrik says. \"This was just for fun. I fight much better without using weapons.\"\r\n\r\n\"I'm not going to lie, though, Barry,\" Daren says. \"That was pretty impressive.\"\r\n\r\n\"Hey, thanks!\" I say. \"You weren't half-bad yourself!\""
-        condition: b2_ch8_goblins = 2
-        set:
-          ac_b2_ch8_tree: 1
-        achievement:
-          id: ac_b2_ch8_tree
-          title: Tree wielder
+        effects:
+          - set:
+              ac_b2_ch8_tree: 1
+            achievement:
+              id: ac_b2_ch8_tree
+              title: Tree wielder
         choices:
           - position: 1
             text: Continue
@@ -1002,28 +1020,28 @@ scenes:
               current_scene: b2_ch08a_literally
   - name: b2_ch08a_literally
     routes:
-      - texts:
+      - condition: b2_ch8_saved = 0
+        texts:
           - source: scene_text
             paragraph: 55
             text: "\"I don't know what you're talking about,\" Melindra says, feigning ignorance. \"I didn't lie about anything.\"\r\n\r\n\"Oh?\" I say. \"So you're saying that after spending more than a week in search of someone who could help you kill the king of Ollendor, you were going to waste your only chance, just like that, because we weren't able to hold our own against one of Tyrath's strongest teams of combatants?\"\r\n\r\n\"I already told you,\" Melindra says. \"Ollendor's defenses are no joke! If you think that some 'elite' team of monsters can compare with what is to come, then you are sorely mistaken!\"\r\n\r\n\"Okay...\" I say. \"Then let me ask you something else. Why exactly did you need to bend your knees and to keep your elbows close to your body when you cast the spell that blew away the orc who was attacking you? Because as far as I'm aware, that stance is what they teach novice elementalists at the very beginning of their training, in order to help them better control their powers, when they are still getting accustomed to them. Are you still getting accustomed to your powers, after six hundred years, Melindra?\""
           - source: scene_text_2
             paragraph: 36
             text: "\"I...\" Melindra starts to say, but she hesitates, and I interrupt her.\r\n\r\n\"Or is it perhaps that Arraka was speaking literally, when she said that you don't know how to hold back?...\" I say. \"Those crazy stillwater powers must surely come with some sort of drawbacks, no? I would expect someone like Eiden, who knows all the ins and outs of magic to find a way around such a problem, but you don't seem like the type. You still haven't learned how to control your stillwater powers properly, have you? It's too much for you to handle, and you're afraid that you'll accidentally put too much power behind one of your spells, and blow us all away, while also killing yourself in the process because of that oath you made.\""
-        condition: b2_ch8_saved = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch08a_image
-      - texts:
+      - condition: b2_ch8_saved = 1
+        texts:
           - source: scene_text
             paragraph: 56
             text: "\"I don't know what you're talking about,\" Melindra says, feigning ignorance. \"I didn't lie about anything.\"\r\n\r\n\"Oh?\" I say. \"So you're saying that after spending more than a week in search of someone who could help you kill the king of Ollendor, you were going to waste your only chance, just like that, because we weren't able to hold our own against one of Tyrath's strongest teams of combatants?\"\r\n\r\n\"I already told you,\" Melindra says. \"Ollendor's defenses are no joke! If you think that some 'elite' team of monsters can compare with what is to come, then you are sorely mistaken!\"\r\n\r\n\"But if you really wanted only to test us, then why did you save me from that orc?\" I say.\r\n\r\n\"I don't KNOW!\" Melindra says. \"I just did it on a whim!\"\r\n\r\n\"Okay...\" I say. \"Then let me ask you something else. Why exactly did you need to bend your knees and to keep your elbows close to your body when you cast the spell that blew away the orc who was attacking you? Because as far as I'm aware, that stance is what they teach novice elementalists at the very beginning of their training, in order to help them better control their powers, when they are still getting accustomed to them. Are you still getting accustomed to your powers, after six hundred years, Melindra?\""
           - source: scene_text_2
             paragraph: 36
             text: "\"I...\" Melindra starts to say, but she hesitates, and I interrupt her.\r\n\r\n\"Or is it perhaps that Arraka was speaking literally, when she said that you don't know how to hold back?...\" I say. \"Those crazy stillwater powers must surely come with some sort of drawbacks, no? I would expect someone like Eiden, who knows all the ins and outs of magic to find a way around such a problem, but you don't seem like the type. You still haven't learned how to control your stillwater powers properly, have you? It's too much for you to handle, and you're afraid that you'll accidentally put too much power behind one of your spells, and blow us all away, while also killing yourself in the process because of that oath you made.\""
-        condition: b2_ch8_saved = 1
         choices:
           - position: 1
             text: Continue
@@ -1032,28 +1050,28 @@ scenes:
                   current_scene: b2_ch08a_image
   - name: b2_ch08a_image
     routes:
-      - texts:
+      - condition: b2_ch8_tornado = 0
+        texts:
           - source: scene_text
             paragraph: 58
             text: "\"No, you're wrong!\" Melindra says. \"I was only using that stance because it's been a long while since I used my powers near a group of allies, and I was feeling a little rusty!\"\r\n\r\n\"You were feeling so rusty that you couldn't even remember the basics?\" I say. \"Yeah, sorry, but I'm not buying it. You're just trying to come up with excuses. Admit it, there would have been no reason for you to use that stance, if you didn't have trouble controlling your powers.\"\r\n\r\nMelindra frowns at me, but she doesn't say anything.\r\n\r\n\"What I don't understand is why you would purposely avoid telling us about it,\" I say. \"Do you really care about your image that much? Is it really so important for you to be known as this perfect and all-powerful stillwater that can do no wrong, that you'd be willing to risk this entire mission?\"\r\n\r\n\"I swear...\" Melindra says, with a menacing look in her eyes. \"If you plan on telling anyone about this...\""
           - source: scene_text_2
             paragraph: 37
             text: "\"You'll what?\" I ask her. \"Pat me slightly on the back? Caress me softly? Because that's about the most you can do to me after that vow you made. I bet you must be regretting your decision to make that oath life-binding now, huh?\"\r\n\r\n\"A little...\" Melindra says.\r\n\r\n\"Relax,\" I tell her. \"I don't have any reason to tell anyone about this. It's not like you could help us if you wanted to. If you want to appear as even more unlikeable than you already are, then who am I to stop you?\""
-        condition: b2_ch8_tornado = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch08a_unlikeable
-      - texts:
+      - condition: b2_ch8_tornado = 1
+        texts:
           - source: scene_text
             paragraph: 57
             text: "\"No, you're wrong!\" Melindra says. \"The only reason why I used that stance was because I was still tired after casting that tornado earlier, and I wanted to be extra safe!\"\r\n\r\n\"Yeah, I'm not buying it,\" I say. \"I know how elemental magic works. Being tired should only affect your concentration, and there is no need to concentrate on how powerful your spells are, once you've mastered the basics. Admit it, there would have been no reason for you to use that stance, if you didn't have trouble controlling your powers.\"\r\n\r\nMelindra frowns at me, but she doesn't say anything.\r\n\r\n\"What I don't understand is why you would purposely avoid telling us about it,\" I say. \"Do you really care about your image that much? Is it really so important for you to be known as this perfect and all-powerful stillwater that can do no wrong, that you'd be willing to risk this entire mission?\"\r\n\r\n\"I swear...\" Melindra says, with a menacing look in her eyes. \"If you plan on telling anyone about this...\""
           - source: scene_text_2
             paragraph: 37
             text: "\"You'll what?\" I ask her. \"Pat me slightly on the back? Caress me softly? Because that's about the most you can do to me after that vow you made. I bet you must be regretting your decision to make that oath life-binding now, huh?\"\r\n\r\n\"A little...\" Melindra says.\r\n\r\n\"Relax,\" I tell her. \"I don't have any reason to tell anyone about this. It's not like you could help us if you wanted to. If you want to appear as even more unlikeable than you already are, then who am I to stop you?\""
-        condition: b2_ch8_tornado = 1
         choices:
           - position: 1
             text: Continue
@@ -1083,28 +1101,28 @@ scenes:
               b2_ch8_parents: 0
   - name: b2_ch08a_civilized
     routes:
-      - texts:
+      - condition: b2_ch8_parents = 0
+        texts:
           - source: scene_text
             paragraph: 61
             text: "\"You really weren't kidding about pestering me, were you?\"\r\n\r\n\"Hey, do you want to find out more about your parents or not?\" Melindra says.\r\n\r\n\"I couldn't care less about my real parents, actually,\" I say.\r\n\r\n\"Okay, fine!\" Melindra says, with a pout, as she crosses her arms. \"If you don't want to hear about them, then I'm not going to tell you anything.\"\r\n\r\n\"Good,\" I say.\r\n\r\nWe then both walk in silence for a few more seconds, as we catch up to the others.\r\n\r\n\"So, about that banshee...\" Melindra says.\r\n\r\n\"Are you serious?\" I ask her.\r\n\r\n\"What?\" Melindra says. \"I was just curious.\"\r\n\r\n\"Well, don't be curious,\" I tell her. \"Don't you have anything better to do than to annoy me?\"\r\n\r\n\"Well, obviously, I don't, because if I did, I wouldn't be annoying you, would I?\" Melindra says."
           - source: scene_text_2
             paragraph: 40
             text: "\"Can you two stop talking and focus for a second, here?\" Daren says. \"I can sense a group of mages approaching us. And I'm not sure if they're friendly. Keep your guards up.\"\r\n\r\nIt takes a while before the mages show themselves, but it would appear that they are yet another group of weapon enchanters. They don't really look like thugs, so who knows, maybe this time we can just say hello and then be on our way, like civilized people. I know that I'm being optimistic here, but still...\r\n\r\n\"Hey, look at that!\" one of the weapon enchanters says. \"These bozos have brought whores with them to the tournament.\"\r\n\r\n\"Wow, you're right,\" says a second mage. \"They even made sure to bring at least one for each of them.\"\r\n\r\n\"Do you think that the little girl was brought by the dwarf?\" says a third mage. \"That sick bastard.\"\r\n\r\nAll of a sudden, Melindra grabs my arm with both her hands, and she presses herself against me.\r\n\r\n\"Darling, are you going to just let them talk about me like that?\" Melindra says, with pleading eyes, but with a mocking smile. \"You're not going to let them walk away after calling me a whore, are you?\""
-        condition: b2_ch8_parents = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch08a_terrified
-      - texts:
+      - condition: b2_ch8_parents = 1
+        texts:
           - source: scene_text
             paragraph: 60
             text: "\"What makes you say that?\"\r\n\r\n\"Well, marrying a non-lessathi is strictly prohibited in today's lessathi society,\" Melindra says. \"So it stands to reason that any such relationships will remain hidden from the eyes of the other lessathi. This is the reason why you don't really see any more half-lessathi nowadays. However, if a lessathi woman were to become pregnant with the child of a non-lessathi, such a relationship would become much more difficult to hide. I'm thinking that the reason why your parents left this continent was because they considered it would have been too difficult to keep hiding after your mother became pregnant with you.\"\r\n\r\n\"Okay, but why would they be related to the top brass?\" I say.\r\n\r\n\"Because the only people that have access to teleporting devices on this continent are the kings and the lessathi,\" Melindra says. \"And those teleporters are the only way to leave the continent. Since only the highest ranked lessathi have access to the lessathi teleporters, it means that your mother needed to ask help from one of them, if she wanted to leave, and they would need to do it secretly. Maybe you're even related to the leader of the lessathi! I'm guessing you were born around thirty years or so ago, so the leader back then would have been... Heksol. Yeah, that was the name. I think he might have died since then, though. Or was he killed? I'm not sure. I don't really follow lessathi politics that much anymore.\" \r\n\r\n\"Can you two stop talking and focus for a second, here?\" Daren says. \"I can sense a group of mages approaching us. And I'm not sure if they're friendly. Keep your guards up.\""
           - source: scene_text_2
             paragraph: 39
             text: "It takes a while before the mages show themselves, but it would appear that they are yet another group of weapon enchanters. They don't really look like thugs, so who knows, maybe this time we can just say hello and then be on our way, like civilized people. I know that I'm being optimistic here, but still...\r\n\r\n\"Hey, look at that!\" one of the weapon enchanters says. \"These bozos have brought whores with them to the tournament.\"\r\n\r\n\"Wow, you're right,\" says a second mage. \"They even made sure to bring at least one for each of them.\"\r\n\r\n\"Do you think that the little girl was brought by the dwarf?\" says a third mage. \"That sick bastard.\"\r\n\r\nAll of a sudden, Melindra grabs my arm with both her hands, and she presses herself against me.\r\n\r\n\"Darling, are you going to just let them talk about me like that?\" Melindra says, with pleading eyes, but with a mocking smile. \"You're not going to let them walk away after calling me a whore, are you?\""
-        condition: b2_ch8_parents = 1
         choices:
           - position: 1
             text: Continue
@@ -1195,28 +1213,28 @@ scenes:
               current_scene: b2_ch08a_unnoticed
   - name: b2_ch08a_lessathi
     routes:
-      - texts:
+      - condition: b2_ch1_interfere = 0
+        texts:
           - source: scene_text
             paragraph: 67
             text: "\"Don't forget that there were also lessathi in the city.\"\r\n\r\n\"I don't think that the lessathi were carrying stat boosters with them,\" Leila writes. \"There was this one lessathi who came to threaten me while we were in our cells, and even if I didn't see his face, because he was hiding behind the wall, I could tell that he didn't have a stat device, because my own device would have alerted me if he did.\"\r\n\r\n\"A lessathi threatened you?\" Kate asks.\r\n\r\n\"Yes,\" Leila writes. \"He was trying to convince me to hand over my stat booster to him, but I refused to do it. He later ordered the arena owner to confiscate it from me, but the owner decided to not listen to him, because he wanted me to keep my stat device, in order to make the fight more interesting.\"\r\n\r\n\"I just remembered that there was something else that I wanted to ask about the stat device,\" I say. \"Leila, you told me that you had level three in both strength and speed, but when you were fighting in the arena, you didn't seem to be much stronger or faster than that troll with the high regeneration. Is your device defective by any chance?\"\r\n\r\n\"No,\" Leila says. \"My father once told me that the physical stats from the device enhance the physical abilities that you already have, and that the more fit you are, physically, the more effect those stats will have on you. Given that I've always had a very frail constitution, this is the most I can get out of my stat device, at my current levels.\""
           - source: scene_text_2
             paragraph: 44
             text: "\"Huh...\" I say. \"Well, then, I guess that all those months I've spent doing physical training in preparation for this tournament were not wasted after all.\"\r\n\r\n\"You did physical training?\" Kate says, shocked. \"And this is the result? I bet I could beat you in an arm-wrestling match if I tried hard enough.\"\r\n\r\n\"I said that I only did it for a few months,\" I tell Kate. \"And it's not like that was the only thing that I did during that time. I also needed to do my research. The research that I'm now using to figure out Eiden's weaknesses so we can finally-- hold on a second... Where is Melindra? I could swear that I saw her by the river bank just a minute ago.\"\r\n\r\n\"Who cares about Melindra?\" Kate says.\r\n\r\n\"Well, I didn't see her set up her tent,\" I say. \"Do you think that she's not planning to spend the night at our camp?\"\r\n\r\n\"Melindra can go sleep in the river, for all I care,\" Kate says. \"It's not like she's going to help guard the camp in any way. Which reminds me that I should be preparing to take the first shift. You guys should go get some sleep. Neither of you are scheduled to take any shifts tonight, so you might as well enjoy your rest.\"\r\n\r\nWe decide to take Kate's advice, and we each head towards our tents. Once I get inside, I place my notebook in my backpack and I prepare to go to bed. I still have some stuff that I'd want to read, but I can do that in the morning."
-        condition: b2_ch1_interfere = 0
         choices:
           - position: 1
             text: Continue
             effects:
               - set:
                   current_scene: b2_ch08a_unnoticed
-      - texts:
+      - condition: b2_ch1_interfere = 1
+        texts:
           - source: scene_text
             paragraph: 68
             text: "\"Don't forget that there were also lessathi in the city.\"\r\n\r\n\"The lessathi we fought did not have any stat devices with them,\" Leila writes. \"Even if they were hiding them somewhere, I should have still been able to detect them with the help of my own device. Also, one of those lessathi came to threaten me while I was still in my cell, and he wasn't carrying a stat device back then either.\"\r\n\r\n\"A lessathi threatened you?\" Kate asks.\r\n\r\n\"Yes,\" Leila writes. \"He was trying to convince me to hand over my stat booster to him, but I refused to do it. He later ordered the arena owner to confiscate it from me, but the owner decided to not listen to him, because he wanted me to keep my stat device, in order to make the fight more interesting.\"\r\n\r\n\"I just remembered that there was something else that I wanted to ask about the stat device,\" I say. \"Leila, you told me that you had level three in both strength and speed, but when you were fighting in the arena, you didn't seem to be much stronger or faster than that troll with the high regeneration. Is your device defective by any chance?\"\r\n\r\n\"No,\" Leila says. \"My father once told me that the physical stats from the device enhance the physical abilities that you already have, and that the more fit you are, physically, the more effect those stats will have on you. Given that I've always had a very frail constitution, this is the most I can get out of my stat device, at my current levels.\""
           - source: scene_text_2
             paragraph: 44
             text: "\"Huh...\" I say. \"Well, then, I guess that all those months I've spent doing physical training in preparation for this tournament were not wasted after all.\"\r\n\r\n\"You did physical training?\" Kate says, shocked. \"And this is the result? I bet I could beat you in an arm-wrestling match if I tried hard enough.\"\r\n\r\n\"I said that I only did it for a few months,\" I tell Kate. \"And it's not like that was the only thing that I did during that time. I also needed to do my research. The research that I'm now using to figure out Eiden's weaknesses so we can finally-- hold on a second... Where is Melindra? I could swear that I saw her by the river bank just a minute ago.\"\r\n\r\n\"Who cares about Melindra?\" Kate says.\r\n\r\n\"Well, I didn't see her set up her tent,\" I say. \"Do you think that she's not planning to spend the night at our camp?\"\r\n\r\n\"Melindra can go sleep in the river, for all I care,\" Kate says. \"It's not like she's going to help guard the camp in any way. Which reminds me that I should be preparing to take the first shift. You guys should go get some sleep. Neither of you are scheduled to take any shifts tonight, so you might as well enjoy your rest.\"\r\n\r\nWe decide to take Kate's advice, and we each head towards our tents. Once I get inside, I place my notebook in my backpack and I prepare to go to bed. I still have some stuff that I'd want to read, but I can do that in the morning."
-        condition: b2_ch1_interfere = 1
         choices:
           - position: 1
             text: Continue
@@ -1410,11 +1428,11 @@ scenes:
               storyboard_controls: Jump to frame "Save load game"
   - name: b2_ch08a_credits
     routes:
-      - texts:
+      - condition: second_book_purchased = 0
+        texts:
           - source: scene_text
             paragraph: 79
             text: "The ninth chapter is now available.\r\n\r\nTap the button below to proceed."
-        condition: second_book_purchased = 0
         choices:
           - position: 1
             text: Go to next chapter
@@ -1425,11 +1443,11 @@ scenes:
                   chapter_save: 1
                   checkpoint_rich: 1
                   storyboard_controls: Jump to frame "Save load game"
-      - texts:
+      - condition: second_book_purchased = 1
+        texts:
           - source: scene_text
             paragraph: 80
             text: "The ninth chapter is now available.\r\n\r\nTap the button below to proceed."
-        condition: second_book_purchased = 1
         choices:
           - position: 1
             text: Go to next chapter
