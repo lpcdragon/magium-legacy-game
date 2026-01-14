@@ -284,6 +284,17 @@ scenes:
               current_scene: b3_ch06a_slowpoke
               b3_ch6_slowpoke: 2
   - name: b3_ch06a_slowpoke
+    effects:
+      - set:
+          failed_checks:
+            - '[ Aura concealment check failed - level 3 ]'
+          b3_ch6_concealed: 0
+        condition: bluff < 3
+      - set:
+          successful_checks:
+            - '[ Aura concealment check successful - level 3 ]'
+          b3_ch6_concealed: 1
+        condition: bluff >= 3
     routes:
       - condition: b3_ch6_slowpoke = 0
         texts:
@@ -1098,6 +1109,23 @@ scenes:
                   b3_ch6_plan: 3
                 condition: b3_ch6_sleep = 1
   - name: b3_ch06a_hadrik_plan
+    effects:
+      - set:
+          successful_checks:
+            - '[ Combat technique check successful - level 1 ]'
+        condition: combat_technique >= 1
+      - set:
+          failed_checks:
+            - '[ Combat technique check failed - level 1 ]'
+          successful_checks:
+            - '[ Aura hardening check successful - level 2 ]'
+        condition: combat_technique < 1 AND aura_hardening >= 2
+      - set:
+          failed_checks:
+            - '[ Combat technique check failed - level 1 ]'
+            - '[ Aura hardening check failed - level 2 ]'
+          is_dead: 1
+        condition: combat_technique < 1 AND aura_hardening < 2
     routes:
       - condition: combat_technique >= 1 AND b3_ch6_plan = 0
         texts:
@@ -1159,6 +1187,12 @@ scenes:
         choices:
           - position: 1
             text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch06a_entrance
+                condition: is_dead = 0
+          - position: 1
+            text: Restart game
             effects:
               - set:
                   current_scene: b3_ch06a_entrance
@@ -1235,6 +1269,12 @@ scenes:
         choices:
           - position: 1
             text: Continue
+            effects:
+              - set:
+                  current_scene: b3_ch06a_entrance
+                condition: is_dead = 0
+          - position: 1
+            text: Restart game
             effects:
               - set:
                   current_scene: b3_ch06a_entrance
@@ -1328,17 +1368,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
   - name: b3_ch06a_rose_asleep
     texts:
       - source: scene_text

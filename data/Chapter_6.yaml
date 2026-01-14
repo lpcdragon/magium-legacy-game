@@ -1,3 +1,14 @@
+chapter_effects:
+  - condition: current_scene = "ch6_eiden_vs_dragon" AND ch6_maximize_mode != 1
+    effects:
+      - set:
+          ac_ch6_immersion: 1
+          ch6_maximize_mode: 1
+      - achievement:
+          id: ac_ch6_immersion
+          title: Full immersion
+      - enable maximize mode
+    trigger: stats-screen-open
 scenes:
   - name: ch6_intro
     texts:
@@ -1882,17 +1893,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: >-
           perception < 4 AND premonition < 4 AND reflexes = 4 AND ch6_improvise
           = 1

@@ -826,6 +826,10 @@ scenes:
               - set:
                   current_scene: b2_ch11c_frenzy
   - name: b2_ch11c_frenzy
+    effects:
+      - set:
+          b2_ch11_added_hearing: 2
+        condition: b2_ch11_added_hearing = 1
     routes:
       - condition: ancient_languages = 4
         texts:
@@ -1324,17 +1328,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
   - name: b2_ch11c_avalanche
     texts:
       - source: scene_text

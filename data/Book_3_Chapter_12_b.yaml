@@ -31,6 +31,21 @@ scenes:
               current_scene: b3_ch12b_necromancers
               b3_ch12_scout: 0
   - name: b3_ch12b_scout
+    effects:
+      - set:
+          failed_checks:
+            - '[ Observation check failed - level 3 ]'
+        condition: perception < 2
+      - set:
+          failed_checks:
+            - '[ Observation check failed - level 3 ]'
+          b3_ch12_scout: 2
+        condition: perception = 2
+      - set:
+          successful_checks:
+            - '[ Observation check successful - level 3 ]'
+          b3_ch12_scout: 3
+        condition: perception >= 3
     routes:
       - condition: b3_ch11_red = 0
         texts:
@@ -1156,17 +1171,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: b3_ch12_hadrik = 0 AND b3_ch11_transferred = 0 AND b3_ch10_eiden <> 0
         texts:
           - source: scene_text
@@ -1331,17 +1349,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: bluff < 4 AND b3_ch12_hadrik = 1
         texts:
           - source: scene_text
@@ -1362,17 +1383,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: bluff = 4 AND b3_ch12_hadrik = 0
         texts:
           - source: scene_text
@@ -1393,17 +1417,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: bluff = 4 AND b3_ch12_hadrik = 1
         texts:
           - source: scene_text
@@ -1519,17 +1546,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: b2_ch9_animals = 2
         texts:
           - source: scene_text
@@ -1568,17 +1598,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: b3_ch12_hadrik = 0 AND b3_ch12_scout <> 3
         texts:
           - source: scene_text
@@ -1597,17 +1630,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: b3_ch12_hadrik = 1 AND b3_ch12_scout = 3
         texts:
           - source: scene_text
@@ -1626,17 +1662,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: b3_ch12_hadrik = 0 AND b3_ch12_scout = 3
         texts:
           - source: scene_text
@@ -1699,17 +1738,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: aura_hardening = 4 AND b3_ch11_red = 0
         texts:
           - source: scene_text

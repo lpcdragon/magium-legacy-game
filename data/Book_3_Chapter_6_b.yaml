@@ -359,17 +359,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: perception >= 3 AND reflexes < 3
         texts:
           - source: scene_text
@@ -389,17 +392,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: perception >= 3 AND reflexes >= 3
         texts:
           - source: scene_text
@@ -564,17 +570,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: b3_ch6_selected = 3 AND magical_sense >= 2 AND bluff < 3
         texts:
           - source: scene_text
@@ -604,17 +613,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: b3_ch6_selected <> 3 AND magical_sense >= 2 AND bluff < 3
         texts:
           - source: scene_text
@@ -650,17 +662,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: >-
           b3_ch6_selected = 3 AND magical_sense >= 2 AND bluff >= 3 AND
           b3_ch6_concealed = 0
@@ -687,12 +702,14 @@ scenes:
               - set:
                   current_scene: b3_ch06b_visibility
                   b3_ch6_earth: 0
+                condition: is_dead = 0
           - position: 2
             text: Keep going after the earth elementalist.
             effects:
               - set:
                   current_scene: b3_ch06b_mustache
                   b3_ch6_earth: 1
+                condition: is_dead = 0
       - condition: >-
           b3_ch6_selected <> 3 AND magical_sense >= 2 AND bluff >= 3 AND
           b3_ch6_concealed = 0
@@ -725,12 +742,14 @@ scenes:
               - set:
                   current_scene: b3_ch06b_visibility
                   b3_ch6_earth: 0
+                condition: is_dead = 0
           - position: 2
             text: Keep going after the earth elementalist.
             effects:
               - set:
                   current_scene: b3_ch06b_mustache
                   b3_ch6_earth: 1
+                condition: is_dead = 0
       - condition: >-
           b3_ch6_selected = 3 AND magical_sense >= 2 AND bluff >= 3 AND
           b3_ch6_concealed = 1
@@ -757,12 +776,14 @@ scenes:
               - set:
                   current_scene: b3_ch06b_visibility
                   b3_ch6_earth: 0
+                condition: is_dead = 0
           - position: 2
             text: Keep going after the earth elementalist.
             effects:
               - set:
                   current_scene: b3_ch06b_mustache
                   b3_ch6_earth: 1
+                condition: is_dead = 0
       - condition: >-
           b3_ch6_selected <> 3 AND magical_sense >= 2 AND bluff >= 3 AND
           b3_ch6_concealed = 1
@@ -795,12 +816,14 @@ scenes:
               - set:
                   current_scene: b3_ch06b_visibility
                   b3_ch6_earth: 0
+                condition: is_dead = 0
           - position: 2
             text: Keep going after the earth elementalist.
             effects:
               - set:
                   current_scene: b3_ch06b_mustache
                   b3_ch6_earth: 1
+                condition: is_dead = 0
   - name: b3_ch06b_visibility
     routes:
       - condition: b3_ch6_tie = 1
@@ -847,17 +870,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: b2_ch5_scimitar <> 0 AND strength >= 3
         texts:
           - source: scene_text
@@ -881,11 +907,13 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch06b_retaliate
+                condition: is_dead = 0
           - position: 2
             text: Try to convince him to make the boulders disappear.
             effects:
               - set:
                   current_scene: b3_ch06b_convince
+                condition: is_dead = 0
       - condition: b2_ch5_scimitar = 0 AND strength < 4
         texts:
           - source: scene_text
@@ -906,17 +934,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: b2_ch5_scimitar = 0 AND strength >= 4
         texts:
           - source: scene_text
@@ -940,11 +971,13 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch06b_retaliate
+                condition: is_dead = 0
           - position: 2
             text: Try to convince him to make the boulders disappear.
             effects:
               - set:
                   current_scene: b3_ch06b_convince
+                condition: is_dead = 0
   - name: b3_ch06b_convince
     texts:
       - source: scene_text
@@ -1289,17 +1322,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: >-
           b3_ch6_preparing = 0 AND b3_ch5_fight < 4 AND b3_ch6_focus = 0 AND
           aura_hardening < 3
@@ -1330,17 +1366,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: >-
           b3_ch6_preparing = 0 AND b3_ch5_fight < 4 AND b3_ch6_focus = 2 AND
           aura_hardening < 3
@@ -1371,17 +1410,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: >-
           b3_ch6_preparing = 0 AND b3_ch5_fight < 4 AND b3_ch6_focus = 1 AND
           aura_hardening >= 3
@@ -1409,12 +1451,14 @@ scenes:
               - set:
                   current_scene: b3_ch06b_dome
                   b3_ch6_defense: 1
+                condition: is_dead = 0
           - position: 2
             text: Alright. Let's keep the ice dome as a last alternative, then.
             effects:
               - set:
                   current_scene: b3_ch06b_dome
                   b3_ch6_defense: 0
+                condition: is_dead = 0
       - condition: >-
           b3_ch6_preparing = 0 AND b3_ch5_fight < 4 AND b3_ch6_focus = 0 AND
           aura_hardening >= 3
@@ -1446,12 +1490,14 @@ scenes:
               - set:
                   current_scene: b3_ch06b_dome
                   b3_ch6_defense: 1
+                condition: is_dead = 0
           - position: 2
             text: Alright. Let's keep the ice dome as a last alternative, then.
             effects:
               - set:
                   current_scene: b3_ch06b_dome
                   b3_ch6_defense: 0
+                condition: is_dead = 0
       - condition: >-
           b3_ch6_preparing = 0 AND b3_ch5_fight < 4 AND b3_ch6_focus = 2 AND
           aura_hardening >= 3
@@ -1483,12 +1529,14 @@ scenes:
               - set:
                   current_scene: b3_ch06b_dome
                   b3_ch6_defense: 1
+                condition: is_dead = 0
           - position: 2
             text: Alright. Let's keep the ice dome as a last alternative, then.
             effects:
               - set:
                   current_scene: b3_ch06b_dome
                   b3_ch6_defense: 0
+                condition: is_dead = 0
   - name: b3_ch06b_dome
     routes:
       - condition: b3_ch6_defense = 1 AND b3_ch6_air = 0
@@ -1578,17 +1626,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: toughness >= 4
         texts:
           - source: scene_text
@@ -1611,6 +1662,7 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch06b_conditions
+                condition: is_dead = 0
   - name: b3_ch06b_underneath
     texts:
       - source: scene_text
@@ -1789,6 +1841,16 @@ scenes:
                   current_scene: b3_ch06b_surrounded
                   b3_ch6_uninjured: 1
   - name: b3_ch06b_surrounded
+    effects:
+      - set:
+          failed_checks:
+            - '[ Combat technique check failed - level 2 ]'
+          b3_ch6_wounded: 1
+        condition: b3_ch6_air = 0 AND b3_ch6_tie = 0 AND combat_technique < 2
+      - set:
+          successful_checks:
+            - '[ Combat technique check successful - level 2 ]'
+        condition: b3_ch6_air = 0 AND b3_ch6_tie = 0 AND combat_technique >= 2
     routes:
       - condition: b3_ch6_air = 0 AND b3_ch6_tie = 0 AND b3_ch6_uninjured = 0
         texts:
@@ -2098,17 +2160,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: b3_ch6_manipulators = 2 AND b3_ch6_uninjured = 0
         texts:
           - source: scene_text

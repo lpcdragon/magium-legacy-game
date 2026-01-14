@@ -206,6 +206,7 @@ scenes:
               - set:
                   current_scene: b3_ch09b_melding
                   ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
+                condition: is_dead = 1
       - condition: b3_ch9_backup = 0 AND b3_ch9_assassinate = 1
         texts:
           - source: scene_text
@@ -227,6 +228,7 @@ scenes:
               - set:
                   current_scene: b3_ch09b_melding
                   ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
+                condition: is_dead = 1
       - condition: b3_ch9_backup = 1
         texts:
           - source: scene_text
@@ -518,6 +520,7 @@ scenes:
               - set:
                   current_scene: b3_ch09b_melding
                   ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
+                condition: is_dead = 1
       - condition: aura_hardening < 4 AND b3_ch9_assassinate = 1
         texts:
           - source: scene_text
@@ -541,6 +544,7 @@ scenes:
               - set:
                   current_scene: b3_ch09b_melding
                   ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
+                condition: is_dead = 1
       - condition: aura_hardening >= 4
         texts:
           - source: scene_text
@@ -563,6 +567,7 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch09b_illusory
+                condition: is_dead = 0
   - name: b3_ch09b_floating
     routes:
       - condition: b3_ch9_backup = 1
@@ -580,6 +585,7 @@ scenes:
               - set:
                   current_scene: b3_ch09b_kill
                   b3_ch9_enemies: 1
+                condition: is_dead = 0
           - position: 2
             text: Spare their lives.
             effects:
@@ -618,6 +624,7 @@ scenes:
               - set:
                   current_scene: b3_ch09b_melding
                   ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
+                condition: is_dead = 1
       - condition: b3_ch9_backup = 0 AND toughness < 4 AND b3_ch9_assassinate = 1
         texts:
           - source: scene_text
@@ -650,6 +657,7 @@ scenes:
               - set:
                   current_scene: b3_ch09b_melding
                   ac_b3_ch9_consolation: ac_b3_ch9_consolation + 1
+                condition: is_dead = 1
       - condition: b3_ch9_backup = 0 AND toughness >= 4
         texts:
           - source: scene_text
@@ -687,6 +695,7 @@ scenes:
               - set:
                   current_scene: b3_ch09b_kill
                   b3_ch9_enemies: 1
+                condition: is_dead = 0
           - position: 2
             text: Spare their lives.
             effects:

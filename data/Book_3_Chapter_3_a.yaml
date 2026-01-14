@@ -156,20 +156,6 @@ scenes:
               current_scene: b3_ch03a_hag
               b3_ch3_monsters: 0
             condition: b3_ch2_goblins != 1
-      - position: 2
-        text: Listen, there was no way we could have known those were good goblins!
-        effects:
-          - set:
-              current_scene: b3_ch03a_goblins
-              b3_ch3_monsters: 1
-            condition: b3_ch2_goblins = 1
-      - position: 3
-        text: All we can really do now is try and make it up to him in some way.
-        effects:
-          - set:
-              current_scene: b3_ch03a_goblins
-              b3_ch3_monsters: 2
-            condition: b3_ch2_goblins = 1
   - name: b3_ch03a_roam
     texts:
       - source: scene_text
@@ -198,20 +184,6 @@ scenes:
               current_scene: b3_ch03a_hag
               b3_ch3_monsters: 0
             condition: b3_ch2_goblins != 1
-      - position: 2
-        text: Listen, there was no way we could have known those were good goblins!
-        effects:
-          - set:
-              current_scene: b3_ch03a_goblins
-              b3_ch3_monsters: 1
-            condition: b3_ch2_goblins = 1
-      - position: 3
-        text: All we can really do now is try and make it up to him in some way.
-        effects:
-          - set:
-              current_scene: b3_ch03a_goblins
-              b3_ch3_monsters: 2
-            condition: b3_ch2_goblins = 1
   - name: b3_ch03a_guided
     texts:
       - source: scene_text
@@ -240,20 +212,6 @@ scenes:
               current_scene: b3_ch03a_hag
               b3_ch3_monsters: 0
             condition: b3_ch2_goblins != 1
-      - position: 2
-        text: Listen, there was no way we could have known those were good goblins!
-        effects:
-          - set:
-              current_scene: b3_ch03a_goblins
-              b3_ch3_monsters: 1
-            condition: b3_ch2_goblins = 1
-      - position: 3
-        text: All we can really do now is try and make it up to him in some way.
-        effects:
-          - set:
-              current_scene: b3_ch03a_goblins
-              b3_ch3_monsters: 2
-            condition: b3_ch2_goblins = 1
   - name: b3_ch03a_goblins
     routes:
       - condition: b3_ch3_monsters = 0
@@ -466,6 +424,21 @@ scenes:
         achievement:
           id: ac_b3_ch3_ominous
           title: Ominous foreshadowing
+        condition: premonition = 4 AND b3_ch1_unlock <> 2
+      - set:
+          failed_checks:
+            - '[ Stat device locked - check failed ]'
+          b3_ch3_chains: 0
+        condition: b3_ch1_unlock = 2
+      - set:
+          failed_checks:
+            - '[ Premonition check failed - level 4 ]'
+          b3_ch3_chains: 0
+        condition: premonition < 4 AND b3_ch1_unlock <> 2
+      - set:
+          successful_checks:
+            - '[ Premonition check successful - level 4 ]'
+          b3_ch3_chains: 1
         condition: premonition = 4 AND b3_ch1_unlock <> 2
     routes:
       - condition: b3_ch3_plans = 0

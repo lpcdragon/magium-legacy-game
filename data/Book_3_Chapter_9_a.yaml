@@ -727,17 +727,20 @@ scenes:
           - set:
               current_scene: ch1_intro1
               storyboard_controls: Jump to frame "Chapter 1"
+            condition: is_dead = 1
       - position: 2
         text: Load from last checkpoint
         effects:
           - set:
               chapter_load: 1
               storyboard_controls: Jump to frame "Save load game"
+            condition: is_dead = 1
       - position: 3
         text: Load game
         effects:
           - set:
               storyboard_controls: Jump to frame "Save load game"
+            condition: is_dead = 1
   - name: b3_ch09a_calm
     texts:
       - source: scene_text

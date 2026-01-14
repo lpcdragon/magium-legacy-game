@@ -961,17 +961,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: ch3_daren_worry = 1
         texts:
           - source: scene_text
@@ -1470,17 +1473,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
   - name: ch3_second_kill
     routes:
       - condition: reflexes >= 1 AND combat_technique >= 1
@@ -1627,17 +1633,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: reflexes >= 1 AND combat_technique = 0 AND agility = 0
         texts:
           - source: scene_text
@@ -1661,17 +1670,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: >-
           reflexes = 0 AND toughness = 3 AND combat_technique = 0 AND agility =
           0
@@ -1698,17 +1710,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
   - name: ch3_second_feeling
     texts:
       - source: scene_text
@@ -2336,17 +2351,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: agility = 3
         texts:
           - source: scene_text
@@ -2363,6 +2381,7 @@ scenes:
             effects:
               - set:
                   current_scene: ch3_speed2
+                condition: is_dead = 0
   - name: ch3_snipe_first
     routes:
       - condition: perception < 3 AND ch3_lift_tree = 0
@@ -2381,11 +2400,13 @@ scenes:
             effects:
               - set:
                   current_scene: ch3_speed
+                condition: is_dead = 1
           - position: 2
             text: Try to aim the crossbow while moving
             effects:
               - set:
                   current_scene: ch3_move_second
+                condition: is_dead = 1
       - condition: perception < 3 AND ch3_lift_tree = 1
         texts:
           - source: scene_text
@@ -2402,16 +2423,19 @@ scenes:
             effects:
               - set:
                   current_scene: ch3_speed
+                condition: is_dead = 1
           - position: 2
             text: Try to aim the crossbow while moving
             effects:
               - set:
                   current_scene: ch3_move_second
+                condition: is_dead = 1
           - position: 3
             text: Use fallen trees for throwing and clobbering
             effects:
               - set:
                   current_scene: ch3_clobber
+                condition: is_dead = 1
       - condition: perception = 3
         texts:
           - source: scene_text
@@ -2446,11 +2470,13 @@ scenes:
             effects:
               - set:
                   current_scene: ch3_speed
+                condition: is_dead = 1
           - position: 2
             text: Snipe them from a distance
             effects:
               - set:
                   current_scene: ch3_snipe_second
+                condition: is_dead = 1
       - condition: combat_technique < 3 AND ch3_lift_tree = 1
         texts:
           - source: scene_text
@@ -2467,16 +2493,19 @@ scenes:
             effects:
               - set:
                   current_scene: ch3_speed
+                condition: is_dead = 1
           - position: 2
             text: Snipe them from a distance
             effects:
               - set:
                   current_scene: ch3_snipe_second
+                condition: is_dead = 1
           - position: 3
             text: Use fallen trees for throwing and clobbering
             effects:
               - set:
                   current_scene: ch3_clobber
+                condition: is_dead = 1
       - condition: combat_technique = 3
         texts:
           - source: scene_text
@@ -2512,17 +2541,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: combat_technique = 3
         texts:
           - source: scene_text
@@ -2539,6 +2571,7 @@ scenes:
             effects:
               - set:
                   current_scene: ch3_move2
+                condition: is_dead = 0
   - name: ch3_snipe_second
     routes:
       - condition: perception < 3
@@ -2558,17 +2591,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: perception = 3
         texts:
           - source: scene_text
@@ -2585,6 +2621,7 @@ scenes:
             effects:
               - set:
                   current_scene: ch3_snipe2
+                condition: is_dead = 0
   - name: ch3_speed2
     routes:
       - condition: ch3_prioritize = 1
@@ -2605,17 +2642,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: ch3_prioritize = 2
         texts:
           - source: scene_text

@@ -491,17 +491,36 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 1
+            text: Focus on Gontrok's aura.
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+            condition: b3_ch7_bet = 0 AND is_dead = 0
+          - position: 2
+            text: Ignore Gontrok's aura and focus on the fight.
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+            condition: b3_ch7_bet = 0 AND is_dead = 0
       - condition: reflexes >= 4 AND agility < 4
         texts:
           - source: scene_text
@@ -533,17 +552,36 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 1
+            text: Focus on Gontrok's aura.
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+            condition: b3_ch7_bet = 0 AND is_dead = 0
+          - position: 2
+            text: Ignore Gontrok's aura and focus on the fight.
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+            condition: b3_ch7_bet = 0 AND is_dead = 0
       - condition: reflexes >= 4 AND agility >= 4
         texts:
           - source: scene_text
@@ -574,12 +612,14 @@ scenes:
               - set:
                   current_scene: b3_ch07a_studied
                   b3_ch7_bet: 4
+                condition: is_dead = 0
           - position: 2
             text: Ignore Gontrok's aura and focus on the fight.
             effects:
               - set:
                   current_scene: b3_ch07a_ignore
                   b3_ch7_bet: 5
+                condition: is_dead = 0
   - name: b3_ch07a_studied
     routes:
       - condition: magical_sense < 4
@@ -603,17 +643,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: magical_sense >= 4
         texts:
           - source: scene_text
@@ -634,6 +677,7 @@ scenes:
               - set:
                   current_scene: b3_ch07a_perform
                   b3_ch7_bet: 6
+                condition: is_dead = 0
           - position: 2
             text: >-
               Tell Leila to perform the technique on Gontrok while I keep him
@@ -642,6 +686,7 @@ scenes:
               - set:
                   current_scene: b3_ch07a_busy
                   b3_ch7_bet: 7
+                condition: is_dead = 0
   - name: b3_ch07a_perform
     texts:
       - source: scene_text
@@ -683,17 +728,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: combat_technique >= 2
         texts:
           - source: scene_text
@@ -722,6 +770,7 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch07a_perform2
+                condition: is_dead = 0
   - name: b3_ch07a_perform2
     routes:
       - condition: b3_ch7_massage = 2
@@ -770,17 +819,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: b3_ch7_massage <> 2 AND combat_technique >= 4
         texts:
           - source: scene_text
@@ -803,7 +855,7 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch07a_loyrang
-                  ac_b3_ch7_honorable: 1
+                condition: is_dead = 0
                 achievement: *ref_0
   - name: b3_ch07a_busy
     texts:
@@ -841,17 +893,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: combat_technique >= 2
         texts:
           - source: scene_text
@@ -880,6 +935,7 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch07a_ignore2
+                condition: is_dead = 0
   - name: b3_ch07a_ignore2
     routes:
       - condition: combat_technique < 4
@@ -899,17 +955,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: combat_technique >= 4
         texts:
           - source: scene_text
@@ -929,6 +988,7 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch07a_loyrang
+                condition: is_dead = 0
   - name: b3_ch07a_weapons
     texts:
       - source: scene_text
@@ -1611,17 +1671,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: b3_ch7_tyrant = 1 AND aura_hardening >= 3
         texts:
           - source: scene_text
@@ -1645,12 +1708,14 @@ scenes:
               - set:
                   current_scene: b3_ch07a_assassinate
                   b3_ch7_assassinate: 1
+                condition: is_dead = 0
           - position: 2
             text: Tell the Overseer that he should kill the king himself.
             effects:
               - set:
                   current_scene: b3_ch07a_assassinate
                   b3_ch7_assassinate: 0
+                condition: is_dead = 0
       - condition: b3_ch7_tyrant = 0
         texts:
           - source: scene_text
@@ -1672,12 +1737,14 @@ scenes:
               - set:
                   current_scene: b3_ch07a_assassinate
                   b3_ch7_assassinate: 1
+                condition: is_dead = 0
           - position: 2
             text: Tell the Overseer that he should kill the king himself.
             effects:
               - set:
                   current_scene: b3_ch07a_assassinate
                   b3_ch7_assassinate: 0
+                condition: is_dead = 0
   - name: b3_ch07a_assassinate
     routes:
       - condition: b3_ch7_assassinate = 1 AND b3_ch7_door = 0 AND perception < 2
@@ -1721,17 +1788,28 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 1
+            text: Continue
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+            condition: is_dead = 0 AND b3_ch4_billy = 7
       - condition: b3_ch7_assassinate = 1 AND b3_ch7_door = 0 AND perception >= 2
         texts:
           - source: scene_text
@@ -1771,6 +1849,7 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch07a_golems
+                condition: is_dead = 0
       - condition: b3_ch7_assassinate = 1 AND b3_ch7_door = 1
         texts:
           - source: scene_text
@@ -1808,6 +1887,7 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch07a_golems
+                condition: is_dead = 0
       - condition: b3_ch7_assassinate = 0 AND b3_ch7_door = 0
         texts:
           - source: scene_text
@@ -1845,6 +1925,7 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch07a_golems
+                condition: is_dead = 0
       - condition: b3_ch7_assassinate = 0 AND b3_ch7_door = 1
         texts:
           - source: scene_text
@@ -1882,6 +1963,7 @@ scenes:
             effects:
               - set:
                   current_scene: b3_ch07a_golems
+                condition: is_dead = 0
   - name: b3_ch07a_golems
     texts:
       - source: scene_text

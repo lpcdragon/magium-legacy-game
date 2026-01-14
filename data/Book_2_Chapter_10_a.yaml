@@ -303,6 +303,23 @@ scenes:
               current_scene: b2_ch10a_dagger
             condition: b2_ch10_crossbow = 0
   - name: b2_ch10a_crossbow
+    effects:
+      - set:
+          successful_checks:
+            - '[ Combat technique check successful - level 2 ]'
+        condition: combat_technique >= 2
+      - set:
+          successful_checks:
+            - '[ Combat technique check successful - level 1 ]'
+        condition: combat_technique = 1 AND b2_ch6_crossbow = 1
+      - set:
+          successful_checks:
+            - '[ Combat technique check successful - level 1 ]'
+        condition: combat_technique = 1 AND b2_ch6_crossbow = 0
+      - set:
+          failed_checks:
+            - '[ Combat technique check failed - level 1 ]'
+        condition: combat_technique = 0
     routes:
       - condition: b2_ch9_drink = 1 AND b2_ch10_toast = 1
         texts:
@@ -398,6 +415,34 @@ scenes:
                   current_scene: b2_ch10a_mammoth
                 condition: is_dead = 0
   - name: b2_ch10a_dagger
+    effects:
+      - set:
+          is_dead: 1
+          failed_checks:
+            - '[ Reflexes check failed - level 2 ]'
+        condition: b2_ch9_drink = 1 AND b2_ch10_toast = 1 AND reflexes < 2
+      - set:
+          is_dead: 1
+          failed_checks:
+            - '[ Reflexes check failed - level 1 ]'
+        condition: b2_ch9_drink = 0 AND reflexes < 1
+      - set:
+          is_dead: 1
+          failed_checks:
+            - '[ Reflexes check failed - level 1 ]'
+        condition: b2_ch10_toast = 0 AND reflexes < 1
+      - set:
+          successful_checks:
+            - '[ Reflexes check successful - level 2 ]'
+        condition: reflexes >= 2 AND b2_ch9_drink = 1 AND b2_ch10_toast = 1
+      - set:
+          successful_checks:
+            - '[ Reflexes check successful - level 1 ]'
+        condition: reflexes >= 1 AND b2_ch9_drink = 0
+      - set:
+          successful_checks:
+            - '[ Reflexes check successful - level 1 ]'
+        condition: reflexes >= 1 AND b2_ch10_toast = 0
     routes:
       - condition: b2_ch9_drink = 1 AND b2_ch10_toast = 1 AND b2_ch5_scimitar = 0
         texts:
@@ -427,6 +472,29 @@ scenes:
               - set:
                   current_scene: b2_ch10a_mammoth
                 condition: is_dead = 0
+          - position: 1
+            text: Restart game
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+            condition: reflexes < 2
+          - position: 2
+            text: Load from last checkpoint
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+            condition: reflexes < 2
+          - position: 3
+            text: Load game
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+            condition: reflexes < 2
       - condition: b2_ch9_drink = 1 AND b2_ch10_toast = 1 AND b2_ch5_scimitar <> 0
         texts:
           - source: scene_text
@@ -455,6 +523,29 @@ scenes:
               - set:
                   current_scene: b2_ch10a_mammoth
                 condition: is_dead = 0
+          - position: 1
+            text: Restart game
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+            condition: reflexes < 2
+          - position: 2
+            text: Load from last checkpoint
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+            condition: reflexes < 2
+          - position: 3
+            text: Load game
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+            condition: reflexes < 2
       - condition: b2_ch9_drink = 0 AND b2_ch5_scimitar = 0
         texts:
           - source: scene_text
@@ -493,6 +584,29 @@ scenes:
               - set:
                   current_scene: b2_ch10a_mammoth
                 condition: is_dead = 0
+          - position: 1
+            text: Restart game
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+            condition: reflexes < 1
+          - position: 2
+            text: Load from last checkpoint
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+            condition: reflexes < 1
+          - position: 3
+            text: Load game
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+            condition: reflexes < 1
       - condition: b2_ch9_drink = 0 AND b2_ch5_scimitar <> 0
         texts:
           - source: scene_text
@@ -531,6 +645,29 @@ scenes:
               - set:
                   current_scene: b2_ch10a_mammoth
                 condition: is_dead = 0
+          - position: 1
+            text: Restart game
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+            condition: reflexes < 1
+          - position: 2
+            text: Load from last checkpoint
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+            condition: reflexes < 1
+          - position: 3
+            text: Load game
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+            condition: reflexes < 1
       - condition: b2_ch10_toast = 0 AND b2_ch5_scimitar = 0
         texts:
           - source: scene_text
@@ -569,6 +706,29 @@ scenes:
               - set:
                   current_scene: b2_ch10a_mammoth
                 condition: is_dead = 0
+          - position: 1
+            text: Restart game
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+            condition: reflexes < 1
+          - position: 2
+            text: Load from last checkpoint
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+            condition: reflexes < 1
+          - position: 3
+            text: Load game
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+            condition: reflexes < 1
       - condition: b2_ch10_toast = 0 AND b2_ch5_scimitar <> 0
         texts:
           - source: scene_text
@@ -607,6 +767,29 @@ scenes:
               - set:
                   current_scene: b2_ch10a_mammoth
                 condition: is_dead = 0
+          - position: 1
+            text: Restart game
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+            condition: reflexes < 1
+          - position: 2
+            text: Load from last checkpoint
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+            condition: reflexes < 1
+          - position: 3
+            text: Load game
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+            condition: reflexes < 1
   - name: b2_ch10a_mammoth
     texts:
       - source: scene_text
@@ -844,17 +1027,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: combat_technique >= 3
         texts:
           - source: scene_text_2
@@ -899,17 +1085,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: strength >= 1
         texts:
           - source: scene_text_2
@@ -1081,17 +1270,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: reflexes = 4
         texts:
           - source: scene_text
@@ -1140,17 +1332,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: strength < 4 AND b2_ch10_weakpoint = 0 AND b2_ch5_scimitar <> 0
         texts:
           - source: scene_text
@@ -1171,17 +1366,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: strength = 4 AND b2_ch10_weakpoint = 0 AND b2_ch5_scimitar = 0
         texts:
           - source: scene_text
@@ -1240,17 +1438,20 @@ scenes:
               - set:
                   current_scene: ch1_intro1
                   storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
           - position: 2
             text: Load from last checkpoint
             effects:
               - set:
                   chapter_load: 1
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
           - position: 3
             text: Load game
             effects:
               - set:
                   storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
       - condition: reflexes >= 2 AND b2_ch10_weakpoint = 1 AND b2_ch5_scimitar = 0
         texts:
           - source: scene_text
