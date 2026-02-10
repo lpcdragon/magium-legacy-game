@@ -1,3 +1,8 @@
+chapter_effects:
+  - condition: current_scene = "ch8_languages_failed" AND warning.text is empty
+    effects:
+      - warning:
+          text: Ancient languages stat not high enough
 scenes:
   - name: ch8_intro
     texts:
@@ -207,6 +212,8 @@ scenes:
       - position: 3
         text: Decipher the glyphs (requires level 3 in ancient languages)
         effects:
+          - condition: ancient_languages < 3
+            show_warning: {}
           - set:
               current_scene: ch8_languages_success
             condition: ancient_languages >= 3

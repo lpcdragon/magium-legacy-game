@@ -274,7 +274,7 @@ scenes:
       - source: scene_text_2
         paragraph: 10
         text: "\"Desmond, I wanted to tell you that your brother is no longer in any danger of dying from the disease,\" Daren says. \"It will still take him a while to fully recover, because his condition was very severe, but if all goes well, you should be able to meet him again in a week or two.\"\r\n\r\n\"Are you serious?...\" Desmond asks Daren, looking as if he's still struggling to make sense of what he just heard. \"No, it can't be! This has to be a mistake! My brother was way beyond saving at this point! How can you be so sure that it was really him and not somebody else?\"\r\n\r\n\"Because I was told by two separate nurses that he is the brother of the man named Desmond who is guarding the door,\" Daren says. \"You're not going to tell me that there are two separate Desmonds guarding this same door, are you?\"\r\n\r\n\"No... it's just that I... I don't know what to say...\" Desmond says, looking as if he's trying to not let his joy overwhelm him, on the off-chance that Daren is being too optimistic. \"Thank you! I never thought you'd actually go through with it... I was so sure that you were just a hopeless dreamer like the rest of them! Not in my wildest dreams could I have imagined-- wait, what about the other people in the quarantine zone? How many of them did you manage to save?\""
-        condition: ch11_saved_rose = 1 AND b3_ch6_secret >= 1
+        condition: b3_ch6_secret >= 1 AND ch11_saved_rose = 1
       - source: scene_text_2
         paragraph: 10
         text: "\"Desmond, I wanted to tell you that your brother is no longer in any danger of dying from the disease,\" Daren says. \"It will still take him a while to fully recover, because his condition was very severe, but if all goes well, you should be able to meet him again in a week or two.\"\r\n\r\n\"Are you serious?...\" Desmond asks Daren, looking as if he's still struggling to make sense of what he just heard. \"No, it can't be! This has to be a mistake! My brother was way beyond saving at this point! How can you be so sure that it was really him and not somebody else?\"\r\n\r\n\"Because I was told by two separate nurses that he is the brother of the man named Desmond who is guarding the door,\" Daren says. \"You're not going to tell me that there are two separate Desmonds guarding this same door, are you?\"\r\n\r\n\"No... it's just that I... I don't know what to say...\" Desmond says, looking as if he's trying to not let his joy overwhelm him, on the off-chance that Daren is being too optimistic. \"Thank you! I never thought you'd actually go through with it... I was so sure that you were just a hopeless dreamer like the rest of them! Not in my wildest dreams could I have imagined-- wait, what about the other people in the quarantine zone? How many of them did you manage to save?\""
@@ -293,7 +293,7 @@ scenes:
       - source: scene_3
         paragraph: 9
         text: "\"The majority of the patients are now in a stable condition,\" Daren says. \"There are still a few of them who haven't been fully healed yet because they had been very severely affected by the disease, but the nurses are doing all they can to stabilize them as we speak. Meanwhile, I'm going to meet some of your white mages so I can teach them what spells and what medicine they need to use in order to heal the people that get sick after I'm no longer here.\"\r\n\r\n\"Well, in that case I won't retain you any further,\" Desmond says. \"Go do what you have to do. And may the gods bless you, healer... We are all in your debt.\"\r\n\r\nDaren nods to him and then he begins to walk towards one of the tunnels leading out of the waiting room when he finally sees Leila and me.\r\n\r\n\"Sorry, I don't have time to chat!\" Daren tells us from a distance. \"I need to go look for--\"\r\n\r\n\"Yes, yes, we heard you the first time!\" I tell him in a loud voice. \"Go do your thing! We'll be here when you get back!\"\r\n\r\n\"Okay,\" he says. \"See you later!\"\r\n\r\nNot long after Daren leaves the room, we finally hear Peter's voice coming from Albert's transceiver, but his tone seems very alert, and he is breathing heavily, as if he were running.\r\n\r\n\"Albert!\" Peter says loudly. \"Albert, are you there?!\"\r\n\r\n\"Yes!\" Albert says. \"What happened? Where is doctor Reidzek?\""
-        condition: ch11_saved_rose = 1 AND b3_ch6_secret >= 1
+        condition: b3_ch6_secret >= 1 AND ch11_saved_rose = 1
       - source: scene_3
         paragraph: 9
         text: "\"The majority of the patients are now in a stable condition,\" Daren says. \"There are still a few of them who haven't been fully healed yet because they had been very severely affected by the disease, but the nurses are doing all they can to stabilize them as we speak. Meanwhile, I'm going to meet some of your white mages so I can teach them what spells and what medicine they need to use in order to heal the people that get sick after I'm no longer here.\"\r\n\r\n\"Well, in that case I won't retain you any further,\" Desmond says. \"Go do what you have to do. And may the gods bless you, healer... We are all in your debt.\"\r\n\r\nDaren nods to him and then he begins to walk towards one of the tunnels leading out of the waiting room when he finally sees Leila and me.\r\n\r\n\"Sorry, I don't have time to chat!\" Daren tells us from a distance. \"I need to go look for--\"\r\n\r\n\"Yes, yes, we heard you the first time!\" I tell him in a loud voice. \"Go do your thing! We'll be here when you get back!\"\r\n\r\n\"Okay,\" he says. \"See you later!\"\r\n\r\nNot long after Daren leaves the room, we finally hear Peter's voice coming from Albert's transceiver, but his tone seems very alert, and he is breathing heavily, as if he were running.\r\n\r\n\"Albert!\" Peter says loudly. \"Albert, are you there?!\"\r\n\r\n\"Yes!\" Albert says. \"What happened? Where is doctor Reidzek?\""
@@ -316,7 +316,7 @@ scenes:
         achievement:
           id: ac_b3_ch6_quarantine
           title: Quarantine ender
-        condition: ch11_saved_rose = 1 AND b3_ch6_secret >= 1
+        condition: b3_ch6_secret >= 1 AND ch11_saved_rose = 1
       - set:
           ac_b3_ch6_quarantine: 1
         achievement:
@@ -445,7 +445,12 @@ scenes:
               - set:
                   current_scene: b3_ch06c_credits
   - name: b3_ch06c_credits
-    texts: []
+    texts:
+      - source: scene_text
+        paragraph: 18
+        text: >-
+          Chapter 7 of book 3 is now available. Press on the button below to
+          proceed.
     choices:
       - position: 1
         text: Proceed to next chapter

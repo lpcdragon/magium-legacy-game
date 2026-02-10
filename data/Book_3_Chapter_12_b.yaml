@@ -5,6 +5,10 @@ chapter_effects:
   - condition: b3_ch3_stats_unavailable = 0
     effects:
       - enable stats
+  - condition: current_scene = "b3_ch12b_unleashes2" AND warning.text is empty
+    effects:
+      - warning:
+          text: Your stats are not high enough.
 scenes:
   - name: b3_ch12b_distracting
     texts:
@@ -867,6 +871,16 @@ scenes:
           Go all out (Requires max Strength, Speed, Reflexes, Toughness, Aura
           hardening)
         effects:
+          - condition: strength_aux < 4
+            show_warning: {}
+          - condition: agility_aux < 4
+            show_warning: {}
+          - condition: toughness_aux < 4
+            show_warning: {}
+          - condition: reflexes_aux < 4
+            show_warning: {}
+          - condition: aura_hardening_aux < 4
+            show_warning: {}
           - set:
               current_scene: b3_ch12b_allout1
               b3_ch12_eiden: 4
@@ -1695,19 +1709,6 @@ scenes:
                   current_scene: b3_ch12b_blinding
                 condition: is_dead = 0
   - name: b3_ch12b_steal
-    texts:
-      - source: scene_text
-        paragraph: 62
-        text: "It's time for me to pull out the ace in my sleeve. Meridith told me that I have a one-time opportunity to steal Eiden's energy with my stat device for a few seconds before he catches on to what I'm doing. Now would be the best time to make use of it.\r\n\r\nI quickly pull out my stat device and press on one of the buttons three times, like Meridith showed me.\r\n\r\n\"You're leveling up your stats now, of all times?\" Eiden says, looking unimpressed. \"You do realize that no matter what you do, it's not going to--\"\r\n\r\nAll of a sudden, Eiden realizes what I'm doing and he casts a very fast fire spell at me."
-      - source: scene_text
-        paragraph: 61
-        text: "It's time for me to pull out the ace in my sleeve. Meridith told me that I have a one-time opportunity to steal Eiden's energy with my stat device for a few seconds before he catches on to what I'm doing. Now would be the best time to make use of it.\r\n\r\n\"Hadrik, stand back!\" I say. \"I've got this!\"\r\n\r\n\"Well, if you say so,\" Hadrik says, as he now flies away to give us some space. \"I hope you know what you're doing.\"\r\n\r\n\"I like your confidence, Barry,\" Eiden says, as he is now approaching me. \"Shall I take it that you finally came up with a plan?\"\r\n\r\n\"Oh yeah!\" I say. \"Watch this!\"\r\n\r\nI then pull out my stat device and press on one of the buttons three times, like Meridith showed me.\r\n\r\n\"You're leveling up your stats now, of all times?\" Eiden says, looking unimpressed. \"You do realize that no matter what you do, it's not going to--\"\r\n\r\nAll of a sudden, Eiden realizes what I'm doing and he casts a very fast fire spell at me."
-      - source: scene_text
-        paragraph: 64
-        text: "It's time for me to pull out the ace in my sleeve. Meridith told me that I have a one-time opportunity to steal Eiden's energy with my stat device for a few seconds before he catches on to what I'm doing. Now would be the best time to make use of it.\r\n\r\nI quickly pull out my stat device and press on one of the buttons three times, like Meridith showed me.\r\n\r\n\"You're leveling up your stats now, of all times?\" Eiden says, looking unimpressed. \"You do realize that no matter what you do, it's not going to--\"\r\n\r\nAll of a sudden, Eiden realizes what I'm doing and he casts a very fast fire spell at me."
-      - source: scene_text
-        paragraph: 63
-        text: "It's time for me to pull out the ace in my sleeve. Meridith told me that I have a one-time opportunity to steal Eiden's energy with my stat device for a few seconds before he catches on to what I'm doing. Now would be the best time to make use of it.\r\n\r\n\"Hadrik, stand back!\" I say. \"I've got this!\"\r\n\r\n\"Well, if you say so,\" Hadrik says, as he now flies away to give us some space. \"I hope you know what you're doing.\"\r\n\r\n\"I like your confidence, Barry,\" Eiden says, as he is now approaching me. \"Shall I take it that you finally came up with a plan?\"\r\n\r\n\"Oh yeah!\" I say. \"Watch this!\"\r\n\r\nI then pull out my stat device and press on one of the buttons three times, like Meridith showed me.\r\n\r\n\"You're leveling up your stats now, of all times?\" Eiden says, looking unimpressed. \"You do realize that no matter what you do, it's not going to--\"\r\n\r\nAll of a sudden, Eiden realizes what I'm doing and he casts a very fast fire spell at me."
     routes:
       - condition: aura_hardening < 4 AND b3_ch11_red = 0
         texts:

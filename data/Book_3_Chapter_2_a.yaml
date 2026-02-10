@@ -1,3 +1,8 @@
+chapter_effects:
+  - condition: current_scene = "b3_ch02a_resort" AND warning.text is empty
+    effects:
+      - warning:
+          text: Hearing stat not high enough.
 scenes:
   - name: b3_ch02a_intro
     texts:
@@ -196,6 +201,20 @@ scenes:
                   combat_technique: ${combat_technique_aux}
                   premonition: ${premonition_aux}
                   available_points: ${available_points_aux}
+                condition: b3_ch1_unlock != 2 AND hearing_aux = 4
+          - position: 3
+            text: >-
+              "I could try to eavesdrop on someone from afar." (Requires Hearing
+              4)
+            effects:
+              - condition: b3_ch1_unlock = 2
+                show_warning:
+                  text: Stat device locked
+              - condition: hearing_aux < 4 AND b3_ch1_unlock != 2
+                show_warning: {}
+              - set:
+                  current_scene: b3_ch02a_eavesdrop
+                  b3_ch2_infiltration: 2
                 condition: hearing_aux = 4 AND b3_ch1_unlock != 2
       - condition: b3_ch2_pass2 = 1
         texts:
@@ -254,6 +273,20 @@ scenes:
                   combat_technique: ${combat_technique_aux}
                   premonition: ${premonition_aux}
                   available_points: ${available_points_aux}
+                condition: b3_ch1_unlock != 2 AND hearing_aux = 4
+          - position: 3
+            text: >-
+              "I could try to eavesdrop on someone from afar." (Requires Hearing
+              4)
+            effects:
+              - condition: b3_ch1_unlock = 2
+                show_warning:
+                  text: Stat device locked
+              - condition: hearing_aux < 4 AND b3_ch1_unlock != 2
+                show_warning: {}
+              - set:
+                  current_scene: b3_ch02a_eavesdrop
+                  b3_ch2_infiltration: 2
                 condition: hearing_aux = 4 AND b3_ch1_unlock != 2
       - condition: b3_ch2_pass2 = 2
         texts:
@@ -312,6 +345,20 @@ scenes:
                   combat_technique: ${combat_technique_aux}
                   premonition: ${premonition_aux}
                   available_points: ${available_points_aux}
+                condition: b3_ch1_unlock != 2 AND hearing_aux = 4
+          - position: 3
+            text: >-
+              "I could try to eavesdrop on someone from afar." (Requires Hearing
+              4)
+            effects:
+              - condition: b3_ch1_unlock = 2
+                show_warning:
+                  text: Stat device locked
+              - condition: hearing_aux < 4 AND b3_ch1_unlock != 2
+                show_warning: {}
+              - set:
+                  current_scene: b3_ch02a_eavesdrop
+                  b3_ch2_infiltration: 2
                 condition: hearing_aux = 4 AND b3_ch1_unlock != 2
       - condition: b3_ch2_pass2 = 3
         texts:
@@ -370,6 +417,20 @@ scenes:
                   combat_technique: ${combat_technique_aux}
                   premonition: ${premonition_aux}
                   available_points: ${available_points_aux}
+                condition: b3_ch1_unlock != 2 AND hearing_aux = 4
+          - position: 3
+            text: >-
+              "I could try to eavesdrop on someone from afar." (Requires Hearing
+              4)
+            effects:
+              - condition: b3_ch1_unlock = 2
+                show_warning:
+                  text: Stat device locked
+              - condition: hearing_aux < 4 AND b3_ch1_unlock != 2
+                show_warning: {}
+              - set:
+                  current_scene: b3_ch02a_eavesdrop
+                  b3_ch2_infiltration: 2
                 condition: hearing_aux = 4 AND b3_ch1_unlock != 2
       - condition: b3_ch2_pass2 = 4
         texts:
@@ -428,6 +489,20 @@ scenes:
                   combat_technique: ${combat_technique_aux}
                   premonition: ${premonition_aux}
                   available_points: ${available_points_aux}
+                condition: b3_ch1_unlock != 2 AND hearing_aux = 4
+          - position: 3
+            text: >-
+              "I could try to eavesdrop on someone from afar." (Requires Hearing
+              4)
+            effects:
+              - condition: b3_ch1_unlock = 2
+                show_warning:
+                  text: Stat device locked
+              - condition: hearing_aux < 4 AND b3_ch1_unlock != 2
+                show_warning: {}
+              - set:
+                  current_scene: b3_ch02a_eavesdrop
+                  b3_ch2_infiltration: 2
                 condition: hearing_aux = 4 AND b3_ch1_unlock != 2
   - name: b3_ch02a_drunk
     texts:
