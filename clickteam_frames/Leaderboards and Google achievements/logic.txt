@@ -1,0 +1,257 @@
+* Start of Frame
+	Menu hitbox : Make invisible
+	 GPG Leadboard : Set Leaderboard Id to "CgkI8dOq_4wIEAIQBg"
+	 GPG Achievement : Read All Achievements
+	Message red : Make invisible
+
+* Android object : On back button pressed
++ frame started counter = 0
+	storyboard controls : Jump to frame "Achievements" (61)
+
+* User clicks with left button on Back hitbox
++ frame started counter = 0
+	Back button : Set Color of RGB(255,255,0)
+	storyboard controls : Jump to frame "Achievements" (61)
+
+* frame started counter > 0
+	frame started counter : Subtract 1 from Counter
+
+* AndroidPlus: On App return from pause?
+	Special : Set game resumed to 1
+
+* User clicks with left button on Leaderboards
++ GPG Connector: Is local player authenticated?
+	 GPG Leadboard : Display Leaderboard UI
+	Leaderboards : Change animation sequence to Stand up
+
+* User clicks with left button on Google achievements
++ GPG Connector: Is local player authenticated?
+	 GPG Achievement : Display Achievements
+	Google achievements : Change animation sequence to Stand up
+
+* User clicks with left button on Menu hitbox
++ frame started counter = 0
+	storyboard controls : Jump to frame "Main menu" (59)
+	Main menu button : Set Color of RGB(255,255,0)
+
+* Start of Frame
++ AC CH1 Coward = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH1 Die = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH1 Honesty = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH2 Talker = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH2 Nails = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH2 Master = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH2 Unlikely = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH3 Message = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH3 Army = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH3 Close = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH4 Noble = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH4 Cutthroat = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH4 Kneed = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH5 Wielder = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH5 Liar = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH5 Deed = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH5 Shameless = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH6 Tyrath = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH6 Berserker = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH6 Immersion = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH7 Answer = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH7 Crusher = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH7 Hadrik = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH8 democratie = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH8 first = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH8 Hydra = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH9 Observer = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH9 Decision = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH10 Shaman = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH10 Toast = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH10 Reunion = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH11 Symbol = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH11 Stillwater = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH11 Casualties = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH11 Average = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+// * Always
+	// Counter 4 : Set Counter to GetAchievementType( "GPG Achievement", 0 )
+	// Counter 5 : Set Counter to GetAchievementType( "GPG Achievement", 1 )
+	// Counter 6 : Set Counter to GetAchievementType( "GPG Achievement", 2 )
+	// Counter 7 : Set Counter to GetAchievementType( "GPG Achievement", 3 )
+	// Counter 8 : Set Counter to GetAchievementType( "GPG Achievement", 4 )
+	// Counter 9 : Set Counter to GetAchievementType( "GPG Achievement", 5 )
+
+* Always
+	Counter 4 : Set Counter to GetAchievementState( "GPG Achievement", 0 )
+	Counter 5 : Set Counter to GetAchievementState( "GPG Achievement", 1 )
+	Counter 6 : Set Counter to GetAchievementState( "GPG Achievement", 2 )
+	Counter 7 : Set Counter to GetAchievementState( "GPG Achievement", 3 )
+	Counter 8 : Set Counter to GetAchievementState( "GPG Achievement", 4 )
+	Counter 9 : Set Counter to GetAchievementState( "GPG Achievement", 5 )
+
+* GPG Achievement: On All Achievement Read
++ GetAchievementState( "GPG Achievement", 0 ) = 0
+	extra achievements : Add 1 to Counter
+
+* GPG Achievement: On All Achievement Read
++ GetAchievementState( "GPG Achievement", 1 ) = 0
+	extra achievements : Add 1 to Counter
+
+* GPG Achievement: On All Achievement Read
++ GetAchievementState( "GPG Achievement", 2 ) = 0
+	extra achievements : Add 1 to Counter
+
+* GPG Achievement: On All Achievement Read
++ GetAchievementState( "GPG Achievement", 3 ) = 0
+	extra achievements : Add 1 to Counter
+
+* GPG Achievement: On All Achievement Read
++ GetAchievementState( "GPG Achievement", 4 ) = 0
+	extra achievements : Add 1 to Counter
+
+* GPG Achievement: On All Achievement Read
+	 GPG Leadboard : Submit score with fixed value value( "nb of unlocked achievements" ) + value( "extra achievements" )
+
+* User clicks with left button on Leaderboards
++ NOT GPG Connector: Is local player authenticated?
+	Message red : Reappear
+
+* User clicks with left button on Google achievements
++ NOT GPG Connector: Is local player authenticated?
+	Message red : Reappear
+
+// * Always
+	// nb of achievements : Set alterable string to Str$(value( "nb of unlocked achievements" ))
+
+// * nb of unlocked achievements < 10
+	// nb of achievements : Set X position to 260
+
+// * nb of unlocked achievements >= 10
+	// nb of achievements : Set X position to 240
+
+// * 25 - value( "nb of unlocked achievements" ) < 10
+	// achievements needed : Set X position to 57
+
+// * 25 - value( "nb of unlocked achievements" ) >= 10
+	// achievements needed : Set X position to 38
+
+// * nb of unlocked achievements < 25
+	// achievements needed : Set alterable string to Str$(25 - value( "nb of unlocked achievements" ))
+	// unlocked text : Make invisible
+	// achievements needed : Reappear
+	// String 4 : Reappear
+	// String 3 : Reappear
+
+// * nb of unlocked achievements >= 25
+	// achievements needed : Make invisible
+	// String 4 : Make invisible
+	// String 3 : Make invisible
+	// unlocked text : Reappear
+
+// * First book purchased = 1
+	// String 3 : Make invisible
+	// String 4 : Make invisible
+	// achievements needed : Make invisible
+	// unlocked text : Reappear
+

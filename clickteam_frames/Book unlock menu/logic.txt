@@ -1,0 +1,603 @@
+* Start of Frame
+	Menu hitbox : Make invisible
+	book 2 achievements message : Make invisible
+	book 3 achievements message : Make invisible
+	no achievements message : Make invisible
+	Please wait : Make invisible
+	Waiting message 2 : Make invisible
+	Book 2 unlocked text : Make invisible
+	Book 3 unlocked text : Make invisible
+
+* Start of Frame
++ iap checked = 0
++ First book purchased = 0
+	Please wait : Reappear
+	frame started counter : Set Counter to 1000
+
+* Start of Frame
++ iap checked = 0
++ Second book purchased = 0
+	Please wait : Reappear
+	frame started counter : Set Counter to 1000
+
+* frame started counter < 900
++ frame started counter > 0
++ First book purchased = 0
+	Waiting message 2 : Reappear
+
+* frame started counter < 900
++ frame started counter > 0
++ Second book purchased = 0
+	Waiting message 2 : Reappear
+
+// * Start of Frame
+// + iap checked = 2
+	// Please wait : Reappear
+	// frame started counter : Set Counter to 1000
+
+* iap checked = 0
++ In-App Android: Is Billing Available
++ NOT In-App Android: Is Billing Busy
++ Only one action when event loops
+	 In-App Android : Query Inventory for theses SKUs "buyfirstbook/buysecondbook"
+	Special : Set iap checked to 2
+
+// * iap checked = 2
+// + In-App Android: Is Billing Available
+// + NOT In-App Android: Is Billing Busy
+// + Only one action when event loops
+	//  In-App Android : Query Inventory for theses SKUs "buyfirstbook/buysecondbook"
+	// frame started counter : Set Counter to 500
+
+* In-App Android: On Query Inventory Ready
++ iap checked = 2
++ NOT In-App Android: Is Sku "buyfirstbook" purchased
++ Android object : Network is connected?
+	Special : Set First book purchased to 0
+	Special : Set iap checked to 10
+	 Ini : Set value 0 to item "first_book_purchased" in group "achievements"
+
+* In-App Android: On Query Inventory Ready
++ iap checked = 0
++ NOT In-App Android: Is Sku "buyfirstbook" purchased
++ Android object : Network is connected?
+	Special : Set First book purchased to 0
+	Special : Set iap checked to 2
+	 Ini : Set value 0 to item "first_book_purchased" in group "achievements"
+
+* In-App Android: On Query Inventory Ready
++ iap checked = 0
++ In-App Android: Is Sku "buyfirstbook" purchased
+	Special : Set First book purchased to 1
+	Special : Set iap checked to 1
+	 Ini : Set value 1 to item "first_book_purchased" in group "achievements"
+	Book 2 unlocked text : Reappear
+	unlock book 2 text : Make invisible
+
+* In-App Android: On Query Inventory Ready
++ iap checked = 2
++ In-App Android: Is Sku "buyfirstbook" purchased
+	Special : Set First book purchased to 1
+	Special : Set iap checked to 1
+	 Ini : Set value 1 to item "first_book_purchased" in group "achievements"
+	Book 2 unlocked text : Reappear
+	unlock book 2 text : Make invisible
+
+* In-App Android: On Query Inventory Ready
++ iap 2 checked = 2
++ NOT In-App Android: Is Sku "buysecondbook" purchased
++ Android object : Network is connected?
+	Special : Set Second book purchased to 0
+	Special : Set iap 2 checked to 10
+	 Ini : Set value 0 to item "second_book_purchased" in group "achievements"
+	frame started counter : Set Counter to 2
+
+* In-App Android: On Query Inventory Ready
++ iap 2 checked = 0
++ NOT In-App Android: Is Sku "buysecondbook" purchased
++ Android object : Network is connected?
+	Special : Set Second book purchased to 0
+	Special : Set iap 2 checked to 2
+	 Ini : Set value 0 to item "second_book_purchased" in group "achievements"
+	frame started counter : Set Counter to 2
+
+* In-App Android: On Query Inventory Ready
++ iap 2 checked = 0
++ In-App Android: Is Sku "buysecondbook" purchased
+	Special : Set Second book purchased to 1
+	Special : Set iap 2 checked to 1
+	 Ini : Set value 1 to item "second_book_purchased" in group "achievements"
+	frame started counter : Set Counter to 2
+	Book 3 unlocked text : Reappear
+	unlock book 3 text : Make invisible
+
+* In-App Android: On Query Inventory Ready
++ iap 2 checked = 2
++ In-App Android: Is Sku "buysecondbook" purchased
+	Special : Set Second book purchased to 1
+	Special : Set iap 2 checked to 1
+	 Ini : Set value 1 to item "second_book_purchased" in group "achievements"
+	frame started counter : Set Counter to 2
+	Book 3 unlocked text : Reappear
+	unlock book 3 text : Make invisible
+
+// * game resumed = 1
+// + iap checked <> 0
+// + iap checked <> 2
+// + In-App Android: Is Billing Available
+// + NOT In-App Android: Is Billing Busy
+// + Only one action when event loops
+	//  In-App Android : Query Inventory for theses SKUs "buyfirstbook/buysecondbook"
+	// Special : Set iap check resume to 1
+	// frame started counter : Set Counter to 500
+	// Special : Set game resumed to 0
+
+// * AndroidPlus: On App return from pause?
+// + iap checked <> 0
+// + iap checked <> 2
+// + In-App Android: Is Billing Available
+// + NOT In-App Android: Is Billing Busy
+// + Only one action when event loops
+	//  In-App Android : Query Inventory for theses SKUs "buyfirstbook/buysecondbook"
+	// Special : Set iap check resume to 1
+	// frame started counter : Set Counter to 500
+
+* game resumed = 1
++ iap checked <> 0
++ iap checked <> 2
+	Special : Set iap check resume to 1
+	Special : Set game resumed to 0
+	resume counter : Set Counter to 30
+
+* resume counter > 0
+	resume counter : Subtract 1 from Counter
+
+* AndroidPlus: On App return from pause?
++ iap checked <> 0
++ iap checked <> 2
+	Special : Set iap check resume to 1
+	resume counter : Set Counter to 3
+
+* iap check resume = 1
++ resume counter = 1
++ In-App Android: Is Sku "buyfirstbook" purchased
+	Special : Set First book purchased to 1
+	 Ini : Set value 1 to item "first_book_purchased" in group "achievements"
+	Book 2 unlocked text : Reappear
+	unlock book 2 text : Make invisible
+
+* iap check resume = 1
++ resume counter = 1
++ NOT In-App Android: Is Sku "buyfirstbook" purchased
++ Android object : Network is connected?
+	Special : Set First book purchased to 0
+	 Ini : Set value 0 to item "first_book_purchased" in group "achievements"
+
+* iap check resume = 1
++ resume counter = 1
++ In-App Android: Is Sku "buysecondbook" purchased
+	Special : Set Second book purchased to 1
+	Special : Set iap check resume to 0
+	 Ini : Set value 1 to item "second_book_purchased" in group "achievements"
+	frame started counter : Set Counter to 2
+	Book 3 unlocked text : Reappear
+	unlock book 3 text : Make invisible
+
+* iap check resume = 1
++ resume counter = 1
++ NOT In-App Android: Is Sku "buysecondbook" purchased
++ Android object : Network is connected?
+	Special : Set Second book purchased to 0
+	Special : Set iap check resume to 0
+	 Ini : Set value 0 to item "second_book_purchased" in group "achievements"
+	frame started counter : Set Counter to 2
+
+* iap check resume = 1
++ resume counter = 1
++ NOT In-App Android: Is Sku "buysecondbook" purchased
++ NOT Android object : Network is connected?
+	Special : Set iap check resume to 0
+	frame started counter : Set Counter to 2
+
+* frame started counter > 0
+	frame started counter : Subtract 1 from Counter
+
+* frame started counter > 0
++ First book purchased = 0
+	Please wait : Reappear
+
+* frame started counter > 0
++ Second book purchased = 0
+	Please wait : Reappear
+
+* frame started counter = 0
+	Please wait : Make invisible
+	Waiting message 2 : Make invisible
+
+* Start of Frame
++ AC CH1 Coward = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH1 Die = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH1 Honesty = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH2 Talker = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH2 Nails = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH2 Master = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH2 Unlikely = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH3 Message = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH3 Army = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH3 Close = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH4 Noble = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH4 Cutthroat = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH4 Kneed = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH5 Wielder = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH5 Liar = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH5 Deed = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH5 Shameless = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH6 Tyrath = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH6 Berserker = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH6 Immersion = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH7 Answer = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH7 Crusher = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH7 Hadrik = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH8 democratie = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH8 first = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH8 Hydra = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH9 Observer = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH9 Decision = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH10 Shaman = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH10 Toast = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH10 Reunion = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH11 Symbol = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH11 Stillwater = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH11 Casualties = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC CH11 Average = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Android object : On back button pressed
+	storyboard controls : Jump to frame "Main menu" (59)
+
+* Start of Frame
++ AC B2 CH1 News = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH1 Distance = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH1 Second = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH1 Breed = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH2 Bro = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH2 Easy = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH2 Wall = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH2 Griffin = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH3 Enemy = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH3 Cage = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Player = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Intimidation = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Hadrik = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Risk = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Trampler = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Spear = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Stats = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Time = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Motive = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH5 Tribal = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH5 Divide = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH5 Speaker = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH5 United = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH6 Secret = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH6 Edge = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH7 Average = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH7 Culprit = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH7 Delivered = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH7 Cookie = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH8 Trivia = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH8 Savior = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH8 Tree = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH8 Effects = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH8 Gentleman = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH9 Missing = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH9 Helper = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH9 King = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH9 Cards = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH10 Creative = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH10 Mammoth = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH10 Demolition = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH10 Stalker = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH11 Supportive = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH11 Madman = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH11 Cutthroat = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH11 Average2 = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH11 Hidden = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH11 Elephant = 1
+	nb of unlocked achievements book 2 : Add 1 to Counter
+
+* nb of unlocked achievements >= 25
++ First book purchased = 0
+	book 2 achievements message : Reappear
+
+* nb of unlocked achievements book 2 >= 25
++ Second book purchased = 0
+	book 3 achievements message : Reappear
+
+* nb of unlocked achievements < 25
+	no achievements message : Reappear
+
+* User clicks with left button on Menu hitbox
+	storyboard controls : Jump to frame "Main menu" (59)
+	Main menu button : Set Color of RGB(255,255,0)
+
+* User clicks with left button on Unlock book 2
++ frame started counter = 0
++ First book purchased = 0
+	 In-App Android : Purchase SKU:"buyfirstbook" with Id:1
+	Unlock book 2 : Change animation sequence to Stand up
+
+* First book purchased = 1
+	unlock book 2 text : Make invisible
+	Book 2 unlocked text : Reappear
+
+* Second book purchased = 1
+	Book 3 unlocked text : Reappear
+	unlock book 3 text : Make invisible
+
+* In-App Android: Purchase Id:1 was Ok
+	Special : Set First book purchased to 1
+	 Ini : Set value 1 to item "first_book_purchased" in group "achievements"
+	Book 2 unlocked text : Reappear
+	unlock book 2 text : Make invisible
+	 In-App Android : Unknown action
+
+* User clicks with left button on Unlock book 3
++ frame started counter = 0
++ Second book purchased = 0
+	Unlock book 3 : Change animation sequence to Stand up
+	 In-App Android : Purchase SKU:"buysecondbook" with Id:2
+
+* In-App Android: Purchase Id:2 was Ok
+	Special : Set Second book purchased to 1
+	Book 3 unlocked text : Reappear
+	unlock book 3 text : Make invisible
+	 In-App Android : Unknown action
+
+// * Always
+	// Counter : Set Counter to iap checked
+	// available stat points after restart book 3 : Set Counter to iap 2 checked
+

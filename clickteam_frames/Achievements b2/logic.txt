@@ -1,0 +1,515 @@
+* Start of Frame
+	Special : Start loop "buttons" List Nb Lines( "List1" ) times
+	Menu hitbox : Make invisible
+	Back hitbox : Make invisible
+
+* Android object : On back button pressed
++ frame started counter = 0
+	storyboard controls : Jump to frame "Achievements books" (69)
+
+* User clicks with left button on Back hitbox
++ frame started counter = 0
+	storyboard controls : Jump to frame "Achievements books" (69)
+	Back button : Set Color of RGB(255,255,0)
+
+* AndroidPlus: On App return from pause?
+	Special : Set game resumed to 1
+
+* frame started counter > 0
+	frame started counter : Subtract 1 from Counter
+
+* Multiple Touch: A new touch has occured
+	Multiple Touch : Set NewY to YTouch( "Multiple Touch", 0 ) - Y Top Frame
+	Multiple Touch : Set OldY to YTouch( "Multiple Touch", 0 ) - Y Top Frame
+	Multiple Touch : Set ScrollSpeed to 0
+
+* Multiple Touch: Touch LastNewTouch( "Multiple Touch" ) is active
+	Multiple Touch : Set OldY to NewY( "Multiple Touch" )
+	Multiple Touch : Set NewY to YTouch( "Multiple Touch", 0 ) - Y Top Frame
+	Multiple Touch : Set ScrollSpeed to NewY( "Multiple Touch" ) - OldY( "Multiple Touch" )
+
+// Deceleration
+
+* ScrollSpeed of Multiple Touch > 0
++ NOT Multiple Touch: Touch 0 is active
+	Multiple Touch : Set ScrollSpeed to ScrollSpeed( "Multiple Touch" ) - 0.5
+
+* ScrollSpeed of Multiple Touch < 0
++ NOT Multiple Touch: Touch 0 is active
+	Multiple Touch : Set ScrollSpeed to ScrollSpeed( "Multiple Touch" ) + 0.5
+
+// Limit Speed
+
+* ScrollSpeed of Multiple Touch > 30
++ NOT Multiple Touch: Touch 0 is active
+	Multiple Touch : Set ScrollSpeed to 45
+
+* ScrollSpeed of Multiple Touch < -30
++ NOT Multiple Touch: Touch 0 is active
+	Multiple Touch : Set ScrollSpeed to -45
+
+// Scroll Screen
+
+* ScrollSpeed of Multiple Touch > 0
++ Y Top Frame + ( ( Y Bottom Frame - Y Top Frame ) / 2 ) - ScrollSpeed( "Multiple Touch" ) <= ( 128 * List Nb Lines( "List1" ) ) + 100
+	storyboard controls : Center display at Y=Y Top Frame + ( ( Y Bottom Frame - Y Top Frame ) / 2 ) - ScrollSpeed( "Multiple Touch" )
+
+* ScrollSpeed of Multiple Touch < 0
++ Y Top Frame + ( ( Y Bottom Frame - Y Top Frame ) / 2 ) - ScrollSpeed( "Multiple Touch" ) < ( 128 * List Nb Lines( "List1" ) ) + 100
+	storyboard controls : Center display at Y=Y Top Frame + ( ( Y Bottom Frame - Y Top Frame ) / 2 ) - ScrollSpeed( "Multiple Touch" )
+
+// * ScrollSpeed of Multiple Touch > 0
+	// storyboard controls : Center display at Y=Y Top Frame + ( ( Y Bottom Frame - Y Top Frame ) / 2 ) - ScrollSpeed( "Multiple Touch" )
+
+// * ScrollSpeed of Multiple Touch < 0
+	// storyboard controls : Center display at Y=Y Top Frame + ( ( Y Bottom Frame - Y Top Frame ) / 2 ) - ScrollSpeed( "Multiple Touch" )
+
+* User clicks with left button on Group.Buttons
+	pressed id : Set Counter to Button ID( "Group.Buttons" )
+	Group.Buttons : Change animation sequence to Select
+
+* Multiple Touch: Touch LastNewTouch( "Multiple Touch" ) is active
++ pressed counter = 0
+	Click Y : Set Counter to YTouch( "Multiple Touch", 0 )
+	Click X : Set Counter to XTouch( "Multiple Touch", 0 )
+
+* Repeat while left mouse-key is pressed
++ YTouch( "Multiple Touch", 0 ) > value( "Click Y" ) + 20
+	pointer went off button : Set Counter to 1
+	Group.Buttons : Change animation sequence to Stopped
+
+* Repeat while left mouse-key is pressed
++ YTouch( "Multiple Touch", 0 ) < value( "Click Y" ) - 20
+	pointer went off button : Set Counter to 1
+	Group.Buttons : Change animation sequence to Stopped
+
+* Repeat while left mouse-key is pressed
++ XTouch( "Multiple Touch", 0 ) > value( "Click X" ) + 20
+	pointer went off button : Set Counter to 1
+	Group.Buttons : Change animation sequence to Stopped
+
+* Repeat while left mouse-key is pressed
++ XTouch( "Multiple Touch", 0 ) < value( "Click X" ) - 20
+	pointer went off button : Set Counter to 1
+	Group.Buttons : Change animation sequence to Stopped
+
+* Repeat while left mouse-key is pressed
+	pressed counter : Set Counter to 1
+
+* Repeat while left mouse-key is pressed
++ NOT Mouse pointer is over Group.Buttons
+	pointer went off button : Set Counter to 1
+
+* NOT Repeat while left mouse-key is pressed
++ pressed counter = 1
++ NOT Mouse pointer is over Group.Buttons
+	pressed counter : Set Counter to 0
+	pressed id : Set Counter to 0
+	pointer went off button : Set Counter to 0
+
+* NOT Repeat while left mouse-key is pressed
++ pressed counter = 1
++ Mouse pointer is over Group.Buttons
++ Button ID of Group.Buttons <> value( "pressed id" )
+	pressed counter : Set Counter to 0
+	pressed id : Set Counter to 0
+	pointer went off button : Set Counter to 0
+
+* NOT Repeat while left mouse-key is pressed
++ pressed counter = 1
++ Mouse pointer is over Group.Buttons
++ Button ID of Group.Buttons = value( "pressed id" )
++ pointer went off button = 0
+	pressed counter : Set Counter to 2
+	pressed id : Set Counter to 0
+
+* NOT Repeat while left mouse-key is pressed
++ pressed counter = 1
++ Mouse pointer is over Group.Buttons
++ Button ID of Group.Buttons = value( "pressed id" )
++ pointer went off button = 1
+	pressed id : Set Counter to 0
+	pointer went off button : Set Counter to 0
+
+// This sets the active detector to the user's touch.
+
+* Multiple Touch: Touch 0 is active
+	End Touch : Set X position to XTouch( "Multiple Touch", 0 )
+	End Touch : Set Y position to YTouch( "Multiple Touch", 0 )
+
+// This sets the passive detector to the user's touch.
+
+* Multiple Touch: Touch 0 is active
++ Only one action when event loops
+	Touch Origin : Set X position to XTouch( "Multiple Touch", 0 )
+	Touch Origin : Set Y position to YTouch( "Multiple Touch", 0 )
+
+// When the touch is released, both detectors move off-screen.
+
+* NOT Multiple Touch: Touch 0 is active
+	End Touch : Set position at (-1,-1)
+	Touch Origin : Set position at (-1,-1)
+
+* On loop "buttons"
+	New Objects : Create Button at (-189,-243) layer 1
+	Button : Set Button ID to LoopIndex("buttons") + 1
+	Button : Set X position to 80
+	Button : Set Y position to 500 + Int(LoopIndex("buttons")) * 128
+	New Objects : Create Button Name at (0,0) from Button
+
+* On loop "buttons"
+	 Active 3 : Bring to front
+	 Menu hitbox : Bring to front
+
+* On loop "buttons"
+	 Button Name : Bring to front
+	 Main menu button : Bring to front
+
+* Button Name is overlapping Button
+	Button Name : Set alterable string to List Line Text$( "List1", Button ID( "Button" ) )
+	 Button Name : Bring to front
+
+* NOT Mouse pointer is over Group.Buttons
++ pressed counter = 1
+	Group.Buttons : Change animation sequence to Stopped
+
+* User clicks with left button on Menu hitbox
++ frame started counter = 0
+	storyboard controls : Jump to frame "Main menu" (59)
+	Main menu button : Set Color of RGB(255,255,0)
+
+* Start of Frame
++ AC B2 CH1 News = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH1 Distance = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH1 Second = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH1 Breed = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH2 Bro = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH2 Easy = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH2 Wall = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH2 Griffin = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH3 Enemy = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH3 Cage = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Player = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Intimidation = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Hadrik = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Risk = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Trampler = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Spear = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Stats = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Time = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH4 Motive = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH5 Tribal = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH5 Divide = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH5 Speaker = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH5 United = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH6 Secret = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH6 Edge = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH7 Average = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH7 Culprit = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH7 Delivered = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH7 Cookie = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH8 Trivia = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH8 Savior = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH8 Tree = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH8 Effects = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH8 Gentleman = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH9 Missing = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH9 Helper = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH9 King = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH9 Cards = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH10 Creative = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH10 Mammoth = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH10 Demolition = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH10 Stalker = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH11 Supportive = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH11 Madman = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH11 Cutthroat = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH11 Average2 = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH11 Hidden = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Start of Frame
++ AC B2 CH11 Elephant = 1
+	nb of unlocked achievements : Add 1 to Counter
+
+* Mouse pointer is over Group.Buttons
++ frame started counter = 0
++ Button ID of Group.Buttons = 1
++ pressed counter = 2
+	storyboard controls : Jump to frame "Achievements b2 2" (71)
+	Special : Set achievement chapter to 1
+
+* Mouse pointer is over Group.Buttons
++ frame started counter = 0
++ Button ID of Group.Buttons = 2
++ pressed counter = 2
+	Special : Set achievement chapter to 2
+	storyboard controls : Jump to frame "Achievements b2 2" (71)
+
+* Mouse pointer is over Group.Buttons
++ frame started counter = 0
++ Button ID of Group.Buttons = 3
++ pressed counter = 2
+	Special : Set achievement chapter to 3
+	storyboard controls : Jump to frame "Achievements b2 2" (71)
+
+* Mouse pointer is over Group.Buttons
++ frame started counter = 0
++ Button ID of Group.Buttons = 4
++ pressed counter = 2
+	Special : Set achievement chapter to 41
+	storyboard controls : Jump to frame "Achievements b2 2" (71)
+
+* Mouse pointer is over Group.Buttons
++ frame started counter = 0
++ Button ID of Group.Buttons = 5
++ pressed counter = 2
+	Special : Set achievement chapter to 42
+	storyboard controls : Jump to frame "Achievements b2 2" (71)
+
+* Mouse pointer is over Group.Buttons
++ frame started counter = 0
++ Button ID of Group.Buttons = 6
++ pressed counter = 2
+	Special : Set achievement chapter to 5
+	storyboard controls : Jump to frame "Achievements b2 2" (71)
+
+* Mouse pointer is over Group.Buttons
++ frame started counter = 0
++ Button ID of Group.Buttons = 7
++ pressed counter = 2
+	Special : Set achievement chapter to 6
+	storyboard controls : Jump to frame "Achievements b2 2" (71)
+
+* Mouse pointer is over Group.Buttons
++ frame started counter = 0
++ Button ID of Group.Buttons = 8
++ pressed counter = 2
+	Special : Set achievement chapter to 7
+	storyboard controls : Jump to frame "Achievements b2 2" (71)
+
+* Mouse pointer is over Group.Buttons
++ frame started counter = 0
++ Button ID of Group.Buttons = 9
++ pressed counter = 2
+	Special : Set achievement chapter to 8
+	storyboard controls : Jump to frame "Achievements b2 2" (71)
+
+* Mouse pointer is over Group.Buttons
++ frame started counter = 0
++ Button ID of Group.Buttons = 10
++ pressed counter = 2
+	Special : Set achievement chapter to 9
+	storyboard controls : Jump to frame "Achievements b2 2" (71)
+
+* Mouse pointer is over Group.Buttons
++ frame started counter = 0
++ Button ID of Group.Buttons = 11
++ pressed counter = 2
+	Special : Set achievement chapter to 10
+	storyboard controls : Jump to frame "Achievements b2 2" (71)
+
+* Mouse pointer is over Group.Buttons
++ frame started counter = 0
++ Button ID of Group.Buttons = 12
++ pressed counter = 2
+	Special : Set achievement chapter to 11
+	storyboard controls : Jump to frame "Achievements b2 2" (71)
+
+// * Mouse pointer is over Group.Buttons
+// + frame started counter = 0
+// + Button ID of Group.Buttons = 9
+// + pressed counter = 2
+	// Special : Set achievement chapter to 9
+	// storyboard controls : Jump to frame "Achievements b2 2" (71)
+
+// * Mouse pointer is over Group.Buttons
+// + frame started counter = 0
+// + Button ID of Group.Buttons = 10
+// + pressed counter = 2
+	// Special : Set achievement chapter to 10
+	// storyboard controls : Jump to frame "Achievements b2 2" (71)
+
+// * Mouse pointer is over Group.Buttons
+// + frame started counter = 0
+// + Button ID of Group.Buttons = 11
+// + pressed counter = 2
+	// Special : Set achievement chapter to 11
+	// storyboard controls : Jump to frame "Achievements b2 2" (71)
+
+* Mouse pointer is over Group.Buttons
++ pressed counter = 2
+	pressed counter : Set Counter to 0
+
+* Always
+	nb of achievements : Set alterable string to Str$(value( "nb of unlocked achievements" ))
+
+* nb of unlocked achievements < 10
+	nb of achievements : Set X position to 260
+
+* nb of unlocked achievements >= 10
+	nb of achievements : Set X position to 240
+
+* 25 - value( "nb of unlocked achievements" ) < 10
+	achievements needed : Set X position to 57
+
+* 25 - value( "nb of unlocked achievements" ) >= 10
+	achievements needed : Set X position to 38
+
+* nb of unlocked achievements < 25
+	achievements needed : Set alterable string to Str$(25 - value( "nb of unlocked achievements" ))
+	unlocked text : Make invisible
+	achievements needed : Reappear
+	String 4 : Reappear
+	String 3 : Reappear
+
+* nb of unlocked achievements >= 25
+	achievements needed : Make invisible
+	String 4 : Make invisible
+	String 3 : Make invisible
+	unlocked text : Reappear
+
+// * Second book purchased = 1
+	// String 3 : Make invisible
+	// String 4 : Make invisible
+	// achievements needed : Make invisible
+	// unlocked text : Reappear
+

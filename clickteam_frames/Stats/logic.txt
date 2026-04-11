@@ -1,0 +1,1545 @@
+* Start of Frame
+	Ini : Set current file to "savegame"
+	Magical power : Make invisible
+	Magical knowledge : Make invisible
+
+// * B3 CH11 Magic = 1
+	// Magical power : Reappear
+	// Magical knowledge : Reappear
+
+* B3 CH11 Magic = 1
++ string$( "Current chapter" ) = "B3-Ch11a"
+	Magical power : Reappear
+	Magical knowledge : Reappear
+
+* B3 CH11 Magic = 1
++ string$( "Current chapter" ) = "B3-Ch12a"
+	Magical power : Reappear
+	Magical knowledge : Reappear
+
+* B3 CH11 Magic = 1
++ string$( "Current chapter" ) = "B3-Ch12b"
+	Magical power : Reappear
+	Magical knowledge : Reappear
+
+* achievement timer > 0
+	achievement timer : Subtract 1 from Counter
+
+* achievement timer = 1
+	Trophy : Make invisible
+	Achievement box : Make invisible
+	Achievement title : Make invisible
+	Achievement unlocked : Make invisible
+
+* string$( "Third char of current scene" ) = "-"
+	Current chapter : Set alterable string to Left$(string$( "Current scene" ), 3)
+
+* string$( "Third char of current scene" ) = "0"
+	Current chapter : Set alterable string to Left$(string$( "Current scene" ), 4)
+
+* string$( "Third char of current scene" ) = "1"
+	Current chapter : Set alterable string to Left$(string$( "Current scene" ), 5)
+
+* string$( "Third char of current scene" ) = "C"
+	Current chapter : Set alterable string to Left$(string$( "Current scene" ), 8)
+
+* AndroidPlus: On App return from pause?
+	Special : Set game resumed to 1
+
+* Always
+	Current scene : Set alterable string to current scene
+	Third char of current scene : Set alterable string to Mid$(string$( "Current scene" ), 3, 1)
+
+* Always
++ current scene <> "Ch6-Eiden-vs-dragon"
+	Strength : Set alterable string to Str$(Strength aux)
+	Agility : Set alterable string to Str$(Agility aux)
+	Reflexes : Set alterable string to Str$(Reflexes aux)
+	Premonition : Set alterable string to Str$(Premonition aux)
+	Combat technique : Set alterable string to Str$(Combat technique aux)
+	Toughness : Set alterable string to Str$(Toughness aux)
+	Ancient languages : Set alterable string to Str$(Ancient languages aux)
+	Hearing : Set alterable string to Str$(Hearing aux)
+	Perception : Set alterable string to Str$(Perception aux)
+	Available points : Set alterable string to Str$(Available points aux)
+	Premonition max : Set alterable string to Str$(max stat)
+	Combat technique max : Set alterable string to Str$(max stat)
+	Ancient languages max : Set alterable string to Str$(max stat)
+	Hearing max : Set alterable string to Str$(max stat)
+	Toughness max : Set alterable string to Str$(max stat)
+	Strength max : Set alterable string to Str$(max stat)
+	Perception max : Set alterable string to Str$(max stat)
+	Agility max : Set alterable string to Str$(max stat)
+	Reflexes max : Set alterable string to Str$(max stat)
+	Bluff max : Set alterable string to Str$(max stat)
+	Aura hardening max : Set alterable string to Str$(max stat)
+	Magical sense max : Set alterable string to Str$(max stat)
+	Magical sense : Set alterable string to Str$(Magical sense aux)
+	Aura hardening : Set alterable string to Str$(Aura hardening aux)
+	Bluff : Set alterable string to Str$(Bluff aux)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 1
+	Strength : Set alterable string to Str$(Strength aux)
+	Agility : Set alterable string to Str$(Agility aux)
+	Reflexes : Set alterable string to Str$(Reflexes aux)
+	Premonition : Set alterable string to Str$(Premonition aux)
+	Combat technique : Set alterable string to Str$(Combat technique aux)
+	Toughness : Set alterable string to Str$(Toughness aux)
+	Ancient languages : Set alterable string to Str$(Ancient languages aux)
+	Hearing : Set alterable string to Str$(Hearing aux)
+	Perception : Set alterable string to Str$(Perception aux)
+	Available points : Set alterable string to Str$(Available points aux)
+	Premonition max : Set alterable string to Str$(max stat)
+	Combat technique max : Set alterable string to Str$(max stat)
+	Ancient languages max : Set alterable string to Str$(max stat)
+	Hearing max : Set alterable string to Str$(max stat)
+	Toughness max : Set alterable string to Str$(max stat)
+	Strength max : Set alterable string to Str$(max stat)
+	Perception max : Set alterable string to Str$(max stat)
+	Agility max : Set alterable string to Str$(max stat)
+	Reflexes max : Set alterable string to Str$(max stat)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
+	Available points : Set alterable string to Str$(Available points aux)
+	Premonition max : Set alterable string to Str$(max stat)
+	Combat technique max : Set alterable string to Str$(max stat)
+	Ancient languages max : Set alterable string to Str$(max stat)
+	Hearing max : Set alterable string to Str$(max stat)
+	Toughness max : Set alterable string to Str$(max stat)
+	Strength max : Set alterable string to Str$(max stat)
+	Perception max : Set alterable string to Str$(max stat)
+	Agility max : Set alterable string to Str$(max stat)
+	Reflexes max : Set alterable string to Str$(max stat)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Strength < value( "temporary maximized mode" ) / 100
+	Strength : Set alterable string to Str$(value( "temporary maximized mode" ) / 100)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Agility < value( "temporary maximized mode" ) / 100
+	Agility : Set alterable string to Str$(value( "temporary maximized mode" ) / 100)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Reflexes < value( "temporary maximized mode" ) / 100
+	Reflexes : Set alterable string to Str$(value( "temporary maximized mode" ) / 100)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Premonition < value( "temporary maximized mode" ) / 100
+	Premonition : Set alterable string to Str$(value( "temporary maximized mode" ) / 100)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Combat technique < value( "temporary maximized mode" ) / 100
+	Combat technique : Set alterable string to Str$(value( "temporary maximized mode" ) / 100)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Toughness < value( "temporary maximized mode" ) / 100
+	Toughness : Set alterable string to Str$(value( "temporary maximized mode" ) / 100)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Ancient languages < value( "temporary maximized mode" ) / 100
+	Ancient languages : Set alterable string to Str$(value( "temporary maximized mode" ) / 100)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Hearing < value( "temporary maximized mode" ) / 100
+	Hearing : Set alterable string to Str$(value( "temporary maximized mode" ) / 100)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Perception < value( "temporary maximized mode" ) / 100
+	Perception : Set alterable string to Str$(value( "temporary maximized mode" ) / 100)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Strength >= value( "temporary maximized mode" ) / 100
+	Strength : Set alterable string to Str$(Strength aux)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Agility >= value( "temporary maximized mode" ) / 100
+	Agility : Set alterable string to Str$(Agility aux)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Reflexes >= value( "temporary maximized mode" ) / 100
+	Reflexes : Set alterable string to Str$(Reflexes aux)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Premonition >= value( "temporary maximized mode" ) / 100
+	Premonition : Set alterable string to Str$(Premonition aux)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Combat technique >= value( "temporary maximized mode" ) / 100
+	Combat technique : Set alterable string to Str$(Combat technique aux)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Toughness >= value( "temporary maximized mode" ) / 100
+	Toughness : Set alterable string to Str$(Toughness aux)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Ancient languages >= value( "temporary maximized mode" ) / 100
+	Ancient languages : Set alterable string to Str$(Ancient languages aux)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Hearing >= value( "temporary maximized mode" ) / 100
+	Hearing : Set alterable string to Str$(Hearing aux)
+
+* Always
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
++ Perception >= value( "temporary maximized mode" ) / 100
+	Perception : Set alterable string to Str$(Perception aux)
+
+* Start of Frame
++ current scene = "Ch6-Eiden-vs-dragon"
++ maximized stats used = 0
+	temporary maximized mode : Set Counter to 999
+
+* temporary maximized mode > 0
+	temporary maximized mode : Subtract 1 from Counter
+
+* Start of Frame
+	Strength hitbox : Make invisible
+	Agility hitbox : Make invisible
+	Reflexes hitbox : Make invisible
+	Toughness hitbox : Make invisible
+	Perception hitbox : Make invisible
+	Ancient languages hitbox : Make invisible
+	Hearing hitbox : Make invisible
+	Combat technique hitbox : Make invisible
+	Premonition hitbox : Make invisible
+	Special : Set selected save slot to "save1"
+	Special : Set checkpoint rich to 0
+	Trophy : Make invisible
+	Achievement box : Make invisible
+	Achievement title : Make invisible
+	Achievement unlocked : Make invisible
+	Bluff hitbox : Make invisible
+	Magical sense hitbox : Make invisible
+	Aura hardening hitbox : Make invisible
+	Bluff max : Make invisible
+	Bluff slash : Make invisible
+	Bluff : Make invisible
+	Bluff label : Make invisible
+	Aura hardening max : Make invisible
+	Aura hardening slash : Make invisible
+	Aura hardening : Make invisible
+	Aura hardening label : Make invisible
+	Magical sense max : Make invisible
+	Magical sense slash : Make invisible
+	Magical sense : Make invisible
+	Magical sense label : Make invisible
+
+* string$( "Current chapter" ) = "B3-Ch04a"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch04b"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch05a"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch05b"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch06a"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch06b"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch06c"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch07a"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch08a"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch08b"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch09a"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch09b"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch09c"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch10a"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch10b"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch10c"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch11a"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch12a"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* string$( "Current chapter" ) = "B3-Ch12b"
+	Magical sense label : Reappear
+	Magical sense : Reappear
+	Magical sense slash : Reappear
+	Magical sense max : Reappear
+	Aura hardening label : Reappear
+	Aura hardening : Reappear
+	Aura hardening slash : Reappear
+	Aura hardening max : Reappear
+	Bluff label : Reappear
+	Bluff : Reappear
+	Bluff slash : Reappear
+	Bluff max : Reappear
+
+* Start of Frame
++ current scene = "Ch6-Eiden-vs-dragon"
++ AC CH6 Immersion = 0
+	Special : Set AC CH6 Immersion to 1
+	Achievement box : Reappear
+	Trophy : Reappear
+	Achievement unlocked : Reappear
+	Achievement title : Reappear
+	achievement timer : Set Counter to 200
+	 Ini : Set value AC CH6 Immersion to item "ac_ch6_immersion" in group "achievements"
+
+* Start of Frame
++ stats first time is over = 0
+	storyboard controls : Jump to frame "Stats intro" (58)
+
+* User clicks with left button on Confirm changes
++ current scene = "Ch6-Eiden-vs-dragon"
+	Special : Set maximized stats used to 1
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "Ch1"
+	storyboard controls : Jump to frame "Chapter 1" (1)
+	Confirm changes : Change animation sequence to Stand up
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "Ch2"
+	storyboard controls : Jump to frame "Chapter 2" (2)
+	Confirm changes : Change animation sequence to Stand up
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "Ch3"
+	storyboard controls : Jump to frame "Chapter 3" (3)
+	Confirm changes : Change animation sequence to Stand up
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "Ch4"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Chapter 4" (4)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "Ch5"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Chapter 5" (5)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "Ch6"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Chapter 6" (6)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "Ch7"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Chapter 7" (7)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "Ch8"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Chapter 8" (8)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "Ch9"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Chapter 9" (9)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "Ch10"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Chapter 10" (10)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "Ch11a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Chapter 11 a" (11)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "Ch11b"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Chapter 11 b" (12)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch01a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 1" (13)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch02a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 2" (14)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch03a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 3" (15)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch04a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 4 a" (16)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch04b"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 4 b" (17)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch05a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 5 a" (18)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch05b"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 5 b" (19)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch06a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 6" (20)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch07a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 7" (21)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch08a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 8" (22)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch09a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 9 a" (23)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch09b"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 9 b" (24)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch10a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 10 a" (25)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch10b"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 10 b" (26)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch11a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 11 a" (27)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch11b"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 11 b" (28)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B2-Ch11c"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 2 Chapter 11 c" (29)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch01a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 1" (30)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch02a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 2 a" (31)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch02b"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 2 b" (32)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch02c"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 2 c" (33)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch03a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 3 a" (34)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch03b"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 3 b" (35)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch04a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 4 a" (36)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch04b"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 4 b" (37)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch05a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 5 a" (38)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch05b"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 5 b" (39)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch06a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 6 a" (40)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch06b"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 6 b" (41)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch06c"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 6 c" (42)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch07a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 7 a" (43)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch08a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 8 a" (44)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch08b"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 8 b" (45)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch09a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 9 a" (46)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch09b"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 9 b" (47)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch09c"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 9 c" (48)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch10a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 10 a" (49)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch10b"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 10 b" (50)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch10c"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 10 c" (51)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch11a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 11 a" (52)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch12a"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 12 a" (53)
+
+* User clicks with left button on Confirm changes
++ string$( "Current chapter" ) = "B3-Ch12b"
+	Confirm changes : Change animation sequence to Stand up
+	storyboard controls : Jump to frame "Book 3 Chapter 12 b" (54)
+
+* User clicks with left button on Strength hitbox
++ Strength aux < max stat
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Strength aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Agility hitbox
++ Agility aux < max stat
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Agility aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Toughness hitbox
++ Toughness aux < max stat
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Toughness aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Reflexes hitbox
++ Reflexes aux < max stat
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Reflexes aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Hearing hitbox
++ Hearing aux < max stat
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Hearing aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Perception hitbox
++ Perception aux < max stat
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Perception aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Ancient languages hitbox
++ Ancient languages aux < max stat
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Ancient languages aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Combat technique hitbox
++ Combat technique aux < max stat
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Combat technique aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Premonition hitbox
++ Premonition aux < max stat
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Premonition aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch04a"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch04a"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch04a"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch04b"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch04b"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch04b"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch05a"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch05a"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch05a"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch05b"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch05b"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch05b"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch06a"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch06a"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch06a"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch06b"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch06b"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch06b"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch06c"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch06c"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch06c"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch07a"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch07a"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch07a"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch08a"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch08a"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch08a"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch08b"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch08b"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch08b"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch09a"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch09a"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch09a"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch09b"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch09b"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch09b"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch09c"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch09c"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch09c"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch10a"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch10a"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch10a"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch10b"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch10b"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch10b"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch10c"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch10c"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch10c"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch11a"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch11a"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch11a"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch12a"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch12a"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch12a"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Bluff hitbox
++ string$( "Current chapter" ) = "B3-Ch12b"
++ Bluff aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Bluff aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Magical sense hitbox
++ string$( "Current chapter" ) = "B3-Ch12b"
++ Magical sense aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Magical sense aux
+	Special : Subtract 1 from  Available points aux
+
+* User clicks with left button on Aura hardening hitbox
++ string$( "Current chapter" ) = "B3-Ch12b"
++ Aura hardening aux < max stat
++ Bluff label is visible
++ temporary maximized mode = 0
++ Available points aux > 0
+	Special : Add 1 to Aura hardening aux
+	Special : Subtract 1 from  Available points aux
+
+* Strength aux > Strength
+	Strength : Set Color of RGB(0,192,0)
+	Strength slash : Set Color of RGB(0,192,0)
+	Strength max : Set Color of RGB(0,192,0)
+	Strength label : Set Color of RGB(0,192,0)
+
+* Agility aux > Agility
+	Agility label : Set Color of RGB(0,192,0)
+	Agility : Set Color of RGB(0,192,0)
+	Agility slash : Set Color of RGB(0,192,0)
+	Agility max : Set Color of RGB(0,192,0)
+
+* Toughness aux > Toughness
+	Toughness label : Set Color of RGB(0,192,0)
+	Toughness max : Set Color of RGB(0,192,0)
+	Toughness : Set Color of RGB(0,192,0)
+	Toughness slash : Set Color of RGB(0,192,0)
+
+* Reflexes aux > Reflexes
+	Reflexes label : Set Color of RGB(0,192,0)
+	Reflexes slash : Set Color of RGB(0,192,0)
+	Reflexes max : Set Color of RGB(0,192,0)
+	Reflexes : Set Color of RGB(0,192,0)
+
+* Hearing aux > Hearing
+	Hearing label : Set Color of RGB(0,192,0)
+	Hearing : Set Color of RGB(0,192,0)
+	Hearing slash : Set Color of RGB(0,192,0)
+	Hearing max : Set Color of RGB(0,192,0)
+
+* Perception aux > Perception
+	Perception label : Set Color of RGB(0,192,0)
+	Perception : Set Color of RGB(0,192,0)
+	Perception slash : Set Color of RGB(0,192,0)
+	Perception max : Set Color of RGB(0,192,0)
+
+* Ancient languages aux > Ancient languages
+	Ancient languages label : Set Color of RGB(0,192,0)
+	Ancient languages : Set Color of RGB(0,192,0)
+	Ancient languages slash : Set Color of RGB(0,192,0)
+	Ancient languages max : Set Color of RGB(0,192,0)
+
+* Combat technique aux > Combat technique
+	Combat technique label : Set Color of RGB(0,192,0)
+	Combat technique : Set Color of RGB(0,192,0)
+	Combat technique slash : Set Color of RGB(0,192,0)
+	Combat technique max : Set Color of RGB(0,192,0)
+
+* Premonition aux > Premonition
+	Premonition label : Set Color of RGB(0,192,0)
+	Premonition : Set Color of RGB(0,192,0)
+	Premonition slash : Set Color of RGB(0,192,0)
+	Premonition max : Set Color of RGB(0,192,0)
+
+* Bluff aux > Bluff
+	Bluff max : Set Color of RGB(0,192,0)
+	Bluff slash : Set Color of RGB(0,192,0)
+	Bluff : Set Color of RGB(0,192,0)
+	Bluff label : Set Color of RGB(0,192,0)
+
+* Magical sense aux > Magical sense
+	Magical sense label : Set Color of RGB(0,192,0)
+	Magical sense : Set Color of RGB(0,192,0)
+	Magical sense slash : Set Color of RGB(0,192,0)
+	Magical sense max : Set Color of RGB(0,192,0)
+
+* Aura hardening aux > Aura hardening
+	Aura hardening label : Set Color of RGB(0,192,0)
+	Aura hardening : Set Color of RGB(0,192,0)
+	Aura hardening slash : Set Color of RGB(0,192,0)
+	Aura hardening max : Set Color of RGB(0,192,0)
+
+* User clicks with left button on cancel changes btn
+	cancel changes btn : Change animation sequence to Stand up
+	Special : Set Strength aux to Strength
+	Special : Set Available points aux to Available points
+	Strength label : Set Color of RGB(0,0,0)
+	Agility label : Set Color of RGB(0,0,0)
+	Toughness label : Set Color of RGB(0,0,0)
+	Reflexes label : Set Color of RGB(0,0,0)
+	Hearing label : Set Color of RGB(0,0,0)
+	Perception label : Set Color of RGB(0,0,0)
+	Combat technique label : Set Color of RGB(0,0,0)
+	Ancient languages label : Set Color of RGB(0,0,0)
+	Premonition label : Set Color of RGB(0,0,0)
+	Strength : Set Color of RGB(0,0,0)
+	Agility : Set Color of RGB(0,0,0)
+	Reflexes : Set Color of RGB(0,0,0)
+	Premonition : Set Color of RGB(0,0,0)
+	Combat technique : Set Color of RGB(0,0,0)
+	Toughness : Set Color of RGB(0,0,0)
+	Ancient languages : Set Color of RGB(0,0,0)
+	Hearing : Set Color of RGB(0,0,0)
+	Perception : Set Color of RGB(0,0,0)
+	Strength slash : Set Color of RGB(0,0,0)
+	Agility slash : Set Color of RGB(0,0,0)
+	Ancient languages slash : Set Color of RGB(0,0,0)
+	Reflexes slash : Set Color of RGB(0,0,0)
+	Premonition slash : Set Color of RGB(0,0,0)
+	Combat technique slash : Set Color of RGB(0,0,0)
+	Toughness slash : Set Color of RGB(0,0,0)
+	Perception slash : Set Color of RGB(0,0,0)
+	Hearing slash : Set Color of RGB(0,0,0)
+	Premonition max : Set Color of RGB(0,0,0)
+	Combat technique max : Set Color of RGB(0,0,0)
+	Ancient languages max : Set Color of RGB(0,0,0)
+	Hearing max : Set Color of RGB(0,0,0)
+	Toughness max : Set Color of RGB(0,0,0)
+	Strength max : Set Color of RGB(0,0,0)
+	Perception max : Set Color of RGB(0,0,0)
+	Agility max : Set Color of RGB(0,0,0)
+	Reflexes max : Set Color of RGB(0,0,0)
+	Special : Set Agility aux to Agility
+	Special : Set Toughness aux to Toughness
+	Special : Set Reflexes aux to Reflexes
+	Special : Set Hearing aux to Hearing
+	Special : Set Perception aux to Perception
+	Special : Set Ancient languages aux to Ancient languages
+	Special : Set Combat technique aux to Combat technique
+	Special : Set Premonition aux to Premonition
+	Special : Set Bluff aux to Bluff
+	Special : Set Magical sense aux to Magical sense
+	Special : Set Aura hardening aux to Aura hardening
+	Bluff max : Set Color of RGB(0,0,0)
+	Bluff slash : Set Color of RGB(0,0,0)
+	Bluff : Set Color of RGB(0,0,0)
+	Bluff label : Set Color of RGB(0,0,0)
+	Aura hardening max : Set Color of RGB(0,0,0)
+	Aura hardening slash : Set Color of RGB(0,0,0)
+	Aura hardening : Set Color of RGB(0,0,0)
+	Aura hardening label : Set Color of RGB(0,0,0)
+	Magical sense max : Set Color of RGB(0,0,0)
+	Magical sense slash : Set Color of RGB(0,0,0)
+	Magical sense : Set Color of RGB(0,0,0)
+	Magical sense label : Set Color of RGB(0,0,0)
+
+* Available points = Available points aux
+	return text : Set alterable string to "Return to game"
+
+* Available points <> Available points aux
+	return text : Set alterable string to "Confirm changes"
+
+* Always
+	Debug : Set Counter to AC CH6 Immersion
+

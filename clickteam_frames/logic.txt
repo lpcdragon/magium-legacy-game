@@ -1,0 +1,1372 @@
+* Start of Frame
+	Ini : Set current file to "savegame"
+
+// * Start of Frame
+	// Auto login box : Make invisible
+	// auto login hitbox : Make invisible
+	// deny hitbox : Make invisible
+	// deny text : Make invisible
+	// accept text : Make invisible
+	// auto Login text : Make invisible
+
+// * game started counter = 1
+// + login prompt shown = 0
+	// Counter : Set Counter to 1
+
+* enable auto log in = 1
++ login prompt shown = 0
+	Special : Set login prompt shown to 1
+	 Ini : Set value 1 to item "login_prompt_shown" in group "achievements"
+
+* cloud achievements = 1
++ auto save prompt shown = 0
+	Special : Set auto save prompt shown to 1
+	 Ini : Set value 1 to item "auto_save_prompt_shown" in group "achievements"
+
+* game started counter = 0
++ NOT GPG Connector: Is local player authenticated?
++ enable auto log in = 1
++ Run this event once
++ login prompt shown = 1
++ auto login just shown = 0
++ Login counter < 2
+	 GPG Connector : Log In with UI Box
+	Special : Add 1 to Login counter
+
+* Login counter >= 2
+	Special : Set Login counter to 2
+
+// * login prompt shown = 0
+// + Run this event once
+// + enable auto log in = 0
+// + game started counter = 0
+	// Auto login box : Reappear
+	// deny text : Reappear
+	// accept text : Reappear
+	// auto Login text : Reappear
+
+// * User clicks with left button on auto login hitbox
+// + login prompt shown = 0
+// + enable auto log in = 0
+	// deny text : Make invisible
+	// accept text : Make invisible
+	// auto Login text : Make invisible
+	// Auto login box : Make invisible
+	// Special : Set login prompt shown to 1
+	//  Ini : Set value 1 to item "login_prompt_shown" in group "achievements"
+	// Special : Set enable auto log in to 1
+	//  Ini : Set value 1 to item "enable_auto_log_in" in group "achievements"
+	// auto login just shown : Set Counter to 1
+	//  GPG Connector : Log In with UI Box
+
+// * User clicks with left button on deny hitbox
+// + login prompt shown = 0
+// + enable auto log in = 0
+	// deny text : Make invisible
+	// accept text : Make invisible
+	// auto Login text : Make invisible
+	// Auto login box : Make invisible
+	// Special : Set login prompt shown to 1
+	//  Ini : Set value 1 to item "login_prompt_shown" in group "achievements"
+
+* Counter = 1
+	 Ini : Set string current scene to item "current_scene" in group selected save slot
+	 Ini : Set value CH1 stillwater to item "stillwater" in group selected save slot
+	 Ini : Set value CH1 show yourself to item "show_yourself" in group selected save slot
+	 Ini : Set value CH1 intro feeling to item "intro_feeling" in group selected save slot
+	 Ini : Set value Strength to item "strength" in group selected save slot
+	 Ini : Set value Strength aux to item "strength_aux" in group selected save slot
+	 Ini : Set value Agility to item "agility" in group selected save slot
+	 Ini : Set value Agility aux to item "agility_aux" in group selected save slot
+	 Ini : Set value Toughness to item "toughness" in group selected save slot
+	 Ini : Set value Toughness aux to item "toughness_aux" in group selected save slot
+	 Ini : Set value Reflexes to item "reflexes" in group selected save slot
+	 Ini : Set value Reflexes aux to item "reflexes_aux" in group selected save slot
+	 Ini : Set value Hearing to item "hearing" in group selected save slot
+	 Ini : Set value Hearing aux to item "hearing_aux" in group selected save slot
+	 Ini : Set value Perception to item "perception" in group selected save slot
+	 Ini : Set value Perception aux to item "perception_aux" in group selected save slot
+	 Ini : Set value Ancient languages to item "ancient_languages" in group selected save slot
+	 Ini : Set value Ancient languages aux to item "ancient_languages_aux" in group selected save slot
+	 Ini : Set value Combat technique to item "combat_technique" in group selected save slot
+	 Ini : Set value Combat technique aux to item "combat_technique_aux" in group selected save slot
+	 Ini : Set value Premonition to item "premonition" in group selected save slot
+	 Ini : Set value Premonition aux to item "premonition_aux" in group selected save slot
+	 Ini : Set value stats first time is over to item "stats_intro" in group selected save slot
+	 Ini : Set value Available points to item "available_points" in group selected save slot
+	 Ini : Set value max stat to item "max_stat" in group selected save slot
+	 Ini : Set value Available points aux to item "available_points_aux" in group selected save slot
+	 Ini : Set value is dead to item "is_dead" in group selected save slot
+	 Ini : Set value CH2 toughness happened to item "ch2_toughness_happened" in group selected save slot
+	 Ini : Set value CH2 Kate debt to item "kate_debt" in group selected save slot
+	 Ini : Set value CH2 understood deer to item "ch2_understood_deer" in group selected save slot
+	 Ini : Set value CH2 deer interaction to item "ch2_deer_interaction" in group selected save slot
+	 Ini : Set value CH2 Kate whisper to item "ch2_kate_whisper" in group selected save slot
+	 Ini : Set value CH2 human reason to item "ch2_human_reason" in group selected save slot
+	 Ini : Set value CH2 not owe debt to item "ch2_not_owe_debt" in group selected save slot
+	 Ini : Set value CH3 tactics to item "ch3_tactics" in group selected save slot
+	 Ini : Set value CH3 star message to item "ch3_stars_message" in group selected save slot
+	 Ini : Set value CH3 seduce to item "ch3_seduce" in group selected save slot
+	 Ini : Set value CH3 awkward to item "ch3_awkward" in group selected save slot
+	 Ini : Set value CH3 daren worry to item "ch3_daren_worry" in group selected save slot
+	 Ini : Set value CH3 saved from dart to item "ch3_saved_from_dart" in group selected save slot
+	 Ini : Set value CH3 first killed to item "ch3_first_killed" in group selected save slot
+	 Ini : Set value CH3 second killed to item "ch3_second_killed" in group selected save slot
+	 Ini : Set value CH3 prioritize to item "ch3_prioritize" in group selected save slot
+	 Ini : Set value CH3 lift tree to item "ch3_lift_tree" in group selected save slot
+	 Ini : Set value CH3 tactic to item "ch3_tactic" in group selected save slot
+	 Ini : Set value CH3 final decision to item "ch3_final_decision" in group selected save slot
+	 Ini : Set value CH3 bloodied to item "ch3_bloodied" in group selected save slot
+	 Ini : Set value CH3 Kate badly hurt to item "ch3_kate_badly_hurt" in group selected save slot
+	 Ini : Set value CH4 objectives to item "ch4_objectives" in group selected save slot
+	 Ini : Set value CH4 Dave defeat to item "ch4_dave_defeat" in group selected save slot
+	 Ini : Set value CH4 ending to item "ch4_ending" in group selected save slot
+	 Ini : Set value CH4 spared dave to item "ch4_spared_dave" in group selected save slot
+	 Ini : Set value CH5 admit lie to item "ch5_admit_lie" in group selected save slot
+	 Ini : Set value CH5 goblins to item "ch5_goblins" in group selected save slot
+	 Ini : Set value CH3 treasure to item "ch3_treasure" in group selected save slot
+	 Ini : Set value CH6 Rose deer to item "ch6_rose_deer" in group selected save slot
+	 Ini : Set value CH6 secure to item "ch6_secure" in group selected save slot
+	 Ini : Set value CH5 ignore scream to item "ch5_ignore_scream" in group selected save slot
+	 Ini : Set value CH6 flirt to item "ch6_flirt" in group selected save slot
+	 Ini : Set value CH6 eiden answer to item "ch6_eiden_answer" in group selected save slot
+	 Ini : Set value CH6 improvise to item "ch6_improvise" in group selected save slot
+	 Ini : Set value CH6 defense to item "ch6_defense" in group selected save slot
+	 Ini : Set value CH6 offense to item "ch6_offense" in group selected save slot
+	 Ini : Set value CH6 won dragon to item "ch6_won_dragon" in group selected save slot
+	 Ini : Set value CH6 big plans to item "ch6_big_plans" in group selected save slot
+	 Ini : Set value maximized stats used to item "ch6_maximised_stats_used" in group selected save slot
+	 Ini : Set value CH6 lessathi to item "ch6_lessathi" in group selected save slot
+	 Ini : Set value CH7 tap to item "ch7_tap" in group selected save slot
+	 Ini : Set value CH7 call Rose to item "ch7_call_rose" in group selected save slot
+	 Ini : Set value CH7 watch fight to item "ch7_watch_fight" in group selected save slot
+	 Ini : Set value CH7 help Kate to item "ch7_help_kate" in group selected save slot
+	 Ini : Set value CH7 intimidate to item "ch7_intimidate" in group selected save slot
+	 Ini : Set value CH7 win vs Hadrik to item "ch7_win_vs_hadrik" in group selected save slot
+	 Ini : Set value CH7 informed Azarius to item "ch7_informed_azarius" in group selected save slot
+	 Ini : Set value CH3 tried lift to item "ch3_tried_lift" in group selected save slot
+	 Ini : Set value CH8 talk to item "ch8_talk" in group selected save slot
+	 Ini : Set value CH8 first puzzle to item "ch8_first_puzzle" in group selected save slot
+	 Ini : Set value CH8 smash to item "ch8_smash" in group selected save slot
+	 Ini : Set value CH8 old to item "ch8_old" in group selected save slot
+	 Ini : Set value CH9 inventory to item "ch9_inventory" in group selected save slot
+	 Ini : Set value CH9 take Rose to item "ch9_take_rose" in group selected save slot
+	 Ini : Set value CH9 ogres to item "ch9_ogres" in group selected save slot
+	 Ini : Set value CH10 gems to item "ch10_gems" in group selected save slot
+	 Ini : Set value CH10 Kate scratched to item "ch10_kate_scratched" in group selected save slot
+	 Ini : Set value CH10 Magium to item "ch10_magium" in group selected save slot
+	 Ini : Set value CH11 Saved slave to item "ch11_saved_slave" in group selected save slot
+	 Ini : Set value CH11 Kill noble to item "ch11_kill_noble" in group selected save slot
+	 Ini : Set value CH11 Difference to item "ch11_difference" in group selected save slot
+	 Ini : Set value CH11 Toy to item "ch11_toy" in group selected save slot
+	 Ini : Set value CH11 Romance Rose to item "ch11_romance_rose" in group selected save slot
+	 Ini : Set value CH11 Strategy to item "ch11_strategy" in group selected save slot
+	 Ini : Set value CH11 Saved Rose to item "ch11_saved_rose" in group selected save slot
+	 Ini : Set value B2 Ch1 volunteer to item "b2_ch1_volunteer" in group selected save slot
+	 Ini : Set value B2 Ch1 spin to item "b2_ch1_spin" in group selected save slot
+	 Ini : Set value B2 Ch1 truth to item "b2_ch1_truth" in group selected save slot
+	 Ini : Set value B2 Ch1 Puzzle2 to item "b2_ch1_puzzle2" in group selected save slot
+	 Ini : Set value B2 Ch1 Interfere to item "b2_ch1_interfere" in group selected save slot
+	 Ini : Set value B2 Ch2 tell servant to item "b2_ch2_tell_servant" in group selected save slot
+	 Ini : Set value B2 Ch2 Cell to item "b2_ch2_cell" in group selected save slot
+	 Ini : Set value B2 Ch2 Fist to item "b2_ch2_fist" in group selected save slot
+	 Ini : Set value B2 Ch2 Threatened to item "b2_ch2_threatened" in group selected save slot
+	 Ini : Set value B2 Ch2 Lessathi to item "b2_ch2_lessathi" in group selected save slot
+	 Ini : Set value B2 Ch2 Deal to item "b2_ch2_deal" in group selected save slot
+	 Ini : Set value B2 Ch2 Heard to item "b2_ch2_heard" in group selected save slot
+	 Ini : Set value B2 Ch2 Upset to item "b2_ch2_upset" in group selected save slot
+	 Ini : Set value B2 Ch2 Elevator to item "b2_ch2_elevator" in group selected save slot
+	 Ini : Set value B2 Ch2 Kate to item "b2_ch2_kate" in group selected save slot
+	 Ini : Set value B2 Ch2 Creatures to item "b2_ch2_creatures" in group selected save slot
+	 Ini : Set value B2 CH3 Spin to item "b2_ch3_spin" in group selected save slot
+	 Ini : Set value B2 Ch3 Troll to item "b2_ch3_troll" in group selected save slot
+	 Ini : Set value B2 Ch4 Inform to item "b2_ch4_inform" in group selected save slot
+	 Ini : Set value beta access to item "beta_access" in group selected save slot
+	 Ini : Set string string$( "datetimestamp" ) to item "datetime_stamp" in group selected save slot
+
+* Counter = 1
+	 Ini : Set value B2 Ch4 Inform2 to item "b2_ch4_inform2" in group selected save slot
+	 Ini : Set value B2 CH4 Inform3 to item "b2_ch4_inform3" in group selected save slot
+	 Ini : Set value B2 CH4 called kate to item "b2_ch4_called_kate" in group selected save slot
+	 Ini : Set value B2 CH4 backpack to item "b2_ch4_backpack" in group selected save slot
+	 Ini : Set value B2 CH4 beer to item "b2_ch4_beer" in group selected save slot
+	 Ini : Set value B2 CH4 hearing1 to item "b2_ch4_hearing1" in group selected save slot
+	 Ini : Set value B2 CH4 Argument to item "b2_ch4_argument" in group selected save slot
+	 Ini : Set value B2 CH4 Charge to item "b2_ch4_charge" in group selected save slot
+	 Ini : Set value B2 CH4 Tactic to item "b2_ch4_tactic" in group selected save slot
+	 Ini : Set value B2 CH4 Backup to item "b2_ch4_backup" in group selected save slot
+	 Ini : Set value B2 CH4 hearing2 to item "b2_ch4_hearing2" in group selected save slot
+	 Ini : Set value B2 CH4 Forsake to item "b2_ch4_forsake" in group selected save slot
+	 Ini : Set value B2 CH5 Wilhelm to item "b2_ch5_wilhelm" in group selected save slot
+	 Ini : Set value B2 CH5 Heard guards to item "b2_ch5_heard_guards" in group selected save slot
+	 Ini : Set value B2 CH5 First cut to item "b2_ch5_first_cut" in group selected save slot
+	 Ini : Set value B2 CH5 Negotiate to item "b2_ch5_negotiate" in group selected save slot
+	 Ini : Set value B2 Ch5 Strategy to item "b2_ch5_strategy" in group selected save slot
+	 Ini : Set value B2 CH5 Scimitar to item "b2_ch5_scimitar" in group selected save slot
+	 Ini : Set value B2 CH5 Spare to item "b2_ch5_spare" in group selected save slot
+	 Ini : Set value B2 CH5 Pilot to item "b2_ch5_pilot" in group selected save slot
+	 Ini : Set value B2 CH6 Person to item "b2_ch6_person" in group selected save slot
+	 Ini : Set value B2 CH6 Hurt to item "b2_ch6_hurt" in group selected save slot
+	 Ini : Set value B2 CH6 Stat to item "b2_ch6_stat" in group selected save slot
+	 Ini : Set value B2 CH6 Banned to item "b2_ch6_banned" in group selected save slot
+	 Ini : Set value B2 CH6 Fox to item "b2_ch6_fox" in group selected save slot
+	 Ini : Set value B2 CH6 Crossbow to item "b2_ch6_crossbow" in group selected save slot
+	 Ini : Set value B2 CH7 Dizziness to item "b2_ch7_dizziness" in group selected save slot
+	 Ini : Set value B2 CH7 Tunnel to item "b2_ch7_tunnel" in group selected save slot
+	 Ini : Set value B2 CH7 Rock to item "b2_ch7_rock" in group selected save slot
+	 Ini : Set value B2 CH7 Overheard to item "b2_ch7_overheard" in group selected save slot
+	 Ini : Set value B2 CH7 Wait to item "b2_ch7_wait" in group selected save slot
+	 Ini : Set value B2 CH7 Reward to item "b2_ch7_reward" in group selected save slot
+	 Ini : Set value B2 CH8 Tickle to item "b2_ch8_tickle" in group selected save slot
+	 Ini : Set value B2 CH8 Tornado to item "b2_ch8_tornado" in group selected save slot
+	 Ini : Set value B2 CH8 Saved to item "b2_ch8_saved" in group selected save slot
+	 Ini : Set value B2 CH8 Goblins to item "b2_ch8_goblins" in group selected save slot
+	 Ini : Set value B2 CH8 Parents to item "b2_ch8_parents" in group selected save slot
+	 Ini : Set value B2 CH8 Energizer to item "b2_ch8_energizer" in group selected save slot
+	 Ini : Set value B2 CH9 Amused to item "b2_ch9_amused" in group selected save slot
+	 Ini : Set value B2 CH9 Cast1 to item "b2_ch9_cast1" in group selected save slot
+	 Ini : Set value B2 CH9 Dog to item "b2_ch9_dog" in group selected save slot
+	 Ini : Set value B2 CH9 Defeat to item "b2_ch9_defeat" in group selected save slot
+	 Ini : Set value B2 CH9 Puzzle give to item "b2_ch9_puzzle_give" in group selected save slot
+	 Ini : Set value B2 CH9 Cast2 to item "b2_ch9_cast2" in group selected save slot
+	 Ini : Set value B2 CH9 Apologize to item "b2_ch9_apologize" in group selected save slot
+	 Ini : Set value B2 CH9 Oath to item "b2_ch9_oath" in group selected save slot
+	 Ini : Set value B2 CH9 Tyrath to item "b2_ch9_tyrath" in group selected save slot
+	 Ini : Set value B2 CH9 Animals to item "b2_ch9_animals" in group selected save slot
+	 Ini : Set value B2 CH9 Spell to item "b2_ch9_spell" in group selected save slot
+	 Ini : Set value B2 CH9 Channel to item "b2_ch9_channel" in group selected save slot
+	 Ini : Set value B2 CH9 Weavers to item "b2_ch9_weavers" in group selected save slot
+	 Ini : Set value B2 CH9 Drink to item "b2_ch9_drink" in group selected save slot
+	 Ini : Set value B2 CH9 Flip to item "b2_ch9_flip" in group selected save slot
+	 Ini : Set value B2 CH10 Toast to item "b2_ch10_toast" in group selected save slot
+	 Ini : Set value B2 CH10 Crossbow to item "b2_ch10_crossbow" in group selected save slot
+	 Ini : Set value B2 CH10 Bribe to item "b2_ch10_bribe" in group selected save slot
+	 Ini : Set value B2 CH10 Weakpoint to item "b2_ch10_weakpoint" in group selected save slot
+	 Ini : Set value B2 CH10 Scouts to item "b2_ch10_scouts" in group selected save slot
+	 Ini : Set value B2 CH10 Traps to item "b2_ch10_traps" in group selected save slot
+	 Ini : Set value B2 CH10 Advisor to item "b2_ch10_advisor" in group selected save slot
+	 Ini : Set value B2 CH10 Target to item "b2_ch10_target" in group selected save slot
+	 Ini : Set value B2 CH10 Tactic to item "b2_ch10_tactic" in group selected save slot
+	 Ini : Set value B2 CH10 Activate to item "b2_ch10_activate" in group selected save slot
+	 Ini : Set value B2 CH11 Kneel to item "b2_ch11_kneel" in group selected save slot
+	 Ini : Set value B2 CH11 Save parents to item "b2_ch11_save_parents" in group selected save slot
+	 Ini : Set value B2 CH11 Both to item "b2_ch11_both" in group selected save slot
+	 Ini : Set value B2 CH11 Skip1 to item "b2_ch11_skip1" in group selected save slot
+	 Ini : Set value B2 CH11 Skip2 to item "b2_ch11_skip2" in group selected save slot
+	 Ini : Set value B2 CH11 Encourage to item "b2_ch11_encourage" in group selected save slot
+	 Ini : Set value B2 CH11 Defend to item "b2_ch11_defend" in group selected save slot
+	 Ini : Set value B2 CH11 Paranoid to item "b2_ch11_paranoid" in group selected save slot
+	 Ini : Set value B2 CH11 added hearing to item "b2_ch11_added_hearing" in group selected save slot
+	 Ini : Set value B2 CH11 Echoes to item "b2_ch11_echoes" in group selected save slot
+	 Ini : Set value B2 CH11 Explain to item "b2_ch11_explain" in group selected save slot
+	 Ini : Set value B2 CH11 Items to item "b2_ch11_items" in group selected save slot
+	 Ini : Set value B2 CH11 Towers to item "b2_ch11_towers" in group selected save slot
+	 Ini : Set value B2 CH11 District to item "b2_ch11_district" in group selected save slot
+	 Ini : Set value B2 CH11 Dagger to item "b2_ch11_dagger" in group selected save slot
+	 Ini : Set value B1 saved stats to item "b1_saved_stats" in group selected save slot
+	 Ini : Set value B1 strength to item "b1_strength" in group selected save slot
+	 Ini : Set value B1 agility to item "b1_agility" in group selected save slot
+	 Ini : Set value B1 toughness to item "b1_toughness" in group selected save slot
+	 Ini : Set value B1 reflexes to item "b1_reflexes" in group selected save slot
+	 Ini : Set value B1 hearing to item "b1_hearing" in group selected save slot
+	 Ini : Set value B1 perception to item "b1_perception" in group selected save slot
+	 Ini : Set value B1 ancient languages to item "b1_ancient_languages" in group selected save slot
+	 Ini : Set value B1 combat technique to item "b1_combat_technique" in group selected save slot
+	 Ini : Set value B1 premonition to item "b1_premonition" in group selected save slot
+	 Ini : Set value B1 available points to item "b1_available_points" in group selected save slot
+	 Ini : Set value B2 saved stats to item "b2_saved_stats" in group selected save slot
+	 Ini : Set value B2 strength to item "b2_strength" in group selected save slot
+	 Ini : Set value B2 agility to item "b2_agility" in group selected save slot
+	 Ini : Set value B2 toughness to item "b2_toughness" in group selected save slot
+	 Ini : Set value B2 reflexes to item "b2_reflexes" in group selected save slot
+	 Ini : Set value B2 hearing to item "b2_hearing" in group selected save slot
+	 Ini : Set value B2 perception to item "b2_perception" in group selected save slot
+	 Ini : Set value B2 ancient languages to item "b2_ancient_languages" in group selected save slot
+	 Ini : Set value B2 combat technique to item "b2_combat_technique" in group selected save slot
+	 Ini : Set value B2 premonition to item "b2_premonition" in group selected save slot
+	 Ini : Set value B2 available points to item "b2_available_points" in group selected save slot
+	 Ini : Set value B3 CH1 age to item "b3_ch1_age" in group selected save slot
+	 Ini : Set value B3 CH1 unlock to item "b3_ch1_unlock" in group selected save slot
+	 Ini : Set value B3 CH1 kate1 to item "b3_ch1_kate1" in group selected save slot
+	 Ini : Set value B3 CH1 kate2 to item "b3_ch1_kate2" in group selected save slot
+	 Ini : Set value B3 CH1 kate3 to item "b3_ch1_kate3" in group selected save slot
+	 Ini : Set value B3 CH1 cities to item "b3_ch1_cities" in group selected save slot
+	 Ini : Set value B3 CH1 password to item "b3_ch1_password" in group selected save slot
+	 Ini : Set value B3 CH2 pass2 to item "b3_ch2_pass2" in group selected save slot
+	 Ini : Set value B3 CH2 infiltration to item "b3_ch2_infiltration" in group selected save slot
+	 Ini : Set value B3 CH2 goblins to item "b3_ch2_goblins" in group selected save slot
+	 Ini : Set value B3 CH2 Golems to item "b3_ch2_golems" in group selected save slot
+	 Ini : Set value B3 CH2 name to item "b3_ch2_name" in group selected save slot
+	 Ini : Set value B3 CH2 Confess to item "b3_ch2_confess" in group selected save slot
+
+* Counter = 1
+	 Ini : Set value B3 CH2 contraptions to item "b3_ch2_contraption" in group selected save slot
+	 Ini : Set value B3 CH2 Hearing to item "b3_ch2_hearing" in group selected save slot
+	 Ini : Set value B3 CH2 Gontrok to item "b3_ch2_gontrok" in group selected save slot
+	 Ini : Set value B3 CH2 madness to item "b3_ch2_madness" in group selected save slot
+	 Ini : Set value B3 CH2 Alice to item "b3_ch2_alice" in group selected save slot
+	 Ini : Set value B3 CH2 Kelrim to item "b3_ch2_kelrim" in group selected save slot
+	 Ini : Set value B3 CH2 Question to item "b3_ch2_question" in group selected save slot
+	 Ini : Set value B3 CH3 Interest to item "b3_ch3_interest" in group selected save slot
+	 Ini : Set value B3 CH3 Monsters to item "b3_ch3_monsters" in group selected save slot
+	 Ini : Set value B3 CH3 Plans to item "b3_ch3_plans" in group selected save slot
+	 Ini : Set value B3 CH3 Chains to item "b3_ch3_chains" in group selected save slot
+	 Ini : Set value B3 CH3 Stats unavailable to item "b3_ch3_stats_unavailable" in group selected save slot
+	 Ini : Set value B3 CH3 Magical to item "b3_ch3_magical" in group selected save slot
+	 Ini : Set value B3 CH3 Assassin to item "b3_ch3_assassin" in group selected save slot
+	 Ini : Set value B3 CH3 Functional to item "b3_ch3_functional" in group selected save slot
+	 Ini : Set value B3 CH3 Daren to item "b3_ch3_daren" in group selected save slot
+	 Ini : Set value B3 CH3 Civilians to item "b3_ch3_civilians" in group selected save slot
+	 Ini : Set value B3 CH3 Carry to item "b3_ch3_carry" in group selected save slot
+	 Ini : Set value B3 CH4 Introduction to item "b3_ch4_introduction" in group selected save slot
+	 Ini : Set value Bluff to item "bluff" in group selected save slot
+	 Ini : Set value Bluff aux to item "bluff_aux" in group selected save slot
+	 Ini : Set value Magical sense to item "magical_sense" in group selected save slot
+	 Ini : Set value Magical sense aux to item "magical_sense_aux" in group selected save slot
+	 Ini : Set value Aura hardening to item "aura_hardening" in group selected save slot
+	 Ini : Set value Aura hardening aux to item "aura_hardening_aux" in group selected save slot
+	 Ini : Set value B3 CH4 Average Joe to item "b3_ch4_average_joe" in group selected save slot
+	 Ini : Set value B3 CH4 Demolisher to item "b3_ch4_demolisher" in group selected save slot
+	 Ini : Set value B3 CH4 Insist to item "b3_ch4_insist" in group selected save slot
+	 Ini : Set value B3 CH4 Cut to item "b3_ch4_cut" in group selected save slot
+	 Ini : Set value B3 CH4 Control to item "b3_ch4_control" in group selected save slot
+	 Ini : Set value B3 CH4 Billy to item "b3_ch4_billy" in group selected save slot
+	 Ini : Set value B3 CH4 Beg to item "b3_ch4_beg" in group selected save slot
+	 Ini : Set value B3 CH4 Tasked to item "b3_ch4_tasked" in group selected save slot
+	 Ini : Set value B3 CH4 Drones to item "b3_ch4_drones" in group selected save slot
+	 Ini : Set value B3 CH5 negotiations to item "b3_ch5_negotiations" in group selected save slot
+	 Ini : Set value B3 CH5 guilty to item "b3_ch5_guilty" in group selected save slot
+	 Ini : Set value B3 CH5 demeanor to item "b3_ch5_demeanor" in group selected save slot
+	 Ini : Set value B3 CH5 moustache to item "b3_ch5_moustache" in group selected save slot
+	 Ini : Set value B3 CH5 follow to item "b3_ch5_follow" in group selected save slot
+	 Ini : Set value B3 CH5 Fight to item "b3_ch5_fight" in group selected save slot
+	 Ini : Set value B3 CH5 Brief to item "b3_ch5_brief" in group selected save slot
+	 Ini : Set value B3 CH5 Breath to item "b3_ch5_breath" in group selected save slot
+	 Ini : Set value B3 CH6 Manipulators to item "b3_ch6_manipulators" in group selected save slot
+	 Ini : Set value B3 CH6 Sleep to item "b3_ch6_sleep" in group selected save slot
+	 Ini : Set value B3 CH6 Slowpoke to item "b3_ch6_slowpoke" in group selected save slot
+	 Ini : Set value B3 CH6 Concealed to item "b3_ch6_concealed" in group selected save slot
+	 Ini : Set value B3 CH6 Betrayed to item "b3_ch6_betrayed" in group selected save slot
+	 Ini : Set value B3 CH6 Secret to item "b3_ch6_secret" in group selected save slot
+	 Ini : Set value B3 CH6 Password to item "b3_ch6_password" in group selected save slot
+	 Ini : Set value B3 CH6 Tie to item "b3_ch6_tie" in group selected save slot
+	 Ini : Set value B3 CH6 Survey to item "b3_ch6_survey" in group selected save slot
+	 Ini : Set value B3 CH6 Plan to item "b3_ch6_plan" in group selected save slot
+	 Ini : Set value B3 CH6 Selected to item "b3_ch6_selected" in group selected save slot
+	 Ini : Set value B3 CH6 Labels to item "b3_ch6_labels" in group selected save slot
+	 Ini : Set value B3 CH6 Preparing to item "b3_ch6_preparing" in group selected save slot
+	 Ini : Set value B3 CH6 Focus to item "b3_ch6_focus" in group selected save slot
+	 Ini : Set value B3 CH6 Air to item "b3_ch6_air" in group selected save slot
+	 Ini : Set value B3 CH6 Earth to item "b3_ch6_earth" in group selected save slot
+	 Ini : Set value B3 CH6 Defense to item "b3_ch6_defense" in group selected save slot
+	 Ini : Set value B3 CH6 Uninjured to item "b3_ch6_uninjured" in group selected save slot
+	 Ini : Set value B3 CH6 Wounded to item "b3_ch6_wounded" in group selected save slot
+	 Ini : Set value B3 CH6 Kelrim to item "b3_ch6_kelrim" in group selected save slot
+	 Ini : Set value B3 CH6 Coward to item "b3_ch6_coward" in group selected save slot
+	 Ini : Set value B3 CH6 Ambassador to item "b3_ch6_ambassador" in group selected save slot
+	 Ini : Set value B3 CH6 Drink to item "b3_ch6_drink" in group selected save slot
+	 Ini : Set value B3 CH6 Shift to item "b3_ch6_shift" in group selected save slot
+	 Ini : Set value B3 CH6 Transceivers to item "b3_ch6_transceivers" in group selected save slot
+	 Ini : Set value B3 CH7 Force to item "b3_ch7_force" in group selected save slot
+	 Ini : Set value B3 CH7 Massage to item "b3_ch7_massage" in group selected save slot
+	 Ini : Set value B3 CH7 Bet to item "b3_ch7_bet" in group selected save slot
+	 Ini : Set value B3 CH7 Fingers to item "b3_ch7_fingers" in group selected save slot
+	 Ini : Set value B3 CH7 Door to item "b3_ch7_door" in group selected save slot
+	 Ini : Set value B3 CH7 Tyrant to item "b3_ch7_tyrant" in group selected save slot
+	 Ini : Set value B3 CH7 Assassinate to item "b3_ch7_assassinate" in group selected save slot
+	 Ini : Set value B3 CH8 Theory to item "b3_ch8_theory" in group selected save slot
+	 Ini : Set value B3 CH8 Watching to item "b3_ch8_watching" in group selected save slot
+	 Ini : Set value B3 CH8 Overseer to item "b3_ch8_overseer" in group selected save slot
+	 Ini : Set value B3 CH8 Next to item "b3_ch8_next" in group selected save slot
+	 Ini : Set value B3 CH8 Precisely to item "b3_ch8_precisely" in group selected save slot
+	 Ini : Set value B3 CH8 King to item "b3_ch8_king" in group selected save slot
+	 Ini : Set value B3 CH8 Defeat to item "b3_ch8_defeat" in group selected save slot
+	 Ini : Set value B3 CH8 Detected to item "b3_ch8_detected" in group selected save slot
+	 Ini : Set value B3 CH8 Overseer2 to item "b3_ch8_overseer2" in group selected save slot
+	 Ini : Set value B3 CH8 Three to item "b3_ch8_three" in group selected save slot
+	 Ini : Set value B3 CH8 Voice to item "b3_ch8_voice" in group selected save slot
+	 Ini : Set value B3 CH8 Heartfelt to item "b3_ch8_heartfelt" in group selected save slot
+	 Ini : Set value B3 CH9 Jack to item "b3_ch9_jack" in group selected save slot
+	 Ini : Set value B3 CH9 Currents to item "b3_ch9_currents" in group selected save slot
+	 Ini : Set value B3 CH9 Conclusions to item "b3_ch9_conclusions" in group selected save slot
+	 Ini : Set value B3 CH9 Premonition to item "b3_ch9_premonition" in group selected save slot
+	 Ini : Set value B3 CH9 Illuna to item "b3_ch9_illuna" in group selected save slot
+	 Ini : Set value B3 CH9 Advice to item "b3_ch9_advice" in group selected save slot
+	 Ini : Set value B3 CH9 Food to item "b3_ch9_food" in group selected save slot
+	 Ini : Set value B3 CH9 Attempt to item "b3_ch9_attempt" in group selected save slot
+	 Ini : Set value B3 CH9 Element to item "b3_ch9_element" in group selected save slot
+	 Ini : Set value B3 CH9 Backup to item "b3_ch9_backup" in group selected save slot
+	 Ini : Set value B3 CH9 Assassinate to item "b3_ch9_assassinate" in group selected save slot
+	 Ini : Set value B3 CH9 Teleport to item "b3_ch9_teleport" in group selected save slot
+	 Ini : Set value B3 CH9 Listen to item "b3_ch9_listen" in group selected save slot
+	 Ini : Set value B3 CH9 Enemies to item "b3_ch9_enemies" in group selected save slot
+	 Ini : Set value B3 CH9 Hydra to item "b3_ch9_hydra" in group selected save slot
+	 Ini : Set value B3 CH9 Hadrik to item "b3_ch9_hadrik" in group selected save slot
+	 Ini : Set value B3 CH9 Cover to item "b3_ch9_cover" in group selected save slot
+	 Ini : Set value B3 CH10 Spin to item "b3_ch10_spin" in group selected save slot
+	 Ini : Set value B3 CH10 Majesty to item "b3_ch10_majesty" in group selected save slot
+	 Ini : Set value B3 CH10 Wrong to item "b3_ch10_wrong" in group selected save slot
+	 Ini : Set value B3 CH10 Puzzle to item "b3_ch10_puzzle" in group selected save slot
+	 Ini : Set value B3 CH10 Benefits to item "b3_ch10_benefits" in group selected save slot
+	 Ini : Set value B3 CH10 Check to item "b3_ch10_check" in group selected save slot
+	 Ini : Set value B3 CH10 Biscuit to item "b3_ch10_biscuit" in group selected save slot
+	 Ini : Set value B3 CH10 Inappropriate to item "b3_ch10_inappropriate" in group selected save slot
+	 Ini : Set value B3 CH10 Eiden to item "b3_ch10_eiden" in group selected save slot
+	 Ini : Set value B3 CH10 Beforehand to item "b3_ch10_beforehand" in group selected save slot
+	 Ini : Set value B3 CH10 Misunderstanding to item "b3_ch10_misunderstanding" in group selected save slot
+	 Ini : Set value B3 CH10 Destroyed to item "b3_ch10_destroyed" in group selected save slot
+	 Ini : Set value B3 CH10 Sparring to item "b3_ch10_sparring" in group selected save slot
+	 Ini : Set value B3 CH10 Leader to item "b3_ch10_leader" in group selected save slot
+	 Ini : Set value B3 CH10 Reason to item "b3_ch10_reason" in group selected save slot
+	 Ini : Set value B3 CH10 Worry to item "b3_ch10_worry" in group selected save slot
+	 Ini : Set value B3 CH10 Crystals to item "b3_ch10_crystals" in group selected save slot
+	 Ini : Set value B3 CH10 Node to item "b3_ch10_node" in group selected save slot
+	 Ini : Set value B3 CH10 Mention to item "b3_ch10_mention" in group selected save slot
+	 Ini : Set value B3 CH11 Friend to item "b3_ch11_friend" in group selected save slot
+	 Ini : Set value B3 CH11 Transferred to item "b3_ch11_transferred" in group selected save slot
+
+* Counter = 1
+	 Ini : Set value B3 CH11 Path to item "b3_ch11_path" in group selected save slot
+	 Ini : Set value B3 CH11 Hear to item "b3_ch11_hear" in group selected save slot
+	 Ini : Set value B3 CH11 Reverse to item "b3_ch11_reverse" in group selected save slot
+	 Ini : Set value B3 CH11 Puzzle4 to item "b3_ch11_puzzle4" in group selected save slot
+	 Ini : Set value B3 CH11 Mocking to item "b3_ch11_mocking" in group selected save slot
+	 Ini : Set value B3 CH11 Weakness to item "b3_ch11_weakness" in group selected save slot
+	 Ini : Set value B3 CH11 Escape to item "b3_ch11_escape" in group selected save slot
+	 Ini : Set value B3 CH11 Money to item "b3_ch11_money" in group selected save slot
+	 Ini : Set value B3 CH11 Red to item "b3_ch11_red" in group selected save slot
+	 Ini : Set value B3 CH11 Diane to item "b3_ch11_diane" in group selected save slot
+	 Ini : Set value B3 CH11 Melindra to item "b3_ch11_melindra" in group selected save slot
+	 Ini : Set value B3 CH11 Magic to item "b3_ch11_magic" in group selected save slot
+	 Ini : Set value B3 CH12 Believe to item "b3_ch12_believe" in group selected save slot
+	 Ini : Set value B3 CH12 Invest to item "b3_ch12_invest" in group selected save slot
+	 Ini : Set value B3 CH12 Approach to item "b3_ch12_approach" in group selected save slot
+	 Ini : Set value B3 CH12 Hadrik to item "b3_ch12_hadrik" in group selected save slot
+	 Ini : Set value B3 CH12 Spell to item "b3_ch12_spell" in group selected save slot
+	 Ini : Set value B3 CH12 Chance to item "b3_ch12_chance" in group selected save slot
+	 Ini : Set value B3 CH12 Relieved to item "b3_ch12_relieved" in group selected save slot
+	 Ini : Set value B3 CH12 Diane to item "b3_ch12_diane" in group selected save slot
+	 Ini : Set value B3 CH12 Kate to item "b3_ch12_kate" in group selected save slot
+	 Ini : Set value B3 CH12 Delusional to item "b3_ch12_delusional" in group selected save slot
+	 Ini : Set value B3 CH12 Conflicted to item "b3_ch12_conflicted" in group selected save slot
+	 Ini : Set value B3 CH12 Sincere to item "b3_ch12_sincere" in group selected save slot
+	 Ini : Set value B3 CH12 Scout to item "b3_ch12_scout" in group selected save slot
+	 Ini : Set value B3 CH12 Punches to item "b3_ch12_punches" in group selected save slot
+	 Ini : Set value B3 CH12 Hideous to item "b3_ch12_hideous" in group selected save slot
+	 Ini : Set value B3 CH12 Languages to item "b3_ch12_languages" in group selected save slot
+	 Ini : Set value B3 CH12 Hesitant to item "b3_ch12_hesitant" in group selected save slot
+	 Ini : Set value B3 CH12 Eiden to item "b3_ch12_eiden" in group selected save slot
+	 Ini : Set value B3 CH12 Thank to item "b3_ch12_thank" in group selected save slot
+
+* game started counter = 4
++ selected save slot = "autosave"
+	Special : Set current scene to GroupItemString$( "Ini", selected save slot, "current_scene" )
+	Special : Set CH1 show yourself to GroupItemValue( "Ini", selected save slot, "show_yourself" )
+	Special : Set CH1 intro feeling to GroupItemValue( "Ini", selected save slot, "intro_feeling" )
+	Special : Set CH1 stillwater to GroupItemValue( "Ini", selected save slot, "stillwater" )
+	Special : Set Strength to GroupItemValue( "Ini", selected save slot, "strength" )
+	Special : Set Strength aux to GroupItemValue( "Ini", selected save slot, "strength_aux" )
+	Special : Set Agility to GroupItemValue( "Ini", selected save slot, "agility" )
+	Special : Set Agility aux to GroupItemValue( "Ini", selected save slot, "agility_aux" )
+	Special : Set Toughness to GroupItemValue( "Ini", selected save slot, "toughness" )
+	Special : Set Toughness aux to GroupItemValue( "Ini", selected save slot, "toughness_aux" )
+	Special : Set Reflexes to GroupItemValue( "Ini", selected save slot, "reflexes" )
+	Special : Set Reflexes aux to GroupItemValue( "Ini", selected save slot, "reflexes_aux" )
+	Special : Set Hearing to GroupItemValue( "Ini", selected save slot, "hearing" )
+	Special : Set Hearing aux to GroupItemValue( "Ini", selected save slot, "hearing_aux" )
+	Special : Set Perception to GroupItemValue( "Ini", selected save slot, "perception" )
+	Special : Set Perception aux to GroupItemValue( "Ini", selected save slot, "perception_aux" )
+	Special : Set Ancient languages to GroupItemValue( "Ini", selected save slot, "ancient_languages" )
+	Special : Set Ancient languages aux to GroupItemValue( "Ini", selected save slot, "ancient_languages_aux" )
+	Special : Set Combat technique to GroupItemValue( "Ini", selected save slot, "combat_technique" )
+	Special : Set Combat technique aux to GroupItemValue( "Ini", selected save slot, "combat_technique_aux" )
+	Special : Set Premonition to GroupItemValue( "Ini", selected save slot, "premonition" )
+	Special : Set Premonition aux to GroupItemValue( "Ini", selected save slot, "premonition_aux" )
+	Special : Set stats first time is over to GroupItemValue( "Ini", selected save slot, "stats_intro" )
+	Special : Set Available points to GroupItemValue( "Ini", selected save slot, "available_points" )
+	Special : Set max stat to GroupItemValue( "Ini", selected save slot, "max_stat" )
+	Special : Set Available points aux to GroupItemValue( "Ini", selected save slot, "available_points_aux" )
+	Special : Set is dead to GroupItemValue( "Ini", selected save slot, "is_dead" )
+	Special : Set CH2 toughness happened to GroupItemValue( "Ini", selected save slot, "ch2_toughness_happened" )
+	Special : Set CH2 Kate debt to GroupItemValue( "Ini", selected save slot, "kate_debt" )
+	Special : Set CH2 understood deer to GroupItemValue( "Ini", selected save slot, "ch2_understood_deer" )
+	Special : Set CH2 deer interaction to GroupItemValue( "Ini", selected save slot, "ch2_deer_interaction" )
+	Special : Set CH2 Kate whisper to GroupItemValue( "Ini", selected save slot, "ch2_kate_whisper" )
+	Special : Set CH2 human reason to GroupItemValue( "Ini", selected save slot, "ch2_human_reason" )
+	Special : Set CH2 not owe debt to GroupItemValue( "Ini", selected save slot, "ch2_not_owe_debt" )
+	Special : Set CH3 tactics to GroupItemValue( "Ini", selected save slot, "ch3_tactics" )
+	Special : Set CH3 star message to GroupItemValue( "Ini", selected save slot, "ch3_stars_message" )
+	Special : Set CH3 seduce to GroupItemValue( "Ini", selected save slot, "ch3_seduce" )
+	Special : Set CH3 awkward to GroupItemValue( "Ini", selected save slot, "ch3_awkward" )
+	Special : Set CH3 daren worry to GroupItemValue( "Ini", selected save slot, "ch3_daren_worry" )
+	Special : Set CH3 saved from dart to GroupItemValue( "Ini", selected save slot, "ch3_saved_from_dart" )
+	Special : Set CH3 first killed to GroupItemValue( "Ini", selected save slot, "ch3_first_killed" )
+	Special : Set CH3 second killed to GroupItemValue( "Ini", selected save slot, "ch3_second_killed" )
+	Special : Set CH3 prioritize to GroupItemValue( "Ini", selected save slot, "ch3_prioritize" )
+	Special : Set CH3 lift tree to GroupItemValue( "Ini", selected save slot, "ch3_lift_tree" )
+	Special : Set CH3 tactic to GroupItemValue( "Ini", selected save slot, "ch3_tactic" )
+	Special : Set CH3 final decision to GroupItemValue( "Ini", selected save slot, "ch3_final_decision" )
+	Special : Set CH3 bloodied to GroupItemValue( "Ini", selected save slot, "ch3_bloodied" )
+	Special : Set CH3 Kate badly hurt to GroupItemValue( "Ini", selected save slot, "ch3_kate_badly_hurt" )
+	Special : Set CH4 objectives to GroupItemValue( "Ini", selected save slot, "ch4_objectives" )
+	Special : Set CH4 Dave defeat to GroupItemValue( "Ini", selected save slot, "ch4_dave_defeat" )
+	Special : Set CH4 ending to GroupItemValue( "Ini", selected save slot, "ch4_ending" )
+	Special : Set CH4 spared dave to GroupItemValue( "Ini", selected save slot, "ch4_spared_dave" )
+	Special : Set CH5 admit lie to GroupItemValue( "Ini", selected save slot, "ch5_admit_lie" )
+	Special : Set CH5 goblins to GroupItemValue( "Ini", selected save slot, "ch5_goblins" )
+	Special : Set CH3 treasure to GroupItemValue( "Ini", selected save slot, "ch3_treasure" )
+	Special : Set CH6 Rose deer to GroupItemValue( "Ini", selected save slot, "ch6_rose_deer" )
+	Special : Set CH6 secure to GroupItemValue( "Ini", selected save slot, "ch6_secure" )
+	Special : Set CH5 ignore scream to GroupItemValue( "Ini", selected save slot, "ch5_ignore_scream" )
+	Special : Set CH6 flirt to GroupItemValue( "Ini", selected save slot, "ch6_flirt" )
+	Special : Set CH6 eiden answer to GroupItemValue( "Ini", selected save slot, "ch6_eiden_answer" )
+	Special : Set CH6 improvise to GroupItemValue( "Ini", selected save slot, "ch6_improvise" )
+	Special : Set CH6 defense to GroupItemValue( "Ini", selected save slot, "ch6_defense" )
+	Special : Set CH6 offense to GroupItemValue( "Ini", selected save slot, "ch6_offense" )
+	Special : Set CH6 won dragon to GroupItemValue( "Ini", selected save slot, "ch6_won_dragon" )
+	Special : Set CH6 big plans to GroupItemValue( "Ini", selected save slot, "ch6_big_plans" )
+	Special : Set maximized stats used to GroupItemValue( "Ini", selected save slot, "ch6_maximised_stats_used" )
+	Special : Set CH6 lessathi to GroupItemValue( "Ini", selected save slot, "ch6_lessathi" )
+	Special : Set CH7 tap to GroupItemValue( "Ini", selected save slot, "ch7_tap" )
+	Special : Set CH7 call Rose to GroupItemValue( "Ini", selected save slot, "ch7_call_rose" )
+	Special : Set CH7 watch fight to GroupItemValue( "Ini", selected save slot, "ch7_watch_fight" )
+	Special : Set CH7 help Kate to GroupItemValue( "Ini", selected save slot, "ch7_help_kate" )
+	Special : Set CH7 intimidate to GroupItemValue( "Ini", selected save slot, "ch7_intimidate" )
+	Special : Set CH7 win vs Hadrik to GroupItemValue( "Ini", selected save slot, "ch7_win_vs_hadrik" )
+	Special : Set CH7 informed Azarius to GroupItemValue( "Ini", selected save slot, "ch7_informed_azarius" )
+	Special : Set CH3 tried lift to GroupItemValue( "Ini", selected save slot, "ch3_tried_lift" )
+	Special : Set CH8 talk to GroupItemValue( "Ini", selected save slot, "ch8_talk" )
+	Special : Set CH8 first puzzle to GroupItemValue( "Ini", selected save slot, "ch8_first_puzzle" )
+	Special : Set CH8 smash to GroupItemValue( "Ini", selected save slot, "ch8_smash" )
+	Special : Set CH8 old to GroupItemValue( "Ini", selected save slot, "ch8_old" )
+	Special : Set beta access to GroupItemValue( "Ini", selected save slot, "ch8_beta_access" )
+	Special : Set CH9 inventory to GroupItemValue( "Ini", selected save slot, "ch9_inventory" )
+	Special : Set CH9 take Rose to GroupItemValue( "Ini", selected save slot, "ch9_take_rose" )
+	Special : Set CH9 ogres to GroupItemValue( "Ini", selected save slot, "ch9_ogres" )
+	Special : Set CH10 gems to GroupItemValue( "Ini", selected save slot, "ch10_gems" )
+	Special : Set CH10 Kate scratched to GroupItemValue( "Ini", selected save slot, "ch10_kate_scratched" )
+	Special : Set CH10 Magium to GroupItemValue( "Ini", selected save slot, "ch10_magium" )
+	Special : Set CH11 Saved slave to GroupItemValue( "Ini", selected save slot, "ch11_saved_slave" )
+	Special : Set CH11 Kill noble to GroupItemValue( "Ini", selected save slot, "ch11_kill_noble" )
+	Special : Set CH11 Difference to GroupItemValue( "Ini", selected save slot, "ch11_difference" )
+	Special : Set CH11 Toy to GroupItemValue( "Ini", selected save slot, "ch11_toy" )
+	Special : Set CH11 Romance Rose to GroupItemValue( "Ini", selected save slot, "ch11_romance_rose" )
+	Special : Set CH11 Strategy to GroupItemValue( "Ini", selected save slot, "ch11_strategy" )
+	Special : Set CH11 Saved Rose to GroupItemValue( "Ini", selected save slot, "ch11_saved_rose" )
+	Special : Set B2 Ch1 volunteer to GroupItemValue( "Ini", selected save slot, "b2_ch1_volunteer" )
+	Special : Set B2 Ch1 spin to GroupItemValue( "Ini", selected save slot, "b2_ch1_spin" )
+	Special : Set B2 Ch1 truth to GroupItemValue( "Ini", selected save slot, "b2_ch1_truth" )
+	Special : Set B2 Ch1 Puzzle2 to GroupItemValue( "Ini", selected save slot, "b2_ch1_puzzle2" )
+	Special : Set B2 Ch1 Interfere to GroupItemValue( "Ini", selected save slot, "b2_ch1_interfere" )
+	Special : Set B2 Ch2 tell servant to GroupItemValue( "Ini", selected save slot, "b2_ch2_tell_servant" )
+	Special : Set B2 Ch2 Cell to GroupItemValue( "Ini", selected save slot, "b2_ch2_cell" )
+	Special : Set B2 Ch2 Fist to GroupItemValue( "Ini", selected save slot, "b2_ch2_fist" )
+	Special : Set B2 Ch2 Threatened to GroupItemValue( "Ini", selected save slot, "b2_ch2_threatened" )
+	Special : Set B2 Ch2 Lessathi to GroupItemValue( "Ini", selected save slot, "b2_ch2_lessathi" )
+	Special : Set B2 Ch2 Deal to GroupItemValue( "Ini", selected save slot, "b2_ch2_deal" )
+	Special : Set B2 Ch2 Heard to GroupItemValue( "Ini", selected save slot, "b2_ch2_heard" )
+	Special : Set B2 Ch2 Upset to GroupItemValue( "Ini", selected save slot, "b2_ch2_upset" )
+	Special : Set B2 Ch2 Elevator to GroupItemValue( "Ini", selected save slot, "b2_ch2_elevator" )
+	Special : Set B2 Ch2 Kate to GroupItemValue( "Ini", selected save slot, "b2_ch2_kate" )
+	Special : Set B2 Ch2 Creatures to GroupItemValue( "Ini", selected save slot, "b2_ch2_creatures" )
+	Special : Set B2 CH3 Spin to GroupItemValue( "Ini", selected save slot, "b2_ch3_spin" )
+	Special : Set B2 Ch3 Troll to GroupItemValue( "Ini", selected save slot, "b2_ch3_troll" )
+	Special : Set B2 Ch4 Inform to GroupItemValue( "Ini", selected save slot, "b2_ch4_inform" )
+	Special : Set B2 Ch4 Inform2 to GroupItemValue( "Ini", selected save slot, "b2_ch4_inform2" )
+	Special : Set B2 CH4 Inform3 to GroupItemValue( "Ini", selected save slot, "b2_ch4_inform3" )
+	Special : Set B2 CH4 called kate to GroupItemValue( "Ini", selected save slot, "b2_ch4_called_kate" )
+	Special : Set B2 CH4 backpack to GroupItemValue( "Ini", selected save slot, "b2_ch4_backpack" )
+	Special : Set B2 CH4 beer to GroupItemValue( "Ini", selected save slot, "b2_ch4_beer" )
+	Special : Set B2 CH4 hearing1 to GroupItemValue( "Ini", selected save slot, "b2_ch4_hearing1" )
+	Special : Set B2 CH4 Argument to GroupItemValue( "Ini", selected save slot, "b2_ch4_argument" )
+	Special : Set B2 CH4 Charge to GroupItemValue( "Ini", selected save slot, "b2_ch4_charge" )
+	Special : Set B2 CH4 Tactic to GroupItemValue( "Ini", selected save slot, "b2_ch4_tactic" )
+	Special : Set B2 CH4 Backup to GroupItemValue( "Ini", selected save slot, "b2_ch4_backup" )
+	Special : Set B2 CH4 hearing2 to GroupItemValue( "Ini", selected save slot, "b2_ch4_hearing2" )
+	Special : Set B2 CH4 Forsake to GroupItemValue( "Ini", selected save slot, "b2_ch4_forsake" )
+	Special : Set B2 CH5 Wilhelm to GroupItemValue( "Ini", selected save slot, "b2_ch5_wilhelm" )
+	Special : Set B2 CH5 Heard guards to GroupItemValue( "Ini", selected save slot, "b2_ch5_heard_guards" )
+
+* game started counter = 4
++ selected save slot = "autosave"
+	Special : Set B2 CH5 First cut to GroupItemValue( "Ini", selected save slot, "b2_ch5_first_cut" )
+	Special : Set B2 CH5 Negotiate to GroupItemValue( "Ini", selected save slot, "b2_ch5_negotiate" )
+	Special : Set B2 Ch5 Strategy to GroupItemValue( "Ini", selected save slot, "b2_ch5_strategy" )
+	Special : Set B2 CH5 Scimitar to GroupItemValue( "Ini", selected save slot, "b2_ch5_scimitar" )
+	Special : Set B2 CH5 Spare to GroupItemValue( "Ini", selected save slot, "b2_ch5_spare" )
+	Special : Set B2 CH5 Pilot to GroupItemValue( "Ini", selected save slot, "b2_ch5_pilot" )
+	Special : Set B2 CH6 Person to GroupItemValue( "Ini", selected save slot, "b2_ch6_person" )
+	Special : Set B2 CH6 Hurt to GroupItemValue( "Ini", selected save slot, "b2_ch6_hurt" )
+	Special : Set B2 CH6 Stat to GroupItemValue( "Ini", selected save slot, "b2_ch6_stat" )
+	Special : Set B2 CH6 Banned to GroupItemValue( "Ini", selected save slot, "b2_ch6_banned" )
+	Special : Set B2 CH6 Fox to GroupItemValue( "Ini", selected save slot, "b2_ch6_fox" )
+	Special : Set B2 CH6 Crossbow to GroupItemValue( "Ini", selected save slot, "b2_ch6_crossbow" )
+	Special : Set B2 CH7 Dizziness to GroupItemValue( "Ini", selected save slot, "b2_ch7_dizziness" )
+	Special : Set B2 CH7 Tunnel to GroupItemValue( "Ini", selected save slot, "b2_ch7_tunnel" )
+	Special : Set B2 CH7 Rock to GroupItemValue( "Ini", selected save slot, "b2_ch7_rock" )
+	Special : Set B2 CH7 Overheard to GroupItemValue( "Ini", selected save slot, "b2_ch7_overheard" )
+	Special : Set B2 CH7 Wait to GroupItemValue( "Ini", selected save slot, "b2_ch7_wait" )
+	Special : Set B2 CH7 Reward to GroupItemValue( "Ini", selected save slot, "b2_ch7_reward" )
+	Special : Set B2 CH8 Tickle to GroupItemValue( "Ini", selected save slot, "b2_ch8_tickle" )
+	Special : Set B2 CH8 Tornado to GroupItemValue( "Ini", selected save slot, "b2_ch8_tornado" )
+	Special : Set B2 CH8 Saved to GroupItemValue( "Ini", selected save slot, "b2_ch8_saved" )
+	Special : Set B2 CH8 Goblins to GroupItemValue( "Ini", selected save slot, "b2_ch8_goblins" )
+	Special : Set B2 CH8 Parents to GroupItemValue( "Ini", selected save slot, "b2_ch8_parents" )
+	Special : Set B2 CH8 Energizer to GroupItemValue( "Ini", selected save slot, "b2_ch8_energizer" )
+	Special : Set B2 CH9 Amused to GroupItemValue( "Ini", selected save slot, "b2_ch9_amused" )
+	Special : Set B2 CH9 Cast1 to GroupItemValue( "Ini", selected save slot, "b2_ch9_cast1" )
+	Special : Set B2 CH9 Dog to GroupItemValue( "Ini", selected save slot, "b2_ch9_dog" )
+	Special : Set B2 CH9 Defeat to GroupItemValue( "Ini", selected save slot, "b2_ch9_defeat" )
+	Special : Set B2 CH9 Puzzle give to GroupItemValue( "Ini", selected save slot, "b2_ch9_puzzle_give" )
+	Special : Set B2 CH9 Cast2 to GroupItemValue( "Ini", selected save slot, "b2_ch9_cast2" )
+	Special : Set B2 CH9 Apologize to GroupItemValue( "Ini", selected save slot, "b2_ch9_apologize" )
+	Special : Set B2 CH9 Oath to GroupItemValue( "Ini", selected save slot, "b2_ch9_oath" )
+	Special : Set B2 CH9 Tyrath to GroupItemValue( "Ini", selected save slot, "b2_ch9_tyrath" )
+	Special : Set B2 CH9 Animals to GroupItemValue( "Ini", selected save slot, "b2_ch9_animals" )
+	Special : Set B2 CH9 Spell to GroupItemValue( "Ini", selected save slot, "b2_ch9_spell" )
+	Special : Set B2 CH9 Channel to GroupItemValue( "Ini", selected save slot, "b2_ch9_channel" )
+	Special : Set B2 CH9 Weavers to GroupItemValue( "Ini", selected save slot, "b2_ch9_weavers" )
+	Special : Set B2 CH9 Drink to GroupItemValue( "Ini", selected save slot, "b2_ch9_drink" )
+	Special : Set B2 CH9 Flip to GroupItemValue( "Ini", selected save slot, "b2_ch9_flip" )
+	Special : Set B2 CH10 Toast to GroupItemValue( "Ini", selected save slot, "b2_ch10_toast" )
+	Special : Set B2 CH10 Crossbow to GroupItemValue( "Ini", selected save slot, "b2_ch10_crossbow" )
+	Special : Set B2 CH10 Bribe to GroupItemValue( "Ini", selected save slot, "b2_ch10_bribe" )
+	Special : Set B2 CH10 Weakpoint to GroupItemValue( "Ini", selected save slot, "b2_ch10_weakpoint" )
+	Special : Set B2 CH10 Scouts to GroupItemValue( "Ini", selected save slot, "b2_ch10_scouts" )
+	Special : Set B2 CH10 Traps to GroupItemValue( "Ini", selected save slot, "b2_ch10_traps" )
+	Special : Set B2 CH10 Advisor to GroupItemValue( "Ini", selected save slot, "b2_ch10_advisor" )
+	Special : Set B2 CH10 Target to GroupItemValue( "Ini", selected save slot, "b2_ch10_target" )
+	Special : Set B2 CH10 Tactic to GroupItemValue( "Ini", selected save slot, "b2_ch10_tactic" )
+	Special : Set B2 CH10 Activate to GroupItemValue( "Ini", selected save slot, "b2_ch10_activate" )
+	Special : Set B2 CH11 Kneel to GroupItemValue( "Ini", selected save slot, "b2_ch11_kneel" )
+	Special : Set B2 CH11 Save parents to GroupItemValue( "Ini", selected save slot, "b2_ch11_save_parents" )
+	Special : Set B2 CH11 Both to GroupItemValue( "Ini", selected save slot, "b2_ch11_both" )
+	Special : Set B2 CH11 Skip1 to GroupItemValue( "Ini", selected save slot, "b2_ch11_skip1" )
+	Special : Set B2 CH11 Skip2 to GroupItemValue( "Ini", selected save slot, "b2_ch11_skip2" )
+	Special : Set B2 CH11 Encourage to GroupItemValue( "Ini", selected save slot, "b2_ch11_encourage" )
+	Special : Set B2 CH11 Defend to GroupItemValue( "Ini", selected save slot, "b2_ch11_defend" )
+	Special : Set B2 CH11 Paranoid to GroupItemValue( "Ini", selected save slot, "b2_ch11_paranoid" )
+	Special : Set B2 CH11 added hearing to GroupItemValue( "Ini", selected save slot, "b2_ch11_added_hearing" )
+	Special : Set B2 CH11 Echoes to GroupItemValue( "Ini", selected save slot, "b2_ch11_echoes" )
+	Special : Set B2 CH11 Explain to GroupItemValue( "Ini", selected save slot, "b2_ch11_explain" )
+	Special : Set B2 CH11 Items to GroupItemValue( "Ini", selected save slot, "b2_ch11_items" )
+	Special : Set B2 CH11 Towers to GroupItemValue( "Ini", selected save slot, "b2_ch11_towers" )
+	Special : Set B2 CH11 District to GroupItemValue( "Ini", selected save slot, "b2_ch11_district" )
+	Special : Set B2 CH11 Dagger to GroupItemValue( "Ini", selected save slot, "b2_ch11_dagger" )
+	Special : Set B1 saved stats to GroupItemValue( "Ini", selected save slot, "b1_saved_stats" )
+	Special : Set B1 strength to GroupItemValue( "Ini", selected save slot, "b1_strength" )
+	Special : Set B1 agility to GroupItemValue( "Ini", selected save slot, "b1_agility" )
+	Special : Set B1 toughness to GroupItemValue( "Ini", selected save slot, "b1_toughness" )
+	Special : Set B1 reflexes to GroupItemValue( "Ini", selected save slot, "b1_reflexes" )
+	Special : Set B1 hearing to GroupItemValue( "Ini", selected save slot, "b1_hearing" )
+	Special : Set B1 perception to GroupItemValue( "Ini", selected save slot, "b1_perception" )
+	Special : Set B1 ancient languages to GroupItemValue( "Ini", selected save slot, "b1_ancient_languages" )
+	Special : Set B1 combat technique to GroupItemValue( "Ini", selected save slot, "b1_combat_technique" )
+	Special : Set B1 premonition to GroupItemValue( "Ini", selected save slot, "b1_premonition" )
+	Special : Set B1 available points to GroupItemValue( "Ini", selected save slot, "b1_available_points" )
+	Special : Set B2 saved stats to GroupItemValue( "Ini", selected save slot, "b2_saved_stats" )
+	Special : Set B2 strength to GroupItemValue( "Ini", selected save slot, "b2_strength" )
+	Special : Set B2 agility to GroupItemValue( "Ini", selected save slot, "b2_agility" )
+	Special : Set B2 toughness to GroupItemValue( "Ini", selected save slot, "b2_toughness" )
+	Special : Set B2 reflexes to GroupItemValue( "Ini", selected save slot, "b2_reflexes" )
+	Special : Set B2 hearing to GroupItemValue( "Ini", selected save slot, "b2_hearing" )
+	Special : Set B2 perception to GroupItemValue( "Ini", selected save slot, "b2_perception" )
+	Special : Set B2 ancient languages to GroupItemValue( "Ini", selected save slot, "b2_ancient_languages" )
+	Special : Set B2 combat technique to GroupItemValue( "Ini", selected save slot, "b2_combat_technique" )
+	Special : Set B2 premonition to GroupItemValue( "Ini", selected save slot, "b2_premonition" )
+	Special : Set B2 available points to GroupItemValue( "Ini", selected save slot, "b2_available_points" )
+	Special : Set B3 CH1 age to GroupItemValue( "Ini", selected save slot, "b3_ch1_age" )
+	Special : Set B3 CH1 unlock to GroupItemValue( "Ini", selected save slot, "b3_ch1_unlock" )
+	Special : Set B3 CH1 kate1 to GroupItemValue( "Ini", selected save slot, "b3_ch1_kate1" )
+	Special : Set B3 CH1 kate2 to GroupItemValue( "Ini", selected save slot, "b3_ch1_kate2" )
+	Special : Set B3 CH1 kate3 to GroupItemValue( "Ini", selected save slot, "b3_ch1_kate3" )
+	Special : Set B3 CH1 cities to GroupItemValue( "Ini", selected save slot, "b3_ch1_cities" )
+	Special : Set B3 CH1 password to GroupItemValue( "Ini", selected save slot, "b3_ch1_password" )
+	Special : Set B3 CH2 pass2 to GroupItemValue( "Ini", selected save slot, "b3_ch2_pass2" )
+	Special : Set B3 CH2 infiltration to GroupItemValue( "Ini", selected save slot, "b3_ch2_infiltration" )
+	Special : Set B3 CH2 goblins to GroupItemValue( "Ini", selected save slot, "b3_ch2_goblins" )
+	Special : Set B3 CH2 Golems to GroupItemValue( "Ini", selected save slot, "b3_ch2_golems" )
+	Special : Set B3 CH2 name to GroupItemValue( "Ini", selected save slot, "b3_ch2_name" )
+	Special : Set B3 CH2 Confess to GroupItemValue( "Ini", selected save slot, "b3_ch2_confess" )
+
+* game started counter = 4
++ selected save slot = "autosave"
+	Special : Set B3 CH2 contraptions to GroupItemValue( "Ini", selected save slot, "b3_ch2_contraption" )
+	Special : Set B3 CH2 Hearing to GroupItemValue( "Ini", selected save slot, "b3_ch2_hearing" )
+	Special : Set B3 CH2 Gontrok to GroupItemValue( "Ini", selected save slot, "b3_ch2_gontrok" )
+	Special : Set B3 CH2 madness to GroupItemValue( "Ini", selected save slot, "b3_ch2_madness" )
+	Special : Set B3 CH2 Alice to GroupItemValue( "Ini", selected save slot, "b3_ch2_alice" )
+	Special : Set B3 CH2 Kelrim to GroupItemValue( "Ini", selected save slot, "b3_ch2_kelrim" )
+	Special : Set B3 CH2 Question to GroupItemValue( "Ini", selected save slot, "b3_ch2_question" )
+	Special : Set B3 CH3 Interest to GroupItemValue( "Ini", selected save slot, "b3_ch3_interest" )
+	Special : Set B3 CH3 Monsters to GroupItemValue( "Ini", selected save slot, "b3_ch3_monsters" )
+	Special : Set B3 CH3 Plans to GroupItemValue( "Ini", selected save slot, "b3_ch3_plans" )
+	Special : Set B3 CH3 Chains to GroupItemValue( "Ini", selected save slot, "b3_ch3_chains" )
+	Special : Set B3 CH3 Stats unavailable to GroupItemValue( "Ini", selected save slot, "b3_ch3_stats_unavailable" )
+	Special : Set B3 CH3 Magical to GroupItemValue( "Ini", selected save slot, "b3_ch3_magical" )
+	Special : Set B3 CH3 Assassin to GroupItemValue( "Ini", selected save slot, "b3_ch3_assassin" )
+	Special : Set B3 CH3 Functional to GroupItemValue( "Ini", selected save slot, "b3_ch3_functional" )
+	Special : Set B3 CH3 Daren to GroupItemValue( "Ini", selected save slot, "b3_ch3_daren" )
+	Special : Set B3 CH3 Civilians to GroupItemValue( "Ini", selected save slot, "b3_ch3_civilians" )
+	Special : Set B3 CH3 Carry to GroupItemValue( "Ini", selected save slot, "b3_ch3_carry" )
+	Special : Set B3 CH4 Introduction to GroupItemValue( "Ini", selected save slot, "b3_ch4_introduction" )
+	Special : Set Bluff to GroupItemValue( "Ini", selected save slot, "bluff" )
+	Special : Set Bluff aux to GroupItemValue( "Ini", selected save slot, "bluff_aux" )
+	Special : Set Magical sense to GroupItemValue( "Ini", selected save slot, "magical_sense" )
+	Special : Set Magical sense aux to GroupItemValue( "Ini", selected save slot, "magical_sense_aux" )
+	Special : Set Aura hardening to GroupItemValue( "Ini", selected save slot, "aura_hardening" )
+	Special : Set Aura hardening aux to GroupItemValue( "Ini", selected save slot, "aura_hardening_aux" )
+	Special : Set B3 CH4 Average Joe to GroupItemValue( "Ini", selected save slot, "b3_ch4_average_joe" )
+	Special : Set B3 CH4 Demolisher to GroupItemValue( "Ini", selected save slot, "b3_ch4_demolisher" )
+	Special : Set B3 CH4 Insist to GroupItemValue( "Ini", selected save slot, "b3_ch4_insist" )
+	Special : Set B3 CH4 Cut to GroupItemValue( "Ini", selected save slot, "b3_ch4_cut" )
+	Special : Set B3 CH4 Control to GroupItemValue( "Ini", selected save slot, "b3_ch4_control" )
+	Special : Set B3 CH4 Billy to GroupItemValue( "Ini", selected save slot, "b3_ch4_billy" )
+	Special : Set B3 CH4 Beg to GroupItemValue( "Ini", selected save slot, "b3_ch4_beg" )
+	Special : Set B3 CH4 Tasked to GroupItemValue( "Ini", selected save slot, "b3_ch4_tasked" )
+	Special : Set B3 CH4 Drones to GroupItemValue( "Ini", selected save slot, "b3_ch4_drones" )
+	Special : Set B3 CH5 negotiations to GroupItemValue( "Ini", selected save slot, "b3_ch5_negotiations" )
+	Special : Set B3 CH5 guilty to GroupItemValue( "Ini", selected save slot, "b3_ch5_guilty" )
+	Special : Set B3 CH5 demeanor to GroupItemValue( "Ini", selected save slot, "b3_ch5_demeanor" )
+	Special : Set B3 CH5 moustache to GroupItemValue( "Ini", selected save slot, "b3_ch5_moustache" )
+	Special : Set B3 CH5 follow to GroupItemValue( "Ini", selected save slot, "b3_ch5_follow" )
+	Special : Set B3 CH5 Fight to GroupItemValue( "Ini", selected save slot, "b3_ch5_fight" )
+	Special : Set B3 CH5 Brief to GroupItemValue( "Ini", selected save slot, "b3_ch5_brief" )
+	Special : Set B3 CH5 Breath to GroupItemValue( "Ini", selected save slot, "b3_ch5_breath" )
+	Special : Set B3 CH6 Manipulators to GroupItemValue( "Ini", selected save slot, "b3_ch6_manipulators" )
+	Special : Set B3 CH6 Sleep to GroupItemValue( "Ini", selected save slot, "b3_ch6_sleep" )
+	Special : Set B3 CH6 Slowpoke to GroupItemValue( "Ini", selected save slot, "b3_ch6_slowpoke" )
+	Special : Set B3 CH6 Concealed to GroupItemValue( "Ini", selected save slot, "b3_ch6_concealed" )
+	Special : Set B3 CH6 Betrayed to GroupItemValue( "Ini", selected save slot, "b3_ch6_betrayed" )
+	Special : Set B3 CH6 Secret to GroupItemValue( "Ini", selected save slot, "b3_ch6_secret" )
+	Special : Set B3 CH6 Password to GroupItemValue( "Ini", selected save slot, "b3_ch6_password" )
+	Special : Set B3 CH6 Tie to GroupItemValue( "Ini", selected save slot, "b3_ch6_tie" )
+	Special : Set B3 CH6 Survey to GroupItemValue( "Ini", selected save slot, "b3_ch6_survey" )
+	Special : Set B3 CH6 Plan to GroupItemValue( "Ini", selected save slot, "b3_ch6_plan" )
+	Special : Set B3 CH6 Selected to GroupItemValue( "Ini", selected save slot, "b3_ch6_selected" )
+	Special : Set B3 CH6 Labels to GroupItemValue( "Ini", selected save slot, "b3_ch6_labels" )
+	Special : Set B3 CH6 Preparing to GroupItemValue( "Ini", selected save slot, "b3_ch6_preparing" )
+	Special : Set B3 CH6 Focus to GroupItemValue( "Ini", selected save slot, "b3_ch6_focus" )
+	Special : Set B3 CH6 Air to GroupItemValue( "Ini", selected save slot, "b3_ch6_air" )
+	Special : Set B3 CH6 Earth to GroupItemValue( "Ini", selected save slot, "b3_ch6_earth" )
+	Special : Set B3 CH6 Defense to GroupItemValue( "Ini", selected save slot, "b3_ch6_defense" )
+	Special : Set B3 CH6 Uninjured to GroupItemValue( "Ini", selected save slot, "b3_ch6_uninjured" )
+	Special : Set B3 CH6 Wounded to GroupItemValue( "Ini", selected save slot, "b3_ch6_wounded" )
+	Special : Set B3 CH6 Kelrim to GroupItemValue( "Ini", selected save slot, "b3_ch6_kelrim" )
+	Special : Set B3 CH6 Coward to GroupItemValue( "Ini", selected save slot, "b3_ch6_coward" )
+	Special : Set B3 CH6 Ambassador to GroupItemValue( "Ini", selected save slot, "b3_ch6_ambassador" )
+	Special : Set B3 CH6 Drink to GroupItemValue( "Ini", selected save slot, "b3_ch6_drink" )
+	Special : Set B3 CH6 Shift to GroupItemValue( "Ini", selected save slot, "b3_ch6_shift" )
+	Special : Set B3 CH6 Transceivers to GroupItemValue( "Ini", selected save slot, "b3_ch6_transceivers" )
+	Special : Set B3 CH7 Force to GroupItemValue( "Ini", selected save slot, "b3_ch7_force" )
+	Special : Set B3 CH7 Massage to GroupItemValue( "Ini", selected save slot, "b3_ch7_massage" )
+	Special : Set B3 CH7 Bet to GroupItemValue( "Ini", selected save slot, "b3_ch7_bet" )
+	Special : Set B3 CH7 Fingers to GroupItemValue( "Ini", selected save slot, "b3_ch7_fingers" )
+	Special : Set B3 CH7 Door to GroupItemValue( "Ini", selected save slot, "b3_ch7_door" )
+	Special : Set B3 CH7 Tyrant to GroupItemValue( "Ini", selected save slot, "b3_ch7_tyrant" )
+	Special : Set B3 CH7 Assassinate to GroupItemValue( "Ini", selected save slot, "b3_ch7_assassinate" )
+	Special : Set B3 CH8 Theory to GroupItemValue( "Ini", selected save slot, "b3_ch8_theory" )
+	Special : Set B3 CH8 Watching to GroupItemValue( "Ini", selected save slot, "b3_ch8_watching" )
+	Special : Set B3 CH8 Overseer to GroupItemValue( "Ini", selected save slot, "b3_ch8_overseer" )
+	Special : Set B3 CH8 Next to GroupItemValue( "Ini", selected save slot, "b3_ch8_next" )
+	Special : Set B3 CH8 Precisely to GroupItemValue( "Ini", selected save slot, "b3_ch8_precisely" )
+	Special : Set B3 CH8 King to GroupItemValue( "Ini", selected save slot, "b3_ch8_king" )
+	Special : Set B3 CH8 Defeat to GroupItemValue( "Ini", selected save slot, "b3_ch8_defeat" )
+	Special : Set B3 CH8 Detected to GroupItemValue( "Ini", selected save slot, "b3_ch8_detected" )
+	Special : Set B3 CH8 Overseer2 to GroupItemValue( "Ini", selected save slot, "b3_ch8_overseer2" )
+	Special : Set B3 CH8 Three to GroupItemValue( "Ini", selected save slot, "b3_ch8_three" )
+	Special : Set B3 CH8 Voice to GroupItemValue( "Ini", selected save slot, "b3_ch8_voice" )
+	Special : Set B3 CH8 Heartfelt to GroupItemValue( "Ini", selected save slot, "b3_ch8_heartfelt" )
+	Special : Set B3 CH9 Jack to GroupItemValue( "Ini", selected save slot, "b3_ch9_jack" )
+	Special : Set B3 CH9 Currents to GroupItemValue( "Ini", selected save slot, "b3_ch9_currents" )
+	Special : Set B3 CH9 Conclusions to GroupItemValue( "Ini", selected save slot, "b3_ch9_conclusions" )
+	Special : Set B3 CH9 Premonition to GroupItemValue( "Ini", selected save slot, "b3_ch9_premonition" )
+	Special : Set B3 CH9 Illuna to GroupItemValue( "Ini", selected save slot, "b3_ch9_illuna" )
+	Special : Set B3 CH9 Advice to GroupItemValue( "Ini", selected save slot, "b3_ch9_advice" )
+	Special : Set B3 CH9 Food to GroupItemValue( "Ini", selected save slot, "b3_ch9_food" )
+	Special : Set B3 CH9 Attempt to GroupItemValue( "Ini", selected save slot, "b3_ch9_attempt" )
+	Special : Set B3 CH9 Element to GroupItemValue( "Ini", selected save slot, "b3_ch9_element" )
+	Special : Set B3 CH9 Backup to GroupItemValue( "Ini", selected save slot, "b3_ch9_backup" )
+	Special : Set B3 CH9 Assassinate to GroupItemValue( "Ini", selected save slot, "b3_ch9_assassinate" )
+	Special : Set B3 CH9 Teleport to GroupItemValue( "Ini", selected save slot, "b3_ch9_teleport" )
+	Special : Set B3 CH9 Listen to GroupItemValue( "Ini", selected save slot, "b3_ch9_listen" )
+	Special : Set B3 CH9 Enemies to GroupItemValue( "Ini", selected save slot, "b3_ch9_enemies" )
+	Special : Set B3 CH9 Hydra to GroupItemValue( "Ini", selected save slot, "b3_ch9_hydra" )
+	Special : Set B3 CH9 Hadrik to GroupItemValue( "Ini", selected save slot, "b3_ch9_hadrik" )
+	Special : Set B3 CH9 Cover to GroupItemValue( "Ini", selected save slot, "b3_ch9_cover" )
+	Special : Set B3 CH10 Spin to GroupItemValue( "Ini", selected save slot, "b3_ch10_spin" )
+	Special : Set B3 CH10 Majesty to GroupItemValue( "Ini", selected save slot, "b3_ch10_majesty" )
+	Special : Set B3 CH10 Wrong to GroupItemValue( "Ini", selected save slot, "b3_ch10_wrong" )
+	Special : Set B3 CH10 Puzzle to GroupItemValue( "Ini", selected save slot, "b3_ch10_puzzle" )
+	Special : Set B3 CH10 Benefits to GroupItemValue( "Ini", selected save slot, "b3_ch10_benefits" )
+	Special : Set B3 CH10 Check to GroupItemValue( "Ini", selected save slot, "b3_ch10_check" )
+	Special : Set B3 CH10 Biscuit to GroupItemValue( "Ini", selected save slot, "b3_ch10_biscuit" )
+	Special : Set B3 CH10 Inappropriate to GroupItemValue( "Ini", selected save slot, "b3_ch10_inappropriate" )
+	Special : Set B3 CH10 Eiden to GroupItemValue( "Ini", selected save slot, "b3_ch10_eiden" )
+	Special : Set B3 CH10 Beforehand to GroupItemValue( "Ini", selected save slot, "b3_ch10_beforehand" )
+	Special : Set B3 CH10 Misunderstanding to GroupItemValue( "Ini", selected save slot, "b3_ch10_misunderstanding" )
+	Special : Set B3 CH10 Destroyed to GroupItemValue( "Ini", selected save slot, "b3_ch10_destroyed" )
+	Special : Set B3 CH10 Sparring to GroupItemValue( "Ini", selected save slot, "b3_ch10_sparring" )
+	Special : Set B3 CH10 Leader to GroupItemValue( "Ini", selected save slot, "b3_ch10_leader" )
+	Special : Set B3 CH10 Reason to GroupItemValue( "Ini", selected save slot, "b3_ch10_reason" )
+	Special : Set B3 CH10 Worry to GroupItemValue( "Ini", selected save slot, "b3_ch10_worry" )
+	Special : Set B3 CH10 Crystals to GroupItemValue( "Ini", selected save slot, "b3_ch10_crystals" )
+	Special : Set B3 CH10 Node to GroupItemValue( "Ini", selected save slot, "b3_ch10_node" )
+	Special : Set B3 CH10 Mention to GroupItemValue( "Ini", selected save slot, "b3_ch10_mention" )
+	Special : Set B3 CH11 Friend to GroupItemValue( "Ini", selected save slot, "b3_ch11_friend" )
+	Special : Set B3 CH11 Transferred to GroupItemValue( "Ini", selected save slot, "b3_ch11_transferred" )
+
+* game started counter = 4
++ selected save slot = "autosave"
+	Special : Set B3 CH11 Path to GroupItemValue( "Ini", selected save slot, "b3_ch11_path" )
+	Special : Set B3 CH11 Hear to GroupItemValue( "Ini", selected save slot, "b3_ch11_hear" )
+	Special : Set B3 CH11 Hear to GroupItemValue( "Ini", selected save slot, "b3_ch11_reverse" )
+	Special : Set B3 CH11 Puzzle4 to GroupItemValue( "Ini", selected save slot, "b3_ch11_puzzle4" )
+	Special : Set B3 CH11 Mocking to GroupItemValue( "Ini", selected save slot, "b3_ch11_mocking" )
+	Special : Set B3 CH11 Weakness to GroupItemValue( "Ini", selected save slot, "b3_ch11_weakness" )
+	Special : Set B3 CH11 Money to GroupItemValue( "Ini", selected save slot, "b3_ch11_money" )
+	Special : Set B3 CH11 Red to GroupItemValue( "Ini", selected save slot, "b3_ch11_red" )
+	Special : Set B3 CH11 Diane to GroupItemValue( "Ini", selected save slot, "b3_ch11_diane" )
+	Special : Set B3 CH11 Melindra to GroupItemValue( "Ini", selected save slot, "b3_ch11_melindra" )
+	Special : Set B3 CH11 Magic to GroupItemValue( "Ini", selected save slot, "b3_ch11_magic" )
+	Special : Set B3 CH12 Believe to GroupItemValue( "Ini", selected save slot, "b3_ch12_believe" )
+	Special : Set B3 CH12 Invest to GroupItemValue( "Ini", selected save slot, "b3_ch12_invest" )
+	Special : Set B3 CH12 Approach to GroupItemValue( "Ini", selected save slot, "b3_ch12_approach" )
+	Special : Set B3 CH12 Hadrik to GroupItemValue( "Ini", selected save slot, "b3_ch12_hadrik" )
+	Special : Set B3 CH12 Spell to GroupItemValue( "Ini", selected save slot, "b3_ch12_spell" )
+	Special : Set B3 CH12 Chance to GroupItemValue( "Ini", selected save slot, "b3_ch12_chance" )
+	Special : Set B3 CH12 Relieved to GroupItemValue( "Ini", selected save slot, "b3_ch12_relieved" )
+	Special : Set B3 CH12 Diane to GroupItemValue( "Ini", selected save slot, "b3_ch12_diane" )
+	Special : Set B3 CH12 Kate to GroupItemValue( "Ini", selected save slot, "b3_ch12_kate" )
+	Special : Set B3 CH12 Delusional to GroupItemValue( "Ini", selected save slot, "b3_ch12_delusional" )
+	Special : Set B3 CH12 Conflicted to GroupItemValue( "Ini", selected save slot, "b3_ch12_conflicted" )
+	Special : Set B3 CH12 Sincere to GroupItemValue( "Ini", selected save slot, "b3_ch12_sincere" )
+	Special : Set B3 CH12 Scout to GroupItemValue( "Ini", selected save slot, "b3_ch12_scout" )
+	Special : Set B3 CH12 Punches to GroupItemValue( "Ini", selected save slot, "b3_ch12_punches" )
+	Special : Set B3 CH12 Hideous to GroupItemValue( "Ini", selected save slot, "b3_ch12_hideous" )
+	Special : Set B3 CH12 Languages to GroupItemValue( "Ini", selected save slot, "b3_ch12_languages" )
+	Special : Set B3 CH12 Hesitant to GroupItemValue( "Ini", selected save slot, "b3_ch12_hesitant" )
+	Special : Set B3 CH12 Eiden to GroupItemValue( "Ini", selected save slot, "b3_ch12_eiden" )
+	Special : Set B3 CH12 Thank to GroupItemValue( "Ini", selected save slot, "b3_ch12_thank" )
+
+* Counter = 1
+	 Ini : Set value AC CH1 Coward to item "ac_ch1_coward" in group "achievements"
+	 Ini : Set value AC CH1 Die to item "ac_ch1_die" in group "achievements"
+	 Ini : Set value AC CH1 Honesty to item "ac_ch1_honesty" in group "achievements"
+	 Ini : Set value AC CH2 Talker to item "ac_ch2_talker" in group "achievements"
+	 Ini : Set value AC CH2 Nails to item "ac_ch2_nails" in group "achievements"
+	 Ini : Set value AC CH2 Master to item "ac_ch2_master" in group "achievements"
+	 Ini : Set value AC CH2 Unlikely to item "ac_ch2_unlikely" in group "achievements"
+	 Ini : Set value AC CH3 Message to item "ac_ch3_message" in group "achievements"
+	 Ini : Set value AC CH3 Army to item "ac_ch3_army" in group "achievements"
+	 Ini : Set value AC CH3 Close to item "ac_ch3_close" in group "achievements"
+	 Ini : Set value AC CH4 Noble to item "ac_ch4_noble" in group "achievements"
+	 Ini : Set value AC CH4 Cutthroat to item "ac_ch4_cutthroat" in group "achievements"
+	 Ini : Set value AC CH4 Kneed to item "ac_ch4_kneed" in group "achievements"
+	 Ini : Set value AC CH5 Wielder to item "ac_ch5_wielder" in group "achievements"
+	 Ini : Set value AC CH5 Liar to item "ac_ch5_liar" in group "achievements"
+	 Ini : Set value AC CH5 Deed to item "ac_ch5_deed" in group "achievements"
+	 Ini : Set value AC CH5 Shameless to item "ac_ch5_shameless" in group "achievements"
+	 Ini : Set value AC CH6 Tyrath to item "ac_ch6_tyrath" in group "achievements"
+	 Ini : Set value AC CH6 Berserker to item "ac_ch6_berserker" in group "achievements"
+	 Ini : Set value AC CH6 Immersion to item "ac_ch6_immersion" in group "achievements"
+	 Ini : Set value AC CH7 Answer to item "ac_ch7_answer" in group "achievements"
+	 Ini : Set value AC CH7 Crusher to item "ac_ch7_crusher" in group "achievements"
+	 Ini : Set value AC CH7 Hadrik to item "ac_ch7_hadrik" in group "achievements"
+	 Ini : Set value AC CH8 democratie to item "ac_ch8_democratie" in group "achievements"
+	 Ini : Set value AC CH8 first to item "ac_ch8_first" in group "achievements"
+	 Ini : Set value AC CH8 Hydra to item "ac_ch8_hydra" in group "achievements"
+	 Ini : Set value AC CH9 Observer to item "ac_ch9_observer" in group "achievements"
+	 Ini : Set value AC CH9 Decision to item "ac_ch9_decision" in group "achievements"
+	 Ini : Set value AC CH10 Shaman to item "ac_ch10_shaman" in group "achievements"
+	 Ini : Set value AC CH10 Toast to item "ac_ch10_toast" in group "achievements"
+	 Ini : Set value AC CH10 Reunion to item "ac_ch10_reunion" in group "achievements"
+	 Ini : Set value AC CH11 Symbol to item "ac_ch11_symbol" in group "achievements"
+	 Ini : Set value AC CH11 Stillwater to item "ac_ch11_stillwater" in group "achievements"
+	 Ini : Set value AC CH11 Casualties to item "ac_ch11_casualties" in group "achievements"
+	 Ini : Set value AC CH11 Average to item "ac_ch11_average" in group "achievements"
+	 Ini : Set value ad counter checkpoint to item "ad_counter_checkpoint" in group "achievements"
+	 Ini : Set value ad counter load to item "ad_counter_load" in group "achievements"
+	 Ini : Set value Night mode to item "night_mode" in group "achievements"
+	 Ini : Set value First book purchased to item "first_book_purchased" in group "achievements"
+	 Ini : Set value Patch night mode to item "patch_night_mode" in group "achievements"
+	 Ini : Set value Second book purchased to item "second_book_purchased" in group "achievements"
+	 Ini : Set value cloud achievements to item "cloud_achievements" in group "achievements"
+	 Ini : Set value enable auto log in to item "enable_auto_log_in" in group "achievements"
+	 Ini : Set value login prompt shown to item "login_prompt_shown" in group "achievements"
+	 Ini : Set value ios game message to item "ios_game_message" in group "achievements"
+	 Ini : Set value remove ads reminder to item "remove_ads_reminder" in group "achievements"
+	 Ini : Set value AC B2 CH1 News to item "ac_b2_ch1_news" in group "achievements"
+	 Ini : Set value AC B2 CH1 Distance to item "ac_b2_ch1_distance" in group "achievements"
+	 Ini : Set value AC B2 CH1 Second to item "ac_b2_ch1_second" in group "achievements"
+	 Ini : Set value AC B2 CH1 Breed to item "ac_b2_ch1_breed" in group "achievements"
+	 Ini : Set value AC B2 CH2 Bro to item "ac_b2_ch2_bro" in group "achievements"
+	 Ini : Set value AC B2 CH2 Easy to item "ac_b2_ch2_easy" in group "achievements"
+	 Ini : Set value AC B2 CH2 Wall to item "ac_b2_ch2_wall" in group "achievements"
+	 Ini : Set value AC B2 CH2 Griffin to item "ac_b2_ch2_griffin" in group "achievements"
+	 Ini : Set value AC B2 CH3 Enemy to item "ac_b2_ch3_enemy" in group "achievements"
+	 Ini : Set value AC B2 CH3 Cage to item "ac_b2_ch3_cage" in group "achievements"
+	 Ini : Set value AC B2 CH4 Player to item "ac_b2_ch4_player" in group "achievements"
+	 Ini : Set value AC B2 CH4 Intimidation to item "ac_b2_ch4_intimidation" in group "achievements"
+	 Ini : Set value AC B2 CH4 Hadrik to item "ac_b2_ch4_hadrik" in group "achievements"
+	 Ini : Set value AC B2 CH4 Risk to item "ac_b2_ch4_risk" in group "achievements"
+	 Ini : Set value AC B2 CH4 Trampler to item "ac_b2_ch4_trampler" in group "achievements"
+	 Ini : Set value AC B2 CH4 Spear to item "ac_b2_ch4_spear" in group "achievements"
+	 Ini : Set value AC B2 CH4 Stats to item "ac_b2_ch4_stats" in group "achievements"
+	 Ini : Set value AC B2 CH4 Time to item "ac_b2_ch4_time" in group "achievements"
+	 Ini : Set value AC B2 CH4 Motive to item "ac_b2_ch4_motive" in group "achievements"
+	 Ini : Set value AC B2 CH5 Tribal to item "ac_b2_ch5_tribal" in group "achievements"
+	 Ini : Set value AC B2 CH5 Divide to item "ac_b2_ch5_divide" in group "achievements"
+	 Ini : Set value AC B2 CH5 Speaker to item "ac_b2_ch5_speaker" in group "achievements"
+	 Ini : Set value AC B2 CH5 United to item "ac_b2_ch5_united" in group "achievements"
+	 Ini : Set value AC B2 CH6 Secret to item "ac_b2_ch6_secret" in group "achievements"
+	 Ini : Set value AC B2 CH6 Edge to item "ac_b2_ch6_edge" in group "achievements"
+	 Ini : Set value AC B2 CH7 Average to item "ac_b2_ch7_average" in group "achievements"
+	 Ini : Set value AC B2 CH7 Culprit to item "ac_b2_ch7_culprit" in group "achievements"
+	 Ini : Set value AC B2 CH7 Delivered to item "ac_b2_ch7_delivered" in group "achievements"
+	 Ini : Set value AC B2 CH7 Cookie to item "ac_b2_ch7_cookie" in group "achievements"
+	 Ini : Set value AC B2 CH8 Trivia to item "ac_b2_ch8_trivia" in group "achievements"
+	 Ini : Set value AC B2 CH8 Savior to item "ac_b2_ch8_savior" in group "achievements"
+	 Ini : Set value AC B2 CH8 Tree to item "ac_b2_ch8_tree" in group "achievements"
+	 Ini : Set value AC B2 CH8 Effects to item "ac_b2_ch8_effects" in group "achievements"
+	 Ini : Set value AC B2 CH8 Gentleman to item "ac_b2_ch8_gentleman" in group "achievements"
+	 Ini : Set value AC B2 CH9 Missing to item "ac_b2_ch9_missing" in group "achievements"
+	 Ini : Set value AC B2 CH9 Helper to item "ac_b2_ch9_helper" in group "achievements"
+	 Ini : Set value AC B2 CH9 King to item "ac_b2_ch9_king" in group "achievements"
+	 Ini : Set value AC B2 CH9 Cards to item "ac_b2_ch9_cards" in group "achievements"
+	 Ini : Set value AC B2 CH10 Creative to item "ac_b2_ch10_creative" in group "achievements"
+	 Ini : Set value AC B2 CH10 Mammoth to item "ac_b2_ch10_mammoth" in group "achievements"
+	 Ini : Set value AC B2 CH10 Demolition to item "ac_b2_ch10_demolition" in group "achievements"
+	 Ini : Set value AC B2 CH10 Stalker to item "ac_b2_ch10_stalker" in group "achievements"
+	 Ini : Set value AC B2 CH11 Supportive to item "ac_b2_ch11_supportive" in group "achievements"
+	 Ini : Set value AC B2 CH11 Madman to item "ac_b2_ch11_madman" in group "achievements"
+	 Ini : Set value AC B2 CH11 Cutthroat to item "ac_b2_ch11_cutthroat" in group "achievements"
+	 Ini : Set value AC B2 CH11 Average2 to item "ac_b2_ch11_average2" in group "achievements"
+	 Ini : Set value AC B2 CH11 Hidden to item "ac_b2_ch11_hidden" in group "achievements"
+	 Ini : Set value AC B2 CH11 Elephant to item "ac_b2_ch11_elephant" in group "achievements"
+	 Ini : Set value AC B3 CH1 Regrets to item "ac_b3_ch1_regrets" in group "achievements"
+	 Ini : Set value AC B3 CH1 Password to item "ac_b3_ch1_password" in group "achievements"
+	 Ini : Set value auto save prompt shown to item "auto_save_prompt_shown" in group "achievements"
+	 Ini : Set value hint box shown to item "hint_box_shown" in group "achievements"
+	 Ini : Set value AC B3 CH2 metal to item "ac_b3_ch2_metal" in group "achievements"
+	 Ini : Set value AC B3 CH2 serious to item "ac_b3_ch2_serious" in group "achievements"
+	 Ini : Set value AC B3 CH2 lie to item "ac_b3_ch2_lie" in group "achievements"
+	 Ini : Set value AC B3 CH2 reckless to item "ac_b3_ch2_reckless" in group "achievements"
+	 Ini : Set value AC B3 CH3 Ominous to item "ac_b3_ch3_ominous" in group "achievements"
+	 Ini : Set value AC B3 CH3 Unexpected to item "ac_b3_ch3_unexpected" in group "achievements"
+	 Ini : Set value AC B3 CH3 Job to item "ac_b3_ch3_job" in group "achievements"
+	 Ini : Set value AC B3 CH3 Unforeseen to item "ac_b3_ch3_unforeseen" in group "achievements"
+	 Ini : Set value next chapter crash to item "next_chapter_crash" in group "achievements"
+	 Ini : Set value auto save crash to item "auto_save_crash" in group "achievements"
+	 Ini : Set value AC B3 CH4 Demolisher to item "ac_b3_ch4_demolisher" in group "achievements"
+	 Ini : Set value AC B3 CH4 Alliance to item "ac_b3_ch4_alliance" in group "achievements"
+	 Ini : Set value AC B3 CH4 Deception to item "ac_b3_ch4_deception" in group "achievements"
+	 Ini : Set value AC B3 CH4 Thrower to item "ac_b3_ch4_thrower" in group "achievements"
+	 Ini : Set value menu crash to item "menu_crash" in group "achievements"
+	 Ini : Set value AC B3 CH5 Opportunist to item "ac_b3_ch5_opportunist" in group "achievements"
+	 Ini : Set value AC B3 CH5 Days to item "ac_b3_ch5_days" in group "achievements"
+	 Ini : Set value AC B3 CH5 Footsteps to item "ac_b3_ch5_footsteps" in group "achievements"
+	 Ini : Set value AC B3 CH5 Passed to item "ac_b3_ch5_passed" in group "achievements"
+	 Ini : Set value AC B3 CH6 Natural to item "ac_b3_ch6_natural" in group "achievements"
+	 Ini : Set value AC B3 CH6 Assist to item "ac_b3_ch6_assist" in group "achievements"
+	 Ini : Set value AC B3 CH6 Peek to item "ac_b3_ch6_peek" in group "achievements"
+	 Ini : Set value AC B3 CH6 Credo to item "ac_b3_ch6_credo" in group "achievements"
+	 Ini : Set value AC B3 CH6 Guardian to item "ac_b3_ch6_guardian" in group "achievements"
+	 Ini : Set value AC B3 CH6 Freeze to item "ac_b3_ch6_freeze" in group "achievements"
+	 Ini : Set value AC B3 CH6 Curiosity to item "ac_b3_ch6_curiosity" in group "achievements"
+	 Ini : Set value AC B3 CH6 Average to item "ac_b3_ch6_average" in group "achievements"
+	 Ini : Set value AC B3 CH6 Quarantine to item "ac_b3_ch6_quarantine" in group "achievements"
+
+* Counter = 1
+	 Ini : Set value AC B3 CH6 Echoes to item "ac_b3_ch6_echoes" in group "achievements"
+	 Ini : Set value AC B3 CH7 Honorable to item "ac_b3_ch7_honorable" in group "achievements"
+	 Ini : Set value AC B3 CH7 Sharpshooter to item "ac_b3_ch7_sharpshooter" in group "achievements"
+	 Ini : Set value AC B3 CH7 Paranoid to item "ac_b3_ch7_paranoid" in group "achievements"
+	 Ini : Set value AC B3 CH8 Bluffer to item "ac_b3_ch8_bluffer" in group "achievements"
+	 Ini : Set value AC B3 CH8 Unusual to item "ac_b3_ch8_unusual" in group "achievements"
+	 Ini : Set value AC B3 CH8 Heartfelt to item "ac_b3_ch8_heartfelt" in group "achievements"
+	 Ini : Set value AC B3 CH8 Friend to item "ac_b3_ch8_friend" in group "achievements"
+	 Ini : Set value AC B3 CH9 Consolation to item "ac_b3_ch9_consolation" in group "achievements"
+	 Ini : Set value AC B3 CH9 Prize to item "ac_b3_ch9_prize" in group "achievements"
+	 Ini : Set value AC B3 CH9 Moment to item "ac_b3_ch9_moment" in group "achievements"
+	 Ini : Set value AC B3 CH9 Targets to item "ac_b3_ch9_targets" in group "achievements"
+	 Ini : Set value AC B3 CH9 Trinkets to item "ac_b3_ch9_trinkets" in group "achievements"
+	 Ini : Set value AC B3 CH10 Benefits to item "ac_b3_ch10_benefits" in group "achievements"
+	 Ini : Set value AC B3 CH10 Third to item "ac_b3_ch10_third" in group "achievements"
+	 Ini : Set value AC B3 CH10 Behind to item "ac_b3_ch10_behind" in group "achievements"
+	 Ini : Set value AC B3 CH10 Reasonable to item "ac_b3_ch10_reasonable" in group "achievements"
+	 Ini : Set value AC B3 CH10 Forbidden to item "ac_b3_ch10_forbidden" in group "achievements"
+	 Ini : Set value AC B3 CH11 Fourth to item "ac_b3_ch11_fourth" in group "achievements"
+	 Ini : Set value AC B3 CH11 Taste to item "ac_b3_ch11_taste" in group "achievements"
+	 Ini : Set value AC B3 CH11 Aftermath to item "ac_b3_ch11_aftermath" in group "achievements"
+	 Ini : Set value AC B3 CH12 Battle to item "ac_b3_ch12_battle" in group "achievements"
+	 Ini : Set value AC B3 CH12 Hugger to item "ac_b3_ch12_hugger" in group "achievements"
+	 Ini : Set value AC B3 CH12 Liar to item "ac_b3_ch12_liar" in group "achievements"
+	 Ini : Set value AC B3 CH12 Dagger to item "ac_b3_ch12_dagger" in group "achievements"
+	 Ini : Set value AC B3 CH12 Delegator to item "ac_b3_ch12_delegator" in group "achievements"
+	 Ini : Set value AC B3 CH12 Average to item "ac_b3_ch12_average" in group "achievements"
+
+* game started counter = 4
+	Special : Set AC CH1 Coward to GroupItemValue( "Ini", "achievements", "ac_ch1_coward" )
+	Special : Set AC CH1 Die to GroupItemValue( "Ini", "achievements", "ac_ch1_die" )
+	Special : Set AC CH1 Honesty to GroupItemValue( "Ini", "achievements", "ac_ch1_honesty" )
+	Special : Set AC CH2 Talker to GroupItemValue( "Ini", "achievements", "ac_ch2_talker" )
+	Special : Set AC CH2 Nails to GroupItemValue( "Ini", "achievements", "ac_ch2_nails" )
+	Special : Set AC CH2 Master to GroupItemValue( "Ini", "achievements", "ac_ch2_master" )
+	Special : Set AC CH2 Unlikely to GroupItemValue( "Ini", "achievements", "ac_ch2_unlikely" )
+	Special : Set AC CH3 Message to GroupItemValue( "Ini", "achievements", "ac_ch3_message" )
+	Special : Set AC CH3 Army to GroupItemValue( "Ini", "achievements", "ac_ch3_army" )
+	Special : Set AC CH3 Close to GroupItemValue( "Ini", "achievements", "ac_ch3_close" )
+	Special : Set AC CH4 Noble to GroupItemValue( "Ini", "achievements", "ac_ch4_noble" )
+	Special : Set AC CH4 Cutthroat to GroupItemValue( "Ini", "achievements", "ac_ch4_cutthroat" )
+	Special : Set AC CH4 Kneed to GroupItemValue( "Ini", "achievements", "ac_ch4_kneed" )
+	Special : Set AC CH5 Wielder to GroupItemValue( "Ini", "achievements", "ac_ch5_wielder" )
+	Special : Set AC CH5 Liar to GroupItemValue( "Ini", "achievements", "ac_ch5_liar" )
+	Special : Set AC CH5 Deed to GroupItemValue( "Ini", "achievements", "ac_ch5_deed" )
+	Special : Set AC CH5 Shameless to GroupItemValue( "Ini", "achievements", "ac_ch5_shameless" )
+	Special : Set AC CH6 Tyrath to GroupItemValue( "Ini", "achievements", "ac_ch6_tyrath" )
+	Special : Set AC CH6 Berserker to GroupItemValue( "Ini", "achievements", "ac_ch6_berserker" )
+	Special : Set AC CH6 Immersion to GroupItemValue( "Ini", "achievements", "ac_ch6_immersion" )
+	Special : Set AC CH7 Answer to GroupItemValue( "Ini", "achievements", "ac_ch7_answer" )
+	Special : Set AC CH7 Crusher to GroupItemValue( "Ini", "achievements", "ac_ch7_crusher" )
+	Special : Set AC CH7 Hadrik to GroupItemValue( "Ini", "achievements", "ac_ch7_hadrik" )
+	Special : Set AC CH8 democratie to GroupItemValue( "Ini", "achievements", "ac_ch8_democratie" )
+	Special : Set AC CH8 first to GroupItemValue( "Ini", "achievements", "ac_ch8_first" )
+	Special : Set AC CH8 Hydra to GroupItemValue( "Ini", "achievements", "ac_ch8_hydra" )
+	Special : Set AC CH9 Observer to GroupItemValue( "Ini", "achievements", "ac_ch9_observer" )
+	Special : Set AC CH9 Decision to GroupItemValue( "Ini", "achievements", "ac_ch9_decision" )
+	Special : Set AC CH10 Shaman to GroupItemValue( "Ini", "achievements", "ac_ch10_shaman" )
+	Special : Set AC CH10 Toast to GroupItemValue( "Ini", "achievements", "ac_ch10_toast" )
+	Special : Set AC CH10 Reunion to GroupItemValue( "Ini", "achievements", "ac_ch10_reunion" )
+	Special : Set AC CH11 Symbol to GroupItemValue( "Ini", "achievements", "ac_ch11_symbol" )
+	Special : Set AC CH11 Stillwater to GroupItemValue( "Ini", "achievements", "ac_ch11_stillwater" )
+	Special : Set AC CH11 Casualties to GroupItemValue( "Ini", "achievements", "ac_ch11_casualties" )
+	Special : Set AC CH11 Average to GroupItemValue( "Ini", "achievements", "ac_ch11_average" )
+	Special : Set rate game shown to GroupItemValue( "Ini", "achievements", "rate_game_shown" )
+	Special : Set ad counter checkpoint to GroupItemValue( "Ini", "achievements", "ad_counter_checkpoint" )
+	Special : Set ad counter load to GroupItemValue( "Ini", "achievements", "ad_counter_load" )
+	Special : Set Night mode to GroupItemValue( "Ini", "achievements", "night_mode" )
+	Special : Set First book purchased to GroupItemValue( "Ini", "achievements", "first_book_purchased" )
+	Special : Set Patch night mode to GroupItemValue( "Ini", "achievements", "patch_night_mode" )
+	Special : Set Second book purchased to GroupItemValue( "Ini", "achievements", "second_book_purchased" )
+	Special : Set cloud achievements to GroupItemValue( "Ini", "achievements", "cloud_achievements" )
+	Special : Set enable auto log in to GroupItemValue( "Ini", "achievements", "enable_auto_log_in" )
+	Special : Set login prompt shown to GroupItemValue( "Ini", "achievements", "login_prompt_shown" )
+	Special : Set ios game message to GroupItemValue( "Ini", "achievements", "ios_game_message" )
+	Special : Set remove ads reminder to GroupItemValue( "Ini", "achievements", "remove_ads_reminder" )
+	Special : Set AC B2 CH1 News to GroupItemValue( "Ini", "achievements", "ac_b2_ch1_news" )
+	Special : Set AC B2 CH1 Distance to GroupItemValue( "Ini", "achievements", "ac_b2_ch1_distance" )
+	Special : Set AC B2 CH1 Second to GroupItemValue( "Ini", "achievements", "ac_b2_ch1_second" )
+	Special : Set AC B2 CH1 Breed to GroupItemValue( "Ini", "achievements", "ac_b2_ch1_breed" )
+	Special : Set AC B2 CH2 Bro to GroupItemValue( "Ini", "achievements", "ac_b2_ch2_bro" )
+	Special : Set AC B2 CH2 Easy to GroupItemValue( "Ini", "achievements", "ac_b2_ch2_easy" )
+	Special : Set AC B2 CH2 Wall to GroupItemValue( "Ini", "achievements", "ac_b2_ch2_wall" )
+	Special : Set AC B2 CH2 Griffin to GroupItemValue( "Ini", "achievements", "ac_b2_ch2_griffin" )
+	Special : Set AC B2 CH3 Enemy to GroupItemValue( "Ini", "achievements", "ac_b2_ch3_enemy" )
+	Special : Set AC B2 CH3 Cage to GroupItemValue( "Ini", "achievements", "ac_b2_ch3_cage" )
+	Special : Set AC B2 CH4 Player to GroupItemValue( "Ini", "achievements", "ac_b2_ch4_player" )
+	Special : Set AC B2 CH4 Intimidation to GroupItemValue( "Ini", "achievements", "ac_b2_ch4_intimidation" )
+	Special : Set AC B2 CH4 Hadrik to GroupItemValue( "Ini", "achievements", "ac_b2_ch4_hadrik" )
+	Special : Set AC B2 CH4 Risk to GroupItemValue( "Ini", "achievements", "ac_b2_ch4_risk" )
+	Special : Set AC B2 CH4 Trampler to GroupItemValue( "Ini", "achievements", "ac_b2_ch4_trampler" )
+	Special : Set AC B2 CH4 Spear to GroupItemValue( "Ini", "achievements", "ac_b2_ch4_spear" )
+	Special : Set AC B2 CH4 Stats to GroupItemValue( "Ini", "achievements", "ac_b2_ch4_stats" )
+	Special : Set AC B2 CH4 Time to GroupItemValue( "Ini", "achievements", "ac_b2_ch4_time" )
+	Special : Set AC B2 CH4 Motive to GroupItemValue( "Ini", "achievements", "ac_b2_ch4_motive" )
+	Special : Set AC B2 CH5 Tribal to GroupItemValue( "Ini", "achievements", "ac_b2_ch5_tribal" )
+	Special : Set AC B2 CH5 Divide to GroupItemValue( "Ini", "achievements", "ac_b2_ch5_divide" )
+	Special : Set AC B2 CH5 Speaker to GroupItemValue( "Ini", "achievements", "ac_b2_ch5_speaker" )
+	Special : Set AC B2 CH5 United to GroupItemValue( "Ini", "achievements", "ac_b2_ch5_united" )
+	Special : Set AC B2 CH6 Secret to GroupItemValue( "Ini", "achievements", "ac_b2_ch6_secret" )
+	Special : Set AC B2 CH6 Edge to GroupItemValue( "Ini", "achievements", "ac_b2_ch6_edge" )
+	Special : Set AC B2 CH7 Average to GroupItemValue( "Ini", "achievements", "ac_b2_ch7_average" )
+	Special : Set AC B2 CH7 Culprit to GroupItemValue( "Ini", "achievements", "ac_b2_ch7_culprit" )
+	Special : Set AC B2 CH7 Delivered to GroupItemValue( "Ini", "achievements", "ac_b2_ch7_delivered" )
+	Special : Set AC B2 CH7 Cookie to GroupItemValue( "Ini", "achievements", "ac_b2_ch7_cookie" )
+	Special : Set AC B2 CH8 Trivia to GroupItemValue( "Ini", "achievements", "ac_b2_ch8_trivia" )
+	Special : Set AC B2 CH8 Savior to GroupItemValue( "Ini", "achievements", "ac_b2_ch8_savior" )
+	Special : Set AC B2 CH8 Tree to GroupItemValue( "Ini", "achievements", "ac_b2_ch8_tree" )
+	Special : Set AC B2 CH8 Effects to GroupItemValue( "Ini", "achievements", "ac_b2_ch8_effects" )
+	Special : Set AC B2 CH8 Gentleman to GroupItemValue( "Ini", "achievements", "ac_b2_ch8_gentleman" )
+	Special : Set AC B2 CH9 Missing to GroupItemValue( "Ini", "achievements", "ac_b2_ch9_missing" )
+	Special : Set AC B2 CH9 Helper to GroupItemValue( "Ini", "achievements", "ac_b2_ch9_helper" )
+	Special : Set AC B2 CH9 King to GroupItemValue( "Ini", "achievements", "ac_b2_ch9_king" )
+	Special : Set AC B2 CH9 Cards to GroupItemValue( "Ini", "achievements", "ac_b2_ch9_cards" )
+	Special : Set AC B2 CH10 Creative to GroupItemValue( "Ini", "achievements", "ac_b2_ch10_creative" )
+	Special : Set AC B2 CH10 Mammoth to GroupItemValue( "Ini", "achievements", "ac_b2_ch10_mammoth" )
+	Special : Set AC B2 CH10 Demolition to GroupItemValue( "Ini", "achievements", "ac_b2_ch10_demolition" )
+	Special : Set AC B2 CH10 Stalker to GroupItemValue( "Ini", "achievements", "ac_b2_ch10_stalker" )
+	Special : Set AC B2 CH11 Supportive to GroupItemValue( "Ini", "achievements", "ac_b2_ch11_supportive" )
+	Special : Set AC B2 CH11 Madman to GroupItemValue( "Ini", "achievements", "ac_b2_ch11_madman" )
+	Special : Set AC B2 CH11 Cutthroat to GroupItemValue( "Ini", "achievements", "ac_b2_ch11_cutthroat" )
+	Special : Set AC B2 CH11 Average2 to GroupItemValue( "Ini", "achievements", "ac_b2_ch11_average2" )
+	Special : Set AC B2 CH11 Hidden to GroupItemValue( "Ini", "achievements", "ac_b2_ch11_hidden" )
+	Special : Set AC B2 CH11 Elephant to GroupItemValue( "Ini", "achievements", "ac_b2_ch11_elephant" )
+	Special : Set AC B3 CH1 Regrets to GroupItemValue( "Ini", "achievements", "ac_b3_ch1_regrets" )
+	Special : Set AC B3 CH1 Password to GroupItemValue( "Ini", "achievements", "ac_b3_ch1_password" )
+	Special : Set auto save prompt shown to GroupItemValue( "Ini", "achievements", "auto_save_prompt_shown" )
+	Special : Set hint box shown to GroupItemValue( "Ini", "achievements", "hint_box_shown" )
+	Special : Set AC B3 CH2 metal to GroupItemValue( "Ini", "achievements", "ac_b3_ch2_metal" )
+	Special : Set AC B3 CH2 serious to GroupItemValue( "Ini", "achievements", "ac_b3_ch2_serious" )
+	Special : Set AC B3 CH2 lie to GroupItemValue( "Ini", "achievements", "ac_b3_ch2_lie" )
+	Special : Set AC B3 CH2 reckless to GroupItemValue( "Ini", "achievements", "ac_b3_ch2_reckless" )
+	Special : Set AC B3 CH3 Ominous to GroupItemValue( "Ini", "achievements", "ac_b3_ch3_ominous" )
+	Special : Set AC B3 CH3 Unexpected to GroupItemValue( "Ini", "achievements", "ac_b3_ch3_unexpected" )
+	Special : Set AC B3 CH3 Job to GroupItemValue( "Ini", "achievements", "ac_b3_ch3_job" )
+	Special : Set AC B3 CH3 Unforeseen to GroupItemValue( "Ini", "achievements", "ac_b3_ch3_unforeseen" )
+	Special : Set next chapter crash to GroupItemValue( "Ini", "achievements", "next_chapter_crash" )
+	Special : Set auto save crash to GroupItemValue( "Ini", "achievements", "auto_save_crash" )
+	Special : Set AC B3 CH4 Demolisher to GroupItemValue( "Ini", "achievements", "ac_b3_ch4_demolisher" )
+	Special : Set AC B3 CH4 Alliance to GroupItemValue( "Ini", "achievements", "ac_b3_ch4_alliance" )
+	Special : Set AC B3 CH4 Deception to GroupItemValue( "Ini", "achievements", "ac_b3_ch4_deception" )
+	Special : Set AC B3 CH4 Thrower to GroupItemValue( "Ini", "achievements", "ac_b3_ch4_thrower" )
+	Special : Set menu crash to GroupItemValue( "Ini", "achievements", "menu_crash" )
+	Special : Set AC B3 CH5 Opportunist to GroupItemValue( "Ini", "achievements", "ac_b3_ch5_opportunist" )
+	Special : Set AC B3 CH5 Days to GroupItemValue( "Ini", "achievements", "ac_b3_ch5_days" )
+	Special : Set AC B3 CH5 Footsteps to GroupItemValue( "Ini", "achievements", "ac_b3_ch5_footsteps" )
+	Special : Set AC B3 CH5 Passed to GroupItemValue( "Ini", "achievements", "ac_b3_ch5_passed" )
+	Special : Set AC B3 CH6 Natural to GroupItemValue( "Ini", "achievements", "ac_b3_ch6_natural" )
+	Special : Set AC B3 CH6 Assist to GroupItemValue( "Ini", "achievements", "ac_b3_ch6_assist" )
+	Special : Set AC B3 CH6 Peek to GroupItemValue( "Ini", "achievements", "ac_b3_ch6_peek" )
+	Special : Set AC B3 CH6 Credo to GroupItemValue( "Ini", "achievements", "ac_b3_ch6_credo" )
+	Special : Set AC B3 CH6 Guardian to GroupItemValue( "Ini", "achievements", "ac_b3_ch6_guardian" )
+	Special : Set AC B3 CH6 Freeze to GroupItemValue( "Ini", "achievements", "ac_b3_ch6_freeze" )
+	Special : Set AC B3 CH6 Curiosity to GroupItemValue( "Ini", "achievements", "ac_b3_ch6_curiosity" )
+	Special : Set AC B3 CH6 Average to GroupItemValue( "Ini", "achievements", "ac_b3_ch6_average" )
+	Special : Set AC B3 CH6 Quarantine to GroupItemValue( "Ini", "achievements", "ac_b3_ch6_quarantine" )
+
+* game started counter = 4
+	Special : Set AC B3 CH6 Echoes to GroupItemValue( "Ini", "achievements", "ac_b3_ch6_echoes" )
+	Special : Set AC B3 CH7 Honorable to GroupItemValue( "Ini", "achievements", "ac_b3_ch7_honorable" )
+	Special : Set AC B3 CH7 Sharpshooter to GroupItemValue( "Ini", "achievements", "ac_b3_ch7_sharpshooter" )
+	Special : Set AC B3 CH7 Paranoid to GroupItemValue( "Ini", "achievements", "ac_b3_ch7_paranoid" )
+	Special : Set AC B3 CH8 Bluffer to GroupItemValue( "Ini", "achievements", "ac_b3_ch8_bluffer" )
+	Special : Set AC B3 CH8 Unusual to GroupItemValue( "Ini", "achievements", "ac_b3_ch8_unusual" )
+	Special : Set AC B3 CH8 Heartfelt to GroupItemValue( "Ini", "achievements", "ac_b3_ch8_heartfelt" )
+	Special : Set AC B3 CH8 Friend to GroupItemValue( "Ini", "achievements", "ac_b3_ch8_friend" )
+	Special : Set AC B3 CH9 Consolation to GroupItemValue( "Ini", "achievements", "ac_b3_ch9_consolation" )
+	Special : Set AC B3 CH9 Prize to GroupItemValue( "Ini", "achievements", "ac_b3_ch9_prize" )
+	Special : Set AC B3 CH9 Moment to GroupItemValue( "Ini", "achievements", "ac_b3_ch9_moment" )
+	Special : Set AC B3 CH9 Targets to GroupItemValue( "Ini", "achievements", "ac_b3_ch9_targets" )
+	Special : Set AC B3 CH9 Trinkets to GroupItemValue( "Ini", "achievements", "ac_b3_ch9_trinkets" )
+	Special : Set AC B3 CH10 Benefits to GroupItemValue( "Ini", "achievements", "ac_b3_ch10_benefits" )
+	Special : Set AC B3 CH10 Third to GroupItemValue( "Ini", "achievements", "ac_b3_ch10_third" )
+	Special : Set AC B3 CH10 Behind to GroupItemValue( "Ini", "achievements", "ac_b3_ch10_behind" )
+	Special : Set AC B3 CH10 Reasonable to GroupItemValue( "Ini", "achievements", "ac_b3_ch10_reasonable" )
+	Special : Set AC B3 CH10 Forbidden to GroupItemValue( "Ini", "achievements", "ac_b3_ch10_forbidden" )
+	Special : Set AC B3 CH11 Fourth to GroupItemValue( "Ini", "achievements", "ac_b3_ch11_fourth" )
+	Special : Set AC B3 CH11 Taste to GroupItemValue( "Ini", "achievements", "ac_b3_ch11_taste" )
+	Special : Set AC B3 CH11 Aftermath to GroupItemValue( "Ini", "achievements", "ac_b3_ch11_aftermath" )
+	Special : Set AC B3 CH12 Battle to GroupItemValue( "Ini", "achievements", "ac_b3_ch12_battle" )
+	Special : Set AC B3 CH12 Hugger to GroupItemValue( "Ini", "achievements", "ac_b3_ch12_hugger" )
+	Special : Set AC B3 CH12 Liar to GroupItemValue( "Ini", "achievements", "ac_b3_ch12_liar" )
+	Special : Set AC B3 CH12 Dagger to GroupItemValue( "Ini", "achievements", "ac_b3_ch12_dagger" )
+	Special : Set AC B3 CH12 Delegator to GroupItemValue( "Ini", "achievements", "ac_b3_ch12_delegator" )
+	Special : Set AC B3 CH12 Average to GroupItemValue( "Ini", "achievements", "ac_b3_ch12_average" )
+
+* On loop "reset variables"
+	Special : Set CH1 show yourself to 0
+	Special : Set CH1 intro feeling to 0
+	Special : Set CH1 stillwater to 0
+	Special : Set Strength to 0
+	Special : Set Strength aux to 0
+	Special : Set Agility to 0
+	Special : Set Agility aux to 0
+	Special : Set Toughness to 0
+	Special : Set Toughness aux to 0
+	Special : Set Reflexes to 0
+	Special : Set Reflexes aux to 0
+	Special : Set Hearing to 0
+	Special : Set Hearing aux to 0
+	Special : Set Perception to 0
+	Special : Set Perception aux to 0
+	Special : Set Ancient languages to 0
+	Special : Set Ancient languages aux to 0
+	Special : Set Combat technique to 0
+	Special : Set Combat technique aux to 0
+	Special : Set Premonition to 0
+	Special : Set Premonition aux to 0
+	Special : Set Available points to 0
+	Special : Set max stat to 3
+	Special : Set Available points aux to 0
+	Special : Set is dead to 0
+	Special : Set CH2 toughness happened to 0
+	Special : Set CH2 Kate debt to 0
+	Special : Set CH2 understood deer to 0
+	Special : Set CH2 deer interaction to 0
+	Special : Set CH2 Kate whisper to 0
+	Special : Set CH2 human reason to 0
+	Special : Set CH2 not owe debt to 0
+	Special : Set CH3 tactics to 0
+	Special : Set CH3 star message to 0
+	Special : Set CH3 seduce to 0
+	Special : Set CH3 awkward to 0
+	Special : Set CH3 daren worry to 0
+	Special : Set CH3 saved from dart to 0
+	Special : Set CH3 first killed to 0
+	Special : Set CH3 second killed to 0
+	Special : Set CH3 prioritize to 0
+	Special : Set CH3 lift tree to 0
+	Special : Set CH3 tactic to 0
+	Special : Set CH3 final decision to 0
+	Special : Set CH3 bloodied to 0
+	Special : Set CH3 Kate badly hurt to 0
+	Special : Set CH4 objectives to 0
+	Special : Set CH4 Dave defeat to 0
+	Special : Set CH4 ending to 0
+	Special : Set CH4 spared dave to 0
+	Special : Set CH5 admit lie to 0
+	Special : Set CH5 goblins to 0
+	Special : Set CH3 treasure to 0
+	Special : Set CH6 Rose deer to 0
+	Special : Set CH6 secure to 0
+	Special : Set CH5 ignore scream to 0
+	Special : Set CH6 flirt to 0
+	Special : Set CH6 eiden answer to 0
+	Special : Set CH6 improvise to 0
+	Special : Set CH6 defense to 0
+	Special : Set CH6 offense to 0
+	Special : Set CH6 won dragon to 0
+	Special : Set CH6 big plans to 0
+	Special : Set maximized stats used to 0
+	Special : Set CH6 lessathi to 0
+	Special : Set CH7 tap to 0
+	Special : Set CH7 call Rose to 0
+	Special : Set CH7 watch fight to 0
+	Special : Set CH7 help Kate to 0
+	Special : Set CH7 intimidate to 0
+	Special : Set CH7 win vs Hadrik to 0
+	Special : Set CH7 informed Azarius to 0
+	Special : Set CH3 tried lift to 0
+	Special : Set CH8 talk to 0
+	Special : Set CH8 first puzzle to 0
+	Special : Set CH8 smash to 0
+	Special : Set CH8 old to 0
+	Special : Set CH9 inventory to 0
+	Special : Set CH9 take Rose to 0
+	Special : Set CH9 ogres to 0
+	Special : Set CH10 gems to 0
+	Special : Set CH10 Kate scratched to 0
+	Special : Set CH10 Magium to 0
+	Special : Set CH11 Saved slave to 0
+	Special : Set CH11 Kill noble to 0
+	Special : Set CH11 Difference to 0
+	Special : Set CH11 Toy to 0
+	Special : Set CH11 Romance Rose to 0
+	Special : Set CH11 Strategy to 0
+	Special : Set CH11 Saved Rose to 0
+
+* On loop "reset variables"
+	 Ini : Set string current scene to item "current_scene" in group selected save slot
+	 Ini : Set value CH1 stillwater to item "stillwater" in group selected save slot
+	 Ini : Set value CH1 show yourself to item "show_yourself" in group selected save slot
+	 Ini : Set value CH1 intro feeling to item "intro_feeling" in group selected save slot
+	 Ini : Set value Strength to item "strength" in group selected save slot
+	 Ini : Set value Strength aux to item "strength_aux" in group selected save slot
+	 Ini : Set value Agility to item "agility" in group selected save slot
+	 Ini : Set value Agility aux to item "agility_aux" in group selected save slot
+	 Ini : Set value Toughness to item "toughness" in group selected save slot
+	 Ini : Set value Toughness aux to item "toughness_aux" in group selected save slot
+	 Ini : Set value Reflexes to item "reflexes" in group selected save slot
+	 Ini : Set value Reflexes aux to item "reflexes_aux" in group selected save slot
+	 Ini : Set value Hearing to item "hearing" in group selected save slot
+	 Ini : Set value Hearing aux to item "hearing_aux" in group selected save slot
+	 Ini : Set value Perception to item "perception" in group selected save slot
+	 Ini : Set value Perception aux to item "perception_aux" in group selected save slot
+	 Ini : Set value Ancient languages to item "ancient_languages" in group selected save slot
+	 Ini : Set value Ancient languages aux to item "ancient_languages_aux" in group selected save slot
+	 Ini : Set value Combat technique to item "combat_technique" in group selected save slot
+	 Ini : Set value Combat technique aux to item "combat_technique_aux" in group selected save slot
+	 Ini : Set value Premonition to item "premonition" in group selected save slot
+	 Ini : Set value Premonition aux to item "premonition_aux" in group selected save slot
+	 Ini : Set value stats first time is over to item "stats_intro" in group selected save slot
+	 Ini : Set value Available points to item "available_points" in group selected save slot
+	 Ini : Set value max stat to item "max_stat" in group selected save slot
+	 Ini : Set value Available points aux to item "available_points_aux" in group selected save slot
+	 Ini : Set value is dead to item "is_dead" in group selected save slot
+	 Ini : Set value CH2 toughness happened to item "ch2_toughness_happened" in group selected save slot
+	 Ini : Set value CH2 Kate debt to item "kate_debt" in group selected save slot
+	 Ini : Set value CH2 understood deer to item "ch2_understood_deer" in group selected save slot
+	 Ini : Set value CH2 deer interaction to item "ch2_deer_interaction" in group selected save slot
+	 Ini : Set value CH2 Kate whisper to item "ch2_kate_whisper" in group selected save slot
+	 Ini : Set value CH2 human reason to item "ch2_human_reason" in group selected save slot
+	 Ini : Set value CH2 not owe debt to item "ch2_not_owe_debt" in group selected save slot
+	 Ini : Set value CH3 tactics to item "ch3_tactics" in group selected save slot
+	 Ini : Set value CH3 star message to item "ch3_stars_message" in group selected save slot
+	 Ini : Set value CH3 seduce to item "ch3_seduce" in group selected save slot
+	 Ini : Set value CH3 awkward to item "ch3_awkward" in group selected save slot
+	 Ini : Set value CH3 daren worry to item "ch3_daren_worry" in group selected save slot
+	 Ini : Set value CH3 saved from dart to item "ch3_saved_from_dart" in group selected save slot
+	 Ini : Set value CH3 first killed to item "ch3_first_killed" in group selected save slot
+	 Ini : Set value CH3 second killed to item "ch3_second_killed" in group selected save slot
+	 Ini : Set value CH3 prioritize to item "ch3_prioritize" in group selected save slot
+	 Ini : Set value CH3 lift tree to item "ch3_lift_tree" in group selected save slot
+	 Ini : Set value CH3 tactic to item "ch3_tactic" in group selected save slot
+	 Ini : Set value CH3 final decision to item "ch3_final_decision" in group selected save slot
+	 Ini : Set value CH3 bloodied to item "ch3_bloodied" in group selected save slot
+	 Ini : Set value CH3 Kate badly hurt to item "ch3_kate_badly_hurt" in group selected save slot
+	 Ini : Set value CH4 objectives to item "ch4_objectives" in group selected save slot
+	 Ini : Set value CH4 Dave defeat to item "ch4_dave_defeat" in group selected save slot
+	 Ini : Set value CH4 ending to item "ch4_ending" in group selected save slot
+	 Ini : Set value CH4 spared dave to item "ch4_spared_dave" in group selected save slot
+	 Ini : Set value CH5 admit lie to item "ch5_admit_lie" in group selected save slot
+	 Ini : Set value CH5 goblins to item "ch5_goblins" in group selected save slot
+	 Ini : Set value CH3 treasure to item "ch3_treasure" in group selected save slot
+	 Ini : Set value CH6 Rose deer to item "ch6_rose_deer" in group selected save slot
+	 Ini : Set value CH6 secure to item "ch6_secure" in group selected save slot
+	 Ini : Set value CH5 ignore scream to item "ch5_ignore_scream" in group selected save slot
+	 Ini : Set value CH6 flirt to item "ch6_flirt" in group selected save slot
+	 Ini : Set value CH6 eiden answer to item "ch6_eiden_answer" in group selected save slot
+	 Ini : Set value CH6 improvise to item "ch6_improvise" in group selected save slot
+	 Ini : Set value CH6 defense to item "ch6_defense" in group selected save slot
+	 Ini : Set value CH6 offense to item "ch6_offense" in group selected save slot
+	 Ini : Set value CH6 won dragon to item "ch6_won_dragon" in group selected save slot
+	 Ini : Set value CH6 big plans to item "ch6_big_plans" in group selected save slot
+	 Ini : Set value maximized stats used to item "ch6_maximised_stats_used" in group selected save slot
+	 Ini : Set value CH6 lessathi to item "ch6_lessathi" in group selected save slot
+	 Ini : Set value CH7 tap to item "ch7_tap" in group selected save slot
+	 Ini : Set value CH7 call Rose to item "ch7_call_rose" in group selected save slot
+	 Ini : Set value CH7 watch fight to item "ch7_watch_fight" in group selected save slot
+	 Ini : Set value CH7 help Kate to item "ch7_help_kate" in group selected save slot
+	 Ini : Set value CH7 intimidate to item "ch7_intimidate" in group selected save slot
+	 Ini : Set value CH7 win vs Hadrik to item "ch7_win_vs_hadrik" in group selected save slot
+	 Ini : Set value CH7 informed Azarius to item "ch7_informed_azarius" in group selected save slot
+	 Ini : Set value CH3 tried lift to item "ch3_tried_lift" in group selected save slot
+	 Ini : Set value CH8 talk to item "ch8_talk" in group selected save slot
+	 Ini : Set value CH8 first puzzle to item "ch8_first_puzzle" in group selected save slot
+	 Ini : Set value CH8 smash to item "ch8_smash" in group selected save slot
+	 Ini : Set value CH8 old to item "ch8_old" in group selected save slot
+	 Ini : Set value CH9 inventory to item "ch9_inventory" in group selected save slot
+	 Ini : Set value CH9 take Rose to item "ch9_take_rose" in group selected save slot
+	 Ini : Set value CH9 ogres to item "ch9_ogres" in group selected save slot
+	 Ini : Set value CH10 gems to item "ch10_gems" in group selected save slot
+	 Ini : Set value CH10 Kate scratched to item "ch10_kate_scratched" in group selected save slot
+	 Ini : Set value CH10 Magium to item "ch10_magium" in group selected save slot
+	 Ini : Set value CH11 Saved slave to item "ch11_saved_slave" in group selected save slot
+	 Ini : Set value CH11 Kill noble to item "ch11_kill_noble" in group selected save slot
+	 Ini : Set value CH11 Difference to item "ch11_difference" in group selected save slot
+	 Ini : Set value CH11 Toy to item "ch11_toy" in group selected save slot
+	 Ini : Set value CH11 Romance Rose to item "ch11_romance_rose" in group selected save slot
+	 Ini : Set value CH11 Strategy to item "ch11_strategy" in group selected save slot
+	 Ini : Set value CH11 Saved Rose to item "ch11_saved_rose" in group selected save slot
+	 Ini : Set value B2 Ch1 volunteer to item "b2_ch1_volunteer" in group selected save slot
+	 Ini : Set value B2 Ch1 spin to item "b2_ch1_spin" in group selected save slot
+	 Ini : Set value B2 Ch1 truth to item "b2_ch1_truth" in group selected save slot
+	 Ini : Set value B2 Ch1 Puzzle2 to item "b2_ch1_puzzle2" in group selected save slot
+	 Ini : Set value B2 Ch1 Interfere to item "b2_ch1_interfere" in group selected save slot
+	 Ini : Set value B2 Ch2 tell servant to item "b2_ch2_tell_servant" in group selected save slot
+	 Ini : Set value B2 Ch2 Cell to item "b2_ch2_cell" in group selected save slot
+	 Ini : Set value B2 Ch2 Fist to item "b2_ch2_fist" in group selected save slot
+	 Ini : Set value B2 Ch2 Threatened to item "b2_ch2_threatened" in group selected save slot
+	 Ini : Set value B2 Ch2 Lessathi to item "b2_ch2_lessathi" in group selected save slot
+	 Ini : Set value B2 Ch2 Deal to item "b2_ch2_deal" in group selected save slot
+	 Ini : Set value B2 Ch2 Heard to item "b2_ch2_heard" in group selected save slot
+	 Ini : Set value B2 Ch2 Upset to item "b2_ch2_upset" in group selected save slot
+	 Ini : Set value B2 Ch2 Elevator to item "b2_ch2_elevator" in group selected save slot
+	 Ini : Set value B2 Ch2 Kate to item "b2_ch2_kate" in group selected save slot
+	 Ini : Set value B2 Ch2 Creatures to item "b2_ch2_creatures" in group selected save slot
+	 Ini : Set value B2 CH3 Spin to item "b2_ch3_spin" in group selected save slot
+	 Ini : Set value B2 Ch3 Troll to item "b2_ch3_troll" in group selected save slot
+	 Ini : Set value beta access to item "beta_access" in group selected save slot
+	 Ini : Set string string$( "datetimestamp" ) to item "datetime_stamp" in group selected save slot
+
