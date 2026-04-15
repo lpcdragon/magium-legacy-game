@@ -1,0 +1,796 @@
+scenes:
+  - name: ch1_intro1
+    texts:
+      - source: scene_text
+        paragraph: 24
+        text: |-
+          Dicen que hay una línea muy fina entre la valentía y la estupidez. Mientras estoy aquí, en medio de este bosque, contemplando todas las explosiones a lo lejos, me doy cuenta de que bien podría haber cruzado esa línea, hasta un punto de no retorno.
+
+          Mi nombre es Barry. Tengo veintiocho años y podría describirme con bastante exactitud como un tipo común y corriente. No tengo talentos, ni habilidades particulares, ni formación académica. Lo único que me define es mi obsesión de toda la vida por convertirme en mago. Es lo que he deseado desde que tenía cinco años. Ha sido mi pasión dominante a lo largo de mi vida, ya que he acumulado constantemente conocimientos sobre magos y he viajado por el mundo con la esperanza de encontrar una forma de hacer realidad mi sueño.
+
+          Después de interminables años de buscar en tomos polvorientos y pergaminos desgastados, finalmente he encontrado una manera de lograrlo.
+
+          ¿El truco? Primero tengo que ganar un torneo contra los magos más poderosos del mundo. ¿Suena una locura? Probablemente porque lo es. Pero ya es demasiado tarde para volver atrás. El único camino que me queda es hacia adelante.
+
+          Mientras estoy aquí, sabiendo que ya no es posible volver a mi vida normal, no puedo evitar sentirme bastante...
+    choices:
+      - position: 1
+        text: Entusiasmado
+        effects:
+          - set:
+              current_scene: ch1_intro2
+              ch1_intro_feeling: 1
+      - position: 2
+        text: Tranquilo
+        effects:
+          - set:
+              current_scene: ch1_intro2
+              ch1_intro_feeling: 2
+      - position: 3
+        text: Asustado
+        effects:
+          - set:
+              current_scene: ch1_intro2
+              ch1_intro_feeling: 3
+  - name: ch1_intro2
+    routes:
+      - condition: ch1_intro_feeling = 1
+        texts:
+          - source: scene_text
+            paragraph: 2
+            text: |-
+              ...entusiasmado con todo esto. Tal vez realmente estoy completamente loco. Hubiera esperado sentir al menos un poco de miedo por todo esto. Pero en lugar de eso, tengo esta constante sensación de hormigueo que no desaparece. La sensación de que estoy más cerca de mi sueño que nunca antes en mi vida. Todos los terribles peligros que me esperan me parecen distantes, y en lo único que puedo pensar ahora es que al final del torneo, cuando gane esto, finalmente me convertiré en un mago.
+
+              Hay una explosión a unos pocos cientos de pies de mi ubicación. Las peleas ya han comenzado. Y una de ellas está mucho más cerca de mí de lo que hubiera esperado. No hay forma de que pueda entrar en una pelea con ninguno de los magos en este momento. Necesito evitar el combate el mayor tiempo posible si quiero sobrevivir hasta el final.
+
+              Me dirijo en la dirección opuesta a donde escuché la explosión. Mientras me dirijo hacia el final del bosque, empiezo a escuchar voces. Hay dos magos hablando en un claro a unos pocos pies de distancia. Me escondo detrás de un árbol y echo un vistazo rápido hacia el claro.
+
+              Parece que los dos magos acaban de terminar de pelear. Uno de ellos tiene la apariencia de un matón ordinario. Viste una simple camisa blanca manchada, pantalones de cuero y un cinturón lleno de cuchillos para lanzar. Su barba negra descuidada esconde una sonrisa maliciosa. Solo por ver la confianza en sus ojos, puedo decir claramente que es el vencedor de la escaramuza. El otro mago lleva una armadura pesada, pero su escudo yace en el suelo a su lado y apenas sostiene su espada.
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              Mirando más de cerca al mago con armadura, noto que su cabeza es calva, su piel es oscura, probablemente tiene unos cuarenta y tantos años y tiene una cicatriz en la frente, con forma de 'X'. He leído sobre un mago que coincide exactamente con esta descripción y que respondía al nombre de Daren, y era bastante legendario, pero ¿perdería tan fácilmente contra un matón común? El mago de la camisa blanca responde a mi pregunta mientras se dirige al de la armadura, jugueteando casualmente con uno de sus cuchillos.
+
+              "¡El legendario mago Daren! El salvador del Continente Oriental. El sanador con armadura. Dicen que has viajado por el mundo, salvando innumerables aldeas de la destrucción. Que una vez luchaste contra diez gólems de roca tú solo, solo para defender a un niño pequeño. Supongo que esto demuestra que nunca se debe confiar realmente en las leyendas, ¿eh? Siempre supe que todos esos cuentos sobre magos tan fuertes como gigantes eran pura basura. ¡Diablos, si todos esos magos 'legendarios' que se unieron a este torneo son tan débiles como tú, voy a ganar esto para el atardecer!"
+
+              Empieza a reír, pero se detiene de repente.
+
+              "Espera, ¿quién está ahí?", dice, mientras se gira hacia mí.
+
+              Rápidamente retiro la cabeza detrás del árbol y presiono mi espalda contra él, tratando de respirar lo más silenciosamente posible.
+
+              "Sé que estás ahí, cobarde. ¡Muéstrate, o haré que uno de mi cuchillos te encuentre!"
+        choices:
+          - position: 1
+            text: Permanecer en silencio
+            effects:
+              - set:
+                  current_scene: ch1_cutthroat_dave
+                  ch1_show_yourself: 1
+          - position: 2
+            text: Mostrarme
+            effects:
+              - set:
+                  current_scene: ch1_cutthroat_dave
+                  ch1_show_yourself: 2
+                  ac_ch1_coward: 1
+                achievement:
+                  id: ac_ch1_coward
+                  title: ¿A quién llamas cobarde?
+          - position: 3
+            text: No veo ninguna razón para mostrarme ante ti.
+            effects:
+              - set:
+                  current_scene: ch1_cutthroat_dave
+                  ch1_show_yourself: 3
+      - condition: ch1_intro_feeling = 2
+        texts:
+          - source: scene_text
+            paragraph: 3
+            text: |-
+              ...tranquilo con todo esto. Debe ser porque me he estado preparando mentalmente para esto durante tanto tiempo. O tal vez simplemente soy más fuerte de lo que pensaba. Pero incluso frente al peligro mortal que me espera, incluso contra estas probabilidades imposibles, me siento confiado. Sé que puedo hacerlo. Voy a ganar este torneo y convertirme en mago. No puedo permitirme fallar.
+
+              Hay una explosión a unos pocos cientos de pies de mi ubicación. Las peleas ya han comenzado. Y una de ellas está mucho más cerca de mí de lo que hubiera esperado. No hay forma de que pueda entrar en una pelea con ninguno de los magos en este momento. Necesito evitar el combate el mayor tiempo posible si quiero sobrevivir hasta el final.
+
+              Me dirijo en la dirección opuesta a donde escuché la explosión. Mientras me dirijo hacia el final del bosque, empiezo a escuchar voces. Hay dos magos hablando en un claro a unos pocos pies de distancia. Me escondo detrás de un árbol y echo un vistazo rápido hacia el claro.
+
+              Parece que los dos magos acaban de terminar de pelear. Uno de ellos tiene la apariencia de un matón ordinario. Viste una simple camisa blanca manchada, pantalones de cuero y un cinturón lleno de cuchillos para lanzar. Su barba negra descuidada esconde una sonrisa maliciosa. Solo por ver la confianza en sus ojos, puedo decir claramente que es el vencedor de la escaramuza. El otro mago lleva una armadura pesada, pero su escudo yace en el suelo a su lado y apenas sostiene su espada.
+          - source: scene_text_2
+            paragraph: 4
+            text: |-
+              Mirando más de cerca al mago con armadura, noto que su cabeza es calva, su piel es oscura, probablemente tiene unos cuarenta y tantos años y tiene una cicatriz en la frente, con forma de 'X'. He leído sobre un mago que coincide exactamente con esta descripción y que respondía al nombre de Daren, y era bastante legendario, pero ¿perdería tan fácilmente contra un matón común? El mago de la camisa blanca responde a mi pregunta mientras se dirige al de la armadura, jugueteando casualmente con uno de sus cuchillos.
+
+              "¡El legendario mago Daren! El salvador del Continente Oriental. El sanador con armadura. Dicen que has viajado por el mundo, salvando innumerables aldeas de la destrucción. Que una vez luchaste contra diez gólems de roca tú solo, solo para defender a un niño pequeño. Supongo que esto demuestra que nunca se debe confiar realmente en las leyendas, ¿eh? Siempre supe que todos esos cuentos sobre magos tan fuertes como gigantes eran pura basura. ¡Diablos, si todos esos magos 'legendarios' que se unieron a este torneo son tan débiles como tú, voy a ganar esto para el atardecer!"
+
+              Empieza a reír, pero se detiene de repente.
+
+              "Espera, ¿quién está ahí?", dice, mientras se gira hacia mí.
+
+              Rápidamente retiro la cabeza detrás del árbol y presiono mi espalda contra él, tratando de respirar lo más silenciosamente posible.
+
+              "Sé que estás ahí, cobarde. ¡Muéstrate, o haré que uno de mi cuchillos te encuentre!"
+        choices:
+          - position: 1
+            text: Permanecer en silencio
+            effects:
+              - set:
+                  current_scene: ch1_cutthroat_dave
+                  ch1_show_yourself: 1
+          - position: 2
+            text: Mostrarme
+            effects:
+              - set:
+                  current_scene: ch1_cutthroat_dave
+                  ch1_show_yourself: 2
+                  ac_ch1_coward: 1
+                achievement:
+                  id: ac_ch1_coward
+                  title: ¿A quién llamas cobarde?
+          - position: 3
+            text: No veo ninguna razón para mostrarme ante ti.
+            effects:
+              - set:
+                  current_scene: ch1_cutthroat_dave
+                  ch1_show_yourself: 3
+      - condition: ch1_intro_feeling = 3
+        texts:
+          - source: scene_text
+            paragraph: 4
+            text: |-
+              ...asustado. En el fondo, siempre supe que esto pasaría. He pasado las últimas semanas preparándome mentalmente y haciendo planes. Diciéndome a mí mismo que estaba listo para lo que sea que este torneo me arrojara. Pero una vez que llegué aquí, una vez que supe que no había forma de volver atrás, toda mi confianza se convirtió en incertidumbre, y todo mi valor se convirtió en miedo. Me voy a enfrentar a los magos más fuertes del mundo. Ninguna cantidad de planificación podría haberme preparado realmente para esto. Pero ya es demasiado tarde para cambiar de opinión ahora. Tuve tiempo suficiente para retirarme de esto antes de venir aquí. Voy a ganar este torneo contra todo pronóstico. Voy a hacerlo. Solo tengo que...
+
+              Hay una explosión a unos pocos cientos de pies de mi ubicación. Las peleas ya han comenzado. Y una de ellas está mucho más cerca de mí de lo que hubiera esperado. No hay forma de que pueda entrar en una pelea con ninguno de los magos en este momento. Necesito evitar el combate el mayor tiempo posible si quiero sobrevivir hasta el final.
+
+              Me dirijo en la dirección opuesta a donde escuché la explosión. Mientras me dirijo hacia el final del bosque, empiezo a escuchar voces. Hay dos magos hablando en un claro a unos pocos pies de distancia de mí. Me escondo detrás de un árbol y echo un vistazo rápido hacia el claro.
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              Parece que los dos magos acaban de terminar de pelear. Uno de ellos tiene la apariencia de un matón ordinario. Viste una simple camisa blanca manchada, pantalones de cuero y un cinturón lleno de cuchillos para lanzar. Su barba negra descuidada esconde una sonrisa maliciosa. Solo por ver la confianza en sus ojos, puedo decir claramente que es el vencedor de la escaramuza. El otro mago lleva una armadura pesada, pero su escudo yace en el suelo a su lado y apenas sostiene su espada.
+
+              Mirando más de cerca al mago con armadura, noto que su cabeza es calva, su piel es oscura, probablemente tiene unos cuarenta y tantos años y tiene una cicatriz en la frente, con forma de 'X'. He leído sobre un mago que coincide exactamente con esta descripción y que respondía al nombre de Daren, y era bastante legendario, pero ¿perdería tan fácilmente contra un matón común? El mago de la camisa blanca responde a mi pregunta mientras se dirige al de la armadura, jugueteando casualmente con uno de sus cuchillos.
+
+              "¡El legendario mago Daren! El salvador del continente del este. El sanador con armadura. Dicen que has viajado por el mundo, salvando innumerables aldeas de la destrucción. Que una vez luchaste contra diez gólems de roca tú solo, solo para defender a un niño pequeño. Supongo que esto demuestra que nunca se debe confiar realmente en las leyendas, ¿eh? Siempre supe que todos esos cuentos sobre magos tan fuertes como gigantes eran pura basura. ¡Diablos, si todos esos magos 'legendarios' que se unieron a este torneo son tan débiles como tú, voy a ganar esto para el atardecer!"
+
+              Empieza a reír, pero se detiene de repente.
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              "Espera, ¿quién está ahí?", dice, mientras se gira hacia mí.
+
+              Rápidamente retiro la cabeza detrás del árbol y presiono mi espalda contra él, tratando de respirar lo más silenciosamente posible.
+
+              "Sé que estás ahí, cobarde. ¡Muéstrate, o haré que uno de mi cuchillos te encuentre!"
+        choices:
+          - position: 1
+            text: Permanecer en silencio
+            effects:
+              - set:
+                  current_scene: ch1_cutthroat_dave
+                  ch1_show_yourself: 1
+          - position: 2
+            text: Mostrarme
+            effects:
+              - set:
+                  current_scene: ch1_cutthroat_dave
+                  ch1_show_yourself: 2
+                  ac_ch1_coward: 1
+                achievement:
+                  id: ac_ch1_coward
+                  title: ¿A quién llamas cobarde?
+          - position: 3
+            text: No veo ninguna razón para mostrarme ante ti.
+            effects:
+              - set:
+                  current_scene: ch1_cutthroat_dave
+                  ch1_show_yourself: 3
+  - name: ch1_cutthroat_dave
+    routes:
+      - condition: ch1_show_yourself = 1
+        texts:
+          - source: scene_text
+            paragraph: 5
+            text: |-
+              Mantengo mi respiración lo más silenciosa posible y no digo nada. Debe estar mintiendo. Nunca tuvo la oportunidad de verme. Se rendirá una vez que vea que no hay respuesta.
+
+              "A tu manera, entonces", dice el matón, mientras escucho que lanza una daga hacia mí. La daga pasa zumbando por mi cabeza y, antes de que tenga oportunidad de reaccionar, gira en el aire y vuela directamente hacia mi hombro izquierdo, clavándolo contra el árbol. Dejo escapar un gemido ahogado de dolor, mientras trato de sacar el cuchillo.
+
+              "No vas a sacar ese cuchillo tan fácilmente. Mis cuchillos tienen vida propia y solo me escuchan a mí. Ahora que sé dónde estás, voy a..."
+
+              Se detiene.
+
+              "Así que eres un Stillwater, ¿eh? ¿Tratando de que baje la guardia actuando como un idiota? ¿Tratando de arrullarme en una falsa sensación de seguridad? ¿Es ese tu plan? Pues no va a funcionar conmigo. ¡Porque soy demasiado inteligente para eso, ¿me oyes?!"
+
+              Su repentino cambio de actitud hacia mí no es del todo inesperado. La existencia de los Stillwaters es una de las razones principales por las que me atreví a soñar que podría tener una oportunidad de ganar este torneo.
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              Los Stillwaters son una raza muy rara de magos, que se sabe que son increíblemente poderosos. Se dice que uno de ellos destruyó una ciudad entera en un instante hace unos veinte años, con solo un chasquido de sus dedos. Se decía que la ciudad de Olmnar había sido una de las ciudades más grandes de este continente, pero fue borrada del mapa así como así, en un solo segundo. Tal es el poder de estos Stillwaters.
+
+              Pero lo que es aún más interesante sobre estos Stillwaters es que no puedes diferenciarlos de los humanos normales. Normalmente, puedes sentir la magia fluyendo de cada ser. No necesitas ser un mago para hacerlo. Al sentir su aura mágica, puedes decir qué tan fuertes son los magos antes de entablar una pelea con ellos.
+
+              Los Stillwaters, sin embargo, tienen la misma aura que los humanos normales. Y si te encontraras con alguien que parece no tener casi nada de magia en medio de lo que es esencialmente el torneo de magos más grande de toda la historia... ¿A qué estarías más inclinado a creer? ¿Que un humano promedio fue de alguna manera lo suficientemente suicida como para unirse al torneo solo para ser masacrado? ¿O que te enfrentas a uno de los tipos de magos más fuertes y raros que existen en el mundo?
+
+              "¡No me asustas, Stillwater! ¡Voy a llenarte de agujeros y terminarás rogándome misericordia! Apuesto a que tus leyendas no son más ciertas de lo que lo fueron para esta triste excusa de mago que está a mi lado".
+        choices:
+          - position: 1
+            text: Darle hasta la cuenta de diez para retirarse
+            effects:
+              - set:
+                  current_scene: ch1_retreat
+                  ac_ch1_die: 1
+                achievement:
+                  id: ac_ch1_die
+                  title: Un buen comienzo
+          - position: 2
+            text: Insinuar que soy quien destruyó la ciudad de Olmnar
+            effects:
+              - set:
+                  current_scene: ch1_imply
+      - condition: ch1_show_yourself = 2
+        texts:
+          - source: scene_text
+            paragraph: 6
+            text: |-
+              Respiro profundamente y trato de parecer lo más tranquilo posible. Salgo del bosque y entro al claro, enfrentando directamente al mago de los cuchillos.
+
+              "¿A quién llamas cobarde?", le pregunto.
+
+              El mago se detiene un poco mientras me mide de arriba abajo.
+
+              "Un Stillwater, ¿eh?", dice finalmente. Se esforzó por mantener la compostura al hacer su pregunta, pero el temblor en su voz lo traicionó. Tiene miedo.
+
+              Su repentino cambio de actitud hacia mí no es del todo inesperado. La existencia de los Stillwaters es una de las razones principales por las que me atreví a soñar que podría tener una oportunidad de ganar este torneo.
+          - source: scene_text_2
+            paragraph: 7
+            text: "Stillwaters are a very rare breed of mages, that are known to be incredibly powerful. One of them is said to have destroyed an entire city in an instant some twenty years ago, with only a flick of his fingers. The city of Olmnar was said to have been one of the greatest cities on this continent, but it was wiped off the map just like that, in a single second. Such is the power of these stillwaters.\r\n\r\nBut what is even more interesting about these stillwaters is that you can't differentiate them from normal humans. Normally, you can sense the magic flowing from every being. You don't need to be a mage to do it. By sensing their magical aura, you can tell how strong mages are before engaging them in a fight. \r\n\r\nStillwaters, however, have the same aura as normal humans. And if you were to run into someone that seems to have almost no magic in the middle of what is essentially the greatest mage tournament in all of history... What would you be more inclined to believe? That an average human was somehow suicidal enough to join the tournament only to get massacred? Or that you are facing one of the strongest and rarest kinds of mages that exist in the world?\r\n\r\n\"You don't scare me, stillwater! I'm going to fill you with holes and you'll end up begging me for mercy! I bet your legends are no more true than they were for this sad excuse for a mage standing next to me.\""
+        choices:
+          - position: 1
+            text: Darle hasta la cuenta de diez para retirarse
+            effects:
+              - set:
+                  current_scene: ch1_retreat
+                  ac_ch1_die: 1
+                achievement:
+                  id: ac_ch1_die
+                  title: Un buen comienzo
+          - position: 2
+            text: Insinuar que soy quien destruyó la ciudad de Olmnar
+            effects:
+              - set:
+                  current_scene: ch1_imply
+      - condition: ch1_show_yourself = 3
+        texts:
+          - source: scene_text
+            paragraph: 7
+            text: |-
+              "No veo ninguna razón para mostrarme ante ti", le digo.
+
+              Mientras localiza mi posición por el sonido de mi voz, el mago hace una pausa bastante larga antes de volver a hablar.
+
+              "Un Stillwater, ¿eh?", dice finalmente. Se esforzó por mantener la compostura al hacer su pregunta, pero el temblor en su voz lo traicionó. Tiene miedo.
+
+              Su repentino cambio de actitud hacia mí no es del todo inesperado. La existencia de los Stillwaters es una de las razones principales por las que me atreví a soñar que podría tener una oportunidad de ganar este torneo.
+          - source: scene_text_2
+            paragraph: 8
+            text: "Stillwaters are a very rare breed of mages, that are known to be incredibly powerful. One of them is said to have destroyed an entire city in an instant some twenty years ago, with only a flick of his fingers. The city of Olmnar was said to have been one of the greatest cities on this continent, but it was wiped off the map just like that, in a single second. Such is the power of these stillwaters.\r\n\r\nBut what is even more interesting about these stillwaters is that you can't differentiate them from normal humans. Normally, you can sense the magic flowing from every being. You don't need to be a mage to do it. By sensing their magical aura, you can tell how strong mages are before engaging them in a fight. \r\n\r\nStillwaters, however, have the same aura as normal humans. And if you were to run into someone that seems to have almost no magic in the middle of what is essentially the greatest mage tournament in all of history... What would you be more inclined to believe? That an average human was somehow suicidal enough to join the tournament only to get massacred? Or that you are facing one of the strongest and rarest kinds of mages that exist in the world?\r\n\r\n\"You don't scare me, stillwater! I'm going to fill you with holes and you'll end up begging me for mercy! I bet your legends are no more true than they were for this sad excuse for a mage standing next to me.\""
+        choices:
+          - position: 1
+            text: Darle hasta la cuenta de diez para retirarse
+            effects:
+              - set:
+                  current_scene: ch1_retreat
+                  ac_ch1_die: 1
+                achievement:
+                  id: ac_ch1_die
+                  title: Un buen comienzo
+          - position: 2
+            text: Insinuar que soy quien destruyó la ciudad de Olmnar
+            effects:
+              - set:
+                  current_scene: ch1_imply
+  - name: ch1_retreat
+    routes:
+      - condition: ch1_show_yourself = 1
+        texts:
+          - source: scene_text
+            paragraph: 8
+            text: |-
+              "Te voy a dar hasta la cuenta de diez para que te pierdas de mi vista", le digo.
+
+              "¡Ja! Palabras vacías. Eso es todo lo que tienes. ¡Ármate, necio! ¡Hoy me convierto en una leyenda!"
+
+              Una vez que termina de hablar, escucho al mago lanzar varios cuchillos hacia el bosque. Trato desesperadamente de sacar el cuchillo de mi hombro, pero es inútil. Cinco de los cuchillos del mago pasan a toda velocidad a mi lado y giran en el aire igual que el anterior. Intento de alguna manera quitarme de su camino, pero el cuchillo en mi hombro todavía me mantiene clavado al árbol.
+
+              Lo último que siento es el dolor agudo de todos esos cuchillos empalándome, mientras mi conciencia comienza a desvanecerse lentamente.
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  ch1_show_yourself: 0
+                  ch1_intro_feeling: 0
+                  ch1_stillwater: 0
+          - position: 2
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+      - condition: ch1_show_yourself = 2
+        texts:
+          - source: scene_text
+            paragraph: 9
+            text: |-
+              "Te voy a dar hasta la cuenta de diez para que te pierdas de mi vista", le digo.
+
+              "¡Ja! Palabras vacías. Eso es todo lo que tienes. ¡Ármate, necio! ¡Hoy me convierto en una leyenda!"
+
+              Una vez que termina de hablar, el mago lanza cinco dagas simultáneamente hacia mí. Intento esquivarlas pero son tan rápidas que apenas tengo tiempo de parpadear. Todo terminó en un instante. Mientras siento el dolor de las dagas, mi conciencia comienza a desvanecerse lentamente.
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  ch1_show_yourself: 0
+                  ch1_intro_feeling: 0
+                  ch1_stillwater: 0
+          - position: 2
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+      - condition: ch1_show_yourself = 3
+        texts:
+          - source: scene_text
+            paragraph: 10
+            text: |-
+              "Te voy a dar hasta la cuenta de diez para que te pierdas de mi vista", le digo.
+
+              "¡Ja! Palabras vacías. Eso es todo lo que tienes. ¡Ármate, necio! ¡Hoy me convierto en una leyenda!"
+
+              Una vez que termina de hablar, escucho al mago lanzar varios cuchillos hacia el bosque. Todos pasan a mi lado, pero antes de que tenga oportunidad de pensar qué hacer a continuación, los cuchillos giran repentinamente en el aire y vuelan hacia mí, empalándome donde estoy. Todo terminó tan rápido que apenas tuve tiempo de darme cuenta de que estaba muerto.
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  ch1_show_yourself: 0
+                  ch1_intro_feeling: 0
+                  ch1_stillwater: 0
+          - position: 2
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+  - name: ch1_imply
+    routes:
+      - condition: ch1_show_yourself = 2
+        texts:
+          - source: scene_text
+            paragraph: 11
+            text: |-
+              "Eso es gracioso", le digo. "Eso es casi lo mismo que me dijeron los habitantes de Olmnar. Antes de que redujera su ciudad a cenizas".
+
+              El mago estaba a punto de ir por sus cuchillos, pero ahora se detuvo. Me mira con mucha fijeza, sin apartar los ojos ni un segundo.
+
+              "Estás fanfarroneando", dice el mago.
+
+              "Supongo que solo hay una forma de averiguarlo, entonces", le digo, mientras siento mi corazón martilleando en mi pecho.
+
+              Los pocos segundos de silencio que siguieron se sintieron como los segundos más largos de mi vida. Después de una larga pausa, el mago dice finalmente:
+
+              "Estás de suerte, Stillwater. Me siento misericordioso hoy. Dejaré de molestarte tan pronto como termine con este tipo de aquí".
+
+              "Si haces eso, te arrepentirás", digo sin pensar.
+
+              Mi última frase parece haberlo tomado por sorpresa.
+
+              "¿Qué, estás bromeando? ¿Vas a defender a este desgraciado?"
+
+              "Si tengo que hacerlo. ¿Tengo que hacerlo?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch1_imply2
+      - condition: ch1_show_yourself <> 2
+        texts:
+          - source: scene_text
+            paragraph: 12
+            text: |-
+              "Eso es gracioso", le digo. "Eso es casi lo mismo que me dijeron los habitantes de Olmnar. Antes de que redujera su ciudad a cenizas".
+
+              Después de decir eso, hay una larga pausa en la que ninguno de nosotros dice nada.
+
+              "Estás fanfarroneando", dice el mago.
+
+              "Supongo que solo hay una forma de averiguarlo, entonces", le digo, mientras siento mi corazón martilleando en mi pecho.
+
+              Los pocos segundos de silencio que siguieron se sintieron como los segundos más largos de mi vida. Después de una larga pausa, el mago dice finalmente:
+
+              "Estás de suerte, Stillwater. Me siento misericordioso hoy. Dejaré de molestarte tan pronto como termine con este tipo de aquí".
+
+              "Si haces eso, te arrepentirás", digo sin pensar.
+
+              Mi última frase parece haberlo tomado por sorpresa.
+
+              "¿Qué, estás bromeando? ¿Vas a defender a este desgraciado?"
+
+              "Si tengo que hacerlo. ¿Tengo que hacerlo?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch1_imply2
+  - name: ch1_imply2
+    routes:
+      - condition: ch1_show_yourself = 1
+        texts:
+          - source: scene_text
+            paragraph: 13
+            text: |-
+              El mago una vez más se queda en silencio. No parece querer tentar más a su suerte. Después de un rato, escucho que guarda sus dagas en su cinturón y luego escupe en el suelo.
+
+              "Recordaré esto, Stillwater. No creas que no lo haré. Te arrepentirás del día en que te metiste con Dave el Degollador. Y lo mismo va para ti, sanador con armadura. Los volveré a ver a ambos pronto".
+
+              Después de terminar su discurso, se da la vuelta con disgusto mientras se adentra en el bosque en el lado opuesto del claro. La daga de mi hombro se sale sola y se apresura a alcanzar a su maestro.
+
+              Una vez que ya no puedo ver al mago, dejo escapar un gran suspiro. Eso estuvo cerca. Estuvo realmente cerca. Todavía puedo sentir mi corazón latiendo rápidamente en mi pecho.
+
+              ¿Si haces eso, te arrepentirás? ¿En qué estaba pensando? ¿Estaba tratando de que me mataran? Este es un torneo de vida o muerte, Barry. No es el momento de que empieces a jugar al héroe.
+
+              Mientras trato de calmarme, el mago de armadura enfunda su espada, recoge su escudo del suelo y comienza a caminar hacia mí.
+          - source: scene_text_2
+            paragraph: 9
+            text: |-
+              "No tenías ninguna obligación de salvarme", dice. "Pero lo hiciste de todos modos, a riesgo de tu propia vida. No puedo permitir que tal desinterés quede sin recompensa. Yo, Daren, juro este día que te ofreceré mi protección desde este momento y hasta el final de este torneo. Dime, alma valiente, ¿cuál es tu nombre?"
+
+              Su discurso me tomó por sorpresa.
+
+              "Es, eh... Es Barry. Mi nombre es Barry".
+
+              "Espera, ¿tu nombre es Barry?"
+
+              Trata de contener su risa pero falla miserablemente. Estaba tratando de sonar solemne y digno hace solo unos segundos, pero parece que no tardó mucho en abandonar su actuación.
+
+              "Ese es el nombre más extraño para un mago que he escuchado en mi vida. Especialmente para un Stillwater. ¿Tienes algo que quieras decirme, Barry?"
+        choices:
+          - position: 1
+            text: Decirle que en realidad soy un humano común
+            effects:
+              - set:
+                  current_scene: ch1_ordinary
+                  ch1_stillwater: 2
+          - position: 2
+            text: Decirle que mis padres tenían un sentido del humor extraño
+            effects:
+              - set:
+                  current_scene: ch1_humor
+                  ch1_stillwater: 1
+      - condition: ch1_show_yourself = 2
+        texts:
+          - source: scene_text
+            paragraph: 14
+            text: |-
+              El rostro del mago se contorsiona en una mueca, pero no dice nada. No parece querer tentar más a su suerte. A regañadientes guarda sus dagas en su cinturón y luego escupe en el suelo junto a Daren.
+
+              "Recordaré esto, Stillwater. No creas que no lo haré. Nunca olvido una cara. Te arrepentirás del día en que te metiste con Dave el Degollador. Y lo mismo va para ti, sanador con armadura. Los volveré a ver a ambos pronto".
+
+              Después de terminar su discurso, se da la vuelta con disgusto mientras se adentra en el bosque en el lado opuesto del claro.
+
+              Una vez que ya no puedo ver al mago, dejo escapar un gran suspiro. Eso estuvo cerca. Estuvo realmente cerca. Todavía puedo sentir mi corazón latiendo rápidamente en mi pecho.
+
+              ¿Si haces eso, te arrepentirás? ¿En qué estaba pensando? ¿Estaba tratando de que me mataran? Este es un torneo de vida o muerte, Barry. No es el momento de que empieces a jugar al héroe.
+
+              Mientras trato de calmarme, el mago de armadura enfunda su espada, recoge su escudo del suelo y comienza a caminar hacia mí.
+          - source: scene_text_2
+            paragraph: 10
+            text: "\"You had no obligation to save me,\" he says. \"But you did so anyway, at the risk of your own life. I cannot let such selflessness go unrewarded. I, Daren, vow this day that I will offer you my protection from this moment, and until the end of this tournament. Tell me, brave soul, what is your name?\"\r\n\r\nHis speech took me by surprise.\r\n\r\n\"It's, uhh... It's Barry. My name is Barry.\"\r\n\r\n\"Wait, your name's Barry?\"\r\n\r\nHe tries to contain his laughter but fails miserably. He was trying to sound solemn and dignified just a few seconds ago, but it seems it didn't really take him long to drop his act.\r\n\r\n\"Now that's the weirdest name for a mage I've heard in my life. Especially for a stillwater. Do you have something you want to tell me, Barry?\""
+        choices:
+          - position: 1
+            text: Decirle que en realidad soy un humano común
+            effects:
+              - set:
+                  current_scene: ch1_ordinary
+                  ch1_stillwater: 2
+          - position: 2
+            text: Decirle que mis padres tenían un sentido del humor extraño
+            effects:
+              - set:
+                  current_scene: ch1_humor
+                  ch1_stillwater: 1
+      - condition: ch1_show_yourself = 3
+        texts:
+          - source: scene_text
+            paragraph: 15
+            text: |-
+              El mago una vez más se queda en silencio. No parece querer tentar más a su suerte. Después de un rato, escucho que guarda sus dagas en su cinturón y luego escupe en el suelo.
+
+              "Recordaré esto, Stillwater. No creas que no lo haré. Te arrepentirás del día en que te metiste con Dave el Degollador. Y lo mismo va para ti, sanador con armadura. Los volveré a ver a ambos pronto".
+
+              Después de terminar su discurso, se da la vuelta con disgusto mientras se adentra en el bosque en el lado opuesto del claro.
+
+              Una vez que ya no puedo ver al mago, dejo escapar un gran suspiro. Eso estuvo cerca. Estuvo realmente cerca. Todavía puedo sentir mi corazón latiendo rápidamente en mi pecho.
+
+              ¿Si haces eso, te arrepentirás? ¿En qué estaba pensando? ¿Estaba tratando de que me mataran? Este es un torneo de vida o muerte, Barry. No es el momento de que empieces a jugar al héroe.
+
+              Mientras trato de calmarme, el mago de armadura enfunda su espada, recoge su escudo del suelo y comienza a caminar hacia mí.
+          - source: scene_text_2
+            paragraph: 11
+            text: "\"You had no obligation to save me,\" he says. \"But you did so anyway, at the risk of your own life. I cannot let such selflessness go unrewarded. I, Daren, vow this day that I will offer you my protection from this moment, and until the end of this tournament. Tell me, brave soul, what is your name?\"\r\n\r\nHis speech took me by surprise.\r\n\r\n\"It's, uhh... It's Barry. My name is Barry.\"\r\n\r\n\"Wait, your name's Barry?\"\r\n\r\nHe tries to contain his laughter but fails miserably. He was trying to sound solemn and dignified just a few seconds ago, but it seems it didn't really take him long to drop his act.\r\n\r\n\"Now that's the weirdest name for a mage I've heard in my life. Especially for a stillwater. Do you have something you want to tell me, Barry?\""
+        choices:
+          - position: 1
+            text: Decirle que en realidad soy un humano común
+            effects:
+              - set:
+                  current_scene: ch1_ordinary
+                  ch1_stillwater: 2
+          - position: 2
+            text: Decirle que mis padres tenían un sentido del humor extraño
+            effects:
+              - set:
+                  current_scene: ch1_humor
+                  ch1_stillwater: 1
+  - name: ch1_humor
+    routes:
+      - condition: ch1_show_yourself = 1
+        texts:
+          - source: scene_text
+            paragraph: 16
+            text: |-
+              "Sí. Mis padres tenían un sentido del humor realmente extraño. Hablando de nombres, ¿no se supone que eres un héroe de leyenda? ¿Cómo exactamente alguien tan fuerte como tú es derrotado tan fácilmente por alguien llamado Dave el Degollador?"
+
+              "Oh, eso..."
+
+              Suena avergonzado.
+
+              "Verás, Barry. Puedo ser poderoso, pero eso no significa que no tenga debilidades. Resulta que una de esas debilidades es que nunca logré dominar el hechizo de escudo adecuadamente..."
+
+              "¿El hechizo de escudo? ¿El que lanza una capa protectora invisible a tu alrededor? Pero, ¿no es ese uno de los primeros hechizos que aprende cualquier mago?"
+
+              "Lo es... Pero no es que no pueda lanzarlo en absoluto... Puedo defenderme de la magia perfectamente. Son las armas normales con las que tengo problemas. Por eso uso armadura. Por eso uso una espada y un escudo. Primero comencé a usarlos porque no podía usar el hechizo de escudo correctamente, pero pronto, comencé a adaptar mi magia a ellos, y mi propio estilo de lucha. Encontré un maestro que me enseñó a luchar con armas, y usé mi magia para encantarlas. Luego, después de cada pelea, simplemente usaba mi magia blanca para curar mis heridas. Así..."
+          - source: scene_text_2
+            paragraph: 12
+            text: |-
+              Lo demuestra levantando las manos en el aire y haciendo que aparezca una luz blanca a su alrededor. Mientras la luz brilla, sus heridas comienzan a cerrarse y la sangre se desvanece. Luego usa la misma magia para curar la herida del hombro que me había hecho el cuchillo de Dave el Degollador.
+
+              "Los cuchillos del degollador tenían vida propia, y había muchos de ellos atacándome simultáneamente. Si hubiera tenido un hechizo de escudo adecuado para defenderme de ellos, derrotarlo hubiera sido un juego de niños. Pero defenderse de todos esos cuchillos solo con un escudo y una espada hubiera sido imposible, independientemente de mi habilidad de combate. Todas las armaduras tienen sus debilidades. Todo lo que tenía que hacer era ir repetidamente a las articulaciones de la armadura, hasta que me desgastara".
+
+              "¿Por qué me cuentas todo esto? ¿No deberías estar al menos un poco preocupado por revelar tu mayor debilidad a alguien que acabas de conocer?"
+
+              "¡Oye, acabas de salvarme la vida! Así que no puedes ser tan malo, ¿verdad?"
+
+              "Perdonen que interrumpa", escucho la voz de una mujer detrás de los árboles. "¿Pero por casualidad serías Daren, el legendario salvador del continente del este?"
+        choices:
+          - position: 1
+            text: Siguiente capítulo
+            effects:
+              - set:
+                  current_scene: ch2_intro
+                  chapter_save: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                  checkpoint_rich: 1
+      - condition: ch1_show_yourself <> 1
+        texts:
+          - source: scene_text
+            paragraph: 17
+            text: "\"Yes. My parents had a really weird sense of humor. Speaking of names, aren't you supposed to be a hero of legend? How exactly does one as strong as you get bested so easily by someone named Cutthroat Dave?\"\r\n\r\n\"Oh, that...\"\r\n\r\nHe is sounding embarrassed.\r\n\r\n\"You see, Barry. I may be powerful, but that doesn't mean I don't have weaknesses. It turns out one of those weaknesses is that I never really managed to master the shield spell properly...\"\r\n\r\n\"The shield spell? The one that casts an invisible protective layer around yourself? But isn't that one of the first spells any mage learns?\"\r\n\r\n\"It is... But it's not like I can't cast it at all... I can defend from magic just fine. It's normal weapons that I have a problem with. This is why I wear armor. This is why I use a sword and a shield. I first started using them because I couldn't use the shield spell properly, but soon, I started tailoring my magic around them, and my very fighting style. I found a master that would teach me to fight with weapons, and I used my magic to enchant them. Then, after every fight, I'd just use my white magic to heal my wounds. Like so...\""
+          - source: scene_text_2
+            paragraph: 13
+            text: |-
+              Lo demuestra levantando las manos en el aire y haciendo que aparezca una luz blanca a su alrededor. Mientras la luz brilla, sus heridas comienzan a cerrarse y la sangre se desvanece.
+
+              "Los cuchillos del degollador tenían vida propia, y había muchos de ellos atacándome simultáneamente. Si hubiera tenido un hechizo de escudo adecuado para defenderme de ellos, derrotarlo hubiera sido un juego de niños. Pero defenderse de todos esos cuchillos solo con un escudo y una espada hubiera sido imposible, independientemente de mi habilidad de combate. Todas las armaduras tienen sus debilidades. Todo lo que tenía que hacer era ir repetidamente a las articulaciones de la armadura, hasta que me desgastara".
+
+              "¿Por qué me cuentas todo esto? ¿No deberías estar al menos un poco preocupado por revelar tu mayor debilidad a alguien que acabas de conocer?"
+
+              "¡Oye, acabas de salvarme la vida! Así que no puedes ser tan malo, ¿verdad?"
+
+              "Perdonen que interrumpa", escucho la voz de una mujer detrás de los árboles. "¿Pero por casualidad serías Daren, el legendario salvador del continente del este?"
+        choices:
+          - position: 1
+            text: Siguiente capítulo
+            effects:
+              - set:
+                  current_scene: ch2_intro
+                  chapter_save: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                  checkpoint_rich: 1
+  - name: ch1_ordinary
+    texts:
+      - source: scene_text
+        paragraph: 18
+        text: |-
+          "No soy un Stillwater, Daren. Ese matón simplemente asumió que lo era y me aproveché de la situación".
+
+          "Pero tampoco eres uno de los lugareños. De lo contrario, ese hechizo suyo nos habría alertado en el momento en que sentimos tu presencia".
+
+          Está hablando del hechizo que los organizadores del torneo lanzaron sobre cada uno de los participantes antes de teletransportarnos aquí. No se nos permite lastimar a los humanos que viven en este continente, por lo que su hechizo nos advierte cuando uno de ellos está cerca. Si se puede creer lo que dijeron, se supone que su hechizo nos detendrá incluso antes de que intentemos lastimar a cualquiera de los lugareños. Si es accidental, simplemente nos detiene antes de hacerlo. Si es intencional, nos elimina del torneo y nos envía de regreso.
+
+          También se supone que su hechizo actúa como un medio de comunicación con los organizadores. Dijeron que transmitirían los objetivos a cada uno de nosotros individualmente. Es gracioso. Todos esos cuidadosos preparativos por su parte, y nunca se molestaron en comprobar si yo era un mago o no. Diablos, ¿qué estoy diciendo? Probablemente ni siquiera les importó.
+
+          "Así que debes ser un participante, entonces", continúa Daren. "¿Qué razón tendrías para participar en un torneo contra los magos más poderosos del mundo?"
+
+          Busco lo mismo que cualquier otro participante en este torneo, Daren, pero no estoy seguro de que sea prudente contártelo.
+      - source: scene_text_2
+        paragraph: 14
+        text: |-
+          Busco el premio que se ofrece al ganador. El Magium.
+
+          Nadie sabe exactamente cómo se ve, o de qué está hecho, pero todo el mundo sabe que es la fuente de toda la magia del mundo, y que solo se puede encontrar en el continente de Varathia. Todos los magos lo buscan. Lo anhelan. Están seguros de que si tienen acceso a él, pueden aumentar sus poderes cien veces y convertirse en leyendas vivientes. Y aunque es un error común pensar que el Magium solo es útil para los magos instruidos, mis estudios me han llevado a creer que el Magium es tan extraordinario que incluso puede convertir a un humano normal en un mago.
+
+          He buscado durante mucho tiempo una forma de entrar en Varathia, pero la única forma en que uno puede viajar a su continente es recibiendo una invitación directa. Se envían muy pocas de esas anualmente, y las personas que son teletransportadas allí se mantienen bajo supervisión directa durante la duración de su estadía, y regresan sin información sobre las coordenadas del lugar.
+
+          Pero cuando toda esperanza parecía perdida, llegó el anuncio. Un anuncio mundial por parte de los reyes de Varathia de que estaban organizando un torneo donde cada mago en el mundo estaba invitado. Y al ganador se le concedería acceso al Magium.
+
+          Supe entonces que nunca habría otra oportunidad como esta.
+
+          "¿Por qué te uniste a este torneo, Barry?", me pregunta Daren de nuevo.
+    choices:
+      - position: 1
+        text: Contarle la verdad
+        effects:
+          - set:
+              current_scene: ch1_truth
+              ch2_human_reason: 1
+              ac_ch1_honesty: 1
+            achievement:
+              title: La honestidad es la mejor política.
+              id: ac_ch1_honesty
+      - position: 2
+        text: Decirle que me obligaron
+        effects:
+          - set:
+              current_scene: ch1_forced
+              ch2_human_reason: 2
+      - position: 3
+        text: Decirle que busco una cura para mi hermana enferma
+        effects:
+          - set:
+              current_scene: ch1_sister
+              ch2_human_reason: 3
+  - name: ch1_truth
+    texts:
+      - source: scene_text
+        paragraph: 19
+        text: |-
+          "Busco lo mismo que tú, Daren", le digo. "Busco el Magium. Ha sido mi sueño desde pequeño convertirme en mago, y el Magium puede concederme ese deseo".
+
+          "Vamos, Barry. ¡Vas a tener que inventar una mentira mejor que esa si quieres que te crea!"
+
+          Se detiene y me mira directamente a los ojos.
+
+          "Por los dioses... ¡Hablas en serio! Barry, alabo tu valentía y determinación pero... Te das cuenta de que no puedes ganar todo este torneo solo fanfarroneando, ¿verdad?"
+
+          "¡Claro que lo sé! Ese no es el único as que tengo bajo la manga. ¿Pero qué hay de ti? Dicen que eres uno de los magos más fuertes del mundo. Entonces, ¿cómo alguien tan fuerte como tú es derrotado tan fácilmente por alguien llamado Dave el Degollador?"
+
+          "Oh, eso..."
+
+          Suena avergonzado.
+
+          "Verás, Barry. Puedo ser poderoso, pero eso no significa que no tenga debilidades. Resulta que una de esas debilidades es que nunca logré dominar el hechizo de escudo adecuadamente..."
+
+          "¿El hechizo de escudo? ¿El que lanza una capa protectora invisible a tu alrededor? Pero, ¿no es ese uno de los primeros hechizos que aprende cualquier mago?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch1_weakness
+  - name: ch1_forced
+    texts:
+      - source: scene_text
+        paragraph: 20
+        text: |-
+          "No vine aquí por elección", le digo. "Créeme, no me gustaría nada más que irme de este lugar y nunca mirar atrás. Pero esa no es realmente una opción para mí en este momento. Todo lo que puedo hacer ahora es tratar de sobrevivir hasta el final del torneo".
+
+          Daren hace una pequeña pausa para reflexionar sobre mis palabras.
+
+          "Espera, Barry... creo que también hay otra forma".
+
+          "¿La hay?"
+
+          "¡Sí! ¿Recuerdas las reglas? Dijeron que nos eliminarían del torneo y nos teletransportarían de regreso si detectaban cualquier intención de dañar a los lugareños. ¡Podrías usar eso, Barry! ¡Solo necesitas encontrar a cualquiera de los humanos que viven en este continente, intentar darles un puñetazo en la cara, y serás liberado!"
+
+          "Yo... eh... nunca lo había pensado de esa manera".
+      - source: scene_text_2
+        paragraph: 15
+        text: |-
+          "¡No te preocupes, me aseguraré de mantenerte a salvo hasta que lleguemos a una de las ciudades!"
+
+          "No estoy tan seguro de eso. Quiero decir, acabo de verte ser completamente destrozado por ese tipo que lanza cuchillos. ¿Cómo es que alguien tan fuerte como tú es derrotado tan fácilmente por alguien llamado Dave el Degollador, de todos modos?"
+
+          "Oh, eso..."
+
+          Suena avergonzado.
+
+          "Verás, Barry. Puedo ser poderoso, pero eso no significa que no tenga debilidades. Resulta que una de esas debilidades es que nunca logré dominar el hechizo de escudo adecuadamente..."
+
+          "¿El hechizo de escudo? ¿El que lanza una capa protectora invisible a tu alrededor? Pero, ¿no es ese uno de los primeros hechizos que aprende cualquier mago?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch1_weakness
+  - name: ch1_sister
+    texts:
+      - source: scene_text
+        paragraph: 21
+        text: |-
+          "Es... Es mi hermana. Está terminalmente enferma, y la cura para su enfermedad solo se puede encontrar en este continente. He intentado durante meses conseguir una invitación a este lugar, pero no quisieron oír hablar de ello. Esta era la única forma. Solo puedo esperar que de alguna manera logre sobrevivir lo suficiente para encontrar lo que busco".
+
+          Daren pone una mano en mi hombro.
+
+          "Lo encontraremos. ¡Juntos! ¡Prometo que no dejaré que te pase nada hasta que logres tu objetivo!"
+
+          "No es por sonar ingrato pero... no encuentro esto muy tranquilizador. Quiero decir, acabo de verte ser completamente destrozado por ese tipo que lanza cuchillos. ¿Cómo es que alguien tan fuerte como tú es derrotado tan fácilmente por alguien llamado Dave el Degollador, de todos modos?"
+
+          "Oh, eso..."
+
+          Suena avergonzado.
+
+          "Verás, Barry. Puedo ser poderoso, pero eso no significa que no tenga debilidades. Resulta que una de esas debilidades es que nunca logré dominar el hechizo de escudo adecuadamente..."
+
+          "¿El hechizo de escudo? ¿El que lanza una capa protectora invisible a tu alrededor? Pero, ¿no es ese uno de los primeros hechizos que aprende cualquier mago?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch1_weakness
+  - name: ch1_weakness
+    routes:
+      - condition: ch1_show_yourself = 1
+        texts:
+          - source: scene_text
+            paragraph: 22
+            text: |-
+              "Lo es... Pero no es que no pueda lanzarlo en absoluto... Puedo defenderme de la magia perfectamente. Son las armas normales con las que tengo problemas. Por eso uso armadura. Por eso uso una espada y un escudo. Primero comencé a usarlos porque no podía usar el hechizo de escudo correctamente, pero pronto, comencé a adaptar mi magia a ellos, y mi propio estilo de lucha. Encontré un maestro que me enseñó a luchar con armas, y usé mi magia para encantarlas. Luego, después de cada pelea, simplemente usaba mi magia blanca para curar mis heridas. Así..."
+
+              Lo demuestra levantando las manos en el aire y haciendo que aparezca una luz blanca a su alrededor. Mientras la luz brilla, sus heridas comienzan a cerrarse y la sangre se desvanece. Luego usa la misma magia para curar la herida del hombro que me había hecho el cuchillo de Dave el Degollador.
+
+              "Los cuchillos del degollador tenían vida propia, y había muchos de ellos atacándome simultáneamente. Si hubiera tenido un hechizo de escudo adecuado para defenderme de ellos, derrotarlo hubiera sido un juego de niños. Pero defenderse de todos esos cuchillos solo con un escudo y una espada hubiera sido imposible, independientemente de mi habilidad de combate. Todas las armaduras tienen sus debilidades. Todo lo que tenía que hacer era ir repetidamente a las articulaciones de la armadura, hasta que me desgastara".
+          - source: scene_text_2
+            paragraph: 16
+            text: |-
+              "¿Por qué me cuentas todo esto? ¿No deberías estar al menos un poco preocupado por revelar tu mayor debilidad a alguien que acabas de conocer?"
+
+              "¡Oye, acabas de salvarme la vida! Así que no puedes ser tan malo, ¿verdad?"
+
+              "Perdonen que interrumpa", escucho la voz de una mujer detrás de los árboles. "¿Pero por casualidad serías Daren, el legendario salvador del Continente Oriental?"
+        choices:
+          - position: 1
+            text: Siguiente capítulo
+            effects:
+              - set:
+                  current_scene: ch2_intro
+                  chapter_save: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                  checkpoint_rich: 1
+      - condition: ch1_show_yourself <> 1
+        texts:
+          - source: scene_text
+            paragraph: 23
+            text: |-
+              "Lo es... Pero no es que no pueda lanzarlo en absoluto... Puedo defenderme de la magia perfectamente. Son las armas normales con las que tengo problemas. Por eso uso armadura. Por eso uso una espada y un escudo. Primero comencé a usarlos porque no podía usar el hechizo de escudo correctamente, pero pronto, comencé a adaptar mi magia a ellos, y mi propio estilo de lucha. Encontré un maestro que me enseñó a luchar con armas, y usé mi magia para encantarlas. Luego, después de cada pelea, simplemente usaba mi magia blanca para curar mis heridas. Así..."
+
+              Lo demuestra levantando las manos en el aire y haciendo que aparezca una luz blanca a su alrededor. Mientras la luz brilla, sus heridas comienzan a cerrarse y la sangre se desvanece.
+
+              "Los cuchillos del degollador tenían vida propia, y había muchos de ellos atacándome simultáneamente. Si hubiera tenido un hechizo de escudo adecuado para defenderme de ellos, derrotarlo hubiera sido un juego de niños. Pero defenderse de todos esos cuchillos solo con un escudo y una espada hubiera sido imposible, independientemente de mi habilidad de combate. Todas las armaduras tienen sus debilidades. Todo lo que tenía que hacer era ir repetidamente a las articulaciones de la armadura, hasta que me desgastara".
+          - source: scene_text_2
+            paragraph: 17
+            text: "\"Why are you telling me all of this? Shouldn't you be at least a bit worried about revealing your greatest weakness to someone you just met?\"\r\n\r\n\"Hey, you just saved my life! So you can't be that bad, right?\"\r\n\r\n\"Pardon me for interrupting,\" I hear a woman's voice from behind the trees. \"But would you by any chance be Daren, the legendary savior of the Eastern Continent?\""
+        choices:
+          - position: 1
+            text: Siguiente capítulo
+            effects:
+              - set:
+                  current_scene: ch2_intro
+                  chapter_save: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                  checkpoint_rich: 1

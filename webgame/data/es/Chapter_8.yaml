@@ -1,0 +1,2429 @@
+chapter_effects:
+  - condition: current_scene = "ch8_languages_failed" AND warning.text is empty
+    effects:
+      - warning:
+          text: La estadística de lenguas antiguas no es lo suficientemente alta
+scenes:
+  - name: ch8_intro
+    texts:
+      - source: scene_text
+        paragraph: 2
+        text: |-
+          "¡Barry!" Oigo la voz de Daren llamándome. "Oye, Barry, ¿puedes oírme?"
+
+          Me despierto con un ligero dolor de cabeza y la visión borrosa. A medida que empiezo a ver más claro, noto que estoy sentado en medio de una habitación con paredes de piedra y sin ventanas, con la única salida visible siendo una puerta de rejas metálicas que parece estar cerrada con llave. Las piedras utilizadas para construir las paredes parecen muy antiguas, están llenas de grietas y hay musgo creciendo por todas ellas. Si tuviera que adivinar, diría que estamos retenidos en la celda de una prisión de algunas ruinas antiguas. De repente recuerdo a la amiga de Kate, y cómo nos dejó a todos inconscientes en medio del bosque. ¿Es ella la que nos trajo aquí?
+
+          Miro a mi alrededor para ver si todos están aquí. Daren está de pie justo a mi lado, mientras que Kate y Rose están sentadas en el suelo en el lado opuesto de la habitación, con las espaldas apoyadas contra la pared. Hadrik está de pie cerca de la puerta de rejas metálicas y golpea ligeramente las paredes a su alrededor, probablemente en un intento de probar su durabilidad.
+
+          "¿Qué ha pasado?", le pregunto a Daren. "¿Nos trajeron aquí los lessathi?"
+      - source: scene_text_2
+        paragraph: 5
+        text: |-
+          "No, no fueron los lessathi", dice Daren. "Fueron los animales del bosque. Parecían realmente molestos de que invadiéramos sus sagradas tierras de hadas mágicas. Con gusto te pondré al día con todo lo que pasó mientras estabas inconsciente, pero primero, ¿puedes POR FAVOR apagar ese artefacto infernal tuyo? Ha estado pitando desde que me desperté, y realmente está empezando a ponerme de los nervios".
+
+          Saco mi dispositivo de estadísticas y veo que he recibido cuatro puntos más mientras estaba inconsciente. Debe haber recogido algo de energía del aire después de las peleas de ayer.
+    effects:
+      - set:
+          successful_checks:
+            - 'Punto de control alcanzado: Partida guardada.'
+        condition: checkpoint_rich = 1
+    choices:
+      - position: 1
+        text: Invertir puntos ahora
+        effects:
+          - set:
+              current_scene: ch8_stats_spent
+              storyboard_controls: Jump to frame "Stats"
+      - position: 2
+        text: Invertir puntos más tarde (presionando el botón de estadísticas en la parte superior de la pantalla)
+        effects:
+          - set:
+              current_scene: ch8_intro2
+              checkpoint_rich: 0
+  - name: ch8_stats_spent
+    texts:
+      - source: scene_text
+        paragraph: 2
+        text: |-
+          "¡Barry!" Oigo la voz de Daren llamándome. "Oye, Barry, ¿puedes oírme?"
+
+          Me despierto con un ligero dolor de cabeza y la visión borrosa. A medida que empiezo a ver más claro, noto que estoy sentado en medio de una habitación con paredes de piedra y sin ventanas, con la única salida visible siendo una puerta de rejas metálicas que parece estar cerrada con llave. Las piedras utilizadas para construir las paredes parecen muy antiguas, están llenas de grietas y hay musgo creciendo por todas ellas. Si tuviera que adivinar, diría que estamos retenidos en la celda de una prisión de algunas ruinas antiguas. De repente recuerdo a la amiga de Kate, y cómo nos dejó a todos inconscientes en medio del bosque. ¿Es ella la que nos trajo aquí?
+
+          Miro a mi alrededor para ver si todos están aquí. Daren está de pie justo a mi lado, mientras que Kate y Rose están sentadas en el suelo en el lado opuesto de la habitación, con las espaldas apoyadas contra la pared. Hadrik está de pie cerca de la puerta de rejas metálicas y golpea ligeramente las paredes a su alrededor, probablemente en un intento de probar su durabilidad.
+
+          "¿Qué ha pasado?", le pregunto a Daren. "¿Nos trajeron aquí los lessathi?"
+      - source: scene_text_2
+        paragraph: 5
+        text: |-
+          "No, no fueron los lessathi", dice Daren. "Fueron los animales del bosque. Parecían realmente molestos de que invadiéramos sus sagradas tierras de hadas mágicas. Con gusto te pondré al día con todo lo que pasó mientras estabas inconsciente, pero primero, ¿puedes POR FAVOR apagar ese artefacto infernal tuyo? Ha estado pitando desde que me desperté, y realmente está empezando a ponerme de los nervios".
+
+          Saco mi dispositivo de estadísticas y veo que he recibido cuatro puntos más mientras estaba inconsciente. Debe haber recogido algo de energía del aire después de las peleas de ayer.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_intro2
+              checkpoint_rich: 0
+  - name: ch8_intro2
+    texts:
+      - source: scene_text
+        paragraph: 3
+        text: |-
+          Una vez que termino con el potenciador de estadísticas, lo vuelvo a guardar en mi bolsillo y el dispositivo deja de pitar.
+
+          "¡Finalmente!", dice Daren. "Al menos ahora podemos tener algo de paz y tranquilidad mientras intentamos pensar en una forma de salir de aquí".
+
+          "Espera", le digo. "Dijiste que unos animales nos trajeron aquí, pero no veo a nadie vigilando nuestra celda. ¿Vinieron por aquí mientras yo todavía estaba inconsciente?"
+
+          "Sí", dice Daren. "Un tigre y un oso pasaron antes y empezaron a gruñirnos. Al principio, pensé que los carceleros habían enviado a sus mascotas aquí para asustarnos, pero luego Kate y Rose empezaron a hablar con ellos, haciendo ruidos de animales extraños. Resulta que todos los animales y monstruos de este continente pueden hablar, pero solo usan lenguas antiguas. Los monstruos no pueden hablar en la lengua común porque no saben nada mejor, y los animales no tienen permitido hablarla porque su líder, la zorra espíritu, ha prohibido su uso después de que los humanos empezaran a cazarlos para alimentarse. También resulta que tener una comprensión básica de las lenguas antiguas no es tan poco común si naciste en este continente".
+
+          "No importa todo eso", le digo a Daren. "¿Dijeron lo que quieren de nosotros?"
+
+          "Sí, dijeron que deberíamos esperar aquí hasta que llegara su gran zorro dorado, y aparentemente no paraban de hacer bromas sobre cómo ella nos daría a todos una lección".
+
+          "Entonces, ¿por qué no nos están vigilando? ¿Qué nos impide simplemente romper las paredes y escapar?"
+
+          "Estos", dice Daren, mientras señala su cuello.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          Por primera vez, noto que todos llevamos collares verdes alrededor del cuello, con marcas extrañas escritas en ellos. Me vuelvo hacia Kate.
+
+          "Espera, ¿son estos...?" empiezo a preguntarle pero ella me interrumpe.
+
+          "Sí", me responde. "Son el mismo tipo de collares que los antiguos usaban con los magos artificiales en el Faro de Esperanza para mantener sus poderes bajo control. La buena noticia es que sé cómo apagarlos. La mala noticia es que necesitamos encontrar el dispositivo que alimenta todos estos collares, antes de que pueda usarlo para desactivarlos. Estas ruinas también fueron construidas por los lessathi de antaño, así que si se parecen en algo al Faro, entonces debería haber una sala de control no muy lejos de aquí".
+
+          "Pero si ninguno de ustedes puede lanzar hechizos, ¿entonces por qué Hadrik todavía está en su forma de enano?"
+
+          "Sí, yo también me preguntaba eso", dice Hadrik. "Supongo que los collares en realidad no disipan ningún hechizo que te hayas lanzado a ti mismo antes de ponértelos. Solo te impiden lanzar más magia. Lo primero que intenté cuando me desperté fue convertirme en un gigante, pero este maldito collar no me deja lanzar ningún tipo de magia de cambio de forma".
+
+          "Dices que no puedes lanzar ninguna magia..." le digo. "Pero todavía tienes tu fuerza sobrehumana, ¿verdad?"
+      - source: scene_3
+        paragraph: 5
+        text: '"¡Sí!", dice Hadrik, sonriendo. "Pero incluso con mi poder, sigo sin poder romper el collar alrededor de mi cuello. Estos malditos artilugios parecen ser casi indestructibles. Estaba comprobando si las paredes son tan duraderas como los collares, pero parece que están hechas de piedras normales. ¡Debería poder romperlas sin ningún problema!"'
+    choices:
+      - position: 1
+        text: ¡Perfecto! Entonces no perdamos más tiempo aquí.
+        effects:
+          - set:
+              current_scene: ch8_escape
+              ch8_talk: 0
+      - position: 2
+        text: Espera, creo que deberíamos intentar hablar las cosas con su líder primero.
+        effects:
+          - set:
+              current_scene: ch8_talk
+              ch8_talk: 1
+  - name: ch8_talk
+    texts:
+      - source: scene_text
+        paragraph: 4
+        text: |-
+          "Espera, creo que deberíamos intentar hablar las cosas con su líder primero."
+
+          "Parece un buen plan", dice Daren, con un tono sarcástico. "Quiero decir, por lo que sabemos, esto bien podría ser solo algún malentendido cultural, y solo quieren ofrecernos una taza de té".
+
+          "Maldita sea, Daren, sabes muy bien que esto no es lo que yo estab--"
+
+          "¡Muy bien, todos!", grita Daren con fuerza, para tapar el sonido de mi voz. "¡Es hora de votar! Barry dice que todos deberíamos quedarnos aquí y comer pastelitos con la reina del país de las hadas mágicas. Yo digo que deberíamos salir corriendo ahora, mientras no hay nadie vigilando nuestra celda. ¡Quien también piense que escapar ahora sería nuestra mejor opción, por favor levante la mano!"
+
+          Los cuatro levantan sus manos simultáneamente. Daren y Hadrik me sonríen, mientras que Kate mira hacia otro lado y Rose sonríe disculpándose.
+
+          "¡Lo siento, Barry!", dice ella.
+
+          "Bueno", continúa Daren, "como estamos en una democracia, me temo que te faltaron dos votos para la victoria, Barry. ¡Es una lástima, los resultados estuvieron muy reñidos! Hadrik, cuando estés listo".
+
+          "¡Sí!", dice el enano, preparándose para abrir un agujero en la pared.
+
+          "¡Paren!", digo, y Hadrik interrumpe su golpe para mirarme.
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          "Oh, por el amor de Dios, ¿qué pasa esta vez?", pregunta Daren.
+
+          "¿Y si todo esto es una trampa?", digo. "¿No les parece extraño que no haya ni un solo guardia vigilando nuestra celda? ¿Y si nos están incitando a escapar para poder capturarnos de nuevo con cargos más graves? Ahora mismo, de lo único que somos culpables es de invadir temporalmente su territorio. Dado que somos forasteros y no conocemos bien estas tierras, deberíamos tener circunstancias atenuantes. Pero si intentamos escapar ahora, seguramente tendremos que luchar contra algunos de los animales, e incluso podríamos vernos obligados a matar a algunos de ellos. ¿Realmente queremos hacernos enemigos de toda una raza solo por un pequeño malentendido?"
+
+          "Hmm..." Hadrik dice pensativo, mientras se acaricia la barba. "El muchacho tiene razón".
+
+          "¡No puedes hablar en serio!", le dice Daren.
+
+          "Rose", continúo, "¿no nos dijiste que esta zorra espíritu suya es como una especie de diosa? ¿No es ella, como, increíblemente fuerte?"
+
+          "Oh, sí", dice Rose. "Tiene miles de años y probablemente eclipsa el poder de la mayoría de los magos de este torneo".
+
+          "Entonces, ¿elegirías hacerla nuestra enemiga de buenas a primeras, sabiendo que podría haber una pequeña oportunidad de hablar las cosas con ella si solo tenemos un poco de paciencia?"
+
+          "Bueno, cuando lo pones así, ¡supongo que no lo haría!", dice Rose, sonriendo.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_talk2
+  - name: ch8_talk2
+    texts:
+      - source: scene_text
+        paragraph: 5
+        text: |-
+          "¡Oh, vamos!", dice Daren, exasperado. "¡Todos estaban de mi lado hace unos momentos!"
+
+          "¿Qué pasa, Daren?", le pregunto con una sonrisa burlona. "¿Ya no te gusta la democracia?"
+
+          Daren me frunce el ceño, pero finalmente se rinde y decide abandonar su postura sobre el tema.
+
+          "¡Bien!", dice. "Veo que todos han tomado ya una decisión, así que no sirve de nada alargar más este asunto. Hablaremos con este gran zorro dorado y veremos qué pasa a partir de ahí".
+
+          No tarda mucho en aparecer la líder de los animales. Su forma es la de un zorro normal, pero su pelaje es tan brillante que parece hecho de oro auténtico. El aura mágica que emana es bastante intimidante y también emite una vibración de otro mundo. Una vibración similar, de hecho, a la de una banshee. ¿Podría proceder ella también del plano mágico?
+
+          La zorra viene acompañada por un leopardo y un toro, uno a su izquierda y otro a su derecha, como dos guardaespaldas caminando junto a algún niño noble rico. Cuando todos se detienen frente a nuestra celda, la zorra empieza a hablarnos en la lengua común.
+      - source: scene_text_2
+        paragraph: 8
+        text: |-
+          "Saludos, forasteros", dice ella. "Soy Eleya, el zorro dorado, y estos son mis dos lugartenientes de confianza, Leo el leopardo y Taurus el toro".
+
+          "¡Leo y Taurus!", dice Daren en voz baja. "¡Creatividad de nombres en su máxima expresión!"
+
+          "Sin embargo, ¿no debería ser Leo el nombre de un león?", le pregunta Hadrik.
+
+          "¡Shhh!", les dice Rose, mirando frenéticamente a los tres animales para ver si alguno de ellos ha oído su charla.
+
+          El toro parece haber oído y entendido la broma de Daren, ya que ahora lo mira fijamente con una mirada furiosa. El leopardo o bien no oyó su comentario o no lo consideró digno de una reacción por su parte. La zorra simplemente los ignora por completo y continúa su discurso, como si nada hubiera pasado.
+
+          "Mis leales súbditos me informaron de que fueron sorprendidos invadiendo nuestros terrenos sagrados. ¿Qué tienen que decir en su defensa?"
+    effects:
+      - set:
+          ac_ch8_democratie: 1
+        achievement:
+          id: ac_ch8_democratie
+          title: ¡Viva la democracia!
+    choices:
+      - position: 1
+        text: No sabíamos que estábamos en terrenos sagrados.
+        effects:
+          - set:
+              current_scene: ch8_ignorance
+      - position: 2
+        text: Nuestra intención era irnos, pero fuimos atacados y nos dejaron inconscientes.
+        effects:
+          - set:
+              current_scene: ch8_attacked
+  - name: ch8_ignorance
+    texts:
+      - source: scene_text
+        paragraph: 6
+        text: |-
+          "No sabíamos que estábamos en terrenos sagrados."
+
+          "¿Esa es tu defensa?", me pregunta la zorra, desconcertada. "¿De qué manera la ignorancia te absuelve de tu transgresión? ¿Niegas haber invadido nuestros terrenos sagrados?"
+
+          "No, pero--"
+
+          "Entonces por la presente te declaro culpable y te condeno a una vida de trabajos forzados en nuestro reino animal. Que tus años pasados aquí te hagan reflexionar sobre lo que has hecho y arrepentirte de tus crímenes".
+
+          "¡Ahora, espera un segundo!", dice Daren. "¿Qué clase de sentencia sin sentido es esta? ¿Quién condena a alguien a una vida de trabajos forzados así solo porque resulta que entró en una zona prohibida por accidente? ¿También ejecutas a tus cervatillos y cachorros si no se mantienen fuera del césped en un parque?"
+      - source: scene_text_2
+        paragraph: 9
+        text: |-
+          "Harías bien en no dirigirte a mí de una manera tan informal, mago con armadura", dice Eleya. "Pero para responder a tu pregunta, el reino animal no tiene parques, ni una regla para mantenerse fuera del césped en ninguna región del continente. Sin embargo, si existiera tal regla, y un cachorro o un cervatillo la rompiera, te aseguro que no dudaría en ordenar su ejecución. Las reglas están para cumplirse, tanto por los humanos como por los animales. El hecho de que ustedes los humanos sean tan indulgentes con sus reglas es una de las razones principales por las que su sociedad está decayendo hasta tal punto. No oiré más de esto. Comenzarán su trabajo mañana, al amanecer. Tienen hasta entonces para prepararse para lo que está por venir".
+
+          Con estas últimas palabras, el zorro dorado se marcha, y su compañero toro se apresura a seguirla. El leopardo se queda atrás un momento y hace aparecer mágicamente un sobre amarillo en el suelo frente a él, de la nada. Luego usa una de sus patas delanteras para empujar el sobre bajo la puerta de rejas metálicas y dentro de nuestra celda. Una vez que se asegura de que tiene nuestra atención, él también va a seguir a la zorra y al toro, sin decirnos ni una sola palabra.
+
+          Rose recoge el sobre del suelo y lo abre. Dentro hay una pequeña nota que parece estar escrita en la lengua común.
+
+          "¿Qué dice?", pregunta Kate.
+
+          "Dice: 'Si llegan a un pasillo que se divide en tres caminos, cada uno marcado con el símbolo de un insecto, elijan el marcado con un escarabajo' ".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_escape
+  - name: ch8_attacked
+    texts:
+      - source: scene_text
+        paragraph: 7
+        text: |-
+          "Nuestra intención era irnos, pero fuimos atacados y nos dejaron inconscientes."
+
+          "¡¿Así que admites haber librado una batalla en nuestros terrenos sagrados?!", me pregunta la zorra, conmocionada. "Ese es un crimen mucho más atroz que haber simplemente invadido nuestro territorio. Un crimen que se castiga con la muerte".
+
+          "Espera, ¿qué?..."
+
+          "Se les darán veinticuatro horas para hacer las paces con sus dioses y para escribir sus últimas cartas a sus familias. Su ejecución se llevará a cabo mañana, al amanecer. Asegúrense de tenerlo todo hecho para entonces".
+
+          "¡Ahora, espera un segundo!", dice Daren. "¿Qué clase de sentencia sin sentido es esta? ¿Quién condena a muerte a alguien así solo porque resulta que estaba luchando en tu territorio? ¿También ejecutas a tus cervatillos y cachorros si no se mantienen fuera del césped en un parque?"
+      - source: scene_text_2
+        paragraph: 10
+        text: |-
+          "Harías bien en no dirigirte a mí de una manera tan informal, mago con armadura", dice Eleya. "Pero para responder a tu pregunta, el reino animal no tiene parques, ni una regla para mantenerse fuera del césped en ninguna región del continente. Sin embargo, si existiera tal regla, y un cachorro o un cervatillo la rompiera, te aseguro que no dudaría en ordenar su ejecución. Las reglas están para cumplirse, tanto por los humanos como por los animales. El hecho de que ustedes los humanos sean tan indulgentes con sus reglas es una de las razones principales por las que su sociedad está decayendo hasta tal punto. No oiré más de esto. Tienen hasta mañana para meditar y reflexionar sobre lo que han hecho. Usen este tiempo sabiamente".
+
+          Con estas últimas palabras, el zorro dorado se marcha, y su compañero toro se apresura a seguirla. El leopardo se queda atrás un momento y hace aparecer mágicamente un sobre amarillo en el suelo frente a él, de la nada. Luego usa una de sus patas delanteras para empujar el sobre bajo la puerta de rejas metálicas y dentro de nuestra celda. Una vez que se asegura de que tiene nuestra atención, él también va a seguir a la zorra y al toro, sin decirnos ni una sola palabra.
+               
+          Rose recoge el sobre del suelo y lo abre. Dentro hay una pequeña nota que parece estar escrita en la lengua común.
+
+          "¿Qué dice?", pregunta Kate.
+
+          "Dice: 'Si llegan a un pasillo que se divide en tres caminos, cada uno marcado con el símbolo de un insecto, elijan el marcado con un escarabajo' ".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_escape
+  - name: ch8_escape
+    routes:
+      - condition: ch8_talk = 1
+        texts:
+          - source: scene_text
+            paragraph: 8
+            text: |-
+              "Espera", dice Kate. "¿Significa esto que el leopardo espera que escapemos y nos está dando indicaciones?"
+
+              "Entonces, Barry", dice Daren con una voz particularmente fuerte, a pesar de que estamos todos muy cerca los unos de otros, "¿qué te parece que deberíamos hacer ahora? ¿Crees que deberíamos esperar hasta mañana y ver si el zorro dorado cambia de opinión? ¡Tal vez deberíamos hacer otra votación para decidir nuestra mejor opción! ¿Qué dices, Barry? ¿Hacemos otra votación?"
+
+              La sonrisa de suficiencia que tiene en la cara está empezando a ser un poco irritante.
+
+              "Ya es suficiente, Daren", dice Kate. "Ninguno de nosotros podía haber sabido cuáles eran las intenciones de la zorra de antemano. Siguen sin dejar guardias que nos vigilen, así que no se ha hecho ningún daño. De hecho, puede que incluso estemos en una mejor posición que antes, a juzgar por el contenido de la nota que Rose tiene en sus manos".
+
+              "¡Sí!", dice Hadrik, "¡Todos estuvimos de acuerdo en escuchar a la zorra antes de intentar escapar. ¡Fue una buena idea mientras duró!"
+
+              Al no quedarnos otra alternativa que escapar de nuestra celda, esperamos unos minutos para asegurarnos de que la zorra y sus lugartenientes estuvieran fuera del alcance del oído, y luego Hadrik destrozó la pared de nuestra prisión con su puño.
+          - source: scene_text_2
+            paragraph: 11
+            text: |-
+              Al pasar por encima de los escombros y echar un buen vistazo al exterior de nuestra celda, vemos que el pasillo en el que acabamos de entrar está completamente desierto. Si no fuera por unas cuantas antorchas encendidas aquí y allá, no sería muy descabellado suponer que este edificio había sido abandonado hace mucho tiempo. Nuestra celda parece haber sido colocada en el extremo más alejado del pasillo, lo que significa que el único camino para nosotros es hacia la izquierda. 
+
+              "No me gusta esto", dice Kate, mientras caminamos por el pasillo. "Esta es la misma dirección en la que se fueron la zorra y sus seguidores. Lo último que queremos es encontrarnos con ellos mientras escapamos".
+
+              "Bueno, no es que nos dieran muchas opciones", dice Hadrik. "Solo había un camino por el que ir después de salir de nuestra celda, y no ha habido ninguna bifurcación en el camino desde entonces. Lo que más me intriga es que no hemos pasado por ninguna otra celda desde que salimos. ¿No se supone que esto es una mazmorra de algún tipo? ¿Dónde están todos los demás prisioneros?"
+
+              "¿Tal vez solo tienen una celda por pasillo?", sugiere Rose.
+
+              "Olviden a los prisioneros", digo. "A mí me preocupa más la completa falta de guardias en este lugar. ¿Realmente pensaron que no podíamos derribar estas frágiles y viejas paredes sin magia?"
+
+              "Oye, Rose", llama Daren, mientras estudia la escritura en una pared. "¿Puedes venir aquí un segundo?"
+
+              "¡Claro!", dice Rose, y se dirige a su lado.
+          - source: scene_3
+            paragraph: 6
+            text: |-
+              "Puedes leer lenguas antiguas, ¿verdad? ¿Puedes decirme qué dice esto?"
+
+              "Hmm..." Rose dice, mientras mira el texto y frunce el ceño. "Me temo que esto es un poco demasiado avanzado para mí. Puedo decir que está escrito en el idioma usado por los lessathi de antaño, pero no puedo entender ninguna de las palabras".
+
+              "Barry", dice Daren, "¿no tenía ese artefacto tuyo una estadística llamada 'lenguas antiguas'? ¡Ven aquí y mira si puedes traducir esto!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_languages_failed
+                condition: ancient_languages < 3
+              - set:
+                  current_scene: ch8_languages_success
+                condition: ancient_languages >= 3
+      - condition: ch8_talk = 0
+        texts:
+          - source: scene_text
+            paragraph: 9
+            text: |-
+              "¡Perfecto! Entonces no perdamos más tiempo aquí."
+
+              "¡Muy bien, entonces!", dice Hadrik. "¡Aquí voy!"
+
+              El enano golpea la pared con todas sus fuerzas, lo que la hace añicos. 
+
+              Al pasar por encima de los escombros y echar un buen vistazo al exterior de nuestra celda, vemos que el pasillo en el que acabamos de entrar está completamente desierto. Si no fuera por unas cuantas antorchas encendidas aquí y allá, no sería muy descabellado suponer que este edificio había sido abandonado hace mucho tiempo. Nuestra celda parece haber sido colocada en el extremo más alejado del pasillo, lo que significa que el único camino para nosotros es hacia la izquierda. 
+
+              "No me gusta esto", dice Kate, mientras caminamos por el pasillo. "Esta es la misma dirección en la que se fueron el oso y el tigre para buscar a su líder la zorra. Lo último que queremos es encontrarnos con ella o sus seguidores mientras escapamos".
+
+              "Bueno, no es que nos dieran muchas opciones", dice Hadrik. "Solo había un camino por el que ir después de salir de nuestra celda, y no ha habido ninguna bifurcación en el camino desde entonces. Lo que más me intriga es que no hemos pasado por ninguna otra celda desde que salimos. ¿No se supone que esto es una mazmorra de algún tipo? ¿Dónde están todos los demás prisioneros?"
+          - source: scene_text_2
+            paragraph: 12
+            text: |-
+              "¿Tal vez solo tienen una celda por pasillo?", sugiere Rose.
+
+              "Olviden a los prisioneros", digo. "A mí me preocupa más la completa falta de guardias en este lugar. ¿Realmente pensaron que no podíamos derribar estas frágiles y viejas paredes sin magia?"
+
+              "Oye, Rose", llama Daren, mientras estudia la escritura en una pared. "¿Puedes venir aquí un segundo?"
+
+              "¡Claro!", dice Rose, y se dirige a su lado.
+
+              "Puedes leer lenguas antiguas, ¿verdad? ¿Puedes decirme qué dice esto?"
+
+              "Hmm..." Rose dice, mientras mira el texto y frunce el ceño. "Me temo que esto es un poco demasiado avanzado para mí. Puedo decir que está escrito en el idioma usado por los lessathi de antaño, pero no puedo entender ninguna de las palabras".
+
+              "Barry", dice Daren, "¿no tenía ese artefacto tuyo una estadística llamada 'lenguas antiguas'? ¡Ven aquí y mira si puedes traducir esto!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_languages_failed
+                condition: ancient_languages < 3
+              - set:
+                  current_scene: ch8_languages_success
+                condition: ancient_languages >= 3
+  - name: ch8_languages_failed
+    texts:
+      - source: scene_text
+        paragraph: 10
+        text: |-
+          Al acercarme a los glifos de la pared, intento descifrarlos, pero las palabras utilizadas son demasiado complicadas para que las entienda con mi nivel actual de conocimientos. Sin embargo, podría tener una mejor oportunidad si maximizo mi estadística de lenguas antiguas.
+
+          "Lo siento", digo. "No tengo suficientes niveles en mi estadística de lenguas antiguas para entender lo que dice".
+
+          "¿Y?..." pregunta Daren. "¡Solo sube el nivel de tu estadística y mira qué dice! ¿No es para eso para lo que sirve tu dispositivo?"
+    effects:
+      - set:
+          failed_checks:
+            - '[ Comprobación de lenguas antiguas fallida - nivel 3 ]'
+    choices:
+      - position: 1
+        text: Decirle que no tengo suficientes puntos disponibles para subir el nivel
+        effects:
+          - set:
+              current_scene: ch8_available
+              ch8_first_puzzle: 0
+      - position: 2
+        text: Decirle que mis puntos son limitados y que los estoy guardando para más tarde
+        effects:
+          - set:
+              current_scene: ch8_limited
+              ch8_first_puzzle: 0
+      - position: 3
+        text: Descifrar los glifos (requiere nivel 3 en lenguas antiguas)
+        effects:
+          - condition: ancient_languages < 3
+            show_warning: {}
+          - set:
+              current_scene: ch8_languages_success
+            condition: ancient_languages >= 3
+  - name: ch8_available
+    texts:
+      - source: scene_text
+        paragraph: 11
+        text: |-
+          "No tengo suficientes puntos disponibles para llevar mi estadística de lenguas antiguas a un nivel lo suficientemente alto".
+
+          "¿Qué, en serio?", pregunta Daren. "¿Simplemente gastas todos tus puntos inmediatamente después de recibirlos? ¿Nunca consideraste guardar algunos puntos extra en caso de una emergencia?"
+
+          Él suspira.
+
+          "Bueno, supongo que no llegaremos a ninguna parte quedándonos aquí parados y mirándolo como un grupo de búhos", dice, mientras se aleja de la pared y empieza a caminar de nuevo por el pasillo. "Deberíamos ponernos en marcha e--"
+
+          Daren se detiene a mitad de la frase cuando se da cuenta de que hay alguien bloqueando su camino. Hay una niña de pie frente a él, con las manos a la espalda y una sonrisa alegre en la cara. Lleva un amuleto dorado alrededor del cuello, una camiseta de tirantes gris, unos pantalones anchos que suelen llevar los payasos y no lleva zapatos. Mide poco más de un metro y su largo pelo rojo casi le llega a la cintura. Dada su altura y apariencia general, diría que no tiene más de diez años. Y sin embargo, no recibo ningún tipo de advertencia para no herirla. ¿No es una de las lugareñas?
+
+          "¡Hola!", le dice ella a Daren, todavía sonriendo.
+      - source: scene_text_2
+        paragraph: 13
+        text: |-
+          "Qué demonios...", dice Daren. "¿De dónde has salido?"
+
+          "¡De ahí!", dice la niña, mientras señala un agujero en el techo.
+
+          "Oh, eh, vale...", dice Daren. "¿Y qué estás haciendo aquí?"
+
+          "Estábamos haciendo un poco de entrenamiento en la habitación de arriba cuando los oímos hablar debajo de nosotros. Mi nombre es Flower. ¡Encantada de conocerlos!"
+
+          "Vaya, vaya, vaya... ¡Espera un momento! ¿Quiénes son 'nosotros'?"
+
+          Flower parece haber sido pillada desprevenida por la pregunta de Daren.
+
+          "¿He dicho 'nosotros'?", pregunta. "Lo siento, quería decir 'yo'. Estaba haciendo un poco de entrenamiento en la habitación de arriba. No hay 'nosotros'. Solo 'yo'".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_training
+  - name: ch8_limited
+    texts:
+      - source: scene_text
+        paragraph: 12
+        text: |-
+          "No voy a gastar mis puntos solo para traducir una escritura oscura en una pared. Hay otras estadísticas que son mucho más importantes que las lenguas antiguas".
+
+          "Bien, bien, lo entiendo. Olvida que te lo he preguntado".
+
+          Daren suspira.
+
+          "Bueno, supongo que no llegaremos a ninguna parte quedándonos aquí parados y mirándolo como un grupo de búhos", dice, mientras se aleja de la pared y empieza a caminar de nuevo por el pasillo. "Deberíamos ponernos en marcha e--"
+
+          Daren se detiene a mitad de la frase cuando se da cuenta de que hay alguien bloqueando su camino. Hay una niña de pie frente a él, con las manos a la espalda y una sonrisa alegre en la cara. Lleva un amuleto dorado alrededor del cuello, una camiseta de tirantes gris, unos pantalones anchos que suelen llevar los payasos y no lleva zapatos. Mide poco más de un metro y su largo pelo rojo casi le llega a la cintura. Dada su altura y apariencia general, diría que no tiene más de diez años. Y sin embargo, no recibo ningún tipo de advertencia para no herirla. ¿No es una de las lugareñas?
+
+          "¡Hola!", le dice ella a Daren, todavía sonriendo.
+      - source: scene_text_2
+        paragraph: 14
+        text: |-
+          "Qué demonios...", dice Daren. "¿De dónde has salido?"
+
+          "¡De ahí!", dice la niña, mientras señala un agujero en el techo.
+
+          "Oh, eh, vale...", dice Daren. "¿Y qué estás haciendo aquí?"
+
+          "Estábamos haciendo un poco de entrenamiento en la habitación de arriba cuando los oímos hablar debajo de nosotros. Mi nombre es Flower. ¡Encantada de conocerlos!"
+
+          "Vaya, vaya, vaya... ¡Espera un momento! ¿Quiénes son 'nosotros'?"
+
+          Flower parece haber sido pillada desprevenida por la pregunta de Daren.
+
+          "¿He dicho 'nosotros'?", pregunta. "Lo siento, quería decir 'yo'. Estaba haciendo un poco de entrenamiento en la habitación de arriba. No hay 'nosotros'. Solo 'yo'".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_training
+  - name: ch8_languages_success
+    texts:
+      - source: scene_text
+        paragraph: 13
+        text: |-
+          A medida que empiezo a descifrar los glifos de la pared, me doy cuenta de que la escritura dice: "Si te gusta descubrir secretos, toca cada uno de estos glifos en rápida sucesión".
+
+          "¿Y bien?", me pregunta Daren. "¿Qué dice?"
+    effects:
+      - set:
+          successful_checks:
+            - '[ Comprobación de lenguas antiguas exitosa - nivel 3 ]'
+    choices:
+      - position: 1
+        text: Seguir las instrucciones escritas en la pared
+        effects:
+          - set:
+              current_scene: ch8_follow
+              ch8_first_puzzle: 1
+      - position: 2
+        text: Traducir la frase a Daren, pero no tocar los glifos
+        effects:
+          - set:
+              current_scene: ch8_translate
+              ch8_first_puzzle: 1
+      - position: 3
+        text: Decirle a Daren que es alguna advertencia críptica y no tocar los glifos
+        effects:
+          - set:
+              current_scene: ch8_cryptic
+              ch8_first_puzzle: 2
+  - name: ch8_follow
+    texts:
+      - source: scene_text
+        paragraph: 14
+        text: |-
+          Toco todos los glifos en orden, uno por uno, tal como decían las instrucciones.
+
+          De repente, la piedra con las marcas se desliza hacia un lado y dos objetos pequeños salen despedidos del hueco que dejó en la pared. La piedra vuelve a su posición original. Al mirar más de cerca, veo que los dos objetos que salieron de la pared son un pequeño pergamino y lo que parece ser una pieza de un rompecabezas. Los recojo ambos del suelo y leo el trozo de pergamino. Esta vez el texto está escrito en la lengua común y dice: "Encuentra todas las piezas del rompecabezas y compartiré contigo mi mayor secreto. He dejado una de estas en cada uno de los edificios que he diseñado".
+
+          El pergamino está firmado simplemente como: "El arquitecto de este edificio".
+
+          "Vale", dice Daren, mientras me guardo el pequeño pergamino y la pieza del rompecabezas en el bolsillo izquierdo. "Primero de todo, ¿qué decían los glifos? Y segundo, ¿qué son esas cosas?"
+
+          "Los glifos decían que si los presionaba todos en rápida sucesión descubriría un secreto. El pergamino decía que si encuentro todas las piezas del rompecabezas, descubriré el mayor secreto del arquitecto de este edificio".
+
+          "Inútil", dice Daren, decepcionado, mientras se aleja de la pared y empieza a caminar de nuevo por el pasillo. "No sé qué esperaba, la verdad. Quiero decir, no es como si estuviéramos--"
+      - source: scene_text_2
+        paragraph: 15
+        text: |-
+          Daren se detiene a mitad de la frase cuando se da cuenta de que hay alguien bloqueando su camino. Hay una niña de pie frente a él, con las manos a la espalda y una sonrisa alegre en la cara. Lleva un amuleto dorado alrededor del cuello, una camiseta de tirantes gris, unos pantalones anchos que suelen llevar los payasos y no lleva zapatos. Mide poco más de un metro y su largo pelo rojo casi le llega a la cintura. Dada su altura y apariencia general, diría que no tiene más de diez años. Y sin embargo, no recibo ningún tipo de advertencia para no herirla. ¿No es una de las lugareñas?
+
+          "¡Hola!", le dice ella a Daren, todavía sonriendo.
+
+          "Qué demonios...", dice Daren. "¿De dónde has salido?"
+
+          "¡De ahí!", dice la niña, mientras señala un agujero en el techo.
+
+          "Oh, eh, vale...", dice Daren. "¿Y qué estás haciendo aquí?"
+
+          "Estábamos haciendo un poco de entrenamiento en la habitación de arriba cuando los oímos hablar debajo de nosotros. Mi nombre es Flower. ¡Encantada de conocerlos!"
+
+          "Vaya, vaya, vaya... ¡Espera un momento! ¿Quiénes son 'nosotros'?"
+
+          Flower parece haber sido pillada desprevenida por la pregunta de Daren.
+
+          "¿He dicho 'nosotros'?", pregunta. "Lo siento, quería decir 'yo'. Estaba haciendo un poco de entrenamiento en la habitación de arriba. No hay 'nosotros'. Solo 'yo'".
+    effects:
+      - set:
+          ac_ch8_first: 1
+        achievement:
+          id: ac_ch8_first
+          title: Primera pieza del rompecabezas
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_training
+  - name: ch8_translate
+    texts:
+      - source: scene_text
+        paragraph: 15
+        text: |-
+          "Dice: 'Si te gusta descubrir secretos, toca cada uno de estos glifos en rápida sucesión' ".
+
+          "Vale...", dice Daren. "Entonces, ¿por qué no tocas los glifos?"
+
+          "No lo sé, podría ser una trampa de algún tipo".
+
+          "¡Claro! ¿Por qué no se me ocurrió eso? Quiero decir, ¿qué mejor manera de atraer a la gente para que haga algo que tú quieres que escribir un mensaje en algún idioma oscuro que nadie puede leer, verdad?"
+
+          "En realidad, dado que esto probablemente fue escrito hace unos miles de años, este idioma bien podría haber sido la lengua común en aquel entonces--"
+
+          "Oh, quítate de en medio, ¿quieres? Ya los presionaré yo", dice Daren, mientras me empuja a un lado y empieza a golpear los glifos.
+
+          De repente, la piedra con las marcas se desliza hacia un lado y dos objetos pequeños salen despedidos del hueco que dejó en la pared. La piedra vuelve a su posición original. Daren recoge los dos objetos del suelo y los mira. Parece que uno de los objetos es una pieza de un rompecabezas y el otro es un pequeño pergamino. Daren lee el pergamino y luego me entrega ambos objetos, mientras exclama con disgusto:
+
+          "¡Inútil!"
+
+          Mientras leo el texto del pergamino, noto que está escrito en la lengua común y que dice: "Encuentra todas las piezas del rompecabezas y compartiré contigo mi mayor secreto. He dejado una de estas en cada uno de los edificios que he diseñado".
+      - source: scene_text_2
+        paragraph: 16
+        text: |-
+          El pergamino está firmado simplemente como: "El arquitecto de este edificio".
+
+          "No sé qué esperaba, la verdad", dice Daren, mientras se aleja de la pared y empieza a caminar de nuevo por el pasillo. "Quiero decir, no es como si estuviéramos--"
+
+          Daren se detiene a mitad de la frase cuando se da cuenta de que hay alguien bloqueando su camino. Hay una niña de pie frente a él, con las manos a la espalda y una sonrisa alegre en la cara. Lleva un amuleto dorado alrededor del cuello, una camiseta de tirantes gris, unos pantalones anchos que suelen llevar los payasos y no lleva zapatos. Mide poco más de un metro y su largo pelo rojo casi le llega a la cintura. Dada su altura y apariencia general, diría que no tiene más de diez años. Y sin embargo, no recibo ningún tipo de advertencia para no herirla. ¿No es una de las lugareñas?
+
+          "¡Hola!", le dice ella a Daren, todavía sonriendo.
+
+          "Qué demonios...", dice Daren. "¿De dónde has salido?"
+
+          "¡De ahí!", dice la niña, mientras señala un agujero en el techo.
+
+          "Oh, eh, vale...", dice Daren. "¿Y qué estás haciendo aquí?"
+
+          "Estábamos haciendo un poco de entrenamiento en la habitación de arriba cuando los oímos hablar debajo de nosotros. Mi nombre es Flower. ¡Encantada de conocerlos!"
+
+          "Vaya, vaya, vaya... ¡Espera un momento! ¿Quiénes son 'nosotros'?"
+      - source: scene_3
+        paragraph: 7
+        text: |-
+          Flower parece haber sido pillada desprevenida por la pregunta de Daren.
+
+          "¿He dicho 'nosotros'?", pregunta. "Lo siento, quería decir 'yo'. Estaba haciendo un poco de entrenamiento en la habitación de arriba. No hay 'nosotros'. Solo 'yo'".
+    effects:
+      - set:
+          ac_ch8_first: 1
+        achievement:
+          id: ac_ch8_first
+          title: Primera pieza del rompecabezas
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_training
+  - name: ch8_cryptic
+    texts:
+      - source: scene_text
+        paragraph: 16
+        text: |-
+          "Solo dice: 'Vuelve atrás ahora, antes de que sea demasiado tarde. Has sido advertido' ".
+
+          "Lo de siempre", dice Daren, mientras se aleja de la pared y empieza a caminar de nuevo por el pasillo. "No sé qué esperaba, la verdad. Quiero decir, no es como si estuviéramos--"
+
+          Daren se detiene a mitad de la frase cuando se da cuenta de que hay alguien bloqueando su camino. Hay una niña de pie frente a él, con las manos a la espalda y una sonrisa alegre en la cara. Lleva un amuleto dorado alrededor del cuello, una camiseta de tirantes gris, unos pantalones anchos que suelen llevar los payasos y no lleva zapatos. Mide poco más de un metro y su largo pelo rojo casi le llega a la cintura. Dada su altura y apariencia general, diría que no tiene más de diez años. Y sin embargo, no recibo ningún tipo de advertencia para no herirla. ¿No es una de las lugareñas?
+
+          "¡Hola!", le dice ella a Daren, todavía sonriendo.
+
+          "Qué demonios...", dice Daren. "¿De dónde has salido?"
+
+          "¡De ahí!", dice la niña, mientras señala un agujero en el techo.
+      - source: scene_text_2
+        paragraph: 17
+        text: |-
+          "Oh, eh, vale...", dice Daren. "¿Y qué estás haciendo aquí?"
+
+          "Estábamos haciendo un poco de entrenamiento en la habitación de arriba cuando los oímos hablar debajo de nosotros. Mi nombre es Flower. ¡Encantada de conocerlos!"
+
+          "Vaya, vaya, vaya... ¡Espera un momento! ¿Quiénes son 'nosotros'?"
+
+          Flower parece haber sido pillada desprevenida por la pregunta de Daren.
+
+          "¿He dicho 'nosotros'?", pregunta. "Lo siento, quería decir 'yo'. Estaba haciendo un poco de entrenamiento en la habitación de arriba. No hay 'nosotros'. Solo 'yo'".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_training
+  - name: ch8_training
+    texts:
+      - source: scene_text
+        paragraph: 17
+        text: |-
+          "¿A qué te refieres con entrenamiento?", le pregunta Kate.
+
+          "¡Oh, a muchas cosas!", dice la niña. "Pero sobre todo, vengo aquí para practicar mis habilidades acrobáticas. Hay todo tipo de trampas por aquí, e intento esquivarlas mientras hago backflips elegantes o mientras corro por las paredes. ¡Es muy divertido!"
+
+          "¿Hay trampas en estas ruinas?", pregunta Kate.
+
+          "¡Sí, el lugar está lleno de ellas! Tienes que vigilar tus pasos si no eres de por aquí. ¿Vinieron todos aquí para hacer turismo?"
+
+          "Eh, no...", dice Kate. "Fuimos capturados por los animales y encerrados en una celda. Actualmente estamos buscando la sala de control para poder desactivar los collares de nuestros cuellos. No sabrás por casualidad dónde está eso, ¿verdad?"
+
+          "¿Sala de control?", pregunta Flower, y se para un poco a pensar. "¡Ah, te refieres a la sala llena de palancas y botones! Claro, sé dónde está. ¡Síganme, les enseñaré el camino!"
+
+          Mientras ella empieza a caminar por el pasillo, Daren me dice en voz baja:
+
+          "Algo no va bien aquí. El hechizo que los organizadores lanzaron sobre nosotros no reacciona ante ella de ninguna manera. ¿Qué crees que está causando esto?"
+    choices:
+      - position: 1
+        text: Tal vez sea un animal disfrazado.
+        effects:
+          - set:
+              current_scene: ch8_disguise
+      - position: 2
+        text: Tal vez ella también esté participando en el torneo.
+        effects:
+          - set:
+              current_scene: ch8_participating
+      - position: 3
+        text: Tal vez sea una prisionera aquí también y los organizadores no lo sepan.
+        effects:
+          - set:
+              current_scene: ch8_prisoner
+  - name: ch8_disguise
+    texts:
+      - source: scene_text
+        paragraph: 18
+        text: |-
+          "Tal vez sea un animal disfrazado".
+
+          "¡No, eso no puede ser!", dice Daren. "¿Realmente crees que alguno de estos animales puede lanzar hechizos de ilusión? A menos que sugieras que lleva un disfraz, claro".
+
+          "No importa quién sea ella", nos interrumpe Kate. "Claramente conoce este lugar mejor que nosotros, y si estuviera trabajando con los animales, ya los habría alertado de nuestra presencia. De cualquier manera, solo hay un camino para nosotros en este momento, así que no tenemos más remedio que ir tras ella. Decidiremos más tarde si debemos confiar en ella o no".
+
+          Cuando alcanzamos a Flower, la oímos empezar a hablar con un tono mucho más frío que antes. Mientras habla, sigue caminando por el pasillo y está de espaldas a nosotros.
+
+          "¿Qué te pasa, Flower?", dice ella con su voz fría. "¡Vinimos a estas ruinas desoladas a entrenar, no a jugar a ser guía turística! ¡Ni siquiera sabemos quién es esta gente!"
+
+          "¡Relájate, Pétalo!", dice la niña, esta vez en su tono alegre anterior. "Parecen buena gente. ¡Podemos volver al entrenamiento una vez que hayamos terminado de enseñarles el lugar! Esto no debería llevar mucho tiempo".
+
+          "Perdona, ¿con quién estás hablando?", le pregunta Kate.
+
+          Flower se asusta por la pregunta de Kate y se da la vuelta rápidamente para enfrentarse a ella.
+
+          "¿H-hemos dicho eso en voz alta?", pregunta. "¡Quiero decir 'yo'! ¡'Yo', no 'nosotros'! ¡Porque solo hay una yo!"
+      - source: scene_text_2
+        paragraph: 18
+        text: |-
+          "Espera, ¿estás sugiriendo que hay más de una de ti ahí dentro?", pregunta Daren.
+
+          "¿Qué? ¡No, eso es una locura! ¡Tú estás loco!"
+
+          Entonces empieza a reírse de forma muy nerviosa y antinatural.
+
+          "¿Acaba de llamarme loco?", nos pregunta Daren.
+
+          De repente, se oye una risa amortiguada que sale del amuleto dorado que Flower lleva al cuello. La niña abre el amuleto y empieza a hablarle.
+
+          "¡Cállate, Arraka!", dice ella.
+
+          Ahora que puedo oír la risa con más claridad, me doy cuenta de que la voz dentro del amuleto está formada por tres voces diferentes, todas de mujeres, riendo simultáneamente. Una vez que el ser dentro del amuleto se da cuenta de que ahora podemos oírla claramente, empieza a hablarnos.
+
+          "¡Eh, ustedes de ahí!", dice la voz. "¡Esta chica es una banshee! ¡Rápido, comprueben su aura mágica! Comprueben su au--"
+      - source: scene_3
+        paragraph: 8
+        text: Flower se asusta y cierra el amuleto, haciendo callar a la voz, pero el daño ya estaba hecho. Al analizar su aura mágica en detalle, me doy cuenta de que de hecho es mucho más poderosa de lo que parece, y que la está suprimiendo deliberadamente para que parezca la de un humano normal. ¿Pero es una banshee real, u otra maga artificial como Kate? Hay algo raro en su aura... No puedo decir exactamente qué. Se siente casi como si tuviera dos auras mágicas distintas a su alrededor, una que emite una vibración de otro mundo y otra que no. Es como si tanto la niña como la banshee que la poseyó coexistieran de algún modo en el mismo cuerpo, como dos entidades separadas. Pero eso es imposible... ¿no?
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_banshee
+  - name: ch8_participating
+    texts:
+      - source: scene_text
+        paragraph: 19
+        text: |-
+          "Tal vez ella también esté participando en el torneo".
+
+          "¿Una niña de nueve años participando en un torneo mortal entre magos? No todo el mundo tiene deseos de morir como tú, Barry".
+
+          "No importa quién sea ella", nos interrumpe Kate. "Claramente conoce este lugar mejor que nosotros, y si estuviera trabajando con los animales, ya los habría alertado de nuestra presencia. De cualquier manera, solo hay un camino para nosotros en este momento, así que no tenemos más remedio que ir tras ella. Decidiremos más tarde si debemos confiar en ella o no".
+
+          Cuando alcanzamos a Flower, la oímos empezar a hablar con un tono mucho más frío que antes. Mientras habla, sigue caminando por el pasillo y está de espaldas a nosotros.
+
+          "¿Qué te pasa, Flower?", dice ella con su voz fría. "¡Vinimos a estas ruinas desoladas a entrenar, no a jugar a ser guía turística! ¡Ni siquiera sabemos quién es esta gente!"
+
+          "¡Relájate, Pétalo!", dice la niña, esta vez en su tono alegre anterior. "Parecen buena gente. ¡Podemos volver al entrenamiento una vez que hayamos terminado de enseñarles el lugar! Esto no debería llevar mucho tiempo".
+
+          "Perdona, ¿con quién estás hablando?", le pregunta Kate.
+
+          Flower se asusta por la pregunta de Kate y se da la vuelta rápidamente para enfrentarse a ella.
+
+          "¿H-hemos dicho eso en voz alta?", pregunta. "¡Quiero decir 'yo'! ¡'Yo', no 'nosotros'! ¡Porque solo hay una yo!"
+      - source: scene_text_2
+        paragraph: 19
+        text: |-
+          "Espera, ¿estás sugiriendo que hay más de una de ti ahí dentro?", pregunta Daren.
+
+          "¿Qué? ¡No, eso es una locura! ¡Tú estás loco!"
+
+          Entonces empieza a reírse de forma muy nerviosa y antinatural.
+
+          "¿Acaba de llamarme loco?", nos pregunta Daren.
+
+          De repente, se oye una risa amortiguada que sale del amuleto dorado que Flower lleva al cuello. La niña abre el amuleto y empieza a hablarle.
+
+          "¡Cállate, Arraka!", dice ella.
+
+          Ahora que puedo oír la risa con más claridad, me doy cuenta de que la voz dentro del amuleto está formada por tres voces diferentes, todas de mujeres, riendo simultáneamente. Una vez que el ser dentro del amuleto se da cuenta de que ahora podemos oírla claramente, empieza a hablarnos.
+
+          "¡Eh, ustedes de ahí!", dice la voz. "¡Esta chica es una banshee! ¡Rápido, comprueben su aura mágica! Comprueben su au--"
+      - source: scene_3
+        paragraph: 9
+        text: Flower se asusta y cierra el amuleto, haciendo callar a la voz, pero el daño ya estaba hecho. Al analizar su aura mágica en detalle, me doy cuenta de que de hecho es mucho más poderosa de lo que parece, y que la está suprimiendo deliberadamente para que parezca la de un humano normal. ¿Pero es una banshee real, u otra maga artificial como Kate? Hay algo raro en su aura... No puedo decir exactamente qué. Se siente casi como si tuviera dos auras mágicas distintas a su alrededor, una que emite una vibración de otro mundo y otra que no. Es como si tanto la niña como la banshee que la poseyó coexistieran de algún modo en el mismo cuerpo, como dos entidades separadas. Pero eso es imposible... ¿no?
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_banshee
+  - name: ch8_prisoner
+    texts:
+      - source: scene_text
+        paragraph: 20
+        text: |-
+          "Tal vez sea una prisionera aquí también y los organizadores no lo sepan".
+
+          "Sí, eso es lo que yo estaba pensando también. Pero si eso es cierto, ¿por qué crees que nos ocultaría ese hecho?"
+
+          "No importa quién sea ella", nos interrumpe Kate. "Claramente conoce este lugar mejor que nosotros, y si estuviera trabajando con los animales, ya los habría alertado de nuestra presencia. De cualquier manera, solo hay un camino para nosotros en este momento, así que no tenemos más remedio que ir tras ella. Decidiremos más tarde si debemos confiar en ella o no".
+
+          Cuando alcanzamos a Flower, la oímos empezar a hablar con un tono mucho más frío que antes. Mientras habla, sigue caminando por el pasillo y está de espaldas a nosotros.
+
+          "¿Qué te pasa, Flower?", dice ella con su voz fría. "¡Vinimos a estas ruinas desoladas a entrenar, no a jugar a ser guía turística! ¡Ni siquiera sabemos quién es esta gente!"
+
+          "¡Relájate, Pétalo!", dice la niña, esta vez en su tono alegre anterior. "Parecen buena gente. ¡Podemos volver al entrenamiento una vez que hayamos terminado de enseñarles el lugar! Esto no debería llevar mucho tiempo".
+
+          "Perdona, ¿con quién estás hablando?", le pregunta Kate.
+
+          Flower se asusta por la pregunta de Kate y se da la vuelta rápidamente para enfrentarse a ella.
+
+          "¿H-hemos dicho eso en voz alta?", pregunta. "¡Quiero decir 'yo'! ¡'Yo', no 'nosotros'! ¡Porque solo hay una yo!"
+      - source: scene_text_2
+        paragraph: 20
+        text: |-
+          "Espera, ¿estás sugiriendo que hay más de una de ti ahí dentro?", pregunta Daren.
+
+          "¿Qué? ¡No, eso es una locura! ¡Tú estás loco!"
+
+          Entonces empieza a reírse de forma muy nerviosa y antinatural.
+
+          "¿Acaba de llamarme loco?", nos pregunta Daren.
+
+          De repente, se oye una risa amortiguada que sale del amuleto dorado que Flower lleva al cuello. La niña abre el amuleto y empieza a hablarle.
+
+          "¡Cállate, Arraka!", dice ella.
+
+          Ahora que puedo oír la risa con más claridad, me doy cuenta de que la voz dentro del amuleto está formada por tres voces diferentes, todas de mujeres, riendo simultáneamente. Una vez que el ser dentro del amuleto se da cuenta de que ahora podemos oírla claramente, empieza a hablarnos.
+
+          "¡Eh, ustedes de ahí!", dice la voz. "¡Esta chica es una banshee! ¡Rápido, comprueben su aura mágica! Comprueben su au--"
+      - source: scene_3
+        paragraph: 10
+        text: Flower se asusta y cierra el amuleto, haciendo callar a la voz, pero el daño ya estaba hecho. Al analizar su aura mágica en detalle, me doy cuenta de que de hecho es mucho más poderosa de lo que parece, y que la está suprimiendo deliberadamente para que parezca la de un humano normal. ¿Pero es una banshee real, u otra maga artificial como Kate? Hay algo raro en su aura... No puedo decir exactamente qué. Se siente casi como si tuviera dos auras mágicas distintas a su alrededor, una que emite una vibración de otro mundo y otra que no. Es como si tanto la niña como la banshee que la poseyó coexistieran de algún modo en el mismo cuerpo, como dos entidades separadas. Pero eso es imposible... ¿no?
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_banshee
+  - name: ch8_banshee
+    texts:
+      - source: scene_text
+        paragraph: 21
+        text: |-
+          "¡Así que eso es lo que nos ha estado ocultando todo este tiempo!", dice Daren.
+
+          Entonces se vuelve hacia la niña.
+
+          "¡Pequeña, estás de suerte!", dice. "Ya no necesitas vivir con miedo. ¡A pesar de mi apariencia, resulta que soy un mago blanco consumado! Te libraré de tu problema de banshee en un abrir y cerrar de ojos".
+
+          "¿Qué?", dice la niña, sorprendida. "¡No, no puedes!"
+
+          "¡Claro que puedo!", dice Daren. "No te preocupes por el collar. Esta espada tiene encantamientos más que suficientes para poder llevar a cabo un ritual de purificación incluso sin que yo lance ningún hechizo. ¡Esa banshee estará muerta antes de que te des cuenta, y podrás vivir tu vida como una niña normal otra vez!"
+
+          "¡No!", grita Flower. "¡Es mi amiga! ¡No dejaré que le hagas daño!"
+
+          "¿Amiga?..." pregunta Daren a la niña, mientras se acerca a ella. "¡Esto es aún más serio de lo que pensaba! Tengo que purificarte rápido. ¡Ya no estás pensando con claridad!"
+      - source: scene_text_2
+        paragraph: 21
+        text: |-
+          Cuando se acerca a Flower, una de las piedras que pisó empieza a hundirse en el suelo, y podemos oír cómo se mueven otras piedras sobre nuestras cabezas.
+
+          "¡Cuidado!", dice Flower, señalando hacia arriba, mientras una gran roca se desprende del techo y desciende sobre nuestras cabezas. 
+
+          La niña levanta la mano, con la palma mirando hacia la gran roca, y le dispara una bola de fuego, que pulveriza la roca en un instante. Mientras nos llueven escombros del peñasco destruido, las paredes empiezan ahora a cerrarse lentamente sobre nosotros, con un sonido fuerte y amenazador que resuena por todo el pasillo.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_trap
+  - name: ch8_trap
+    texts:
+      - source: scene_text
+        paragraph: 22
+        text: |-
+          "¡Oh, no!", dice Flower. "Recuerdo esta trampa. ¡Esto no es bueno! Las paredes no van a parar hasta que nos conviertan a todos en una pasta roja pegajosa".
+
+          Empieza a mirar a su alrededor buscando una salida, y entonces sus ojos encuentran el agujero en el techo que usó para entrar en nuestro pasillo. 
+
+          "¡Vale, tengo una idea!", dice ella. "Creo que puedo crear un espacio cerrado aquí volando el techo a ambos lados del pasillo. ¡Luego puedo inundar la habitación con agua para que todos podamos nadar hasta ese agujero en el techo! ¿Saben nadar?"
+
+          "Bueno, voy vestido de pies a cabeza con una armadura pesada, ¡¿así que tú qué crees?!", le pregunta Daren.
+
+          "¡Vale, vale! ¡Nuevo plan! ¡Creo que había un mecanismo secreto en la habitación de arriba para detener el movimiento de las paredes! Pétalo, ¿puedes darme un impulso?"
+
+          La niña pone ambos brazos a los lados, con las palmas mirando hacia abajo. Dos potentes chorros de agua empiezan a brotar de sus manos, que la elevan por el aire y la introducen directamente por el agujero del techo.
+
+          "¿Qué demonios?", dice Daren. "¿No ha usado magia de fuego hace un momento? ¡¿No me digas que ya ha dominado dos elementos a los nueve años?!"
+
+          "En realidad, creo que el agua es el elemento de la banshee", le digo a Daren.
+      - source: scene_text_2
+        paragraph: 22
+        text: |-
+          "¿Qué acabas de decir?", me pregunta.
+
+          "Chicos, ¿pueden oírme?", nos pregunta Flower desde la habitación de arriba, pero luego continúa hablando sin esperar respuesta. "Solo quería hacerles saber que he encontrado el mecanismo secreto. Pero, eh... Verán, el caso es que hay más de un mecanismo. Y no sé muy bien cuál de ellos es el correcto. Pero... Estoy segura de que lo resolveré a tiempo. Probablemente".
+
+          "¡Vale, ya basta!", dice Hadrik. "Voy a atravesar esta pared a puñetazos hasta que lleguemos al otro lado".
+
+          "¿Qué?", grita Kate. "¡No, no hagas eso! ¿Estás loco? ¿Y si esa pared es lo único que sostiene el techo sobre nosotros y todo se nos viene encima una vez que la destruyas?"
+
+          "¿Entonces prefieres quedarte aquí sentada y ser aplastada entre dos paredes?", dice Hadrik. "¿No pensarás en serio que la pequeña atolondrada de ahí arriba va a descifrar los complejos mecanismos que manejan este lugar antes de que las paredes nos alcancen, verdad?"
+
+          "¿Eh, chicos?", dice Flower. "No sé si pueden oírme, pero me acabo de dar cuenta de que olvidé decirles una cosa importante. Hagan lo que hagan, NO rompan las paredes. ¿Vale? ¡Bien! Ahora, veamos... ¡Creo que lo tengo! ¡Ajá!... Vale, no, eso era el interruptor de la luz. Vuelta a empezar".
+    choices:
+      - position: 1
+        text: Decirle a Hadrik que ignore a Kate y Flower y que rompa la pared
+        effects:
+          - set:
+              current_scene: ch8_smash
+              ch8_smash: 1
+      - position: 2
+        text: Intentar convencer a Hadrik de que espere un poco más a Flower
+        effects:
+          - set:
+              current_scene: ch8_wait
+              ch8_smash: 0
+  - name: ch8_smash
+    routes:
+      - condition: reflexes < 2
+        texts:
+          - source: scene_text
+            paragraph: 23
+            text: |-
+              "Hadrik, ¡no hay tiempo! Solo derriba esa pared, y ya nos preocuparemos de las consecuencias más tarde".
+
+              "¡Ja!", dice Hadrik. "¡Eso es exactamente lo que quería oír! ¡Allá va!"
+
+              El enano usa toda su fuerza para abrir un agujero en una de las paredes que se cierran sobre nosotros. En el momento en que la pared se derrumba, varias lanzas afiladas empiezan a salir disparadas de ella, y directas hacia nosotros. 
+
+              No tuve tiempo de reaccionar, y una de las lanzas me dio de lleno en la cara, matándome al instante.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de reflejos fallida - nivel 2 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: reflexes >= 2
+        texts:
+          - source: scene_text
+            paragraph: 24
+            text: |-
+              "Hadrik, ¡no hay tiempo! Solo derriba esa pared, y ya nos preocuparemos de las consecuencias más tarde".
+
+              "¡Ja!", dice Hadrik. "¡Eso es exactamente lo que quería oír! ¡Allá va!"
+
+              El enano usa toda su fuerza para abrir un agujero en una de las paredes que se cierran sobre nosotros. En el momento en que la pared se derrumba, varias lanzas afiladas empiezan a salir disparadas de ella, y directas hacia nosotros. 
+
+              Me doy cuenta de que una de ellas está a punto de darme en la cara, así que me hago a un lado justo a tiempo y siento una ligera brisa en las mejillas mientras la lanza pasa zumbando junto a mi cabeza y atraviesa la pared que tengo detrás. Los demás también consiguieron salir ilesos de esto de alguna manera. Hadrik y Kate esquivaron las lanzas, mientras que Daren se protegió a Rose y a sí mismo con su escudo.
+
+              Las paredes empiezan ahora a frenar, y pronto se detienen por completo. Flower no tarda en volver a aparecer, con una sonrisa victoriosa en la cara.
+
+              "¡Ja, ja, lo conseguí!", dice ella, poco después de caer por el agujero del techo. "Pero creo que también debería decirles-- ¡OH DIOSES MÍOS!, ¿qué ha pasado aquí? ¿Han roto una de las paredes? ¡Les DIJE que no rompieran las paredes!"
+          - source: scene_text_2
+            paragraph: 23
+            text: |-
+              "Sí, todos te oímos", dice Kate, "pero parece que algunos de los miembros de nuestro grupo tienen cerebros más lentos, y les lleva un tiempo más largo de lo normal procesar la información en situaciones críticas".
+
+              "¡Oh, lo siento, no lo sabía!", dice Flower, con aspecto de estar genuinamente preocupada. "Debería haberles avisado antes. ¿Alguien está herido? Pétalo sabe un poco de magia curativa, así que deberíamos poder ayudar si no es nada demasiado serio".
+
+              "Eh, no, creo que todos estamos bien por ahora", dice Hadrik. "Lo siento por eso, me impacienté un poco ahí atrás".
+
+              "Vale", dice Flower. "Entonces, supongo que debería contarles ahora las malas noticias. Verán, cuando estaba trasteando con esos complejos mecanismos de arriba, yo... pueeede que haya activado accidentalmente todas las trampas de este pasillo".
+
+              "¡¿Que qué?!", le pregunta Kate.
+
+              "¡No se preocupen, todavía puedo arreglarlo!", dice Flower. "Creo que sé dónde están la mayoría de las trampas, así que mientras sigan mis instrucciones deberían estar bien. Solo necesito hacer una prueba rápida y asegurarme de que no estoy recordando nada mal".
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de reflejos exitosa - nivel 2 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_dare
+                condition: is_dead = 0
+  - name: ch8_wait
+    texts:
+      - source: scene_text
+        paragraph: 25
+        text: |-
+          "Hadrik, es demasiado arriesgado. ¿No puedes darle a Flower solo un poco más de tiempo?"
+
+          Hadrik parece disgustado por no recibir ningún tipo de apoyo del grupo.
+
+          "Bueno, está bien entonces", dice Hadrik. "Si a nadie le gusta mi idea, entonces esperaré un poco más. Pero recuerden mis palabras, si esas paredes llegan a alcanzarnos, no voy a contenerme".
+
+          Después de quince segundos más de espera, las paredes empiezan finalmente a frenar, y pronto se detienen por completo. Flower no tarda en volver a aparecer, con una sonrisa victoriosa en la cara.
+
+          "¡Ja, ja, lo conseguí!", dice ella, poco después de caer por el agujero del techo. "Pero creo que también debería contarles las malas noticias. Verán, cuando estaba trasteando con esos complejos mecanismos de arriba, yo... pueeede que haya activado accidentalmente todas las trampas de este pasillo".
+
+          "¡¿Que qué?!", le pregunta Kate.
+
+          "¡No se preocupen, todavía puedo arreglarlo!", dice Flower. "Creo que sé dónde están la mayoría de las trampas, así que mientras sigan mis instrucciones deberían estar bien. Solo necesito hacer una prueba rápida y asegurarme de que no estoy recordando nada mal".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_dare
+  - name: ch8_dare
+    texts:
+      - source: scene_text
+        paragraph: 26
+        text: |-
+          La niña empieza a correr por el pasillo y da un salto sorprendentemente largo, que la hace aterrizar sobre una gran piedra con dos grietas a cada lado. Entonces hace una pirueta elegante y se vuelve hacia nosotros.
+
+          "¿Ven?", nos dice. "¡Todo bajo control!"
+
+          En cuanto termina de hablar, una de las paredes se abre y una gran hoja de péndulo sale balanceándose, apuntando directamente a Flower. Rueda para esquivarla y activa otras dos trampas por accidente. Ahora hay docenas de flechas disparándose desde ambas paredes, mientras unas afiladas cuchillas giratorias salen del suelo y se mueven en círculos a su alrededor. A primera vista, la niña parece estar tropezando torpemente mientras evade las trampas por pura suerte. Al observarla más de cerca, me doy cuenta de que, aunque sus movimientos parecen erráticos, tienen una forma de fluir los unos en los otros que le permite no desperdiciar ni un solo segundo entre dos acciones. Supongo que no bromeaba cuando dijo que venía a este lugar a entrenar sus habilidades acrobáticas.
+
+          Hadrik sacude la cabeza mientras observa a la niña saltar de un lado a otro, y luego se tumba en el suelo, con la oreja pegada al piso, intentando escuchar algo.
+
+          "Eh, chicos, sé que esto se ve mal", nos dice Flower mientras salta de una pared, aterriza sobre su mano izquierda y luego rebota en el suelo como un resorte, "¡pero si sigo así, o recordaré el camino correcto, o acabaré activando todas las trampas, así que salimos ganando de cualquier manera!"
+      - source: scene_text_2
+        paragraph: 24
+        text: |-
+          "Sí, no, esto claramente no nos lleva a ninguna parte", dice Hadrik mientras se levanta, "Esa zorra va a estar aquí en cualquier momento. No podemos permitirnos perder el tiempo aquí mientras la niña prueba todas las trampas. Este pasillo está comprometido, pero he podido oír algo de ruido debajo de nosotros. ¡Estas ruinas tienen un nivel subterráneo esperando a ser encontrado, y estoy a punto de crear un atajo hacia él!"
+
+          "¡No te ATREVAS!", grita Kate.
+
+          "¿Qué dices?", pregunta Hadrik con una sonrisa. "¡Tengo problemas para oírte por todo el ruido que están haciendo esas trampas!"
+
+          Entonces golpea el suelo bajo nosotros, lo que agrieta todas las piedras y nos hace caer junto con todos los escombros que antes formaban el suelo bajo nuestros pies. El camino hacia abajo fue más largo de lo que hubiera deseado, pero afortunadamente, la superficie sobre la que aterrizamos era lo suficientemente blanda como para que no nos rompiéramos nada con la caída.
+
+          "¡Hadrik, cómo has podido hacer algo tan temerario!", grita Kate. "¿Crees que todos somos gigantes disfrazados como tú? ¿Te das cuenta de que si esta superficie inusualmente blanda no estuviera aquí para frenar nuestra caída, nos habríamos roto todos los huesos? ¡Te lo juro, si todavía tuviera mis poderes de hielo, te daría un golpe tan fuerte en la cabeza que te dejaría en coma!"
+
+          Mientras Kate habla, puedo sentir que la superficie en la que estamos se mueve lentamente hacia arriba y hacia abajo. También puedo oír un gruñido bajo continuo en algún lugar por encima de nosotros. Algo no va bien aquí.
+    choices:
+      - position: 1
+        text: Examinar la superficie más de cerca
+        effects:
+          - set:
+              current_scene: ch8_surface
+      - position: 2
+        text: Intentar identificar el origen del sonido
+        effects:
+          - set:
+              current_scene: ch8_sound
+  - name: ch8_surface
+    texts:
+      - source: scene_text
+        paragraph: 27
+        text: |-
+          Empiezo a mirar de cerca la superficie en la que estamos todos sentados, para ver si puedo distinguir de qué está hecha. Tiene una especie de tacto escurridizo y, si no me equivoco, hay pequeñas escamas de color verde oscuro que cubren toda la superficie. En ese momento, ya podía hacerme una idea aproximada de sobre qué habíamos aterrizado exactamente, pero aun así, una parte de mí no quería creerlo, así que miré hacia arriba, con la esperanza de que mi intuición estuviera equivocada.
+
+          Nueve criaturas con forma de culebra, cada una de ellas al menos seis veces mi tamaño, me miraban fijamente, con los colmillos al descubierto y la baba cayéndoles por la boca. Las nueve culebras estaban conectadas al gran cuerpo sobre el que aterrizamos cuando caímos del nivel superior. Solo he leído sobre criaturas como estas en libros antes, pero aun así, no hay duda posible. Sobre lo que todos hemos aterrizado es una hidra.
+           
+          Kate y Hadrik siguen discutiendo y no se han dado cuenta de la situación en la que estamos. Daren está inspeccionando justo ahora la superficie escurridiza y cubierta de escamas verde oscuro sobre la que hemos aterrizado, y Rose está mirando hacia las culebras, con una mirada aterrorizada en los ojos, incapaz de decidirse a hablar.
+
+          "Chicos...", les digo a Hadrik y Kate. "Odio interrumpirlos, pero creo que deberían echar un vistazo a esto".
+      - source: scene_text_2
+        paragraph: 25
+        text: |-
+          Entonces señalo hacia arriba, y ambos se quedan congelados por un momento.
+
+          "Que los dioses tengan piedad...", dice Hadrik, que parece incapaz de apartar la vista de las cabezas de la espantosa criatura.
+
+          "¡Bajen todos del cuerpo de la hidra!", grita Daren, mientras toma a Rose en sus brazos y salta fuera del cuerpo del monstruo. "¡AHORA!"
+
+          Me deslizo por el cuerpo resbaladizo de la criatura y aterrizo en el suelo de piedra de abajo. Entonces todos nos distanciamos de la hidra y nos armamos, esperando a ver cuál será su primer movimiento. Todas aquellas cabezas rugen al mismo tiempo y el monstruo empieza a acercarse a nosotros, lentamente, con su larga cola balanceándose continuamente de izquierda a derecha mientras camina. Una de las culebras toma la iniciativa y se lanza hacia nosotros. Su ataque fue bastante lento, así que todos tuvimos tiempo de quitarnos de su camino, pero su impacto con la pared que teníamos detrás dejó un gran agujero en ella. Daren no pierde el tiempo y usa su espada para cortar la cabeza de la hidra con un golpe rápido.
+
+          "¡No, no hagas eso!", le digo. "¡¿Por qué harías eso?!"
+
+          La hidra retrae rápidamente el cuello decapitado, y las otras ocho cabezas empiezan a gritar de dolor. Entonces, en cuestión de segundos, la cabeza cortada vuelve a crecer y todas las demás cabezas vuelven a guardar silencio.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_hydra
+  - name: ch8_sound
+    texts:
+      - source: scene_text
+        paragraph: 28
+        text: |-
+          Miro por encima de mí, para intentar ver si puedo identificar el origen del gruñido. Acabé arrepintiéndome de mi decisión inmediatamente después de tomarla.  
+
+          Nueve criaturas con forma de culebra, cada una de ellas al menos seis veces mi tamaño, me miraban fijamente, con los colmillos al descubierto y la baba cayéndoles por la boca. Las nueve culebras estaban conectadas al gran cuerpo sobre el que aterrizamos cuando caímos del nivel superior. Solo he leído sobre criaturas como estas en libros antes, pero aun así, no hay duda posible. Sobre lo que todos hemos aterrizado es una hidra.
+           
+          Kate y Hadrik siguen discutiendo y no se han dado cuenta de la situación en la que estamos. Daren está inspeccionando justo ahora la superficie escurridiza y cubierta de escamas verde oscuro sobre la que hemos aterrizado, y Rose está mirando hacia las culebras, con una mirada aterrorizada en los ojos, incapaz de decidirse a hablar.
+
+          "Chicos...", les digo a Hadrik y Kate. "Odio interrumpirlos, pero creo que deberían echar un vistazo a esto".
+
+          Entonces señalo hacia arriba, y ambos se quedan congelados por un momento.
+      - source: scene_text_2
+        paragraph: 26
+        text: |-
+          "Que los dioses tengan piedad...", dice Hadrik, que parece incapaz de apartar la vista de las cabezas de la espantosa criatura.
+
+          "¡Bajen todos del cuerpo de la hidra!", grita Daren, mientras toma a Rose en sus brazos y salta fuera del cuerpo del monstruo. "¡AHORA!"
+
+          Me deslizo por el cuerpo resbaladizo de la criatura y aterrizo en el suelo de piedra de abajo. Entonces todos nos distanciamos de la hidra y nos armamos, esperando a ver cuál será su primer movimiento. Todas aquellas cabezas rugen al mismo tiempo y el monstruo empieza a acercarse a nosotros, lentamente, con su larga cola balanceándose continuamente de izquierda a derecha mientras camina. Una de las culebras toma la iniciativa y se lanza hacia nosotros. Su ataque fue bastante lento, así que todos tuvimos tiempo de quitarnos de su camino, pero su impacto con la pared que teníamos detrás dejó un gran agujero en ella. Daren no pierde el tiempo y usa su espada para cortar la cabeza de la hidra con un golpe rápido.
+
+          "¡No, no hagas eso!", le digo. "¡¿Por qué harías eso?!"
+
+          La hidra retrae rápidamente el cuello decapitado, y las otras ocho cabezas empiezan a gritar de dolor. Entonces, en cuestión de segundos, la cabeza cortada vuelve a crecer y todas las demás cabezas vuelven a guardar silencio.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_hydra
+  - name: ch8_hydra
+    texts:
+      - source: scene_text
+        paragraph: 29
+        text: |-
+          "¿Qué?..." me pregunta Daren. "¿No te creerías de verdad esas viejas leyendas de que a las hidras les crecen dos cabezas por cada una que cortas, verdad? He luchado contra hidras antes, y ninguna poseía ese tipo de habilidad. Aun así, la capacidad de regeneración de esta está por las nubes. La última vez que luché contra una de estas, tuve tiempo más que suficiente para cortar todas las cabezas antes de que empezaran a regenerarse, pero no hay forma de que eso funcione con este monstruo en concreto. La única forma de matarla es si podemos averiguar dónde está su corazón y apuñalarlo, o si usamos fuego para evitar que se regenere".
+
+          "Maldiciones...", dice Kate. "Si tan solo tuviera mi magia de hielo, habría cortado fácilmente todas esas cabezas simultáneamente..."
+
+          "¿No tenía esa niña pequeña magia de fuego?", pregunta Daren.
+
+          Entonces empieza a gritar el nombre de la niña, mientras mira hacia el agujero del techo.
+
+          "¡Flower! ¡Eh, Flower!"
+
+          No hay respuesta.
+
+          "Estás perdiendo el tiempo", dice Hadrik. "No hay forma de que pueda oírte desde tan arriba, con el sonido que están haciendo todas esas trampas".
+
+          "Sí, probablemente tengas razón", dice Daren, mientras prepara su espada una vez más y echa una mirada hacia el monstruo.
+
+          La hidra ha dado unos pasos atrás mientras Daren hablaba y se ha quedado parada un rato, dudando si atacar. Debe tener miedo de que le corten otra vez una de sus cabezas.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_hearing_fail
+            condition: hearing < 4
+          - set:
+              current_scene: ch8_hearing_success
+            condition: hearing = 4
+  - name: ch8_hearing_fail
+    texts:
+      - source: scene_text
+        paragraph: 30
+        text: |-
+          "Bueno", dice Hadrik. "Si no va a venir a nosotros..."
+
+          No termina su frase y arremete directamente contra la criatura de nueve cabezas. El monstruo ataca al enano con cuatro de sus cabezas, pero él salta para esquivarlas y consigue colocarse debajo del cuerpo de la hidra. Entonces Hadrik flexiona todos sus músculos y empieza a levantar a la hidra del suelo, mientras ruge con fuerza y su cara se vuelve casi roja por el esfuerzo. 
+
+          Antes de que la hidra tenga tiempo de reaccionar, el enano la envía estrellándose contra la pared más cercana. La criatura se tambalea ahora torpemente, intentando volver a levantarse.
+
+          "Supongo que no puedo dejar pasar una oportunidad tan buena como esta", dice Daren. "Barry, tú cuida de Rose. Iré a luchar contra la hidra con Hadrik".
+
+          "Eh, vale...", le digo, mientras él arremete hacia el monstruo y empieza a acuchillar su enorme cuerpo.
+
+          Me doy la vuelta y veo que Rose está sentada en el suelo, con la espalda apoyada en la pared y los brazos sujetándose las piernas, intentando en vano controlar sus temblores.
+    effects:
+      - set:
+          failed_checks:
+            - '[ Comprobación de audición fallida - nivel 4 ]'
+    choices:
+      - position: 1
+        text: Intentar ayudarla a sacudirse el miedo
+        effects:
+          - set:
+              current_scene: ch8_shake
+      - position: 2
+        text: Dejarla sola
+        effects:
+          - set:
+              current_scene: ch8_alone
+      - position: 3
+        text: ¿De verdad vas a hacer esto cada vez que luchemos contra un monstruo grande?
+        effects:
+          - set:
+              current_scene: ch8_seriously
+  - name: ch8_hearing_success
+    texts:
+      - source: scene_text
+        paragraph: 31
+        text: |-
+          Puedo oír el corazón de alguien latiendo muy rápidamente. Intentando localizar el origen del sonido, me doy cuenta de que no procede de uno de nosotros, sino de la hidra. Empiezo a bloquear todos los demás sonidos con mi mente y me centro únicamente en el fuerte latido del corazón del monstruo, para localizar con precisión su ubicación exacta. Me lleva unos segundos, pero al final consigo rastrear el sonido hasta su origen: la punta de la cola de la hidra. ¡Así que ahí era donde escondía su punto débil!
+
+          "Bueno", dice Hadrik. "Si no va a venir a nosotros..."
+
+          No termina su frase y arremete directamente contra la criatura de nueve cabezas. El monstruo ataca al enano con cuatro de sus cabezas, pero él salta para esquivarlas y consigue colocarse debajo del cuerpo de la hidra. Entonces Hadrik flexiona todos sus músculos y empieza a levantar a la hidra del suelo, mientras ruge con fuerza y su cara se vuelve casi roja por el esfuerzo. 
+
+          Antes de que la hidra tenga tiempo de reaccionar, el enano la envía estrellándose contra la pared más cercana. La criatura se tambalea ahora torpemente, intentando volver a levantarse.
+    effects:
+      - set:
+          successful_checks:
+            - '[ Comprobación de audición exitosa - nivel 4 ]'
+    choices:
+      - position: 1
+        text: Aprovechar esta oportunidad para arremeter contra la hidra y cortarle el corazón
+        effects:
+          - set:
+              current_scene: ch8_rush
+      - position: 2
+        text: Hablarle a Daren del punto débil de la hidra
+        effects:
+          - set:
+              current_scene: ch8_weakspot
+  - name: ch8_shake
+    texts:
+      - source: scene_text
+        paragraph: 32
+        text: |-
+          "¡Rose!"
+
+          No da señales de haberme oído y sigue temblando incontroladamente mientras mira al suelo.
+
+          "Eh, Rose, ¿estás conmigo?"
+
+          "Déjala...", me dice Kate. "Se le pasará una vez que hayamos acabado con la hidra y el peligro haya pasado. Fue lo mismo cuando luchamos contra Tyrath. Ya está haciendo todo lo que puede para mantener el control sobre sí misma".
+
+          "Supongo que tienes razón", le digo, y luego me doy la vuelta para ver cómo va la pelea con la hidra.
+      - source: scene_text_2
+        paragraph: 27
+        text: |-
+          No parece que Hadrik y Daren estén perdiendo la pelea, pero tampoco es que estén ganando. La hidra está usando sus cabezas de culebra para mantenerlos a raya a ambos, mientras Daren intenta aprovechar cada oportunidad que tiene para apuñalar el cuerpo de la criatura, con la esperanza de que consiga encontrar su corazón por pura suerte. El gran cuerpo de la hidra se regenera casi tan rápido como sus cabezas, por lo que no han avanzado mucho más allá de ir tachando todas las partes del cuerpo donde no se encuentra el corazón. Esto parece que podría llevar un tiempo.
+
+          Después de unos cuantos intentos fallidos de asesinato más, Hadrik y Daren dan unos pasos atrás para recuperar el aliento. De repente, una enorme columna de llamas envuelve a la hidra, que empieza a gritar de agonía con todas sus cabezas. Los gritos se apagan rápidamente, mientras la hidra se vuelve completamente negra y sus restos carbonizados caen al suelo, sin vida. Poco después de que las llamas desaparezcan, Flower cae por el agujero del techo y frena su caída con pequeños chorros de fuego que salen de sus pies.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_awakened
+  - name: ch8_alone
+    texts:
+      - source: scene_text
+        paragraph: 33
+        text: |-
+          No es que nada de lo que pudiera decir o hacer fuera a hacerla sentir mejor. Estoy seguro de que se le pasará una vez que la hidra esté muerta y el peligro haya desaparecido. Decido dejarla sola por ahora y observar la pelea en su lugar.
+
+          No parece que Hadrik y Daren estén perdiendo la pelea, pero tampoco es que estén ganando. La hidra está usando sus cabezas de culebra para mantenerlos a raya a ambos, mientras Daren intenta aprovechar cada oportunidad que tiene para apuñalar el cuerpo de la criatura, con la esperanza de que consiga encontrar su corazón por pura suerte. El gran cuerpo de la hidra se regenera casi tan rápido como sus cabezas, por lo que no han avanzado mucho más allá de ir tachando todas las partes del cuerpo donde no se encuentra el corazón. Esto parece que podría llevar un tiempo.
+
+          Después de unos cuantos intentos fallidos de asesinato más, Hadrik y Daren dan unos pasos atrás para recuperar el aliento. De repente, una enorme columna de llamas envuelve a la hidra, que empieza a gritar de agonía con todas sus cabezas. Los gritos se apagan rápidamente, mientras la hidra se vuelve completamente negra y sus restos carbonizados caen al suelo, sin vida. Poco después de que las llamas desaparezcan, Flower cae por el agujero del techo y frena su caída con pequeños chorros de fuego que salen de sus pies.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_awakened
+  - name: ch8_seriously
+    texts:
+      - source: scene_text
+        paragraph: 34
+        text: |-
+          "¿De verdad vas a hacer esto cada vez que luchemos contra un monstruo grande?"
+
+          Casi en cuanto termino mi frase, siento un dolor muy agudo en el abdomen, cuando Kate me golpea con todas sus fuerzas y me hace caer de rodillas mientras intento recuperar el aliento.
+
+          "Realmente, ahora, Kate...", le digo mientras me recupero de su golpe y me pongo en pie. "Te juro que tengo la mitad de ganas de devolvértelo ahora que no tienes acceso a ninguno de tus hechizos de hielo superpoderosos".
+
+          "Pruébame", me dice Kate mientras asume su postura de combate. "Dispositivo de estadísticas y todo. Te aseguro que me he entrenado en varias artes marciales a lo largo de mi vida para una ocasión así".
+
+          Incluso sin sus poderes de hielo, sigue consiguiendo emitir ese aura amenazadora suya, mientras me mira directamente a los ojos, sin ningún tipo de vacilación.
+
+          "Era una broma, Kate", le digo mientras suspiro. "Solo una broma".
+      - source: scene_text_2
+        paragraph: 28
+        text: |-
+          Entonces me doy la vuelta para observar la pelea de la hidra, mientras Kate abandona su postura de combate y se apoya en la pared con los brazos cruzados, desviando también su mirada hacia la hidra.
+
+          No parece que Hadrik y Daren estén perdiendo la pelea, pero tampoco es que estén ganando. La hidra está usando sus cabezas de culebra para mantenerlos a raya a ambos, mientras Daren intenta aprovechar cada oportunidad que tiene para apuñalar el cuerpo de la criatura, con la esperanza de que consiga encontrar su corazón por pura suerte. El gran cuerpo de la hidra se regenera casi tan rápido como sus cabezas, por lo que no han avanzado mucho más allá de ir tachando todas las partes del cuerpo donde no se encuentra el corazón. Esto parece que podría llevar un tiempo.
+
+          Después de unos cuantos intentos fallidos de asesinato más, Hadrik y Daren dan unos pasos atrás para recuperar el aliento. De repente, una enorme columna de llamas envuelve a la hidra, que empieza a gritar de agonía con todas sus cabezas. Los gritos se apagan rápidamente, mientras la hidra se vuelve completamente negra y sus restos carbonizados caen al suelo, sin vida. Poco después de que las llamas desaparezcan, Flower cae por el agujero del techo y frena su caída con pequeños chorros de fuego que salen de sus pies.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_awakened
+  - name: ch8_rush
+    routes:
+      - condition: agility < 3
+        texts:
+          - source: scene_text
+            paragraph: 35
+            text: |-
+              No pierdo el tiempo y arremeto contra el monstruo ahora, mientras aún está desorientado. 
+
+              Incluso mientras se tambalea, la hidra todavía no ha bajado la guardia. Al acercarme a ella, dos de las cabezas se lanzan hacia mí y me veo obligado a saltar a un lado para esquivarlas. Entonces arremeto directamente hacia el corazón e intento apuñalarlo, pero el monstruo aparta su cola de mi alcance y la eleva en el aire.
+
+              Así que la hidra es consciente de su propio punto débil. Fui descuidado. El monstruo ha recuperado ahora el equilibrio y está usando todas sus cabezas para acorralarme. Consigo esquivar con éxito sus dos primeros ataques, pero el tercero me pilla desprevenido. Cuando los colmillos de la hidra se hundieron en mi carne, pude ver mi vida pasar ante mis ojos durante unos segundos, antes de caer al suelo y perder el conocimiento para siempre.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de velocidad fallida - nivel 3 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: agility >= 3
+        texts:
+          - source: scene_text
+            paragraph: 36
+            text: |-
+              No pierdo el tiempo y arremeto contra el monstruo ahora, mientras aún está desorientado. 
+
+              Incluso mientras se tambalea, la hidra todavía no ha bajado la guardia. Al acercarme a ella, dos de las cabezas se lanzan hacia mí, pero fui tan rápido que fallaron por mucho. Justo cuando el corazón del monstruo está al alcance de mi daga, la hidra aleja su cola de mí y la eleva en el aire.
+
+              Así que la hidra es consciente de su propio punto débil. Fui descuidado. El monstruo ha recuperado ahora el equilibrio y está usando todas sus cabezas en un intento de acorralarme. Sin embargo, a mi velocidad actual, esquivar todas estas lentas culebras enormes parece un juego de niños.
+
+              "Muchacho, ¿qué demonios crees que estás haciendo?", me pregunta el enano.
+
+              "¡Hadrik!", le digo. "El corazón de la criatura está en la punta de su cola. Si puedes tirar de su cola de vuelta hacia aquí, le daré el golpe de gracia con mi daga".
+
+              "¡Oooh, ahora lo entiendo!", dice Hadrik, sonriendo. "Dalo por hecho".
+
+              Entonces el enano salta detrás de la hidra y la agarra por la cola, tirando de ella hacia abajo con todas sus fuerzas.
+
+              "¡Vale, Barry!", dice el enano mientras lucha por mantener sujeta la cola. "¡Cuando estés listo!"
+          - source: scene_text_2
+            paragraph: 29
+            text: |-
+              Pongo toda mi velocidad en este único sprint y llego cerca de la punta de la cola de la hidra en un instante, apuñalándola con toda la fuerza que pude reunir. Los gritos de todas las cabezas de culebra al atravesar el corazón eran dolorosos de oír, pero una vez que giré el cuchillo, sus aullidos empezaron a desvanecerse y entonces toda la criatura se vino abajo contra el suelo con un fuerte estruendo. La hidra yace ahora muerta a mi lado, pero casi siento que todavía me observa con sus ojos sin vida, esperando a que baje la guardia para dar un último golpe.
+
+              "¡Barry, bastardo astuto!", me dice Daren mientras se acerca a mí. "Podrías haberme hablado del punto débil de la hidra, pero querías quedarte con toda la gloria. Bueno, ¿cómo se siente haber matado a tu primera hidra? No vas a dejar que se te suba a la cabeza, ¿verdad?"
+
+              "¡Claro que no!", le digo. "Siempre tuve la intención de ir a una búsqueda épica de matanza de monstruos justo después de ganar este torneo. ¡Una victoria menor como esta no cambia nada!"
+
+              Daren sonríe.
+
+              "Pequeño caradura--" empieza a decir, pero es interrumpido por Flower, que ahora desciende hacia nosotros usando dos pequeños chorros de fuego que salen de sus pies para frenar su caída.
+
+              "¡Oh, dioses, no sabía que había una hidra aquí abajo!", dice ella. "¡Habría venido antes, pero esas trampas de arriba no paraban!"
+
+              Entonces aterriza y mira al monstruo sorprendida, intentando ver si está realmente muerto o solo durmiendo.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de velocidad exitosa - nivel 3 ]'
+              ac_ch8_hydra: 1
+            achievement:
+              id: ac_ch8_hydra
+              title: Matador de hidra
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_awakened_win
+                condition: is_dead = 0
+  - name: ch8_weakspot
+    texts:
+      - source: scene_text
+        paragraph: 37
+        text: |-
+          "Oye, Daren", le digo, "acabo de averiguar dónde esconde la hidra su corazón. No está dentro del cuerpo, está en la punta de su cola".
+
+          "¿Cómo puedes estar tan seguro?", me pregunta Daren.
+
+          "He maximizado mi estadística de Audición. Créeme, está ahí. Todavía puedo oírlo latir desde aquí".
+
+          "¿Ah, sí? Bueno, supongo que solo hay una forma de estar seguro", dice Daren, y arremete contra la hidra mientras ésta aún intenta recuperar el equilibrio. 
+
+          Incluso mientras se tambalea, la criatura todavía no ha bajado la guardia. Al acercarse Daren a ella, dos de las cabezas se lanzan hacia él, pero esquiva una de ellas y rebana la otra, aprovechando la oportunidad que creó para dirigirse inmediatamente hacia la punta de la cola del monstruo. Justo cuando está a punto de apuñalar el corazón, la hidra aparta su cola y la eleva en el aire, de modo que Daren ya no puede alcanzarla.
+
+          La criatura no es tonta. Entendió la intención de Daren y también es muy consciente de su propio punto débil.
+
+          "Huyes de mí, ¿eh?", dice Daren. "Bueno, si no vas a dejar que te apuñale el corazón, entonces tendré que conformarme con lo siguiente mejor".
+      - source: scene_text_2
+        paragraph: 30
+        text: |-
+          Entonces salta en el aire y apunta su espada a la base misma de la cola del monstruo. Consigue cortarla limpiamente de un solo golpe, y todas las cabezas de la hidra empiezan a gritar de agonía al mismo tiempo. En cuestión de segundos, todas las cabezas callan y la hidra cae estrepitosamente al suelo, mientras la vida abandona sus ojos para siempre.
+
+          "Qué lugar más tonto para guardar el corazón", dice Daren. "¿Cómo es que las hidras no se han extinguido ya?"
+
+          "No se han extinguido porque gente como tú sigue asumiendo que sus corazones están dentro de sus cuerpos e ignora la cola por completo", le responde Kate. "¿No dijiste que habías luchado contra hidras antes? Y sin embargo, no tenías ni idea de este punto débil. Yo diría que esta táctica de distracción natural suya les ha estado funcionando bastante bien hasta ahora".
+
+          Daren frunce el ceño, pero no le responde a Kate. De repente oímos la voz de Flower desde arriba, que ahora desciende hacia nosotros usando dos pequeños chorros de fuego que salen de sus pies para frenar su caída.
+
+          "¡Oh, dioses, no sabía que había una hidra aquí abajo!", dice ella. "¡Habría venido antes, pero esas trampas de arriba no paraban!"
+
+          Entonces aterriza y mira al monstruo sorprendida, intentando ver si está realmente muerto o solo durmiendo.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_awakened_win
+  - name: ch8_awakened
+    routes:
+      - condition: ch8_smash = 0
+        texts:
+          - source: scene_text
+            paragraph: 38
+            text: |-
+              "Oh, dioses", dice ella mientras aterriza cerca de nosotros. "No sabía que había una hidra aquí abajo. ¡Habría venido antes, pero esas trampas de arriba no paraban! ¿Alguien está herido? Pétalo sabe un poco de magia curativa, así que deberíamos poder ayudar si no es nada demasiado serio".
+
+              La forma en que se encargó de esa hidra como si nada y la manera tranquila en que habla ahora me hacen pensar que esta chica ha lidiado con enemigos mucho más fuertes en el pasado. No estoy seguro de cuál sería la situación si todos estuviéramos al máximo de nuestras fuerzas, pero tal y como estamos ahora, hacernos enemigos de esta niña sería poco menos que un suicidio. Tenemos que elegir nuestras palabras con cuidado si queremos salir de aquí de una pieza.
+
+              "En realidad, me vendría bien un poco de curación ahora mismo", dice Hadrik. "¡Esa herida en mi pierna en concreto me está matando!"
+
+              "¡Estamos en ello!", dice la niña mientras se acerca al enano y pone sus manos sobre su herida.
+
+              "¿Pétalo?", pregunta ella, y luego hace una pausa de unos instantes.
+
+              Los ojos de la niña empiezan entonces a brillar con una luz azul intensa, mientras su expresión se vuelve mucho más fría y una luz cálida empieza a salir de sus manos, curando lentamente la herida de Hadrik.
+
+              "Así que...", dice Hadrik, mientras sonríe. "Tú debes de ser la banshee que habita el cuerpo de la niña. Pétalo, ¿verdad?"
+          - source: scene_text_2
+            paragraph: 31
+            text: |-
+              La niña mira al enano a los ojos sin cambiar su expresión fría, pero no dice nada. Luego vuelve a desviar su mirada hacia la herida de éste y sigue curándola diligentemente.
+
+              "No eres muy habladora, ¿verdad?", pregunta Hadrik, todavía sonriendo.
+
+              Cuando la herida se cura por completo, los ojos de la niña vuelven a su color verde normal y su expresión cálida regresa también.
+
+              "Oh, normalmente no es tan silenciosa", dice Flower. "Creo que simplemente es tímida con los extraños..."
+
+              "Bueno, creo que esta farsa ya ha durado bastante", dice Daren mientras empieza a acercarse a Flower. "Siento mucho tener que arruinar esta hermosa amistad, pero me temo que la banshee tiene que irse".
+
+              "En realidad, no creo que eso sea posible", le digo.
+
+              "¿Ah, sí?", dice Daren. "¿Y eso por qué? ¡Por favor, ilumínanos, oh gran experto en banshees!"
+
+              "Porque la banshee ya ha despertado. De hecho, creo que lleva en este estado mucho tiempo".
+
+              "¡Imposible! Todo el mundo sabe que se supone que una banshee despertada tiene el aspecto de un auténtico monstruo. Casi nada debería quedar del aspecto de su huésped humano".
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              "Sí, he visto despertar a una banshee antes, ¿recuerdas? Eso no quita, sin embargo, el hecho de que esta banshee ya haya despertado, a pesar de todo eso, ya que claramente ya no está en estado latente. ¿Por qué no pruebas tu técnica de purificación con ella si no me crees?"
+
+              "Hmph...", dice Daren. "Iba a hacer eso de todos modos".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_purification
+      - condition: ch8_smash = 1
+        texts:
+          - source: scene_text
+            paragraph: 39
+            text: |-
+              "Oh, dioses", dice ella mientras aterriza cerca de nosotros. "No sabía que había una hidra aquí abajo. ¡Habría venido antes, pero esas trampas de arriba no paraban! ¿Alguien necesita curación?"
+
+              La forma en que se encargó de esa hidra como si nada y la manera tranquila en que habla ahora me hacen pensar que esta chica ha lidiado con enemigos mucho más fuertes en el pasado. No estoy seguro de cuál sería la situación si todos estuviéramos al máximo de nuestras fuerzas, pero tal y como estamos ahora, hacernos enemigos de esta niña sería poco menos que un suicidio. Tenemos que elegir nuestras palabras con cuidado si queremos salir de aquí de una pieza.
+
+              "En realidad, me vendría bien un poco de curación ahora mismo", dice Hadrik. "¡Esa herida en mi pierna en concreto me está matando!"
+
+              "¡Estamos en ello!", dice la niña mientras se acerca al enano y pone sus manos sobre su herida.
+
+              "¿Pétalo?", pregunta ella, y luego hace una pausa de unos instantes.
+
+              Los ojos de la niña empiezan entonces a brillar con una luz azul intensa, mientras su expresión se vuelve mucho más fría y una luz cálida empieza a salir de sus manos, curando lentamente la herida de Hadrik.
+
+              "Así que...", dice Hadrik, mientras sonríe. "Tú debes de ser la banshee que habita el cuerpo de la niña. Pétalo, ¿verdad?"
+
+              La niña mira al enano a los ojos sin cambiar su expresión fría, pero no dice nada. Luego vuelve a desviar su mirada hacia la herida de éste y sigue curándola diligentemente.
+          - source: scene_text_2
+            paragraph: 32
+            text: |-
+              "No eres muy habladora, ¿verdad?", pregunta Hadrik, todavía sonriendo.
+
+              Al curarse la herida por completo, los ojos de la niña vuelven a su color verde normal y su expresión cálida regresa también.
+
+              "Oh, normalmente no es tan silenciosa", dice Flower. "Creo que simplemente es tímida con los extraños..."
+
+              "Bueno, creo que esta farsa ya ha durado bastante", dice Daren mientras empieza a acercarse a Flower. "Siento mucho tener que arruinar esta hermosa amistad, pero me temo que la banshee tiene que irse".
+
+              "En realidad, no creo que eso sea posible", le digo.
+
+              "¿Ah, sí?", dice Daren. "¿Y eso por qué? ¡Por favor, ilumínanos, oh gran experto en banshees!"
+
+              "Porque la banshee ya ha despertado. De hecho, creo que lleva en este estado mucho tiempo".
+
+              "¡Imposible! Todo el mundo sabe que se supone que una banshee despertada tiene el aspecto de un auténtico monstruo. Casi nada debería quedar del aspecto de su huésped humano".
+
+              "Sí, he visto despertar a una banshee antes, ¿recuerdas? Eso no quita, sin embargo, el hecho de que esta banshee ya haya despertado, a pesar de todo eso, ya que claramente ya no está en estado latente. ¿Por qué no pruebas tu técnica de purificación con ella si no me crees?"
+
+              "Hmph...", dice Daren. "Iba a hacer eso de todos modos".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_purification
+  - name: ch8_awakened_win
+    routes:
+      - condition: ch8_smash = 0
+        texts:
+          - source: scene_text
+            paragraph: 40
+            text: |-
+              "¡Vaya, no puedo creer que hayan acabado con una hidra ustedes solos sin usar magia!", dice ella. "¿Alguien está herido? Pétalo sabe un poco de magia curativa, así que deberíamos poder ayudar si no es nada demasiado serio".
+
+              "En realidad, me vendría bien un poco de curación ahora mismo", dice Hadrik. "¡Esa herida en mi pierna en concreto me está matando!"
+
+              "¡Estamos en ello!", dice la niña mientras se acerca al enano y pone sus manos sobre su herida.
+
+              "¿Pétalo?", pregunta ella, y luego hace una pausa de unos instantes.
+
+              Los ojos de la niña empiezan entonces a brillar con una luz azul intensa, mientras su expresión se vuelve mucho más fría y una luz cálida empieza a salir de sus manos, curando lentamente la herida de Hadrik.
+
+              "Así que...", dice Hadrik, mientras sonríe. "Tú debes de ser la banshee que habita el cuerpo de la niña. Pétalo, ¿verdad?"
+
+              La niña mira al enano a los ojos sin cambiar su expresión fría, pero no dice nada. Luego vuelve a desviar su mirada hacia la herida de éste y sigue curándola diligentemente.
+          - source: scene_text_2
+            paragraph: 33
+            text: |-
+              "No eres muy habladora, ¿verdad?", pregunta Hadrik, todavía sonriendo.
+
+              Al curarse la herida por completo, los ojos de la niña vuelven a su color verde normal y su expresión cálida regresa también.
+
+              "Oh, normalmente no es tan silenciosa", dice Flower. "Creo que simplemente es tímida con los extraños..."
+
+              "Bueno, creo que esta farsa ya ha durado bastante", dice Daren mientras empieza a acercarse a Flower. "Siento mucho tener que arruinar esta hermosa amistad, pero me temo que la banshee tiene que irse".
+
+              "En realidad, no creo que eso sea posible", le digo.
+
+              "¿Ah, sí?", dice Daren. "¿Y eso por qué? ¡Por favor, ilumínanos, oh gran experto en banshees!"
+
+              "Porque la banshee ya ha despertado. De hecho, creo que lleva en este estado mucho tiempo".
+
+              "¡Imposible! Todo el mundo sabe que se supone que una banshee despertada tiene el aspecto de un auténtico monstruo. Casi nada debería quedar del aspecto de su huésped humano".
+
+              "Sí, he visto despertar a una banshee antes, ¿recuerdas? Eso no quita, sin embargo, el hecho de que esta banshee ya haya despertado, a pesar de todo eso, ya que claramente ya no está en estado latente. ¿Por qué no pruebas tu técnica de purificación con ella si no me crees?"
+
+              "Hmph...", dice Daren. "Iba a hacer eso de todos modos".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_purification
+      - condition: ch8_smash = 1
+        texts:
+          - source: scene_text
+            paragraph: 41
+            text: |-
+              "¡Vaya, no puedo creer que hayan acabado con una hidra ustedes solos sin usar magia!", dice ella. "¿Alguien necesita curación?"
+
+              "En realidad, me vendría bien un poco de curación ahora mismo", dice Hadrik. "¡Esa herida en mi pierna en concreto me está matando!"
+
+              "¡Estamos en ello!", dice la niña mientras se acerca al enano y pone sus manos sobre su herida.
+
+              "¿Pétalo?", pregunta ella, y luego hace una pausa de unos instantes.
+
+              Los ojos de la niña empiezan entonces a brillar con una luz azul intensa, mientras su expresión se vuelve mucho más fría y una luz cálida empieza a salir de sus manos, curando lentamente la herida de Hadrik.
+
+              "Así que...", dice Hadrik, mientras sonríe. "Tú debes de ser la banshee que habita el cuerpo de la niña. Pétalo, ¿verdad?"
+
+              La niña mira al enano a los ojos sin cambiar su expresión fría, pero no dice nada. Luego vuelve a desviar su mirada hacia la herida de éste y sigue curándola diligentemente.
+          - source: scene_text_2
+            paragraph: 34
+            text: "\"Not really the talkative sort, are you?\" Hadrik asks, still grinning.\r\n\r\nAs the wound heals completely, the girl's eyes turn back to their normal green color, and her warm expression returns as well.\r\n\r\n\"Oh, she's usually not this silent,\" Flower says. \"I think she's just shy around strangers...\"\r\n\r\n\"Well, I think this farce has gone on long enough,\" Daren says, as he starts approaching Flower. \"I really am sorry that I have to ruin this beautiful friendship, but I'm afraid the banshee has to go.\"\r\n\r\n\"Actually, I don't think that will be possible,\" I tell him.\r\n\r\n\"Oh yeah?\" Daren says. \"And why is that? Please, enlighten us, oh, great banshee expert!\"\r\n\r\n\"Because the banshee has already awakened. In fact, I think she's been in this state for a very long time.\"\r\n\r\n\"Impossible! Everyone knows that an awakened banshee is supposed to look like a genuine monster. Almost nothing should remain of their human host's appearance.\"\r\n\r\n\"Yeah, I've seen a banshee awaken before, remember? That doesn't, however, change the fact that this banshee has already awakened, in spite of all that, since she is clearly no longer in a dormant state. Why don't you try your purification technique on her if you don't believe me?\"\r\n\r\n\"Hmph...\" Daren says. \"I was going to do that anyway.\""
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_purification
+  - name: ch8_purification
+    texts:
+      - source: scene_text
+        paragraph: 42
+        text: |-
+          "¿Q-q-qué estás haciendo?", pregunta Flower a Daren mientras éste se acerca a ella y empieza a mover su espada en el aire a su alrededor.
+
+          "Flower, no pasa nada", le digo. "Su técnica no funcionará contigo ni con Pétalo. Te lo garantizo".
+
+          "Eh... ¿vale?", dice Flower con un ligero temblor en la voz.
+
+          Daren agita su espada en el aire durante unos quince segundos, intentando que se ilumine para poder iniciar el ritual de purificación.
+
+          "No... No está funcionando...", dice Daren tras haberse rendido finalmente.
+
+          "Claro que no", le digo. "La técnica de purificación solo puede usarse antes de que una banshee haya despertado del todo, o si la banshee nunca existió en primer lugar. El aura de una banshee despertada es demasiado errática para poder fijarla bien, así que la técnica simplemente no se activará. La única forma de matar a la banshee ahora es si también matas a la niña junto con ella. ¿Eso es lo que quieres?"
+
+          "No, eso no es... yo no..."
+
+          "¡Escúchenme!", nos grita la niña. "¡Pétalo está aquí para quedarse, les guste o no! No tienen por qué hablar con ella si no quieren. ¡Y yo también estoy aquí! ¡Y... aunque no sea la mejor guía que hay... soy la única guía que tienen! ¡Prometí que los llevaría a todos a la sala llena de botones y no pienso faltar a esa promesa! ¿Todavía están dispuestos a seguirme?"
+    choices:
+      - position: 1
+        text: Claro. No es que tengamos una alternativa mejor en este momento.
+        effects:
+          - set:
+              current_scene: ch8_alternative
+      - position: 2
+        text: Por favor, dime que al menos tienes una idea vaga de hacia dónde nos dirigimos.
+        effects:
+          - set:
+              current_scene: ch8_vague
+  - name: ch8_alternative
+    texts:
+      - source: scene_text
+        paragraph: 43
+        text: |-
+          "Claro. No es que tengamos una alternativa mejor en este momento".
+
+          "Estoy de acuerdo", dice Kate. "No importa lo mal que la niña recuerde el trazado de estas ruinas. Sigue siendo mejor que no tener ninguna información".
+
+          Hadrik suspira.
+
+          "Cuenten conmigo también, supongo", dice él. "La última vez que intenté tomar la iniciativa acabamos en la guarida de una hidra, así que no tengo derecho a quejarme".
+
+          "Yo...", dice Rose, que aún no ha recuperado del todo la voz tras el incidente de la hidra. "Creo que también deberíamos seguir a Flower..."
+
+          "¡Muy bien, entonces!", dice la niña mientras se le ilumina la cara. "¡No se van a arrepentir de esto! ¡Vengan, síganme, sé exactamente a dónde vamos!"
+
+          Entonces toma la delantera y empieza a desfilar como un soldado delante de nosotros, mientras dice repetidamente: "Hut, dos, tres, cuatro".
+
+          "Oh, ya empiezo a arrepentirme de esto...", dice Daren, mientras todos empezamos a seguir los pasos de la niña y dejamos atrás la sala de la hidra.
+
+          Tras unos minutos de caminata, llegamos a lo que parece ser un ascensor hecho enteramente de piedra. En su interior hay varias palancas, que supongo que sirven para manejarlo.
+      - source: scene_text_2
+        paragraph: 35
+        text: |-
+          "Vale, este ascensor nos va a llevar de vuelta al nivel superior del que vinimos", dice la niña mientras todos entramos en él. "¡Nos va a dejar justo al final del pasillo, así que no tendremos que preocuparnos por más trampas! Ahora, si tan solo pudiera recordar cuál de estas palancas tengo que accionar..."
+
+          Empieza a mirar cada palanca por turno, con el ceño fruncido.
+
+          "¡Ooooooh! ¡No puedo recordar cuál es la correcta!", exclama la niña tras diez segundos de mirada continua.
+
+          Se oye un murmullo que sale del amuleto que Flower lleva al cuello.
+
+          "¿Qué pasa, Arraka?", pregunta la niña mientras abre el amuleto.
+
+          "¡Eh, Flower!", dice la voz del amuleto. "Recuerdo qué palanca tienes que accionar para llegar al nivel superior. ¡Es la segunda por la derecha!"
+
+          "No me estarás mintiendo otra vez, ¿verdad?", pregunta Flower, mirando el amuleto con desconfianza.
+
+          "¡Oh, no, no, es la verdad! ¡Lo juro por mi madre!"
+
+          "Bueno, vale, entonces...", dice la niña mientras tira de la palanca.
+
+          De repente, el ascensor empieza a moverse pero, como era de esperar, la dirección en la que nos dirigimos es hacia abajo en lugar de hacia arriba.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_arraka
+  - name: ch8_vague
+    texts:
+      - source: scene_text
+        paragraph: 44
+        text: |-
+          "Por favor, dime que al menos tienes una idea vaga de hacia dónde nos dirigimos".
+
+          "¡Claro!", dice Flower. "Lo primero que tenemos que hacer es volver al pasillo del que vinimos. Hay un ascensor no muy lejos de aquí que puede llevarnos de vuelta al nivel superior. ¡Nos dejará justo al final del pasillo, así que no tendremos que preocuparnos por más trampas!"
+
+          "Eso... en realidad suena como un plan bastante bueno", dice Hadrik.
+
+          "Estoy de acuerdo", dice Kate. "No podemos permitirnos perder el tiempo dando vueltas, con la zorra espíritu pisándonos los talones. Yo digo que sigamos el liderazgo de la niña por ahora".
+
+          "Yo...", dice Rose, que aún no ha recuperado del todo la voz tras el incidente de la hidra. "Creo que también deberíamos seguir a Flower..."
+
+          "¡Muy bien, entonces!", dice la niña mientras se le ilumina la cara. "¡No se van a arrepentir de esto! ¡Vengan, síganme, sé exactamente a dónde vamos!"
+
+          Entonces toma la delantera y empieza a marchar como un soldado delante de nosotros, repitiendo una y otra vez "Un, dos, tres, cuatro".
+
+          "Oh, ya me estoy arrepintiendo de esto...", dice Daren mientras todos empezamos a seguir los pasos de la niña y dejamos atrás la sala de la hidra.
+
+          Tras unos minutos de caminar, finalmente llegamos al ascensor del que Flower habló. Está hecho completamente de piedra, pero hay varias palancas dentro, que supongo que se usan para accionarlo.
+      - source: scene_text_2
+        paragraph: 36
+        text: |-
+          "Vale, este es el ascensor que les dije", dice la niña mientras todos entramos en él. "Ahora, si tan solo pudiera recordar cuál de estas palancas tengo que accionar..."
+
+          Empieza a mirar cada palanca por turno, con el ceño fruncido.
+
+          "¡Ooooooh! ¡No puedo recordar cuál es la correcta!", exclama la niña tras diez segundos de mirada continua.
+
+          Se oye un murmullo que sale del amuleto que Flower lleva al cuello.
+
+          "¿Qué pasa, Arraka?", pregunta la niña mientras abre el amuleto.
+
+          "¡Eh, Flower!", dice la voz del amuleto. "Recuerdo qué palanca tienes que accionar para llegar al nivel superior. ¡Es la segunda por la derecha!"
+
+          "No me estarás mintiendo otra vez, ¿verdad?", pregunta Flower, mirando el amuleto con desconfianza.
+
+          "¡Oh, no, no, es la verdad! ¡Lo juro por mi madre!"
+
+          "Bueno, vale, entonces...", dice la niña mientras tira de la palanca.
+
+          De repente, el ascensor empieza a moverse pero, como era de esperar, la dirección en la que nos dirigimos es hacia abajo en lugar de hacia arriba.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_arraka
+  - name: ch8_arraka
+    texts:
+      - source: scene_text
+        paragraph: 45
+        text: |-
+          "¡Lo juraste!", dice Flower, furiosa. "¡Lo juraste por tu madre!"
+
+          "¡No tengo madre, boba!", le dice Arraka, y empieza a reír histéricamente.
+
+          A medida que bajamos hacia los niveles inferiores de las ruinas, se oyen varios gruñidos bajos continuos en algún lugar debajo de nosotros.
+
+          "Ya he tenido bastante de esto", dice la niña mientras sus ojos se vuelven azules de nuevo y empieza a juguetear con las palancas hasta que el ascensor se detiene y vuelve a subir.
+
+          "Tenías que arruinar toda la diversión como siempre haces, ¿verdad, Illuna?", dice la voz del amuleto mientras los ojos de la niña vuelven a ser verdes.
+
+          "Espera, ¿quién es Illuna?", le pregunto a la niña. "¿Es ese el verdadero nombre de la banshee?"
+
+          "No importa eso", dice Hadrik. "Lo que quiero saber es quién es el espíritu de ese amuleto".
+
+          "¿Quién, yo?", dice Arraka. "¡Pues si soy el espíritu de la alegría y la risa! ¡Esta niña malvada me tiene atrapada aquí dentro y no me deja hacer mi trabajo de repartir felicidad por todo el mundo! ¿No me salvarán de esta villana?"
+      - source: scene_text_2
+        paragraph: 37
+        text: |-
+          "Espíritu de la alegría y la risa, ¿eh?", dice Hadrik con su sonrisa habitual. "¿Así que supongo que el aura siniestra que te rodea es por el amuleto en el que te tiene la niña, entonces?"
+
+          "¿Eh?", pregunta Arraka. "¡Ah, no, es que olvidé cambiarla!"
+
+          El aura siniestra a su alrededor desaparece ahora por completo y es sustituida por una de alegría y bondad.
+
+          "¿Ven? ¡Ahora soy el espíritu de la alegría y la risa!", dice Arraka, habiendo cambiado su voz para que parezca la de una dulce niña. "Si no me creen, ¡pueden preguntar a todas las personas que han tenido el honor de conocerme! ¡Siempre las dejo con una sonrisa en la cara! Claro que sería un poco difícil conseguir que hablaran con ustedes, ya que están todas muertas. Y ahora que lo pienso, la expresión con la que suelo dejarlas es algo menos que una sonrisa y más bien una mirada de puro terror. Pero estoy segura de que he tallado unas cuantas sonrisas en el cuello de al menos algunas de ellas, así que debería seguir contando, ¿verdad? Ajá- AJAJAJA--"
+
+          Flower interrumpe el discurso de Arraka cerrando el amuleto y luego se queda sujeta a él durante unos segundos, apretando el puño a su alrededor con rabia.
+
+          "Entonces, eh...", empiezo a preguntarle mientras el ascensor llega finalmente al pasillo de las trampas. "¿Es otra banshee, entonces?"
+
+          "Sí...", dice Flower. "Una muy malvada y poderosa. Fue atrapada en este amuleto hace veinte años por los lessathi, y hemos estado actuando como sus carceleras desde entonces".
+    choices:
+      - position: 1
+        text: ¿Por qué? ¿Se lo pidieron los lessathi?
+        effects:
+          - set:
+              current_scene: ch8_lessathi
+              ch8_old: 0
+      - position: 2
+        text: Espera, ¿acabas de decir hace veinte años? ¿Cuántos años tienes exactamente?
+        effects:
+          - set:
+              current_scene: ch8_old
+              ch8_old: 1
+  - name: ch8_lessathi
+    texts:
+      - source: scene_text
+        paragraph: 46
+        text: |-
+          "¿Por qué? ¿Se lo pidieron los lessathi?"
+
+          "¿Qué?", pregunta la niña, sorprendida. "¡No! ¿Quién iba a trabajar para esos imbéciles? ¡La tenemos con nosotras porque queremos! Ahora vamos, ¡la sala de los botones no debería estar mucho más lejos!"
+
+          "Pero, eh... ¿No es Arraka un poco más problemática de lo que vale?", le pregunto a Flower mientras empezamos a caminar por el pasillo. "¿No sería mejor dejarla en algún sitio y acabar con ella?"
+
+          "¡Oh, no es tan mala como todo eso! De hecho, nos ha ayudado muchas veces a lo largo de los años e incluso nos ha salvado la vida en varias ocasiones. Además, se toma a Pétalo mucho más en serio de lo que me toma a mí y eso es... ¡OH, DIOSES MÍOS!"
+
+          "¿Qué?", pregunta Kate. "¿Qué ha pasado?"
+
+          "¡Recuerdo esos tres pasillos!", dice mientras señala delante de ella. "Uno de ellos lleva a la sala de control, mientras que los otros dos llevan a trampas mortales. ¡Sé con certeza que el pasillo correcto tenía algún tipo de insecto marcado en una de sus paredes! Prácticamente ya estamos allí. ¡Vengan!"
+
+          "¿Un insecto?...", pregunta Kate, mientras Flower se adelanta para mirar mejor las paredes de los tres pasillos.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_corridors
+  - name: ch8_old
+    texts:
+      - source: scene_text
+        paragraph: 47
+        text: |-
+          "Espera, ¿acabas de decir hace veinte años? ¿Cuántos años tienes exactamente?"
+
+          "¡Cumpliré treinta el mes que viene!", dice la niña, sonriendo. "¡Eh, miren, hemos llegado al pasillo principal! ¡Síganme, la sala de los botones no debería estar mucho más lejos!"   
+
+          "Sabes, eh... No estoy muy seguro de cómo decirte esto, pero... no pareces tener treinta años", le digo a Flower mientras empezamos a caminar por el pasillo.  
+
+          "¡Oh, mi cuerpo dejó de envejecer hace veinte años, después de que mi alma se fusionara con la de Pétalo! Pétalo no para de decirme que técnicamente nunca llegué a los diez años, ¡pero yo digo que al diablo con eso! Si quiero tener mis cumpleaños, nada va a... ¡OH, DIOSES MÍOS!"
+
+          "¿Qué?", pregunta Kate. "¿Qué ha pasado?"
+
+          "¡Recuerdo esos tres pasillos!", dice mientras señala delante de ella. "Uno de ellos lleva a la sala de control, mientras que los otros dos llevan a trampas mortales. ¡Sé con certeza que el pasillo correcto tenía algún tipo de insecto marcado en una de sus paredes! Prácticamente ya estamos allí. ¡Vengan!"
+
+          "¿Un insecto?...", pregunta Kate, mientras Flower se adelanta para mirar mejor las paredes de los tres pasillos.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_corridors
+  - name: ch8_corridors
+    routes:
+      - condition: ch8_talk = 0
+        texts:
+          - source: scene_text
+            paragraph: 48
+            text: |-
+              "¡Noooooooooooooooo!", grita la niña al llegar al lugar donde el camino se divide en tres direcciones.
+
+              Al mirar las marcas de las tres paredes, empiezo a comprender el origen de la frustración de la niña. No se equivocaba cuando recordaba que el pasillo correcto tenía un insecto marcado. Lo que no recordó, sin embargo, fue que los otros dos pasillos también tenían insectos marcados.
+
+              "Una libélula, un escarabajo y una avispa...", dice Kate mientras estudia las marcas de las paredes. "Flower, ¿estás diciendo que uno de estos tres caminos nos llevará directamente a la sala de control?"
+
+              "Sí, mientras elijamos el camino correcto, no habrá más obstáculos entre nosotros y la sala de los botones", dice la niña. "¡Ooooooh! ¡Si tan solo pudiera recordar qué camino es el correcto!"
+        choices:
+          - position: 1
+            text: Sugerir tomar el camino marcado con una libélula
+            effects:
+              - set:
+                  current_scene: ch8_dragonfly
+          - position: 2
+            text: Sugerir tomar el camino marcado con un escarabajo
+            effects:
+              - set:
+                  current_scene: ch8_beetle
+          - position: 3
+            text: Sugerir tomar el camino marcado con una avispa
+            effects:
+              - set:
+                  current_scene: ch8_wasp
+      - condition: ch8_talk = 1
+        texts:
+          - source: scene_text
+            paragraph: 49
+            text: |-
+              "¡Noooooooooooooooo!", grita la niña al llegar al lugar donde el camino se divide en tres direcciones.
+
+              Al mirar las marcas de las tres paredes, empiezo a comprender el origen de la frustración de la niña. No se equivocaba cuando recordaba que el pasillo correcto tenía un insecto marcado. Lo que no recordó, sin embargo, fue que los otros dos pasillos también tenían insectos marcados.
+
+              "Espera un momento...", dice Kate. "¿No decía algo aquella nota del leopardo sobre tres pasillos con insectos marcados? Veo una libélula, un escarabajo y una avispa. El leopardo nos dijo que el camino del escarabajo es el correcto".
+
+              "¿Leopardo?...", nos pregunta Flower. "¿Te refieres a Leo, el leopardo?"
+
+              "¡Sí!", le responde Kate. "¿Lo conoces?"
+
+              "Sí, lo conozco, pero... no entiendo por qué los ayudaría. Realmente odia a los humanos..."
+
+              "¿Crees que podría ser una trampa, entonces?", pregunta Kate.
+
+              "No lo sé...", dice la niña. "¡Ooooooh! ¡Si tan solo pudiera recordar qué camino es el correcto!"
+        choices:
+          - position: 1
+            text: Sugerir tomar el camino marcado con una libélula
+            effects:
+              - set:
+                  current_scene: ch8_dragonfly
+          - position: 2
+            text: Sugerir tomar el camino marcado con un escarabajo
+            effects:
+              - set:
+                  current_scene: ch8_beetle
+          - position: 3
+            text: Sugerir tomar el camino marcado con una avispa
+            effects:
+              - set:
+                  current_scene: ch8_wasp
+  - name: ch8_dragonfly
+    routes:
+      - condition: ch8_talk = 0
+        texts:
+          - source: scene_text
+            paragraph: 50
+            text: |-
+              "Si sabemos que al menos uno de estos caminos es el correcto, entonces lo mismo da elegir uno al azar y si activamos alguna trampa, salimos de allí lo antes posible. Yo digo que probemos primero por el pasillo marcado con una libélula".
+
+              "Para mí, cualquier camino es tan bueno como cualquier otro", dice Daren. "De hecho, pensándolo bien, prefiero seguir específicamente la sugerencia de Barry, ¡porque así, si nos topamos con una trampa, podré echarle toda la culpa a él después!"
+
+              Una vez que todos estuvieron de acuerdo en dejarme cargar con la culpa de nuestro posible fracaso, todos empezamos a caminar por el pasillo marcado con una libélula. 
+
+              Antes incluso de dar cinco pasos dentro del pasillo, oímos un fuerte ruido detrás de nosotros, mientras nuestro camino de vuelta queda sellado por un muro de piedra recién erigido. Inmediatamente después, el techo empieza a descender hacia nosotros, poco a poco.
+
+              "Oh no...", dice Flower. "¡Ahora me acuerdo! ¡Era el escarabajo! ¡El escarabajo marcaba el camino correcto! ¿Por qué no me acordé de esto antes?"
+
+              "Bueno, no es como si fuera el fin del mundo, o algo así", dice Hadrik. "El techo apenas se mueve. Romperé esta pared que bloquea la salida y todos podremos volver al camino correcto".
+
+              "¡No!", grita Flower. "¡Si rompes esa pared, van a salir de ella docenas de flechas envenenadas!"
+          - source: scene_text_2
+            paragraph: 38
+            text: |-
+              "Hmm...", dice Hadrik. "Estoy bastante seguro de que el pasillo del escarabajo era el del medio. Eso significa que si rompo esta pared a nuestra izquierda, podemos entrar directamente al pasillo del escarabajo, sin tener que volver atrás".
+
+              Hace una pausa.
+
+              "Es decir... Si, eh... Si todos los demás también están de acuerdo con esto".
+
+              "Que yo sepa, no hay trampas dentro del muro entre los dos pasillos", dice Flower.
+
+              "Está bien, Hadrik", dice Kate. "Siéntete libre de destrozar la pared a tu gusto".
+
+              "¡Recibido!", dice Hadrik, con una sonrisa, mientras golpea la pared con todas sus fuerzas.
+
+              Entonces nos abrimos paso por el agujero de la pared y entramos en el pasillo del escarabajo, tal y como estaba previsto. 
+
+              Tras unos minutos de caminar por el pasillo, empezamos finalmente a ver algo de luz al final del túnel. 
+
+              "¡Es aquí!", dice Flower, emocionada, mientras señala hacia la salida. "¡Recuerdo esta parte! ¡Una vez que pasemos esa puerta, nada se interpondrá entre nosotros y la sala de control! ¡Les dije que llegaríamos sanos y salvos! ¡Vengan, síganme!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_control_room
+      - condition: ch8_talk = 1
+        texts:
+          - source: scene_text
+            paragraph: 51
+            text: |-
+              "Para mí, suena a que el leopardo intenta atraernos a una trampa", digo. "Al menos eso solo nos deja otros dos pasillos para elegir. Yo digo que vayamos por el pasillo de la libélula, y si activamos alguna trampa, salimos de allí lo antes posible".
+
+              "Seré honesto aquí", dice Daren, "no creo que tengamos información suficiente para llegar a ninguna conclusión. Así que, si va a ser un juego de adivinanzas de cualquier manera, ¡prefiero seguir los instintos de Barry, porque así, si se equivoca, puedo echarle toda la culpa a él después!"
+
+              Una vez que todos estuvieron de acuerdo en dejarme cargar con la culpa de nuestro posible fracaso, todos empezamos a caminar por el pasillo marcado con una libélula. 
+
+              Antes incluso de dar cinco pasos dentro del pasillo, oímos un fuerte ruido detrás de nosotros, mientras nuestro camino de vuelta queda sellado por un muro de piedra recién erigido. Inmediatamente después, el techo empieza a descender hacia nosotros, poco a poco.
+
+              "Oh no...", dice Flower. "Ahora finalmente me acuerdo. Leo tenía razón. Realmente deberíamos haber tomado el camino con el escarabajo".
+
+              "Bueno, no es como si fuera el fin del mundo, o algo así", dice Hadrik. "El techo apenas se mueve. Romperé esta pared que bloquea la salida y todos podremos volver al camino correcto".
+
+              "¡No!", grita Flower. "¡Si rompes esa pared, van a salir de ella docenas de flechas envenenadas!"
+          - source: scene_text_2
+            paragraph: 39
+            text: "\"Hmm...\" Hadrik says. \"I'm pretty sure that the beetle corridor was the one in the middle. That means that if I smash this wall on our left, we can just enter the beetle corridor directly, without having to go back.\"\r\n\r\nHe pauses.\r\n\r\n\"That is to say... If, uh... If everyone else is also okay with this.\"\r\n\r\n\"There are no traps inside the wall between the two corridors as far as I know,\" Flower says.\r\n\r\n\"It's okay, Hadrik,\" Kate says. \"Feel free to smash the wall to your heart's content.\"\r\n\r\n\"Roger!\" Hadrik says, with a grin, as he punches the wall with all of his might.\r\n\r\nWe then make our way through the hole in the wall, and we enter the beetle corridor, just as planned. \r\n\r\nAfter a few minutes of walking through the corridor, we finally start to see some light at the end of the tunnel. \r\n\r\n\"This is it!\" Flower says, excited, as she points towards the exit. \"I remember this part! Once we're past that door, nothing will stand between us and the control room! I told you we'd make it there safely! Come on, follow me!\""
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_control_room
+  - name: ch8_wasp
+    routes:
+      - condition: premonition < 4 AND ch8_talk = 0
+        texts:
+          - source: scene_text
+            paragraph: 52
+            text: |-
+              "Si sabemos que al menos uno de estos caminos es el correcto, entonces lo mismo da elegir uno al azar y si activamos alguna trampa, salimos de allí lo antes posible. Yo digo que probemos primero por el pasillo marcado con una avispa".
+
+              "Para mí, cualquier camino es tan bueno como cualquier otro", dice Daren. "De hecho, pensándolo bien, prefiero seguir específicamente la sugerencia de Barry, ¡porque así, si nos topamos con una trampa, podré echarle toda la culpa a él después!"
+
+              Una vez que todos estuvieron de acuerdo en dejarme cargar con la culpa de nuestro posible fracaso, todos empezamos a caminar por el pasillo marcado con una avispa. 
+
+              Antes incluso de dar cinco pasos dentro del pasillo, oímos un fuerte ruido detrás de nosotros, mientras nuestro camino de vuelta queda sellado por un muro de piedra recién erigido. 
+
+              Todos empezamos a mirar a nuestro alrededor, intentando averiguar de dónde empezarán a salir las trampas.
+
+              "¿Tal vez no hay trampas esta vez?", pregunta Hadrik.
+
+              Inmediatamente después de terminar su pregunta, el suelo se desmorona bajo nosotros y todos empezamos a caer en el foso de abajo. En el fondo del foso, nos esperaban un centenar de pinchos afilados. Fui empalado por cinco de ellos al caer. Solo tuve unos segundos para sentir el dolor antes de que todo empezara a desvanecerse lentamente y empezara a perder el conocimiento para siempre.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de premonición fallida - nivel 4 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: premonition < 4 AND ch8_talk = 1
+        texts:
+          - source: scene_text
+            paragraph: 53
+            text: |-
+              "Para mí, suena a que el leopardo intenta atraernos a una trampa", digo. "Al menos eso solo nos deja otros dos pasillos para elegir. Yo digo que vayamos por el pasillo de la avispa, y si activamos alguna trampa, salimos de allí lo antes posible".
+
+              "Seré honesto aquí", dice Daren, "no creo que tengamos información suficiente para llegar a ninguna conclusión. Así que, si va a ser un juego de adivinanzas de cualquier manera, ¡prefiero seguir los instintos de Barry, porque así, si se equivoca, puedo echarle toda la culpa a él después!"
+
+              Una vez que todos estuvieron de acuerdo en dejarme cargar con la culpa de nuestro posible fracaso, todos empezamos a caminar por el pasillo marcado con una avispa. 
+
+              Antes incluso de dar cinco pasos dentro del pasillo, oímos un fuerte ruido detrás de nosotros, mientras nuestro camino de vuelta queda sellado por un muro de piedra recién erigido. 
+
+              Todos empezamos a mirar a nuestro alrededor, intentando averiguar de dónde empezarán a salir las trampas.
+
+              "¿Tal vez no hay trampas esta vez?", pregunta Hadrik.
+
+              Inmediatamente después de terminar su pregunta, el suelo se desmorona bajo nosotros y todos empezamos a caer en el foso de abajo. En el fondo del foso, nos esperaban un centenar de pinchos afilados. Fui empalado por cinco de ellos al caer. Solo tuve unos segundos para sentir el dolor antes de que todo empezara a desvanecerse lentamente y empezara a perder el conocimiento para siempre.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de premonición fallida - nivel 4 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: premonition = 4 AND ch8_talk = 0
+        texts:
+          - source: scene_text
+            paragraph: 54
+            text: |-
+              "Si sabemos que al menos uno de estos caminos es el correcto, entonces lo mismo da elegir uno al azar y si activamos alguna trampa, salimos de allí lo antes posible. Yo digo que probemos primero por el pasillo marcado con una avispa".
+
+              "Para mí, cualquier camino es tan bueno como cualquier otro", dice Daren. "De hecho, pensándolo bien, prefiero seguir específicamente la sugerencia de Barry, ¡porque así, si nos topamos con una trampa, podré echarle toda la culpa a él después!"
+
+              Una vez que todos estuvieron de acuerdo en dejarme cargar con la culpa de nuestro posible fracaso, todos empezamos a caminar por el pasillo marcado con una avispa. 
+
+              Antes incluso de dar cinco pasos dentro del pasillo, oímos un fuerte ruido detrás de nosotros, mientras nuestro camino de vuelta queda sellado por un muro de piedra recién erigido. 
+
+              De repente tengo una visión del suelo desmoronándose bajo nosotros y de los seis cayendo en un foso lleno de pinchos.
+
+              "¡Escuchen todos con atención!", empiezo a decir. "El suelo en medio del pasillo se va a desmoronar bajo nosotros en cualquier segundo. ¡Acérquense a las paredes lo más posible y no se muevan hasta que yo lo diga! ¡Háganlo!"
+
+              "¿Eh?", pregunta Flower, mientras todos los demás siguen mis instrucciones sin rechistar.
+
+              De repente, todo el suelo en medio del pasillo se derrumba y la niña empieza a caer en el foso de abajo.
+
+              "¡Flower!", grita Kate, pero la niña usa sus chorros de fuego para impulsarse de nuevo hacia arriba, como si nada hubiera pasado.
+          - source: scene_text_2
+            paragraph: 2
+            text: |-
+              "¡Vaya, eso ha estado muy bien, Barry!", dice Flower, mientras flota en el aire con la ayuda de los dos chorros de fuego que salen de sus pies. "¿Puedes ver el futuro?"
+
+              "Más o menos", le digo. "Tengo una estadística llamada premonición en mi potenciador de estadísticas, pero no es muy fiable".
+
+              "¡Ooooh!", dice Flower, fingiendo comprensión.
+
+              De repente jadea con fuerza, tapándose la boca con ambas manos.
+
+              "¡Acabo de recordar qué camino era el correcto! ¡Era el del escarabajo! ¿Por qué no me acordé de esto antes?"
+
+              "Bueno, no es como si fuera el fin del mundo, o algo así", dice Hadrik. "Todos salimos ilesos gracias al cachivache de Barry, así que todo lo que tenemos que hacer es romper esa pared que bloquea la salida y todos podremos volver al camino correcto".
+
+              "¡No!", grita Flower. "¡Si rompes esa pared, van a salir de ella docenas de flechas envenenadas!"
+
+              "Hmm...", dice Hadrik. "Estoy bastante seguro de que el pasillo del escarabajo era el del medio. Eso significa que si rompo esta pared detrás de mí, podemos entrar directamente al pasillo del escarabajo, sin tener que volver atrás".
+
+              Hace una pausa.
+
+              "Es decir... Si, eh... Si todos los demás también están de acuerdo con esto".
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              "Que yo sepa, no hay trampas dentro del muro entre los dos pasillos", dice Flower.
+
+              "Está bien, Hadrik", dice Kate. "Siéntete libre de destrozar la pared a tu gusto".
+
+              "¡Recibido!", dice Hadrik, con una sonrisa, mientras golpea la pared con todas sus fuerzas.
+
+              Entonces nos abrimos paso por el agujero de la pared y entramos en el pasillo del escarabajo, tal y como estaba previsto. 
+
+              Tras unos minutos de caminar por el pasillo, empezamos finalmente a ver algo de luz al final del túnel. 
+
+              "¡Es aquí!", dice Flower, emocionada, mientras señala hacia la salida. "¡Recuerdo esta parte! ¡Una vez que pasemos esa puerta, nada se interpondrá entre nosotros y la sala de control! ¡Les dije que llegaríamos sanos y salvos! ¡Vengan, síganme!"
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de premonición exitosa - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_control_room
+                condition: is_dead = 0
+      - condition: premonition = 4 AND ch8_talk = 1
+        texts:
+          - source: scene_text
+            paragraph: 55
+            text: |-
+              "Para mí, suena a que el leopardo intenta atraernos a una trampa", digo. "Al menos eso solo nos deja otros dos pasillos para elegir. Yo digo que vayamos por el pasillo de la avispa, y si activamos alguna trampa, salimos de allí lo antes posible".
+
+              "Seré honesto aquí", dice Daren, "no creo que tengamos información suficiente para llegar a ninguna conclusión. Así que, si va a ser un juego de adivinanzas de cualquier manera, ¡prefiero seguir los instintos de Barry, porque así, si se equivoca, puedo echarle toda la culpa a él después!"
+
+              Una vez que todos estuvieron de acuerdo en dejarme cargar con la culpa de nuestro posible fracaso, todos empezamos a caminar por el pasillo marcado con una avispa. 
+
+              Antes incluso de dar cinco pasos dentro del pasillo, oímos un fuerte ruido detrás de nosotros, mientras nuestro camino de vuelta queda sellado por un muro de piedra recién erigido. 
+
+              De repente tengo una visión del suelo desmoronándose bajo nosotros y de los seis cayendo en un foso lleno de pinchos.
+
+              "¡Escuchen todos con atención!", empiezo a decir. "El suelo en medio del pasillo se va a desmoronar bajo nosotros en cualquier segundo. ¡Acérquense a las paredes lo más posible y no se muevan hasta que yo lo diga! ¡Háganlo!"
+
+              "¿Eh?", pregunta Flower, mientras todos los demás siguen mis instrucciones sin rechistar.
+
+              De repente, todo el suelo en medio del pasillo se derrumba y la niña empieza a caer en el foso de abajo.
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              "¡Flower!", grita Kate, pero la niña usa sus chorros de fuego para impulsarse de nuevo hacia arriba, como si nada hubiera pasado.
+
+              "¡Vaya, eso ha estado muy bien, Barry!", dice Flower, mientras flota en el aire con la ayuda de los dos chorros de fuego que salen de sus pies. "¿Puedes ver el futuro?"
+
+              "Más o menos", le digo. "Tengo una estadística llamada premonición en mi potenciador de estadísticas, pero no es muy fiable".
+
+              "¡Ooooh!", dice Flower, fingiendo comprensión.
+
+              De repente, jadea fuertemente, cubriéndose la boca con ambas manos.
+
+              "¡Acabo de recordar cuál era el camino correcto! Leo tenía razón. Realmente deberíamos haber tomado el camino con el escarabajo".
+
+              "Bueno, no es como si fuera el fin del mundo, ni nada", dice Hadrik. "Todos salimos de una pieza gracias al cacharro de Barry, así que lo único que tenemos que hacer es romper esa pared que bloquea la salida y todos podemos volver al camino correcto".
+
+              "¡No!", grita Flower. "¡Si rompes esa pared, van a salir docenas de flechas envenenadas!"
+
+              "Hmm...", dice Hadrik. "Estoy bastante seguro de que el pasillo del escarabajo era el del medio. Eso significa que si rompo esta pared detrás de mí, podemos entrar directamente al pasillo del escarabajo, sin tener que volver atrás".
+
+              Se detiene.
+          - source: scene_3
+            paragraph: 3
+            text: |-
+              "Es decir... Si, eh... Si todos los demás también están de acuerdo con esto".
+
+              "Que yo sepa, no hay trampas dentro del muro entre los dos pasillos", dice Flower.
+
+              "Está bien, Hadrik", dice Kate. "Siéntete libre de destrozar la pared a tu gusto".
+
+              "¡Recibido!", dice Hadrik, con una sonrisa, mientras golpea la pared con todas sus fuerzas.
+
+              Entonces nos abrimos paso por el agujero en la pared y entramos en el pasillo del escarabajo, tal como estaba planeado.
+
+              Tras unos minutos de caminar por el pasillo, empezamos finalmente a ver algo de luz al final del túnel.
+
+              "¡Es aquí!", dice Flower, emocionada, mientras señala hacia la salida. "¡Recuerdo esta parte! ¡Una vez que pasemos esa puerta, nada se interpondrá entre nosotros y la sala de control! ¡Les dije que llegaríamos sanos y salvos! ¡Vengan, síganme!"
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de premonición exitosa - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_control_room
+                condition: is_dead = 0
+  - name: ch8_beetle
+    routes:
+      - condition: ch8_talk = 0
+        texts:
+          - source: scene_text
+            paragraph: 56
+            text: |-
+              "Si sabemos que al menos uno de estos caminos es el correcto, entonces lo mismo da elegir uno al azar y si activamos alguna trampa, salimos de allí lo antes posible. Yo digo que probemos primero por el pasillo marcado con un escarabajo".
+
+              "Para mí, cualquier camino es tan bueno como cualquier otro", dice Daren. "De hecho, pensándolo bien, prefiero seguir específicamente la sugerencia de Barry, ¡porque así, si nos topamos con una trampa, podré echarle toda la culpa a él después!"
+
+              Una vez que todos estuvieron de acuerdo en dejarme cargar con la culpa de nuestro posible fracaso, todos empezamos a caminar por el pasillo marcado con un escarabajo. 
+
+              Tras unos minutos de caminar por el pasillo, empezamos finalmente a ver algo de luz al final del túnel. 
+
+              "¡Es aquí!", dice Flower, emocionada, mientras señala hacia la salida. "¡Recuerdo esta parte! ¡Una vez que pasemos esa puerta, nada se interpondrá entre nosotros y la sala de control! ¡Les dije que llegaríamos sanos y salvos! ¡Vengan, síganme!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_control_room
+      - condition: ch8_talk = 1
+        texts:
+          - source: scene_text
+            paragraph: 57
+            text: |-
+              "No creo que el leopardo hubiera elegido una forma tan indirecta de matarnos cuando podría simplemente haberle dicho a la zorra que planeábamos escapar, y haber hecho que ella nos ejecutara. Yo digo que vayamos por el pasillo marcado con un escarabajo, y si activamos alguna trampa, salimos de allí lo antes posible".
+
+              "Seré honesto aquí", dice Daren, "no creo que tengamos información suficiente para llegar a ninguna conclusión. Así que, si va a ser un juego de adivinanzas de cualquier manera, ¡prefiero seguir los instintos de Barry, porque así, si se equivoca, puedo echarle toda la culpa a él después!"
+
+              Una vez que todos estuvieron de acuerdo en dejarme cargar con la culpa de nuestro posible fracaso, todos empezamos a caminar por el pasillo marcado con un escarabajo. 
+
+              Tras unos minutos de caminar por el pasillo, empezamos finalmente a ver algo de luz al final del túnel. 
+
+              "¡Es aquí!", dice Flower, emocionada, mientras señala hacia la salida. "¡Recuerdo esta parte! ¡Una vez que pasemos esa puerta, nada se interpondrá entre nosotros y la sala de control! ¡Les dije que llegaríamos sanos y salvos! ¡Vengan, síganme!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_control_room
+  - name: ch8_control_room
+    routes:
+      - condition: ch8_talk = 0
+        texts:
+          - source: scene_text
+            paragraph: 58
+            text: |-
+              Flower sale corriendo del túnel, pero su impulso se desvanece inmediatamente después de entrar en la sala de control y se detiene justo delante de la salida del pasillo. Al llegar yo mismo al final del pasillo, mis ojos tardan unos instantes en acostumbrarse a la luz tan brillante que hay en esta sala.
+
+              "¡Felicidades!", oigo decir a una voz femenina, mientras mi visión es todavía un poco borrosa. "Han llegado a la sala de control. Ahora ya pueden morir en paz, sabiendo que han logrado su objetivo".
+
+              De repente me doy cuenta de dónde venía toda esa luz. El gran zorro dorado está de pie frente a nosotros y su aura mágica, increíblemente fuerte, brilla tanto que cuesta incluso mirarla. Su forma puede ser la de un zorro normal, pero su aura emite una vibración de otro mundo. Una vibración similar, de hecho, a la de una banshee. ¿Podría proceder ella también del plano mágico?
+
+              Al mirar a mi alrededor, veo que la habitación en la que estamos está llena de palancas y botones de todas las formas y tamaños, tal como dijo Flower, y hay escrituras extrañas en todas las paredes. Además de la zorra, en la habitación también hay un leopardo, que parece ser uno de los seguidores de la zorra.
+          - source: scene_text_2
+            paragraph: 4
+            text: |-
+              "En cuanto me enteré de que se habían escapado de la mazmorra", dice la zorra, "supe que solo podía haber un lugar al que se dirigieran, así que en lugar de perseguirlos, decidí simplemente esperarlos aquí. Fueron tontos al escaparse de su celda. Si hubieran esperado pacientemente mi juicio, solo habrían sido condenados a una vida de trabajos forzados en el reino animal. Sin embargo, escapar de la prisión antes de oír su sentencia es un crimen mucho más atroz. Uno que se castiga con la muerte".
+
+              "¡¿Estás de broma?!", dice Daren. "¿Quién condena a alguien a una vida de trabajos así solo porque resulta que entró en una zona prohibida por accidente? ¿También ejecutas a tus cervatillos y cachorros si no se mantienen fuera del césped en un parque?"
+
+              "Harías bien en no dirigirte a mí de una manera tan informal, mago con armadura", dice el zorro dorado. "Pero para responder a tu pregunta, el reino animal no tiene parques, ni una regla para mantenerse fuera del césped en ninguna región del continente. Sin embargo, si existiera tal regla, y un cachorro o un cervatillo la rompiera, te aseguro que no dudaría en ordenar su ejecución. Las reglas están para cumplirse, tanto por los humanos como por los animales. El hecho de que ustedes los humanos sean tan indulgentes con sus reglas es una de las razones principales por las que su sociedad está decayendo hasta tal punto. No oiré más de esto".
+
+              De repente, una jaula dorada aparece de la nada y nos rodea a todos menos a Flower.
+
+              "Ustedes cinco no valen ni un segundo más de mi tiempo", dice la zorra. "Voy a ejecutarlos aquí y ahora y acabar con esto de una vez por todas".
+          - source: scene_3
+            paragraph: 4
+            text: |-
+              El poder mágico que emana de ella no se parece a nada de lo que haya sido testigo antes. Ni siquiera sentí tanta presión cuando estuve en presencia de Azarius. La desesperanza que siento ahora mismo solo puede compararse con la sensación que tuve cuando conocimos a Eiden por primera vez. ¿Vamos a morir todos así, sin ni siquiera tener la oportunidad de ofrecer la más mínima resistencia?
+
+              "¡Eleya, espera!", dice la niña mientras se interpone entre nosotros y la zorra espíritu. "¡No puedes hacerles daño! ¡No son mala gente!"
+
+              "No te metas en mi camino, Flower", dice la zorra. "Esta gente ha roto nuestras reglas sagradas y debe ser castigada".
+
+              "Ya, pero ¿no puedes, no sé, darles un tirón de orejas o algo?"
+
+              "No voy a dejar que cuestiones nuestros métodos ni nuestros castigos, niña. Puede que nos hayas ayudado en el pasado, pero si insistes en defender a estos criminales, no dudaré en ejecutarte junto con ellos".
+
+              "¡Ooooooh! ¡Siempre eres tan testaruda!", dice la niña mientras sus ojos se vuelven de un rojo brillante y su aura mágica empieza a irradiar con fuerza desde su cuerpo. "¡Está bien! ¡Si quieres pelea, te daré tu pelea! ¡Prepárate, Pétalo!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_golden_rule
+      - condition: ch8_talk = 1
+        texts:
+          - source: scene_text
+            paragraph: 59
+            text: |-
+              Flower sale corriendo del túnel, pero su impulso se desvanece inmediatamente después de entrar en la sala de control y se detiene justo delante de la salida del pasillo. Al llegar yo mismo al final del pasillo, mis ojos tardan unos instantes en acostumbrarse a la luz tan brillante que hay en esta sala.
+
+              "¡Felicidades!", oigo decir a una voz familiar, mientras mi visión es todavía un poco borrosa. "Han llegado a la sala de control. Ahora ya pueden morir en paz, sabiendo que han logrado su objetivo".
+
+              De repente me doy cuenta de dónde venía toda esa luz. La zorra espíritu está de pie frente a nosotros y su aura mágica, increíblemente fuerte, brilla tanto que cuesta incluso mirarla. Leo, el leopardo, también está a su lado, pero el toro parece estar ausente esta vez. La habitación está llena de palancas y botones de todas las formas y tamaños, tal como dijo Flower, y hay escrituras extrañas en todas las paredes.
+
+              "En cuanto me enteré de que se habían escapado de la mazmorra", dice la zorra, "supe que solo podía haber un lugar al que se dirigieran, así que en lugar de perseguirlos, decidí simplemente esperarlos aquí".
+
+              De repente, una jaula dorada aparece de la nada y nos rodea a todos menos a Flower.
+
+              "Parece que mi benevolencia fue desperdiciada con gente como ustedes", dice la zorra. "Voy a ejecutarlos aquí y ahora y acabar con esto de una vez por todas".
+          - source: scene_text_2
+            paragraph: 40
+            text: |-
+              El poder mágico que emana de ella no se parece a nada de lo que haya sido testigo antes. Ni siquiera sentí tanta presión cuando estuve en presencia de Azarius. La desesperanza que siento ahora mismo solo puede compararse con la sensación que tuve cuando conocimos a Eiden por primera vez. ¿Vamos a morir todos así, sin ni siquiera tener la oportunidad de ofrecer la más mínima resistencia?
+
+              "¡Eleya, espera!", dice la niña mientras se interpone entre nosotros y la zorra espíritu. "¡No puedes hacerles daño! ¡No son mala gente!"
+
+              "No te metas en mi camino, Flower", dice la zorra. "Esta gente ha roto nuestras reglas sagradas y debe ser castigada".
+
+              "Ya, pero ¿no puedes, no sé, darles un tirón de orejas o algo?"
+
+              "No voy a dejar que cuestiones nuestros métodos ni nuestros castigos, niña. Puede que nos hayas ayudado en el pasado, pero si insistes en defender a estos criminales, no dudaré en ejecutarte junto con ellos".
+
+              "¡Ooooooh! ¡Siempre eres tan testaruda!", dice la niña mientras sus ojos se vuelven de un rojo brillante y su aura mágica empieza a irradiar con fuerza desde su cuerpo. "¡Está bien! ¡Si quieres pelea, te daré tu pelea! ¡Prepárate, Pétalo!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch8_golden_rule
+  - name: ch8_golden_rule
+    texts:
+      - source: scene_text
+        paragraph: 60
+        text: |-
+          "¡Por favor, deténganse!", dice el leopardo en la lengua común, y los ojos de Flower empiezan a volver lentamente a su color verde normal.
+
+          "¿Qué significa esto, Leo?", le pregunta la zorra. "¡Solo te di permiso para usar la lengua común en caso de una emergencia extrema!"
+
+          "Siento si hablo cuando no me toca, oh gran zorro dorado, pero considero que esta es una emergencia de la mayor importancia".
+
+          "Explícate".
+
+          "Me gustaría invocar la sexta regla de oro y tomar la custodia personal de estos prisioneros".
+
+          "¿Con qué fin?"
+
+          "Creo que nos serían de mucha más utilidad vivos que muertos. No podemos permitirnos enviar más tropas a la fortaleza de los ogros. A este paso, el cáliz sagrado se perderá para siempre. Pero estos guerreros han demostrado su destreza en el combate al derrotar a nuestra mascota hidra del nivel subterráneo. Podríamos enviarlos a recuperar el cáliz, a cambio de su libertad".
+      - source: scene_text_2
+        paragraph: 41
+        text: |-
+          "Ya veo...", dice la zorra. "Así que por esto insististe en acompañarme a la sala de control cuando supimos que los prisioneros se habían escapado. Me sorprendes, Leo. De todos los animales de nuestro reino, tú eres con diferencia el que más odia a los humanos. Nunca pensé que llegaría el día en que sugerirías usar a ninguno de ellos para favorecer nuestra causa".
+
+          Se detiene un poco para reflexionar sobre sus palabras.
+
+          "Muy bien entonces", dice la zorra. "De total acuerdo con la sexta regla de oro, por la presente te concedo la custodia completa de estos cinco prisioneros".
+
+          Eleya se vuelve entonces hacia nosotros.
+
+          "Han tenido suerte de haber sido perdonados de tal manera, humanos", dice ella. "Sugiero que aprovechen al máximo esta oportunidad".
+    choices:
+      - position: 1
+        text: Preguntarle sobre la fortaleza de los ogros
+        effects:
+          - set:
+              current_scene: ch8_stronghold
+      - position: 2
+        text: Preguntarle sobre el cáliz sagrado
+        effects:
+          - set:
+              current_scene: ch8_chalice
+  - name: ch8_stronghold
+    texts:
+      - source: scene_text
+        paragraph: 61
+        text: |-
+          "¿Podrías decirnos algo más sobre esa fortaleza de los ogros a la que nos van a enviar?"
+
+          "La fortaleza de los ogros es un fortín situado a unas cuantas decenas de kilómetros de aquí", dice Eleya. "Los ogros la han estado usando como su cuartel general principal en la zona durante los últimos años. Está fuertemente defendida y es muy difícil de infiltrar. Además de guerreros normales, me han dicho que los ogros también cuentan con unos cuantos magos poderosos entre sus filas".
+
+          "¿Se nos desactivarán temporalmente los collares una vez que lleguemos a la fortaleza de los ogros?", pregunta Kate. "He visto collares como estos antes y sé positivamente que podían activarse y desactivarse a voluntad, sin tener que quitarlos".
+
+          "Me temo que los collares que usamos son una versión más primitiva de los que tú conoces", dice la zorra. "Sus efectos no desaparecerán a menos que los quitemos por completo, y no voy a hacer que se los quiten hasta que hayan recuperado el cáliz de oro. Les daré un plazo de cinco días para completar su búsqueda. Esto debería darles tiempo más que suficiente para realizar la tarea. Si no han vuelto en cinco días, asumiré que han abandonado su búsqueda y usaré estos collares para que mueran electrocutados".
+
+          "¡¿Cinco días?!", pregunta Hadrik. "¿Y si nos perdemos por el camino?"
+
+          "No se perderán", dice la zorra. "Porque voy a enviar a un guía con ustedes para que les enseñe el camino".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_ending
+  - name: ch8_chalice
+    texts:
+      - source: scene_text
+        paragraph: 62
+        text: |-
+          "¿Podrías decirnos algo más sobre ese cáliz sagrado que debemos recuperar?"
+
+           "El cáliz sagrado es un artefacto que puede dar al agua propiedades curativas únicas", dice Eleya. "Usábamos esta agua para curar ciertas enfermedades que son específicas de los animales y que son incurables mediante el uso de hechizos. Estas enfermedades se han cobrado muchas vidas de mis súbditos desde que los ogros robaron nuestro cáliz y lo escondieron en su fortaleza".
+
+          "¿Se nos desactivarán temporalmente los collares una vez que lleguemos a la fortaleza de los ogros?", pregunta Kate. "He visto collares como estos antes y sé positivamente que podían activarse y desactivarse a voluntad, sin tener que quitarlos".
+
+          "Me temo que los collares que usamos son una versión más primitiva de los que tú conoces", dice la zorra. "Sus efectos no desaparecerán a menos que los quitemos por completo, y no voy a hacer que se los quiten hasta que hayan recuperado el cáliz de oro. Les daré un plazo de cinco días para completar su búsqueda. Esto debería darles tiempo más que suficiente para realizar la tarea. Si no han vuelto en cinco días, asumiré que han abandonado su búsqueda y usaré estos collares para que mueran electrocutados".
+
+          "¡¿Cinco días?!", pregunta Hadrik. "¿Y si nos perdemos por el camino?"
+
+          "No se perderán", dice la zorra. "Porque voy a enviar a un guía con ustedes para que les enseñe el camino".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch8_ending
+  - name: ch8_ending
+    texts:
+      - source: scene_text
+        paragraph: 63
+        text: |-
+          Entonces se vuelve hacia Flower.
+
+          "Flower, ya que estabas tan ansiosa por proteger a estos humanos con tu vida, te asigno esta tarea a ti".
+
+          "Eh... no creo realmente que todavía me quieran como su guía después de todo lo que ha pasado en estas ruinas... ¿No podrías enviar a Leo, o...?"
+
+          "No, te envío a ti. Considera esto como tu castigo por enfrentarte a mí antes. Por supuesto, no te obligo a ir. Si no quieres aceptar esta tarea, simplemente los ejecutaré ahora mismo y te ahorraré la molestia".
+
+          "¡No!", grita Flower. "¡No, no hagas eso! Vale, ya lo entiendo... Iré... iré con ellos a la fortaleza de los ogros".
+
+          "Muy bien entonces", dice la zorra mientras se da la vuelta para irse. "Leo, te dejo a cargo de darles las instrucciones de su misión. Yo tengo otros asuntos de los que ocuparme".
+
+          "Así que, eh...", nos dice Flower mientras la zorra sale de la habitación. "Supongo que viajaremos juntos un tiempo más..."
+
+          Entonces empieza a reírse nerviosa y antinaturalmente de nuevo. 
+
+          Oh, cielos...
+
+          Incluso sin usar mi estadística de premonición, hay una cosa de la que estoy definitivamente seguro. Este va a ser un viaje de mil demonios.
+    choices:
+      - position: 1
+        text: Siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              storyboard_controls: Jump to frame "Save load game"
+              current_scene: ch9_intro
+              chapter_save: 1
+              checkpoint_rich: 1

@@ -1,0 +1,1785 @@
+scenes:
+  - name: ch11b_credits
+    effects:
+      - set:
+          iap_check_resume: 1
+        condition: iap_checked <> 0 AND iap_checked <> 2
+      - set:
+          first_book_purchased: 1
+          iap_check_resume: 0
+    routes:
+      - condition: first_book_purchased = 1
+        texts:
+          - source: scene_text
+            paragraph: 42
+            text: |-
+              Este marca el final del primer libro de Magium.
+
+              El segundo y tercer libro han sido completados y están listos para desbloquear, pero los libros restantes se publicarán capítulo a capítulo, a medida que los escriba. (la serie principal probablemente tendrá 5 libros en total)
+
+              Si ya pagaste para desbloquear el segundo libro, puedes tocar el botón de abajo para continuar. De lo contrario, necesitarás completar 25 logros del primer libro para desbloquear el segundo.
+
+              Puedes ver cuántos logros más necesitas completar en el menú de logros.
+
+              También me gustaría añadir que te sugiero encarecidamente que guardes la partida ahora en una ranura que no vayas a sobrescribir, si planeas empezar a completar logros, ya que de lo contrario perderás el progreso de tu partida actual y tendrás que terminar el juego otra vez para poder avanzar al siguiente libro.
+
+              También deberías tener cuidado de no desinstalar el juego, ya que todos los libros siguientes se subirán dentro de la misma aplicación, y si desinstalas el juego, todo tu progreso local, incluidos tus logros, se perderá.
+
+              ¡Gracias por jugar!
+
+              P.D. Si disfrutaste el juego, no olvides recomendarlo a tus amigos.
+        choices:
+          - position: 1
+            text: Continuar al libro 2
+            effects:
+              - set:
+                  b1_saved_stats: 1
+                  b1_strength: ${strength_aux}
+                  b1_agility: ${agility_aux}
+                  b1_toughness: ${toughness_aux}
+                  b1_reflexes: ${reflexes_aux}
+                  b1_hearing: ${hearing_aux}
+                  b1_perception: ${perception_aux}
+                  b1_ancient_languages: ${ancient_languages_aux}
+                  b1_combat_technique: ${combat_technique_aux}
+                  b1_premonition: ${premonition_aux}
+                  b1_available_points: ${available_points_aux}
+                  storyboard_controls: Jump to frame "Save load game"
+                  current_scene: b2_ch01a_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+      - condition: nb_of_unlocked_achievements >= 25 AND first_book_purchased = 0
+        texts:
+          - source: scene_text
+            paragraph: 42
+            text: |-
+              Este marca el final del primer libro de Magium.
+
+              El segundo y tercer libro han sido completados y están listos para desbloquear, pero los libros restantes se publicarán capítulo a capítulo, a medida que los escriba. (la serie principal probablemente tendrá 5 libros en total)
+
+              Si ya pagaste para desbloquear el segundo libro, puedes tocar el botón de abajo para continuar. De lo contrario, necesitarás completar 25 logros del primer libro para desbloquear el segundo.
+
+              Puedes ver cuántos logros más necesitas completar en el menú de logros.
+
+              También me gustaría añadir que te sugiero encarecidamente que guardes la partida ahora en una ranura que no vayas a sobrescribir, si planeas empezar a completar logros, ya que de lo contrario perderás el progreso de tu partida actual y tendrás que terminar el juego otra vez para poder avanzar al siguiente libro.
+
+              También deberías tener cuidado de no desinstalar el juego, ya que todos los libros siguientes se subirán dentro de la misma aplicación, y si desinstalas el juego, todo tu progreso local, incluidos tus logros, se perderá.
+
+              ¡Gracias por jugar!
+
+              P.D. Si disfrutaste el juego, no olvides recomendarlo a tus amigos.
+        choices:
+          - position: 1
+            text: Continuar al libro 2
+            effects:
+              - set:
+                  b1_saved_stats: 1
+                  b1_strength: ${strength_aux}
+                  b1_agility: ${agility_aux}
+                  b1_toughness: ${toughness_aux}
+                  b1_reflexes: ${reflexes_aux}
+                  b1_hearing: ${hearing_aux}
+                  b1_perception: ${perception_aux}
+                  b1_ancient_languages: ${ancient_languages_aux}
+                  b1_combat_technique: ${combat_technique_aux}
+                  b1_premonition: ${premonition_aux}
+                  b1_available_points: ${available_points_aux}
+                  storyboard_controls: Jump to frame "Save load game"
+                  current_scene: b2_ch01a_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+      - condition: nb_of_unlocked_achievements < 25 AND first_book_purchased = 0
+        texts:
+          - source: scene_text
+            paragraph: 42
+            text: |-
+              Este marca el final del primer libro de Magium.
+
+              El segundo y tercer libro han sido completados y están listos para desbloquear, pero los libros restantes se publicarán capítulo a capítulo, a medida que los escriba. (la serie principal probablemente tendrá 5 libros en total)
+
+              Si ya pagaste para desbloquear el segundo libro, puedes tocar el botón de abajo para continuar. De lo contrario, necesitarás completar 25 logros del primer libro para desbloquear el segundo.
+
+              Puedes ver cuántos logros más necesitas completar en el menú de logros.
+
+              También me gustaría añadir que te sugiero encarecidamente que guardes la partida ahora en una ranura que no vayas a sobrescribir, si planeas empezar a completar logros, ya que de lo contrario perderás el progreso de tu partida actual y tendrás que terminar el juego otra vez para poder avanzar al siguiente libro.
+
+              También deberías tener cuidado de no desinstalar el juego, ya que todos los libros siguientes se subirán dentro de la misma aplicación, y si desinstalas el juego, todo tu progreso local, incluidos tus logros, se perderá.
+
+              ¡Gracias por jugar!
+
+              P.D. Si disfrutaste el juego, no olvides recomendarlo a tus amigos.
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+  - name: ch11b_clones
+    texts:
+      - source: scene_text
+        paragraph: 2
+        text: |-
+          "¿Cómo supieron que estaríamos aquí?" les pregunta Kate.
+
+          "Todo es gracias a su amiga de ahí," dice el mago de las túnicas verdes, señalando hacia Rose. "Un mendigo la escuchó decirle a una enfermera en el hospital que traería a un sanador experto para atender a los enfermos. Nos vendió la información por una suma razonable, y organizamos el vaciado de las calles junto con los guardias locales, por si el sanador en cuestión era de hecho el que estábamos buscando. Ahora bien, Zack, deberías hacerte a un lado mientras yo me encargo de estos debiluchos. Yo solo debería ser más que suficiente para acabar con ellos."
+
+          "No, no lo eres," dice Daren. "Ya sabemos que tu dios se especializa en ilusiones. Las ilusiones son inútiles contra enemigos que ya las esperan."
+
+          "¿Estás seguro de eso, sanador?" dice el mago de las túnicas verdes, y de repente, cientos de clones tanto de él como de su aliado llenan toda el área del mercado a nuestro alrededor.
+
+          "No te has movido de tu posición original, genio," dice Daren, mientras se lanza hacia él. "Sé cuál es el verdadero."
+
+          Cuando Daren alcanza a los dos magos originales, lanza un tajo con su espada y los atraviesa a ambos de un solo golpe. Sin embargo, en lugar de morir, los dos magos simplemente se desvanecen en el aire.
+
+          "¿Qué significa esto?" pregunta Kate. "Si esos dos eran de hecho ilusiones, ¿significa eso que los magos reales estaban ocultos invisiblemente cuando lanzaron el hechizo de ilusión?"
+      - source: scene_text_2
+        paragraph: 2
+        text: |-
+          "Arraka," digo, "¿por qué no nos dijiste que los magos eran invisibles?"
+
+          "Porque no lo eran," dice Arraka. "Si alguien se ocultara invisiblemente en cualquier lugar, lo habría detectado."
+
+          "Entonces, ¿cómo explicas el hecho de que los que estábamos viendo eran en realidad ilusiones?" pregunto.
+
+          "¿Cómo se supone que yo sepa eso, imbécil?" dice Arraka. "¡Averígualo tú mismo!"
+
+          "¿Puedes al menos averiguar cuáles de estos son los originales?" pregunto.
+
+          "No," dice Arraka. "Nunca me molesté en aprender cómo distinguir entre clones y originales, porque cada vez que alguien lanzaba un hechizo así contra mí, simplemente usaba un hechizo propio para destruirlos a todos al mismo tiempo, y eso era todo."
+
+          "¿Alguien tiene idea de por qué ninguno de los clones nos ha atacado todavía?" nos pregunta Hadrik. "Solo están ahí parados, sonriendo como un montón de idiotas. ¿Creen que están esperando algo?"
+    choices:
+      - position: 1
+        text: Preguntarle a Kate si puede congelar toda el área a nuestro alrededor para encargarse de los clones.
+        effects:
+          - set:
+              current_scene: ch11b_freeze
+      - position: 2
+        text: Intentar concentrarse en encontrar a los originales e ignorar los clones por ahora.
+        effects:
+          - set:
+              current_scene: ch11b_concentrate
+  - name: ch11b_freeze
+    routes:
+      - condition: premonition < 4
+        texts:
+          - source: scene_text
+            paragraph: 3
+            text: |-
+              "Kate," digo, "¿podrías congelar toda el área a nuestro alrededor para encargarte de todos los clones al mismo tiempo?"
+
+              "Sí," dice Kate, "estaba a punto de hacer justo eso."
+
+              Luego envía una poderosa onda de magia congelante a nuestro alrededor, que golpea a todos los clones a la vez. Inmediatamente después de que las ilusiones desaparecen, la onda congelante de Kate invierte su dirección, y nos golpea a todos antes de que tengamos tiempo de reaccionar.
+
+              Mientras los demás se sacuden el hechizo de hielo cada uno a su manera, puedo sentir cómo me congelo lentamente hasta morir, mientras mi corazón late cada vez más lento por segundos.
+
+              "¡Kate, descongélalo, rápido!" dice Daren.
+
+              "¡No puedo!" dice Kate. "¡No sé cómo!"
+
+              Daren corre hacia mí e intenta lanzar algún tipo de hechizo de curación sobre mí, pero ya es demasiado tarde para eso. Ya puedo sentir mi consciencia desvaneciéndose, mientras mi visión comienza a nublarse, poco a poco. Morí poco después, sin siquiera descubrir qué fue lo que devolvió el hechizo de Kate contra nosotros.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de premonición fallida - nivel 4 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: premonition >= 4
+        texts:
+          - source: scene_text
+            paragraph: 4
+            text: |-
+              "Kate," digo, "¿podrías congelar toda el área a nuestro alrededor para encargarte de todos los clones al mismo tiempo?"
+
+              En cuanto dejo de hablar, veo una visión en la que Kate destroza a todos los clones con una onda de hielo. Una vez que todos desaparecen, la onda congelante de Kate rápidamente invierte su dirección, y nos golpea a todos antes de que tengamos tiempo de reaccionar.
+
+              "Sí," me responde Kate, "estaba a punto de hacer justo eso."
+
+              "¡Espera!" grito. "¡No lo hagas!"
+
+              Kate se ve un poco confundida, pero detiene su hechizo justo a tiempo.
+
+              "¿Por qué no?" me pregunta.
+
+              "Acabo de tener una premonición," digo. "Si hubieras lanzado ese hechizo, se habría vuelto contra nosotros y nos habría congelado a todos, justo después de que los clones desaparecieran."
+
+              "Entonces, ¿los clones son una trampa?" pregunta Hadrik.
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              "¡Esperen un momento!" dice Arraka. "¡Creo que lo tengo!"
+
+              "¿Reconoces el hechizo?" pregunta Kate.
+
+              "Sí," dice Arraka. "Este es en realidad uno de los hechizos de ilusión favoritos de Memphir. No me sorprende que haya empezado a enseñárselo a sus seguidores."
+
+              "¿Memphir?" pregunta Hadrik. "¿Ese es el nombre del Dios del Destino?"
+
+              "Sí, ese es," dice Arraka. "El hechizo está diseñado de tal manera que cuando todas las ilusiones son destruidas, los atacantes reciben de vuelta todos los hechizos que lanzaron para matar a los clones. Siempre solía caer en ese estúpido truco."
+
+              "¿Cómo puedes saber que es exactamente el mismo hechizo?" le pregunto.
+
+              "Si prestas mucha atención, verás que todos los clones tienen una firma fácilmente reconocible en sus auras mágicas," dice Arraka. "El flujo de sus auras tiene una especie de movimiento serpenteante. Algo así como una culebra moviéndose entre la hierba. ¿Entienden lo que digo?"
+
+              "Sí, creo que lo entiendo," digo.
+
+              "¡Oye, creo que yo también puedo verlo!" dice Hadrik. "¡Esto es genial! ¡Ahora solo tenemos que ver cuáles de ellos no llevan esta firma, y sabremos quiénes son los originales!"
+
+              "Ajá," dice Arraka. "Buena suerte con eso."
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de premonición exitosa - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch11b_square
+                condition: is_dead = 0
+  - name: ch11b_concentrate
+    texts:
+      - source: scene_text
+        paragraph: 5
+        text: |-
+          "Voy a intentar congelar toda el área a nuestro alrededor, para poder encargarme de todos los clones al mismo tiempo," dice Kate.
+
+          "No, espera," digo. "Creo que deberíamos concentrarnos primero en encontrar a los originales."
+
+          "¿Crees que destruir los clones podría activar una trampa?" dice Kate.
+
+          "No lo sé," digo. "Pero el hecho de que los clones no se muevan en absoluto me hace pensar que al menos están esperando algo. Mientras no estén haciendo nada, creo que deberíamos aprovechar la situación e intentar descifrar su truco antes de enfrentarlos abiertamente."
+
+          "¡Esperen un momento!" dice Arraka. "¡Creo que lo tengo!"
+
+          "¿Descubriste cuáles son los originales?" pregunta Kate.
+      - source: scene_text_2
+        paragraph: 4
+        text: |-
+          "No, ¡pero descubrí qué tipo de hechizo de ilusión están usando!" dice Arraka. "Este es en realidad uno de los favoritos de Memphir. No me sorprende que haya empezado a enseñárselo a sus seguidores."
+
+          "¿Memphir?" pregunta Hadrik. "¿Ese es el nombre del Dios del Destino?"
+
+          "Sí, ese es," dice Arraka. "El hechizo está diseñado de tal manera que cuando todas las ilusiones son destruidas, los atacantes reciben de vuelta todos los hechizos que lanzaron para matar a los clones. Siempre solía caer en ese estúpido truco."
+
+          "¿Cómo puedes saber que es exactamente el mismo hechizo?" le pregunto.
+
+          "Si prestas mucha atención, verás que todos los clones tienen una firma fácilmente reconocible en sus auras mágicas," dice Arraka. "El flujo de sus auras tiene una especie de movimiento serpenteante. Algo así como una culebra moviéndose entre la hierba. ¿Entienden lo que digo?"
+
+          "Sí, creo que lo entiendo," digo.
+
+          "¡Oye, creo que yo también puedo verlo!" dice Hadrik. "¡Esto es genial! ¡Ahora solo tenemos que ver cuáles de ellos no llevan esta firma, y sabremos quiénes son los originales!"
+
+          "Ajá," dice Arraka. "Buena suerte con eso."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_square
+  - name: ch11b_square
+    texts:
+      - source: scene_text
+        paragraph: 6
+        text: |-
+          "¿Por qué dices eso?" dice Kate.
+
+          "Porque ya lo comprobé," dice Arraka. "Dos veces. Ninguno de ellos es el original."
+
+          "¿Estás diciendo que los magos reales nunca estuvieron aquí, y que simplemente lanzaron el hechizo de ilusión desde lejos?" pregunta Daren.
+
+          "No," dice Arraka. "He estado vigilando toda el área a nuestro alrededor desde que noté que las calles estaban vacías, y les garantizo que los únicos magos que estaban lo suficientemente cerca como para lanzar un hechizo de ilusión sobre nosotros fueron los dos que nos emboscaron."
+
+          "Pero eso no tiene sentido," digo. "Si esos dos eran los magos reales, entonces ¿qué les pasó? ¿Simplemente se convirtieron en ilusiones también cuando lanzaron el hechizo?"
+
+          De repente, se me ocurre una idea.
+
+          "Esperen..." digo. "Creo que tengo una pista, pero necesito confirmación antes de estar seguro. Illuna, comprueba mi razonamiento. ¿Podría ser todo esto una ilusión? No solo los clones que tenemos delante, sino todo el mundo a nuestro alrededor también. Ya saben, como aquella vez con el chamán."
+
+          "No, eso es imposible," dice Illuna. "Si se hubiera lanzado un hechizo que afecta la mente de ese calibre sobre nosotros, debería haber habido algún tipo de efecto visual, para que todos lo viéramos, de la misma manera que las cavernas subterráneas se llenaron de humo cuando el chamán lanzó su hechizo. No hubo tal--"
+
+          Illuna se detiene un segundo, mientras la comprensión se apodera de ella.
+      - source: scene_text_2
+        paragraph: 5
+        text: |-
+          "¡La luz verde!" dice. "¡Por supuesto! ¡Debería haberme dado cuenta inmediatamente! Esto también explica por qué su supuesta trampa afectó a Rose. Es porque lo que realmente pasó fue lo contrario. Su hechizo de control mental no pudo actuar sobre Rose, y entonces, a nosotros nos pareció como si hubiera perdido el conocimiento. Probablemente es lo mismo con Flower también."
+
+          "Genial," dice Daren. "Así que estamos de vuelta al punto de partida, entonces. Necesitamos encontrar a los magos reales para poder matarlos y salir de la ilusión."
+
+          "No, no es necesario," dice Illuna. "Solo necesitamos hacer eso con el chamán porque se había atrapado a sí mismo en la ilusión con nosotros para evitar que escapáramos, ¿recuerdan? Ya que los magos no están realmente aquí con nosotros, significa que el propósito principal de esta ilusión no era matarnos, sino ganar tiempo para que pudieran matarnos en el mundo real mientras estábamos indefensos. Esto me lleva a creer que el tiempo fluye a la misma velocidad aquí que en el mundo real, lo cual es diferente de lo que experimentamos en el ritual del chamán."
+
+          "Oh, dioses," dice Kate. "Si eso es cierto, ¡entonces significa que Flower ha estado luchando contra los dos magos sola en el mundo real todo este tiempo!"
+
+          "Probablemente," dice Illuna. "Necesitamos salir de aquí rápido. Todos, cierren los ojos y empiecen a visualizar los momentos antes de que los magos lanzaran la ilusión sobre nosotros. Necesitan hacer esto con la convicción de que la imagen en su cabeza representa el mundo real, y que quieren regresar a él. Si todos hacemos esto a la vez, romperemos el efecto de la ilusión sobre nosotros."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_honor
+  - name: ch11b_honor
+    texts:
+      - source: scene_text
+        paragraph: 7
+        text: |-
+          Todos cerramos los ojos y empezamos a hacer lo que dijo Illuna. Mientras formo una imagen clara de las calles de la ciudad en mi mente, la imagen empieza a volverse cada vez más nítida, hasta que siento que me atrae hacia ella, y de repente me doy cuenta de que mi imaginación se había convertido en realidad sin que yo siquiera lo notara. Al abrir los ojos, me veo de pie en medio de la calle, pero todo se ve muy diferente a como lo recordaba.
+
+          Hay cráteres por todos lados, las paredes de las casas a los lados de la calle están completamente carbonizadas, y hay un enorme dragón esquelético justo frente a nosotros. Rose está de rodillas, llorando, y Flower parece que apenas puede mantenerse en pie, pero está mirando al dragón desafiante. Está cubierta de moretones por todas partes, y su ropa es un completo desastre, pero hay un aura muy intimidante rodeándola, como si estuviera hecha de un fuego más caliente que el de su magia elemental. Cuando Flower siente que finalmente hemos despertado del hechizo de ilusión, se gira hacia nosotros y nos da una sonrisa cansada.
+
+          "¡Rompieron el hechizo!" dice la chica. "Sabía que podían hacerlo. Lo sabía..."
+
+          Al pronunciar las últimas palabras, los ojos de Flower se cierran lentamente, y luego cae al suelo, inconsciente. Daren ahora se apresura a su lado, para protegerla del dragón, en caso de que decida atacarla mientras está indefensa.
+
+          "Fue tan imprudente..." dice Rose, mientras contiene las lágrimas. "Nunca dejó de pelear incluso después de que claramente había excedido sus límites. Estaba intentando desesperadamente protegerlos, incluso a costa de su propia vida..."
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "Está bien," dice Illuna, mientras toma el control del cuerpo de la chica, pero no se levanta del suelo. "La chica solo se desmayó por agotamiento. No va a morir."
+
+          "¿Ves lo que has hecho ahora, idiota?" Zack el nigromante le dice a su aliado. "¡Si el inútil hechizo de tu dios hubiera funcionado como dijiste que lo haría, no estaríamos en este lío!"
+
+          "¡No te atrevas a echarme la culpa a mí!" dice el mago de las túnicas verdes, mientras está bañado en sudor, luciendo como si estuviera a punto de desmayarse de agotamiento también. "Mi hechizo nunca fue diseñado para funcionar contra almas fusionadas. Simplemente apuntó al alma que estaba controlando el cuerpo en ese momento y dejó a la otra en paz. No había forma de que pudiera evitarlo. ¡Tú eres el único culpable de esto, maldito tacaño! Si hubieras usado ese hechizo stillwater de invocación tuyo cuando te lo dije, todos habrían muerto en segundos."
+
+          "Cállate, hereje," dice Zack. "Solo puedo lanzar ese hechizo una vez al día. Sería un insulto al gran Dios de la Muerte Ulruk si desperdiciara su único uso diario tan temprano en la mañana, en gente como ellos."
+
+          "¿Estás bromeando?!" dice el mago de las túnicas verdes. "¿Tienes idea de cuánta energía mágica necesité gastar para mantenerlos en esa ilusión durante tanto tiempo? ¡Tuve que cancelar todas mis protecciones hace dos horas solo para poder lanzar el maldito hechizo! ¡Ni siquiera tengo mi escudo mágico activado ahora mismo!"
+
+          Justo cuando el mago de las túnicas verdes deja de hablar, un cono de hielo le atraviesa la cabeza, y poco después cae al suelo, sin vida.
+      - source: scene_3
+        paragraph: 3
+        text: |-
+          "Gracias por avisarme," dice Kate.
+
+          "¡Maldita!" dice Zack, furioso. "¿No tienes honor?!"
+
+          "Es su propia maldita culpa por no prestar atención durante una pelea," dice Kate. "¡Y no me hables de honor! Tú habrías hecho exactamente lo mismo con nosotros si Flower no nos hubiera protegido mientras estábamos indefensos."
+
+          "¡No me sermonees, maldita!" dice Zack. "¡No hay necesidad de honor cuando se mata a herejes irredimibles como ustedes!"
+    choices:
+      - position: 1
+        text: ¿Cómo sabes que somos irredimibles?
+        effects:
+          - set:
+              current_scene: ch11b_irredeemable
+      - position: 2
+        text: ¿Tu amigo no era también un hereje?
+        effects:
+          - set:
+              current_scene: ch11b_heathen
+      - position: 3
+        text: ¿Y cómo te conviertes en seguidor de Ulruk? ¿Hacen entrevistas para eso?
+        effects:
+          - set:
+              current_scene: ch11b_interviews
+  - name: ch11b_irredeemable
+    texts:
+      - source: scene_text
+        paragraph: 8
+        text: |-
+          "¿Cómo sabes que somos irredimibles?"
+
+          "¡El hecho de que hayan llegado a la madurez y aún no hayan decidido dedicar sus vidas al Dios de la Muerte es prueba suficiente, hereje!" dice Zack. "Pero basta de charla. Voy a enseñarles a todos de primera mano por qué toda su vida hasta este momento fue un error."
+
+          "Illuna, ¿puedes moverte?" pregunta Daren.
+
+          "No," dice Illuna. "La chica llevó su cuerpo mucho más allá de sus límites mientras estábamos en la ilusión. Puedo sentir un dolor en cada hueso y músculo, y ni siquiera puedo mover un dedo. Su cuerpo está cubierto de moretones, su ropa es un desastre, y el amuleto de Arraka está..."
+
+          Se detiene por un momento, y de repente, escuchamos un crujido proveniente del amuleto alrededor de su cuello.
+
+          "Oh..." dice Illuna. "Oh, no..."
+
+          "Aja- AJAJAJA--"
+
+          El amuleto cruje de nuevo, esta vez mucho más violentamente que antes, y la risa de Arraka se intensifica aún más.
+
+          "¡AJAJAJAJAJAJAJAJA!"
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          De repente, el amuleto se rompe completamente, y un aura oscura envuelve a Illuna, mientras el cuerpo de la chica se eleva lentamente en el aire, en posición erguida. Un viento muy poderoso nos sopla en la cara, empujándonos a todos lejos de ella, mientras el cielo se oscurece cada vez más por segundos. Los ojos de la chica ahora están cambiando lentamente de azul brillante a negro absoluto, mientras sonríe ampliamente, mirando a cada uno de nosotros por turno.
+
+          "¡Así que esto es lo que parecen todos en persona!" dice Arraka. "Era un poco difícil saberlo desde dentro del amuleto, guiándome solo por el sentido mágico. Cómo pueden salir cada día sin que los confundan con una compañía de circo me supera."
+
+          "Mira quién habla," dice Hadrik. "Te das cuenta de que literalmente estás vestida como un payaso ahora mismo, ¿verdad?"
+
+          Arraka le sonríe malvadamente a Hadrik.
+
+          "Enano," dice. "¿Estás seguro de que es buena idea estar ahí parado haciendo chistes? ¿No deberías más bien estar comprándome esa cerveza que me debes? Me vendría bien un trago ahora mismo. Eso y una masacre. Todavía no estoy segura con cuál debería empezar."
+
+          "Flower..." dice Kate, débilmente. "¿Qué le pasó a Flower? ¿Dónde están Flower e Illuna?"
+
+          "Oh, están muertas," dice Arraka. "¿O debería decir... 'absorbidas'? Lo que pasó es que me fusioné con sus almas cuando tomé el control de su cuerpo. Ambas son parte de mí ahora."
+
+          ”Entonces, ¿ambas siguen ahí dentro... en algún lugar?" pregunta Kate.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_monster
+  - name: ch11b_heathen
+    texts:
+      - source: scene_text
+        paragraph: 9
+        text: |-
+          "¿Tu amigo no era también un hereje? ¿Por qué habría necesidad de honor al matarlo a él, entonces?"
+
+          "¡Porque a diferencia de ustedes, él estaba sirviendo la causa del Dios de la Muerte!" dice Zack. "Ustedes, por otro lado, están tan más allá de la salvación que solo pueden servirlo a través de sus muertes. Es por lo tanto mi deber enviarlos a él antes de que se desvíen aún más del camino correcto."
+
+          "Illuna, ¿puedes moverte?" pregunta Daren.
+
+          "No," dice Illuna. "La chica llevó su cuerpo mucho más allá de sus límites mientras estábamos en la ilusión. Puedo sentir un dolor en cada hueso y músculo, y ni siquiera puedo mover un dedo. Su cuerpo está cubierto de moretones, su ropa es un desastre, y el amuleto de Arraka está..."
+
+          Se detiene por un momento, y de repente, escuchamos un crujido proveniente del amuleto alrededor de su cuello.
+
+          "Oh..." dice Illuna. "Oh, no..."
+
+          "Aja- AJAJAJA--"
+
+          El amuleto cruje de nuevo, esta vez mucho más violentamente que antes, y la risa de Arraka se intensifica aún más.
+
+          "¡AJAJAJAJAJAJAJAJA!"
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          De repente, el amuleto se rompe completamente, y un aura oscura envuelve a Illuna, mientras el cuerpo de la chica se eleva lentamente en el aire, en posición erguida. Un viento muy poderoso nos sopla en la cara, empujándonos a todos lejos de ella, mientras el cielo se oscurece cada vez más por segundos. Los ojos de la chica ahora están cambiando lentamente de azul brillante a negro absoluto, mientras sonríe ampliamente, mirando a cada uno de nosotros por turno.
+
+          "¡Así que esto es lo que parecen todos en persona!" dice Arraka. "Era un poco difícil saberlo desde dentro del amuleto, guiándome solo por el sentido mágico. Cómo pueden salir cada día sin que los confundan con una compañía de circo me supera."
+
+          "Mira quién habla," dice Hadrik. "Te das cuenta de que literalmente estás vestida como un payaso ahora mismo, ¿verdad?"
+
+          Arraka le sonríe malvadamente a Hadrik.
+
+          "Enano," dice. "¿Estás seguro de que es buena idea estar ahí parado haciendo chistes? ¿No deberías más bien estar comprándome esa cerveza que me debes? Me vendría bien un trago ahora mismo. Eso y una masacre. Todavía no estoy segura con cuál debería empezar."
+
+          "Flower..." dice Kate, débilmente. "¿Qué le pasó a Flower? ¿Dónde están Flower e Illuna?"
+
+          "Oh, están muertas," dice Arraka. "¿O debería decir... 'absorbidas'? Lo que pasó es que me fusioné con sus almas cuando tomé el control de su cuerpo. Ambas son parte de mí ahora."
+
+          ”Entonces, ¿ambas siguen ahí dentro... en algún lugar?" pregunta Kate.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_monster
+  - name: ch11b_interviews
+    texts:
+      - source: scene_text
+        paragraph: 10
+        text: |-
+          "¿Y cómo te conviertes en seguidor de Ulruk? ¿Hacen entrevistas para eso?"
+
+          "¡No te burles del todopoderoso dios Ulruk, hereje!" dice Zack. "El Dios de la Muerte da la bienvenida a todos los que dedicarían sus vidas a servirlo, sin excepción. Incluso si no le son útiles en vida, pueden servirlo a través de sus muertes. Y eso es exactamente lo que todos ustedes estarán haciendo, muy pronto."
+
+          "Illuna, ¿puedes moverte?" pregunta Daren.
+
+          "No," dice Illuna. "La chica llevó su cuerpo mucho más allá de sus límites mientras estábamos en la ilusión. Puedo sentir un dolor en cada hueso y músculo, y ni siquiera puedo mover un dedo. Su cuerpo está cubierto de moretones, su ropa es un desastre, y el amuleto de Arraka está..."
+
+          Se detiene por un momento, y de repente, escuchamos un crujido proveniente del amuleto alrededor de su cuello.
+
+          "Oh..." dice Illuna. "Oh, no..."
+
+          "Aja- AJAJAJA--"
+
+          El amuleto cruje de nuevo, esta vez mucho más violentamente que antes, y la risa de Arraka se intensifica aún más.
+
+          "¡AJAJAJAJAJAJAJAJA!"
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          De repente, el amuleto se rompe completamente, y un aura oscura envuelve a Illuna, mientras el cuerpo de la chica se eleva lentamente en el aire, en posición erguida. Un viento muy poderoso nos sopla en la cara, empujándonos a todos lejos de ella, mientras el cielo se oscurece cada vez más por segundos. Los ojos de la chica ahora están cambiando lentamente de azul brillante a negro absoluto, mientras sonríe ampliamente, mirando a cada uno de nosotros por turno.
+
+          "¡Así que esto es lo que parecen todos en persona!" dice Arraka. "Era un poco difícil saberlo desde dentro del amuleto, guiándome solo por el sentido mágico. Cómo pueden salir cada día sin que los confundan con una compañía de circo me supera."
+
+          "Mira quién habla," dice Hadrik. "Te das cuenta de que literalmente estás vestida como un payaso ahora mismo, ¿verdad?"
+
+          Arraka le sonríe malvadamente a Hadrik.
+
+          "Enano," dice. "¿Estás seguro de que es buena idea estar ahí parado haciendo chistes? ¿No deberías más bien estar comprándome esa cerveza que me debes? Me vendría bien un trago ahora mismo. Eso y una masacre. Todavía no estoy segura con cuál debería empezar."
+
+          "Flower..." dice Kate, débilmente. "¿Qué le pasó a Flower? ¿Dónde están Flower e Illuna?"
+
+          "Oh, están muertas," dice Arraka. "¿O debería decir... 'absorbidas'? Lo que pasó es que me fusioné con sus almas cuando tomé el control de su cuerpo. Ambas son parte de mí ahora."
+
+          ”Entonces, ¿ambas siguen ahí dentro... en algún lugar?" pregunta Kate.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_monster
+  - name: ch11b_monster
+    texts:
+      - source: scene_text
+        paragraph: 11
+        text: |-
+          "Bueno, supongo que podrías decirlo así," dice Arraka, "si quieres ponerte técnica, pero el caso es que--"
+
+          "¡Monstruo!" grita Zack, de repente, mientras señala hacia Arraka. "¡Abominación! ¡Fuera, demonio inmundo!"
+
+          De repente, el dragón esquelético, que no se había movido ni un centímetro desde que escapamos de la ilusión, bate sus alas y se lanza hacia Arraka, rugiendo con fuerza. Justo cuando la alcanza, el dragón explota en miles de pedazos diminutos que se esparcen por toda el área a nuestro alrededor.
+
+          "Vamos, por favor..." dice Arraka.
+
+          Mientras los huesos del dragón vuelan en todas direcciones, el suelo comienza a temblar, y varios esqueletos empiezan a surgir lentamente de él. No me toma mucho darme cuenta de que esto es obra del nigromante, y que todos los esqueletos frente a nosotros son stillwaters.
+
+          "¿Lo entiendes ahora, banshee?" dice Zack. "¿Entiendes a quién te enfrentas? ¡Este es el verdadero poder del Dios de la Muerte! Si te arrodillas ahora y suplicas el perdón de Ulruk, quizás tenga a bien concederte una muerte rápida e indolora."
+
+          Arraka ignora completamente al mago, eligiendo en cambio mirar fijamente a uno de los esqueletos que han surgido del suelo.
+      - source: scene_text_2
+        paragraph: 8
+        text: |-
+          "¡Esperen un momento!" dice Arraka. "¡Te conozco! ¡Eres Vallen, verdad? ¡Vallen patas cortas que no podía cantar afinado ni para salvar su vida! No vas a hacerme daño, ¿verdad? ¿Recuerdas todos esos buenos ratos que pasamos durante el invierno inmóvil? ¿Recuerdas aquella vez que tuvimos que sacarte de un estanque porque te caíste mientras practicabas tu hechizo para volar y de repente recordaste que no sabías nadar? ¿Recuerdas cómo nos burlábamos de ti porque siempre caminabas raro después de gastar toda tu energía mágica? ¿Recuerdas cuando te até a un árbol y te obligué a mirar mientras asesinaba lentamente a todos tus amigos hasta que pudieras dar todas las notas de esa canción infantil sobre el león y el cordero? Buenos tiempos, ¿eh? A ver, ¿cómo era esa canción?"
+
+          Arraka se aclara la garganta y empieza a cantar.
+
+          "Oh, había un cordero, un cordero, un cordero," canta. "¡Y ese cordero tenía una lana tan blanca y brillante!"
+
+          Mientras Arraka canta la canción, el esqueleto llamado Vallen empieza a temblar incontrolablemente, y se lleva ambas manos a la cabeza, como si tuviera un intenso dolor de cabeza. Eventualmente, su dolor se convierte en rabia, y ruge con fuerza mientras empieza a disparar fuego de sus manos. El fuego simplemente se desliza por el escudo mágico de Arraka, y ella actúa como si nada hubiera pasado, continuando con su canción.
+      - source: scene_3
+        paragraph: 4
+        text: |-
+          "¿Por qué están ahí parados, idiotas?!" les pregunta Zack a los otros esqueletos. "¡Atáquenla! ¡Mátenla!"
+
+          Los esqueletos empiezan a lanzar hechizos contra Arraka, atacándola con todo tipo de magia elemental simultáneamente, mientras también usan hechizos para debilitar sus defensas. Arraka actúa como si ni siquiera notara la avalancha de hechizos que están siendo lanzados sobre ella, y continúa cantando sin ninguna interrupción.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_sonic
+  - name: ch11b_sonic
+    texts:
+      - source: scene_text
+        paragraph: 12
+        text: |-
+          "Ya puedes dejar tu teatrito, banshee," dice Zack. "Puedo ver a través de ti. Aunque estés actuando calmada y segura, la realidad es que apenas puedes resistir la avalancha de ataques que te están lanzando, y no tienes forma de contraatacar. Como mis esqueletos ahora están completamente protegidos contra ataques sónicos, ¡podrías decir que se han vuelto casi indestructibles! No hay nada que puedas hacer para dañarlos."
+
+          Arraka deja de cantar y le sonríe maliciosamente al nigromante.
+
+          "Oh, ¿dices que están protegidos contra ataques sónicos?" dice, con tono burlón, mientras los esqueletos continúan atacándola con todo lo que tienen. "¡Qué impresionante! Verdaderamente, eres un mago entre magos. Pero dime, nigromante, ¿también consideraste proteger a tus títeres contra piedrecitas?"
+
+          "¿Qué clase de pregunta es esa, pequeña--" empieza a decir Zack, pero Arraka no le da la oportunidad de terminar su pregunta.
+
+          Mientras el nigromante hablaba, Arraka hizo flotar algunas piedrecitas del suelo hasta su mano, y luego empezó a lanzarlas con los dedos hacia cada uno de los esqueletos. Cuando las piedrecitas los alcanzaron, los esqueletos explotaron, pero esta vez en pedazos tan pequeños que bien podrían confundirse con motas de polvo.
+
+          Cuando el nigromante vio lo que pasó, se le cayó la mandíbula, y no pudo articular una palabra más. Estaba en un shock demasiado grande.
+      - source: scene_text_2
+        paragraph: 9
+        text: |-
+          "Sí, adelante, empaqueta eso y envíaselo al viejo Ulruk como regalo," dice Arraka, mientras señala hacia los montones de polvo en el suelo. "Dile que es de parte de Arraka. Dile que debería esperar muchos más regalos de mi parte en el futuro cercano. Dile que una vez que termine con el plano terrenal, le haré una visita. Lo visitaré a él, visitaré a Memphir, visitaré a cada uno de los supuestos dioses que creyeron que sería una buena broma hacer que me prohibieran el acceso al plano mágico junto con todas las demás banshees existentes. ¡Y entonces podremos hacer una fiesta juntos, mientras recordamos tiempos ya olvidados!"
+
+          "¡Cállate!" dice Daren a Arraka de repente, mientras empieza a caminar hacia ella, con una mirada furiosa en su rostro. "¡Me importan un comino tu pasado o tus vendettas personales! ¡Devuélvelas, me oyes! ¡Devuelve a las dos ahora mismo!"
+
+          "¿Disculpa?" dice Arraka.
+
+          "¡Sabes muy bien de qué estoy hablando!" dice Daren. "¡Flower e Illuna! ¡Devuélvelas a ambas ahora mismo!"
+
+          "¿Qué, además de feo eres estúpido?" dice Arraka. "¿No acabo de decirte que absorbí sus almas cuando tomé el control del cuerpo? ¿Qué esperas que haga, que las corte de mí con un cuchillo de carnicero?"
+
+          "¡Si no vas a dejarlas ir, entonces te obligaré a hacerlo!" dice Daren, mientras saca su espada. "¡Prepárate, banshee!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_murder
+  - name: ch11b_murder
+    texts:
+      - source: scene_text
+        paragraph: 13
+        text: |-
+          "Entonces, masacre será," dice Arraka, con una sonrisa, mientras Daren se lanza hacia ella.
+
+          Antes de que siquiera dé tres pasos, Daren de repente empieza a marchitarse como una planta, a un ritmo increíblemente rápido. En cuestión de segundos, lo único que queda de él es su armadura, ya que el resto de su cuerpo se había convertido completamente en polvo.
+
+          "No..." dice Kate, mientras se lleva la mano a la boca. "¡¡No!!"
+
+          Conjura cien carámbanos que apunta hacia Arraka, pero antes de que pueda atacarla con ellos, se marchita igual que Daren, y en cuestión de segundos, no queda nada de ella excepto un montón de polvo.
+
+          "¡¡No!!" grita Rose, mientras empieza a llorar. "¡Por favor, para! ¡¡Por favor!!"
+
+          "¿Qué te pasa, Hadrik?" dice Arraka, mientras sonríe malvadamente. "¿No vas a mostrarme ese espíritu de lucha de gigante del que tanto te gusta presumir? ¡Estoy justo aquí! ¿Qué estás esperando?"
+
+          "Te voy a mostrar espíritu de lucha, vieja bruja arrogante," dice Hadrik, mientras un hilillo de sudor le corre por la sien, y se lanza hacia Arraka, con los puños listos.
+      - source: scene_text_2
+        paragraph: 10
+        text: |-
+          Al igual que los dos anteriores, Hadrik rápidamente se convierte en polvo, y lo único que queda de él es su armadura de cuero y sus botas.
+
+          "Por favor..." dice Rose de nuevo, esta vez con una voz mucho más débil que antes.
+
+          Están muertos. Todos murieron justo frente a mí. ¿Cómo puede ser esto? ¿Es esta otra ilusión? ¡Tiene que serlo! ¡Eso es! ¡Esto debe ser una ilusión!
+
+          Cierro los ojos e intento visualizar el mundo real en mi mente. Intento hacer la imagen lo más clara posible, e intento lanzarme dentro de ella, justo como hice antes, pero no pasa nada. No pasa nada...
+
+          "No irás en serio a cerrar los ojos y pretender que no estoy aquí, ¿verdad?" me dice Arraka. "Vamos, saca tu daga. No es divertido matarte si ni siquiera te defiendes."
+    choices:
+      - position: 1
+        text: Sacar mi daga y atacar a Arraka
+        effects:
+          - set:
+              current_scene: ch11b_dagger
+      - position: 2
+        text: No voy a darte esa satisfacción.
+        effects:
+          - set:
+              current_scene: ch11b_satisfaction
+  - name: ch11b_satisfaction
+    texts:
+      - source: scene_text
+        paragraph: 14
+        text: |-
+          "No voy a darte esa satisfacción."
+
+          "Hmph," dice Arraka. "En realidad iba a matarte lentamente para atormentar a tu amiga de ahí, pero no es lo mismo si no planeas defenderte."
+
+          Luego agita la mano hacia Rose y la mata de la misma forma que mató a todos los demás.
+
+          "Bueno, fue un viaje divertido mientras duró, Barry," dice Arraka. "El viaje puede terminar para ti hoy, pero no te preocupes, ¡siempre vivirás en mi memoria!"
+
+          Agita la mano hacia mí, y puedo sentir cada parte de mi cuerpo secándose rápidamente, mientras mi visión empieza a nublarse. Las palabras de Arraka son lo último que escucho antes de perder completamente la consciencia.
+
+          "Hasta la vista, Barry," dice Arraka. "¡Ha sido un placer!"
+    choices:
+      - position: 1
+        text: Reiniciar juego
+        effects:
+          - set:
+              current_scene: ch1_intro1
+              storyboard_controls: Jump to frame "Chapter 1"
+      - position: 2
+        text: Cargar desde el último punto de control
+        effects:
+          - set:
+              chapter_load: 1
+              storyboard_controls: Jump to frame "Save load game"
+      - position: 3
+        text: Cargar partida
+        effects:
+          - set:
+              storyboard_controls: Jump to frame "Save load game"
+  - name: ch11b_dagger
+    texts:
+      - source: scene_text
+        paragraph: 15
+        text: |-
+          Saco mi daga y miro a Arraka directamente a los ojos.
+
+          "¡Muy bien, entonces!" dice Arraka, sonriendo. "Aquí está, Barry. Un duelo épico de los tiempos en gestación. Héroe contra villana. Banshee contra lessathi. Los bardos cantarán canciones sobre nosotros durante miles de años. ¡Vamos, hagámoslo!"
+
+          No voy a arreglar nada si me quedo aquí deprimiéndome. No espera que yo sea una amenaza. Está demasiado confiada. Quizás pueda usar eso en su contra de alguna manera. Quizás si la mato, todo volverá a la normalidad. Quizás si ella muere, sus hechizos se deshagan y todos vuelvan a la vida. No lo sabré hasta que lo intente.
+
+          Me lanzo hacia la banshee, pero de repente siento un dolor agudo en el estómago, cuando una roca vuela hacia mí y me tira de espaldas.
+
+          "Oh, lo siento, ¿fue demasiado brusco?" dice Arraka, mientras lucho por recuperar el aliento. "¡No estoy exactamente segura de cuánto daño puedes aguantar, ya que nunca he luchado contra un debilucho como tú antes!"
+
+          "¡Por favor, déjalo en paz!" grita Rose, mientras las lágrimas siguen cayendo de sus ojos.
+
+          "No querría matarte de golpe," dice Arraka. "Deberíamos disfrutar al máximo, ¿sabes lo que digo?"
+
+          Luego lanza otra roca justo debajo de mi pecho, y puedo sentir el aliento abandonándome otra vez.
+
+          "¡Para!" grita Rose. "¡Le estás haciendo daño!"
+      - source: scene_text_2
+        paragraph: 11
+        text: |-
+          "Vaya," dice Arraka. "Bueno, siempre supe que eras un debilucho, pero nunca imaginé que sería tan malo. Es doloroso de ver, de verdad. Creo que simplemente voy a ahorrarte la vergüenza y matarte ahora mismo."
+
+          "¡No, no lo hagas!" grita Rose tan fuerte como puede.
+
+          "¡Adiós, Barry!" dice Arraka, mientras agita la mano hacia mí, y puedo sentir todo mi cuerpo empezando a secarse rápidamente. "¡Fue divertido mientras duró!"
+
+          "¡Para!" grita Rose de nuevo, y justo cuando los últimos ecos de sus palabras se desvanecen, todo a mi alrededor se congela en su lugar.
+
+          Mi cuerpo ya no se está secando, Arraka no se mueve, y las lágrimas de Rose están flotando en el aire. ¿Es esto algo que normalmente pasa cuando mueres? ¿Se supone que el tiempo se siente más lento mientras experimentas tus últimos momentos? No lo sabría. Nunca he muerto antes.
+
+          De repente, todo empieza a moverse en reversa, mientras me encuentro presenciando todos los eventos que llevaron a mi muerte. Veo a Arraka golpeándome con las rocas, y luego la veo matar a Hadrik, y a Kate, y luego a Daren. La veo matando a los esqueletos stillwater y luego la veo liberándose del amuleto. ¿Es esto lo que llaman ver tu vida pasar frente a tus ojos?
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_weaver
+  - name: ch11b_weaver
+    texts:
+      - source: scene_text
+        paragraph: 16
+        text: |-
+          Vaya, esto es bastante entretenido, la verdad. Nunca supe que morir pudiera ser tan divertido. Eh, mira, esa es Flower luchando contra el dragón esquelético. ¿Cómo demonios estoy viendo esto? ¿No se supone que yo estaba en la ilusión mientras todo esto pasaba? Ahora los cráteres están desapareciendo uno por uno. Y... hemos vuelto al momento en que los dos magos nos tendieron la emboscada.
+
+          La cadena de eventos que se despliega ante mis ojos se detiene, y durante unos segundos, me encuentro en un estado congelado otra vez, en el momento exacto después de que los dos magos nos emboscaron. Entonces, de repente, el tiempo empieza a moverse de nuevo, y todos están mirando a su alrededor, con expresiones muy confusas en sus caras.
+
+          Espera un momento... ¿Es esto posible? ¿No fue solo mi imaginación? ¿Me estás diciendo que acabo de presenciar el tiempo revirtiéndose y que todos aún recuerdan lo que pasó?
+
+          No tengo mucho tiempo para pensar en lo que pasó, porque mis sospechas se confirman de repente por una Arraka enfurecida.
+
+          "¿¡Una tejedora del tiempo!?" grita Arraka desde su amuleto. "¿¡Me estás tomando el pelo!? ¿Y era Rose, de entre todas las personas? ¡Ustedes sabían esto, ¿verdad?! ¡Me tendieron una trampa! ¡Sabían que esto pasaría! ¡Me dejaron escapar a propósito para poder reírse de mí, ¿verdad?! ¡Pues ¿saben qué?! ¡Se acabó el ser amable! ¡La próxima vez que salga, les voy a arrancar cada hueso de sus cuerpos y haré que sus familias lo vean! ¡Van a suplicarme que les dé las muertes fáciles que les di hoy! ¿Me oyen? ¡Voy a hacer de sus vidas un infierno! ¡Deja de sonreírme, estúpido enano de pacotilla!"
+      - source: scene_text_2
+        paragraph: 12
+        text: |-
+          "Ya es suficiente, Arraka," dice Illuna. "No estoy segura de qué pasó exactamente después de que escapaste del amuleto, pero creo que puedo hacerme una idea general por lo que acabas de decir. Perdiste. Ganamos. Supéralo. Si escucho más de tus lloriqueos, voy a cerrar este amuleto y nunca más lo abriré. ¿Entiendes?"
+
+          Arraka no dice nada, pero no necesito ver su cara para saber que debe estar echando humo ahora mismo.
+
+          "¿Estoy... vivo?" dice el mago de túnicas verdes. "Pero... ¿cómo?"
+
+          "¡Fue la maldita!" dice Zack, mientras señala hacia Rose. "¡Lo vi todo suceder ante mis ojos! ¡Revirtió el tiempo! ¿Sabes lo que esto significa? ¿Sabes lo que significaría si alguno de nuestros dioses pudiera hacerse con este tipo de poder?"
+
+          Antes de que el mago de túnicas verdes tenga tiempo de responder a la pregunta, un cono de hielo le atraviesa la cabeza, y muere al instante.
+
+          "Tu amigo realmente no debería habernos dicho que canceló todos sus hechizos de protección hace dos horas," Kate le dice al nigromante. "Eso es prácticamente pedir que te maten una y otra vez."
+
+          "Ya no me importa esa patética excusa de mago," dice Zack. "Lo que me importa más que nada ahora es la mujer con la que viajan. Entréguenla pacíficamente, y haré que sus muertes sean rápidas."
+
+          "Es una decisión difícil de tomar," dice Hadrik, con una sonrisa, "pero me temo que vamos a tener que rechazar tu generosa oferta."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_safety
+  - name: ch11b_safety
+    texts:
+      - source: scene_text
+        paragraph: 17
+        text: |-
+          "¡Que así sea, entonces!" dice Zack, y empieza de nuevo con la invocación de sus esqueletos stillwater.
+
+          "¡Ah, no, eso sí que no!" dice Hadrik, y se lanza hacia el nigromante para matarlo antes de que complete el hechizo, pero uno de los esqueletos, que solo había sacado la mitad superior de su cuerpo del suelo, lanza un poderoso hechizo de viento que envía al enano volando de vuelta hacia nosotros.
+
+          "¡Rose, ponte a salvo!" dice Daren. "Puede que el nigromante y sus esqueletos no puedan hacerte daño debido al hechizo del torneo, pero no se puede decir lo mismo de nosotros. Si te quedas demasiado cerca de nosotros arriesgarás quedar atrapada en el fuego cruzado."
+
+          "De acuerdo," dice Rose, mientras se dirige hacia el extremo opuesto de la plaza del mercado.
+
+          Una vez que los esqueletos han salido completamente a la superficie, dos de ellos empiezan a atacarnos simultáneamente con una ráfaga de hechizos de fuego y agua, mientras otro crea una barrera mágica alrededor de él y todos los demás stillwaters. Daren usa su escudo para crear su propia barrera mágica a nuestro alrededor, pero parece que no podrá mantenerla mucho más tiempo si los stillwaters siguen atacando a este ritmo.
+      - source: scene_text_2
+        paragraph: 13
+        text: |-
+          "Si alguien tiene alguna idea de cómo podemos salir de esta con vida, ahora sería un buen momento para hacérnoslo saber," dice Daren, mientras dos paredes de roca recién formadas se cierran sobre su barrera, intentando atravesarla por fuerza bruta.
+
+          "No podemos luchar contra ellos de frente," dice Illuna. "Necesitamos concentrarnos en descubrir sus debilidades. Puede que sean stillwaters, pero siguen siendo solo esqueletos. Si los examinamos cuidadosamente, seguro que descubriremos una o dos cosas que podamos usar a nuestro favor."
+
+          "Bueno, no es que os esté metiendo prisa ni nada," dice Daren, "pero dudo que pueda mantener esta barrera ni un minuto más. Siendo realista, probablemente se romperá mucho antes que eso. Así que, sí, si tenéis pensado buscar puntos débiles, más vale que lo hagáis rápido."
+
+          Illuna tiene razón. Aunque sean stillwaters, sus frágiles cuerpos no muertos les dejarán con algunas debilidades explotables. Azarius nos lo demostró. Incluso si el nigromante ha aprendido de sus errores pasados y los ha protegido contra ataques sónicos, aún debería haber algo que pudiéramos aprovechar. Sin mencionar que el hechizo del nigromante solo dura cinco minutos y está limitado a un uso por día, así que salvo más reversiones temporales inesperadas, deberíamos estar a salvo si logramos resistir durante toda la duración del hechizo.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_emergency
+  - name: ch11b_emergency
+    texts:
+      - source: scene_text
+        paragraph: 18
+        text: |-
+          Mientras examino a los esqueletos cuidadosamente, noto algo peculiar en ellos. Aunque sus auras se sienten similares a la de Eiden, su energía mágica se siente como si estuviera fugándose de sus cuerpos a un ritmo muy rápido. Si tuviera que aventurar una suposición de por qué está pasando eso, diría que lo más probable es que sea porque sus nuevos cuerpos no pueden manejar la tremenda cantidad de energía que tienen a su disposición. Sinceramente me sorprende que mi dispositivo de estadísticas no esté reaccionando a nada de esto. Habría esperado que estuviera pitando como loco a estas alturas.
+
+          Saco mi potenciador de estadísticas para echarle un vistazo, y descubro para mi sorpresa que aunque no tengo puntos nuevos para gastar, hay un mensaje parpadeante en la esquina de la pantalla que dice: 'Modo de emergencia disponible. Toca aquí para activar."
+
+          ¿Modo de emergencia? ¿Es esto algo que solo se puede activar cuando el dispositivo tiene acceso a una gran cantidad de energía? Si es así, ¿entonces es esto lo que hizo Eiden para potenciar mi dispositivo después de llenarlo de energía antes de mi pelea con el dragón?
+
+          Desafortunadamente, no tengo mucho tiempo para pensarlo. Voy a tener que confiar en mi instinto aquí. Y mi instinto me dice que debería aprovechar esta oportunidad mientras la tenga.
+      - source: scene_text_2
+        paragraph: 14
+        text: |-
+          Al tocar el mensaje del modo de emergencia, de repente siento una gran cantidad de energía recorriendo mi cuerpo, similar a lo que pasó antes de mi pelea con el dragón, y justo como la última vez, me doy cuenta de que ahora tengo acceso a un impresionante repertorio de hechizos, así como el conocimiento necesario para poder lanzarlos. Por un momento, pude ver dos estadísticas adicionales mostrándose en la pantalla del dispositivo, junto a las nueve existentes. Las estadísticas se llamaban 'Poder mágico' y 'Conocimiento mágico', pero desaparecieron casi tan rápido como aparecieron.
+
+          Creo que estoy empezando a entender lo que está pasando aquí. Este 'Modo de emergencia' de alguna manera potencia dos estadísticas ocultas a las que normalmente no tengo acceso, pero solo lo hace temporalmente, cuando el dispositivo obtiene un excedente de energía que no puede asimilar inmediatamente. Así es como Eiden potenció mi dispositivo para mi pelea con Tyrath. Estoy seguro. La sensación que tengo es exactamente la misma que entonces, aunque no parece que tenga acceso a tantos hechizos como la última vez.
+
+          Esta vez, parece que no tengo disponibles hechizos de vuelo ni de teletransporte, así que supongo que tendré que moverme a la antigua usanza. También me faltan algunos de los hechizos más grandes a los que tenía acceso la última vez, y puedo sentir que el poder detrás de cada uno de mis hechizos es significativamente más débil que cuando Eiden potenció el dispositivo.
+      - source: scene_3
+        paragraph: 5
+        text: Independientemente, esta es la mejor oportunidad que tengo para darle la vuelta a la situación, y necesito aprovecharla al máximo. Primero tendré que decidir si quiero enfrentarme al enemigo solo, o si debería intentar trabajar con todos como equipo para eliminar a los esqueletos. Trabajar en equipo tiene sus ventajas, pero también significa que puede que me vea obligado a limitar la potencia de fuego de algunos de mis hechizos para evitar poner en peligro a mis compañeros. Sin embargo, si los convenzo de esperar aquí, puedo proporcionarles varias protecciones que los mantendrán a salvo y fuera de mi camino durante la pelea.
+    choices:
+      - position: 1
+        text: Luchar contra los esqueletos solo
+        effects:
+          - set:
+              current_scene: ch11b_alone
+      - position: 2
+        text: Luchar contra los esqueletos en equipo
+        effects:
+          - set:
+              current_scene: ch11b_team
+  - name: ch11b_alone
+    texts:
+      - source: scene_text
+        paragraph: 19
+        text: |-
+          No estoy realmente acostumbrado a trabajar en equipo cuando se trata de usar ataques mágicos. Es mejor si hago esto solo.
+
+          Hay cinco stillwaters en total, de los cuales cuatro parecen ser elementalistas que tienen maestría sobre un elemento mágico diferente cada uno, y el quinto parece estar especializado en apoyar a los demás, ya sea debilitando las defensas del enemigo o lanzando protecciones sobre sus aliados. Dado su alineación perfecta, voy a asumir que formaban parte de un escuadrón durante el invierno inmóvil, y que murieron juntos durante una de sus misiones.
+
+          Sin embargo, los cinco combinados no están ni cerca del nivel de Eiden. Puede que tengan mucho poder y energía mágica, pero aparte de eso, no son diferentes de los magos normales. Los elementalistas no tienen control sobre más de un elemento, el mago de apoyo no lanza otros hechizos aparte de aquellos en los que se especializa, y ninguno de ellos parece ser capaz de ignorar las leyes de la magia de la misma manera que Eiden.
+      - source: scene_text_2
+        paragraph: 15
+        text: |-
+          Mientras tanto, el modo de emergencia de mi dispositivo de estadísticas me da acceso a los cuatro elementos mágicos tradicionales, así como a los no tradicionales como el hielo, el ácido y la electricidad. También creo que mi nivel de poder actual es algo comparable al de cada stillwater, pero no puedo estar cien por cien seguro de eso porque nunca he tenido la oportunidad de luchar contra magos en igualdad de condiciones antes.
+
+          La cuestión ahora es cómo planeo usar todo este poder. Si voy con todo y uso mis hechizos más fuertes, hay un gran riesgo de que termine dañando a algunos de los civiles de la ciudad. Las calles pueden haberse vaciado, pero seguro hay algunos locales aún refugiados en las casas cercanas, y realmente no puedo garantizar su seguridad una vez que empiece a hacer caer meteoros del cielo.
+    choices:
+      - position: 1
+        text: Ignorar a los civiles. Lanzar todos mis hechizos más fuertes.
+        effects:
+          - set:
+              current_scene: ch11b_strongest
+              ch11_strategy: 1
+      - position: 2
+        text: Solo lanzar los hechizos que no arriesguen herir a civiles.
+        effects:
+          - set:
+              current_scene: ch11b_civilians
+              ch11_strategy: 2
+  - name: ch11b_team
+    texts:
+      - source: scene_text
+        paragraph: 20
+        text: |-
+          Sería demasiado arriesgado luchar contra todos ellos yo solo. Coordinar mis ataques con los demás debería definitivamente aumentar nuestras posibilidades de victoria.
+
+          Hay cinco stillwaters en total, de los cuales cuatro parecen ser elementalistas que tienen maestría sobre un elemento mágico diferente cada uno, y el quinto parece estar especializado en apoyar a los demás, ya sea debilitando las defensas del enemigo o lanzando protecciones sobre sus aliados. Dado su alineación perfecta, voy a asumir que formaban parte de un escuadrón durante el invierno inmóvil, y que murieron juntos durante una de sus misiones.
+
+          Sin embargo, los cinco combinados no están ni cerca del nivel de Eiden. Puede que tengan mucho poder y energía mágica, pero aparte de eso, no son diferentes de los magos normales. Los elementalistas no tienen control sobre más de un elemento, el mago de apoyo no lanza otros hechizos aparte de aquellos en los que se especializa, y ninguno de ellos parece ser capaz de ignorar las leyes de la magia de la misma manera que Eiden.
+      - source: scene_text_2
+        paragraph: 16
+        text: |-
+          Mientras tanto, el modo de emergencia de mi dispositivo de estadísticas me da acceso a los cuatro elementos mágicos tradicionales, así como a los no tradicionales como el hielo, el ácido y la electricidad. También creo que mi nivel de poder actual es algo comparable al de cada stillwater, pero no puedo estar cien por cien seguro de eso porque nunca he tenido la oportunidad de luchar contra magos en igualdad de condiciones antes.
+
+          La cuestión ahora es cuál debería ser el enfoque de nuestra pelea. Si nuestro objetivo es simplemente ganar tiempo hasta que el hechizo del nigromante se agote, entonces nuestra mejor apuesta sería seguir reforzando la barrera de Daren, mientras atacamos a los esqueletos desde lejos. Nuestro objetivo principal en ese caso debería ser el stillwater de apoyo, ya que sería el que estaría constantemente intentando debilitar nuestra barrera, y ya que matar al nigromante no cancelaría realmente su hechizo antes de su límite de tiempo.
+
+          Si nuestro objetivo fuera en cambio eliminar a los stillwaters directamente, nuestra mejor apuesta probablemente sería apuntar al nigromante, ya que la prioridad principal de los esqueletos sería defender a su maestro, y esto serviría para romper su ritmo.
+    choices:
+      - position: 1
+        text: Intentar ganar tiempo hasta que el hechizo se agote
+        effects:
+          - set:
+              current_scene: ch11b_buy
+              ch11_strategy: 3
+      - position: 2
+        text: Intentar eliminar a los stillwaters directamente
+        effects:
+          - set:
+              current_scene: ch11b_directly
+              ch11_strategy: 4
+  - name: ch11b_strongest
+    texts:
+      - source: scene_text
+        paragraph: 21
+        text: |-
+          "Chicos, tengo un plan," digo. "Pero necesitaré hacer esto solo. ¿Pueden quedarse todos dentro de la barrera de Daren mientras me encargo de los esqueletos? Me aseguraré de reforzarla con todo lo que tengo."
+
+          "¿Pero qué demonios?" dice Daren. "¿Qué es esa energía mágica de locos que irradia de ti de repente? ¡No me digas que Eiden congeló el tiempo otra vez para darte poderes mágicos!"
+
+          "No," digo, mientras empiezo a reforzar la barrera mágica. "No fue Eiden. Simplemente usé mi dispositivo para aprovechar la energía que se está fugando de los stillwaters."
+
+          "¿Puedes hacer eso ahora?" me pregunta Daren.
+
+          "Aparentemente," digo.
+
+          "Bueno, espero que sepas lo que haces," dice Daren.
+
+          "No te preocupes," digo, mientras termino de reforzar la barrera. "¡Esto habrá terminado antes de que te des cuenta!"
+
+          Una vez que me aseguro de que todos están de acuerdo con mi plan, lanzo algunos hechizos de protección sobre mí mismo, y luego salgo de la barrera para enfrentarme a los stillwaters.
+      - source: scene_text_2
+        paragraph: 17
+        text: |-
+          Tomo la iniciativa y uso uno de mis hechizos para hacer caer un pequeño meteoro del cielo sobre los esqueletos. El impacto del meteoro hace que dos de los edificios cercanos se derrumben, pero la barrera mágica alrededor de los stillwaters sigue en pie, y ninguno de ellos parece estar herido.
+
+          No les doy tiempo a recuperarse, y convoco una pequeña ventisca, junto con una tormenta eléctrica sobre su posición, mientras dos enormes manos hechas de roca salen del suelo e intentan aplastar a los stillwaters y su barrera bajo sus palmas.
+
+          Mientras tanto, intento eliminar al nigromante a distancia con un ataque de rayo, pero el stillwater encargado del apoyo logra defenderlo a tiempo con una barrera mágica bien colocada frente a él.
+
+          Uno de los esqueletos desaparece de dentro de su barrera, y se teletransporta justo frente a mí, mientras coloca rápidamente sus palmas huesudas sobre mi pecho y lanza un poderoso hechizo de viento contra mí a quemarropa. Su hechizo me envía volando contra una pared detrás de mí, pero uso mi propia magia de viento para levantarme en el aire, justo antes de que su elementalista de tierra intente aplastarme entre dos paredes de piedra.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_strongest2
+  - name: ch11b_strongest2
+    texts:
+      - source: scene_text
+        paragraph: 22
+        text: |-
+          Usar magia de aire para volar no es ni de lejos tan fácil como suena, y me siento mucho más torpe que cuando usaba el hechizo de vuelo en mi pelea con el dragón, pero al menos puedo moverme más fácilmente ahora. El elementalista de aire ve que no estoy muerto, y rápidamente se teletransporta de vuelta dentro de la seguridad de la barrera de su aliado, antes de que tenga la oportunidad de devolverle el favor.
+
+          "¡No, no, no, lo estás haciendo todo mal!" me grita Arraka desde dentro de su amuleto. "¡Deja de atacar toda la barrera y concéntrate en un solo punto! ¿No ves lo lento que su mago de apoyo refuerza partes individuales de la barrera? ¡Es porque nunca aprendió a localizar correctamente su producción de energía! Se lo estuve diciendo hace seiscientos años, pero el idiota no me creyó hasta que se lo demostré usando una maldita rama de árbol para atravesar su barrera y perforarle los pulmones."
+
+          Aceptar consejos de Arraka no es algo que me apetezca especialmente hacer ahora mismo, pero al echar un vistazo a la barrera mágica de los esqueletos, puedo al menos confirmar que no está mintiendo. La energía mágica está distribuida de forma fina por toda la barrera, lo que ayuda enormemente contra hechizos con un área de efecto amplia, pero debería dejarla vulnerable contra ataques más concentrados. Empiezo a cargar un ataque de rayo mientras vuelo en círculos para esquivar los proyectiles mágicos de los otros esqueletos. Cuando mi ataque es lo suficientemente poderoso, me detengo un segundo para tener un tiro claro, y luego apunto directamente al mago de apoyo, asegurándome de que todo el poder detrás de mi golpe esté concentrado en un solo punto.
+      - source: scene_text_2
+        paragraph: 18
+        text: |-
+          Mi rayo atraviesa la barrera directamente y golpea al stillwater de apoyo en el cráneo, matándolo al instante. Mientras la barrera mágica empieza a desaparecer, los otros cuatro esqueletos que se ocultaban debajo están ahí de pie, mirando muy confundidos. Aprovecho esto y uso una gran cantidad de energía mágica para crear un gran charco de ácido debajo de los stillwaters.
+
+          Los esqueletos fueron tomados por sorpresa y no tuvieron tiempo de reaccionar. Mientras todos se hunden lentamente en el charco de ácido, el elementalista de aire usa un hechizo de viento para levantar la mitad superior de su cuerpo que aún no se ha derretido en el aire, pero rápidamente levanto dos trozos de roca del suelo y los uso para aplastar la cabeza del esqueleto entre ellos. Finalmente, todos los esqueletos se hunden completamente en el ácido, y decido empezar a descender hacia el suelo, antes de que la energía de mi dispositivo se agote por completo. Una vez que bajo, el charco de ácido desaparece, pero los esqueletos ya se habían derretido completamente antes de que esto ocurriera, lo que significa que el nigromante es ahora el único enemigo que queda en pie.
+    effects:
+      - set:
+          ac_ch11_stillwater: 1
+        achievement:
+          id: ac_ch11_stillwater
+          title: Matador de stillwaters
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_sacrificial
+  - name: ch11b_civilians
+    texts:
+      - source: scene_text
+        paragraph: 23
+        text: |-
+          "Chicos, tengo un plan," digo. "Pero necesitaré hacer esto solo. ¿Pueden quedarse todos dentro de la barrera de Daren mientras me encargo de los esqueletos? Me aseguraré de reforzarla con todo lo que tengo."
+
+          "¿Pero qué demonios?" dice Daren. "¿Qué es esa energía mágica de locos que irradia de ti de repente? ¡No me digas que Eiden congeló el tiempo otra vez para darte poderes mágicos!"
+
+          "No," digo, mientras empiezo a reforzar la barrera mágica. "No fue Eiden. Simplemente usé mi dispositivo para aprovechar la energía que se está fugando de los stillwaters."
+
+          "¿Puedes hacer eso ahora?" me pregunta Daren.
+
+          "Aparentemente," digo.
+
+          "Bueno, espero que sepas lo que haces," dice Daren.
+
+          "No te preocupes," digo, mientras termino de reforzar la barrera. "¡Esto habrá terminado antes de que te des cuenta!"
+      - source: scene_text_2
+        paragraph: 19
+        text: |-
+          Una vez que me aseguro de que todos están de acuerdo con mi plan, lanzo algunos hechizos de protección sobre mí mismo, y luego salgo de la barrera para enfrentarme a los stillwaters.
+
+          Si no voy a usar mis hechizos más grandes, entonces mi mejor opción es apuntar primero al nigromante, porque los stillwaters se verán obligados a defenderlo, y posiblemente romper sus filas.
+
+          Justo cuando salgo de la barrera, intento eliminar al nigromante con un ataque de rayo, pero el esqueleto encargado del apoyo reacciona rápido y logra defender a su maestro a tiempo con una barrera mágica bien colocada frente a él. El elementalista de tierra intenta entonces aplastarme entre dos paredes de piedra, pero uso magia de viento para levantarme en el aire y fuera de su alcance.
+
+          Usar magia de aire para volar no es ni de lejos tan fácil como suena, y me siento mucho más torpe que cuando usaba el hechizo de vuelo en mi pelea con el dragón, pero al menos puedo moverme más fácilmente ahora.
+
+          Me posiciono por encima de los cinco esqueletos y empiezo a verter fuego sobre ellos, mientras intento aplastar la barrera mágica que los rodea bajo varias capas de roca. Mientras el stillwater de apoyo está ocupado manteniendo su barrera, el elementalista de fuego y el de agua combinan sus dos elementos para crear una nube de vapor que cubre toda el área a nuestro alrededor.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_civilians2
+  - name: ch11b_civilians2
+    routes:
+      - condition: perception >= 2
+        texts:
+          - source: scene_text
+            paragraph: 24
+            text: |-
+              Mientras el vapor me rodea, de repente noto unas chispas apenas visibles empezando a formarse junto a mí. Esto no parece normal. Necesito salir de aquí, rápido.
+
+              Justo cuando salgo volando del vapor, las chispas que dejé atrás se convierten en una gran explosión que envía una poderosa onda de aire hacia mí, haciéndome girar en el aire durante unos segundos.
+
+              "¡No, no, no, lo estás haciendo todo mal!" me grita Arraka desde dentro de su amuleto. "¡Deja de atacar toda la barrera y concéntrate en un solo punto! ¿No ves lo lento que su mago de apoyo refuerza partes individuales de la barrera? ¡Es porque nunca aprendió a localizar correctamente su producción de energía! Se lo estuve diciendo hace seiscientos años, pero el idiota no me creyó hasta que se lo demostré usando una maldita rama de árbol para atravesar su barrera y perforarle los pulmones."
+
+              Aceptar consejos de Arraka no es algo que me apetezca especialmente hacer ahora mismo, pero al echar un vistazo a la barrera mágica de los esqueletos, puedo al menos confirmar que no está mintiendo. La energía mágica está distribuida de forma fina por toda la barrera, lo que ayuda enormemente contra hechizos con un área de efecto amplia, pero debería dejarla vulnerable contra ataques más concentrados. Empiezo a cargar un ataque de rayo mientras vuelo en círculos para esquivar los proyectiles mágicos de los otros esqueletos. Cuando mi ataque es lo suficientemente poderoso, me detengo un segundo para tener un tiro claro, y luego apunto directamente al mago de apoyo, asegurándome de que todo el poder detrás de mi golpe esté concentrado en un solo punto.
+          - source: scene_text_2
+            paragraph: 20
+            text: |-
+              Mi rayo atraviesa la barrera directamente y golpea al stillwater de apoyo en el cráneo, matándolo al instante. Mientras la barrera mágica empieza a desaparecer, los otros cuatro esqueletos que se ocultaban debajo están ahí de pie, mirando muy confundidos. Aprovecho esto y uso una gran cantidad de energía mágica para crear un gran charco de ácido debajo de los stillwaters.
+
+              Los esqueletos fueron tomados por sorpresa y no tuvieron tiempo de reaccionar. Mientras todos se hunden lentamente en el charco de ácido, el elementalista de aire usa un hechizo de viento para levantar la mitad superior de su cuerpo que aún no se ha derretido en el aire, pero rápidamente levanto dos trozos de roca del suelo y los uso para aplastar la cabeza del esqueleto entre ellos. Finalmente, todos los esqueletos se hunden completamente en el ácido, y decido empezar a descender hacia el suelo, antes de que la energía de mi dispositivo se agote por completo. Una vez que bajo, el charco de ácido desaparece, pero los esqueletos ya se habían derretido completamente antes de que esto ocurriera, lo que significa que el nigromante es ahora el único enemigo que queda en pie.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de observación exitosa - nivel 2 ]'
+              ac_ch11_stillwater: 1
+            achievement:
+              id: ac_ch11_stillwater
+              title: Matador de stillwaters
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch11b_sacrificial
+                condition: is_dead = 0
+      - condition: perception < 2 AND hearing >= 3
+        texts:
+          - source: scene_text
+            paragraph: 25
+            text: |-
+              Mientras el vapor me rodea, de repente empiezo a escuchar el sonido de chispas crepitando en algún lugar muy cerca de mí. Esto no parece normal. Necesito salir de aquí, rápido.
+
+              Justo cuando salgo volando del vapor, las chispas que dejé atrás se convierten en una gran explosión que envía una poderosa onda de aire hacia mí, haciéndome girar en el aire durante unos segundos.
+
+              "¡No, no, no, lo estás haciendo todo mal!" me grita Arraka desde dentro de su amuleto. "¡Deja de atacar toda la barrera y concéntrate en un solo punto! ¿No ves lo lento que su mago de apoyo refuerza partes individuales de la barrera? ¡Es porque nunca aprendió a localizar correctamente su producción de energía! Se lo estuve diciendo hace seiscientos años, pero el idiota no me creyó hasta que se lo demostré usando una maldita rama de árbol para atravesar su barrera y perforarle los pulmones."
+          - source: scene_text_2
+            paragraph: 21
+            text: |-
+              Aceptar consejos de Arraka no es algo que me apetezca especialmente hacer ahora mismo, pero al echar un vistazo a la barrera mágica de los esqueletos, puedo al menos confirmar que no está mintiendo. La energía mágica está distribuida de forma fina por toda la barrera, lo que ayuda enormemente contra hechizos con un área de efecto amplia, pero debería dejarla vulnerable contra ataques más concentrados. Empiezo a cargar un ataque de rayo mientras vuelo en círculos para esquivar los proyectiles mágicos de los otros esqueletos. Cuando mi ataque es lo suficientemente poderoso, me detengo un segundo para tener un tiro claro, y luego apunto directamente al mago de apoyo, asegurándome de que todo el poder detrás de mi golpe esté concentrado en un solo punto.
+
+              Mi rayo atraviesa la barrera directamente y golpea al stillwater de apoyo en el cráneo, matándolo al instante. Mientras la barrera mágica empieza a desaparecer, los otros cuatro esqueletos que se ocultaban debajo están ahí de pie, mirando muy confundidos. Aprovecho esto y uso una gran cantidad de energía mágica para crear un gran charco de ácido debajo de los stillwaters.
+          - source: scene_3
+            paragraph: 6
+            text: Los esqueletos fueron tomados por sorpresa y no tuvieron tiempo de reaccionar. Mientras todos se hunden lentamente en el charco de ácido, el elementalista de aire usa un hechizo de viento para levantar la mitad superior de su cuerpo que aún no se ha derretido en el aire, pero rápidamente levanto dos trozos de roca del suelo y los uso para aplastar la cabeza del esqueleto entre ellos. Finalmente, todos los esqueletos se hunden completamente en el ácido, y decido empezar a descender hacia el suelo, antes de que la energía de mi dispositivo se agote por completo. Una vez que bajo, el charco de ácido desaparece, pero los esqueletos ya se habían derretido completamente antes de que esto ocurriera, lo que significa que el nigromante es ahora el único enemigo que queda en pie.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de audición exitosa - nivel 3 ]'
+              failed_checks:
+                - '[ Comprobación de observación fallida - nivel 2 ]'
+              ac_ch11_stillwater: 1
+            achievement:
+              id: ac_ch11_stillwater
+              title: Matador de stillwaters
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch11b_sacrificial
+                condition: is_dead = 0
+      - condition: perception < 2 AND hearing < 3
+        texts:
+          - source: scene_text
+            paragraph: 26
+            text: |-
+              No hay necesidad de entrar en pánico. Puedo simplemente usar mi sentido mágico para saber dónde están. Mientras empiezo a atacar a los stillwaters de nuevo, de repente escucho un fuerte crepitar justo a mi lado e inmediatamente después, una explosión muy poderosa me envía estrellándome contra el suelo. La explosión estuvo demasiado cerca de mí para que mi escudo mágico me protegiera completamente, y creo que debo haberme roto al menos dos costillas con esa caída.
+
+              Nunca tengo la oportunidad de volver a la pelea, porque justo después de golpear el suelo, una gruesa capa de roca se presiona sobre mí y me aplasta hasta convertirme en una pasta roja y espesa en cuestión de segundos.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de observación fallida - nivel 2 ]'
+                - '[ Comprobación de audición fallida - nivel 3 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+  - name: ch11b_buy
+    texts:
+      - source: scene_text
+        paragraph: 27
+        text: |-
+          "Chicos," digo, "creo que tengo un plan."
+
+          "¿Pero qué demonios?" dice Daren. "¿Qué es esa energía mágica de locos que irradia de ti de repente? ¡No me digas que Eiden congeló el tiempo otra vez para darte poderes mágicos!"
+
+          "No," digo, mientras empiezo a reforzar la barrera mágica. "No fue Eiden. Simplemente usé mi dispositivo para aprovechar la energía que se está fugando de los stillwaters."
+
+          "¿Puedes hacer eso ahora?" me pregunta Daren.
+
+          "Aparentemente," digo.
+
+          "¿Entonces cuál es tu plan?" pregunta Daren.
+
+          "Bueno," digo, "¿recuerdas cómo Azarius nos dijo la última vez que el hechizo del nigromante solo dura cinco minutos y que solo puede lanzarse una vez al día? Estaba pensando que podríamos simplemente esperar a que se agote, mientras seguimos reforzando la barrera y atacándolos desde la distancia."
+
+          "En ese caso, espero que tengas unos hechizos de refuerzo realmente buenos," dice Daren, "porque yo prácticamente ya he agotado todos los míos."
+
+          "No te preocupes," digo. "Tú solo concéntrate en mantener la barrera. Yo me encargo de los refuerzos."
+
+          Me giro hacia Flower y Kate.
+
+          "¿Pueden ustedes tres poner algo de presión sobre los stillwaters mientras Daren y yo mantenemos la barrera?" digo.
+
+          "¡Sí, señor!" dice Flower, mientras hace un saludo militar con la mano derecha.
+      - source: scene_text_2
+        paragraph: 22
+        text: |-
+          "Veré qué puedo hacer," dice Kate.
+
+          "Intenten apuntar al esqueleto que mantiene su barrera mágica tanto como sea posible," digo. "Él es el que va a estar ocupado deshaciendo mis hechizos de refuerzo."
+
+          "¿Y qué se supone que haga yo todo este tiempo?" pregunta Hadrik.
+
+          "Bueno, podrías, eh..." empiezo a decir, pero me detengo a pensar un segundo. "Puedes ser nuestra última línea de defensa y asegurarte de repeler todos sus hechizos en caso de que nuestra barrera falle antes del límite de tiempo."
+
+          "¡Genial!" dice Hadrik. "Son momentos como estos los que me hacen lamentar no haber traído un mazo de cartas conmigo cuando me uní al torneo."
+
+          Una vez que todos aceptan seguir mi plan, vuelvo a reforzar la barrera de Daren, mientras Kate, Flower e Illuna empiezan a lanzar sus hechizos contra los stillwaters. Mantener la barrera contra tantos ataques simultáneos está resultando ser un poco más difícil de lo que había pensado originalmente. Daren ya está en su límite, y mantener la barrera por mí mismo está empezando a drenarme de energía rápidamente. Las chicas tampoco parecen estar haciéndolo muy bien, porque aún no han logrado atravesar la barrera de los esqueletos, mientras el stillwater de apoyo hace todo lo posible por contrarrestar mis hechizos de refuerzo.
+
+          Esto no está funcionando. Necesito revisar mi plan, o no vamos a aguantar hasta la marca de los cinco minutos.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_buy2
+  - name: ch11b_buy2
+    texts:
+      - source: scene_text
+        paragraph: 28
+        text: |-
+          "Hadrik," digo, "ha habido un cambio de planes. ¿Qué te parecería proporcionarnos una pequeña distracción?"
+
+          La cara del enano se ilumina cuando escucha mi sugerencia.
+
+          "¡Ahora sí que estamos hablando, Barry!" dice, con una amplia sonrisa. "¿Qué quieres que haga? ¿Debería simplemente ir y atacar al nigromante para darles un buen susto?"
+
+          "Sí, eso es exactamente lo que tenía en mente," digo. "Espera, déjame lanzarte algunas protecciones primero."
+
+          Una vez que termino de lanzar los hechizos de protección sobre Hadrik, el enano sale disparado de la barrera y alcanza al nigromante en unos segundos. El elementalista de aire reacciona rápido y usa un hechizo de viento para empujar a Hadrik varios metros hacia atrás. Para cuando Hadrik vuelve, el esqueleto de apoyo coloca una barrera mágica alrededor de su maestro, que el enano ahora está intentando romper con una ráfaga de puñetazos.
+
+          "¡No, no, no, lo están haciendo todo mal!" nos grita Arraka desde dentro de su amuleto. "¡Dejen de atacar toda la barrera y concéntrense en un solo punto! ¿No ven lo lento que su mago de apoyo refuerza partes individuales de la barrera? ¡Es porque nunca aprendió a localizar correctamente su producción de energía! Se lo estuve diciendo hace seiscientos años, pero el idiota no me creyó hasta que se lo demostré usando una maldita rama de árbol para atravesar su barrera y perforarle los pulmones."
+      - source: scene_text_2
+        paragraph: 23
+        text: |-
+          Aceptar consejos de Arraka no es algo que me apetezca especialmente hacer ahora mismo, pero al echar un vistazo a la barrera mágica de los esqueletos, puedo al menos confirmar que no está mintiendo. La energía mágica está distribuida de forma fina por toda la barrera, lo que ayuda enormemente contra hechizos con un área de efecto amplia, pero debería dejarla vulnerable contra ataques más concentrados. Empiezo a cargar un ataque de rayo en mis manos, y cuando se vuelve lo suficientemente poderoso, lo apunto directamente al mago de apoyo, asegurándome de que todo el poder detrás de mi golpe esté concentrado en un solo punto.
+
+          Mi rayo atraviesa la barrera de los esqueletos directamente y golpea al stillwater de apoyo en el cráneo, matándolo al instante. Mientras la barrera mágica empieza a desaparecer, los otros cuatro esqueletos que se ocultaban debajo están ahí de pie, mirando muy confundidos. Aprovecho esto y uso una gran cantidad de energía mágica para crear un gran charco de ácido debajo de los stillwaters.
+
+          Los esqueletos fueron tomados por sorpresa y no tuvieron tiempo de reaccionar. Mientras todos se hunden lentamente en el charco de ácido, el elementalista de aire usa un hechizo de viento para levantar la mitad superior de su cuerpo que aún no se ha derretido en el aire, pero rápidamente levanto dos trozos de roca del suelo y los uso para aplastar la cabeza del esqueleto entre ellos. Finalmente, todos los esqueletos se hunden completamente en el ácido, y cuando la energía de mi dispositivo se agota por completo, el charco de ácido desaparece. Sin embargo, los esqueletos ya se habían derretido completamente antes de que esto ocurriera, lo que significa que el nigromante es ahora el único enemigo que queda en pie.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_sacrificial
+  - name: ch11b_directly
+    texts:
+      - source: scene_text
+        paragraph: 29
+        text: |-
+          "Chicos," digo, "creo que tengo un plan."
+
+          "¿Pero qué demonios?" dice Daren. "¿Qué es esa energía mágica de locos que irradia de ti de repente? ¡No me digas que Eiden congeló el tiempo otra vez para darte poderes mágicos!"
+
+          "No," digo, mientras empiezo a reforzar la barrera mágica para darnos algo de tiempo para hablar. "No fue Eiden. Simplemente usé mi dispositivo para aprovechar la energía que se está fugando de los stillwaters."
+
+          "¿Puedes hacer eso ahora?" me pregunta Daren.
+
+          "Aparentemente," digo.
+
+          "¿Entonces cuál es tu plan?" pregunta Daren.
+
+          "Creo que deberíamos empezar a ir a la ofensiva," digo. "Tengo suficientes hechizos de protección para todos y también tengo acceso a muchos hechizos poderosos, así que estaremos mejor presionándolos que ganando tiempo. Deberíamos empezar centrándonos en el nigromante, porque los stillwaters se verán obligados a proteger a su maestro cuando lo ataquemos, y eso podría hacer que rompan su formación."
+
+          Hago una pausa para pensar antes de continuar.
+
+          "Daren, voy a lanzar la mayoría de mis protecciones sobre ti," digo. "Intenta atraer la atención de los stillwaters tanto como puedas."
+
+          "De acuerdo, puedo hacer eso," dice Daren.
+
+          "Hadrik, quiero que presiones al nigromante tanto como puedas," digo. "Una vez que salgamos de la barrera, deberías correr directo hacia él y golpearlo con todo lo que tengas."
+      - source: scene_text_2
+        paragraph: 24
+        text: |-
+          "¡Considéralo hecho!" dice Hadrik, con una sonrisa.
+
+          Me giro hacia Flower.
+
+          "Flower, ¿puedes volar, verdad?" le pregunto.
+
+          "Sí, más o menos," dice Flower. "No conozco ningún hechizo para volar, pero puedo hacer que salgan chorros de fuego de mis pies, que me impulsan al aire y pueden mantenerme en vuelo durante largos períodos de tiempo."
+
+          "Perfecto," digo. "Entonces vendrás conmigo. Yo tampoco tengo hechizos para volar, pero creo que puedo usar magia de aire para volar razonablemente bien. Tú, Illuna y yo vamos a atacar a los esqueletos desde arriba, en un intento de abrumar sus defensas."
+
+          "¡Sí, señor!" dice Flower, mientras hace un saludo militar con la mano derecha.
+
+          "Y por último," digo, mientras me giro hacia Kate. "Kate, como te especializas en ataques de largo alcance, quiero que te quedes dentro de esta barrera y observes la pelea desde lejos. Los esqueletos probablemente te ignorarán, así que podrás analizar la situación con calma y buscar sus debilidades. Es seguro que cometerán algunos errores con la presión que les pondremos."
+
+          "De acuerdo," dice Kate. "Me aseguraré de castigarles severamente por cualquier error que cometan durante la pelea."
+
+          "Muy bien, eso es todo," digo. "Saldremos de la barrera juntos en cuanto termine de lanzar todos los hechizos de protección. ¡Prepárense!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_directly2
+  - name: ch11b_directly2
+    texts:
+      - source: scene_text
+        paragraph: 30
+        text: |-
+          Una vez que termino de lanzar los hechizos de protección, salimos de la barrera y empezamos a poner nuestro plan en acción. Hadrik se lanza directo hacia el nigromante y lo alcanza en cuestión de segundos, pero el elementalista de aire reacciona rápido y usa un hechizo de viento para empujar a Hadrik varios metros hacia atrás. Para cuando Hadrik vuelve, el esqueleto de apoyo coloca una barrera mágica alrededor de su maestro, que el enano ahora está intentando romper con una ráfaga de puñetazos.
+
+          Daren se dirige hacia los cinco stillwaters, y cuando se acerca a ellos, uno de los esqueletos dispara un poderoso rayo de fuego hacia él. Daren usa su espada para absorber todo el fuego, y luego lo envía de vuelta hacia su atacante. La barrera de los esqueletos les defiende del golpe, pero las acciones de Daren parecen haber captado la atención completa de los stillwaters. Ahora todos están disparando hechizos hacia él, mientras usa su escudo para bloquear y su espada para absorber sus elementos.
+
+          Esto es lo que estábamos esperando. Le hago una señal a Flower, y ella asiente con la cabeza, mientras empieza a correr hacia los stillwaters. Mientras corre, salta alto en el aire y luego usa sus chorros de fuego para impulsarse más alto, mientras va a posicionarse por encima de la barrera de los esqueletos. Yo la sigo y uso mi magia de aire para levantarme en el aire. Usar magia de aire para volar no es ni de lejos tan fácil como suena, y me siento mucho más torpe que cuando usaba el hechizo de vuelo en mi pelea con el dragón, pero debería ser suficiente para mis propósitos.
+      - source: scene_text_2
+        paragraph: 25
+        text: |-
+          Alcanzo a Flower, y ambos nos posicionamos unos diez metros por encima de la barrera de los stillwaters, dejando algo de distancia entre nosotros para que sea más difícil que los esqueletos nos apunten a los dos. Entonces empezamos a atacar la barrera con hechizos de fuego, agua y tierra desde todos los lados, en un intento de abrumar las defensas de los stillwaters.
+
+          "¡No, no, no, lo están haciendo todo mal!" nos grita Arraka desde dentro de su amuleto. "¡Dejen de atacar toda la barrera y concéntrense en un solo punto! ¿No ven lo lento que su mago de apoyo refuerza partes individuales de la barrera? ¡Es porque nunca aprendió a localizar correctamente su producción de energía! Se lo estuve diciendo hace seiscientos años, pero el idiota no me creyó hasta que se lo demostré usando una maldita rama de árbol para atravesar su barrera y perforarle los pulmones."
+
+          Aceptar consejos de Arraka no es algo que me apetezca especialmente hacer ahora mismo, pero al echar un vistazo a la barrera mágica de los esqueletos, puedo al menos confirmar que no está mintiendo. La energía mágica está distribuida de forma fina por toda la barrera, lo que ayuda enormemente contra hechizos con un área de efecto amplia, pero debería dejarla vulnerable contra ataques más concentrados. Empiezo a cargar un ataque de rayo mientras sigo en el aire, y cuando se vuelve lo suficientemente poderoso, lo apunto directamente al mago de apoyo, asegurándome de que todo el poder detrás de mi golpe esté concentrado en un solo punto.
+      - source: scene_3
+        paragraph: 7
+        text: |-
+          Mi rayo atraviesa la barrera directamente y golpea al stillwater de apoyo en el cráneo, matándolo al instante. Mientras la barrera mágica empieza a desaparecer, los otros cuatro esqueletos que se ocultaban debajo están ahí de pie, mirando muy confundidos. Aprovecho esto y uso una gran cantidad de energía mágica para crear un gran charco de ácido debajo de los stillwaters.
+
+          Los esqueletos fueron tomados por sorpresa y no tuvieron tiempo de reaccionar. Mientras todos se hunden lentamente en el charco de ácido, el elementalista de aire usa un hechizo de viento para levantar la mitad superior de su cuerpo que aún no se ha derretido en el aire, pero rápidamente levanto dos trozos de roca del suelo y los uso para aplastar la cabeza del esqueleto entre ellos. Finalmente, todos los esqueletos se hunden completamente en el ácido, y decido empezar a descender hacia el suelo, antes de que la energía de mi dispositivo se agote por completo. Una vez que bajo, el charco de ácido desaparece, pero los esqueletos ya se habían derretido completamente antes de que esto ocurriera, lo que significa que el nigromante es ahora el único enemigo que queda en pie.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_sacrificial
+  - name: ch11b_sacrificial
+    routes:
+      - condition: ch11_strategy = 1
+        texts:
+          - source: scene_text
+            paragraph: 32
+            text: |-
+              "¡No!" grita Zack. "¡No dejaré que esto termine así!"
+
+              Justo después de terminar la frase, el nigromante saca un cuchillo de sus túnicas y lo usa para apuñalarse en el pecho. Entonces queda envuelto en una luz roja brillante, y poco después empieza a convertirse en cenizas.
+
+              "El Dios de la Muerte... tendrá su premio..." dice Zack, justo antes de exhalar su último aliento.
+
+              Mientras todos nos reunimos para mirar el montón de cenizas en que se ha convertido el nigromante, Hadrik se echa a reír.
+
+              "¡En cuanto a últimas palabras se refiere, he oído mejores!" dice el enano.
+
+              "Eso no fue solo una amenaza vacía," dice Illuna, mientras mira a su alrededor frenéticamente, como si esperara que algo explotara. "Eso que acaba de lanzar era un hechizo de sacrificio. Un tipo de hechizo que requiere la muerte de quien lo lanza como pago, a cambio de proporcionar efectos que no serían obtenibles por medios normales. La maldición de muerte que el chamán ogro lanzó sobre mí antes de que dejáramos el fuerte también era uno de estos hechizos. Esto aún no ha terminado..."
+
+              "Tranquila," dice Hadrik. "Si sus todopoderosos esqueletos stillwater no pudieron matarnos, ¿qué esperas que haga después de estar ya muerto?"
+          - source: scene_text_2
+            paragraph: 26
+            text: |-
+              "Eso suena muy valiente viniendo de alguien que ni siquiera pudo identificar una debilidad obvia en las defensas del enemigo," dice Arraka. "Todos estarían fritos si no fuera por mí. Yo soy la que los salvó a todos ustedes, perdedores. ¿Dónde está mi recompensa por eso, eh?"
+
+              "¡Ah, tengo tu recompensa justo aquí!" dice Hadrik, mientras agarra el amuleto de Arraka del cuello de Flower y empieza a hacerlo girar por la cadena.
+
+              "Espera," dice Flower. "¡No hagas eso! ¿No te dije que tiene mareos por movimiento?"
+
+              "¿En serio?" dice Hadrik, con una sonrisa, mientras sigue haciendo girar a Arraka. "Vaya. Supongo que se me habrá olvidado."
+        choices:
+          - position: 1
+            text: Déjala, Hadrik. No vale la pena.
+            effects:
+              - set:
+                  current_scene: ch11b_bother
+          - position: 2
+            text: Supongo que se lo merece después de todo lo que ha hecho.
+            effects:
+              - set:
+                  current_scene: ch11b_deserve
+          - position: 3
+            text: ¿Puedo hacerla girar yo después?
+            effects:
+              - set:
+                  current_scene: ch11b_spin
+      - condition: ch11_strategy = 2
+        texts:
+          - source: scene_text
+            paragraph: 32
+            text: |-
+              "¡No!" grita Zack. "¡No dejaré que esto termine así!"
+
+              Justo después de terminar la frase, el nigromante saca un cuchillo de sus túnicas y lo usa para apuñalarse en el pecho. Entonces queda envuelto en una luz roja brillante, y poco después empieza a convertirse en cenizas.
+
+              "El Dios de la Muerte... tendrá su premio..." dice Zack, justo antes de exhalar su último aliento.
+
+              Mientras todos nos reunimos para mirar el montón de cenizas en que se ha convertido el nigromante, Hadrik se echa a reír.
+
+              "¡En cuanto a últimas palabras se refiere, he oído mejores!" dice el enano.
+
+              "Eso no fue solo una amenaza vacía," dice Illuna, mientras mira a su alrededor frenéticamente, como si esperara que algo explotara. "Eso que acaba de lanzar era un hechizo de sacrificio. Un tipo de hechizo que requiere la muerte de quien lo lanza como pago, a cambio de proporcionar efectos que no serían obtenibles por medios normales. La maldición de muerte que el chamán ogro lanzó sobre mí antes de que dejáramos el fuerte también era uno de estos hechizos. Esto aún no ha terminado..."
+
+              "Tranquila," dice Hadrik. "Si sus todopoderosos esqueletos stillwater no pudieron matarnos, ¿qué esperas que haga después de estar ya muerto?"
+          - source: scene_text_2
+            paragraph: 26
+            text: |-
+              "Eso suena muy valiente viniendo de alguien que ni siquiera pudo identificar una debilidad obvia en las defensas del enemigo," dice Arraka. "Todos estarían fritos si no fuera por mí. Yo soy la que los salvó a todos ustedes, perdedores. ¿Dónde está mi recompensa por eso, eh?"
+
+              "¡Ah, tengo tu recompensa justo aquí!" dice Hadrik, mientras agarra el amuleto de Arraka del cuello de Flower y empieza a hacerlo girar por la cadena.
+
+              "Espera," dice Flower. "¡No hagas eso! ¿No te dije que tiene mareos por movimiento?"
+
+              "¿En serio?" dice Hadrik, con una sonrisa, mientras sigue haciendo girar a Arraka. "Vaya. Supongo que se me habrá olvidado."
+        choices:
+          - position: 1
+            text: Déjala, Hadrik. No vale la pena.
+            effects:
+              - set:
+                  current_scene: ch11b_bother
+          - position: 2
+            text: Supongo que se lo merece después de todo lo que ha hecho.
+            effects:
+              - set:
+                  current_scene: ch11b_deserve
+          - position: 3
+            text: ¿Puedo hacerla girar yo después?
+            effects:
+              - set:
+                  current_scene: ch11b_spin
+      - condition: ch11_strategy = 3
+        texts:
+          - source: scene_text
+            paragraph: 31
+            text: |-
+              "¡No!" grita Zack, mientras la barrera a su alrededor empieza a desaparecer. "¡No dejaré que esto termine así!"
+
+              Justo después de terminar la frase, el nigromante saca un cuchillo de sus túnicas y lo usa para apuñalarse en el pecho. Entonces queda envuelto en una luz roja brillante, y poco después empieza a convertirse en cenizas.
+
+              "El Dios de la Muerte... tendrá su premio..." dice Zack, justo antes de exhalar su último aliento.
+
+              Mientras todos nos reunimos para mirar el montón de cenizas en que se ha convertido el nigromante, Hadrik se echa a reír.
+
+              "¡En cuanto a últimas palabras se refiere, he oído mejores!" dice el enano.
+
+              "Eso no fue solo una amenaza vacía," dice Illuna, mientras mira a su alrededor frenéticamente, como si esperara que algo explotara. "Eso que acaba de lanzar era un hechizo de sacrificio. Un tipo de hechizo que requiere la muerte de quien lo lanza como pago, a cambio de proporcionar efectos que no serían obtenibles por medios normales. La maldición de muerte que el chamán ogro lanzó sobre mí antes de que dejáramos el fuerte también era uno de estos hechizos. Esto aún no ha terminado..."
+
+              "Tranquila," dice Hadrik. "Si sus todopoderosos esqueletos stillwater no pudieron matarnos, ¿qué esperas que haga después de estar ya muerto?"
+          - source: scene_text_2
+            paragraph: 26
+            text: |-
+              "Eso suena muy valiente viniendo de alguien que ni siquiera pudo identificar una debilidad obvia en las defensas del enemigo," dice Arraka. "Todos estarían fritos si no fuera por mí. Yo soy la que los salvó a todos ustedes, perdedores. ¿Dónde está mi recompensa por eso, eh?"
+
+              "¡Ah, tengo tu recompensa justo aquí!" dice Hadrik, mientras agarra el amuleto de Arraka del cuello de Flower y empieza a hacerlo girar por la cadena.
+
+              "Espera," dice Flower. "¡No hagas eso! ¿No te dije que tiene mareos por movimiento?"
+
+              "¿En serio?" dice Hadrik, con una sonrisa, mientras sigue haciendo girar a Arraka. "Vaya. Supongo que se me habrá olvidado."
+        choices:
+          - position: 1
+            text: Déjala, Hadrik. No vale la pena.
+            effects:
+              - set:
+                  current_scene: ch11b_bother
+          - position: 2
+            text: Supongo que se lo merece después de todo lo que ha hecho.
+            effects:
+              - set:
+                  current_scene: ch11b_deserve
+          - position: 3
+            text: ¿Puedo hacerla girar yo después?
+            effects:
+              - set:
+                  current_scene: ch11b_spin
+      - condition: ch11_strategy = 4
+        texts:
+          - source: scene_text
+            paragraph: 31
+            text: |-
+              "¡No!" grita Zack, mientras la barrera a su alrededor empieza a desaparecer. "¡No dejaré que esto termine así!"
+
+              Justo después de terminar la frase, el nigromante saca un cuchillo de sus túnicas y lo usa para apuñalarse en el pecho. Entonces queda envuelto en una luz roja brillante, y poco después empieza a convertirse en cenizas.
+
+              "El Dios de la Muerte... tendrá su premio..." dice Zack, justo antes de exhalar su último aliento.
+
+              Mientras todos nos reunimos para mirar el montón de cenizas en que se ha convertido el nigromante, Hadrik se echa a reír.
+
+              "¡En cuanto a últimas palabras se refiere, he oído mejores!" dice el enano.
+
+              "Eso no fue solo una amenaza vacía," dice Illuna, mientras mira a su alrededor frenéticamente, como si esperara que algo explotara. "Eso que acaba de lanzar era un hechizo de sacrificio. Un tipo de hechizo que requiere la muerte de quien lo lanza como pago, a cambio de proporcionar efectos que no serían obtenibles por medios normales. La maldición de muerte que el chamán ogro lanzó sobre mí antes de que dejáramos el fuerte también era uno de estos hechizos. Esto aún no ha terminado..."
+
+              "Tranquila," dice Hadrik. "Si sus todopoderosos esqueletos stillwater no pudieron matarnos, ¿qué esperas que haga después de estar ya muerto?"
+          - source: scene_text_2
+            paragraph: 26
+            text: |-
+              "Eso suena muy valiente viniendo de alguien que ni siquiera pudo identificar una debilidad obvia en las defensas del enemigo," dice Arraka. "Todos estarían fritos si no fuera por mí. Yo soy la que los salvó a todos ustedes, perdedores. ¿Dónde está mi recompensa por eso, eh?"
+
+              "¡Ah, tengo tu recompensa justo aquí!" dice Hadrik, mientras agarra el amuleto de Arraka del cuello de Flower y empieza a hacerlo girar por la cadena.
+
+              "Espera," dice Flower. "¡No hagas eso! ¿No te dije que tiene mareos por movimiento?"
+
+              "¿En serio?" dice Hadrik, con una sonrisa, mientras sigue haciendo girar a Arraka. "Vaya. Supongo que se me habrá olvidado."
+        choices:
+          - position: 1
+            text: Déjala, Hadrik. No vale la pena.
+            effects:
+              - set:
+                  current_scene: ch11b_bother
+          - position: 2
+            text: Supongo que se lo merece después de todo lo que ha hecho.
+            effects:
+              - set:
+                  current_scene: ch11b_deserve
+          - position: 3
+            text: ¿Puedo hacerla girar yo después?
+            effects:
+              - set:
+                  current_scene: ch11b_spin
+  - name: ch11b_bother
+    texts:
+      - source: scene_text
+        paragraph: 33
+        text: |-
+          "Déjala, Hadrik. No vale la pena."
+
+          "Al contrario, Barry," dice Hadrik. "Creo que esto bien vale el esfuerzo. De hecho, ¡creo que voy a incorporar esta rutina a mi horario diario a partir de ahora! Pero necesito consultar con Arraka primero. No querría imponerme. ¿Qué dices, Arraka, te parece bien a las diez de la mañana para nuestras sesiones diarias de giro?"
+
+          "¡Enano!" dice Arraka, mientras Hadrik sigue haciéndola girar. "¡Cuando salga de aquí otra vez, voy a meter mi mano por tu garganta y te voy a dar la vuelta como un calcetín! ¡Y luego te voy a colgar de un árbol por tus propios intestinos para poder usarte de columpio!"
+
+          "¿Entonces, las diez es muy temprano?" pregunta Hadrik, con una sonrisa. "¿Sería mejor si lo programamos para las once de la mañana?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_hole
+  - name: ch11b_deserve
+    texts:
+      - source: scene_text
+        paragraph: 34
+        text: |-
+          "Supongo que se lo merece después de todo lo que ha hecho."
+
+          "Claro que sí," dice Hadrik. "De hecho, ¡creo que voy a incorporar esta rutina a mi horario diario a partir de ahora! Pero necesito consultar con Arraka primero. No querría imponerme. ¿Qué dices, Arraka, te parece bien a las diez de la mañana para nuestras sesiones diarias de giro?"
+
+          "¡Enano!" dice Arraka, mientras Hadrik sigue haciéndola girar. "¡Cuando salga de aquí otra vez, voy a meter mi mano por tu garganta y te voy a dar la vuelta como un calcetín! ¡Y luego te voy a colgar de un árbol por tus propios intestinos para poder usarte de columpio!"
+
+          "¿Entonces, las diez es muy temprano?" pregunta Hadrik, con una sonrisa. "¿Sería mejor si lo programamos para las once de la mañana?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_hole
+  - name: ch11b_spin
+    texts:
+      - source: scene_text
+        paragraph: 35
+        text: |-
+          "¿Puedo hacerla girar yo después?"
+
+          "Claro que sí, Barry," dice Hadrik. "¡Todos pueden turnarse para hacer girar a Arraka! De hecho, estoy pensando en convertir esto en una especie de rutina diaria a partir de ahora. Pero necesito consultar con Arraka primero. No querría imponerme. ¿Qué dices, Arraka, te parece bien a las diez de la mañana para nuestras sesiones diarias de giro?"
+
+          "¡Enano!" dice Arraka, mientras Hadrik sigue haciéndola girar. "¡Cuando salga de aquí otra vez, voy a meter mi mano por tu garganta y te voy a dar la vuelta como un calcetín! ¡Y luego te voy a colgar de un árbol por tus propios intestinos para poder usarte de columpio!"
+
+          "¿Entonces, las diez es muy temprano?" pregunta Hadrik, con una sonrisa. "¿Sería mejor si lo programamos para las once de la mañana?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_hole
+  - name: ch11b_hole
+    routes:
+      - condition: hearing < 4
+        texts:
+          - source: scene_text
+            paragraph: 36
+            text: |-
+              Mientras Hadrik y Arraka están hablando, escucho el sonido de piedras golpeando contra el suelo en algún lugar del lado opuesto de la plaza del mercado. Al darme la vuelta para identificar la fuente del sonido, me lleva unos segundos procesar completamente la escena que se despliega ante mis ojos.
+
+              Hay un agujero en el suelo, con piedras rotas a su alrededor en el lugar donde escuché el ruido, y Rose está ahí de pie frente a él, con los brazos colgando a los lados y una expresión completamente vacía en su rostro, mientras un esqueleto la abraza con fuerza y lentamente le retuerce un cuchillo oxidado en el corazón. Cuando la luz abandona por completo los ojos de Rose, su atacante presiona más fuerte el cuchillo contra su pecho, haciéndola caer de espaldas, mientras el esqueleto se desmorona en pedazos.
+
+              "¡Rose!" grita Daren, mientras corre hacia ella.
+
+              Cuando la alcanza, Daren empieza a lanzar un hechizo de curación, pero Rose no reacciona de ninguna manera. Todos nos reunimos alrededor de los dos y los observamos sin decir una palabra, mientras Daren sigue lanzando hechizo de curación tras hechizo de curación, mientras Rose mira fijamente a la distancia, sin mover un músculo.
+
+              "¡Rose, quédate conmigo!" grita Daren, mientras sigue lanzando desesperadamente sus hechizos.
+          - source: scene_text_2
+            paragraph: 27
+            text: |-
+              No sirve de nada... Estoy seguro de que Daren también se habrá dado cuenta. Rose ya no respira. Dejó de respirar incluso antes de caer al suelo. Está muerta. Después de todo lo que pasamos para llevarla a casa sana y salva. Después de todo lo que ha pasado esta última semana. Murió, así sin más. Y ni siquiera Daren puede traerla de vuelta.
+
+              "No..." dice Kate. "Esto no está bien. ¡Tiene que ser una ilusión! El nigromante nunca podría hacerle daño así. ¡El hechizo del torneo lo habría impedido! Esto tiene que ser una—"
+
+              "El nigromante está muerto," la interrumpe Illuna. "El hechizo del torneo que le impedía hacer daño a Rose desapareció junto con su aura. Esta trampa fue diseñada específicamente para activarse después de su muerte, para burlar los efectos del hechizo de protección. Usó un vacío legal. Esto no es una ilusión. Rose murió, y el nigromante es quien la mató."
+
+              "¡No, no puede ser!" dice Kate, mientras las lágrimas empiezan a brotar de sus ojos. "No puede simplemente morir así. Esto no es justo. ¡No se merecía esto!"
+
+              Kate se detiene unos segundos para frotarse los ojos con las manos, mientras intenta contener las lágrimas.
+
+              "No se merecía esto..." dice Kate de nuevo, esta vez en un tono mucho más bajo.
+
+              "Esto es culpa mía..." dice Daren, mientras finalmente suelta a Rose. "Yo fui quien se ofreció a escoltarla a casa. Yo fui quien prometió que la protegeríamos. Le fallé. Es mi culpa que esté muerta..."
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "¡Eh, para el carro!" dice Hadrik. "No puedes simplemente echarte toda la culpa a ti mismo. Rose sabía muy bien en lo que se metía cuando decidió quedarse con nosotros después de lo que pasó ayer con el noble. Tomó su propia decisión y la mantuvo hasta el final. Murió con honor, y todos deberíamos respetarla por eso."
+
+              "¿¡Qué sabes tú de Rose!?" grita Daren furiosamente, de repente. "¿Crees que quería vivir sus últimos momentos en un estercolero como este? ¿Crees que murió feliz, sabiendo que dejó a sus hermanitos solos para valerse por sí mismos? ¿De verdad crees que todo en el mundo puede medirse por tus valores primitivos? ¿Qué te da el derecho de hablar de Rose así? ¡Dímelo!"
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de audición fallida - nivel 4 ]'
+              ch11_saved_rose: 0
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch11b_revenant
+      - condition: hearing = 4 AND perception < 4
+        texts:
+          - source: scene_text
+            paragraph: 37
+            text: |-
+              Mientras Hadrik y Arraka están hablando, escucho el sonido de piedras empezando a desmoronarse en algún lugar del lado opuesto de la plaza del mercado. Me doy la vuelta para intentar identificar la fuente del sonido, pero no veo a nadie en esa dirección excepto a Rose.
+
+              De repente, las piedras del suelo frente a Rose salen disparadas por los aires, mientras un esqueleto emerge de debajo de ellas y rápidamente usa un cuchillo oxidado para apuñalarla en el corazón. Rose no tuvo tiempo de reaccionar. Al principio, solo había sorpresa en sus ojos, pero pronto, su expresión facial se volvió vacía, mientras sus brazos colgaban a los lados, inmóviles. Cuando la luz abandona por completo los ojos de Rose, su atacante presiona más fuerte el cuchillo contra su pecho, haciéndola caer de espaldas, mientras el esqueleto se desmorona en pedazos.
+
+              "¡Rose!" grita Daren, mientras corre hacia ella.
+
+              Cuando la alcanza, Daren empieza a lanzar un hechizo de curación, pero Rose no reacciona de ninguna manera. Todos nos reunimos alrededor de los dos y los observamos sin decir una palabra, mientras Daren sigue lanzando hechizo de curación tras hechizo de curación, mientras Rose mira fijamente a la distancia, sin mover un músculo.
+
+              "¡Rose, quédate conmigo!" grita Daren, mientras sigue lanzando desesperadamente sus hechizos.
+          - source: scene_text_2
+            paragraph: 27
+            text: |-
+              No sirve de nada... Estoy seguro de que Daren también se habrá dado cuenta. Rose ya no respira. Dejó de respirar incluso antes de caer al suelo. Está muerta. Después de todo lo que pasamos para llevarla a casa sana y salva. Después de todo lo que ha pasado esta última semana. Murió, así sin más. Y ni siquiera Daren puede traerla de vuelta.
+
+              "No..." dice Kate. "Esto no está bien. ¡Tiene que ser una ilusión! El nigromante nunca podría hacerle daño así. ¡El hechizo del torneo lo habría impedido! Esto tiene que ser una—"
+
+              "El nigromante está muerto," la interrumpe Illuna. "El hechizo del torneo que le impedía hacer daño a Rose desapareció junto con su aura. Esta trampa fue diseñada específicamente para activarse después de su muerte, para burlar los efectos del hechizo de protección. Usó un vacío legal. Esto no es una ilusión. Rose murió, y el nigromante es quien la mató."
+
+              "¡No, no puede ser!" dice Kate, mientras las lágrimas empiezan a brotar de sus ojos. "No puede simplemente morir así. Esto no es justo. ¡No se merecía esto!"
+
+              Kate se detiene unos segundos para frotarse los ojos con las manos, mientras intenta contener las lágrimas.
+
+              "No se merecía esto..." dice Kate de nuevo, esta vez en un tono mucho más bajo.
+
+              "Esto es culpa mía..." dice Daren, mientras finalmente suelta a Rose. "Yo fui quien se ofreció a escoltarla a casa. Yo fui quien prometió que la protegeríamos. Le fallé. Es mi culpa que esté muerta..."
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "¡Eh, para el carro!" dice Hadrik. "No puedes simplemente echarte toda la culpa a ti mismo. Rose sabía muy bien en lo que se metía cuando decidió quedarse con nosotros después de lo que pasó ayer con el noble. Tomó su propia decisión y la mantuvo hasta el final. Murió con honor, y todos deberíamos respetarla por eso."
+
+              "¿¡Qué sabes tú de Rose!?" grita Daren furiosamente, de repente. "¿Crees que quería vivir sus últimos momentos en un estercolero como este? ¿Crees que murió feliz, sabiendo que dejó a sus hermanitos solos para valerse por sí mismos? ¿De verdad crees que todo en el mundo puede medirse por tus valores primitivos? ¿Qué te da el derecho de hablar de Rose así? ¡Dímelo!"
+        effects:
+          - set:
+              failed_checks:
+                - '[ Observación fallida - nivel 4 ]'
+              successful_checks:
+                - '[ Comprobación de audición exitosa - nivel 4 ]'
+              ch11_saved_rose: 0
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch11b_revenant
+      - condition: hearing = 4 AND perception = 4 AND agility < 4
+        texts:
+          - source: scene_text
+            paragraph: 38
+            text: |-
+              Mientras Hadrik y Arraka están hablando, escucho el sonido de piedras empezando a desmoronarse en algún lugar del lado opuesto de la plaza del mercado. Me doy la vuelta para intentar identificar la fuente del sonido, y me doy cuenta de que las piedras del suelo frente a Rose están todas ligeramente agrietadas. Tengo un presentimiento muy ominoso sobre esto, y antes de que me dé tiempo a pensar las cosas, mi cuerpo se mueve solo y empiezo a correr hacia Rose lo más rápido que puedo.
+
+              Antes de poder alcanzarla, todas las piedras frente a Rose salen disparadas por los aires de repente, mientras un esqueleto emerge de debajo de ellas y rápidamente usa un cuchillo oxidado para apuñalarla en el corazón. Rose no tuvo tiempo de reaccionar. Al principio, solo había sorpresa en sus ojos, pero pronto, su expresión facial se volvió vacía, mientras sus brazos colgaban a los lados, inmóviles. Cuando la luz abandona por completo los ojos de Rose, su atacante presiona más fuerte el cuchillo contra su pecho, haciéndola caer de espaldas, mientras el esqueleto se desmorona en pedazos.
+
+              "¡Rose!" grita Daren, mientras corre hacia ella.
+
+              Cuando la alcanza, Daren empieza a lanzar un hechizo de curación, pero Rose no reacciona de ninguna manera. Todos nos reunimos alrededor de los dos y los observamos sin decir una palabra, mientras Daren sigue lanzando hechizo de curación tras hechizo de curación, mientras Rose mira fijamente a la distancia, sin mover un músculo.
+          - source: scene_text_2
+            paragraph: 28
+            text: |-
+              "¡Rose, quédate conmigo!" grita Daren, mientras sigue lanzando desesperadamente sus hechizos.
+
+              No sirve de nada... Estoy seguro de que Daren también se habrá dado cuenta. Rose ya no respira. Dejó de respirar incluso antes de caer al suelo. Está muerta. Después de todo lo que pasamos para llevarla a casa sana y salva. Después de todo lo que ha pasado esta última semana. Murió, así sin más. Y ni siquiera Daren puede traerla de vuelta.
+
+              "No..." dice Kate. "Esto no está bien. ¡Tiene que ser una ilusión! El nigromante nunca podría hacerle daño así. ¡El hechizo del torneo lo habría impedido! Esto tiene que ser una—"
+
+              "El nigromante está muerto," la interrumpe Illuna. "El hechizo del torneo que le impedía hacer daño a Rose desapareció junto con su aura. Esta trampa fue diseñada específicamente para activarse después de su muerte, para burlar los efectos del hechizo de protección. Usó un vacío legal. Esto no es una ilusión. Rose murió, y el nigromante es quien la mató."
+
+              "¡No, no puede ser!" dice Kate, mientras las lágrimas empiezan a brotar de sus ojos. "No puede simplemente morir así. Esto no es justo. ¡No se merecía esto!"
+
+              Kate se detiene unos segundos para frotarse los ojos con las manos, mientras intenta contener las lágrimas.
+
+              "No se merecía esto..." dice Kate de nuevo, esta vez en un tono mucho más bajo.
+          - source: scene_3
+            paragraph: 10
+            text: |-
+              "Esto es culpa mía..." dice Daren, mientras finalmente suelta a Rose. "Yo fui quien se ofreció a escoltarla a casa. Yo fui quien prometió que la protegeríamos. Le fallé. Es mi culpa que esté muerta..."
+
+              "¡Eh, para el carro!" dice Hadrik. "No puedes simplemente echarte toda la culpa a ti mismo. Rose sabía muy bien en lo que se metía cuando decidió quedarse con nosotros después de lo que pasó ayer con el noble. Tomó su propia decisión y la mantuvo hasta el final. Murió con honor, y todos deberíamos respetarla por eso."
+
+              "¿¡Qué sabes tú de Rose!?" grita Daren furiosamente, de repente. "¿Crees que quería vivir sus últimos momentos en un estercolero como este? ¿Crees que murió feliz, sabiendo que dejó a sus hermanitos solos para valerse por sí mismos? ¿De verdad crees que todo en el mundo puede medirse por tus valores primitivos? ¿Qué te da el derecho de hablar de Rose así? ¡Dímelo!"
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de audición exitosa - nivel 4 ]'
+                - '[ Comprobación de observación exitosa - nivel 4 ]'
+              failed_checks:
+                - '[ Comprobación de velocidad fallida - nivel 4 ]'
+              ch11_saved_rose: 0
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch11b_revenant
+      - condition: hearing = 4 AND perception = 4 AND agility = 4
+        texts:
+          - source: scene_text
+            paragraph: 39
+            text: |-
+              Mientras Hadrik y Arraka están hablando, escucho el sonido de piedras empezando a desmoronarse en algún lugar del lado opuesto de la plaza del mercado. Me doy la vuelta para intentar identificar la fuente del sonido, y me doy cuenta de que las piedras del suelo frente a Rose están todas ligeramente agrietadas. Tengo un presentimiento muy ominoso sobre esto, y antes de que me dé tiempo a pensar las cosas, mi cuerpo se mueve solo y empiezo a correr hacia Rose lo más rápido que puedo.
+
+              Justo cuando la alcanzo, todas las piedras frente a Rose salen disparadas por los aires de repente, mientras un esqueleto emerge de debajo de ellas e intenta apuñalarla en el corazón con un cuchillo oxidado. Aparto al esqueleto de ella y lo estampo contra el suelo, mientras saco mi propia daga y me preparo para dar el golpe final. Para mi sorpresa, no hubo necesidad de apuñalar al esqueleto, porque ya se había desmoronado en pedazos en el momento en que golpeó el suelo.
+
+              "¡Rose, ¿estás bien?!" grita Daren, mientras él y todos los demás corren hacia nosotros.
+
+              "Yo, eh... ¡Sí!" dice Rose. "¡Gracias a Barry!"
+
+              "Barry, ¿cómo sabías lo que iba a pasar?" me pregunta Kate. "¿El potenciador de estadísticas te dio una premonición?"
+          - source: scene_text_2
+            paragraph: 29
+            text: |-
+              "No," digo. "No sabía que habría un esqueleto, solo noté que algo estaba intentando salir del suelo cerca de Rose, y no quise esperar a ver qué era."
+
+              "Aun así, no entiendo por qué el nigromante haría esto," dice Kate. "¿No habría impedido el hechizo del torneo que ese esqueleto hiciera daño a Rose?"
+
+              "No," dice Illuna. "Cuando el nigromante murió, el hechizo del torneo vinculado a él desapareció junto con su aura. Esta trampa fue diseñada específicamente para activarse después de su muerte, para burlar los efectos del hechizo de protección. Estaba intentando usar un vacío legal. Esto es probablemente el resultado del hechizo de sacrificio que usó antes de morir."
+
+              "Oh, dioses," dice Rose. "Nunca supe que la magia pudiera usarse así. No puedo creer que llegara a tales extremos solo para matarme..."
+
+              "Bueno, para ser justos, te vio revertir el tiempo mismo hace unos minutos," dice Hadrik. "¿Cómo demonios hiciste esa hazaña, de todas formas?"
+
+              "No lo sé..." dice Rose. "Eiden me dijo antes que yo era una tejedora del tiempo, pero pensé que estaba equivocado. Realmente no tengo idea de cómo hice lo que hice. Estaba tan desesperada por deshacer todo lo que había pasado que debo haber activado mis poderes por accidente. No estoy segura de si alguna vez podré hacer algo así de nuevo."
+          - source: scene_3
+            paragraph: 9
+            text: |-
+              "Bueno, una vez fue más que suficiente," dice Daren. "No solo salvaste todas nuestras vidas al rebobinar el tiempo, puede que hayas salvado al mundo entero. Pero podemos hablar de esto después. Ahora mismo, necesito curar a todos. No querríamos que nos pillara desprevenidos algún otro dúo loco de magos cazando recompensas."
+
+              Poco después de que Daren empieza a curarnos, un fuerte estruendo empieza a resonar por toda la ciudad.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de audición exitosa - nivel 4 ]'
+                - '[ Comprobación de observación exitosa - nivel 4 ]'
+                - '[ Comprobación de velocidad exitosa - nivel 4 ]'
+              ch11_saved_rose: 1
+              ac_ch11_casualties: 1
+            achievement:
+              id: ac_ch11_casualties
+              title: Sin bajas
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch11b_ending
+  - name: ch11b_revenant
+    texts:
+      - source: scene_text
+        paragraph: 41
+        text: |-
+          De repente, Rose empieza a moverse, y lentamente levanta el torso del suelo, mientras mira a su alrededor, con una expresión vacía en el rostro. Pero su expresión no es lo único que se siente vacío en ella. Su aura es completamente diferente a la de antes también. Se siente hueca, casi sin vida, y su piel es mucho más blanca, casi como si ya no circulara sangre por sus venas.
+
+          "¡Rose!" grita Kate. "¡Estás viva!"
+
+          "No," dice Daren, con una mirada muy oscura en los ojos. "Esa no es Rose."
+
+          "¿Qué quieres decir?" pregunta Kate. "Por supuesto que es Rose. ¡Está ahí mismo!"
+
+          "Solo su cuerpo está ahí," dice Illuna. "Rose está muerta. Lo que ves ante ti es un revenant. Un ser no muerto que nace con los recuerdos previos del anfitrión, pero con una personalidad completamente diferente. Ahora entiendo por qué el nigromante se tomó tantas molestias en lanzar un hechizo de sacrificio antes de matarse. Fue para convertir a Rose en un revenant."
+
+          "¡No, eso no puede ser verdad!" dice Kate, con desesperación en la voz, mientras Rose se levanta del suelo y empieza a caminar lentamente alejándose de nosotros. "¡Rose, diles que no es verdad!"
+
+          "Aquella a quien llaman Rose ya no existe," dice el revenant, sin girar la cabeza hacia nosotros. "Soy una servidora de Ulruk, el Dios de la Muerte, y mi tarea es llevar este cuerpo de tejedora del tiempo hasta él sano y salvo."
+
+          "Eso no va a pasar, maldita escoria no muerta," dice Daren, mientras saca su espada. "Vas a dejar su cuerpo aquí, para que podamos darle un entierro digno."
+      - source: scene_text_2
+        paragraph: 31
+        text: |-
+          "No estás en posición de detenerme, sanador," dice el revenant. "No soy como tu amiga, que no sabía cómo controlar sus poderes. Solo tengo que congelar el tiempo durante unas horas, y desde tu punto de vista, será como si me hubiera teletransportado fuera de la ciudad. Ahora, si me disculpan, mi maestro me está esperando."
+
+          Entonces empieza a caminar lentamente alejándose de nosotros otra vez, sin molestarse siquiera en mirar atrás, como si ni siquiera nos considerara una amenaza. Las manos de Daren están temblando mientras mira hacia el revenant, y parece congelado en su lugar. Aunque sabe que no es Rose, debe ser difícil para él obligarse a atacarla.
+
+          "Oh, una cosa más antes de irme," dice el revenant, mientras se detiene y gira la cabeza hacia nosotros. Esta vez, la mirada vacía en sus ojos es reemplazada por una de arrepentimiento. "Cuiden a los niños por mí, ¿quieren? No creo que vaya a volver a esa casa pronto..."
+
+          "¡Detente!" grita Daren.
+
+          Entonces corre hacia el revenant e intenta cortarla con su espada, pero ella desaparece sin dejar rastro antes de que pudiera asestarle un golpe, y lo único que su hoja consigue cortar es el aire vacío.
+
+          Mientras todos nos quedamos ahí en silencio, un fuerte estruendo empieza a resonar por toda la ciudad.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch11b_ending
+  - name: ch11b_ending
+    texts:
+      - source: scene_text
+        paragraph: 40
+        text: |-
+          El cielo sobre nosotros se llena rápidamente de pantallas holográficas muy grandes, mientras la gente empieza lentamente a abrir sus ventanas para echar un buen vistazo, aunque parecen demasiado asustados para acercarse a nosotros. Parece que todas las pantallas muestran lo mismo, que es un gnomo con el pelo despeinado, llevando gafas de protección y una bata de laboratorio manchada de aceite, que actualmente está trasteando con unos cables en algún tipo de taller, mientras tararea una melodía alegre. Después de unos segundos más de tarareo, el gnomo de repente mira hacia nosotros, se quita las gafas y pega la cara a la pantalla.
+
+          "Qué peculiar," dice el gnomo, mientras se aleja de la pantalla. "¡Muy peculiar! ¡Podría jurar que ya he conectado estos cables un millón de veces, pero nunca había visto la luz roja ponerse verde hasta ahora! Bueno, ¡da igual! ¿Pueden oírme todos?"
+
+          Hay una pausa en la que podemos escuchar un murmullo bajo de la gente que observa las pantallas desde sus ventanas.
+
+          "Espera, ¿qué estoy diciendo?" dice el gnomo. "Esto es un transmisor de una sola vía. Aunque me respondan, no podré oírlos. De acuerdo, esto es lo que haré. Voy a proceder a leerles este pequeño discurso que tengo escrito aquí en mi pergamino, y si en realidad nadie puede oírme, simplemente lo leeré de nuevo en otro momento. Ahora, ¿dónde habré puesto ese maldito pergamino?"
+
+          El gnomo desaparece debajo de la pantalla por unos diez segundos, durante los cuales el murmullo en la plaza del mercado se intensifica.
+      - source: scene_text_2
+        paragraph: 30
+        text: |-
+          "¡Bueno, podría jurar que lo tenía por aquí, en algún sitio!" dice el gnomo, mientras vuelve de debajo de la pantalla. "¡Da igual, entonces improvisaré!"
+
+          El gnomo se aclara la garganta antes de continuar.
+
+          "¡Damas y caballeros!" dice el gnomo. "¿O debería decir solo caballeros en este caso? ¿Ya que no hay mujeres magas? ¡Caballeros y caballeros! ¡Bienvenidos al torneo de Magium! Soy Golmyck, el rey de Thilias, y tengo un anuncio público que hacer. En primer lugar, me gustaría empezar con una disculpa a todos los magos que se han unido a este torneo. Cuando llegaron por primera vez al continente, a todos se les dijo que recibirían sus objetivos de forma privada, pero desafortunadamente, el dispositivo que se suponía iba a transmitirles estos mensajes se rompió poco después de su llegada. He estado intentando arreglarlo desde entonces, pero dado que ya ha pasado una semana entera, decidí usar este viejo transmisor como solución temporal, hasta que logre hacer funcionar el dispositivo original correctamente. Normalmente, esta transmisión debería estar llegando a todas las ciudades de Varathia e incluso a algunas áreas en la naturaleza salvaje, pero como no puedo garantizar que cada mago en el continente vaya a ver esto, ¡me gustaría pedirles a todos que pasen esta información a sus compañeros participantes que se hayan perdido el anuncio!"
+      - source: scene_3
+        paragraph: 11
+        text: |-
+          El gnomo se aclara la garganta de nuevo.
+
+          "Y ahora que las presentaciones están fuera del camino," dice Golmyck, "creo que finalmente es hora de darles a todos lo que han estado esperando."
+
+          El gnomo sonríe.
+
+          "¡Sus primeros objetivos!" dice.
+
+          -----Fin del libro 1-----
+    effects:
+      - set:
+          ac_ch11_average: 1
+        achievement:
+          id: ac_ch11_average
+          title: Ciudadano Promedio
+        condition: available_points = 19
+    choices:
+      - position: 1
+        text: Continuar hacia el libro 2
+        effects:
+          - set:
+              current_scene: ch11b_credits

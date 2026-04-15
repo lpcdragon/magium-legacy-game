@@ -1,0 +1,2611 @@
+scenes:
+  - name: b2_ch04a_intro
+    effects:
+      - set:
+          successful_checks:
+            - 'Punto de control alcanzado: Partida guardada.'
+        condition: checkpoint_rich = 1
+    routes:
+      - condition: b2_ch2_cell = 1
+        texts:
+          - source: scene_text
+            paragraph: 2
+            text: |-
+              La trampilla sobre nosotros se abre, permitiendo que la plataforma nos eleve lentamente a través de la gruesa capa de roca que forma el techo de la cueva. Una vez que nos acercamos al nivel de las celdas de nuestra división, una segunda trampilla se abre, y la plataforma reduce su velocidad hasta detenerse, al llegar finalmente a nuestro destino. Casi inmediatamente después de que se detiene, el ascensor cambia de dirección, y comienza a descender de vuelta hacia los niveles inferiores. Saltamos de la plataforma al suelo de la celda, mientras la trampilla se cierra, bloqueando el ascensor de nuestra vista.
+
+              Al mirar a mi alrededor, me doy cuenta de que la habitación a la que hemos llegado no es en realidad la habitación de Leila, sino la mía. Supongo que fue bueno que elegí la celda número tres cuando el empleado del escritorio me preguntó. Si hubiera elegido la celda número cinco en su lugar, esta habitación probablemente habría sido tomada por el mago que fue encerrado aquí ayer.
+
+              Mientras estamos de pie en medio de mi habitación, un pequeño charco comienza a formarse bajo nuestros pies, debido al agua que gotea de nuestra ropa.
+          - source: scene_text_2
+            paragraph: 2
+            text: |-
+              "Deberíamos cambiarnos," digo, mientras saco la llave de mi habitación del bolsillo y voy a abrir la puerta. "También quiero revisar mi cuaderno, para ver si puedo encontrar alguna información útil sobre las criaturas que vimos en las cavernas. Te veré en unas horas, para contarte lo que encontré."
+
+              Leila asiente.
+
+              "Hasta luego," escribe Leila, y sale de mi habitación, dirigiéndose hacia la suya.
+
+              Lo primero que hago después de que se va es buscar en mi mochila una camisa seca y un par de pantalones nuevos.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_technically
+                  checkpoint_rich: 0
+      - condition: b2_ch2_cell <> 1
+        texts:
+          - source: scene_text
+            paragraph: 3
+            text: |-
+              La trampilla sobre nosotros se abre, permitiendo que la plataforma nos eleve lentamente a través de la gruesa capa de roca que forma el techo de la cueva. Una vez que nos acercamos al nivel de las celdas de nuestra división, una segunda trampilla se abre, y la plataforma reduce su velocidad hasta detenerse, al llegar finalmente a nuestro destino. Casi inmediatamente después de que se detiene, el ascensor cambia de dirección, y comienza a descender de vuelta hacia los niveles inferiores. Saltamos de la plataforma al suelo de la celda, mientras la trampilla se cierra, bloqueando el ascensor de nuestra vista.
+
+              "¿Q-q-qué está pasando?" escuchamos una voz proveniente de detrás de nosotros. "¿Cómo llegaron aquí? ¿Y cómo diablos se mojaron tanto?"
+
+              Cuando tanto Leila como yo nos damos la vuelta, rápidamente nos damos cuenta de que el ascensor en realidad no nos llevó de vuelta a la habitación de Leila. En cambio, nos llevó a la celda número tres, que es una de las habitaciones que el empleado del escritorio me ofreció elegir cuando llegué aquí por primera vez, y también la habitación que actualmente está siendo habitada por el mago que fue encerrado aquí ayer.
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              El mago nos mira con una expresión algo asustada, mientras un hilo de sudor le corre por la frente, y parece estar escondiendo algo detrás de su espalda.
+
+              "Perdón por la molestia," le digo al mago. "Salimos a nadar y nos perdimos de camino de vuelta. Nos iremos de aquí tan pronto como nos abras esa puerta."
+
+              "¿Salieron a nadar?" pregunta el mago, impactado. "Estaban intentando escapar, ¿verdad? Denme una buena razón por la que no debería llamar a los guardias ahora mismo, y contarles lo que estaban haciendo."
+        choices:
+          - position: 1
+            text: Si nos dejas ir, no preguntaré nada sobre eso que estás escondiendo detrás de tu espalda.
+            effects:
+              - set:
+                  current_scene: b2_ch04a_hiding
+                  checkpoint_rich: 0
+          - position: 2
+            text: Adelante. El dueño de la arena ya sabe lo que pasó.
+            effects:
+              - set:
+                  current_scene: b2_ch04a_owner
+                  checkpoint_rich: 0
+  - name: b2_ch04a_hiding
+    texts:
+      - source: scene_text
+        paragraph: 4
+        text: |-
+          "Si nos dejas ir, no preguntaré nada sobre eso que estás escondiendo detrás de tu espalda."
+
+          "¿Qué cosa?" grita el mago. "¡No estoy escondiendo nada detrás de mi espalda!"
+
+          "No va a funcionar," escribe Leila, mientras mira directamente al mago.
+
+          "¿Qué es lo de la escritura?" pregunta el mago, confundido, mientras mira a Leila. "¿Así es como hablas? ¿Qué es lo que no va a funcionar?"
+
+          Leila se agacha para recoger un objeto del suelo que parece haber sido hecho pegando varias piezas de chatarra de la forma más aleatoria posible. El objeto es lo suficientemente pequeño para caber en su palma, así que lo agarra con una mano, y estira su brazo hacia el mago, acercando el objeto de metal a unos centímetros de su cara.
+
+          "Esto," escribe Leila. "Esto es lo que no va a funcionar."
+
+          "No sé de qué estás hablando," dice el mago, fingiendo ignorancia. "Eso es solo un trozo de chatarra."
+      - source: scene_text_2
+        paragraph: 4
+        text: |-
+          "No," escribe Leila. "Este es un dispositivo diseñado para mejorar tus habilidades físicas por un tiempo limitado. Y eso que estás escondiendo detrás de tu espalda probablemente está destinado a actuar como un puente entre tú y tu dispositivo de chatarra, permitiéndote transferir tu energía mágica hacia él durante un período de tiempo."
+
+          "¿Cómo sup--" empieza a decir el mago, pero se detiene cuando ve un nuevo texto aparecer frente a él.
+
+          "No puedes usar este dispositivo en la arena," escribe Leila. "Será detectado de inmediato. Si no logras que de alguna manera se enlace directamente a tu aura mágica, la energía mágica que estallará del dispositivo cuando lo actives disparará todas las alarmas mágicas en un radio de ocho kilómetros. De cualquier forma, incluso si logras que funcione, el dispositivo está tan mal hecho que no podrás usarlo por más de unos minutos, incluso si pasas todo el día cargándolo."
+
+          "¡Unos minutos son más que suficiente en una arena!" grita el mago. "¡Unos minutos pueden significar la diferencia entre la vida y la muerte! ¡No sabes lo aterrador que puede ser una arena! ¡No tienes idea! ¡Si puedo obtener aunque sea la más mínima ventaja de este dispositivo, lo usaré con gusto!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_meeting
+  - name: b2_ch04a_owner
+    texts:
+      - source: scene_text
+        paragraph: 5
+        text: |-
+          "Adelante. El dueño de la arena ya sabe lo que pasó."
+
+          "¡Estás mintiendo!" dice el mago. "¡Apuesto a que ni siquiera sabes cómo se ve el dueño!"
+
+          "No va a funcionar," escribe Leila, mientras mira directamente al mago.
+
+          "¿Qué es lo de la escritura?" pregunta el mago, confundido, mientras mira a Leila. "¿Así es como hablas? ¿Qué es lo que no va a funcionar?"
+
+          Leila se agacha para recoger un objeto del suelo que parece haber sido hecho pegando varias piezas de chatarra de la forma más aleatoria posible. El objeto es lo suficientemente pequeño para caber en su palma, así que lo agarra con una mano, y estira su brazo hacia el mago, acercando el objeto de metal a unos centímetros de su cara.
+
+          "Esto," escribe Leila. "Esto es lo que no va a funcionar."
+
+          "No sé de qué estás hablando," dice el mago, fingiendo ignorancia. "Eso es solo un trozo de chatarra."
+      - source: scene_text_2
+        paragraph: 4
+        text: |-
+          "No," escribe Leila. "Este es un dispositivo diseñado para mejorar tus habilidades físicas por un tiempo limitado. Y eso que estás escondiendo detrás de tu espalda probablemente está destinado a actuar como un puente entre tú y tu dispositivo de chatarra, permitiéndote transferir tu energía mágica hacia él durante un período de tiempo."
+
+          "¿Cómo sup--" empieza a decir el mago, pero se detiene cuando ve un nuevo texto aparecer frente a él.
+
+          "No puedes usar este dispositivo en la arena," escribe Leila. "Será detectado de inmediato. Si no logras que de alguna manera se enlace directamente a tu aura mágica, la energía mágica que estallará del dispositivo cuando lo actives disparará todas las alarmas mágicas en un radio de ocho kilómetros. De cualquier forma, incluso si logras que funcione, el dispositivo está tan mal hecho que no podrás usarlo por más de unos minutos, incluso si pasas todo el día cargándolo."
+
+          "¡Unos minutos son más que suficiente en una arena!" grita el mago. "¡Unos minutos pueden significar la diferencia entre la vida y la muerte! ¡No sabes lo aterrador que puede ser una arena! ¡No tienes idea! ¡Si puedo obtener aunque sea la más mínima ventaja de este dispositivo, lo usaré con gusto!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_meeting
+  - name: b2_ch04a_meeting
+    texts:
+      - source: scene_text
+        paragraph: 6
+        text: |-
+          "No digas que no te lo advertí..." escribe Leila, y le entrega al mago su dispositivo de chatarra.
+
+          El mago toma el dispositivo y lo mira por unos segundos, con una expresión contemplativa en su rostro. Luego saca una llave de su bolsillo, y camina junto a nosotros para desbloquear y luego abrir la puerta.
+
+          "Este encuentro nunca ocurrió," dice el mago, mientras mira a cada uno de nosotros. "¿Entienden? Ahora, vamos. Salgan de aquí."
+
+          "No necesitas decírnoslo dos veces," digo, mientras me dirijo a la puerta, y salgo de la habitación junto con Leila.
+
+          Mientras el mago cierra la puerta detrás de nosotros, los dos comenzamos a dirigirnos hacia nuestras habitaciones.
+
+          "Me sorprende que pudieras descifrar para qué era ese dispositivo con solo un vistazo," digo.
+
+          "Solía pasar mucho tiempo en el taller de mi padre, cuando vivíamos en nuestra cabaña del bosque," escribe Leila. "Aprendí un par de cosas mientras lo veía trabajar."
+      - source: scene_text_2
+        paragraph: 5
+        text: |-
+          "¿Crees que podrá modificar el dispositivo a tiempo para la arena?" le pregunto.
+
+          "Es posible," escribe Leila. "Pero tendrá que hacerlo rápido. No podrá cargarlo con energía mientras lo esté modificando, y necesitará cargarlo por al menos diez horas para sacarle algún uso decente, dado lo ineficiente que es."
+
+          "Deberíamos ir a cambiarnos," digo. "También quiero revisar mi cuaderno, para ver si puedo encontrar alguna información útil sobre las criaturas que vimos en las cavernas. Te veré en unas horas, para contarte lo que encontré."
+
+          Leila asiente.
+
+          "Hasta luego," escribe Leila, y se dirige hacia su habitación.
+
+          Yo también vuelvo a mi propia habitación, y lo primero que hago después de entrar es buscar en mi mochila una camisa seca y un par de pantalones nuevos.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_technically
+  - name: b2_ch04a_technically
+    texts:
+      - source: scene_text
+        paragraph: 7
+        text: |-
+          Una vez que me cambio y dejo mi ropa mojada a secar, tomo mi cuaderno y vuelvo a estudiar.
+
+          Aproximadamente una hora después de empezar a leer, recibí una llamada en mi transceptor de parte de Flower.
+
+          "Barry, ¿estás bien?" me pregunta Flower de repente, con un poco de pánico en su voz.
+
+          Pude notar de inmediato que era ella y no Illuna quien hablaba, por el tono de su voz.
+
+          "Sí, estoy vivo," digo. "Logramos volver a nuestras celdas hace como una hora."
+
+          "¡Gracias a los dioses!" dice Flower. "Cuando me enteré de lo que pasó, me preocupé mucho. Especialmente cuando descubrí que te dejaron solo con ese imbécil de Fyron. ¡Petal también ha estado muy preocupada!"
+
+          "¿Ah sí?" le pregunto, sorprendido. "¿Eso dijo?"
+
+          "Bueno, técnicamente," dice Flower, "lo que dijo fue que si no podías manejarte en una situación así después de unirte a este torneo, entonces te merecías tu destino, ¡pero estoy segura de que no es lo que realmente quiso decir!"
+    choices:
+      - position: 1
+        text: ¿Ah sí? Bueno, dile que sus ojos azules la hacen ver gorda.
+        effects:
+          - set:
+              current_scene: b2_ch04a_fat
+      - position: 2
+        text: Está bien. ¡Sé que lo dice con buena intención!
+        effects:
+          - set:
+              current_scene: b2_ch04a_means
+      - position: 3
+        text: ¿Y qué hay de Arraka? ¿No estaba preocupada por mí?
+        effects:
+          - set:
+              current_scene: b2_ch04a_worried
+  - name: b2_ch04a_fat
+    texts:
+      - source: scene_text
+        paragraph: 8
+        text: |-
+          "¿Ah sí? Bueno, dile que sus ojos azules la hacen ver gorda."
+
+          "Te puedo escuchar, ¿sabes?..." me dice Illuna, con tono amenazante.
+
+          "Espera, ¿sus ojos azules realmente me hacen ver gorda?" pregunta Flower.
+
+          "¡Oye, Barry!" dice Arraka, interrumpiendo a Flower. "Algo me ha estado molestando desde que salimos de las cavernas. ¿Cómo diablos lograste convencer al trol de que te dejara ir? Estaba segura de que estabas acabado cuando lo sentí acercarse a ti."
+
+          "¿Te refieres a Velgos?" le pregunto. "¿El trol que no moriría ni aunque le cortaras la cabeza? Lo detuvo el dueño de la arena. Aparentemente quiere hacer un show de nuestra pelea, y pelearemos contra el trol en la segunda ronda de la arena."
+
+          "¡Ja!" dice Arraka. "¡Estoy deseando que llegue!"
+
+          "¡Ten cuidado, Barry!" dice Flower. "¡No podremos ayudarte mientras estés en la arena!"
+
+          "Sí, lo sé," digo. "No te preocupes, estaré bien. Pero gracias por tu preocupación."
+
+          Después de terminar de hablar con Flower e Illuna, pasé otra hora estudiando mi cuaderno, y luego empecé a llamar a mis amigos de las otras divisiones, uno por uno, para contarles mis hallazgos. Cuando llegué a Kate, también decidí contarle sobre su antigua compañera del Faro, para ver cómo reaccionaría.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "Oye, Kate," digo. "¿Recuerdas haber conocido a una joven lessathi con cabello plateado que no podía hablar, cuando estabas en el Faro de Esperanza? O quizás tenía el cabello negro en ese entonces, no estoy seguro."
+
+          Hay una breve pausa después de que termino mi frase, durante la cual ni siquiera puedo escuchar el sonido de la respiración de Kate.
+
+          "¿Cómo sabes de Leila?" me pregunta Kate, después de unos segundos.
+
+          "¡Así que sí la recuerdas!" digo. "¿Ustedes dos se llevaban bien, o..."
+
+          "¡Dime cómo sabes de ella!" grita Kate.
+
+          "¡Está bien, está bien!" digo. "La conocí el otro día. Es miembro de mi división. Todavía está viva."
+
+          Hay otra breve pausa durante la cual Kate no dice nada.
+
+          "¿Estás seguro de esto?" dice Kate. "¿Cómo sabes que realmente es ella? Podría estar tratando de engañarte. Cualquiera puede teñirse el cabello de blanco y fingir que no puede hablar. La Leila que yo conozco debería haber estado muerta hace mucho tiempo."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_change
+  - name: b2_ch04a_means
+    texts:
+      - source: scene_text
+        paragraph: 9
+        text: |-
+          "Está bien. ¡Sé que lo dice con buena intención!"
+
+          "¡Oye, Barry!" dice Arraka. "Algo me ha estado molestando desde que salimos de las cavernas. ¿Cómo diablos lograste convencer al trol de que te dejara ir? Estaba segura de que estabas acabado cuando lo sentí acercarse a ti."
+
+          "¿Te refieres a Velgos?" le pregunto. "¿El trol que no moriría ni aunque le cortaras la cabeza? Lo detuvo el dueño de la arena. Aparentemente quiere hacer un show de nuestra pelea, y pelearemos contra el trol en la segunda ronda de la arena."
+
+          "¡Ja!" dice Arraka. "¡Estoy deseando que llegue!"
+
+          "¡Ten cuidado, Barry!" dice Flower. "¡No podremos ayudarte mientras estés en la arena!"
+
+          "Sí, lo sé," digo. "No te preocupes, estaré bien. Pero gracias por tu preocupación."
+
+          Después de terminar de hablar con Flower e Illuna, pasé otra hora estudiando mi cuaderno, y luego empecé a llamar a mis amigos de las otras divisiones, uno por uno, para contarles mis hallazgos. Cuando llegué a Kate, también decidí contarle sobre su antigua compañera del Faro, para ver cómo reaccionaría.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "Oye, Kate," digo. "¿Recuerdas haber conocido a una joven lessathi con cabello plateado que no podía hablar, cuando estabas en el Faro de Esperanza? O quizás tenía el cabello negro en ese entonces, no estoy seguro."
+
+          Hay una breve pausa después de que termino mi frase, durante la cual ni siquiera puedo escuchar el sonido de la respiración de Kate.
+
+          "¿Cómo sabes de Leila?" me pregunta Kate, después de unos segundos.
+
+          "¡Así que sí la recuerdas!" digo. "¿Ustedes dos se llevaban bien, o..."
+
+          "¡Dime cómo sabes de ella!" grita Kate.
+
+          "¡Está bien, está bien!" digo. "La conocí el otro día. Es miembro de mi división. Todavía está viva."
+
+          Hay otra breve pausa durante la cual Kate no dice nada.
+
+          "¿Estás seguro de esto?" dice Kate. "¿Cómo sabes que realmente es ella? Podría estar tratando de engañarte. Cualquiera puede teñirse el cabello de blanco y fingir que no puede hablar. La Leila que yo conozco debería haber estado muerta hace mucho tiempo."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_change
+  - name: b2_ch04a_worried
+    texts:
+      - source: scene_text
+        paragraph: 10
+        text: |-
+          "¿Y qué hay de Arraka? ¿No estaba preocupada por mí?"
+
+          "¡Claro que estaba preocupada!" dice Arraka. "¡Me preocupo por ti todo el tiempo! Rezo todos los días para que alguien finalmente encuentre una cura para tu mórbida estupidez, ¡pero no he tenido suerte hasta ahora! ¡Sin embargo, no te desanimes! ¡Estoy segura de que eventualmente alguien te sacará de tu miseria!"
+
+          "Gracias por tus amables palabras," le digo.
+
+          "¡Oye, no hay de qué!" dice Arraka. "Además, ¿te importaría contarme cómo diablos lograste convencer al trol de que te dejara ir? Estaba segura de que estabas acabado cuando lo sentí acercarse a ti."
+
+          "¿Te refieres a Velgos?" le pregunto. "¿El trol que no moriría ni aunque le cortaras la cabeza? Lo detuvo el dueño de la arena. Aparentemente quiere hacer un show de nuestra pelea, y pelearemos contra el trol en la segunda ronda de la arena."
+
+          "¡Ja!" dice Arraka. "¡Estoy deseando que llegue!"
+
+          "¡Ten cuidado, Barry!" dice Flower. "¡No podremos ayudarte mientras estés en la arena!"
+
+          "Sí, lo sé," digo. "No te preocupes, estaré bien. Pero gracias por tu preocupación."
+
+          Después de terminar de hablar con Flower e Illuna, pasé otra hora estudiando mi cuaderno, y luego empecé a llamar a mis amigos de las otras divisiones, uno por uno, para contarles mis hallazgos. Cuando llegué a Kate, también decidí contarle sobre su antigua compañera del Faro, para ver cómo reaccionaría.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "Oye, Kate," digo. "¿Recuerdas haber conocido a una joven lessathi con cabello plateado que no podía hablar, cuando estabas en el Faro de Esperanza? O quizás tenía el cabello negro en ese entonces, no estoy seguro."
+
+          Hay una breve pausa después de que termino mi frase, durante la cual ni siquiera puedo escuchar el sonido de la respiración de Kate.
+
+          "¿Cómo sabes de Leila?" me pregunta Kate, después de unos segundos.
+
+          "¡Así que sí la recuerdas!" digo. "¿Ustedes dos se llevaban bien, o..."
+
+          "¡Dime cómo sabes de ella!" grita Kate.
+
+          "¡Está bien, está bien!" digo. "La conocí el otro día. Es miembro de mi división. Todavía está viva."
+
+          Hay otra breve pausa durante la cual Kate no dice nada.
+
+          "¿Estás seguro de esto?" dice Kate. "¿Cómo sabes que realmente es ella? Podría estar tratando de engañarte. Cualquiera puede teñirse el cabello de blanco y fingir que no puede hablar. La Leila que yo conozco debería haber estado muerta hace mucho tiempo."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_change
+  - name: b2_ch04a_change
+    texts:
+      - source: scene_text
+        paragraph: 11
+        text: |-
+          "¿Por qué?" digo. "¿Encontraste su cuerpo?"
+
+          "...No," dice Kate. "No lo encontré."
+
+          "Bueno, entonces," digo, "supongo que no te haría daño conocerla, ¿verdad? Podrás decidir por ti misma si realmente es ella cuando la veas de cerca."
+
+          "Está bien, Barry," dice Kate. "Accederé a conocerla. Pero ten cuidado con ella. No puedes estar seguro de que realmente sea ella. Había muchos lessathi en esa institución que sabían de nosotras. La información podría haberse filtrado de muchas maneras."
+
+          "Bien, tendré cuidado," digo. "Te veré en la arena, mañana. ¡No llegues tarde!"
+
+          "Nos vemos mañana," dice Kate, simplemente, y luego ambos cerramos la transmisión.
+
+          Una vez que me aseguro de que cada uno de mis amigos sepa sobre los monstruos de la arena y sus debilidades, decido que es hora de volver con Leila, para finalmente formular un plan sobre cómo lidiar con los eventos de mañana. Cuando llego a su habitación, toco tres veces, y ella abre su puerta, vestida con la misma ropa que llevaba cuando volvimos de las cavernas. Su ropa no está tan mojada como cuando regresamos, pero definitivamente no está ni cerca de estar seca todavía.
+
+          "¿No te cambiaste?" le pregunto, impactado.
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          "No tengo ropa de repuesto," escribe Leila. "No llevaba mochila cuando me capturaron."
+
+          "Bueno, ¿por qué no dijiste algo?" digo. "¡Podrías haberme pedido algo de ropa prestada hasta que la tuya se secara!"
+
+          "No quería ser una molestia," escribe Leila.
+
+          "Espera un momento," digo. "Si no tienes mochila, ¿qué hay de la comida? No me digas que no has comido nada desde que llegaste aquí."
+
+          "Los guardias me han proporcionado un suministro mínimo de comida y agua," escribe Leila. "Justo lo suficiente para sobrevivir. No es un problema."
+
+          "Claro que es un problema," digo. "Espera aquí, voy a traerte ropa para cambiarte y algo de comida."
+
+          "No, no tienes que--" empieza a escribir Leila, pero la ignoro, y vuelvo a mi habitación en busca de algo de ropa y un poco de cecina de mi mochila.
+
+          Luego vuelvo con Leila y le entrego una camisa de manga larga, un par de pantalones, la cecina y una botella de agua.
+
+          "Aquí tienes," le digo a Leila. "Ahora apúrate y cámbiate, ¿quieres? No querrás pescar un resfriado justo antes de la arena."
+
+          "Gracias..." escribe Leila, mientras toma lo que le di, y luego cierra la puerta para cambiarse.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_troll
+  - name: b2_ch04a_troll
+    texts:
+      - source: scene_text
+        paragraph: 12
+        text: |-
+          Abre la puerta un poco después, vestida con mi ropa, con las mangas largas de la camisa colgando más allá de sus manos, y los pantalones arrastrándose por el suelo detrás de ella.
+
+          "Esta ropa es... un poco grande para mí," escribe Leila.
+
+          "¡Te ves bien!" le digo. "No es como si fueras a pelear con esta ropa en el evento de la arena. Es solo hasta que tu propia ropa se seque. Vamos, entremos. Quiero contarte lo que descubrí mientras leía mi cuaderno."
+
+          Ambos entramos a su habitación, y paso los siguientes quince minutos contándole las partes más importantes de mis hallazgos. Escucha atentamente lo que tengo que decir, mientras de vez en cuando le da un mordisco a la cecina que le di. Después de que termino de hablar, deja la cecina en la cama, a su lado, y empieza a escribir.
+
+          "Por lo que me dices," escribe Leila, "entiendo que nuestro mayor problema con diferencia será el trol, y su regeneración superior a la normal."
+
+          "Sí," le digo. "Ya se sabe que un trol puede regenerarse lo suficientemente rápido como para no morir de una herida en el corazón, pero que un trol pueda sobrevivir con la cabeza cortada es algo que no creía posible. Supongo que muestra lo poco que realmente sabemos sobre la regeneración en general. Según todos los libros que he leído, cualquier ser vivo al que le hayan separado la cabeza de su cuerpo no debería poder vivir más, independientemente de lo alta que sea su regeneración. El hecho de que el cuerpo pudiera regenerar su cabeza contradice nuestro conocimiento más básico sobre cómo se supone que funciona el cuerpo de un trol."
+      - source: scene_text_2
+        paragraph: 8
+        text: |-
+          "Pero el trol no regeneró su cabeza," escribe Leila. "La cabeza siguió hablando desde el suelo, y el cuerpo tuvo que recogerla."
+
+          "¡Tienes razón!" digo. "Esto significa que el enlace entre el cuerpo y la cabeza de alguna manera no se rompe, incluso después de que los dos se separan. Quizás podamos usar esto. Si el trol todavía usa su cabeza para ver y oír incluso después de ser separada del cuerpo, entonces quizás podamos cortarle la cabeza, recogerla, y luego vendarle los ojos, o algo así, ¡dejando su cuerpo indefenso!"
+
+          "No creo que el trol se dejaría atrapar así de nuevo, en la arena," escribe Leila. "Usé el elemento sorpresa antes, pero ahora sabe lo rápida que soy, y no me dejará cortarle la cabeza de nuevo tan fácilmente."
+
+          "Bueno, la única forma de matar a un trol común," digo, "es cortándole la cabeza o quemándolo vivo. Si cortar la cabeza no es una opción, entonces la única alternativa que nos queda es el fuego. Dicho esto, conseguir acceso a cualquier tipo de llamas será prácticamente imposible en la arena, y ese trol incluso lleva armadura anti-magia, que le da protección contra el fuego. Incluso si de alguna manera logramos encontrar una forma de quemarlo, primero tendríamos que dañar su armadura lo suficiente como para que las protecciones mágicas sobre ella se desgasten."
+
+          "¿Crees que deberíamos hablar de todo esto con los otros miembros de nuestra división?" escribe Leila. "Quizás podrían tener algunas ideas."
+    choices:
+      - position: 1
+        text: Supongo que no haría daño escuchar sus opiniones al respecto.
+        effects:
+          - set:
+              current_scene: b2_ch04a_matter
+              b2_ch4_inform: 1
+      - position: 2
+        text: No, que encuentren su propia información. Nosotros casi morimos por la nuestra.
+        effects:
+          - set:
+              current_scene: b2_ch04a_information
+              b2_ch4_inform: 0
+  - name: b2_ch04a_matter
+    texts:
+      - source: scene_text
+        paragraph: 13
+        text: |-
+          "Supongo que no haría daño escuchar sus opiniones al respecto."
+
+          Leila asiente.
+
+          "Muy bien entonces," digo. "Vamos a tocar sus puertas, y tendremos una reunión en la sala de recreación."
+
+          Me doy la vuelta para salir de la habitación, pero Leila me agarra de la manga y me detiene en seco. Al volverme hacia ella, veo que la escritura azul frente a ella dice simplemente: "Espera."
+
+          La escritura azul desaparece rápidamente, siendo reemplazada por un nuevo texto.
+
+          "¿Podemos hacer esto después?" escribe Leila.
+
+          "¿Después?" le pregunto, confundido.
+
+          "Después de que mi ropa se haya secado..." escribe Leila, con una mirada suplicante en sus ojos, mientras me muestra las mangas largas colgando de sus muñecas.
+
+          "Oh, cierto, cierto," digo. "Perdón, lo olvidé."
+
+          Hago una pausa por unos segundos.
+      - source: scene_text_2
+        paragraph: 9
+        text: |-
+          "Pensándolo bien," digo, "quizás deberíamos tener esta discusión mañana, durante nuestro último período de recreación. Los eventos de la arena no empezarán hasta pasado mañana, así que tendremos tiempo de sobra para hacer una estrategia. No tengo muchas ganas de ir tocando las puertas de todos como si estuviera repartiendo panfletos. Además, algunos de ellos podrían no aceptar una reunión, ni siquiera si los llamo. Creo que estarán más dispuestos a escucharme mañana, cuando estemos todos en la misma sala."
+
+          Leila asiente de nuevo.
+
+          "Creo que voy a volver a mi habitación e intentar conseguir más información," digo. "Buscaré cada nota que haya escrito sobre regeneración, e intentaré ver si puedo darle sentido a esta situación. Quizás si entendemos bien la habilidad del trol, podamos encontrar una forma de contrarrestarla. Avísame si se te ocurre alguna idea mientras tanto."
+
+          "Lo haré," escribe Leila.
+
+          "Bueno, entonces creo que me voy," digo. "¡Te veré después!"
+
+          "Hasta luego," escribe Leila, y luego salgo de su habitación y vuelvo a la mía.
+
+          Al cerrar la puerta de mi habitación detrás de mí, y al tomar mi cuaderno de nuevo, mis pensamientos se dirigen hacia el lessathi que me ofreció el trato con el rey. Todavía no les he contado a ninguno de mis amigos sobre ello. ¿Debería contarles?
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_knowledge
+  - name: b2_ch04a_information
+    texts:
+      - source: scene_text
+        paragraph: 14
+        text: |-
+          "No, que encuentren su propia información. Nosotros casi morimos por la nuestra."
+
+          "De acuerdo," escribe Leila.
+
+          "Así que nuestro principal problema sigue siendo el trol..." digo.
+
+          Leila asiente, y hago una pausa por unos segundos para pensar qué hacer a continuación.
+
+          "Creo que voy a volver a mi habitación e intentar conseguir más información," digo. "Buscaré cada nota que haya escrito sobre regeneración, e intentaré ver si puedo darle sentido a esta situación. Quizás si entendemos bien la habilidad del trol, podamos encontrar una forma de contrarrestarla. Avísame si se te ocurre alguna idea mientras tanto."
+
+          "Lo haré," escribe Leila.
+
+          "Bueno, entonces creo que me voy," digo. "¡Te veré después!"
+
+          "Hasta luego," escribe Leila, y luego salgo de su habitación y vuelvo a la mía.
+
+          Al cerrar la puerta de mi habitación detrás de mí, y al tomar mi cuaderno de nuevo, mis pensamientos se dirigen hacia el lessathi que me ofreció el trato con el rey. Todavía no les he contado a ninguno de mis amigos sobre ello. ¿Debería contarles?
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_knowledge
+  - name: b2_ch04a_knowledge
+    routes:
+      - condition: b2_ch2_deal = 3
+        texts:
+          - source: scene_text
+            paragraph: 15
+            text: |-
+              No, definitivamente no debería. La mayoría de ellos probablemente no estarían de acuerdo con que yo ayude a los lessathi, y probablemente se molestarían por ello. Es mejor guardármelo para mí. Aun así, no puedo evitar preguntarme quién será la adición de último momento a nuestra división, y cómo exactamente planean que él solucione todos mis problemas. Seguramente no esperan que algún lessathi se encargue de todas esas bestias solo, ¿verdad?
+
+              Mientras estoy perdido en mis pensamientos, pasando mecánicamente las páginas de mi cuaderno una por una, mis ojos se topan con un párrafo que parece que me salté las últimas veces que estuve hojeando estos textos. Este párrafo menciona una teoría que no es muy popular entre los eruditos, que establece que la alta regeneración de algunas criaturas puede ser el resultado de una diferencia innata entre sus auras y las nuestras.
+
+              De repente recuerdo la lección de Eiden, antes de que entráramos a la ciudad, cuando me decía que si alteras lo suficiente el aura de una persona, puedes incluso evitar que envejezca. Si lo que me dijo es cierto, entonces no sería tan descabellado asumir que un tipo especial de aura podría otorgar a alguien una alta tasa de regeneración. Si ese es el caso, ¿entonces esta aura quizás también podría ayudar a mantener las extremidades funcionales, incluso si son separadas del cuerpo?
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              Admitiré que mi conocimiento sobre auras es limitado, pero por lo poco que sé, se supone que el aura de una persona no tiene un alcance ilimitado. ¿Qué pasaría, entonces, si la cabeza del trol fuera llevada demasiado lejos del cuerpo después de ser cortada? ¿Se desvanecería su conciencia? ¿Eso lo haría morir definitivamente? Si alguna vez logramos cortar la cabeza de ese trol de nuevo, definitivamente es algo que vale la pena probar.
+
+              Terminé pasando el día tratando de buscar más información para confirmar mi teoría. Desafortunadamente, no se ha investigado mucho sobre este tema, ya que la mayoría de la gente apenas puede leer el nivel de poder mágico en el aura de alguien, así que la teoría de que un aura podría influir en la regeneración de un cuerpo ha sido considerada como 'sin fundamento en hechos' por la mayoría de los grupos respetables de eruditos, y los pocos que quisieron investigar esta teoría no recibieron el financiamiento apropiado para hacerlo.
+
+              Pasé todo el día investigando esto, y todo lo que tengo para mostrar es una teoría extravagante, basada en otra teoría extravagante cuya validez depende mayormente de un comentario al pasar de Eiden. Mejor que nada, supongo...
+
+              Guardo mi cuaderno de vuelta en mi mochila, y me preparo para dormir. Tendré más tiempo para estudiar mañana.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_cards
+      - condition: b2_ch2_deal <> 3
+        texts:
+          - source: scene_text
+            paragraph: 16
+            text: |-
+              No, no debería preocuparlos innecesariamente. Si voy a contarles sobre esto, será después de la arena, cuando todos estén a salvo.
+
+              Mientras estoy perdido en mis pensamientos, pasando mecánicamente las páginas de mi cuaderno una por una, mis ojos se topan con un párrafo que parece que me salté las últimas veces que estuve hojeando estos textos. Este párrafo menciona una teoría que no es muy popular entre los eruditos, que establece que la alta regeneración de algunas criaturas puede ser el resultado de una diferencia innata entre sus auras y las nuestras.
+
+              De repente recuerdo la lección de Eiden, antes de que entráramos a la ciudad, cuando me decía que si alteras lo suficiente el aura de una persona, puedes incluso evitar que envejezca. Si lo que me dijo es cierto, entonces no sería tan descabellado asumir que un tipo especial de aura podría otorgar a alguien una alta tasa de regeneración. Si ese es el caso, ¿entonces esta aura quizás también podría ayudar a mantener las extremidades funcionales, incluso si son separadas del cuerpo?
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              Admitiré que mi conocimiento sobre auras es limitado, pero por lo poco que sé, se supone que el aura de una persona no tiene un alcance ilimitado. ¿Qué pasaría, entonces, si la cabeza del trol fuera llevada demasiado lejos del cuerpo después de ser cortada? ¿Se desvanecería su conciencia? ¿Eso lo haría morir definitivamente? Si alguna vez logramos cortar la cabeza de ese trol de nuevo, definitivamente es algo que vale la pena probar.
+
+              Terminé pasando el día tratando de buscar más información para confirmar mi teoría. Desafortunadamente, no se ha investigado mucho sobre este tema, ya que la mayoría de la gente apenas puede leer el nivel de poder mágico en el aura de alguien, así que la teoría de que un aura podría influir en la regeneración de un cuerpo ha sido considerada como 'sin fundamento en hechos' por la mayoría de los grupos respetables de eruditos, y los pocos que quisieron investigar esta teoría no recibieron el financiamiento apropiado para hacerlo.
+
+              Pasé todo el día investigando esto, y todo lo que tengo para mostrar es una teoría extravagante, basada en otra teoría extravagante cuya validez depende mayormente de un comentario al pasar de Eiden. Mejor que nada, supongo...
+
+              Guardo mi cuaderno de vuelta en mi mochila, y me preparo para dormir. Tendré más tiempo para estudiar mañana.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_cards
+  - name: b2_ch04a_cards
+    texts:
+      - source: scene_text
+        paragraph: 17
+        text: |-
+          Antes de dormirme, Leila vino a tocar mi puerta para devolverme la ropa. Le pregunté si se le había ocurrido alguna idea, pero dijo que lo único que se le había venido a la mente era que podríamos intentar aplastar la cabeza del trol después de decapitarlo, con la esperanza de que la cabeza ya no se regenere después de ser cortada del cuerpo.
+
+          Al día siguiente, nuestro período de recreación estaba programado hacia el mediodía. Al salir de mi celda para encontrarme con los demás, noté, para mi sorpresa, que todos estaban reunidos en el centro de la sala, sentados en el suelo, excepto Wilhelm, que estaba de pie, barajando una baraja de cartas.
+
+          "¡Llegas tarde!" dice Wilhelm. "Toma asiento. Casi íbamos a empezar sin ti."
+
+          "¿Qué está pasando aquí?" le pregunto a Wilhelm.
+
+          "Te preguntas," dice Wilhelm, "por qué de repente estamos todos en buenos términos después de habernos ignorado mutuamente durante los últimos días. La respuesta es simple. Es porque el dueño de la arena acaba de hacernos una visita."
+
+          "¿El dueño?" le pregunto, sorprendido.
+      - source: scene_text_2
+        paragraph: 11
+        text: |-
+          "Sí," dice Wilhelm. "Los guardias de este lugar le dijeron que realmente no hemos estado usando estos períodos de recreación para conocernos. Por lo tanto, decidió venir personalmente para informarnos amablemente de que si no planeamos actuar como equipo, nos enviará a la muerte uno por uno, en lugar de darnos la oportunidad de trabajar juntos. También nos comunicó que el período de recreación de hoy es la última vez en que podemos demostrar que somos capaces de cooperar entre nosotros."
+
+          "Entonces, ¿por eso están todos jugando a las cartas?" digo.
+
+          "Bueno, teníamos que empezar por algún lado," dice Wilhelm. "Y resulta que yo tenía una baraja de cartas conmigo, así que dije, ¿por qué no?"
+
+          "Justo," digo. "Entonces, ¿a qué estamos jugando exactamente?"
+
+          "Estamos jugando a un juego que se llama cierra la boca y recoge las malditas cartas," me dice uno de los dos matones, en tono amenazante.
+    choices:
+      - position: 1
+        text: Si el juego se llama 'cierra la boca', ¿por qué tus labios se están moviendo?
+        effects:
+          - set:
+              current_scene: b2_ch04a_lips
+      - position: 2
+        text: Eso no respondió mi pregunta.
+        effects:
+          - set:
+              current_scene: b2_ch04a_answer
+      - position: 3
+        text: Nunca he oído hablar de este juego. ¿Podrías enseñarme las reglas?
+        effects:
+          - set:
+              current_scene: b2_ch04a_rules
+  - name: b2_ch04a_lips
+    texts:
+      - source: scene_text
+        paragraph: 18
+        text: |-
+          "Si el juego se llama 'cierra la boca', ¿por qué tus labios se están moviendo?"
+
+          "¿Qué acabas de decirme, pedazo de mier--" empieza a decir el matón mientras se levanta, pero es interrumpido por Wilhelm.
+
+          "Vamos, vamos," dice Wilhelm, mientras le pone una mano en el hombro al matón para evitar que me alcance. "Se supone que debemos actuar como equipo aquí, ¿recuerdas?"
+
+          "Quita tu asquerosa mano de encima, escoria plebeya," le dice el matón a Wilhelm.
+
+          No estoy seguro de si alguien más lo notó, pero por un segundo, estoy bastante seguro de que pude ver la expresión alegre de Wilhelm transformarse en una de pura sed de sangre al escuchar las palabras del matón. No pude ver más de su reacción, porque Bruce de repente se echó a reír a carcajadas, haciendo que todos volviéramos la vista hacia él.
+
+          "¿Acabas de llamarlo escoria plebeya?" dice Bruce. "¿Y tú qué se supone que eres? ¿El príncipe perdido de Olmnar?"
+
+          "No," dice el mago que fue encerrado aquí ayer. "Eso lo convierte en un noble desheredado. Mira bien ese trapo mugriento que lleva como bufanda. Tiene la marca de la familia Tilirius."
+      - source: scene_text_2
+        paragraph: 12
+        text: |-
+          "¿La familia Tilirius?" dice Bruce. "¡Ja! Entonces supongo que eso lo convierte en escoria de alta cuna. ¡Mis disculpas!"
+
+          Se ríe de nuevo.
+
+          "¿Podemos volver a nuestro juego de cartas, por favor?" pregunta Wilhelm. "Los guardias todavía están escuchando."
+
+          "A nadie le importan tus cartas, Wilbert," dice Bruce. "El dueño dijo que teníamos que hablar, así que estamos hablando. No dijo nada de jugar cartas. Ve a hacerlo solo, si tanto te gusta jugar a las cartas."
+
+          "Mi nombre es Wilhelm, no Wilbert," dice Wilhelm, en un tono calmado pero amenazante.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_strategy
+  - name: b2_ch04a_answer
+    texts:
+      - source: scene_text
+        paragraph: 19
+        text: |-
+          "Eso no respondió mi pregunta."
+
+          "Sí la respondió," dice el matón. "Ahora cierra la boca y recoge las malditas cartas, a menos que quieras que personalmente me asegure de que nunca vuelvas a abrir la boca."
+
+          "Vamos, vamos," dice Wilhelm, mientras le pone una mano en el hombro al matón. "Se supone que debemos actuar como equipo aquí, ¿recuerdas?"
+
+          "Quita tu asquerosa mano de encima, escoria plebeya," le dice el matón a Wilhelm.
+
+          No estoy seguro de si alguien más lo notó, pero por un segundo, estoy bastante seguro de que pude ver la expresión alegre de Wilhelm transformarse en una de pura sed de sangre al escuchar las palabras del matón. No pude ver más de su reacción, porque Bruce de repente se echó a reír a carcajadas, haciendo que todos volviéramos la vista hacia él.
+
+          "¿Acabas de llamarlo escoria plebeya?" dice Bruce. "¿Y tú qué se supone que eres? ¿El príncipe perdido de Olmnar?"
+
+          "No," dice el mago que fue encerrado aquí ayer. "Eso lo convierte en un noble desheredado. Mira bien ese trapo mugriento que lleva como bufanda. Tiene la marca de la familia Tilirius."
+      - source: scene_text_2
+        paragraph: 12
+        text: |-
+          "¿La familia Tilirius?" dice Bruce. "¡Ja! Entonces supongo que eso lo convierte en escoria de alta cuna. ¡Mis disculpas!"
+
+          Se ríe de nuevo.
+
+          "¿Podemos volver a nuestro juego de cartas, por favor?" pregunta Wilhelm. "Los guardias todavía están escuchando."
+
+          "A nadie le importan tus cartas, Wilbert," dice Bruce. "El dueño dijo que teníamos que hablar, así que estamos hablando. No dijo nada de jugar cartas. Ve a hacerlo solo, si tanto te gusta jugar a las cartas."
+
+          "Mi nombre es Wilhelm, no Wilbert," dice Wilhelm, en un tono calmado pero amenazante.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_strategy
+  - name: b2_ch04a_rules
+    texts:
+      - source: scene_text
+        paragraph: 20
+        text: |-
+          "Nunca he oído hablar de este juego. ¿Podrías enseñarme las reglas?"
+
+          "¿Estás intentando ser gracioso?" me pregunta el matón, mientras saca lentamente su daga. "Porque no creo que quieras saber lo que suelo hacerle a la gente que intenta ser graciosa conmigo."
+
+          "Vamos, vamos," dice Wilhelm, mientras le pone una mano en el hombro al matón. "Se supone que debemos actuar como equipo aquí, ¿recuerdas?"
+
+          "Quita tu asquerosa mano de encima, escoria plebeya," le dice el matón a Wilhelm.
+
+          No estoy seguro de si alguien más lo notó, pero por un segundo, estoy bastante seguro de que pude ver la expresión alegre de Wilhelm transformarse en una de pura sed de sangre al escuchar las palabras del matón. No pude ver más de su reacción, porque Bruce de repente se echó a reír a carcajadas, haciendo que todos volviéramos la vista hacia él.
+
+          "¿Acabas de llamarlo escoria plebeya?" dice Bruce. "¿Y tú qué se supone que eres? ¿El príncipe perdido de Olmnar?"
+
+          "No," dice el mago que fue encerrado aquí ayer. "Eso lo convierte en un noble desheredado. Mira bien ese trapo mugriento que lleva como bufanda. Tiene la marca de la familia Tilirius."
+      - source: scene_text_2
+        paragraph: 12
+        text: |-
+          "¿La familia Tilirius?" dice Bruce. "¡Ja! Entonces supongo que eso lo convierte en escoria de alta cuna. ¡Mis disculpas!"
+
+          Se ríe de nuevo.
+
+          "¿Podemos volver a nuestro juego de cartas, por favor?" pregunta Wilhelm. "Los guardias todavía están escuchando."
+
+          "A nadie le importan tus cartas, Wilbert," dice Bruce. "El dueño dijo que teníamos que hablar, así que estamos hablando. No dijo nada de jugar cartas. Ve a hacerlo solo, si tanto te gusta jugar a las cartas."
+
+          "Mi nombre es Wilhelm, no Wilbert," dice Wilhelm, en un tono calmado pero amenazante.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_strategy
+  - name: b2_ch04a_strategy
+    routes:
+      - condition: b2_ch2_threatened <> 2
+        texts:
+          - source: scene_text
+            paragraph: 21
+            text: |-
+              Cuando Wilhelm deja de hablar, una escritura azul aparece en medio de nosotros, con caracteres grandes, para que todos podamos verla claramente.
+
+              "Disculpen," dice el texto, "pero me gustaría comenzar a discutir nuestra estrategia para mañana ahora, si no les importa."
+
+              Todos nos giramos hacia Leila, que nos mira con una expresión molesta en su rostro.
+
+              "Oh, eh..." dice Bruce. "Claro, claro... Quizás deberíamos empezar a hacer eso."
+
+              "No podría estar más de acuerdo," dice Wilhelm.
+
+              "¿Y de qué se supone que debemos hablar, exactamente?" dice el mago. "Todavía no nos han dado ninguna información sobre los eventos de mañana. Lo único que sabemos hasta ahora es que probablemente pelearemos contra criaturas míticas de algún tipo, en una de las rondas."
+
+              Leila me mira.
+
+              Me pregunto si está teniendo dudas sobre que no les contemos lo que descubrimos en las cavernas. Si fuera a cambiar de opinión, definitivamente no habría un momento mejor que este.
+            condition: b2_ch4_inform = 0
+          - source: scene_text
+            paragraph: 22
+            text: |-
+              Cuando Wilhelm deja de hablar, una escritura azul aparece en medio de nosotros, con caracteres grandes, para que todos podamos verla claramente.
+
+              "Disculpen," dice el texto, "pero me gustaría comenzar a discutir nuestra estrategia para mañana ahora, si no les importa."
+
+              Todos nos giramos hacia Leila, que nos mira con una expresión molesta en su rostro.
+
+              "Oh, eh..." dice Bruce. "Claro, claro... Quizás deberíamos empezar a hacer eso."
+
+              "No podría estar más de acuerdo," dice Wilhelm.
+
+              "¿Y de qué se supone que debemos hablar, exactamente?" dice el mago. "Todavía no nos han dado ninguna información sobre los eventos de mañana. Lo único que sabemos hasta ahora es que probablemente pelearemos contra criaturas míticas de algún tipo, en una de las rondas."
+
+              Leila me mira.
+
+              Creo que está intentando decirme que este sería el mejor momento para que les cuente a todos lo que descubrimos en las cavernas. Aunque, supongo que todavía no es demasiado tarde para cambiar de opinión tampoco.
+            condition: b2_ch4_inform = 1
+        choices:
+          - position: 1
+            text: Preguntarle a Wilhelm si escuchó a los guardias decir algo sobre el evento de la arena
+            effects:
+              - set:
+                  current_scene: b2_ch04a_overheard
+                  b2_ch4_inform2: 0
+          - position: 2
+            text: Contarles a todos lo que descubrimos en las cavernas
+            effects:
+              - set:
+                  current_scene: b2_ch04a_caverns
+                  b2_ch4_inform2: 1
+                  b2_ch4_inform3: 0
+      - condition: b2_ch2_threatened = 2
+        texts:
+          - source: scene_text
+            paragraph: 21
+            text: |-
+              Cuando Wilhelm deja de hablar, una escritura azul aparece en medio de nosotros, con caracteres grandes, para que todos podamos verla claramente.
+
+              "Disculpen," dice el texto, "pero me gustaría comenzar a discutir nuestra estrategia para mañana ahora, si no les importa."
+
+              Todos nos giramos hacia Leila, que nos mira con una expresión molesta en su rostro.
+
+              "Oh, eh..." dice Bruce. "Claro, claro... Quizás deberíamos empezar a hacer eso."
+
+              "No podría estar más de acuerdo," dice Wilhelm.
+
+              "¿Y de qué se supone que debemos hablar, exactamente?" dice el mago. "Todavía no nos han dado ninguna información sobre los eventos de mañana. Lo único que sabemos hasta ahora es que probablemente pelearemos contra criaturas míticas de algún tipo, en una de las rondas."
+
+              Leila me mira.
+
+              Me pregunto si está teniendo dudas sobre que no les contemos lo que descubrimos en las cavernas. Si fuera a cambiar de opinión, definitivamente no habría un momento mejor que este.
+            condition: b2_ch4_inform = 0
+          - source: scene_text
+            paragraph: 22
+            text: |-
+              Cuando Wilhelm deja de hablar, una escritura azul aparece en medio de nosotros, con caracteres grandes, para que todos podamos verla claramente.
+
+              "Disculpen," dice el texto, "pero me gustaría comenzar a discutir nuestra estrategia para mañana ahora, si no les importa."
+
+              Todos nos giramos hacia Leila, que nos mira con una expresión molesta en su rostro.
+
+              "Oh, eh..." dice Bruce. "Claro, claro... Quizás deberíamos empezar a hacer eso."
+
+              "No podría estar más de acuerdo," dice Wilhelm.
+
+              "¿Y de qué se supone que debemos hablar, exactamente?" dice el mago. "Todavía no nos han dado ninguna información sobre los eventos de mañana. Lo único que sabemos hasta ahora es que probablemente pelearemos contra criaturas míticas de algún tipo, en una de las rondas."
+
+              Leila me mira.
+
+              Creo que está intentando decirme que este sería el mejor momento para que les cuente a todos lo que descubrimos en las cavernas. Aunque, supongo que todavía no es demasiado tarde para cambiar de opinión tampoco.
+            condition: b2_ch4_inform = 1
+        choices:
+          - position: 1
+            text: Preguntar si alguien escuchó a los guardias decir algo sobre el evento de la arena
+            effects:
+              - set:
+                  current_scene: b2_ch04a_overheard
+                  b2_ch4_inform2: 0
+          - position: 2
+            text: Contarles a todos lo que descubrimos en las cavernas
+            effects:
+              - set:
+                  current_scene: b2_ch04a_caverns
+                  b2_ch4_inform2: 1
+                  b2_ch4_inform3: 0
+  - name: b2_ch04a_caverns
+    routes:
+      - condition: b2_ch2_heard = 1
+        texts:
+          - source: scene_text
+            paragraph: 23
+            text: |-
+              "En realidad hay algo de información que me gustaría compartir con ustedes," digo. "Pero más vale que se preparen, porque esto va a ser largo."
+
+              Entonces empiezo a contarles a todos sobre nuestro viaje a las cavernas subterráneas, y lo que descubrimos ahí. Omití contarles cómo exactamente llegamos a los túneles, y tampoco les conté sobre nuestro encuentro con Flower e Illuna, pero intenté describir el resto de nuestra aventura con el mayor detalle posible, mientras simultáneamente evitaba darles cualquier información que pudiera llevarlos a saber que somos lessathi y que usamos dispositivos de estadísticas. Después de terminar con la historia, también les di un breve resumen de lo que sé sobre cada una de las criaturas que encontramos, incluyendo sus comportamientos y debilidades, y también les conté mi teoría sobre la inusual habilidad de regeneración del trol.
+
+              "Esta es toda información muy útil," dice Wilhelm. "Resulta que anoche escuché a los guardias decir que pelearíamos contra un trol llamado Velgos en la segunda ronda, pero nunca me habría imaginado que fuera tan poderoso. Lo que me gustaría agregar es que también los escuché hablar sobre manticoras, las cuales no creo que hayan encontrado en las cavernas subterráneas. Si tu cuaderno tiene tanta información como has afirmado, quizás deberías investigar un poco sobre ellas también."
+
+              "De hecho ya investigué sobre ellas," digo. "Olvidé mencionarlo antes, pero también logré escuchar a los guardias hablando sobre algunos de los monstruos contra los que podríamos tener que pelear en la arena. En esa conversación mencionaron manticoras y escorpiones gigantes. Les daré el informe sobre ellos más tarde."
+          - source: scene_text_2
+            paragraph: 13
+            text: |-
+              "Entonces, sobre esa trampilla que activaste accidentalmente," dice Bruce, "¿intentaste ver si podías activarla de nuevo?"
+
+              "Lo intenté varias veces después de eso," escribe Leila, "pero no logré que funcionara."
+
+              "¿Hay alguna posibilidad de que podamos echar un vistazo dentro de tu habitación?" dice Bruce. "Quizás alguno de nosotros pueda resolverlo."
+
+              "No," escribe Leila. "No voy a dejar que ninguno de ustedes entre a mi habitación."
+
+              "¿Excepto al stillwater?" dice el mago.
+
+              "Excepto al stillwater," escribe Leila, simplemente.
+
+              "Entonces nuestro mayor problema sigue siendo el trol..." dice Wilhelm. "No sé qué decir sobre esa teoría del aura. Realmente no soy quién para hablar, porque nunca he estudiado magia, pero me parece un poco rebuscada."
+
+              "A mí me gusta más la idea de Leila sobre aplastar la cabeza," dice Bruce. "Dudo que pueda regenerarla una vez que haya sido cortada."
+
+              "De cualquier forma," dice Wilhelm, "creo que en lo que todos podemos estar de acuerdo es en que no hay forma de que podamos enfrentar a estos enemigos solos. Sé que no nos soportamos mucho, pero vamos a tener que hacer una tregua hasta al menos después de los eventos de la arena. Nuestra supervivencia depende de ello."
+          - source: scene_3
+            paragraph: 2
+            text: Por una vez, todos estuvieron de acuerdo con Wilhelm, aunque algunos lo hicieron más a regañadientes que otros, y decidimos pasar el resto del período de recreación discutiendo varias estrategias que podrían funcionar contra los monstruos que conocíamos, pero también contra otros monstruos sobre los que había leído en mis notas. Incluso acordamos tener una segunda reunión más tarde, después de pasar un tiempo a solas en nuestras habitaciones, reflexionando sobre la información que teníamos a nuestra disposición.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_leaving
+      - condition: b2_ch2_heard = 0
+        texts:
+          - source: scene_text
+            paragraph: 24
+            text: |-
+              "En realidad hay algo de información que me gustaría compartir con ustedes," digo. "Pero más vale que se preparen, porque esto va a ser largo."
+
+              Entonces empiezo a contarles a todos sobre nuestro viaje a las cavernas subterráneas, y lo que descubrimos ahí. Omití contarles cómo exactamente llegamos a los túneles, y tampoco les conté sobre nuestro encuentro con Flower e Illuna, pero intenté describir el resto de nuestra aventura con el mayor detalle posible, mientras simultáneamente evitaba darles cualquier información que pudiera llevarlos a saber que somos lessathi y que usamos dispositivos de estadísticas. Después de terminar con la historia, también les di un breve resumen de lo que sé sobre cada una de las criaturas que encontramos, incluyendo sus comportamientos y debilidades, y también les conté mi teoría sobre la inusual habilidad de regeneración del trol.
+
+              "Esta es toda información muy útil," dice Wilhelm. "Resulta que anoche escuché a los guardias decir que pelearíamos contra un trol llamado Velgos en la segunda ronda, pero nunca me habría imaginado que fuera tan poderoso. Lo que me gustaría agregar es que también los escuché hablar sobre manticoras, las cuales no creo que hayan encontrado en las cavernas subterráneas. Si tu cuaderno tiene tanta información como has afirmado, quizás deberías investigar un poco sobre ellas también."
+
+              Definitivamente lo investigaré," digo. "Gracias por avisarme."
+          - source: scene_text_2
+            paragraph: 13
+            text: |-
+              "Entonces, sobre esa trampilla que activaste accidentalmente," dice Bruce, "¿intentaste ver si podías activarla de nuevo?"
+
+              "Lo intenté varias veces después de eso," escribe Leila, "pero no logré que funcionara."
+
+              "¿Hay alguna posibilidad de que podamos echar un vistazo dentro de tu habitación?" dice Bruce. "Quizás alguno de nosotros pueda resolverlo."
+
+              "No," escribe Leila. "No voy a dejar que ninguno de ustedes entre a mi habitación."
+
+              "¿Excepto al stillwater?" dice el mago.
+
+              "Excepto al stillwater," escribe Leila, simplemente.
+
+              "Entonces nuestro mayor problema sigue siendo el trol..." dice Wilhelm. "No sé qué decir sobre esa teoría del aura. Realmente no soy quién para hablar, porque nunca he estudiado magia, pero me parece un poco rebuscada."
+
+              "A mí me gusta más la idea de Leila sobre aplastar la cabeza," dice Bruce. "Dudo que pueda regenerarla una vez que haya sido cortada."
+
+              "De cualquier forma," dice Wilhelm, "creo que en lo que todos podemos estar de acuerdo es en que no hay forma de que podamos enfrentar a estos enemigos solos. Sé que no nos soportamos mucho, pero vamos a tener que hacer una tregua hasta al menos después de los eventos de la arena. Nuestra supervivencia depende de ello."
+          - source: scene_3
+            paragraph: 2
+            text: Por una vez, todos estuvieron de acuerdo con Wilhelm, aunque algunos lo hicieron más a regañadientes que otros, y decidimos pasar el resto del período de recreación discutiendo varias estrategias que podrían funcionar contra los monstruos que conocíamos, pero también contra otros monstruos sobre los que había leído en mis notas. Incluso acordamos tener una segunda reunión más tarde, después de pasar un tiempo a solas en nuestras habitaciones, reflexionando sobre la información que teníamos a nuestra disposición.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_leaving
+  - name: b2_ch04a_overheard
+    routes:
+      - condition: b2_ch4_inform = 0 AND b2_ch2_threatened <> 2
+        texts:
+          - source: scene_text
+            paragraph: 25
+            text: |-
+              "Oye, Wilhelm," digo. "¿Resulta que escuchaste a los guardias decir algo sobre los eventos de la arena?"
+
+              "De hecho, sí," dice Wilhelm. "Anoche, mientras intentaba dormirme, escuché a dos guardias mencionar que podría haber algunas arpías y algunas manticoras en la primera ronda. Creo que también pude haberlos escuchado decir algo sobre gárgolas, pero no estoy completamente seguro."
+
+              "Eso en realidad suena mejor de lo que esperaba," dice Bruce. "Quiero decir, las gárgolas son malas, claro, pero no son ni de cerca tan peligrosas como una hidra, por ejemplo."
+
+              "Excepto por el hecho de que una hidra no puede volar," dice el mago. "Yo mucho preferiría pelear contra una hidra en tierra, que pelear contra una horda de criaturas voladoras sin magia ni armamento a distancia."
+
+              "Esto no es todo lo que escuché decir a los guardias sobre la arena," dice Wilhelm. "También los escuché hablar sobre a quién nos enfrentaríamos en la segunda ronda. Aparentemente es un famoso mercenario trol conocido con el nombre de Velgos. Decían que ha peleado en la arena antes, y que se le considera a la par del campeón invicto de la arena."
+          - source: scene_text_2
+            paragraph: 14
+            text: |-
+              "¿Velgos?" dice Bruce. "Nunca he oído hablar de él."
+
+              "Yo tampoco," dice el mago.
+
+              "Si un trol es lo mejor que tienen," dice Bruce, "entonces quizás he estado sobreestimando un poco a los organizadores. He matado muchos troles antes. Todo lo que necesitas hacer es cortarles la cabeza. Es así de simple."
+
+              "Olvida al trol," dice el mago. "Necesitamos concentrarnos en las criaturas. ¿Alguien conoce alguna debilidad que podamos usar contra ellas?"
+        choices:
+          - position: 1
+            text: Contarles las debilidades de las criaturas
+            effects:
+              - set:
+                  current_scene: b2_ch04a_weaknesses
+                  b2_ch4_inform3: 1
+          - position: 2
+            text: No contarles nada
+            effects:
+              - set:
+                  current_scene: b2_ch04a_weaknesses
+                  b2_ch4_inform3: 0
+      - condition: b2_ch4_inform = 1 AND b2_ch2_threatened <> 2
+        texts:
+          - source: scene_text
+            paragraph: 26
+            text: |-
+              "Oye, Wilhelm," digo. "¿Resulta que escuchaste a los guardias decir algo sobre los eventos de la arena?"
+
+              Al darse cuenta de que no planeo contarles sobre las criaturas, Leila me da una mirada de decepción, pero decide permanecer en silencio.
+
+              "De hecho, sí," dice Wilhelm. "Anoche, mientras intentaba dormirme, escuché a dos guardias mencionar que podría haber algunas arpías y algunas manticoras en la primera ronda. Creo que también pude haberlos escuchado decir algo sobre gárgolas, pero no estoy completamente seguro."
+
+              "Eso en realidad suena mejor de lo que esperaba," dice Bruce. "Quiero decir, las gárgolas son malas, claro, pero no son ni de cerca tan peligrosas como una hidra, por ejemplo."
+
+              "Excepto por el hecho de que una hidra no puede volar," dice el mago. "Yo mucho preferiría pelear contra una hidra en tierra, que pelear contra una horda de criaturas voladoras sin magia ni armamento a distancia."
+
+              "Esto no es todo lo que escuché decir a los guardias sobre la arena," dice Wilhelm. "También los escuché hablar sobre a quién nos enfrentaríamos en la segunda ronda. Aparentemente es un famoso mercenario trol conocido con el nombre de Velgos. Decían que ha peleado en la arena antes, y que se le considera a la par del campeón invicto de la arena."
+          - source: scene_text_2
+            paragraph: 14
+            text: |-
+              "¿Velgos?" dice Bruce. "Nunca he oído hablar de él."
+
+              "Yo tampoco," dice el mago.
+
+              "Si un trol es lo mejor que tienen," dice Bruce, "entonces quizás he estado sobreestimando un poco a los organizadores. He matado muchos troles antes. Todo lo que necesitas hacer es cortarles la cabeza. Es así de simple."
+
+              "Olvida al trol," dice el mago. "Necesitamos concentrarnos en las criaturas. ¿Alguien conoce alguna debilidad que podamos usar contra ellas?"
+        choices:
+          - position: 1
+            text: Contarles las debilidades de las criaturas
+            effects:
+              - set:
+                  current_scene: b2_ch04a_weaknesses
+                  b2_ch4_inform3: 1
+          - position: 2
+            text: No contarles nada
+            effects:
+              - set:
+                  current_scene: b2_ch04a_weaknesses
+                  b2_ch4_inform3: 0
+      - condition: b2_ch4_inform = 0 AND b2_ch2_threatened = 2
+        texts:
+          - source: scene_text
+            paragraph: 27
+            text: |-
+              "¿Alguien escuchó por casualidad a los guardias decir algo sobre los eventos de la arena?"
+
+              "De hecho, sí," dice Wilhelm. "Anoche, mientras intentaba dormirme, escuché a dos guardias mencionar que podría haber algunas arpías y algunas manticoras en la primera ronda. Creo que también pude haberlos escuchado decir algo sobre gárgolas, pero no estoy completamente seguro."
+
+              "Eso en realidad suena mejor de lo que esperaba," dice Bruce. "Quiero decir, las gárgolas son malas, claro, pero no son ni de cerca tan peligrosas como una hidra, por ejemplo."
+
+              "Excepto por el hecho de que una hidra no puede volar," dice el mago. "Yo mucho preferiría pelear contra una hidra en tierra, que pelear contra una horda de criaturas voladoras sin magia ni armamento a distancia."
+
+              "Esto no es todo lo que escuché decir a los guardias sobre la arena," dice Wilhelm. "También los escuché hablar sobre a quién nos enfrentaríamos en la segunda ronda. Aparentemente es un famoso mercenario trol conocido con el nombre de Velgos. Decían que ha peleado en la arena antes, y que se le considera a la par del campeón invicto de la arena."
+          - source: scene_text_2
+            paragraph: 14
+            text: |-
+              "¿Velgos?" dice Bruce. "Nunca he oído hablar de él."
+
+              "Yo tampoco," dice el mago.
+
+              "Si un trol es lo mejor que tienen," dice Bruce, "entonces quizás he estado sobreestimando un poco a los organizadores. He matado muchos troles antes. Todo lo que necesitas hacer es cortarles la cabeza. Es así de simple."
+
+              "Olvida al trol," dice el mago. "Necesitamos concentrarnos en las criaturas. ¿Alguien conoce alguna debilidad que podamos usar contra ellas?"
+        choices:
+          - position: 1
+            text: Contarles las debilidades de las criaturas
+            effects:
+              - set:
+                  current_scene: b2_ch04a_weaknesses
+                  b2_ch4_inform3: 1
+          - position: 2
+            text: No contarles nada
+            effects:
+              - set:
+                  current_scene: b2_ch04a_weaknesses
+                  b2_ch4_inform3: 0
+      - condition: b2_ch4_inform = 1 AND b2_ch2_threatened = 2
+        texts:
+          - source: scene_text
+            paragraph: 28
+            text: |-
+              "¿Alguien escuchó por casualidad a los guardias decir algo sobre los eventos de la arena?"
+
+              Al darse cuenta de que no planeo contarles sobre las criaturas, Leila me da una mirada de decepción, pero decide permanecer en silencio.
+
+              "De hecho, sí," dice Wilhelm. "Anoche, mientras intentaba dormirme, escuché a dos guardias mencionar que podría haber algunas arpías y algunas manticoras en la primera ronda. Creo que también pude haberlos escuchado decir algo sobre gárgolas, pero no estoy completamente seguro."
+
+              "Eso en realidad suena mejor de lo que esperaba," dice Bruce. "Quiero decir, las gárgolas son malas, claro, pero no son ni de cerca tan peligrosas como una hidra, por ejemplo."
+
+              "Excepto por el hecho de que una hidra no puede volar," dice el mago. "Yo mucho preferiría pelear contra una hidra en tierra, que pelear contra una horda de criaturas voladoras sin magia ni armamento a distancia."
+
+              "Esto no es todo lo que escuché decir a los guardias sobre la arena," dice Wilhelm. "También los escuché hablar sobre a quién nos enfrentaríamos en la segunda ronda. Aparentemente es un famoso mercenario trol conocido con el nombre de Velgos. Decían que ha peleado en la arena antes, y que se le considera a la par del campeón invicto de la arena."
+          - source: scene_text_2
+            paragraph: 14
+            text: |-
+              "¿Velgos?" dice Bruce. "Nunca he oído hablar de él."
+
+              "Yo tampoco," dice el mago.
+
+              "Si un trol es lo mejor que tienen," dice Bruce, "entonces quizás he estado sobreestimando un poco a los organizadores. He matado muchos troles antes. Todo lo que necesitas hacer es cortarles la cabeza. Es así de simple."
+
+              "Olvida al trol," dice el mago. "Necesitamos concentrarnos en las criaturas. ¿Alguien conoce alguna debilidad que podamos usar contra ellas?"
+        choices:
+          - position: 1
+            text: Contarles las debilidades de las criaturas
+            effects:
+              - set:
+                  current_scene: b2_ch04a_weaknesses
+                  b2_ch4_inform3: 1
+          - position: 2
+            text: No contarles nada
+            effects:
+              - set:
+                  current_scene: b2_ch04a_weaknesses
+                  b2_ch4_inform3: 0
+  - name: b2_ch04a_weaknesses
+    routes:
+      - condition: b2_ch4_inform3 = 1
+        texts:
+          - source: scene_text
+            paragraph: 29
+            text: |-
+              "He estado leyendo mucho sobre criaturas míticas estos últimos días," digo. "Durante mis estudios, también encontré algo de información valiosa sobre las debilidades de las arpías y las manticoras."
+
+              "¿Pero qué hay de las otras criaturas sobre las que leíste?" dice el mago. "¿También descubriste sus debilidades?"
+
+              "A mí también me interesaría escuchar sobre cualquier otra criatura con la que Barry se haya topado en sus estudios," dice Wilhelm.
+
+              "Bueno, está bien entonces," digo. "Pero más vale que se preparen, porque esto va a ser largo."
+
+              Terminé contándoles mucho más de lo que originalmente planeaba. Les di la mayor parte de la información que necesitaban sobre las criaturas que sabía que podríamos enfrentar, y también sobre muchas otras. Pasamos el resto del período de recreación discutiendo estrategias para todo tipo de escenarios que podrían ocurrir en la arena. Incluso acordamos tener una segunda reunión más tarde, después de pasar un tiempo a solas en nuestras habitaciones, reflexionando sobre la información que teníamos a nuestra disposición.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_leaving
+      - condition: b2_ch4_inform3 = 0
+        texts:
+          - source: scene_text
+            paragraph: 30
+            text: |-
+              Hay una breve pausa durante la cual nadie dice nada. Para nuestra sorpresa, quien rompió el silencio fue nada menos que el matón de la familia Tilirius.
+
+              "Sé un par de cosas sobre criaturas míticas," dice el matón. "Estuve leyendo sobre ellas en mi tiempo libre, antes de que me echaran de la mansión. Las arpías y las manticoras aparecían muy a menudo en ese tipo de libros."
+
+              "¡Así que hay ventajas en ser un ex-noble!" dice Bruce. "¿Quién lo hubiera pensado? Bueno, vamos, no seas tímido y cuéntanos todo lo que sepas. Vamos a necesitar toda la información que podamos obtener si queremos sobrevivir al día de mañana."
+
+              "Por una vez, estoy de acuerdo con Bruce," dice Wilhelm. "Asegúrate de darnos todos los detalles que puedas recordar. Nosotros también intentaremos aportar cuando podamos, si resulta que recordamos alguna información adicional de mitos y leyendas que pueda ser de ayuda."
+
+              El resto del período de recreación se pasó discutiendo sobre las criaturas descritas por el matón, y también sobre varias estrategias que podríamos emplear para derrotarlas. Realmente no me involucré mucho en su discusión, ya que no puedo decir que confiaría en ninguno de ellos para cubrirme las espaldas en una pelea. Unas horas después del período de recreación, fui a la habitación de Leila para que pudiéramos tener nuestra propia reunión de estrategia por separado, discutiendo sobre todas las posibles criaturas que podríamos encontrar, y sobre cómo podríamos lidiar con ellas.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_leaving
+  - name: b2_ch04a_leaving
+    routes:
+      - condition: b2_ch2_threatened = 0
+        texts:
+          - source: scene_text
+            paragraph: 31
+            text: |-
+              Al final del día, no logramos idear mejores planes contra el trol que los originales, así que lo único que podíamos hacer era esperar que al menos uno de ellos funcionara bien.
+
+              Una vez que vuelvo a mi habitación, tarde en la noche, me acuesto en la cama, y me quedo dormido como una piedra.
+
+              Al día siguiente, un guardia me despierta por la mañana, diciéndome que empaque mis cosas, porque nos vamos en veinte minutos. Meto todo de vuelta en mi mochila, y luego salgo por la puerta hacia la sala de recreación, donde los otros miembros de mi división estaban empezando lentamente a reunirse. En cuanto estamos todos listos para irnos, comenzamos a salir del área de nuestra división uno por uno, y nos detenemos afuera de la puerta, donde nos recibe un empleado de la arena, que recoge todas nuestras llaves, y nos dice que lo sigamos.
+          - source: scene_text_2
+            paragraph: 15
+            text: |-
+              Mientras todos caminamos por los túneles poco iluminados, miembros de otras divisiones lentamente empiezan a salir de sus áreas de división también, y a seguir a sus guías por los pasillos. Cuando finalmente llegamos a los niveles superiores, nos dicen que nos formemos de manera ordenada, para que los guardias que fueron enviados a escoltarnos a la arena tengan más facilidad para mantenernos vigilados. No logré ver a ninguno de mis amigos mientras avanzábamos hacia la arena, pero sí vi una multitud bastante grande abriéndose camino hacia la arena para ver el espectáculo, y una fila muy larga en la taquilla.
+
+              Los guardias nos guían por la entrada de gladiadores de la arena, y nos muestran nuestros vestuarios, donde podemos guardar nuestras pertenencias durante la duración del espectáculo. Después de terminar de meter nuestras mochilas en los casilleros, los guardias nos dicen que podemos movernos libremente por el área designada para los gladiadores hasta que comiencen los eventos, pero que necesitaremos reunirnos en el área de espera de nuestra división después del sonido del primer cuerno.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_trace
+      - condition: b2_ch2_threatened = 1
+        texts:
+          - source: scene_text
+            paragraph: 32
+            text: |-
+              Al final del día, no logramos idear mejores planes contra el trol que los originales, así que lo único que podíamos hacer era esperar que al menos uno de ellos funcionara bien.
+
+              Después de volver a mi habitación por la noche y acostarme en la cama, mis últimos pensamientos antes de dormir fueron sobre la visión que tuve de Wilhelm apuñalándome por la espalda, durante el evento de la arena.
+
+              Va a estar bien. Ya sé lo que trama. Mientras no le quite los ojos de encima, no podrá sorprenderme. Decido no pensar más en esto, y me voy a dormir.
+
+              Al día siguiente, un guardia me despierta por la mañana, diciéndome que empaque mis cosas, porque nos vamos en veinte minutos. Meto todo de vuelta en mi mochila, y luego salgo por la puerta hacia la sala de recreación, donde los otros miembros de mi división estaban empezando lentamente a reunirse. En cuanto estamos todos listos para irnos, comenzamos a salir del área de nuestra división uno por uno, y nos detenemos afuera de la puerta, donde nos recibe un empleado de la arena, que recoge todas nuestras llaves, y nos dice que lo sigamos.
+          - source: scene_text_2
+            paragraph: 15
+            text: |-
+              Mientras todos caminamos por los túneles poco iluminados, miembros de otras divisiones lentamente empiezan a salir de sus áreas de división también, y a seguir a sus guías por los pasillos. Cuando finalmente llegamos a los niveles superiores, nos dicen que nos formemos de manera ordenada, para que los guardias que fueron enviados a escoltarnos a la arena tengan más facilidad para mantenernos vigilados. No logré ver a ninguno de mis amigos mientras avanzábamos hacia la arena, pero sí vi una multitud bastante grande abriéndose camino hacia la arena para ver el espectáculo, y una fila muy larga en la taquilla.
+
+              Los guardias nos guían por la entrada de gladiadores de la arena, y nos muestran nuestros vestuarios, donde podemos guardar nuestras pertenencias durante la duración del espectáculo. Después de terminar de meter nuestras mochilas en los casilleros, los guardias nos dicen que podemos movernos libremente por el área designada para los gladiadores hasta que comiencen los eventos, pero que necesitaremos reunirnos en el área de espera de nuestra división después del sonido del primer cuerno.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_trace
+      - condition: b2_ch2_threatened = 2 AND b2_ch2_lessathi = 0
+        texts:
+          - source: scene_text
+            paragraph: 33
+            text: |-
+              Al final del día, no logramos idear mejores planes contra el trol que los originales, así que lo único que podíamos hacer era esperar que al menos uno de ellos funcionara bien.
+
+              Después de volver a mi habitación por la noche y acostarme en la cama, mis últimos pensamientos antes de dormir fueron sobre la visión que tuve de Wilhelm apuñalándome por la espalda, durante el evento de la arena.
+
+              Va a estar bien. No creo que intente nada después del susto que le di hace dos días. Y aunque lo hiciera, estaré esperándolo, así que no podrá tomarme desprevenido. Decido no pensar más en esto, y me voy a dormir.
+
+              Al día siguiente, un guardia me despierta por la mañana, diciéndome que empaque mis cosas, porque nos vamos en veinte minutos. Meto todo de vuelta en mi mochila, y luego salgo por la puerta hacia la sala de recreación, donde los otros miembros de mi división estaban empezando lentamente a reunirse. En cuanto estamos todos listos para irnos, comenzamos a salir del área de nuestra división uno por uno, y nos detenemos afuera de la puerta, donde nos recibe un empleado de la arena, que recoge todas nuestras llaves, y nos dice que lo sigamos.
+          - source: scene_text_2
+            paragraph: 15
+            text: |-
+              Mientras todos caminamos por los túneles poco iluminados, miembros de otras divisiones lentamente empiezan a salir de sus áreas de división también, y a seguir a sus guías por los pasillos. Cuando finalmente llegamos a los niveles superiores, nos dicen que nos formemos de manera ordenada, para que los guardias que fueron enviados a escoltarnos a la arena tengan más facilidad para mantenernos vigilados. No logré ver a ninguno de mis amigos mientras avanzábamos hacia la arena, pero sí vi una multitud bastante grande abriéndose camino hacia la arena para ver el espectáculo, y una fila muy larga en la taquilla.
+
+              Los guardias nos guían por la entrada de gladiadores de la arena, y nos muestran nuestros vestuarios, donde podemos guardar nuestras pertenencias durante la duración del espectáculo. Después de terminar de meter nuestras mochilas en los casilleros, los guardias nos dicen que podemos movernos libremente por el área designada para los gladiadores hasta que comiencen los eventos, pero que necesitaremos reunirnos en el área de espera de nuestra división después del sonido del primer cuerno.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_trace
+      - condition: b2_ch2_threatened = 2 AND b2_ch2_lessathi = 1
+        texts:
+          - source: scene_text
+            paragraph: 34
+            text: |-
+              Al final del día, no logramos idear mejores planes contra el trol que los originales, así que lo único que podíamos hacer era esperar que al menos uno de ellos funcionara bien.
+
+              Después de volver a mi habitación por la noche y acostarme en la cama, mis últimos pensamientos antes de dormir fueron sobre la visión que tuve de Wilhelm apuñalándome por la espalda, durante el evento de la arena.
+
+              Normalmente, no creo que intentara nada después del susto que le di hace dos días, pero me preocupa un poco que pueda haber visto el comentario de Leila sobre que soy un lessathi cuando nos estaba espiando, antes de que fuera a su habitación por primera vez. Definitivamente tendré que vigilarlo para que no me tome desprevenido. Decido no pensar más en esto, y me voy a dormir.
+
+              Al día siguiente, un guardia me despierta por la mañana, diciéndome que empaque mis cosas, porque nos vamos en veinte minutos. Meto todo de vuelta en mi mochila, y luego salgo por la puerta hacia la sala de recreación, donde los otros miembros de mi división estaban empezando lentamente a reunirse. En cuanto estamos todos listos para irnos, comenzamos a salir del área de nuestra división uno por uno, y nos detenemos afuera de la puerta, donde nos recibe un empleado de la arena, que recoge todas nuestras llaves, y nos dice que lo sigamos.
+          - source: scene_text_2
+            paragraph: 15
+            text: |-
+              Mientras todos caminamos por los túneles poco iluminados, miembros de otras divisiones lentamente empiezan a salir de sus áreas de división también, y a seguir a sus guías por los pasillos. Cuando finalmente llegamos a los niveles superiores, nos dicen que nos formemos de manera ordenada, para que los guardias que fueron enviados a escoltarnos a la arena tengan más facilidad para mantenernos vigilados. No logré ver a ninguno de mis amigos mientras avanzábamos hacia la arena, pero sí vi una multitud bastante grande abriéndose camino hacia la arena para ver el espectáculo, y una fila muy larga en la taquilla.
+
+              Los guardias nos guían por la entrada de gladiadores de la arena, y nos muestran nuestros vestuarios, donde podemos guardar nuestras pertenencias durante la duración del espectáculo. Después de terminar de meter nuestras mochilas en los casilleros, los guardias nos dicen que podemos movernos libremente por el área designada para los gladiadores hasta que comiencen los eventos, pero que necesitaremos reunirnos en el área de espera de nuestra división después del sonido del primer cuerno.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_trace
+  - name: b2_ch04a_trace
+    routes:
+      - condition: b2_ch2_kate = 0
+        texts:
+          - source: scene_text
+            paragraph: 35
+            text: |-
+              Pensé que este sería el mejor momento para organizar un encuentro entre Leila y Kate, así que le dije a Leila que quería que conociera a algunos de mis amigos antes del evento, y le pedí que me siguiera. Pareció un poco desconfiada de mis motivos al principio, pero al final, decidió venir conmigo.
+
+              El área a la que nos dieron acceso era la zona justo debajo de los asientos de los espectadores, rodeando el área donde la lucha estaba a punto de tener lugar. El área de combate reservada para los gladiadores se ve mucho más grande que las de las arenas sobre las que había leído antes, en los libros de historia. El anfiteatro que rodea la arena parece lo suficientemente grande como para albergar treinta mil espectadores, si no más, y aun así, no parece que los asientos corran peligro de no llenarse. Incluso a esta hora tan temprana de la mañana, hay miles de espectadores entrando a raudales por todas las entradas, y luego abriéndose paso por las gradas ascendentes, ansiosos por llegar a sus lugares reservados, y ver el evento del siglo.
+
+              Parece que tres días fueron más que suficientes para correr la voz por toda la ciudad sobre el evento de hoy. Nos abrimos paso por el nivel inferior del coliseo, mientras miro a mi alrededor, escaneando los grupos de gladiadores para ver si puedo reconocer a alguien.
+          - source: scene_text_2
+            paragraph: 16
+            text: |-
+              Media hora después, todavía no estamos ni cerca de encontrar rastro de ellos. También intenté contactarlos a través del transceptor de Daren, pero no tuve suerte. Debe haber demasiada gente intentando usar transceptores en la zona como para poder captar las señales correctas. ¿Dónde podrán estar todos? El cuerno que anuncia el inicio de los eventos podría sonar en cualquier momento.
+
+              "¿Leila?" escucho la voz de Kate detrás de mí. "Leila, ¿de verdad eres tú?"
+
+              Leila se da la vuelta al escuchar la voz de Kate, pero cuando ve su rostro, parece congelarse de la impresión.
+
+              "¿Kate?..." escribe Leila, pero no le da tiempo a escribir nada más, porque Kate viene corriendo hacia ella, y luego la abraza tan fuerte como puede.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_safe
+      - condition: b2_ch2_kate = 1
+        texts:
+          - source: scene_text
+            paragraph: 36
+            text: |-
+              Pensé que este sería el mejor momento para organizar un encuentro entre Leila y Kate, así que le conté a Leila sobre mi idea, y le pedí que me siguiera. Pareció un poco indecisa al principio, pero al final, decidió venir conmigo.
+
+              El área a la que nos dieron acceso era la zona justo debajo de los asientos de los espectadores, rodeando el área donde la lucha estaba a punto de tener lugar. El área de combate reservada para los gladiadores se ve mucho más grande que las de las arenas sobre las que había leído antes, en los libros de historia. El anfiteatro que rodea la arena parece lo suficientemente grande como para albergar treinta mil espectadores, si no más, y aun así, no parece que los asientos corran peligro de no llenarse. Incluso a esta hora tan temprana de la mañana, hay miles de espectadores entrando a raudales por todas las entradas, y luego abriéndose paso por las gradas ascendentes, ansiosos por llegar a sus lugares reservados, y ver el evento del siglo.
+
+              Parece que tres días fueron más que suficientes para correr la voz por toda la ciudad sobre el evento de hoy. Nos abrimos paso por el nivel inferior del coliseo, mientras miro a mi alrededor, escaneando los grupos de gladiadores para ver si puedo reconocer a alguien.
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              Media hora después, todavía no estamos ni cerca de encontrar rastro de ellos. También intenté contactarlos a través del transceptor de Daren, pero no tuve suerte. Debe haber demasiada gente intentando usar transceptores en la zona como para poder captar las señales correctas. ¿Dónde podrán estar todos? El cuerno que anuncia el inicio de los eventos podría sonar en cualquier momento.
+
+              "¿Leila?" escucho la voz de Kate detrás de mí. "Leila, ¿de verdad eres tú?"
+
+              Leila se da la vuelta al escuchar la voz de Kate, pero cuando ve su rostro, duda en escribir algo por unos instantes.
+
+              "Kate, yo..." empieza a escribir Leila, pero se ve interrumpida cuando Kate viene corriendo hacia ella, y la abraza tan fuerte como puede.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_safe
+  - name: b2_ch04a_safe
+    texts:
+      - source: scene_text
+        paragraph: 37
+        text: |-
+          "¡Leila!" dice Kate. "Por los dioses, pensé que estabas muerta. Nos dijeron que moriste por los experimentos. Oh dioses, Leila, ¡lo siento mucho! ¡No debí haberles creído! Debí haber ido a buscarte como hice con todos los demás."
+
+          "No necesitas discul--" escribe Leila, pero detiene su texto cuando se da cuenta de que Kate tiene los ojos cerrados, intentando evitar que las lágrimas salgan.
+
+          "Lo siento," dice Kate. "No debí haberte abandonado así. ¡Por favor, perdóname! Estaba tan concentrada en Diane que--"
+
+          El resto de las palabras de Kate quedan ahogadas por el sonido de un cuerno muy fuerte. Parece que el evento de la arena está a punto de comenzar.
+
+          "Kate, tenemos que irnos," dice Daren.
+
+          Solo ahora noto que Daren y Hadrik también estaban ahí, de pie detrás de Kate. Deben haberse encontrado antes, y vinieron a buscarme juntos.
+
+          "Lo sé," dice Kate, mientras se limpia las lágrimas con la manga.
+
+          "Por favor... mantenla a salvo..." me dice Kate, simplemente, mientras pasa junto a mí, dirigiéndose hacia el lado de la arena de su división.
+
+          "Lo haré," le digo.
+
+          "Kate, espera, yo..." escribe Leila, con la boca abierta, como si hubiera olvidado que no puede hablar, pero Kate no llega a ver la escritura azul, y sigue caminando, alejándose de nosotros.
+    choices:
+      - position: 1
+        text: Llamar a Kate
+        effects:
+          - set:
+              current_scene: b2_ch04a_reunion
+              b2_ch4_called_kate: 1
+      - position: 2
+        text: No hay tiempo. Las dos pueden hablar más después de la arena.
+        effects:
+          - set:
+              current_scene: b2_ch04a_reunion
+              b2_ch4_called_kate: 0
+  - name: b2_ch04a_reunion
+    routes:
+      - condition: b2_ch4_called_kate = 1 AND b2_ch2_kate = 0
+        texts:
+          - source: scene_text
+            paragraph: 38
+            text: |-
+              "¡Oye, Kate!" grito fuerte, para asegurarme de que me escuche.
+
+              Kate se detiene en seco, y se da la vuelta, confundida. Al ver que Leila no hace nada, le doy un codazo. Finalmente entiende lo que estaba haciendo, y rápidamente crea un mensaje de texto azul, con letras muy grandes, para que Kate pueda verlo a distancia.
+
+              "Kate, yo también lo siento," dice el texto. "¡Siento haber pensado que nunca querrías volver a verme porque era una lessathi! Así que, ahora que las dos lo sentimos, ¡ganemos la arena y salgamos de aquí vivas para poder seguir sintiéndolo juntas!"
+
+              Al principio, Kate se llevó un susto al ver la escritura, pero luego se dio cuenta de quién venía, y logró sonreír.
+
+              "¡Es una promesa!" le grita a Leila, y luego se da la vuelta, para apresurarse de regreso hacia su división.
+          - source: scene_text_2
+            paragraph: 18
+            text: |-
+              "¡Dales duro, Barry!" dice Hadrik, con su sonrisa habitual, mientras también se dirige hacia su propia área designada.
+
+              "O mejor aún, no te mueras," me dice Daren. "Solo necesitamos sobrevivir a la arena, no ganarla. Nos vemos después del final del evento. Recuerda, no hace falta hacer ninguna locura. Solo mantente vivo. ¿Entendido?"
+
+              "Entendido," digo.
+
+              Una vez que Daren también se ha ido, Leila y yo decidimos dirigirnos hacia nuestra división también.
+
+              "Entonces..." digo, mientras los dos caminamos lado a lado. "¿Ahora te alegras de haber decidido seguirme para conocer a mis amigos?" digo.
+
+              Leila me mira sorprendida por unos instantes, hasta que se da cuenta de que en realidad era a Kate a quien quería que conociera desde el principio.
+
+              "Sí," escribe entonces, sonriendo. "Me alegro. Gracias..."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_stats
+                  available_points: available_points + 3
+                  available_points_aux: available_points_aux + 3
+      - condition: b2_ch4_called_kate = 1 AND b2_ch2_kate = 1
+        texts:
+          - source: scene_text
+            paragraph: 39
+            text: |-
+              "¡Oye, Kate!" grito fuerte, para asegurarme de que me escuche.
+
+              Kate se detiene en seco, y se da la vuelta, confundida. Al ver que Leila no hace nada, le doy un codazo. Finalmente entiende lo que estaba haciendo, y rápidamente crea un mensaje de texto azul, con letras muy grandes, para que Kate pueda verlo a distancia.
+
+              "Kate, yo también lo siento," dice el texto. "¡Siento haber pensado que nunca querrías volver a verme porque era una lessathi! Así que, ahora que las dos lo sentimos, ¡ganemos la arena y salgamos de aquí vivas para poder seguir sintiéndolo juntas!"
+
+              Al principio, Kate se llevó un susto al ver la escritura, pero luego se dio cuenta de quién venía, y logró sonreír.
+
+              "¡Es una promesa!" le grita a Leila, y luego se da la vuelta, para apresurarse de regreso hacia su división.
+          - source: scene_text_2
+            paragraph: 19
+            text: |-
+              "¡Dales duro, Barry!" dice Hadrik, con su sonrisa habitual, mientras también se dirige hacia su propia área designada.
+
+              "O mejor aún, no te mueras," me dice Daren. "Solo necesitamos sobrevivir a la arena, no ganarla. Nos vemos después del final del evento. Recuerda, no hace falta hacer ninguna locura. Solo mantente vivo. ¿Entendido?"
+
+              "Entendido," digo.
+
+              Una vez que Daren también se ha ido, Leila y yo decidimos dirigirnos hacia nuestra división también.
+
+              "Entonces..." digo, mientras los dos caminamos lado a lado. "¿Ahora te alegras de haber decidido seguirme para conocer a Kate después de todo?" digo.
+
+              Leila sonríe, débilmente.
+
+              "Sí..." escribe. "Sí, me alegro. Gracias..."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_stats
+                  available_points: available_points + 3
+                  available_points_aux: available_points_aux + 3
+      - condition: b2_ch4_called_kate = 0 AND b2_ch2_kate = 0
+        texts:
+          - source: scene_text
+            paragraph: 40
+            text: |-
+              Decido no llamar a Kate. Las dos pueden hablar más después de que terminemos con la arena.
+
+              "¡Dales duro, Barry!" dice Hadrik, con su sonrisa habitual, mientras también se dirige hacia su propia área designada.
+
+              "O mejor aún, no te mueras," me dice Daren. "Solo necesitamos sobrevivir a la arena, no ganarla. Nos vemos después del final del evento. Recuerda, no hace falta hacer ninguna locura. Solo mantente vivo. ¿Entendido?"
+
+              "Entendido," digo.
+
+              Una vez que Daren también se ha ido, Leila y yo decidimos dirigirnos hacia nuestra división también.
+
+              Mientras caminamos, no puedo evitar notar que Leila parece un poco distraída.
+
+              "No te preocupes," le digo. "¡Tendrás tiempo de hablar con Kate todo lo que quieras después de que termine la arena!"
+
+              "Sí..." escribe Leila. "Claro..."
+
+              "Entonces... ¿ahora te alegras de haber decidido seguirme para conocer a mis amigos?" digo.
+
+              Leila me mira sorprendida por unos instantes, hasta que se da cuenta de que en realidad era a Kate a quien quería que conociera desde el principio.
+
+              "Sí," escribe entonces, sonriendo. "Me alegro. Gracias..."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_stats
+                  available_points: available_points + 3
+                  available_points_aux: available_points_aux + 3
+      - condition: b2_ch4_called_kate = 0 AND b2_ch2_kate = 1
+        texts:
+          - source: scene_text
+            paragraph: 41
+            text: |-
+              Decido no llamar a Kate. Las dos pueden hablar más después de que terminemos con la arena.
+
+              "¡Dales duro, Barry!" dice Hadrik, con su sonrisa habitual, mientras también se dirige hacia su propia área designada.
+
+              "O mejor aún, no te mueras," me dice Daren. "Solo necesitamos sobrevivir a la arena, no ganarla. Nos vemos después del final del evento. Recuerda, no hace falta hacer ninguna locura. Solo mantente vivo. ¿Entendido?"
+
+              "Entendido," digo.
+
+              Una vez que Daren también se ha ido, Leila y yo decidimos dirigirnos hacia nuestra división también.
+
+              Mientras caminamos, no puedo evitar notar que Leila parece un poco distraída.
+
+              "No te preocupes," le digo. "¡Tendrás tiempo de hablar con Kate todo lo que quieras después de que termine la arena!"
+
+              "Sí..." escribe Leila. "Claro..."
+
+              "Entonces... ¿ahora te alegras de haber decidido seguirme para conocer a Kate después de todo?" digo.
+
+              Leila sonríe, débilmente.
+
+              "Sí..." escribe. "Sí, me alegro. Gracias..."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_stats
+                  available_points: available_points + 3
+                  available_points_aux: available_points_aux + 3
+  - name: b2_ch04a_stats
+    routes:
+      - condition: ch11_saved_rose = 1
+        texts:
+          - source: scene_text
+            paragraph: 42
+            text: |-
+              Nos dirigimos al área de nuestra división, donde todos nuestros demás compañeros de equipo ya se habían reunido. Luego tomamos nuestros lugares junto a las rejas de hierro que bloquean nuestro acceso al área de combate, para tener una mejor vista de lo que sucede en la arena. Al parecer, todavía hay algunas personas abriéndose camino hacia sus asientos, pero la mayoría de los espectadores parecen haber encontrado sus lugares, y ahora esperan inquietos a que comience el espectáculo. Echo un vistazo para ver si puedo localizar a Flower o a Rose, pero los asientos están demasiado lejos de mí como para poder distinguir ningún detalle. El presentador está verificando su amplificador de voz mágico, en preparación para el evento. Está situado en una plataforma elevada, por encima de los asientos de los espectadores.
+
+              Mientras todos esperamos a que los eventos comiencen, de repente escucho un pitido familiar, proveniente de mi bolsillo. Al mismo tiempo, un pitido similar viene de la dirección de Leila también.
+
+              Por fin. He estado esperando esto desde hace un tiempo.
+        choices:
+          - position: 1
+            text: Invertir puntos ahora
+            effects:
+              - set:
+                  current_scene: b2_ch04a_stats_spent
+                  storyboard_controls: Jump to frame "Stats"
+          - position: 2
+            text: Invertir puntos más tarde (presionando el botón de estadísticas en la parte superior de la pantalla)
+            effects:
+              - set:
+                  current_scene: b2_ch04a_private
+      - condition: ch11_saved_rose = 0
+        texts:
+          - source: scene_text
+            paragraph: 43
+            text: |-
+              Nos dirigimos al área de nuestra división, donde todos nuestros demás compañeros de equipo ya se habían reunido. Luego tomamos nuestros lugares junto a las rejas de hierro que bloquean nuestro acceso al área de combate, para tener una mejor vista de lo que sucede en la arena. Al parecer, todavía hay algunas personas abriéndose camino hacia sus asientos, pero la mayoría de los espectadores parecen haber encontrado sus lugares, y ahora esperan inquietos a que comience el espectáculo. Echo un vistazo para ver si puedo localizar a Flower, pero los asientos están demasiado lejos de mí como para poder distinguir ningún detalle. El presentador está verificando su amplificador de voz mágico, en preparación para el evento. Está situado en una plataforma elevada, por encima de los asientos de los espectadores.
+
+              Mientras todos esperamos a que los eventos comiencen, de repente escucho un pitido familiar, proveniente de mi bolsillo. Al mismo tiempo, un pitido similar viene de la dirección de Leila también.
+
+              Por fin. He estado esperando esto desde hace un tiempo.
+        choices:
+          - position: 1
+            text: Invertir puntos ahora
+            effects:
+              - set:
+                  current_scene: b2_ch04a_stats_spent
+                  storyboard_controls: Jump to frame "Stats"
+          - position: 2
+            text: Invertir puntos más tarde (presionando el botón de estadísticas en la parte superior de la pantalla)
+            effects:
+              - set:
+                  current_scene: b2_ch04a_private
+  - name: b2_ch04a_stats_spent
+    routes:
+      - condition: ch11_saved_rose = 1
+        texts:
+          - source: scene_text
+            paragraph: 42
+            text: |-
+              Nos dirigimos al área de nuestra división, donde todos nuestros demás compañeros de equipo ya se habían reunido. Luego tomamos nuestros lugares junto a las rejas de hierro que bloquean nuestro acceso al área de combate, para tener una mejor vista de lo que sucede en la arena. Al parecer, todavía hay algunas personas abriéndose camino hacia sus asientos, pero la mayoría de los espectadores parecen haber encontrado sus lugares, y ahora esperan inquietos a que comience el espectáculo. Echo un vistazo para ver si puedo localizar a Flower o a Rose, pero los asientos están demasiado lejos de mí como para poder distinguir ningún detalle. El presentador está verificando su amplificador de voz mágico, en preparación para el evento. Está situado en una plataforma elevada, por encima de los asientos de los espectadores.
+
+              Mientras todos esperamos a que los eventos comiencen, de repente escucho un pitido familiar, proveniente de mi bolsillo. Al mismo tiempo, un pitido similar viene de la dirección de Leila también.
+
+              Por fin. He estado esperando esto desde hace un tiempo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_private
+      - condition: ch11_saved_rose = 0
+        texts:
+          - source: scene_text
+            paragraph: 43
+            text: |-
+              Nos dirigimos al área de nuestra división, donde todos nuestros demás compañeros de equipo ya se habían reunido. Luego tomamos nuestros lugares junto a las rejas de hierro que bloquean nuestro acceso al área de combate, para tener una mejor vista de lo que sucede en la arena. Al parecer, todavía hay algunas personas abriéndose camino hacia sus asientos, pero la mayoría de los espectadores parecen haber encontrado sus lugares, y ahora esperan inquietos a que comience el espectáculo. Echo un vistazo para ver si puedo localizar a Flower, pero los asientos están demasiado lejos de mí como para poder distinguir ningún detalle. El presentador está verificando su amplificador de voz mágico, en preparación para el evento. Está situado en una plataforma elevada, por encima de los asientos de los espectadores.
+
+              Mientras todos esperamos a que los eventos comiencen, de repente escucho un pitido familiar, proveniente de mi bolsillo. Al mismo tiempo, un pitido similar viene de la dirección de Leila también.
+
+              Por fin. He estado esperando esto desde hace un tiempo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_private
+  - name: b2_ch04a_private
+    texts:
+      - source: scene_text
+        paragraph: 44
+        text: |-
+          Una vez que termino con mi dispositivo de estadísticas, lo guardo de vuelta en mi bolsillo, y veo que Leila también está a punto de terminar con el suyo. Conociéndola, debe haber puesto todos sus puntos en resistencia. Le preguntaría directamente, pero no querría revelarle a los demás el hecho de que somos lessathi.
+
+          "¿Encontraron una forma de mandarse mensajes en privado?" nos pregunta Bruce, después de vernos a los dos usar el mismo tipo de dispositivos al mismo tiempo. "Bueno, espero que hayan dicho lo que necesitaban, porque el espectáculo está a punto de empezar."
+
+          Poco después de que Bruce termina de hablar, escuchamos el sonido de un segundo cuerno, ahora señalando el verdadero inicio del evento. Los pocos espectadores que llegaron tarde ahora se apresuran lo más rápido que pueden hacia sus asientos, mientras el presentador hace unas pruebas, para asegurarse de que su amplificador de voz funciona correctamente. Pronto, el murmullo constante que se podía escuchar por toda la arena lentamente se apaga, y el presentador toma una respiración profunda, preparándose para anunciar oficialmente el inicio del evento de la arena.
+
+          "Bienvenidos," dice el presentador. "¡Bienvenidos todos! No creo que haya razón para hacer una larga introducción en esta ocasión. Todos saben por qué están aquí. Vinieron porque se les prometió el evento del siglo, y planeamos cumplir esa promesa. Ahora, si a todos les parece bien, me gustaría comenzar anunciando las reglas."
+
+          El presentador espera unos momentos, para asegurarse de que no haya objeciones, y luego continúa leyendo de su libreta.
+      - source: scene_text_2
+        paragraph: 20
+        text: '"Por petición del mismísimo dueño de la arena, el señor Venard," dice el presentador, "el evento de hoy seguirá las reglas tradicionales, que fueron utilizadas por su padre antes que él y por los lessathi de antaño, antes del invierno inmóvil. Como la mayoría de ustedes ya sabrá, esto también significa que si un gladiador rompe una de las reglas, no será descalificado de seguir participando, sino que se convertirá en un indeseable. Al convertirse en indeseable, un gladiador será obligado a participar en una ronda adicional después de que termine el evento oficial, donde tendrá que pelear contra todos los demás gladiadores restantes a la vez, en una batalla final. Cualquier gladiador que logre dar el golpe de gracia a un indeseable será recompensado ya sea con su libertad, o con una gran suma de dinero, dependiendo de su estatus en esta arena. Otros gladiadores, por supuesto, pueden negarse a participar en esta ronda final, y los indeseables también pueden elegir no participar más en las rondas regulares, una vez que hayan sido marcados como infractores de las reglas."'
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_undesirables
+  - name: b2_ch04a_undesirables
+    texts:
+      - source: scene_text
+        paragraph: 45
+        text: |-
+          El presentador tose fuerte, y pasa la página de su libreta.
+
+          "Por supuesto," continúa el presentador, "esto no significa que los gladiadores ahora estén exentos de seguir las reglas generales de la arena. Si un gladiador es sorprendido usando magia, si intenta matar a sus compañeros de equipo, o si ataca a alguno de los espectadores, será ejecutado en el acto. La regla de los indeseables solo aplica para las reglas del evento en sí. Prosiguiendo, las reglas tradicionales de la arena establecen que los eventos de la arena deben dividirse en exactamente tres rondas. La primera ronda, como estoy seguro de que ya les han dicho, se peleará contra una variedad de criaturas míticas que nunca antes se han usado en esta arena. Sin embargo, tenemos una sorpresa para la segunda ronda. Para esta ocasión especial, en lugar de nuestro campeón reinante, creo que les alegrará saber que el guerrero que nos acompañará no es otro que ¡el implacable mercenario Velgos!"
+
+          Hay un fuerte murmullo entre la multitud cuando escuchan el nombre de Velgos. Por lo que puedo notar, parecen emocionados ante la posibilidad de verlo pelear.
+
+          "En la tercera ronda," dice el presentador, "los gladiadores que sobrevivan las dos primeras rondas tendrán que pelear en una serie de duelos, para decidir quiénes serán los vencedores de este evento. Algunos de los duelos deberán pelearse a muerte, mientras que otros se pelearán solo hasta que uno de los combatientes se rinda. Los duelos exactos se decidirán después del final de la segunda ronda, cuando sepamos exactamente cuáles de los combatientes han sobrevivido. Y ahora que ya terminamos con todas las presentaciones, creo que finalmente es hora de comenzar este evento. ¿Están todos listos?"
+      - source: scene_text_2
+        paragraph: 21
+        text: |-
+          La multitud estalla en fuertes vítores por unos segundos, y el presentador ahora alza la voz, para ahogar todos los ruidos fuertes.
+
+          "Entonces no los haré esperar más," dice el presentador. "¡Que comience el evento del siglo!"
+
+          Uno de los portones de hierro del nivel inferior del anfiteatro está siendo lentamente levantado, mientras las multitudes siguen vitoreando tan fuerte como pueden.
+
+          "Para la primera ronda," dice el presentador, "las divisiones de combatientes entrarán a la arena una por una, en el orden del número de su división. ¡Demos una cálida ronda de aplausos a la primera división de este evento!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_manticores
+  - name: b2_ch04a_manticores
+    routes:
+      - condition: b2_ch2_heard = 1 AND b2_ch4_inform2 = 0 AND b2_ch4_inform3 = 0
+        texts:
+          - source: scene_text
+            paragraph: 46
+            text: |-
+              Hay una mezcla de aplausos y gritos proveniente de los asientos de los espectadores, mientras los gladiadores de la primera división salen por los portones, y se dirigen hacia el centro de la arena. No reconozco a ninguno de los guerreros en esta división, pero a juzgar por los continuos vítores de la multitud, diría que la mayoría de los espectadores los han visto actuar al menos una vez antes. Algunos de los gladiadores parecen un poco demasiado confiados. ¿Ex-vencedores, quizás? De cualquier forma, más les vale ponerse las pilas, y rápido. Por lo que dijo Bruce en mi primer día aquí, los eventos hasta ahora ni siquiera se podrían comparar con lo que viene.
+
+              Una gran reja de hierro en el lado opuesto de la arena hace un fuerte chirrido al abrirse. Desde más allá del portón, un león con alas negras, ojos rojos, dos cuernos en la cabeza y una cola de escorpión se abre paso hacia el área de combate. La manticora no pierde tiempo, y se eleva directamente hacia el cielo. Dos manticoras más la siguen, y todas comienzan a circular por los cielos sobre la arena, observando atentamente a sus presas. Al ver a las bestias abandonar el área de combate con tanta facilidad, algunos de los espectadores entre la multitud empiezan a mostrar señales de inquietud.
+
+              "No se preocupen," dice el presentador, intentando calmar a la multitud. "Estas bestias han sido bien entrenadas. No se atreverían a poner sus garras sobre nadie que no sean los gladiadores en la arena."
+
+              Varios escorpiones gigantes ahora también se unen a la arena, viniendo de más allá del mismo portón por el que entraron las manticoras. Avanzan lentamente hacia los guerreros, en línea recta, sin ningún intento de rodearlos.
+          - source: scene_text_2
+            paragraph: 22
+            text: |-
+              Menos mal que escuché a los guardias hablar sobre los escorpiones mientras estaba en mi celda. He tenido todo el tiempo del mundo para prepararme contra ellos, y también le conté a Leila toda la información que necesitaba saber sobre ellos.
+
+              Al menos en lo que respecta a los escorpiones gigantes, no deberíamos tener ningún... ¡Oye, espera un momento! Esos no son escorpiones gigantes... Esos no son escorpiones gigantes para nada. Son merodeadores del desierto. ¡Malditos guardias idiotas! ¿No podrían notar la diferencia?
+
+              Está bien... ¡Cálmate! Los merodeadores del desierto son básicamente escorpiones gigantes con cabezas más pequeñas. Deberían tener más o menos los mismos comportamientos. ¿Pero también tienen las mismas debilidades? Creo que sí, pero no estoy completamente seguro. Si tan solo tuviera mi cuaderno conmigo ahora...
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_backpack
+      - condition: b2_ch2_heard = 1 AND b2_ch4_inform2 = 1
+        texts:
+          - source: scene_text
+            paragraph: 46
+            text: |-
+              Hay una mezcla de aplausos y gritos proveniente de los asientos de los espectadores, mientras los gladiadores de la primera división salen por los portones, y se dirigen hacia el centro de la arena. No reconozco a ninguno de los guerreros en esta división, pero a juzgar por los continuos vítores de la multitud, diría que la mayoría de los espectadores los han visto actuar al menos una vez antes. Algunos de los gladiadores parecen un poco demasiado confiados. ¿Ex-vencedores, quizás? De cualquier forma, más les vale ponerse las pilas, y rápido. Por lo que dijo Bruce en mi primer día aquí, los eventos hasta ahora ni siquiera se podrían comparar con lo que viene.
+
+              Una gran reja de hierro en el lado opuesto de la arena hace un fuerte chirrido al abrirse. Desde más allá del portón, un león con alas negras, ojos rojos, dos cuernos en la cabeza y una cola de escorpión se abre paso hacia el área de combate. La manticora no pierde tiempo, y se eleva directamente hacia el cielo. Dos manticoras más la siguen, y todas comienzan a circular por los cielos sobre la arena, observando atentamente a sus presas. Al ver a las bestias abandonar el área de combate con tanta facilidad, algunos de los espectadores entre la multitud empiezan a mostrar señales de inquietud.
+
+              "No se preocupen," dice el presentador, intentando calmar a la multitud. "Estas bestias han sido bien entrenadas. No se atreverían a poner sus garras sobre nadie que no sean los gladiadores en la arena."
+
+              Varios escorpiones gigantes ahora también se unen a la arena, viniendo de más allá del mismo portón por el que entraron las manticoras. Avanzan lentamente hacia los guerreros, en línea recta, sin ningún intento de rodearlos.
+          - source: scene_text_2
+            paragraph: 23
+            text: |-
+              Menos mal que escuché a los guardias hablar sobre los escorpiones mientras estaba en mi celda. He tenido todo el tiempo del mundo para prepararme contra ellos, y también les conté a todos los demás toda la información que necesitaban saber sobre ellos.
+
+              Al menos en lo que respecta a los escorpiones gigantes, no deberíamos tener ningún... ¡Oye, espera un momento! Esos no son escorpiones gigantes... Esos no son escorpiones gigantes para nada. Son merodeadores del desierto. ¡Malditos guardias idiotas! ¿No podrían notar la diferencia?
+
+              Está bien... ¡Cálmate! Los merodeadores del desierto son básicamente escorpiones gigantes con cabezas más pequeñas. Deberían tener más o menos los mismos comportamientos. ¿Pero también tienen las mismas debilidades? Creo que sí, pero no estoy completamente seguro. Si tan solo tuviera mi cuaderno conmigo ahora...
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_backpack
+      - condition: b2_ch2_heard = 1 AND b2_ch4_inform3 = 1
+        texts:
+          - source: scene_text
+            paragraph: 46
+            text: |-
+              Hay una mezcla de aplausos y gritos proveniente de los asientos de los espectadores, mientras los gladiadores de la primera división salen por los portones, y se dirigen hacia el centro de la arena. No reconozco a ninguno de los guerreros en esta división, pero a juzgar por los continuos vítores de la multitud, diría que la mayoría de los espectadores los han visto actuar al menos una vez antes. Algunos de los gladiadores parecen un poco demasiado confiados. ¿Ex-vencedores, quizás? De cualquier forma, más les vale ponerse las pilas, y rápido. Por lo que dijo Bruce en mi primer día aquí, los eventos hasta ahora ni siquiera se podrían comparar con lo que viene.
+
+              Una gran reja de hierro en el lado opuesto de la arena hace un fuerte chirrido al abrirse. Desde más allá del portón, un león con alas negras, ojos rojos, dos cuernos en la cabeza y una cola de escorpión se abre paso hacia el área de combate. La manticora no pierde tiempo, y se eleva directamente hacia el cielo. Dos manticoras más la siguen, y todas comienzan a circular por los cielos sobre la arena, observando atentamente a sus presas. Al ver a las bestias abandonar el área de combate con tanta facilidad, algunos de los espectadores entre la multitud empiezan a mostrar señales de inquietud.
+
+              "No se preocupen," dice el presentador, intentando calmar a la multitud. "Estas bestias han sido bien entrenadas. No se atreverían a poner sus garras sobre nadie que no sean los gladiadores en la arena."
+
+              Varios escorpiones gigantes ahora también se unen a la arena, viniendo de más allá del mismo portón por el que entraron las manticoras. Avanzan lentamente hacia los guerreros, en línea recta, sin ningún intento de rodearlos.
+          - source: scene_text_2
+            paragraph: 23
+            text: |-
+              Menos mal que escuché a los guardias hablar sobre los escorpiones mientras estaba en mi celda. He tenido todo el tiempo del mundo para prepararme contra ellos, y también les conté a todos los demás toda la información que necesitaban saber sobre ellos.
+
+              Al menos en lo que respecta a los escorpiones gigantes, no deberíamos tener ningún... ¡Oye, espera un momento! Esos no son escorpiones gigantes... Esos no son escorpiones gigantes para nada. Son merodeadores del desierto. ¡Malditos guardias idiotas! ¿No podrían notar la diferencia?
+
+              Está bien... ¡Cálmate! Los merodeadores del desierto son básicamente escorpiones gigantes con cabezas más pequeñas. Deberían tener más o menos los mismos comportamientos. ¿Pero también tienen las mismas debilidades? Creo que sí, pero no estoy completamente seguro. Si tan solo tuviera mi cuaderno conmigo ahora...
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_backpack
+      - condition: b2_ch2_heard = 0
+        texts:
+          - source: scene_text
+            paragraph: 46
+            text: |-
+              Hay una mezcla de aplausos y gritos proveniente de los asientos de los espectadores, mientras los gladiadores de la primera división salen por los portones, y se dirigen hacia el centro de la arena. No reconozco a ninguno de los guerreros en esta división, pero a juzgar por los continuos vítores de la multitud, diría que la mayoría de los espectadores los han visto actuar al menos una vez antes. Algunos de los gladiadores parecen un poco demasiado confiados. ¿Ex-vencedores, quizás? De cualquier forma, más les vale ponerse las pilas, y rápido. Por lo que dijo Bruce en mi primer día aquí, los eventos hasta ahora ni siquiera se podrían comparar con lo que viene.
+
+              Una gran reja de hierro en el lado opuesto de la arena hace un fuerte chirrido al abrirse. Desde más allá del portón, un león con alas negras, ojos rojos, dos cuernos en la cabeza y una cola de escorpión se abre paso hacia el área de combate. La manticora no pierde tiempo, y se eleva directamente hacia el cielo. Dos manticoras más la siguen, y todas comienzan a circular por los cielos sobre la arena, observando atentamente a sus presas. Al ver a las bestias abandonar el área de combate con tanta facilidad, algunos de los espectadores entre la multitud empiezan a mostrar señales de inquietud.
+
+              "No se preocupen," dice el presentador, intentando calmar a la multitud. "Estas bestias han sido bien entrenadas. No se atreverían a poner sus garras sobre nadie que no sean los gladiadores en la arena."
+
+              Varios escorpiones gigantes ahora también se unen a la arena, viniendo de más allá del mismo portón por el que entraron las manticoras. Avanzan lentamente hacia los guerreros, en línea recta, sin ningún intento de rodearlos.
+          - source: scene_text_2
+            paragraph: 24
+            text: No, espera... Esos no son escorpiones, son merodeadores del desierto. Se ven casi iguales que los escorpiones, pero sus cabezas son más pequeñas. Recuerdo haber leído sobre los merodeadores del desierto en mi cuaderno, y sé que su debilidad estaba detrás de una de las escamas de su espalda, pero no puedo recordar cuál. Si tan solo tuviera mi cuaderno conmigo ahora...
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_backpack
+  - name: b2_ch04a_backpack
+    routes:
+      - condition: ch6_secure = 1
+        texts:
+          - source: scene_text
+            paragraph: 47
+            text: |-
+              ¿Debería ir a buscarlo? Si van por orden del número de división, entonces todavía debería quedar bastante tiempo hasta que sea nuestro turno de entrar a la arena. Pero si me voy ahora, me voy a perder las peleas. Si voy a pelear contra estas criaturas, observarlas en acción puede ser crucial para mi supervivencia.
+
+              ¡Maldición! Si tan solo no le hubiera dicho a Daren que asegurara mi mochila, podría haber mandado a Leila a revisar el cuaderno por mí. Supongo que no tiene sentido pensar en eso ahora. Lo hecho, hecho está. Solo hay dos opciones. O voy a leer mi cuaderno, o me quedo aquí y veo las peleas.
+        choices:
+          - position: 1
+            text: Quedarme aquí y ver las peleas.
+            effects:
+              - set:
+                  ac_b2_ch4_risk: 1
+                achievement:
+                  id: ac_b2_ch4_risk
+                  title: Un riesgo calculado
+                condition: b2_ch2_heard = 1
+              - set:
+                  current_scene: b2_ch04a_remain
+                  b2_ch4_backpack: 1
+          - position: 2
+            text: Ir a leer el cuaderno.
+            effects:
+              - set:
+                  current_scene: b2_ch04a_read
+                  b2_ch4_backpack: 2
+      - condition: ch6_secure = 0
+        texts:
+          - source: scene_text
+            paragraph: 48
+            text: |-
+              ¿Debería ir a buscarlo? Si van por orden del número de división, entonces todavía debería quedar bastante tiempo hasta que sea nuestro turno de entrar a la arena. Pero si me voy ahora, me voy a perder las peleas. Si voy a pelear contra estas criaturas, observarlas en acción puede ser crucial para mi supervivencia.
+
+              ¡Un momento, también tengo otra opción! Podría mandar a Leila a leer mi cuaderno, y arrancar las páginas que necesito, para que me las traiga de vuelta. ¿Pero podría encontrar las páginas? Sí hice un índice de páginas al principio, pero a la gente le ha costado entender mi horrible letra en el pasado. No puedo simplemente decirle que me traiga el cuaderno, porque entonces quizás no tenga tiempo de devolverlo a mi mochila antes de que empiece nuestra ronda. De cualquier manera, no tengo mucho tiempo. Voy a tener que decidir qué quiero hacer.
+        choices:
+          - position: 1
+            text: Quedarme aquí y ver las peleas.
+            effects:
+              - set:
+                  ac_b2_ch4_risk: 1
+                achievement:
+                  id: ac_b2_ch4_risk
+                  title: Un riesgo calculado
+                condition: b2_ch2_heard = 1
+              - set:
+                  current_scene: b2_ch04a_remain
+                  b2_ch4_backpack: 1
+          - position: 2
+            text: Ir a leer el cuaderno.
+            effects:
+              - set:
+                  current_scene: b2_ch04a_read
+                  b2_ch4_backpack: 2
+          - position: 3
+            text: Mandar a Leila a buscar las páginas.
+            effects:
+              - set:
+                  current_scene: b2_ch04a_remain
+                  b2_ch4_backpack: 3
+  - name: b2_ch04a_read
+    routes:
+      - condition: ch6_secure = 1
+        texts:
+          - source: scene_text
+            paragraph: 49
+            text: |-
+              Iré a leer el cuaderno. Es más seguro así.
+
+              "Oye, Leila," digo. "Necesito ir a revisar mi cuaderno rápido. ¿Podrías darme un resumen de las peleas cuando vuelva?"
+
+              Leila asiente.
+
+              "De acuerdo," digo. "Vuelvo enseguida."
+
+              Salgo del área de nuestra división y me apresuro hacia los vestuarios. Poco después de salir de la sala, uno de los guardias me ve y me llama.
+
+              "Tú, ahí," dice el guardia. "¿Por qué abandonaste el área de tu división?"
+
+              "Lo siento," digo. "Olvidé algo en mi mochila y me dirigía al vestuario."
+
+              "No se supone que debas abandonar tu área designada sin permiso," me dice el guardia.
+
+              "Está bien," digo. "¿Cómo pido permiso, entonces?"
+          - source: scene_text_2
+            paragraph: 25
+            text: |-
+              El guardia se rasca la cabeza. No creo que nadie le haya hecho esta pregunta antes.
+
+              "Espera aquí," dice el guardia. "Voy a preguntarle al dueño. Más vale que no te muevas de este lugar hasta que yo vuelva, o estarás en problemas."
+
+              El guardia va a subir un tramo de escaleras, y luego desaparece de mi vista. Vuelve unos minutos después, con un papel en la mano.
+
+              "Aquí tienes un pase libre, firmado por el dueño," dice el guardia, mientras me entrega el papel. "Si algún otro guardia intenta detenerte, le muestras este papel. Cuando termines, vuelves aquí, y me entregas este papel. ¿Está claro?"
+
+              "Clarísimo," digo, y luego me dirijo hacia el vestuario.
+
+              Cuando finalmente llego a mi casillero, lo abro con mi llave, y luego saco el cuaderno de mi mochila. Arranco rápidamente las páginas que necesito, luego coloco mi cuaderno de vuelta en mi mochila y cierro el casillero.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_himself
+      - condition: ch6_secure = 0
+        texts:
+          - source: scene_text
+            paragraph: 50
+            text: |-
+              Iré a leer el cuaderno yo mismo. Es más seguro así.
+
+              "Oye, Leila," digo. "Necesito ir a revisar mi cuaderno rápido. ¿Podrías darme un resumen de las peleas cuando vuelva?"
+
+              Leila asiente.
+
+              "De acuerdo," digo. "Vuelvo enseguida."
+
+              Salgo del área de nuestra división y me apresuro hacia los vestuarios. Poco después de salir de la sala, uno de los guardias me ve y me llama.
+
+              "Tú, ahí," dice el guardia. "¿Por qué abandonaste el área de tu división?"
+
+              "Lo siento," digo. "Olvidé algo en mi mochila y me dirigía al vestuario."
+
+              "No se supone que debas abandonar tu área designada sin permiso," me dice el guardia.
+
+              "Está bien," digo. "¿Cómo pido permiso, entonces?"
+          - source: scene_text_2
+            paragraph: 25
+            text: |-
+              El guardia se rasca la cabeza. No creo que nadie le haya hecho esta pregunta antes.
+
+              "Espera aquí," dice el guardia. "Voy a preguntarle al dueño. Más vale que no te muevas de este lugar hasta que yo vuelva, o estarás en problemas."
+
+              El guardia va a subir un tramo de escaleras, y luego desaparece de mi vista. Vuelve unos minutos después, con un papel en la mano.
+
+              "Aquí tienes un pase libre, firmado por el dueño," dice el guardia, mientras me entrega el papel. "Si algún otro guardia intenta detenerte, le muestras este papel. Cuando termines, vuelves aquí, y me entregas este papel. ¿Está claro?"
+
+              "Clarísimo," digo, y luego me dirijo hacia el vestuario.
+
+              Cuando finalmente llego a mi casillero, lo abro con mi llave, y luego saco el cuaderno de mi mochila. Arranco rápidamente las páginas que necesito, luego coloco mi cuaderno de vuelta en mi mochila y cierro el casillero.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_himself
+  - name: b2_ch04a_himself
+    routes:
+      - condition: b2_ch2_heard = 1
+        texts:
+          - source: scene_text
+            paragraph: 51
+            text: |-
+              Mientras estudio la información de camino de vuelta del vestuario, me doy cuenta de que los merodeadores del desierto en efecto no eran muy diferentes de los escorpiones gigantes. Incluso sus debilidades son las mismas. Supongo que todo este viaje no fue más que una enorme pérdida de tiempo.
+
+              Cuando me acerco al área de mi división, noto al guardia esperándome donde lo dejé, y le devuelvo su papel.
+
+              Luego vuelvo a entrar al área designada para mi división, y regreso hacia los barrotes metálicos, donde todos están viendo las peleas.
+
+              Parece que tanto la primera como la segunda pelea de división ya terminaron. Todas las manticoras y los escorpiones están muertos, y también hay algunos cadáveres de puercoespines arqueros tirados en el suelo junto a ellos. Hadrik está siendo lanzado hacia arriba y hacia abajo por sus compañeros de equipo, mientras repiten su nombre sin cesar, y las multitudes vitorean a todo pulmón.
+
+              "¿Qué está pasando aquí?" le pregunto a Leila.
+
+              "Tu amigo enano acaba de derrotar a todos esos monstruos él solo," escribe Leila.
+          - source: scene_text_2
+            paragraph: 26
+            text: |-
+              "¿Él solo?" pregunto, sorprendido. "¿Qué pasó con la primera división?"
+
+              "Fueron todos asesinados," escribe Leila. "Puedes ver sus cuerpos por allá."
+
+              Luego señala hacia varios gladiadores muertos que están escondidos detrás de unos cadáveres de merodeadores.
+
+              "Diablos..." digo. "Será mejor que nos preparemos, entonces. Será nuestro turno después de la siguiente división."
+
+              Pasa aproximadamente un minuto más para que los vítores finalmente se calmen, y para que Hadrik y los demás bajen del escenario, para que la siguiente división pueda entrar al área de combate.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_daft
+      - condition: b2_ch2_heard = 0
+        texts:
+          - source: scene_text
+            paragraph: 52
+            text: |-
+              Mientras estudio la información de camino de vuelta del vestuario, noto al guardia esperándome donde lo dejé, y le devuelvo su papel.
+
+              Luego vuelvo a entrar al área designada para mi división, y regreso hacia los barrotes metálicos, donde todos están viendo las peleas.
+
+              Parece que tanto la primera como la segunda pelea de división ya terminaron. Todas las manticoras y los escorpiones están muertos, y también hay algunos cadáveres de puercoespines arqueros tirados en el suelo junto a ellos. Hadrik está siendo lanzado hacia arriba y hacia abajo por sus compañeros de equipo, mientras repiten su nombre sin cesar, y las multitudes vitorean a todo pulmón.
+
+              "¿Qué está pasando aquí?" le pregunto a Leila.
+
+              "Tu amigo enano acaba de derrotar a todos esos monstruos él solo," escribe Leila.
+          - source: scene_text_2
+            paragraph: 26
+            text: |-
+              "¿Él solo?" pregunto, sorprendido. "¿Qué pasó con la primera división?"
+
+              "Fueron todos asesinados," escribe Leila. "Puedes ver sus cuerpos por allá."
+
+              Luego señala hacia varios gladiadores muertos que están escondidos detrás de unos cadáveres de merodeadores.
+
+              "Diablos..." digo. "Será mejor que nos preparemos, entonces. Será nuestro turno después de la siguiente división."
+
+              Pasa aproximadamente un minuto más para que los vítores finalmente se calmen, y para que Hadrik y los demás bajen del escenario, para que la siguiente división pueda entrar al área de combate.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_daft
+  - name: b2_ch04a_remain
+    routes:
+      - condition: b2_ch4_backpack = 1
+        texts:
+          - source: scene_text
+            paragraph: 53
+            text: |-
+              Olvida el cuaderno. Que yo sepa, podrían ni siquiera usar merodeadores en nuestra división, y solo estaría perdiendo el tiempo.
+
+              Los merodeadores ahora se acercan cada vez más a los gladiadores, mientras las manticoras siguen volando en círculos, esperando la mejor oportunidad para atacar.
+
+              Los guerreros parecen estar bastante bien organizados, y no se dejan intimidar por los monstruos. A la señal de su líder, tres de los hombres saltan a atacar al merodeador de la izquierda, mientras el resto de los gladiadores intenta distraer a los demás. Uno de los guerreros se queda atrás, y observa atentamente a las manticoras. Debe haber sido asignado para observar el campo de batalla, para que pueda advertir a sus compañeros si la situación cambia.
+
+              Las criaturas parecidas a escorpiones son al menos cinco veces más grandes que los gladiadores, y probablemente podrían aplastar a cualquiera de ellos con sus garras gigantes. Los guerreros parecen ser experimentados en combate, sin embargo, y logran permanecer ilesos, anticipando los movimientos de los merodeadores, y cubriéndose unos a otros en momentos de necesidad. El grupo de la izquierda en particular parece estar haciéndolo sorprendentemente bien. Han logrado debilitar a la criatura con varios golpes bien sincronizados, y ya se están acercando para el golpe final.
+
+              El más ágil de los tres salta sobre la espalda de la criatura y la apuñala ferozmente en la parte trasera de la cabeza. El merodeador grita de dolor e intenta atacar al guerrero con su cola, pero el gladiador salta, mientras los otros dos se lanzan y clavan sus espadas en ambos ojos del monstruo al mismo tiempo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_mercy
+      - condition: b2_ch4_backpack = 3
+        texts:
+          - source: scene_text
+            paragraph: 54
+            text: |-
+              "Oye, Leila," digo. "¿Puedo pedirte un favor?"
+
+              Leila se gira hacia mí, con una mirada curiosa en los ojos, esperando ver qué tengo que decir.
+
+              "Había información escrita sobre merodeadores del desierto en mi cuaderno," digo, "pero no recuerdo algunos detalles importantes. ¿Podrías ir a sacar el cuaderno de mi mochila, arrancar las páginas sobre los merodeadores y traérmelas? Hay un índice al principio del cuaderno donde puedes encontrar los números de las páginas que buscas. Yo iría yo mismo, pero soy el que más ha estudiado sobre criaturas míticas, y me temo que me perderé algo importante si no veo las peleas."
+
+              "Está bien, iré," escribe Leila. "Dame la llave."
+
+              Saco la llave de mi casillero del bolsillo, y se la entrego a Leila.
+
+              "El número del casillero está escrito en la llave," digo. "Has visto cómo es mi cuaderno, ¿verdad? Necesitarás tener una imagen clara de él en tu mente si quieres recuperarlo de la mochila."
+
+              "Sí, lo he visto," escribe Leila. "Vuelvo enseguida."
+
+              Luego sale del área de nuestra división y se dirige hacia el vestuario.
+
+              Mientras había estado hablando con Leila, los merodeadores se habían acercado a los gladiadores. Las manticoras siguen volando en círculos, esperando la mejor oportunidad para atacar.
+          - source: scene_text_2
+            paragraph: 27
+            text: |-
+              Los guerreros parecen estar bastante bien organizados, y no se dejan intimidar por los monstruos. A la señal de su líder, tres de los hombres saltan a atacar al merodeador de la izquierda, mientras el resto de los gladiadores intenta distraer a los demás. Uno de los guerreros se queda atrás, y observa atentamente a las manticoras. Debe haber sido asignado para observar el campo de batalla, para que pueda advertir a sus compañeros si la situación cambia.
+
+              Las criaturas parecidas a escorpiones son al menos cinco veces más grandes que los gladiadores, y probablemente podrían aplastar a cualquiera de ellos con sus garras gigantes. Los guerreros parecen ser experimentados en combate, sin embargo, y logran permanecer ilesos, anticipando los movimientos de los merodeadores, y cubriéndose unos a otros en momentos de necesidad. El grupo de la izquierda en particular parece estar haciéndolo sorprendentemente bien. Han logrado debilitar a la criatura con varios golpes bien sincronizados, y ya se están acercando para el golpe final.
+
+              El más ágil de los tres salta sobre la espalda de la criatura y la apuñala ferozmente en la parte trasera de la cabeza. El merodeador grita de dolor e intenta atacar al guerrero con su cola, pero el gladiador salta, mientras los otros dos se lanzan y clavan sus espadas en ambos ojos del monstruo al mismo tiempo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_mercy
+  - name: b2_ch04a_mercy
+    texts:
+      - source: scene_text
+        paragraph: 55
+        text: |-
+          La multitud estalla en fuertes vítores y gritos, mientras la criatura parecida a un escorpión cae al suelo. Los tres guerreros levantan sus espadas por unos segundos, para señalar su victoria a los espectadores, y luego se dirigen hacia los otros merodeadores, para ayudar a sus compañeros de equipo.
+
+          "¡Retrocedan!" escuchamos el grito desesperado del gladiador que estaba observando el campo de batalla. "¡Retrocedan, ahora!"
+
+          Los gladiadores miran hacia arriba, pero no tienen tiempo para reaccionar. Solo toma unos segundos para que las manticoras que habían estado sobrevolando en círculos todo este tiempo se lancen en picada, claven sus garras en los pechos de los guerreros, y luego se eleven de vuelta al cielo, cargando a sus presas.
+
+          Los gritos de los gladiadores silencian a la multitud por completo, mientras las bestias vuelan cada vez más alto. Dos de los gladiadores dejaron caer sus espadas del dolor, inmediatamente después de ser atacados, pero uno de ellos logró mantener su arma, y ahora la está usando para apuñalar a su atacante en el vientre. La manticora grita, y suelta al guerrero, que cae al suelo y se estrella la cabeza contra el duro suelo. Los otros dos gladiadores son elevados un poco más alto por sus atacantes, pero luego también son soltados al suelo, y mueren por el impacto.
+
+          Los guerreros restantes finalmente empiezan a entrar en pánico. Su líder estaba entre los que murieron. Al perder a la persona que les daba instrucciones, los gladiadores comienzan a romper su formación, y los merodeadores aprovechan esto agarrando a uno de los guerreros con sus garras, mientras otro merodeador lo empala con su cola.
+      - source: scene_text_2
+        paragraph: 28
+        text: |-
+          Como si todo esto no fuera suficiente, dos manticoras más están entrando justo ahora al área de combate desde más allá del portón, y corren rápidamente hacia los gladiadores sobrevivientes. El observador es asesinado primero. No parecía ser muy hábil en combate, y fue destrozado en un instante. Los otros gladiadores no duraron mucho más. Los merodeadores del desierto y las manticoras finalmente unieron fuerzas contra ellos, y no pudieron hacer nada.
+
+          Al final de la pelea, la arena cae en completo silencio, excepto por los sonidos de las manticoras, festejando ávidamente con los cadáveres de sus presas duramente ganadas.
+
+          "Por los dioses..." dice Bruce, mientras observa las consecuencias de la batalla con horror, desde más allá de nuestra reja de hierro.
+
+          "Parece que ni siquiera nuestros campeones reinantes pudieron derrotar a estas temibles bestias," dice el presentador. "Esto no pinta bien para las siguientes divisiones. ¿Va a terminar este evento en un baño de sangre?"
+
+          El portón de hierro de la segunda división ahora se está levantando. Sin embargo, nadie parece estar saliendo. Después de unos diez segundos de silencio, escuchamos un grito proveniente de su dirección.
+
+          "¡No voy a salir ahí!" grita un hombre, a todo pulmón. "¡Si quieren matarme, mátenme ahora! ¡Vieron lo que les pasó a esos gladiadores! ¡No tenemos oportunidad!"
+
+          "Vas a marchar ahí dentro y pelear," dice la voz de otro hombre, "o recibirás una muerte mucho peor que ser devorado vivo por una manticora."
+
+          "¡No, por favor, ten piedad!" grita el otro hombre.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_trash
+  - name: b2_ch04a_trash
+    texts:
+      - source: scene_text
+        paragraph: 56
+        text: |-
+          La discusión entre lo que supongo es un gladiador de la segunda división y un guardia de la arena está generando muchas reacciones de los espectadores. Algunos de ellos parecen estar asustándose, y otros se mueven nerviosamente en sus asientos.
+
+          "Parece que estamos experimentando algunas dificultades técnicas," dice el presentador. "No hay razón para alarmarse. Estoy seguro de que nuestros guardias pondrán el espectáculo en marcha de nuevo en--"
+
+          El presentador se detiene a mitad de frase, cuando un único enano sale por el portón de la segunda división, llevando una botella en la mano, y caminando a paso tranquilo, hacia los merodeadores del desierto. Tanto la multitud como el presentador caen en completo silencio, mientras observan a Hadrik caminar tranquilamente, y luego detenerse en medio de la arena, para beberse de un trago el último contenido de su botella.
+
+          "¡Ah!" exclama Hadrik. "¡No hay nada como una buena botella de cerveza enana para abrirte el apetito antes de una batalla!"
+
+          Luego empieza a girar la cabeza, como si estuviera buscando algo.
+
+          "Oigan, ¿no tendrán por casualidad algo donde pueda tirar esta botella vacía?" le grita al presentador, mientras le muestra la botella vacía en su mano.
+
+          El presentador lo observa, con una expresión desconcertada en el rostro, sin decir nada.
+      - source: scene_text_2
+        paragraph: 29
+        text: |-
+          "Ya saben, como un bote de basura, o una bolsa de papel, o algo, para no hacer un desorden," dice Hadrik.
+
+          El presentador y la multitud observan al enano en silencio, incapaces de decidir si está hablando en serio o no. Mientras Hadrik hablaba, una de las criaturas parecidas a escorpiones se le acercaba sigilosamente por detrás, preparándose para atacarlo con sus garras.
+
+          "¡Saben qué, olvídenlo!" dice Hadrik. "Mejor usaré esto como arma improvisada."
+
+          Entonces se gira inmediatamente, y le da un botellazo al merodeador del desierto en la cabeza, que se rompe en fragmentos de vidrio que se clavan en los ojos de la criatura. El monstruo empieza a gritar de dolor, mientras Hadrik da un rápido salto, aterrizando con el puño encima del merodeador, y estrellándolo contra el suelo, causando una fuerte onda expansiva mientras también forma un pequeño cráter debajo de la criatura, debido a la fuerza del impacto.
+
+          Una de las manticoras que todavía estaba en el cielo se lanza rápidamente en picada para agarrar a Hadrik con sus garras, pero el enano se aparta en el momento exacto en que el monstruo lo alcanza, y lo agarra por la cola. Luego lo hace girar durante unos cuatro segundos, ganando impulso, y lo lanza contra una pared lejana con todas sus fuerzas, haciendo que la bestia la atraviese con un fuerte estruendo.
+
+          La multitud y el presentador están sin palabras. Miran al enano con expresiones de estupefacción en sus rostros, sin saber cómo reaccionar.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_porcupines
+  - name: b2_ch04a_porcupines
+    texts:
+      - source: scene_text
+        paragraph: 57
+        text: |-
+          "Oh, no se preocupen por esa pared," dice Hadrik, pensando que su comportamiento imprudente es la razón del silencio de todos. "Revisé esa zona antes de la batalla y no hay nada más que un almacén vacío de ese lado, así que no hay peligro de que nadie resul--"
+
+          Un fuerte rugido de vítores ahoga el resto de las palabras de Hadrik, mientras los espectadores finalmente recuperan su vigor anterior, y empiezan a gritar y aplaudir como nunca antes.
+
+          "¡Eso, así es como debe ser!" grita Hadrik, con una amplia sonrisa, al ver a la gente vitoreando. "¡De esto es de lo que se trata una arena! ¡Más les vale agarrarse bien a sus asientos, porque la diversión apenas empieza!"
+
+          Luego corre hacia otro merodeador, y le da un cabezazo tan feroz que cae al suelo al instante.
+
+          "¡Liberen la segunda oleada!" grita el presentador, mientras unos cuantos merodeadores del desierto más salen del gran portón de hierro que había sido abierto previamente.
+      - source: scene_text_2
+        paragraph: 30
+        text: |-
+          Abriéndose paso desde detrás de los merodeadores, una nueva especie de criaturas está entrando al área de combate. Las criaturas parecen versiones más grandes de los puercoespines, pero por lo que entiendo no deberían estar relacionadas con ellos de ninguna manera más allá de su apariencia. A diferencia de los puercoespines normales, las púas de sus espaldas son armas mortales, y son lo suficientemente afiladas y resistentes como para competir con el acero élfico. Las criaturas tienen la habilidad de lanzar sus púas como proyectiles, con una precisión y velocidad muy altas. Debido a su alta tasa de regeneración, también tienen la habilidad de regenerar sus púas casi instantáneamente. Esto les proporciona un stock prácticamente ilimitado de munición para usar contra sus enemigos. Su apariencia y su comportamiento han llevado a la gente a llamar a estas criaturas 'puercoespines arqueros'.
+
+          Unos cuantos de los puercoespines que se han posicionado a varias docenas de pies detrás de Hadrik ahora están dándole la espalda, preparándose para atacar. Hadrik todavía está peleando contra los merodeadores, y no parece haber notado a los puercoespines. ¿Debería gritarle una advertencia? No querría distraerlo en medio de su batalla, pero si esos puercoespines logran apuntar bien sus tiros, podría estar en problemas.
+    choices:
+      - position: 1
+        text: Advertirle
+        effects:
+          - set:
+              current_scene: b2_ch04a_lullaby
+              b2_ch4_beer: 1
+      - position: 2
+        text: No advertirle
+        effects:
+          - set:
+              current_scene: b2_ch04a_lullaby
+              b2_ch4_beer: 0
+  - name: b2_ch04a_lullaby
+    routes:
+      - condition: b2_ch4_beer = 1
+        texts:
+          - source: scene_text
+            paragraph: 58
+            text: |-
+              "¡Oye, Hadrik!" grito. "¡Detrás de ti!"
+
+              Hadrik mira hacia atrás, y ve a los puercoespines preparándose para atacarlo. Espera a que disparen, y esquiva en el último momento, haciendo que las púas impacten a un merodeador del desierto en su lugar. Luego se lanza hacia sus atacantes a distancia, sin dejarles tiempo para preparar un segundo tiro, y los golpea repetidamente con los puños, hasta que todos están muertos, o incapaces de moverse.
+
+              "¡Buena esa, Barry!" dice Hadrik entonces. "Te debo una cerveza."
+
+              El merodeador que fue alcanzado por las púas era el último en pie, y el daño que recibió fue suficiente para hacerlo caer.
+
+              Las manticoras han abandonado todas sus presas cuando Hadrik empezó su arrasamiento, y ahora han vuelto a sobrevolar en círculos, tratando de encontrar el momento adecuado para atacar. Una de las manticoras más valientes se lanza rápidamente en picada, intentando sorprender al enano, pero cuando lo ve reaccionar, el monstruo rápidamente se eleva de vuelta al cielo, fuera de su alcance.
+
+              "¡Maldición!" dice Hadrik. "¡Vuelve aquí, cobarde! ¡Vuelve aquí y pelea!"
+
+              "¡Oye, enano!" escucho la voz de Arraka proveniente de la multitud. "¿Por qué no intentas cantarles una canción de cuna? ¡Quizás les dé sueño y bajen de vuelta! ¡JAJAJAJAJAJA!"
+          - source: scene_text_2
+            paragraph: 31
+            text: |-
+              Siguiendo el sonido de la voz de Arraka, logro identificar a Flower entre la multitud de espectadores. La gente a su alrededor tiene la cabeza girada hacia ella, y la observan con curiosidad. Deben pensar que el amuleto alrededor de su cuello es algún nuevo tipo de transceptor.
+
+              "¡Cállate, maldita vieja bruja!" le grita Hadrik de vuelta. "¡Cuando salga de aquí, te juro que voy a duplicar tus sesiones de giro!"
+
+              "¡Sí, tengo una idea mejor!" dice Arraka. "¿Qué tal si dejas de hacerle perder el tiempo a todos y vuelves a pelear? ¿Tienes idea de cuánto costó esta entrada?"
+
+              "¡No puedo pelear contra ellas, pedazo de idiota!" grita Hadrik, exasperado. "No me permiten usar armas a distancia en la arena."
+
+              "¡Entonces lanza unas lanzas!" grita Arraka. "¿De verdad tengo que decirte todo? Tienes lanzas montadas en las paredes. Úsalas."
+
+              Ahora que Arraka lo menciona, veo que efectivamente hay lanzas y varias otras armas montadas en las paredes de la arena. Deben haber sido colocadas ahí para darle a la gente que no tenía armas cuando fue capturada una oportunidad equitativa en el evento de combate. Hadrik murmura algo entre dientes, y va a buscar una de las lanzas. Luego la lanza hacia una de las manticoras, y la lanza se clava en su pecho, haciendo que la sangre salpique mientras la criatura cae hacia el suelo. Antes de que la criatura llegue al suelo, el enano agarra dos lanzas más, y las arroja en rápida sucesión hacia dos de las otras manticoras, matándolas también.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_chanting
+      - condition: b2_ch4_beer = 0
+        texts:
+          - source: scene_text
+            paragraph: 59
+            text: |-
+              No debería interrumpir la pelea del enano. Sabe lo que hace.
+
+              Mientras Hadrik manda al último de los merodeadores estrellándose contra el suelo, tres de los puercoespines arqueros apuntan sus tiros hacia él, y seis de sus afiladas púas se le clavan en la espalda.
+
+              "Hmm," dice Hadrik, con el tono de un hombre al que acaba de picar un mosquito.
+
+              Luego se saca todas las púas una por una con las manos y las tira al suelo. Las púas apenas parecen haber atravesado su piel, y casi no sale sangre de las heridas. No sé por qué me sorprendo. Si el acero élfico regular sin encantamiento no es lo suficientemente afilado para atravesar la piel de un gigante, ¿por qué sería diferente con las púas de un puercoespín?
+
+              Hadrik no les da a los puercoespines arqueros la oportunidad de apuntar su segundo tiro, ya que se lanza hacia ellos, y luego los golpea repetidamente con los puños hasta que todos están muertos, o incapaces de moverse.
+
+              Las manticoras han abandonado todas sus presas cuando Hadrik empezó su arrasamiento, y ahora han vuelto a sobrevolar en círculos, tratando de encontrar el momento adecuado para atacar. Una de las manticoras más valientes se lanza rápidamente en picada, intentando sorprender al enano, pero cuando lo ve reaccionar, el monstruo rápidamente se eleva de vuelta al cielo, fuera de su alcance.
+
+              "¡Maldición!" dice Hadrik. "¡Vuelve aquí, cobarde! ¡Vuelve aquí y pelea!"
+          - source: scene_text_2
+            paragraph: 32
+            text: |-
+              "¡Oye, enano!" escucho la voz de Arraka proveniente de la multitud. "¿Por qué no intentas cantarles una canción de cuna? ¡Quizás les dé sueño y bajen de vuelta! ¡JAJAJAJAJAJA!"
+
+              Siguiendo el sonido de la voz de Arraka, logro identificar a Flower entre la multitud de espectadores. La gente a su alrededor tiene la cabeza girada hacia ella, y la observan con curiosidad. Deben pensar que el amuleto alrededor de su cuello es algún nuevo tipo de transceptor.
+
+              "¡Cállate, maldita vieja bruja!" le grita Hadrik de vuelta. "¡Cuando salga de aquí, te juro que voy a duplicar tus sesiones de giro!"
+
+              "¡Sí, tengo una idea mejor!" dice Arraka. "¿Qué tal si dejas de hacerle perder el tiempo a todos y vuelves a pelear? ¿Tienes idea de cuánto costó esta entrada?"
+
+              "¡No puedo pelear contra ellas, pedazo de idiota!" grita Hadrik, exasperado. "No me permiten usar armas a distancia en la arena."
+
+              "¡Entonces lanza unas lanzas!" grita Arraka. "¿De verdad tengo que decirte todo? Tienes lanzas montadas en las paredes. Úsalas."
+          - source: scene_3
+            paragraph: 4
+            text: Ahora que Arraka lo menciona, veo que efectivamente hay lanzas y varias otras armas montadas en las paredes de la arena. Deben haber sido colocadas ahí para darle a la gente que no tenía armas cuando fue capturada una oportunidad equitativa en el evento de combate. Hadrik murmura algo entre dientes, y va a buscar una de las lanzas. Luego la lanza hacia una de las manticoras, y la lanza se clava en su pecho, haciendo que la sangre salpique mientras la criatura cae hacia el suelo. Antes de que la criatura llegue al suelo, el enano agarra dos lanzas más, y las arroja en rápida sucesión hacia dos de las otras manticoras, matándolas también.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_chanting
+  - name: b2_ch04a_chanting
+    routes:
+      - condition: hearing < 3
+        texts:
+          - source: scene_text
+            paragraph: 61
+            text: |-
+              La última manticora restante decide que los cielos ya no son seguros, así que rápidamente se lanza en picada hacia Hadrik, para terminar la pelea con un gran choque final. Hadrik no espera a que la criatura lo alcance, y salta, agarrándola del aire, y haciendo un giro en caída, aplastando la cabeza de la bestia contra el suelo.
+
+              Lo logró... El maldito loco lo logró. Derribó ambas oleadas de monstruos él solo, y apenas lo arañaron.
+
+              Las multitudes ahora están vitoreando más fuerte que nunca. Los compañeros de equipo de Hadrik, que habían estado escondidos todo este tiempo, vienen corriendo hacia el enano, y lo levantan en el aire, mientras cantan su nombre repetidamente.
+
+              "¡Hadrik! ¡Hadrik! ¡Hadrik!" siguen diciendo, mientras las multitudes vitorean.
+
+              "Ni crean que se van a librar tan fácil, perros cobardes," dice Hadrik, con una sonrisa, mientras sus compañeros lo lanzan hacia arriba y hacia abajo. "Cuando salgamos de aquí, me van a comprar tragos para un año entero."
+
+              Pasan dos minutos más para que los vítores de la multitud finalmente se calmen, y para que Hadrik y los demás bajen del escenario, para que la siguiente división pueda entrar al área de combate.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de audición fallida - nivel 3 ]'
+              b2_ch4_hearing1: 0
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_retained
+                condition: b2_ch4_backpack = 3
+              - set:
+                  current_scene: b2_ch04a_daft
+                condition: b2_ch4_backpack != 3
+      - condition: hearing >= 3
+        texts:
+          - source: scene_text
+            paragraph: 60
+            text: |-
+              La última manticora restante decide que los cielos ya no son seguros, así que rápidamente se lanza en picada hacia Hadrik, para terminar la pelea con un gran choque final. Hadrik no espera a que la criatura lo alcance, y salta, agarrándola del aire, y haciendo un giro en caída, aplastando la cabeza de la bestia contra el suelo.
+
+              Lo logró... El maldito loco lo logró. Derribó ambas oleadas de monstruos él solo, y apenas lo arañaron.
+
+              Las multitudes ahora están vitoreando más fuerte que nunca. Los compañeros de equipo de Hadrik, que habían estado escondidos todo este tiempo, vienen corriendo hacia el enano, y lo levantan en el aire, mientras cantan su nombre repetidamente.
+
+              "¡Hadrik! ¡Hadrik! ¡Hadrik!" siguen diciendo, mientras las multitudes vitorean.
+
+              "Ni crean que se van a librar tan fácil, perros cobardes," dice Hadrik, con una sonrisa, mientras sus compañeros lo lanzan hacia arriba y hacia abajo. "Cuando salgamos de aquí, me van a comprar tragos para un año entero."
+
+              "¡¿Qué significa esto?!" escucho al embajador de Ollendor gritar desde arriba.
+
+              "¡Embajador!" dice Venard, el dueño de la arena. "¡Veo que decidió unirse a nosotros después de todo! ¿Le gustaría un poco de vino?"
+
+              Los dos parecen estar hablando desde una sala privada encima del área de nuestra división. No parece que ninguno de mis compañeros de equipo pueda escucharlos.
+          - source: scene_text_2
+            paragraph: 33
+            text: |-
+              "¿Por qué está el enano aquí?" dice el embajador. "¡No se suponía que estuviera aquí! ¡Va a arruinarlo todo!"
+
+              "Cálmese, embajador," dice Venard. "El enano vino aquí con una carta de admisión firmada por el mismísimo rey. No podíamos simplemente rechazarlo."
+
+              "El hecho de que no pudieran rechazarlo," dice el embajador, "no significa que tengan que dejarlo hacer una burla de toda su arena."
+
+              "Pero no ha hecho nada de eso, embajador," dice el dueño. "Todo lo contrario, de hecho. Nos ha proporcionado un espectáculo que esta arena no ha visto en siglos, y a la multitud le encanta. El espectáculo apenas ha comenzado, ¡y ya ha superado todas mis expectativas!"
+
+              "¡Me importan un bledo sus expectativas!" grita el embajador. "Lo quiero fuera, ¿entiende? ¡No quiero que vuelva a poner un pie en esa arena!"
+
+              "Hmm," dice Venard. "A decir verdad, yo también creo que permitir que el enano cause estragos más de lo que ya lo ha hecho haría el espectáculo demasiado predecible y aburrido. Muy bien, embajador. Hablaré con el personal encargado de organizar las peleas para hacer algunas modificaciones en el programa. No lo volverá a ver."
+
+              Después de que terminan su discusión, la sala de arriba queda en silencio de nuevo. Mientras tanto, en el exterior, las multitudes todavía no han dejado de vitorear, desde el final de la pelea anterior. Pasa aproximadamente un minuto más para que los vítores finalmente se calmen, y para que Hadrik y los demás bajen del escenario, para que la siguiente división pueda entrar al área de combate.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de audición exitosa - nivel 3 ]'
+              b2_ch4_hearing1: 1
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_retained
+                condition: b2_ch4_backpack = 3
+              - set:
+                  current_scene: b2_ch04a_daft
+                condition: b2_ch4_backpack != 3
+  - name: b2_ch04a_retained
+    routes:
+      - condition: b2_ch2_heard = 1
+        texts:
+          - source: scene_text
+            paragraph: 62
+            text: |-
+              Poco antes de que la siguiente división sea anunciada, Leila finalmente regresa del vestuario, con unas cuantas páginas de mi cuaderno en la mano.
+
+              "Perdona la tardanza," escribe Leila. "Un guardia me retuvo de camino a los casilleros. Tuvo que ir a buscarme un pase del dueño antes de que pudiera continuar."
+
+              "No hay problema," le digo. "¿Son todas las páginas?"
+
+              "Es todo lo que pude encontrar," escribe Leila. "Comportamientos, debilidades y algunos diagramas."
+
+              "Perfecto," le digo. "Es todo lo que necesitamos."
+
+              Tomo las notas de sus manos y las estudio detenidamente.
+
+              No me toma mucho darme cuenta de que los merodeadores del desierto efectivamente no eran muy diferentes de los escorpiones gigantes. Incluso sus debilidades son las mismas. Supongo que todo este viaje al que mandé a Leila resultó ser nada más que una enorme pérdida de tiempo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_daft
+      - condition: b2_ch2_heard = 0
+        texts:
+          - source: scene_text
+            paragraph: 63
+            text: |-
+              Poco antes de que la siguiente división sea anunciada, Leila finalmente regresa del vestuario, con unas cuantas páginas de mi cuaderno en la mano.
+
+              "Perdona la tardanza," escribe Leila. "Un guardia me retuvo de camino a los casilleros. Tuvo que ir a buscarme un pase del dueño antes de que pudiera continuar."
+
+              "No hay problema," le digo. "¿Son todas las páginas?"
+
+              "Es todo lo que pude encontrar," escribe Leila. "Comportamientos, debilidades y algunos diagramas."
+
+              "Perfecto," le digo. "Es todo lo que necesitamos."
+
+              Tomo las notas de sus manos y las estudio detenidamente.
+
+              La información escrita aquí es definitivamente útil. Me aseguraré de sacarle buen provecho si la necesidad surge.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_daft
+  - name: b2_ch04a_daft
+    texts:
+      - source: scene_text
+        paragraph: 64
+        text: |-
+          El portón de la tercera división ahora se está abriendo. El primero en salir no es otro que Daren. Sus compañeros de equipo también lo siguen después de un breve momento, pero se ven un poco aprensivos.
+
+          "Para su información," dice el presentador, "el hombre con la cicatriz que acaba de entrar en la arena es conocido como Daren, el sanador con armadura. Es un reconocido héroe de fuera de Varathia que ha viajado por el mundo y ha salvado incontables vidas a lo largo de los años. Puede que hayan oído de él en varios periódicos en el pasado. Hoy, participará en nuestro evento de la arena como nuestro invitado especial. ¡Demos una cálida ronda de aplausos para el héroe Daren!"
+
+          Todos los espectadores empiezan a aplaudir, mientras Daren y sus compañeros de equipo se acercan al centro de la arena y preparan sus armas.
+
+          "¡Bueno, escuchen!" nos dice Bruce, mientras los gladiadores todavía esperan para comenzar su pelea. "Después de ver las dos peleas anteriores, creo que necesitamos cambiar nuestra estrategia de batalla."
+
+          "¿Te volviste loco?" dice el matón del noble desheredado. "¿Por qué cambiaríamos nuestras tácticas minutos antes de la batalla?"
+      - source: scene_text_2
+        paragraph: 34
+        text: |-
+          "Porque tal como estamos ahora, vamos a perder," dice Bruce. "No tenemos trabajo en equipo. Deberíamos intentar ser más como esos gladiadores de la primera división. Vieron lo bien que trabajaron juntos."
+
+          "Los gladiadores de la primera división están todos muertos," dice el mago.
+
+          "¡Maldición, saben a qué me refiero!" dice Bruce. "Hablo de asignar roles a cada uno. Todos vieron cómo operaban. Un tipo era el líder, otro se quedaba atrás, para advertir del peligro, algunos eran señuelos, y otros eran los combatientes principales. Si hiciéramos eso también, estaríamos mucho más organizados."
+    choices:
+      - position: 1
+        text: Creo que es una buena idea.
+        effects:
+          - set:
+              current_scene: b2_ch04a_good
+      - position: 2
+        text: Eso suena como una idea terrible.
+        effects:
+          - set:
+              current_scene: b2_ch04a_terrible
+  - name: b2_ch04a_good
+    texts:
+      - source: scene_text
+        paragraph: 65
+        text: |-
+          "Creo que es una buena idea," digo. "Si cada uno tiene un rol, y sabemos qué estamos haciendo, habrá menos posibilidades de pánico."
+
+          "¿Ah, sí?" pregunta el mago. "Eso probablemente es lo que esos tipos de la primera pelea pensaron también. Pero cuando su líder murió, toda su organización se fue al garete."
+
+          "¡Aún así es mejor que pelear en el caos total desde el principio!" dice Bruce.
+
+          "¿Y quién exactamente va a ser nuestro líder?" le pregunta el matón desheredado a Bruce. "¿Tú? No me hagas reír. Preferiría que me comiera una manticora a tener que escuchar ninguna de tus órdenes."
+
+          "Nunca dije que yo sería el líder," dice Bruce. "Podemos votar quién será líder."
+
+          "Olvídalo," dice el mago. "No me importa quién sea el líder. No voy a dejar mi supervivencia en manos de una persona que apenas conozco. No va a pasar."
+
+          Mientras Bruce y los demás discutían, la primera ronda de la tercera división se estaba preparando para comenzar.
+
+          "¡Suelten a los aplastadores!" dice el presentador.
+      - source: scene_text_2
+        paragraph: 35
+        text: |-
+          Varias criaturas que parecen un cruce entre un toro y un rinoceronte están entrando lentamente al área de combate. Cada aplastador tiene dos cuernos en la frente, un cuerno en el hocico, y una cola que parece tener una maza con pinchos pegada al final. También he leído que su piel es tan dura que bien podrían estar llevando armadura de placas completa. Como su nombre sugiere, los aplastadores suelen entrar en batalla embistiendo hacia sus oponentes, e intentando aplastarlos hasta la muerte.
+
+          Efectivamente, los aplastadores no esperan mucho, y empiezan a embestir hacia los gladiadores a toda velocidad.
+
+          "Si quieren vivir, quédense detrás de mí," les dice Daren a los otros gladiadores.
+
+          Los compañeros de equipo de Daren están aterrados. Solo les toma unos segundos de ver a las bestias acercarse más y más para olvidar completamente la advertencia de Daren y empezar a correr por sus vidas.
+
+          Daren deja escapar un profundo suspiro, y continúa manteniéndose firme, con su espada lista. En cuanto uno de los aplastadores llega al alcance de su espada, se hace a un lado, y le corta la cabeza de un solo movimiento, haciendo que el cuerpo sin cabeza del aplastador caiga al suelo y siga deslizándose sobre su vientre unos cuantos pies más, hasta que finalmente pierde el impulso.
+      - source: scene_3
+        paragraph: 5
+        text: |-
+          "Maldita sea," escucho gritar a Bruce detrás de mí. "¿Por qué no me hacen caso? ¡No vamos a tener ninguna oportunidad en la arena si no nos organizamos!"
+
+          "No tienes que ser tan negativo, Bruce," dice Wilhelm, con tono calmado. "Estoy seguro de que nos las arreglaremos de una u otra manera. Lo importante es que tuvimos esa discusión ayer sobre las debilidades de las criaturas. Mientras la supervivencia sea la meta principal en nuestras mentes, seguro le daremos el mejor uso a esa información."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_concentrate
+  - name: b2_ch04a_terrible
+    texts:
+      - source: scene_text
+        paragraph: 66
+        text: |-
+          "Eso suena como una idea terrible," digo. "Este tipo de estrategia quizás funcionó para esos tipos porque ya se conocían y habían peleado juntos antes. Los siete de nosotros, por otro lado, nos negamos a hablar durante tres días seguidos, hasta que el dueño nos obligó a hacerlo. No va a funcionar."
+
+          "¡No podemos saberlo hasta que lo intentemos!" dice Bruce.
+
+          "¿Y quién exactamente va a ser nuestro líder?" le pregunta el matón desheredado a Bruce. "¿Tú? No me hagas reír. Preferiría que me comiera una manticora a tener que escuchar ninguna de tus órdenes."
+
+          "Nunca dije que yo sería el líder," dice Bruce. "Podemos votar quién será líder."
+
+          "Olvídalo," dice el mago. "No me importa quién sea el líder. No voy a dejar mi supervivencia en manos de una persona que apenas conozco. No va a pasar."
+
+          Mientras Bruce y los demás discutían, la primera ronda de la tercera división se estaba preparando para comenzar.
+
+          "¡Suelten a los aplastadores!" dice el presentador.
+      - source: scene_text_2
+        paragraph: 35
+        text: |-
+          Varias criaturas que parecen un cruce entre un toro y un rinoceronte están entrando lentamente al área de combate. Cada aplastador tiene dos cuernos en la frente, un cuerno en el hocico, y una cola que parece tener una maza con pinchos pegada al final. También he leído que su piel es tan dura que bien podrían estar llevando armadura de placas completa. Como su nombre sugiere, los aplastadores suelen entrar en batalla embistiendo hacia sus oponentes, e intentando aplastarlos hasta la muerte.
+
+          Efectivamente, los aplastadores no esperan mucho, y empiezan a embestir hacia los gladiadores a toda velocidad.
+
+          "Si quieren vivir, quédense detrás de mí," les dice Daren a los otros gladiadores.
+
+          Los compañeros de equipo de Daren están aterrados. Solo les toma unos segundos de ver a las bestias acercarse más y más para olvidar completamente la advertencia de Daren y empezar a correr por sus vidas.
+
+          Daren deja escapar un profundo suspiro, y continúa manteniéndose firme, con su espada lista. En cuanto uno de los aplastadores llega al alcance de su espada, se hace a un lado, y le corta la cabeza de un solo movimiento, haciendo que el cuerpo sin cabeza del aplastador caiga al suelo y siga deslizándose sobre su vientre unos cuantos pies más, hasta que finalmente pierde el impulso.
+      - source: scene_3
+        paragraph: 5
+        text: |-
+          "Maldita sea," escucho gritar a Bruce detrás de mí. "¿Por qué no me hacen caso? ¡No vamos a tener ninguna oportunidad en la arena si no nos organizamos!"
+
+          "No tienes que ser tan negativo, Bruce," dice Wilhelm, con tono calmado. "Estoy seguro de que nos las arreglaremos de una u otra manera. Lo importante es que tuvimos esa discusión ayer sobre las debilidades de las criaturas. Mientras la supervivencia sea la meta principal en nuestras mentes, seguro le daremos el mejor uso a esa información."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch04a_concentrate
+  - name: b2_ch04a_concentrate
+    routes:
+      - condition: b2_ch4_inform3 = 0 AND b2_ch4_inform2 = 0
+        texts:
+          - source: scene_text
+            paragraph: 67
+            text: |-
+              Los aplastadores han terminado su primera vuelta por la arena, y ahora vuelven hacia Daren para una segunda ronda. Algunos de sus compañeros de equipo lograron evadir la estampida, pero dos de ellos no tuvieron tanta suerte, y fueron aplastados hasta morir antes de poder salir del peligro. Daren espera pacientemente hasta el último momento una vez más, y luego atraviesa a la criatura con su espada por el costado, partiéndola por la mitad. Las multitudes se vuelven locas una vez más.
+
+              Al ver que la primera oleada de bestias ya está siendo manejada, el presentador señala el inicio de la segunda oleada. Tres cobras gigantes ahora se abren paso hacia Daren, mientras los aplastadores deciden perseguir a los blancos más fáciles. Las cobras son más altas y más anchas que Daren, pero su tamaño no es lo único peligroso de ellas. Por las manchas negras en sus cuellos, estoy casi seguro de que estas son en realidad cobras escupe-ácido, y no cobras normales.
+
+              El ácido que viene de las cobras no es tan fuerte como el ácido de los hechizos de los magos, pero definitivamente no es algo que deba tomarse a la ligera. Aunque quizás no dañe significativamente armas y armaduras que hayan sido suficientemente encantadas, ese ácido puede quemar la mayoría de los metales regulares en cuestión de minutos, y puede quemar la carne humana en cuestión de segundos.
+          - source: scene_text_2
+            paragraph: 36
+            text: |-
+              Al enfrentarse ahora a atacantes a distancia, Daren decide que ya no es seguro mantener su posición, y cambia a la ofensiva. Avanzando lentamente, con su escudo al frente, Daren cierra gradualmente la distancia entre él y las cobras, hasta que queda lo suficientemente cerca como para poder hacer un ataque de embestida. Las cobras le han estado escupiendo todo este tiempo, pero a juzgar por el impacto que ha tenido en el escudo de Daren, bien podrían haber estado rociando agua.
+
+              Daren se lanza hacia una de las cobras, y le corta la cabeza de un solo golpe. Antes de que las otras dos logren atacarlo, golpea a una con su escudo, mientras apuñala a la otra por la boca con su espada. Luego se asegura de que la tercera cobra todavía esté aturdida, y la remata también, con un tajo bien cronometrado de su espada.
+
+              Mientras Daren estaba ocupado con las cobras, los otros gladiadores habían logrado derribar a uno de los aplastadores por su cuenta. Al ver que los otros aplastadores no planean atacarlo más, Daren decide ir a ayudar a los demás a matar a las criaturas restantes.
+
+              "¡Si ninguno de ustedes va a entrar en razón, entonces pelearé solo!" grita Bruce de nuevo, esta vez más fuerte que antes. "¡No pienso dejarme matar para salvarles el trasero!"
+
+              "Dudo mucho que alguien estuviera contando con tu ayuda para empezar," dice Wilhelm. "¿Ahora podrías guardar silencio, por favor? Nuestra batalla comenzará pronto, y me gustaría concentrarme."
+
+              Genial. Nuestra pelea ni siquiera empezó todavía, y nuestro equipo ya se está desmoronando. Lo sabía desde el principio: no se puede confiar en esta gente.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_silence
+      - condition: b2_ch4_inform3 = 1
+        texts:
+          - source: scene_text
+            paragraph: 67
+            text: |-
+              Los aplastadores han terminado su primera vuelta por la arena, y ahora vuelven hacia Daren para una segunda ronda. Algunos de sus compañeros de equipo lograron evadir la estampida, pero dos de ellos no tuvieron tanta suerte, y fueron aplastados hasta morir antes de poder salir del peligro. Daren espera pacientemente hasta el último momento una vez más, y luego atraviesa a la criatura con su espada por el costado, partiéndola por la mitad. Las multitudes se vuelven locas una vez más.
+
+              Al ver que la primera oleada de bestias ya está siendo manejada, el presentador señala el inicio de la segunda oleada. Tres cobras gigantes ahora se abren paso hacia Daren, mientras los aplastadores deciden perseguir a los blancos más fáciles. Las cobras son más altas y más anchas que Daren, pero su tamaño no es lo único peligroso de ellas. Por las manchas negras en sus cuellos, estoy casi seguro de que estas son en realidad cobras escupe-ácido, y no cobras normales.
+
+              El ácido que viene de las cobras no es tan fuerte como el ácido de los hechizos de los magos, pero definitivamente no es algo que deba tomarse a la ligera. Aunque quizás no dañe significativamente armas y armaduras que hayan sido suficientemente encantadas, ese ácido puede quemar la mayoría de los metales regulares en cuestión de minutos, y puede quemar la carne humana en cuestión de segundos.
+          - source: scene_text_2
+            paragraph: 37
+            text: |-
+              Al enfrentarse ahora a atacantes a distancia, Daren decide que ya no es seguro mantener su posición, y cambia a la ofensiva. Avanzando lentamente, con su escudo al frente, Daren cierra gradualmente la distancia entre él y las cobras, hasta que queda lo suficientemente cerca como para poder hacer un ataque de embestida. Las cobras le han estado escupiendo todo este tiempo, pero a juzgar por el impacto que ha tenido en el escudo de Daren, bien podrían haber estado rociando agua.
+
+              Daren se lanza hacia una de las cobras, y le corta la cabeza de un solo golpe. Antes de que las otras dos logren atacarlo, golpea a una con su escudo, mientras apuñala a la otra por la boca con su espada. Luego se asegura de que la tercera cobra todavía esté aturdida, y la remata también, con un tajo bien cronometrado de su espada.
+
+              Mientras Daren estaba ocupado con las cobras, los otros gladiadores habían logrado derribar a uno de los aplastadores por su cuenta. Al ver que los otros aplastadores no planean atacarlo más, Daren decide ir a ayudar a los demás a matar a las criaturas restantes.
+
+              "¡Si ninguno de ustedes va a entrar en razón, entonces pelearé solo!" grita Bruce de nuevo, esta vez más fuerte que antes. "¡No pienso dejarme matar para salvarles el trasero!"
+
+              "Dudo mucho que alguien estuviera contando con tu ayuda para empezar," dice Wilhelm. "¿Ahora podrías guardar silencio, por favor? Nuestra batalla comenzará pronto, y me gustaría concentrarme."
+
+              Genial. Nuestra pelea ni siquiera empezó todavía, y nuestro equipo ya se está desmoronando. Debí haberlo sabido desde el principio: no se puede confiar en esta gente.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_silence
+      - condition: b2_ch4_inform2 = 1
+        texts:
+          - source: scene_text
+            paragraph: 67
+            text: |-
+              Los aplastadores han terminado su primera vuelta por la arena, y ahora vuelven hacia Daren para una segunda ronda. Algunos de sus compañeros de equipo lograron evadir la estampida, pero dos de ellos no tuvieron tanta suerte, y fueron aplastados hasta morir antes de poder salir del peligro. Daren espera pacientemente hasta el último momento una vez más, y luego atraviesa a la criatura con su espada por el costado, partiéndola por la mitad. Las multitudes se vuelven locas una vez más.
+
+              Al ver que la primera oleada de bestias ya está siendo manejada, el presentador señala el inicio de la segunda oleada. Tres cobras gigantes ahora se abren paso hacia Daren, mientras los aplastadores deciden perseguir a los blancos más fáciles. Las cobras son más altas y más anchas que Daren, pero su tamaño no es lo único peligroso de ellas. Por las manchas negras en sus cuellos, estoy casi seguro de que estas son en realidad cobras escupe-ácido, y no cobras normales.
+
+              El ácido que viene de las cobras no es tan fuerte como el ácido de los hechizos de los magos, pero definitivamente no es algo que deba tomarse a la ligera. Aunque quizás no dañe significativamente armas y armaduras que hayan sido suficientemente encantadas, ese ácido puede quemar la mayoría de los metales regulares en cuestión de minutos, y puede quemar la carne humana en cuestión de segundos.
+          - source: scene_text_2
+            paragraph: 37
+            text: |-
+              Al enfrentarse ahora a atacantes a distancia, Daren decide que ya no es seguro mantener su posición, y cambia a la ofensiva. Avanzando lentamente, con su escudo al frente, Daren cierra gradualmente la distancia entre él y las cobras, hasta que queda lo suficientemente cerca como para poder hacer un ataque de embestida. Las cobras le han estado escupiendo todo este tiempo, pero a juzgar por el impacto que ha tenido en el escudo de Daren, bien podrían haber estado rociando agua.
+
+              Daren se lanza hacia una de las cobras, y le corta la cabeza de un solo golpe. Antes de que las otras dos logren atacarlo, golpea a una con su escudo, mientras apuñala a la otra por la boca con su espada. Luego se asegura de que la tercera cobra todavía esté aturdida, y la remata también, con un tajo bien cronometrado de su espada.
+
+              Mientras Daren estaba ocupado con las cobras, los otros gladiadores habían logrado derribar a uno de los aplastadores por su cuenta. Al ver que los otros aplastadores no planean atacarlo más, Daren decide ir a ayudar a los demás a matar a las criaturas restantes.
+
+              "¡Si ninguno de ustedes va a entrar en razón, entonces pelearé solo!" grita Bruce de nuevo, esta vez más fuerte que antes. "¡No pienso dejarme matar para salvarles el trasero!"
+
+              "Dudo mucho que alguien estuviera contando con tu ayuda para empezar," dice Wilhelm. "¿Ahora podrías guardar silencio, por favor? Nuestra batalla comenzará pronto, y me gustaría concentrarme."
+
+              Genial. Nuestra pelea ni siquiera empezó todavía, y nuestro equipo ya se está desmoronando. Debí haberlo sabido desde el principio: no se puede confiar en esta gente.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04a_silence
+  - name: b2_ch04a_silence
+    routes:
+      - condition: b2_ch2_deal = 1
+        texts:
+          - source: scene_text
+            paragraph: 68
+            text: |-
+              Hay un estallido de vítores muy fuerte proveniente del exterior. Parece que Daren y los demás gladiadores sobrevivientes finalmente han derrotado a todas las criaturas. El presentador les señala que abandonen el área de combate, para que el espectáculo pueda continuar.
+
+              Mientras Daren y los demás se preparan para irse, un hombre vestido con una túnica azul oscuro con una capucha en la cabeza viene por detrás de mí, y se une a mi lado junto a la reja metálica.
+
+              "¿Quién eres?" le pregunto, aunque probablemente ya pueda adivinar la respuesta.
+
+              "Soy una adición de último momento a su división," dice el hombre. "He sido enviado aquí para resolver sus problemas."
+
+              El hombre lleva dos guadañas en las manos, que tienen zafiros incrustados en sus empuñaduras.
+
+              "¿Te enviaron los lessathi?" le pregunto en voz baja, para asegurarme de que ninguno de los demás me escuche. "¿En qué estaban pensando? No me digas que planeas pelear contra todos los monstruos tú solo."
+
+              "Cumpliré nuestra parte del trato," dice el lessathi. "Asegúrate de cumplir la tuya cuando llegue el momento."
+
+              "Eh, sí," digo. "Sí, por supuesto..."
+
+              El lessathi de repente gira la cabeza hacia mí, con una expresión de shock y rabia en los ojos.
+
+              "¡Estás mintiendo!" dice.
+
+              "¿Qué?" le pregunto. "¡No, estaba diciendo la verdad!"
+          - source: scene_text_2
+            paragraph: 38
+            text: |-
+              "¡Eres un necio!" grita el lessathi. "¡Cualquier persona con habilidades pasables en lectura de auras podría notar que estás mintiendo por la forma en que tu aura está temblando ahora mismo! ¿No tienes idea de lo que les pasa a las personas que nos mienten? Debería matarte ahora mismo por tu insolencia."
+
+              "Oye, ¿qué está pasando aquí?" pregunta Bruce, después de escuchar los gritos del lessathi. "¿Quién eres, y qué haces en nuestra división?"
+
+              El lessathi se calma, y guarda sus guadañas cuando ve a Bruce confrontarlo. Parece que a pesar de su comentario anterior, preferiría evitar un conflicto que atrajera demasiada atención hacia él.
+
+              "El trato se cancela," dice el lessathi, mientras sale del área de nuestra división. "Disfruten su última pelea."
+
+              Luego se va por la puerta, sin decir otra palabra.
+
+              "Maldita sea, ¿quién era ese?" dice Bruce. "¿Qué quería?"
+
+              "Ni idea," digo.
+
+              Leila me mira con sospecha, pero no dice nada. Mientras tanto, los barrotes frente a nosotros finalmente se están levantando.
+
+              Todos nos dirigimos hacia el centro de la arena, como todas las divisiones antes que nosotros.
+          - source: scene_3
+            paragraph: 6
+            text: |-
+              "¡Damas y caballeros, les presento a la cuarta división!" dice el presentador.
+
+              La multitud nos observa en completo silencio, mientras nos abrimos paso entre todos los cadáveres de animales, para llegar a nuestro destino. Está claro que no reconocen a nadie de nuestra división. Probablemente ya están pensando que nos van a masacrar, como a esa primera división de antes. Espero que no terminemos dándoles la razón.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04b_bastard
+                  storyboard_controls: Jump to frame "Book 2 Chapter 4 b"
+      - condition: b2_ch2_deal = 2
+        texts:
+          - source: scene_text
+            paragraph: 69
+            text: |-
+              Hay un estallido de vítores muy fuerte proveniente del exterior. Parece que Daren y los demás gladiadores sobrevivientes finalmente han derrotado a todas las criaturas. El presentador les señala que abandonen el área de combate, para que el espectáculo pueda continuar.
+
+              Una vez que Daren y los demás abandonan el escenario, los barrotes frente a nosotros finalmente comienzan a levantarse. Todos nos dirigimos hacia el centro de la arena, como todas las divisiones antes que nosotros.
+
+              "¡Damas y caballeros, les presento a la cuarta división!" dice el presentador.
+
+              La multitud nos observa en completo silencio, mientras nos abrimos paso entre todos los cadáveres de animales, para llegar a nuestro destino. Está claro que no reconocen a nadie de nuestra división. Probablemente ya están pensando que nos van a masacrar, como a esa primera división de antes. Espero que no terminemos dándoles la razón.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04b_bastard
+                  storyboard_controls: Jump to frame "Book 2 Chapter 4 b"
+      - condition: b2_ch2_deal = 4
+        texts:
+          - source: scene_text
+            paragraph: 69
+            text: |-
+              Hay un estallido de vítores muy fuerte proveniente del exterior. Parece que Daren y los demás gladiadores sobrevivientes finalmente han derrotado a todas las criaturas. El presentador les señala que abandonen el área de combate, para que el espectáculo pueda continuar.
+
+              Una vez que Daren y los demás abandonan el escenario, los barrotes frente a nosotros finalmente comienzan a levantarse. Todos nos dirigimos hacia el centro de la arena, como todas las divisiones antes que nosotros.
+
+              "¡Damas y caballeros, les presento a la cuarta división!" dice el presentador.
+
+              La multitud nos observa en completo silencio, mientras nos abrimos paso entre todos los cadáveres de animales, para llegar a nuestro destino. Está claro que no reconocen a nadie de nuestra división. Probablemente ya están pensando que nos van a masacrar, como a esa primera división de antes. Espero que no terminemos dándoles la razón.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04b_bastard
+                  storyboard_controls: Jump to frame "Book 2 Chapter 4 b"
+      - condition: b2_ch2_deal = 3
+        texts:
+          - source: scene_text
+            paragraph: 70
+            text: |-
+              Hay un estallido de vítores muy fuerte proveniente del exterior. Parece que Daren y los demás gladiadores sobrevivientes finalmente han derrotado a todas las criaturas. El presentador les señala que abandonen el área de combate, para que el espectáculo pueda continuar.
+
+              Mientras Daren y los demás se preparan para irse, un hombre vestido con una túnica azul oscuro con una capucha en la cabeza viene por detrás de mí, y se une a mi lado junto a la reja metálica.
+
+              "¿Quién eres?" le pregunto, aunque probablemente ya pueda adivinar la respuesta.
+
+              "Soy una adición de último momento a su división," dice el hombre. "He sido enviado aquí para resolver sus problemas."
+
+              El hombre lleva dos guadañas en las manos, que tienen zafiros incrustados en sus empuñaduras.
+
+              "¿Te enviaron los lessathi?" le pregunto en voz baja, para asegurarme de que ninguno de los demás me escuche. "¿En qué estaban pensando? No me digas que planeas pelear contra todos los monstruos tú solo."
+
+              "Cumpliré nuestra parte del trato," dice el lessathi. "Asegúrate de cumplir la tuya cuando llegue el momento."
+          - source: scene_text_2
+            paragraph: 39
+            text: |-
+              "Eh, sí," digo. "Sí, por supuesto..."
+
+              El lessathi prepara sus guadañas, y espera a que se nos dé acceso a la arena. Una vez que Daren y los demás salen del área de combate, los barrotes frente a nosotros finalmente comienzan a levantarse.
+
+              Todos nos dirigimos hacia el centro de la arena, como todas las divisiones antes que nosotros.
+
+              "¡Damas y caballeros, les presento a la cuarta división!" dice el presentador.
+
+              La multitud nos observa en completo silencio, mientras nos abrimos paso entre todos los cadáveres de animales, para llegar a nuestro destino. Está claro que no reconocen a nadie de nuestra división. Probablemente ya están pensando que nos van a masacrar, como a esa primera división de antes. Espero que no terminemos dándoles la razón.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch04b_bastard
+                  storyboard_controls: Jump to frame "Book 2 Chapter 4 b"

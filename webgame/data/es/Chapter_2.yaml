@@ -1,0 +1,1648 @@
+scenes:
+  - name: ch2_intro
+    texts:
+      - source: scene_text
+        paragraph: 24
+        text: |-
+          Tanto Daren como yo nos damos la vuelta al mismo tiempo. Vemos a una figura alta y delgada de pie detrás de nosotros, con cabello largo y negro, piel clara y una mirada muy seria en su rostro. Viste pantalones de cuero, una blusa blanca de manga larga y una capa verde con capucha. Parece tener veintipocos años.
+
+          Pero eso no es todo lo que hay en esta mujer. También puedo sentir una fuerte aura mágica a su alrededor. Un aura que no podría provenir de un humano normal. ¿Podría ser... una banshee?
+
+          Mi corazón comienza a latir rápidamente de nuevo. Aquella noche de hace quince años vuelve a mí. Puedo verla vívidamente, y todavía puedo escuchar la risa. Esa risa siniestra y aguda. ¿Nunca dejará de atormentarme?
+
+          Respiro profundamente y trato de calmarme. Esta mujer no puede ser una banshee. La sensación que tengo ahora es demasiado diferente a la que tuve en aquel entonces. ¿Significa eso que es una maga? No, eso sería imposible. Y sin embargo...
+
+          "Barry", susurra Daren. "No tengas miedo. Conozco la magia blanca. Puedo purificarla".
+      - source: scene_text_2
+        paragraph: 3
+        text: |-
+          Me doy cuenta de que Daren también debe haber sentido la magia proveniente de la mujer y ha concluido que ha sido poseída por una banshee. Las banshees son espíritus parásitos que necesitan habitar cuerpos para sobrevivir. Suelen pasar unas semanas dentro de un cuerpo en estado latente antes de tomar el control. Durante esta fase, el huésped puede desarrollar poderes mágicos. Una vez que una banshee tiene el control total del cuerpo, dicen que ha despertado. La única forma de salvar al huésped original una vez que ha sido poseído por una banshee es usar magia blanca para purificarla antes de que la banshee haya despertado por completo, lo que básicamente significa matar a la banshee sin dañar al huésped.
+
+          Sin embargo, la técnica de purificación opera bajo el supuesto de que una mujer no puede tener poderes mágicos propios. Lo llaman purificación, pero lo único que hace la técnica, de hecho, es erradicar por completo el aura que emite la fuerte vibra mágica, con el propósito de eliminar también a la banshee junto con ella. Por otro lado, si el aura no pertenece de hecho a una banshee, sino a la mujer misma, la purificación no sería menos que una sentencia de muerte.
+
+          "No, espera. ¡Escúchame!", suelto de repente. "Esta mujer no es una banshee".
+
+          "¿Y qué, estás sugiriendo que es una maga, entonces? Barry, las mujeres no pueden ser magos. No ha habido ni un solo caso registrado de una mujer maga en toda la historia de nuestro mundo. Cada vez que una mujer ha desarrollado poderes mágicos, ha sido debido a una banshee. Todas y cada una de las veces".
+
+          "¿No crees que lo sé? Pero esta es diferente. ¡Si intentas purificarla, bien podrías terminar matándola!"
+      - source: scene_3
+        paragraph: 3
+        text: |-
+          "¿Cómo puedes estar tan seguro?"
+
+          "Porque he conocido a una banshee antes. De cerca. ¿Has conocido a una banshee antes, Daren?"
+
+          "...No", admite.
+
+          "Acabas de decir que confiabas en mí lo suficiente como para contarme tu mayor debilidad. Te pido que confíes en mí en esto también. ¿Puedes confiar en mí en esto, Daren?"
+
+          Daren me lanza una larga mirada y luego suspira profundamente.
+
+          "Está bien. Lo haremos a tu manera. Pero no le quitaré el ojo de encima. Lo juro, Barry, si resulta que solo dices todo esto por su apariencia, voy a--"
+
+          "¿Les importaría decirme de qué han estado susurrando durante el último minuto?", nos pregunta la mujer.
+    effects:
+      - set:
+          successful_checks:
+            - 'Punto de control alcanzado: Partida guardada.'
+        condition: checkpoint_rich = 1
+    choices:
+      - position: 1
+        text: Su apariencia
+        effects:
+          - set:
+              current_scene: ch2_looks
+              ch2_kate_whisper: 1
+              checkpoint_rich: 0
+      - position: 2
+        text: Decidir cuál de los dos debería intentar conquistarla
+        effects:
+          - set:
+              current_scene: ch2_pass
+              ch2_kate_whisper: 2
+              checkpoint_rich: 0
+              ac_ch2_talker: 1
+            achievement:
+              id: ac_ch2_talker
+              title: Charlatán habilidoso
+      - position: 3
+        text: Simplemente terminando nuestra discusión de antes
+        effects:
+          - set:
+              current_scene: ch2_earlier
+              ch2_kate_whisper: 3
+              checkpoint_rich: 0
+      - position: 4
+        text: Discutiendo si es una banshee o no
+        effects:
+          - set:
+              current_scene: ch2_banshee
+              ch2_kate_whisper: 4
+              checkpoint_rich: 0
+  - name: ch2_looks
+    texts:
+      - source: scene_text
+        paragraph: 25
+        text: |-
+          "Estábamos hablando de tu apariencia, en realidad", le digo.
+
+          La mujer me mira fijamente. Es difícil saber si está molesta o simplemente no le afecta mi comentario, pero al menos parece creerme. Decide ignorarme por completo y se dirige a Daren en su lugar.
+
+          "No respondiste a mi pregunta. Estaba preguntando si eras Daren, el sanador con armadura".
+
+          "Lo soy, en efecto", responde Daren. "¿Qué asunto tendrías conmigo?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_escort
+  - name: ch2_pass
+    texts:
+      - source: scene_text
+        paragraph: 26
+        text: |-
+          "Estábamos tratando de decidir cuál de los dos debería intentar conquistarte", le digo. "¡Estábamos a punto de jugar piedra, papel o tijera por ello! ¿Nos harías el honor de arbitrar nuestro encuentro?"
+
+          La mujer está claramente molesta por mi comentario. Intenta controlar su ceño y parecer impasible, pero su enojo es bastante visible. Me pregunto si fui demasiado lejos con mi broma. Bueno, al menos no parece dudar de mis palabras.
+
+          Decide ignorarme por completo y se dirige a Daren en su lugar.
+
+          "No respondiste a mi pregunta. Estaba preguntando si eras Daren, el sanador con armadura".
+
+          "Lo soy, en efecto", responde Daren. "¿Qué asunto tendrías conmigo?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_escort
+  - name: ch2_earlier
+    texts:
+      - source: scene_text
+        paragraph: 27
+        text: |-
+          "Estábamos terminando nuestra discusión de antes", le digo.
+
+          Me mira con sospecha. No parece creerme. Decide dejar el tema por ahora y se dirige a Daren en su lugar.
+
+          "No respondiste a mi pregunta. Estaba preguntando si eras Daren, el sanador con armadura".
+
+          "Lo soy, en efecto", responde Daren. "¿Qué asunto tendrías conmigo?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_escort
+  - name: ch2_banshee
+    texts:
+      - source: scene_text
+        paragraph: 28
+        text: |-
+          "Estábamos discutiendo si eres una banshee o no", le digo.
+
+          "Oh", dice ella.
+
+          Parece conmocionada por mi comentario.
+
+          "Bueno, lamento haberles molestado, entonces", continúa. "Me pondré en camino".
+
+          Mientras se gira para irse, Daren la llama.
+
+          "¡Espera! ¡No lo dejaste terminar! Ya hemos concluido que no eres una banshee. ¡Puedes quedarte!"
+
+          Luego se vuelve hacia nosotros, lentamente.
+
+          "¿Puedo?"
+
+          Trata de mantener su expresión lo más neutral posible, pero hubo un ligero temblor en su tono cuando hizo la pregunta, y sus ojos están un poco llorosos. Parece que ha estado conteniendo las lágrimas.
+
+          "Por supuesto que puedes", responde Daren. "Ahora, ¿qué fue lo que me preguntaste al principio?"
+
+          La expresión de la mujer vuelve lentamente a la normalidad, mientras repite su pregunta inicial.
+
+          "Estaba preguntando si eras Daren, el sanador con armadura".
+
+          "Lo soy, en efecto", responde Daren. "¿Qué asunto tendrías conmigo?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_escort
+  - name: ch2_escort
+    routes:
+      - condition: ch1_stillwater = 1
+        texts:
+          - source: scene_text
+            paragraph: 29
+            text: |-
+              "Yo... requiero una escolta. No estoy segura de poder sobrevivir a este torneo por mi cuenta. Y he oído hablar de todas tus hazañas de valor y todas tus leyendas, así que pensé que tal vez..."
+
+              "¡No digas más! Te otorgaré mi protección durante la duración de tu búsqueda. Por lo que dices, ¿deduzco que no estás tratando realmente de ganar el torneo?"
+
+              "No... no lo estoy. Estoy buscando... a una amiga. Y tengo razones para creer que está en algún lugar de este continente. Pero todavía no tengo ninguna pista específica. Por ahora, solo necesito seguir con vida".
+
+              "¡Entonces puedes unirte a nosotros! ¡Estábamos a punto de salir de aquí! Estamos demasiado al descubierto en este momento".
+
+              "¿Nosotros? ¿Planeas viajar junto a este Stillwater? ¡No puedes confiar en él!"
+        choices:
+          - position: 1
+            text: Preguntarle qué tiene contra mí
+            effects:
+              - set:
+                  current_scene: ch2_against
+          - position: 2
+            text: Preguntar por qué deberíamos confiar en ella
+            effects:
+              - set:
+                  current_scene: ch2_trust
+          - position: 3
+            text: Preguntar por qué se apresura tanto a confiar en Daren y no en mí
+            effects:
+              - set:
+                  current_scene: ch2_quick
+      - condition: ch1_stillwater = 2
+        texts:
+          - source: scene_text
+            paragraph: 30
+            text: |-
+              "Yo... requiero una escolta. No estoy segura de poder sobrevivir a este torneo por mi cuenta. Y he oído hablar de todas tus hazañas de valor y todas tus leyendas, así que pensé que tal vez..."
+
+              "¡No digas más! Te otorgaré mi protección durante la duración de tu búsqueda. Por lo que dices, ¿deduzco que no estás tratando realmente de ganar el torneo?"
+
+              "No... no lo estoy. Estoy buscando... a una amiga. Y tengo razones para creer que está en algún lugar de este continente. Pero todavía no tengo ninguna pista específica. Por ahora, solo necesito seguir con vida".
+
+              "¡Entonces puedes unirte a nosotros! ¡Estábamos a punto de salir de aquí! Estamos demasiado al descubierto en este momento".
+
+              "¿Nosotros? ¿Planeas viajar junto a este Stillwater? ¡No puedes confiar en él!"
+
+              "En realidad, no es un Stillwater, es solo un humano normal", la corrige Daren.
+
+              Genial. Me pregunto si planea revelar mi identidad a cada persona que conozcamos de ahora en adelante.
+
+              "¿Eso es lo que te dijo?", pregunta la mujer. "¿Y le crees? ¡Solo está tratando de que bajes la guardia!"
+        choices:
+          - position: 1
+            text: Preguntarle qué tiene contra mí
+            effects:
+              - set:
+                  current_scene: ch2_against
+          - position: 2
+            text: Preguntar por qué deberíamos confiar en ella
+            effects:
+              - set:
+                  current_scene: ch2_trust
+          - position: 3
+            text: Preguntar por qué se apresura tanto a confiar en Daren y no en mí
+            effects:
+              - set:
+                  current_scene: ch2_quick
+  - name: ch2_against
+    texts:
+      - source: scene_text
+        paragraph: 31
+        text: |-
+          "¡Oye, estoy justo aquí!", le digo. "¿Qué tienes contra mí, de todos modos?"
+
+          "No me vengas con ese cuento, Stillwater. He oído hablar de lo que tu clase puede hacer. La vida humana no tiene valor para ti. Dime, ¿qué hicieron los habitantes de Olmnar para merecer un destino tan terrible?"
+
+          "¡Vaya, vaya! ¡Calmémonos todos!", dice Daren.
+
+          Se vuelve hacia la mujer.
+
+          "Escucha, entiendo tu preocupación, pero este hombre salvó mi vida y tengo la intención de pagar mi deuda con él. Si buscas una escolta, entonces viajaremos los tres juntos. No aceptaré ninguna alternativa".
+
+          La mujer hace una pausa para considerar las palabras de Daren.
+      - source: scene_text_2
+        paragraph: 4
+        text: |-
+          "Muy bien", dice. "Si así tiene que ser, me veo obligada a cumplir. Pero sabe que estaré vigilando constantemente mi espalda. No me convencen tan fácilmente como a ti, sanador con armadura".
+
+          "¡Genial!", dice Daren. "Ahora que hemos resuelto eso, ¡vámonos! ¡La aventura aguarda!"
+
+          "Espera", exclamo. "Todavía no nos has dicho tu nombre".
+
+          La mujer se vuelve hacia mí y me lanza una mirada pensativa. Tras considerarlo cuidadosamente, decide responder.
+
+          "Es Kate. Mi nombre es Kate".
+
+          Con esas últimas palabras, los tres abandonamos el claro y nos adentramos en el bosque, con la esperanza de encontrar algún lugar alejado de las batallas en curso que se libran por toda la tierra.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_stats
+              available_points: available_points + 3
+              available_points_aux: available_points_aux + 3
+  - name: ch2_trust
+    texts:
+      - source: scene_text
+        paragraph: 32
+        text: |-
+          "Dices que no puedes confiar en mí, ¡pero no veo por qué alguno de nosotros debería confiar en ti!", le digo. "¿Y si en realidad no estás buscando a una amiga y solo estás aquí para ganar el torneo, como cualquier otro participante? ¿Qué pruebas tienes para respaldar tu afirmación?"
+
+          "No estoy... Yo solo..."
+
+          Vacila.
+
+          "¡Vaya, vaya! ¡Calmémonos todos!", dice Daren.
+
+          Se vuelve hacia la mujer.
+
+          "Escucha, entiendo tu preocupación, pero este hombre salvó mi vida y tengo la intención de pagar mi deuda con él. Si buscas una escolta, entonces viajaremos los tres juntos. No aceptaré ninguna alternativa".
+      - source: scene_text_2
+        paragraph: 5
+        text: |-
+          La mujer hace una pausa para considerar las palabras de Daren.
+
+          "Muy bien", dice. "Si así tiene que ser, me veo obligada a cumplir. Pero sabe que estaré vigilando constantemente mi espalda. No me convencen tan fácilmente como a ti, sanador con armadura".
+
+          "¡Genial!", dice Daren. "Ahora que hemos resuelto eso, ¡vámonos! ¡La aventura aguarda!"
+
+          "Espera", exclamo. "Todavía no nos has dicho tu nombre".
+
+          La mujer se vuelve hacia mí y me lanza una mirada pensativa. Tras considerarlo cuidadosamente, decide responder.
+
+          "Es Kate. Mi nombre es Kate".
+
+          Con esas últimas palabras, los tres abandonamos el claro y nos adentramos en el bosque, con la esperanza de encontrar algún lugar alejado de las batallas en curso que se libran por toda la tierra.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_stats
+              available_points: available_points + 3
+              available_points_aux: available_points_aux + 3
+  - name: ch2_quick
+    texts:
+      - source: scene_text
+        paragraph: 33
+        text: |-
+          "¿Por qué yo?", le pregunto. "¿Por qué puedes confiar en Daren tan fácilmente, pero no en mí?"
+
+          "¡Porque su reputación lo precede! ¡Pocos son los que no han oído hablar de su valentía y su moralidad excepcional! Tú, por otro lado, provienes de una raza llena de homicidas en masa".
+
+          "¡Vaya, vaya! ¡Calmémonos todos!", dice Daren.
+
+          Se vuelve hacia la mujer.
+
+          "Escucha, entiendo tu preocupación, pero este hombre salvó mi vida y tengo la intención de pagar mi deuda con él. Si buscas una escolta, entonces viajaremos los tres juntos. No aceptaré ninguna alternativa".
+
+          La mujer hace una pausa para considerar las palabras de Daren.
+
+          "Muy bien", dice. "Si así tiene que ser, me veo obligada a cumplir. Pero sabe que estaré vigilando constantemente mi espalda. No me convencen tan fácilmente como a ti, sanador con armadura".
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "¡Genial!", dice Daren. "Ahora que hemos resuelto eso, ¡vámonos! ¡La aventura aguarda!"
+
+          "Espera", exclamo. "Todavía no nos has dicho tu nombre".
+
+          La mujer se vuelve hacia mí y me lanza una mirada pensativa. Tras considerarlo cuidadosamente, decide responder.
+
+          "Es Kate. Mi nombre es Kate".
+
+          Con esas últimas palabras, los tres abandonamos el claro y nos adentramos en el bosque, con la esperanza de encontrar algún lugar alejado de las batallas en curso que se libran por toda la tierra.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_stats
+              available_points: available_points + 3
+              available_points_aux: available_points_aux + 3
+  - name: ch2_stats
+    texts:
+      - source: scene_text
+        paragraph: 34
+        text: |-
+          Mientras marchamos por el bosque, escucho unos fuertes pitidos provenientes de mi bolsillo derecho.
+
+          "Barry, ¿qué es ese sonido?", pregunta Daren. "Conozco ese sonido. No me digas que trajiste una baratija del adivino contigo hasta aquí. ¿Planeas adivinarnos el futuro, Barry?"
+
+          Una baratija del adivino. Así es como la mayoría de la gente llama a estos dispositivos hoy en día. Pero muy pocas personas saben lo que realmente hacen y cómo funcionan en realidad. Mis investigaciones me han llevado a creer que estos dispositivos aprovechan su energía de la magia que los rodea. Cuanta más energía aprovechan, más efectivos se vuelven. Dado que los magos suelen estar muy dispersos unos de otros y no tienen realmente ninguna razón para lanzar hechizos poderosos uno tras otro, los efectos de tal dispositivo son mayormente insignificantes.
+
+          Pero imagina la cantidad de energía que podría reunir en un lugar lleno de los magos más poderosos del mundo, que luchan constantemente entre sí.
+
+          Saco el dispositivo de mi bolsillo. Se parece mucho a un juguete, con unos pocos botones y una pantalla. Al presionar los botones, diferentes letras aparecen mágicamente en la pantalla, formando palabras y mostrando números. El dispositivo llama a estos mis 'estadísticas'. Mis estadísticas consisten principalmente en varios atributos físicos como fuerza, velocidad, reflejos, resistencia, observación y audición, pero también hay otros como técnica de combate, lenguas antiguas y premonición.
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          Cuando el dispositivo reúne suficiente energía, me avisa mediante pitidos y luego me permite invertir un número limitado de puntos en mis estadísticas. Por el momento, todas mis estadísticas están en cero, lo que significa que la energía del dispositivo estaba completamente agotada cuando lo compré. Supongo que tendré que empezar a subirlas de nivel desde cero.
+
+          Se supone que invertir mis puntos en estadísticas mejora realmente mis atributos reales, siempre que mantenga el dispositivo lo suficientemente cerca de mí para que entre en contacto con mi aura mágica. A medida que pase mi tiempo aquí, espero escuchar estos pitidos cada vez con más frecuencia. Sin embargo, tendré que pensar dos veces la forma en que gasto mis puntos, ya que no tengo forma de saber cuándo recibiré mi próximo lote de puntos, ni forma de cambiar de opinión después de haberlos invertido. Es probable que los valores máximos que aparecen ahora para cada estadística aumenten a medida que pase el tiempo.
+
+          Este dispositivo es utilizado principalmente por adivinos debido a su estadística de premonición. Les proporciona vislumbres muy vagos del futuro que luego son libres de interpretar a su gusto. Me pregunto si la estadística de lenguas antiguas significa realmente que empezaré a ser capaz de entender y hablar lenguas antiguas. Escuché que hay muchos de esos escritos en este continente. Y escuché que algunas personas aquí no hablan la lengua común.
+    choices:
+      - position: 1
+        text: Invertir puntos ahora
+        effects:
+          - set:
+              current_scene: ch2_stats_spent
+              storyboard_controls: Jump to frame "Stats"
+      - position: 2
+        text: Invertir puntos más tarde (presionando el botón de estadísticas en la parte superior de la pantalla)
+        effects:
+          - set:
+              current_scene: ch2_fallen_trees
+  - name: ch2_stats_spent
+    texts:
+      - source: scene_text
+        paragraph: 34
+        text: |-
+          Mientras marchamos por el bosque, escucho unos fuertes pitidos provenientes de mi bolsillo derecho.
+
+          "Barry, ¿qué es ese sonido?", pregunta Daren. "Conozco ese sonido. No me digas que trajiste una baratija del adivino contigo hasta aquí. ¿Planeas adivinarnos el futuro, Barry?"
+
+          Una baratija del adivino. Así es como la mayoría de la gente llama a estos dispositivos hoy en día. Pero muy pocas personas saben lo que realmente hacen y cómo funcionan en realidad. Mis investigaciones me han llevado a creer que estos dispositivos aprovechan su energía de la magia que los rodea. Cuanta más energía aprovechan, más efectivos se vuelven. Dado que los magos suelen estar muy dispersos unos de otros y no tienen realmente ninguna razón para lanzar hechizos poderosos uno tras otro, los efectos de tal dispositivo son mayormente insignificantes.
+
+          Pero imagina la cantidad de energía que podría reunir en un lugar lleno de los magos más poderosos del mundo, que luchan constantemente entre sí.
+
+          Saco el dispositivo de mi bolsillo. Se parece mucho a un juguete, con unos pocos botones y una pantalla. Al presionar los botones, diferentes letras aparecen mágicamente en la pantalla, formando palabras y mostrando números. El dispositivo llama a estos mis 'estadísticas'. Mis estadísticas consisten principalmente en varios atributos físicos como fuerza, velocidad, reflejos, resistencia, observación y audición, pero también hay otros como técnica de combate, lenguas antiguas y premonición.
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          Cuando el dispositivo reúne suficiente energía, me avisa mediante pitidos y luego me permite invertir un número limitado de puntos en mis estadísticas. Por el momento, todas mis estadísticas están en cero, lo que significa que la energía del dispositivo estaba completamente agotada cuando lo compré. Supongo que tendré que empezar a subirlas de nivel desde cero.
+
+          Se supone que invertir mis puntos en estadísticas mejora realmente mis atributos reales, siempre que mantenga el dispositivo lo suficientemente cerca de mí para que entre en contacto con mi aura mágica. A medida que pase mi tiempo aquí, espero escuchar estos pitidos cada vez con más frecuencia. Sin embargo, tendré que pensar dos veces la forma en que gasto mis puntos, ya que no tengo forma de saber cuándo recibiré mi próximo lote de puntos, ni forma de cambiar de opinión después de haberlos invertido. Es probable que los valores máximos que aparecen ahora para cada estadística aumenten a medida que pase el tiempo.
+
+          Este dispositivo es utilizado principalmente por adivinos debido a su estadística de premonición. Les proporciona vislumbres muy vagos del futuro que luego son libres de interpretar a su gusto. Me pregunto si la estadística de lenguas antiguas significa realmente que empezaré a ser capaz de entender y hablar lenguas antiguas. Escuché que hay muchos de esos escritos en este continente. Y escuché que algunas personas aquí no hablan la lengua común.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_fallen_trees
+  - name: ch2_fallen_trees
+    routes:
+      - condition: ch1_stillwater = 2
+        texts:
+          - source: scene_text
+            paragraph: 35
+            text: |-
+              "Barry, ¿no crees que hay cosas más importantes que hacer ahora que andar jugando con ese juguete?", me pregunta Daren.
+
+              "Esto no es un juguete", le respondo mientras vuelvo a guardar el dispositivo en mi bolsillo. "Y creo que deberías prestar más atención a por dónde vas en lugar de sermonearme, porque veo que se nos acaba de terminar el bosque".
+
+              "¡Silencio, los dos! Tenemos compañía", dice Kate.
+
+              Tiene razón. Mirando a nuestro alrededor, veo que hay árboles caídos por todas partes en esta zona, y hay bastantes cadáveres tirados por ahí. Parece que ha habido una batalla aquí, o tal vez varias. Los vencedores estaban en medio de saquear los cuerpos cuando nos notaron.
+
+              Son tres en total. Uno de ellos está considerablemente bien formado para ser un mago. Tiene una barba negra muy larga que le cubre la cara, parece tener unos cuarenta y tantos años, lleva una armadura pesada y sostiene una gran hacha de batalla. Los otros dos son un poco más delgados y jóvenes y visten chalecos de cota de malla en su lugar, pero no sostienen armas. El mago barbudo con el hacha de batalla le grita a Daren.
+
+              "Vaya equipo el que has reunido allí, sanador con armadura. Un sanador, una banshee y un humano común. ¡Es como si estuvieras muriéndote por perder este torneo!"
+
+              Kate se vio visiblemente afectada por el comentario de la banshee. Sus ojos se contrajeron y su mirada se dirigió inconscientemente hacia el suelo.
+
+              "Cuida tu lengua, necio", le respondo. "¿A quién llamas humano común? ¿No has oído hablar de los Stillwaters?"
+          - source: scene_text_2
+            paragraph: 8
+            text: |-
+              "¡Ja! ¡Los Stillwaters son leyendas y nada más! No sé qué intentabas lograr uniéndote a este torneo, muchacho, pero pronto ya no importará".
+
+              "¿Por qué?", le pregunta Daren al mago barbudo. "¿Por qué has hecho esto?"
+
+              Señala los cuerpos sin vida que yacen a nuestro alrededor.
+
+              "¡Nadie nos dijo que deberíamos empezar a matarnos unos a otros!", continúa Daren. "Nos dijeron que no hay reglas hasta que nos den nuestros primeros objetivos. ¡Ni siquiera sabíamos si iba a haber combate involucrado! ¿Por qué tuviste que matar a todas estas personas?"
+
+              "Porque no hay reglas", responde el mago con el hacha de batalla. "No hay reglas significa que podemos hacer lo que queramos. ¡Y lo que queremos es eliminar a la mayor parte de la competencia posible antes de que comience el evento principal!"
+
+              Él sonríe.
+          - source: scene_3
+            paragraph: 4
+            text: |-
+              "¡Mis hijos y yo estábamos un poco preocupados al principio! Temíamos no estar listos para las ligas mayores. ¡Pero aquí estamos!", exclama el mago barbudo mientras levanta las manos y adopta una postura victoriosa. "¡Pero basta de charla! ¡Todos sabemos lo que viene!"
+
+              "¡Barry, ponte detrás de mí!", grita Daren mientras se lanza frente a mí.
+
+              "Primera regla del combate", dice el mago barbudo.
+
+              De repente, uno de los dos magos más jóvenes que estaban al lado del mago con el hacha de batalla desaparece y aparece justo detrás de mí, con una daga en la mano.
+
+              "Siempre mata primero a los enemigos más débiles", continúa el mago barbudo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch2_battle_human
+                  ch2_toughness_happened: 0
+      - condition: ch1_stillwater = 1
+        texts:
+          - source: scene_text
+            paragraph: 36
+            text: "\"Barry, don't you think there are more important things to do right now than playing around with that toy?\" Daren asks me.\r\n\r\n\"This isn't a toy,\" I answer him as I put the device back into my pocket. \"And I think you should pay more attention to where you're going instead of lecturing me, because I see we just ran out of forest.\"\r\n\r\n\"Quiet, the two of you! We've got company,\" Kate says.\r\n\r\nShe's right. Looking all around us, I see there are fallen trees everywhere in this area, and there are quite a few dead bodies lying around. It seems there's been a battle here, or maybe several. The victors were in the middle of looting the bodies when they noticed us.\r\n\r\nThere's three of them in total. One of them is considerably well-built for a mage. He has a very long black beard covering his face, he seems to be in his mid forties, he's wearing heavy armor and is holding a large battleaxe. The other two are a bit skinnier and younger and are wearing chainmail vests instead, but they're holding no weapons. The bearded mage with the battleaxe shouts to Daren.\r\n\r\n\"Quite the team you've assembled there, healer in armor. A healer, a banshee and an ordinary human. It's like you're dying to lose this tournament!\"\r\n\r\nKate was visibly affected by the banshee comment. Her eyes twitched and her look went subconsciously towards the ground. \r\n\r\n\"Mind your tongue, fool,\" I reply to him. \"Who are you calling an ordinary human? Have you not heard of stillwaters?\""
+          - source: scene_text_2
+            paragraph: 9
+            text: |-
+              "¡Ja! ¡Los Stillwaters son leyendas y nada más! No sé qué intentabas lograr uniéndote a este torneo, muchacho, pero pronto ya no importará".
+
+              "¿Por qué?", le pregunta Daren al mago barbudo. "¿Por qué has hecho esto?"
+
+              Señala los cuerpos sin vida que yacen a nuestro alrededor.
+
+              "¡Nadie nos dijo que deberíamos empezar a matarnos unos a otros!", continúa Daren. "Nos dijeron que no hay reglas hasta que nos den nuestros primeros objetivos. ¡Ni siquiera sabíamos si iba a haber combate involucrado! ¿Por qué tuviste que matar a todas estas personas?"
+
+              "Porque no hay reglas", responde el mago con el hacha de batalla. "No hay reglas significa que podemos hacer lo que queramos. ¡Y lo que queremos es eliminar a la mayor parte de la competencia posible antes de que comience el evento principal!"
+          - source: scene_3
+            paragraph: 5
+            text: |-
+              Él sonríe.
+
+              "¡Mis hijos y yo estábamos un poco preocupados al principio! Temíamos no estar listos para las ligas mayores. ¡Pero aquí estamos!", exclama el mago barbudo mientras levanta las manos y adopta una postura victoriosa. "¡Pero basta de charla! ¡Todos sabemos lo que viene!"
+
+              Su sonrisa se ensancha, mientras me mira directamente.
+
+              "Primera regla del combate", dice el mago barbudo.
+
+              De repente, uno de los dos magos más jóvenes que estaban al lado del mago con el hacha de batalla desaparece y aparece justo detrás de mí, con una daga en la mano.
+
+              "Siempre mata primero a los enemigos más débiles", continúa el mago barbudo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch2_battle_stillwater
+  - name: ch2_battle_stillwater
+    routes:
+      - condition: premonition > 0
+        texts:
+          - source: scene_text
+            paragraph: 38
+            text: |-
+              Poco después de que el joven mago aparezca detrás de mí, veo una visión de él lanzando su daga hacia mi cuello. ¿Fue eso... una premonición?
+
+              Efectivamente, el joven mago ahora lanza su daga exactamente de la misma manera que lo hizo en mi visión. Sabiendo de dónde viene el golpe, logro esquivarlo en el último segundo. Justo después de que esquivo, el mago me da una fuerte patada en el pecho, derribándome de espaldas.
+
+              "¡Barry!", grita Daren mientras se interpone entre mi atacante y yo, bloqueando el siguiente golpe con su escudo.
+
+              "¡Ja! ¡Dejaste a la mujer sin defensa! Error clásico", dice el mago con el hacha de batalla, mientras su segundo hijo hace aparecer una docena de espadas de la nada, flotando frente a él, y las envía todas volando hacia Kate.
+
+              Justo cuando las espadas la alcanzan, el brazo izquierdo de Kate se cubre con un gran y grueso bloque de hielo, esculpido en forma de escudo. Lo pone frente a ella y todas las espadas quedan clavadas en él.
+
+              "¿Dejé a la mujer sin defensa?", pregunta Kate. "Entonces, ¿qué es? ¿Mujer?... ¿O banshee?"
+
+              Baja su brazo izquierdo para revelar su rostro, mientras mira directamente al mago de la barba negra. Sus ojos rebosan de furia.
+
+              "¡Decídete!", grita, mientras todo el bosque se queda en silencio por el sonido de su voz.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de premonición exitosa - nivel 1 ]'
+              ch2_toughness_happened: 0
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch2_battle_begins
+                condition: is_dead = 0
+      - condition: premonition = 0 AND reflexes > 0
+        texts:
+          - source: scene_text
+            paragraph: 39
+            text: |-
+              El joven mago lanza su daga hacia mi cuello. Reacciono con una velocidad que me sorprende y logro esquivar el golpe en el último segundo. Justo después de esquivar, el mago me da una fuerte patada en el pecho, derribándome de espaldas.
+
+              "¡Barry!", grita Daren mientras se interpone entre mi atacante y yo, bloqueando el siguiente golpe con su escudo.
+
+              "¡Ja! ¡Dejaste a la mujer sin defensa! Error clásico", dice el mago con el hacha de batalla, mientras su segundo hijo hace aparecer una docena de espadas de la nada, flotando frente a él, y las envía todas volando hacia Kate.
+
+              Justo cuando las espadas la alcanzan, el brazo izquierdo de Kate se cubre con un gran y grueso bloque de hielo, esculpido en forma de escudo. Lo pone frente a ella y todas las espadas quedan clavadas en él.
+
+              "¿Dejé a la mujer sin defensa?", pregunta Kate. "Entonces, ¿qué es? ¿Mujer?... ¿O banshee?"
+
+              Baja su brazo izquierdo para revelar su rostro, mientras mira directamente al mago de la barba negra. Sus ojos rebosan de furia.
+
+              "¡Decídete!", grita, mientras todo el bosque se queda en silencio por el sonido de su voz.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de reflejos exitosa - nivel 1 ]'
+              failed_checks:
+                - '[ Comprobación de premonición fallida - nivel 1 ]'
+              ch2_toughness_happened: 0
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch2_battle_begins
+                condition: is_dead = 0
+      - condition: premonition = 0 AND reflexes = 0 AND toughness > 2
+        texts:
+          - source: scene_text
+            paragraph: 40
+            text: |-
+              El joven mago lanza su daga hacia mi cuello. El tajo es demasiado rápido para que pueda esquivarlo, pero cuando golpea mi cuello, no logra atravesar mi piel, extrayendo solo un poco de sangre en su lugar. El mago mira su daga, sorprendido, e inmediatamente me da una fuerte patada en el pecho, derribándome de espaldas.
+
+              "¡Barry!", grita Daren mientras se interpone entre mi atacante y yo, bloqueando el siguiente golpe con su escudo.
+
+              "¡Ja! ¡Dejaste a la mujer sin defensa! Error clásico", dice el mago con el hacha de batalla, mientras su segundo hijo hace aparecer una docena de espadas de la nada, flotando frente a él, y las envía todas volando hacia Kate.
+
+              Justo cuando las espadas la alcanzan, el brazo izquierdo de Kate se cubre con un gran y grueso bloque de hielo, esculpido en forma de escudo. Lo pone frente a ella y todas las espadas quedan clavadas en él.
+
+              "¿Dejé a la mujer sin defensa?", pregunta Kate. "Entonces, ¿qué es? ¿Mujer?... ¿O banshee?"
+
+              Baja su brazo izquierdo para revelar su rostro, mientras mira directamente al mago de la barba negra. Sus ojos rebosan de furia.
+
+              "¡Decídete!", grita, mientras todo el bosque se queda en silencio por el sonido de su voz.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de resistencia exitosa - nivel 3 ]'
+              failed_checks:
+                - '[ Comprobación de premonición fallida - nivel 1 ]'
+                - '[ Comprobación de reflejos fallida - nivel 1 ]'
+              ch2_toughness_happened: 1
+              ac_ch2_nails: 1
+            achievement:
+              id: ac_ch2_nails
+              title: Duro de roer
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch2_battle_begins
+                condition: is_dead = 0
+      - condition: premonition = 0 AND reflexes = 0 AND toughness < 3
+        texts:
+          - source: scene_text
+            paragraph: 41
+            text: |-
+              El joven mago lanza su daga hacia mi cuello. El tajo es demasiado rápido para que pueda esquivarlo y, cuando golpea mi cuello, me degüella por completo. Intento desesperadamente detener el flujo de sangre cubriendo la herida abierta con mis manos, pero es demasiado tarde.
+
+              "¡Barry!", escucho a Daren gritar mientras corre hacia mí.
+
+              Lo último que veo es a Daren intentando en vano curar mi herida, mientras mi conciencia se desvanece lentamente.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de premonición fallida - nivel 1 ]'
+                - '[ Comprobación de reflejos fallida - nivel 1 ]'
+                - '[ Comprobación de resistencia fallida - nivel 3 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+  - name: ch2_battle_human
+    texts:
+      - source: scene_text
+        paragraph: 37
+        text: |-
+          El joven mago lanza su daga hacia mi cuello, pero Daren reacciona justo a tiempo y usa su escudo para recibir el golpe.
+
+          "¡Ja! ¡Dejaste a la mujer sin defensa! Error clásico", dice el mago con el hacha de batalla, mientras su segundo hijo hace aparecer una docena de espadas de la nada, flotando frente a él, y las envía todas volando hacia Kate.
+
+          Justo cuando las espadas la alcanzan, el brazo izquierdo de Kate se cubre con un gran y grueso bloque de hielo, esculpido en forma de escudo. Lo pone frente a ella y todas las espadas quedan clavadas en él.
+
+          "¿Dejé a la mujer sin defensa?", pregunta Kate. "Entonces, ¿qué es? ¿Mujer?... ¿O banshee?"
+
+          Baja su brazo izquierdo para revelar su rostro, mientras mira directamente al mago de la barba negra. Sus ojos rebosan de furia.
+
+          "¡Decídete!", grita, mientras todo el bosque se queda en silencio por el sonido de su voz.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_battle_begins
+  - name: ch2_battle_begins
+    texts:
+      - source: scene_text
+        paragraph: 42
+        text: |-
+          El mago con el hacha de batalla parece haber perdido temporalmente la calma y se ve un poco aterrorizado. Y debería estarlo. La intención de matar de Kate es tan fuerte que casi parece palpable.
+
+          "Veo traidores y lanzadores de espadas", grita ella. "¿Y se hacen llamar magos? ¡Vengan. Les mostraré magia de verdad!"
+
+          Mientras habla, el aire a nuestro alrededor parece volverse más frío. Así que esto es lo que se siente al estar en un torneo junto a los magos más poderosos del mundo.
+
+          El mago barbudo parece haber reaccionado.
+
+          "Tus trucos de salón no te salvarán por segunda vez, moza. No me importa si eres una banshee o no. ¡Ninguno de ustedes va a salir de este lugar con vida!", grita mientras corre hacia Daren, con su hacha de batalla lista para atacar.
+
+          A medida que se acerca, me doy cuenta de que si no hago algo rápido, Daren se verá obligado a luchar contra el mago mayor y el joven al mismo tiempo mientras también me defiende a mí, y no tendrá el lujo de usar hechizos de curación ya que requieren que esté calmado y relajado para lanzarlos.
+
+          ¿Tal vez hay algo que pueda hacer para ayudar?
+    choices:
+      - position: 1
+        text: Esconderme detrás de Daren y dejar que él se encargue de ambos
+        effects:
+          - set:
+              current_scene: ch2_hide
+      - position: 2
+        text: Atraer al joven mago lejos de Daren y concentrarme en evitar sus ataques
+        effects:
+          - set:
+              current_scene: ch2_avoid
+      - position: 3
+        text: Luchar contra el joven mago yo mismo
+        effects:
+          - set:
+              current_scene: ch2_fight
+  - name: ch2_hide
+    texts:
+      - source: scene_text
+        paragraph: 43
+        text: |-
+          Si trato de encargarme del joven mago yo mismo, podría estorbar a Daren. Le dejaré esto a él e intentaré seguir su iniciativa tanto como sea posible.
+
+          Kate parece haber captado la atención indivisa del mago lanzador de espadas. Él constantemente envía espadas hacia ella desde todas las direcciones, mientras ella crea paredes de hielo para bloquear sus ataques. Tenemos suerte. Con la debilidad de Daren contra las armas y mi falta de talentos mágicos, ese mago probablemente habría sido el más difícil de combatir para nosotros.
+
+          Cuando el mago barbudo nos alcanza, su hacha de batalla choca ruidosamente con la espada de Daren.
+
+          "Veo que has encantado bien tu arma, sanador", dice el mago mayor. "¿Pero cuánto tiempo puedes durar contra un guerrero endurecido en batalla como yo?"
+
+          Él ruge y presiona su hacha de batalla con más fuerza contra la espada de Daren. El joven mago intenta atacarme de nuevo con su daga, pero Daren intercepta su golpe con su escudo.
+      - source: scene_text_2
+        paragraph: 10
+        text: |-
+          "¿Cuánto tiempo planeas defender a este pequeño mocoso? ¡No puedes protegerlo y luchar contra nosotros dos al mismo tiempo! ¡Abandona al chico y tal vez tengas una oportunidad!"
+
+          "¡Nunca!", grita Daren mientras lanza un tajo hacia el mago barbudo y su hoja se encuentra con el acero del hacha de batalla una vez más.
+
+          Mientras tanto, el mago que lucha contra Kate ha logrado rodearla con espadas flotantes, apuntadas hacia ella desde todas las direcciones. Las envía todas hacia ella simultáneamente en un intento de abrumar sus defensas. Rápidamente se rodea con una esfera de hielo muy grueso, y todas las espadas, una vez más, se detienen en ella. Al deshacer la esfera, los cientos de espadas caen al suelo con un estruendo ensordecedor.
+
+          El mago de la daga tiene mucho interés en asestarme un golpe. Daren ha logrado bloquear con éxito cada uno de sus golpes dirigidos a mí, pero se ha lastimado en el proceso más de una vez. Incluso con su armadura de cuerpo completo equipada, puedo decir que no durará mucho más de esta manera. Hay que hacer algo.
+    choices:
+      - position: 1
+        text: Pedirle ayuda a Kate
+        effects:
+          - set:
+              current_scene: ch2_ask_kate
+              ch2_kate_debt: 1
+      - position: 2
+        text: Atraer al joven mago lejos de Daren y concentrarme en evitar sus ataques
+        effects:
+          - set:
+              current_scene: ch2_avoid
+      - position: 3
+        text: Luchar contra el joven mago yo mismo
+        effects:
+          - set:
+              current_scene: ch2_fight
+  - name: ch2_avoid
+    texts:
+      - source: scene_text
+        paragraph: 45
+        text: |-
+          No hay forma de que Daren pueda luchar contra los dos mientras me defiende. Dado que el joven mago parece estar concentrado en mí, lo atraeré lejos de Daren e intentaré evadir sus ataques tanto como pueda, hasta que Daren acabe con el mago mayor.
+
+          Kate parece haber captado la atención indivisa del mago lanzador de espadas. Él constantemente envía espadas hacia ella desde todas las direcciones, mientras ella crea paredes de hielo para bloquear sus ataques. Tenemos suerte. Con la debilidad de Daren contra las armas y mi falta de talentos mágicos, ese mago probablemente habría sido el más difícil de combatir para nosotros.
+
+          Cuando el mago barbudo nos alcanza, su hacha de batalla choca ruidosamente con la espada de Daren.
+
+          "Veo que has encantado bien tu arma, sanador", dice el mago mayor. "¿Pero cuánto tiempo puedes durar contra un guerrero endurecido en batalla como yo?"
+
+          Él ruge y presiona su hacha de batalla con más fuerza contra la espada de Daren.
+      - source: scene_text_2
+        paragraph: 11
+        text: |-
+          Mientras los dos luchan, salgo corriendo hacia el bosque. Como era de esperar, el mago de la daga viene justo tras de mí.
+
+          "¡Barry, espera!", me grita Daren.
+
+          Intenta seguirme, pero decide no hacerlo. No puede permitirse apartar los ojos del mago barbudo ni un segundo. Es demasiado peligroso.
+
+          Mientras tanto, el mago que lucha contra Kate ha logrado rodearla con espadas flotantes, apuntadas hacia ella desde todas las direcciones. Las envía todas hacia ella simultáneamente en un intento de abrumar sus defensas. Rápidamente se rodea con una esfera de hielo muy grueso, y todas las espadas, una vez más, se detienen en ella. Al deshacer la esfera, los cientos de espadas caen al suelo con un estruendo ensordecedor.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_avoid2
+  - name: ch2_avoid2
+    routes:
+      - condition: agility > 0
+        texts:
+          - source: scene_text
+            paragraph: 46
+            text: |-
+              Mi plan de atraer al joven mago lejos está funcionando mucho mejor de lo que esperaba. El mago sigue teletransportándose tras de mí e intentando pillarme desprevenido, pero cada vez que cree que me tiene en un aprieto, simplemente me alejo con facilidad. Sabía que ese dispositivo de estadísticas resultaría útil, pero nunca me atreví a soñar que lo sería tanto. Siento que podría seguir corriendo así durante horas sin cansarme.
+
+              "Muchacho, ¿qué crees que estás haciendo? ¡Deja de tontear y termínalo! ¡Es solo un humano común!", grita el mago con el hacha de batalla.
+
+              Kate parece haber pasado a la ofensiva. Está lanzando conos de hielo hacia el otro mago joven, y él ahora se ve obligado a usar sus espadas para cortarlos, en lugar de atacarla. A medida que él se concentra más en la defensa, los ataques de Kate se vuelven cada vez más implacables. No tarda mucho hasta que empieza a enviar cientos de dagas de hielo hacia su enemigo. El mago no parece saber cómo usar su técnica para defenderse de tal cantidad de ataques simultáneos. Solo hace falta un pequeño error de cálculo por su parte para terminar la batalla abruptamente, cuando una de las dagas de hielo lo apuñala justo en el corazón, matándolo en el acto.
+          - source: scene_text_2
+            paragraph: 12
+            text: |-
+              "¡No!", grita el mago mayor cuando ve lo que le pasó a su hijo mayor. Apartar los ojos de su oponente fue un error fatal. Daren no desperdició su oportunidad y clavó su hoja justo en el pecho del hombre, su arma encantada atravesando la pesada armadura del mago como un cuchillo en mantequilla. El mago barbudo dio un último gorgoteo antes de ahogarse en su propia sangre.
+
+              Aterrorizado, el joven mago de la daga intenta teletransportarse al bosque para escapar, pero el alcance de su hechizo parece limitado y solo lo transporta a mitad de camino. Intenta correr, pero Kate lo elimina desde lejos con un cono de hielo en la cabeza, lo que lo mató instantáneamente.
+
+              Fue un espectáculo espantoso, pero en este punto, lo único que me importa es que de alguna manera logré salir vivo de eso.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de velocidad exitosa - nivel 1 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch2_battle_end
+                condition: is_dead = 0
+      - condition: agility = 0 AND reflexes > 0
+        texts:
+          - source: scene_text
+            paragraph: 47
+            text: |-
+              Mi plan de atraer al joven mago lejos está funcionando mucho mejor de lo que esperaba. El mago sigue teletransportándose tras de mí e intentando pillarme desprevenido, pero cada vez que cree que me tiene en un aprieto, simplemente esquivo sus ataques con facilidad. Sabía que ese dispositivo de estadísticas resultaría útil, pero nunca me atreví a soñar que lo sería tanto. Siento que podría seguir haciendo esto todo el día.
+
+              "Muchacho, ¿qué crees que estás haciendo? ¡Deja de tontear y termínalo! ¡Es solo un humano común!", grita el mago con el hacha de batalla.
+
+              Kate parece haber pasado a la ofensiva. Está lanzando conos de hielo hacia el otro mago joven, y él ahora se ve obligado a usar sus espadas para cortarlos, en lugar de atacarla. A medida que él se concentra más en la defensa, los ataques de Kate se vuelven cada vez más implacables. No tarda mucho hasta que empieza a enviar cientos de dagas de hielo hacia su enemigo. El mago no parece saber cómo usar su técnica para defenderse de tal cantidad de ataques simultáneos. Solo hace falta un pequeño error de cálculo por su parte para terminar la batalla abruptamente, cuando una de las dagas de hielo lo apuñala justo en el corazón, matándolo en el acto.
+          - source: scene_text_2
+            paragraph: 13
+            text: |-
+              "¡No!", grita el mago mayor cuando ve lo que le pasó a su hijo mayor. Apartar los ojos de su oponente fue un error fatal. Daren no desperdició su oportunidad y clavó su hoja justo en el pecho del hombre, su arma encantada atravesando la pesada armadura del mago como un cuchillo en mantequilla. El mago barbudo dio un último gorgoteo antes de ahogarse en su propia sangre.
+
+              Aterrorizado, el joven mago de la daga intenta teletransportarse al bosque para escapar, pero el alcance de su hechizo parece limitado y solo lo transporta a mitad de camino. Intenta correr, pero Kate lo elimina desde lejos con un cono de hielo en la cabeza, lo que lo mató instantáneamente.
+
+              Fue un espectáculo espantoso, pero en este punto, lo único que me importa es que de alguna manera logré salir vivo de eso.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de reflejos exitosa - nivel 1 ]'
+              failed_checks:
+                - '[ Comprobación de velocidad fallida - nivel 1 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch2_battle_end
+                condition: is_dead = 0
+      - condition: agility = 0 AND reflexes = 0 AND toughness > 2 AND ch2_toughness_happened = 0
+        texts:
+          - source: scene_text
+            paragraph: 48
+            text: |-
+              Mi plan de atraer al joven mago lejos no está funcionando tan bien como esperaba. Pensé que al menos podría mantenerlo ocupado el tiempo suficiente para que Daren terminara su batalla, pero él constantemente me toma por sorpresa con su magia de teletransportación y, con cada tajo, se acerca más a golpearme. Tal vez debería volver a donde Daren está luchando antes de que me maten.
+
+              "¡Barry! ¡Detrás de ti!", grita Daren. Pero es demasiado tarde. El cuchillo alcanza mi cuello antes de que tenga oportunidad de esquivarlo.
+
+              Para sorpresa mía y del mago, la hoja no logra atravesar mi piel, extrayendo solo un poco de sangre en su lugar. Me doy cuenta de que debe ser porque había usado mi dispositivo de estadísticas para maximizar mi resistencia. Aprovecho este momento de confusión para ampliar la distancia entre mi atacante y yo, e intento mantener mi guardia alta ante cualquier teletransporte sorpresa más.
+
+              "Muchacho, ¿qué crees que estás haciendo? ¡Deja de tontear y termínalo! ¡Es solo un humano común!", grita el mago con el hacha de batalla.
+          - source: scene_text_2
+            paragraph: 14
+            text: |-
+              Kate parece haber pasado a la ofensiva. Está lanzando conos de hielo hacia el otro mago joven, y él ahora se ve obligado a usar sus espadas para cortarlos, en lugar de atacarla. A medida que él se concentra más en la defensa, los ataques de Kate se vuelven cada vez más implacables. No tarda mucho hasta que empieza a enviar cientos de dagas de hielo hacia su enemigo. El mago no parece saber cómo usar su técnica para defenderse de tal cantidad de ataques simultáneos. Solo hace falta un pequeño error de cálculo por su parte para terminar la batalla abruptamente, cuando una de las dagas de hielo lo apuñala justo en el corazón, matándolo en el acto.
+
+              "¡No!", grita el mago mayor cuando ve lo que le pasó a su hijo mayor. Apartar los ojos de su oponente fue un error fatal. Daren no desperdició su oportunidad y clavó su hoja justo en el pecho del hombre, su arma encantada atravesando la pesada armadura del mago como un cuchillo en mantequilla. El mago barbudo dio un último gorgoteo antes de ahogarse en su propia sangre.
+
+              Aterrorizado, el joven mago de la daga intenta teletransportarse al bosque para escapar, pero el alcance de su hechizo parece limitado y solo lo transporta a mitad de camino. Intenta correr, pero Kate lo elimina desde lejos con un cono de hielo en la cabeza, lo que lo mató instantáneamente.
+
+              Fue un espectáculo espantoso, pero en este punto, lo único que me importa es que de alguna manera logré salir vivo de eso.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de resistencia exitosa - nivel 3 ]'
+              failed_checks:
+                - '[ Comprobación de velocidad fallida - nivel 1 ]'
+                - '[ Comprobación de reflejos fallida - nivel 1 ]'
+              ac_ch2_nails: 1
+            achievement:
+              id: ac_ch2_nails
+              title: Duro de roer
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch2_battle_end
+                condition: is_dead = 0
+      - condition: agility = 0 AND reflexes = 0 AND toughness > 2 AND ch2_toughness_happened = 1
+        texts:
+          - source: scene_text
+            paragraph: 49
+            text: |-
+              Mi plan de atraer al joven mago lejos no está funcionando tan bien como esperaba. Pensé que al menos podría mantenerlo ocupado el tiempo suficiente para que Daren terminara su batalla, pero él constantemente me toma por sorpresa con su magia de teletransportación y, con cada tajo, se acerca más a golpearme. Tal vez debería volver a donde Daren está luchando antes de que me maten.
+
+              "¡Barry! ¡Detrás de ti!", grita Daren. Pero es demasiado tarde. El cuchillo alcanza mi cuello antes de que tenga oportunidad de esquivarlo.
+
+              Esta vez, el mago pone más fuerza en su golpe y logra atravesar la resistencia de mi piel. Su daga me degüella por completo. Intento desesperadamente detener el flujo de sangre cubriendo la herida abierta con mis manos, pero no sirve de nada.
+
+              "¡Barry!", oigo a Daren gritar a lo lejos.
+
+              Lo último que veo es la daga del mago descendiendo hacia mí mientras asesta el golpe final.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de velocidad fallida - nivel 1 ]'
+                - '[ Comprobación de reflejos fallida - nivel 1 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: agility = 0 AND reflexes = 0 AND toughness < 3
+        texts:
+          - source: scene_text
+            paragraph: 50
+            text: |-
+              Mi plan de atraer al joven mago lejos no está funcionando tan bien como esperaba. Pensé que al menos podría mantenerlo ocupado el tiempo suficiente para que Daren terminara su batalla, pero él constantemente me toma por sorpresa con su magia de teletransportación y, con cada tajo, se acerca más a golpearme. Tal vez debería volver a donde Daren está luchando antes de que me maten.
+
+              "¡Barry! ¡Detrás de ti!", grita Daren. Pero es demasiado tarde. El cuchillo alcanza mi cuello antes de que tenga oportunidad de esquivarlo.
+
+              Su daga me degüella por completo. Intento desesperadamente detener el flujo de sangre cubriendo la herida abierta con mis manos, pero no sirve de nada.
+
+              "¡Barry!", oigo a Daren gritar a lo lejos.
+
+              Lo último que veo es la daga del mago descendiendo hacia mí mientras asesta el golpe final.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de velocidad fallida - nivel 1 ]'
+                - '[ Comprobación de reflejos fallida - nivel 1 ]'
+                - '[ Comprobación de resistencia fallida - nivel 3 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+  - name: ch2_fight
+    texts:
+      - source: scene_text
+        paragraph: 51
+        text: |-
+          No hay forma de que Daren pueda luchar contra los dos mientras me defiende. Dado que el joven mago parece estar concentrado en mí, lo atraeré lejos de Daren e intentaré luchar contra él por mi cuenta hasta que Daren acabe con el mago mayor.
+
+          Kate parece haber captado la atención indivisa del mago lanzador de espadas. Él constantemente envía espadas hacia ella desde todas las direcciones, mientras ella crea paredes de hielo para bloquear sus ataques. Tenemos suerte. Con la debilidad de Daren contra las armas y mi falta de talentos mágicos, ese mago probablemente habría sido el más difícil de combatir para nosotros.
+
+          Cuando el mago barbudo nos alcanza, su hacha de batalla choca ruidosamente con la espada de Daren.
+
+          "Veo que has encantado bien tu arma, sanador", dice el mago mayor. "¿Pero cuánto tiempo puedes durar contra un guerrero endurecido en batalla como yo?"
+
+          Él ruge y presiona su hacha de batalla con más fuerza contra la espada de Daren.
+      - source: scene_text_2
+        paragraph: 15
+        text: |-
+          Mientras los dos luchan, salgo corriendo hacia el bosque. Como era de esperar, el mago de la daga viene justo tras de mí.
+
+          "¡Barry, espera!", me grita Daren.
+
+          Intenta seguirme, pero decide no hacerlo. No puede permitirse apartar los ojos del mago barbudo ni un segundo. Es demasiado peligroso.
+
+          Mientras tanto, el mago que lucha contra Kate ha logrado rodearla con espadas flotantes, apuntadas hacia ella desde todas las direcciones. Las envía todas hacia ella simultáneamente en un intento de abrumar sus defensas. Rápidamente se rodea con una esfera de hielo muy grueso, y todas las espadas, una vez más, se detienen en ella. Al deshacer la esfera, los cientos de espadas caen al suelo con un estruendo ensordecedor.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_fight2
+  - name: ch2_fight2
+    routes:
+      - condition: combat_technique > 0
+        texts:
+          - source: scene_text
+            paragraph: 52
+            text: |-
+              Una vez que estoy lo suficientemente lejos de Daren y su oponente, me vuelvo hacia el mago de la daga y adopto mi postura de combate. Me doy cuenta de que, de repente, me siento bastante confiado en mis habilidades de lucha. ¿Es por ese dispositivo de estadísticas? El mago intenta sorprenderme de nuevo teletransportándose detrás de mí, pero logro detener su brazo mientras lo lanza hacia mí. Sujetando firmemente su brazo, tiro de su muñeca hacia atrás, obligándolo a soltar la daga. Mientras tomo su arma, él saca rápidamente otra daga de su manga y hace una estocada hacia mí. Nuestras dos dagas chocan y comenzamos a luchar.
+
+              "Muchacho, ¿qué crees que estás haciendo? ¡Deja de tontear y termínalo! ¡Es solo un humano común!", grita el mago con el hacha de batalla.
+
+              Kate parece haber pasado a la ofensiva. Está lanzando conos de hielo hacia el otro mago joven, y él ahora se ve obligado a usar sus espadas para cortarlos, en lugar de atacarla. A medida que él se concentra más en la defensa, los ataques de Kate se vuelven cada vez más implacables. No tarda mucho hasta que empieza a enviar cientos de dagas de hielo hacia su enemigo. El mago no parece saber cómo usar su técnica para defenderse de tal cantidad de ataques simultáneos. Solo hace falta un pequeño error de cálculo por su parte para terminar la batalla abruptamente, cuando una de las dagas de hielo lo apuñala justo en el corazón, matándolo en el acto.
+          - source: scene_text_2
+            paragraph: 16
+            text: |-
+              "¡No!", grita el mago mayor cuando ve lo que le pasó a su hijo mayor. Apartar los ojos de su oponente fue un error fatal. Daren no desperdició su oportunidad y clavó su hoja justo en el pecho del hombre, su arma encantada atravesando la pesada armadura del mago como un cuchillo en mantequilla. El mago barbudo dio un último gorgoteo antes de ahogarse en su propia sangre.
+
+              Aterrorizado, el joven mago de la daga intenta teletransportarse al bosque para escapar, pero el alcance de su hechizo parece limitado y solo lo transporta a mitad de camino. Intenta correr, pero Kate lo elimina desde lejos con un cono de hielo en la cabeza, lo que lo mata instantáneamente.
+
+              Fue un espectáculo espantoso, pero en este punto, lo único que me importa es que de alguna manera logré salir vivo de eso.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de técnica de combate exitosa - nivel 1 ]'
+              ac_ch2_master: 1
+            achievement:
+              id: ac_ch2_master
+              title: Maestro de artes marciales
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch2_battle_end
+                condition: is_dead = 0
+      - condition: combat_technique = 0 AND toughness > 2 AND ch2_toughness_happened = 0
+        texts:
+          - source: scene_text
+            paragraph: 53
+            text: |-
+              Una vez que estoy lo suficientemente lejos de Daren y su oponente, me vuelvo hacia el mago de la daga y adopto mi postura de combate. Mientras el mago se teletransporta de nuevo detrás de mí, intento desarmarlo. Sin embargo, no logro agarrar su brazo y su cuchillo alcanza mi cuello.
+
+              Para sorpresa mía y del mago, la hoja no logra atravesar mi piel, extrayendo solo un poco de sangre en su lugar. Me doy cuenta de que debe ser porque había usado mi dispositivo de estadísticas para maximizar mi resistencia. Aprovecho este momento de confusión para ampliar la distancia entre mi atacante y yo, e intento mantener mi guardia alta ante cualquier teletransporte sorpresa más.
+
+              "Muchacho, ¿qué crees que estás haciendo? ¡Deja de tontear y termínalo! ¡Es solo un humano común!", grita el mago con el hacha de batalla.
+
+              Kate parece haber pasado a la ofensiva. Está lanzando conos de hielo hacia el otro mago joven, y él ahora se ve obligado a usar sus espadas para cortarlos, en lugar de atacarla. A medida que él se concentra más en la defensa, los ataques de Kate se vuelven cada vez más implacables. No tarda mucho hasta que empieza a enviar cientos de dagas de hielo hacia su enemigo. El mago no parece saber cómo usar su técnica para defenderse de tal cantidad de ataques simultáneos. Solo hace falta un pequeño error de cálculo por su parte para terminar la batalla abruptamente, cuando una de las dagas de hielo lo apuñala justo en el corazón, matándolo en el acto.
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              "¡No!", grita el mago mayor cuando ve lo que le pasó a su hijo mayor. Apartar los ojos de su oponente fue un error fatal. Daren no desperdició su oportunidad y clavó su hoja justo en el pecho del hombre, su arma encantada atravesando la pesada armadura del mago como un cuchillo en mantequilla. El mago barbudo dio un último gorgoteo antes de ahogarse en su propia sangre.
+
+              Aterrorizado, el joven mago de la daga intenta teletransportarse al bosque para escapar, pero el alcance de su hechizo parece limitado y solo lo transporta a mitad de camino. Intenta correr, pero Kate lo elimina desde lejos con un cono de hielo en la cabeza, lo que lo mata instantáneamente.
+
+              Fue un espectáculo espantoso, pero en este punto, lo único que me importa es que de alguna manera logré salir vivo de eso.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de resistencia exitosa - nivel 3 ]'
+              failed_checks:
+                - '[ Comprobación de técnica de combate fallida - nivel 1 ]'
+              ac_ch2_nails: 1
+            achievement:
+              id: ac_ch2_nails
+              title: Duro de roer
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch2_battle_end
+                condition: is_dead = 0
+      - condition: combat_technique = 0 AND toughness > 2 AND ch2_toughness_happened = 1
+        texts:
+          - source: scene_text
+            paragraph: 54
+            text: |-
+              Una vez que estoy lo suficientemente lejos de Daren y su oponente, me vuelvo hacia el mago de la daga y adopto mi postura de combate. Mientras el mago se teletransporta de nuevo detrás de mí, intento desarmarlo. Sin embargo, no logro agarrar su brazo y su cuchillo alcanza mi cuello.
+
+              Esta vez, el mago pone más fuerza en su golpe y logra atravesar la resistencia de mi piel. Su daga me degüella por completo. Intento desesperadamente detener el flujo de sangre cubriendo la herida abierta con mis manos, pero no sirve de nada.
+
+              "¡Barry!", oigo a Daren gritar a lo lejos.
+
+              Lo último que veo es la daga del mago descendiendo hacia mí mientras asesta el golpe final.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de técnica de combate fallida - nivel 1 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: combat_technique = 0 AND toughness < 3
+        texts:
+          - source: scene_text
+            paragraph: 55
+            text: |-
+              Una vez que estoy lo suficientemente lejos de Daren y su oponente, me vuelvo hacia el mago de la daga y adopto mi postura de combate. Mientras el mago se teletransporta de nuevo detrás de mí, intento desarmarlo. Sin embargo, no logro agarrar su brazo y su cuchillo alcanza mi cuello.
+
+              Su daga me degüella por completo. Intento desesperadamente detener el flujo de sangre cubriendo la herida abierta con mis manos, pero no sirve de nada.
+
+              "¡Barry!", oigo a Daren gritar a lo lejos.
+
+              Lo último que veo es la daga del mago descendiendo hacia mí mientras asesta el golpe final.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de técnica de combate fallida - nivel 1 ]'
+                - '[ Comprobación de resistencia fallida - nivel 3 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+  - name: ch2_ask_kate
+    texts:
+      - source: scene_text
+        paragraph: 44
+        text: |-
+          "¡Kate, ayuda!", grito, mientras Daren todavía intenta mantener a raya a los dos atacantes. Kate no muestra señales de haberme oído y continúa defendiéndose de las espadas que vuelan hacia ella.
+
+          "¡Kate!", grito de nuevo. "¡Lo están matando!"
+
+          Al terminar de gritar, Kate mira brevemente en mi dirección y extiende su brazo derecho hacia el mago que empuña la daga, con la palma hacia él. Un cono de hielo sale lentamente de su palma, con su extremo afilado apuntando hacia la cabeza del mago.
+
+          Todo lo que siguió ocurrió casi en un instante. Sin perder un segundo, envió el cono de hielo directamente a la cabeza del joven mago, matándolo al instante. La conmoción del mago mayor al ver morir a su hijo frente a él proporcionó una apertura suficiente para que Daren le cortara la cabeza justo por encima de los hombros. Mientras el mago lanzador de espadas todavía se recuperaba de lo que acababa de presenciar, Kate tomó una de las muchas espadas que yacían a sus pies y rápidamente la envió volando de regreso hacia su dueño, empalándolo a través del corazón y matándolo en el acto.
+
+          Fue un espectáculo espantoso, pero en este punto, lo único que me importa es que de alguna manera logré salir vivo de eso.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_battle_end
+  - name: ch2_battle_end
+    routes:
+      - condition: ch1_stillwater = 1
+        texts:
+          - source: scene_text
+            paragraph: 56
+            text: |-
+              Daren se ve muy enojado. Me lanza una mirada acusadora mientras cura sus heridas.
+
+              "Barry, tenemos que hablar. No has sido completamente honesto conmigo, y casi morimos allí atrás por eso. No eres realmente un Stillwater, ¿verdad?"
+
+              "No... no lo soy", admito.
+
+              "Pero tampoco eres uno de los lugareños. De lo contrario, ese hechizo suyo nos habría alertado en el momento en que sentimos tu presencia".
+
+              Está hablando del hechizo que los organizadores del torneo lanzaron sobre cada uno de los participantes antes de teletransportarnos aquí. No se nos permite lastimar a los humanos que viven en este continente, por lo que su hechizo nos advierte cuando uno de ellos está cerca. Si se puede creer lo que dijeron, se supone que su hechizo nos detendrá incluso antes de que intentemos lastimar a cualquiera de los lugareños. Si es accidental, simplemente nos detiene antes de hacerlo. Si es intencional, nos elimina del torneo y nos envía de regreso.
+
+              También se supone que su hechizo actúa como un medio de comunicación con los organizadores. Dijeron que transmitirían los objetivos a cada uno de nosotros individualmente. Es gracioso. Todos esos cuidadosos preparativos por su parte, y nunca se molestaron en comprobar si yo era un mago o no. Diablos, ¿qué estoy diciendo? Probablemente ni siquiera les importó.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch2_confession
+      - condition: ch1_stillwater = 2
+        texts:
+          - source: scene_text
+            paragraph: 57
+            text: |-
+              Mientras cura sus heridas, Daren me mira directamente.
+
+              "¡Maldita sea, Barry! Eso estuvo demasiado cerca. Vamos a tener que pensar alguna estrategia hasta nuestra próxima pelea, o no vamos a durar mucho más".
+
+              "Sí", le digo. "Creo que puedes tener razón".
+
+              Después de terminar su hechizo de curación, camina hacia Kate.
+
+              "Kate, por favor explícame algo, porque simplemente no lo entiendo. Con la forma en que estabas luchando allí atrás, ¿por qué pedirías una escolta?"
+
+              "Todos tienen sus debilidades, sanador... A juzgar por lo mucho que has estado luchando en esta pelea, asumiría que, irónicamente, eres más débil contra otros encantadores de armas como tú. Pero el hecho de que me encargara de estos matones con facilidad no significa que no vaya a tener problemas contra otros enemigos. Nadie puede sobrevivir a este torneo solo".
+
+              "Sí... supongo que tienes razón".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch2_battle_end2
+  - name: ch2_confession
+    texts:
+      - source: scene_text
+        paragraph: 58
+        text: |-
+          "Así que debes ser un participante, entonces", continúa Daren. "¿Qué razón tendrías para participar en un torneo contra los magos más poderosos del mundo?"
+
+          Busco lo mismo que cualquier otro participante en este torneo, Daren, pero no estoy seguro de qué tan prudente sería contártelo.
+
+          Busco el premio que se ofrece al ganador. El Magium.
+
+          Nadie sabe exactamente cómo se ve, o de qué está hecho, pero todo el mundo sabe que es la fuente de toda la magia del mundo, y que solo se puede encontrar en el continente de Varathia. Todos los magos lo buscan. Lo anhelan. Están seguros de que si tienen acceso a él, pueden aumentar sus poderes cien veces y convertirse en leyendas vivientes. Y aunque es un error común pensar que el Magium solo es útil para los magos instruidos, mis estudios me han llevado a creer que el Magium es tan extraordinario que incluso puede convertir a un humano normal en un mago.
+      - source: scene_text_2
+        paragraph: 18
+        text: |-
+          He buscado durante mucho tiempo una forma de entrar en Varathia, pero la única forma en que uno puede viajar a su continente es recibiendo una invitación directa. Se envían muy pocas de esas anualmente, y las personas que son teletransportadas allí se mantienen bajo supervisión directa durante la duración de su estadía, y regresan sin información sobre las coordenadas del lugar.
+
+          Pero cuando toda esperanza parecía perdida, llegó el anuncio. Un anuncio mundial por parte de los reyes de Varathia de que estaban organizando un torneo donde cada mago en el mundo estaba invitado. Y al ganador se le concedería acceso al Magium.
+
+          Supe entonces que nunca habría otra oportunidad como esta.
+
+          "¿Por qué te uniste a este torneo, Barry?", me pregunta Daren de nuevo.
+    choices:
+      - position: 1
+        text: Contarle la verdad
+        effects:
+          - set:
+              current_scene: ch2_truth2
+              ch2_human_reason: 1
+      - position: 2
+        text: Decirle que me obligaron
+        effects:
+          - set:
+              current_scene: ch2_forced2
+              ch2_human_reason: 2
+      - position: 3
+        text: Decirle que busco una cura para mi hermana enferma
+        effects:
+          - set:
+              current_scene: ch2_sister2
+              ch2_human_reason: 3
+  - name: ch2_truth2
+    texts:
+      - source: scene_text
+        paragraph: 59
+        text: |-
+          "Busco lo mismo que tú, Daren", le digo. "Busco el Magium. Ha sido mi sueño desde pequeño convertirme en mago, y el Magium puede concederme ese deseo".
+
+          "Vamos, Barry. ¡Vas a tener que inventar una mentira mejor que esa si quieres que te crea!"
+
+          Se detiene y me mira directamente a los ojos.
+
+          "Por los dioses... ¡Hablas en serio! Barry, alabo tu valentía y determinación pero... Te das cuenta de que no puedes ganar todo este torneo solo fanfarroneando, ¿verdad?"
+
+          "Si me permites interrumpir", dice Kate. "Creo que deberíamos salir de aquí lo antes posible, antes de que alguien nos vea entre todos estos cadáveres y piense que nosotros matamos a todas estas personas".
+
+          Daren la mira.
+
+          "No te entiendo, mujer. Con la forma en que estabas luchando allí atrás, ¿por qué pedirías una escolta?"
+
+          "Todos tienen sus debilidades, sanador... A juzgar por lo mucho que has estado luchando en esta pelea, asumiría que, irónicamente, eres más débil contra otros encantadores de armas como tú. Pero el hecho de que me encargara de estos matones con facilidad no significa que no vaya a tener problemas contra otros enemigos. Nadie puede sobrevivir a este torneo solo".
+
+          "Sí... supongo que tienes razón".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_battle_end2
+  - name: ch2_forced2
+    texts:
+      - source: scene_text
+        paragraph: 60
+        text: |-
+          "No vine aquí por elección", le digo. "Créeme, no me gustaría nada más que irme de este lugar y nunca mirar atrás. Pero esa no es realmente una opción para mí en este momento. Todo lo que puedo hacer ahora es tratar de sobrevivir hasta el final del torneo".
+
+          Daren hace una pequeña pausa para reflexionar sobre mis palabras.
+
+          "Espera, Barry... creo que también hay otra forma".
+
+          "¿La hay?"
+
+          "¡Sí! ¿Recuerdas las reglas? Dijeron que nos eliminarían del torneo y nos teletransportarían de regreso si detectaban cualquier intención de dañar a los lugareños. ¡Podrías usar eso, Barry! ¡Solo necesitas encontrar a cualquiera de los humanos que viven en este continente, intentar darles un puñetazo en la cara, y serás liberado!"
+
+          "Yo... eh... nunca lo había pensado de esa manera".
+
+          "¡No te preocupes, me aseguraré de mantenerte a salvo hasta que lleguemos a una de las ciudades!"
+      - source: scene_text_2
+        paragraph: 19
+        text: |-
+          "Si me permites interrumpir", dice Kate. "Creo que deberíamos salir de aquí lo antes posible, antes de que alguien nos vea entre todos estos cadáveres y piense que nosotros matamos a todas estas personas".
+
+          Daren la mira.
+
+          "No te entiendo, mujer. Con la forma en que estabas luchando allí atrás, ¿por qué pedirías una escolta?"
+
+          "Todos tienen sus debilidades, sanador... A juzgar por lo mucho que has estado luchando en esta pelea, asumiría que, irónicamente, eres más débil contra otros encantadores de armas como tú. Pero el hecho de que me encargara de estos matones con facilidad no significa que no vaya a tener problemas contra otros enemigos. Nadie puede sobrevivir a este torneo solo".
+
+          "Sí... supongo que tienes razón".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_battle_end2
+  - name: ch2_sister2
+    texts:
+      - source: scene_text
+        paragraph: 61
+        text: |-
+          "Es... Es mi hermana. Está terminalmente enferma, y la cura para su enfermedad solo se puede encontrar en este continente. He intentado durante meses conseguir una invitación a este lugar, pero no quisieron oír hablar de ello. Esta era la única forma. Solo puedo esperar que de alguna manera logre sobrevivir lo suficiente para encontrar lo que busco".
+
+          Daren pone una mano en mi hombro.
+
+          "Lo encontraremos. ¡Juntos! ¡Prometo que no dejaré que te pase nada hasta que logres tu objetivo!"
+
+          "Si me permites interrumpir", dice Kate. "Creo que deberíamos salir de aquí lo antes posible, antes de que alguien nos vea entre todos estos cadáveres y piense que nosotros matamos a todas estas personas".
+
+          Daren la mira.
+
+          "No te entiendo, mujer. Con la forma en que estabas luchando allí atrás, ¿por qué pedirías una escolta?"
+
+          "Todos tienen sus debilidades, sanador... A juzgar por lo mucho que has estado luchando en esta pelea, asumiría que, irónicamente, eres más débil contra otros encantadores de armas como tú. Pero el hecho de que me encargara de estos matones con facilidad no significa que no vaya a tener problemas contra otros enemigos. Nadie puede sobrevivir a este torneo solo".
+
+          "Sí... supongo que tienes razón".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_battle_end2
+  - name: ch2_battle_end2
+    routes:
+      - condition: ch2_kate_debt = 0
+        texts:
+          - source: scene_text
+            paragraph: 62
+            text: |-
+              Daren hace una pausa.
+
+              "Muy bien. Sigamos adelante", dice, mientras se dirige hacia los árboles.
+
+              Empiezo a seguirlo, pero Kate me detiene en seco. Tiene esa mirada muy seria de nuevo.
+
+              "Stillwater", dice en voz baja, para evitar ser escuchada por Daren. "Te vi 'luchando' allí atrás. Puede que hayas logrado convencer a Daren y a ese tonto barbudo de que eres un humano común, pero yo no me dejo engañar tan fácilmente. No sé cuál es tu juego, pero voy a vigilarte".
+
+              "No soy--" empiezo a decir, pero Kate me corta y me agarra de la camisa.
+
+              "Escúchame, Stillwater. No me interesan tus mentiras. Solo quería asegurarme de que tuvieras claro lo que pienso de tu pequeña farsa. Ahora, ¿está claro?"
+        choices:
+          - position: 1
+            text: Cristalino.
+            effects:
+              - set:
+                  current_scene: ch2_crystal
+          - position: 2
+            text: No realmente, ¿podrías darme más detalles?
+            effects:
+              - set:
+                  current_scene: ch2_elaborate
+      - condition: ch2_kate_debt = 1
+        texts:
+          - source: scene_text
+            paragraph: 63
+            text: |-
+              Daren hace una pausa.
+
+              "Muy bien. Sigamos adelante", dice, mientras se dirige hacia los árboles.
+
+              Empiezo a seguirlo, pero Kate me detiene en seco. Tiene esa mirada muy seria de nuevo.
+
+              "Stillwater", dice en voz baja, para evitar ser escuchada por Daren. "Te vi 'luchando' allí atrás. Puede que hayas logrado convencer a Daren y a ese tonto barbudo de que eres un humano común, pero yo no me dejo engañar tan fácilmente. No sé cuál es tu juego, pero voy a vigilarte".
+
+              "No soy--" empiezo a decir, pero Kate me corta y me agarra de la camisa.
+
+              "Me debes una, Stillwater. Te salvé la vida durante esa batalla y me la debes. Y tengo la intención de cobrar esa deuda más pronto que tarde. ¿Está claro?"
+        choices:
+          - position: 1
+            text: No te preocupes, siempre pago mis deudas.
+            effects:
+              - set:
+                  current_scene: ch2_always
+          - position: 2
+            text: Sí, está claro.
+            effects:
+              - set:
+                  current_scene: ch2_clear
+          - position: 3
+            text: No te debo nada.
+            effects:
+              - set:
+                  current_scene: ch2_no_debt
+                  ch2_not_owe_debt: 1
+  - name: ch2_crystal
+    texts:
+      - source: scene_text
+        paragraph: 64
+        text: |-
+          "Cristalino", le digo.
+
+          "Bien", dice ella mientras suelta mi camisa. "Ahora vámonos. Tenemos que alcanzar a Daren".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_deer
+  - name: ch2_elaborate
+    texts:
+      - source: scene_text
+        paragraph: 65
+        text: |-
+          "No realmente, ¿podrías darme más detalles?", le pregunto.
+
+          Kate me frunce el ceño.
+
+          "Bromea todo lo que quieras, Stillwater, pero te tengo echado el ojo".
+
+          Suelta mi camisa y va a alcanzar a Daren, sin decir ni una palabra más.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_deer
+  - name: ch2_always
+    texts:
+      - source: scene_text
+        paragraph: 66
+        text: |-
+          "No te preocupes", le digo. "Siempre pago mis deudas".
+
+          La mirada en sus ojos ha perdido un poco de su hostilidad. Parece que está dispuesta a confiar en mi palabra, por el momento.
+
+          "Muy bien, entonces", dice, mientras suelta mi camisa. "Vámonos. Tenemos que alcanzar a Daren".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_deer
+  - name: ch2_clear
+    texts:
+      - source: scene_text
+        paragraph: 67
+        text: |-
+          "Sí, está claro", le digo.
+
+          "Muy bien, entonces", dice, mientras suelta mi camisa. "Vámonos. Tenemos que alcanzar a Daren".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_deer
+  - name: ch2_no_debt
+    texts:
+      - source: scene_text
+        paragraph: 68
+        text: |-
+          "No te debo nada", le digo. "Solo me ayudaste porque viste que a Daren lo estaban matando".
+
+          Kate me mira con desprecio.
+
+          "Tú eras al que estaban matando, Stillwater. No a Daren. Y pagarás tu deuda".
+
+          Suelta mi camisa y va a alcanzar a Daren, sin decir ni una palabra más.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch2_deer
+  - name: ch2_deer
+    routes:
+      - condition: ancient_languages < 2
+        texts:
+          - source: scene_text
+            paragraph: 69
+            text: |-
+              Al acercarnos al bosque, veo a una cierva y su cervatillo aparecer de detrás de los árboles. Hacen algo de ruido al vernos y luego se apresuran a volver al bosque.
+
+              Decidimos seguir el camino que lleva a las montañas, con la esperanza de encontrar una cueva que nos proporcione refugio para la noche.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de lenguas antiguas fallida - nivel 2 ]'
+              ch2_understood_deer: 0
+              ch2_deer_interaction: 0
+        choices:
+          - position: 1
+            text: Siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: ch3_intro
+                  chapter_save: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                  checkpoint_rich: 1
+      - condition: ancient_languages >= 2
+        texts:
+          - source: scene_text
+            paragraph: 70
+            text: |-
+              Al acercarnos al bosque, veo a una cierva y su cervatillo aparecer de detrás de los árboles. Cuando el cervatillo abre la boca, me doy cuenta de que habla en una de las lenguas antiguas que mi dispositivo de estadísticas me ha enseñado.
+
+              "¡Mami, hay más forasteros por aquí!"
+
+              "No te preocupes, hijo", le dice la madre del cervatillo. "Encontraremos un camino seguro de regreso a nuestra cueva. Lo prometo".
+
+              Vuelven hacia el bosque.
+
+              "Esperen", les grito en su propio idioma.
+
+              Los dos ciervos se detienen y me miran.
+
+              "¿Puedes... entendernos?", pregunta la cierva.
+        effects:
+          - set:
+              ch2_understood_deer: 1
+              successful_checks:
+                - '[ Comprobación de lenguas antiguas exitosa - nivel 2 ]'
+        choices:
+          - position: 1
+            text: Ofrecer protección a cambio de que nos lleven a su cueva
+            effects:
+              - set:
+                  current_scene: ch2_protection
+                  ch2_deer_interaction: 1
+                  ac_ch2_unlikely: 1
+                achievement:
+                  id: ac_ch2_unlikely
+                  title: Un aliado improbable
+          - position: 2
+            text: Desearles un viaje seguro
+            effects:
+              - set:
+                  current_scene: ch2_travels
+                  ch2_deer_interaction: 2
+          - position: 3
+            text: Decirles que se ven deliciosos
+            effects:
+              - set:
+                  current_scene: ch2_delicious
+                  ch2_deer_interaction: 3
+  - name: ch2_protection
+    texts:
+      - source: scene_text
+        paragraph: 71
+        text: |-
+          "Sí, puedo", le digo. "Los oí hablar de una cueva. Nosotros también buscamos refugio. Podríamos ofrecerles protección en su camino de regreso si prometen dejarnos compartir su cueva por una noche".
+
+          La cierva me mide con la mirada. No está segura de qué pensar de mi oferta.
+
+          "No les haremos daño, lo prometo", le digo.
+
+          "No", dice la cierva. "No lo harán. De lo contrario, no seguiría viva, teniendo esta conversación con usted. Le agradezco, forastero. Aceptamos su generosa oferta. Mi nombre es Elaria, y este es mi hijo, Molan. ¿Creo que así es como los humanos se presentan?"
+
+          Se acerca a mí y extiende una de sus pezuñas delanteras hacia mí. Me doy cuenta de que quiere que le dé la mano. Agarro su pezuña y la estrecho ligeramente antes de soltarla.
+
+          "Soy Barry", le digo. "¡Encantado de conocerte!"
+      - source: scene_text_2
+        paragraph: 20
+        text: |-
+          Daren y Kate me miran estupefactos. Se me ocurre que probablemente ninguno de los dos entendió ni una palabra de lo que he estado diciendo. Todo esto debe sonar como ruidos de animales extraños para ellos.
+
+          "Barry, ¿qué demonios?...", pregunta Daren.
+
+          "Se lo explicaré más tarde", le digo. "Dijeron que pueden llevarnos a su cueva, a cambio de nuestra protección. Seguimos buscando refugio, ¿no?"
+
+          "Bueno, supongo, pero..."
+
+          "Entonces vamos, dice que es por aquí", digo, mientras sigo a los ciervos hacia el bosque.
+
+          Daren se muestra claramente muy reacio a todo esto, pero me sigue de todos modos. Kate parece más desconcertada que escéptica, mientras decide seguirme también hacia las profundidades del bosque y hacia las montañas.
+    choices:
+      - position: 1
+        text: Siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: ch3_intro
+              chapter_save: 1
+              storyboard_controls: Jump to frame "Save load game"
+              checkpoint_rich: 1
+  - name: ch2_travels
+    texts:
+      - source: scene_text
+        paragraph: 72
+        text: |-
+          "Sí, puedo", le digo. "¡Solo quería desearles un viaje seguro!"
+
+          "Oh...", dice ella. "Gracias. Yo también le deseo un viaje seguro, forastero. Vamos hijo mío, vámonos".
+
+          Mientras los dos ciervos regresan al bosque, noto que Daren y Kate me miran fijamente.
+
+          "Barry, ¿qué demonios estabas haciendo?", pregunta Daren. "¿Sabes lo ridículo que sonabas cuando estabas imitando a esa cierva?"
+
+          "Sí, supongo que sonaba ridículo. No me hagan caso, solo estaba tonteando. Sigamos adelante".
+
+          Decidimos seguir el camino que lleva a las montañas, con la esperanza de encontrar una cueva que nos proporcione refugio para la noche.
+    choices:
+      - position: 1
+        text: Siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: ch3_intro
+              chapter_save: 1
+              storyboard_controls: Jump to frame "Save load game"
+              checkpoint_rich: 1
+  - name: ch2_delicious
+    texts:
+      - source: scene_text
+        paragraph: 73
+        text: |-
+          "Sí, puedo", le digo. "¡Y solo quería decir que se ven deliciosos!"
+
+          "¡No! Aléjate de nosotros, monstruo. ¡Hijo, rápido, al bosque!", dice ella, mientras regresan apresuradamente al bosque.
+
+          Mientras los dos ciervos desaparecen, noto que Daren y Kate me miran fijamente.
+
+          "Barry, ¿qué demonios estabas haciendo?", pregunta Daren. "¿Sabes lo ridículo que sonabas cuando estabas imitando a esa cierva?"
+
+          "Sí, supongo que sonaba ridículo. No me hagan caso, solo estaba tonteando. Sigamos adelante".
+
+          Decidimos seguir el camino que lleva a las montañas, con la esperanza de encontrar una cueva que nos proporcione refugio para la noche.
+    choices:
+      - position: 1
+        text: Siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: ch3_intro
+              chapter_save: 1
+              storyboard_controls: Jump to frame "Save load game"
+              checkpoint_rich: 1

@@ -1,0 +1,1800 @@
+scenes:
+  - name: b2_ch09b_inseparable
+    texts:
+      - source: scene_text
+        paragraph: 2
+        text: |-
+          "Oh, eran mucho más que simples aliados", dice Melindra. "Hace seiscientos años, eran casi inseparables. Casi habrías pensado que eran pareja de verlos, de no ser porque uno de ellos era humano y el otro era un espíritu con forma de zorro del plano mágico."
+
+          Inseparables, ¿eh? Bueno, supongo que eso explica por qué Eiden se enfadó tanto cuando sugerí que destruyó la ciudad de Olmnar porque buscaba el perdón del zorro...
+
+          "Eh...", dice Hadrik. "Vaya, cada día se aprende algo nuevo..."
+
+          "¡Eh, Melindra, todavía no les has contado la parte más graciosa!", dice Arraka.
+
+          "¿De qué estás hablando?", le pregunta Melindra a Arraka, en tono frío.
+
+          "¡Hablo de cómo el zorro lleva décadas confinado a sus bosques sagrados por su pelea con Eiden!", dice Arraka.
+
+          "¿Por qué?", pregunta Daren. "¿Eiden lo encerró ahí con un hechizo?"
+
+          "No es por Eiden", dice Melindra. "Es por el dragón, Tyrath. Siempre que sale de sus bosques sagrados, el zorro pierde la mayor parte de sus poderes. El dragón lo sabe y aprovecharía la oportunidad para matarlo en cuanto saliera de su reino."
+      - source: scene_text_2
+        paragraph: 2
+        text: |-
+          "Sí", dice Arraka, "pero cuando el zorro y Eiden todavía eran amigos, Tyrath no se atrevía a atacar al zorro ni siquiera cuando salía de los bosques sagrados, porque sabía que Eiden se teletransportaría de inmediato para ayudarlo, ya que podía sentirlos a ambos desde el otro lado del continente."
+
+          "Espera", digo. "¿Esa es la única razón por la que el dragón no ha atacado al zorro mientras estaba fuera de sus bosques sagrados? ¿Por Eiden? ¿No podría simplemente... mandar a algunos de sus escuadrones de élite a pelear contra Eiden y matar al zorro mientras él estuviera distraído o algo así?"
+
+          "No", dice Melindra. "Definitivamente no. Eiden jamás se distraería de vigilar al zorro por culpa de unos cuantos peleles. Es demasiado importante para él. Si quisieras distraer a Eiden del zorro, necesitarías llevarle todo un ejército para combatirlo. O un dios."
+
+          "Un momento", dice Hadrik. "¿No tenían el zorro, el dragón y Eiden algún tipo de pacto que les impedía luchar entre ellos? ¿Por qué intentaría el dragón romper ese pacto matando al zorro, sabiendo que eso lo llevaría a un enfrentamiento directo con Eiden?"
+      - source: scene_3
+        paragraph: 2
+        text: |-
+          "¡Porque sería una oportunidad demasiado buena como para dejarla pasar!", dice Arraka. "Y una de las principales razones por las que el dragón aceptó hacer este pacto en primer lugar fue porque sabía que Eiden y el zorro eran aliados, y no quería arriesgarse a luchar contra ambos al mismo tiempo. Iniciar una pelea con Eiden sería un precio pequeño a pagar por librarse del zorro, sobre todo porque vive convencido de que podría derrotar a Eiden sin destruir todo el continente en el proceso, si se esforzara lo suficiente."
+
+          "¿Y tú no crees que pudiera?", pregunta Daren.
+
+          "Claro que no", dice Arraka. "Tyrath no tendría ninguna oportunidad contra Eiden si este fuera con todo. ¿Recuerdan cuando Eiden reveló su aura en la arena y yo dije que por fin se estaba poniendo un poco serio? Pues no estaba bromeando esa vez. Eiden es mucho más poderoso de lo que deja ver. Yo debería saberlo. Luché contra él en el invierno inmóvil. Probablemente podría enfrentarse al dragón en igualdad de condiciones incluso sin recurrir a sus trucos. ¿Pero con sus trucos? Probablemente lo destruiría sin pestañear."
+    choices:
+      - position: 1
+        text: Si de verdad es tan poderoso, entonces ¿por qué no ha matado a Tyrath hasta ahora?
+        effects:
+          - set:
+              current_scene: b2_ch09b_reveal
+              b2_ch9_tyrath: 0
+      - position: 2
+        text: ¿Por qué me da la impresión de que te estás inventando excusas por haber perdido en el invierno inmóvil?
+        effects:
+          - set:
+              current_scene: b2_ch09b_reveal
+              b2_ch9_tyrath: 1
+      - position: 3
+        text: Pero ¿por qué Eiden sería mucho más poderoso que los stillwaters normales?
+        effects:
+          - set:
+              current_scene: b2_ch09b_reveal
+              b2_ch9_tyrath: 2
+  - name: b2_ch09b_reveal
+    routes:
+      - condition: b2_ch9_tyrath = 0
+        texts:
+          - source: scene_text
+            paragraph: 3
+            text: |-
+              "Si de verdad es tan poderoso, entonces ¿por qué no ha matado a Tyrath hasta ahora?"
+
+              "Bueno, la primera vez que hicieron este pacto también negociaron una tregua entre los tres ejércitos", dice Melindra. "Y no es que Eiden siempre haya estado enfrentado al dragón. Incluso solíamos tener consejos mensuales en los que Eiden, el zorro y el dragón se reunían para hablar de los problemas comunes que afectaban a todos sus reinos. Yo participé en algunos de esos encuentros y, aunque las discusiones entre Eiden y Tyrath no eran muy distintas de lo que son hoy, en aquel entonces desprendían un aire mucho más amistoso. Creo que, aunque no quiera admitirlo, a Eiden le entristecería ver morir al dragón."
+
+              "¡Ja! ¡Ni hablar!", dice Arraka. "Seguro que Eiden solo mantiene vivo al dragón porque le divierte."
+
+              "¿Quién sabe?", dice Melindra, encogiéndose de hombros. "Hace mucho tiempo que no tengo una conversación de verdad con Eiden, así que ya no sé qué pasa por su cabeza."
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              "Hoy nos has estado contando bastantes cosas sobre el pasado de Eiden, Melindra...", dice Illuna de pronto. "¿Puedo preguntar a qué debemos este repentino cambio de actitud por tu parte?"
+
+              "Bueno, como obviamente soy la espía de Eiden", dice Melindra, con un tono sarcástico en la voz, "no puedo mantenerlo todo en secreto. Necesito revelar de vez en cuando algo de información sensible para asegurarme de que ustedes empiecen a confiar de verdad en mí."
+
+              Luego mira directamente a Kate, con una sonrisa burlona.
+
+              "¿No estás de acuerdo?", le pregunta.
+
+              Kate le frunce el ceño, pero no dice nada.
+
+              "Eh... quizá ya va siendo hora de cambiar de tema", dice Hadrik, intentando evitar que estalle otra discusión entre Kate y Melindra. "Por ejemplo, ¿ustedes también se dieron cuenta de que en realidad no nos hemos encontrado con muchos animales mientras atravesábamos estos bosques? Yo esperaba que estos lugares estuvieran rebosantes de vida salvaje, pero en su mayoría solo nos hemos topado con monstruos y otros magos."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_circles
+      - condition: b2_ch9_tyrath = 1
+        texts:
+          - source: scene_text
+            paragraph: 4
+            text: |-
+              "¿Por qué me da la impresión de que te estás inventando excusas por haber perdido en el invierno inmóvil?"
+
+              "¿Eres idiota o qué?", dice Arraka. "Ya te dije que Eiden es más débil que yo. Solo perdí porque sus trucos me pillaron por sorpresa. No perdería una segunda vez."
+
+              "Claro", le digo, en tono poco convencido.
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              "Hoy nos has estado contando bastantes cosas sobre el pasado de Eiden, Melindra...", dice Illuna de pronto. "¿Puedo preguntar a qué debemos este repentino cambio de actitud por tu parte?"
+
+              "Bueno, como obviamente soy la espía de Eiden", dice Melindra, con un tono sarcástico en la voz, "no puedo mantenerlo todo en secreto. Necesito revelar de vez en cuando algo de información sensible para asegurarme de que ustedes empiecen a confiar de verdad en mí."
+
+              Luego mira directamente a Kate, con una sonrisa burlona.
+
+              "¿No estás de acuerdo?", le pregunta.
+
+              Kate le frunce el ceño, pero no dice nada.
+
+              "Eh... quizá ya va siendo hora de cambiar de tema", dice Hadrik, intentando evitar que estalle otra discusión entre Kate y Melindra. "Por ejemplo, ¿ustedes también se dieron cuenta de que en realidad no nos hemos encontrado con muchos animales mientras atravesábamos estos bosques? Yo esperaba que estos lugares estuvieran rebosantes de vida salvaje, pero en su mayoría solo nos hemos topado con monstruos y otros magos."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_circles
+      - condition: b2_ch9_tyrath = 2
+        texts:
+          - source: scene_text
+            paragraph: 5
+            text: |-
+              "Pero ¿por qué Eiden sería mucho más poderoso que los stillwaters normales?"
+
+              "¿Y cómo quieres que lo sepa?", dice Arraka. "Para cuando me fusioné con Therius, los stillwaters ya estaban en guerra con los lessathi. No conozco la historia de cómo llegaron a existir los stillwaters, y tampoco me molesté en averiguarla."
+
+              "Claro", digo.
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              "Hoy nos has estado contando bastantes cosas sobre el pasado de Eiden, Melindra...", dice Illuna de pronto. "¿Puedo preguntar a qué debemos este repentino cambio de actitud por tu parte?"
+
+              "Bueno, como obviamente soy la espía de Eiden", dice Melindra, con un tono sarcástico en la voz, "no puedo mantenerlo todo en secreto. Necesito revelar de vez en cuando algo de información sensible para asegurarme de que ustedes empiecen a confiar de verdad en mí."
+
+              Luego mira directamente a Kate, con una sonrisa burlona.
+
+              "¿No estás de acuerdo?", le pregunta.
+
+              Kate le frunce el ceño, pero no dice nada.
+
+              "Eh... quizá ya va siendo hora de cambiar de tema", dice Hadrik, intentando evitar que estalle otra discusión entre Kate y Melindra. "Por ejemplo, ¿ustedes también se dieron cuenta de que en realidad no nos hemos encontrado con muchos animales mientras atravesábamos estos bosques? Yo esperaba que estos lugares estuvieran rebosantes de vida salvaje, pero en su mayoría solo nos hemos topado con monstruos y otros magos."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_circles
+  - name: b2_ch09b_circles
+    texts:
+      - source: scene_text
+        paragraph: 6
+        text: |-
+          "Lo más probable es que la mayoría de los animales ya hayan ido a los bosques sagrados", dice Flower, "donde pueden recibir la protección directa del zorro dorado hasta que termine este torneo. Sería demasiado peligroso para ellos deambular por esta zona con tantos magos recorriendo estas tierras. Recuerden que el hechizo del torneo solo está hecho para proteger a los ciudadanos de Varathia, no a los animales también."
+
+          "Aun así, todavía quedan algunos idiotas que se quedaron atrás", dice Arraka. "Por ejemplo, ¿ven ese incendio forestal de allí? Llevo dos minutos mirando a un oso y a dos lobos correr en círculos, intentando encontrar una salida hacia un lugar seguro, pero están prácticamente rodeados de árboles en llamas. Seguramente las llamas los devorarán en cualquier momento."
+
+          "¿Qué?", pregunta Flower, horrorizada. "¡Eso es horrible!"
+
+          "Lo sé, ¿verdad?", dice Arraka. "Nada supera al entretenimiento gratis. ¿Alguien quiere apostar cuánto tiempo les queda de vida?"
+
+          "¡¡¡No!!!", grita Flower.
+      - source: scene_text_2
+        paragraph: 4
+        text: |-
+          "Vaya, de verdad que no te gusta apostar, ¿eh?", dice Arraka.
+
+          "Espera, ¿hay un incendio forestal?", dice Daren, mientras intenta mirar a través de la cúpula de hielo semitransparente en busca de rastros de humo. "¿A qué distancia está de nosotros? ¿Existe riesgo de que el fuego se extienda más de lo que ya lo ha hecho?"
+
+          "Bueno", dice Arraka, "ya casi no llueve, los rayos no han parado y el viento sigue soplando con fuerza, así que yo diría que están todas las condiciones para que el fuego siga extendiéndose. Pero, por la dirección en la que sopla el viento, diría que no debería alcanzarnos, a menos que un rayo caiga sobre algún árbol justo a nuestro lado o algo así."
+
+          "Oh", dice Daren. "Bueno, en ese caso, deberíamos poder esperar aquí hasta que termine la tormenta."
+
+          "¿Qué quieres decir?", pregunta Flower. "¿Y esos animales atrapados entre los árboles en llamas? ¡Tenemos que ayudarlos!"
+
+          "¿Por qué íbamos a arriesgar nuestras vidas para ayudar a unos animales?", dice Daren. "Son problemas del zorro, no nuestros."
+
+          "Estoy de acuerdo con Daren", dice Kate. "No deberíamos asumir riesgos innecesarios en una situación como esta."
+
+          "¡No puedo creerlos!", dice Flower. "Pues Petal y yo vamos a ir. ¡Incluso sin su ayuda!"
+    choices:
+      - position: 1
+        text: Ofrecerme para ir con Flower
+        effects:
+          - set:
+              current_scene: b2_ch09b_save
+              b2_ch9_animals: 1
+      - position: 2
+        text: Quedarme callado
+        effects:
+          - set:
+              current_scene: b2_ch09b_silent
+              b2_ch9_animals: 0
+  - name: b2_ch09b_silent
+    texts:
+      - source: scene_text
+        paragraph: 7
+        text: |-
+          "No creo que esa sea una buena idea...", dice Daren.
+
+          Flower lo ignora y usa su magia de fuego para abrir un agujero en la cúpula de hielo de Kate.
+
+          "¿Me estás escuchando?...", le dice Daren a Flower mientras ella sale de la cúpula.
+
+          Por un segundo parece que Flower por fin va a responderle al darse la vuelta para mirarnos, pero enseguida me doy cuenta de que la persona a la que en realidad está mirando no es Daren, sino Melindra.
+
+          "Melindra, ¿qué estás haciendo?", dice Flower. "¡Tenemos que darnos prisa!"
+
+          "¿Yo?", dice Melindra, con expresión de sorpresa.
+
+          "¡Sí, tú!", dice Flower. "¡Vamos, no tenemos tiempo que perder!"
+
+          "Uf, está bien...", dice Melindra mientras también sale de la cúpula de hielo de Kate para seguir a Flower. "Supongo que iremos a salvar a unos animales..."
+
+          "¡Maldita sea!", dice Daren, mientras Kate va cerrando poco a poco el agujero de su cúpula. "¡Cuidado con los rayos! ¡Y con las ramas en llamas que caen de los árboles!"
+
+          "¡Tendremos cuidado!", grita Flower de vuelta, y luego desaparece entre los árboles junto con Melindra.
+      - source: scene_text_2
+        paragraph: 5
+        text: |-
+          "¿Seguro que no deberíamos ir detrás de ellas?...", nos pregunta Hadrik.
+
+          "Flower e Illuna han sobrevivido durante los últimos veinte años apoyándose solo la una en la otra", dice Kate. "No deberían tener problemas para arreglárselas contra un simple incendio forestal."
+
+          "Supongo...", dice Hadrik.
+
+          "Si no vuelven en veinte minutos, iremos a buscarlas", dice Daren. "Pero espero que no haga falta..."
+
+          Aunque todos habíamos acordado esperar dentro de la cúpula a que Flower regresara, estaba claro que nos íbamos poniendo cada vez más inquietos con cada minuto que pasaba. Diez minutos después, cuando casi empezábamos a considerar si debíamos salir antes a buscar a Flower, por fin vemos a Flower y a Melindra salir del bosque, vivas y sanas.
+
+          "¡Ya pueden salir de la cúpula!", nos grita Flower. "La tormenta casi ha terminado."
+
+          "Oh, bien, ambas están ilesas", dice Daren, mientras se disipa la cúpula de hielo y puede observarlas bien a las dos. "Estaba empezando a preocuparme de que fuera a tener que curar quemaduras graves, con lo mucho que tardaron en volver. ¿Encontraron a quienes buscaban?"
+
+          "Sí", dice Flower. "Todos los animales están a salvo. Ya podemos seguir nuestro camino."
+
+          "Muy bien", dice Daren. "Entonces pongámonos en marcha. Preferiblemente en una dirección que nos aleje del incendio forestal."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch09b_leila
+  - name: b2_ch09b_save
+    texts:
+      - source: scene_text
+        paragraph: 8
+        text: |-
+          "En realidad, yo también voy", digo.
+
+          "¡Oh, vamos!", dice Daren. "¡Son animales!"
+
+          "Animales que pueden hablar, además", digo. "No es como si fueran bestias tontas."
+
+          "¡Pero siguen siendo animales!", dice Daren.
+
+          "¡Barry, vamos!", me dice Flower, después de usar su magia de fuego para abrir un agujero en la cúpula de hielo de Kate.
+
+          "Vale", digo. "Guía tú."
+
+          "¡Barry, espera!", dice Daren.
+
+          "Relájate", le digo al salir de la cúpula. "No es como si fuera a morir en un incendio forestal después de haber sobrevivido tanto tiempo en este torneo. Tenemos a Illuna con nosotros, que puede apagar las llamas con su magia de agua. Estaremos bien."
+
+          "Melindra, ¿qué estás haciendo?", dice Flower, al ver que Melindra se ha quedado dentro de la cúpula. "¡Tenemos que darnos prisa!"
+
+          "¿Yo?", dice Melindra, con expresión de sorpresa.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "¡Sí, tú!", dice Flower. "¡Vamos, no tenemos tiempo que perder!"
+
+          "Uf, está bien...", dice Melindra mientras también sale de la cúpula de hielo de Kate para seguir a Flower. "Supongo que iremos a salvar a unos animales..."
+
+          "¡Maldita sea!", dice Daren, mientras Kate va cerrando poco a poco el agujero de su cúpula. "¡Cuidado con los rayos! ¡Y con las ramas en llamas que caen de los árboles!"
+
+          "Sí, sí, tendremos cuidado", le digo a Daren, y luego todos nos dirigimos hacia el humo negro que sale de los árboles en llamas a lo lejos.
+
+          Corremos en la misma dirección durante aproximadamente un minuto, con Flower a la cabeza. El aguacero de antes se ha convertido en una llovizna mientras estábamos dentro de la cúpula, pero el viento sigue siendo tan fuerte como siempre. A la velocidad a la que vamos, seguramente llegaremos a los árboles en llamas en menos de un minuto.
+
+          "Me sorprende que hayas venido con nosotros", le digo a Melindra mientras corremos lado a lado detrás de Flower. "Tenía la impresión de que no te caían muy bien el zorro dorado y sus animales."
+
+          "No me importan los animales", dice Melindra. "Solo vine porque Flower me lo pidió."
+
+          "Ya veo...", digo.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch09b_save2
+  - name: b2_ch09b_save2
+    texts:
+      - source: scene_text
+        paragraph: 9
+        text: |-
+          "¡Concéntrense!", dice Flower. "Ya estamos cerca del fuego. Arraka, ¿puedes mostrarnos exactamente dónde están ahora mismo los animales?"
+
+          "Bueno, podría, pero ¿dónde estaría la diversión en eso?", dice Arraka.
+
+          "Claro que dirías eso...", dice Flower. "Da igual, los encontraremos por nuestra cuenta. Deberíamos poder sentir sus auras en cuanto nos acerquemos lo suficiente."
+
+          "Eh...", dice Melindra. "Si están buscando al oso y a los lobos, entonces están en esa dirección. Yo también puedo sentir auras a distancia, ¿recuerdan?"
+
+          "¡Oh, cierto, se me había olvidado por completo!", dice Flower. "¡Muchas gracias, Melindra! Vamos, acerquémonos más."
+
+          Cuando empezamos a acercarnos al incendio forestal, enseguida descubrimos que entre nosotros y los árboles en llamas hay una espesa capa de humo negro que vamos a tener que atravesar antes de llegar a nuestro destino.
+
+          "Melindra, ¿podrías apartar este humo con tu magia de aire?", dice Flower.
+
+          Melindra se queda ahí quieta sin decir nada y parece estar muy concentrada en el humo que tiene delante. Al mirarla, de pronto recuerdo que era incapaz de controlar por completo sus poderes, lo cual explicaría por qué simplemente se queda mirando el humo, incapaz de decidirse.
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          "¿Melindra?...", pregunta Flower otra vez, en voz más baja.
+
+          "Seguramente está pensando que necesitará una gran ráfaga de aire para despejar toda esta zona de humo", le digo a Flower. "Ven aquí. Deberíamos darle espacio."
+
+          "Oh, vale...", dice Flower mientras empieza a seguirme.
+
+          Cuando Melindra entiende lo que estoy haciendo, me dedica un seco asentimiento y luego se prepara para lanzar su hechizo. Una vez que Flower y yo estamos lo bastante lejos, Melindra desata una potentísima ráfaga de aire que dispersa todo el humo y nos deja una vista despejada del bosque en llamas que tenemos delante. En cuanto estamos dentro del alcance, Illuna dispara un potentísimo chorro de agua con las manos y lo usa para apagar, uno por uno, los árboles que arden frente a nosotros.
+
+          "Las llamas se han apagado", dice Flower. "¡Avancen!"
+
+          Después de pasar junto a los árboles en llamas, no tardamos mucho en encontrar a los tres animales detectando sus auras. En cuanto llegamos hasta ellos, los dos lobos se giran para encararnos, gruñendo y enseñándonos los colmillos de forma amenazante, y el oso se alza sobre las patas traseras para parecer más intimidante.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch09b_failed
+              b2_ch9_animals: 1
+            condition: ancient_languages_aux < 2
+          - set:
+              current_scene: b2_ch09b_success
+              b2_ch9_animals: 2
+            condition: ancient_languages_aux >= 2
+  - name: b2_ch09b_failed
+    texts:
+      - source: scene_text
+        paragraph: 10
+        text: |-
+          "Esperen", nos dice Flower. "Entiendo un poco su lengua. Intentaré comunicarme con ellos."
+
+          Entonces empieza a hacer varios sonidos de animales y a señalar hacia el camino por el que vinimos, mientras los lobos van dejando de gruñir poco a poco para escucharla.
+
+          "¡Apartémonos para que puedan pasar!", nos dice Flower, y todos nos hacemos a un lado para darles paso libre hacia la salida.
+
+          Los lobos y el oso nos miran con recelo durante unos segundos, pero al final deciden seguir las indicaciones de Flower y pasan despacio junto a nosotros, sin mirar atrás.
+
+          "No estoy segura de cuánto han entendido de lo que dije", dice Flower, "pero al menos captaron la dirección correcta. Dejémosles un poco de tiempo para salir de aquí y luego podremos volver a la cúpula de hielo de Kate."
+      - source: scene_text_2
+        paragraph: 8
+        text: |-
+          Hacemos lo que dice Flower y esperamos un rato, hasta que los lobos y el oso pasan junto a los árboles en llamas. Una vez que dejamos de verlos, también nos abrimos paso hacia fuera y regresamos junto a nuestros amigos. Mientras volvemos hacia la cúpula, notamos que la tormenta se está calmando poco a poco, aunque el cielo todavía no se ha despejado del todo. El viento resulta mucho más soportable ahora mismo y los rayos casi han cesado. Unos minutos después, por fin llegamos junto a nuestros compañeros, que nos habían estado esperando impacientes dentro de la cúpula de hielo.
+
+          "¡Ya pueden salir de la cúpula!", les grita Flower. "La tormenta casi ha terminado."
+
+          "Oh, bien, todos están ilesos", dice Daren, mientras se disipa la cúpula de hielo y puede observarnos bien a los tres. "Estaba empezando a preocuparme de que fuera a tener que curar quemaduras graves, con lo mucho que tardaron en volver. ¿Encontraron a quienes buscaban?"
+
+          "Sí", dice Flower. "Todos los animales están a salvo. Ya podemos seguir nuestro camino."
+
+          "Muy bien", dice Daren. "Entonces pongámonos en marcha. Preferiblemente en una dirección que nos aleje del incendio forestal."
+    effects:
+      - set:
+          failed_checks:
+            - '[ Comprobación de lenguas antiguas fallida - nivel 2 ]'
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch09b_leila
+  - name: b2_ch09b_success
+    texts:
+      - source: scene_text
+        paragraph: 11
+        text: |-
+          "Esperen", les digo, en la lengua antigua de los animales. "¡Estamos aquí para ayudar!"
+
+          "¿Cómo han entrado aquí?", me pregunta uno de los lobos, en la lengua de los animales. "Llevamos más de cinco minutos dando vueltas por esta zona y no hemos encontrado ni una sola salida."
+
+          "Tenemos una elementalista de agua en el equipo", les digo. "¿Qué hacían ustedes tres aquí? ¿No se suponía que debían esperar en los bosques sagrados hasta que terminara este torneo de magos?"
+
+          "El zorro dorado nos envió a una misión", dice el otro lobo.
+
+          "¡No les cuentes lo de la misión!", dice el primer lobo.
+
+          "Han venido hasta aquí para rescatarnos", dice el segundo lobo. "Como mínimo, podríamos mostrar un poco de sinceridad."
+
+          "¿Qué misión les encargó?", digo. "Quizá podamos ayudar, a menos que sea un secreto, claro."
+
+          "Nos dijeron que es posible que el stillwater Eiden haya lanzado un hechizo peculiar en algún lugar de esta zona", dice el segundo lobo. "A mi hermano y a mí nos enviaron aquí para investigarlo, porque ambos tenemos un sentido mágico muy agudo. El oso es nuestro guardaespaldas. No se habrán topado por casualidad con un hechizo apenas detectable que lleve la firma de Eiden durante su viaje, ¿verdad?"
+    effects:
+      - set:
+          successful_checks:
+            - '[ Comprobación de lenguas antiguas exitosa - nivel 2 ]'
+    choices:
+      - position: 1
+        text: Contarle lo del hechizo de Eiden.
+        effects:
+          - set:
+              current_scene: b2_ch09b_spell
+              b2_ch9_spell: 1
+      - position: 2
+        text: No contarle lo del hechizo de Eiden.
+        effects:
+          - set:
+              current_scene: b2_ch09b_spell
+              b2_ch9_spell: 0
+  - name: b2_ch09b_spell
+    routes:
+      - condition: b2_ch9_spell = 1
+        texts:
+          - source: scene_text
+            paragraph: 12
+            text: |-
+              "De hecho sí nos topamos con un hechizo así", digo. "Para encontrarlo, tendrán que caminar en esa dirección durante unas horas, hasta llegar a un río. Luego tendrán que seguir ese río corriente abajo durante aproximadamente otra hora, y deberían poder detectar el hechizo, siempre que su sentido mágico sea lo bastante bueno."
+
+              "Agradecemos mucho su ayuda", dice el segundo lobo. "Por desgracia, ahora mismo no tenemos nada con lo que recompensarlos, pero si alguna vez se acercan a uno de los bosques sagrados en el futuro, no duden en enviarnos un mensaje. Los lobos no olvidamos nuestras deudas con facilidad."
+
+              "De acuerdo", digo. "Pero creo que deberían darse prisa y salir de aquí antes de que el fuego se extienda aún más. La salida está por allí."
+
+              "Tiene nuestra más sincera gratitud, humano", dice el segundo lobo. "Espero que volvamos a encontrarnos. Vamos, hermano, salgamos de este lugar infernal."
+          - source: scene_text_2
+            paragraph: 9
+            text: |-
+              "¡Vaya, no sabía que hablabas tan bien la lengua de los animales, Barry!", dice Flower, mientras los tres animales se dirigen hacia la salida. "Solo logré entender ciertas partes de lo que dijiste. ¿Cuál era esa misión de la que hablaba el lobo antes?"
+
+              "El zorro los envió a investigar ese hechizo oculto de Eiden que encontramos esta mañana", digo. "Les dije dónde podían encontrarlo, así que fueron a buscarlo."
+
+              "Oh, ya veo...", dice Flower. "Muy bien, pues dejémosles un poco de tiempo para salir de aquí y luego podremos volver a la cúpula de hielo de Kate."
+
+              Hacemos lo que dice Flower y esperamos un rato, hasta que los lobos y el oso pasan junto a los árboles en llamas. Una vez que dejamos de verlos, también nos abrimos paso hacia fuera y regresamos junto a nuestros amigos. Mientras volvemos hacia la cúpula, notamos que la tormenta se está calmando poco a poco, aunque el cielo todavía no se ha despejado del todo. El viento resulta mucho más soportable ahora mismo y los rayos casi han cesado. Unos minutos después, por fin llegamos junto a nuestros compañeros, que nos habían estado esperando impacientes dentro de la cúpula de hielo.
+          - source: scene_3
+            paragraph: 3
+            text: |-
+              "¡Ya pueden salir de la cúpula!", les grita Flower. "La tormenta casi ha terminado."
+
+              "Oh, bien, todos están ilesos", dice Daren, mientras se disipa la cúpula de hielo y puede observarnos bien a los tres. "Estaba empezando a preocuparme de que fuera a tener que curar quemaduras graves, con lo mucho que tardaron en volver. ¿Encontraron a quienes buscaban?"
+
+              "Sí", dice Flower. "Todos los animales están a salvo. Ya podemos seguir nuestro camino."
+
+              "Muy bien", dice Daren. "Entonces pongámonos en marcha. Preferiblemente en una dirección que nos aleje del incendio forestal."
+        effects:
+          - set:
+              ac_b2_ch9_helper: 1
+            achievement:
+              id: ac_b2_ch9_helper
+              title: ¡Soy un ayudante!
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_leila
+      - condition: b2_ch9_spell = 0
+        texts:
+          - source: scene_text
+            paragraph: 13
+            text: |-
+              "Por desgracia, no", le digo. "Pero mi sentido mágico no es gran cosa, así que puede que se me haya pasado."
+
+              "Bueno, agradecemos la ayuda de todos modos", dice el segundo lobo. "Por desgracia, no llevamos nada con nosotros que podamos darles a cambio de habernos salvado, pero si alguna vez se acercan a uno de los bosques sagrados en el futuro, no duden en enviarnos un mensaje. Los lobos no olvidamos nuestras deudas con facilidad."
+
+              "De acuerdo", digo. "Pero creo que deberían darse prisa y salir de aquí antes de que el fuego se extienda aún más. La salida está por allí."
+
+              "Tiene nuestra más sincera gratitud, humano", dice el segundo lobo. "Espero que volvamos a encontrarnos. Vamos, hermano, salgamos de este lugar infernal."
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "¡Vaya, no sabía que hablabas tan bien la lengua de los animales, Barry!", dice Flower, mientras los tres animales se dirigen hacia la salida. "Solo logré entender ciertas partes de lo que dijiste. ¿Cuál era esa misión de la que hablaba el lobo antes?"
+
+              "El zorro los envió a investigar ese hechizo oculto de Eiden que encontramos esta mañana", digo. "No me apetecía contarles nada al respecto, así que les dije que no habíamos encontrado nada parecido."
+
+              "Oh, ya veo...", dice Flower. "Muy bien, pues dejémosles un poco de tiempo para salir de aquí y luego podremos volver a la cúpula de hielo de Kate."
+
+              Hacemos lo que dice Flower y esperamos un rato, hasta que los lobos y el oso pasan junto a los árboles en llamas. Una vez que dejamos de verlos, también nos abrimos paso hacia fuera y regresamos junto a nuestros amigos. Mientras volvemos hacia la cúpula, notamos que la tormenta se está calmando poco a poco, aunque el cielo todavía no se ha despejado del todo. El viento resulta mucho más soportable ahora mismo y los rayos casi han cesado. Unos minutos después, por fin llegamos junto a nuestros compañeros, que nos habían estado esperando impacientes dentro de la cúpula de hielo.
+          - source: scene_3
+            paragraph: 4
+            text: "\"You can come out of the dome, now!\" Flower shouts at them. \"The storm is almost over.\"\r\n\r\n\"Oh, good, you're all unharmed,\" Daren says, as the ice dome gets dismissed, and he gets to have a good look at the three of us. \"I was getting worried that I might have to heal some serious burn wounds, with how long you took to come back. Did you find who you were looking for?\"\r\n\r\n\"Yes,\" Flower says. \"The animals are all safe. We can be on our way, now.\"\r\n\r\n\"Alright,\" Daren says. \"Let's get going, then. Preferably in a direction that leads us away from the forest fire.\""
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_leila
+  - name: b2_ch09b_leila
+    texts:
+      - source: scene_text
+        paragraph: 14
+        text: |-
+          Con la tormenta ya pasada, el resto del viaje de aquel día resultó relativamente tranquilo, salvo por algún que otro encontronazo más con magos que estaban recogiendo piñas de los árboles. Tras varias horas caminando, decidimos montar el campamento un poco antes de lo habitual, porque el cielo aún no se había despejado del todo y queríamos asegurarnos de dormir algo antes de que una nueva tormenta asomara su fea cabeza y saliera volando con todas nuestras tiendas.
+
+          Antes de irnos a dormir, Hadrik insistió en que todos nos uniéramos a otra partida de cartas que había aprendido en tabernas enanas. Aunque yo conseguí usar mi investigación del cuaderno como excusa para no participar, los demás no tuvieron tanta suerte. Parecía que a quienes más quería ver participando en el juego era a Kate y a Melindra, porque ambas intentaron negarse varias veces, pero Hadrik no iba a aceptar un no por respuesta.
+      - source: scene_text_2
+        paragraph: 11
+        text: |-
+          Era bastante obvio lo que estaba intentando hacer. Su verdadero objetivo seguramente era crear una situación en la que Kate y Melindra se vieran obligadas a interactuar entre sí, con la esperanza de que empezaran a llevarse mejor. Probablemente todos sabían eso tan bien como yo, pero a Hadrik es bastante difícil negarle algo cuando se le mete algo en la cabeza, así que al final todos tuvieron que aceptar a regañadientes unirse a su partida.
+
+          Después de unos quince minutos sentado sobre la hierba, leyendo mi cuaderno, de pronto veo un mensaje azul flotando delante de mis ojos.
+
+          "¿Sigues ocupado con tu cuaderno?", escribe Leila.
+
+          "Sí", digo, levantando la vista para mirarla. "Esos vacíos legales no van a encontrarse solos. ¿No estabas jugando hace un momento a las cartas con Hadrik?"
+
+          "Sí", escribe Leila, "pero el juego exige que digamos los nombres de las cartas lo más rápido posible, y mis mensajes escritos no se forman instantáneamente, así que estaba en demasiada desventaja frente a los demás. ¿Puedo sentarme?"
+
+          "Claro", le digo, mientras Leila se sienta en la hierba a mi lado.
+    choices:
+      - position: 1
+        text: Entonces, ¿cómo van las cosas con Kate?
+        effects:
+          - set:
+              current_scene: b2_ch09b_things
+      - position: 2
+        text: Entonces, ¿qué te parece nuestro pequeño grupo hasta ahora?
+        effects:
+          - set:
+              current_scene: b2_ch09b_group
+      - position: 3
+        text: Entonces, ¿qué has estado haciendo últimamente?
+        effects:
+          - set:
+              current_scene: b2_ch09b_lately
+  - name: b2_ch09b_things
+    texts:
+      - source: scene_text
+        paragraph: 15
+        text: |-
+          "Entonces, ¿cómo van las cosas con Kate?"
+
+          "Han ido... mejor de lo que esperaba", escribe Leila, con una leve sonrisa. "Kate y yo no hablábamos mucho durante nuestro tiempo en el Faro, así que no pensé que de verdad fuera a considerarme su amiga. Me alegra saber que me equivocaba."
+
+          "Sí, yo también me sorprendí al ver lo mucho que se ha abierto contigo estos dos últimos días", digo. "Kate suele ser del tipo callado y rara vez sale de su caparazón, así que ha sido agradable ver este otro lado suyo por una vez."
+
+          "No siempre fue así...", escribe Leila. "Solía hablar mucho más cuando estábamos en el Faro, sobre todo con su amiga Diane. Quizá esté empezando a volver a ser como antes, ahora que por fin tiene gente en la que puede confiar."
+
+          "Tienes razón", digo. "Creo que esta es la primera vez en al menos diez años que logra formar parte de un grupo en el que realmente puede apoyarse sin temer que la apuñalen por la espalda."
+
+          "¿Crees que yo también podría hacerlo algún día?", escribe Leila.
+      - source: scene_text_2
+        paragraph: 12
+        text: |-
+          "¿Hacer qué?", digo.
+
+          "Formar parte de vuestro grupo...", escribe Leila.
+
+          "¿De qué estás hablando?", digo. "¡Si ya formas parte de nuestro grupo!"
+
+          Leila niega con la cabeza.
+
+          "Solo temporalmente", escribe Leila. "Cuando terminen todos vuestros asuntos en Ollendor, yo me quedaré atrás con mi padre y ustedes se marcharán de la ciudad para vivir su siguiente aventura."
+
+          "Sí, pero tampoco es que vayamos a hacer esto para siempre", digo. "Al final, el torneo terminará y nuestro grupo se disolverá, pero eso no significa que no vayamos a volver a vernos más adelante. Y cuando eso ocurra, serás bienvenida a unirte a nosotros."
+
+          "No... no estoy segura de lo fácil que será para nosotros volver a encontrarnos después de que se vayan de Varathia", escribe Leila.
+
+          "Bueno, he oído que los ciudadanos de Varathia pueden invitar a gente de fuera", digo, "así que no creo que sea un problema tan grande si nos envías una invitación oficial."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch09b_breakthrough
+  - name: b2_ch09b_group
+    texts:
+      - source: scene_text
+        paragraph: 16
+        text: |-
+          "Entonces, ¿qué te parece nuestro pequeño grupo hasta ahora?"
+
+          "No está mal", escribe Leila, sonriendo. "La alegría de Hadrik puede resultar un poco agotadora a veces y Daren puede ser demasiado severo en ciertas situaciones, pero todos son buena gente y disfruto de su compañía."
+
+          "Sí, puede ser bastante divertido estar con ellos", digo. "No te preocupes, al cabo de un tiempo te acostumbras a sus rarezas. Demonios, incluso yo logré acostumbrarme a Arraka, y ya has visto cómo es. Supongo que esto es lo que pasa cuando viajas con las mismas personas durante un largo periodo de tiempo y afrontas muchas dificultades junto a ellas. Antes de darte cuenta, pasas a formar parte de un grupo muy unido y casi empiezas a pensar en ellos como en una familia."
+
+          "¿Crees que yo también podría hacerlo algún día?", escribe Leila.
+      - source: scene_text_2
+        paragraph: 12
+        text: |-
+          "¿Hacer qué?", digo.
+
+          "Formar parte de vuestro grupo...", escribe Leila.
+
+          "¿De qué estás hablando?", digo. "¡Si ya formas parte de nuestro grupo!"
+
+          Leila niega con la cabeza.
+
+          "Solo temporalmente", escribe Leila. "Cuando terminen todos vuestros asuntos en Ollendor, yo me quedaré atrás con mi padre y ustedes se marcharán de la ciudad para vivir su siguiente aventura."
+
+          "Sí, pero tampoco es que vayamos a hacer esto para siempre", digo. "Al final, el torneo terminará y nuestro grupo se disolverá, pero eso no significa que no vayamos a volver a vernos más adelante. Y cuando eso ocurra, serás bienvenida a unirte a nosotros."
+
+          "No... no estoy segura de lo fácil que será para nosotros volver a encontrarnos después de que se vayan de Varathia", escribe Leila.
+
+          "Bueno, he oído que los ciudadanos de Varathia pueden invitar a gente de fuera", digo, "así que no creo que sea un problema tan grande si nos envías una invitación oficial."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch09b_breakthrough
+  - name: b2_ch09b_lately
+    texts:
+      - source: scene_text
+        paragraph: 17
+        text: |-
+          "Entonces, ¿qué has estado haciendo últimamente?"
+
+          "Bueno", escribe Leila, "de algún modo he conseguido convertirme en la árbitra de todos los futuros concursos entre Hadrik y Daren gracias a mi actuación de hoy. Y Hadrik también me ha preguntado si podría usar mi texto flotante para mostrar permanentemente las puntuaciones mientras jugamos a las cartas. Así que... ¡supongo que estoy en camino de convertirme en una miembro de pleno derecho del equipo!"
+
+          "¡Eso está bien!", digo. "Avísame cuando hayas impresionado a suficientes miembros del grupo y me aseguraré de darte tu carné oficial de miembro."
+
+          "¿Crees que podría conseguirlo algún día?", escribe Leila.
+      - source: scene_text_2
+        paragraph: 12
+        text: |-
+          "¿Hacer qué?", digo.
+
+          "Formar parte de vuestro grupo...", escribe Leila.
+
+          "¿De qué estás hablando?", digo. "¡Si ya formas parte de nuestro grupo!"
+
+          Leila niega con la cabeza.
+
+          "Solo temporalmente", escribe Leila. "Cuando terminen todos vuestros asuntos en Ollendor, yo me quedaré atrás con mi padre y ustedes se marcharán de la ciudad para vivir su siguiente aventura."
+
+          "Sí, pero tampoco es que vayamos a hacer esto para siempre", digo. "Al final, el torneo terminará y nuestro grupo se disolverá, pero eso no significa que no vayamos a volver a vernos más adelante. Y cuando eso ocurra, serás bienvenida a unirte a nosotros."
+
+          "No... no estoy segura de lo fácil que será para nosotros volver a encontrarnos después de que se vayan de Varathia", escribe Leila.
+
+          "Bueno, he oído que los ciudadanos de Varathia pueden invitar a gente de fuera", digo, "así que no creo que sea un problema tan grande si nos envías una invitación oficial."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch09b_breakthrough
+  - name: b2_ch09b_breakthrough
+    routes:
+      - condition: b2_ch8_energizer = 1
+        texts:
+          - source: scene_text
+            paragraph: 18
+            text: |-
+              "No estoy segura de lo bien que funcionaría eso", escribe Leila, "teniendo en cuenta que mi padre y yo somos criminales buscados. Además, Ollendor es un reino paria, así que los demás reinos jamás aprobarían una invitación así, aunque yo no fuera considerada una criminal."
+
+              "Sí, pero estás olvidando que nuestro objetivo en Ollendor es asesinar a su rey", digo. "Lo más probable es que las cosas no sigan igual después de que eso ocurra. Y puede que tu historial criminal se borre en el futuro, con un poco de ayuda de Golmyck. Creo que dejó bastante claro que está de tu lado, así que estoy seguro de que encontrará la manera de ayudarte una vez que haya ganado un poco más de influencia en su ciudad. ¡Piensa en positivo!"
+
+              "Quizá tengas razón...", escribe Leila. "Como mínimo, algo me dice que Hadrik jamás abandonaría Varathia sin celebrar una última fiesta, independientemente de quién acabe ganando el torneo, así que seguro que nos veremos al menos una vez más antes de que se vayan."
+
+              "¿Ves? ¿Qué te dije?", digo. "Ya entiendes cómo funciona nuestro grupo y apenas llevas viajando con nosotros poco más de dos días. ¡Prácticamente ya eres miembro oficial del equipo!"
+
+              "Entonces me aseguraré de esforzarme para ser digna de ese título", escribe Leila, sonriendo.
+
+              "¡Oye, Leila!", grita Hadrik. "Sé que es mucho pedir, pero ¿podrías venir a ayudarnos a llevar la puntuación con esos útiles textos flotantes tuyos? Quizá podamos cambiar un poco las reglas para que juegues con nosotros en igualdad de condiciones."
+          - source: scene_text_2
+            paragraph: 13
+            text: |-
+              "Parece que mis talentos hacen falta en otra parte", me escribe Leila, mientras se levanta de la hierba. "Buena suerte con tu cuaderno, Barry. ¡Ha sido divertido charlar contigo!"
+
+              "Lo mismo digo", digo. "¡Asegúrate de trabajar duro para poder ganarte tu puesto permanente en el grupo!"
+
+              "Lo haré", me escribe Leila.
+
+              Luego se aleja de mí y empieza a dirigirse hacia los demás.
+
+              "¡Ya voy!", escribe con grandes letras azules mientras se apresura a reunirse una vez más con la partida de cartas.
+          - source: scene_3
+            paragraph: 5
+            text: |-
+              Durante los siguientes veinte minutos más o menos, me concentro únicamente en mi cuaderno, intentando ignorar los sonidos de fondo que hacen Hadrik y los demás mientras juegan. Por desgracia, concentrarme con todas mis fuerzas no basta para lograr otro gran avance. Quizá deba empezar a adoptar un enfoque distinto en vez de limitarme a repasar toda la información que tengo disponible y esperar que al final se me ocurra algo. ¿Pero qué otro enfoque hay?...
+
+              Mientras estoy sentado allí pensando, empieza a darme un fuerte dolor de cabeza y unas náuseas que destrozan por completo mi concentración. Parece que el segundo hechizo energizante también se ha agotado. Bueno, supongo que no tiene sentido seguir estudiando más por ahora. Más vale que me tumbe boca arriba e intente pensar lo menos posible en el dolor y en el cansancio.
+
+              Después de unos diez minutos tumbado boca arriba, de pronto oigo una voz conocida hablar en voz alta a través de mi transceptor.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_revenant
+                condition: ch11_saved_rose = 0
+              - set:
+                  current_scene: b2_ch09b_freezing
+                condition: ch11_saved_rose = 1
+      - condition: b2_ch8_energizer <> 1
+        texts:
+          - source: scene_text
+            paragraph: 18
+            text: |-
+              "No estoy segura de lo bien que funcionaría eso", escribe Leila, "teniendo en cuenta que mi padre y yo somos criminales buscados. Además, Ollendor es un reino paria, así que los demás reinos jamás aprobarían una invitación así, aunque yo no fuera considerada una criminal."
+
+              "Sí, pero estás olvidando que nuestro objetivo en Ollendor es asesinar a su rey", digo. "Lo más probable es que las cosas no sigan igual después de que eso ocurra. Y puede que tu historial criminal se borre en el futuro, con un poco de ayuda de Golmyck. Creo que dejó bastante claro que está de tu lado, así que estoy seguro de que encontrará la manera de ayudarte una vez que haya ganado un poco más de influencia en su ciudad. ¡Piensa en positivo!"
+
+              "Quizá tengas razón...", escribe Leila. "Como mínimo, algo me dice que Hadrik jamás abandonaría Varathia sin celebrar una última fiesta, independientemente de quién acabe ganando el torneo, así que seguro que nos veremos al menos una vez más antes de que se vayan."
+
+              "¿Ves? ¿Qué te dije?", digo. "Ya entiendes cómo funciona nuestro grupo y apenas llevas viajando con nosotros poco más de dos días. ¡Prácticamente ya eres miembro oficial del equipo!"
+
+              "Entonces me aseguraré de esforzarme para ser digna de ese título", escribe Leila, sonriendo.
+
+              "¡Oye, Leila!", grita Hadrik. "Sé que es mucho pedir, pero ¿podrías venir a ayudarnos a llevar la puntuación con esos útiles textos flotantes tuyos? Quizá podamos cambiar un poco las reglas para que juegues con nosotros en igualdad de condiciones."
+          - source: scene_text_2
+            paragraph: 13
+            text: |-
+              "Parece que mis talentos hacen falta en otra parte", me escribe Leila, mientras se levanta de la hierba. "Buena suerte con tu cuaderno, Barry. ¡Ha sido divertido charlar contigo!"
+
+              "Lo mismo digo", digo. "¡Asegúrate de trabajar duro para poder ganarte tu puesto permanente en el grupo!"
+
+              "Lo haré", me escribe Leila.
+
+              Luego se aleja de mí y empieza a dirigirse hacia los demás.
+
+              "¡Ya voy!", escribe con grandes letras azules mientras se apresura a reunirse una vez más con la partida de cartas.
+          - source: scene_3
+            paragraph: 6
+            text: |-
+              Durante los siguientes treinta minutos más o menos, me concentro únicamente en mi cuaderno, intentando ignorar los sonidos de fondo que hacen Hadrik y los demás mientras juegan. Por desgracia, concentrarme con todas mis fuerzas no basta para lograr otro gran avance. Quizá deba empezar a adoptar un enfoque distinto en vez de limitarme a repasar toda la información que tengo disponible y esperar que al final se me ocurra algo. ¿Pero qué otro enfoque hay?...
+
+              Mientras estoy sentado allí pensando, de pronto oigo una voz conocida hablar en voz alta a través de mi transceptor.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_revenant
+                condition: ch11_saved_rose = 0
+              - set:
+                  current_scene: b2_ch09b_freezing
+                condition: ch11_saved_rose = 1
+  - name: b2_ch09b_revenant
+    routes:
+      - condition: b2_ch8_energizer = 3
+        texts:
+          - source: scene_text
+            paragraph: 20
+            text: |-
+              "¿Hola?", oigo decir a la voz de Rose. "¿Sigue abierto este canal?"
+
+              Oír la voz de Rose así, de la nada, hace que se me salte un latido. Como no oye ninguna respuesta por mi parte, la voz vuelve a llamarme una vez más.
+
+              "¿Me estás oyendo?", vuelve a decir la voz de Rose.
+
+              Cálmate, Barry. Esta no es Rose. Sabes perfectamente quién es. Es el revenant. El hecho de que tenga acceso a este canal significa que está usando el viejo transceptor de Daren. El que le dio a Rose el segundo día del torneo. Golpeo el transceptor una vez para que pueda oírme y luego intento responderle con la mayor calma posible.
+          - source: scene_text_2
+            paragraph: 15
+            text: |-
+              "¿Qué quieres?", digo.
+
+              "Así que puedes oírme, entonces", dice el revenant. "Bien. Asegúrate de dejar este canal abierto. Volveré a ponerme en contacto contigo pronto. No intentes llamarme. Mantendré este canal cerrado por mi lado hasta que tenga un motivo para llamarte. Adiós."
+
+              "¡Maldición, espera!", digo, pero ya no sirve de nada intentar contactar con ella.
+
+              El canal de comunicación de su lado ya está cerrado.
+        choices:
+          - position: 1
+            text: Dejar el canal abierto por mi lado.
+            effects:
+              - set:
+                  current_scene: b2_ch09b_channel
+                  b2_ch9_channel: 1
+          - position: 2
+            text: Cerrar el canal por mi lado también.
+            effects:
+              - set:
+                  current_scene: b2_ch09b_channel
+                  b2_ch9_channel: 0
+      - condition: b2_ch8_energizer <> 3
+        texts:
+          - source: scene_text
+            paragraph: 19
+            text: |-
+              "¿Hola?", oigo decir a la voz de Rose. "¿Sigue abierto este canal?"
+
+              Oír la voz de Rose así, de la nada, me golpea como una daga clavándoseme en el pecho. De pronto me doy cuenta de que he estado evitando por completo pensar en Rose desde aquel día en que brindamos con Enrique en su memoria. Incluso cuando me prometí que no evitaría pensar en su muerte, aun así acabé haciéndolo. Supongo que algunas cosas son más fáciles de decir que de hacer, después de todo.
+
+              "¿Me estás oyendo?", vuelve a decir la voz de Rose.
+
+              Cálmate, Barry. Esta no es Rose. Sabes perfectamente quién es. Es el revenant. El hecho de que tenga acceso a este canal significa que está usando el viejo transceptor de Daren. El que le dio a Rose el segundo día del torneo. Golpeo el transceptor una vez para que pueda oírme y luego intento responderle con la mayor calma posible.
+          - source: scene_text_2
+            paragraph: 14
+            text: "\"What do you want?\" I say.\r\n\r\n\"So you can hear me, then,\" the revenant says. \"Good. Make sure to leave this channel open. I will be contacting you again soon. Don't try to call me. I will be keeping this channel closed on my side until I'll have a reason to call you. Goodbye.\"\r\n\r\n\"Damn it, wait!\" I say, but it's no use trying to contact her anymore.\r\n\r\nThe channel of communication on her side is now closed."
+        choices:
+          - position: 1
+            text: Dejar el canal abierto por mi lado.
+            effects:
+              - set:
+                  current_scene: b2_ch09b_channel
+                  b2_ch9_channel: 1
+          - position: 2
+            text: Cerrar el canal por mi lado también.
+            effects:
+              - set:
+                  current_scene: b2_ch09b_channel
+                  b2_ch9_channel: 0
+  - name: b2_ch09b_channel
+    routes:
+      - condition: b2_ch9_channel = 1
+        texts:
+          - source: scene_text
+            paragraph: 21
+            text: |-
+              Decido dejar el canal abierto por mi lado. No tengo ni idea de lo que pueda estar planeando el revenant, pero al menos escucharla no puede hacer daño.
+
+              "¿Era... quien creo que era?", me pregunta Daren, mientras él y los demás se acercan a mí.
+
+              "Sí", digo. "Era el revenant. Por lo visto, todavía conserva tu viejo transceptor."
+
+              "¿Qué quería?", dice Daren.
+
+              "Estaba comprobando si el canal seguía abierto", digo. "También dijo que volvería a ponerse en contacto conmigo más tarde y que debía dejar el canal abierto, pero no me dijo por qué. Intenté pedirle más detalles, pero cerró el canal por su lado."
+
+              "Eh...", dice Hadrik. "Bueno, no sé el resto de ustedes, pero todo esto me ha matado un poco el ambiente. Creo que voy a recoger las cartas por ahora y terminaremos la partida en otro momento."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_shift
+      - condition: b2_ch9_channel = 0
+        texts:
+          - source: scene_text
+            paragraph: 22
+            text: |-
+              Decido cerrar el canal por mi lado también. No tengo ninguna obligación de hacer lo que me diga el revenant.
+
+              "¿Era... quien creo que era?", me pregunta Daren, mientras él y los demás se acercan a mí.
+
+              "Sí", digo. "Era el revenant. Por lo visto, todavía conserva tu viejo transceptor."
+
+              "¿Qué quería?", dice Daren.
+
+              "Estaba comprobando si el canal seguía abierto", digo. "También dijo que volvería a ponerse en contacto conmigo más tarde y que debía dejar el canal abierto, pero no me dijo por qué. Intenté pedirle más detalles, pero cerró el canal por su lado, así que yo también decidí cerrar el mío y dar el asunto por terminado."
+
+              "Quizá sea lo mejor...", dice Daren.
+
+              "Eh...", dice Hadrik. "Bueno, no sé el resto de ustedes, pero todo esto me ha matado un poco el ambiente. Creo que voy a recoger las cartas por ahora y terminaremos la partida en otro momento."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_shift
+  - name: b2_ch09b_freezing
+    routes:
+      - condition: b2_ch8_energizer = 1
+        texts:
+          - source: scene_text
+            paragraph: 23
+            text: |-
+              "¿Barry?", dice Rose. "¿Puedes oírme?"
+
+              "Sí, te oigo", digo, mientras me levanto y golpeo el transceptor a través del bolsillo para que pueda oírme, intentando concentrarme con todas mis fuerzas en lo que está diciendo.
+
+              "¿Era Rose a quien acabo de oír?", grita Hadrik desde la distancia.
+
+              "Sí", le grito de vuelta, y luego saco el transceptor del bolsillo para enseñárselo. "Está en el transceptor."
+
+              "Muy bien, hagamos una pausa", dice Hadrik, mientras él y los demás dejan sus cartas en el suelo y se dirigen hacia mí.
+
+              "Barry, ¿están todos los demás ahí contigo?", me pregunta Rose.
+
+              "Sí, ahora vienen", digo. "Espera un segundo."
+
+              Luego espero a que todos los demás lleguen hasta donde estoy antes de seguir hablando.
+
+              "Vale, ya están aquí", le digo a Rose, intentando mantener la voz calmada mientras ignoro el dolor de cabeza. "¿De qué querías hablarnos?"
+          - source: scene_text_2
+            paragraph: 16
+            text: |-
+              "Yo... no sé muy bien cómo explicarlo...", dice Rose. "Hace unos minutos ocurrió algo... Y fue realmente aterrador. Solo iba caminando por la casa cuando me di cuenta de que todo a mi alrededor estaba completamente congelado. Intenté llamar a mis hermanos, pero no respondían, no respiraban, solo estaban ahí parados, mirando al frente, mientras incluso las hojas que caían de los árboles flotaban en el aire, completamente inmóviles. Y yo no podía hacer nada. Al final el tiempo volvió a la normalidad por sí solo, pero no tengo ni idea de por qué ni de si esto podría volver a pasar. Solo puedo asumir que de algún modo activé mis poderes temporales por accidente, pero no tuve absolutamente ningún control sobre ellos. Me asusta muchísimo pensar que la próxima vez que esto ocurra quizá no sea capaz de deshacer el hechizo y me quede atrapada para siempre así, en un mundo donde todo el mundo está congelado en el tiempo salvo yo..."
+
+              "Oh, yo no me preocuparía demasiado por eso", dice Melindra de pronto.
+
+              "¿Qué?...", dice Daren. "¿Qué quieres decir? ¿Por qué no debería?"
+
+              "Porque ningún hechizo que congele el tiempo dura para siempre", dice Melindra. "Por mucho que tarde, el hechizo tendría que terminar en algún momento. Pero si no te apetece esperar y no tienes ninguna forma directa de cancelar el hechizo, siempre puedes intentar interactuar físicamente con alguna de las personas que están congeladas en el tiempo. Hay una cosa que todos los hechizos que congelan el tiempo tienen en común, y es que no puedes interactuar físicamente con ningún ser vivo congelado en el tiempo sin activar la cancelación de tu hechizo."
+          - source: scene_3
+            paragraph: 7
+            text: |-
+              "Eso es...", empieza a decir Rose, pero se interrumpe. "¡Gracias! Probaré eso la próxima vez que active por accidente un hechizo de congelación del tiempo."
+
+              "Dime una cosa...", dice Melindra. "No serás por casualidad una tejedora del tiempo, ¿verdad?"
+
+              "Lo soy...", dice Rose. "O al menos eso fue lo que Eiden me dijo que era cuando Eiden me vio por primera vez."
+
+              "¿Ah, sí?", dice Melindra. "Qué interesante..."
+
+              "¿Debemos entender entonces que ya conociste antes a una tejedora del tiempo, Melindra?", pregunta Daren.
+
+              "Sí", dice Melindra. "Pero fue durante el invierno inmóvil. Y como ya dije..."
+
+              "Sí, sí", la interrumpe Daren. "Ya nos dijiste que no hablarías con nadie sobre el invierno inmóvil, por la razón que sea. Lo entendemos."
+        choices:
+          - position: 1
+            text: ¿Podrías al menos decirnos qué sabes sobre las tejedoras del tiempo en general?
+            effects:
+              - set:
+                  current_scene: b2_ch09b_energizer_rose
+                  b2_ch9_weavers: 1
+          - position: 2
+            text: Rose, ¿recuerdas qué estabas haciendo antes de que el tiempo se congelara?
+            effects:
+              - set:
+                  current_scene: b2_ch09b_energizer_rose
+                  b2_ch9_weavers: 0
+      - condition: b2_ch8_energizer <> 1
+        texts:
+          - source: scene_text
+            paragraph: 24
+            text: |-
+              "¿Barry?", dice Rose. "¿Puedes oírme?"
+
+              "Sí, te oigo", digo, mientras golpeo el transceptor a través del bolsillo para que pueda oírme.
+
+              "¿Era Rose a quien acabo de oír?", grita Hadrik desde la distancia.
+
+              "Sí", le grito de vuelta, y luego saco el transceptor del bolsillo para enseñárselo. "Está en el transceptor."
+
+              "Muy bien, hagamos una pausa", dice Hadrik, mientras él y los demás dejan sus cartas en el suelo y se dirigen hacia mí.
+
+              "Barry, ¿están todos los demás ahí contigo?", me pregunta Rose.
+
+              "Sí, ahora vienen", digo. "Espera un segundo."
+
+              Luego espero a que todos los demás lleguen hasta donde estoy antes de seguir hablando.
+
+              "Vale, ya están aquí", le digo a Rose. "¿De qué querías hablarnos?"
+          - source: scene_text_2
+            paragraph: 16
+            text: |-
+              "Yo... no sé muy bien cómo explicarlo...", dice Rose. "Hace unos minutos ocurrió algo... Y fue realmente aterrador. Solo iba caminando por la casa cuando me di cuenta de que todo a mi alrededor estaba completamente congelado. Intenté llamar a mis hermanos, pero no respondían, no respiraban, solo estaban ahí parados, mirando al frente, mientras incluso las hojas que caían de los árboles flotaban en el aire, completamente inmóviles. Y yo no podía hacer nada. Al final el tiempo volvió a la normalidad por sí solo, pero no tengo ni idea de por qué ni de si esto podría volver a pasar. Solo puedo asumir que de algún modo activé mis poderes temporales por accidente, pero no tuve absolutamente ningún control sobre ellos. Me asusta muchísimo pensar que la próxima vez que esto ocurra quizá no sea capaz de deshacer el hechizo y me quede atrapada para siempre así, en un mundo donde todo el mundo está congelado en el tiempo salvo yo..."
+
+              "Oh, yo no me preocuparía demasiado por eso", dice Melindra de pronto.
+
+              "¿Qué?...", dice Daren. "¿Qué quieres decir? ¿Por qué no debería?"
+
+              "Porque ningún hechizo que congele el tiempo dura para siempre", dice Melindra. "Por mucho que tarde, el hechizo tendría que terminar en algún momento. Pero si no te apetece esperar y no tienes ninguna forma directa de cancelar el hechizo, siempre puedes intentar interactuar físicamente con alguna de las personas que están congeladas en el tiempo. Hay una cosa que todos los hechizos que congelan el tiempo tienen en común, y es que no puedes interactuar físicamente con ningún ser vivo congelado en el tiempo sin activar la cancelación de tu hechizo."
+          - source: scene_3
+            paragraph: 7
+            text: |-
+              "Eso es...", empieza a decir Rose, pero se interrumpe. "¡Gracias! Probaré eso la próxima vez que active por accidente un hechizo de congelación del tiempo."
+
+              "Dime una cosa...", dice Melindra. "No serás por casualidad una tejedora del tiempo, ¿verdad?"
+
+              "Lo soy...", dice Rose. "O al menos eso fue lo que Eiden me dijo que era cuando Eiden me vio por primera vez."
+
+              "¿Ah, sí?", dice Melindra. "Qué interesante..."
+
+              "¿Debemos entender entonces que ya conociste antes a una tejedora del tiempo, Melindra?", pregunta Daren.
+
+              "Sí", dice Melindra. "Pero fue durante el invierno inmóvil. Y como ya dije..."
+
+              "Sí, sí", la interrumpe Daren. "Ya nos dijiste que no hablarías con nadie sobre el invierno inmóvil, por la razón que sea. Lo entendemos."
+        choices:
+          - position: 1
+            text: ¿Podrías al menos decirnos qué sabes sobre las tejedoras del tiempo en general?
+            effects:
+              - set:
+                  current_scene: b2_ch09b_weaver
+                  b2_ch9_weavers: 1
+          - position: 2
+            text: Rose, ¿recuerdas qué estabas haciendo antes de que el tiempo se congelara?
+            effects:
+              - set:
+                  current_scene: b2_ch09b_weaver
+                  b2_ch9_weavers: 0
+  - name: b2_ch09b_energizer_rose
+    routes:
+      - condition: b2_ch9_weavers = 1 AND ch11_romance_rose = 0
+        texts:
+          - source: scene_text
+            paragraph: 25
+            text: |-
+              "¿Podrías al menos decirnos qué sabes sobre... Uf..."
+
+              Mientras hablaba, de pronto sentí unas fuertes ganas de vomitar y tuve que contenerme, aunque a esas alturas ya era bastante obvio que no podía seguir ocultando mi estado al resto.
+
+              "Barry... ¿pasa algo?", pregunta Rose.
+
+              "Oh, el hechizo energizante debe haberse agotado otra vez...", dice Melindra. "Supongo que debería prepararme para que me golpee una fuerte sensación de cansancio dentro de unos minutos."
+
+              "Espera, ¿hechizo energizante?", dice Rose. "¿De qué está hablando?"
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              "Melindra pasó la noche en la tienda de Barry, ayer", dice Kate, con voz fría. "Los dos usaron un hechizo energizante, pero Barry nunca había usado uno antes, así que está sufriendo dolores de cabeza y náuseas provocados por la fatiga."
+
+              "Oh...", dice Rose. "Ya veo..."
+
+              "Así que, eh...", dice Hadrik, intentando cambiar de tema. "¿Cómo van las cosas en Thilias?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_thilias
+      - condition: b2_ch9_weavers = 1 AND ch11_romance_rose = 1
+        texts:
+          - source: scene_text
+            paragraph: 25
+            text: |-
+              "¿Podrías al menos decirnos qué sabes sobre... Uf..."
+
+              Mientras hablaba, de pronto sentí unas fuertes ganas de vomitar y tuve que contenerme, aunque a esas alturas ya era bastante obvio que no podía seguir ocultando mi estado al resto.
+
+              "Barry... ¿pasa algo?", pregunta Rose.
+
+              "Oh, el hechizo energizante debe haberse agotado otra vez...", dice Melindra. "Supongo que debería prepararme para que me golpee una fuerte sensación de cansancio dentro de unos minutos."
+
+              "Espera, ¿hechizo energizante?", dice Rose. "¿De qué está hablando?"
+          - source: scene_text_2
+            paragraph: 18
+            text: |-
+              "Melindra pasó la noche en la tienda de Barry, ayer", dice Kate, con voz fría. "Los dos usaron un hechizo energizante, pero Barry nunca había usado uno antes, así que está sufriendo dolores de cabeza y náuseas provocados por la fatiga. Creo que puedes imaginar para qué usaron el hechizo energizante."
+
+              "Sí... entiendo...", dice Rose, intentando parecer calmada, aunque por su tono de voz era evidente que estaba profundamente decepcionada.
+
+              "Lo siento", dice Kate.
+
+              "No hay motivo para disculparse", dice Rose. "Lo que pasó entre Barry y yo fue solo una noche. No había ningún compromiso. ¿Verdad, Barry?..."
+
+              El tono de su voz al dirigirse a mí sonó casi como si me estuviera suplicando que lo dejara estar. Cualquier excusa que intentara poner a estas alturas probablemente solo empeoraría las cosas. Quizá de verdad haya llegado el momento de dejarlo ir.
+
+              "Sí...", le digo. "Tienes razón."
+
+              Después de que termino la frase, se hace una larga pausa durante la cual ninguno de nosotros dice nada.
+
+              "Así que, eh...", dice Hadrik, intentando cambiar de tema. "¿Cómo van las cosas en Thilias?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_thilias
+      - condition: b2_ch9_weavers = 0 AND ch11_romance_rose = 0
+        texts:
+          - source: scene_text
+            paragraph: 26
+            text: |-
+              "Rose, ¿recuerdas qué estabas haciendo antes de... Uf..."
+
+              Mientras hablaba, de pronto sentí unas fuertes ganas de vomitar y tuve que contenerme, aunque a esas alturas ya era bastante obvio que no podía seguir ocultando mi estado al resto.
+
+              "Barry... ¿pasa algo?", pregunta Rose.
+
+              "Oh, el hechizo energizante debe haberse agotado otra vez...", dice Melindra. "Supongo que debería prepararme para que me golpee una fuerte sensación de cansancio dentro de unos minutos."
+
+              "Espera, ¿hechizo energizante?", dice Rose. "¿De qué está hablando?"
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              "Melindra pasó la noche en la tienda de Barry, ayer", dice Kate, con voz fría. "Los dos usaron un hechizo energizante, pero Barry nunca había usado uno antes, así que está sufriendo dolores de cabeza y náuseas provocados por la fatiga."
+
+              "Oh...", dice Rose. "Ya veo..."
+
+              "Así que, eh...", dice Hadrik, intentando cambiar de tema. "¿Cómo van las cosas en Thilias?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_thilias
+      - condition: b2_ch9_weavers = 0 AND ch11_romance_rose = 1
+        texts:
+          - source: scene_text
+            paragraph: 26
+            text: |-
+              "Rose, ¿recuerdas qué estabas haciendo antes de... Uf..."
+
+              Mientras hablaba, de pronto sentí unas fuertes ganas de vomitar y tuve que contenerme, aunque a esas alturas ya era bastante obvio que no podía seguir ocultando mi estado al resto.
+
+              "Barry... ¿pasa algo?", pregunta Rose.
+
+              "Oh, el hechizo energizante debe haberse agotado otra vez...", dice Melindra. "Supongo que debería prepararme para que me golpee una fuerte sensación de cansancio dentro de unos minutos."
+
+              "Espera, ¿hechizo energizante?", dice Rose. "¿De qué está hablando?"
+          - source: scene_text_2
+            paragraph: 18
+            text: |-
+              "Melindra pasó la noche en la tienda de Barry, ayer", dice Kate, con voz fría. "Los dos usaron un hechizo energizante, pero Barry nunca había usado uno antes, así que está sufriendo dolores de cabeza y náuseas provocados por la fatiga. Creo que puedes imaginar para qué usaron el hechizo energizante."
+
+              "Sí... entiendo...", dice Rose, intentando parecer calmada, aunque por su tono de voz era evidente que estaba profundamente decepcionada.
+
+              "Lo siento", dice Kate.
+
+              "No hay motivo para disculparse", dice Rose. "Lo que pasó entre Barry y yo fue solo una noche. No había ningún compromiso. ¿Verdad, Barry?..."
+
+              El tono de su voz al dirigirse a mí sonó casi como si me estuviera suplicando que lo dejara estar. Cualquier excusa que intentara poner a estas alturas probablemente solo empeoraría las cosas. Quizá de verdad haya llegado el momento de dejarlo ir.
+
+              "Sí...", le digo. "Tienes razón."
+
+              Después de que termino la frase, se hace una larga pausa durante la cual ninguno de nosotros dice nada.
+
+              "Así que, eh...", dice Hadrik, intentando cambiar de tema. "¿Cómo van las cosas en Thilias?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_thilias
+  - name: b2_ch09b_weaver
+    routes:
+      - condition: b2_ch9_weavers = 1
+        texts:
+          - source: scene_text
+            paragraph: 27
+            text: |-
+              "¿Podrías al menos decirnos qué sabes sobre las tejedoras del tiempo en general?"
+
+              "No sé demasiadas cosas sobre las tejedoras del tiempo en general", dice Melindra. "La mayor parte de lo que sé procede de la única tejedora del tiempo que conocí y, como ya dije, prefiero no discutir los detalles. Sin embargo, hay una cosa de la que estoy bastante segura, y es que lo más probable es que los poderes de su amiga despierten por completo pronto."
+
+              "¿Pero será capaz de controlarlos?", digo.
+
+              "No lo sé", dice Melindra. "Eso dependerá de ella."
+
+              "Mmm...", digo.
+
+              "Quizá ya va siendo hora de cambiar de tema", dice Daren. "No querríamos preocupar todavía más a Rose de lo que ya está. Recibió un buen consejo sobre cómo lidiar con los hechizos que congelan el tiempo, así que dejémoslo ahí por ahora."
+
+              "De acuerdo", dice Hadrik. "Así que, ¿cómo van las cosas en Thilias?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_thilias
+      - condition: b2_ch9_weavers = 0
+        texts:
+          - source: scene_text
+            paragraph: 28
+            text: |-
+              "Rose, ¿recuerdas qué estabas haciendo antes de que el tiempo se congelara?"
+
+              "Yo... no estaba haciendo nada especial", dice Rose. "Acababa de terminar de cocinar y llevaba la comida a mis hermanos, al patio."
+
+              "¿Sentiste alguna emoción fuerte justo antes de activar el hechizo?", digo.
+
+              "No...", dice Rose. "Solo estaba llevando los platos. No ocurrió nada fuera de lo normal antes de que el tiempo se congelara."
+
+              "Mmm...", digo.
+
+              "Quizá ya va siendo hora de cambiar de tema", dice Daren. "No querríamos preocupar todavía más a Rose de lo que ya está. Recibió un buen consejo sobre cómo lidiar con los hechizos que congelan el tiempo, así que dejémoslo ahí por ahora."
+
+              "De acuerdo", dice Hadrik. "Así que, ¿cómo van las cosas en Thilias?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_thilias
+  - name: b2_ch09b_thilias
+    routes:
+      - condition: b2_ch1_interfere = 1
+        texts:
+          - source: scene_text
+            paragraph: 29
+            text: |-
+              "En realidad no ha pasado gran cosa desde que ustedes se fueron", dice Rose. "Supongo que la noticia más importante sería que el señor Venard ha anunciado su retirada."
+
+              "¿El dueño de la arena?", pregunta Daren.
+
+              "Sí", dice Rose. "Su retirada ha pillado por sorpresa a mucha gente. Dicen que las arenas no volverán a ser lo mismo sin él. La razón que dio para decidir retirarse fue que el último evento de la arena fue el momento culminante de su carrera y que, como ya ha cumplido su objetivo de organizar el mayor espectáculo que haya visto jamás Thilias, quiere pasar página y dejar el resto a la siguiente generación."
+
+              "Eh...", dice Hadrik. "Bueno, supongo que nunca volvería a tener la oportunidad de reunir tantas criaturas raras en toda su vida, así que cualquier otro evento que organizara a partir de ahora acabaría resultando aburrido en comparación con aquel en el que luchamos nosotros. No puedo culparlo por querer terminar su carrera en lo más alto."
+          - source: scene_text_2
+            paragraph: 19
+            text: |-
+              "También está el hecho de que su reserva de criaturas quedó completamente agotada tras el último evento", dice Daren, "así que probablemente no quisiera lidiar con el esfuerzo de conseguir criaturas nuevas otra vez. Me imagino que pasará bastante tiempo antes de que Thilias vuelva a tener otro evento de arena."
+
+              "Los eventos con criaturas se han suspendido por tiempo indefinido", dice Rose, "pero los combates en la arena seguirán adelante según lo previsto. No estoy segura de cuánta gente seguirá asistiendo a los eventos cuando descubran que ya no habrá más criaturas, eso sí..."
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "¡Rooooose!", oímos la voz de Suzie salir del transceptor. "¡Kevin está siendo malo conmigo otra vez!"
+
+              "¡Ahora voy, Suzie!", grita Rose.
+
+              Luego vuelve a dirigirse a nosotros.
+
+              "Lo siento, tengo que dejarlos por ahora", dice Rose. "Ya volveremos a hablar en otro momento. ¡Gracias por la ayuda!"
+
+              Todos nos despedimos de Rose y luego ella cierra el transceptor para ir a ocuparse de sus hermanos.
+
+              "Entonces, ¿vamos a volver a nuestro juego?", pregunta Hadrik.
+
+              "Yo digo que terminemos la ronda que estábamos jugando antes de que nos interrumpieran y luego lo dejemos por hoy", dice Daren. "Quiero asegurarme de dormir algo antes de que otra tormenta aparezca de la nada para despertarnos."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_shift
+      - condition: b2_ch1_interfere = 0 AND b2_ch2_deal <> 3
+        texts:
+          - source: scene_text
+            paragraph: 30
+            text: |-
+              "No van demasiado bien", dice Rose. "Hoy nos enteramos de que asesinaron al señor Venard."
+
+              "¿El dueño de la arena?", pregunta Daren. "¿Quién lo mató?"
+
+              "Nadie lo sabe", dice Rose. "Hay muchos rumores, pero ninguno parece creíble. Los guardias de la ciudad siguen intentando encontrar al culpable."
+
+              "No creo que lleguen a encontrarlo nunca", digo. "Lo más probable es que el dueño de la arena fuera asesinado por los lessathi. Sé con certeza que desobedeció sus órdenes directas para ayudarnos a Leila y a mí, y no creo que los lessathi se tomen muy bien la insubordinación."
+          - source: scene_text_2
+            paragraph: 20
+            text: |-
+              "¡Eso es terrible!", dice Rose. "Pero ¿por qué iba a elegir ayudarlos sabiendo el riesgo que corría?"
+
+              "Dijo que no le importaba lo que le pasara después", digo. "Quería asegurarse de que aquel evento de arena fuera perfecto, y no iba a dejar que nadie lo arruinara. Ni siquiera los lessathi."
+
+              "Ya veo...", dice Rose.
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "¡Rooooose!", oímos la voz de Suzie salir del transceptor. "¡Kevin está siendo malo conmigo otra vez!"
+
+              "¡Ahora voy, Suzie!", grita Rose.
+
+              Luego vuelve a dirigirse a nosotros.
+
+              "Lo siento, tengo que dejarlos por ahora", dice Rose. "Ya volveremos a hablar en otro momento. ¡Gracias por la ayuda!"
+
+              Todos nos despedimos de Rose y luego ella cierra el transceptor para ir a ocuparse de sus hermanos.
+
+              "Entonces, ¿vamos a volver a nuestro juego?", pregunta Hadrik.
+
+              "Yo digo que terminemos la ronda que estábamos jugando antes de que nos interrumpieran y luego lo dejemos por hoy", dice Daren. "Quiero asegurarme de dormir algo antes de que otra tormenta aparezca de la nada para despertarnos."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_shift
+      - condition: b2_ch1_interfere = 0 AND b2_ch2_deal = 3
+        texts:
+          - source: scene_text
+            paragraph: 31
+            text: |-
+              "Han ido muy mal...", dice Rose. "Hoy mismo nos ha llegado la noticia de que el rey Golmyck ha fallecido. El comunicado oficial del palacio es que ha sufrido un ataque al corazón, pero mucha gente sospecha que lo asesinaron. Toda la ciudad está de luto. No estoy segura de qué va a pasar ahora. No se ha anunciado ninguna nueva elección. Se rumorea que los nobles pretenden poner esta vez a uno de los suyos en el poder para no tener que volver a lidiar con alguien como Golmyck."
+
+              "Golmyck no puede haberse muerto así como así", dice Daren. "No tendría sentido. Estaba perfectamente sano la última vez que lo vimos. Creo que esto podría haber sido obra de los lessathi. Golmyck nos dijo que uno de estos días iba a reunirse con algunos representantes del reino animal para hablar sobre cómo enfrentarse a los lessathi de tu ciudad. Quizá los lessathi se enteraron de esa reunión de algún modo y decidieron matarlo antes de que fuera demasiado tarde."
+
+              Al oír las palabras de Daren, de pronto me doy cuenta de lo que ocurrió. La razón por la que los lessathi se enteraron de lo que planeaba el rey con los animales fue por el dispositivo que me dieron para sabotear la habitación insonorizada de Golmyck. Debió de invitar a los animales a su sala subterránea, creyendo que sería seguro mantener allí la conversación, y sin saberlo reveló todos sus secretos al enemigo. Yo... fui quien hizo que mataran a Golmyck.
+          - source: scene_text_2
+            paragraph: 21
+            text: |-
+              "Si ese es el caso, quizá ellos también fueran quienes mataron al señor Venard...", dice Rose.
+
+              "¿El dueño de la arena?", dice Daren. "¿También lo asesinaron?"
+
+              "Sí", dice Rose. "Hoy nos anunciaron su asesinato, poco antes de que nos comunicaran la muerte del rey. Hay muchos rumores sobre quién lo mató, pero ninguno parece creíble. Los guardias de la ciudad dijeron que seguían intentando encontrar al culpable."
+
+              "Nunca lo encontrarán", digo. "Estoy seguro de que fueron los lessathi quienes lo mataron. El dueño nos dijo a Leila y a mí que desobedeció una orden directa de ellos para ayudarnos en la arena, y no creo que los lessathi se tomen bien la insubordinación. Venard dijo que no le importaba lo que le pasara, siempre que aquel evento de arena saliera perfecto. Dijo que no iba a dejar que nadie lo arruinara. Ni siquiera los lessathi."
+
+              "Ya veo...", dice Rose.
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "¡Rooooose!", oímos la voz de Suzie salir del transceptor. "¡Kevin está siendo malo conmigo otra vez!"
+
+              "¡Ahora voy, Suzie!", grita Rose.
+
+              Luego vuelve a dirigirse a nosotros.
+
+              "Lo siento, tengo que dejarlos por ahora", dice Rose. "Ya volveremos a hablar en otro momento. ¡Gracias por la ayuda!"
+
+              Todos nos despedimos de Rose y luego ella cierra el transceptor para ir a ocuparse de sus hermanos.
+
+              "Entonces, ¿vamos a volver a nuestro juego?", pregunta Hadrik.
+
+              "Yo digo que terminemos la ronda que estábamos jugando antes de que nos interrumpieran y luego lo dejemos por hoy", dice Daren. "Quiero asegurarme de dormir algo antes de que otra tormenta aparezca de la nada para despertarnos."
+        effects:
+          - set:
+              ac_b2_ch9_king: 1
+            achievement:
+              id: ac_b2_ch9_king
+              title: ¡Que viva el rey!
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_shift
+  - name: b2_ch09b_shift
+    routes:
+      - condition: b2_ch8_energizer = 0
+        texts:
+          - source: scene_text
+            paragraph: 32
+            text: |-
+              Después de que Hadrik y los demás terminaran su partida de cartas, todos nos fuimos a dormir en nuestras tiendas, excepto Illuna, que hizo el primer turno. Esta vez, le pedí a Daren que le prestara una tienda a Melindra para poder dormir bien por la noche, sin más interrupciones.
+
+              No tardé mucho en quedarme dormido y me desperté varias horas después por la voz de Hadrik, que vino a decirme que nuestro turno de guardia estaba a punto de empezar.
+
+              "Vamos, Barry", dice Hadrik. "Ahora nos toca a nosotros. Espero que hoy tengas ganas de beber, porque llevo conmigo estas botellas de ale enana que están pidiendo a gritos que las vacíen."
+        choices:
+          - position: 1
+            text: Aceptar beber con Hadrik.
+            effects:
+              - set:
+                  current_scene: b2_ch09b_met_zek
+                  b2_ch9_drink: 1
+          - position: 2
+            text: Decirle que prefiero mantenerme sobrio esta noche.
+            effects:
+              - set:
+                  current_scene: b2_ch09b_met_zek
+                  b2_ch9_drink: 0
+      - condition: b2_ch8_energizer = 1
+        texts:
+          - source: scene_text
+            paragraph: 33
+            text: |-
+              Después de que Hadrik y los demás terminaran su partida de cartas, todos nos fuimos a dormir en nuestras tiendas, excepto Illuna, que hizo el primer turno. Esta vez, Daren se aseguró de prestarle una tienda a Melindra para que pudiera dormir bien por la noche, sin más interrupciones.
+
+              Me costó un poco quedarme dormido durante la primera hora debido a las náuseas y a los dolores de cabeza, pero tras un poco de descanso, el dolor desapareció y también mis problemas para dormir. Me desperté varias horas después por la voz de Hadrik, que vino a decirme que nuestro turno de guardia estaba a punto de empezar.
+
+              "Vamos, Barry", dice Hadrik. "Ahora nos toca a nosotros. Espero que hoy tengas ganas de beber, porque llevo conmigo estas botellas de ale enana que están pidiendo a gritos que las vacíen."
+        choices:
+          - position: 1
+            text: Aceptar beber con Hadrik.
+            effects:
+              - set:
+                  current_scene: b2_ch09b_met_zek
+                  b2_ch9_drink: 1
+          - position: 2
+            text: Decirle que prefiero mantenerme sobrio esta noche.
+            effects:
+              - set:
+                  current_scene: b2_ch09b_met_zek
+                  b2_ch9_drink: 0
+      - condition: b2_ch8_energizer = 2
+        texts:
+          - source: scene_text
+            paragraph: 32
+            text: |-
+              Después de que Hadrik y los demás terminaran su partida de cartas, todos nos fuimos a dormir en nuestras tiendas, excepto Illuna, que hizo el primer turno. Esta vez, le pedí a Daren que le prestara una tienda a Melindra para poder dormir bien por la noche, sin más interrupciones.
+
+              No tardé mucho en quedarme dormido y me desperté varias horas después por la voz de Hadrik, que vino a decirme que nuestro turno de guardia estaba a punto de empezar.
+
+              "Vamos, Barry", dice Hadrik. "Ahora nos toca a nosotros. Espero que hoy tengas ganas de beber, porque llevo conmigo estas botellas de ale enana que están pidiendo a gritos que las vacíen."
+        choices:
+          - position: 1
+            text: Aceptar beber con Hadrik.
+            effects:
+              - set:
+                  current_scene: b2_ch09b_met_zek
+                  b2_ch9_drink: 1
+          - position: 2
+            text: Decirle que prefiero mantenerme sobrio esta noche.
+            effects:
+              - set:
+                  current_scene: b2_ch09b_met_zek
+                  b2_ch9_drink: 0
+      - condition: b2_ch8_energizer = 3
+        texts:
+          - source: scene_text
+            paragraph: 34
+            text: |-
+              Después de que Hadrik y los demás terminaran su partida de cartas, todos nos fuimos a dormir en nuestras tiendas, excepto Illuna, que hizo el primer turno. Esta vez, Daren se aseguró de prestarle una tienda a Melindra para que pudiera dormir bien por la noche, sin más interrupciones.
+
+              No tardé mucho en quedarme dormido y me desperté varias horas después por la voz de Hadrik, que vino a decirme que nuestro turno de guardia estaba a punto de empezar.
+
+              "Vamos, Barry", dice Hadrik. "Ahora nos toca a nosotros. Espero que hoy tengas ganas de beber, porque llevo conmigo estas botellas de ale enana que están pidiendo a gritos que las vacíen."
+        choices:
+          - position: 1
+            text: Aceptar beber con Hadrik.
+            effects:
+              - set:
+                  current_scene: b2_ch09b_met_zek
+                  b2_ch9_drink: 1
+          - position: 2
+            text: Decirle que prefiero mantenerme sobrio esta noche.
+            effects:
+              - set:
+                  current_scene: b2_ch09b_met_zek
+                  b2_ch9_drink: 0
+  - name: b2_ch09b_met_zek
+    routes:
+      - condition: b2_ch9_drink = 1
+        texts:
+          - source: scene_text
+            paragraph: 35
+            text: |-
+              "Claro, tomaré unos sorbos", digo. "Pero no me voy a beber una botella entera. Me emborracho demasiado rápido con el ale enana y preferiría mantenerme relativamente sobrio, por si realmente tenemos que pelear con alguien."
+
+              "Me basta con eso", dice Hadrik. "¡Vamos allá!"
+
+              Después de vestirme y coger mis armas, sigo a Hadrik fuera de mi tienda y luego ambos nos dirigimos a un lugar que nos ofrece una buena vista de todas las tiendas, sin estar lo bastante cerca como para despertar a los demás cuando hablemos. Ahora el cielo está casi despejado, así que parece que no tendremos que preocuparnos por otra tormenta hoy. Nos sentamos cada uno en el tronco de dos árboles caídos que están frente a frente y luego hacemos chocar nuestras botellas de ale enana.
+
+              "¡Salud, Barry!", dice Hadrik.
+
+              "¡Salud!", digo, mientras ambos empezamos a beber de nuestras botellas.
+
+              "Sabes", dice Hadrik, "como esta noche estamos bebiendo los dos, estaba pensando que quizá podríamos jugar una o dos partidas de Met-Zek con las reglas originales, esta vez."
+
+              "¿Te refieres al juego de cartas con faroles en el que tenías que dar un sorbo de ale cada vez que perdías una mano?", digo.
+          - source: scene_text_2
+            paragraph: 22
+            text: |-
+              "¡Ese mismo!", dice Hadrik.
+
+              "Perfecto", digo. "Vamos a ello."
+
+              Pasamos los siguientes minutos colocando las cartas y luego empezamos a jugar. Las reglas son tan complicadas como recordaba. No entiendo muy bien cómo este puede ser un juego que normalmente se juega en tabernas. Lo normal sería pensar que, llegados a cierto punto, los jugadores estarían demasiado borrachos como para poder jugarlo correctamente. O quizá se supone que eso forma parte del encanto del juego. Quién sabe.
+
+              En cualquier caso, hay al menos una cosa que sé con certeza, y es que no se me da demasiado bien este juego. Desde que empezamos a jugar, Hadrik apenas ha perdido manos y mi puntuación deja bastante que desear. La buena noticia, sin embargo, es que Hadrik acabó aburrido de esperar a perder una mano para dar un sorbo de su botella y empezó a beber a intervalos aleatorios. Cuanto más borracho se iba poniendo, menos atención prestaba a sus manos, y eso hizo que el enfrentamiento entre los dos se equilibrara un poco más, aunque, con la cantidad de veces que yo había tenido que beber de la botella de ale, también empezaba a costarme concentrarme, incluso si solo estaba dando pequeños sorbos para evitar emborracharme demasiado.
+
+              "Oye, Barry", dice Hadrik, mientras coloca una carta boca arriba en el suelo. "Llevo un tiempo queriendo preguntarte... ¿Cuál es tu opinión sobre Melindra hasta ahora? Has tenido ese pequeño episodio con ella en tu tienda y, aparte de Flower, pareces ser la única otra persona con la que ha hablado en privado. Sé sincero, ¿crees que acabará encajando en el grupo?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_interrupt
+      - condition: b2_ch9_drink = 0
+        texts:
+          - source: scene_text
+            paragraph: 36
+            text: |-
+              "En realidad preferiría mantenerme sobrio", digo. "Por si de verdad tenemos que pelear con alguien."
+
+              "Como quieras", dice Hadrik. "Espero que no te moleste si yo sí bebo, eso sí."
+
+              "Para nada", digo.
+
+              "Muy bien", dice Hadrik. "¡Vamos allá!"
+
+              Después de vestirme y coger mis armas, sigo a Hadrik fuera de mi tienda y luego ambos nos dirigimos a un lugar que nos ofrece una buena vista de todas las tiendas, sin estar lo bastante cerca como para despertar a los demás cuando hablemos. Ahora el cielo está casi despejado, así que parece que no tendremos que preocuparnos por otra tormenta hoy. Nos sentamos cada uno en el tronco de dos árboles caídos que están frente a frente y luego Hadrik se prepara para beber de su botella de ale enana.
+
+              "¡Salud, Barry!", dice Hadrik.
+
+              "¡Salud!", digo, mientras Hadrik empieza a beber de su botella.
+
+              "Sabes", dice Hadrik, "esperaba que pudiéramos jugar un par de partidas de Met-Zek esta noche con las reglas originales, pero como tú no bebes, supongo que voy a tener que darte una pequeña ventaja. ¿Qué me dices? ¿Te apuntas a una ronda?"
+
+              "¿Met-Zek?", pregunto. "¿Te refieres al juego de cartas al que jugamos hace tres días? ¿Ese en el que había faroles y tenías que dar un sorbo de ale cada vez que perdías una mano?"
+          - source: scene_text_2
+            paragraph: 23
+            text: |-
+              "¡Ese mismo!", dice Hadrik.
+
+              "Perfecto", digo. "Vamos a ello."
+
+              Pasamos los siguientes minutos colocando las cartas y luego empezamos a jugar. Las reglas son tan complicadas como recordaba. No entiendo muy bien cómo este puede ser un juego que normalmente se juega en tabernas. Lo normal sería pensar que, llegados a cierto punto, los jugadores estarían demasiado borrachos como para poder jugarlo correctamente. O quizá se supone que eso forma parte del encanto del juego. Quién sabe.
+
+              En cualquier caso, hay al menos una cosa que sé con certeza, y es que no se me da demasiado bien este juego. Desde que empezamos a jugar, Hadrik apenas ha perdido manos y mi puntuación deja bastante que desear. La buena noticia, sin embargo, es que Hadrik acabó aburrido de esperar a perder una mano para dar un sorbo de su botella y empezó a beber a intervalos aleatorios. Cuanto más borracho se iba poniendo, menos atención prestaba a sus manos, y eso hizo que el enfrentamiento entre los dos se equilibrara un poco más, aunque yo seguía necesitando ganar bastantes manos si quería alcanzar su puntuación.
+
+              "Oye, Barry", dice Hadrik, mientras coloca una carta boca arriba en el suelo. "Llevo un tiempo queriendo preguntarte... ¿Cuál es tu opinión sobre Melindra hasta ahora? Has tenido ese pequeño episodio con ella en tu tienda y, aparte de Flower, pareces ser la única otra persona con la que ha hablado en privado. Sé sincero, ¿crees que acabará encajando en el grupo?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_interrupt
+  - name: b2_ch09b_interrupt
+    routes:
+      - condition: b2_ch9_amused = 1
+        texts:
+          - source: scene_text
+            paragraph: 37
+            text: |-
+              "Es difícil de decir", le digo, mientras también coloco una carta boca arriba en el suelo. "Tuve una pequeña conversación con ella esta mañana, pero no logré convencerla de que dejara de antagonizar al grupo con sus actos. Dijo que no debería intentar cambiar la forma en que vive solo para acomodarse a los demás y que Eiden nunca tuvo problema con la forma en que se comportaba."
+
+              "Sí, me temía que dijera algo así", dice Hadrik.
+
+              "El caso es que, aunque empezara a cambiar de actitud ahora mismo, ya se ha hecho mucho daño", digo. "Kate no parece confiar en ella en absoluto. Y los demás... bueno, no estoy seguro con respecto a los demás, pero a mí me queda claro que, aparte de Flower, nadie está intentando de verdad ser su amigo."
+
+              "Lo sé", dice Hadrik. "Por eso intenté montar esa partida de cartas antes de irnos a dormir. Esperaba que quizá, si todos hablaban un poco más entre sí, llegarían a algún tipo de entendimiento. Pero por ahora no he tenido suerte."
+          - source: scene_text_2
+            paragraph: 24
+            text: |-
+              Luego mira sus cartas y se le dibuja una sonrisa confiada en la cara mientras deja una de ellas boca abajo en el suelo. Ahora bien, las reglas de este juego dicen que puedes interrumpir cualquier ronda en cualquier momento para pedirle a tu adversario que ponga todas sus cartas boca arriba. Si su carta resulta ser mala, perdería la ronda al instante y yo ganaría cinco veces más puntos de los que obtendría si esperara a que la ronda terminara. Sin embargo, si hago eso y la carta que dejó boca abajo era en realidad una buena carta, yo perdería cinco veces más puntos de los que perdería normalmente.
+
+              Así que la cuestión es... ¿Puso una carta buena? ¿O una mala?
+        choices:
+          - position: 1
+            text: Decirle que dé la vuelta a su carta
+            effects:
+              - set:
+                  current_scene: b2_ch09b_conversation
+                  b2_ch9_flip: 1
+          - position: 2
+            text: Dejar que la ronda continúe con normalidad
+            effects:
+              - set:
+                  current_scene: b2_ch09b_conversation
+                  b2_ch9_flip: 0
+      - condition: b2_ch8_energizer = 1 AND b2_ch9_amused = 0
+        texts:
+          - source: scene_text
+            paragraph: 38
+            text: |-
+              "Es difícil de decir", le digo, mientras también coloco una carta boca arriba en el suelo. "Tuve una pequeña conversación con ella esta mañana y me prometió que intentaría antagonizar menos a la gente a partir de ahora, pero ya se ha hecho mucho daño. Kate, al menos, no parece confiar en ella en absoluto. No estoy seguro con respecto a los demás, pero está bastante claro que, aparte de Flower, nadie está intentando de verdad ser su amigo."
+
+              "Lo sé", dice Hadrik. "Por eso intenté montar esa partida de cartas antes de irnos a dormir. Esperaba que quizá, si todos hablaban un poco más entre sí, llegarían a algún tipo de entendimiento. Pero por ahora no he tenido suerte."
+          - source: scene_text_2
+            paragraph: 25
+            text: "He then looks at his cards, and he gets a confident grin on his face, as he places one of his cards on the ground, facing down. Now, the rules of this game state that you can interrupt any round, at any moment, to ask your adversary to turn all his cards face up. In case his card is bad, his round would be immediately forfeited, and I would gain five times more points than I would have gained, if I waited for the round to be over. However, if I do this, and the card facing down was actually a good card, I would be losing five times the points that I'd lose normally. \r\n\r\nSo, the question here is... Did he place down a good card? Or a bad card?"
+        choices:
+          - position: 1
+            text: Decirle que dé la vuelta a su carta
+            effects:
+              - set:
+                  current_scene: b2_ch09b_conversation
+                  b2_ch9_flip: 1
+          - position: 2
+            text: Dejar que la ronda continúe con normalidad
+            effects:
+              - set:
+                  current_scene: b2_ch09b_conversation
+                  b2_ch9_flip: 0
+      - condition: b2_ch8_energizer = 2
+        texts:
+          - source: scene_text
+            paragraph: 38
+            text: |-
+              "Es difícil de decir", le digo, mientras también coloco una carta boca arriba en el suelo. "Tuve una pequeña conversación con ella esta mañana y me prometió que intentaría antagonizar menos a la gente a partir de ahora, pero ya se ha hecho mucho daño. Kate, al menos, no parece confiar en ella en absoluto. No estoy seguro con respecto a los demás, pero está bastante claro que, aparte de Flower, nadie está intentando de verdad ser su amigo."
+
+              "Lo sé", dice Hadrik. "Por eso intenté montar esa partida de cartas antes de irnos a dormir. Esperaba que quizá, si todos hablaban un poco más entre sí, llegarían a algún tipo de entendimiento. Pero por ahora no he tenido suerte."
+          - source: scene_text_2
+            paragraph: 25
+            text: "He then looks at his cards, and he gets a confident grin on his face, as he places one of his cards on the ground, facing down. Now, the rules of this game state that you can interrupt any round, at any moment, to ask your adversary to turn all his cards face up. In case his card is bad, his round would be immediately forfeited, and I would gain five times more points than I would have gained, if I waited for the round to be over. However, if I do this, and the card facing down was actually a good card, I would be losing five times the points that I'd lose normally. \r\n\r\nSo, the question here is... Did he place down a good card? Or a bad card?"
+        choices:
+          - position: 1
+            text: Decirle que dé la vuelta a su carta
+            effects:
+              - set:
+                  current_scene: b2_ch09b_conversation
+                  b2_ch9_flip: 1
+          - position: 2
+            text: Dejar que la ronda continúe con normalidad
+            effects:
+              - set:
+                  current_scene: b2_ch09b_conversation
+                  b2_ch9_flip: 0
+      - condition: b2_ch8_energizer = 3
+        texts:
+          - source: scene_text
+            paragraph: 38
+            text: |-
+              "Es difícil de decir", le digo, mientras también coloco una carta boca arriba en el suelo. "Tuve una pequeña conversación con ella esta mañana y me prometió que intentaría antagonizar menos a la gente a partir de ahora, pero ya se ha hecho mucho daño. Kate, al menos, no parece confiar en ella en absoluto. No estoy seguro con respecto a los demás, pero está bastante claro que, aparte de Flower, nadie está intentando de verdad ser su amigo."
+
+              "Lo sé", dice Hadrik. "Por eso intenté montar esa partida de cartas antes de irnos a dormir. Esperaba que quizá, si todos hablaban un poco más entre sí, llegarían a algún tipo de entendimiento. Pero por ahora no he tenido suerte."
+          - source: scene_text_2
+            paragraph: 25
+            text: "He then looks at his cards, and he gets a confident grin on his face, as he places one of his cards on the ground, facing down. Now, the rules of this game state that you can interrupt any round, at any moment, to ask your adversary to turn all his cards face up. In case his card is bad, his round would be immediately forfeited, and I would gain five times more points than I would have gained, if I waited for the round to be over. However, if I do this, and the card facing down was actually a good card, I would be losing five times the points that I'd lose normally. \r\n\r\nSo, the question here is... Did he place down a good card? Or a bad card?"
+        choices:
+          - position: 1
+            text: Decirle que dé la vuelta a su carta
+            effects:
+              - set:
+                  current_scene: b2_ch09b_conversation
+                  b2_ch9_flip: 1
+          - position: 2
+            text: Dejar que la ronda continúe con normalidad
+            effects:
+              - set:
+                  current_scene: b2_ch09b_conversation
+                  b2_ch9_flip: 0
+      - condition: b2_ch8_energizer = 0
+        texts:
+          - source: scene_text
+            paragraph: 39
+            text: |-
+              "Es difícil de decir", le digo, mientras también coloco una carta boca arriba en el suelo. "Sinceramente, no puedo decir que haya estado precisamente en buenos términos con ella hasta ahora. De algún modo conseguí pactar una tregua con ella esta tarde, así que al menos nuestra pequeña disputa ha terminado por el momento, pero, por lo que he visto, la mayoría de la gente de nuestro grupo no parece tener muy buena opinión de ella. Kate, al menos, no parece confiar en ella en absoluto. No estoy seguro con respecto a los demás, pero está bastante claro que, aparte de Flower, nadie está intentando de verdad ser su amigo."
+
+              "Lo sé", dice Hadrik. "Por eso intenté montar esa partida de cartas antes de irnos a dormir. Esperaba que quizá, si todos hablaban un poco más entre sí, llegarían a algún tipo de entendimiento. Pero por ahora no he tenido suerte."
+          - source: scene_text_2
+            paragraph: 26
+            text: "He then looks at his cards, and he gets a confident grin on his face, as he places one of his cards on the ground, facing down. Now, the rules of this game state that you can interrupt any round, at any moment, to ask your adversary to turn all his cards face up. In case his card is bad, his round would be immediately forfeited, and I would gain five times more points than I would have gained, if I waited for the round to be over. However, if I do this, and the card facing down was actually a good card, I would be losing five times the points that I'd lose normally. \r\n\r\nSo, the question here is... Did he place down a good card? Or a bad card?"
+        choices:
+          - position: 1
+            text: Decirle que dé la vuelta a su carta
+            effects:
+              - set:
+                  current_scene: b2_ch09b_conversation
+                  b2_ch9_flip: 1
+          - position: 2
+            text: Dejar que la ronda continúe con normalidad
+            effects:
+              - set:
+                  current_scene: b2_ch09b_conversation
+                  b2_ch9_flip: 0
+  - name: b2_ch09b_conversation
+    routes:
+      - condition: b2_ch9_flip = 1 AND b2_ch9_drink = 0
+        texts:
+          - source: scene_text
+            paragraph: 40
+            text: |-
+              "Da la vuelta a tu carta, Hadrik", le digo.
+
+              Hadrik me sonríe y pone su carta boca arriba. Al parecer, la carta que había dejado boca abajo era una de las peores que podría haber tenido en esta situación. No solo perdió la ronda, sino que lo hizo de forma espectacular. Casi me pregunto si no estaría buscando simplemente una excusa para volver a beber de su botella.
+
+              "¡Buena llamada, Barry!", dice Hadrik. "Por un momento casi pensé que te tenía."
+
+              Luego vuelve a beber de su botella de ale, antes de barajar otra vez y repartirnos nuevas cartas.
+
+              "En fin", dice Hadrik, mientras ambos empezamos a colocar nuestras cartas en el suelo para comenzar una nueva ronda. "Estaba pensando que quizá podríamos tener una charla con los demás sobre Melindra. No sé si es buena idea dejar las cosas así hasta que lleguemos a Ollendor. Ya es bastante malo que vayamos a tener que infiltrarnos por nuestra cuenta en una ciudad fuertemente fortificada. Preferiría no tenernos también peleando entre nosotros a cada paso del camino."
+
+              "Si volvemos a tener otra conversación privada sin Melindra, solo lograremos enfadarla aún más", digo. "Hoy ha dejado bastante claro que le han molestado todas esas veces en las que la excluíamos de las conversaciones porque no confiábamos en ella. No hace falta retorcer más el cuchillo en la herida."
+          - source: scene_text_2
+            paragraph: 27
+            text: |-
+              "¿Pero cómo vamos a convencer a los demás de que se lleven bien con Melindra, entonces?", dice Hadrik.
+
+              "No lo sé", digo. "Pero desde luego no será hablando. Seamos serios. Si con tener una conversación bastara para arreglar toda esta situación, no estaríamos donde estamos ahora. Melindra tiene que ganarse la confianza del equipo con sus actos, no con palabras. Dudo que a estas alturas nada de lo que tú y yo podamos decir vaya a marcar una gran diferencia."
+
+              Al terminar de hablar, miro las cartas que tengo en el suelo y de pronto me doy cuenta de que la ronda ya había terminado y de que la había ganado por un margen bastante amplio. De hecho, los puntos que obtuve en esta ronda fueron justo los suficientes para hacerme ganar toda la partida.
+
+              Vaya... Bueno, supongo que siempre hay una primera vez.
+
+              "¡Felicidades por ganar una partida de Met-Zek por primera vez, Barry!", dice Hadrik, mientras veo salir lentamente el sol detrás de él. "Ahora creo que deberíamos hacer una pequeña pausa para recibir como se debe a nuestro nuevo invitado. Llegará hasta nosotros en breve."
+        effects:
+          - set:
+              ac_b2_ch9_cards: 1
+            achievement:
+              id: ac_b2_ch9_cards
+              title: Maestro de las cartas
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_ending
+      - condition: b2_ch9_flip = 1 AND b2_ch9_drink = 1
+        texts:
+          - source: scene_text
+            paragraph: 40
+            text: |-
+              "Da la vuelta a tu carta, Hadrik", le digo.
+
+              Hadrik me sonríe y pone su carta boca arriba. Al parecer, la carta que había dejado boca abajo era una de las peores que podría haber tenido en esta situación. No solo perdió la ronda, sino que lo hizo de forma espectacular. Casi me pregunto si no estaría buscando simplemente una excusa para volver a beber de su botella.
+
+              "¡Buena llamada, Barry!", dice Hadrik. "Por un momento casi pensé que te tenía."
+
+              Luego vuelve a beber de su botella de ale, antes de barajar otra vez y repartirnos nuevas cartas.
+
+              "En fin", dice Hadrik, mientras ambos empezamos a colocar nuestras cartas en el suelo para comenzar una nueva ronda. "Estaba pensando que quizá podríamos tener una charla con los demás sobre Melindra. No sé si es buena idea dejar las cosas así hasta que lleguemos a Ollendor. Ya es bastante malo que vayamos a tener que infiltrarnos por nuestra cuenta en una ciudad fuertemente fortificada. Preferiría no tenernos también peleando entre nosotros a cada paso del camino."
+
+              "Si volvemos a tener otra conversación privada sin Melindra, solo lograremos enfadarla aún más", digo. "Hoy ha dejado bastante claro que le han molestado todas esas veces en las que la excluíamos de las conversaciones porque no confiábamos en ella. No hace falta retorcer más el cuchillo en la herida."
+          - source: scene_text_2
+            paragraph: 28
+            text: |-
+              "¿Pero cómo vamos a convencer a los demás de que se lleven bien con Melindra, entonces?", dice Hadrik.
+
+              "No lo sé", digo. "Pero desde luego no será hablando. Seamos serios. Si con tener una conversación bastara para arreglar toda esta situación, no estaríamos donde estamos ahora. Melindra tiene que ganarse la confianza del equipo con sus actos, no con palabras. Dudo que a estas alturas nada de lo que tú y yo podamos decir vaya a marcar una gran diferencia."
+
+              Al terminar de hablar, miro las cartas que tengo en el suelo y de pronto me doy cuenta de que la ronda ya había terminado y de que la había ganado por un margen bastante amplio.
+
+              "¡Felicidades por ganar la ronda, Barry!", dice Hadrik, mientras veo salir lentamente el sol detrás de él. "Ahora creo que deberíamos hacer una pequeña pausa para recibir como se debe a nuestro nuevo invitado. Llegará hasta nosotros en breve."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_ending
+      - condition: b2_ch9_flip = 0 AND b2_ch9_drink = 1
+        texts:
+          - source: scene_text
+            paragraph: 41
+            text: |-
+              Dejo que la ronda continúe con normalidad y coloco otra de mis cartas boca arriba.
+
+              "Esperaba que no me desafiaras", dice Hadrik, con una sonrisa.
+
+              Luego coloca otra carta boca arriba en el suelo y le da la vuelta a la carta que había dejado boca abajo. Al parecer, esa carta era increíblemente mala, lo que me habría hecho ganar la ronda si lo hubiera desafiado antes, pero, en combinación con la nueva carta que ahora ha puesto en el suelo, le otorga un bonificador inmenso que prácticamente hace que yo pierda la ronda al instante.
+
+              "Más suerte la próxima vez, ¿eh, Barry?", dice Hadrik, mientras empieza a barajar.
+
+              "Lo que tú digas", digo, y vuelvo a dar otro sorbo de mi botella.
+
+              Una vez que Hadrik termina de barajar, reparte nuestras cartas y empezamos una nueva ronda.
+
+              "En fin", dice Hadrik, mientras ambos empezamos a colocar nuestras cartas en el suelo. "Estaba pensando que quizá podríamos tener una charla con los demás sobre Melindra. No sé si es buena idea dejar las cosas así hasta que lleguemos a Ollendor. Ya es bastante malo que vayamos a tener que infiltrarnos por nuestra cuenta en una ciudad fuertemente fortificada. Preferiría no tenernos también peleando entre nosotros a cada paso del camino."
+
+              "Si volvemos a tener otra conversación privada sin Melindra, solo lograremos enfadarla aún más", digo. "Hoy ha dejado bastante claro que le han molestado todas esas veces en las que la excluíamos de las conversaciones porque no confiábamos en ella. No hace falta retorcer más el cuchillo en la herida."
+          - source: scene_text_2
+            paragraph: 28
+            text: |-
+              "¿Pero cómo vamos a convencer a los demás de que se lleven bien con Melindra, entonces?", dice Hadrik.
+
+              "No lo sé", digo. "Pero desde luego no será hablando. Seamos serios. Si con tener una conversación bastara para arreglar toda esta situación, no estaríamos donde estamos ahora. Melindra tiene que ganarse la confianza del equipo con sus actos, no con palabras. Dudo que a estas alturas nada de lo que tú y yo podamos decir vaya a marcar una gran diferencia."
+
+              Al terminar de hablar, miro las cartas que tengo en el suelo y de pronto me doy cuenta de que la ronda ya había terminado y de que la había ganado por un margen bastante amplio.
+
+              "¡Felicidades por ganar la ronda, Barry!", dice Hadrik, mientras veo salir lentamente el sol detrás de él. "Ahora creo que deberíamos hacer una pequeña pausa para recibir como se debe a nuestro nuevo invitado. Llegará hasta nosotros en breve."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_ending
+      - condition: b2_ch9_flip = 0 AND b2_ch9_drink = 0
+        texts:
+          - source: scene_text
+            paragraph: 42
+            text: |-
+              Dejo que la ronda continúe con normalidad y coloco otra de mis cartas boca arriba.
+
+              "Esperaba que no me desafiaras", dice Hadrik, con una sonrisa.
+
+              Luego coloca otra carta boca arriba en el suelo y le da la vuelta a la carta que había dejado boca abajo. Al parecer, esa carta era increíblemente mala, lo que me habría hecho ganar la ronda si lo hubiera desafiado antes, pero, en combinación con la nueva carta que ahora ha puesto en el suelo, le otorga un bonificador inmenso que prácticamente hace que yo pierda la ronda al instante.
+
+              "Más suerte la próxima vez, ¿eh, Barry?", dice Hadrik, mientras empieza a barajar.
+
+              "Lo que tú digas", digo.
+
+              Una vez que Hadrik termina de barajar, reparte nuestras cartas y empezamos una nueva ronda.
+
+              "En fin", dice Hadrik, mientras ambos empezamos a colocar nuestras cartas en el suelo. "Estaba pensando que quizá podríamos tener una charla con los demás sobre Melindra. No sé si es buena idea dejar las cosas así hasta que lleguemos a Ollendor. Ya es bastante malo que vayamos a tener que infiltrarnos por nuestra cuenta en una ciudad fuertemente fortificada. Preferiría no tenernos también peleando entre nosotros a cada paso del camino."
+
+              "Si volvemos a tener otra conversación privada sin Melindra, solo lograremos enfadarla aún más", digo. "Hoy ha dejado bastante claro que le han molestado todas esas veces en las que la excluíamos de las conversaciones porque no confiábamos en ella. No hace falta retorcer más el cuchillo en la herida."
+          - source: scene_text_2
+            paragraph: 28
+            text: |-
+              "¿Pero cómo vamos a convencer a los demás de que se lleven bien con Melindra, entonces?", dice Hadrik.
+
+              "No lo sé", digo. "Pero desde luego no será hablando. Seamos serios. Si con tener una conversación bastara para arreglar toda esta situación, no estaríamos donde estamos ahora. Melindra tiene que ganarse la confianza del equipo con sus actos, no con palabras. Dudo que a estas alturas nada de lo que tú y yo podamos decir vaya a marcar una gran diferencia."
+
+              Al terminar de hablar, miro las cartas que tengo en el suelo y de pronto me doy cuenta de que la ronda ya había terminado y de que la había ganado por un margen bastante amplio.
+
+              "¡Felicidades por ganar la ronda, Barry!", dice Hadrik, mientras veo salir lentamente el sol detrás de él. "Ahora creo que deberíamos hacer una pequeña pausa para recibir como se debe a nuestro nuevo invitado. Llegará hasta nosotros en breve."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch09b_ending
+  - name: b2_ch09b_ending
+    texts:
+      - source: scene_text
+        paragraph: 43
+        text: |-
+          Hadrik tiene razón. Puedo sentir a un mago acercándose lentamente hacia nosotros y no está haciendo ningún esfuerzo por ocultar su presencia. Por la sensación que me transmite su aura, diría que es, sin duda alguna, uno de los magos más fuertes que se han unido a este torneo. Cuando por fin lo vemos bien, descubrimos que es un hombre de piel oscura, rondando los cincuenta y tantos, con el pelo corto y gris, una constitución musculosa y una mirada severa e inflexible. Empuña dos grandes espadas en las manos y lleva una armadura de cuero que parece estar fuertemente encantada. El hombre avanza despacio hasta llegar junto a Hadrik y a mí, y luego se detiene justo frente a nosotros, con una expresión bastante calmada en la cara.
+
+          "¿Puedo preguntar si este es el campamento donde se aloja Daren, el sanador con armadura?", dice el hombre. "De ser así, me gustaría mucho reunirme con él."
+      - source: scene_text_2
+        paragraph: 29
+        text: |-
+          "Creo que ya conoces la respuesta a esa pregunta", dice Hadrik. "Pero antes de dejarte avanzar más, me temo que primero vas a tener que presentarte. Dinos... ¿quién eres y cómo conoces a Daren?"
+
+          "Me sorprende que Daren no les haya hablado de mí", dice el hombre. "Nos conocemos desde hace mucho tiempo. Somos viejos amigos."
+
+          "Eso sigue sin responder a la pregunta", dice Hadrik.
+
+          El hombre sonríe.
+
+          "Muy bien", dice. "En ese caso, me presentaré. Me llamo Nolderan. Soy un exsabio, un encantador de renombre y un maestro de artes marciales. Y además, soy el hombre que le dejó esa cicatriz a Daren."
+    choices:
+      - position: 1
+        text: Siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: b2_ch10a_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"
+  - name: b2_ch09b_credits
+    routes:
+      - condition: second_book_purchased = 0
+        texts:
+          - source: scene_text
+            paragraph: 44
+            text: |-
+              El décimo capítulo ya está disponible.
+
+              Pulsa el botón de abajo para continuar.
+        choices:
+          - position: 1
+            text: Ir al siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: b2_ch10a_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"
+      - condition: second_book_purchased = 1
+        texts:
+          - source: scene_text
+            paragraph: 45
+            text: "The tenth chapter is now available.\r\n\r\nTap the button below to proceed."
+        choices:
+          - position: 1
+            text: Ir al siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: b2_ch10a_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"

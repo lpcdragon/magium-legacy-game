@@ -1,0 +1,2145 @@
+scenes:
+  - name: b2_ch11a_intro
+    effects:
+      - set:
+          successful_checks:
+            - 'Punto de control alcanzado: Partida guardada.'
+        condition: checkpoint_rich = 1
+    routes:
+      - condition: ch11_saved_rose = 0
+        texts:
+          - source: scene_text
+            paragraph: 2
+            text: |-
+              "Tienes razón...", le dice Daren a Hadrik, después de mirar a su alrededor durante unos segundos. "El tiempo de verdad está congelado. ¿Podría ser obra de Eiden?"
+
+              "No es Eiden", dice Arraka. "Si Eiden estuviera aquí, ya se los habría dicho, ¿recuerdan?"
+
+              "Entonces, ¿quién es?", pregunta Daren. "¿Quién congeló el tiempo?"
+
+              "¿Por qué no miran y lo comprueban ustedes mismos?", dice Arraka. "Está saliendo del bosque y viene hacia ustedes en este mismo instante."
+
+              "¿A ella?...", dice Daren.
+
+              Cuando todos nos fijamos en la persona que se acerca lentamente hacia nosotros, la reconocemos de inmediato. Rose avanza ahora muy despacio hacia nosotros, mientras sus ojos brillan con una intensa luz amarilla. Tiene una expresión completamente vacía y mira fijamente al frente, sin reconocer nuestra presencia.
+          - source: scene_text_2
+            paragraph: 2
+            text: |-
+              "El revenant, otra vez...", dice Daren, con una mirada fría. "Vamos a ver qué quiere."
+
+              Todos hacemos lo que dice Daren y nos acercamos al revenant, hasta quedar justo frente a ella. En cuanto llegamos, el revenant se detiene en seco y sigue mirando recto al frente, con la misma expresión vacía en la cara.
+
+              "¿Por qué viniste aquí, revenant?", le pregunta Daren. "¿Y por qué congelaste el tiempo?"
+
+              El revenant no reacciona de ningún modo a las palabras de Daren. Ni siquiera parece consciente de nuestra presencia. Es como si estuviera en una especie de... trance.
+        effects:
+          - set:
+              hearing_aux: hearing_aux + 3
+              hearing: hearing + 3
+              b2_ch11_added_hearing: 1
+            condition: b2_ch11_added_hearing = 0 AND b2_ch6_stat = 1 AND b2_ch9_channel = 1 AND b2_ch10_activate = 1
+        choices:
+          - position: 1
+            text: Seguir intentando hablar con ella.
+            effects:
+              - set:
+                  current_scene: b2_ch11a_keep
+                  checkpoint_rich: 0
+          - position: 2
+            text: Agarrarla por los brazos e intentar sacarla del trance a sacudidas.
+            effects:
+              - set:
+                  current_scene: b2_ch11a_grab
+                  checkpoint_rich: 0
+      - condition: ch11_saved_rose = 1
+        texts:
+          - source: scene_text
+            paragraph: 3
+            text: "\"You're right...\" Daren tells Hadrik, after looking around himself for a few seconds. \"The time really is frozen. Could it be Eiden's doing?\"\r\n\r\n\"It's not Eiden,\" Arraka says. \"If Eiden were here, I would have told you about it, remember?\"\r\n\r\n\"Then who is it?\" Daren asks. \"Who froze the time?\"\r\n\r\n\"Why don't you take a look and see for yourself?\" Arraka says. \"She is coming out of the woods and heading your way as we speak.\"\r\n\r\n\"She?...\" Daren says.\r\n\r\nAs we all take a look at the person who is now slowly approaching us, we recognize her immediately. Rose is currently walking very slowly towards us, while her eyes are shining with a bright yellow light. Her expression is completely blank, as she looks straight ahead of her, without acknowledging our presence."
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              "¿Rose?...", dice Daren. "¿Pero no estaba en Thilias todavía ayer?... ¡Vamos, acerquémonos a ella!"
+
+              Todos hacemos lo que dice Daren y nos acercamos a Rose, hasta quedar justo frente a ella. En cuanto llegamos, Rose se detiene en seco y sigue mirando recto al frente, con la misma expresión vacía en la cara.
+
+              "Rose, ¿puedes oírnos?", dice Kate.
+
+              Rose no reacciona de ningún modo a las palabras de Kate. Ni siquiera parece consciente de nuestra presencia. Es como si estuviera en una especie de... trance.
+        choices:
+          - position: 1
+            text: Seguir intentando hablar con ella.
+            effects:
+              - set:
+                  current_scene: b2_ch11a_keep
+                  checkpoint_rich: 0
+          - position: 2
+            text: Agarrarla por los brazos e intentar sacarla del trance a sacudidas.
+            effects:
+              - set:
+                  current_scene: b2_ch11a_grab
+                  checkpoint_rich: 0
+  - name: b2_ch11a_keep
+    routes:
+      - condition: ch11_saved_rose = 0
+        texts:
+          - source: scene_text
+            paragraph: 4
+            text: |-
+              "¿Nos estás escuchando?...", digo.
+
+              Al ver que el revenant sigue sin hacer nada, me coloco justo delante de ella y empiezo a chasquear los dedos repetidamente, muy cerca de su cara.
+
+              "¡Vamos!", digo. "¡Reacciona!"
+
+              "Oh, no...", dice Melindra. "Ya he visto pasar algo así antes. Si es lo que creo que es, más vale que se preparen. Esa pelea con el sabio de antes va a parecer un paseo por el parque comparada con lo que viene ahora."
+
+              "Menudo espectáculo les espera, desde luego", dice Arraka, y luego se ríe.
+
+              "¿De qué están hablando las dos?", dice Hadrik. "¿Prepararnos para qué?"
+
+              "Está empezando...", dice Melindra.
+          - source: scene_text_2
+            paragraph: 4
+            text: |-
+              De pronto, el revenant desaparece ante nuestros ojos y oímos su voz a nuestra espalda. Cuando todos nos damos la vuelta, nos damos cuenta de que no era solo su voz la que había cambiado de sitio en una fracción de segundo, sino el revenant en persona. La voz que sale de su boca apenas suena como la de Rose, por la enorme reverberación que la acompaña.
+
+              "He venido a contarles una profecía...", dice el revenant.
+
+              "Ya empezamos", dice Arraka.
+
+              "Una profecía de cosas que podrían llegar a suceder, pero que aún no han quedado fijadas en piedra", continúa el revenant. "Escuchen con atención los acontecimientos que van a ser anunciados, y quizá logren impedir que ocurran antes de que sea demasiado tarde."
+
+              El revenant vuelve a desaparecer y reaparece a nuestra izquierda, preparándose para hablar de nuevo, mientras el eco de su voz se intensifica para señalar el comienzo de la profecía. Después de cada línea que pronuncia, el revenant desaparece y aparece en un sitio distinto, obligándonos a todos a girar la cabeza confundidos.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_prophecy
+      - condition: ch11_saved_rose = 1
+        texts:
+          - source: scene_text
+            paragraph: 5
+            text: |-
+              "¡Rose!", grito. "¡¡¡Eh, Rose!!!"
+
+              Al ver que sigue sin hacer nada, me coloco justo a su lado y empiezo a mover la mano delante de sus ojos.
+
+              "Sin reacción...", digo, al darme cuenta de que las pupilas de Rose ni siquiera se mueven para seguir la dirección de mi mano.
+
+              "Oh, no...", dice Melindra. "Ya he visto pasar algo así antes. Si es lo que creo que es, más vale que se preparen. Esa pelea con el sabio de antes va a parecer un paseo por el parque comparada con lo que viene ahora."
+
+              "Menudo espectáculo les espera, desde luego", dice Arraka, y luego se ríe.
+
+              "¿De qué están hablando las dos?", dice Hadrik. "¿Prepararnos para qué?"
+
+              "Está empezando...", dice Melindra.
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              De pronto, Rose desaparece ante nuestros ojos y oímos su voz a nuestra espalda. Cuando todos nos damos la vuelta, nos damos cuenta de que no era solo su voz la que había cambiado de sitio en una fracción de segundo, sino Rose en persona. La voz que sale de su boca apenas suena como la de Rose, por la enorme reverberación que la acompaña.
+
+              "He venido a contarles una profecía...", dice Rose.
+
+              "Ya empezamos", dice Arraka.
+
+              "Una profecía de cosas que podrían llegar a suceder, pero que aún no han quedado fijadas en piedra", continúa Rose. "Escuchen con atención los acontecimientos que van a ser anunciados, y quizá logren impedir que ocurran antes de que sea demasiado tarde."
+
+              Rose vuelve a desaparecer y reaparece a nuestra izquierda, preparándose para hablar de nuevo, mientras el eco de su voz se intensifica para señalar el comienzo de la profecía. Después de cada línea que pronuncia, Rose desaparece y aparece en un sitio distinto, obligándonos a todos a girar la cabeza confundidos.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_prophecy
+  - name: b2_ch11a_grab
+    routes:
+      - condition: ch11_saved_rose = 0
+        texts:
+          - source: scene_text
+            paragraph: 6
+            text: |-
+              Me acerco al revenant e intento agarrarla por los brazos. En cuanto la toco, una fuerte fuerza mágica me empuja hacia atrás y me hace caer de espaldas.
+
+              "¿Qué demonios?...", digo, mientras me levanto del suelo lentamente.
+
+              "Oh, no...", dice Melindra. "Ya he visto pasar algo así antes. Si es lo que creo que es, más vale que se preparen. Esa pelea con el sabio de antes va a parecer un paseo por el parque comparada con lo que viene ahora."
+
+              "Menudo espectáculo les espera, desde luego", dice Arraka, y luego se ríe.
+
+              "¿De qué están hablando las dos?", dice Hadrik. "¿Prepararnos para qué?"
+
+              "Está empezando...", dice Melindra.
+          - source: scene_text_2
+            paragraph: 4
+            text: |-
+              De pronto, el revenant desaparece ante nuestros ojos y oímos su voz a nuestra espalda. Cuando todos nos damos la vuelta, nos damos cuenta de que no era solo su voz la que había cambiado de sitio en una fracción de segundo, sino el revenant en persona. La voz que sale de su boca apenas suena como la de Rose, por la enorme reverberación que la acompaña.
+
+              "He venido a contarles una profecía...", dice el revenant.
+
+              "Ya empezamos", dice Arraka.
+
+              "Una profecía de cosas que podrían llegar a suceder, pero que aún no han quedado fijadas en piedra", continúa el revenant. "Escuchen con atención los acontecimientos que van a ser anunciados, y quizá logren impedir que ocurran antes de que sea demasiado tarde."
+
+              El revenant vuelve a desaparecer y reaparece a nuestra izquierda, preparándose para hablar de nuevo, mientras el eco de su voz se intensifica para señalar el comienzo de la profecía. Después de cada línea que pronuncia, el revenant desaparece y aparece en un sitio distinto, obligándonos a todos a girar la cabeza confundidos.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_prophecy
+      - condition: ch11_saved_rose = 1
+        texts:
+          - source: scene_text
+            paragraph: 7
+            text: |-
+              Me acerco a Rose e intento agarrarla por los brazos. En cuanto la toco, una fuerte fuerza mágica me empuja hacia atrás y me hace caer de espaldas.
+
+              "¿Qué demonios?...", digo, mientras me levanto del suelo lentamente.
+
+              "Oh, no...", dice Melindra. "Ya he visto pasar algo así antes. Si es lo que creo que es, más vale que se preparen. Esa pelea con el sabio de antes va a parecer un paseo por el parque comparada con lo que viene ahora."
+
+              "Menudo espectáculo les espera, desde luego", dice Arraka, y luego se ríe.
+
+              "¿De qué están hablando las dos?", dice Hadrik. "¿Prepararnos para qué?"
+
+              "Está empezando...", dice Melindra.
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              De pronto, Rose desaparece ante nuestros ojos y oímos su voz a nuestra espalda. Cuando todos nos damos la vuelta, nos damos cuenta de que no era solo su voz la que había cambiado de sitio en una fracción de segundo, sino Rose en persona. La voz que sale de su boca apenas suena como la de Rose, por la enorme reverberación que la acompaña.
+
+              "He venido a contarles una profecía...", dice Rose.
+
+              "Ya empezamos", dice Arraka.
+
+              "Una profecía de cosas que podrían llegar a suceder, pero que aún no han quedado fijadas en piedra", continúa Rose. "Escuchen con atención los acontecimientos que van a ser anunciados, y quizá logren impedir que ocurran antes de que sea demasiado tarde."
+
+              Rose vuelve a desaparecer y reaparece a nuestra izquierda, preparándose para hablar de nuevo, mientras el eco de su voz se intensifica para señalar el comienzo de la profecía. Después de cada línea que pronuncia, Rose desaparece y aparece en un sitio distinto, obligándonos a todos a girar la cabeza confundidos.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_prophecy
+  - name: b2_ch11a_prophecy
+    routes:
+      - condition: ch11_saved_rose = 0
+        texts:
+          - source: scene_text
+            paragraph: 8
+            text: |-
+              "Cuando dos viejos enemigos choquen por última vez,
+
+              Un gran desastre que una vez fue evitado
+
+              Ya no podrá impedirse de la misma manera.
+
+              Un continente entero yace en ruinas,
+
+              Mientras una sola risa compuesta por distintas voces
+
+              Resuena con fuerza por todo el reino."
+
+              En cuanto el revenant termina de recitar la profecía, deja de moverse y vuelve a quedarse mirando al vacío, con una expresión vacía en el rostro.
+
+              Una profecía sobre un gran desastre... Dos viejos enemigos... ¿Significa eso que teníamos razón? ¿La calamidad sobre la que Eiden nos advirtió ocurrirá cuando se enfrente a Tyrath? Pero, por otro lado, la profecía también mencionó una risa compuesta por distintas voces. Y solo conozco a una persona que encajaría con esa descripción...
+
+              "Arraka...", digo. "Esta profecía fue sospechosamente específica con lo de esa única risa compuesta por distintas voces. No sabrás algo sobre este 'gran desastre', ¿verdad?"
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              "Oye, si quieres, yo podría hacer que esa profecía se cumpliera en menos de un día", dice Arraka. "Así no tendrían que seguir perdiendo tiempo intentando descifrarla. Lo único que tienen que hacer es sacarme de este amuleto. ¿Qué dicen?"
+
+              "Creo que prefiero resolverlo por mi cuenta, si no te importa", digo.
+
+              "Allá tú", dice Arraka.
+
+              "Entonces, ¿eso era todo?...", dice Daren. "¿La profecía ha terminado?"
+
+              "Si preguntas solo por la profecía, sí, ha terminado", dice Melindra.
+
+              "Entonces estás diciendo que deberíamos esperar algo más justo después de la profecía, ¿no?", dice Daren.
+
+              "Solo si todo ocurre igual que hace seiscientos años", dice Melindra. "La última vez que tuve el honor de presenciar la profecía de una tejedora del tiempo, no tuve que esperar mucho hasta que--"
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              Melindra se interrumpe, porque de pronto todos sentimos una inmensa presión en el aire, que nos dificulta respirar, mientras el cielo parece temblar bajo la pura fuerza del poder mágico que ha inundado toda nuestra zona. A medida que nos adaptamos poco a poco a la presión y empezamos a respirar con más normalidad, el revenant va elevándose cada vez más en el aire, mientras sus ojos siguen brillando de color amarillo, fijos en la nada.
+
+              "¡¿Qué demonios?!", grita Hadrik. "¿Qué es esta locura de poder mágico? Arraka sigue dentro del amuleto, ¿verdad?"
+
+              "¡Ja, ja, ja, ja, ja!", se ríe Arraka desde dentro de su amuleto.
+
+              "Esto no es obra de Arraka", dice Melindra, mientras lucha por mantener la calma. "Ya se los dije. Esa pelea con el sabio de antes va a parecer poca cosa comparada con lo que está a punto de suceder."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_prophecy2
+      - condition: ch11_saved_rose = 1
+        texts:
+          - source: scene_text
+            paragraph: 9
+            text: |-
+              "Cuando dos viejos enemigos choquen por última vez,
+
+              Un gran desastre que una vez fue evitado
+
+              Ya no podrá impedirse de la misma manera.
+
+              Un continente entero yace en ruinas,
+
+              Mientras una sola risa compuesta por distintas voces
+
+              Resuena con fuerza por todo el reino."
+
+              En cuanto Rose termina de recitar la profecía, deja de moverse y vuelve a quedarse mirando al vacío, con una expresión vacía en el rostro.
+
+              Una profecía sobre un gran desastre... Dos viejos enemigos... ¿Significa eso que teníamos razón? ¿La calamidad sobre la que Eiden nos advirtió ocurrirá cuando se enfrente a Tyrath? Pero, por otro lado, la profecía también mencionó una risa compuesta por distintas voces. Y solo conozco a una persona que encajaría con esa descripción...
+
+              "Arraka...", digo. "Esta profecía fue sospechosamente específica con lo de esa única risa compuesta por distintas voces. No sabrás algo sobre este 'gran desastre', ¿verdad?"
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              "Oye, si quieres, yo podría hacer que esa profecía se cumpliera en menos de un día", dice Arraka. "Así no tendrían que seguir perdiendo tiempo intentando descifrarla. Lo único que tienen que hacer es sacarme de este amuleto. ¿Qué dicen?"
+
+              "Creo que prefiero resolverlo por mi cuenta, si no te importa", digo.
+
+              "Allá tú", dice Arraka.
+
+              "Entonces, ¿eso era todo?...", dice Daren. "¿La profecía ha terminado?"
+
+              "Si preguntas solo por la profecía, sí, ha terminado", dice Melindra.
+
+              "Entonces estás diciendo que deberíamos esperar algo más justo después de la profecía, ¿no?", dice Daren.
+
+              "Solo si todo ocurre igual que hace seiscientos años", dice Melindra. "La última vez que tuve el honor de presenciar la profecía de una tejedora del tiempo, no tuve que esperar mucho hasta que--"
+          - source: scene_3
+            paragraph: 3
+            text: |-
+              Melindra se interrumpe, porque de pronto todos sentimos una inmensa presión en el aire, que nos dificulta respirar, mientras el cielo parece temblar bajo la pura fuerza del poder mágico que ha inundado toda nuestra zona. A medida que nos adaptamos poco a poco a la presión y empezamos a respirar con más normalidad, Rose va elevándose cada vez más en el aire, mientras sus ojos siguen brillando de color amarillo, fijos en la nada.
+
+              "¡¿Qué demonios?!", grita Hadrik. "¿Qué es esta locura de poder mágico? Arraka sigue dentro del amuleto, ¿verdad?"
+
+              "¡Ja, ja, ja, ja, ja!", se ríe Arraka desde dentro de su amuleto.
+
+              "Esto no es obra de Arraka", dice Melindra, mientras lucha por mantener la calma. "Ya se los dije. Esa pelea con el sabio de antes va a parecer poca cosa comparada con lo que está a punto de suceder."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_prophecy2
+  - name: b2_ch11a_prophecy2
+    routes:
+      - condition: ch11_saved_rose = 0
+        texts:
+          - source: scene_text
+            paragraph: 10
+            text: |-
+              Tiene razón. No creo haber experimentado una sensación de pavor así desde que vi a Arraka salir de su amuleto. Es como si cada fibra de mi ser me estuviera diciendo que salga corriendo al demonio lejos de aquí, tan lejos como sea posible y tan rápido como puedan llevarme los pies. No puedo dejar que este miedo me venza. Ahora no. Estoy casi seguro de que hasta la decisión equivocada más pequeña en este punto podría llevar a mi aniquilación instantánea. ¿A quién nos estamos enfrentando exactamente aquí?
+
+              "Saludos, mortales...", oímos varias voces masculinas hablar al unísono a nuestro alrededor.
+
+              Esta forma de hablar se parece mucho a la manera en que Arraka habla a veces, cuando pierde el control de su voz. Una risa compuesta por varias voces... ¿Podría estar esto relacionado con la profecía también?
+
+              "Han sido bendecidos con la presencia de un dios", dicen las voces, mientras reverberan por toda la zona. "Arrodíllense ante mí y entonces les daré permiso para contemplar mi magnífica forma con admiración."
+
+              "¿Y tú exactamente qui--", empieza a decir Daren, pero Melindra le tapa la boca con la mano para hacerlo callar, con una mirada de pánico en el rostro.
+
+              "Este es el Dios del Tiempo", dice Melindra. "No le hagan ninguna pregunta. Tiene poder suficiente para acabar con todos nosotros en cuestión de segundos. Solo... arrodíllense..."
+          - source: scene_text_2
+            paragraph: 7
+            text: |-
+              Entonces ella se arrodilla ante el Dios del Tiempo, con la cabeza agachada, mientras le hace señas a Daren para que haga lo mismo.
+
+              ¿Un adversario capaz de hacer que incluso alguien tan orgullosa como Melindra actúe así? No me gusta adónde va esto. Está claro que, si me pongo a hacer tonterías aquí, podría conseguir que nos maten a todos. Pero ¿de verdad debería arrodillarme ante este bastardo?
+
+              Mientras estaba allí, considerando mis opciones, el Dios del Tiempo fue materializándose lentamente en una forma más terrenal, aunque no sé si de verdad podría llamarla así. Su cuerpo tiene la forma y el tamaño de un humano, pero está hecho de una especie de luz azul sólida que irradia energía mágica sin parar. El hombre no tiene rostro ni rasgos distinguibles, aparte de unas cuantas llamitas azules que aparecen y desaparecen al azar por todo su cuerpo a intervalos cortos e igualmente aleatorios. Ahora mismo flota en el aire, junto al revenant, mirándonos directamente con su rostro vacío.
+
+              "No es prudente hacer esperar a un dios...", dice el Dios del Tiempo. "Les dije que se arrodillaran."
+
+              "No escuchen lo que dice", nos dice Arraka. "Necesita que sigan vivos para que sus planes funcionen. No puede hacerles nada. Solo está faroleando."
+        choices:
+          - position: 1
+            text: Arrodillarme ante el Dios del Tiempo
+            effects:
+              - set:
+                  current_scene: b2_ch11a_kneel
+                  b2_ch11_kneel: 1
+          - position: 2
+            text: Mantenerme firme
+            effects:
+              - set:
+                  current_scene: b2_ch11a_kneel
+                  b2_ch11_kneel: 0
+          - position: 3
+            text: Mantenerme firme e insultar al Dios del Tiempo
+            effects:
+              - set:
+                  current_scene: b2_ch11a_kneel
+                  b2_ch11_kneel: 2
+      - condition: ch11_saved_rose = 1
+        texts:
+          - source: scene_text
+            paragraph: 10
+            text: |-
+              Tiene razón. No creo haber experimentado una sensación de pavor así desde que vi a Arraka salir de su amuleto. Es como si cada fibra de mi ser me estuviera diciendo que salga corriendo al demonio lejos de aquí, tan lejos como sea posible y tan rápido como puedan llevarme los pies. No puedo dejar que este miedo me venza. Ahora no. Estoy casi seguro de que hasta la decisión equivocada más pequeña en este punto podría llevar a mi aniquilación instantánea. ¿A quién nos estamos enfrentando exactamente aquí?
+
+              "Saludos, mortales...", oímos varias voces masculinas hablar al unísono a nuestro alrededor.
+
+              Esta forma de hablar se parece mucho a la manera en que Arraka habla a veces, cuando pierde el control de su voz. Una risa compuesta por varias voces... ¿Podría estar esto relacionado con la profecía también?
+
+              "Han sido bendecidos con la presencia de un dios", dicen las voces, mientras reverberan por toda la zona. "Arrodíllense ante mí y entonces les daré permiso para contemplar mi magnífica forma con admiración."
+
+              "¿Y tú exactamente qui--", empieza a decir Daren, pero Melindra le tapa la boca con la mano para hacerlo callar, con una mirada de pánico en el rostro.
+
+              "Este es el Dios del Tiempo", dice Melindra. "No le hagan ninguna pregunta. Tiene poder suficiente para acabar con todos nosotros en cuestión de segundos. Solo... arrodíllense..."
+          - source: scene_text_2
+            paragraph: 8
+            text: |-
+              Entonces ella se arrodilla ante el Dios del Tiempo, con la cabeza agachada, mientras le hace señas a Daren para que haga lo mismo.
+
+              ¿Un adversario capaz de hacer que incluso alguien tan orgullosa como Melindra actúe así? No me gusta adónde va esto. Está claro que, si me pongo a hacer tonterías aquí, podría conseguir que nos maten a todos. Pero ¿de verdad debería arrodillarme ante este bastardo?
+
+              Mientras estaba allí, considerando mis opciones, el Dios del Tiempo fue materializándose lentamente en una forma más terrenal, aunque no sé si de verdad podría llamarla así. Su cuerpo tiene la forma y el tamaño de un humano, pero está hecho de una especie de luz azul sólida que irradia energía mágica sin parar. El hombre no tiene rostro ni rasgos distinguibles, aparte de unas cuantas llamitas azules que aparecen y desaparecen al azar por todo su cuerpo a intervalos cortos e igualmente aleatorios. Ahora mismo flota en el aire, junto a Rose, mirándonos directamente con su rostro vacío.
+
+              "No es prudente hacer esperar a un dios...", dice el Dios del Tiempo. "Les dije que se arrodillaran."
+
+              "No escuchen lo que dice", nos dice Arraka. "Necesita que sigan vivos para que sus planes funcionen. No puede hacerles nada. Solo está faroleando."
+        choices:
+          - position: 1
+            text: Arrodillarme ante el Dios del Tiempo
+            effects:
+              - set:
+                  current_scene: b2_ch11a_kneel
+                  b2_ch11_kneel: 1
+          - position: 2
+            text: Mantenerme firme
+            effects:
+              - set:
+                  current_scene: b2_ch11a_kneel
+                  b2_ch11_kneel: 0
+          - position: 3
+            text: Mantenerme firme e insultar al Dios del Tiempo
+            effects:
+              - set:
+                  current_scene: b2_ch11a_kneel
+                  b2_ch11_kneel: 2
+  - name: b2_ch11a_kneel
+    routes:
+      - condition: b2_ch11_kneel = 1
+        texts:
+          - source: scene_text
+            paragraph: 11
+            text: |-
+              A pesar de lo que dijo Arraka, decido no arriesgar la seguridad de todos por culpa de mi orgullo y me arrodillo frente al Dios del Tiempo, igual que Melindra.
+
+              "Si quieres verme arrodillado, espero que hayas traído una silla", le dice Daren al Dios del Tiempo, "porque vas a tener que esperar un buen rato."
+
+              Justo cuando Daren termina de hablar, vemos cómo una fuerza invisible le arranca el corazón directamente del pecho, atravesando también la armadura de placas, mientras la sangre empieza a salpicar por todas partes.
+
+              "Oh, no...", dice Hadrik, mientras el resto de nosotros miramos a Daren, demasiado impactados para hablar.
+
+              Cuando Daren está a punto de desplomarse al suelo, oigo a Hadrik empezar a hablar al revés y luego veo cómo el corazón de Daren vuelve por sí solo a meterse en su pecho, mientras toda la sangre del suelo y de su armadura desaparece al instante. En cuanto termina el hechizo de inversión temporal, Daren empieza a respirar muy fuerte y muy deprisa, empapado en sudor, como si acabara de despertarse de una pesadilla terrible.
+
+              Arraka se ríe al verle la cara.
+
+              "Supongo que olvidé que él también puede invertir el tiempo, siempre que tenga control sobre la tejedora del tiempo", dice Arraka. "¡Error mío!"
+          - source: scene_text_2
+            paragraph: 9
+            text: |-
+              "No voy a repetirme otra vez", dice el Dios del Tiempo. "Arrodíllense."
+
+              Kate y los demás intercambian unas miradas vacilantes, pero no parece que ninguno tenga intención de obedecer las órdenes del dios, ni siquiera después de la demostración de poder que acaba de dar.
+
+              "Lo siento", dice Hadrik, con media sonrisa, mientras intenta imitar su habitual tono seguro. "Mi médico me dijo que arrodillarme es malo para mi--"
+
+              "¡He dicho que SE ARRODILLEN!", grita el dios, y entonces una inmensa presión nos empuja a todos contra el suelo, incluidos Melindra y yo, que ya estábamos arrodillados.
+
+              Ahora todos estamos siendo aplastados contra el suelo rocoso por una fuerza increíble, y ya siento el dolor de mis órganos internos sangrando, mientras la enorme presión que tenemos encima se vuelve cada vez más insoportable. Para asegurarse de que no nos mata, el Dios del Tiempo sigue lanzando hechizos de inversión temporal cada diez segundos más o menos, curando así nuestras heridas internas solo para que vuelvan a formarse una y otra vez durante los siguientes minutos.
+
+              Durante ese tiempo, soy incapaz de prestar atención a nada de lo que me rodea. Cada gramo de mi energía se concentra en soportar el dolor. Ya no puedo distinguir si los gritos que oigo vienen de mí o de mis amigos. Es como si hubiera entrado voluntariamente en una especie de trance, intentando fundirme con el dolor. Intentando dejar que fluya a través de mí. Por mucho que lo intente, sin embargo, el dolor vuelve a dominarme una y otra vez, y entonces tengo que recuperar la concentración desde cero.
+          - source: scene_3
+            paragraph: 4
+            text: |-
+              "¿Puedes PARAR ya con las inversiones temporales?", dice Arraka, exasperada, al cabo de un rato. "¡Me estás mareando!"
+
+              Al oír las palabras de Arraka, el Dios del Tiempo lanza un último hechizo de inversión temporal y luego reduce la presión que había sobre nosotros en el aire, asegurándose de que ya no nos esté haciendo daño, aunque todavía nos mantiene pegados al suelo.
+
+              "¡Graaacias!", dice Arraka, en el mismo tono exasperado.
+
+              "Veo que vivir entre estos mortales te ha enseñado algunos modales básicos que ya venían haciendo falta, Arraka", dice el Dios del Tiempo. "Es lamentable que no pudieras aprenderlos antes de que nos viéramos obligados a desterrarte de nuestro reino."
+
+              "¿Obligados?...", dice Arraka. "¡Ja! Solo lo hicieron porque me tenían miedo. Es gracioso, porque cuando ambos vivíamos en el plano mágico, no te tenía por alguien cobarde. Y aun así, huiste de mí dos veces. Una con el destierro y otra hace seiscientos años. ¿Qué pasó con aquel duelo nuestro que quedó sin terminar, eh? ¿No dijiste que tarde o temprano ajustaríamos cuentas?"
+
+              "Y lo haremos", dice el Dios del Tiempo. "En cuanto ambos volvamos a estar en nuestras condiciones óptimas. No querrás enfrentarte a mí desde dentro de un amuleto, ¿verdad?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_absorb
+      - condition: b2_ch11_kneel = 0
+        texts:
+          - source: scene_text
+            paragraph: 12
+            text: |-
+              "Arraka tiene razón", digo. "No deberíamos tener que arrodillarnos ante nadie. Ni siquiera ante los dioses. Pase lo que pase, pienso mantenerme firme."
+
+              En cuanto termino de hablar, de repente siento un dolor intensísimo en el lado izquierdo del pecho y, al mirar hacia abajo, veo con horror que me han arrancado el corazón del cuerpo y que ahora tengo un enorme agujero ensangrentado en el pecho, justo donde antes estaba mi corazón.
+
+              "¡¡¡Barry!!!", grita Kate, desesperada.
+
+              Todo empieza a volverse mucho más frío y noto escalofríos por todo el cuerpo. La luz ante mis ojos comienza a apagarse lentamente, mientras voy perdiendo la consciencia poco a poco. Justo antes de que todo se vuelva negro, sin embargo, recupero de repente los sentidos al oír a Kate gritar mi nombre al revés. Inmediatamente después, mi corazón vuelve a meterse en mi pecho, mi herida se cierra por completo y toda la sangre desaparece de mi camisa casi al instante. En cuanto termina el hechizo de inversión temporal, empiezo a respirar muy fuerte y muy deprisa, empapado en sudor, como si acabara de despertarme de una pesadilla terrible.
+
+              Arraka se ríe al verme la cara.
+
+              "Supongo que olvidé que él también puede invertir el tiempo, siempre que tenga control sobre la tejedora del tiempo", dice Arraka. "¡Error mío!"
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "No voy a repetirme otra vez", dice el Dios del Tiempo. "Arrodíllense."
+
+              Los demás y yo intercambiamos unas miradas vacilantes, pero ninguno de nosotros parece tener prisa por obedecer las órdenes del dios, ni siquiera después de la demostración de poder que acaba de dar.
+
+              "Lo siento", dice Hadrik, con media sonrisa, mientras intenta imitar su habitual tono seguro. "Mi médico me dijo que arrodillarme es malo para mi--"
+
+              "¡He dicho que SE ARRODILLEN!", grita el dios, y entonces una inmensa presión nos empuja a todos contra el suelo, incluida Melindra, que ya estaba arrodillada.
+
+              Ahora todos estamos siendo aplastados contra el suelo rocoso por una fuerza increíble, y ya siento el dolor de mis órganos internos sangrando, mientras la enorme presión que tenemos encima se vuelve cada vez más insoportable. Para asegurarse de que no nos mata, el Dios del Tiempo sigue lanzando hechizos de inversión temporal cada diez segundos más o menos, curando así nuestras heridas internas solo para que vuelvan a formarse una y otra vez durante los siguientes minutos.
+
+              Durante ese tiempo, soy incapaz de prestar atención a nada de lo que me rodea. Cada gramo de mi energía se concentra en soportar el dolor. Ya no puedo distinguir si los gritos que oigo vienen de mí o de mis amigos. Es como si hubiera entrado voluntariamente en una especie de trance, intentando fundirme con el dolor. Intentando dejar que fluya a través de mí. Por mucho que lo intente, sin embargo, el dolor vuelve a dominarme una y otra vez, y entonces tengo que recuperar la concentración desde cero.
+          - source: scene_3
+            paragraph: 4
+            text: |-
+              "¿Puedes PARAR ya con las inversiones temporales?", dice Arraka, exasperada, al cabo de un rato. "¡Me estás mareando!"
+
+              Al oír las palabras de Arraka, el Dios del Tiempo lanza un último hechizo de inversión temporal y luego reduce la presión que había sobre nosotros en el aire, asegurándose de que ya no nos esté haciendo daño, aunque todavía nos mantiene pegados al suelo.
+
+              "¡Graaacias!", dice Arraka, en el mismo tono exasperado.
+
+              "Veo que vivir entre estos mortales te ha enseñado algunos modales básicos que ya venían haciendo falta, Arraka", dice el Dios del Tiempo. "Es lamentable que no pudieras aprenderlos antes de que nos viéramos obligados a desterrarte de nuestro reino."
+
+              "¿Obligados?...", dice Arraka. "¡Ja! Solo lo hicieron porque me tenían miedo. Es gracioso, porque cuando ambos vivíamos en el plano mágico, no te tenía por alguien cobarde. Y aun así, huiste de mí dos veces. Una con el destierro y otra hace seiscientos años. ¿Qué pasó con aquel duelo nuestro que quedó sin terminar, eh? ¿No dijiste que tarde o temprano ajustaríamos cuentas?"
+
+              "Y lo haremos", dice el Dios del Tiempo. "En cuanto ambos volvamos a estar en nuestras condiciones óptimas. No querrás enfrentarte a mí desde dentro de un amuleto, ¿verdad?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_absorb
+      - condition: b2_ch11_kneel = 2
+        texts:
+          - source: scene_text
+            paragraph: 13
+            text: |-
+              "No es que pensara arrodillarme ni nada", digo. "No puedes presentarte aquí con ese aspecto y esperar que te trate como a un dios. Al menos ponte algo de ropa, hombre. Y una cara. Es embarazoso para todos nosotros."
+
+              Justo cuando termino de hablar, de repente siento un dolor insoportable por toda la parte superior del cuerpo, mientras varios de mis órganos internos quedan aplastados en cuestión de segundos. Entonces escupo sangre y me doy cuenta de que, aparte de los órganos aplastados, también me han arrancado el corazón, dejando un enorme agujero ensangrentado en el lado izquierdo del pecho.
+
+              "¡¡¡Barry!!!", grita Kate, desesperada.
+
+              Todo empieza a volverse mucho más frío y noto escalofríos por todo el cuerpo. Entonces la luz ante mis ojos empieza a apagarse lentamente, mientras ya voy perdiendo la consciencia. Justo antes de que todo se vuelva negro, sin embargo, recupero de repente los sentidos al oír a Kate gritar mi nombre al revés, y la sangre que escupí vuelve directamente a mi boca. Inmediatamente después, mi corazón vuelve a meterse en mi pecho, mi herida se cierra por completo y toda la sangre desaparece de mi camisa casi al instante. En cuanto termina el hechizo de inversión temporal, empiezo a respirar muy fuerte y muy deprisa, empapado en sudor, como si acabara de despertarme de una pesadilla terrible.
+
+              Arraka se ríe al verme la cara.
+
+              "Supongo que olvidé que él también puede invertir el tiempo, siempre que tenga control sobre la tejedora del tiempo", dice Arraka. "¡Error mío!"
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "No voy a repetirme otra vez", dice el Dios del Tiempo. "Arrodíllense."
+
+              Los demás y yo intercambiamos unas miradas vacilantes, pero ninguno de nosotros parece tener prisa por obedecer las órdenes del dios, ni siquiera después de la demostración de poder que acaba de dar.
+
+              "Lo siento", dice Hadrik, con media sonrisa, mientras intenta imitar su habitual tono seguro. "Mi médico me dijo que arrodillarme es malo para mi--"
+
+              "¡He dicho que SE ARRODILLEN!", grita el dios, y entonces una inmensa presión nos empuja a todos contra el suelo, incluida Melindra, que ya estaba arrodillada.
+
+              Ahora todos estamos siendo aplastados contra el suelo rocoso por una fuerza increíble, y ya siento el dolor de mis órganos internos sangrando, mientras la enorme presión que tenemos encima se vuelve cada vez más insoportable. Para asegurarse de que no nos mata, el Dios del Tiempo sigue lanzando hechizos de inversión temporal cada diez segundos más o menos, curando así nuestras heridas internas solo para que vuelvan a formarse una y otra vez durante los siguientes minutos.
+
+              Durante ese tiempo, soy incapaz de prestar atención a nada de lo que me rodea. Cada gramo de mi energía se concentra en soportar el dolor. Ya no puedo distinguir si los gritos que oigo vienen de mí o de mis amigos. Es como si hubiera entrado voluntariamente en una especie de trance, intentando fundirme con el dolor. Intentando dejar que fluya a través de mí. Por mucho que lo intente, sin embargo, el dolor vuelve a dominarme una y otra vez, y entonces tengo que recuperar la concentración desde cero.
+          - source: scene_3
+            paragraph: 4
+            text: |-
+              "¿Puedes PARAR ya con las inversiones temporales?", dice Arraka, exasperada, al cabo de un rato. "¡Me estás mareando!"
+
+              Al oír las palabras de Arraka, el Dios del Tiempo lanza un último hechizo de inversión temporal y luego reduce la presión que había sobre nosotros en el aire, asegurándose de que ya no nos esté haciendo daño, aunque todavía nos mantiene pegados al suelo.
+
+              "¡Graaacias!", dice Arraka, en el mismo tono exasperado.
+
+              "Veo que vivir entre estos mortales te ha enseñado algunos modales básicos que ya venían haciendo falta, Arraka", dice el Dios del Tiempo. "Es lamentable que no pudieras aprenderlos antes de que nos viéramos obligados a desterrarte de nuestro reino."
+
+              "¿Obligados?...", dice Arraka. "¡Ja! Solo lo hicieron porque me tenían miedo. Es gracioso, porque cuando ambos vivíamos en el plano mágico, no te tenía por alguien cobarde. Y aun así, huiste de mí dos veces. Una con el destierro y otra hace seiscientos años. ¿Qué pasó con aquel duelo nuestro que quedó sin terminar, eh? ¿No dijiste que tarde o temprano ajustaríamos cuentas?"
+
+              "Y lo haremos", dice el Dios del Tiempo. "En cuanto ambos volvamos a estar en nuestras condiciones óptimas. No querrás enfrentarte a mí desde dentro de un amuleto, ¿verdad?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_absorb
+  - name: b2_ch11a_absorb
+    texts:
+      - source: scene_text
+        paragraph: 14
+        text: |-
+          "Bueno, si simplemente destruyeras este amuleto por mí, podríamos--", empieza a decir Arraka, pero la interrumpe el Dios del Tiempo.
+
+          "No vas a recibir ninguna ayuda de mi parte", dice el Dios del Tiempo. "No creas que he olvidado la gran cantidad de espíritus que mataste y absorbiste hace miles de años. Algunos de ellos eran amigos míos, por si no lo sabías."
+
+          "No seas así, Selkram", dice Arraka, con tono burlón. "Nosotros también somos amigos, ¿no? Al fin y al cabo, gracias a mí descubriste que podías absorber otros espíritus. No creas que no me di cuenta de lo que has estado haciendo. Puede que hayas logrado ocultárselo a todos los demás espíritus del plano mágico, pero ¡yo fui quien inventó la técnica! Sé perfectamente cuáles son sus efectos secundarios. Tu voz empezó a cambiar justo después de nuestra primera batalla en el plano mágico, y a Ulruk le pasó lo mismo. Esas voces distintas que usas al hablar son las de todos esos otros espíritus que no lograste absorber correctamente, ¿verdad? A mí me pasó lo mismo al principio, pero luego aprendí y me adapté, a diferencia de ustedes, idiotas. En serio, ¿qué pensaban tú y Ulruk? ¿Que podían copiar mi técnica sin ningún tipo de entrenamiento? ¿Hasta dónde podía llegar su arrogancia? ¿Tienen idea de cuánto tiempo me pasé perfeccionando ese hechizo? Pero bueno, supongo que les resultó más fácil asumir que solo las espíritus femeninas de las razas civilizadas podían absorber correctamente a otros espíritus, y convencer a todo el mundo de desterrarnos al plano terrenal, que admitir que la única razón de su fracaso era su extraordinaria ineptitud."
+      - source: scene_text_2
+        paragraph: 11
+        text: |-
+          "No voy a quedarme aquí escuchándote burlarte de--", empieza a decir el Dios del Tiempo, pero Arraka lo corta.
+
+          "Los dos deberían haber escuchado a Memphir", dice Arraka. "Es el único que tiene cerebro entre todos ustedes, los 'dioses'. Apuesto a que intentó impedirles absorber a los espíritus, ¿verdad? A él nunca le oí usar voces distintas cuando hablaba. Por cierto, ¿cómo está Memphir? ¿No se cumple el plazo de su propia profecía en algún momento de este siglo?"
+
+          "El Dios del Destino y su profecía no son asunto tu--", empieza a decir el Dios del Tiempo, pero vuelven a interrumpirlo.
+      - source: scene_3
+        paragraph: 5
+        text: '"Sí, era este siglo, ¿no?...", dice Arraka, que ahora ignora por completo al Dios del Tiempo mientras se pierde en sus propios pensamientos. "Y la profecía también era bastante específica sobre su muerte. Decía que lo mataría un miembro de las razas civilizadas del plano terrenal, originario de una región llamada Varathia. Recuerdo cómo Memphir revisaba esa profecía una y otra vez, con la esperanza de que algo cambiara, aunque siempre obtenía exactamente el mismo resultado. Estaba obsesionándose por completo con ella... Apuesto a que debió de asustarse de verdad cuando Eiden le puso a este continente el nombre de Varathia, ¿eh? Y ahora que el plazo se acerca, el supuesto ''Dios del Destino'' llegó incluso a formar una alianza temporal con el ''Dios de la Muerte'', diciéndole que lo ayudaría con sus matanzas indiscriminadas, siempre que se concentraran en Varathia. La verdad, no entiendo qué le pasa por la cabeza a Memphir. Si yo estuviera en su lugar, simplemente reduciría este continente entero a un montón de cenizas en un solo día y se acabó."'
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch11a_misery
+  - name: b2_ch11a_misery
+    texts:
+      - source: scene_text
+        paragraph: 15
+        text: |-
+          ¿El Dios del Destino también pretende destruir este continente? ¿Cómo podría empeorar aún más esta situación?...
+
+          "Arraka, si no te callas, voy a--", dice Selkram, el Dios del Tiempo.
+
+          "¿Vas a qué?...", dice Arraka, en tono provocador. "¿A destruir mi amuleto?"
+
+          "También podría lanzarte muy lejos de aquí, en medio de un océano, donde nadie volverá a encontrarte jamás", dice el dios.
+
+          "Me encantaría verte intentarlo", dice Arraka.
+
+          "¡No le hagas caso a sus provocaciones!", dice Illuna, mientras lucha por articular las palabras y sigue aplastada contra el suelo, con la cara pegada a la tierra. "¡Si la arrojas a un océano, escapará del amuleto ella sola, y entonces será el fin para todos nosotros!"
+
+          "¿Oh?", dice el Dios del Tiempo. "Entonces tú debes de ser su captora... O quizá solo su carcelera. Supongo que resulta apropiado que sea una 'banshee' quien supervise una tarea así, teniendo en cuenta cuánto ha sufrido tu especie por su arrogancia."
+      - source: scene_text_2
+        paragraph: 12
+        text: |-
+          "¡Y por la tuya también!", grita Flower de repente. "¡Es culpa tuya que Petal tenga que vivir así! Nunca quiso esa vida. Nunca quiso matar a nadie. Y ninguna de las otras banshees tampoco. ¡Nunca te perdonaré por lo que has hecho!"
+
+          "¿Nunca me perdonarás?...", dice el Dios del Tiempo, sonando sinceramente desconcertado. "Debes de tener muy poca memoria si puedes permitirte hablarme así después de todo lo que ha pasado. Déjame refrescarte un poco esa memoria tan corta."
+
+          Entonces empieza a aumentar la presión que aplastaba a Flower contra el suelo hasta que ella empieza a gritar de dolor. Tras unos segundos más, el Dios del Tiempo vuelve a invertir el tiempo para asegurarse de no matarla por accidente y continúa aplastándola una y otra vez, como antes.
+
+          "Oh, no...", dice Arraka. "Otra vez no con las inversiones temporales... ¡Mátenme ya y sáquenme de mi miseria!"
+    choices:
+      - position: 1
+        text: Intentar llamar la atención del Dios del Tiempo para que se fije en mí en vez de en Flower.
+        effects:
+          - set:
+              current_scene: b2_ch11a_attention
+      - position: 2
+        text: Dejar en paz al Dios del Tiempo. Seguro que acaba parando por sí solo.
+        effects:
+          - set:
+              current_scene: b2_ch11a_eventually
+  - name: b2_ch11a_attention
+    texts:
+      - source: scene_text
+        paragraph: 16
+        text: |-
+          "¿Es así como debería comportarse un dios?", digo, mientras intento con esfuerzo girar la cara hacia el Dios del Tiempo, aunque sigo aplastado contra el suelo. "¿Metiéndose con niñas pequeñas? ¿En el plano mágico no tienen concepto del honor? ¿O al menos de la dignidad?"
+
+          El dios vuelve a invertir el tiempo para curar a Flower y luego flota hasta mi posición para observarme mejor. O al menos eso creo que intenta, ya que en realidad no tiene cara.
+
+          "Qué curioso...", dice el Dios del Tiempo. "Pareces débil, incluso para los estándares mortales. Apenas percibo magia en tu aura. Y, aun así, sigues intentando desafiarme. ¿Por qué?"
+
+          "No intentes buscar razones en él", dice Arraka. "Hasta intentó atacarme una vez con una daga cuando yo estaba en todo mi poder. Creo que tiene el instinto de supervivencia defectuoso o algo así. De todos modos, solo es un debilucho, así que ¿a quién le importa?"
+      - source: scene_text_2
+        paragraph: 13
+        text: |-
+          "Sin embargo, no solo él es sorprendentemente débil...", dice Selkram, mientras asciende un poco más para poder vernos mejor a todos. "Ni una sola persona de este grupo, salvo la chica stillwater, se acerca siquiera a las de hace seiscientos años en términos de poder mágico. La última vez estaban el zorro dorado, estaba aquella stillwater con la que estabas fusionada, y también aquel stillwater realmente poderoso que viajaba con el zorro. Eiden, creo que se llamaba, ¿no? Si comparas eso con lo que tenemos aquí, todo parece una broma cruel. ¿Para qué molestarse siquiera en enviar a la tejedora del tiempo a cualquiera de estas personas? Probablemente las maten en los próximos días, si tienen la suerte de sobrevivir tanto tiempo..."
+
+          "¿De qué... Ngh... estás hablando?", digo, como me cuesta hablar bien con la cara constantemente hundida en la tierra. "¿No fuiste tú quien envió aquí a la tejedora del tiempo?"
+
+          "¡Ja!", dice Arraka. "¡Selkram YA QUISIERA poder controlar a las tejedoras del tiempo cuando se le antoja! El Magium es quien envió aquí a la tejedora del tiempo, no esta triste excusa de dios."
+
+          "¿El Magium?...", digo, demasiado atónito para hacer otra cosa que repetir sus palabras.
+      - source: scene_3
+        paragraph: 6
+        text: |-
+          "Mhm...", dice Arraka. "Es una especie de tradición del Magium enviar a una tejedora del tiempo al plano terrenal cada vez que existe la posibilidad de que se pierdan muchísimas vidas en poco tiempo. Sobre todo cuando se trata de este continente. Cuando los poderes de la tejedora del tiempo por fin despiertan, la persona que recibió esos poderes entra en una especie de trance, congela el tiempo y luego camina pacientemente hacia varios grupos de personas, entregándoles la profecía uno por uno. Siempre ha sido así."
+
+          "Pero entonces... ¿qué tiene que ver el Dios del Tiempo con todo esto?", pregunto.
+
+          "Oh, Selkram simplemente está pirateando la señal, por decirlo así", dice Arraka. "Hace mucho encontró una manera de aprovechar el trance de una tejedora del tiempo para vincularse temporalmente de forma directa al Magium, y está usando esa conexión para meter en la mezcla un ritual propio. ¿Saben cómo los demás dioses obtienen su poder gracias a grandes cantidades de seguidores? Bueno, Selkram no tiene seguidores. Él apuesta por la calidad en lugar de la cantidad. Básicamente, como los grupos visitados por tejedoras del tiempo pueden afectar la vida de cientos de miles de personas, decidió concentrar todos sus esfuerzos en explotar a gente como ustedes, en lugar de mendigar la adoración de un rebaño de ovejas, como hacen todos los demás dioses."
+
+          "¿De qué... clase de ritual estás hablando?", le pregunto a Arraka, un poco aprensivo.
+
+          "Bueno, no conozco todos los detalles", dice Arraka, "porque esos rituales suyos siempre cambian, pero casi seguro que en al menos una de las etapas habrá algún tipo de viaje en el tiempo. Por cierto, ¿cuándo empieza el ritual?"
+    choices:
+      - position: 1
+        text: Continuar.
+        effects:
+          - set:
+              current_scene: b2_ch11a_sanity
+            condition: ch11_saved_rose = 1
+          - set:
+              current_scene: b2_ch11a_invitation
+            condition: ch11_saved_rose = 0
+  - name: b2_ch11a_eventually
+    texts:
+      - source: scene_text
+        paragraph: 17
+        text: |-
+          Decido no seguir intentando irritar todavía más al Dios de la Muerte. Probablemente solo empeoraría las cosas para todos si interviniera.
+
+          "¡Déjala en paz!!!", grita Kate, después de que Selkram aplaste a Flower contra el suelo unas cuantas veces más. "¿No la has hecho sufrir ya bastante?"
+
+          El dios vuelve a invertir el tiempo para curar a Flower y luego flota hasta la posición de Kate para observarla mejor. O al menos eso creo que intenta, ya que en realidad no tiene cara.
+
+          "Qué extraño...", dice el Dios del Tiempo. "Por el tono con el que me hablas, habría esperado que al menos tuvieras cierta cantidad decente de energía mágica para respaldar tus amenazas. Pero al mirarte de cerca veo que tu poder apenas puede compararse con el de la stillwater de tu propio grupo, y mucho menos con el de alguien de mi calibre. Así que me pregunto por qué intentas desafiarme."
+
+          "¿Y a quién le importa?", dice Arraka. "De todos modos, solo es una debilucha."
+      - source: scene_text_2
+        paragraph: 14
+        text: |-
+          "Sin embargo, no solo él es sorprendentemente débil...", dice Selkram, mientras asciende un poco más para poder vernos mejor a todos. "Ni una sola persona de este grupo, salvo la chica stillwater, se acerca siquiera a las de hace seiscientos años en términos de poder mágico. La última vez estaban el zorro dorado, estaba aquella stillwater con la que estabas fusionada, y también aquel stillwater realmente poderoso que viajaba con el zorro. Eiden, creo que se llamaba, ¿no? Si comparas eso con lo que tenemos aquí, todo parece una broma cruel. ¿Para qué molestarse siquiera en enviar a la tejedora del tiempo a cualquiera de estas personas? Probablemente las maten en los próximos días, si tienen la suerte de sobrevivir tanto tiempo..."
+
+          "¿De qué... Ngh... estás hablando?", digo, como me cuesta hablar bien con la cara constantemente hundida en la tierra. "¿No fuiste tú quien envió aquí a la tejedora del tiempo?"
+
+          "¡Ja!", dice Arraka. "¡Selkram YA QUISIERA poder controlar a las tejedoras del tiempo cuando se le antoja! El Magium es quien envió aquí a la tejedora del tiempo, no esta triste excusa de dios."
+
+          "¿El Magium?...", digo, demasiado atónito para hacer otra cosa que repetir sus palabras.
+      - source: scene_3
+        paragraph: 6
+        text: |-
+          "Mhm...", dice Arraka. "Es una especie de tradición del Magium enviar a una tejedora del tiempo al plano terrenal cada vez que existe la posibilidad de que se pierdan muchísimas vidas en poco tiempo. Sobre todo cuando se trata de este continente. Cuando los poderes de la tejedora del tiempo por fin despiertan, la persona que recibió esos poderes entra en una especie de trance, congela el tiempo y luego camina pacientemente hacia varios grupos de personas, entregándoles la profecía uno por uno. Siempre ha sido así."
+
+          "Pero entonces... ¿qué tiene que ver el Dios del Tiempo con todo esto?", pregunto.
+
+          "Oh, Selkram simplemente está pirateando la señal, por decirlo así", dice Arraka. "Hace mucho encontró una manera de aprovechar el trance de una tejedora del tiempo para vincularse temporalmente de forma directa al Magium, y está usando esa conexión para meter en la mezcla un ritual propio. ¿Saben cómo los demás dioses obtienen su poder gracias a grandes cantidades de seguidores? Bueno, Selkram no tiene seguidores. Él apuesta por la calidad en lugar de la cantidad. Básicamente, como los grupos visitados por tejedoras del tiempo pueden afectar la vida de cientos de miles de personas, decidió concentrar todos sus esfuerzos en explotar a gente como ustedes, en lugar de mendigar la adoración de un rebaño de ovejas, como hacen todos los demás dioses."
+
+          "¿De qué... clase de ritual estás hablando?", le pregunto a Arraka, un poco aprensivo.
+
+          "Bueno, no conozco todos los detalles", dice Arraka, "porque esos rituales suyos siempre cambian, pero casi seguro que en al menos una de las etapas habrá algún tipo de viaje en el tiempo. Por cierto, ¿cuándo empieza el ritual?"
+    choices:
+      - position: 1
+        text: Continuar.
+        effects:
+          - set:
+              current_scene: b2_ch11a_sanity
+            condition: ch11_saved_rose = 1
+          - set:
+              current_scene: b2_ch11a_invitation
+            condition: ch11_saved_rose = 0
+  - name: b2_ch11a_sanity
+    routes:
+      - condition: ch4_spared_dave = 1
+        texts:
+          - source: scene_text
+            paragraph: 18
+            text: |-
+              "En cuanto todos los preparativos estén en su sitio", dice el Dios del Tiempo. "Pero eso no significa que debas pasar el tiempo que queda conversando con estas criaturas inferiores. ¿Por qué te molestas en responder a todas y cada una de sus preguntas? Dudo mucho que esta gente supere siquiera la primera fase del ritual."
+
+              Arraka se ríe.
+
+              "Creo que te vas a sorprender mucho con su próxima actuación", dice. "No son de los que se rinden fácilmente."
+
+              "Ya veremos eso muy pronto...", dice el Dios del Tiempo.
+
+              Entonces vuela hasta la posición de Rose, la agarra por la barbilla y le gira la cabeza a un lado y a otro varias veces mientras acerca su cara a la suya.
+
+              "¡Quita tus manos de encima de ella, bastardo!", grita Flower desde el suelo, mientras intenta en vano obligar a su cuerpo a incorporarse.
+
+              "¿Quieres que le quite las manos de encima?...", pregunta el dios, sorprendido. "Oh, esta tejedora del tiempo es amiga tuya... Qué interesante. Entonces quizá sea más apropiado que se una a ustedes en las pruebas que les esperan. Así podrán estar todos juntos en sus momentos de sufrimiento. Déjame sacarla de su trance."
+          - source: scene_text_2
+            paragraph: 16
+            text: |-
+              Después de terminar de hablar, el Dios del Tiempo suelta a Rose y luego mueve la mano delante de su cara, haciendo que la luz brillante se desvanezca de sus ojos. Rose mira ahora a su alrededor, confusa, intentando entender dónde está y por qué está flotando sobre el suelo, al lado de un hombre azul sin rostro.
+
+              "¿Qué está pasando?...", pregunta Rose. "¿Cómo he llegado aquí?"
+
+              "Tus preguntas se responderán a su debido tiempo", dice el Dios del Tiempo. "Por ahora, lo único que necesitas saber es que pronto vas a participar en un ritual divino, y que la única manera de salir de él con la cordura intacta será superar las pruebas a las que vas a enfrentarte. El ritual comenzará en breve."
+
+              Hace una pausa.
+
+              "Oh, y para que quede perfectamente claro...", dice el Dios del Tiempo, con voz más alta. "El ritual afectará a todas las personas que se encuentren en esta zona general y que no estén congeladas en el tiempo en este momento. Eso incluye también a quienes puedan estar escondidos detrás de un hechizo de invisibilidad, observándonos desde la distancia."
+
+              "¡Ja!", dice Arraka. "¡Lo sabía!"
+
+              "Que comience el ritual", dice el dios, y entonces una luz blanca cegadora inunda toda nuestra zona, haciendo imposible ver más allá de mis propias manos.
+        choices:
+          - position: 1
+            text: Continuar.
+            effects:
+              - set:
+                  current_scene: b2_ch11a_cabin
+      - condition: ch4_spared_dave = 0
+        texts:
+          - source: scene_text
+            paragraph: 18
+            text: |-
+              "En cuanto todos los preparativos estén en su sitio", dice el Dios del Tiempo. "Pero eso no significa que debas pasar el tiempo que queda conversando con estas criaturas inferiores. ¿Por qué te molestas en responder a todas y cada una de sus preguntas? Dudo mucho que esta gente supere siquiera la primera fase del ritual."
+
+              Arraka se ríe.
+
+              "Creo que te vas a sorprender mucho con su próxima actuación", dice. "No son de los que se rinden fácilmente."
+
+              "Ya veremos eso muy pronto...", dice el Dios del Tiempo.
+
+              Entonces vuela hasta la posición de Rose, la agarra por la barbilla y le gira la cabeza a un lado y a otro varias veces mientras acerca su cara a la suya.
+
+              "¡Quita tus manos de encima de ella, bastardo!", grita Flower desde el suelo, mientras intenta en vano obligar a su cuerpo a incorporarse.
+
+              "¿Quieres que le quite las manos de encima?...", pregunta el dios, sorprendido. "Oh, esta tejedora del tiempo es amiga tuya... Qué interesante. Entonces quizá sea más apropiado que se una a ustedes en las pruebas que les esperan. Así podrán estar todos juntos en sus momentos de sufrimiento. Déjame sacarla de su trance."
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              Después de terminar de hablar, el Dios del Tiempo suelta a Rose y luego mueve la mano delante de su cara, haciendo que la luz brillante se desvanezca de sus ojos. Rose mira ahora a su alrededor, confusa, intentando entender dónde está y por qué está flotando sobre el suelo, al lado de un hombre azul sin rostro.
+
+              "¿Qué está pasando?...", pregunta Rose. "¿Cómo he llegado aquí?"
+
+              "Tus preguntas se responderán a su debido tiempo", dice el Dios del Tiempo. "Por ahora, lo único que necesitas saber es que pronto vas a participar en un ritual divino, y que la única manera de salir de él con la cordura intacta será superar las pruebas a las que vas a enfrentarte. El ritual comenzará en breve."
+
+              "Oh, no...", dice Rose de repente, cuando por fin nos ve a mí y a los demás tirados en el suelo. "¿Qué ha pasado aquí?"
+
+              "Solo un pequeño encontronazo con un dios", digo, esforzándome por sonar como mi yo despreocupado de siempre. "Nada demasiado serio."
+
+              "El ritual va a comenzar ahora", dice el Dios del Tiempo. "Prepárense."
+
+              Cuando el dios termina de hablar, una luz blanca cegadora inunda toda nuestra zona, haciendo imposible ver más allá de mis propias manos.
+        choices:
+          - position: 1
+            text: Continuar.
+            effects:
+              - set:
+                  current_scene: b2_ch11a_cabin
+  - name: b2_ch11a_invitation
+    routes:
+      - condition: ch4_spared_dave = 1
+        texts:
+          - source: scene_text
+            paragraph: 19
+            text: |-
+              "En cuanto todos los preparativos estén en su sitio", dice el Dios del Tiempo. "Pero eso no significa que debas pasar el tiempo que queda conversando con estas criaturas inferiores. ¿Por qué te molestas en responder a todas y cada una de sus preguntas? Dudo mucho que esta gente supere siquiera la primera fase del ritual."
+
+              Arraka se ríe.
+
+              "Creo que te vas a sorprender mucho con su próxima actuación", dice. "No son de los que se rinden fácilmente."
+
+              "Ya veremos eso muy pronto...", dice el Dios del Tiempo.
+
+              Entonces vuela hasta la posición del revenant, la agarra por la barbilla y le gira la cabeza a un lado y a otro varias veces mientras acerca su cara a la suya.
+
+              "Hmm...", dice el Dios del Tiempo. "Percibo rastros del aura del Dios de la Muerte en esta tejedora del tiempo. ¿Un revenant, quizá? O tal vez alguna otra forma de no-muerta. Bueno, sea lo que sea, acaba de ganarse una invitación a mi ritual. Déjame sacarla de su trance."
+
+              Después de terminar de hablar, el Dios del Tiempo suelta al revenant y luego mueve la mano delante de su cara, haciendo que la luz brillante se desvanezca de sus ojos. Después de recuperar los sentidos, el revenant mira a su alrededor con su calma mirada inexpresiva y luego se dirige directamente al Dios del Tiempo.
+          - source: scene_text_2
+            paragraph: 18
+            text: |-
+              "Veo que me has sacado de mi trance", dice el revenant. "¿Debo entender que vas a obligarme a participar en tu ritual?"
+
+              "Qué perspicaz por tu parte", dice el Dios del Tiempo. "Parece que Ulruk te ha instruido bien."
+
+              "No hizo falta que me instruyera", dice el revenant. "El hechizo que me trajo a este mundo implantó en mi mente gran parte del conocimiento del Dios de la Muerte, incluidos detalles sobre tus rituales y sobre tu personalidad. Teniendo en cuenta esos factores, no me resultó difícil predecir que tu primera reacción al descubrirme sería intentar 'castigar' al Dios de la Muerte por inmiscuirse en tus asuntos. ¿Y qué mejor forma de castigarlo que a través de mí, su fiel seguidora?"
+
+              "Por fin, Ulruk ha encontrado una seguidora capaz de compensar su falta de seso", dice el Dios del Tiempo. "Pero veamos hasta dónde puede llevarte el tuyo en las pruebas que vienen. El ritual está a punto de comenzar. Prepárate."
+
+              Hace una pausa.
+
+              "Oh, y para que quede perfectamente claro...", dice el Dios del Tiempo, con voz más alta. "El ritual afectará a todas las personas que se encuentren en esta zona general y que no estén congeladas en el tiempo en este momento. Eso incluye también a quienes puedan estar escondidos detrás de un hechizo de invisibilidad, observándonos desde la distancia."
+
+              "¡Ja!", dice Arraka. "¡Lo sabía!"
+
+              "Que comience el ritual", dice el dios, y entonces una luz blanca cegadora inunda toda nuestra zona, haciendo imposible ver más allá de mis propias manos.
+        choices:
+          - position: 1
+            text: Continuar.
+            effects:
+              - set:
+                  current_scene: b2_ch11a_cabin
+      - condition: ch4_spared_dave = 0
+        texts:
+          - source: scene_text
+            paragraph: 19
+            text: |-
+              "En cuanto todos los preparativos estén en su sitio", dice el Dios del Tiempo. "Pero eso no significa que debas pasar el tiempo que queda conversando con estas criaturas inferiores. ¿Por qué te molestas en responder a todas y cada una de sus preguntas? Dudo mucho que esta gente supere siquiera la primera fase del ritual."
+
+              Arraka se ríe.
+
+              "Creo que te vas a sorprender mucho con su próxima actuación", dice. "No son de los que se rinden fácilmente."
+
+              "Ya veremos eso muy pronto...", dice el Dios del Tiempo.
+
+              Entonces vuela hasta la posición del revenant, la agarra por la barbilla y le gira la cabeza a un lado y a otro varias veces mientras acerca su cara a la suya.
+
+              "Hmm...", dice el Dios del Tiempo. "Percibo rastros del aura del Dios de la Muerte en esta tejedora del tiempo. ¿Un revenant, quizá? O tal vez alguna otra forma de no-muerta. Bueno, sea lo que sea, acaba de ganarse una invitación a mi ritual. Déjame sacarla de su trance."
+
+              Después de terminar de hablar, el Dios del Tiempo suelta al revenant y luego mueve la mano delante de su cara, haciendo que la luz brillante se desvanezca de sus ojos. Después de recuperar los sentidos, el revenant mira a su alrededor con su calma mirada inexpresiva y luego se dirige directamente al Dios del Tiempo.
+          - source: scene_text_2
+            paragraph: 19
+            text: |-
+              "Veo que me has sacado de mi trance", dice el revenant. "¿Debo entender que vas a obligarme a participar en tu ritual?"
+
+              "Qué perspicaz por tu parte", dice el Dios del Tiempo. "Parece que Ulruk te ha instruido bien."
+
+              "No hizo falta que me instruyera", dice el revenant. "El hechizo que me trajo a este mundo implantó en mi mente gran parte del conocimiento del Dios de la Muerte, incluidos detalles sobre tus rituales y sobre tu personalidad. Teniendo en cuenta esos factores, no me resultó difícil predecir que tu primera reacción al descubrirme sería intentar 'castigar' al Dios de la Muerte por inmiscuirse en tus asuntos. ¿Y qué mejor forma de castigarlo que a través de mí, su fiel seguidora?"
+
+              "Por fin, Ulruk ha encontrado una seguidora capaz de compensar su falta de seso", dice el Dios del Tiempo. "Pero veamos hasta dónde puede llevarte el tuyo en las pruebas que vienen. El ritual está a punto de comenzar. Prepárate."
+
+              Cuando el dios termina de hablar, una luz blanca cegadora inunda toda nuestra zona, haciendo imposible ver más allá de mis propias manos.
+        choices:
+          - position: 1
+            text: Continuar.
+            effects:
+              - set:
+                  current_scene: b2_ch11a_cabin
+  - name: b2_ch11a_cabin
+    texts:
+      - source: scene_text
+        paragraph: 20
+        text: |-
+          Entonces me invade un fuerte mareo, mientras siento que me arrancan la mente del cuerpo. En cuanto la luz desaparece y puedo volver a ver a mi alrededor, me doy cuenta de que sigo tirado en el suelo, pero todos los demás han desaparecido.
+
+          Espera, no, eso no está bien... No es que los demás hayan desaparecido. Es que me han transportado a un lugar completamente distinto. Sigo en medio de un bosque, sí, pero este bosque me resulta terriblemente familiar. Como si ya hubiera estado aquí antes, en mi pasado lejano.
+
+          Cuando decido ponerme de pie y explorar un poco, me quedo paralizado unos instantes por la impresión al darme cuenta de que mi altura ahora es mucho menor que antes. Y no solo ha cambiado mi altura. Los brazos también los tengo mucho más cortos, las manos más pequeñas y ya no llevo la misma ropa.
+
+          "--pero casi seguro que en al menos una de las etapas habrá algún tipo de viaje en el tiempo", oigo la voz de Arraka al fondo de mi cabeza, mientras de repente recuerdo lo que me estaba diciendo hace un momento.
+
+          Viaje en el tiempo, un cuerpo más pequeño y un bosque que me resulta familiar. Esto me da muy mala espina.
+
+          Reviso de inmediato mis bolsillos para ver si aún llevo alguno de mis viejos objetos, pero han desaparecido todos, incluido mi dispositivo de estadísticas. Si de verdad es el bosque que creo que es, y si esa fuerte aura mágica que siento a lo lejos también pertenece a quien creo, entonces el Dios del Tiempo debe de haberme enviado de vuelta a cuando yo tenía unos trece años. ¿Pero con qué propósito?...
+      - source: scene_text_2
+        paragraph: 20
+        text: |-
+          Dejo todos esos pensamientos a un lado y echo a correr tan rápido como puedo hacia la casa que en otro tiempo llamé mi hogar. Digo que corro hacia mi casa, pero la verdad es que mi hogar era más bien una cabaña. Estaba hecha casi por completo de madera y se encontraba algo apartada del resto del pueblo, porque a mi padre le gustaba la tranquilidad. Teníamos un río cerca y podíamos sacar toda la leña que necesitábamos de este bosque, así que dependíamos bastante poco de los demás habitantes del pueblo. Incluso teníamos una pequeña parcela de tierra que cultivábamos y un establo donde guardábamos el heno. Es curioso que todavía recuerde todos estos detalles con tanta claridad, cuando llevo tantos años sin pensar en este lugar.
+
+          En cuanto llego al borde del bosque y miro hacia la vieja cabaña, siento que el corazón me da un vuelco al ver a mi hermanita en mitad de nuestro patio delantero, justo cuando la banshee que lleva dentro está despertando y preparándose para apoderarse de su cuerpo. Esa poderosa aura mágica que irradia ella es tan siniestra como la recordaba y me recorre la espalda con escalofríos. No solo está cambiando el aura de mi hermana, también su cuerpo se está transformando en algo que ya no podría llamarse humano. Su cara parece estarse derritiendo y la piel se le está volviendo morada, mientras el resto del cuerpo empieza a deformarse lentamente.
+      - source: scene_3
+        paragraph: 7
+        text: |-
+          Mientras el burro frente a nuestro establo rebuzna con fuerza, asustado, mis padres y mi hermano pequeño están justo regresando a la casa y corren hacia el patio para ver qué le está ocurriendo a mi hermana. Siguen vivos... Mis padres siguen vivos. Esta vez no llegué demasiado tarde. Todavía puedo salvarlos. Puedo arreglar las cosas. Puedo-- espera... ¿Y qué pasa con esa prueba de la que hablaba el Dios del Tiempo? ¿Salvar a mis padres forma parte de la prueba o se supone que debería hacer otra cosa?
+
+          No... ¡A la mierda esa prueba! Me están ofreciendo una oportunidad única en la vida para arreglar los errores de mi pasado. No voy a desaprovecharla. Esta vez no llegaré demasiado tarde. Esta vez voy a salvarlos a todos.
+    choices:
+      - position: 1
+        text: Atacar ahora mismo a la banshee, mientras todavía sigue despertando.
+        effects:
+          - set:
+              current_scene: b2_ch11a_attack
+      - position: 2
+        text: Esperar a que la banshee ataque a mis padres antes de entrar a matarla.
+        effects:
+          - set:
+              current_scene: b2_ch11a_wait
+  - name: b2_ch11a_attack
+    texts:
+      - source: scene_text
+        paragraph: 21
+        text: |-
+          No podría pedir un momento mejor para atacar a la banshee. Con su despertar todavía en marcha, debería estar demasiado ocupada como para prestar atención a nada más a su alrededor. Ahora es cuando tengo que actuar.
+
+          Corro rápidamente hacia nuestro establo, mientras el burro sigue rebuznando, y recojo la horca que estaba tirada en el suelo. ¿De verdad quiero matar a la banshee, sin embargo? En realidad no es culpa suya que se vea obligada a matar a otras personas para seguir viviendo. Quizá si intento razonar con ella... No, no, no, recuerda esa risa. Recuerda esa risa siniestra que todavía me persigue en sueños de vez en cuando, incluso después de tantos años. Esta banshee mató a mis padres a sangre fría y lo disfrutó. No es como Illuna. No se puede razonar con ella. O matas, o te matan.
+
+          Mientras me acerco a la banshee, veo que mis padres y mi hermano ya han llegado hasta ella y están intentando hablar con ella como si siguiera siendo mi hermana.
+
+          "¡Claire!", dice mi madre. "¡Santos dioses, qué te ha pasado!"
+
+          "¡Tenemos que llamar a un doctor!", dice mi padre, presa del pánico. "O... a un hechicero. De esos de los que Barry siempre habla. ¡Un mago! Así se llaman. Esto parece algún tipo de enfermedad mágica. Si encontramos a un médico mago, quizá podamos--"
+
+          "Hazte a un lado, padre...", le digo, acercándome a ellos con la horca todavía en las manos.
+      - source: scene_text_2
+        paragraph: 21
+        text: |-
+          "Barry...", dice mi padre. "¿Qué haces con esa horca? ¡Tu hermana está muy enferma! Tenemos que llevarla a un doctor."
+
+          "Lo que tiene no tiene cura", le digo. "Tengo que matarla antes de que nos mate a todos."
+
+          "¡Barry, qué estás diciendo?!", dice mi madre, horrorizada. "Tiene que haber una manera de salvarla. No puedes matarla así sin más. ¡Es tu hermana!"
+
+          "Lo que ven ahí ya no es mi hermana", digo. "Es una banshee. Déjenme pasar."
+
+          "No me importa lo que sea", dice mi padre, con una mirada resuelta mientras se coloca entre la banshee y yo. "No voy a dejar que le hagas daño a mi niña."
+
+          "No hay tiempo para estar teniendo esta discusión", digo. "Tenemos que matarla rápido, antes de que--"
+
+          No llego a terminar la frase, porque la banshee acaba de completar su despertar y ha aprovechado al máximo nuestra distracción para atravesarle el pecho a mi padre con la mano por la espalda, como si hubiera usado una lanza.
+
+          "¡¡¡No!!!", grito, mientras mi padre cae al suelo, gorgoteando sangre.
+
+          Intento lanzarme entonces hacia la banshee con la horca, pero ella ya me estaba esperando. Lo único que necesitó fue conjurar de la nada una lanza afilada de piedra y lanzármela directamente a través del cráneo, matándome antes siquiera de tener la oportunidad de alcanzarla.
+    choices:
+      - position: 1
+        text: Reiniciar juego
+        effects:
+          - set:
+              current_scene: ch1_intro1
+              storyboard_controls: Jump to frame "Chapter 1"
+      - position: 2
+        text: Cargar desde el último punto de control
+        effects:
+          - set:
+              chapter_load: 1
+              storyboard_controls: Jump to frame "Save load game"
+      - position: 3
+        text: Cargar partida
+        effects:
+          - set:
+              storyboard_controls: Jump to frame "Save load game"
+  - name: b2_ch11a_wait
+    texts:
+      - source: scene_text
+        paragraph: 22
+        text: |-
+          Corro rápidamente hacia nuestro establo, mientras el burro sigue rebuznando, y recojo la horca que estaba tirada en el suelo. ¿De verdad quiero matar a la banshee, sin embargo? En realidad no es culpa suya que se vea obligada a matar a otras personas para seguir viviendo. Quizá si intento razonar con ella... No, no, no, recuerda esa risa. Recuerda esa risa siniestra que todavía me persigue en sueños de vez en cuando, incluso después de tantos años. Esta banshee mató a mis padres a sangre fría y lo disfrutó. No es como Illuna. No se puede razonar con ella. O matas, o te matan.
+
+          Mientras me acerco a la banshee, veo que mis padres y mi hermano ya han llegado hasta ella y están intentando hablar con ella como si siguiera siendo mi hermana.
+
+          "¡Claire!", dice mi madre. "¡Santos dioses, qué te ha pasado!"
+
+          "¡Tenemos que llamar a un doctor!", dice mi padre, presa del pánico. "O... a un hechicero. De esos de los que Barry siempre habla. ¡Un mago! Así se llaman. Esto parece algún tipo de enfermedad mágica. Si encontramos a un médico mago, quizá todavía podamos curarla. Tiene que haber un mago en alguno de los pueblos vecinos. Barry, ahí estás. ¡Ven rápido! Tu hermana está muy enferma. ¿Conoces a algún médico mago por nuestra zona?"
+
+          "No hay magos blancos en ninguno de los pueblos de los alrededores", le digo, mientras me acerco lentamente a él con la horca en la mano. "Y aunque los hubiera, ya sería demasiado tarde para ella."
+
+          "¿Qué estás diciendo?...", dice mi padre. "¿Y qué haces con esa horca?"
+      - source: scene_text_2
+        paragraph: 22
+        text: |-
+          "Olvida la horca", digo. "No le quites los ojos de encima a Claire. En cuestión de segundos va a convertirse en un monstruo y no dudará en atacarte."
+
+          "¿Claire? ¿Un monstruo?...", dice mi padre, volviéndose hacia ella con aprensión. "No, eso no puede ser lo que está pasando de verdad... Estás bromeando, ¿verdad, Barry?"
+
+          "No le quites los ojos de encima", le repito, con tono serio. "Si intenta matarte, no voy a contenerme contra ella."
+
+          Justo cuando termino de hablar, la banshee ya había acabado con su despertar y se preparaba para lanzar su primer ataque. Rápidamente empujo a mi padre fuera de su camino con una mano y, con la otra, mantengo el agarre sobre mi horca. La banshee intentaba ensartar a mi padre con la mano desnuda, pero debido a mi intervención solo logra herirme levemente en el lado izquierdo del abdomen.
+
+          Mi madre jadea al ver la sangre gotear de mí.
+
+          "¡Barry!", grita, con miedo en la voz.
+
+          No le doy a la banshee tiempo para atacarme de nuevo y le hundo la horca directamente en el pecho, sosteniendo el arma con ambas manos. La banshee lanza un grito muy fuerte y estridente, pero no logra reunir la fuerza para otro ataque y, al cabo de unos segundos más, tanto sus gritos como sus espasmos llegan a su fin, junto con su vida.
+      - source: scene_3
+        paragraph: 8
+        text: |-
+          Al soltar la horca de mis manos, junto con el cuerpo de la banshee, mi madre viene a abrazarme con fuerza y luego me sostiene entre sus brazos durante unos segundos, sin decir nada.
+
+          "Gracias...", dice mi madre. "Muchas gracias por salvarlo. No puedo ni imaginar lo que habría sido perder a mi hija y a mi marido en el mismo día."
+
+          Se aparta de repente al fijarse en mi herida.
+
+          "Lo siento", dice. "No debería haber estado presionando tu herida así. Voy a buscar unas vendas y algo de alcohol para fricciones a la casa. Parece que solo es una herida superficial, así que debería bastar con limpiarla un poco. ¡Ahora vuelvo!"
+
+          Entonces corre hacia la casa, mientras mi padre sigue aparentemente en estado de shock por lo ocurrido y mi hermano llora de fondo.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch11a_changed
+  - name: b2_ch11a_changed
+    texts:
+      - source: scene_text
+        paragraph: 23
+        text: |-
+          Lo hice. De verdad lo hice. Cambié el pasado. Aunque tenga que vivir toda mi vida otra vez hasta llegar a los veintiocho años, igualmente habrá merecido la pena. Ni siquiera con magia me habría atrevido a soñar que algo así fuera posible. Ahora, mientras logre averiguar en qué consiste el ritual del Dios del Tiempo y cómo sobrevivirlo, debería poder--
+
+          El hilo de mis pensamientos se interrumpe por un mareo extremo, mientras toda la zona vuelve a inundarse de una luz blanca intensa. Igual que antes, tengo la sensación de que me arrancan la consciencia del cuerpo y luego la luz se desvanece, mientras vuelvo a encontrarme en medio de un bosque demasiado familiar.
+
+          No... No puede ser...
+      - source: scene_text_2
+        paragraph: 23
+        text: |-
+          Miro rápidamente hacia abajo para confirmar que estoy en el mismo cuerpo de trece años y luego echo a correr hacia mi casa tan rápido como puedo. No sé por qué corro. Mi sentido mágico basta para darme toda la información que necesito. El aura de la banshee que posee a mi hermana es tan fuerte como la primera vez que me enviaron atrás en el tiempo. También percibo que mis padres y mi hermano pequeño aún no han llegado a la casa. Lo percibo todo. Entonces, ¿por qué estoy corriendo?...
+
+          En cuanto llego al borde del bosque y miro hacia nuestra casa, veo a mi hermana transformarse en una banshee, igual que antes. Todo lo que hice no sirvió de nada. Va a volver a pasar. Y soy el único que puede impedirlo.
+    choices:
+      - position: 1
+        text: Intentar salvar otra vez a mis padres.
+        effects:
+          - set:
+              current_scene: b2_ch11a_daylight
+              b2_ch11_save_parents: 1
+      - position: 2
+        text: Dejar que mis padres mueran.
+        effects:
+          - set:
+              current_scene: b2_ch11a_restrain
+              b2_ch11_save_parents: 0
+  - name: b2_ch11a_daylight
+    texts:
+      - source: scene_text
+        paragraph: 24
+        text: |-
+          Corro hacia el establo tan rápido como puedo y recojo del suelo la horca, igual que la vez anterior. Sin pensarlo siquiera, corro a toda velocidad hacia la banshee y, antes de que mis padres y mi hermano puedan llegar hasta ella, le atravieso el pecho.
+
+          Esta tiene que ser la buena. Esta vez hice todo perfecto. No me hirieron, no interactué con ninguno de mis padres y maté a la banshee antes de que siquiera tuviera la oportunidad de completar su despertar. Esto tiene que ser lo que el ritual quiere de mí, ¿no? Si no, ¿por qué me habría enviado aquí?
+
+          "Barry...", dice mi madre, con lágrimas en los ojos. "¿Qué has hecho?"
+
+          Cuando miro al suelo para ver el cadáver de la banshee que acabo de matar, descubro con espanto que su cuerpo ha vuelto a la forma original que tenía mi hermana antes de que empezara el despertar. Mientras mi madre aprieta contra sí el cadáver sin vida de mi hermana, mi padre me mira con puro desprecio en los ojos, mientras una furia silenciosa se apodera poco a poco de él.
+
+          "La mataste...", dice mi padre. "La mataste a sangre fría. Pequeño bastardo. ¿Así es como nos pagas por haberte acogido? ¿Por tratarte como si fueras nuestro propio hijo?"
+
+          "¡Jonathan, basta!", dice mi madre, con una súbita mirada de pánico en los ojos.
+      - source: scene_text_2
+        paragraph: 24
+        text: |-
+          "No, Helen", dice mi padre, con la misma mirada oscura de antes, sin perderme de vista. "El chico necesita saberlo. QUIERO que lo sepa. Barry... quiero que recuerdes lo que estoy a punto de decirte cada uno de los días que pases pudriéndote en prisión. Tú NO eres nuestro hijo. Nunca lo fuiste. Tus verdaderos padres eran una pareja de forasteros que se mudaron a nuestro remoto pueblo menos de un año antes de que nacieras. Los asesinaron a plena luz del día unos años después unos matones encapuchados que de algún modo luego desaparecieron sin dejar rastro y, como ya no quedaba nadie para cuidarte, Helen y yo decidimos acogerte. Pero lo hicimos solo por lástima y porque nadie más te quería. ¿Lo entiendes? ¡Nadie te quería! ¡Nadie te que--"
+
+          Las últimas palabras de mi padre quedaron completamente ahogadas por el sonido de mi madre abofeteándolo con muchísima fuerza en la cara.
+
+          "¡He dicho que basta!", dice mi madre, mirándolo con determinación mientras se seca una lágrima del ojo.
+    effects:
+      - set:
+          ac_b2_ch11_hidden: 1
+        achievement:
+          id: ac_b2_ch11_hidden
+          title: Una verdad oculta
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch11a_daylight2
+  - name: b2_ch11a_restrain
+    texts:
+      - source: scene_text
+        paragraph: 25
+        text: |-
+          Mientras me quedo allí de pie e intento decidir mi siguiente movimiento, un pensamiento oscuro me cruza de repente la mente respecto a un escenario que he evitado por completo considerar hasta este momento. ¿Y si este ritual no va de salvar a mis padres? ¿Y si la única razón por la que el Dios del Tiempo me envió aquí fue obligarme a revivir mis errores del pasado y mostrarme lo impotente que soy para cambiarlos? Arraka sí mencionó que estos rituales están pensados para explotarnos en beneficio del propio dios. Y, después de todo lo que el Dios del Tiempo nos ha hecho, no tendría ningún sentido que quisiera ayudarnos a cambiar el pasado por bondad de corazón.
+
+          Cuanto más lo pienso, más sentido tiene. No es como si el 'Dios del Tiempo' fuera un dios de verdad. No creó el tiempo. No tiene ningún control sobre él. La única manera de deshacer algo que ya ha ocurrido es mediante un hechizo de inversión temporal. Si la muerte de mis padres no ha sido deshecha con magia, entonces mi presencia aquí es irrelevante. Simplemente me veré obligado a repetir estos mismos acontecimientos una y otra vez, hasta tomar exactamente las mismas decisiones que tomé cuando tenía trece años. Nunca hubo otra opción. Fui un idiota por pensar lo contrario.
+
+          Empiezo a retroceder lentamente hacia el interior del bosque, mientras hago todo lo posible por mantener la calma. No hay otra salida. Solo tengo que pasar por esto una vez más y entonces habrá terminado.
+      - source: scene_text_2
+        paragraph: 25
+        text: |-
+          Me detengo a varias decenas de metros del borde del bosque y espero allí a que mis padres intenten hablar con la banshee. No puedo dejar que ninguno de los dos me vea. Tengo que hacerlo todo exactamente igual que hace quince años. Tengo que llegar tarde.
+
+          Cuando empiezo a oír los gritos de mis padres, mientras los matan, me entra un impulso repentino de salir corriendo y salvarlos, pero consigo contenerme. No hay nada que pueda hacer por ellos. Tengo que mantenerme fuerte.
+
+          En cuanto dejo de oír sus voces, salgo corriendo del bosque tan rápido como puedo y entro en el establo para agarrar la horca. Mi hermano ahora está huyendo de la banshee, justo como recuerdo que hizo hace tantos años. Mientras ella está ocupada persiguiéndolo, la banshee es un blanco fácil. Rápidamente le rodeo y le hundo la horca por la espalda, atravesándole el estómago. La banshee intenta darse la vuelta y atacarme, pero está demasiado debilitada por su despertar. Al final deja de moverse y cae al suelo, mientras yo suelto la horca para que caiga con ella.
+      - source: scene_3
+        paragraph: 9
+        text: |-
+          Al mirar hacia los cadáveres de mis padres, tirados cerca de la banshee, no puedo evitar sentir un dolor agudo en la zona del pecho, alrededor del corazón, aunque se me pasa poco después. Es la segunda vez que no consigo salvarlos. No... No puedo pensar así. Mis padres ya estaban muertos. Esto no fue diferente de un sueño. Un sueño terrible que por fin ha terminado--
+
+          Una luz blanca intensa me envuelve de repente, mientras mi consciencia vuelve a ser transferida a otro cuerpo. Cuando la luz y el mareo se disipan, me encuentro una vez más en el mismo bosque, mientras el aura de mi hermana se deja sentir con total claridad a lo lejos.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch11a_pitchfork
+  - name: b2_ch11a_daylight2
+    texts:
+      - source: scene_text
+        paragraph: 26
+        text: |-
+          Entonces se acerca a mí y me pone las manos sobre los hombros, mirándome directamente a los ojos.
+
+          "Barry, siento muchísimo lo que te ha dicho tu padre...", me dice mi madre, mientras aún intenta contener las lágrimas de antes. "Estoy segura de que no quiso decir todas esas cosas horribles. Debió de perder los nervios por la conmoción de lo ocurrido. No es verdad que no te quisiéramos. Siempre te hemos querido, aunque no fueras nuestro hijo de sangre."
+
+          Hace una pausa de un segundo para secarse con la manga las lágrimas que se le están formando en los ojos.
+      - source: scene_text_2
+        paragraph: 26
+        text: |-
+          "Y respecto a tu hermana...", continúa mi madre. "No puedo creer que la mataras sin tener una razón. Todos pudimos sentir el aura mágica poderosa y antinatural que salía de tu hermana hace apenas unos minutos, y también pudimos ver desde lejos en qué forma monstruosa se había convertido antes de que la mataras. Yo... no sé nada de magia, y tu padre tampoco. Pero a ti siempre te fascinó, y siempre aprovechaste cada oportunidad que tuviste para aprender más sobre ella. Si esa cosa en la que se estaba convirtiendo tu hermana era lo bastante peligrosa como para que tuvieras que matarla, estoy dispuesta a confiar en tu palabra, por doloroso que sea para mí aceptarlo. Pero tienes que darme tu palabra. Tienes que jurarme que no había otra salida. Barry, ¿puedes jurármelo?"
+
+          "¡Sí, lo juro!", digo. "No hay forma de que yo hubiera--"
+
+          No sirve de nada. Ya no puedo hablar. El mareo vuelve a apoderarse de mí y siento que me arrancan del cuerpo, mientras la luz brillante me ciega igual que las dos veces anteriores. Cuando desaparecen tanto el mareo como la luz, me encuentro en el mismo sitio que ya conozco demasiado bien, mientras el aura de mi hermana se siente con claridad más allá del borde del bosque, tan fuerte como siempre.
+    choices:
+      - position: 1
+        text: Seguir intentando salvar a mis padres
+        effects:
+          - set:
+              current_scene: b2_ch11a_trying
+              b2_ch11_save_parents: 2
+      - position: 2
+        text: Dejar que mis padres mueran
+        effects:
+          - set:
+              current_scene: b2_ch11a_spotted
+  - name: b2_ch11a_trying
+    texts:
+      - source: scene_text
+        paragraph: 27
+        text: |-
+          No... No puedo dejar que termine así. No cuando estoy tan cerca de salvarlos. Incluso después de todo lo que mi padre acaba de decirme, sigo sin poder odiarlo. Después de todo, me vio asesinar brutalmente a su niñita ante sus propios ojos. Y mi madre estaba dispuesta a confiar en mí incluso en estas circunstancias. No puedo rendirme con ellos así sin más. Voy a encontrar una forma de salvarlos, pase lo que pase.
+
+          Pasé la siguiente hora más o menos tratando de averiguar qué podía estar fallando en lo que hacía. Probé todo lo que se me ocurrió. Maté a la banshee con armas distintas, la maté antes y después de que mis padres intervinieran, intenté razonar con la banshee antes de matarla e incluso conseguí que mi padre la matara él mismo una vez.
+
+          Todo para nada. Cada vez que parecía que por fin iba a funcionar, simplemente me enviaban otra vez atrás en el tiempo y tenía que empezar de cero. También estuve a punto de morir varias veces. No estoy seguro de cómo funcionaría este ritual si muriera, pero teniendo en cuenta el poco interés que el Dios del Tiempo parecía mostrar por nuestras vidas, no me sorprendería nada que simplemente me quedara muerto, sin ningún tipo de inversión temporal que viniera a salvarme.
+      - source: scene_text_2
+        paragraph: 27
+        text: |-
+          Mientras me quedo allí de pie e intento decidir mi siguiente movimiento, un pensamiento oscuro me cruza de repente la mente respecto a un escenario que he evitado por completo considerar hasta este momento. ¿Y si este ritual no va de salvar a mis padres? ¿Y si la única razón por la que el Dios del Tiempo me envió aquí fue obligarme a revivir mis errores del pasado y mostrarme lo impotente que soy para cambiarlos? Arraka sí mencionó que estos rituales están pensados para explotarnos en beneficio del propio dios. Y, después de todo lo que el Dios del Tiempo nos ha hecho, no tendría ningún sentido que quisiera ayudarnos a cambiar el pasado por bondad de corazón.
+
+          Cuanto más lo pienso, más sentido tiene. No es como si el 'Dios del Tiempo' fuera un dios de verdad. No creó el tiempo. No tiene ningún control sobre él. La única manera de deshacer algo que ya ha ocurrido es mediante un hechizo de inversión temporal. Si la muerte de mis padres no ha sido deshecha con magia, entonces mi presencia aquí es irrelevante. Simplemente me veré obligado a repetir estos mismos acontecimientos una y otra vez, hasta tomar exactamente las mismas decisiones que tomé cuando tenía trece años. Nunca hubo otra opción. Fui un idiota por pensar lo contrario.
+
+          Empiezo a avanzar lentamente hacia mi vieja casa, mientras hago todo lo posible por mantener la calma. No hay otra salida. Solo tengo que pasar por esto una vez más y entonces habrá terminado.
+
+          Mientras camino por el bosque, me aseguro de no llegar a la cabaña demasiado pronto, para que ni mis padres ni la banshee me vean. Tengo que hacerlo todo exactamente igual que hace quince años. Tengo que llegar tarde.
+      - source: scene_3
+        paragraph: 10
+        text: |-
+          Cuando llego al borde del bosque, puedo oír los gritos de mis padres, mientras mi hermana los mata uno por uno. No hay nada que pueda hacer por ellos. Tengo que mantenerme fuerte.
+
+          En cuanto dejo de oír sus voces, salgo corriendo del bosque tan rápido como puedo y entro en el establo para agarrar la horca. Mi hermano ahora está huyendo de la banshee, justo como recuerdo que hizo hace tantos años. Mientras ella está ocupada persiguiéndolo, la banshee es un blanco fácil. Rápidamente le rodeo y le hundo la horca por la espalda, atravesándole el estómago. La banshee intenta darse la vuelta y atacarme, pero está demasiado debilitada por su despertar. Al final deja de moverse y cae al suelo, mientras yo suelto la horca para que caiga con ella.
+
+          Al mirar hacia los cadáveres de mis padres, tirados cerca de la banshee, no puedo evitar sentir un dolor agudo en la zona del pecho, alrededor del corazón, aunque se me pasa poco después. Es la segunda vez que no consigo salvarlos. No... No puedo pensar así. Mis padres ya estaban muertos. Esto no fue diferente de un sueño. Un sueño terrible que por fin ha terminado--
+
+          Una luz blanca intensa me envuelve de repente, mientras mi consciencia vuelve a ser transferida a otro cuerpo. Cuando la luz y el mareo se disipan, me encuentro una vez más en el mismo bosque, mientras el aura de mi hermana se deja sentir con total claridad a lo lejos.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch11a_pitchfork
+  - name: b2_ch11a_spotted
+    texts:
+      - source: scene_text
+        paragraph: 28
+        text: |-
+          Mientras me quedo allí de pie e intento decidir mi siguiente movimiento, un pensamiento oscuro me cruza de repente la mente respecto a un escenario que he evitado por completo considerar hasta este momento. ¿Y si este ritual no va de salvar a mis padres? ¿Y si la única razón por la que el Dios del Tiempo me envió aquí fue obligarme a revivir mis errores del pasado y mostrarme lo impotente que soy para cambiarlos? Arraka sí mencionó que estos rituales están pensados para explotarnos en beneficio del propio dios. Y, después de todo lo que el Dios del Tiempo nos ha hecho, no tendría ningún sentido que quisiera ayudarnos a cambiar el pasado por bondad de corazón.
+
+          Cuanto más lo pienso, más sentido tiene. No es como si el 'Dios del Tiempo' fuera un dios de verdad. No creó el tiempo. No tiene ningún control sobre él. La única manera de deshacer algo que ya ha ocurrido es mediante un hechizo de inversión temporal. Si la muerte de mis padres no ha sido deshecha con magia, entonces mi presencia aquí es irrelevante. Simplemente me veré obligado a repetir estos mismos acontecimientos una y otra vez, hasta tomar exactamente las mismas decisiones que tomé cuando tenía trece años. Nunca hubo otra opción. Fui un idiota por pensar lo contrario.
+
+          Empiezo a avanzar lentamente hacia mi vieja casa, mientras hago todo lo posible por mantener la calma. No hay otra salida. Solo tengo que pasar por esto una vez más y entonces habrá terminado.
+
+          Mientras camino por el bosque, me aseguro de no llegar a la cabaña demasiado pronto, para que ni mis padres ni la banshee me vean. Tengo que hacerlo todo exactamente igual que hace quince años. Tengo que llegar tarde.
+      - source: scene_text_2
+        paragraph: 28
+        text: |-
+          Cuando llego al borde del bosque, puedo oír los gritos de mis padres, mientras mi hermana los mata uno por uno. No hay nada que pueda hacer por ellos. Tengo que mantenerme fuerte.
+
+          En cuanto dejo de oír sus voces, salgo corriendo del bosque tan rápido como puedo y entro en el establo para agarrar la horca. Mi hermano ahora está huyendo de la banshee, justo como recuerdo que hizo hace tantos años. Mientras ella está ocupada persiguiéndolo, la banshee es un blanco fácil. Rápidamente le rodeo y le hundo la horca por la espalda, atravesándole el estómago. La banshee intenta darse la vuelta y atacarme, pero está demasiado debilitada por su despertar. Al final deja de moverse y cae al suelo, mientras yo suelto la horca para que caiga con ella.
+
+          Al mirar hacia los cadáveres de mis padres, tirados cerca de la banshee, no puedo evitar sentir un dolor agudo en la zona del pecho, alrededor del corazón, aunque se me pasa poco después. Es la segunda vez que no consigo salvarlos. No... No puedo pensar así. Mis padres ya estaban muertos. Esto no fue diferente de un sueño. Un sueño terrible que por fin ha terminado--
+
+          Una luz blanca intensa me envuelve de repente, mientras mi consciencia vuelve a ser transferida a otro cuerpo. Cuando la luz y el mareo se disipan, me encuentro una vez más en el mismo bosque, mientras el aura de mi hermana se deja sentir con total claridad a lo lejos.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch11a_pitchfork
+  - name: b2_ch11a_pitchfork
+    texts:
+      - source: scene_text
+        paragraph: 29
+        text: |-
+          No... ¡No!!! ¿Cómo puede ser? No hice nada diferente de lo que hice hace quince años. Dejé que murieran mis dos padres. Salvé a mi hermano. Usé la misma horca. Hasta me aseguré de llegar demasiado tarde para que no hubiera ninguna duda de que yo... exactamente...
+
+          No... Eso no está bien. No fue eso lo que pasó en absoluto... Esa es solo la historia que llevo quince años contándole a todo el mundo. La he contado tantas veces que hasta conseguí engañarme a mí mismo y creer que era real. Pero la realidad de estos acontecimientos fue muy distinta a como la recordaba. Ahora entiendo lo que este ritual quiere de mí. Ahora por fin entiendo lo que tengo que hacer.
+
+          A medida que por fin caigo en la cuenta de lo que ocurrió de verdad hace tantos años, primero siento conmoción, luego resignación y finalmente odio. Un sentimiento de puro odio hacia el Dios del Tiempo que no deja de intensificarse mientras camino por el bosque.
+
+          Cuando por fin llego al borde del bosque, entro en el establo para recoger la horca y luego camino hacia mis padres, que ahora intentan en vano hablar con el ser que una vez fue mi hermana. Me coloco a una distancia segura de ellos y espero.
+      - source: scene_text_2
+        paragraph: 29
+        text: |-
+          Al cabo de unos segundos más, la banshee finalmente despierta e intenta ensartar a mi padre con la mano desnuda. Sorprendentemente, mi padre logra esquivar ese primer ataque, así que la banshee vuelve a atacarlo clavándole en la pierna un cono afilado de roca, lo que lo hace caer al suelo gritando de dolor. La banshee ahora también grita, al parecer porque ella misma también siente dolor por haberse esforzado tanto nada más despertar. Mientras la banshee está distraída, mi padre por fin me ve y también ve la horca que sostengo entre las manos.
+
+          "Barry...", dice mi padre. "Rápido... ¡Lánzame la horca!"
+
+          No le digo nada a mi padre y sigo mirándolo fijamente, mientras continúo maldiciendo al Dios del Tiempo en mi mente, cada vez más con cada segundo que pasa.
+
+          "¡Barry!", dice mi padre, esta vez con un tono más desesperado. "¡No hay tiempo! ¡Tienes que darme la horca!"
+
+          Por desgracia para él, la banshee ya se había recuperado y se preparaba para un tercer y último ataque. Mi padre no podía hacer nada para escapar debido a la gran herida de la pierna y volvió a ser ensartado, esta vez por el pecho, lo que lo mató casi al instante.
+      - source: scene_3
+        paragraph: 11
+        text: |-
+          Mi madre grita aterrorizada al ver morir a mi padre ante sus ojos. Ahora está demasiado asustada como para moverse, pero antes de sus últimos momentos consigue pronunciar unas pocas palabras finales.
+
+          "Barry, por favor... sálvame...", dice.
+
+          Igual que antes, no me muevo de mi sitio, no le respondo, y la banshee la mata cortándole la garganta con una daga de roca afilada. Cuando la banshee me ve allí de pie, mirando los cadáveres de mis padres, se echa a reír. Exactamente la misma risa siniestra que aún recuerdo con claridad hasta hoy. Y ahora por fin sé de qué se estaba riendo. No se reía porque disfrutara matando a mis padres. Se reía de mí.
+
+          No es que yo llegara demasiado tarde. Nunca fue eso lo que pasó. Yo estaba allí cuando atacaron a mis padres. Lo vi todo con mis propios ojos. Tenía la horca en las manos, listo para golpear, pero cuando me acerqué a la banshee y vi su figura monstruosa mirándome con aquella expresión cruel en los ojos, simplemente me quedé congelado. Me quedé completamente paralizado de miedo y ni siquiera pude oír a mi padre y a mi madre suplicarme que los ayudara. Solo cuando mi hermano pequeño estaba a punto de morir también a manos de la banshee reuní por fin el valor para atacarla. Eso es lo que ocurrió realmente hace quince años y lo que he bloqueado por completo de mi mente durante más de la mitad de mi vida.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch11a_eliminated
+  - name: b2_ch11a_eliminated
+    routes:
+      - condition: ch11_saved_rose = 0
+        texts:
+          - source: scene_text
+            paragraph: 30
+            text: |-
+              Esta fue la única vez en mi vida en que me paralicé de miedo. De hecho, ahora que lo pienso, lo que ocurrió después de este incidente fue que desarrollé una tendencia casi suicida a ignorar por completo el peligro, por desesperada que fuera la situación. Casi parece que mi deseo de que algo así no volviera a ocurrir jamás fue tan fuerte que me frió el cerebro y me eliminó el instinto de conservación. Ahora tantas cosas empiezan a tener sentido... No puedo creer que haya mantenido reprimido este recuerdo durante tanto tiempo. Supongo que debería darle las gracias al Dios del Tiempo por esta deslumbrante revelación. Le estrecharía la mano, pero con la cantidad de rabia que siento hacia él ahora mismo, me temo que podría aplastársela por accidente.
+
+              La banshee ya ha empezado a perseguir a mi hermano. No pierdo ni un segundo y corro hacia ella, atravesándole la espalda con la horca sin darle ninguna oportunidad de contraatacar. Mientras la banshee muere lentamente ante mis ojos, una luz blanca vuelve a llenar la zona y me transportan una vez más a través del tiempo. Esta vez, sin embargo, no estoy preocupado. Ya sé que he superado esta fase del ritual.
+
+              Tal como esperaba, en cuanto la luz se desvanece, vuelvo a encontrarme en mi cuerpo de veintiocho años, rodeado por todos mis amigos, mientras Arraka suelta una de sus risas habituales.
+          - source: scene_text_2
+            paragraph: 30
+            text: |-
+              "Parece que eres de los primeros en superar esta parte del ritual, Barry, muchacho", dice Arraka. "Ven, siéntate y disfrutemos mientras vemos sufrir al resto de tus amigos en sus propias pruebas."
+
+              Echo un vistazo rápido a mi alrededor para ver cuál es nuestra situación actual. El Dios del Tiempo ya no se ve por ninguna parte, pero no parece que su marcha haya afectado al ritual de ningún modo. Daren, Kate, Leila, Hadrik y el revenant parecen estar en alguna clase de trance, similar al que tenía el revenant cuando llegó por primera vez a este lugar. Sus ojos brillan de color amarillo y se quedan mirando al frente sin ser conscientes de nuestra presencia. Todos permanecen justo donde yo los dejé, salvo el revenant, que ahora tiene los pies en el suelo en lugar de flotar en el aire como antes. Mientras tanto, Melindra, Illuna y, presumiblemente, Flower ya han salido de sus trances y me están mirando con atención.
+          - source: scene_3
+            paragraph: 12
+            text: |-
+              "¿Qué quieres decir con eso de que veamos a mis amigos durante sus pruebas?...", le pregunto a Arraka, una vez que entiendo bien nuestra situación. "¿Tienes una forma de ver lo que está pasando en el pasado?"
+
+              "Claro", dice Arraka. "No es tan difícil. Ahora mismo todos están conectados al Magium, así que si sabes vincularte correctamente a sus auras, deberías poder ver lo que ellos están viendo."
+
+              "El Magium...", digo, recordando de repente la discusión que Arraka tuvo con el Dios del Tiempo antes de enviarnos al pasado. "Antes dijiste que el Magium fue quien envió aquí al revenant para darnos la profecía. ¿Qué querías decir con eso? ¿Estás diciendo que el Magium es una persona?"
+
+              "¡Ja, ja, ja, ja, ja!", se ríe Arraka. "Illuna, ¿lo oíste? ¡Me ha preguntado si el Magium es una persona!"
+
+              "Lo he oído...", dice Illuna, con tono seco, mientras Arraka sigue riéndose de fondo.
+
+              "Claro, cómo no ibas a responder mi pregunta...", digo, mirando hacia el amuleto de Arraka. "Entonces olvida el Magium. ¿Qué puedes decirme de los rituales de los demás?"
+
+              "¿De cuáles hablas?", dice Arraka. "¿De los que ya pasaron o de los que siguen dentro del trance?"
+        choices:
+          - position: 1
+            text: Las dos, supongo?...
+            effects:
+              - set:
+                  current_scene: b2_ch11a_transparent
+                  b2_ch11_both: 1
+          - position: 2
+            text: Las de los que todavía siguen dentro de sus rituales, obviamente.
+            effects:
+              - set:
+                  current_scene: b2_ch11a_transparent
+                  b2_ch11_both: 0
+      - condition: ch11_saved_rose = 1
+        texts:
+          - source: scene_text
+            paragraph: 30
+            text: |-
+              Esta fue la única vez en mi vida en que me paralicé de miedo. De hecho, ahora que lo pienso, lo que ocurrió después de este incidente fue que desarrollé una tendencia casi suicida a ignorar por completo el peligro, por desesperada que fuera la situación. Casi parece que mi deseo de que algo así no volviera a ocurrir jamás fue tan fuerte que me frió el cerebro y me eliminó el instinto de conservación. Ahora tantas cosas empiezan a tener sentido... No puedo creer que haya mantenido reprimido este recuerdo durante tanto tiempo. Supongo que debería darle las gracias al Dios del Tiempo por esta deslumbrante revelación. Le estrecharía la mano, pero con la cantidad de rabia que siento hacia él ahora mismo, me temo que podría aplastársela por accidente.
+
+              La banshee ya ha empezado a perseguir a mi hermano. No pierdo ni un segundo y corro hacia ella, atravesándole la espalda con la horca sin darle ninguna oportunidad de contraatacar. Mientras la banshee muere lentamente ante mis ojos, una luz blanca vuelve a llenar la zona y me transportan una vez más a través del tiempo. Esta vez, sin embargo, no estoy preocupado. Ya sé que he superado esta fase del ritual.
+
+              Tal como esperaba, en cuanto la luz se desvanece, vuelvo a encontrarme en mi cuerpo de veintiocho años, rodeado por todos mis amigos, mientras Arraka suelta una de sus risas habituales.
+          - source: scene_text_2
+            paragraph: 31
+            text: |-
+              "Parece que eres de los primeros en superar esta parte del ritual, Barry, muchacho", dice Arraka. "Ven, siéntate y disfrutemos mientras vemos sufrir al resto de tus amigos en sus propias pruebas."
+
+              Echo un vistazo rápido a mi alrededor para ver cuál es nuestra situación actual. El Dios del Tiempo ya no se ve por ninguna parte, pero no parece que su marcha haya afectado al ritual de ningún modo. Daren, Kate, Leila, Hadrik y Rose parecen estar en alguna clase de trance, similar al que tenía Rose cuando llegó por primera vez a este lugar. Sus ojos brillan de color amarillo y se quedan mirando al frente sin ser conscientes de nuestra presencia. Todos permanecen justo donde yo los dejé, salvo Rose, que ahora tiene los pies en el suelo en lugar de flotar en el aire como antes. Mientras tanto, Melindra, Illuna y, presumiblemente, Flower ya han salido de sus trances y me están mirando con atención.
+          - source: scene_3
+            paragraph: 13
+            text: |-
+              "¿Qué quieres decir con eso de que veamos a mis amigos durante sus pruebas?...", le pregunto a Arraka, una vez que entiendo bien nuestra situación. "¿Tienes una forma de ver lo que está pasando en el pasado?"
+
+              "Claro", dice Arraka. "No es tan difícil. Ahora mismo todos están conectados al Magium, así que si sabes vincularte correctamente a sus auras, deberías poder ver lo que ellos están viendo."
+
+              "El Magium...", digo, recordando de repente la discusión que Arraka tuvo con el Dios del Tiempo antes de enviarnos al pasado. "Antes dijiste que el Magium fue quien envió aquí a Rose para darnos la profecía. ¿Qué querías decir con eso? ¿Estás diciendo que el Magium es una persona?"
+
+              "¡Ja, ja, ja, ja, ja!", se ríe Arraka. "Illuna, ¿lo oíste? ¡Me ha preguntado si el Magium es una persona!"
+
+              "Lo he oído...", dice Illuna, con tono seco, mientras Arraka sigue riéndose de fondo.
+
+              "Claro, cómo no ibas a responder mi pregunta...", digo, mirando hacia el amuleto de Arraka. "Entonces olvida el Magium. ¿Qué puedes decirme de los rituales de los demás?"
+
+              "¿De cuáles hablas?", dice Arraka. "¿De los que ya pasaron o de los que siguen dentro del trance?"
+        choices:
+          - position: 1
+            text: Las dos, supongo?...
+            effects:
+              - set:
+                  current_scene: b2_ch11a_transparent
+                  b2_ch11_both: 1
+          - position: 2
+            text: Las de los que todavía siguen dentro de sus rituales, obviamente.
+            effects:
+              - set:
+                  current_scene: b2_ch11a_transparent
+                  b2_ch11_both: 0
+  - name: b2_ch11a_transparent
+    routes:
+      - condition: b2_ch11_both = 1 AND ch11_saved_slave <> 3
+        texts:
+          - source: scene_text
+            paragraph: 31
+            text: |-
+              "Las dos, supongo?..."
+
+              "Bueno", dice Arraka, "no llegué a ver el ritual de Melindra, pero a Illuna la obligaron a recrear toda la 'masacre de los bosques sagrados' hasta el último detalle. Su ritual no fue ni de lejos tan gracioso como el tuyo, porque desde el principio se dio cuenta de lo que tenía que hacer, pero aun así pude notar que estaba bastante furiosa por dentro, aunque no lo demostrara demasiado. Flower, en cambio, no dejaba de intentar salvar una y otra vez a sus amigos de la destrucción de Olmnar, incluso después de fracasar decenas de veces seguidas. Al final fue Illuna quien logró convencerla de que por fin los dejara ir, después de salir de su propio ritual y ver lo que estaba haciendo esa chica insensata."
+
+              "¿Y qué hay de los que aún siguen dentro de sus rituales?", digo.
+
+              "Hmm...", dice Arraka. "Creo que será más rápido enseñártelo directamente. Empecemos con el sanador."
+
+              En un solo instante, el paisaje que me rodea cambia por completo, y todos desaparecen de delante de mis ojos salvo Flower y yo, ya que ahora me encuentro de pie frente a la casa de Rose, en la ciudad de Thilias. Cuando nos miro mejor, me doy cuenta de que Flower y yo nos hemos vuelto semitransparentes, y lo mismo le ocurre al amuleto de Arraka. Por otro lado, también veo a otra Flower y a otra versión de mí mismo que no son transparentes en absoluto y que están ocupados hablando con Rose y sus hermanos en ese mismo patio en el que nos encontramos. Hadrik, Kate y Daren también están aquí, por lo visto, y Ella también.
+          - source: scene_text_2
+            paragraph: 32
+            text: |-
+              "¡Primero, déjame darte un poco de contexto!", dice Arraka.
+
+              "¿Qué está pasando?", digo. "¿Cómo nos trajiste hasta aquí?"
+
+              "Shh...", me dice Arraka.
+
+              "Rose", oigo decir a Daren. "¿Podrías enseñarme mi habitación? Lo único que quiero ahora mismo es tumbarme un rato en una cama."
+
+              "¡Claro!", dice Rose. "¡Sígueme, te enseñaré el camino!"
+
+              "Vale, ahora el sanador se dirige a su habitación y se va a quedar allí un rato", dice Arraka. "¿Recuerdas esta parte?"
+
+              "Sí", digo. "Esto pasó justo después de que llegáramos por primera vez a la casa de Rose. ¿Pero por qué me enseñas esto? ¿Tiene algo que ver con el ritual de Daren?"
+
+              "Ya te lo dije", dice Arraka. "¡Intento darte un poco de contexto! Si no, no tendría ninguna gracia. Muy bien, lo siguiente: adelantemos hasta la habitación de Daren."
+
+              Una vez más, todo el paisaje que nos rodea cambia en un instante y ambos nos encontramos dentro de la habitación de Daren en la mansión de Rose, donde Daren está sentado en la cama, con el torso inclinado hacia delante y los codos apoyados sobre las rodillas, mientras se sostiene la cabeza con ambas manos. Igual que antes, parece totalmente ajeno a nuestra presencia.
+          - source: scene_3
+            paragraph: 14
+            text: |-
+              "Por cierto, él no puede vernos ni oírnos", me dice Arraka, mientras seguimos en nuestra forma semitransparente. "Por si no te habías dado cuenta ya."
+
+              "Podría haber muerto...", oigo la voz de Daren reverberando por las paredes, aunque Daren sigue con la boca cerrada. "Podría haber muerto justo delante de mis ojos, y yo no habría tenido poder para salvarla..."
+
+              "¿Qué fue eso?", le pregunto a Arraka, mientras miro a nuestro alrededor intentando encontrar el origen del sonido. "¿Eran... los pensamientos de Daren?"
+
+              "Claro que eran sus pensamientos", dice Arraka. "¿Qué otra cosa iban a ser?"
+
+              "¿Tienes la capacidad de leer la mente de la gente?", digo, empezando a ponerme un poco nervioso.
+
+              "¡No, idiota!", dice Arraka. "¿Cuántas veces tengo que decirte que tus amigos están conectados al Magium ahora mismo? Leer sus pensamientos mientras están en este estado es fácil si tienes un conocimiento decente de cómo funcionan las auras. Ahora cállate y presta atención. No te traje aquí para nada."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_luggage
+      - condition: b2_ch11_both = 1 AND ch11_saved_slave = 3
+        texts:
+          - source: scene_text
+            paragraph: 32
+            text: |-
+              "Las dos, supongo?..."
+
+              "Bueno", dice Arraka, "no llegué a ver el ritual de Melindra, pero a Illuna la obligaron a recrear toda la 'masacre de los bosques sagrados' hasta el último detalle. Su ritual no fue ni de lejos tan gracioso como el tuyo, porque desde el principio se dio cuenta de lo que tenía que hacer, pero aun así pude notar que estaba bastante furiosa por dentro, aunque no lo demostrara demasiado. Flower, en cambio, no dejaba de intentar salvar una y otra vez a sus amigos de la destrucción de Olmnar, incluso después de fracasar decenas de veces seguidas. Al final fue Illuna quien logró convencerla de que por fin los dejara ir, después de salir de su propio ritual y ver lo que estaba haciendo esa chica insensata."
+
+              "¿Y qué hay de los que aún siguen dentro de sus rituales?", digo.
+
+              "Hmm...", dice Arraka. "Creo que será más rápido enseñártelo directamente. Empecemos con el sanador."
+
+              En un solo instante, el paisaje que me rodea cambia por completo, y todos desaparecen de delante de mis ojos salvo Flower y yo, ya que ahora me encuentro de pie frente a la casa de Rose, en la ciudad de Thilias. Cuando nos miro mejor, me doy cuenta de que Flower y yo nos hemos vuelto semitransparentes, y lo mismo le ocurre al amuleto de Arraka. Por otro lado, también veo a otra Flower y a otra versión de mí mismo que no son transparentes en absoluto y que están ocupados hablando con Rose y sus hermanos en ese mismo patio en el que nos encontramos. Hadrik, Kate y Daren también están aquí, por lo visto, pero no están diciendo nada.
+          - source: scene_text_2
+            paragraph: 32
+            text: |-
+              "¡Primero, déjame darte un poco de contexto!", dice Arraka.
+
+              "¿Qué está pasando?", digo. "¿Cómo nos trajiste hasta aquí?"
+
+              "Shh...", me dice Arraka.
+
+              "Rose", oigo decir a Daren. "¿Podrías enseñarme mi habitación? Lo único que quiero ahora mismo es tumbarme un rato en una cama."
+
+              "¡Claro!", dice Rose. "¡Sígueme, te enseñaré el camino!"
+
+              "Vale, ahora el sanador se dirige a su habitación y se va a quedar allí un rato", dice Arraka. "¿Recuerdas esta parte?"
+
+              "Sí", digo. "Esto pasó justo después de que llegáramos por primera vez a la casa de Rose. ¿Pero por qué me enseñas esto? ¿Tiene algo que ver con el ritual de Daren?"
+
+              "Ya te lo dije", dice Arraka. "¡Intento darte un poco de contexto! Si no, no tendría ninguna gracia. Muy bien, lo siguiente: adelantemos hasta la habitación de Daren."
+
+              Una vez más, todo el paisaje que nos rodea cambia en un instante y ambos nos encontramos dentro de la habitación de Daren en la mansión de Rose, donde Daren está sentado en la cama, con el torso inclinado hacia delante y los codos apoyados sobre las rodillas, mientras se sostiene la cabeza con ambas manos. Igual que antes, parece totalmente ajeno a nuestra presencia.
+          - source: scene_3
+            paragraph: 15
+            text: |-
+              "Por cierto, él no puede vernos ni oírnos", me dice Arraka, mientras seguimos en nuestra forma semitransparente. "Por si no te habías dado cuenta ya."
+
+              "Está muerta...", oigo la voz de Daren reverberando por las paredes, aunque Daren sigue con la boca cerrada. "La mataron justo delante de mis ojos, y yo fui incapaz de impedir que pasara."
+
+              "¿Qué fue eso?", le pregunto a Arraka, mientras miro a nuestro alrededor intentando encontrar el origen del sonido. "¿Eran... los pensamientos de Daren?"
+
+              "Claro que eran sus pensamientos", dice Arraka. "¿Qué otra cosa iban a ser?"
+
+              "¿Tienes la capacidad de leer la mente de la gente?", digo, empezando a ponerme un poco nervioso.
+
+              "¡No, idiota!", dice Arraka. "¿Cuántas veces tengo que decirte que tus amigos están conectados al Magium ahora mismo? Leer sus pensamientos mientras están en este estado es fácil si tienes un conocimiento decente de cómo funcionan las auras. Ahora cállate y presta atención. No te traje aquí para nada."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_luggage
+      - condition: b2_ch11_both = 0 AND ch11_saved_slave <> 3
+        texts:
+          - source: scene_text
+            paragraph: 33
+            text: |-
+              "Las de los que todavía siguen dentro de sus rituales, obviamente."
+
+              "Hmm...", dice Arraka. "Creo que será más rápido enseñártelo directamente. Empecemos con el sanador."
+
+              En un solo instante, el paisaje que me rodea cambia por completo, y todos desaparecen de delante de mis ojos salvo Flower y yo, ya que ahora me encuentro de pie frente a la casa de Rose, en la ciudad de Thilias. Cuando nos miro mejor, me doy cuenta de que Flower y yo nos hemos vuelto semitransparentes, y lo mismo le ocurre al amuleto de Arraka. Por otro lado, también veo a otra Flower y a otra versión de mí mismo que no son transparentes en absoluto y que están ocupados hablando con Rose y sus hermanos en ese mismo patio en el que nos encontramos. Hadrik, Kate y Daren también están aquí, por lo visto, y Ella también.
+          - source: scene_text_2
+            paragraph: 32
+            text: |-
+              "¡Primero, déjame darte un poco de contexto!", dice Arraka.
+
+              "¿Qué está pasando?", digo. "¿Cómo nos trajiste hasta aquí?"
+
+              "Shh...", me dice Arraka.
+
+              "Rose", oigo decir a Daren. "¿Podrías enseñarme mi habitación? Lo único que quiero ahora mismo es tumbarme un rato en una cama."
+
+              "¡Claro!", dice Rose. "¡Sígueme, te enseñaré el camino!"
+
+              "Vale, ahora el sanador se dirige a su habitación y se va a quedar allí un rato", dice Arraka. "¿Recuerdas esta parte?"
+
+              "Sí", digo. "Esto pasó justo después de que llegáramos por primera vez a la casa de Rose. ¿Pero por qué me enseñas esto? ¿Tiene algo que ver con el ritual de Daren?"
+
+              "Ya te lo dije", dice Arraka. "¡Intento darte un poco de contexto! Si no, no tendría ninguna gracia. Muy bien, lo siguiente: adelantemos hasta la habitación de Daren."
+
+              Una vez más, todo el paisaje que nos rodea cambia en un instante y ambos nos encontramos dentro de la habitación de Daren en la mansión de Rose, donde Daren está sentado en la cama, con el torso inclinado hacia delante y los codos apoyados sobre las rodillas, mientras se sostiene la cabeza con ambas manos. Igual que antes, parece totalmente ajeno a nuestra presencia.
+          - source: scene_3
+            paragraph: 14
+            text: |-
+              "Por cierto, él no puede vernos ni oírnos", me dice Arraka, mientras seguimos en nuestra forma semitransparente. "Por si no te habías dado cuenta ya."
+
+              "Podría haber muerto...", oigo la voz de Daren reverberando por las paredes, aunque Daren sigue con la boca cerrada. "Podría haber muerto justo delante de mis ojos, y yo no habría tenido poder para salvarla..."
+
+              "¿Qué fue eso?", le pregunto a Arraka, mientras miro a nuestro alrededor intentando encontrar el origen del sonido. "¿Eran... los pensamientos de Daren?"
+
+              "Claro que eran sus pensamientos", dice Arraka. "¿Qué otra cosa iban a ser?"
+
+              "¿Tienes la capacidad de leer la mente de la gente?", digo, empezando a ponerme un poco nervioso.
+
+              "¡No, idiota!", dice Arraka. "¿Cuántas veces tengo que decirte que tus amigos están conectados al Magium ahora mismo? Leer sus pensamientos mientras están en este estado es fácil si tienes un conocimiento decente de cómo funcionan las auras. Ahora cállate y presta atención. No te traje aquí para nada."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_luggage
+      - condition: b2_ch11_both = 0 AND ch11_saved_slave = 3
+        texts:
+          - source: scene_text
+            paragraph: 34
+            text: |-
+              "Las de los que todavía siguen dentro de sus rituales, obviamente."
+
+              "Hmm...", dice Arraka. "Creo que será más rápido enseñártelo directamente. Empecemos con el sanador."
+
+              En un solo instante, el paisaje que me rodea cambia por completo, y todos desaparecen de delante de mis ojos salvo Flower y yo, ya que ahora me encuentro de pie frente a la casa de Rose, en la ciudad de Thilias. Cuando nos miro mejor, me doy cuenta de que Flower y yo nos hemos vuelto semitransparentes, y lo mismo le ocurre al amuleto de Arraka. Por otro lado, también veo a otra Flower y a otra versión de mí mismo que no son transparentes en absoluto y que están ocupados hablando con Rose y sus hermanos en ese mismo patio en el que nos encontramos. Hadrik, Kate y Daren también están aquí, por lo visto, pero no están diciendo nada.
+          - source: scene_text_2
+            paragraph: 32
+            text: |-
+              "¡Primero, déjame darte un poco de contexto!", dice Arraka.
+
+              "¿Qué está pasando?", digo. "¿Cómo nos trajiste hasta aquí?"
+
+              "Shh...", me dice Arraka.
+
+              "Rose", oigo decir a Daren. "¿Podrías enseñarme mi habitación? Lo único que quiero ahora mismo es tumbarme un rato en una cama."
+
+              "¡Claro!", dice Rose. "¡Sígueme, te enseñaré el camino!"
+
+              "Vale, ahora el sanador se dirige a su habitación y se va a quedar allí un rato", dice Arraka. "¿Recuerdas esta parte?"
+
+              "Sí", digo. "Esto pasó justo después de que llegáramos por primera vez a la casa de Rose. ¿Pero por qué me enseñas esto? ¿Tiene algo que ver con el ritual de Daren?"
+
+              "Ya te lo dije", dice Arraka. "¡Intento darte un poco de contexto! Si no, no tendría ninguna gracia. Muy bien, lo siguiente: adelantemos hasta la habitación de Daren."
+
+              Una vez más, todo el paisaje que nos rodea cambia en un instante y ambos nos encontramos dentro de la habitación de Daren en la mansión de Rose, donde Daren está sentado en la cama, con el torso inclinado hacia delante y los codos apoyados sobre las rodillas, mientras se sostiene la cabeza con ambas manos. Igual que antes, parece totalmente ajeno a nuestra presencia.
+          - source: scene_3
+            paragraph: 15
+            text: |-
+              "Por cierto, él no puede vernos ni oírnos", me dice Arraka, mientras seguimos en nuestra forma semitransparente. "Por si no te habías dado cuenta ya."
+
+              "Está muerta...", oigo la voz de Daren reverberando por las paredes, aunque Daren sigue con la boca cerrada. "La mataron justo delante de mis ojos, y yo fui incapaz de impedir que pasara."
+
+              "¿Qué fue eso?", le pregunto a Arraka, mientras miro a nuestro alrededor intentando encontrar el origen del sonido. "¿Eran... los pensamientos de Daren?"
+
+              "Claro que eran sus pensamientos", dice Arraka. "¿Qué otra cosa iban a ser?"
+
+              "¿Tienes la capacidad de leer la mente de la gente?", digo, empezando a ponerme un poco nervioso.
+
+              "¡No, idiota!", dice Arraka. "¿Cuántas veces tengo que decirte que tus amigos están conectados al Magium ahora mismo? Leer sus pensamientos mientras están en este estado es fácil si tienes un conocimiento decente de cómo funcionan las auras. Ahora cállate y presta atención. No te traje aquí para nada."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_luggage
+  - name: b2_ch11a_luggage
+    routes:
+      - condition: ch11_saved_slave <> 3
+        texts:
+          - source: scene_text
+            paragraph: 35
+            text: |-
+              "No...", oigo otra vez la voz de Daren resonando por toda la habitación. "No es que yo estuviera indefenso. Podría haber conseguido el poder, si hubiera querido. Pero ¿lo habría hecho?... ¿Habría sido capaz de hacer algo tan humillante como pedirle ayuda a Eiden para salvar la vida de esa pobre chica? ¿Qué habría pasado si Barry no hubiera intervenido? ¿Esa chica habría muerto por mi culpa? ¿Porque yo no fui capaz de dejar a un lado mi ego? ¡No! Eiden es malvado. No pudo haberme ofrecido ayuda sin esconder algún motivo ulterior. Pero entonces, ¿por qué no pidió nada a cambio? Vi cómo le daba el poder a Barry y no había ningún truco. Incluso nos dio poder al resto como efecto secundario de su hechizo... Entonces, ¿por qué lo hizo? ¿Cuál podía ser su razón? ¿De verdad me dio esa opción solo para humillarme? ¿Qué está pensando Eiden?..."
+
+              "Perfecto", dice Arraka. "Creo que esto debería bastar como contexto para nuestros propósitos. Pasemos al ritual."
+
+              Otra vez, todo el entorno que nos rodea cambia por completo, pero esta vez nos encontramos en las calles de Thilias, justo cuando el noble estaba amenazando a Ella. Flower y yo seguimos siendo semitransparentes, pero la versión no transparente de mí mismo está a apenas unos cuatro metros de nuestra posición actual, y también lo están Daren, Kate, Rose y Eiden.
+          - source: scene_text_2
+            paragraph: 33
+            text: |-
+              "Vale", me dice Arraka. "Aquí fue donde de verdad empezó el ritual de Daren. Lo que te he estado enseñando hasta ahora no eran más que fragmentos de sus recuerdos, para que entendieras mejor sus motivaciones. ¿Está todo claro hasta ahora?"
+
+              "Supongo que sí...", digo.
+
+              "Bien", dice Arraka. "Ahora vamos a ver el espectáculo."
+
+              "¿Qué ha pasado?", oigo los pensamientos de Daren resonando por la zona mientras mira a su alrededor, confundido. "¿Este es el ritual del que hablaba Arraka? ¿Me han enviado al pasado?"
+
+              "Qué interesante...", dice Eiden de repente. "El flujo del aura del sanador ha cambiado por completo en cuestión de segundos. Es como si ahora fuera una persona distinta de la que era hace unos momentos. ¿Qué podría desencadenar un cambio así, me pregunto?... ¿Pérdida de memoria? No, no, no... Es otra cosa. ¿Viaje en el tiempo, quizá? ¿Una prueba del Dios del Tiempo?"
+
+              "No sé de qué estás hablando", dice Daren, intentando fingir ignorancia. "¿Quién es ese Dios del Tiempo del que hablas? Nunca he oído hablar de él."
+
+              "¡Entonces sí que recibiste una prueba!", dice Eiden, con una sonrisa, al ver a través del farol de Daren. "Pero ¿cuál podría ser el propósito del ritual?... ¿Salvar a la chica esclava? En cualquier caso, debo asegurarme de no intervenir. ¡No me gustaría que fracasaras en tu prueba por mi culpa!"
+          - source: scene_3
+            paragraph: 16
+            text: |-
+              "¿Qué quieres decir con que no vas a intervenir?", dice Daren, con un tono de ansiedad en la voz. "Todavía vas a darle a Barry el poder para atacar al noble, ¿verdad?"
+
+              "¿Eso fue lo que hice la última vez que viviste estos acontecimientos?", pregunta Eiden con una sonrisa maliciosa. "¿Por qué fue Barry quien salvó a la esclava y no tú? ¿Es porque rechazaste mi oferta? Sí, eso tendría sentido, ¿verdad? Pero esta vez ya no podrás confiar en que tu amigo venga a arreglar tu desastre. Así que, ¿qué vas a hacer?"
+
+              "Este bastardo...", oigo pensar a Daren. "Debí haber sabido que no se podía confiar en él. Pero si Barry ya no va a salvar a Ella, eso significa que..."
+
+              De repente oímos a Ella gritar de miedo, pues el conde de Ollendor ya tiene el cuchillo en la mano mientras se acerca lentamente a ella.
+
+              "¡Por favor, se lo suplico!", dice Ella, mientras intenta desesperadamente levantar en sus manos todo el equipaje que debía cargar. "Déme una oportunidad más. Todavía puedo cargar estas bolsas por usted. ¡No quiero morir!"
+
+              "Entonces deberías haber pensado en eso antes de hacerme perder el tiempo, moza", dice el noble. "Ahora quédate quieta. Haré que tu muerte sea lo más rápida posible."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_tightly
+      - condition: ch11_saved_slave = 3
+        texts:
+          - source: scene_text
+            paragraph: 36
+            text: |-
+              "No...", oigo otra vez la voz de Daren resonando por toda la habitación. "No es que yo estuviera indefenso. Podría haber conseguido el poder, si hubiera querido. Pero no lo pedí. Fui demasiado orgulloso. Demasiado arrogante. Pensé que encontraría la forma de salvarla contra toda lógica, como siempre hago. No pude aceptar la idea de que podía fracasar hasta ese punto. Incluso cuando el noble sacó el cuchillo, seguí negándome a ver la verdad delante de mis ojos. Dejé morir a aquella pobre chica inocente porque no fui capaz de suplicarle ayuda a Eiden. Aunque sea malvado, sus motivos eran claros. Lo único que pedía a cambio del poder era que admitiera mi debilidad delante de él. Nada más. Y ni siquiera fui capaz de hacer algo tan simple. No solo eso, sino que además maté a aquel noble y nos puse a todos en peligro solo por una venganza inútil. ¿Por qué no pude matar a ese noble antes de que asesinara a la chica a sangre fría? ¿De qué sirven todos estos años de entrenamiento y de viajar por el mundo si ni siquiera puedo salvar a una sola chica indefensa que está justo delante de mí?"
+
+              "Perfecto", dice Arraka. "Creo que esto debería bastar como contexto para nuestros propósitos. Pasemos al ritual."
+
+              Otra vez, todo el entorno que nos rodea cambia por completo, pero esta vez nos encontramos en las calles de Thilias, justo cuando el noble estaba amenazando a la chica esclava. Flower y yo seguimos siendo semitransparentes, pero la versión no transparente de mí mismo está a apenas unos cuatro metros de nuestra posición actual, y también lo están Daren, Kate, Rose y Eiden.
+          - source: scene_text_2
+            paragraph: 33
+            text: |-
+              "Vale", me dice Arraka. "Aquí fue donde de verdad empezó el ritual de Daren. Lo que te he estado enseñando hasta ahora no eran más que fragmentos de sus recuerdos, para que entendieras mejor sus motivaciones. ¿Está todo claro hasta ahora?"
+
+              "Supongo que sí...", digo.
+
+              "Bien", dice Arraka. "Ahora vamos a ver el espectáculo."
+
+              "¿Qué ha pasado?", oigo los pensamientos de Daren resonando por la zona mientras mira a su alrededor, confundido. "¿Este es el ritual del que hablaba Arraka? ¿Me han enviado al pasado?"
+
+              "Qué interesante...", dice Eiden de repente. "El flujo del aura del sanador ha cambiado por completo en cuestión de segundos. Es como si ahora fuera una persona distinta de la que era hace unos momentos. ¿Qué podría desencadenar un cambio así, me pregunto?... ¿Pérdida de memoria? No, no, no... Es otra cosa. ¿Viaje en el tiempo, quizá? ¿Una prueba del Dios del Tiempo?"
+
+              "No sé de qué estás hablando", dice Daren, intentando fingir ignorancia. "¿Quién es ese Dios del Tiempo del que hablas? Nunca he oído hablar de él."
+
+              "¡Entonces sí que recibiste una prueba!", dice Eiden, con una sonrisa, al ver a través del farol de Daren. "Pero ¿cuál podría ser el propósito del ritual?... ¿Salvar a la chica esclava? En cualquier caso, debo asegurarme de no intervenir. ¡No me gustaría que fracasaras en tu prueba por mi culpa!"
+          - source: scene_3
+            paragraph: 17
+            text: |-
+              "¿Qué quieres decir con que no vas a intervenir?", dice Daren, con un tono de ansiedad en la voz.
+
+              "Sabes perfectamente a qué me refiero, sanador", dice Eiden, con una sonrisa maliciosa. "Hablo de la oferta que debí hacerte la última vez que viviste estos acontecimientos. Y lo que te estoy diciendo es que esa oferta ya no sigue en pie. Así que, ¿qué vas a hacer?"
+
+              "Este bastardo...", oigo pensar a Daren. "Debí haber sabido que no se podía confiar en él. Pero si ya no va a ofrecerme el poder, eso significa que..."
+
+              De repente oímos a la chica esclava gritar de miedo, pues el conde de Ollendor ya tiene el cuchillo en la mano mientras se acerca lentamente a ella.
+
+              "¡Por favor, se lo suplico!", dice la chica esclava, mientras intenta desesperadamente levantar en sus manos todo el equipaje que debía cargar. "Déme una oportunidad más. Todavía puedo cargar estas bolsas por usted. ¡No quiero morir!"
+
+              "Entonces deberías haber pensado en eso antes de hacerme perder el tiempo, moza", dice el noble. "Ahora quédate quieta. Haré que tu muerte sea lo más rápida posible."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_tightly
+  - name: b2_ch11a_tightly
+    routes:
+      - condition: ch11_saved_slave <> 3
+        texts:
+          - source: scene_text
+            paragraph: 37
+            text: |-
+              Sin pensarlo, Daren corre a ayudar a Ella e intenta apartarla del conde.
+
+              "Ven, Ella", dice Daren, mientras intenta tirar de su brazo. "Voy a sacarte de las garras de este monstruo."
+
+              "¡No!", grita Ella, presa del pánico, dando un salto hacia atrás para alejarse de Daren. "¡No puedo! No puedo huir de él. Soy de su propiedad."
+
+              Luego Ella se vuelve de nuevo hacia el conde de Ollendor.
+
+              "Señor, por favor, le prometo que--"
+
+              Ella no llega a terminar la frase, porque el noble le abre la garganta de un tajo con su daga de inmediato.
+
+              "¡No!", grita Daren, desesperado, y al instante la agarra entre sus brazos e intenta lanzarle un hechizo curativo.
+
+              Por desgracia, para cuando el hechizo empieza a surtir efecto, Ella ya ha perdido demasiada sangre y muere lentamente en sus brazos mientras él sigue intentando curarla.
+
+              "Pff...", dice el noble, mirando a Daren con asco. "Qué patético."
+          - source: scene_text_2
+            paragraph: 34
+            text: |-
+              "¡No, se supone que esto no tenía que pasar así!", grita Daren, ignorando por completo al conde mientras sigue intentando curar el cadáver de Ella que sostiene en sus brazos. "No tenía que ser así. Ella tenía que seguir viviendo, feliz, en la casa de Rose. ¡Se merecía ser feliz! Por favor... Si hay alguien escuchando. Denme otra oportunidad. Les prometo que la próxima vez no volveré a fallarle. Por favor..."
+
+              Entonces Daren empieza a sollozar en silencio, mientras sigue abrazando con fuerza el cadáver. Tras unos segundos de silencio, rotos solo por sus lentos sollozos, una luz blanca intensa envuelve de repente la zona y, unos instantes después, volvemos a encontrarnos en el mismo lugar, pero con Ella aún viva y con Daren de nuevo donde estaba cuando lo enviaron atrás en el tiempo por primera vez.
+
+              "¡Ja, ja, ja, ja, ja!", se ríe Arraka. "¿Viste eso? ¿Viste qué oportuno fue? ¡Aunque todo estuviera guionado, no podría haber salido mejor!"
+        choices:
+          - position: 1
+            text: ¿Qué es exactamente lo que te resulta tan gracioso?
+            effects:
+              - set:
+                  current_scene: b2_ch11a_funny
+          - position: 2
+            text: ¿De verdad es esto lo que tú consideras entretenimiento?
+            effects:
+              - set:
+                  current_scene: b2_ch11a_entertainment
+          - position: 3
+            text: De verdad me estás empezando a poner de los nervios, ¿sabes?
+            effects:
+              - set:
+                  current_scene: b2_ch11a_nerves
+      - condition: ch11_saved_slave = 3
+        texts:
+          - source: scene_text
+            paragraph: 47
+            text: |-
+              Sin pensarlo, Daren corre a ayudar a la chica esclava e intenta apartarla del conde.
+
+              "Ven conmigo, chica", dice Daren, mientras intenta tirar de su brazo. "Voy a sacarte de las garras de este monstruo."
+
+              "¡No!", grita la chica esclava, presa del pánico, dando un salto hacia atrás para alejarse de Daren. "¡No puedo! No puedo huir de él. Soy de su propiedad."
+
+              Luego se vuelve de nuevo hacia el conde de Ollendor.
+
+              "Señor, por favor, le prometo que--"
+
+              La chica no llega a terminar la frase, porque el noble le abre la garganta de un tajo con su daga de inmediato.
+
+              "¡No!", grita Daren, desesperado, y al instante agarra entre sus brazos a la chica esclava e intenta lanzarle un hechizo curativo.
+
+              Por desgracia, para cuando el hechizo empieza a surtir efecto, la chica ya ha perdido demasiada sangre y muere lentamente en sus brazos mientras él sigue intentando curarla.
+
+              "Pff...", dice el noble, mirando a Daren con asco. "Qué patético."
+          - source: scene_text_2
+            paragraph: 35
+            text: |-
+              "¡No, no vuelvas a morir, te lo suplico!", grita Daren, ignorando por completo al conde mientras sigue intentando curar a la chica muerta que sostiene en sus brazos. "Esto no tenía que pasar. Esta vez iba a salvarte. Iba a arreglar las cosas. Por favor... Si hay alguien escuchando. Denme otra oportunidad. Les prometo que la próxima vez no volveré a fallarle. Por favor..."
+
+              Entonces Daren empieza a sollozar en silencio, mientras sigue abrazando con fuerza el cadáver de la chica esclava. Tras unos segundos de silencio, rotos solo por sus lentos sollozos, una luz blanca intensa envuelve de repente la zona y, unos instantes después, volvemos a encontrarnos en el mismo lugar, pero con la chica esclava aún viva y con Daren de nuevo donde estaba cuando lo enviaron atrás en el tiempo por primera vez.
+
+              "¡Ja, ja, ja, ja, ja!", se ríe Arraka. "¿Viste eso? ¿Viste qué oportuno fue? ¡Aunque todo estuviera guionado, no podría haber salido mejor!"
+        choices:
+          - position: 1
+            text: ¿Qué es exactamente lo que te resulta tan gracioso?
+            effects:
+              - set:
+                  current_scene: b2_ch11a_funny
+          - position: 2
+            text: ¿De verdad es esto lo que tú consideras entretenimiento?
+            effects:
+              - set:
+                  current_scene: b2_ch11a_entertainment
+          - position: 3
+            text: De verdad me estás empezando a poner de los nervios, ¿sabes?
+            effects:
+              - set:
+                  current_scene: b2_ch11a_nerves
+  - name: b2_ch11a_funny
+    texts:
+      - source: scene_text
+        paragraph: 38
+        text: |-
+          "¿Qué es exactamente lo que te resulta tan gracioso?"
+
+          "¿Quieres decir aparte de todo el sufrimiento?", dice Arraka. "Bueno, me hace gracia que el grandullón vaya a creer ahora que de verdad le han dado otra oportunidad, tal como pidió. Pero en realidad, ni al ritual ni al Dios del Tiempo podría importarles menos si salva o no a la esclava."
+
+          "Entonces dices que esa no es la clave de su prueba, ¿no?", digo.
+
+          "¡Claro que no lo es!", dice Arraka. "¿Qué clase de pregunta estúpida es esa? ¿No pasaste tú mismo por una prueba hace muy poco? Ya deberías saber lo que necesita hacer el sanador para superar esta."
+
+          Mientras Arraka y yo hablábamos, Eiden acababa de descubrir por segunda vez que el Dios del Tiempo había enviado a Daren al pasado y se estaba preparando para burlarse de él una vez más.
+      - source: scene_text_2
+        paragraph: 36
+        text: |-
+          "Debo asegurarme de no intervenir", oigo decir a Eiden. "¡No me gustaría que fracasaras en tu prueba por mi culpa!"
+
+          "¡No, no lo entiendes!", dice Daren, con una desesperación evidente en la voz. "¡Necesito que intervengas! ¡No puedo fallarle otra vez! Necesito el poder que solo tú puedes dar. ¡El poder para atacar al noble!"
+
+          "¿Oh?", pregunta Eiden, sorprendido. "Sinceramente, no habría esperado que me pidieras ayuda de un modo tan directo. Pero aun así, no tiene sentido someterse a una prueba si no vas a resolver tus problemas por ti mismo. Me temo que tendré que rechazar tu petición, independientemente de lo que pudiera haber hecho en tu línea temporal original."
+
+          "¡Maldito seas!", dice Daren. "¿Quieres que te lo suplique? ¿Eso es lo que quieres?"
+
+          "No, en realidad yo estaba--", empieza a decir Eiden, pero se interrumpe al ver que Daren cae de rodillas y manos ante él, con la cabeza agachada.
+      - source: scene_3
+        paragraph: 18
+        text: |-
+          "¡Entonces te lo suplicaré!", dice Daren. "Te lo suplicaré de rodillas y manos. Aunque te odio con todo mi corazón. Aunque te considere una de las personas más malvadas e irredimibles que he conocido en mi vida. Pero ahora mismo eres mi única esperanza para salvar a esta chica de su terrible destino, y lo único que puedo hacer es suplicarte que me ayudes. Así que por favor... te lo suplico... Dame el poder para salvar a esta chica y haré cualquier cosa que me pidas, por humillante que sea..."
+
+          Mientras Daren hablaba, podía ver a Eiden abrir lentamente los ojos durante unos segundos, con una expresión de conmoción y asombro en la cara. Luego, cuando Daren terminó su discurso, Eiden sonrió levemente con los ojos cerrados.
+
+          "¿Harás cualquier cosa que te pida, dices?", dice Eiden. "Entonces solo tengo una petición."
+
+          Hace una pausa de un segundo y adopta una expresión mucho más seria.
+
+          "Demuéstrame que estoy equivocado...", continúa Eiden.
+
+          El stillwater levanta entonces las manos y un viento poderoso empieza a girar a su alrededor durante unos segundos.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch11a_destination
+  - name: b2_ch11a_entertainment
+    texts:
+      - source: scene_text
+        paragraph: 39
+        text: |-
+          "¿De verdad es esto lo que tú consideras entretenimiento?"
+
+          "¿Entretenimiento?", dice Arraka. "Esto no es solo entretenimiento para mí, Barry, muchacho. Es para lo que VIVO."
+
+          "Vaya, hace mucho que perdiste el juicio, ¿verdad?", le digo a Arraka.
+
+          "Bueno, o eso o resulta que yo soy la única persona cuerda del mundo y todos ustedes son un atajo de chiflados", dice Arraka. "El mundo quizá nunca lo sepa."
+
+          Mientras Arraka y yo hablábamos, Eiden acababa de descubrir por segunda vez que el Dios del Tiempo había enviado a Daren al pasado y se estaba preparando para burlarse de él una vez más.
+      - source: scene_text_2
+        paragraph: 36
+        text: |-
+          "Debo asegurarme de no intervenir", oigo decir a Eiden. "¡No me gustaría que fracasaras en tu prueba por mi culpa!"
+
+          "¡No, no lo entiendes!", dice Daren, con una desesperación evidente en la voz. "¡Necesito que intervengas! ¡No puedo fallarle otra vez! Necesito el poder que solo tú puedes dar. ¡El poder para atacar al noble!"
+
+          "¿Oh?", pregunta Eiden, sorprendido. "Sinceramente, no habría esperado que me pidieras ayuda de un modo tan directo. Pero aun así, no tiene sentido someterse a una prueba si no vas a resolver tus problemas por ti mismo. Me temo que tendré que rechazar tu petición, independientemente de lo que pudiera haber hecho en tu línea temporal original."
+
+          "¡Maldito seas!", dice Daren. "¿Quieres que te lo suplique? ¿Eso es lo que quieres?"
+
+          "No, en realidad yo estaba--", empieza a decir Eiden, pero se interrumpe al ver que Daren cae de rodillas y manos ante él, con la cabeza agachada.
+      - source: scene_3
+        paragraph: 18
+        text: |-
+          "¡Entonces te lo suplicaré!", dice Daren. "Te lo suplicaré de rodillas y manos. Aunque te odio con todo mi corazón. Aunque te considere una de las personas más malvadas e irredimibles que he conocido en mi vida. Pero ahora mismo eres mi única esperanza para salvar a esta chica de su terrible destino, y lo único que puedo hacer es suplicarte que me ayudes. Así que por favor... te lo suplico... Dame el poder para salvar a esta chica y haré cualquier cosa que me pidas, por humillante que sea..."
+
+          Mientras Daren hablaba, podía ver a Eiden abrir lentamente los ojos durante unos segundos, con una expresión de conmoción y asombro en la cara. Luego, cuando Daren terminó su discurso, Eiden sonrió levemente con los ojos cerrados.
+
+          "¿Harás cualquier cosa que te pida, dices?", dice Eiden. "Entonces solo tengo una petición."
+
+          Hace una pausa de un segundo y adopta una expresión mucho más seria.
+
+          "Demuéstrame que estoy equivocado...", continúa Eiden.
+
+          El stillwater levanta entonces las manos y un viento poderoso empieza a girar a su alrededor durante unos segundos.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch11a_destination
+  - name: b2_ch11a_nerves
+    texts:
+      - source: scene_text
+        paragraph: 40
+        text: |-
+          "De verdad me estás empezando a poner de los nervios, ¿sabes?"
+
+          "¿Por qué?", dice Arraka. "¿Porque me reí de tu amigo? La gente se ríe de otra gente constantemente, Barry. ¡Vas a tener que endurecer un poco la piel si quieres salir adelante en este mundo!"
+
+          "O quizá debería intentar ignorarte más a menudo a partir de ahora", digo.
+
+          "¿Y perderte todos mis maravillosos comentarios?", dice Arraka. "¡La verdad, Barry, creía que eras más listo que eso!"
+
+          Mientras Arraka y yo hablábamos, Eiden acababa de descubrir por segunda vez que el Dios del Tiempo había enviado a Daren al pasado y se estaba preparando para burlarse de él una vez más.
+      - source: scene_text_2
+        paragraph: 36
+        text: |-
+          "Debo asegurarme de no intervenir", oigo decir a Eiden. "¡No me gustaría que fracasaras en tu prueba por mi culpa!"
+
+          "¡No, no lo entiendes!", dice Daren, con una desesperación evidente en la voz. "¡Necesito que intervengas! ¡No puedo fallarle otra vez! Necesito el poder que solo tú puedes dar. ¡El poder para atacar al noble!"
+
+          "¿Oh?", pregunta Eiden, sorprendido. "Sinceramente, no habría esperado que me pidieras ayuda de un modo tan directo. Pero aun así, no tiene sentido someterse a una prueba si no vas a resolver tus problemas por ti mismo. Me temo que tendré que rechazar tu petición, independientemente de lo que pudiera haber hecho en tu línea temporal original."
+
+          "¡Maldito seas!", dice Daren. "¿Quieres que te lo suplique? ¿Eso es lo que quieres?"
+
+          "No, en realidad yo estaba--", empieza a decir Eiden, pero se interrumpe al ver que Daren cae de rodillas y manos ante él, con la cabeza agachada.
+      - source: scene_3
+        paragraph: 18
+        text: |-
+          "¡Entonces te lo suplicaré!", dice Daren. "Te lo suplicaré de rodillas y manos. Aunque te odio con todo mi corazón. Aunque te considere una de las personas más malvadas e irredimibles que he conocido en mi vida. Pero ahora mismo eres mi única esperanza para salvar a esta chica de su terrible destino, y lo único que puedo hacer es suplicarte que me ayudes. Así que por favor... te lo suplico... Dame el poder para salvar a esta chica y haré cualquier cosa que me pidas, por humillante que sea..."
+
+          Mientras Daren hablaba, podía ver a Eiden abrir lentamente los ojos durante unos segundos, con una expresión de conmoción y asombro en la cara. Luego, cuando Daren terminó su discurso, Eiden sonrió levemente con los ojos cerrados.
+
+          "¿Harás cualquier cosa que te pida, dices?", dice Eiden. "Entonces solo tengo una petición."
+
+          Hace una pausa de un segundo y adopta una expresión mucho más seria.
+
+          "Demuéstrame que estoy equivocado...", continúa Eiden.
+
+          El stillwater levanta entonces las manos y un viento poderoso empieza a girar a su alrededor durante unos segundos.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch11a_destination
+  - name: b2_ch11a_destination
+    routes:
+      - condition: ch11_saved_slave <> 3
+        texts:
+          - source: scene_text
+            paragraph: 41
+            text: |-
+              "¿Demostrarte que estoy equivocado?", pregunta Daren, confuso, mientras Eiden baja los brazos y el viento a su alrededor se detiene. "¿Qué quieres decir con--"
+
+              "Tienes el poder, sanador", dice Eiden. "Ahora ve, ve. ¡Antes de que sea demasiado tarde!"
+
+              "De acuerdo...", dice Daren, levantándose del suelo y corriendo hacia el noble.
+
+              "¿Cuántas segundas oportunidades vas a pedirme, chica necia?", oigo decir al conde de Ollendor, con el cuchillo en la mano, mientras Daren y Eiden siguen conversando. "¿No te das cuenta de que mi misericordia no es ilimitada? Ya he tenido bastante de tus excusas. Esta vez te mataré de verdad. ¡No te muevas de ese sitio!"
+
+              "¡No dejaré que la mates, bastardo!", grita Daren, corriendo hacia el noble con la espada preparada.
+
+              "¿Qué demonios?", dice el conde justo cuando estaba a punto de cortarle la garganta a Ella, y se vuelve hacia Daren.
+
+              El noble apenas tiene tiempo de darse la vuelta, porque la hoja de Daren lo decapita al instante y el cuerpo sin cabeza del conde de Ollendor cae al suelo poco después, junto a su cabeza cercenada.
+          - source: scene_text_2
+            paragraph: 37
+            text: |-
+              "Lo hice...", oigo pensar a Daren. "La salvé... Esta vez no dudé. Por fin logré arreglarlo."
+
+              De repente, la ya demasiado familiar luz blanca llena la zona a nuestro alrededor para enviar una vez más a Daren de vuelta al comienzo del ritual.
+
+              "¡No, no, no!", grita Daren mientras la luz lo envuelve, pero nadie lo escucha y, tras unos segundos, vuelve a encontrarse exactamente donde empezó, con el noble todavía vivo y coleando.
+
+              "¡Ja- ja, ja, ja, ja!", se ríe Arraka. "¡El idiota de verdad creyó que había completado la prueba! ¿Te lo puedes creer? Y la ironía es que lo único que necesitaba hacer para completarla era calmarse de una vez por todas y cerrar la boca. Así Eiden no habría visto ningún cambio extraño en su aura y no habría podido adivinar que el Dios del Tiempo lo había enviado al pasado. Pero a este paso va a tardar un millón de años en darse cuenta. Madre mía, este tipo es una fuente de comedia estupenda."
+
+              "Entonces su ritual es igual que el mío, ¿no?", le pregunto. "Solo tiene que recrear los mismos acontecimientos que sucedieron la primera vez."
+
+              "Sí, la mayoría de sus rituales fueron hechos de la misma manera", dice Arraka. "Mientras sea la versión pasada de ti la que salve a la esclava usando el poder de Eiden, debería ir bien. Bueno, seguro que tarde o temprano lo averiguará. Vamos, vayamos a visitar algunos de los otros rituales."
+          - source: scene_3
+            paragraph: 19
+            text: |-
+              "¿Qué ha pasado?", oigo los pensamientos de Daren de fondo. "¿Qué hice mal? ¡¿Qué quiere este ritual de mí?!"
+
+              "Y nuestro próximo destino es el Faro de Esperanza", dice Arraka. "¡Agárrate fuerte! Va a ser un viaje accidentado. Nah, es broma. Ya estamos aquí."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_underground
+      - condition: ch11_saved_slave = 3
+        texts:
+          - source: scene_text
+            paragraph: 48
+            text: |-
+              "¿Demostrarte que estoy equivocado?", pregunta Daren, confuso, mientras Eiden baja los brazos y el viento a su alrededor se detiene. "¿Qué quieres decir con--"
+
+              "Tienes el poder, sanador", dice Eiden. "Ahora ve, ve. ¡Antes de que sea demasiado tarde!"
+
+              "De acuerdo...", dice Daren, levantándose del suelo y corriendo hacia el noble.
+
+              "¿Cuántas segundas oportunidades vas a pedirme, chica necia?", oigo decir al conde de Ollendor, con el cuchillo en la mano, mientras Daren y Eiden siguen conversando. "¿No te das cuenta de que mi misericordia no es ilimitada? Ya he tenido bastante de tus excusas. Esta vez te mataré de verdad. ¡No te muevas de ese sitio!"
+
+              "¡No dejaré que la mates, bastardo!", grita Daren, corriendo hacia el noble con la espada preparada.
+
+              "¿Qué demonios?", dice el conde justo cuando estaba a punto de cortarle la garganta a la chica esclava, y se vuelve hacia Daren.
+
+              El noble apenas tiene tiempo de darse la vuelta, porque la hoja de Daren lo decapita al instante y el cuerpo sin cabeza del conde de Ollendor cae al suelo poco después, junto a su cabeza cercenada.
+          - source: scene_text_2
+            paragraph: 38
+            text: |-
+              "Lo hice...", oigo pensar a Daren. "La salvé... Esta vez no dudé. Por fin logré arreglarlo."
+
+              De repente, la ya demasiado familiar luz blanca llena la zona a nuestro alrededor para enviar una vez más a Daren de vuelta al comienzo del ritual.
+
+              "¡No, no, no!", grita Daren mientras la luz lo envuelve, pero nadie lo escucha y, tras unos segundos, vuelve a encontrarse exactamente donde empezó, con el noble todavía vivo y coleando.
+
+              "¡Ja- ja, ja, ja, ja!", se ríe Arraka. "¡El idiota de verdad creyó que había completado la prueba! ¿Te lo puedes creer? ¡Imagínate la cara que va a poner cuando descubra que la esclava en realidad tiene que morir para que su ritual termine!"
+
+              "Entonces su ritual es igual que el mío, ¿no?", le pregunto. "¿Necesita recrear los mismos acontecimientos que ocurrieron la primera vez para poder superarlo?"
+
+              "Sí, la mayoría de sus rituales fueron hechos de la misma manera", dice Arraka. "Si quiere superar la prueba, lo primero que tendrá que hacer es calmarse de una vez por todas, porque si no Eiden siempre podrá notar que algo va mal al ver las fluctuaciones repentinas de su aura. Después tendrá que rechazar una vez más la oferta de Eiden e intentar convencer al noble de que cambie de actitud, lo que acabará conduciendo a la muerte de la esclava. Bueno, seguro que tarde o temprano lo averiguará. Vamos, vayamos a visitar algunos de los otros rituales."
+          - source: scene_3
+            paragraph: 19
+            text: |-
+              "¿Qué ha pasado?", oigo los pensamientos de Daren de fondo. "¿Qué hice mal? ¡¿Qué quiere este ritual de mí?!"
+
+              "Y nuestro próximo destino es el Faro de Esperanza", dice Arraka. "¡Agárrate fuerte! Va a ser un viaje accidentado. Nah, es broma. Ya estamos aquí."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch11a_underground
+  - name: b2_ch11a_underground
+    texts:
+      - source: scene_text
+        paragraph: 42
+        text: |-
+          Al mirar a mi alrededor, veo que nuestro entorno ha cambiado por completo en cuestión de segundos y ahora estamos situados en medio de un corredor subterráneo muy oscuro, con apenas unas pocas antorchas tenues como única fuente de luz. Casi inmediatamente después de llegar aquí, oímos el grito de un niño pequeño que resuena en la distancia y luego oímos también a una niña gritar de dolor, aunque parece estar más cerca que el niño. No mucho después empezamos a oír asimismo los gritos aterrorizados de otros cuantos niños. Algunos suplican piedad, otros intentan ahogar sus propios gritos y otros llaman en vano a sus padres para que los salven.
+
+          He oído historias sobre este lugar tanto por Kate como por Leila, pero jamás habría imaginado que fuera tan terrible. Solo estar aquí, escuchando todos estos gritos, me pone la piel de gallina por todo el cuerpo. Ni siquiera puedo empezar a imaginar cómo debe de ser pasar por lo que esos niños están sufriendo ahora mismo.
+      - source: scene_text_2
+        paragraph: 39
+        text: |-
+          "Vaya, estos lessathi sí que no se andaban con tonterías, ¿eh?", dice Arraka. "Es como toda una sinfonía de gritos horrorizados aquí abajo. En fin, este no era exactamente el sitio al que quería traerte. Solo necesito echar un vistazo rápido a lo que tu amiga Kate ha estado haciendo desde el comienzo de este ritual para ahorrarte los detalles aburridos e ir directo a lo bueno. Te dejaré disfrutar de estos melódicos sonidos de pura agonía mientras hago lo mío, ¿de acuerdo?"
+
+          "¿Melódicos sonidos de--? ¡Aquí están gritando niños!", le grito. "¡¿Qué demonios te pasa?!"
+
+          "Para serte sincera, me importan un bledo los niños que gritan", dice Arraka. "El tipo de tortura que normalmente me resulta divertido es el psicológico, no el físico. Por eso la parte realmente entretenida para mí es ver TUS reacciones a todo esto. ¿Para qué creías, si no, que me tomé la molestia de traerte conmigo a estos rituales? ¿Si no era para mi propio entretenimiento?"
+    choices:
+      - position: 1
+        text: Creí que simplemente estabas aburrida y decidiste traerme contigo por capricho.
+        effects:
+          - set:
+              current_scene: b2_ch11a_bored
+      - position: 2
+        text: Sigo sin entender cómo puedes encontrar entretenimiento en cosas así...
+        effects:
+          - set:
+              current_scene: b2_ch11a_understand
+  - name: b2_ch11a_bored
+    texts:
+      - source: scene_text
+        paragraph: 43
+        text: |-
+          "Creí que simplemente estabas aburrida y decidiste traerme contigo por capricho."
+
+          "Nah", dice Arraka. "Ese es el rollo de Eiden, no el mío. Sé que la mayor parte del tiempo no lo parece, pero rara vez hago algo sin motivo. Por ejemplo, elegí este momento concreto como nuestro destino inicial porque sabía que a esta hora estarían haciendo experimentos y habría muchos gritos. Habría sido una pena tenerte esperando en un pasillo silencioso y vacío, ¿sabes?"
+
+          "Ugh...", digo. "Cállate de una vez y sácanos de aquí."
+
+          "Más fácil decirlo que hacerlo", dice Arraka. "Puedo ser un genio en lo que respecta a la magia, pero tampoco puedes esperar que recorra todos estos acontecimientos en cuestión de segundos. No es como si pudiera conectarme al Magium así todos los días."
+
+          "Hablas del Magium con toda naturalidad, pero todavía ni siquiera me has dicho qué es", digo.
+
+          "De eso va el chiste, Barry, muchacho", dice Arraka. "Lo sigo haciendo porque sé que te frustra. Es una buena forma de no morirme de aburrimiento mientras paso por el tedioso proceso de examinar estos recuerdos."
+
+          "¿Por lo menos puedes decirme cómo eres capaz de cambiar entre pasado y futuro con tanta facilidad?", le pregunto. "¿Y cómo es que también puedes acceder a los recuerdos de la gente y transportarnos dentro de ellos como si formaran parte de nuestra realidad?"
+      - source: scene_text_2
+        paragraph: 40
+        text: |-
+          "Cuando estás vinculada directamente al Magium del modo en que lo estamos ahora", dice Arraka, "términos como 'pasado', 'futuro', 'recuerdos' y 'realidad' pierden todo significado. Aquí dentro, todo es real e imaginario a la vez. ¡Deja que te lo demuestre!"
+
+          Una serpiente roja gigante, con dos alas y cuatro pequeñas garras, aparece de repente delante de mí y se lanza de inmediato hacia mí con una mirada amenazadora, mientras todo su cuerpo está envuelto en llamas. Me entra un poco el pánico y doy un salto hacia atrás mientras intento sacar la daga, pero el monstruo me araña la pierna derecha con una de sus garras y luego desaparece tan rápido como apareció.
+
+          "Arraka, ¿qué has hecho?", pregunta Flower, horrorizada, mientras Illuna se acerca a mí para curarme.
+
+          "¡Relájate!", dice Arraka. "Ninguno de los dos puede morir aquí dentro. Ese arañazo no dolió, ¿verdad?"
+
+          "Ahora que lo dices, supongo que no", digo, justo cuando Illuna deja de curarme de golpe al darse cuenta de que nunca estuve en peligro de verdad.
+
+          "Eso es porque estos no son nuestros cuerpos reales", dice Arraka. "Solo son nuestras proyecciones. Nuestros cuerpos reales siguen justo donde los dejamos, atascados en uno de esos trances raros de ojos brillantes. Lo que intentaba mostrarte es que puedo hacer lo que me dé la gana mientras estamos aquí. Es como mi propio patio de recreo. Obviamente, no puedo interferir en lo que hacen tus amigos, porque en realidad no existimos en sus mundos, pero en lo que respecta a observar, mis opciones son ilimitadas."
+      - source: scene_3
+        paragraph: 20
+        text: |-
+          "Entonces, ¿estás diciendo que mis amigos tampoco pueden morir?", digo. "Ahora mismo solo están en un mundo imaginario, ¿no?"
+
+          "No, eso solo se aplica a nosotros, porque somos proyecciones, como ya dije", me dice Arraka. "Los mundos a los que han sido transportados tus amigos son muy reales. Lo que pasa es que no son NUESTRO mundo. Son mundos paralelos, parecidos al nuestro, en los que el futuro nunca llegó a ocurrir. Evidentemente, ninguno de los cambios que hagan allí afectará en lo más mínimo a nuestro mundo, pero ellos no tienen forma de saberlo. ¿No te pareció extraño que lograras superar tu propio ritual aunque normalmente habría sido imposible reproducir exactamente todas las acciones que tomaste hace quince años hasta el último detalle? Eso es porque no eran las leyes del tiempo las que te impedían hacer lo que querías. Era simplemente Selkram, jugando con tu cabeza."
+
+          "El Dios del Tiempo...", digo, mientras me lleno de un odio incontrolable solo por pronunciar su nombre. "¿Nos está observando ahora mismo?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch11a_materialized
+  - name: b2_ch11a_understand
+    texts:
+      - source: scene_text
+        paragraph: 44
+        text: |-
+          "Sigo sin entender cómo puedes encontrar entretenimiento en cosas así..."
+
+          "Oye, dame un respiro, ¿quieres?", dice Arraka. "Yo también podría haber sido normal si no hubiera presenciado cómo asesinaban brutalmente a mis padres delante de mis ojos cuando apenas era una niña..."
+
+          "¿En serio?...", digo.
+
+          "¡No, claro que no, imbécil!", dice Arraka. "Las banshees no tienen padres. ¿Qué pasa, te crees Flower o qué?"
+
+          "Ugh...", digo. "Cállate de una vez y sácanos de aquí."
+
+          "Más fácil decirlo que hacerlo", dice Arraka. "Puedo ser un genio en lo que respecta a la magia, pero tampoco puedes esperar que recorra todos estos acontecimientos en cuestión de segundos. No es como si pudiera conectarme al Magium así todos los días."
+
+          "Hablas del Magium con toda naturalidad, pero todavía ni siquiera me has dicho qué es", digo.
+
+          "De eso va el chiste, Barry, muchacho", dice Arraka. "Lo sigo haciendo porque sé que te frustra. Es una buena forma de no morirme de aburrimiento mientras paso por el tedioso proceso de examinar estos recuerdos."
+
+          "¿Por lo menos puedes decirme cómo eres capaz de cambiar entre pasado y futuro con tanta facilidad?", le pregunto. "¿Y cómo es que también puedes acceder a los recuerdos de la gente y transportarnos dentro de ellos como si formaran parte de nuestra realidad?"
+      - source: scene_text_2
+        paragraph: 40
+        text: |-
+          "Cuando estás vinculada directamente al Magium del modo en que lo estamos ahora", dice Arraka, "términos como 'pasado', 'futuro', 'recuerdos' y 'realidad' pierden todo significado. Aquí dentro, todo es real e imaginario a la vez. ¡Deja que te lo demuestre!"
+
+          Una serpiente roja gigante, con dos alas y cuatro pequeñas garras, aparece de repente delante de mí y se lanza de inmediato hacia mí con una mirada amenazadora, mientras todo su cuerpo está envuelto en llamas. Me entra un poco el pánico y doy un salto hacia atrás mientras intento sacar la daga, pero el monstruo me araña la pierna derecha con una de sus garras y luego desaparece tan rápido como apareció.
+
+          "Arraka, ¿qué has hecho?", pregunta Flower, horrorizada, mientras Illuna se acerca a mí para curarme.
+
+          "¡Relájate!", dice Arraka. "Ninguno de los dos puede morir aquí dentro. Ese arañazo no dolió, ¿verdad?"
+
+          "Ahora que lo dices, supongo que no", digo, justo cuando Illuna deja de curarme de golpe al darse cuenta de que nunca estuve en peligro de verdad.
+
+          "Eso es porque estos no son nuestros cuerpos reales", dice Arraka. "Solo son nuestras proyecciones. Nuestros cuerpos reales siguen justo donde los dejamos, atascados en uno de esos trances raros de ojos brillantes. Lo que intentaba mostrarte es que puedo hacer lo que me dé la gana mientras estamos aquí. Es como mi propio patio de recreo. Obviamente, no puedo interferir en lo que hacen tus amigos, porque en realidad no existimos en sus mundos, pero en lo que respecta a observar, mis opciones son ilimitadas."
+      - source: scene_3
+        paragraph: 20
+        text: |-
+          "Entonces, ¿estás diciendo que mis amigos tampoco pueden morir?", digo. "Ahora mismo solo están en un mundo imaginario, ¿no?"
+
+          "No, eso solo se aplica a nosotros, porque somos proyecciones, como ya dije", me dice Arraka. "Los mundos a los que han sido transportados tus amigos son muy reales. Lo que pasa es que no son NUESTRO mundo. Son mundos paralelos, parecidos al nuestro, en los que el futuro nunca llegó a ocurrir. Evidentemente, ninguno de los cambios que hagan allí afectará en lo más mínimo a nuestro mundo, pero ellos no tienen forma de saberlo. ¿No te pareció extraño que lograras superar tu propio ritual aunque normalmente habría sido imposible reproducir exactamente todas las acciones que tomaste hace quince años hasta el último detalle? Eso es porque no eran las leyes del tiempo las que te impedían hacer lo que querías. Era simplemente Selkram, jugando con tu cabeza."
+
+          "El Dios del Tiempo...", digo, mientras me lleno de un odio incontrolable solo por pronunciar su nombre. "¿Nos está observando ahora mismo?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch11a_materialized
+  - name: b2_ch11a_materialized
+    texts:
+      - source: scene_text
+        paragraph: 45
+        text: |-
+          "No", dice Arraka. "No puede quedarse materializado sin más en nuestro mundo todo el tiempo que quiera. Eso desperdiciaría demasiada energía. Por eso normalmente solo aparece al principio y al final, a menos que sea absolutamente necesario que intervenga personalmente en mitad de un ritual. De lo contrario, se limitará a permanecer en el plano mágico y esperar pacientemente a que los rituales reúnan energía para él."
+
+          "Pero ¿cómo lo ayudan estos rituales?", digo. "¿Qué tienen estas pruebas que le da tanto poder?"
+
+          "Está reuniendo energía de sus emociones negativas", dice Arraka. "Odio, ira, miedo, desesperación... ese tipo de cosas. Son las clases de emociones que pueden explotarse con más eficacia mediante estos métodos. Pero no puede hacer nada de eso sin vincularse directamente al Magium durante las profecías de las tejedoras del tiempo, así que necesita exprimirles todo lo que pueda mientras aún tiene la oportunidad. Por eso estas pruebas están diseñadas como están. Para asegurarse de que desencadenan en ustedes tantas emociones negativas intensas como sea posible."
+
+          "No estoy seguro de que me guste hacia dónde va esto", digo. "¿Qué clase de prueba retorcida pretende hacer pasar a Kate, si necesitó enviarla de vuelta a sus años en el Faro?"
+
+          "Lo veremos los dos en unos segundos", dice Arraka. "En realidad nunca había mirado este ritual antes de venir aquí contigo, así que los dos vamos a vivirlo por primera vez, juntos. Seguro que será divertido. ¡Empecemos!"
+      - source: scene_text_2
+        paragraph: 41
+        text: |-
+          Los dos desaparecemos del corredor lleno de gritos y reaparecemos en una habitación oscura y vacía donde una versión de once años de Kate parece estar hablando con lo que supongo que es una versión de doce años de su amiga Diane. Kate es fácil de reconocer, porque simplemente parece una versión más pequeña de sí misma, pero Diane tiene el pelo largo y rubio y un físico mucho más frágil del que tenía de adulta, así que me cuesta un poco más saber si de verdad es ella o no. Las dos visten harapos. La habitación en la que estamos se parece a mi vieja celda de la arena, con una cama y una pequeña ventana en la parte superior, así que supongo que lo más probable es que estén en la habitación de Diane y que Kate haya decidido ir a verla para contarle algo que conoce del futuro.
+
+          "No conseguí hacer audibles sus pensamientos, así que tendremos que apañarnos con lo que tenemos", me dice Arraka. "Veamos a dónde lleva esto."
+
+          "Te digo que no es la prueba de lealtad", le dice Kate a Diane, en un susurro, para asegurarse de que los guardias de fuera no las oigan. "Sé que cuesta creerlo, pero he venido del futuro y sé que el cuidador lessathi que intenta ayudarnos a escapar se convertirá más tarde en el padre adoptivo de Leila. ¡Sé que se puede confiar en él!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch11b_collars
+              storyboard_controls: Jump to frame "Book 2 Chapter 11 b"

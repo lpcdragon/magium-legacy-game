@@ -1,0 +1,2475 @@
+scenes:
+  - name: b2_ch01a_intro
+    texts:
+      - source: scene_text
+        paragraph: 2
+        text: |-
+          "¿Nuestros primeros objetivos?" pregunta Hadrik. "¿He oído bien?"
+
+          "¡Así es, has oído bien!" dice Golmyck, el rey gnomo, como si estuviera respondiendo a la pregunta de Hadrik. "Ahora voy a anunciar los objetivos de la primera ronda del torneo, así que más vale que prestéis atención, porque no pienso repetirlo. ¿Estáis listos?"
+
+          Golmyck hace una breve pausa antes de continuar.
+
+          "¡Muy bien, entonces!" dice. "Vuestros primeros objetivos son los siguientes. Cada uno de vosotros deberá encontrar una piña luminosa y llevarla a la ciudad de Galamir. Las piñas luminosas solo crecen en el continente de Varathia, así que la mayoría probablemente no sepáis mucho sobre ellas, pero básicamente parecen piñas normales, excepto que empiezan a brillar intensamente cuando las tomas en tu mano. No hay límite de tiempo para completar estos objetivos, pero cuanto antes llevéis las piñas a su destino, más rápido podréis empezar con vuestros siguientes objetivos, lo que os dará ventaja frente a los rezagados. Por último, me gustaría mencionar que en esta ronda se os permitirá formar equipos con otros participantes. Un equipo puede tener tantos miembros como queráis, y si todos confirmáis que formáis parte del mismo equipo cuando lleguéis a Galamir, pasaréis la primera ronda juntos, siempre que tengáis al menos una piña con vosotros. Eso es todo por ahora. ¡Buena suerte!"
+
+          "¡¿Qué?!" grita Hadrik. "¡No puede ir en serio! ¿Cómo pueden llamar a esto un torneo de magos con objetivos así? ¿Qué será lo próximo, decirnos que vayamos a recoger flores?"
+    effects:
+      - set:
+          successful_checks:
+            - 'Punto de control alcanzado: Partida guardada.'
+        condition: checkpoint_rich = 1
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_intro2_dead
+              checkpoint_rich: 0
+            condition: ch11_saved_rose = 0
+          - set:
+              current_scene: b2_ch01a_intro2_alive
+              checkpoint_rich: 0
+            condition: ch11_saved_rose = 1
+  - name: b2_ch01a_intro2_dead
+    texts:
+      - source: scene_text
+        paragraph: 3
+        text: |-
+          "Hadrik..." dice Daren, con una expresión muy sombría en el rostro. "Sinceramente, ahora mismo me importan un bledo los objetivos del torneo."
+
+          "¡Ah, casi se me olvida algo muy importante!" dice Golmyck. "Daren, el sanador con armadura, y todos los miembros de su grupo deben presentarse en las puertas del castillo real de Thilias en exactamente cinco horas. Esto incluye al enano, a la maga artificial y al lessathi. No hacerlo resultará en su descalificación del torneo. La niña que viaja con ellos también puede unirse a ellos si lo desea, pero no está obligada. ¡Gracias a todos por escuchar! ¡Que tengáis un buen día!"
+
+          El gnomo entonces presiona un botón y la transmisión se interrumpe, mientras las pantallas holográficas en el aire empiezan a desaparecer lentamente, una por una.
+
+          "Espera, ¿cómo sabía que Barry era un lessathi?" dice Hadrik. "¿No se enteró el propio Barry de esto hace poco?"
+
+          "El hecho de que el rey de Thilias conociera las verdaderas identidades tanto de Barry como de Kate sugiere fuertemente que nos ha estado vigilando durante un tiempo," dice Illuna. "Debe tener espías que le informan de todo lo que ocurre en su reino. No me sorprendería demasiado si también supiera de mi existencia."
+      - source: scene_text_2
+        paragraph: 2
+        text: |-
+          "Ah, mierda," dice Hadrik. "Si ese es el caso, entonces quizás también sepa que soy un gigante. A lo mejor nos llaman al castillo para echarme del torneo."
+
+          "Nos convocan por lo que pasó con el noble ayer," dice Daren. "Incluso tienen recompensas por nuestras cabezas. No deberíamos sorprendernos de que quieran interrogarnos. Vamos, dirijámonos a la casa de Rose. Ir al hospital ahora está descartado sin Rose para guiarnos, y sería prudente recoger nuestras mochilas antes de encaminarnos al castillo."
+
+          Daren hace una pausa.
+
+          "Uno de nosotros también tendrá que dar la noticia de la muerte de Rose a sus hermanos cuando lleguemos allí," dice.
+    choices:
+      - position: 1
+        text: Ofrecerse voluntario para dar la noticia a los niños
+        effects:
+          - set:
+              current_scene: b2_ch01a_volunteer
+              b2_ch1_volunteer: 1
+              ac_b2_ch1_news: 1
+            achievement:
+              id: ac_b2_ch1_news
+              title: Portador de malas noticias
+      - position: 2
+        text: Guardar silencio
+        effects:
+          - set:
+              current_scene: b2_ch01a_silent
+              b2_ch1_volunteer: 0
+  - name: b2_ch01a_intro2_alive
+    texts:
+      - source: scene_text
+        paragraph: 4
+        text: |-
+          "¿Tal vez necesitéis usar magia para encontrar las piñas?" sugiere Rose. "Soy herborista, pero nunca he oído hablar de piñas luminosas."
+
+          "¡Ah, casi se me olvida algo muy importante!" dice Golmyck. "Daren, el sanador con armadura, y todos los miembros de su grupo deben presentarse en las puertas del castillo real de Thilias en exactamente cinco horas. Esto incluye al enano, a la maga artificial y al lessathi. No hacerlo resultará en su descalificación del torneo. La niña que viaja con ellos también puede unirse a ellos si lo desea, pero no está obligada. ¡Gracias a todos por escuchar! ¡Que tengáis un buen día!"
+
+          El gnomo entonces presiona un botón y la transmisión se interrumpe, mientras las pantallas holográficas en el aire empiezan a desaparecer lentamente, una por una.
+
+          "Espera, ¿cómo sabía que Barry era un lessathi?" dice Hadrik. "¿No se enteró el propio Barry de esto hace poco?"
+
+          "El hecho de que el rey de Thilias conociera las verdaderas identidades tanto de Barry como de Kate sugiere fuertemente que nos ha estado vigilando durante un tiempo," dice Illuna. "Debe tener espías que le informan de todo lo que ocurre en su reino. No me sorprendería demasiado si también supiera de mi existencia."
+
+          "Ah, mierda," dice Hadrik. "Si ese es el caso, entonces quizás también sepa que soy un gigante. A lo mejor nos llaman al castillo para echarme del torneo."
+      - source: scene_text_2
+        paragraph: 3
+        text: |-
+          "Nos convocan por lo que pasó con el noble ayer," dice Daren. "Incluso tienen recompensas por nuestras cabezas. No deberíamos sorprendernos de que quieran interrogarnos. Vamos, démonos prisa hacia el hospital. No nos queda mucho tiempo."
+
+          "El hospital puede esperar," dice Rose. "Ninguno de los heridos está en estado crítico, y solo tenéis cinco horas para llegar al castillo. Todavía tenemos que volver a mi casa para que podáis recoger vuestras mochilas, y llegar al castillo desde allí os llevará casi dos horas a pie."
+
+          "¿Tu ciudad no tiene algún tipo de transporte público que podamos usar para llegar más rápido?" pregunta Daren.
+
+          "¿Como qué?" pregunta Rose.
+
+          "Bueno, ya sabes..." dice Daren. "¿Como carruajes? ¿Tirados por caballos?"
+
+          "¡Oh, dioses, no!" dice Rose, escandalizada. "¿Quién obligaría a un caballo a tirar de un carruaje? ¡Eso sería incluso más horrible que la caza de animales! Además, los animales abandonaron nuestra ciudad hace décadas, cuando comenzaron las cacerías. Ahora todos viven en el dominio del zorro dorado."
+
+          "Oh, claro, claro," dice Daren. "Los animales pueden hablar aquí. Se me olvidó. De acuerdo, pongámonos en marcha, entonces. Mientras mantengamos un paso constante, deberíamos llegar bien."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_spin
+  - name: b2_ch01a_volunteer
+    texts:
+      - source: scene_text
+        paragraph: 5
+        text: |-
+          "Yo lo haré," digo. "Intentaré dárselo lo más suavemente posible."
+
+          Daren me lanza una larga mirada durante unos segundos. No parece muy cómodo dejando este asunto en mis manos, pero tampoco parece querer ser él quien se encargue, ni nadie más, por lo que puede verse.
+
+          "De acuerdo," dice Daren, finalmente. "Barry será quien dé la noticia a los niños. ¿Alguna objeción?"
+
+          Todos los demás guardan silencio, mientras Kate y Flower bajan la mirada al suelo.
+
+          "Entonces está decidido," dice Daren. "Pongámonos en marcha. Tomaremos la misma ruta que usamos cuando vinimos, para no perdernos. Seguidme."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_spin
+  - name: b2_ch01a_silent
+    texts:
+      - source: scene_text
+        paragraph: 6
+        text: |-
+          Decido guardar silencio, y todos los demás también. Kate y Flower están mirando al suelo, mientras Hadrik se rasca la nuca incómodamente.
+
+          "Yo me encargo," dice Daren, tras ver que nadie quiere ofrecerse voluntario para la tarea. "Ahora, pongámonos en marcha. No tenemos mucho tiempo. Tomaremos la misma ruta que usamos cuando vinimos, para no perdernos. Seguidme."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_spin
+  - name: b2_ch01a_spin
+    routes:
+      - condition: ch11_saved_rose = 0
+        texts:
+          - source: scene_text
+            paragraph: 7
+            text: |-
+              "¿Puedo recuperar a Arraka, por favor?" le pregunta Flower a Hadrik, mientras nos dirigimos hacia la mansión.
+
+              "La verdad, ¡prefiero quedármela un poco más, si no te importa!" dice Hadrik.
+
+              "Bueno, está bien..." dice Flower. "Pero asegúrate de vigilarla."
+
+              "No te preocupes," dice Hadrik, mientras empieza a girar el amuleto de nuevo. "¡Me aseguraré de darle toda la atención que necesita!"
+
+              Todos seguimos a Daren y volvemos por donde vinimos, mientras poco a poco dejamos atrás los barrios bajos y entramos en el distrito más rico donde se encuentra la casa de Rose.
+
+              Nadie dijo una sola palabra mientras caminábamos por los callejones, ni siquiera Hadrik. Kate en particular parecía ser la más afectada por lo que había ocurrido, y la expresión de su rostro era muy dolorosa de ver. En medio del silencio, una enfurecida Arraka de vez en cuando nos lanzaba una variedad de insultos y amenazas, mientras Hadrik la ignoraba y seguía girando su amuleto a pesar de sus quejas interminables.
+          - source: scene_text_2
+            paragraph: 4
+            text: |-
+              "¿Quieres hacer que se calle?" dice Daren, después de un rato. "Ya he tenido suficiente de Arraka para toda una semana. No necesito escuchar su parloteo constante durante todo el viaje."
+
+              "Oh, claro, perdona..." dice Hadrik, mientras cierra el amuleto y luego continúa haciéndolo girar por la cadena.
+
+              Los gritos de Arraka aún son audibles, pero ahora son más una molestia leve, ya que el ruido se ha amortiguado.
+
+              "Creo que mi muñeca está empezando a entumecerse de tanto girar," dice Hadrik, unos minutos después. "Barry, ¿qué dices? ¿Quieres intentarlo? ¡Te aseguro que es una experiencia muy gratificante!"
+        choices:
+          - position: 1
+            text: Claro, ¿por qué no?
+            effects:
+              - set:
+                  current_scene: b2_ch01a_sure_dead
+                  b2_ch1_spin: 1
+          - position: 2
+            text: Creo que paso, gracias.
+            effects:
+              - set:
+                  current_scene: b2_ch01a_pass_dead
+                  b2_ch1_spin: 0
+      - condition: ch11_saved_rose = 1
+        texts:
+          - source: scene_text
+            paragraph: 8
+            text: |-
+              "¿Puedo recuperar a Arraka, por favor?" le pregunta Flower a Hadrik, mientras nos dirigimos hacia la mansión.
+
+              "La verdad, ¡prefiero quedármela un poco más, si no te importa!" dice Hadrik.
+
+              "Bueno, está bien..." dice Flower. "Pero asegúrate de vigilarla."
+
+              "No te preocupes," dice Hadrik, mientras empieza a girar el amuleto de nuevo. "¡Me aseguraré de darle toda la atención que necesita!"
+
+              Todos seguimos a Rose y volvemos por donde vinimos, mientras poco a poco dejamos atrás los barrios bajos y entramos en el distrito más rico donde se encuentra la casa de Rose.
+
+              Mientras caminábamos, Arraka de vez en cuando nos lanzaba una variedad de insultos y amenazas, mientras Hadrik la ignoraba y seguía girando su amuleto a pesar de sus quejas interminables.
+          - source: scene_text_2
+            paragraph: 5
+            text: "\"Will you shut her up?\" Daren says, after a while. \"I've already had enough of Arraka to last me for a week. I don't need to hear her constant yammering the entire trip.\"\r\n\r\n\"Oh, right, sorry...\" Hadrik says, as he closes the amulet and then continues to spin it by the chain.\r\n\r\nArraka's shouting is still audible, but it's more of a mild annoyance now that the noise has become muffled.\r\n\r\n\"I think my wrist is starting to go numb from all the spinning,\" Hadrik says, a few minutes later. \"Barry, what do you say? Do you wanna give this a try? I assure you it's a very rewarding experience!\""
+        choices:
+          - position: 1
+            text: Claro, ¿por qué no?
+            effects:
+              - set:
+                  current_scene: b2_ch01a_sure_alive
+                  b2_ch1_spin: 1
+          - position: 2
+            text: Creo que paso, gracias.
+            effects:
+              - set:
+                  current_scene: b2_ch01a_pass_alive
+                  b2_ch1_spin: 0
+  - name: b2_ch01a_sure_dead
+    texts:
+      - source: scene_text
+        paragraph: 9
+        text: |-
+          "Claro, ¿por qué no?" digo, mientras agarro el amuleto y empiezo a girarlo también.
+
+          La voz amortiguada de Arraka se hace más fuerte ahora, pero no puedo distinguir lo que intenta decir. Probablemente sea mejor que no lo sepa.
+
+          "He estado pensando," dice Kate, de repente. "¿Podría ser que Rose quizás no esté completamente muerta? ¿Podría seguir en algún lugar ahí dentro, dentro de su cuerpo?"
+
+          "Kate..." empieza a decir Daren, pero Kate continúa hablando, esta vez levantando un poco la voz.
+
+          "¡Quizás todavía haya alguna forma de traerla de vuelta!" dice, mirando a cada uno de nosotros por turnos, buscando nuestra aprobación. "¡Quizás si derrotamos a ese seguidor de Ulruk que robó su cuerpo, podamos devolverla a la normalidad! ¡No podemos saberlo hasta que lo intentemos!"
+
+          "Kate, por favor..." dice Daren, mientras se detiene y mira a Kate directamente a los ojos. "No me hagas repetirlo. Rose se ha ido. No puedes traer de vuelta a los muertos, por mucho que lo intentes."
+
+          "Pero, ¿cómo puedes estar seguro de que está muerta?" dice Kate, con desesperación visible en sus ojos. "Oíste lo que dijo antes de irse. ¡Todos la oísteis! Nos dijo que cuidáramos de sus hermanos. ¿Por qué diría algo así si una parte de Rose no siguiera ahí dentro, en algún lugar?"
+
+          "Los revenants nacen con los recuerdos de sus huéspedes," dice Illuna. "Por eso es común que al principio estén confundidos y tengan algo de crisis de identidad, mientras luchan por diferenciar entre sus propios pensamientos y los que heredaron de sus huéspedes."
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "Entonces quizás aún podamos--" empieza a decir Kate, pero Illuna la interrumpe.
+
+          "Aunque a veces puedan elegir mantener algunos de los valores y principios de su antiguo huésped," dice Illuna, "los revenants siguen siendo entidades completamente diferentes a los anteriores dueños de sus cuerpos. Un revenant no puede nacer si su huésped aún está vivo. El mero hecho de que este revenant haya llegado a existir es prueba de que Rose ya estaba muerta cuando el sirviente de Ulruk tomó posesión de su cuerpo."
+
+          "Pero..." intenta argumentar Kate de nuevo, esta vez con mucha más vacilación en su voz. "Pero... quizás si nosotros..."
+
+          Se detiene al darse cuenta de que ya no tiene argumentos válidos que presentar. En vez de continuar su razonamiento, su mirada vuelve al suelo, y no dice ni una palabra más.
+
+          "Lo siento," dice Daren, mientras se da la vuelta y comienza a caminar hacia la casa de Rose de nuevo.
+
+          Todos le seguimos uno por uno, siendo Kate la última en moverse de su sitio. El resto de nuestro viaje hacia la mansión transcurrió en completo silencio.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_monsters
+  - name: b2_ch01a_pass_dead
+    texts:
+      - source: scene_text
+        paragraph: 10
+        text: |-
+          "Creo que paso, gracias."
+
+          "Tú te lo pierdes," dice Hadrik. "Pero en serio, ¡no sabes lo que te estás perdiendo!"
+
+          "He estado pensando," dice Kate, de repente. "¿Podría ser que Rose quizás no esté completamente muerta? ¿Podría seguir en algún lugar ahí dentro, dentro de su cuerpo?"
+
+          "Kate..." empieza a decir Daren, pero Kate continúa hablando, esta vez levantando un poco la voz.
+
+          "¡Quizás todavía haya alguna forma de traerla de vuelta!" dice, mirando a cada uno de nosotros por turnos, buscando nuestra aprobación. "¡Quizás si derrotamos a ese seguidor de Ulruk que robó su cuerpo, podamos devolverla a la normalidad! ¡No podemos saberlo hasta que lo intentemos!"
+
+          "Kate, por favor..." dice Daren, mientras se detiene y mira a Kate directamente a los ojos. "No me hagas repetirlo. Rose se ha ido. No puedes traer de vuelta a los muertos, por mucho que lo intentes."
+
+          "Pero, ¿cómo puedes estar seguro de que está muerta?" dice Kate, con desesperación visible en sus ojos. "Oíste lo que dijo antes de irse. ¡Todos la oísteis! Nos dijo que cuidáramos de sus hermanos. ¿Por qué diría algo así si una parte de Rose no siguiera ahí dentro, en algún lugar?"
+
+          "Los revenants nacen con los recuerdos de sus huéspedes," dice Illuna. "Por eso es común que al principio estén confundidos y tengan algo de crisis de identidad, mientras luchan por diferenciar entre sus propios pensamientos y los que heredaron de sus huéspedes."
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          "Entonces quizás aún podamos--" empieza a decir Kate, pero Illuna la interrumpe.
+
+          "Aunque a veces puedan elegir mantener algunos de los valores y principios de su antiguo huésped," dice Illuna, "los revenants siguen siendo entidades completamente diferentes a los anteriores dueños de sus cuerpos. Un revenant no puede nacer si su huésped aún está vivo. El mero hecho de que este revenant haya llegado a existir es prueba de que Rose ya estaba muerta cuando el sirviente de Ulruk tomó posesión de su cuerpo."
+
+          "Pero..." intenta argumentar Kate de nuevo, esta vez con mucha más vacilación en su voz. "Pero... quizás si nosotros..."
+
+          Se detiene al darse cuenta de que ya no tiene argumentos válidos que presentar. En vez de continuar su razonamiento, su mirada vuelve al suelo, y no dice ni una palabra más.
+
+          "Lo siento," dice Daren, mientras se da la vuelta y comienza a caminar hacia la casa de Rose de nuevo.
+
+          Todos le seguimos uno por uno, siendo Kate la última en moverse de su sitio. El resto de nuestro viaje hacia la mansión transcurrió en completo silencio.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_monsters
+  - name: b2_ch01a_sure_alive
+    texts:
+      - source: scene_text
+        paragraph: 11
+        text: |-
+          "Claro, ¿por qué no?" digo, mientras agarro el amuleto y empiezo a girarlo también.
+
+          La voz amortiguada de Arraka se hace más fuerte ahora, pero no puedo distinguir lo que intenta decir. Probablemente sea mejor que no lo sepa.
+
+          "Y bien, ¿qué pensáis de vuestros primeros objetivos?" nos pregunta Flower, mientras seguimos caminando hacia la mansión.
+
+          "Yo opino que el que los ideó puede metérselos por el--" empieza a decir Hadrik, pero Daren lo interrumpe.
+
+          "Sí, ya te oímos la primera vez," dice. "Lo hecho, hecho está. Estoy seguro de que no serás el único que tenga quejas sobre la cuestionable naturaleza de estos objetivos. A mí personalmente me alivia que no nos hayan dicho que empecemos a matarnos entre nosotros o algo así. Eso habría aumentado las bajas dramáticamente."
+
+          "Pero, ¿cómo vais a encontrar las piñas?" pregunta Flower. "¡He vivido aquí durante años y ni siquiera sé cómo son!"
+
+          "Bueno, tampoco es que las hayas estado buscando específicamente," digo. "¿Quizás haya alguien en esta ciudad que pueda ayudarnos?"
+
+          "No sé qué decir," dice Rose. "Tengo bastantes conocimientos de herbolaria y estas piñas luminosas nunca aparecieron en ninguno de los libros que he leído. Puede que las hayan descubierto hace poco."
+
+          "¿Entonces estás diciendo que lo más probable es que ellos tampoco sepan dónde están estas piñas, y simplemente están aprovechando la situación para hacernos buscarlas en su lugar?" pregunta Hadrik.
+      - source: scene_text_2
+        paragraph: 8
+        text: |-
+          "Bueno, no es exactamente lo que estaba diciendo, pero--"
+
+          "¡Oh, lo juro, cuando ponga mis manos encima de ese rey de Thilias, lo voy a lanzar de un guantazo al otro lado de la sala, guardias o no guardias!" dice Hadrik.
+
+          "No, no lo harás," dice Kate. "Todavía no puedes hacer daño a ningún local, ¿recuerdas?"
+
+          "¡Maldición, tienes razón!" dice Hadrik. "Pero quizás no sea demasiado tarde. Quizás Eiden aún me dé el poder si se lo pido amablemente."
+
+          El enano se detiene en medio del camino y empieza a gritar lo más fuerte que puede.
+
+          "¡Eiden!" dice. "¡Eh, Eiden, ¿me oyes?! ¡Yo también quiero el poder! ¡Sal de ahí, maldita sea, sé que te escondes por aquí cerca!"
+
+          "Eh, ¿Hadrik?" dice Rose, sonriendo con incomodidad. "Hay gente viviendo en estas casas. ¿Podrías bajar un poco la voz? Además, no deberías detenerte en medio del callejón así. Podrías tener problemas para encontrar el camino de vuelta a mi casa si nos pierdes de vista."
+
+          "Oh, claro, perdona," dice Hadrik. "¡Ya voy!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_lover
+  - name: b2_ch01a_pass_alive
+    texts:
+      - source: scene_text
+        paragraph: 12
+        text: |-
+          "Creo que paso, gracias."
+
+          "Tú te lo pierdes," dice Hadrik. "Pero en serio, ¡no sabes lo que te estás perdiendo!"
+
+          Y bien, ¿qué pensáis de vuestros primeros objetivos?" nos pregunta Flower, mientras seguimos caminando hacia la mansión.
+
+          "Yo opino que el que los ideó puede metérselos por el--" empieza a decir Hadrik, pero Daren lo interrumpe.
+
+          "Sí, ya te oímos la primera vez," dice. "Lo hecho, hecho está. Estoy seguro de que no serás el único que tenga quejas sobre la cuestionable naturaleza de estos objetivos. A mí personalmente me alivia que no nos hayan dicho que empecemos a matarnos entre nosotros o algo así. Eso habría aumentado las bajas dramáticamente."
+
+          "Pero, ¿cómo vais a encontrar las piñas?" pregunta Flower. "¡He vivido aquí durante años y ni siquiera sé cómo son!"
+
+          "Bueno, tampoco es que las hayas estado buscando específicamente," digo. "¿Quizás haya alguien en esta ciudad que pueda ayudarnos?"
+
+          "No sé qué decir," dice Rose. "Tengo bastantes conocimientos de herbolaria y estas piñas luminosas nunca aparecieron en ninguno de los libros que he leído. Puede que las hayan descubierto hace poco."
+
+          "¿Entonces estás diciendo que lo más probable es que ellos tampoco sepan dónde están estas piñas, y simplemente están aprovechando la situación para hacernos buscarlas en su lugar?" pregunta Hadrik.
+      - source: scene_text_2
+        paragraph: 9
+        text: |-
+          "Bueno, no es exactamente lo que estaba diciendo, pero--"
+
+          "¡Oh, lo juro, cuando ponga mis manos encima de ese rey de Thilias, lo voy a lanzar de un guantazo al otro lado de la sala, guardias o no guardias!" dice Hadrik.
+
+          "No, no lo harás," dice Kate. "Todavía no puedes hacer daño a ningún local, ¿recuerdas?"
+
+          "¡Maldición, tienes razón!" dice Hadrik. "Pero quizás no sea demasiado tarde. Quizás Eiden aún me dé el poder si se lo pido amablemente."
+
+          El enano se detiene en medio del camino y empieza a gritar lo más fuerte que puede.
+
+          "¡Eiden!" dice. "¡Eh, Eiden, ¿me oyes?! ¡Yo también quiero el poder! ¡Sal de ahí, maldita sea, sé que te escondes por aquí cerca!"
+
+          "Eh, ¿Hadrik?" dice Rose, sonriendo con incomodidad. "Hay gente viviendo en estas casas. ¿Podrías bajar un poco la voz? Además, no deberías detenerte en medio del callejón así. Podrías tener problemas para encontrar el camino de vuelta a mi casa si nos pierdes de vista."
+
+          "Oh, claro, perdona," dice Hadrik. "¡Ya voy!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_lover
+  - name: b2_ch01a_monsters
+    routes:
+      - condition: b2_ch1_volunteer = 0
+        texts:
+          - source: scene_text
+            paragraph: 13
+            text: |-
+              Cuando nos acercamos a la mansión, los hermanos de Rose nos vieron desde lejos y vinieron corriendo a recibirnos.
+
+              "¿Dónde está Rose?" dice Suzie, después de mirar a su alrededor durante unos segundos. "¿Se quedó en el hospital?"
+
+              Los demás y yo intercambiamos miradas incómodas, mientras Daren se pone delante de nosotros y coloca su mano en el hombro de Suzie.
+
+              "Suzie," dice, "hay algo que necesito contarte sobre Rose."
+
+              "Oh, dioses," dice Suzie. "¿Está ella..."
+
+              Se detiene un segundo antes de continuar.
+
+              "¿Está muerta?" pregunta.
+
+              Daren parece un poco sorprendido por la pregunta tan directa de la chica, pero decide que no tiene sentido seguir andándose con rodeos.
+
+              "Sí..." dice. "Lo siento. Fue culpa mía. Prometí que la protegería y yo--"
+
+              "Oh, está bien," dice Suzie, forzándose a sonreír. "Rose nos dijo hace mucho que siempre debíamos estar preparados para que esto pasara. Nos enseñó a cocinar nuestra propia comida, y a limpiar la casa, y todo lo demás que necesitábamos saber, por si ella nunca volvía de uno de sus viajes."
+
+              Mientras Suzie habla, su hermano intenta con todas sus fuerzas contener las lágrimas.
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "Le prometimos que pasara lo que pasara, no lloraríamos," dice Suzie. "Le prometimos que seríamos fuertes y que..."
+
+              Deja de hablar un segundo para frotarse los ojos con la manga.
+
+              "Y que siempre la recordaríamos con una sonrisa," dice Suzie, con una voz mucho más temblorosa que antes. "Y que seguiríamos viviendo nuestras vidas y seríamos felices, y... y..."
+
+              La chica ya no puede contener las lágrimas y de repente rompe a llorar. Su hermano, que también estaba al límite, empieza a llorar también, con una voz mucho más fuerte.
+
+              "Vaya, vaya," oímos la voz de un hombre detrás de nosotros. "¿Qué clase de monstruos harían llorar así a una chica tan hermosa?"
+
+              Al darnos la vuelta, vemos que el hombre que habló es casi tan alto como Daren, con una complexión musculosa y bien tonificada, llevando una camisa medio desabotonada, con largo cabello negro que le llegaba a los hombros y un bigote espeso cubriendo todo su labio superior. En su cadera izquierda lleva una vaina dorada que parece contener una espada bastante cara, al menos a juzgar por la multitud de gemas que decoran su empuñadura. El hombre se detiene frente a Suzie y le seca las lágrimas suavemente con la mano derecha.
+
+              "¿Estas personas malas te han disgustado, mi querida Suzie?" le pregunta el hombre.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_bottle
+      - condition: b2_ch1_volunteer = 1
+        texts:
+          - source: scene_text
+            paragraph: 14
+            text: |-
+              Cuando nos acercamos a la mansión, los hermanos de Rose nos vieron desde lejos y vinieron corriendo a recibirnos.
+
+              "¿Dónde está Rose?" dice Suzie, después de mirar a su alrededor durante unos segundos. "¿Se quedó en el hospital?"
+
+              Todos me miran, mientras doy un paso al frente y me aclaro la garganta con nerviosismo.
+
+              "¿Qué pasa?" pregunta Suzie, empezando a preocuparse. "¿Le ha pasado algo a Rose?"
+
+              "Sí," digo. "Nos atacaron de camino al hospital. Pensamos que Rose estaría a salvo, pero ella..."
+
+              Hago una pausa, sin saber exactamente cómo darle la noticia sin causarle un shock.
+
+              "Oh, dioses," dice Suzie. "¿Está ella..."
+
+              Se detiene un segundo antes de continuar.
+
+              "¿Está muerta?" pregunta.
+
+              Su pregunta directa me pilló por sorpresa. Antes de que tuviera oportunidad de responder, Daren se puso delante de mí y se arrodilló ante Suzie, con la cabeza inclinada.
+
+              "Lo siento," dice. "Fue culpa mía. Prometí que la protegería y yo--"
+
+              "Oh, está bien," dice Suzie, forzándose a sonreír. "Rose nos dijo hace mucho que siempre debíamos estar preparados para que esto pasara. Nos enseñó a cocinar nuestra propia comida, y a limpiar la casa, y todo lo demás que necesitábamos saber, por si ella nunca volvía de uno de sus viajes."
+          - source: scene_text_2
+            paragraph: 11
+            text: |-
+              Mientras Suzie habla, su hermano intenta con todas sus fuerzas contener las lágrimas.
+
+              "Le prometimos que pasara lo que pasara, no lloraríamos," dice Suzie. "Le prometimos que seríamos fuertes y que..."
+
+              Deja de hablar un segundo para frotarse los ojos con la manga.
+
+              "Y que siempre la recordaríamos con una sonrisa," dice Suzie, con una voz mucho más temblorosa que antes. "Y que seguiríamos viviendo nuestras vidas y seríamos felices, y... y..."
+
+              La chica ya no puede contener las lágrimas y de repente rompe a llorar. Su hermano, que también estaba al límite, empieza a llorar también, con una voz mucho más fuerte.
+
+              "Vaya, vaya," oímos la voz de un hombre detrás de nosotros. "¿Qué clase de monstruos harían llorar así a una chica tan hermosa?"
+
+              Al darnos la vuelta, vemos que el hombre que habló es casi tan alto como Daren, con una complexión musculosa y bien tonificada, llevando una camisa medio desabotonada, con largo cabello negro que le llegaba a los hombros y un bigote espeso cubriendo todo su labio superior. En su cadera izquierda lleva una vaina dorada que parece contener una espada bastante cara, al menos a juzgar por la multitud de gemas que decoran su empuñadura. El hombre se detiene frente a Suzie y le seca las lágrimas suavemente con la mano derecha.
+
+              "¿Estas personas malas te han disgustado, mi querida Suzie?" le pregunta el hombre.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_bottle
+  - name: b2_ch01a_bottle
+    texts:
+      - source: scene_text
+        paragraph: 15
+        text: |-
+          "Tío Enrique," dice Suzie, apenas capaz de controlar su voz. "Es Rose. Está..."
+
+          La chica lucha por sacar las palabras de su boca, mientras se ahoga en lágrimas.
+
+          "Está muerta, tío," dice. "Rose está muerta."
+
+          Entonces abraza a su tío tan fuerte como puede, mientras sigue intentando contener sus sollozos.
+
+          "¿Rose está... muerta?" dice Enrique, con una mezcla de dolor y shock en su voz.
+
+          Su mirada se oscurece gradualmente, mientras nos mira.
+
+          "¿Son ellos los responsables de esto?" pregunta Enrique, mientras empieza a sacar lentamente su espada de la vaina.
+
+          "¡No!" grita Suzie. "¡No fueron ellos! ¡Intentaron protegerla! ¡Son sus amigos!"
+
+          "Yo soy quien dejó que Rose muriera," dice Daren, mientras se acerca a Enrique e inclina la cabeza ante él. "Prometí que la mantendría a salvo, pero le fallé. No tengo palabras para expresar mis disculpas..."
+
+          Tras ver la expresión de dolor en el rostro de Daren, Enrique se calma lentamente, camina hacia él y le pone una mano en el hombro.
+      - source: scene_text_2
+        paragraph: 12
+        text: |-
+          "No hay necesidad de disculparse, amigo mío," dice Enrique. "Soy yo quien debería disculparse, por sacar conclusiones precipitadas antes. Está claro que tú también has sufrido mucho por esto."
+
+          Enrique pasa entonces junto a Daren y nos observa detenidamente a cada uno de nosotros.
+
+          "¡Animaos, amigos!" dice. "¿Por qué esas caras largas? Rose no habría querido veros así. Habría querido que sonrierais. No deberíamos estar lamentando la pérdida de Rose. Deberíamos estar celebrando vuestro regreso sano y salvo. Y como amigos de Rose, ¡también sois todos amigos míos!"
+
+          Se vuelve hacia Suzie.
+
+          "¡Suzie!" dice. "Tráeme la mejor botella de vino de la bodega. La que guardábamos para una ocasión especial. Ya sabes a cuál me refiero, ¿verdad?"
+
+          "Sí, tío," dice Suzie, mientras se seca las lágrimas con la manga de nuevo, y deja de llorar de repente. "¡La traigo enseguida!"
+
+          "Ahora, entonces, amigos de Rose," dice Enrique, mientras Suzie sale corriendo hacia la casa, "antes de brindar, me gustaría saber vuestros nombres. ¡Sería impropio no conocer los nombres de las personas con quienes pretendo compartir un trago!"
+    choices:
+      - position: 1
+        text: ¿Es realmente el momento y el lugar para tomar una copa?
+        effects:
+          - set:
+              current_scene: b2_ch01a_time
+      - position: 2
+        text: ¿No deberíamos hablar primero de qué vamos a hacer con los niños?
+        effects:
+          - set:
+              current_scene: b2_ch01a_discussing
+      - position: 3
+        text: Si vamos a tomar una copa, ¿por qué no ir a lo grande con algo de cerveza enana?
+        effects:
+          - set:
+              current_scene: b2_ch01a_dwarven
+  - name: b2_ch01a_time
+    texts:
+      - source: scene_text
+        paragraph: 16
+        text: |-
+          "¿Es realmente el momento y el lugar para tomar una copa?"
+
+          "¿De qué hablas?" dice Enrique. "¡Siempre es un buen momento y lugar para tomar una copa! Beber une a las personas. Solo pregúntale a tu amigo enano. Los enanos son famosos por sus hábitos excesivos de bebida, y aun así son una de las razas más unidas del mundo."
+
+          "Así es," dice Hadrik. "Aunque hay una teoría muy extendida de que la única razón por la que los enanos no guardan rencor es porque siempre están demasiado borrachos para recordar lo que hicieron el día anterior. Por cierto, me llamo Hadrik. ¡Encantado de conocerte!"
+
+          Hadrik entonces estrecha la mano de Enrique y nos presenta a los demás uno por uno.
+
+          "Este de aquí es Barry," dice Hadrik. "Este es Daren. Allí tenemos a Kate, y la niña se llama Flower. Ah, y también tenemos dos banshees. La que está dentro del cuerpo de la niña se llama Illuna, y la que está en el amuleto que llevo se llama Arraka."
+      - source: scene_text_2
+        paragraph: 13
+        text: |-
+          Se oye un murmullo apenas audible proveniente del amuleto cerrado, cuando Hadrik termina de hablar, pero nadie le presta atención.
+
+          "¿Dos banshees?" pregunta Enrique, un poco sorprendido. "¿Y Rose era amiga de ambas?"
+
+          "Bueno, de ambas no," dice Hadrik. "La del amuleto es más nuestra prisionera que nuestra aliada, la verdad, pero Illuna y Rose definitivamente eran muy buenas amigas."
+
+          "Bueno, en ese caso siempre será bienvenida aquí, banshee o no," dice Enrique. "¡Ah, aquí viene nuestro vino!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_ella
+            condition: ch11_saved_slave != 3
+          - set:
+              current_scene: b2_ch01a_no_ella
+            condition: ch11_saved_slave = 3
+  - name: b2_ch01a_discussing
+    texts:
+      - source: scene_text
+        paragraph: 17
+        text: |-
+          "¿No deberíamos hablar primero de qué vamos a hacer con los niños?"
+
+          "¡Ah, no tenéis que preocuparos por eso!" dice Enrique. "¡Lo tengo todo controlado!"
+
+          "¿En qué sentido?" pregunto.
+
+          "¡Os daré más detalles en cuanto lleguen nuestras bebidas!" dice Enrique. "Asuntos tan importantes se discuten mejor con una copa de buen vino. ¡Estoy seguro de que vuestro amigo de sangre enana estaría de acuerdo conmigo!"
+
+          "Bueno, si me lo preguntas a mí, probablemente reemplazaría el 'buen vino' de tu frase por 'cerveza enana'," dice Hadrik, "pero supongo que ambos podemos estar de acuerdo en lo general, al menos. Por cierto, me llamo Hadrik. ¡Encantado de conocerte!"
+
+          Hadrik entonces estrecha la mano de Enrique y nos presenta a los demás uno por uno.
+
+          "Este de aquí es Barry," dice Hadrik. "Este es Daren. Allí tenemos a Kate, y la niña se llama Flower. Ah, y también tenemos dos banshees. La que está dentro del cuerpo de la niña se llama Illuna, y la que está en el amuleto que llevo se llama Arraka."
+      - source: scene_text_2
+        paragraph: 14
+        text: |-
+          Se oye un murmullo apenas audible proveniente del amuleto cerrado, cuando Hadrik termina de hablar, pero nadie le presta atención.
+
+          "¿Dos banshees?" pregunta Enrique, un poco sorprendido. "¿Y Rose era amiga de ambas?"
+
+          "Bueno, de ambas no," dice Hadrik. "La del amuleto es más nuestra prisionera que nuestra aliada, la verdad, pero Illuna y Rose definitivamente eran muy buenas amigas."
+
+          "Bueno, en ese caso siempre será bienvenida aquí, banshee o no," dice Enrique. "¡Ah, aquí viene nuestro vino!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_ella
+            condition: ch11_saved_slave != 3
+          - set:
+              current_scene: b2_ch01a_no_ella
+            condition: ch11_saved_slave = 3
+  - name: b2_ch01a_dwarven
+    texts:
+      - source: scene_text
+        paragraph: 18
+        text: |-
+          "Si vamos a tomar una copa, ¿por qué no ir a lo grande con algo de cerveza enana?" digo. "Tenemos unas botellas extra guardadas en nuestras mochilas."
+
+          "¡Ah, la buena y vieja cerveza enana!" dice Enrique. "Hace tiempo que no disfruto de su sabor. Pero te aseguro que el vino que Suzie está a punto de traer hará que la cerveza enana parezca cerveza gnómica en comparación."
+
+          "¡Ahora sí que me has picado la curiosidad!" dice Hadrik. "Después de decir algo así, va a ser muy difícil cumplir con mis expectativas. Por cierto, me llamo Hadrik. ¡Encantado de conocerte!"
+
+          Hadrik entonces estrecha la mano de Enrique y nos presenta a los demás uno por uno.
+
+          "Este de aquí es Barry," dice Hadrik. "Este es Daren. Allí tenemos a Kate, y la niña se llama Flower. Ah, y también tenemos dos banshees. La que está dentro del cuerpo de la niña se llama Illuna, y la que está en el amuleto que llevo se llama Arraka."
+      - source: scene_text_2
+        paragraph: 15
+        text: |-
+          Se oye un murmullo apenas audible proveniente del amuleto cerrado, cuando Hadrik termina de hablar, pero nadie le presta atención.
+
+          "¿Dos banshees?" pregunta Enrique, un poco sorprendido. "¿Y Rose era amiga de ambas?"
+
+          "Bueno, de ambas no," dice Hadrik. "La del amuleto es más nuestra prisionera que nuestra aliada, la verdad, pero Illuna y Rose definitivamente eran muy buenas amigas."
+
+          "Bueno, en ese caso siempre será bienvenida aquí, banshee o no," dice Enrique. "¡Ah, aquí viene nuestro vino!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_ella
+            condition: ch11_saved_slave != 3
+          - set:
+              current_scene: b2_ch01a_no_ella
+            condition: ch11_saved_slave = 3
+  - name: b2_ch01a_ella
+    texts:
+      - source: scene_text
+        paragraph: 19
+        text: |-
+          Suzie venía ahora hacia nosotros a toda prisa con una botella de vino en las manos, mientras detrás de ella podíamos ver a Ella, que parecía haberse recuperado completamente después de la noche anterior, y que llevaba una bandeja con varias copas de vino encima.
+
+          Cuando las dos llegan, colocan tanto la bandeja como la botella en una mesa de picnic junto a nosotros, y entonces Suzie empieza a abrir la botella.
+
+          "Por los dioses," dice Enrique al ver a Ella. "¡Mis ojos han sido verdaderamente bendecidos al contemplar semejante belleza!"
+
+          Se inclina entonces galantemente y le besa la mano.
+
+          "¡Si mi corazón no perteneciera ya a Rose por toda la eternidad, probablemente me habría enamorado de ti en un instante!" dice Enrique.
+
+          Ella parece un poco confundida tras escuchar las palabras de Enrique, pero en vez de responderle, decide hacer una elegante reverencia y presentarse.
+
+          "Mi nombre es Ella," dice la chica. "He oído por Suzie lo que le pasó a la señorita Rose. Lamento su pérdida."
+
+          Por un momento, hubo un destello de tristeza en los ojos de Enrique al oír las palabras de Ella, pero rápidamente forzó de nuevo una sonrisa alegre en su rostro, antes de hablar otra vez.
+
+          "¡No tienes por qué disculparte, querida!" dice Enrique. "Tú no tuviste nada que ver con esto."
+      - source: scene_text_2
+        paragraph: 16
+        text: |-
+          "Supongo que usted es el nuevo amo de esta casa," dice Ella. "Creo que le debo una explicación por mi presencia aquí. Verá, Rose me contrató ayer mismo para trabajar como..."
+
+          Ella hace una pausa de unos segundos antes de continuar, mientras baja lentamente la cabeza.
+
+          "Como esclava," dice. "Estoy bien formada en limpieza del hogar y cocina, y también sé leer y escribir. Si me acepta, prometo servirle tan fielmente como la serví a ella."
+
+          "Voy a detenerte ahí mismo, Ella," dice Enrique, mientras levanta suavemente la barbilla de la chica con su mano, para que pueda mirarlo directamente a los ojos. "No deberías estar diciendo tales mentiras. La Rose que yo conocía nunca habría contratado a una esclava para trabajar para ella. Sin importar cuál haya sido tu pasado, una vez que te convertiste en parte de esta familia, lo hiciste como mujer libre, y no como esclava. Mientras trabajes en esta casa, tienes prohibido llamarte esclava nunca más. ¿Queda claro?"
+
+          "Sí, señor," dice Ella, sonriendo débilmente, mientras las lágrimas empiezan a formarse en sus ojos.
+
+          "¡Muy bien, entonces!" dice Enrique.
+
+          Se vuelve entonces hacia nosotros.
+
+          "¿Y bien?" pregunta. "¿A qué estáis esperando? ¡Este vino no va a beberse solo!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_ella2
+  - name: b2_ch01a_no_ella
+    texts:
+      - source: scene_text
+        paragraph: 20
+        text: |-
+          Suzie se acercaba ahora lentamente hacia nosotros, sosteniendo una botella de vino en la mano izquierda y una bandeja llena de copas de vino en la derecha.
+
+          "Veo que también trajiste copas," dice Enrique, mientras va a agarrar la bandeja de la mano de Suzie. "¡Buena chica!"
+
+          Después de colocar tanto la bandeja como la botella en una mesa de picnic junto a nosotros, la chica empieza a abrir la botella, mientras Enrique se vuelve hacia nosotros.
+
+          "¿Y bien?" pregunta. "¿A qué estáis esperando? ¡Este vino no va a beberse solo!"
+
+          "Tío," dice Kevin, el hermano de Suzie, mientras tira de la manga de Enrique, todavía sorbiendo, con lágrimas en los ojos. "Tío, ¿qué vamos a hacer? ¿Cómo vamos a vivir sin Rose? Nos esforzamos mucho en aprender a vivir solos. Nos las arreglamos durante semanas mientras Rose estaba en sus viajes. Aprendimos a comprar comida, y a cocinar, y a usar la chimenea, pero no podemos... no podemos--"
+
+          "No te preocupes, mi joven amiguito," dice Enrique, mientras le da unas palmaditas en la cabeza a Kevin. "No tendréis que vivir solos, porque a partir de mañana, ¡me mudaré de vuelta con vosotros!"
+
+          "¿Lo... lo harás?" pregunta Kevin.
+
+          "¡Por supuesto que sí!" dice Enrique. "¿Os mentiría? Una vez que traiga todas mis pertenencias, viviré aquí de nuevo, ¡y será como en los viejos tiempos!"
+
+          Al escuchar las palabras de Enrique, Suzie, que estaba ocupada llenando las copas con vino, sale corriendo hacia su tío y le da un gran abrazo otra vez.
+      - source: scene_text_2
+        paragraph: 17
+        text: |-
+          "¡Gracias, tío!" dice. "¡Muchísimas gracias! ¡No pensé que volverías algún día!"
+
+          "Perdona que interrumpa," dice Kate. "Pero por lo que Rose nos contó, entendí que la razón por la que os divorciasteis fue que querías pasar tiempo con otras mujeres. ¿No deberías estar discutiendo esto con tu esposa actual antes de hacer tales promesas?"
+
+          "Amante," dice Enrique.
+
+          "¿Perdona?" dice Kate.
+
+          "Amante, no esposa," dice Enrique. "Rose ha sido y siempre será mi única esposa."
+
+          "De acuerdo," dice Kate. "Tu amante. ¿Cuál crees que será su reacción ante todo esto? ¿Puedes estar tan seguro de que aceptará mudarse a esta casa contigo, solo para cuidar de los hermanos de tu ex esposa?"
+
+          "¡Oh, se pondrá furiosa!" dice Enrique. "¡No soporta a los niños!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_body
+  - name: b2_ch01a_ella2
+    texts:
+      - source: scene_text
+        paragraph: 21
+        text: |-
+          "Tío," dice Kevin, el hermano de Suzie, mientras tira de la manga de Enrique, todavía sorbiendo, con lágrimas en los ojos. "Tío, ¿qué vamos a hacer? ¿Cómo vamos a vivir sin Rose? Nos esforzamos mucho en aprender a vivir solos. Nos las arreglamos durante semanas mientras Rose estaba en sus viajes. Aprendimos a comprar comida, y a cocinar, y a usar la chimenea, pero no podemos... no podemos--"
+
+          "No te preocupes, mi joven amiguito," dice Enrique, mientras le da unas palmaditas en la cabeza a Kevin. "No tendréis que vivir solos, porque a partir de mañana, ¡me mudaré de vuelta con vosotros!"
+
+          "¿Lo... lo harás?" pregunta Kevin.
+
+          "¡Por supuesto que sí!" dice Enrique. "¿Os mentiría? Una vez que traiga todas mis pertenencias, viviré aquí de nuevo, ¡y será como en los viejos tiempos!"
+
+          Al escuchar las palabras de Enrique, Suzie, que estaba ocupada llenando las copas con vino, sale corriendo hacia su tío y le da un gran abrazo otra vez.
+
+          "¡Gracias, tío!" dice. "¡Muchísimas gracias! ¡No pensé que volverías algún día!"
+      - source: scene_text_2
+        paragraph: 18
+        text: |-
+          "Perdona que interrumpa," dice Kate. "Pero por lo que Rose nos contó, entendí que la razón por la que os divorciasteis fue que querías pasar tiempo con otras mujeres. ¿No deberías estar discutiendo esto con tu esposa actual antes de hacer tales promesas?"
+
+          "Amante," dice Enrique.
+
+          "¿Perdona?" dice Kate.
+
+          "Amante, no esposa," dice Enrique. "Rose ha sido y siempre será mi única esposa."
+
+          "De acuerdo," dice Kate. "Tu amante. ¿Cuál crees que será su reacción ante todo esto? ¿Puedes estar tan seguro de que aceptará mudarse a esta casa contigo, solo para cuidar de los hermanos de tu ex esposa?"
+
+          "¡Oh, se pondrá furiosa!" dice Enrique. "¡No soporta a los niños!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_body
+  - name: b2_ch01a_body
+    texts:
+      - source: scene_text
+        paragraph: 22
+        text: |-
+          "Entonces, ¿cómo puedes hacer tal promesa en su nombre, sin consultarla primero?" pregunta Kate.
+
+          "Oh, nunca hice la promesa en su nombre," dice Enrique. "De hecho, ¡pienso romper con ella en cuanto vuelva a casa!"
+
+          "¿Vas a romper con tu amante... solo para mudarte con los hermanos de Rose?" pregunta Kate, algo sorprendida.
+
+          "¡Por supuesto!" dice Enrique. "¿Por qué estás tan sorprendida? La echaré de menos, pero al fin y al cabo, es solo otra mujer que solo me quiere por mi dinero y mi buen aspecto. No debería tener problemas en reemplazarla. ¡Hay muchos peces en el mar!"
+
+          Se ríe.
+
+          "Ahora, entonces, coged vuestras copas, todos," dice Enrique. "Hoy brindamos por Rose: la mujer más hermosa y bondadosa que he conocido, y el amor de mi vida. ¡Que siempre sea recordada, y que siga viviendo en nuestros corazones, desde ahora y para siempre!"
+
+          Tras escuchar el discurso de Enrique, todos decidimos coger nuestras copas de vino y unirnos al brindis.
+
+          La siguiente media hora la pasamos hablando de Rose. Le contamos a Enrique las aventuras que habíamos vivido con ella durante la última semana, y él nos contó sus años juntos en la mansión. Estaba claro que ninguno de nosotros estaba de humor para beber, ni para contar historias, pero no importaba.
+      - source: scene_text_2
+        paragraph: 19
+        text: |-
+          Enrique tenía razón. Rose no habría querido que pasáramos nuestras vidas arrepintiéndonos. Y no podíamos permitirnos evitar hablar de ella de ahora en adelante solo porque dolía recordarla. Rose no merecía eso.
+
+          Mientras hablábamos, se hacía cada vez más obvio que, a pesar de su actuación alegre, Enrique era probablemente quien más sufría por la pérdida de Rose. Sin embargo, siempre que hablaba de Rose, su sonrisa se volvía genuina, e incluso Kate había conseguido sonreír una o dos veces durante nuestra larga conversación.
+
+          Cuando el tiempo empezó a agotarse, le dijimos a Enrique que teníamos que dirigirnos al castillo, y cada uno fue a recoger su mochila antes de emprender nuestro nuevo viaje. Cuando estábamos a punto de partir, Enrique nos apartó un momento para hablar con nosotros, lejos de los niños.
+
+          "Hay algo que no me atreví a preguntar delante de los niños," dice Enrique. "Vi que no trajisteis el cuerpo de Rose cuando volvisteis a la mansión, así que asumí lo peor, pero necesito saberlo. ¿Cómo murió Rose?"
+    choices:
+      - position: 1
+        text: Contarle lo del revenant.
+        effects:
+          - set:
+              current_scene: b2_ch01a_circumstances
+              b2_ch1_truth: 1
+      - position: 2
+        text: Contarle que el cuerpo de Rose fue incinerado por un mago elementalista de fuego.
+        effects:
+          - set:
+              current_scene: b2_ch01a_circumstances
+              b2_ch1_truth: 0
+  - name: b2_ch01a_circumstances
+    routes:
+      - condition: b2_ch1_truth = 1
+        texts:
+          - source: scene_text
+            paragraph: 23
+            text: |-
+              "Esto va a ser un poco difícil de creer," digo.
+
+              "Oh, créeme, no soy ajeno al mundo de la magia," dice Enrique. "Estoy preparado para cualquier cosa."
+
+              "Bueno," digo, "lo que pasó fue que después de que Rose fue asesinada, su cuerpo fue... tomado, por una entidad llamada revenant."
+
+              "Cuando dices que su cuerpo fue tomado..." empieza a decir Enrique, pero Daren responde a su pregunta antes de que termine.
+
+              "Quiere decir que un espíritu maligno tomó posesión de su cuerpo, después de que ella muriera," dice Daren.
+
+              "¿Y supongo que no hay forma de traer a Rose de vuelta, aunque matéis a este espíritu maligno?" pregunta Enrique.
+
+              "No, no la hay," dice Daren. "Lo siento."
+
+              "Entiendo," dice Enrique.
+
+              Hace una pausa.
+
+              "Si los niños alguna vez me preguntan qué le pasó a Rose, les diré que su cuerpo fue incinerado," dice Enrique. "Prefiero que crean eso a darles pesadillas."
+
+              "Entonces nos aseguraremos de contarles la misma historia, si alguna vez nos preguntan," dice Daren.
+
+              "Gracias," dice Enrique.
+
+              Entonces se vuelve para mirarnos a todos.
+          - source: scene_text_2
+            paragraph: 20
+            text: |-
+              "Amigos míos, lamento que no hayamos tenido la oportunidad de conocernos en mejores circunstancias," dice. "Solo sabed esto: ya sea que decidáis quedaros en la ciudad o marcharos antes del anochecer, siempre seréis bienvenidos aquí, cuando decidáis volver. ¡Que los dioses os acompañen!"
+
+              "Que nos protejan a todos," dice Daren. "¡Adiós, Enrique, y buena suerte!"
+
+              Una vez que todos nos despedimos de Enrique y de los hermanos de Rose, nos pusimos en camino, tomando la ruta más corta que conocíamos al castillo. Según Enrique, mientras siguiéramos caminando en la misma dirección general, deberíamos ir encontrando muchas señalizaciones que nos mostrarían el camino correcto a nuestro destino, así que no deberíamos preocuparnos demasiado por perdernos.
+
+              "¿Crees que estarán bien?" me pregunta Kate. "Los hermanos de Rose, quiero decir. No estoy segura de cuánto puedo confiar en ese hombre para cuidar de ellos de ahora en adelante..."
+
+              "Bueno, Rose confiaba lo suficiente en él como para dejarlo a cargo de visitar a sus hermanos mientras ella estaba fuera," digo. "Y su preocupación por los niños me pareció genuina. Además, los niños parecían quererlo mucho. ¡Creo que no tenemos de qué preocuparnos!"
+
+              "Supongo que podrías tener razón," dice Kate. "Parecía serio cuando dijo que rompería con su amante para mudarse con ellos. Quizás solo me estaba preocupando por nada."
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              "Mira, hay otra de esas señalizaciones," dice Hadrik. "¡Seguimos por buen camino!"
+
+              Nos llevó poco menos de dos horas llegar al castillo de Thilias desde la mansión de Rose. Cuando llegamos a las puertas principales, Daren les hizo señas a los guardias para que nos dejaran pasar, y una vez que confirmaron nuestras identidades, abrieron las puertas. Todos entramos lentamente, mientras las puertas se cierran de golpe detrás de nosotros.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_hallway
+      - condition: b2_ch1_truth = 0
+        texts:
+          - source: scene_text
+            paragraph: 24
+            text: |-
+              "Su cuerpo fue incinerado por un mago elementalista de fuego, poco después de que nos atacaran," digo.
+
+              "Ya veo," dice Enrique. "Temía que ese pudiera ser el caso. Intentaré evitar el tema al hablar con los niños, pero si alguna vez me preguntan qué pasó, les diré lo que habéis dicho."
+
+              Entonces se vuelve para mirarnos a todos.
+
+              "Amigos míos, lamento que no hayamos tenido la oportunidad de conocernos en mejores circunstancias," dice. "Solo sabed esto: ya sea que decidáis quedaros en la ciudad o marcharos antes del anochecer, siempre seréis bienvenidos aquí, cuando decidáis volver. ¡Que los dioses os acompañen!"
+
+              "Que nos protejan a todos," dice Daren. "¡Adiós, Enrique, y buena suerte!"
+
+              Una vez que todos nos despedimos de Enrique y de los hermanos de Rose, nos pusimos en camino, tomando la ruta más corta que conocíamos al castillo. Según Enrique, mientras siguiéramos caminando en la misma dirección general, deberíamos ir encontrando muchas señalizaciones que nos mostrarían el camino correcto a nuestro destino, así que no deberíamos preocuparnos demasiado por perdernos.
+          - source: scene_text_2
+            paragraph: 21
+            text: |-
+              "No estoy segura de que haya sido tan buena idea contarle esa mentira a Enrique sobre la muerte de Rose," dice Kate, mientras caminamos por los callejones. "Era su ex marido. Creo que merecía saber la verdad."
+
+              "Ese hombre no está acostumbrado al mundo en el que vivimos, Kate," dice Daren. "Incluso para nosotros es difícil aceptar lo que pasó, y todos hemos visto cadáveres caminando a plena luz del día muchas veces. Pero imagina qué efecto habría tenido en alguien que ha vivido toda su vida dentro de la seguridad de estas murallas. Contarle la verdad a Enrique solo habría servido para darle pesadillas durante años."
+
+              "Supongo... que podrías tener razón," dice Kate. "No tengo forma de saber cómo le habría afectado esta información."
+
+              "Mira, hay otra de esas señalizaciones," dice Hadrik. "¡Seguimos por buen camino!"
+
+              Nos llevó poco menos de dos horas llegar al castillo de Thilias desde la mansión de Rose. Cuando llegamos a las puertas principales, Daren les hizo señas a los guardias para que nos dejaran pasar, y una vez que confirmaron nuestras identidades, abrieron las puertas. Todos entramos lentamente, mientras las puertas se cierran de golpe detrás de nosotros.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_hallway
+  - name: b2_ch01a_lover
+    texts:
+      - source: scene_text
+        paragraph: 25
+        text: |-
+          Cuando nos acercamos a la mansión, los hermanos de Rose nos vieron desde lejos y vinieron corriendo a saludarnos. Dejamos a Rose hablando con su hermano y su hermana pequeños, mientras cada uno de nosotros fue a su habitación a recoger su mochila. Cuando volvimos al patio, nos dimos cuenta de que ahora había otra persona junto a Rose, además de sus dos hermanos.
+
+          Al acercarnos más, pudimos ver que esta persona era un hombre tan alto como Daren, con una constitución musculosa y bien tonificada, llevando una camisa medio desabrochada, con largo cabello negro que le llegaba hasta los hombros, y un tupido bigote que cubría todo su labio superior. En la cadera izquierda, llevaba una vaina dorada que parecía contener una espada bastante cara, a juzgar por la multitud de gemas que decoraban su empuñadura. El hombre parecía estar en medio de una conversación con Rose, pero cuando nos vio acercarnos, nos echó a todos una larga mirada antes de volver a hablar.
+
+          "Ah, veo que te has hecho amiga de algunos de los participantes del torneo en tu último viaje," le dice el hombre a Rose. "¿Podrías presentarme a tus nuevos amigos?"
+
+          "¡Por supuesto!" dice Rose, y luego se vuelve hacia nosotros. "Este es mi ex marido, Enrique. Me estaba contando lo que Suzie y Kevin han estado haciendo estas últimas semanas, ya que ha estado pasándose a verlos de vez en cuando mientras yo estaba fuera."
+
+          Rose se vuelve ahora hacia Enrique, mientras nos presenta uno por uno.
+      - source: scene_text_2
+        paragraph: 22
+        text: |-
+          "Enrique," dice ella, "estos son mis amigos que me han ayudado a volver a casa sana y salva, y que me han salvado la vida incontables veces durante la última semana. De derecha a izquierda, tenemos a Flower, Illuna, Kate, Barry, Daren y Hadrik."
+
+          "Espera, ¿por qué me has dicho dos nombres mientras señalabas a la niña?" pregunta Enrique.
+
+          "Oh, eh, es un poco complicado," dice Rose. "Verás, Flower es el nombre de la chica, e Illuna es una banshee que vive dentro de ella. Las dos comparten el mismo cuerpo, pero son muy buenas amigas."
+
+          "¿Una chica y una banshee, viviendo en paz en el mismo cuerpo?" dice Enrique, sorprendido. "¡Eso sí que no se ve todos los días!"
+
+          Entonces se acerca a Daren y le estrecha la mano.
+
+          "¡Tú debes de ser el nuevo amante de Rose!" le dice Enrique a Daren. "¡Cuida bien de ella, amigo mío. Es una mujer extraordinaria!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_unfair
+            condition: ch11_romance_rose = 0
+          - set:
+              current_scene: b2_ch01a_offend
+            condition: ch11_romance_rose = 1
+  - name: b2_ch01a_unfair
+    texts:
+      - source: scene_text
+        paragraph: 26
+        text: |-
+          "Eh, en realidad, yo no soy--" empieza a decir Daren, pero Rose lo interrumpe.
+
+          "Enrique," dice ella, mientras aprieta con fuerza el brazo derecho de su ex marido con ambas manos. "¿Recuerdas lo que pasó la última vez que asumiste que uno de mis invitados era mi amante?"
+
+          "¡Rose, estás siendo injusta!" dice Enrique. "¿Cómo iba yo a saber que la mujer que agarraba el brazo de aquel hombre era en realidad su esposa? Se parecían tanto que podría haber jurado que era su hermana. ¡Cualquiera habría cometido ese error! Y además, esta vez me aseguré de que no hubiera ninguna mujer a su lado antes de acercarme, ¿no es así?"
+
+          Rose suspira, mientras suelta el brazo de Enrique.
+
+          "Vamos, Daren, vámonos," dice. "Tenemos que darnos prisa hacia el castillo. No queremos hacer esperar al rey de Thilias."
+
+          "¡Oh, cierto, el mensaje de antes!" dice Enrique. "¿Quieres decir que Golmyck hablaba de tus amigos cuando hizo la invitación al final?"
+
+          "¡Sí, exacto!" dice Rose. "Tendré que guiarlos hasta el castillo, así que estaré fuera de nuevo unas horas. ¿Te importaría quedarte aquí con los niños hasta que vuelva?"
+
+          "¡Por supuesto que no!" dice Enrique. "¡Para eso he venido, después de todo!"
+      - source: scene_text_2
+        paragraph: 23
+        text: |-
+          "¡Gracias, Enrique!" dice Rose. "Hablaremos más cuando vuelva. ¡Cuídate!"
+
+          "¡Adiós, mi dulce Rose!" dice Enrique. "¡Y adiós a todos vosotros. Espero que nos volvamos a ver algún día, para que me contéis vuestras aventuras con una copa de buen vino!"
+
+          Todos nos despedimos de Enrique y de los hermanos de Rose y entonces emprendemos nuestro nuevo viaje, hacia el castillo de Thilias. Rose toma la delantera, igual que antes, pero esta vez se asegura de mostrarnos todas las señalizaciones y edificios que usa como referencia, porque más tarde tendríamos que encontrar el camino de vuelta a su mansión por nuestra cuenta.
+
+          "Siento lo de antes," le dice Rose a Daren, mientras caminamos por los callejones. "Espero que Enrique no te haya hecho sentir demasiado incómodo. Es que lleva un tiempo preocupado por mí porque no he estado con otro hombre desde que rompimos, y siempre se deja llevar en situaciones como esta."
+
+          "No pasa nada," dice Daren. "Francamente, me preocupa más aquel tipo al que le preguntó lo mismo cuando vino aquí con su esposa. ¿Al final conseguiste aclarar el malentendido?"
+
+          "Eh, bueno, intenté explicarle la situación a su esposa lo mejor que pude, pero no estoy segura de cuánto me creyó," dice Rose. "Sé que los dos siguen juntos, pero en realidad no me han vuelto a hablar desde aquel día..."
+
+          "No la culpo," dice Daren. "Creo que incluso mi esposa habría sido cautelosa contigo después de oír algo así."
+    choices:
+      - position: 1
+        text: ¿Estás casado?
+        effects:
+          - set:
+              current_scene: b2_ch01a_married
+              ac_b2_ch1_distance: 1
+            achievement:
+              id: ac_b2_ch1_distance
+              title: Larga distancia
+      - position: 2
+        text: Un momento. Estoy bastante seguro de que leí en alguna parte que nunca te habías casado.
+        effects:
+          - set:
+              current_scene: b2_ch01a_somewhere
+              ac_b2_ch1_distance: 1
+            achievement:
+              id: ac_b2_ch1_distance
+              title: Larga distancia
+  - name: b2_ch01a_offend
+    texts:
+      - source: scene_text
+        paragraph: 27
+        text: |-
+          "Eh, en realidad, yo no soy--" empieza a decir Daren, pero Hadrik lo interrumpe.
+
+          "¡En realidad, te has equivocado de persona!" dice Hadrik, con una sonrisa. "¡Es a Barry a quien deberías estar diciéndole esto, no a Daren!"
+
+          "¿Qué, él?" dice Enrique, mientras me mira, un poco sorprendido.
+
+          Entonces recupera rápidamente la compostura y se acerca a mí.
+
+          "Mis disculpas, amigo," dice Enrique, mientras pone una mano en mi hombro. "No quise ofenderte. No debería haber hecho suposiciones basándome solo en las apariencias. Si Rose te ha elegido como su amante, entonces confío en su criterio. ¡Os deseo a ambos felicidad en los años venideros!"
+
+          "¡Vale, vale, ya le has dado tu bendición!" dice Rose, con la cara completamente roja, mientras me agarra del brazo y me atrae hacia ella. "¡Ahora Barry tiene que darse prisa hacia el castillo. El rey de Thilias está esperando!"
+
+          "¡Oh, cierto, el mensaje de antes!" dice Enrique. "¿Quieres decir que Golmyck hablaba de tus amigos cuando hizo la invitación al final?"
+
+          "¡Sí, exacto!" dice Rose. "Tendré que guiarlos hasta el castillo, así que estaré fuera de nuevo unas horas. ¿Te importaría quedarte aquí con los niños hasta que vuelva?"
+
+          "¡Por supuesto que no!" dice Enrique. "¡Para eso he venido, después de todo!"
+      - source: scene_text_2
+        paragraph: 24
+        text: |-
+          "¡Gracias, Enrique!" dice Rose. "Hablaremos más cuando vuelva. ¡Cuídate!"
+
+          "¡Adiós, mi dulce Rose!" dice Enrique. "¡Y adiós a todos vosotros. Espero que nos volvamos a ver algún día, para que me contéis vuestras aventuras con una copa de buen vino!"
+
+          Todos nos despedimos de Enrique y de los hermanos de Rose y entonces emprendemos nuestro nuevo viaje, hacia el castillo de Thilias. Rose toma la delantera, igual que antes, pero esta vez se asegura de mostrarnos todas las señalizaciones y edificios que usa como referencia, porque más tarde tendríamos que encontrar el camino de vuelta a su mansión por nuestra cuenta.
+
+          "Siento lo de antes," me dice Rose, mientras caminamos por los callejones. "Espero que Enrique no te haya hecho sentir demasiado incómodo. Es que lleva un tiempo preocupado por mí porque no he estado con otro hombre desde que rompimos, y esa fue su manera de mostrar que no alberga ningún sentimiento negativo hacia ti."
+
+          "Sí, me imaginé que era algo así," digo. "¡No te preocupes!"
+
+          Rose sonríe. Luego mira detrás de nosotros para asegurarse de que no hay nadie al alcance del oído, y empieza a hablar en voz más baja.
+
+          "Y también siento haberme ido tan temprano esta mañana sin decir nada," dice Rose. "Es que no quería hacer un gran escándalo de lo que pasó. Ya viste cómo reaccionaron todos cuando Flower les contó... Y además, probablemente tomaremos caminos separados ahora que la primera ronda del torneo ha comenzado. Ni siquiera podemos estar seguros de que nos volvamos a ver después de que dejes la ciudad."
+    choices:
+      - position: 1
+        text: ¡Eh, no me des por perdido antes de que el torneo haya empezado siquiera!
+        effects:
+          - set:
+              current_scene: b2_ch01a_writing
+      - position: 2
+        text: En realidad, estaba pensando que podríamos mantenernos en contacto usando los transceptores de Daren.
+        effects:
+          - set:
+              current_scene: b2_ch01a_transceivers
+  - name: b2_ch01a_married
+    texts:
+      - source: scene_text
+        paragraph: 28
+        text: |-
+          "¿Estás casado?"
+
+          "Más o menos..." dice Daren.
+
+          "¿Cómo puedes estar más o menos casado?" pregunto.
+
+          "Dejé a Sophie en la remota aldea del Continente Sur donde pasamos juntos nuestra infancia," dice Daren. "Cuando decidí viajar por el mundo para ayudar a las personas necesitadas, quise divorciarme, para mantenerla lejos del peligro, pero ella no quiso ni oír hablar de eso. Al final, le ofrecí un compromiso, dándole la libertad de hacer su vida con otro hombre si quería, aunque técnicamente siguiéramos casados."
+
+          "¿Y lo hizo?" pregunta Rose.
+
+          "No..." dice Daren. "Al principio, intenté alejarla, convenciéndome de que era por su propio bien, pero sin importar lo que hiciera, incluso si me iba durante años sin enviarle siquiera una carta, ella siempre esperaba pacientemente mi regreso. Por suerte para nosotros, toda la gente de nuestra aldea nos conocía bien, y fueron lo bastante amables como para mantener nuestra relación oculta del resto del mundo. Al ver que no podía convencer a Sophie de que me dejara sin importar lo que hiciera, finalmente me rendí, y decidí trabajar en mejorar la calidad de nuestra relación a distancia. Fue entonces cuando se me ocurrió la idea de encantar algunos transceptores mágicos para aumentar su alcance. Los transceptores que llevo conmigo ahora me han ayudado a mantenerme en contacto con ella incluso cuando estábamos en continentes diferentes."
+
+          "¿Eso significa que puedes hablar con ella incluso ahora?" digo.
+      - source: scene_text_2
+        paragraph: 25
+        text: |-
+          "No," dice Daren. "Es lo primero que intenté cuando llegué aquí, pero este continente o está fuera de alcance, o hay algún tipo de dispositivo que está bloqueando todas las formas de comunicación con el exterior."
+
+          "De todas formas, quizás sea mejor que no hayas podido contactar con ella desde que llegaste aquí," dice Kate. "No me imagino cómo contarle lo que has pasado esta última semana podría haber ayudado a mantenerla tranquila. Es mejor que no lo sepa, la verdad."
+
+          "Sí, quizás tengas razón," dice Daren.
+
+          "Mirad, hay otra señalización que muestra el camino al castillo," dice Rose. "Nos las iremos encontrando mucho más a menudo a medida que nos acerquemos a nuestro destino. Seguidme, ¡tenemos que meternos por este callejón!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_entrance
+  - name: b2_ch01a_somewhere
+    texts:
+      - source: scene_text
+        paragraph: 29
+        text: |-
+          "Un momento. Estoy bastante seguro de que leí en alguna parte que nunca te habías casado."
+
+          "Sí," dice Daren. "Eso es porque difundí mucha información falsa para protegerla. He hecho muchos enemigos en mi vida, y la mayoría de ellos no dudarían en usar a mi esposa para vengarse de mí."
+
+          "Entonces, ¿dónde está ahora?" pregunta Rose.
+
+          "Dejé a Sophie en la remota aldea del Continente Sur donde pasamos juntos nuestra infancia," dice Daren. "Cuando decidí viajar por el mundo para ayudar a las personas necesitadas, quise divorciarme, para mantenerla lejos del peligro, pero ella no quiso ni oír hablar de eso. Al final, le ofrecí un compromiso, dándole la libertad de hacer su vida con otro hombre si quería, aunque técnicamente siguiéramos casados."
+
+          "¿Y lo hizo?" pregunta Rose.
+      - source: scene_text_2
+        paragraph: 26
+        text: |-
+          "No..." dice Daren. "Al principio, intenté alejarla, convenciéndome de que era por su propio bien, pero sin importar lo que hiciera, incluso si me iba durante años sin enviarle siquiera una carta, ella siempre esperaba pacientemente mi regreso. Por suerte para nosotros, toda la gente de nuestra aldea nos conocía bien, y fueron lo bastante amables como para mantener nuestra relación oculta del resto del mundo. Al ver que no podía convencer a Sophie de que me dejara sin importar lo que hiciera, finalmente me rendí, y decidí trabajar en mejorar la calidad de nuestra relación a distancia. Fue entonces cuando se me ocurrió la idea de encantar algunos transceptores mágicos para aumentar su alcance. Los transceptores que llevo conmigo ahora me han ayudado a mantenerme en contacto con ella incluso cuando estábamos en continentes diferentes."
+
+          "¿Eso significa que puedes hablar con ella incluso ahora?" digo.
+
+          "No," dice Daren. "Es lo primero que intenté cuando llegué aquí, pero este continente o está fuera de alcance, o hay algún tipo de dispositivo que está bloqueando todas las formas de comunicación con el exterior."
+
+          "De todas formas, quizás sea mejor que no hayas podido contactar con ella desde que llegaste aquí," dice Kate. "No me imagino cómo contarle lo que has pasado esta última semana podría haber ayudado a mantenerla tranquila. Es mejor que no lo sepa, la verdad."
+
+          "Sí, quizás tengas razón," dice Daren.
+      - source: scene_3
+        paragraph: 3
+        text: '"Mirad, hay otra señalización que muestra el camino al castillo," dice Rose. "Nos las iremos encontrando mucho más a menudo a medida que nos acerquemos a nuestro destino. Seguidme, ¡tenemos que meternos por este callejón!"'
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_entrance
+  - name: b2_ch01a_writing
+    texts:
+      - source: scene_text
+        paragraph: 31
+        text: |-
+          "¡Eh, no me des por perdido antes de que el torneo haya empezado siquiera!" digo. "Ha habido gente corriente que ha ganado concursos contra magos antes, ¿sabes?"
+
+          Rose se ríe.
+
+          "Sí, y cada uno de ellos fue un concurso de beber," dice. "Ya sabes a qué me refiero, Barry... Incluso si ganas el torneo, seguimos siendo parte de dos mundos completamente diferentes. Mundos que han estado casi totalmente aislados el uno del otro durante miles de años."
+
+          "¿Y qué?" digo. "El ganador del torneo recibe el derecho de entrar y salir de Varathia cuando quiera, ¿recuerdas? Tú solo espera aquí. En cuanto gane este torneo, conseguiré mis poderes de mago bien rápido, ¡y luego volveré a por ti! ¡Es una promesa!"
+
+          La cara de Rose empieza a ponerse roja de nuevo lentamente al escuchar mis palabras.
+
+          "Oye, Rose, ¿son este tipo de señalizaciones las que deberíamos buscar en el camino de vuelta?" dice Hadrik, mientras él y los demás se acercan a nosotros.
+
+          Entonces se detiene al ver la cara roja de Rose, y va cambiando la mirada entre los dos varias veces antes de seguir hablando.
+
+          "¿Estoy... interrumpiendo algo?" pregunta.
+
+          "¡No, tranquilo!" dice Rose, intentando recuperar la compostura rápidamente. "¡Sí, esas son exactamente el tipo de señales que debéis buscar! Nos las iremos encontrando más a menudo a medida que nos acerquemos al castillo. Vamos, seguidme. ¡Tenemos que pasar por este callejón!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_entrance
+  - name: b2_ch01a_transceivers
+    texts:
+      - source: scene_text
+        paragraph: 32
+        text: |-
+          "En realidad, estaba pensando que podríamos mantenernos en contacto usando los transceptores de Daren," digo. "Me dijo que los ha encantado para cubrir un alcance mucho mayor que los transceptores normales, así que no debería haber ningún problema."
+
+          "Ya sabes a qué me refiero, Barry..." dice Rose. "Incluso si nos mantenemos en contacto después de que dejes la ciudad, seguimos siendo parte de dos mundos completamente diferentes. Mundos que han estado casi totalmente aislados el uno del otro durante miles de años."
+
+          "¿Y qué?" digo. "El ganador del torneo recibe el derecho de entrar y salir de Varathia cuando quiera, ¿recuerdas? Tú solo espera aquí. En cuanto gane este torneo, conseguiré mis poderes de mago bien rápido, ¡y luego volveré a por ti! ¡Es una promesa!"
+
+          La cara de Rose empieza a ponerse roja de nuevo lentamente al escuchar mis palabras.
+
+          "Oye, Rose, ¿son este tipo de señalizaciones las que deberíamos buscar en el camino de vuelta?" dice Hadrik, mientras él y los demás se acercan a nosotros.
+
+          Entonces se detiene al ver la cara roja de Rose, y va cambiando la mirada entre los dos varias veces antes de seguir hablando.
+
+          "¿Estoy... interrumpiendo algo?" pregunta.
+
+          "¡No, tranquilo!" dice Rose, intentando recuperar la compostura rápidamente. "¡Sí, esas son exactamente el tipo de señales que debéis buscar! Nos las iremos encontrando más a menudo a medida que nos acerquemos al castillo. Vamos, seguidme. ¡Tenemos que pasar por este callejón!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_entrance
+  - name: b2_ch01a_entrance
+    texts:
+      - source: scene_text
+        paragraph: 30
+        text: |-
+          Nos llevó unas dos horas llegar al castillo de Thilias desde la mansión de Rose. Dado que llegamos a nuestro destino con tiempo de sobra, nos tomamos nuestro tiempo para despedirnos de Rose.
+
+          "Vale, vale," dice Rose, después de que Kate termina de abrazarla. "¡Basta de despedidas! Solo vais a una reunión. ¡No es como si no fuéramos a vernos nunca más!"
+
+          "Recuerda mantener siempre cerca el transceptor que te di," le dice Daren a Rose. "Si las cosas se ponen feas y no podemos volver, te llamaremos."
+
+          "¡Ahí va Daren otra vez, con su optimismo habitual!" dice Rose, sonriendo. "Estoy segura de que estaréis bien. El rey solo quiere hablar con vosotros, eso es todo. De lo contrario habría enviado una orden de arresto, no una invitación."
+
+          "Esperemos que tengas razón," dice Daren.
+
+          "Bueno, la entrada es por ahí," dice Rose. "Creo que ya hemos pasado bastante tiempo parados frente al castillo. Recordad... Mientras estéis fuera, pienso cocinar una comida que dejará en ridículo la magia de Flower, ¡así que no lleguéis tarde!"
+
+          "¡No me lo perdería por nada del mundo!" digo.
+
+          Rose sonríe, y se da la vuelta, mientras nosotros hacemos lo mismo y nos dirigimos hacia el gran portón que tenemos delante. Al acercarnos a la entrada, Daren les hace señas a los guardias para que nos dejen pasar, y una vez que confirman nuestras identidades, abren las puertas. Todos entramos lentamente, mientras las puertas se cierran de golpe detrás de nosotros.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_hallway
+  - name: b2_ch01a_hallway
+    texts:
+      - source: scene_text
+        paragraph: 33
+        text: |-
+          Hay algo extraño en este castillo. Lo noté incluso antes de que entráramos. Las ventanas del castillo parecían como si debieran tener gemas preciosas incrustadas en sus marcos, pero las gemas habían desaparecido todas. También parecía que varias decoraciones habían sido arrancadas de las torres.
+
+          El interior del castillo se ve aún peor. Los pasillos están completamente vacíos. No hay pinturas en las paredes, ni alfombras en el suelo ni jarrones en las mesas. El lugar parece más una mazmorra que un castillo. Ni siquiera hay guardias patrullando los pasillos. Casi empiezo a preguntarme si no habremos acabado en el lugar equivocado.
+
+          "Esto me recuerda al fuerte de los ogros," dice Hadrik, mientras abre el amuleto de Arraka. "¡Eh, tú! ¡Arraka! ¿Estás detectando algún guardia escondido de forma invisible por aquí? ¡Respóndeme!"
+
+          Arraka no emite ningún sonido, actuando como si no oyera una palabra de lo que dice Hadrik.
+
+          "¿Dándome el tratamiento del silencio, eh?" dice Hadrik, con una sonrisa.
+
+          De repente, Kate congela toda el área a nuestro alrededor, haciendo que parezca que estamos dentro de algún palacio helado de cuento de hadas.
+
+          "El área está despejada," dice Kate. "No hay nadie rodeándonos."
+
+          "Genial," dice Daren. "Ahora descongela el maldito pasillo antes de que alguien vea--"
+      - source: scene_text_2
+        paragraph: 27
+        text: |-
+          Antes de que Daren terminara la frase, una puerta frente a nosotros se abrió ligeramente, y un hombre que parecía ser algún tipo de sirviente del castillo asomó la cabeza.
+
+          "El rey va a--" empieza a decir el hombre, pero de repente se queda callado, por la impresión de ver todo el pasillo completamente congelado.
+
+          Tras unos segundos, el hombre empieza a hablar de nuevo, decidiendo actuar como si nada hubiera pasado.
+
+          "El rey será notificado de su llegada en breve," dice el sirviente. "Por favor esperen en este pasillo hasta que sea la hora de su cita programada."
+
+          Entonces cierra la puerta sin decir otra palabra.
+
+          "¡Bueno, ya habéis oído al hombre!" dice Flower. "Todavía nos queda mucho tiempo hasta la reunión. ¡Vamos a explorar!"
+
+          "¿De qué hablas?" dice Daren. "Nos dijo que esperáramos aquí. ¡Y Kate todavía tiene que descongelar el pasillo antes de que alguien más vea esto!"
+
+          "No puedo descongelarlo," dice Kate. "Se derretirá solo en unas horas."
+
+          "¡No tenemos unas horas!" dice Daren. "¡Si el rey ve esto, nos cortará la cabeza!"
+
+          "¡Relájate!" dice Hadrik. "¿Qué es lo peor que podría pasar?"
+      - source: scene_3
+        paragraph: 4
+        text: |-
+          "¡Santos dioses, hombre!" dice Daren, exasperado. "¿No hay nada que te altere?"
+
+          De repente, toda el área a nuestro alrededor se cubre de llamas, y todo el hielo se derrite rápidamente convirtiéndose en agua, que luego se evapora casi instantáneamente. Las llamas desaparecen entonces tan rápido como aparecieron, dejando el pasillo en el mismo estado en que estaba cuando llegamos.
+
+          "Listo," dice Flower. "Me he encargado. Ahora, ¿alguien quiere ir a explorar?"
+    choices:
+      - position: 1
+        text: Claro, yo voy.
+        effects:
+          - set:
+              current_scene: b2_ch01a_bricks
+              b2_ch1_puzzle2: 1
+      - position: 2
+        text: No, prefiero quedarme aquí.
+        effects:
+          - set:
+              current_scene: b2_ch01a_bricks
+              b2_ch1_puzzle2: 0
+  - name: b2_ch01a_bricks
+    routes:
+      - condition: b2_ch1_puzzle2 = 1
+        texts:
+          - source: scene_text
+            paragraph: 34
+            text: |-
+              "Claro, yo voy."
+
+              "¡Perfecto!" dice Flower. "¡Sígueme!"
+
+              "¡Oh, vamos!" dice Daren. "¿Qué se supone que le decimos al sirviente si vuelve y pregunta por vosotros?"
+
+              "Dile que volvemos enseguida," digo. "Y luego llámame por el transceptor."
+
+              Daren niega con la cabeza en desaprobación, pero no dice nada más. Voy a alcanzar a Flower, que parece haberse detenido frente a un muro, no muy lejos de nuestra posición original. Tras mirar el muro desde diferentes ángulos, la chica empieza a golpear los ladrillos, uno por uno, como si estuviera buscando algo.
+
+              "¿Hay algo especial en este muro?" le pregunto.
+
+              "¡Shhh, estoy intentando escuchar!" dice Flower, mientras sigue golpeando los ladrillos.
+
+              Tras unos segundos más, la chica finalmente parece haber encontrado lo que buscaba, y empieza a sacar uno de los ladrillos del muro con ambas manos. Cuando deja el ladrillo en el suelo, veo que dentro del hueco dejado en el muro hay una pequeña palanca de madera.
+
+              "Vaya, sí que sabes lo que haces, ¿eh?" le digo a Flower.
+
+              "¡Por supuesto!" dice Flower. "¡Petal y yo hemos recorrido docenas de ruinas con pasadizos ocultos! ¡Es algo así como nuestro pasatiempo!"
+          - source: scene_text_2
+            paragraph: 28
+            text: |-
+              "Menos un pasatiempo y más una tendencia a meterse en peligro mortal semanalmente," dice Illuna, mientras los ojos de la chica vuelven a ponerse azul brillante.
+
+              "¡Ya está!" dice Flower, mientras tira de la palanca de madera.
+
+              En cuanto suelta la palanca, los ladrillos que la rodean empiezan a hundirse dentro del muro, abriéndonos paso para pasar al otro lado. Ambos pasamos al otro lado del muro y entramos en una pequeña habitación oscura que tiene un pedestal de piedra en el centro. Al examinarlo más de cerca, parece que hay algo escrito en la parte superior del pedestal, pero está demasiado oscuro para distinguir lo que dice.
+
+              Flower crea un pequeño orbe de fuego, que envía flotando sobre el pedestal, para que pueda leer lo que hay escrito. Ahora que lo veo con claridad, parece que el texto está escrito en Lengua Común.
+
+              "¿Qué dice?" pregunta Flower.
+
+              "Dice: 'Coloca tu palma sobre este pedestal, si te gusta descubrir secretos.'"
+
+              "¡Oh, me encanta descubrir secretos!" dice Flower, y rápidamente coloca su palma sobre la parte superior del pedestal de piedra.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_bricks2
+      - condition: b2_ch1_puzzle2 = 0
+        texts:
+          - source: scene_text
+            paragraph: 35
+            text: |-
+              "No, prefiero quedarme aquí."
+
+              "¡Allá tú!" dice Flower. "Bueno, si alguien quiere venir, que me siga. Si no, iré yo sola."
+
+              "Espera," dice Daren. "¿Qué se supone que le decimos al sirviente si vuelve y pregunta por ti?"
+
+              "Solo decid que vuelvo enseguida," dice Flower. "No es que el rey tuviera nada que discutir conmigo ni nada. Ni siquiera estoy en el torneo."
+
+              "Bueno, eso es cierto, supongo..." dice Daren, mientras Flower se detiene frente a un muro y empieza a examinarlo de cerca.
+
+              Tras unos segundos, la chica empieza a golpear cada uno de los ladrillos que tiene delante, uno por uno.
+
+              "¿Qué crees que está haciendo?" me pregunta Daren.
+
+              "Probablemente esté buscando un pasadizo secreto, o algo así," digo.
+
+              Poco después de que dejo de hablar, la chica saca un ladrillo del muro, y luego mete la mano en el hueco dejado por el ladrillo que falta. Los ladrillos frente a ella empiezan entonces a hundirse repentinamente dentro del muro, abriéndole paso para pasar al otro lado.
+
+              "Vaya, sí que sabe lo que hace, ¿eh?" digo, mientras la chica desaparece tras el muro.
+
+              "Bueno, la conocimos mientras hacía ejercicios matutinos en unas ruinas llenas de trampas," dice Hadrik.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_bricks2
+  - name: b2_ch01a_bricks2
+    effects:
+      - set:
+          ac_b2_ch1_second: 1
+        achievement:
+          id: ac_b2_ch1_second
+          title: Segunda pieza del rompecabezas
+        condition: b2_ch1_puzzle2 = 1
+    routes:
+      - condition: b2_ch1_puzzle2 = 1 AND ch8_first_puzzle = 1
+        texts:
+          - source: scene_text
+            paragraph: 36
+            text: |-
+              De repente, aparece un agujero en la base del pedestal, y dos pequeños objetos salen disparados de él. Cuando me agacho a recogerlos, el agujero se cierra de nuevo. Al mirar más de cerca los dos objetos, veo que uno de ellos es una pieza de un rompecabezas, mientras que el otro es un pequeño pergamino. Sostengo el pergamino en la mano para que tanto Flower como yo podamos ver lo que hay escrito.
+
+              Al leer el texto del pergamino, noto que también está escrito en Lengua Común, y dice: "Encuentra todas las piezas del rompecabezas, y compartiré contigo mi mayor secreto. He dejado una de estas en cada uno de los edificios que he diseñado."
+
+              El pergamino está firmado simplemente como: "El arquitecto de este edificio."
+
+              Parece que el arquitecto de este castillo es también quien diseñó las ruinas del bosque. Ahora tengo dos de estas piezas del rompecabezas en mi poder. Me pregunto cuántas quedan.
+
+              "¡Oye, esto suena divertido!" dice Flower. "¡Yo también quiero una!"
+
+              Pone su palma en el pedestal de nuevo, pero esta vez no pasa nada.
+
+              "¡No me deja sacar otra!" dice Flower. "¡Barry, inténtalo tú!"
+
+              "Oye, Barry, ¿me oyes?" escucho la voz de Daren saliendo del transceptor.
+          - source: scene_text_2
+            paragraph: 29
+            text: |-
+              "Sí, te oigo," digo, mientras agarro el transceptor con la mano derecha.
+
+              Flower me frunce el ceño por ignorarla, y me coge la mano izquierda ella misma, colocándola sobre el pedestal. Igual que antes, la base del pedestal se abre y lanza otra pieza del rompecabezas y un pergamino. Flower coge ambos objetos y se los mete en el bolsillo.
+
+              "El sirviente del castillo ha vuelto," dice Daren. "Ha dicho que el rey os recibirá ahora. Date prisa y vuelve aquí, ¿quieres?"
+
+              "Sí, ya vamos," digo.
+
+              Después de salir de la habitación oscura tras el muro, Flower tira de la palanca de nuevo, y los ladrillos vuelven a su posición original. Luego recoge el ladrillo del suelo y lo coloca cuidadosamente de vuelta en el muro.
+
+              "No queremos que nadie más descubra el secreto antes que nosotros, ¿verdad, Barry?" dice Flower, con una sonrisa.
+
+              "Supongo que no," digo, mientras empezamos a volver hacia donde los demás nos esperaban.
+
+              "¿Y bien?" dice Daren cuando los alcanzamos. "¿Encontrasteis lo que buscabais?"
+
+              "¡Sip!" dice Flower, con una sonrisa alegre.
+
+              "Espectacular," dice Daren. "Ahora, vamos."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_reason
+      - condition: b2_ch1_puzzle2 = 1 AND ch8_first_puzzle <> 1
+        texts:
+          - source: scene_text
+            paragraph: 37
+            text: |-
+              De repente, aparece un agujero en la base del pedestal, y dos pequeños objetos salen disparados de él. Cuando me agacho a recogerlos, el agujero se cierra de nuevo. Al mirar más de cerca los dos objetos, veo que uno de ellos es una pieza de un rompecabezas, mientras que el otro es un pequeño pergamino. Sostengo el pergamino en la mano para que tanto Flower como yo podamos ver lo que hay escrito.
+
+              Al leer el texto del pergamino, noto que también está escrito en Lengua Común, y dice: "Encuentra todas las piezas del rompecabezas, y compartiré contigo mi mayor secreto. He dejado una de estas en cada uno de los edificios que he diseñado."
+
+              El pergamino está firmado simplemente como: "El arquitecto de este edificio."
+
+              "¡Oye, esto suena divertido!" dice Flower. "¡Yo también quiero una!"
+
+              Pone su palma en el pedestal de nuevo, pero esta vez no pasa nada.
+
+              "¡No me deja sacar otra!" dice Flower. "¡Barry, inténtalo tú!"
+
+              "Oye, Barry, ¿me oyes?" escucho la voz de Daren saliendo del transceptor.
+          - source: scene_text_2
+            paragraph: 29
+            text: |-
+              "Sí, te oigo," digo, mientras agarro el transceptor con la mano derecha.
+
+              Flower me frunce el ceño por ignorarla, y me coge la mano izquierda ella misma, colocándola sobre el pedestal. Igual que antes, la base del pedestal se abre y lanza otra pieza del rompecabezas y un pergamino. Flower coge ambos objetos y se los mete en el bolsillo.
+
+              "El sirviente del castillo ha vuelto," dice Daren. "Ha dicho que el rey os recibirá ahora. Date prisa y vuelve aquí, ¿quieres?"
+
+              "Sí, ya vamos," digo.
+
+              Después de salir de la habitación oscura tras el muro, Flower tira de la palanca de nuevo, y los ladrillos vuelven a su posición original. Luego recoge el ladrillo del suelo y lo coloca cuidadosamente de vuelta en el muro.
+
+              "No queremos que nadie más descubra el secreto antes que nosotros, ¿verdad, Barry?" dice Flower, con una sonrisa.
+
+              "Supongo que no," digo, mientras empezamos a volver hacia donde los demás nos esperaban.
+
+              "¿Y bien?" dice Daren cuando los alcanzamos. "¿Encontrasteis lo que buscabais?"
+
+              "¡Sip!" dice Flower, con una sonrisa alegre.
+
+              "Espectacular," dice Daren. "Ahora, vamos."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_reason
+      - condition: b2_ch1_puzzle2 = 0
+        texts:
+          - source: scene_text
+            paragraph: 38
+            text: |-
+              Mientras Flower todavía está dentro del muro, la puerta frente a nosotros se abre de nuevo, y el mismo sirviente del castillo aparece ante nosotros.
+
+              "¿Daren y su equipo?" dice el hombre. "El rey os recibirá ahora."
+
+              Entonces cierra las puertas, igual que la última vez, sin decir otra palabra.
+
+              "¡Eh, un momento!" dice Hadrik. "¿Desde cuándo nos hemos convertido en el equipo de Daren? ¡Creía que funcionábamos como una democracia!"
+
+              "Es una forma de hablar," dice Kate. "¿Cómo esperas que nos llamen si solo conocen el nombre de Daren?"
+
+              "Sí, no me lo trago," dice Hadrik. "Ya sabían que eras una maga artificial, así que no les habría costado tanto aprender nuestros nombres. ¡Por no mencionar que ya les dimos nuestros malditos nombres cuando nos inscribimos en este torneo!"
+          - source: scene_text_2
+            paragraph: 30
+            text: |-
+              "¡Flower!" grita Daren, ignorando la queja de Hadrik. "¡Eh, Flower! ¿Has terminado ya? ¡El rey nos llama!"
+
+              "¡Ya voy!" dice Flower, mientras sale corriendo del muro, y luego mete la mano en el pequeño agujero de nuevo.
+
+              Mientras los ladrillos vuelven a su sitio, la chica recoge el ladrillo que había sacado del muro antes, y lo coloca de vuelta en su posición original.
+
+              "¿Qué estabas haciendo ahí dentro todo ese tiempo?" le pregunta Daren.
+
+              "¡Es un secreto!" dice Flower, con una sonrisa alegre.
+
+              "Lo que sea," dice Daren. "¡Venga, vamos!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_reason
+  - name: b2_ch01a_reason
+    texts:
+      - source: scene_text
+        paragraph: 39
+        text: |-
+          Abrimos las puertas que el sirviente del castillo usó antes, y entramos en un largo pasillo vacío que parece llevar directamente a la sala del trono. Antes de abrir el último par de puertas, Daren nos mira a cada uno para confirmar que estamos listos, y entonces todos entramos en la sala del trono, uno por uno.
+
+          La sala del trono se ve tan vacía como cualquier otra parte del castillo, excepto que hay una larga y estrecha alfombra roja que lleva hasta el trono en el lado opuesto de la cámara, donde el rey está sentado actualmente. De pie junto a él podemos ver al sirviente de antes, y al otro lado, un hombre mayor que no reconozco, pero que parece ser bastante importante, al menos a juzgar por su ropa cara. El gnomo va ahora vestido de forma más regia que en su última aparición, con una corona dorada en la cabeza y un manto rojo sobre los hombros. Cuando llegamos frente a él, nos saluda cortésmente.
+
+          "¡Bienvenidos, amigos!" dice Golmyck. "¡Por favor, sentíos como en casa! Lamento la falta de sillas, pero me han dicho repetidamente que no sería apropiado que gente corriente se sentara en presencia de un rey."
+
+          "Déjese de formalidades, rey de Thilias," dice el hombre de aspecto importante. "No es el momento ni el lugar para observar la etiqueta apropiada."
+
+          "Vamos, vamos, embajador," dice Golmyck. "La etiqueta apropiada es siempre importante, no sea que descendamos a la barbarie."
+      - source: scene_text_2
+        paragraph: 31
+        text: |-
+          "¿Me habla de barbarie, cuando las personas ante nosotros son homicidas probados?" dice el embajador. "No vine aquí para escuchar sus sermones. ¡Vine aquí en nombre del rey de Ollendor, para asegurarme de que los responsables de la muerte del hermano de su majestad sean debidamente castigados!"
+
+          "Culpables podrán ser," dice Golmyck, "pero también son nuestros estimados invitados, y me gustaría al menos escuchar sus razones antes de decidir su castigo."
+
+          Entonces se vuelve hacia nosotros.
+
+          "¿Qué decís, valientes guerreros?" dice el gnomo. "¿Cuál fue vuestra razón para matar al conde de Ollendor?"
+    choices:
+      - position: 1
+        text: El tipo se lo estaba buscando.
+        effects:
+          - set:
+              current_scene: b2_ch01a_asking
+      - position: 2
+        text: ¡No lo matamos! ¡Somos inocentes!
+        effects:
+          - set:
+              current_scene: b2_ch01a_innocent
+      - position: 3
+        text: Lo matamos porque no daba absolutamente ningún valor a la vida humana.
+        effects:
+          - set:
+              current_scene: b2_ch01a_value
+  - name: b2_ch01a_asking
+    routes:
+      - condition: b2_ch1_spin = 0
+        texts:
+          - source: scene_text
+            paragraph: 40
+            text: |-
+              "El tipo se lo estaba buscando."
+
+              "¿Lo ve?" le dice el embajador a Golmyck. "¿Ve ahora qué clase de gente ha invitado a sus salones?"
+
+              "Su majestad," nos interrumpe Daren, mientras se coloca delante de mí y hace una reverencia ante el rey. "¡Por favor, permítame explicar lo que ocurrió!"
+
+              "¡Psst!" oigo la voz de Arraka saliendo del amuleto, en cuanto Daren empieza a hablar. "¡Eh, tú! ¡Debilucho! Tipo que usa estadísticas. Medio lessathi. ¡Ven aquí!"
+
+              "¿Medio... lessathi?" le pregunto, mientras me acerco a Hadrik y al amuleto.
+
+              "¡Olvida eso!" dice Arraka, en voz baja. "Tenemos problemas. Eiden acaba de teletransportarse en medio del pasillo, y se está ocultando con ese hechizo de invisibilidad suyo."
+
+              "¿Eiden?" le pregunto. "¿Por qué elegiría venir precisamente ahora?"
+
+              "No lo sé y no me importa," dice Arraka. "Prometí que os avisaría cuando Eiden estuviera cerca, y he cumplido mi palabra. ¿¡Ahora le dirás a este zopenco que sostiene mi amuleto que deje de darme vueltas a la menor oportunidad!?"
+
+              "Eh, vale..." digo. "Veré qué puedo hacer al respecto."
+
+              Mientras hablaba con Arraka, parece que la discusión entre el rey y el embajador se había acalorado un poco más.
+          - source: scene_text_2
+            paragraph: 32
+            text: |-
+              "¡¿Defendería a esta escoria?!" le grita el embajador al rey gnomo.
+
+              "No estoy defendiendo a nadie," le responde Golmyck, con calma. "Simplemente digo que antes de condenarlos, se les debe ofrecer un juicio justo."
+
+              "¡Esta gentuza no merece un juicio!" grita el embajador. "¡Merecen ser ejecutados en el acto! ¿Quiere la guerra, rey de Thilias? ¿Necesito recordarle que represento al mismísimo rey de Ollendor? ¡No voy a quedarme aquí presenciando esta farsa de juicio cuando ya tenemos toda la información necesaria para dictar su sentencia en este mismo instante! ¡Los hará matar aquí y ahora, o habrá guerra! ¿Me oye, Golmyck? ¡¡¡Guerra!!!"
+
+              "Me temo que no puedo permitirle ejecutar a estas personas, embajador," escuchamos la voz de Eiden viniendo de detrás de nosotros.
+
+              Cuando todos nos damos la vuelta, Eiden empieza a caminar lentamente hacia el embajador, y se detiene justo frente a él. El embajador está ahora sudando a mares, y parece que apenas puede mantener la compostura.
+
+              "¿Qué le ocurre, embajador?" pregunta Eiden, con una sonrisa burlona. "¿No va a inclinarse ante su Creador?"
+        effects:
+          - set:
+              ac_b2_ch1_breed: 1
+            achievement:
+              id: ac_b2_ch1_breed
+              title: Mestizo
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_creator
+      - condition: b2_ch1_spin = 1
+        texts:
+          - source: scene_text
+            paragraph: 41
+            text: |-
+              "El tipo se lo estaba buscando."
+
+              "¿Lo ve?" le dice el embajador a Golmyck. "¿Ve ahora qué clase de gente ha invitado a sus salones?"
+
+              "Su majestad," nos interrumpe Daren, mientras se coloca delante de mí y hace una reverencia ante el rey. "¡Por favor, permítame explicar lo que ocurrió!"
+
+              "¡No, ya he oído bastantes explicaciones!" dice el embajador. "Su majestad, se está haciendo evidente que esta gentuza no merece que pierda su tiempo con ellos. Si simplemente me los entregara a mi custodia, como le pedí antes de esta reunión, me aseguraría de que se haga justicia, y usted no tendría que preocuparse más por este asunto."
+
+              "Eso no será posible, embajador," dice Golmyck. "Si bien es cierto que la víctima en este caso era un ciudadano de Ollendor, el crimen ocurrió en la ciudad de Thilias, que cae bajo mi jurisdicción. Según el tratado firmado hace seiscientos años por todos los reinos de Varathia, esto significa que soy yo quien debe juzgarlos, no el rey de Ollendor."
+
+              "¡¿Defendería a esta escoria?!" le grita el embajador al rey gnomo.
+
+              "No estoy defendiendo a nadie," le responde Golmyck, con calma. "Simplemente digo que antes de condenarlos, se les debe ofrecer un juicio justo."
+          - source: scene_text_2
+            paragraph: 33
+            text: |-
+              "¡Esta gentuza no merece un juicio!" grita el embajador. "¡Merecen ser ejecutados en el acto! ¿Quiere la guerra, rey de Thilias? ¿Necesito recordarle que represento al mismísimo rey de Ollendor? ¡No voy a quedarme aquí presenciando esta farsa de juicio cuando ya tenemos toda la información necesaria para dictar su sentencia en este mismo instante! ¡Los hará matar aquí y ahora, o habrá guerra! ¿Me oye, Golmyck? ¡¡¡Guerra!!!"
+
+              "Me temo que no puedo permitirle ejecutar a estas personas, embajador," escuchamos la voz de Eiden viniendo de detrás de nosotros.
+
+              Después de darme la vuelta y ver la cara de Eiden, mi primera reacción es coger el amuleto de Arraka de la mano de Hadrik.
+
+              "¡Tú!" le digo. "¡Dijiste que nos avisarías cada vez que Eiden estuviera ocultándose invisiblemente a nuestro alrededor!"
+
+              "¿Ah, sí?" dice Arraka. "Debo admitir que mi memoria ha estado un poco borrosa últimamente. Me pregunto por qué... ¡Ah, ya sé por qué! ¡Debe de ser por tanto DARME VUELTAS!"
+
+              Eiden me mira, con sus ojos cerrados, y sonríe. Solo ahora me doy cuenta de que quizás he estado hablando un poco demasiado alto. Decide no comentar nuestra conversación, y empieza a caminar lentamente hacia el embajador. Cuando se detiene frente a él, podemos ver que el embajador está sudando a mares, y que apenas puede mantener la compostura.
+
+              "¿Qué le ocurre, embajador?" pregunta Eiden, con una sonrisa burlona. "¿No va a inclinarse ante su Creador?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_creator
+  - name: b2_ch01a_value
+    routes:
+      - condition: b2_ch1_spin = 0
+        texts:
+          - source: scene_text
+            paragraph: 42
+            text: |-
+              "Lo matamos porque no daba absolutamente ningún valor a la vida humana."
+
+              "Ah," dice Golmyck. "Supongo que se refiere a la chica esclava que estaba con él en ese momento. Dime, joven lessathi, ¿conoces las leyes de nuestra ciudad respecto a la esclavitud?"
+
+              "Su majestad," nos interrumpe Daren, mientras se coloca delante de mí y hace una reverencia ante el rey. "¡Por favor, permítame explicar lo que ocurrió!"
+
+              "¡Psst!" oigo la voz de Arraka saliendo del amuleto, en cuanto Daren empieza a hablar. "¡Eh, tú! ¡Debilucho! Tipo que usa estadísticas. Medio lessathi. ¡Ven aquí!"
+
+              "¿Medio... lessathi?" le pregunto, mientras me acerco a Hadrik y al amuleto.
+
+              "¡Olvida eso!" dice Arraka, en voz baja. "Tenemos problemas. Eiden acaba de teletransportarse en medio del pasillo, y se está ocultando con ese hechizo de invisibilidad suyo."
+
+              "¿Eiden?" le pregunto. "¿Por qué elegiría venir precisamente ahora?"
+
+              "No lo sé y no me importa," dice Arraka. "Prometí que os avisaría cuando Eiden estuviera cerca, y he cumplido mi palabra. ¿¡Ahora le dirás a este zopenco que sostiene mi amuleto que deje de darme vueltas a la menor oportunidad!?"
+
+              "Eh, vale..." digo. "Veré qué puedo hacer al respecto."
+          - source: scene_text_2
+            paragraph: 34
+            text: |-
+              Mientras hablaba con Arraka, parece que la discusión entre el rey y el embajador se había acalorado un poco más.
+
+              "¡¿Defendería a esta escoria?!" le grita el embajador al rey gnomo.
+
+              "No estoy defendiendo a nadie," le responde Golmyck, con calma. "Simplemente digo que antes de condenarlos, se les debe ofrecer un juicio justo."
+
+              "¡¡¡Esta gentuza no merece un juicio!!!" grita el embajador. "¡Merecen ser ejecutados en el acto! ¿Quiere la guerra, rey de Thilias? ¿Necesito recordarle que represento al mismísimo rey de Ollendor? ¡No voy a quedarme aquí presenciando esta farsa de juicio cuando ya tenemos toda la información necesaria para dictar su sentencia en este mismo instante! ¡Los hará matar aquí y ahora, o habrá guerra! ¿Me oye, Golmyck? ¡¡¡Guerra!!!"
+
+              "Me temo que no puedo permitirle ejecutar a estas personas, embajador," escuchamos la voz de Eiden viniendo de detrás de nosotros.
+
+              Cuando todos nos damos la vuelta, Eiden empieza a caminar lentamente hacia el embajador, y se detiene justo frente a él. El embajador está ahora sudando a mares, y parece que apenas puede mantener la compostura.
+
+              "¿Qué le ocurre, embajador?" pregunta Eiden, con una sonrisa burlona. "¿No va a inclinarse ante su Creador?"
+        effects:
+          - set:
+              ac_b2_ch1_breed: 1
+            achievement:
+              id: ac_b2_ch1_breed
+              title: Mestizo
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_creator
+      - condition: b2_ch1_spin = 1
+        texts:
+          - source: scene_text
+            paragraph: 43
+            text: |-
+              "Lo matamos porque no daba absolutamente ningún valor a la vida humana."
+
+              "Ah," dice Golmyck. "Supongo que se refiere a la chica esclava que estaba con él en ese momento. Dime, joven lessathi, ¿conoces las leyes de nuestra ciudad respecto a la esclavitud?"
+
+              "Su majestad," nos interrumpe Daren, mientras se coloca delante de mí y hace una reverencia ante el rey. "¡Por favor, permítame explicar lo que ocurrió!"
+
+              "¡No, ya he oído bastantes explicaciones!" dice el embajador. "Su majestad, se está haciendo evidente que esta gentuza no merece que pierda su tiempo con ellos. Si simplemente me los entregara a mi custodia, como le pedí antes de esta reunión, me aseguraría de que se haga justicia, y usted no tendría que preocuparse más por este asunto."
+
+              "Eso no será posible, embajador," dice Golmyck. "Si bien es cierto que la víctima en este caso era un ciudadano de Ollendor, el crimen ocurrió en la ciudad de Thilias, que cae bajo mi jurisdicción. Según el tratado firmado hace seiscientos años por todos los reinos de Varathia, esto significa que soy yo quien debe juzgarlos, no el rey de Ollendor."
+
+              "¡¿Defendería a esta escoria?!" le grita el embajador al rey gnomo.
+
+              "No estoy defendiendo a nadie," le responde Golmyck, con calma. "Simplemente digo que antes de condenarlos, se les debe ofrecer un juicio justo."
+          - source: scene_text_2
+            paragraph: 35
+            text: |-
+              "¡Esta gentuza no merece un juicio!" grita el embajador. "¡Merecen ser ejecutados en el acto! ¿Quiere la guerra, rey de Thilias? ¿Necesito recordarle que represento al mismísimo rey de Ollendor? ¡No voy a quedarme aquí presenciando esta farsa de juicio cuando ya tenemos toda la información necesaria para dictar su sentencia en este mismo instante! ¡Los hará matar aquí y ahora, o habrá guerra! ¿Me oye, Golmyck? ¡¡¡Guerra!!!"
+
+              "Me temo que no puedo permitirle ejecutar a estas personas, embajador," escuchamos la voz de Eiden viniendo de detrás de nosotros.
+
+              Después de darme la vuelta y ver la cara de Eiden, mi primera reacción es coger el amuleto de Arraka de la mano de Hadrik.
+
+              "¡Tú!" le digo. "¡Dijiste que nos avisarías cada vez que Eiden estuviera ocultándose invisiblemente a nuestro alrededor!"
+
+              "¿Ah, sí?" dice Arraka. "Debo admitir que mi memoria ha estado un poco borrosa últimamente. Me pregunto por qué... ¡Ah, ya sé por qué! ¡Debe de ser por tanto DARME VUELTAS!"
+
+              Eiden me mira, con sus ojos cerrados, y sonríe. Solo ahora me doy cuenta de que quizás he estado hablando un poco demasiado alto. Decide no comentar nuestra conversación, y empieza a caminar lentamente hacia el embajador. Cuando se detiene frente a él, podemos ver que el embajador está sudando a mares, y que apenas puede mantener la compostura.
+
+              "¿Qué le ocurre, embajador?" pregunta Eiden, con una sonrisa burlona. "¿No va a inclinarse ante su Creador?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_creator
+  - name: b2_ch01a_innocent
+    effects:
+      - set:
+          ac_b2_ch1_breed: 1
+        achievement:
+          id: ac_b2_ch1_breed
+          title: Mestizo
+        condition: b2_ch1_spin = 0
+    routes:
+      - condition: b2_ch1_spin = 0 AND ch11_kill_noble = 1
+        texts:
+          - source: scene_text
+            paragraph: 44
+            text: |-
+              "¡No lo matamos! ¡Somos inocentes!"
+
+              "¿Oh?" dice Golmyck, mientras se acaricia la barbilla. "Qué extraño. Nuestros informes muestran que fuiste tú, específicamente, quien mató al conde de Ollendor. Pensé que a estas alturas ya sabrías lo difícil que es ocultar información en mi ciudad. ¿Por qué nos mentirías así?"
+
+              "Su majestad," nos interrumpe Daren, mientras se coloca delante de mí y hace una reverencia ante el rey. "¡Por favor, permítame explicar lo que ocurrió!"
+
+              "¡Psst!" oigo la voz de Arraka saliendo del amuleto, en cuanto Daren empieza a hablar. "¡Eh, tú! ¡Debilucho! Tipo que usa estadísticas. Medio lessathi. ¡Ven aquí!"
+
+              "¿Medio... lessathi?" le pregunto, mientras me acerco a Hadrik y al amuleto.
+
+              "¡Olvida eso!" dice Arraka, en voz baja. "Tenemos problemas. Eiden acaba de teletransportarse en medio del pasillo, y se está ocultando con ese hechizo de invisibilidad suyo."
+
+              "¿Eiden?" le pregunto. "¿Por qué elegiría venir precisamente ahora?"
+
+              "No lo sé y no me importa," dice Arraka. "Prometí que os avisaría cuando Eiden estuviera cerca, y he cumplido mi palabra. ¿¡Ahora le dirás a este zopenco que sostiene mi amuleto que deje de darme vueltas a la menor oportunidad!?"
+
+              "Eh, vale..." digo. "Veré qué puedo hacer al respecto."
+          - source: scene_text_2
+            paragraph: 36
+            text: |-
+              Mientras hablaba con Arraka, parece que la discusión entre el rey y el embajador se había acalorado un poco más.
+
+              "¡¿Defendería a esta escoria?!" le grita el embajador al rey gnomo.
+
+              "No estoy defendiendo a nadie," le responde Golmyck, con calma. "Simplemente digo que antes de condenarlos, se les debe ofrecer un juicio justo."
+
+              "¡Esta gentuza no merece un juicio!" grita el embajador. "¡Merecen ser ejecutados en el acto! ¿Quiere la guerra, rey de Thilias? ¿Necesito recordarle que represento al mismísimo rey de Ollendor? ¡No voy a quedarme aquí presenciando esta farsa de juicio cuando ya tenemos toda la información necesaria para dictar su sentencia en este mismo instante! ¡Los hará matar aquí y ahora, o habrá guerra! ¿Me oye, Golmyck? ¡¡¡Guerra!!!"
+
+              "Me temo que no puedo permitirle ejecutar a estas personas, embajador," escuchamos la voz de Eiden viniendo de detrás de nosotros.
+
+              Cuando todos nos damos la vuelta, Eiden empieza a caminar lentamente hacia el embajador, y se detiene justo frente a él. El embajador está ahora sudando a mares, y parece que apenas puede mantener la compostura.
+
+              "¿Qué le ocurre, embajador?" pregunta Eiden, con una sonrisa burlona. "¿No va a inclinarse ante su Creador?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_creator
+      - condition: b2_ch1_spin = 1 AND ch11_kill_noble = 1
+        texts:
+          - source: scene_text
+            paragraph: 45
+            text: |-
+              "¡No lo matamos! ¡Somos inocentes!"
+
+              "¿Oh?" dice Golmyck, mientras se acaricia la barbilla. "Qué extraño. Nuestros informes muestran que fuiste tú, específicamente, quien mató al conde de Ollendor. Pensé que a estas alturas ya sabrías lo difícil que es ocultar información en mi ciudad. ¿Por qué nos mentirías así?"
+
+              "Su majestad," nos interrumpe Daren, mientras se coloca delante de mí y hace una reverencia ante el rey. "¡Por favor, permítame explicar lo que ocurrió!"
+
+              "¡No, ya he oído bastantes explicaciones!" dice el embajador. "Su majestad, se está haciendo evidente que esta gentuza no merece que pierda su tiempo con ellos. Si simplemente me los entregara a mi custodia, como le pedí antes de esta reunión, me aseguraría de que se haga justicia, y usted no tendría que preocuparse más por este asunto."
+
+              "Eso no será posible, embajador," dice Golmyck. "Si bien es cierto que la víctima en este caso era un ciudadano de Ollendor, el crimen ocurrió en la ciudad de Thilias, que cae bajo mi jurisdicción. Según el tratado firmado hace seiscientos años por todos los reinos de Varathia, esto significa que soy yo quien debe juzgarlos, no el rey de Ollendor."
+
+              "¡¿Defendería a esta escoria?!" le grita el embajador al rey gnomo.
+
+              "No estoy defendiendo a nadie," le responde Golmyck, con calma. "Simplemente digo que antes de condenarlos, se les debe ofrecer un juicio justo."
+          - source: scene_text_2
+            paragraph: 37
+            text: |-
+              "¡Esta gentuza no merece un juicio!" grita el embajador. "¡Merecen ser ejecutados en el acto! ¿Quiere la guerra, rey de Thilias? ¿Necesito recordarle que represento al mismísimo rey de Ollendor? ¡No voy a quedarme aquí presenciando esta farsa de juicio cuando ya tenemos toda la información necesaria para dictar su sentencia en este mismo instante! ¡Los hará matar aquí y ahora, o habrá guerra! ¿Me oye, Golmyck? ¡¡¡Guerra!!!"
+
+              "Me temo que no puedo permitirle ejecutar a estas personas, embajador," escuchamos la voz de Eiden viniendo de detrás de nosotros.
+
+              Después de darme la vuelta y ver la cara de Eiden, mi primera reacción es coger el amuleto de Arraka de la mano de Hadrik.
+
+              "¡Tú!" le digo. "¡Dijiste que nos avisarías cada vez que Eiden estuviera ocultándose invisiblemente a nuestro alrededor!"
+
+              "¿Ah, sí?" dice Arraka. "Debo admitir que mi memoria ha estado un poco borrosa últimamente. Me pregunto por qué... ¡Ah, ya sé por qué! ¡Debe de ser por tanto DARME VUELTAS!"
+
+              Eiden me mira, con sus ojos cerrados, y sonríe. Solo ahora me doy cuenta de que quizás he estado hablando un poco demasiado alto. Decide no comentar nuestra conversación, y empieza a caminar lentamente hacia el embajador. Cuando se detiene frente a él, podemos ver que el embajador está sudando a mares, y que apenas puede mantener la compostura.
+
+              "¿Qué le ocurre, embajador?" pregunta Eiden, con una sonrisa burlona. "¿No va a inclinarse ante su Creador?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_creator
+      - condition: b2_ch1_spin = 0 AND ch11_saved_slave = 3
+        texts:
+          - source: scene_text
+            paragraph: 46
+            text: |-
+              ¡No lo matamos! ¡Somos inocentes!"
+
+              "¿Oh?" dice Golmyck, mientras se acaricia la barbilla. "Pensé que a estas alturas ya sabrías lo difícil que es ocultar información en mi ciudad. ¿Estás seguro de que quieres mentirnos así?"
+
+              "Su majestad," nos interrumpe Daren, mientras se coloca delante de mí y hace una reverencia ante el rey. "¡Por favor, permítame explicar lo que ocurrió!"
+
+              "¡Psst!" oigo la voz de Arraka saliendo del amuleto, en cuanto Daren empieza a hablar. "¡Eh, tú! ¡Debilucho! Tipo que usa estadísticas. Medio lessathi. ¡Ven aquí!"
+
+              "¿Medio... lessathi?" le pregunto, mientras me acerco a Hadrik y al amuleto.
+
+              "¡Olvida eso!" dice Arraka, en voz baja. "Tenemos problemas. Eiden acaba de teletransportarse en medio del pasillo, y se está ocultando con ese hechizo de invisibilidad suyo."
+
+              "¿Eiden?" le pregunto. "¿Por qué elegiría venir precisamente ahora?"
+
+              "No lo sé y no me importa," dice Arraka. "Prometí que os avisaría cuando Eiden estuviera cerca, y he cumplido mi palabra. ¿¡Ahora le dirás a este zopenco que sostiene mi amuleto que deje de darme vueltas a la menor oportunidad!?"
+
+              "Eh, vale..." digo. "Veré qué puedo hacer al respecto."
+
+              Mientras hablaba con Arraka, parece que la discusión entre el rey y el embajador se había acalorado un poco más.
+          - source: scene_text_2
+            paragraph: 38
+            text: |-
+              "¡¿Defendería a esta escoria?!" le grita el embajador al rey gnomo.
+
+              "No estoy defendiendo a nadie," le responde Golmyck, con calma. "Simplemente digo que antes de condenarlos, se les debe ofrecer un juicio justo."
+
+              "¡Esta gentuza no merece un juicio!" grita el embajador. "¡Merecen ser ejecutados en el acto! ¿Quiere la guerra, rey de Thilias? ¿Necesito recordarle que represento al mismísimo rey de Ollendor? ¡No voy a quedarme aquí presenciando esta farsa de juicio cuando ya tenemos toda la información necesaria para dictar su sentencia en este mismo instante! ¡Los hará matar aquí y ahora, o habrá guerra! ¿Me oye, Golmyck? ¡¡¡Guerra!!!"
+
+              "Me temo que no puedo permitirle ejecutar a estas personas, embajador," escuchamos la voz de Eiden viniendo de detrás de nosotros.
+
+              Cuando todos nos damos la vuelta, Eiden empieza a caminar lentamente hacia el embajador, y se detiene justo frente a él. El embajador está ahora sudando a mares, y parece que apenas puede mantener la compostura.
+
+              "¿Qué le ocurre, embajador?" pregunta Eiden, con una sonrisa burlona. "¿No va a inclinarse ante su Creador?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_creator
+      - condition: b2_ch1_spin = 1 AND ch11_saved_slave = 3
+        texts:
+          - source: scene_text
+            paragraph: 47
+            text: |-
+              "¡No lo matamos! ¡Somos inocentes!"
+
+              "¿Oh?" dice Golmyck, mientras se acaricia la barbilla. "Pensé que a estas alturas ya sabrías lo difícil que es ocultar información en mi ciudad. ¿Estás seguro de que quieres mentirnos así?"
+
+              "Su majestad," nos interrumpe Daren, mientras se coloca delante de mí y hace una reverencia ante el rey. "¡Por favor, permítame explicar lo que ocurrió!"
+
+              "¡No, ya he oído bastantes explicaciones!" dice el embajador. "Su majestad, se está haciendo evidente que esta gentuza no merece que pierda su tiempo con ellos. Si simplemente me los entregara a mi custodia, como le pedí antes de esta reunión, me aseguraría de que se haga justicia, y usted no tendría que preocuparse más por este asunto."
+
+              "Eso no será posible, embajador," dice Golmyck. "Si bien es cierto que la víctima en este caso era un ciudadano de Ollendor, el crimen ocurrió en la ciudad de Thilias, que cae bajo mi jurisdicción. Según el tratado firmado hace seiscientos años por todos los reinos de Varathia, esto significa que soy yo quien debe juzgarlos, no el rey de Ollendor."
+
+              "¡¿Defendería a esta escoria?!" le grita el embajador al rey gnomo.
+
+              "No estoy defendiendo a nadie," le responde Golmyck, con calma. "Simplemente digo que antes de condenarlos, se les debe ofrecer un juicio justo."
+          - source: scene_text_2
+            paragraph: 39
+            text: |-
+              "¡Esta gentuza no merece un juicio!" grita el embajador. "¡Merecen ser ejecutados en el acto! ¿Quiere la guerra, rey de Thilias? ¿Necesito recordarle que represento al mismísimo rey de Ollendor? ¡No voy a quedarme aquí presenciando esta farsa de juicio cuando ya tenemos toda la información necesaria para dictar su sentencia en este mismo instante! ¡Los hará matar aquí y ahora, o habrá guerra! ¿Me oye, Golmyck? ¡¡¡Guerra!!!"
+
+              "Me temo que no puedo permitirle ejecutar a estas personas, embajador," escuchamos la voz de Eiden viniendo de detrás de nosotros.
+
+              Después de darme la vuelta y ver la cara de Eiden, mi primera reacción es coger el amuleto de Arraka de la mano de Hadrik.
+
+              "¡Tú!" le digo. "¡Dijiste que nos avisarías cada vez que Eiden estuviera ocultándose invisiblemente a nuestro alrededor!"
+
+              "¿Ah, sí?" dice Arraka. "Debo admitir que mi memoria ha estado un poco borrosa últimamente. Me pregunto por qué... ¡Ah, ya sé por qué! ¡Debe de ser por tanto DARME VUELTAS!"
+
+              Eiden me mira, con sus ojos cerrados, y sonríe. Solo ahora me doy cuenta de que quizás he estado hablando un poco demasiado alto. Decide no comentar nuestra conversación, y empieza a caminar lentamente hacia el embajador. Cuando se detiene frente a él, podemos ver que el embajador está sudando a mares, y que apenas puede mantener la compostura.
+
+              "¿Qué le ocurre, embajador?" pregunta Eiden, con una sonrisa burlona. "¿No va a inclinarse ante su Creador?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_creator
+      - condition: b2_ch1_spin = 0 AND ch11_saved_slave <> 3 AND ch11_kill_noble = 0
+        texts:
+          - source: scene_text
+            paragraph: 48
+            text: |-
+              "¡No lo matamos! ¡Somos inocentes!"
+
+              "¿Inocentes, dices?" dice Golmyck, mientras se acaricia la barbilla. "Ahora que lo pienso, nuestros informes mostraban que también había otra persona con vosotros cuando atacasteis al conde. ¿Estás diciendo que esa otra persona es de hecho la responsable de la muerte del conde de Ollendor?"
+
+              "¡Sí, exacto!" digo. "¡Eiden fue quien lo mató, no nosotros!"
+
+              "¿Y quién es este Eiden, si puedo preguntar?" dice Golmyck.
+
+              Justo después de escucharme pronunciar el nombre de Eiden, el embajador soltó un chillido, y desde entonces está sudando a mares, con aspecto bastante agitado.
+
+              "¿Le ocurre algo, embajador?" le pregunta Golmyck.
+
+              "¡Mentiras!" dice el embajador de repente. "¡El chico miente! ¡No hay forma de que ese hombre se hubiera asociado jamás con gente como ellos!"
+
+              "¿Qué hombre?" pregunta Golmyck. "¿Está hablando de este tal Eiden?"
+
+              "Su majestad," nos interrumpe Daren, mientras se coloca delante de mí y hace una reverencia ante el rey. "¡Por favor, permítame explicar lo que ocurrió!"
+
+              "¡Psst!" oigo la voz de Arraka saliendo del amuleto, en cuanto Daren empieza a hablar. "¡Eh, tú! ¡Debilucho! Tipo que usa estadísticas. Medio lessathi. ¡Ven aquí!"
+
+              "¿Medio... lessathi?" le pregunto, mientras me acerco a Hadrik y al amuleto.
+          - source: scene_text_2
+            paragraph: 40
+            text: |-
+              "¡Olvida eso!" dice Arraka, en voz baja. "Tenemos problemas. Eiden acaba de teletransportarse en medio del pasillo, y se está ocultando con ese hechizo de invisibilidad suyo."
+
+              "¿Eiden?" le pregunto. "¿Por qué elegiría venir precisamente ahora?"
+
+              "No lo sé y no me importa," dice Arraka. "Prometí que os avisaría cuando Eiden estuviera cerca, y he cumplido mi palabra. ¿¡Ahora le dirás a este zopenco que sostiene mi amuleto que deje de darme vueltas a la menor oportunidad!?"
+
+              "Eh, vale..." digo. "Veré qué puedo hacer al respecto."
+
+              Mientras hablaba con Arraka, parece que la discusión entre el rey y el embajador se había acalorado un poco más.
+
+              "¡¿Defendería a esta escoria?!" le grita el embajador al rey gnomo.
+
+              "No estoy defendiendo a nadie," le responde Golmyck, con calma. "Simplemente digo que antes de condenarlos, se les debe ofrecer un juicio justo."
+
+              "¡Esta gentuza no merece un juicio!" grita el embajador. "¡Merecen ser ejecutados en el acto! ¿Quiere la guerra, rey de Thilias? ¿Necesito recordarle que represento al mismísimo rey de Ollendor? ¡No voy a quedarme aquí presenciando esta farsa de juicio cuando ya tenemos toda la información necesaria para dictar su sentencia en este mismo instante! ¡Los hará matar aquí y ahora, o habrá guerra! ¿Me oye, Golmyck? ¡¡¡Guerra!!!"
+          - source: scene_3
+            paragraph: 5
+            text: |-
+              "Me temo que no puedo permitirle ejecutar a estas personas, embajador," escuchamos la voz de Eiden viniendo de detrás de nosotros.
+
+              Cuando todos nos damos la vuelta, Eiden empieza a caminar lentamente hacia el embajador, y se detiene justo frente a él. El embajador está ahora sudando a mares, y parece que apenas puede mantener la compostura.
+
+              "¿Qué le ocurre, embajador?" pregunta Eiden, con una sonrisa burlona. "¿No va a inclinarse ante su Creador?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_creator
+      - condition: b2_ch1_spin = 1 AND ch11_saved_slave <> 3 AND ch11_kill_noble = 0
+        texts:
+          - source: scene_text
+            paragraph: 49
+            text: |-
+              ¡No lo matamos! ¡Somos inocentes!"
+
+              "¿Inocentes, dices?" dice Golmyck, mientras se acaricia la barbilla. "Ahora que lo pienso, nuestros informes mostraban que también había otra persona con vosotros cuando atacasteis al conde. ¿Estás diciendo que esa otra persona es de hecho la responsable de la muerte del conde de Ollendor?"
+
+              "¡Sí, exacto!" digo. "¡Eiden fue quien lo mató, no nosotros!"
+
+              "¿Y quién es este Eiden, si puedo preguntar?" dice Golmyck.
+
+              Justo después de escucharme pronunciar el nombre de Eiden, el embajador soltó un chillido, y desde entonces está sudando a mares, con aspecto bastante agitado.
+
+              "¿Le ocurre algo, embajador?" le pregunta Golmyck.
+
+              "¡Mentiras!" dice el embajador de repente. "¡El chico miente! ¡No hay forma de que ese hombre se hubiera asociado jamás con gente como ellos!"
+
+              "¿Qué hombre?" pregunta Golmyck. "¿Está hablando de este tal Eiden?"
+
+              "Su majestad," nos interrumpe Daren, mientras se coloca delante de mí y hace una reverencia ante el rey. "¡Por favor, permítame explicar lo que ocurrió!"
+
+              "¡No, ya he oído bastantes explicaciones!" dice el embajador. "Su majestad, se está haciendo evidente que esta gentuza no merece que pierda su tiempo con ellos. Si simplemente me los entregara a mi custodia, como le pedí antes de esta reunión, me aseguraría de que se haga justicia, y usted no tendría que preocuparse más por este asunto."
+          - source: scene_text_2
+            paragraph: 41
+            text: |-
+              "Eso no será posible, embajador," dice Golmyck. "Si bien es cierto que la víctima en este caso era un ciudadano de Ollendor, el crimen ocurrió en la ciudad de Thilias, que cae bajo mi jurisdicción. Según el tratado firmado hace seiscientos años por todos los reinos de Varathia, esto significa que soy yo quien debe juzgarlos, no el rey de Ollendor."
+
+              "¡¿Defendería a esta escoria?!" le grita el embajador al rey gnomo.
+
+              "No estoy defendiendo a nadie," le responde Golmyck, con calma. "Simplemente digo que antes de condenarlos, se les debe ofrecer un juicio justo."
+
+              "¡Esta gentuza no merece un juicio!" grita el embajador. "¡Merecen ser ejecutados en el acto! ¿Quiere la guerra, rey de Thilias? ¿Necesito recordarle que represento al mismísimo rey de Ollendor? ¡No voy a quedarme aquí presenciando esta farsa de juicio cuando ya tenemos toda la información necesaria para dictar su sentencia en este mismo instante! ¡Los hará matar aquí y ahora, o habrá guerra! ¿Me oye, Golmyck? ¡¡¡Guerra!!!"
+
+              "Me temo que no puedo permitirle ejecutar a estas personas, embajador," escuchamos la voz de Eiden viniendo de detrás de nosotros.
+
+              Después de darme la vuelta y ver la cara de Eiden, mi primera reacción es coger el amuleto de Arraka de la mano de Hadrik.
+
+              "¡Tú!" le digo. "¡Dijiste que nos avisarías cada vez que Eiden estuviera ocultándose invisiblemente a nuestro alrededor!"
+          - source: scene_3
+            paragraph: 6
+            text: |-
+              "¿Ah, sí?" dice Arraka. "Debo admitir que mi memoria ha estado un poco borrosa últimamente. Me pregunto por qué... ¡Ah, ya sé por qué! ¡Debe de ser por tanto DARME VUELTAS!"
+
+              Eiden me mira, con sus ojos cerrados, y sonríe. Solo ahora me doy cuenta de que quizás he estado hablando un poco demasiado alto. Decide no comentar nuestra conversación, y empieza a caminar lentamente hacia el embajador. Cuando se detiene frente a él, podemos ver que el embajador está sudando a mares, y que apenas puede mantener la compostura.
+
+              "¿Qué le ocurre, embajador?" pregunta Eiden, con una sonrisa burlona. "¿No va a inclinarse ante su Creador?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_creator
+  - name: b2_ch01a_creator
+    texts:
+      - source: scene_text
+        paragraph: 50
+        text: |-
+          La sala entera queda en completo silencio, mientras el embajador intenta forzar una expresión humilde en su rostro, mientras se inclina lentamente ante Eiden.
+
+          "Como siempre, no soy más que su humilde servidor," dice el embajador, sonando como si experimentara un gran dolor con cada palabra que pronunciaba. "Es un honor tenerle en estos salones, oh gran Creador."
+
+          "¿¡Qué?!" gritan Flower y Daren al mismo tiempo.
+
+          "Un momento," dice Hadrik. "Creador, como el fundador de la civilización de Varathia. ¿Es ese el Creador del que estamos hablando aquí?"
+
+          "Me sorprende que no lo supierais a estas alturas," dice Eiden, con una expresión desconcertada. "¿No os lo dijo Arraka? ella estaba allí cuando todo empezó, después de todo."
+
+          Hay unos momentos de silencio, durante los cuales todos dirigimos la mirada hacia el amuleto de Arraka.
+
+          "Qué, ¿no lo mencioné?" dice Arraka. "Supongo que se me habrá olvidado. ¡Ajá--- AJAJAJAJAJA!"
+
+          "Así que usted es el Creador del que tanto he oído hablar," dice Golmyck, mientras se acaricia la barbilla.
+
+          "¡Así es!" dice Eiden. "Y debo decir que soy un gran admirador de su trabajo. He oído que lo primero que hizo cuando se mudó al castillo real fue despojarlo de todo lo que tuviera valor, venderlo todo, y luego entregar el dinero a los pobres. La nobleza de toda Varathia estuvo alborotada durante meses después del suceso. ¡Fue un espectáculo de lo más entretenido!"
+      - source: scene_text_2
+        paragraph: 42
+        text: |-
+          "Siempre fui de la opinión de que el castillo real no pertenece a la familia real, sino al pueblo," dice Golmyck. "Solo hice lo que cualquier otro habría hecho en mi lugar, si hubiera sido elegido por el pueblo para representar sus intereses."
+
+          "Creo que podrías estar teniendo una opinión demasiado alta del pueblo bajo tu gobierno, rey de Thilias," dice Eiden, con una sonrisa cortés.
+
+          "Creador," dice el embajador, mientras finalmente reúne el valor para hablar de nuevo. "Sé que su palabra es ley en todo el continente de Varathia, pero debo insistir--"
+
+          "El continente de Varathia..." le interrumpe Eiden. "Vosotros siempre lo llamasteis así, ¿verdad? Pero el tamaño de Varathia no se acerca ni remotamente al de ningún otro continente del mundo. Si acaso, es más bien una isla, en realidad. De hecho, si no recuerdo mal, así es como nombré este lugar después del invierno eterno. La isla de Varathia. La isla de la libertad. ¿Por qué empezó la gente a llamar a esto un continente, me pregunto? ¿Fue porque os sentisteis excluidos cuando descubristeis que había un mundo fuera de Varathia? ¿Fue quizás para satisfacer vuestros propios egos, engañándoos a vosotros mismos haciéndoos creer que podíais compararos con las civilizaciones de los otros continentes?"
+
+          "Creador, por favor," dice el embajador. "No sé cuál es su relación con estos magos, pero nos han hecho un gran daño. Se ha perdido una vida que nunca podrá ser reemplazada. Sería muy trágico si los culpables de la muerte de la víctima fueran simplemente puestos en libertad."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_creator2
+  - name: b2_ch01a_creator2
+    routes:
+      - texts:
+          - source: scene_text
+            paragraph: 52
+            text: "\"Oh?\" Eiden says, with an evil smile. \"And what if I told you that I was in fact the one who gave them the ability to hurt the people of Varathia?\"\r\n\r\nThe ambassador is now sweating even harder than before, and he seems to be too afraid to give Eiden an answer. Seeing the expression on his face, Eiden starts to laugh.\r\n\r\n\"Do not worry, ambassador,\" he says. \"I never suggested that they should be set free. However, I believe we can all agree that an execution would be a dull way for such powerful mages to meet their demise.\"\r\n\r\n\"What do you... have in mind, then?\" the ambassador asks.\r\n\r\n\"The arenas, of course!\" Eiden says. \"Have them thrown in the arena, and if they somehow manage to survive until the end, then it will mean that the gods have seen fit to acquit them of their crimes. The rules of the arenas state that you may not use magic during fights, so they won't get any unfair advantage over any of the other gladiators. There are even magic detectors placed all around the fighting area, to make sure that there's no cheating.\"\r\n\r\n\"Yes, but,\" the ambassador says, \"if they somehow manage to survive, the king of Ollendor will--\"\r\n\r\n\"Are you trying to say that the fabled arenas of Varathia, the pride of your 'continent', are not enough to stop a mere handful of mages that can't even cast any spells?\" Eiden says, with a wicked smile.\r\n\r\n\"No...\" the ambassador says. \"No, of course not...\""
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_creator3
+      - condition: ch11_saved_slave <> 3 AND ch11_kill_noble = 0
+        texts:
+          - source: scene_text
+            paragraph: 51
+            text: |-
+              "¿Oh?" dice Eiden, con una sonrisa malvada. "¿Y si te dijera que de hecho fui yo tanto quien les dio la capacidad de hacer daño a la gente de Varathia, como quien mató a su querido conde?"
+
+              El embajador está ahora sudando aún más que antes, y parece demasiado asustado para darle una respuesta a Eiden. Al ver la expresión en su rostro, Eiden empieza a reírse.
+
+              "No se preocupe, embajador," dice. "Nunca sugerí que debieran ser puestos en libertad. Sin embargo, creo que todos podemos coincidir en que una ejecución sería una forma aburrida para que unos magos tan poderosos encuentren su fin."
+
+              "¿Qué... tiene en mente, entonces?" pregunta el embajador.
+
+              "¡Las arenas, por supuesto!" dice Eiden. "Que los arrojen a la arena, y si de algún modo consiguen sobrevivir hasta el final, significará que los dioses han considerado oportuno absolverlos de sus crímenes. Las reglas de las arenas dicen que no se puede usar magia durante los combates, así que no tendrán ninguna ventaja injusta sobre los otros gladiadores. Incluso hay detectores de magia colocados por toda la zona de combate, para asegurarse de que no haya trampas."
+
+              "Sí, pero," dice el embajador, "si de algún modo logran sobrevivir, el rey de Ollendor--"
+
+              "¿Está intentando decir que las legendarias arenas de Varathia, el orgullo de su 'continente', no son suficientes para detener a un puñado de magos que ni siquiera pueden lanzar hechizos?" dice Eiden, con una sonrisa perversa.
+
+              "No..." dice el embajador. "No, por supuesto que no..."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_creator3
+  - name: b2_ch01a_creator3
+    texts:
+      - source: scene_text
+        paragraph: 53
+        text: |-
+          El embajador se detiene unos segundos para aclarar sus pensamientos.
+
+          "Muy bien, entonces," dice, finalmente. "Los criminales se enfrentarán a su sentencia en la arena. Pero supervisaré los procedimientos personalmente. Quiero asegurarme de que nada salga mal."
+
+          "Por supuesto, embajador," dice Golmyck. "Las arenas son suyas, durante la duración de estos eventos."
+
+          El embajador hace otra pausa.
+
+          "Tres días," dice. "En tres días, organizaré el mayor evento de arena en toda la historia de Varathia. Hasta entonces, los criminales serán encerrados en las celdas bajo la arena de Thilias, junto con los demás gladiadores."
+
+          "¡Entonces queda decidido!" dice Eiden. "Espero con ganas ver lo que tendrá preparado para nosotros, embajador. Le veré de nuevo el día del evento principal. No me decepcione."
+
+          Con estas últimas palabras, Eiden se teletransporta fuera de la sala, sin dejar rastro, como siempre hace.
+
+          "Vosotros, criminales, venís conmigo," dice el embajador. "No quiero que andéis por las calles poniendo más vidas inocentes en peligro."
+      - source: scene_text_2
+        paragraph: 43
+        text: |-
+          "En realidad, embajador," dice Golmyck, "me gustaría tener una palabra con ellos en privado primero, si no le importa. Me aseguraré de que uno de mis sirvientes los escolte a sus celdas poco después."
+
+          "Hmph," dice el embajador. "Haga lo que quiera. No pienso perder más tiempo aquí. Tengo asuntos que atender. Solo asegúrese de que estén todos en sus celdas antes de medianoche."
+
+          El embajador entonces se aleja de nosotros y sale de la sala, cerrando la puerta de un portazo a su paso.
+
+          "Muy bien, entonces," dice Golmyck, mientras se levanta de su trono. "Seguidme. Prefiero no tener nuestra discusión en este lugar tan aburrido. Ahora os voy a llevar a mi verdadero castillo, donde podemos hablar a nuestras anchas, hasta que sea hora de llevaros a la arena."
+    choices:
+      - position: 1
+        text: ¿Qué te hace pensar que simplemente vamos a aceptar que nos lleven a la arena?
+        effects:
+          - set:
+              current_scene: b2_ch01a_agree
+      - position: 2
+        text: ¿Verdadero castillo? ¿Cuántos castillos tenéis en este sitio?
+        effects:
+          - set:
+              current_scene: b2_ch01a_castles
+      - position: 3
+        text: Entonces, ¿qué son exactamente estos eventos que tenemos que ganar para ser libres?
+        effects:
+          - set:
+              current_scene: b2_ch01a_events
+  - name: b2_ch01a_agree
+    texts:
+      - source: scene_text
+        paragraph: 54
+        text: |-
+          "¿Qué te hace pensar que simplemente vamos a aceptar que nos lleven a la arena?"
+
+          "Bueno, sois libres de resistir el arresto, por supuesto," dice Golmyck. "Pero eso también resultaría en vuestra descalificación inmediata del torneo. ¿Es eso lo que queréis?"
+
+          Abro la boca para decir algo, pero no se me ocurre ninguna réplica ingeniosa. En vez de eso, decido guardar silencio.
+
+          "Por supuesto que no," dice Golmyck, respondiendo a su propia pregunta. "No sé cuáles habrán sido las razones o motivaciones de cada uno para venir aquí, pero me imagino que si fueron lo bastante fuertes como para haceros querer arriesgar vuestras vidas en un torneo como este, definitivamente no dejaríais que un obstáculo tan menor se interpusiera en vuestro camino. Si os sirve de ayuda, podéis considerar esta arena como una ronda de clasificación extra, por así decirlo. Para que entréis en calor de cara al evento principal. Ahora, ¿dónde estaba esa palanca oculta?... ¡Ah, sí, aquí está!"
+
+          El gnomo mete la mano derecha detrás del trono y tira de una palanca. Esto hace que uno de los bloques de piedra que forman el suelo frente a nosotros se aparte por sí solo, revelando una escalera oculta que lleva a los niveles inferiores del castillo.
+
+          "Barry, dejo la sala del trono a tu cargo hasta mi regreso," dice Golmyck.
+      - source: scene_text_2
+        paragraph: 44
+        text: |-
+          "¿Qué?..." digo.
+
+          "Sí, su majestad," dice el sirviente del rey, casi al mismo tiempo que yo.
+
+          "Oh, mis disculpas," dice Golmyck, después de darse cuenta de la confusión que ha creado. "Le hablaba a mi sirviente. También se llama Barry."
+
+          Entonces se vuelve para mirarnos a todos.
+
+          "¡Muy bien, por aquí, si son tan amables!" dice Golmyck, mientras empieza a bajar las escaleras.
+
+          El resto de nosotros intercambiamos unas miradas, y luego seguimos al gnomo, hasta llegar a una sala subterránea llena de piezas de maquinaria y prototipos, así como diversas herramientas que parecen haber sido tiradas al azar después de su uso. En el centro de la sala hay un banco de trabajo sobre el cual podemos ver un gran dispositivo que parece una versión más grande de los transmisores de Daren, con una luz verde en la parte inferior.
+
+          Cuando entramos en la sala, Golmyck estaba en proceso de quitarse el manto y la corona, y ponerse la bata de laboratorio manchada de aceite que le vimos llevar antes, cuando apareció en el holograma. Ahora que miro con más atención a mi alrededor, me doy cuenta de que esta es de hecho la sala exacta desde la que estaba transmitiendo, y que el dispositivo en el banco de trabajo es probablemente el que acababa de arreglar justo antes de la transmisión.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_shapeshift
+  - name: b2_ch01a_castles
+    texts:
+      - source: scene_text
+        paragraph: 55
+        text: |-
+          "¿Verdadero castillo? ¿Cuántos castillos tenéis en este sitio?"
+
+          "Oh, no lo decía en sentido literal," dice Golmyck. "Lo entenderéis mejor cuando lleguemos. Ahora, ¿dónde estaba esa palanca oculta?... ¡Ah, sí, aquí está!"
+
+          El gnomo mete la mano derecha detrás del trono y tira de una palanca. Esto hace que uno de los bloques de piedra que forman el suelo frente a nosotros se aparte por sí solo, revelando una escalera oculta que lleva a los niveles inferiores del castillo.
+
+          "Barry, dejo la sala del trono a tu cargo hasta mi regreso," dice Golmyck.
+
+          "¿Qué?..." digo.
+
+          "Sí, su majestad," dice el sirviente del rey, casi al mismo tiempo que yo.
+
+          "Oh, mis disculpas," dice Golmyck, después de darse cuenta de la confusión que ha creado. "Le hablaba a mi sirviente. También se llama Barry."
+      - source: scene_text_2
+        paragraph: 45
+        text: |-
+          Entonces se vuelve para mirarnos a todos.
+
+          "¡Muy bien, por aquí, si son tan amables!" dice Golmyck, mientras empieza a bajar las escaleras.
+
+          El resto de nosotros intercambiamos unas miradas, y luego seguimos al gnomo, hasta llegar a una sala subterránea llena de piezas de maquinaria y prototipos, así como diversas herramientas que parecen haber sido tiradas al azar después de su uso. En el centro de la sala hay un banco de trabajo sobre el cual podemos ver un gran dispositivo que parece una versión más grande de los transmisores de Daren, con una luz verde en la parte inferior.
+
+          Cuando entramos en la sala, Golmyck estaba en proceso de quitarse el manto y la corona, y ponerse la bata de laboratorio manchada de aceite que le vimos llevar antes, cuando apareció en el holograma. Ahora que miro con más atención a mi alrededor, me doy cuenta de que esta es de hecho la sala exacta desde la que estaba transmitiendo, y que el dispositivo en el banco de trabajo es probablemente el que acababa de arreglar justo antes de la transmisión.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_shapeshift
+  - name: b2_ch01a_events
+    texts:
+      - source: scene_text
+        paragraph: 56
+        text: |-
+          "Entonces, ¿qué son exactamente estos eventos que tenemos que ganar para ser libres?"
+
+          "Lo único que puedo decir con certeza es que será una serie de batallas involucrando a otros gladiadores y posiblemente algunos monstruos," dice Golmyck. "Aparte de eso, es difícil saberlo. Las reglas tienden a cambiar de un evento a otro, y dependen mucho de los caprichos de los organizadores. Dado que el embajador es quien está a cargo de la organización esta vez, mi suposición es que las reglas se harán de forma que os pongan en la mayor desventaja posible. Ahora, ¿dónde estaba esa palanca oculta?... ¡Ah, sí, aquí está!"
+
+          El gnomo mete la mano derecha detrás del trono y tira de una palanca. Esto hace que uno de los bloques de piedra que forman el suelo frente a nosotros se aparte por sí solo, revelando una escalera oculta que lleva a los niveles inferiores del castillo.
+
+          "Barry, dejo la sala del trono a tu cargo hasta mi regreso," dice Golmyck.
+
+          "¿Qué?..." digo.
+
+          "Sí, su majestad," dice el sirviente del rey, casi al mismo tiempo que yo.
+      - source: scene_text_2
+        paragraph: 46
+        text: |-
+          "Oh, mis disculpas," dice Golmyck, después de darse cuenta de la confusión que ha creado. "Le hablaba a mi sirviente. También se llama Barry."
+
+          Entonces se vuelve para mirarnos a todos.
+
+          "¡Muy bien, por aquí, si son tan amables!" dice Golmyck, mientras empieza a bajar las escaleras.
+
+          El resto de nosotros intercambiamos unas miradas, y luego seguimos al gnomo, hasta llegar a una sala subterránea llena de piezas de maquinaria y prototipos, así como diversas herramientas que parecen haber sido tiradas al azar después de su uso. En el centro de la sala hay un banco de trabajo sobre el cual podemos ver un gran dispositivo que parece una versión más grande de los transmisores de Daren, con una luz verde en la parte inferior.
+
+          Cuando entramos en la sala, Golmyck estaba en proceso de quitarse el manto y la corona, y ponerse la bata de laboratorio manchada de aceite que le vimos llevar antes, cuando apareció en el holograma. Ahora que miro con más atención a mi alrededor, me doy cuenta de que esta es de hecho la sala exacta desde la que estaba transmitiendo, y que el dispositivo en el banco de trabajo es probablemente el que acababa de arreglar justo antes de la transmisión.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_shapeshift
+  - name: b2_ch01a_shapeshift
+    texts:
+      - source: scene_text
+        paragraph: 57
+        text: |-
+          "Bienvenidos a mi castillo dentro de mi castillo," dice Golmyck. "Encontré esta sala secreta poco después de mudarme aquí, y rápidamente decidí aprovechar el gran espacio sin usar para montar mi nuevo taller. No he tenido oportunidad de cacharrear con dispositivos tan a menudo como me habría gustado desde que me convertí en rey, pero este lugar siempre me relaja después de una discusión acalorada como la que tuve con el embajador antes."
+
+          "¿Ha dicho que tenía algo que quería discutir con nosotros en privado?" dice Daren.
+
+          "Sí, así es," dice Golmyck. "Empecemos con vuestro amigo gigante de ahí, que ahora mismo está haciendo un cambio de forma para convertirse en un enano."
+
+          "¡Maldita sea!" dice Hadrik. "Debería haber sabido que era demasiado bueno para ser verdad. ¿Es esta la parte donde me echas del torneo?"
+
+          "¡Por supuesto que no!" dice Golmyck. "Las reglas del torneo nunca declararon explícitamente que los gigantes no estaban permitidos en el torneo. Solo evitamos invitar a gigantes a este concurso por la abrumadora ventaja que obtendríais tanto de vuestro tamaño como de vuestra fuerza. Sin embargo, dado que te has encogido voluntariamente al tamaño de un enano, hemos decidido hacer una excepción en tu caso. Se te permitirá participar en este torneo, siempre y cuando no uses el cambio de forma para convertirte en nada más grande de lo que sería normalmente posible para un enano. Y además, dado que pareces tan encariñado con tu forma de enano, así es como te presentarás ante todos los demás participantes de ahora en adelante. No quiero que ninguno de los otros magos descubra que en realidad eres un gigante. ¿Queda claro?"
+      - source: scene_text_2
+        paragraph: 47
+        text: |-
+          "¡Más claro que el agua!" dice Hadrik, sonriendo felizmente.
+
+          "Bueno, en ese caso, ¡eres libre de irte!" dice Golmyck. "No tengo más asuntos que discutir contigo."
+
+          "¿Quieres decir que soy libre de irme a la arena, o..."
+
+          "No, quiero decir que eres libre de continuar con la primera ronda del torneo," dice Golmyck. "A diferencia de tus amigos, tú no estabas presente en la escena del crimen, así que no hay razón para encarcelarte. No hay necesidad de que vayas a la arena."
+
+          "¡Y un cuerno que no!" grita Hadrik. "¿Crees que he venido hasta aquí para ir a buscar piñas? ¡He venido a luchar, maldita sea! ¡Te juro que si no me dejas luchar en esta arena, voy a empezar a destrozar todo el barrio hasta que tus guardias me metan allí ellos mismos!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_apology
+  - name: b2_ch01a_apology
+    texts:
+      - source: scene_text
+        paragraph: 58
+        text: |-
+          "Bueno, si insistes, puedo escribirte una carta de admisión, que puedes darle a los guardias en la entrada de la arena," dice Golmyck. "Seguro que te dejan entrar cuando vean el sello real."
+
+          "¡Perfecto!" dice Hadrik. "¡Muy agradecido!"
+
+          "¿También debería escribir una carta para la chica y la banshee de ahí?" dice Golmyck, mientras mira hacia Flower.
+
+          "Eh, bueno--" empieza a decir Flower, pero Illuna la interrumpe.
+
+          "No, estamos bien," dice, mientras los ojos de la chica se vuelven azules. "Veremos el espectáculo desde las gradas."
+
+          "Muy bien," dice Golmyck. "Entonces me aseguraré de proporcionaros una entrada."
+
+          "Veo que ha hecho los deberes," dice Hadrik. "No pensé que también supiera lo de Illuna."
+
+          "Mis espías han recibido la instrucción de ser especialmente vigilantes cuando se trata de magos de otros continentes," dice Golmyck. "Os han estado vigilando de cerca desde que entrasteis en la ciudad."
+
+          "¿Eso significa que también nos estaban vigilando cuando atacamos al noble?" dice Daren.
+      - source: scene_text_2
+        paragraph: 48
+        text: |-
+          "Sí..." dice Golmyck. "Esta es la segunda razón por la que quería hablar con vosotros en privado. En primer lugar, me gustaría ofreceros una disculpa. Me imagino que la escena que presenciasteis aquel día debió de ser bastante impactante para forasteros como vosotros."
+
+          "No parece que apruebe lo que estaba pasando con la chica esclava," dice Kate.
+
+          "No lo apruebo," dice Golmyck. "Personalmente, me parece repugnante la forma en que nuestra sociedad trata a los esclavos, y todos somos responsables de alguna manera por permitir que este sistema continúe. Yo mismo no soy mucho mejor que mis predecesores, porque apenas he hecho nada concluyente para abordar el problema desde que me mudé a este castillo."
+
+          "Pero ¿por qué?" pregunta Daren. "¿Por qué no ha hecho nada? Usted es el rey. Podría hacer tanto por ayudar a estas personas..."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch01a_interfere
+  - name: b2_ch01a_interfere
+    texts:
+      - source: scene_text
+        paragraph: 59
+        text: |-
+          "Mire ahí arriba," dice Golmyck, mientras señala un dispositivo de metal colgado del techo.
+
+          "¿Qué pasa con eso?" pregunta Daren, tras echarle un vistazo rápido al dispositivo.
+
+          "Lo que ven ahí arriba es un invento de mi propia creación, con el único propósito de bloquear las comunicaciones hacia el exterior," dice Golmyck. "Lo instalé aquí poco después de mi llegada al castillo."
+
+          "¿Está diciendo que alguien podría estar intentando escuchar nuestra conversación?" digo.
+
+          "¡Oh, están intentándolo con toda seguridad!" dice Golmyck. "Quizás no lo hayáis notado, pero la sala de arriba está plagada de docenas de dispositivos ocultos, hechos para espiar conversaciones. No se equivoquen, no soy la única persona con una red de información en esta ciudad. Y el control que tengo sobre mi reino es en realidad mucho más limitado de lo que podrían pensar."
+
+          "¿Y quiénes son exactamente las personas que le vigilan?" pregunta Hadrik. "¿Los otros reyes?"
+
+          "Sí, en cierto modo," dice Golmyck. "Los encargados de vigilarme son un grupo de lessathi que son aliados de los otros reyes, pero que trabajan de forma independiente. Controlan una vasta red subterránea de espías y asesinos que rivalizan con la mía, y su propósito es asegurarse de que no tome demasiadas iniciativas que pudieran 'poner en peligro' el futuro de Varathia. Si intento tomar una decisión tan audaz como liberar a todos los esclavos de mi ciudad, bien podría ser asesinado antes siquiera de conseguir firmar el decreto."
+      - source: scene_text_2
+        paragraph: 49
+        text: |-
+          "Entonces, ¿simplemente se va a quedar aquí sin hacer nada?" pregunta Daren.
+
+          "En absoluto," dice Golmyck. "De hecho, llevo años trabajando para mejorar nuestras relaciones con el reino animal precisamente para esto. Sus territorios han ido reduciéndose cada vez más debido al creciente número de ataques de monstruos en los últimos años, así que sus negociadores se han vuelto un poco menos rígidos últimamente. Les prometí proporcionarles refugio dentro de nuestros muros, a cambio de que nos ayudaran a eliminar la amenaza lessathi de nuestra ciudad. Tendré una reunión en esta misma sala con uno de los representantes del reino animal en unos días, donde discutiremos exactamente este tema. Si todo va bien, es muy probable que lleguemos a un acuerdo en los próximos meses."
+
+          "Entonces, ¿lo que intenta decirnos es que lo tiene todo bajo control, y que no deberíamos interferir más?" pregunta Hadrik.
+
+          "Sí, exacto," dice Golmyck. "Quería asegurarme de que fuerais conscientes de toda la situación, por si os sentíais tentados a hacer algo imprudente de nuevo."
+    choices:
+      - position: 1
+        text: En realidad, creo que ya hemos cubierto nuestra cuota de acciones imprudentes por esta semana.
+        effects:
+          - set:
+              current_scene: b2_ch01a_documents
+              b2_ch1_interfere: 0
+      - position: 2
+        text: Unos meses es demasiado tiempo. Quizás podamos encargarnos nosotros de su problema con los lessathi.
+        effects:
+          - set:
+              current_scene: b2_ch01a_documents
+              b2_ch1_interfere: 1
+  - name: b2_ch01a_documents
+    routes:
+      - condition: b2_ch1_interfere = 0
+        texts:
+          - source: scene_text
+            paragraph: 60
+            text: |-
+              "En realidad, creo que ya hemos cubierto nuestra cuota de acciones imprudentes por esta semana," digo.
+
+              "Estos lessathi de los que habló..." le dice Kate a Golmyck. "¿Sabe si están trabajando con otros magos artificiales? ¿Hay una mujer llamada Diane, que controla la electricidad, ayudándoles?"
+
+              "Que yo sepa, los lessathi de mi ciudad no emplean a ningún mago como guardaespaldas," dice Golmyck. "Mis espías seguramente se habrían enterado a estas alturas, si hubiera otros magos artificiales en Thilias."
+
+              "Ya veo..." dice Kate.
+
+              "Hay una cosa más que necesito deciros a todos antes de que os vayáis," dice Golmyck, mientras se vuelve hacia el resto de nosotros. "Si conseguís sobrevivir a la arena y ganar vuestra libertad, tendréis que pasar de nuevo por mi castillo, para recibir unos documentos que demostrarán que habéis cumplido vuestra condena por vuestros crímenes. Aunque lo más probable es que estos documentos no sean necesarios en Thilias, deberían ayudaros a tratar con guardias que puedan intentar arrestaros en otras ciudades, por el asesinato del conde de Ollendor. Ahora, a menos que tengáis algo más que discutir conmigo, empezaré a escribir esa carta de admisión para el enano, y luego podréis seguir vuestro camino."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_ending
+      - condition: b2_ch1_interfere = 1
+        texts:
+          - source: scene_text
+            paragraph: 61
+            text: |-
+              "Unos meses es demasiado tiempo. Quizás podamos encargarnos nosotros de su problema con los lessathi."
+
+              "¿Oh?" dice Golmyck, mientras se acaricia la barbilla. "¿Y hablas en nombre de todo tu equipo, al hacer esta propuesta, joven lessathi? ¿O solo hablas por ti mismo?"
+
+              Las palabras del gnomo me pillaron desprevenido. Aunque ya llevamos viajando juntos una semana, no estoy seguro de que todos estuvieran de acuerdo en unirse a esta misión potencialmente suicida.
+
+              Mientras me quedo ahí, e intento pensar en una respuesta para darle al gnomo, Daren se pone de mi lado, y me pone la mano en el hombro.
+
+              "Habla también por mí," le dice Daren a Golmyck.
+
+              "Y por mí," dice Hadrik, mientras da un paso al frente. "Después de oír lo que le pasó a la chica esclava, ayer, estaré más que encantado de darles una lección a esos bastardos, si son los responsables de lo que está pasando en esta ciudad."
+
+              "Interesante," dice Golmyck, y luego se vuelve hacia Kate. "¿Y usted, maga artificial? ¿También se ofrece voluntaria para esta misión?"
+
+              "Estos lessathi de los que habló..." dice Kate. "¿Sabe si están trabajando con otros magos artificiales? ¿Hay una mujer llamada Diane, que controla la electricidad, ayudándoles?"
+          - source: scene_text_2
+            paragraph: 50
+            text: |-
+              "Que yo sepa, los lessathi de mi ciudad no emplean a ningún mago como guardaespaldas," dice Golmyck. "Mis espías seguramente se habrían enterado a estas alturas, si hubiera otros magos artificiales en Thilias."
+
+              "Ya veo..." dice Kate, y hace una pausa de unos segundos. "Aunque Diane no esté en esta ciudad, todavía hay una posibilidad de que los lessathi sepan algo sobre su paradero actual. Si de todas formas planeáis asaltar su cuartel general, entonces yo también voy."
+
+              "Bueno, si todos los demás van, entonces nosotras también vamos, ¿verdad Petal?" dice Flower, con entusiasmo.
+
+              Los ojos de la chica se vuelven azules de nuevo, mientras Illuna suelta un profundo suspiro, pero no dice nada.
+
+              "Debo admitir que no esperaba que todos os ofrecierais a ayudar tan de todo corazón," dice Golmyck.
+
+              Se toma unos momentos para aclarar sus pensamientos antes de continuar.
+
+              "Muy bien, entonces," dice Golmyck. "Pensaré en lo que habéis dicho. Continuaremos esta discusión más adelante, cuando volváis de la arena. Después de que consigáis ganar vuestra libertad, tendréis que pasar de nuevo por mi castillo, para recibir unos documentos que demostrarán que habéis cumplido vuestra condena por vuestros crímenes. Aunque lo más probable es que estos documentos no sean necesarios en Thilias, deberían ayudaros a tratar con guardias que puedan intentar arrestaros en otras ciudades, por el asesinato del conde de Ollendor. Ahora, a menos que tengáis algo más que discutir conmigo, empezaré a escribir esa carta de admisión para el enano, y luego podréis seguir vuestro camino."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch01a_ending
+  - name: b2_ch01a_ending
+    texts:
+      - source: scene_text
+        paragraph: 62
+        text: |-
+          Cuando termina de hablar, Golmyck escribe unas palabras en un trozo de papel, estampa su sello en la carta, y luego se la entrega a Hadrik, para que pueda mostrársela a los guardias en la arena. Justo cuando nos damos la vuelta para irnos, el gnomo de repente recuerda que se le olvidó decirnos algo.
+
+          "Oh, y una última cosa," dice Golmyck. "Creo que esto debería ser obvio, pero lo mencionaré de todas formas. No debéis hablar de nada de lo que hemos discutido en esta sala mientras estéis dentro de la ciudad. Ni siquiera entre vosotros. Nunca se sabe cuándo alguien podría estar escuchando. Os llamé a esta sala segura para charlar en privado porque sentí que podía confiaros esta información. Espero que no traicionéis mi confianza."
+
+          "Por supuesto que no..." dice Daren. "Tendremos cuidado."
+
+          "Muy bien, entonces," dice Golmyck. "En ese caso, ¡os deseo suerte en la arena, y que los dioses estén con vosotros!"
+
+          "Que nos protejan a todos," dice Daren.
+      - source: scene_text_2
+        paragraph: 51
+        text: |-
+          Después de terminar nuestra discusión con Golmyck, nos despedimos del gnomo, y lo dejamos trabajar en sus dispositivos, mientras empezábamos a subir por las estrechas escaleras, uno por uno. Cuando llegamos a la sala del trono, el sirviente del rey ya nos estaba esperando, en lo alto de las escaleras.
+
+          "Por aquí, si son tan amables," dice el sirviente, mientras empieza a caminar hacia la salida. "Asegúrense de seguirme de cerca, para que no se pierdan."
+
+          "No te preocupes, Barry, ¡vamos justo detrás de ti!" dice Hadrik, y luego me dirige una amplia sonrisa. "¿Verdad que sí, Barry?"
+
+          "Oh, cállate," le digo, mientras todos empezamos a seguir al sirviente fuera de la sala, y hacia nuestra nueva prisión.
+    choices:
+      - position: 1
+        text: Siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: b2_ch02a_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"
+  - name: b2_ch01a_credits
+    routes:
+      - condition: second_book_purchased = 0
+        texts:
+          - source: scene_text
+            paragraph: 63
+            text: |-
+              ¡El segundo capítulo ya está disponible!
+
+              Pulsa el botón de abajo para continuar al siguiente capítulo.
+        choices:
+          - position: 1
+            text: Ir al siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: b2_ch02a_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"
+      - condition: second_book_purchased = 1
+        texts:
+          - source: scene_text
+            paragraph: 64
+            text: "The second chapter is now available!\r\n\r\nPress the button below to proceed to the next chapter."
+        choices:
+          - position: 1
+            text: Ir al siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: b2_ch02a_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"

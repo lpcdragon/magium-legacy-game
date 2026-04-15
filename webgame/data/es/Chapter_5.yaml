@@ -1,0 +1,1914 @@
+scenes:
+  - name: ch5_intro
+    effects:
+      - set:
+          successful_checks:
+            - 'Punto de control alcanzado: Partida guardada.'
+        condition: checkpoint_rich = 1
+      - set:
+          is_dead: 0
+    routes:
+      - condition: ch4_ending = 1
+        texts:
+          - source: scene_text
+            paragraph: 273
+            text: |-
+              "¡Daren!", grito. "¿Daren, puedes oírme?"
+
+              "¿Barry? ¡Espera ahí mismo! ¡Voy a por ti!"
+
+              Bueno, no es que vaya a ninguna parte. Todavía me duelen las rodillas de muerte. Apenas me he movido de mi posición original para evitar más dolor. Eiden sí que me dio una buena. 
+
+              "¡Barry! ¡¿Qué ha pasado?!", dice Daren cuando me ve.
+
+              "Oh, no mucho. Solo un pequeño regalo de despedida de nuestro amigo común".
+
+              "¡Eiden!", dice Daren, mientras aprieta el puño.
+
+              Lanza un hechizo de curación sobre mí y, de repente, me veo envuelto en una cálida y reconfortante luz. El dolor me abandona por completo y consigo ponerme en pie sin dificultad. Siempre supe que existían hechizos de curación como este, pero presenciar uno de primera mano es otra cosa. La mayoría de los sanadores que he conocido en mi vida apenas podían curar hematomas leves o esguinces de tobillo.
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              "¿Dónde está el Stillwater?"
+
+              "Se ha ido. Acabo de verle matar a Dave el Degollador junto con toda una banda de secuaces. Resulta que puede lanzar magia de fuego, magia de combustión y teletransporte sin despeinarse. Eiden se molestó porque Dave el Degollador lo confundió conmigo y yo me aproveché de la situación".
+
+              "¡Ja! ¡Se lo tiene merecido! Pero, ¿cómo terminé inconsciente en el suelo?"
+
+              "¿Quieres decir que no lo recuerdas? Simplemente agitó su mano con indiferencia y te dejó dormido".
+
+              "¿Qué?... Eso no puede estar bien. Tengo tanta protección contra los hechizos de sueño que debería ser casi inmune. ¡Al menos debería ser capaz de mantener la consciencia! ¿Y qué fue eso de que usaba magia de fuego? Estoy bastante seguro de que usó magia de aire conmigo cuando lo conocimos por primera vez. ¡Normalmente lleva toda una vida dominar incluso un solo elemento!"
+        choices:
+          - position: 1
+            text: ¿Tal vez tenga algún artefacto que lo esté ayudando?
+            effects:
+              - set:
+                  current_scene: ch5_artifact
+                  checkpoint_rich: 0
+          - position: 2
+            text: ¿Tal vez sea más viejo de lo que parece?
+            effects:
+              - set:
+                  current_scene: ch5_older
+                  checkpoint_rich: 0
+          - position: 3
+            text: ¿Tal vez hizo un pacto con algún dios?
+            effects:
+              - set:
+                  current_scene: ch5_pact
+                  checkpoint_rich: 0
+      - condition: ch4_ending = 2
+        texts:
+          - source: scene_text
+            paragraph: 274
+            text: |-
+              "¡Daren!"
+
+              No hay respuesta.
+
+              "¡Oye, Daren!"
+
+              Daren se despierta de repente y empieza a mirar a su alrededor, confundido.
+
+              "¿Qué ha pasado? ¿Dónde está el Stillwater?", me pregunta.
+
+              "Es la segunda vez que me haces exactamente las mismas preguntas. Se ha ido. Desapareció justo después de ponerte a dormir".
+
+              "¿Ponerme a dormir?... ¡No, eso no puede ser! Tengo tanta protección contra los hechizos de sueño que debería ser casi inmune. ¡Al menos debería ser capaz de mantener la consciencia!"
+
+              "Bueno, solo te digo lo que vi. Yo tampoco pretendo entenderlo".
+
+              "¿Entonces les importaría decirme quién era ese Stillwater?", nos pregunta Kate. "¿Y de qué trataba ese trato del que hablaba?"
+
+              Daren y yo empezamos a ponerla al corriente de los detalles de nuestro primer encuentro con Eiden.
+          - source: scene_text_2
+            paragraph: 4
+            text: |-
+              Después de que terminamos de hablar, Kate se toma unos momentos para reflexionar sobre nuestras palabras.
+
+              "Entonces, déjame ver si lo he entendido bien...", dice. "Barry, cambiaste nuestras vidas por un mensaje".
+
+              "Exacto", digo.
+
+              "Y tenemos que entregar este mensaje a cualquier hombre con túnica que podamos encontrar que lleve un broche con la imagen de un halcón sosteniendo el sol en sus garras".
+
+              "Sí. ¿Te dice algo esa descripción?"
+
+              "Sí...", dice, y casi inmediatamente mira hacia el suelo.
+
+              Está ocultando algo de nuevo. Lo sé.
+
+              "Son un grupo clandestino", continúa. "La mayoría de las veces no se muestran realmente en público. Nadie sabe exactamente quiénes son, ni qué hacen. La mayoría de la gente ni siquiera sabe que existen. Pero hay rumores de que cuentan con el respaldo de los reyes de Varathia".
+
+              "¿Cuentan con el respaldo de los reyes?", pregunta Daren. "¿Qué querría Eiden con esos peces gordos? Solo tienes que decirles que recuerden el invierno en calma, ¿verdad? Me pregunto qué se supone que significa eso".
+        choices:
+          - position: 1
+            text: Suena a amenaza.
+            effects:
+              - set:
+                  current_scene: ch5_threat
+          - position: 2
+            text: Suena a mensaje cifrado.
+            effects:
+              - set:
+                  current_scene: ch5_coded
+      - condition: ch4_ending = 3
+        texts:
+          - source: scene_text
+            paragraph: 275
+            text: |-
+              "¡Daren!"
+
+              No hay respuesta.
+
+              "¡Oye, Daren!"
+
+              Daren se despierta de repente y empieza a mirar a su alrededor, confundido.
+
+              "¿Qué ha pasado? ¿Dónde está el Stillwater?", me pregunta.
+
+              "Es la segunda vez que me haces exactamente las mismas preguntas. Se ha ido. Desapareció justo después de ponerte a dormir".
+
+              "¿Ponerme a dormir?... ¡No, eso no puede ser! Tengo tanta protección contra los hechizos de sueño que debería ser casi inmune. ¡Al menos debería ser capaz de mantener la consciencia!"
+
+              "Bueno, solo te digo lo que vi. Yo tampoco pretendo entenderlo. En cualquier caso, creo que deberíamos despertar a Kate. Necesita oír lo que ha pasado, y nos vendría bien otra reunión de estrategia ahora mismo".
+
+              Los dos nos dirigimos a nuestra cueva y procedemos a despertar a Kate de su sueño.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch5_wake_kate
+                  checkpoint_rich: 0
+      - condition: ch4_ending = 4
+        texts:
+          - source: scene_text
+            paragraph: 276
+            text: |-
+              "¡Barry!", me llama Daren de nuevo mientras se acerca a los árboles.
+
+              "Estoy aquí", le respondo.
+
+              Entra en el bosque y empieza a buscar a Dave el Degollador.
+
+              "¿Dónde está el degollador?"
+
+              "Si miras con atención, todavía puedes ver algunas de sus cenizas cerca de esa roca de allí".
+
+              "¿Cenizas?... No me digas que ese dispositivo tuyo ahora te da también poderes de fuego".
+
+              "No fui yo, fue el Stillwater. Eiden volvió y quemó a Dave hasta dejarlo hecho cenizas justo cuando estaba a punto de acabar conmigo. Dijo que no era apropiado que un cartero muriera antes de salir de la oficina de correos".
+
+              "Espera, ¿estás diciendo que usó magia de fuego? ¿No usó magia de aire aquella vez que me inmovilizó contra el suelo? ¡Normalmente lleva toda una vida dominar incluso un solo elemento!"
+        choices:
+          - position: 1
+            text: ¿Tal vez tenga algún artefacto que lo esté ayudando?
+            effects:
+              - set:
+                  current_scene: ch5_artifact
+                  checkpoint_rich: 0
+          - position: 2
+            text: ¿Tal vez sea más viejo de lo que parece?
+            effects:
+              - set:
+                  current_scene: ch5_older
+                  checkpoint_rich: 0
+          - position: 3
+            text: ¿Tal vez hizo un pacto con algún dios?
+            effects:
+              - set:
+                  current_scene: ch5_pact
+                  checkpoint_rich: 0
+      - condition: ch4_ending = 5 AND ch4_dave_defeat <> 1
+        texts:
+          - source: scene_text
+            paragraph: 275
+            text: |-
+              "¡Daren!"
+
+              No hay respuesta.
+
+              "¡Oye, Daren!"
+
+              Daren se despierta de repente y empieza a mirar a su alrededor, confundido.
+
+              "¿Qué ha pasado? ¿Dónde está el Stillwater?", me pregunta.
+
+              "Es la segunda vez que me haces exactamente las mismas preguntas. Se ha ido. Desapareció justo después de ponerte a dormir".
+
+              "¿Ponerme a dormir?... ¡No, eso no puede ser! Tengo tanta protección contra los hechizos de sueño que debería ser casi inmune. ¡Al menos debería ser capaz de mantener la consciencia!"
+
+              "Bueno, solo te digo lo que vi. Yo tampoco pretendo entenderlo. En cualquier caso, creo que deberíamos despertar a Kate. Necesita oír lo que ha pasado, y nos vendría bien otra reunión de estrategia ahora mismo".
+
+              Los dos nos dirigimos a nuestra cueva y procedemos a despertar a Kate de su sueño.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch5_wake_kate
+                  checkpoint_rich: 0
+      - condition: ch4_ending = 5 AND ch4_dave_defeat = 1
+        texts:
+          - source: scene_text
+            paragraph: 277
+            text: |-
+              "¡Daren!"
+
+              No hay respuesta.
+
+              "¡Oye, Daren!"
+
+              Daren se despierta de repente y empieza a mirar a su alrededor, confundido.
+
+              "¿Qué ha pasado? ¿Dónde está el Stillwater?", me pregunta.
+
+              "Es la segunda vez que me haces exactamente las mismas preguntas. Se ha ido. Desapareció justo después de ponerte a dormir".
+
+              "¿Ponerme a dormir?... ¡No, eso no puede ser! Tengo tanta protección contra los hechizos de sueño que debería ser casi inmune. ¡Al menos debería ser capaz de mantener la consciencia!"
+
+              "Bueno, solo te digo lo que vi. Yo tampoco pretendo entenderlo. En cualquier caso, creo que deberíamos despertar a Kate. Necesita oír lo que ha pasado, y nos vendría bien otra reunión de estrategia ahora mismo".
+
+              "No tan rápido, Barry. Primero quiero echar un vistazo a ese dispositivo de estadísticas tuyo".
+
+              "¿Eh? ¿Qué te ha picado de repente?"
+
+              "Solo dalo por un segundo, ¿quieres? Quiero probar algo".
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              Le entrego el dispositivo y él lo mira fijamente durante unos segundos.
+
+              "¿Vas a hacer alg--"
+
+              "¡Shhh!"
+
+              Recoge una piedra del suelo y la lanza contra un pino cercano. La piedra da en el blanco y rebota, dejando una ligera marca en la corteza del árbol.
+
+              "Pensé que algo aquí andaba mal", dice Daren. "Mira esa marca. Apenas se nota que estoy usando un dispositivo de estadísticas ahora mismo. Pero ese lanzamiento tuyo de antes... ¡Eso fue una locura! Fue tan fuerte que levantó al degollador del suelo y lo estampó contra un árbol. ¿Cómo consigues tanta potencia con esto?"
+
+              "No estoy... seguro. Pensé que solo estaba reaccionando a la increíble cantidad de poder mágico que nos rodea. Debe haber algo en mí específicamente que hace que el potenciador de estadísticas funcione tan bien. Pero sin saber exactamente cómo funciona, es difícil decir qué podría ser".
+
+              "Hmm..."
+
+              Me devuelve el dispositivo.
+
+              "Supongo que no sirve de nada quedarse aquí lanzando conjeturas, entonces. Ya lo averiguaremos más tarde. Vamos a buscar a Kate".
+
+              Los dos nos dirigimos a nuestra cueva y procedemos a despertar a Kate de su sueño.
+        effects:
+          - set:
+              ac_ch5_wielder: 1
+            achievement:
+              id: ac_ch5_wielder
+              title: Portador del dispositivo de estadísticas
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch5_wake_kate
+                  checkpoint_rich: 0
+      - condition: ch4_ending = 6
+        texts:
+          - source: scene_text
+            paragraph: 278
+            text: |-
+              "¡Daren!"
+
+              No hay respuesta.
+
+              "¡Oye, Daren!"
+
+              Daren se despierta de repente y empieza a mirar a su alrededor, confundido.
+
+              "¿Qué ha pasado? ¿Dónde está el Stillwater?", me pregunta.
+
+              "Es la segunda vez que me haces exactamente las mismas preguntas. Se ha ido. Desapareció justo después de ponerte a dormir".
+
+              "¿Ponerme a dormir?... ¡No, eso no puede ser! Tengo tanta protección contra los hechizos de sueño que debería ser casi inmune. ¡Al menos debería ser capaz de mantener la consciencia!"
+
+              "Bueno, solo te digo lo que vi. Yo tampoco pretendo entenderlo".
+
+              "Espera un minuto... ¿No acabamos de verle lanzar magia de fuego también? Hay algo que está seriamente mal aquí. Estoy bastante seguro de que usó magia de aire conmigo la primera vez que nos vimos. ¿Cómo puede conocer dos tipos de magia elemental? ¡Normalmente lleva toda una vida dominar incluso un solo elemento!"
+        choices:
+          - position: 1
+            text: ¿Tal vez tenga algún artefacto que lo esté ayudando?
+            effects:
+              - set:
+                  current_scene: ch5_artifact
+                  checkpoint_rich: 0
+          - position: 2
+            text: ¿Tal vez sea más viejo de lo que parece?
+            effects:
+              - set:
+                  current_scene: ch5_older
+                  checkpoint_rich: 0
+          - position: 3
+            text: ¿Tal vez hizo un pacto con algún dios?
+            effects:
+              - set:
+                  current_scene: ch5_pact
+                  checkpoint_rich: 0
+  - name: ch5_artifact
+    texts:
+      - source: scene_text
+        paragraph: 279
+        text: |-
+          "¿Tal vez tenga algún artefacto que lo esté ayudando?"
+
+          "No, eso no puede ser. Si ese fuera el caso, o bien lo habríamos visto llevarlo o habríamos sentido su aura mágica cuando estaba así de cerca. Además, la mayoría de los objetos mágicos ofensivos se usan como armas, y él definitivamente no sostenía nada en sus manos".
+
+          "En cualquier caso, creo que deberíamos despertar a Kate. Necesita oír lo que ha pasado, y nos vendría bien otra reunión de estrategia ahora mismo".
+
+          Los dos nos dirigimos a nuestra cueva y procedemos a despertar a Kate de su sueño.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch5_wake_kate
+  - name: ch5_older
+    texts:
+      - source: scene_text
+        paragraph: 280
+        text: |-
+          "¿Tal vez sea más viejo de lo que parece?"
+
+          Daren hace una pequeña pausa para reflexionar sobre mi pregunta.
+
+          "Puede que hayas dado en el clavo, Barry", me dice Daren. "Cuando luché contra él, podía anticipar cada uno de mis movimientos, y ni siquiera se molestó en usar magia para evitar mis primeros golpes. A la mayoría de los guerreros curtidos en mil batallas les habría costado esquivar incluso el primer tajo de mi espada. Sin embargo, no estoy muy seguro de cómo podríamos averiguar cuál es su edad real".
+
+          "¿Tal vez podríamos preguntárselo?"
+
+          "¿Preguntárselo? ¿Has perdido el juicio?"
+
+          "¿Por qué dices eso? No es que tenga ninguna razón para ocultarnos su verdadera edad. Y no parece tener problemas para alternar entre el intento de asesinato y una conversación casual".
+
+          "A veces me pregunto qué pasa por tu cabeza, Barry..."
+
+          "En cualquier caso, creo que deberíamos despertar a Kate. Necesita oír lo que ha pasado, y nos vendría bien otra reunión de estrategia ahora mismo".
+
+          Los dos nos dirigimos a nuestra cueva y procedemos a despertar a Kate de su sueño.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch5_wake_kate
+  - name: ch5_pact
+    texts:
+      - source: scene_text
+        paragraph: 281
+        text: |-
+          "¿Tal vez hizo un pacto con algún dios?"
+
+          "No te creas todo lo que lees en los cuentos de hadas, Barry. Todavía no he oído hablar de un pacto real entre un dios y un mortal, y definitivamente no me inclino a creer que ninguno de los dioses se hubiera molestado en reconocer siquiera la existencia de ese mocoso".
+
+          "En cualquier caso, creo que deberíamos despertar a Kate. Necesita oír lo que ha pasado, y nos vendría bien otra reunión de estrategia ahora mismo".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch5_wake_kate
+  - name: ch5_wake_kate
+    routes:
+      - condition: ch3_bloodied = 0 AND ch3_kate_badly_hurt = 0
+        texts:
+          - source: scene_text
+            paragraph: 282
+            text: |-
+              Una vez que se levanta, empezamos a ponerla al corriente de todo lo que ha pasado desde que apareció Eiden.
+
+              Después de que terminamos de hablar, Kate se toma unos momentos para reflexionar sobre nuestras palabras.
+
+              "Entonces, déjame ver si lo he entendido bien...", dice. "Barry, cambiaste nuestras vidas por un mensaje".
+
+              "Exacto", digo.
+
+              "Y tenemos que entregar este mensaje a cualquier hombre con túnica que podamos encontrar que lleve un broche con la imagen de un halcón sosteniendo el sol en sus garras".
+
+              "Sí. ¿Te dice algo esa descripción?"
+
+              "Sí...", dice, y casi inmediatamente mira hacia el suelo.
+
+              Está ocultando algo de nuevo. Lo sé.
+
+              "Son un grupo clandestino", continúa. "La mayoría de las veces no se muestran realmente en público. Nadie sabe exactamente quiénes son, ni qué hacen. La mayoría de la gente ni siquiera sabe que existen. Pero hay rumores de que cuentan con el respaldo de los reyes de Varathia".
+
+              "¿Cuentan con el respaldo de los reyes?", pregunta Daren. "¿Qué querría Eiden con esos peces gordos? Solo tienes que decirles que recuerden el invierno en calma, ¿verdad? Me pregunto qué se supone que significa eso".
+        choices:
+          - position: 1
+            text: Suena a amenaza.
+            effects:
+              - set:
+                  current_scene: ch5_threat
+          - position: 2
+            text: Suena a mensaje cifrado.
+            effects:
+              - set:
+                  current_scene: ch5_coded
+      - condition: ch3_bloodied = 1 AND ch3_kate_badly_hurt = 0
+        texts:
+          - source: scene_text
+            paragraph: 283
+            text: |-
+              Nos lleva un tiempo, pero finalmente logramos despertarla, y empezamos a ponerla al corriente de todo lo que ha pasado desde que apareció Eiden. 
+
+              Después de que terminamos de hablar, Kate se toma unos momentos para reflexionar sobre nuestras palabras.
+
+              "Entonces, déjame ver si lo he entendido bien...", dice. "Barry, cambiaste nuestras vidas por un mensaje".
+
+              "Exacto", digo.
+
+              "Y tenemos que entregar este mensaje a cualquier hombre con túnica que podamos encontrar que lleve un broche con la imagen de un halcón sosteniendo el sol en sus garras".
+
+              "Sí. ¿Te dice algo esa descripción?"
+
+              "Sí...", dice, y casi inmediatamente mira hacia el suelo.
+
+              Está ocultando algo de nuevo. Lo sé.
+
+              "Son un grupo clandestino", continúa. "La mayoría de las veces no se muestran realmente en público. Nadie sabe exactamente quiénes son, ni qué hacen. La mayoría de la gente ni siquiera sabe que existen. Pero hay rumores de que cuentan con el respaldo de los reyes de Varathia".
+
+              "¿Cuentan con el respaldo de los reyes?", pregunta Daren. "¿Qué querría Eiden con esos peces gordos? Solo tienes que decirles que recuerden el invierno en calma, ¿verdad? Me pregunto qué se supone que significa eso".
+        choices:
+          - position: 1
+            text: Suena a amenaza.
+            effects:
+              - set:
+                  current_scene: ch5_threat
+          - position: 2
+            text: Suena a mensaje cifrado.
+            effects:
+              - set:
+                  current_scene: ch5_coded
+      - condition: ch3_kate_badly_hurt = 1
+        texts:
+          - source: scene_text
+            paragraph: 284
+            text: |-
+              Nos llevó más de un minuto despertarla. Una vez que se levantó pudimos ver que todavía estaba en una forma terrible. Parece que ni siquiera la magia curativa puede obrar milagros. Probablemente pasará otro día hasta que se recupere por completo de la terrible experiencia de esta mañana.
+
+              Empezamos a ponerla al corriente de todo lo que ha pasado desde que apareció Eiden.
+
+              Después de que terminamos de hablar, Kate se toma unos momentos para reflexionar sobre nuestras palabras.
+
+              "Entonces, déjame ver si lo he entendido bien...", dice. "Barry, cambiaste nuestras vidas por un mensaje".
+
+              "Exacto", digo.
+
+              "Y tenemos que entregar este mensaje a cualquier hombre con túnica que podamos encontrar que lleve un broche con la imagen de un halcón sosteniendo el sol en sus garras".
+
+              "Sí. ¿Te dice algo esa descripción?"
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              "Sí...", dice, y casi inmediatamente mira hacia el suelo.
+
+              Está ocultando algo de nuevo. Lo sé.
+
+              "Son un grupo clandestino", continúa. "La mayoría de las veces no se muestran realmente en público. Nadie sabe exactamente quiénes son, ni qué hacen. La mayoría de la gente ni siquiera sabe que existen. Pero hay rumores de que cuentan con el respaldo de los reyes de Varathia".
+
+              "¿Cuentan con el respaldo de los reyes?", pregunta Daren. "¿Qué querría Eiden con esos peces gordos? Solo tienes que decirles que recuerden el invierno en calma, ¿verdad? Me pregunto qué se supone que significa eso".
+        choices:
+          - position: 1
+            text: Suena a amenaza.
+            effects:
+              - set:
+                  current_scene: ch5_threat
+          - position: 2
+            text: Suena a mensaje cifrado.
+            effects:
+              - set:
+                  current_scene: ch5_coded
+  - name: ch5_threat
+    routes:
+      - condition: ch2_human_reason = 1
+        texts:
+          - source: scene_text
+            paragraph: 285
+            text: |-
+              "Para mí suena a amenaza. Sin duda encajaría con la forma de hacer las cosas de Eiden, por lo que hemos visto hasta ahora. Nos envía a luchar contra sus enemigos, y luego se ríe de ello después".
+
+              Kate asiente.
+
+              "Estoy de acuerdo", dice ella. "No nos habría dejado vivos solo para enviar un mensaje a unos viejos amigos. Una amenaza velada a unos viejos enemigos, por otro lado, parece mucho más probable. No estoy segura de qué es exactamente el invierno en calma, pero estoy dispuesta a apostar que seremos atacados en el momento en que terminemos de decir las palabras".
+
+              "Así que, o luchamos contra todo un grupo clandestino respaldado por la realeza de este continente, o luchamos contra un maníaco loco superpoderoso que puede evaporarnos en un abrir y cerrar de ojos. La buena noticia es que no hay límite de tiempo. ¡Si logramos evitar encontrarnos con esos caballeros con túnica hasta el final del torneo, podríamos estar a salvo!"
+
+              "Ahora espera un momento", dice Daren. "No hay razón para asumir que el mensaje es una amenaza solo por la redacción de la frase. Además, ¡creo que lo que es más importante ahora mismo es encontrar una forma de vencer a Eiden, no hablar de su mensaje!"
+
+              "¿Y cómo sugieres que hagamos eso, exactamente?", dice Kate. "Solo le llevó medio segundo ponerte a dormir, y estoy bastante segura de que tus protecciones son mejores que las mías en ese departamento. Solo eso sería suficiente para eliminarnos a todos, pero he oído que tiene todo un arsenal de otros hechizos en su bolsillo".
+
+              "¿Entonces qué? ¿Significa eso que todos deberíamos inclinarnos ante él ahora y convertirnos en sus lacayos?"
+          - source: scene_text_2
+            paragraph: 7
+            text: |-
+              "¿Cuándo he dicho yo algo así? Lo único que digo es que no tenemos información suficiente para elaborar ninguna estrategia viable contra él en este momento. Hasta que encontremos alguna debilidad en esa magia suya, deberíamos estar agradecidos por el tiempo que Barry nos ha comprado con su trato, por mucho que dure".
+
+              "Tal vez tengas razón. Con suerte, el tiempo que Barry nos ha comprado será suficiente para descubrir la debilidad de Eiden".
+
+              "Kate", digo. "¿Tienes un minuto?"
+
+              Kate me mira, confundida.
+
+              "Por supuesto", dice ella, finalmente, y luego me sigue fuera de la cueva.
+
+              Mientras salimos, Daren me guiña un ojo y me levanta el pulgar. Típico de Daren, malinterpretar completamente este tipo de situación. A veces me pregunto si entiende siquiera el lenguaje corporal.
+
+              "Voy a preguntarte directamente", le digo a Kate una vez que llegamos a la entrada de la cueva. "¿Qué es el Faro de Esperanza?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch5_private_truth
+      - condition: ch2_human_reason = 2
+        texts:
+          - source: scene_text
+            paragraph: 287
+            text: |-
+              "Para mí suena a amenaza. Sin duda encajaría con la forma de hacer las cosas de Eiden, por lo que hemos visto hasta ahora. Nos envía a luchar contra sus enemigos, y luego se ríe de ello después".
+
+              Kate asiente.
+
+              "Estoy de acuerdo", dice ella. "No nos habría dejado vivos solo para enviar un mensaje a unos viejos amigos. Una amenaza velada a unos viejos enemigos, por otro lado, parece mucho más probable. No estoy segura de qué es exactamente el invierno en calma, pero estoy dispuesta a apostar que seremos atacados en el momento en que terminemos de decir las palabras".
+
+              "Así que, o luchamos contra todo un grupo clandestino respaldado por la realeza de este continente, o luchamos contra un maníaco loco superpoderoso que puede evaporarnos en un abrir y cerrar de ojos. La buena noticia es que no hay límite de tiempo. ¡Si logramos evitar encontrarnos con esos caballeros con túnica hasta el final del torneo, podríamos estar a salvo!"
+
+              "Ahora espera un momento", dice Daren. "No hay razón para asumir que el mensaje es una amenaza solo por la redacción de la frase. Además, ¡creo que lo que es más importante ahora mismo es encontrar una forma de vencer a Eiden, no hablar de su mensaje!"
+
+              "¿Y cómo sugieres que hagamos eso, exactamente?", dice Kate. "Solo le llevó medio segundo ponerte a dormir, y estoy bastante segura de que tus protecciones son mejores que las mías en ese departamento. Solo eso sería suficiente para eliminarnos a todos, pero he oído que tiene todo un arsenal de otros hechizos en su bolsillo".
+          - source: scene_text_2
+            paragraph: 9
+            text: |-
+              "¿Entonces qué? ¿Significa eso que todos deberíamos inclinarnos ante él ahora y convertirnos en sus lacayos?"
+
+              "¿Cuándo he dicho yo algo así? Lo único que digo es que no tenemos información suficiente para elaborar ninguna estrategia viable contra él en este momento. Hasta que encontremos alguna debilidad en esa magia suya, deberíamos estar agradecidos por el tiempo que Barry nos ha comprado con su trato, por mucho que dure".
+
+              "Tal vez tengas razón. Con suerte, el tiempo que Barry nos ha comprado será suficiente para descubrir la debilidad de Eiden".
+
+              Se vuelve hacia mí.
+
+              "Barry, creo que deberíamos empezar a dirigirnos a una de las ciudades. Deberíamos centrarnos en llevarte a casa lo antes posible. No es que hayan anunciado los objetivos todavía, así que deberíamos tener tiempo suficiente. Estoy bastante seguro de haber visto una señal de tráfico que apuntaba hacia una de las ciudades en nuestro camino aquí".
+
+              "Oh, uh... Esa es una buena idea. ¡Deberíamos hacer eso totalmente!"
+
+              Kate me frunce el ceño.
+
+              Barry", dice ella. "¿Puedo hablar contigo, en privado?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch5_private_lie
+      - condition: ch2_human_reason = 3
+        texts:
+          - source: scene_text
+            paragraph: 286
+            text: |-
+              "Para mí suena a amenaza. Sin duda encajaría con la forma de hacer las cosas de Eiden, por lo que hemos visto hasta ahora. Nos envía a luchar contra sus enemigos, y luego se ríe de ello después".
+
+              Kate asiente.
+
+              "Estoy de acuerdo", dice ella. "No nos habría dejado vivos solo para enviar un mensaje a unos viejos amigos. Una amenaza velada a unos viejos enemigos, por otro lado, parece mucho más probable. No estoy segura de qué es exactamente el invierno en calma, pero estoy dispuesta a apostar que seremos atacados en el momento en que terminemos de decir las palabras".
+
+              "Así que, o luchamos contra todo un grupo clandestino respaldado por la realeza de este continente, o luchamos contra un maníaco loco superpoderoso que puede evaporarnos en un abrir y cerrar de ojos. La buena noticia es que no hay límite de tiempo. ¡Si logramos evitar encontrarnos con esos caballeros con túnica hasta el final del torneo, podríamos estar a salvo!"
+
+              "Ahora espera un momento", dice Daren. "No hay razón para asumir que el mensaje es una amenaza solo por la redacción de la frase. Además, ¡creo que lo que es más importante ahora mismo es encontrar una forma de vencer a Eiden, no hablar de su mensaje!"
+
+              "¿Y cómo sugieres que hagamos eso, exactamente?", dice Kate. "Solo le llevó medio segundo ponerte a dormir, y estoy bastante segura de que tus protecciones son mejores que las mías en ese departamento. Solo eso sería suficiente para eliminarnos a todos, pero he oído que tiene todo un arsenal de otros hechizos en su bolsillo".
+          - source: scene_text_2
+            paragraph: 8
+            text: |-
+              "¿Entonces qué? ¿Significa eso que todos deberíamos inclinarnos ante él ahora y convertirnos en sus lacayos?"
+
+              "¿Cuándo he dicho yo algo así? Lo único que digo es que no tenemos información suficiente para elaborar ninguna estrategia viable contra él en este momento. Hasta que encontremos alguna debilidad en esa magia suya, deberíamos estar agradecidos por el tiempo que Barry nos ha comprado con su trato, por mucho que dure".
+
+              "Tal vez tengas razón. Con suerte, el tiempo que Barry nos ha comprado será suficiente para descubrir la debilidad de Eiden".
+
+              Se vuelve hacia mí.
+
+              "Barry, ¿tuviste suerte encontrando esas hierbas medicinales que necesitabas para curar la enfermedad de tu hermana?"
+
+              "No... Nada de eso, todavía. Mantengo los ojos bien abiertos".
+
+              Kate me frunce el ceño.
+
+              "Muy bien", dice Daren. "Avísame si necesitas ayuda".
+
+              "Barry", dice Kate. "¿Puedo hablar contigo, en privado?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch5_private_lie
+  - name: ch5_coded
+    routes:
+      - condition: ch2_human_reason = 1
+        texts:
+          - source: scene_text
+            paragraph: 288
+            text: |-
+              "Para mí suena a un mensaje en clave. Creo que se refiere a algo que solo Eiden y esos hombres con túnica saben, para que puedan encontrarse en algún lugar o llevar a cabo una acción determinada".
+
+              "Estoy de acuerdo", dice Daren. "Después de todo, él no querría que supiéramos dónde se reunirán o qué harán".
+
+              "No creo que el Stillwater nos haya perdonado la vida solo para enviar un mensaje", dice Kate. "Debe tener alguna otra razón oculta que desconocemos. La forma en que redactó este mensaje... para mí suena más como una amenaza. ¿Y si nos atacan justo después de decirles estas palabras?"
+
+              "Ahora espera un momento", dice Daren. "No hay razón para asumir que el mensaje es una amenaza solo por la redacción de la frase. Además, ¡creo que lo que es más importante ahora mismo es encontrar una forma de vencer a Eiden, no hablar de su mensaje!"
+
+              "¿Y cómo sugieres que hagamos eso, exactamente?", dice Kate. "Solo le llevó medio segundo ponerte a dormir, y estoy bastante segura de que tus protecciones son mejores que las mías en ese departamento. Solo eso sería suficiente para eliminarnos a todos, pero he oído que tiene todo un arsenal de otros hechizos en su bolsillo".
+
+              "¿Entonces qué? ¿Significa eso que todos deberíamos inclinarnos ante él ahora y convertirnos en sus lacayos?"
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "¿Cuándo he dicho yo algo así? Lo único que digo es que no tenemos información suficiente para elaborar ninguna estrategia viable contra él en este momento. Hasta que encontremos alguna debilidad en esa magia suya, deberíamos estar agradecidos por el tiempo que Barry nos ha comprado con su trato, por mucho que dure".
+
+              "Tal vez tengas razón. Con suerte, el tiempo que Barry nos ha comprado será suficiente para descubrir la debilidad de Eiden".
+
+              "Kate", digo. "¿Tienes un minuto?"
+
+              Kate me mira, confundida.
+
+              "Por supuesto", dice ella, finalmente, y luego me sigue fuera de la cueva.
+
+              Mientras salimos, Daren me guiña un ojo y me levanta el pulgar. Típico de Daren, malinterpretar completamente este tipo de situación. A veces me pregunto si entiende siquiera el lenguaje corporal.
+
+              "Voy a preguntarte directamente", le digo a Kate una vez que llegamos a la entrada de la cueva. "¿Qué es el Faro de Esperanza?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch5_private_truth
+      - condition: ch2_human_reason = 2
+        texts:
+          - source: scene_text
+            paragraph: 289
+            text: |-
+              "Para mí suena a un mensaje en clave. Creo que se refiere a algo que solo Eiden y esos hombres con túnica saben, para que puedan encontrarse en algún lugar o llevar a cabo una acción determinada".
+
+              "Estoy de acuerdo", dice Daren. "Después de todo, él no querría que supiéramos dónde se reunirán o qué harán".
+
+              "No creo que el Stillwater nos haya perdonado la vida solo para enviar un mensaje", dice Kate. "Debe tener alguna otra razón oculta que desconocemos. La forma en que redactó este mensaje... para mí suena más como una amenaza. ¿Y si nos atacan justo después de decirles estas palabras?"
+
+              "Ahora espera un momento", dice Daren. "No hay razón para asumir que el mensaje es una amenaza solo por la redacción de la frase. Además, ¡creo que lo que es más importante ahora mismo es encontrar una forma de vencer a Eiden, no hablar de su mensaje!"
+
+              "¿Y cómo sugieres que hagamos eso, exactamente?", dice Kate. "Solo le llevó medio segundo ponerte a dormir, y estoy bastante segura de que tus protecciones son mejores que las mías en ese departamento. Solo eso sería suficiente para eliminarnos a todos, pero he oído que tiene todo un arsenal de otros hechizos en su bolsillo".
+          - source: scene_text_2
+            paragraph: 11
+            text: |-
+              "¿Entonces qué? ¿Significa eso que todos deberíamos inclinarnos ante él ahora y convertirnos en sus lacayos?"
+
+              "¿Cuándo he dicho yo algo así? Lo único que digo es que no tenemos información suficiente para elaborar ninguna estrategia viable contra él en este momento. Hasta que encontremos alguna debilidad en esa magia suya, deberíamos estar agradecidos por el tiempo que Barry nos ha comprado con su trato, por mucho que dure".
+
+              "Tal vez tengas razón. Con suerte, el tiempo que Barry nos ha comprado será suficiente para descubrir la debilidad de Eiden".
+
+              Se vuelve hacia mí.
+
+              "Barry, creo que deberíamos empezar a dirigirnos a una de las ciudades. Deberíamos centrarnos en llevarte a casa lo antes posible. No es que hayan anunciado los objetivos todavía, así que deberíamos tener tiempo suficiente. Estoy bastante seguro de haber visto una señal de tráfico que apuntaba hacia una de las ciudades en nuestro camino aquí".
+
+              "Oh, uh... Esa es una buena idea. ¡Deberíamos hacer eso totalmente!"
+
+              Kate me frunce el ceño.
+
+              Barry", dice ella. "¿Puedo hablar contigo, en privado?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch5_private_lie
+      - condition: ch2_human_reason = 3
+        texts:
+          - source: scene_text
+            paragraph: 290
+            text: |-
+              "Para mí suena a un mensaje en clave. Creo que se refiere a algo que solo Eiden y esos hombres con túnica saben, para que puedan encontrarse en algún lugar o llevar a cabo una acción determinada".
+
+              "Estoy de acuerdo", dice Daren. "Después de todo, él no querría que supiéramos dónde se reunirán o qué harán".
+
+              "No creo que el Stillwater nos haya perdonado la vida solo para enviar un mensaje", dice Kate. "Debe tener alguna otra razón oculta que desconocemos. La forma en que redactó este mensaje... para mí suena más como una amenaza. ¿Y si nos atacan justo después de decirles estas palabras?"
+
+              "Ahora espera un momento", dice Daren. "No hay razón para asumir que el mensaje es una amenaza solo por la redacción de la frase. Además, ¡creo que lo que es más importante ahora mismo es encontrar una forma de vencer a Eiden, no hablar de su mensaje!"
+
+              "¿Y cómo sugieres que hagamos eso, exactamente?", dice Kate. "Solo le llevó medio segundo ponerte a dormir, y estoy bastante segura de que tus protecciones son mejores que las mías en ese departamento. Solo eso sería suficiente para eliminarnos a todos, pero he oído que tiene todo un arsenal de otros hechizos en su bolsillo".
+
+              "¿Entonces qué? ¿Significa eso que todos deberíamos inclinarnos ante él ahora y convertirnos en sus lacayos?"
+          - source: scene_text_2
+            paragraph: 12
+            text: |-
+              "¿Cuándo he dicho yo algo así? Lo único que digo es que no tenemos información suficiente para elaborar ninguna estrategia viable contra él en este momento. Hasta que encontremos alguna debilidad en esa magia suya, deberíamos estar agradecidos por el tiempo que Barry nos ha comprado con su trato, por mucho que dure".
+
+              "Tal vez tengas razón. Con suerte, el tiempo que Barry nos ha comprado será suficiente para descubrir la debilidad de Eiden".
+
+              Se vuelve hacia mí.
+
+              "Barry, ¿tuviste suerte encontrando esas hierbas medicinales que necesitabas para curar la enfermedad de tu hermana?"
+
+              "No... Nada de eso, todavía. Mantengo los ojos bien abiertos".
+
+              Kate me frunce el ceño.
+
+              "Muy bien", dice Daren. "Avísame si necesitas ayuda".
+
+              "Barry", dice Kate. "¿Puedo hablar contigo, en privado?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch5_private_lie
+  - name: ch5_private_truth
+    routes:
+      - condition: ch4_ending <> 2
+        texts:
+          - source: scene_text
+            paragraph: 293
+            text: |-
+              Se detiene un momento para mirarme directamente a los ojos. 
+
+              "¿Cómo sabes lo del Faro?", me pregunta.
+
+              "Eiden nos dijo que eres una superviviente de ese lugar poco antes de atacar a Daren. Sin embargo, no quiso darnos ningún detalle. Dijo que deberíamos preguntártelo a ti personalmente. ¿Entonces de qué se trata?"
+
+              "Es... complicado".
+
+              "Sin duda. No hace falta que me cuentes toda la historia. Un breve resumen bastará".
+
+              "¿De verdad no tienes nada mejor que hacer que entrometerte en mis asuntos personales?"
+
+              "Si fuera solo una cuestión de privacidad, no lo habría sacado a colación. Pero no lo es, ¿verdad? Has estado ocultando cosas desde que nos conocimos. Fue lo mismo cuando te pregunté por los hombres con túnica que busca Eiden. Te lo pregunto porque no quiero que este secretismo tuyo acabe matándonos a todos".
+          - source: scene_text_2
+            paragraph: 14
+            text: |-
+              "No lo hará".
+
+              "¿Cómo puedes estar tan segura?"
+
+              Desvía la mirada por un segundo.
+
+              "Simplemente no lo hará".
+
+              Hace una pausa.
+
+              "No... no pienso mantener esto en secreto para siempre. Es solo que... este no es el momento adecuado. Prometo que lo aclararé todo a su debido tiempo. Ahora, si eso es todo lo que querías discutir conmigo, volveré a dormir".
+
+              Regresa al interior de la cueva, pero yo no la sigo. En su lugar, me tumbo apoyando la espalda contra la pared exterior de la cueva y empiezo a ordenar mis pensamientos.
+
+              Han pasado muchas cosas desde que me uní a este torneo. La gente muere a diestra y siniestra, y los organizadores ni siquiera se molestan en darnos nuestros objetivos. Y para colmo, está ese Stillwater. ¿Qué podría pretender conseguir uniéndose a un torneo como este? ¿Cuál es su propósito?
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch5_scream
+      - condition: ch4_ending = 2
+        texts:
+          - source: scene_text
+            paragraph: 294
+            text: |-
+              "¿De verdad no tienes nada mejor que hacer que entrometerte en mis asuntos personales?"
+
+              "Si fuera solo una cuestión de privacidad, no lo habría sacado a colación. Pero no lo es, ¿verdad? Has estado ocultando cosas desde que nos conocimos. Fue lo mismo cuando te pregunté por los hombres con túnica que busca Eiden. Te lo pregunto porque no quiero que este secretismo tuyo acabe matándonos a todos".
+
+              "No lo hará".
+
+              "¿Cómo puedes estar tan segura?"
+
+              Desvía la mirada por un segundo.
+
+              "Simplemente no lo hará".
+
+              Hace una pausa.
+
+              "No... no pienso mantener esto en secreto para siempre. Es solo que... este no es el momento adecuado. Prometo que lo aclararé todo a su debido tiempo. Ahora, si eso es todo lo que querías discutir conmigo, volveré a dormir".
+
+              Regresa al interior de la cueva, pero yo no la sigo. En su lugar, me tumbo apoyando la espalda contra la pared exterior de la cueva y empiezo a ordenar mis pensamientos.
+
+              Han pasado muchas cosas desde que me uní a este torneo. La gente muere a diestra y siniestra, y los organizadores ni siquiera se molestan en darnos nuestros objetivos. Y para colmo, está ese Stillwater. ¿Qué podría pretender conseguir uniéndose a un torneo como este? ¿Cuál es su propósito?
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch5_scream
+  - name: ch5_private_lie
+    routes:
+      - condition: ch4_ending <> 2
+        texts:
+          - source: scene_text
+            paragraph: 291
+            text: |-
+              "Err... Por supuesto", digo, y la sigo fuera de la cueva.
+
+              Mientras salimos, Daren me guiña un ojo y me levanta el pulgar. Típico de Daren, malinterpretar completamente este tipo de situación. A veces me pregunto si entiende siquiera el lenguaje corporal.
+
+              Una vez en la entrada de la cueva, Kate se detiene frente a mí y me mira directamente a los ojos con esa mirada suya seria y decidida.
+
+              "Le mentiste a Daren sobre tu verdadero propósito al unirte a este torneo, ¿verdad?"
+
+              "¿Y qué si lo hice?"
+
+              "¿Por qué ocultárselo? ¿De verdad crees que te considerará un enemigo solo porque compiten por el mismo premio? E incluso si lo hiciera, ¿crees que tendría alguna razón para temerte?"
+
+              "Todo el mundo miente. Todo el mundo tiene algo que ocultar. Tú no eres diferente. No es que le hayas contado nunca a Daren lo del Faro de Esperanza, ¿verdad?"
+          - source: scene_text_2
+            paragraph: 13
+            text: |-
+              La determinación de los ojos de Kate ha sido sustituida ahora por la incertidumbre.
+
+              "¿Qué sabes tú del Faro de Esperanza?"
+
+              "No mucho, la verdad. Eiden solo dijo que eres una superviviente de ese lugar, pero no quiso darnos más detalles. Dijo que deberíamos preguntártelo a ti en persona. ¿Entonces qué es este Faro de Esperanza?"
+
+              Vacila.
+
+              "Es... complicado".
+
+              "Ajá. ¿Ves a qué me refiero? Tú también le ocultas cosas a Daren. ¿En qué se diferencia eso de lo que yo hago?"
+
+              "Es diferente. Y deberías decirle la verdad a Daren. Pero eres libre de hacer lo que quieras. Eso es todo lo que tenía que decir al respecto".
+
+              Con estas últimas palabras, me da la espalda y regresa furiosa a la cueva.
+        choices:
+          - position: 1
+            text: Contarle la verdad a Daren
+            effects:
+              - set:
+                  current_scene: ch5_admit_lie
+                  ch5_admit_lie: 1
+          - position: 2
+            text: No decirle nada a Daren
+            effects:
+              - set:
+                  current_scene: ch5_no_admit
+                  ch5_admit_lie: 0
+      - condition: ch4_ending = 2
+        texts:
+          - source: scene_text
+            paragraph: 292
+            text: |-
+              "Err... Por supuesto", digo, y la sigo fuera de la cueva.
+
+              Mientras salimos, Daren me guiña un ojo y me levanta el pulgar. Típico de Daren, malinterpretar completamente este tipo de situación. A veces me pregunto si entiende siquiera el lenguaje corporal.
+
+              Una vez en la entrada de la cueva, Kate se detiene frente a mí y me mira directamente a los ojos con esa mirada suya seria y decidida.
+
+              "Le mentiste a Daren sobre tu verdadero propósito al unirte a este torneo, ¿verdad?"
+
+              "¿Y qué si lo hice?"
+
+              "¿Por qué ocultárselo? ¿De verdad crees que te considerará un enemigo solo porque compiten por el mismo premio? E incluso si lo hiciera, ¿crees que tendría alguna razón para temerte?"
+
+              "Todo el mundo miente. Todo el mundo tiene algo que ocultar. Tú no eres diferente. No es que le hayas contado nunca a Daren lo del Faro de Esperanza, ¿verdad?"
+
+              "¡Eso no es lo mismo!"
+
+              "¿Por qué no?"
+
+              Hace una pausa de unos segundos y luego decide ignorar completamente mi pregunta.
+
+              "Deberías decirle la verdad a Daren. Pero no voy a obligarte. Eres libre de hacer lo que quieras. Eso es todo lo que tenía que decir al respecto".
+
+              Con estas últimas palabras, me da la espalda y regresa furiosa a la cueva.
+        choices:
+          - position: 1
+            text: Contarle la verdad a Daren
+            effects:
+              - set:
+                  current_scene: ch5_admit_lie
+                  ch5_admit_lie: 1
+          - position: 2
+            text: No decirle nada a Daren
+            effects:
+              - set:
+                  current_scene: ch5_no_admit
+                  ch5_admit_lie: 0
+  - name: ch5_admit_lie
+    effects:
+      - set:
+          ac_ch5_liar: 1
+        achievement:
+          id: ac_ch5_liar
+          title: Mentiroso confeso
+    routes:
+      - condition: ch2_human_reason = 2
+        texts:
+          - source: scene_text
+            paragraph: 295
+            text: |-
+              Tal vez Kate tenga razón. ¿En qué estaba pensando cuando le mentí a Daren de esa manera? Me ha demostrado nada más que honestidad hasta ahora, y yo he traicionado su confianza. Se va a molestar por esto, pero prefiero decirle la verdad ahora que esperar a que se entere por su cuenta más tarde.
+
+              "Daren, tengo algo que decirte", digo al entrar en la cueva.
+
+              Kate, que se disponía a volver a dormir, me observa ahora atentamente, esperando a ver si realmente pienso seguir adelante con ello.
+
+              "Oye, Barry, realmente no deberías empezar una conversación así. Normalmente, las conversaciones que empiezan con esas palabras nunca terminan bien".
+
+              Respiro hondo.
+
+              "Quería decirte que te mentí ayer sobre la verdadera razón por la que estoy aquí. La verdad es que nadie me obligó a venir a este lugar. Vine aquí por mi propia voluntad. Vine porque quiero ganar este torneo. Porque ha sido mi sueño desde que era un niño convertirme en mago, y el Magium puede concederme ese deseo. Siento no haber sido honesto contigo sobre esto".
+          - source: scene_text_2
+            paragraph: 15
+            text: |-
+              "Oh", dice Daren. 
+
+              Sus ojos están mucho más fríos de lo habitual.
+
+              "Bueno, ahora ya lo sé".
+
+              "Ahora ya lo sabes..."
+
+              Kate me sonríe débilmente, pero Daren me mira más serio de lo que lo he visto nunca. Decido darle tiempo para que piense en lo que he dicho y me dirijo de nuevo hacia la entrada de la cueva.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch5_scream
+      - condition: ch2_human_reason = 3
+        texts:
+          - source: scene_text
+            paragraph: 296
+            text: |-
+              Tal vez Kate tenga razón. ¿En qué estaba pensando cuando le mentí a Daren de esa manera? Me ha demostrado nada más que honestidad hasta ahora, y yo he traicionado su confianza. Se va a molestar por esto, pero prefiero decirle la verdad ahora que esperar a que se entere por su cuenta más tarde.
+
+              "Daren, tengo algo que decirte", digo al entrar en la cueva.
+
+              Kate, que se disponía a volver a dormir, me observa ahora atentamente, esperando a ver si realmente pienso seguir adelante con ello.
+
+              "Oye, Barry, realmente no deberías empezar una conversación así. Normalmente, las conversaciones que empiezan con esas palabras nunca terminan bien".
+
+              Respiro hondo.
+
+              "Quería decirte que te mentí ayer sobre la verdadera razón por la que estoy aquí. La verdad es que no vine aquí buscando hierbas medicinales. Vine aquí porque quiero ganar este torneo. Porque ha sido mi sueño desde que era un niño convertirme en mago, y el Magium puede concederme ese deseo. Siento no haber sido honesto contigo sobre esto".
+          - source: scene_text_2
+            paragraph: 16
+            text: |-
+              "¿Y esa historia de tu hermana, también era todo mentira?"
+
+              "Sí..."
+
+              "Oh", dice Daren. 
+
+              Sus ojos están mucho más fríos de lo habitual.
+
+              "Bueno, ahora ya lo sé".
+
+              "Ahora ya lo sabes..."
+
+              Kate me sonríe débilmente, pero Daren me mira más serio de lo que lo he visto nunca. Decido darle tiempo para que piense en lo que he dicho y me dirijo de nuevo hacia la entrada de la cueva.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch5_scream
+  - name: ch5_no_admit
+    texts:
+      - source: scene_text
+        paragraph: 299
+        text: |-
+          Diga lo que diga Kate, no tengo forma de saber cómo reaccionará Daren si se entera de que en realidad aspiro a ganar este torneo como todo el mundo. Y además, si descubre que le he estado mintiendo todo este tiempo, solo se disgustará más. No tengo más remedio que seguir mintiéndole, en este punto.
+
+          Me tumbo apoyando la espalda contra la pared exterior de la cueva y empiezo a ordenar mis pensamientos. Han pasado muchas cosas desde que me uní a este torneo. La gente muere a diestra y siniestra, y los organizadores ni siquiera se molestan en darnos nuestros objetivos. Y para colmo, está ese Stillwater. ¿Qué podría pretender conseguir uniéndose a un torneo como este? ¿Cuál es su propósito?
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch5_scream
+  - name: ch5_scream
+    routes:
+      - condition: ch5_admit_lie = 0
+        texts:
+          - source: scene_text
+            paragraph: 297
+            text: |-
+              Mientras estoy allí sentado pensando, de repente oigo el grito de una mujer que viene de muy lejos. Al mismo tiempo, aparece un mensaje de advertencia flotando ante mis ojos, diciéndome que no la hiera porque es una de las lugareñas. 
+
+              Aunque está bastante lejos de aquí, a juzgar por los débiles rastros de magia que vienen de su dirección, es seguro asumir que está siendo atacada por monstruos. No parecen muy grandes, ni particularmente poderosos, así que probablemente estemos hablando de un puñado de goblins.   
+
+              Las reglas del torneo son un poco confusas sobre qué pasaría si salváramos a uno de los lugareños del ataque de un monstruo. La regla general es no intervenir en absoluto en los asuntos de la gente de Varathia, pero no se aplica mediante un hechizo, como la regla que nos impide herirlos directamente, por ejemplo.
+
+              Desde una perspectiva lógica, sería menos arriesgado no intervenir. No hay forma de saber con certeza si tomar una acción aquí no me haría ser expulsado del torneo. Pero entonces...
+
+              La mujer vuelve a gritar, esta vez más fuerte, y sonando más aterrorizada.
+        choices:
+          - position: 1
+            text: Ignorarla
+            effects:
+              - set:
+                  current_scene: ch5_ignore
+                  ch5_ignore_scream: 1
+          - position: 2
+            text: Llamar a Daren e ir al rescate
+            effects:
+              - set:
+                  current_scene: ch5_rescue
+                  ch5_ignore_scream: 0
+      - condition: ch5_admit_lie = 1
+        texts:
+          - source: scene_text
+            paragraph: 298
+            text: |-
+              Al llegar a la salida, de repente oigo el grito de una mujer que viene de muy lejos. Al mismo tiempo, aparece un mensaje de advertencia flotando ante mis ojos, diciéndome que no la hiera porque es una de las lugareñas. 
+
+              Aunque está bastante lejos de aquí, a juzgar por los débiles rastros de magia que vienen de su dirección, es seguro asumir que está siendo atacada por monstruos. No parecen muy grandes, ni particularmente poderosos, así que probablemente estemos hablando de un puñado de goblins.   
+
+              Las reglas del torneo son un poco confusas sobre qué pasaría si salváramos a uno de los lugareños del ataque de un monstruo. La regla general es no intervenir en absoluto en los asuntos de la gente de Varathia, pero no se aplica mediante un hechizo, como la regla que nos impide herirlos directamente, por ejemplo.
+
+              Desde una perspectiva lógica, sería menos arriesgado no intervenir. No hay forma de saber con certeza si tomar una acción aquí no me haría ser expulsado del torneo. Pero entonces...
+
+              La mujer vuelve a gritar, esta vez más fuerte, y sonando más aterrorizada.
+        choices:
+          - position: 1
+            text: Ignorarla
+            effects:
+              - set:
+                  current_scene: ch5_ignore
+                  ch5_ignore_scream: 1
+          - position: 2
+            text: Llamar a Daren e ir al rescate
+            effects:
+              - set:
+                  current_scene: ch5_rescue
+                  ch5_ignore_scream: 0
+  - name: ch5_ignore
+    routes:
+      - condition: ch5_admit_lie = 0
+        texts:
+          - source: scene_text
+            paragraph: 300
+            text: |-
+              No he venido aquí para hacerme el héroe. Ganar el torneo es lo prioritario. No debo olvidar eso. Si existe la más mínima posibilidad de que salvar a esta mujer me haga ser expulsado del torneo, entonces no debo interferir.
+
+              "¿Qué es ese ruido?", pregunta Daren al acercarse a la entrada de la cueva.
+
+              "Una de las lugareñas está siendo atacada por un grupo de monstruos. Probablemente goblins".
+
+              "¡Por los dioses! Entonces, ¿por qué no me llamaste en el momento en que oíste su voz?"
+
+              "Bueno, las reglas del torneo dicen que no debemos interferir en los asuntos de la gente de Varathia".
+
+              "¿De verdad crees que alguien nos va a pedir cuentas por salvar la vida de una de las lugareñas? ¿Qué te pasa, Barry? Esto no es propio de ti".
+
+              Pasa a mi lado sin decir otra palabra y se dirige hacia el origen del sonido. 
+
+              Kate, que estaba lo suficientemente cerca como para haber oído nuestra conversación, se aclara la garganta y dice:
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              "Si te sirve de algo, creo que has tomado la decisión correcta. No hay forma de saber con certeza qué pasará si rompemos la regla de no interferencia".
+
+              "Gracias. Pero es demasiado tarde para preocuparse por eso ahora. No podemos abandonar a Daren así. Vamos".
+
+              Al alcanzar a Daren, nos sorprende ver que ya no hay monstruos en las cercanías.
+
+              "Mira quién ha decidido aparecer", dice Daren.
+
+              "¿Qué ha pasado? ¿Dónde están los goblins?", le pregunto.
+
+              "Todos salieron huyendo asustados al verme. No eran un grupo muy valiente. Ni siquiera tuve que desenvainar mi espada".
+
+              Miro a mi alrededor para ver si la mujer que gritaba resultó herida de alguna manera. Cuando la veo bien, me quedo brevemente atónito por lo hermosa que es.  Tiene el pelo largo y castaño rojizo, una cintura delgada y una sonrisa cálida, mientras que sus rasgos faciales son suaves y femeninos, a diferencia de los de Kate, y sus ojos castaños claros irradian amabilidad. Lleva un vestido castaño rojizo a juego con su pelo, y parece estar en la mitad de la veintena. La mujer hace ahora una elegante reverencia ante nosotros, como gesto de gratitud.
+
+              "Muchísimas gracias a todos por su ayuda", dice. "¡No sé qué habría hecho sin ustedes!"
+        choices:
+          - position: 1
+            text: Es a Daren a quien deberías agradecer, no a nosotros.
+            effects:
+              - set:
+                  current_scene: ch5_humble
+          - position: 2
+            text: Solo hicimos lo que cualquier otro habría hecho en nuestro lugar.
+            effects:
+              - set:
+                  current_scene: ch5_stead
+      - condition: ch5_admit_lie = 1
+        texts:
+          - source: scene_text
+            paragraph: 301
+            text: |-
+              No he venido aquí para hacerme el héroe. Ganar el torneo es lo prioritario. No debo olvidar eso. Si existe la más mínima posibilidad de que salvar a esta mujer me haga ser expulsado del torneo, entonces no debo interferir.
+
+              "¿Qué es ese ruido?", pregunta Daren al acercarse a la entrada de la cueva.
+
+              "Una de las lugareñas está siendo atacada por un grupo de monstruos. Probablemente goblins".
+
+              "¡Por los dioses! Entonces, ¿por qué no me llamaste en el momento en que oíste su voz?"
+
+              "Bueno, las reglas del torneo dicen que no debemos interferir en los asuntos de la gente de Varathia".
+
+              "¿De verdad crees que alguien nos va a pedir cuentas por salvar la vida de una de las lugareñas? ¿Qué te pasa, Barry? Siento que ya ni siquiera te conozco".
+
+              Pasa a mi lado sin decir otra palabra y se dirige hacia el origen del sonido. 
+
+              Kate, que estaba lo suficientemente cerca como para haber oído nuestra conversación, se aclara la garganta y dice:
+
+              "Si te sirve de algo, creo que has tomado la decisión correcta. No hay forma de saber con certeza qué pasará si rompemos la regla de no interferencia".
+          - source: scene_text_2
+            paragraph: 18
+            text: |-
+              "Gracias. Pero es demasiado tarde para preocuparse por eso ahora. No podemos abandonar a Daren así. Vamos".
+
+              Al alcanzar a Daren, nos sorprende ver que ya no hay monstruos en las cercanías.
+
+              "Mira quién ha decidido aparecer", dice Daren.
+
+              "¿Qué ha pasado? ¿Dónde están los goblins?", le pregunto.
+
+              "Todos salieron huyendo asustados al verme. No eran un grupo muy valiente. Ni siquiera tuve que desenvainar mi espada".
+
+              Miro a mi alrededor para ver si la mujer que estaba gritando resultó herida de alguna manera. Cuando la observo bien, me quedo brevemente impresionado por lo hermosa que es. Tiene un largo cabello castaño rojizo, una cintura esbelta y una sonrisa cálida, mientras que sus rasgos faciales son suaves y femeninos, a diferencia de los de Kate, y sus ojos marrón claro irradian amabilidad. Lleva un vestido castaño rojizo a juego con su cabello y aparenta estar en la mitad de la veintena. La mujer ahora se inclina elegantemente ante nosotros como gesto de gratitud.
+
+              "Muchísimas gracias a todos por su ayuda", dice. "¡No sé qué habría hecho sin ustedes!"
+        choices:
+          - position: 1
+            text: Es a Daren a quien deberías agradecer, no a nosotros.
+            effects:
+              - set:
+                  current_scene: ch5_humble
+          - position: 2
+            text: Solo hicimos lo que cualquier otro habría hecho en nuestro lugar.
+            effects:
+              - set:
+                  current_scene: ch5_stead
+  - name: ch5_humble
+    texts:
+      - source: scene_text
+        paragraph: 302
+        text: |-
+          "Es a Daren a quien deberías agradecer, no a nosotros. Él es quien corrió a salvarte, a pesar de la regla de no interferencia del torneo de magos".
+
+          "Soy muy consciente", dice la mujer, sonriendo educadamente. "Eso no niega, sin embargo, el hecho de que ustedes dos finalmente también siguieran a su amigo aquí, a pesar de esa regla, ¡y por eso les doy las gracias! Mi nombre es Rose. ¡Encantada de conocerlos a todos!"
+
+          "Si me permites preguntar", interrumpe Kate. "¿Qué hacías sola en medio de la naturaleza?"
+
+          "Bueno, señorita, err..."
+
+          "Kate", dice Kate, mientras se señala a sí misma. Luego nos señala secamente a mí y luego a Daren, dándole a Rose también nuestros nombres.
+
+          Rose sonríe y continúa.
+      - source: scene_text_2
+        paragraph: 19
+        text: |-
+          "Señorita Kate, estaba aquí buscando unas hierbas muy raras que solo crecen en esta zona del continente. Ha habido un brote de plaga de aceite en mi ciudad natal y, como herborista, puedo reconocer las plantas que se necesitan para la cura".
+
+          "Lo siento, ¿qué es la plaga de aceite?"
+
+          "Oh, no sabía que esta enfermedad no existe fuera de nuestro continente. Los médicos no están seguros de su causa, pero lo que ocurre es que el sudor de los pacientes se vuelve tan espeso como el aceite, y tienen una fiebre muy alta, con tos violenta. Algunos de nosotros tenemos una inmunidad natural, pero los que no tienen tanta suerte son puestos en cuarentena en algún lugar y abandonados allí para que mueran solos. La única cura que conocemos para esta enfermedad se extrae de las plantas muy raras que he venido a recolectar aquí".
+
+          "¿Pero por qué eres tú la que ha venido a por las hierbas? ¿Tienes familiares infectados? ¿Por qué no contrataste al menos a unos guardaespaldas para que te acompañaran?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch5_creator
+  - name: ch5_stead
+    texts:
+      - source: scene_text
+        paragraph: 303
+        text: |-
+          "Solo hicimos lo que cualquier otro habría hecho en nuestro lugar".
+
+          La mujer sonríe.
+
+          "En efecto. La mayoría de la gente habría hecho lo mismo que usted, y me habría dejado morir para no arriesgarse a ser expulsado del torneo".
+
+          Mientras la mujer habla, siento que se me enrojecen las orejas. 
+
+          "¡Pero finalmente decidió seguir a su amigo aquí a pesar de la regla de no interferencia del torneo, y por eso le doy las gracias! Mi nombre es Rose. ¡Encantada de conocerlos a todos!"
+
+          "Si me permites preguntar", interrumpe Kate. "¿Qué hacías sola en medio de la naturaleza?"
+
+          "Bueno, señorita, err..."
+
+          "Kate", dice Kate, mientras se señala a sí misma. Luego nos señala secamente a mí y luego a Daren, dándole a Rose también nuestros nombres.
+      - source: scene_text_2
+        paragraph: 20
+        text: |-
+          Rose sonríe y continúa.
+
+          "Señorita Kate, estaba aquí buscando unas hierbas muy raras que solo crecen en esta zona del continente. Ha habido un brote de plaga de aceite en mi ciudad natal y, como herborista, puedo reconocer las plantas que se necesitan para la cura".
+
+          "Lo siento, ¿qué es la plaga de aceite?"
+
+          "Oh, no sabía que esta enfermedad no existe fuera de nuestro continente. Los médicos no están seguros de su causa, pero lo que ocurre es que el sudor de los pacientes se vuelve tan espeso como el aceite, y tienen una fiebre muy alta, con tos violenta. Algunos de nosotros tenemos una inmunidad natural, pero los que no tienen tanta suerte son puestos en cuarentena en algún lugar y abandonados allí para que mueran solos. La única cura que conocemos para esta enfermedad se extrae de las plantas muy raras que he venido a recolectar aquí".
+
+          "¿Pero por qué eres tú la que ha venido a por las hierbas? ¿Tienes familiares infectados? ¿Por qué no contrataste al menos a unos guardaespaldas para que te acompañaran?"
+    effects:
+      - set:
+          ac_ch5_shameless: 1
+        achievement:
+          id: ac_ch5_shameless
+          title: Sin vergüenza
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch5_creator
+  - name: ch5_rescue
+    texts:
+      - source: scene_text
+        paragraph: 304
+        text: |-
+          No es el momento de preocuparse por el reglamento del torneo. La vida de esa mujer está en peligro. Tenemos que actuar ahora.
+
+          "¡Daren! ¡Ven rápido!"
+
+          "¿Qué? ¿Qué pasa?"
+
+          "Una de las lugareñas está siendo atacada por un grupo de goblins cerca de aquí. ¡Si nos damos prisa, podemos llegar a tiempo para rescatarla!"
+
+          Daren pone cara seria y agarra su espada.
+
+          "Vamos", dice, y me sigue mientras me dirijo en la dirección de donde oí el grito.
+
+          Al acercarnos, las auras mágicas de los monstruos se intensifican. Hay cuatro de ellos y tienen a la mujer rodeada, pero no parece que hayan llegado a herirla todavía.
+
+          Cuando finalmente llegamos al alcance visual de los atacantes, se confirman mis sospechas. Son goblins, en efecto. Criaturas viles y horribles, de no más de un metro de altura, con colmillos en lugar de dientes, narices ganchudas, orejas puntiagudas y piel verde. A pesar de sus apariencias, los goblins son bastante inteligentes y suelen estar organizados en clanes con jerarquías claramente definidas, a diferencia de la mayoría de las otras razas de monstruos. También son lo suficientemente listos como para fabricar y usar herramientas, así como armas y armaduras.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch5_goblins
+  - name: ch5_goblins
+    routes:
+      - condition: ancient_languages < 3
+        texts:
+          - source: scene_text
+            paragraph: 305
+            text: |-
+              En cuanto nos ven, uno de ellos les grita algo a sus aliados en un idioma que no entiendo, y luego todos se dispersan rápidamente. Visiblemente, no estaban preparados para una lucha real.
+
+              Una vez que los goblins se han ido, me doy la vuelta para asegurarme de que la mujer que acabamos de salvar no esté herida de ninguna manera. Ahora que la veo bien, me quedo brevemente atónito por lo hermosa que es.  Tiene el pelo largo y castaño rojizo, una cintura delgada y una sonrisa cálida, mientras que sus rasgos faciales son suaves y femeninos, a diferencia de los de Kate, y sus ojos castaños claros irradian amabilidad. Lleva un vestido castaño rojizo a juego con su pelo, y parece estar en la mitad de la veintena. La mujer hace ahora una elegante reverencia ante nosotros, como gesto de gratitud.
+
+              "Muchísimas gracias a todos por su ayuda", dice. "¡No sé qué habría hecho sin ustedes! Mi nombre es Rose. ¡Encantada de conocerlos!"
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de lenguas antiguas fallida - nivel 3 ]'
+              ch5_goblins: 0
+        choices:
+          - position: 1
+            text: ¡Gajes del oficio!
+            effects:
+              - set:
+                  current_scene: ch5_work
+          - position: 2
+            text: Tuviste suerte de que lográramos llegar a tiempo.
+            effects:
+              - set:
+                  current_scene: ch5_lucky
+          - position: 3
+            text: No hay problema. Nos encanta ayudar a la gente. ¡Pero también aceptamos donaciones!
+            effects:
+              - set:
+                  current_scene: ch5_donations
+      - condition: ancient_languages = 3
+        texts:
+          - source: scene_text
+            paragraph: 306
+            text: |-
+              En cuanto nos ven, uno de ellos les grita algo a sus aliados. De repente me doy cuenta de que está hablando en una de las lenguas antiguas que mi dispositivo de estadísticas me ha enseñado.
+
+              "¡Guerreros humanos!", dice él. "Olviden a la mujer. ¡Retirada!"
+
+              "Esperen", les grito en su propia lengua.
+
+              "¿El humano habla nuestra lengua?"
+
+              "Sí. Ahora dime, ¿por qué atacaron a la mujer?"
+
+              "Porque estamos muriendo de hambre, humano. No íbamos a matarla. Solo queríamos quitarle la comida que lleva en su mochila".
+
+              "¿Por qué están aquí fuera, robando a la gente? ¿No debería su clan proporcionarles comida y refugio?"
+          - source: scene_text_2
+            paragraph: 21
+            text: |-
+              "Fuimos desterrados de nuestro clan hace dos días. No teníamos dinero para pagar nuestro tributo anual. Ahora somos parias. Vivimos de las sobras. Ni siquiera sabemos distinguir entre bayas venenosas y comestibles, así que no podemos vivir de la tierra".
+
+              "¿A cuánto ascendía el tributo anual para los cuatro?"
+
+              "Dos piezas de cobre".
+
+              ¿Dos piezas de cobre? Eso es apenas el precio de una hogaza de pan. Pensándolo bien, los goblins no pueden trabajar para los humanos abiertamente ya que se les considera monstruos. Hay gente que se sabe que contrabandea mercancías y armas a los goblins, pero son raros y operan fuera de la ley. No debería sorprender que el dinero sea mucho más valioso para ellos que para nosotros.
+
+              Tengo dinero de sobra, pero la pregunta es: ¿quiero dar siquiera dos piezas de cobre a unos monstruos que han atacado a una mujer indefensa hace un minuto?
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de lenguas antiguas exitosa - nivel 3 ]'
+        choices:
+          - position: 1
+            text: Darles las dos piezas de cobre
+            effects:
+              - set:
+                  current_scene: ch5_goblins2
+                  ch5_goblins: 1
+          - position: 2
+            text: No darles nada y enviarlos por su camino.
+            effects:
+              - set:
+                  current_scene: ch5_goblins2
+                  ch5_goblins: 2
+  - name: ch5_goblins2
+    routes:
+      - condition: ch5_goblins = 1
+        texts:
+          - source: scene_text
+            paragraph: 307
+            text: |-
+              Saco dos piezas de cobre de mi bolsillo derecho y se las lanzo a los goblins. Su líder atrapó las dos monedas al vuelo y ahora las mira como si no pudiera dar crédito a sus ojos.
+
+              "¿Qué significa esto?", me pregunta.
+
+              "Dos piezas de cobre. Para tu tributo anual. Ahora puedes volver a tu clan y dejar de robar a la gente".
+
+              "¡No, no te creo! ¡Es una trampa! No escuchen ni una palabra de lo que dice. ¡Tiene que ser una trampa!"
+
+              "Ehm... Disculpe... ¿señor goblin?"
+
+              No reconozco la voz, así que me doy la vuelta para ver quién acaba de hablar. Me doy cuenta de que es la mujer que salvamos de los goblins. Ahora que la veo bien, me quedo brevemente atónito por lo hermosa que es.  Tiene el pelo largo y castaño rojizo, una cintura delgada y una sonrisa cálida, mientras que sus rasgos faciales son suaves y femeninos, a diferencia de los de Kate, y sus ojos castaños claros irradian amabilidad. Lleva un vestido castaño rojizo a juego con su pelo, y parece estar en la mitad de la veintena. En su mano sostiene unas bayas azules que ahora muestra a los goblins.
+          - source: scene_text_2
+            paragraph: 22
+            text: |-
+              "He oído que hablaban de que tenían problemas para distinguir entre bayas comestibles y venenosas, ¡y he pensado que podría ayudarles!"
+
+              "¿Usted... puede entendernos también?"
+
+              "Sí, aunque no tan bien como este hombre que está a mi lado. Solo he captado la mitad de lo que hablaban, ¡pero lo suficiente para entender por qué me atacaron allí atrás! Soy herborista, así que sé bastante de plantas. Aunque no puedo enseñarles todo lo que sé, puedo decirles una regla general que pueden seguir para asegurarse de no envenenarse. Deben quedarse con las bayas azules, ya que son lo suficientemente comunes como para encontrarlas en cualquier región de este continente, e incluso las más venenosas solo dan dolor de estómago como mucho. En cuanto a encontrar las que no son venenosas, basta con buscar bayas azules que sean de un color oscuro. Solo las bayas de color azul claro son peligrosas".
+
+              Se come una de las bayas de color azul oscuro que sostiene para demostrar que no miente, y luego le lanza una bolsa llena de ellas al líder goblin. 
+
+              "Tengan, estoy segura de que les darán mucho mejor uso a estas bayas que yo. Acabo de comer. Y por favor, no ataquen más a gente indefensa".
+        effects:
+          - set:
+              ac_ch5_deed: 1
+            achievement:
+              id: ac_ch5_deed
+              title: Una buena acción
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch5_goblins3
+      - condition: ch5_goblins = 2
+        texts:
+          - source: scene_text
+            paragraph: 308
+            text: |-
+              "Creo que he captado lo principal de la situación. Muy bien. Sigan su camino, entonces".
+
+              "No volveremos a molestarlos, humano. No somos tan tontos como para entablar una lucha armada contra guerreros humanos entrenados".
+
+              Mientras se da la vuelta para irse, oímos la voz de una mujer detrás de nosotros.
+
+              "Ehm... Disculpe... ¿señor goblin?"
+
+              No reconozco la voz, así que me doy la vuelta para ver quién acaba de hablar. Me doy cuenta de que es la mujer que salvamos de los goblins. Ahora que la veo bien, me quedo brevemente atónito por lo hermosa que es.  Tiene el pelo largo y castaño rojizo, una cintura delgada y una sonrisa cálida, mientras que sus rasgos faciales son suaves y femeninos, a diferencia de los de Kate, y sus ojos castaños claros irradian amabilidad. Lleva un vestido castaño rojizo a juego con su pelo, y parece estar en la mitad de la veintena. En su mano sostiene unas bayas azules que ahora muestra a los goblins.
+
+              "He oído que hablaban de que tenían problemas para distinguir entre bayas comestibles y venenosas, ¡y he pensado que podría ayudarles!"
+          - source: scene_text_2
+            paragraph: 23
+            text: |-
+              "¿Usted... puede entendernos también?"
+
+              "Sí, aunque no tan bien como este hombre que está a mi lado. Solo he captado la mitad de lo que hablaban, ¡pero lo suficiente para entender por qué me atacaron allí atrás! Soy herborista, así que sé bastante de plantas. Aunque no puedo enseñarles todo lo que sé, puedo decirles una regla general que pueden seguir para asegurarse de no envenenarse. Deben quedarse con las bayas azules, ya que son lo suficientemente comunes como para encontrarlas en cualquier región de este continente, e incluso las más venenosas solo dan dolor de estómago como mucho. En cuanto a encontrar las que no son venenosas, basta con buscar bayas azules que sean de un color oscuro. Solo las bayas de color azul claro son peligrosas".
+
+              Se come una de las bayas de color azul oscuro que sostiene para demostrar que no miente, y luego le lanza una bolsa llena de ellas al líder goblin. 
+
+              "Tengan, estoy segura de que les darán mucho mejor uso a estas bayas que yo. Acabo de comer. Y por favor, no ataquen más a gente indefensa".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch5_goblins3
+  - name: ch5_goblins3
+    routes:
+      - condition: ch5_goblins = 1
+        texts:
+          - source: scene_text
+            paragraph: 309
+            text: |-
+              El goblin parece casi paralizado. Toma vacilante una de las bayas y se la come. Una vez que comprueba por sí mismo que no estaba envenenada, empieza a llorar. Mientras solloza, uno de sus amigos goblins viene a abrazarlo y empiezan a llorar juntos. 
+
+              Así que esto es lo que se siente al ser un goblin. Nunca lo supe. La mujer del pelo castaño rojizo mira a los goblins y sonríe feliz. Es increíble lo feliz que puede estar por unos monstruos que estaban a punto de robarle todo hace unos minutos.
+
+              Una vez que recupera el control de sí mismo, el líder goblin se vuelve hacia nosotros y dice:
+
+              "Humanos, nunca olvidaré su amabilidad. Yo, Uluk Mihtun, juro que pagaré esta deuda, a ambos. Nos volveremos a ver. Hasta entonces..."
+
+              El goblin pone su mano izquierda sobre su estómago y su mano derecha sobre su pecho. El resto de los goblins imitan sus gestos y todos dicen a la vez:
+
+              "¡Tunak Madar!"
+
+              Tunak Madar... Si no me equivoco, por lo que me ha enseñado el dispositivo de estadísticas, deduzco que esta es una de las formas más altas de respeto y gratitud que existen en su idioma. No tiene traducción en ningún otro idioma que se acerque siquiera a su significado.
+          - source: scene_text_2
+            paragraph: 24
+            text: |-
+              Mientras los goblins se marchan, me doy la vuelta para ver que Daren está frunciendo mucho el ceño y frotándose la frente, mientras que Kate simplemente se queda allí parada, mirándonos con la boca abierta.
+
+              "Muy bien", dice Daren. "¿Alguien puede explicarme qué acaba de pasar?"
+
+              La mujer ríe suavemente.
+
+              "Lo siento", dice ella. "Me doy cuenta de que toda esta situación debe de haber parecido muy extraña si no entendían lo que decíamos. En resumen, han sido desterrados de su clan hace dos días por falta de dinero y tuvieron que recurrir al pequeño robo para no morir de hambre, ¡así que les ayudamos en lo que pudimos! Pero, ¿dónde están mis modales? Mi nombre es Rose. Muchísimas gracias a todos por su ayuda. ¡No sé qué habría hecho sin ustedes!"
+        choices:
+          - position: 1
+            text: ¡Gajes del oficio!
+            effects:
+              - set:
+                  current_scene: ch5_work
+          - position: 2
+            text: Tuviste suerte de que lográramos llegar a tiempo.
+            effects:
+              - set:
+                  current_scene: ch5_lucky
+          - position: 3
+            text: No hay problema. Nos encanta ayudar a la gente. ¡Pero también aceptamos donaciones!
+            effects:
+              - set:
+                  current_scene: ch5_donations
+      - condition: ch5_goblins = 2
+        texts:
+          - source: scene_text
+            paragraph: 310
+            text: |-
+              El goblin parece casi paralizado. Toma vacilante una de las bayas y se la come. Una vez que comprueba por sí mismo que no estaba envenenada, empieza a llorar. Mientras solloza, uno de sus amigos goblins viene a abrazarlo y empiezan a llorar juntos. 
+
+              Así que esto es lo que se siente al ser un goblin. Nunca lo supe. La mujer del pelo castaño rojizo mira a los goblins y sonríe feliz. Es increíble lo feliz que puede estar por unos monstruos que estaban a punto de robarle todo hace unos minutos.
+
+              Una vez que recupera el control de sí mismo, el líder goblin se pone de rodillas y clava su daga en el suelo. El resto de los goblins hacen lo mismo que su líder, mientras este empieza a hablar.
+
+              "Estamos avergonzados. Nos han mostrado tanta amabilidad, pero no merecíamos nada de ella. Todo lo que podemos hacer es rogar su perdón".
+
+              La mujer parece avergonzada.
+
+              "Por favor", dice ella. "No hay necesidad de disculparse. Solo hacían lo que creían mejor para sobrevivir y protegerse unos a otros".
+
+              "No somos dignos de sus palabras. Yo, Uluk Mihtun, le juro que pagaré esta deuda. Nos volveremos a ver. Hasta entonces..."
+          - source: scene_text_2
+            paragraph: 25
+            text: |-
+              El goblin pone su mano izquierda sobre su estómago y su mano derecha sobre su pecho. El resto de los goblins imitan sus gestos y todos dicen a la vez:
+
+              "¡Tunak Madar!"
+
+              Tunak Madar... Si no me equivoco, por lo que me ha enseñado el dispositivo de estadísticas, deduzco que esta es una de las formas más altas de respeto y gratitud que existen en su idioma. No tiene traducción en ningún otro idioma que se acerque siquiera a su significado.
+
+              Mientras los goblins se marchan, me doy la vuelta para ver que Daren está frunciendo mucho el ceño y frotándose la frente, mientras que Kate simplemente se queda allí parada, mirándonos con la boca abierta.
+
+              "Muy bien", dice Daren. "¿Alguien puede explicarme qué acaba de pasar?"
+
+              La mujer ríe suavemente.
+
+              "Lo siento", dice ella. "Me doy cuenta de que toda esta situación debe de haber parecido muy extraña si no entendían lo que decíamos. En resumen, han sido desterrados de su clan hace dos días por falta de dinero y tuvieron que recurrir al pequeño robo para no morir de hambre, ¡así que los ayudé en lo que pude! Pero, ¿on están mis modales? Mi nombre es Rose. Muchísimas gracias a todos por su ayuda. ¡No sé qué habría hecho sin ustedes!"
+        choices:
+          - position: 1
+            text: ¡Gajes del oficio!
+            effects:
+              - set:
+                  current_scene: ch5_work
+          - position: 2
+            text: Tuviste suerte de que lográramos llegar a tiempo.
+            effects:
+              - set:
+                  current_scene: ch5_lucky
+          - position: 3
+            text: No hay problema. Nos encanta ayudar a la gente. ¡Pero también aceptamos donaciones!
+            effects:
+              - set:
+                  current_scene: ch5_donations
+  - name: ch5_work
+    texts:
+      - source: scene_text
+        paragraph: 311
+        text: |-
+          "¡Gajes del oficio!", le digo.
+
+          "¿Ah, sí?", pregunta ella, sonriendo juguetonamente. "Supongo, entonces, que la razón por la que se ha unido a este torneo es para ayudar a la gente necesitada".
+
+          "Bueno, yo, esto..."
+
+          "No le hagas caso a Barry", dice Daren. "Solo le gusta presumir ante las damas bonitas. Como habrás adivinado, solo somos unos participantes del torneo de magos que andaban cerca y oyeron tu grito. Estoy seguro de que cualquier otro en nuestro lugar habría hecho lo mismo".
+
+          "Está siendo demasiado modesto, señor espadachín. Muchos otros probablemente habrían dudado en ayudarme debido a la regla de no interferencia del torneo, es decir, si es que hubieran tenido siquiera la tentación de ayudarme en primer lugar. Me gustaría pagarles por su amabilidad, pero no traje dinero conmigo, ya que temía encontrarme con ladrones".
+
+          "Si me permites preguntar", interrumpe Kate. "¿Qué hacías sola en medio de la naturaleza?"
+
+          "Bueno, señorita, err..."
+      - source: scene_text_2
+        paragraph: 26
+        text: |-
+          "Kate", dice Kate, mientras se señala a sí misma. Luego nos señala secamente a mí y luego a Daren, dándole a Rose también nuestros nombres.
+
+          Rose sonríe y continúa.
+
+          "Señorita Kate, estaba aquí buscando unas hierbas muy raras que solo crecen en esta zona del continente. Ha habido un brote de plaga de aceite en mi ciudad natal y, como herborista, puedo reconocer las plantas que se necesitan para la cura".
+
+          "Lo siento, ¿qué es la plaga de aceite?"
+
+          "Oh, no sabía que esta enfermedad no existe fuera de nuestro continente. Los médicos no están seguros de su causa, pero lo que ocurre es que el sudor de los pacientes se vuelve tan espeso como el aceite, y tienen una fiebre muy alta, con tos violenta. Algunos de nosotros tenemos una inmunidad natural, pero los que no tienen tanta suerte son puestos en cuarentena en algún lugar y abandonados allí para que mueran solos. La única cura que conocemos para esta enfermedad se extrae de las plantas muy raras que he venido a recolectar aquí".
+
+          "¿Pero por qué eres tú la que ha venido a por las hierbas? ¿Tienes familiares infectados? ¿Por qué no contrataste al menos a unos guardaespaldas para que te acompañaran?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch5_creator
+  - name: ch5_lucky
+    texts:
+      - source: scene_text
+        paragraph: 312
+        text: |-
+          "Tuviste suerte de que lográramos llegar a tiempo para rescatarte. ¿En qué pensabas viniendo aquí fuera tú sola?"
+
+          "Barry, estás siendo demasiado duro", me dice Daren.
+
+          "No, tiene razón", dice Rose. "Venir aquí sola fue muy imprudente por mi parte. Es solo que... se me acababa el tiempo. Y nadie estaba dispuesto a venir conmigo para ayudar. No tuve otra opción..."
+
+          "Si me permites preguntar", interrumpe Kate. "¿Qué hacías sola en medio de la naturaleza?"
+
+          "Bueno, señorita, err..."
+
+          "Kate", dice Kate, mientras se señala a sí misma. Luego nos señala secamente a mí y luego a Daren, dándole a Rose también nuestros nombres.
+
+          Rose sonríe y continúa.
+      - source: scene_text_2
+        paragraph: 27
+        text: |-
+          "Señorita Kate, estaba aquí buscando unas hierbas muy raras que solo crecen en esta zona del continente. Ha habido un brote de plaga de aceite en mi ciudad natal y, como herborista, puedo reconocer las plantas que se necesitan para la cura".
+
+          "Lo siento, ¿qué es la plaga de aceite?"
+
+          "Oh, no sabía que esta enfermedad no existe fuera de nuestro continente. Los médicos no están seguros de su causa, pero lo que ocurre es que el sudor de los pacientes se vuelve tan espeso como el aceite, y tienen una fiebre muy alta, con tos violenta. Algunos de nosotros tenemos una inmunidad natural, pero los que no tienen tanta suerte son puestos en cuarentena en algún lugar y abandonados allí para que mueran solos. La única cura que conocemos para esta enfermedad se extrae de las plantas muy raras que he venido a recolectar aquí".
+
+          "¿Pero por qué eres tú la que ha venido a por las hierbas? ¿Tienes familiares infectados? ¿Por qué no contrataste al menos a unos guardaespaldas para que te acompañaran?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch5_creator
+  - name: ch5_donations
+    texts:
+      - source: scene_text
+        paragraph: 313
+        text: |-
+          "No hay problema. Nos encanta ayudar a la gente. ¡Pero también aceptamos donaciones!"
+
+          "¡Maldita sea, Barry!", dice Daren.
+
+          Rose ríe entre dientes.
+
+          "No pasa nada, no me ha ofendido el comentario de Barry. Con mucho gusto les habría recompensado por rescatarme, pero lamentablemente no traje dinero conmigo, ya que temía encontrarme con ladrones".
+
+          "Si me permites preguntar", interrumpe Kate. "¿Qué hacías sola en medio de la naturaleza?"
+
+          "Bueno, señorita, err..."
+
+          "Kate", dice Kate, mientras se señala a sí misma. Luego nos señala secamente a mí y luego a Daren, dándole a Rose también nuestros nombres.
+      - source: scene_text_2
+        paragraph: 28
+        text: |-
+          Rose sonríe y continúa.
+
+          "Señorita Kate, estaba aquí buscando unas hierbas muy raras que solo crecen en esta zona del continente. Ha habido un brote de plaga de aceite en mi ciudad natal y, como herborista, puedo reconocer las plantas que se necesitan para la cura".
+
+          "Lo siento, ¿qué es la plaga de aceite?"
+
+          "Oh, no sabía que esta enfermedad no existe fuera de nuestro continente. Los médicos no están seguros de su causa, pero lo que ocurre es que el sudor de los pacientes se vuelve tan espeso como el aceite, y tienen una fiebre muy alta, con tos violenta. Algunos de nosotros tenemos una inmunidad natural, pero los que no tienen tanta suerte son puestos en cuarentena en algún lugar y abandonados allí para que mueran solos. La única cura que conocemos para esta enfermedad se extrae de las plantas muy raras que he venido a recolectar aquí".
+
+          "¿Pero por qué eres tú la que ha venido a por las hierbas? ¿Tienes familiares infectados? ¿Por qué no contrataste al menos a unos guardaespaldas para que te acompañaran?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch5_creator
+  - name: ch5_creator
+    texts:
+      - source: scene_text
+        paragraph: 314
+        text: |-
+          "Oh, no... Mi familia está bien, gracias a los dioses. Vine aquí porque todos los enfermos son demasiado pobres para permitirse el dinero para enviar a alguien a recolectar hierbas para ellos. Y yo tampoco tenía dinero para contratar guardaespaldas que me acompañaran. No soy médico, pero me ofrezco como voluntaria para ayudar a cuidar a los enfermos tan a menudo como puedo. Con la muerte de nuestro Gran Sacerdote, el número de enfermos aumenta cada día. Él era la última persona en nuestro pueblo que sabía cómo crear comida mediante magia y, por mucho que lo intentó, no consiguió enseñar su oficio a ninguno de sus discípulos. Mucha gente está empezando a envenenarse por comer las bayas equivocadas del bosque, otros están muriendo de hambre y otros han recurrido a... a..."
+
+          Se detiene un poco para animarse a decir las palabras que tenía en la punta de la lengua.
+
+          "la caza de animales", termina su frase.
+
+          "Espera, ¿entonces es verdad que en tu continente está prohibido cazar animales?", pregunta Daren, sorprendido.
+
+          "Lo... estaba. Hubo un tiempo en que cada ciudad de Varathia tenía al menos diez personas que sabían crear comida de la nada, usando magia. Esa habilidad les fue enseñada por el Creador, y ellos la enseñaron a sus discípulos lo mejor que pudieron. Pero aquellos que podían aprender la habilidad eran individuos muy raros y talentosos. Desde la misma fundación de Varathia hace seiscientos años, todas las ciudades dependían fuertemente del Creador para encontrar a estos individuos talentosos y enseñarles este oficio. Pero entonces, el Creador simplemente desapareció hace unos cien años y el número de personas que aún conocían el oficio de fabricar comida empezó a disminuir".
+      - source: scene_text_2
+        paragraph: 29
+        text: |-
+          "A riesgo de preguntar algo obvio, ¿quién es el Creador?", pregunta Daren.
+
+          "Oh, lo siento. Olvidé lo poca información sobre nosotros que llega a los otros continentes. El Creador fue... el fundador de nuestra civilización. Todo lo que somos hoy se lo debemos a él. Él y el espíritu protector de todos los animales, el gran Zorro Dorado, decidieron juntos hace seiscientos años poner fin a toda guerra y hambre, uniendo el reino humano y el animal, y guiándolos hacia una era de paz y prosperidad. Enseñaron tanto a humanos como a animales a crear lo que necesitaban con magia, y así eliminaron la necesidad de trabajo y conflicto. Comida, agua, calor, refugio, cada una de esas cosas podía obtenerse por medios mágicos. Por lo que he oído, debió de ser el paraíso".
+    choices:
+      - position: 1
+        text: ¿Por qué desapareció el Creador?
+        effects:
+          - set:
+              current_scene: ch5_disappear
+      - position: 2
+        text: ¿Cómo vivió el Creador tanto tiempo?
+        effects:
+          - set:
+              current_scene: ch5_long
+  - name: ch5_disappear
+    texts:
+      - source: scene_text
+        paragraph: 315
+        text: |-
+          "¿Por qué desapareció el Creador?"
+
+          "Nadie lo sabe con certeza. Hay muchos relatos sobre lo que llevó a su desaparición, pero no tenemos forma de saber si alguno de ellos es cierto. Algunos dicen que se volvió loco en las últimas décadas de su reinado y simplemente nos dejó sin mediar palabra. Otros dicen que estaba decepcionado con la humanidad y decidió abandonarnos. Otros dicen que simplemente se aburrió de nosotros y se fue a crear otra civilización en un continente diferente. La mayoría de la gente, sin embargo, piensa que murió y que los reyes de Varathia decidieron ocultarlo al pueblo para evitar el pánico. Mientras el pueblo mantenga la esperanza de que el Creador pueda volver para salvarlos a todos, aún puede haber cierta sensación de orden".
+
+          Hace una pausa.
+
+          "Pero debo de estar aburriéndolos con estas historias. Les agradezco de nuevo de todo corazón que me hayan rescatado allí atrás. Solo desearía que hubiera algo que pudiera ofrecerles a cambio".
+
+          Daren sonríe.
+
+          "Bueno, tendrás tiempo para pensar en eso de camino a casa, porque vamos contigo".
+
+          "¡¿Qué?!", dice Kate.
+    choices:
+      - position: 1
+        text: Esa parece una idea genial.
+        effects:
+          - set:
+              current_scene: ch5_great
+      - position: 2
+        text: ¿No crees que deberías consultarnos antes de tomar una decisión así?
+        effects:
+          - set:
+              current_scene: ch5_consult
+  - name: ch5_long
+    texts:
+      - source: scene_text
+        paragraph: 316
+        text: |-
+          "¿Cómo vivió el Creador tanto tiempo? Por lo que nos cuentas, ¡debió de vivir al menos unos cientos de años!"
+
+          "Sí. Esa es una de las razones por las que cada vez hay más gente que ni siquiera cree ya en su existencia. Ya ha pasado mucho tiempo desde que desapareció, y antes tampoco se mostraba realmente ante mucha gente. Solo los miembros de las familias reales llegaban a verlo. Hay muchos que dicen que el Creador fue simplemente un invento de los reyes, y que están usando su desaparición como excusa para quedarse con el poder de crear comida para ellos mismos. En algunas de las ciudades, estos grupos de gente han empezado a rebelarse contra sus reinos y están al borde de guerras civiles". 
+
+          Hace una pausa.
+
+          "Pero debo de estar aburriéndolos con estas historias. Les agradezco de nuevo de todo corazón que me hayan rescatado allí atrás. Solo desearía que hubiera algo que pudiera ofrecerles a cambio".
+
+          Daren sonríe.
+
+          "Bueno, tendrás tiempo para pensar en eso de camino a casa, porque vamos contigo".
+
+          "¡¿Qué?!", dice Kate.
+    choices:
+      - position: 1
+        text: Esa parece una idea genial.
+        effects:
+          - set:
+              current_scene: ch5_great
+      - position: 2
+        text: ¿No crees que deberías consultarnos antes de tomar una decisión así?
+        effects:
+          - set:
+              current_scene: ch5_consult
+  - name: ch5_great
+    texts:
+      - source: scene_text
+        paragraph: 317
+        text: |-
+          "Esa parece una idea genial."
+
+          "¿Tú también?", me pregunta Kate, decepcionada.
+
+          "Bueno, no es que tengamos nada que hacer hasta que nos den nuestros objetivos", le digo. "Y probablemente estaremos más seguros en una de las ciudades que aquí fuera en la naturaleza, donde nos atacan cada pocas horas. ¿No dijiste tú misma que no tienes pistas específicas sobre el paradero del amigo que buscas ahora mismo?"
+
+          "Supongo... pero--"
+
+          "¡Entonces está decidido!", dice Daren con entusiasmo. 
+
+          "¡No!", dice Kate. "¡No hay nada decidido! Yo nunca he dicho que esté de acuerdo con esto".
+
+          "Por favor, escúchenme", interrumpe Rose. "Daren, realmente aprecio lo que intentas hacer, pero no quiero que te pelees con tus amigos por ello. Créeme, estaré bien. Sé que puede haber parecido que no sabía lo que hacía allí atrás, pero en realidad he recorrido estos caminos yo sola antes. He evitado a propósito todas las zonas frecuentadas por monstruos o bandidos, y he investigado mucho de antemano. La única razón por la que me encontré con esos goblins fue porque eran un grupo descarriado, alejado de cualquier otro campamento goblin. No volverá a ocurrir".
+
+          "Cállate un segundo", dice Kate. "¿Oyen eso?"
+      - source: scene_text_2
+        paragraph: 30
+        text: |-
+          Ahora que lo menciona, oigo un débil silbido, aunque no reconozco la melodía. Se está acercando. De repente la música se detiene, justo cuando los silbadores entran en nuestro campo visual. Son tres. Encantadores de armas, por su aspecto. Parecen más limpios que el grupo de Dave el Degollador y no huelen como ellos, pero aparte de eso, no se ven muy diferentes. Probablemente nos atacarán en cuanto nos vean, como todos los demás.
+
+          Y yo que pensaba que ya habíamos cubierto nuestro cupo de peleas inútiles por hoy. 
+
+          "Clive, ¿ves eso?", dice uno de los hombres.
+
+          "Por los dioses, es una banshee", dice otro.
+
+          El tercer hombre empieza a gritar y cae de espaldas.
+
+          "¡Monstruo! ¡Maten al monstruo!", grita uno de ellos, con puro terror en su voz.
+
+          Kate no parece estar tomándose esto muy bien. Está mirando hacia el suelo, pero esta vez no es rabia lo que veo en sus ojos. Si tuviera que adivinar, diría que se siente miserable.
+
+          El hombre llamado Clive corre ahora gritando hacia Kate, con la espada en la mano, listo para atravesarla. Daren prepara su propia espada pero, antes de que llegue a actuar, es Rose quien se interpone entre Kate y el mago atacante.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch5_monster
+  - name: ch5_consult
+    texts:
+      - source: scene_text
+        paragraph: 318
+        text: |-
+          "¿No crees que deberías consultarnos antes de tomar una decisión así?"
+
+          "¡Vamos! ¿Qué les pasa a ustedes? Estaremos mucho más seguros dentro de un pueblo que aquí fuera en la naturaleza. ¿No sería mejor esperar en algún lugar seguro hasta que recibamos nuestros objetivos?"
+
+          "Encontrar una ciudad es una cosa, escoltar a una lugareña hasta ella es otra. Rescatarla de los goblins puede no ser interpretado como interferir en los asuntos locales, pero convertirse en sus guardaespaldas personales roza peligrosamente el territorio de la 'interferencia externa'".
+
+          "Solo diremos que necesitábamos un guía. Relájate, estaremos bien".
+
+          "No, estoy de acuerdo con Barry", dice Kate. "No deberíamos perder el tiempo escoltando a lugareños. Los objetivos podrían anunciarse en cualquier segundo".
+
+          "Por favor, escúchenme", interrumpe Rose. "Daren, realmente aprecio lo que intentas hacer, pero no quiero que te pelees con tus amigos por ello. Créeme, estaré bien. Sé que puede haber parecido que no sabía lo que hacía allí atrás, pero en realidad he recorrido estos caminos yo sola antes. He evitado a propósito todas las zonas frecuentadas por monstruos o bandidos, y he investigado mucho de antemano. La única razón por la que me encontré con esos goblins fue porque eran un grupo descarriado, alejado de cualquier otro campamento goblin. No volverá a ocurrir".
+
+          "Cállate un segundo", dice Kate. "¿Oyen eso?"
+      - source: scene_text_2
+        paragraph: 31
+        text: |-
+          Ahora que lo menciona, oigo un débil silbido, aunque no reconozco la melodía. Se está acercando. De repente la música se detiene, justo cuando los silbadores entran en nuestro campo visual. Son tres. Encantadores de armas, por su aspecto. Parecen más limpios que el grupo de Dave el Degollador y no huelen como ellos, pero aparte de eso, no se ven muy diferentes. Probablemente nos atacarán en cuanto nos vean, como todos los demás.
+
+          Y yo que pensaba que ya habíamos cubierto nuestro cupo de peleas inútiles por hoy. 
+
+          "Clive, ¿ves eso?", dice uno de los hombres.
+
+          "Por los dioses, es una banshee", dice otro.
+
+          El tercer hombre empieza a gritar y cae de espaldas.
+
+          "¡Monstruo! ¡Maten al monstruo!", grita uno de ellos, con puro terror en su voz.
+
+          Kate no parece estar tomándose esto muy bien. Está mirando hacia el suelo, pero esta vez no es rabia lo que veo en sus ojos. Si tuviera que adivinar, diría que se siente miserable.
+
+          El hombre llamado Clive corre ahora gritando hacia Kate, con la espada en la mano, listo para atravesarla. Daren prepara su propia espada pero, antes de que llegue a actuar, es Rose quien se interpone entre Kate y el mago atacante.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch5_monster
+  - name: ch5_monster
+    texts:
+      - source: scene_text
+        paragraph: 319
+        text: |-
+          "¡Detente!", grita ella, y el mago llamado Clive se detiene en seco.
+
+          "Apártate de mi camino, mujer", dice él. "O te mataré junto con esa monstruosidad que tanto te empeñas en defender".
+
+          "No puedes hacerle daño. No lo permitiré. Estoy en deuda con ella por salvarme la vida. Y a mí tampoco puedes hacerme daño. ¡Soy ciudadana de Varathia!"
+
+          "¡Ja! ¿Crees que sus tontas reglas pueden detenerme? He asesinado a gente antes. Te enseñaré un truquito: mientras no te pillen en el acto, no tienen pruebas reales. ¿Qué, de verdad no te crees sus cuentos de hadas sobre que su hechizo me teletransportará de alguna manera antes de que te mate? Cualquiera más inteligente que una rata se daría cuenta de que eso no es más que un farol".
+
+          Tiene razón. Incluso para la magia, un hechizo como el que Varathia dice haber lanzado sobre nosotros iría mucho más allá de lo que sabemos que es posible. Para detener un ataque antes de que ocurra, se necesitaría algo parecido a... la lectura del pensamiento.
+
+          "Clive", dice uno de los otros hombres. "Quizá deberías dejarla en paz. No deberíamos ir atacando a los lugareños en nuestro segundo día".
+
+          "No te preocupes, no voy a atacarla", dice Clive con una sonrisa malvada. "¡Solo voy a enseñarle a esta pequeña zorra cuál es su sitio!"
+      - source: scene_text_2
+        paragraph: 32
+        text: |-
+          "¡No!", grita Daren, mientras corre hacia Rose.
+
+          Al mismo tiempo, Kate extiende su brazo hacia Clive y un cono de hielo sale lentamente de su palma.
+
+          Clive lanza rápidamente su cuchillo a la cara de Rose y ella cierra instintivamente los ojos. El mago detiene su golpe a escasos centímetros de su objetivo y todo su cuerpo empieza a vibrar ruidosamente, mientras se ve envuelto en una luz blanca.
+
+          "Ah, mierd--", empieza a decir, pero es teletransportado fuera del continente y lejos del torneo.   
+
+           "¿Qué le has hecho a Clive, asquerosa-- ¡¡AARGHH!!"
+
+          El hombre que empezó a hablar fue interrumpido inmediatamente por uno de los conos de hielo de Kate, que le atravesó el hombro derecho.
+
+          "Normalmente, no me lo pensaría dos veces antes de matar a una escoria como tú", dice Kate. "Pero prefiero evitar que Rose sea testigo de una espantosa carnicería. Así que te ofrezco la oportunidad de retirarte. ¿Qué me dices?"
+
+          El hombre con el cono de hielo en el hombro derecho rechina los dientes.
+
+          "Olvida a la banshee", le dice a su camarada. "¡Salgamos pitando de aquí!"
+
+          Una vez que los dos se han alejado lo suficiente, Kate se vuelve hacia Rose y le dice:
+
+          "He cambiado de opinión. Sería un honor servirte de escolta hasta que llegues a tu ciudad natal. Siento haberte juzgado mal. Lo que acabas de hacer ha sido muy valiente y heroico".
+    choices:
+      - position: 1
+        text: ¿De verdad? Porque a mí me ha parecido imprudente y estúpido.
+        effects:
+          - set:
+              current_scene: ch5_reckless
+      - position: 2
+        text: ¿Desde cuándo aprecias tú la valentía y el heroísmo?
+        effects:
+          - set:
+              current_scene: ch5_heroism
+  - name: ch5_reckless
+    texts:
+      - source: scene_text
+        paragraph: 320
+        text: |-
+          "¿De verdad? Porque a mí me ha parecido imprudente y estúpido."
+
+          Kate, que está de pie justo a mi lado, me da un golpe en la nuca.
+
+          "¿A qué diablos ha venido eso?", le pregunto.
+
+          "¿Es que no tienes nada de tacto?"
+
+          "Tengo más que tú. Al menos yo no golpeo a la gente de repente sin ningún motivo".
+
+          "¿Quieres otro chichón en la cabeza a juego con el que te acabo de hacer?"
+
+          Rose deja escapar una risita, que llama nuestra atención.
+
+          "Lo siento", dice ella, sonriendo. "Es solo que me han recordado a mis hermanos pequeños, que siempre se pelean así. Parecen estar muy unidos".
+      - source: scene_text_2
+        paragraph: 33
+        text: |-
+          Kate se sonroja. Es la primera vez que la veo sonrojarse desde que la conocí ayer. Le sienta bien.
+
+          "Ya veo por qué", dice Daren, sonriendo. "Barry está prendado de Kate desde la primera vez que la vio".
+
+          "¡¿Qué?!", me pregunta Kate, tomándose la broma de Daren un poco demasiado en serio.
+
+          "Eh, vamos", dice Daren. "¡Tendrán que continuar esta conversación más tarde, en privado! Ahora que somos cuatro, tendremos que replantear nuestra estrategia de batalla. Tenemos que asegurarnos de que no le pase nada a Rose si nos encontramos con algún monstruo de camino a su ciudad natal".
+
+          Y así, terminamos pasando el resto de la mañana discutiendo diferentes tácticas y estratagemas.
+    choices:
+      - position: 1
+        text: Siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: ch6_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"
+  - name: ch5_heroism
+    texts:
+      - source: scene_text
+        paragraph: 321
+        text: |-
+          "¿Desde cuándo aprecias tú la valentía y el heroísmo?"
+
+          Kate, que está de pie justo a mi lado, me da un puñetazo en el hombro derecho. Su puñetazo fue lo suficientemente fuerte como para dejar un buen moretón.
+
+          "¡Maldita sea, Kate! ¿Has oído hablar alguna vez de la moderación?"
+
+          "¡Cállate! Te lo has buscado. Intentaba ser amable y has arruinado el momento".
+
+          "Sí, bueno, ser amable no te pega. Ahora bien, dar puñetazos, por otro lado..."
+
+          Rose deja escapar una risita, que llama nuestra atención.
+
+          "Lo siento", dice ella, sonriendo. "Es solo que me han recordado a mis hermanos pequeños, que siempre se pelean así. Parecen estar muy unidos".
+
+          Kate se sonroja. Es la primera vez que la veo sonrojarse desde que la conocí ayer. Le sienta bien.
+      - source: scene_text_2
+        paragraph: 34
+        text: |-
+          "Ya veo por qué", dice Daren, sonriendo. "Barry está prendado de Kate desde la primera vez que la vio".
+
+          "¡¿Qué?!", me pregunta Kate, tomándose la broma de Daren un poco demasiado en serio.
+
+          "Eh, vamos", dice Daren. "¡Tendrán que continuar esta conversación más tarde, en privado! Ahora que somos cuatro, tendremos que replantear nuestra estrategia de batalla. Tenemos que asegurarnos de que no le pase nada a Rose si nos encontramos con algún monstruo de camino a su ciudad natal".
+
+          Y así, terminamos pasando el resto de la mañana discutiendo diferentes tácticas y estratagemas.
+    choices:
+      - position: 1
+        text: Siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: ch6_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"

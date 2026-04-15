@@ -1,0 +1,2438 @@
+scenes:
+  - name: b2_ch05a_intro
+    effects:
+      - set:
+          successful_checks:
+            - 'Punto de control alcanzado: Partida guardada.'
+        condition: checkpoint_rich = 1
+    routes:
+      - texts:
+          - source: scene_text
+            paragraph: 2
+            text: "\"Stillwater!\" Bruce shouts. \"Hey, stillwater, are you listening?\"\r\n\r\nI suddenly realize that I've been so lost in my own thoughts for the past minute, that I've been completely neglecting my surroundings. Wilhelm seems to have already returned to our room while I was spacing out, and judging by Bruce's tone of voice, I can only assume that he asked me a question, but I cannot for the life of me remember what it was.\r\n\r\n\"Sorry, I wasn't paying attention,\" I tell him. \"Could you repeat that?\"\r\n\r\n\"I was talking about Wilhelm,\" Bruce says. \"We can't let him roam free throughout the arena after what he did last round. Who knows who he'll try to kill next? I say we tie him up, and leave him here. It's safer that way.\""
+        choices:
+          - position: 1
+            text: Wilhelm no es una amenaza. Déjalo hacer lo que quiera. No hará ninguna diferencia.
+            effects:
+              - set:
+                  current_scene: b2_ch05a_threat
+                  checkpoint_rich: 0
+                  b2_ch5_wilhelm: 0
+          - position: 2
+            text: No tenemos cuerda. Podríamos simplemente decirle que mantenga su distancia de nosotros.
+            effects:
+              - set:
+                  current_scene: b2_ch05a_rope
+                  checkpoint_rich: 0
+                  b2_ch5_wilhelm: 0
+          - position: 3
+            text: Déjalo pelear con nosotros. Necesitaremos toda la ayuda posible contra ese trol.
+            effects:
+              - set:
+                  current_scene: b2_ch05a_help
+                  checkpoint_rich: 0
+                  b2_ch5_wilhelm: 1
+      - condition: b2_ch2_deal = 3
+        texts:
+          - source: scene_text
+            paragraph: 3
+            text: |-
+              "¡Stillwater!" grita Bruce. "¡Eh, stillwater, ¿me estás escuchando?"
+
+              De repente me doy cuenta de que he estado tan perdido en mis propios pensamientos durante el último minuto, que he estado completamente ignorando mis alrededores. Wilhelm parece haber regresado ya a nuestra sala mientras yo estaba en las nubes, y a juzgar por el tono de voz de Bruce, solo puedo asumir que me hizo una pregunta, pero no puedo por nada del mundo recordar cuál fue.
+
+              "Perdón, no estaba prestando atención," le digo. "¿Podrías repetir eso?"
+
+              "Estaba hablando de Wilhelm," dice Bruce. "Viste esa daga de empuñadura naranja que estaba usando la ronda pasada. No hay duda de que es un asesino a estas alturas. Es demasiado peligroso dejarlo andar libre por la arena. ¿Quién sabe cuándo intentará matar a uno de nosotros? Yo digo que lo atemos y lo dejemos aquí. Es más seguro así."
+        choices:
+          - position: 1
+            text: Wilhelm no es una amenaza. Déjalo hacer lo que quiera. No hará ninguna diferencia.
+            effects:
+              - set:
+                  current_scene: b2_ch05a_threat
+                  checkpoint_rich: 0
+                  b2_ch5_wilhelm: 0
+          - position: 2
+            text: No tenemos cuerda. Podríamos simplemente decirle que mantenga su distancia de nosotros.
+            effects:
+              - set:
+                  current_scene: b2_ch05a_rope
+                  checkpoint_rich: 0
+                  b2_ch5_wilhelm: 0
+          - position: 3
+            text: Déjalo pelear con nosotros. Necesitaremos toda la ayuda posible contra ese trol.
+            effects:
+              - set:
+                  current_scene: b2_ch05a_help
+                  checkpoint_rich: 0
+                  b2_ch5_wilhelm: 1
+      - condition: b2_ch2_threatened = 2 AND b2_ch2_lessathi = 0
+        texts:
+          - source: scene_text
+            paragraph: 3
+            text: |-
+              "¡Stillwater!" grita Bruce. "¡Eh, stillwater, ¿me estás escuchando?"
+
+              De repente me doy cuenta de que he estado tan perdido en mis propios pensamientos durante el último minuto, que he estado completamente ignorando mis alrededores. Wilhelm parece haber regresado ya a nuestra sala mientras yo estaba en las nubes, y a juzgar por el tono de voz de Bruce, solo puedo asumir que me hizo una pregunta, pero no puedo por nada del mundo recordar cuál fue.
+
+              "Perdón, no estaba prestando atención," le digo. "¿Podrías repetir eso?"
+
+              "Estaba hablando de Wilhelm," dice Bruce. "Viste esa daga de empuñadura naranja que estaba usando la ronda pasada. No hay duda de que es un asesino a estas alturas. Es demasiado peligroso dejarlo andar libre por la arena. ¿Quién sabe cuándo intentará matar a uno de nosotros? Yo digo que lo atemos y lo dejemos aquí. Es más seguro así."
+        choices:
+          - position: 1
+            text: Wilhelm no es una amenaza. Déjalo hacer lo que quiera. No hará ninguna diferencia.
+            effects:
+              - set:
+                  current_scene: b2_ch05a_threat
+                  checkpoint_rich: 0
+                  b2_ch5_wilhelm: 0
+          - position: 2
+            text: No tenemos cuerda. Podríamos simplemente decirle que mantenga su distancia de nosotros.
+            effects:
+              - set:
+                  current_scene: b2_ch05a_rope
+                  checkpoint_rich: 0
+                  b2_ch5_wilhelm: 0
+          - position: 3
+            text: Déjalo pelear con nosotros. Necesitaremos toda la ayuda posible contra ese trol.
+            effects:
+              - set:
+                  current_scene: b2_ch05a_help
+                  checkpoint_rich: 0
+                  b2_ch5_wilhelm: 1
+  - name: b2_ch05a_threat
+    texts:
+      - source: scene_text
+        paragraph: 4
+        text: |-
+          "Wilhelm no es una amenaza. Déjalo hacer lo que quiera. No hará ninguna diferencia."
+
+          "Sí," dice Bruce, "pero preferiría no tener que cuidarme las espaldas de mis propios compañeros mientras estoy ocupado peleando. Ya fue bastante difícil hacerlo en la primera ronda."
+
+          "No tenemos cuerda para atarlo," dice el mago. "Además, no debería haber razón para inmovilizarlo. Mientras acepte mantener su distancia de nosotros de ahora en adelante, deberíamos estar bien."
+
+          "Si no quieren mi ayuda durante la batalla," dice Wilhelm, "entonces no necesitan decirlo dos veces. No se preocupen, les aseguro que me mantendré lo más lejos posible de ustedes de ahora en adelante."
+
+          ¡Maldición! Ahora perdí el hilo de mis pensamientos. ¿En qué estaba pensando, antes de que me interrumpieran? Estoy seguro de que tenía algo que ver con el trol.
+
+          Al echar otro vistazo hacia el área de combate y ver al trol todavía saludando a las multitudes, mis pensamientos anteriores de repente vuelven a mí.
+
+          "Oye, Leila," digo. "¿Es cosa mía o el trol lleva una armadura diferente esta vez?"
+
+          "Sí," escribe Leila. "Sigue siendo armadura anti-magia, pero ahora también tiene hombreras. Probablemente cambió de armadura para hacernos más difícil cortarle la cabeza otra vez."
+
+          "Corrígeme si me equivoco," digo, "¿pero no es este modelo específico de armadura que lleva vulnerable al fuego regular?"
+      - source: scene_text_2
+        paragraph: 2
+        text: |-
+          "La armadura que lleva no lo protege contra fuego regular en absoluto," escribe Leila. "Solo contra fuego mágico."
+
+          "Es lo que pensaba," digo, y luego me dirijo hacia la puerta que da a los pasillos fuera de nuestra sala.
+
+          Mientras me preparo para abrir la puerta, me vuelvo hacia Leila, para darle un último mensaje antes de irme.
+
+          "Leila, ¿podrías hacerme un favor?" le digo. "Necesito que tomes una de las antorchas que iluminan los pasillos y que la traigas contigo a la arena cuando comience la ronda. Asegúrate de que no dejes que el trol la vea, cuando te acerques a él. Cuando ambos estemos en el área de combate, te haré una señal, y entonces puedes lanzarle la antorcha. ¿Entendido?"
+
+          "Sí, pero ¿a dónde vas?" escribe Leila. "¿Qué planeas hacer?"
+
+          "Lo descubrirás pronto," digo, y luego salgo por la puerta.
+
+          Me aseguro de que los guardias no estén a la vista, y empiezo a dirigirme directamente hacia el área de división de Hadrik. Si no me falla la memoria, su sala debería estar muy cerca de la nuestra.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch05a_ogres_heard
+              b2_ch5_heard_guards: 1
+            condition: hearing_aux >= 2
+          - set:
+              current_scene: b2_ch05a_toast
+              b2_ch5_heard_guards: 0
+            condition: hearing_aux < 2
+  - name: b2_ch05a_rope
+    texts:
+      - source: scene_text
+        paragraph: 5
+        text: |-
+          "No tenemos cuerda. Podríamos simplemente decirle que mantenga su distancia de nosotros."
+
+          "Sí," dice el mago. "Creo que es buena idea. Mientras acepte mantener su distancia de nosotros de ahora en adelante, deberíamos estar bien."
+
+          "Si no quieren mi ayuda durante la batalla," dice Wilhelm, "entonces no necesitan decirlo dos veces. No se preocupen, les aseguro que me mantendré lo más lejos posible de ustedes de ahora en adelante."
+
+          ¡Maldición! Ahora perdí el hilo de mis pensamientos. ¿En qué estaba pensando, antes de que me interrumpieran? Estoy seguro de que tenía algo que ver con el trol.
+
+          Al echar otro vistazo hacia el área de combate y ver al trol todavía saludando a las multitudes, mis pensamientos anteriores de repente vuelven a mí.
+
+          "Oye, Leila," digo. "¿Es cosa mía o el trol lleva una armadura diferente esta vez?"
+
+          "Sí," escribe Leila. "Sigue siendo armadura anti-magia, pero ahora también tiene hombreras. Probablemente cambió de armadura para hacernos más difícil cortarle la cabeza otra vez."
+
+          "Corrígeme si me equivoco," digo, "¿pero no es este modelo específico de armadura que lleva vulnerable al fuego regular?"
+      - source: scene_text_2
+        paragraph: 2
+        text: |-
+          "La armadura que lleva no lo protege contra fuego regular en absoluto," escribe Leila. "Solo contra fuego mágico."
+
+          "Es lo que pensaba," digo, y luego me dirijo hacia la puerta que da a los pasillos fuera de nuestra sala.
+
+          Mientras me preparo para abrir la puerta, me vuelvo hacia Leila, para darle un último mensaje antes de irme.
+
+          "Leila, ¿podrías hacerme un favor?" le digo. "Necesito que tomes una de las antorchas que iluminan los pasillos y que la traigas contigo a la arena cuando comience la ronda. Asegúrate de que no dejes que el trol la vea, cuando te acerques a él. Cuando ambos estemos en el área de combate, te haré una señal, y entonces puedes lanzarle la antorcha. ¿Entendido?"
+
+          "Sí, pero ¿a dónde vas?" escribe Leila. "¿Qué planeas hacer?"
+
+          "Lo descubrirás pronto," digo, y luego salgo por la puerta.
+
+          Me aseguro de que los guardias no estén a la vista, y empiezo a dirigirme directamente hacia el área de división de Hadrik. Si no me falla la memoria, su sala debería estar muy cerca de la nuestra.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch05a_ogres_heard
+              b2_ch5_heard_guards: 1
+            condition: hearing_aux >= 2
+          - set:
+              current_scene: b2_ch05a_toast
+              b2_ch5_heard_guards: 0
+            condition: hearing_aux < 2
+  - name: b2_ch05a_help
+    texts:
+      - source: scene_text
+        paragraph: 6
+        text: |-
+          "Déjalo pelear con nosotros. Necesitaremos toda la ayuda posible contra ese trol."
+
+          "Si te preocupa que te apuñale por la espalda," dice Wilhelm, "entonces me aseguraré de estar siempre en tu línea de visión durante la batalla, para que puedas vigilarme sin mucho esfuerzo. ¿Sería eso suficiente para calmar tus preocupaciones?"
+
+          "Supongo..." dice Bruce. "Mientras pueda ver fácilmente dónde estás en todo momento, no eres gran amenaza."
+
+          "Muy bien," dice Wilhelm. "Pelear en la primera línea no es exactamente ideal para mí, pero prefiero hacer esto a verme forzado a pelear solo. Solo espero que no se aprovechen de esta situación para usarme como señuelo."
+
+          ¡Maldición! Ahora perdí el hilo de mis pensamientos. ¿En qué estaba pensando, antes de que me interrumpieran? Estoy seguro de que tenía algo que ver con el trol.
+
+          Al echar otro vistazo hacia el área de combate y ver al trol todavía saludando a las multitudes, mis pensamientos anteriores de repente vuelven a mí.
+
+          "Oye, Leila," digo. "¿Es cosa mía o el trol lleva una armadura diferente esta vez?"
+
+          "Sí," escribe Leila. "Sigue siendo armadura anti-magia, pero ahora también tiene hombreras. Probablemente cambió de armadura para hacernos más difícil cortarle la cabeza otra vez."
+
+          "Corrígeme si me equivoco," digo, "¿pero no es este modelo específico de armadura que lleva vulnerable al fuego regular?"
+      - source: scene_text_2
+        paragraph: 2
+        text: |-
+          "La armadura que lleva no lo protege contra fuego regular en absoluto," escribe Leila. "Solo contra fuego mágico."
+
+          "Es lo que pensaba," digo, y luego me dirijo hacia la puerta que da a los pasillos fuera de nuestra sala.
+
+          Mientras me preparo para abrir la puerta, me vuelvo hacia Leila, para darle un último mensaje antes de irme.
+
+          "Leila, ¿podrías hacerme un favor?" le digo. "Necesito que tomes una de las antorchas que iluminan los pasillos y que la traigas contigo a la arena cuando comience la ronda. Asegúrate de que no dejes que el trol la vea, cuando te acerques a él. Cuando ambos estemos en el área de combate, te haré una señal, y entonces puedes lanzarle la antorcha. ¿Entendido?"
+
+          "Sí, pero ¿a dónde vas?" escribe Leila. "¿Qué planeas hacer?"
+
+          "Lo descubrirás pronto," digo, y luego salgo por la puerta.
+
+          Me aseguro de que los guardias no estén a la vista, y empiezo a dirigirme directamente hacia el área de división de Hadrik. Si no me falla la memoria, su sala debería estar muy cerca de la nuestra.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch05a_ogres_heard
+              b2_ch5_heard_guards: 1
+            condition: hearing_aux >= 2
+          - set:
+              current_scene: b2_ch05a_toast
+              b2_ch5_heard_guards: 0
+            condition: hearing_aux < 2
+  - name: b2_ch05a_ogres_heard
+    texts:
+      - source: scene_text
+        paragraph: 7
+        text: |-
+          Casi tan pronto como salgo de mi sala, empiezo a escuchar a dos guardias hablando entre sí, muy lejos en el pasillo.
+
+          "¿Escuchaste que van a traer a los ogros esta ronda?" dice uno de los guardias.
+
+          "¿Te refieres a los que Velgos capturó?" dice el otro guardia.
+
+          "Sí. Escuché que el trol tiene a miembros de su tribu como rehenes, y los está amenazando con matarlos a menos que peleen a su lado. Uno de esos miembros de la tribu es una chamán. No se ven muchas de esas, en estos días."
+
+          "Espera, ¿dijiste chamán? Entonces por eso tenía esas prendas extrañas y marcas en la cara..."
+
+          "¿Qué quieres decir? ¿La viste?"
+
+          "Sí, una de las celdas que estoy vigilando tiene unos cuantos ogros. Es la más cercana a los vestuarios. Supongo que Velgos debe haberle pedido al dueño que los moviera aquí, temporalmente, para poder matar fácilmente a uno o dos de ellos en caso de que los guerreros se porten mal."
+
+          "¡Ja! Esos ogros tontos ni siquiera saben que sus miembros de la tribu están justo bajo sus narices. Se lo merecen. Si fueron lo suficientemente estúpidos como para dejarse capturar, entonces merecen vivir sus vidas como secuaces del trol. ¡Estoy seguro de que ambos nos proporcionarán buen entretenimiento!"
+
+          Los guardias se ríen, y luego reanudan sus patrullas.
+    effects:
+      - set:
+          successful_checks:
+            - '[ Comprobación de audición exitosa - nivel 2 ]'
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch05a_toast
+  - name: b2_ch05a_toast
+    routes:
+      - condition: b2_ch5_heard_guards = 1
+        texts:
+          - source: scene_text
+            paragraph: 8
+            text: |-
+              Avanzo por el pasillo lo más rápido que puedo, e intento averiguar cuál de las puertas lleva a la sala del enano. Cuando escucho la risa de Hadrik proveniente de detrás de una de las puertas, me doy cuenta de que he llegado a mi destino, y toco la puerta tres veces, llamándolo, para que sepa quién es.
+
+              "Hadrik, ¿estás ahí?" digo.
+
+              "¡Sí, sí, dame un segundo!" dice Hadrik, y me abre la puerta unos segundos después.
+
+              Justo como esperaba, parece que el enano trajo más de unas cuantas botellas de ale con él, para hacerle compañía. Probablemente intentó convencer a sus compañeros de equipo de beber con él antes de la batalla, pero no parece que haya tenido mucha suerte.
+
+              "¡Felicidades por ganar tu primera ronda, Barry!" dice Hadrik. "¿Viniste a hacer un brindis, antes de tu próxima batalla?"
+
+              "No exactamente," digo. "Pero sí vine a pedirte una de tus botellas de ale enana, si no es mucha molestia."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_maliciously
+      - condition: b2_ch5_heard_guards = 0
+        texts:
+          - source: scene_text
+            paragraph: 9
+            text: "I make my way down the hallway as fast as I can, and I try to figure out which one of the doors leads to the dwarf's room. When I hear Hadrik's laughter coming from behind one of the doors, I realize that I've reached my destination, and I knock on the door three times, calling out to him, to let him know who it is.\r\n\r\n\"Hadrik, are you in there?\" I say.\r\n\r\n\"Yeah, yeah, give me a sec!\" Hadrik says, and he opens the door for me a few seconds later.\r\n\r\nJust as I was hoping, it looks like the dwarf brought more than a few bottles of ale with him, to keep him company. He likely tried to convince his teammates to drink with him before the battle, but it doesn't look like he's had much luck.\r\n\r\n\"Congratulations on winning your first round, Barry!\" Hadrik says. \"Did you come to make a toast, before your next battle?\"\r\n\r\n\"Not exactly,\" I say. \"But I did come here to ask you for one of your dwarven ale bottles, if it's not too much trouble.\""
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de audición fallida - nivel 2 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_maliciously
+  - name: b2_ch05a_maliciously
+    routes:
+      - condition: b2_ch4_beer = 0 AND b2_ch2_creatures = 1
+        texts:
+          - source: scene_text
+            paragraph: 10
+            text: |-
+              "Para nada," dice Hadrik. "Originalmente traje estas botellas aquí para dárselas a mis compañeros de equipo, pero nadie aquí parece apreciar las alegrías de compartir un trago antes de una batalla, como yo. Toma la botella que quieras. ¡Tengo de sobra!"
+
+              "¡Perfecto!" le digo, mientras tomo una de las botellas de ale enana del suelo. "Ahora lo único que necesito es una manera de llegar al área de combate antes del inicio de la ronda."
+
+              Luego empiezo a mirar a mi alrededor, para ver si hay algún mecanismo oculto que me permita abrir la reja de hierro por mi cuenta.
+
+              "Quieres entrar a la arena antes de la batalla..." me pregunta Hadrik, confundido.
+
+              "Sí," le digo. "¿Conoces una salida?"
+
+              "Bueno, no, pero siempre está la buena y vieja manera tradicional," dice Hadrik, mientras se acerca a la reja de hierro. "Apártate."
+
+              Luego golpea la reja muy fuerte, arrancándola de sus bisagras, y enviándola volando hacia la arena.
+
+              "¡El camino está despejado!" dice Hadrik.
+
+              "¡Genial!" digo. "¡Muchas gracias!"
+
+              Luego me dirijo hacia el área de combate a través del agujero en la pared, y saludo a Hadrik mientras me voy.
+
+              "¡Nos vemos!" le digo.
+
+              "Eh, nos vemos, supongo..." dice Hadrik.
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              Mientras avanzo lentamente hacia el trol, con la botella de ale en la mano, el presentador empieza a gritarme, desde su plataforma elevada arriba.
+
+              "¿Qué crees que estás haciendo?" dice. "¡La ronda aún no ha comenzado! ¡Vuelve a tu propia área de división ahora mismo! ¿Me escuchas? ¡Vuelve! ¡Oye, me estás escuchando?"
+
+              Ignoro al presentador, y miro directamente al trol, mientras camino casualmente hacia él. Cuando me ve, Velgos deja de saludar a las multitudes, y empieza a sonreírme maliciosamente.
+
+              "¿Viniste aquí a suplicar por tu vida, humano?" me grita el trol. "¡No te servirá de nada! ¡Tu destino ya está sellado!"
+
+              No digo nada y sigo caminando hacia adelante.
+
+              "¡Maldición!" dice el presentador. "Abran las rejas. ¡Ábranlas ahora!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_flammable
+      - condition: b2_ch4_beer = 0 AND b2_ch2_creatures = 0
+        texts:
+          - source: scene_text
+            paragraph: 11
+            text: |-
+              "Para nada," dice Hadrik. "Originalmente traje estas botellas aquí para dárselas a mis compañeros de equipo, pero nadie aquí parece apreciar las alegrías de compartir un trago antes de una batalla, como yo. Toma la botella que quieras. ¡Tengo de sobra!"
+
+              "¡Perfecto!" le digo, mientras tomo una de las botellas de ale enana del suelo.
+
+              Luego me dirijo hacia el área de combate, a través del agujero en la pared donde solía estar la reja de hierro antes de que Hadrik la arrancara de sus bisagras.
+
+              "¡Nos vemos!" le digo, mientras lo saludo y salgo de su área de división.
+
+              "Eh, nos vemos, supongo..." dice Hadrik, luciendo un poco confundido.
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              Mientras avanzo lentamente hacia el trol, con la botella de ale en la mano, el presentador empieza a gritarme, desde su plataforma elevada arriba.
+
+              "¿Qué crees que estás haciendo?" dice. "¡La ronda aún no ha comenzado! ¡Vuelve a tu propia área de división ahora mismo! ¿Me escuchas? ¡Vuelve! ¡Oye, me estás escuchando?"
+
+              Ignoro al presentador, y miro directamente al trol, mientras camino casualmente hacia él. Cuando me ve, Velgos deja de saludar a las multitudes, y empieza a sonreírme maliciosamente.
+
+              "¿Viniste aquí a suplicar por tu vida, humano?" me grita el trol. "¡No te servirá de nada! ¡Tu destino ya está sellado!"
+
+              No digo nada y sigo caminando hacia adelante.
+
+              "¡Maldición!" dice el presentador. "Abran las rejas. ¡Ábranlas ahora!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_flammable
+      - condition: b2_ch4_beer = 1 AND b2_ch2_creatures = 1
+        texts:
+          - source: scene_text
+            paragraph: 12
+            text: |-
+              "Para nada," dice Hadrik. "Sí dije que te debía una cerveza, después de todo. Bueno, la ale enana no es realmente nada parecido a la cerveza, ¡pero ya te haces la idea! Toma la botella que quieras. ¡Tengo de sobra!"
+
+              "¡Perfecto!" le digo, mientras tomo una de las botellas de ale enana del suelo. "Ahora lo único que necesito es una manera de llegar al área de combate antes del inicio de la ronda."
+
+              Luego empiezo a mirar a mi alrededor, para ver si hay algún mecanismo oculto que me permita abrir la reja de hierro por mi cuenta.
+
+              "Quieres entrar a la arena antes de la batalla..." me pregunta Hadrik, confundido.
+
+              "Sí," le digo. "¿Conoces una salida?"
+
+              "Bueno, no, pero siempre está la buena y vieja manera tradicional," dice Hadrik, mientras se acerca a la reja de hierro. "Apártate."
+
+              Luego golpea la reja muy fuerte, arrancándola de sus bisagras, y enviándola volando hacia la arena.
+
+              "¡El camino está despejado!" dice Hadrik.
+
+              "¡Genial!" digo. "¡Muchas gracias!"
+
+              Luego me dirijo hacia el área de combate a través del agujero en la pared, y saludo a Hadrik mientras me voy.
+
+              "¡Nos vemos!" le digo.
+
+              "Eh, nos vemos, supongo..." dice Hadrik.
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              Mientras avanzo lentamente hacia el trol, con la botella de ale en la mano, el presentador empieza a gritarme, desde su plataforma elevada arriba.
+
+              "¿Qué crees que estás haciendo?" dice. "¡La ronda aún no ha comenzado! ¡Vuelve a tu propia área de división ahora mismo! ¿Me escuchas? ¡Vuelve! ¡Oye, me estás escuchando?"
+
+              Ignoro al presentador, y miro directamente al trol, mientras camino casualmente hacia él. Cuando me ve, Velgos deja de saludar a las multitudes, y empieza a sonreírme maliciosamente.
+
+              "¿Viniste aquí a suplicar por tu vida, humano?" me grita el trol. "¡No te servirá de nada! ¡Tu destino ya está sellado!"
+
+              No digo nada y sigo caminando hacia adelante.
+
+              "¡Maldición!" dice el presentador. "Abran las rejas. ¡Ábranlas ahora!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_flammable
+      - condition: b2_ch4_beer = 1 AND b2_ch2_creatures = 0
+        texts:
+          - source: scene_text
+            paragraph: 13
+            text: |-
+              "Para nada," dice Hadrik. "Sí dije que te debía una cerveza, después de todo. Bueno, la ale enana no es realmente nada parecido a la cerveza, ¡pero ya te haces la idea! Toma la botella que quieras. ¡Tengo de sobra!"
+
+              "¡Perfecto!" le digo, mientras tomo una de las botellas de ale enana del suelo.
+
+              Luego me dirijo hacia el área de combate, a través del agujero en la pared donde solía estar la reja de hierro antes de que Hadrik la arrancara de sus bisagras.
+
+              "¡Nos vemos!" le digo, mientras lo saludo y salgo de su área de división.
+
+              "Eh, nos vemos, supongo..." dice Hadrik, luciendo un poco confundido.
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              Mientras avanzo lentamente hacia el trol, con la botella de ale en la mano, el presentador empieza a gritarme, desde su plataforma elevada arriba.
+
+              "¿Qué crees que estás haciendo?" dice. "¡La ronda aún no ha comenzado! ¡Vuelve a tu propia área de división ahora mismo! ¿Me escuchas? ¡Vuelve! ¡Oye, me estás escuchando?"
+
+              Ignoro al presentador, y miro directamente al trol, mientras camino casualmente hacia él. Cuando me ve, Velgos deja de saludar a las multitudes, y empieza a sonreírme maliciosamente.
+
+              "¿Viniste aquí a suplicar por tu vida, humano?" me grita el trol. "¡No te servirá de nada! ¡Tu destino ya está sellado!"
+
+              No digo nada y sigo caminando hacia adelante.
+
+              "¡Maldición!" dice el presentador. "Abran las rejas. ¡Ábranlas ahora!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_flammable
+  - name: b2_ch05a_flammable
+    texts:
+      - source: scene_text
+        paragraph: 14
+        text: |-
+          Escucho un cuerno señalando el inicio de la segunda ronda, y la reja de mi división empieza a levantarse lentamente. Mientras sigo caminando, me aseguro de avanzar lo suficientemente despacio para darle a Leila tiempo de alcanzarme.
+
+          El trol sigue provocándome. Debe estar pensando que vine aquí a ofrecerle un trago. No creo que haya tenido nunca el privilegio de probar ale enana. A juzgar por la sensación de ardor que sentí en la garganta cuando bebí mi primera botella con Hadrik, apostaría a que esta es la bebida alcohólica más fuerte que el dinero puede comprar. Quizás Velgos estaría un poco más preocupado si supiera lo que tengo en esta botella.
+
+          "¿Estás intentando sobornarme, humano?" dice Velgos, con una risa. "¡Va a hacer falta más que una botella de ale para convencerme de perdonarte la vida! ¿Qué tal si empiezas arrodillándote ante mí? ¡Quiero que cada espectador en la multitud vea lo patético que eres, antes de que te mate!"
+
+          Me detengo justo frente al trol, y le sonrío, mientras levanto mi botella. Leila ahora está a solo unos pocos metros detrás de mí, y se está acercando, con los otros miembros de mi división no muy lejos detrás de ella. Lleva la antorcha escondida detrás de la espalda, asegurándose de que el trol no la note.
+
+          "¡Salud!" le digo al trol, mientras tengo mi botella levantada en el aire.
+
+          "¿Qué estás intentan--" empieza a decir Velgos, pero no lo dejo terminar su frase.
+
+          Rápidamente agarro la botella por el cuello, y la estrello contra el cráneo del trol, cubriéndolo en ale enana de la cabeza a los pies. El trol parece conmocionado, incapaz de entender lo que está pasando.
+      - source: scene_text_2
+        paragraph: 4
+        text: |-
+          "¡Leila, ahora!" grito, mientras salto hacia atrás alejándome del trol.
+
+          Tan pronto como doy la señal, Leila lanza su antorcha al trol, encendiendo el líquido inflamable, y haciendo que el trol se prenda en llamas. Velgos empieza a gritar fuerte, mientras intenta extinguir el fuego de su cabeza con sus propias manos. Leila aprovecha al máximo esta oportunidad, y rápidamente se lanza hacia su enemigo, cortando una de sus hombreras directamente de su armadura, con una de sus dagas encantadas. El trol agarra ambas cimitarras en sus manos, e intenta partir a Leila por la mitad, pero ella salta hacia atrás a tiempo, esquivando su golpe.
+
+          "Los voy a destruir," nos grita el trol. "¡Los voy a cortar en pedazos tan pequeños que no encontrarán suficiente de ustedes para darles un entierro decente!"
+
+          Sus ojos están rojos de rabia, mientras el fuego que lo cubre se está apagando lentamente. Las marcas dejadas por las llamas ya están empezando a regenerarse. Supongo que debería haber esperado que el fuego regular no sería suficiente contra un enemigo con tal poder regenerativo. ¿Qué sigue, entonces? Si no decido rápidamente qué voy a hacer ahora, el trol no me dará más tiempo para reaccionar. ¿Debería ir a la ofensiva, o debería retirarme, dándoles a los demás tiempo para unirse a mí?
+    choices:
+      - position: 1
+        text: Intentar cortarle la cabeza al trol
+        effects:
+          - set:
+              current_scene: b2_ch05a_cut
+              b2_ch5_first_cut: 0
+      - position: 2
+        text: Intentar actuar como señuelo, para que Leila pueda cortarle la cabeza al trol
+        effects:
+          - set:
+              current_scene: b2_ch05a_decoy
+              b2_ch5_first_cut: 0
+      - position: 3
+        text: Hacer una retirada táctica.
+        effects:
+          - set:
+              current_scene: b2_ch05a_tactical
+              b2_ch5_first_cut: 0
+  - name: b2_ch05a_cut
+    routes:
+      - condition: agility >= 3 AND strength >= 2
+        texts:
+          - source: scene_text
+            paragraph: 15
+            text: |-
+              Decido aprovechar la oportunidad que Leila me dio, lanzándome hacia el trol y blandiendo mi daga encantada hacia su cuello, desde la dirección donde su hombrera había sido destrozada. Velgos no tiene tiempo de reaccionar, y logro cortarle la cabeza de los hombros en un solo movimiento.
+
+              Rápidamente agarro su cabeza cortada por el pelo, y la lanzo lejos, lo más que puedo. El cuerpo del trol salta hacia atrás, luciendo muy desorientado.
+
+              "¡Esta es nuestra oportunidad!" le digo a Leila. "¡Golpeémoslo con todo lo que tenemos antes de que--"
+
+              Me interrumpo, porque la cabeza del trol ahora está siendo lentamente recreada, comenzando desde el cuello de Velgos. Solo toma unos cinco segundos hasta que la cabeza se regenera completamente, aunque, a juzgar por la expresión en su cara, este debe haber sido un proceso particularmente doloroso.
+
+              "Me voy a tomar mi tiempo matándote," dice Velgos, luciendo como si todavía estuviera intentando contener algo del dolor. "Lo haré lentamente, después de forzarte a ver morir a todos tus amigos."
+
+              "Sí, sí," digo. "Ya lo he escuchado todo antes."
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              "¡Cuidado!" nos grita Bruce, desde atrás.
+
+              No mucho después de su advertencia, dos ogros muy grandes salen por la reja detrás de Velgos, e intentan golpearnos con sus mazas sobredimensionadas. Tanto Leila como yo saltamos hacia atrás, y nos unimos a nuestros compañeros de equipo, que ahora todos han llegado a nuestra ubicación.
+
+              "Lo sabía," dice nuestro compañero mago. "Sabía que no nos lo pondrían tan fácil como pelear contra un solo trol. ¡Tenían que traer a los ogros también!"
+
+              "Deja de quejarte," dice Bruce. "Los ogros son fáciles de vencer. Son tontos, y lentos como caracoles. Puedo enfrentarme a los dos yo solo."
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de velocidad exitosa - nivel 3 ]'
+                - '[ Comprobación de fuerza exitosa - nivel 2 ]'
+              b2_ch5_first_cut: 1
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_not_heard
+                condition: is_dead = 0 AND b2_ch5_heard_guards = 0
+              - set:
+                  current_scene: b2_ch05a_heard
+                condition: is_dead = 0 AND b2_ch5_heard_guards = 1
+      - condition: agility >= 3 AND strength < 2
+        texts:
+          - source: scene_text
+            paragraph: 16
+            text: |-
+              Decido aprovechar la oportunidad que Leila me dio, lanzándome hacia el trol y blandiendo mi daga encantada hacia su cuello, desde la dirección donde su hombrera había sido destrozada. Velgos no tiene tiempo de reaccionar, pero mi golpe no es lo suficientemente fuerte para cortarle la cabeza de un solo movimiento, así que mi cuchillo se queda clavado en su garganta. Cuando Velgos intenta cortarme el brazo con una de sus cimitarras, me veo forzado a retroceder antes de terminar el trabajo, y la herida del cuello del trol se sana sola en cuestión de segundos.
+
+              "Va a hacer falta más que eso para matarme," dice Velgos.
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              "¡Cuidado!" nos grita Bruce, desde atrás.
+
+              No mucho después de su advertencia, dos ogros muy grandes salen por la reja detrás de Velgos, e intentan golpearnos con sus mazas sobredimensionadas. Tanto Leila como yo saltamos hacia atrás, y nos unimos a nuestros compañeros de equipo, que ahora todos han llegado a nuestra ubicación.
+
+              "Lo sabía," dice nuestro compañero mago. "Sabía que no nos lo pondrían tan fácil como pelear contra un solo trol. ¡Tenían que traer a los ogros también!"
+
+              "Deja de quejarte," dice Bruce. "Los ogros son fáciles de vencer. Son tontos, y lentos como caracoles. Puedo enfrentarme a los dos yo solo."
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de velocidad exitosa - nivel 3 ]'
+              failed_checks:
+                - '[ Comprobación de fuerza fallida - nivel 2 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_not_heard
+                condition: is_dead = 0 AND b2_ch5_heard_guards = 0
+              - set:
+                  current_scene: b2_ch05a_heard
+                condition: is_dead = 0 AND b2_ch5_heard_guards = 1
+      - condition: agility < 3 AND combat_technique >= 2 AND strength >= 2
+        texts:
+          - source: scene_text
+            paragraph: 17
+            text: |-
+              Decido aprovechar la oportunidad que Leila me dio, lanzándome hacia el trol y fingiendo que intento clavarle mi hoja en el pecho. Cuando el trol intenta atacarme, rápidamente me muevo hacia un lado, y balanceo mi brazo hacia su cuello, desde el lado donde su hombrera había sido destrozada, cortándole la cabeza de un solo movimiento.
+
+              Rápidamente agarro su cabeza cortada por el pelo, y la lanzo lejos, lo más que puedo. El cuerpo del trol salta hacia atrás, luciendo muy desorientado.
+
+              "¡Esta es nuestra oportunidad!" le digo a Leila. "¡Golpeémoslo con todo lo que tenemos antes de que--"
+
+              Me interrumpo, porque la cabeza del trol ahora está siendo lentamente recreada, comenzando desde el cuello de Velgos. Solo toma unos cinco segundos hasta que la cabeza se regenera completamente, aunque, a juzgar por la expresión en su cara, este debe haber sido un proceso particularmente doloroso.
+
+              "Me voy a tomar mi tiempo matándote," dice Velgos, luciendo como si todavía estuviera intentando contener algo del dolor. "Lo haré lentamente, después de forzarte a ver morir a todos tus amigos."
+
+              "Sí, sí," digo. "Ya lo he escuchado todo antes."
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              "¡Cuidado!" nos grita Bruce, desde atrás.
+
+              No mucho después de su advertencia, dos ogros muy grandes salen por la reja detrás de Velgos, e intentan golpearnos con sus mazas sobredimensionadas. Tanto Leila como yo saltamos hacia atrás, y nos unimos a nuestros compañeros de equipo, que ahora todos han llegado a nuestra ubicación.
+
+              "Lo sabía," dice nuestro compañero mago. "Sabía que no nos lo pondrían tan fácil como pelear contra un solo trol. ¡Tenían que traer a los ogros también!"
+
+              "Deja de quejarte," dice Bruce. "Los ogros son fáciles de vencer. Son tontos, y lentos como caracoles. Puedo enfrentarme a los dos yo solo."
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de técnica de combate exitosa - nivel 2 ]'
+                - '[ Comprobación de fuerza exitosa - nivel 2 ]'
+              failed_checks:
+                - '[ Comprobación de velocidad fallida - nivel 3 ]'
+              b2_ch5_first_cut: 1
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_not_heard
+                condition: is_dead = 0 AND b2_ch5_heard_guards = 0
+              - set:
+                  current_scene: b2_ch05a_heard
+                condition: is_dead = 0 AND b2_ch5_heard_guards = 1
+      - condition: agility < 3 AND combat_technique >= 2 AND strength < 2
+        texts:
+          - source: scene_text
+            paragraph: 18
+            text: |-
+              Decido aprovechar la oportunidad que Leila me dio, lanzándome hacia el trol y fingiendo que intento clavarle mi hoja en el pecho. Cuando el trol intenta atacarme, rápidamente me muevo hacia un lado, y balanceo mi brazo hacia su cuello, desde el lado donde su hombrera había sido destrozada. Mi golpe no es lo suficientemente fuerte para cortarle la cabeza de un solo movimiento, sin embargo, así que mi cuchillo se queda clavado en su garganta a medio camino. Cuando Velgos intenta cortarme el brazo con una de sus cimitarras, me veo forzado a retroceder antes de terminar el trabajo, y la herida del cuello del trol se sana sola en cuestión de segundos.
+
+              "Va a hacer falta más que eso para matarme," dice Velgos.
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              "¡Cuidado!" nos grita Bruce, desde atrás.
+
+              No mucho después de su advertencia, dos ogros muy grandes salen por la reja detrás de Velgos, e intentan golpearnos con sus mazas sobredimensionadas. Tanto Leila como yo saltamos hacia atrás, y nos unimos a nuestros compañeros de equipo, que ahora todos han llegado a nuestra ubicación.
+
+              "Lo sabía," dice nuestro compañero mago. "Sabía que no nos lo pondrían tan fácil como pelear contra un solo trol. ¡Tenían que traer a los ogros también!"
+
+              "Deja de quejarte," dice Bruce. "Los ogros son fáciles de vencer. Son tontos, y lentos como caracoles. Puedo enfrentarme a los dos yo solo."
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de técnica de combate exitosa - nivel 2 ]'
+              failed_checks:
+                - '[ Comprobación de velocidad fallida - nivel 3 ]'
+                - '[ Comprobación de fuerza fallida - nivel 2 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_not_heard
+                condition: is_dead = 0 AND b2_ch5_heard_guards = 0
+              - set:
+                  current_scene: b2_ch05a_heard
+                condition: is_dead = 0 AND b2_ch5_heard_guards = 1
+      - condition: agility < 3 AND combat_technique < 2
+        texts:
+          - source: scene_text
+            paragraph: 19
+            text: Decido aprovechar la oportunidad que Leila me dio, lanzándome hacia el trol e intentando cortarle la cabeza desde el lado donde su hombrera había sido destrozada. Velgos me ve venir, y lanza una de sus cimitarras hacia mí, pero logro esquivarla, y voy directo a por su cuello. Desafortunadamente, el primer golpe del trol nunca pretendió dar en el blanco, sino solo llevarme al camino de su segunda cimitarra. Nunca tuve la oportunidad de esquivar su segundo golpe, que me separó la cabeza de los hombros, y me mató en el acto.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de velocidad fallida - nivel 3 ]'
+                - '[ Comprobación de técnica de combate fallida - nivel 2 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+  - name: b2_ch05a_decoy
+    routes:
+      - condition: agility >= 3
+        texts:
+          - source: scene_text
+            paragraph: 20
+            text: |-
+              Leila probablemente tendrá mejor oportunidad de cortarle la cabeza al trol que yo. Solo necesito asegurarme de que pueda acercársele sigilosamente.
+
+              Me lanzo hacia Velgos, con mi cuchillo encantado listo, fingiendo que quiero apuñalarlo en el pecho.
+
+              Me acerco lo suficiente a él para hacer que me ataque, pero luego retrocedo rápidamente, y me posiciono de manera que fuerza al trol a darle la espalda a Leila, para poder seguir vigilándome.
+
+              Leila comprende de inmediato la intención detrás de mis acciones, y tan pronto como Velgos aparta los ojos de ella, hace un rápido sprint hacia él, blandiendo una de sus dagas hacia su cuello, desde el lado donde su hombrera había sido destrozada. Le corta la cabeza de un solo movimiento, y luego la agarra por el pelo y la tira al suelo. Casi inmediatamente después, pisa la cabeza del trol, aplastándola bajo su sandalia.
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              El cuerpo del trol salta lejos de nosotros, pero la cabeza en el suelo no parece estar regenerándose. En cambio, una nueva cabeza se está formando, comenzando desde el cuello de Velgos. Solo toma unos cinco segundos hasta que la cabeza se regenera completamente, aunque, a juzgar por la expresión en su cara, este debe haber sido un proceso particularmente doloroso.
+
+              "Me voy a tomar mi tiempo matándote," dice Velgos, luciendo como si todavía estuviera intentando contener algo del dolor. "Lo haré lentamente, después de forzarte a ver morir a todos tus amigos."
+
+              "Sí, sí," digo. "Ya lo he escuchado todo antes."
+
+              "¡Cuidado!" nos grita Bruce, desde atrás.
+
+              No mucho después de su advertencia, dos ogros muy grandes salen por la reja detrás de Velgos, e intentan golpearnos con sus mazas sobredimensionadas. Tanto Leila como yo saltamos hacia atrás, y nos unimos a nuestros compañeros de equipo, que ahora todos han llegado a nuestra ubicación.
+
+              "Lo sabía," dice nuestro compañero mago. "Sabía que no nos lo pondrían tan fácil como pelear contra un solo trol. ¡Tenían que traer a los ogros también!"
+
+              "Deja de quejarte," dice Bruce. "Los ogros son fáciles de vencer. Son tontos, y lentos como caracoles. Puedo enfrentarme a los dos yo solo."
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de velocidad exitosa - nivel 3 ]'
+              b2_ch5_first_cut: 1
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_not_heard
+                condition: is_dead = 0 AND b2_ch5_heard_guards = 0
+              - set:
+                  current_scene: b2_ch05a_heard
+                condition: is_dead = 0 AND b2_ch5_heard_guards = 1
+      - condition: agility < 3 AND reflexes >= 3
+        texts:
+          - source: scene_text
+            paragraph: 21
+            text: |-
+              Leila probablemente tendrá mejor oportunidad de cortarle la cabeza al trol que yo. Solo necesito asegurarme de que pueda acercársele sigilosamente.
+
+              Me lanzo hacia Velgos, con mi cuchillo encantado listo, fingiendo que quiero apuñalarlo en el pecho.
+
+              Me acerco lo suficiente a él para hacer que me ataque, y luego intento retroceder rápidamente, pero no soy lo suficientemente rápido, y el trol me atrapa mal parado. De alguna manera logro compensarlo con mis reflejos rápidos, y esquivo su golpe, posicionándome de manera que fuerza al trol a darle la espalda a Leila.
+
+              Leila comprende de inmediato la intención detrás de mis acciones, y tan pronto como Velgos aparta los ojos de ella, hace un rápido sprint hacia él, blandiendo una de sus dagas hacia su cuello, desde el lado donde su hombrera había sido destrozada. Le corta la cabeza de un solo movimiento, y luego la agarra por el pelo y la tira al suelo. Casi inmediatamente después, pisa la cabeza del trol, aplastándola bajo su sandalia.
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              El cuerpo del trol salta lejos de nosotros, pero la cabeza en el suelo no parece estar regenerándose. En cambio, una nueva cabeza se está formando, comenzando desde el cuello de Velgos. Solo toma unos cinco segundos hasta que la cabeza se regenera completamente, aunque, a juzgar por la expresión en su cara, este debe haber sido un proceso particularmente doloroso.
+
+              "Me voy a tomar mi tiempo matándote," dice Velgos, luciendo como si todavía estuviera intentando contener algo del dolor. "Lo haré lentamente, después de forzarte a ver morir a todos tus amigos."
+
+              "Sí, sí," digo. "Ya lo he escuchado todo antes."
+
+              "¡Cuidado!" nos grita Bruce, desde atrás.
+
+              No mucho después de su advertencia, dos ogros muy grandes salen por la reja detrás de Velgos, e intentan golpearnos con sus mazas sobredimensionadas. Tanto Leila como yo saltamos hacia atrás, y nos unimos a nuestros compañeros de equipo, que ahora todos han llegado a nuestra ubicación.
+
+              "Lo sabía," dice nuestro compañero mago. "Sabía que no nos lo pondrían tan fácil como pelear contra un solo trol. ¡Tenían que traer a los ogros también!"
+
+              "Deja de quejarte," dice Bruce. "Los ogros son fáciles de vencer. Son tontos, y lentos como caracoles. Puedo enfrentarme a los dos yo solo."
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de velocidad fallida - nivel 3 ]'
+              successful_checks:
+                - '[ Comprobación de reflejos exitosa - nivel 3 ]'
+              b2_ch5_first_cut: 1
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_not_heard
+                condition: is_dead = 0 AND b2_ch5_heard_guards = 0
+              - set:
+                  current_scene: b2_ch05a_heard
+                condition: is_dead = 0 AND b2_ch5_heard_guards = 1
+      - condition: agility < 3 AND reflexes < 3
+        texts:
+          - source: scene_text
+            paragraph: 22
+            text: |-
+              Leila probablemente tendrá mejor oportunidad de cortarle la cabeza al trol que yo. Solo necesito asegurarme de que pueda acercársele sigilosamente.
+
+              Me lanzo hacia Velgos, con mi cuchillo encantado listo, fingiendo que quiero apuñalarlo en el pecho.
+
+              Me acerco lo suficiente a él para hacer que me ataque, y luego intento retroceder rápidamente, pero no soy lo suficientemente rápido, y el trol me atrapa mal parado. No tengo oportunidad de esquivar su golpe, y una de sus cimitarras me decapita en el acto.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de velocidad fallida - nivel 3 ]'
+                - '[ Comprobación de reflejos fallida - nivel 3 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+  - name: b2_ch05a_tactical
+    texts:
+      - source: scene_text
+        paragraph: 23
+        text: |-
+          No deberíamos enfrentarlo solos. Ya logramos destrozar una de sus hombreras. Eso debería ser suficiente por ahora.
+
+          Le hago señas a Leila para que se retire, y ambos nos dirigimos hacia los otros miembros de nuestro equipo. El trol todavía se está recuperando del fuego, así que elige no venir tras nosotros por el momento. Mientras tanto, dos ogros muy grandes han salido por la reja detrás de Velgos, y ahora están blandiendo sus mazas sobredimensionadas amenazadoramente hacia nosotros.
+
+          "Lo sabía," dice nuestro compañero mago. "Sabía que no nos lo pondrían tan fácil como pelear contra un solo trol. ¡Tenían que traer a los ogros también!"
+
+          "Deja de quejarte," dice Bruce. "Los ogros son fáciles de vencer. Son tontos, y lentos como caracoles. Puedo enfrentarme a los dos yo solo."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch05a_not_heard
+            condition: is_dead = 0 AND b2_ch5_heard_guards = 0
+          - set:
+              current_scene: b2_ch05a_heard
+            condition: is_dead = 0 AND b2_ch5_heard_guards = 1
+  - name: b2_ch05a_not_heard
+    texts:
+      - source: scene_text
+        paragraph: 24
+        text: |-
+          "Yo tendría cuidado, si fuera tú," le digo a Bruce. "He visto mi buena cuota de ogros normales esta última semana, y te puedo decir sin la menor duda que estos dos están un nivel por encima del resto."
+
+          "¡Bah!" dice Bruce. "Su tamaño no me impresiona. Grandes o no, estoy dispuesto a apostar que sangran igual."
+
+          Los ogros no nos dan la oportunidad de continuar nuestra conversación, y empiezan a correr hacia nosotros, rugiendo a pleno pulmón, mientras balancean sus mazas.
+
+          "Yo me encargo de los ogros," dice Bruce, mientras todos esquivamos el ataque de los ogros. "Ustedes ocúpense del trol. Vamos. ¡Vamos!"
+
+          Mientras Leila va a pelear contra el trol, echo un largo vistazo a nuestro enemigo, intentando preparar un plan de ataque.
+    effects:
+      - set:
+          b2_ch5_negotiate: 0
+    choices:
+      - position: 1
+        text: Observar la batalla entre Leila y Velgos, para encontrar sus debilidades
+        effects:
+          - set:
+              current_scene: b2_ch05a_contrary_wilhelm
+              b2_ch5_strategy: 1
+            condition: b2_ch5_first_cut = 1 AND b2_ch5_wilhelm = 1
+          - set:
+              current_scene: b2_ch05a_contrary_without
+              b2_ch5_strategy: 1
+            condition: b2_ch5_first_cut = 1 AND b2_ch5_wilhelm = 0
+          - set:
+              current_scene: b2_ch05a_easily_without
+              b2_ch5_strategy: 1
+            condition: b2_ch5_first_cut = 0 AND b2_ch5_wilhelm = 1
+          - set:
+              current_scene: b2_ch05a_easily_without_real
+              b2_ch5_strategy: 1
+            condition: b2_ch5_first_cut = 0 AND b2_ch5_wilhelm = 0
+      - position: 2
+        text: Mentirle al mago, para convencerlo de actuar como señuelo
+        effects:
+          - set:
+              current_scene: b2_ch05a_contrary_wilhelm
+              b2_ch5_strategy: 2
+            condition: b2_ch5_first_cut = 1 AND b2_ch5_wilhelm = 1
+          - set:
+              current_scene: b2_ch05a_contrary_without
+              b2_ch5_strategy: 2
+            condition: b2_ch5_first_cut = 1 AND b2_ch5_wilhelm = 0
+          - set:
+              current_scene: b2_ch05a_easily_without
+              b2_ch5_strategy: 2
+            condition: b2_ch5_first_cut = 0 AND b2_ch5_wilhelm = 1
+          - set:
+              current_scene: b2_ch05a_easily_without_real
+              b2_ch5_strategy: 2
+            condition: b2_ch5_first_cut = 0 AND b2_ch5_wilhelm = 0
+      - position: 3
+        text: Cortarle la cabeza al trol, mientras está ocupado peleando con Leila
+        effects:
+          - set:
+              current_scene: b2_ch05a_contrary_wilhelm
+              b2_ch5_strategy: 3
+            condition: b2_ch5_first_cut = 1 AND b2_ch5_wilhelm = 1
+          - set:
+              current_scene: b2_ch05a_contrary_without
+              b2_ch5_strategy: 3
+            condition: b2_ch5_first_cut = 1 AND b2_ch5_wilhelm = 0
+          - set:
+              current_scene: b2_ch05a_easily_without
+              b2_ch5_strategy: 3
+            condition: b2_ch5_first_cut = 0 AND b2_ch5_wilhelm = 1
+          - set:
+              current_scene: b2_ch05a_easily_without_real
+              b2_ch5_strategy: 3
+            condition: b2_ch5_first_cut = 0 AND b2_ch5_wilhelm = 0
+  - name: b2_ch05a_heard
+    routes:
+      - condition: ancient_languages = 0
+        texts:
+          - source: scene_text
+            paragraph: 25
+            text: |-
+              "En realidad, preferiría ser yo quien se enfrente a ellos, si no te importa," le digo a Bruce. "No estoy completamente seguro, pero creo que podría ponerlos de nuestro lado, si tengo una pequeña charla con ellos."
+
+              "Eso suena como una idea estúpida," dice Bruce, "pero quién soy yo para juzgar. Puedes quedarte con los ogros, si quieres. El trol es suficiente para mí."
+
+              Los ogros no nos dan la oportunidad de continuar nuestra conversación, y empiezan a correr hacia nosotros, rugiendo a pleno pulmón, mientras balancean sus mazas.
+
+              Como acordamos, los demás se hacen a un lado y empiezan a dirigirse hacia el trol, dejándome pelear contra los ogros completamente solo.
+
+              "¡Eh, ustedes!" les digo a los ogros. "¡Tenemos que hablar!"
+
+              Los dos ogros me ignoran, e intentan golpearme con sus mazas. Por suerte, aunque su fuerza es formidable, esquivar sus ataques torpes es un juego de niños, en un entorno abierto como este.
+
+              "¡Es sobre los miembros de su tribu capturados!" les digo.
+
+              Siguen sin reaccionar. ¿Será porque no entienden Común?
+
+              Les hablaría en su propio idioma si pudiera, pero ni siquiera conozco las palabras básicas de su vocabulario. Esperaba poder llegar a un acuerdo con ellos, pero si ni siquiera pueden entender lo que digo, estoy perdiendo el tiempo.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de lenguas antiguas fallida - nivel 1 ]'
+              b2_ch5_negotiate: 0
+        choices:
+          - position: 1
+            text: Matar a los ogros
+            effects:
+              - set:
+                  current_scene: b2_ch05a_kill_ogres
+                  b2_ch5_negotiate: 2
+          - position: 2
+            text: Pedir ayuda para lidiar con los ogros
+            effects:
+              - set:
+                  current_scene: b2_ch05a_dealing
+      - condition: ancient_languages >= 1
+        texts:
+          - source: scene_text
+            paragraph: 26
+            text: |-
+              "En realidad, preferiría ser yo quien se enfrente a ellos, si no te importa," le digo a Bruce. "No estoy completamente seguro, pero creo que podría ponerlos de nuestro lado, si tengo una pequeña charla con ellos."
+
+              "Eso suena como una idea estúpida," dice Bruce, "pero quién soy yo para juzgar. Puedes quedarte con los ogros, si quieres. El trol es suficiente para mí."
+
+              Los ogros no nos dan la oportunidad de continuar nuestra conversación, y empiezan a correr hacia nosotros, rugiendo a pleno pulmón, mientras balancean sus mazas.
+
+              Como acordamos, los demás se hacen a un lado y empiezan a dirigirse hacia el trol, dejándome pelear contra los ogros completamente solo.
+
+              "¡Eh, ustedes!" les digo a los ogros. "¡Tenemos que hablar!"
+
+              Los dos ogros me ignoran, e intentan golpearme con sus mazas. Por suerte, aunque su fuerza es formidable, esquivar sus ataques torpes es un juego de niños, en un entorno abierto como este.
+
+              "¡Es sobre los miembros de su tribu capturados!" les digo.
+
+              Siguen sin reaccionar. ¿Será porque no entienden Común?
+
+              "Sé dónde están reteniendo cautivos a los miembros de su tribu," digo, en lengua ogra.
+
+              Los ogros reaccionan a mis palabras por primera vez, y ambos dejan de atacarme, mientras me miran con suspicacia.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de lenguas antiguas exitosa - nivel 1 ]'
+              b2_ch5_negotiate: 1
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_negotiation
+  - name: b2_ch05a_negotiation
+    texts:
+      - source: scene_text
+        paragraph: 27
+        text: |-
+          "¿Cómo sabrías sobre nuestros miembros de tribu capturados?" dice uno de los ogros.
+
+          "¡No lo escuches, está intentando engañarnos!" dice el segundo ogro.
+
+          "¿De verdad?" digo. "¿Y si les dijera que también sé que uno de los cautivos es la chamán de su tribu, que resulta ser una hembra?"
+
+          "Sabe sobre nuestra chamán," dice el primer ogro. "¡Debe estar diciendo la verdad!"
+
+          "Aun si lo está, no vale la pena," dice el segundo ogro. "El trol nos matará a todos si intentamos ayudar a este humano de cualquier forma."
+
+          "No si lo matamos primero," digo.
+
+          "¡Estás loco!" dice el segundo ogro. "¡El trol es inmortal! ¡Aunque lo mates, volverá a la vida! ¡No hay forma de que podamos vencerlo!"
+
+          "¿Entonces prefieren vivir el resto de sus vidas como sus lacayos?" digo.
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          "Hermano," dice el primer ogro, "hemos estado a merced del trol por demasiado tiempo. ¡Nunca tendremos una mejor oportunidad que esta para vengar a nuestros guerreros caídos y rescatar a los cautivos!"
+
+          El segundo ogro mira a su compañero de armas durante unos largos segundos, considerando sus palabras cuidadosamente.
+
+          "¿Qué nos pedirías, si aceptáramos ayudarte?" dice el segundo ogro.
+
+          "Solo ayúdenme a matar al trol," digo. "Después de eso, les diré dónde retienen a sus amigos, y serán libres de irse. No se preocupen, no los retienen lejos de aquí. Tendrán tiempo de sobra para liberarlos y salir de la ciudad antes de que reúnan a los guardias de la ciudad."
+
+          "Te tomaré la palabra, humano," dice el segundo ogro, después de pensar en mi oferta unos segundos más. "Más te vale no estar mintiéndonos."
+
+          "No se me ocurriría," digo.
+
+          Los dos ogros intercambian una última mirada, y luego me dan la espalda, preparándose para ir a pelear contra su antiguo aliado.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch05a_prepare
+  - name: b2_ch05a_dealing
+    texts:
+      - source: scene_text
+        paragraph: 28
+        text: |-
+          "Oigan, eh, ¿chicos?..." les digo a mis compañeros de equipo que pelean contra el trol. "¡Cambié de opinión! ¡Creo que me vendría bien un poco de ayuda aquí!"
+
+          "¡Maldición!" dice Bruce, furioso. "Sabía que esto era solo una pérdida de tiempo. No necesitamos a dos personas para lidiar con dos míseros ogros. Yo me encargaré de ellos. ¡Tú ven aquí y ayuda con el trol!"
+
+          "¿Crees que voy a dejar que tú--" empieza a decir Velgos, pero Leila rápidamente lanza su daga hacia su cuello, lo que obliga al trol a interrumpir su discurso para defenderse de su ataque.
+
+          Una vez que Bruce toma mi lugar y empieza a pelear contra los ogros, echo un largo vistazo hacia el trol, e intento armar un plan de ataque.
+    choices:
+      - position: 1
+        text: Observar la batalla entre Leila y Velgos, para encontrar sus debilidades
+        effects:
+          - set:
+              current_scene: b2_ch05a_contrary_wilhelm
+              b2_ch5_strategy: 1
+            condition: b2_ch5_negotiate = 0 AND b2_ch5_first_cut = 1 AND b2_ch5_wilhelm = 1
+          - set:
+              current_scene: b2_ch05a_contrary_without
+              b2_ch5_strategy: 1
+            condition: b2_ch5_negotiate = 0 AND b2_ch5_first_cut = 1 AND b2_ch5_wilhelm = 0
+          - set:
+              current_scene: b2_ch05a_easily_without
+              b2_ch5_strategy: 1
+            condition: b2_ch5_negotiate = 0 AND b2_ch5_first_cut = 0 AND b2_ch5_wilhelm = 1
+          - set:
+              current_scene: b2_ch05a_easily_without_real
+              b2_ch5_strategy: 1
+            condition: b2_ch5_negotiate = 0 AND b2_ch5_first_cut = 0 AND b2_ch5_wilhelm = 0
+      - position: 2
+        text: Mentirle al mago, para convencerlo de actuar como señuelo
+        effects:
+          - set:
+              current_scene: b2_ch05a_contrary_wilhelm
+              b2_ch5_strategy: 2
+            condition: b2_ch5_negotiate = 0 AND b2_ch5_first_cut = 1 AND b2_ch5_wilhelm = 1
+          - set:
+              current_scene: b2_ch05a_contrary_without
+              b2_ch5_strategy: 2
+            condition: b2_ch5_negotiate = 0 AND b2_ch5_first_cut = 1 AND b2_ch5_wilhelm = 0
+          - set:
+              current_scene: b2_ch05a_easily_without
+              b2_ch5_strategy: 2
+            condition: b2_ch5_negotiate = 0 AND b2_ch5_first_cut = 0 AND b2_ch5_wilhelm = 1
+          - set:
+              current_scene: b2_ch05a_easily_without_real
+              b2_ch5_strategy: 2
+            condition: b2_ch5_negotiate = 0 AND b2_ch5_first_cut = 0 AND b2_ch5_wilhelm = 0
+      - position: 3
+        text: Cortarle la cabeza al trol, mientras está ocupado peleando con Leila
+        effects:
+          - set:
+              current_scene: b2_ch05a_contrary_wilhelm
+              b2_ch5_strategy: 3
+            condition: b2_ch5_negotiate = 0 AND b2_ch5_first_cut = 1 AND b2_ch5_wilhelm = 1
+          - set:
+              current_scene: b2_ch05a_contrary_without
+              b2_ch5_strategy: 3
+            condition: b2_ch5_negotiate = 0 AND b2_ch5_first_cut = 1 AND b2_ch5_wilhelm = 0
+          - set:
+              current_scene: b2_ch05a_easily_without
+              b2_ch5_strategy: 3
+            condition: b2_ch5_negotiate = 0 AND b2_ch5_first_cut = 0 AND b2_ch5_wilhelm = 1
+          - set:
+              current_scene: b2_ch05a_easily_without_real
+              b2_ch5_strategy: 3
+            condition: b2_ch5_negotiate = 0 AND b2_ch5_first_cut = 0 AND b2_ch5_wilhelm = 0
+  - name: b2_ch05a_kill_ogres
+    routes:
+      - condition: agility >= 2
+        texts:
+          - source: scene_text
+            paragraph: 29
+            text: |-
+              No tiene sentido prolongar esta batalla más. Voy a acabar con ellos lo más rápido posible, para poder reunirme con Leila y los demás.
+
+              A juzgar por el tamaño de sus mazas, ninguna cantidad de reflejos va a salvarme si enfrento a estos monstruos de cerca, debido a la enorme área que pueden cubrir con un solo golpe. O necesito ser lo suficientemente rápido como para entrar y salir de su alcance, o lo suficientemente fuerte como para poder matarlos antes de que ellos acaben conmigo.
+
+              Corro hacia el ogro de mi derecha, incitándolo a intentar aplastarme con su maza, y una vez que lanza el golpe, duplico mi velocidad y lo rodeo, apuñalándolo múltiples veces en la espalda. El otro ogro intenta ayudar a su compañero, pero evita golpear demasiado fuerte, para no darle a su amigo por accidente. Los movimientos ya de por sí lentos del monstruo se ralentizan aún más por contenerse, lo que me deja tiempo de sobra para hacer un rápido sprint hacia él y apuñalarlo en el corazón. Tan pronto como el segundo ogro muere, vuelvo al primero, que ahora está tirado en el suelo, y le corto el cuello, rematándolo.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de velocidad exitosa - nivel 2 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_prepare
+                condition: is_dead = 0
+      - condition: agility < 2 AND strength >= 3
+        texts:
+          - source: scene_text
+            paragraph: 30
+            text: |-
+              No tiene sentido prolongar esta batalla más. Voy a acabar con ellos lo más rápido posible, para poder reunirme con Leila y los demás.
+
+              A juzgar por el tamaño de sus mazas, ninguna cantidad de reflejos va a salvarme si enfrento a estos monstruos de cerca, debido a la enorme área que pueden cubrir con un solo golpe. O necesito ser lo suficientemente rápido como para entrar y salir de su alcance, o lo suficientemente fuerte como para poder matarlos antes de que ellos acaben conmigo.
+
+              Definitivamente no soy lo suficientemente rápido como para correr en círculos a su alrededor sin que me golpeen, pero con mi nivel de fuerza, quizás pueda lograrlo. Avanzo lentamente hacia uno de los ogros, y espero a que me ataque con su maza. Una vez que deja caer su arma sobre mí, levanto mi cuchillo, sosteniéndolo con ambas manos, y bloqueo su golpe justo encima de mi cabeza. Luego suelto mi cuchillo, y agarro la maza con ambas manos, arrancándola del agarre del ogro. Usando mi arma recién adquirida, le aplasto la cabeza al ogro antes de que tenga tiempo de reaccionar, y luego me muevo hacia su amigo, preparándome para atacarlo también. Ahora que tengo el mismo alcance de ataque que él, el monstruo ya no tiene forma de compensar su lentitud. Intenta golpearme, pero soy mucho más rápido, y logro asestar un golpe antes de que siquiera empiece su movimiento. Un solo golpe bastó para enviar al ogro al suelo. Tan pronto como termino de pelear, suelto la maza, y recojo mi cuchillo del suelo.
+          - source: scene_text_2
+            paragraph: 8
+            text: Balancear un gran trozo de madera puede haber funcionado contra estos dos idiotas, pero ese trol lo va a cortar en un instante. Es mucho mejor que use mi propia arma, especialmente si mi objetivo es cortarle la cabeza.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de velocidad fallida - nivel 2 ]'
+              successful_checks:
+                - '[ Comprobación de fuerza exitosa - nivel 3 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_prepare
+                condition: is_dead = 0
+      - condition: agility < 2 AND strength < 3
+        texts:
+          - source: scene_text
+            paragraph: 31
+            text: |-
+              No tiene sentido prolongar esta batalla más. Voy a acabar con ellos lo más rápido posible, para poder reunirme con Leila y los demás.
+
+              A juzgar por el tamaño de sus mazas, ninguna cantidad de reflejos va a salvarme si enfrento a estos monstruos de cerca, debido a la enorme área que pueden cubrir con un solo golpe. O necesito ser lo suficientemente rápido como para entrar y salir de su alcance, o lo suficientemente fuerte como para poder matarlos antes de que ellos acaben conmigo.
+
+              Pero bueno, quizás le estoy dando demasiadas vueltas. Los ogros son tanto tontos como lentos. Lo único que tienen a su favor es su tamaño y fuerza. Con mi ingenio, debería poder superarlos en maniobras, incluso si soy más débil que ellos.
+
+              Me lanzo hacia los ogros, intentando anticipar desde qué dirección me atacarán prestando mucha atención a sus movimientos lentos. Me doy cuenta de que uno de los ogros está a punto de balancear su maza hacia mí, así que me aparto del camino e intento salir de su alcance. Desafortunadamente, no fui lo suficientemente rápido, y el arma del monstruo me aplastó la cabeza, matándome al instante.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de velocidad fallida - nivel 2 ]'
+                - '[ Comprobación de fuerza fallida - nivel 3 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+  - name: b2_ch05a_prepare
+    routes:
+      - condition: b2_ch5_negotiate = 2 AND b2_ch5_first_cut = 0
+        texts:
+          - source: scene_text
+            paragraph: 32
+            text: |-
+              Mientras peleaba contra los ogros, vi a Leila y Bruce trabajando juntos, logrando decapitar al trol. Leila aplastó la cabeza de Velgos bajo su sandalia, pero la cabeza no se regeneró en el suelo.
+
+              En su lugar, una nueva cabeza se formó desde el cuello del trol, tomándole solo unos cinco segundos regenerarla completamente a su forma original. Sin embargo, a juzgar por la expresión que tenía en la cara después de terminar de regenerarse, supongo que este debe haber sido un proceso particularmente doloroso.
+
+              Mientras me preparo para unirme a mis amigos en la batalla, echo un largo vistazo a Velgos, e intento armar un plan de ataque.
+        choices:
+          - position: 1
+            text: Observar la batalla entre Leila y Velgos, para encontrar sus debilidades
+            effects:
+              - set:
+                  current_scene: b2_ch05a_contrary_ogres
+                  b2_ch5_strategy: 1
+          - position: 2
+            text: Mentirle al mago, para convencerlo de actuar como señuelo
+            effects:
+              - set:
+                  current_scene: b2_ch05a_contrary_ogres
+                  b2_ch5_strategy: 2
+          - position: 3
+            text: Cortarle la cabeza al trol, mientras está ocupado peleando con Leila
+            effects:
+              - set:
+                  current_scene: b2_ch05a_contrary_ogres
+                  b2_ch5_strategy: 3
+      - condition: b2_ch5_negotiate = 2 AND b2_ch5_first_cut = 1
+        texts:
+          - source: scene_text
+            paragraph: 33
+            text: |-
+              Mientras peleaba contra los ogros, vi a Leila y Bruce trabajando juntos, logrando decapitar al trol por segunda vez. Leila aplastó la cabeza de Velgos bajo su sandalia, pero la cabeza no se regeneró en el suelo.
+
+              En su lugar, el trol volvió a regenerar su cabeza desde el cuello, aunque esta vez pareció tomar más tiempo crearla completamente, y parecía estar teniendo un poco de dificultad recreando exactamente los mismos rasgos faciales que tenía antes.
+
+              Mientras me preparo para unirme a mis amigos en la batalla, echo un largo vistazo a Velgos, e intento armar un plan de ataque.
+        choices:
+          - position: 1
+            text: Observar la batalla entre Leila y Velgos, para encontrar sus debilidades
+            effects:
+              - set:
+                  current_scene: b2_ch05a_contrary_ogres
+                  b2_ch5_strategy: 1
+          - position: 2
+            text: Mentirle al mago, para convencerlo de actuar como señuelo
+            effects:
+              - set:
+                  current_scene: b2_ch05a_contrary_ogres
+                  b2_ch5_strategy: 2
+          - position: 3
+            text: Cortarle la cabeza al trol, mientras está ocupado peleando con Leila
+            effects:
+              - set:
+                  current_scene: b2_ch05a_contrary_ogres
+                  b2_ch5_strategy: 3
+      - condition: b2_ch5_negotiate = 1 AND b2_ch5_first_cut = 0
+        texts:
+          - source: scene_text
+            paragraph: 34
+            text: |-
+              Mientras hablaba con los ogros, vi a Leila y Bruce trabajando juntos, logrando decapitar al trol. Leila aplastó la cabeza de Velgos bajo su sandalia, pero la cabeza no se regeneró en el suelo.
+
+              En su lugar, una nueva cabeza se formó desde el cuello del trol, tomándole solo unos cinco segundos regenerarla completamente a su forma original. Sin embargo, a juzgar por la expresión que tenía en la cara después de terminar de regenerarse, supongo que este debe haber sido un proceso particularmente doloroso.
+
+              Mientras me preparo para unirme a mis amigos en la batalla, echo un largo vistazo a Velgos, e intento armar un plan de ataque.
+        choices:
+          - position: 1
+            text: Observar la batalla entre Leila y Velgos, para encontrar sus debilidades
+            effects:
+              - set:
+                  current_scene: b2_ch05a_contrary_ogres
+                  b2_ch5_strategy: 1
+          - position: 2
+            text: Mentirle al mago, para convencerlo de actuar como señuelo
+            effects:
+              - set:
+                  current_scene: b2_ch05a_contrary_ogres
+                  b2_ch5_strategy: 2
+          - position: 3
+            text: Cortarle la cabeza al trol, mientras está ocupado peleando con Leila
+            effects:
+              - set:
+                  current_scene: b2_ch05a_contrary_ogres
+                  b2_ch5_strategy: 3
+      - condition: b2_ch5_negotiate = 1 AND b2_ch5_first_cut = 1
+        texts:
+          - source: scene_text
+            paragraph: 35
+            text: |-
+              Mientras hablaba con los ogros, vi a Leila y Bruce trabajando juntos, logrando decapitar al trol por segunda vez. Leila aplastó la cabeza de Velgos bajo su sandalia, pero la cabeza no se regeneró en el suelo.
+
+              En su lugar, el trol volvió a regenerar su cabeza desde el cuello, aunque esta vez pareció tomar más tiempo crearla completamente, y parecía estar teniendo un poco de dificultad recreando exactamente los mismos rasgos faciales que tenía antes.
+
+              Mientras me preparo para unirme a mis amigos en la batalla, echo un largo vistazo a Velgos, e intento armar un plan de ataque.
+        choices:
+          - position: 1
+            text: Observar la batalla entre Leila y Velgos, para encontrar sus debilidades
+            effects:
+              - set:
+                  current_scene: b2_ch05a_contrary_ogres
+                  b2_ch5_strategy: 1
+          - position: 2
+            text: Mentirle al mago, para convencerlo de actuar como señuelo
+            effects:
+              - set:
+                  current_scene: b2_ch05a_contrary_ogres
+                  b2_ch5_strategy: 2
+          - position: 3
+            text: Cortarle la cabeza al trol, mientras está ocupado peleando con Leila
+            effects:
+              - set:
+                  current_scene: b2_ch05a_contrary_ogres
+                  b2_ch5_strategy: 3
+  - name: b2_ch05a_contrary_ogres
+    routes:
+      - condition: b2_ch5_negotiate = 2 AND b2_ch5_first_cut = 0
+        texts:
+          - source: scene_text
+            paragraph: 36
+            text: |-
+              Mientras me quedo ahí parado, pensando, el trol finalmente me nota, y sus ojos se llenan de rabia una vez más. Leila aprovecha esta breve distracción, y logra cortarle la cabeza al trol otra vez. Una vez que aplasta su cabeza, el trol empieza a regenerar una nueva desde su cuello, aunque esta vez parece estar tomando más tiempo crearla completamente, y parece estar teniendo un poco de dificultad recreando exactamente los mismos rasgos faciales que tenía antes.
+
+              Tan pronto como su cabeza vuelve a crecer, Leila y Bruce empiezan a presionar al trol otra vez, sin dejarle ninguna oportunidad de contraatacar apropiadamente.
+
+              "Santo cielo," dice el mago, exasperado, mientras observa a Leila pelear. "¡Deja de apuntar a la cabeza! ¿No ves que no te está sirviendo de nada?"
+
+              "¡Al contrario!" le digo. "Creo que cortarle la cabeza es exactamente lo que deberíamos estar haciendo. Pudiste ver claramente que al trol le costó regenerar su cabeza cuando se la cortaron la segunda vez. Incluso con su alucinante capacidad regenerativa, tiene que haber algún tipo de límite a cuántas veces puede regenerar su cabeza en un período de tiempo tan corto. ¡Mi suposición es que una o dos decapitaciones más deberían bastar!"
+
+              Echo otro vistazo rápido al campo de batalla, y parece que las cosas no van muy bien para Velgos en este momento. Leila y Bruce están haciendo un muy buen trabajo flanqueándolo, y el trol no puede atacar a Bruce en absoluto, porque si aparta los ojos de Leila por un solo segundo, ella le cortará la cabeza otra vez en un abrir y cerrar de ojos.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_climactic_ogres
+      - condition: b2_ch5_negotiate = 2 AND b2_ch5_first_cut = 1
+        texts:
+          - source: scene_text
+            paragraph: 37
+            text: |-
+              "Santo cielo," dice el mago, exasperado, mientras observa a Leila pelear. "¡Deja de apuntar a la cabeza! ¿No ves que no te está sirviendo de nada?"
+
+              "¡Al contrario!" le digo. "Creo que cortarle la cabeza es exactamente lo que deberíamos estar haciendo. Pudiste ver claramente que al trol le costó regenerar su cabeza cuando se la cortaron la segunda vez. Incluso con su alucinante capacidad regenerativa, tiene que haber algún tipo de límite a cuántas veces puede regenerar su cabeza en un período de tiempo tan corto. ¡Mi suposición es que una o dos decapitaciones más deberían bastar!"
+
+              Vuelvo a mirar al trol, que todavía está ocupado peleando, pero cuando me nota, sus ojos se llenan de rabia una vez más.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_climactic_ogres
+      - condition: b2_ch5_negotiate = 1 AND b2_ch5_first_cut = 0
+        texts:
+          - source: scene_text
+            paragraph: 38
+            text: |-
+              Mientras me quedo ahí parado, pensando, los ogros se lanzan hacia el trol, con sus mazas listas, preparándose para golpear. Al ver a sus antiguos compañeros volverse contra él, los ojos de Velgos se llenan de rabia. Leila aprovecha esta breve distracción, y logra cortarle la cabeza al trol otra vez. Una vez que aplasta su cabeza, el trol empieza a regenerar una nueva desde su cuello, aunque esta vez parece estar tomando más tiempo crearla completamente, y parece estar teniendo un poco de dificultad recreando exactamente los mismos rasgos faciales que tenía antes.
+
+              Tan pronto como su cabeza vuelve a crecer, Leila, Bruce y los ogros empiezan a presionar al trol una vez más, sin dejarle ninguna oportunidad de contraatacar apropiadamente.
+
+              "Santo cielo," dice el mago, exasperado, mientras observa a Leila pelear. "¡Deja de apuntar a la cabeza! ¿No ves que no te está sirviendo de nada?"
+
+              "¡Al contrario!" le digo. "Creo que cortarle la cabeza es exactamente lo que deberíamos estar haciendo. Pudiste ver claramente que al trol le costó regenerar su cabeza cuando se la cortaron la segunda vez. Incluso con su alucinante capacidad regenerativa, tiene que haber algún tipo de límite a cuántas veces puede regenerar su cabeza en un período de tiempo tan corto. ¡Mi suposición es que una o dos decapitaciones más deberían bastar!"
+
+              Echo otro vistazo rápido al campo de batalla, y parece que a Velgos no le está yendo muy bien. No creo que haya peleado nunca contra tantos enemigos fuertes a la vez, y no está acostumbrado a defenderse de tantos ataques al mismo tiempo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_climactic_ogres
+      - condition: b2_ch5_negotiate = 1 AND b2_ch5_first_cut = 1
+        texts:
+          - source: scene_text
+            paragraph: 39
+            text: |-
+              "Santo cielo," dice el mago, exasperado, mientras observa a Leila pelear. "¡Deja de apuntar a la cabeza! ¿No ves que no te está sirviendo de nada?"
+
+              "¡Al contrario!" le digo. "Creo que cortarle la cabeza es exactamente lo que deberíamos estar haciendo. Pudiste ver claramente que al trol le costó regenerar su cabeza cuando se la cortaron la segunda vez. Incluso con su alucinante capacidad regenerativa, tiene que haber algún tipo de límite a cuántas veces puede regenerar su cabeza en un período de tiempo tan corto. ¡Mi suposición es que una o dos decapitaciones más deberían bastar!"
+
+              Los ogros ahora se lanzan hacia el trol, con sus mazas listas, preparándose para golpear. Al ver a sus antiguos compañeros volverse contra él, los ojos de Velgos se llenan de rabia.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_climactic_ogres
+  - name: b2_ch05a_climactic_ogres
+    routes:
+      - condition: b2_ch5_strategy = 1 AND b2_ch5_first_cut = 0
+        texts:
+          - source: scene_text
+            paragraph: 43
+            text: |-
+              Mantengo mi posición, intentando estudiar cuidadosamente al trol, mientras pelea. Sin embargo, no logro hacerlo por mucho tiempo, porque Leila pronto consigue encontrar otra abertura en las defensas del trol, y vuelve a cortarle la cabeza.
+
+              Después de que su cabeza es aplastada una vez más, el trol empieza a regenerar una nueva desde el cuello, pero esta vez algo claramente no está bien. La forma grotesca que está emergiendo de su cuello ya no puede llamarse ni remotamente una cabeza. Al rostro le falta la mitad de la piel, los ojos se le están saliendo de las órbitas, y su forma no se parece en nada a la de antes. Más importante aún, parecería que su cabeza no se ha regenerado lo bastante bien como para permitirle respirar.
+
+              El trol ahora intenta desesperadamente jadear por aire, mientras nos mira a Leila y a mí con puro odio en los ojos. Intenta hablar, pero ya no le queda aire en los pulmones. Solo consigue emitir unos sonidos guturales ininteligibles, mientras da unos pasos hacia adelante y estira uno de sus brazos hacia nosotros, en un intento inútil de alcanzarnos. Una vez que se queda completamente sin aliento, cae de rodillas, y empieza a arañarse la garganta con las manos, como si estuviera intentando crear un nuevo conducto para que el aire llegue a sus pulmones. Finalmente, deja de moverse por completo, y cae de bruces al suelo, sin vida.
+
+              "Bueno, eso fue anticlimático..." digo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_dead
+      - condition: b2_ch5_strategy = 2 AND b2_ch5_first_cut = 0
+        texts:
+          - source: scene_text
+            paragraph: 44
+            text: |-
+              "Así que, en fin," le digo al mago, "tengo un plan sobre cómo atacar al trol, pero voy a necesitar tu ayuda con--"
+
+              Me interrumpo, porque mientras estaba hablando, Leila consiguió encontrar otra abertura en las defensas del trol, y volvió a cortarle la cabeza.
+
+              Después de que su cabeza es aplastada una vez más, el trol empieza a regenerar una nueva desde el cuello, pero esta vez algo claramente no está bien. La forma grotesca que está emergiendo de su cuello ya no puede llamarse ni remotamente una cabeza. Al rostro le falta la mitad de la piel, los ojos se le están saliendo de las órbitas, y su forma no se parece en nada a la de antes. Más importante aún, parecería que su cabeza no se ha regenerado lo bastante bien como para permitirle respirar.
+
+              El trol ahora intenta desesperadamente jadear por aire, mientras nos mira a Leila y a mí con puro odio en los ojos. Intenta hablar, pero ya no le queda aire en los pulmones. Solo consigue emitir unos sonidos guturales ininteligibles, mientras da unos pasos hacia adelante y estira uno de sus brazos hacia nosotros, en un intento inútil de alcanzarnos. Una vez que se queda completamente sin aliento, cae de rodillas, y empieza a arañarse la garganta con las manos, como si estuviera intentando crear un nuevo conducto para que el aire llegue a sus pulmones. Finalmente, deja de moverse por completo, y cae de bruces al suelo, sin vida.
+
+              "Bueno, eso fue anticlimático..." digo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_dead
+      - condition: b2_ch5_strategy = 3 AND b2_ch5_first_cut = 0
+        texts:
+          - source: scene_text
+            paragraph: 45
+            text: |-
+              "Así que, en fin," le digo al mago, "fue divertido charlar contigo, pero tengo un trol que matar, así que si no te importa--"
+
+              Me interrumpo, porque mientras estaba hablando, Leila consiguió encontrar otra abertura en las defensas del trol, y volvió a cortarle la cabeza.
+
+              Después de que su cabeza es aplastada una vez más, el trol empieza a regenerar una nueva desde el cuello, pero esta vez algo claramente no está bien. La forma grotesca que está emergiendo de su cuello ya no puede llamarse ni remotamente una cabeza. Al rostro le falta la mitad de la piel, los ojos se le están saliendo de las órbitas, y su forma no se parece en nada a la de antes. Más importante aún, parecería que su cabeza no se ha regenerado lo bastante bien como para permitirle respirar.
+
+              El trol ahora intenta desesperadamente jadear por aire, mientras nos mira a Leila y a mí con puro odio en los ojos. Intenta hablar, pero ya no le queda aire en los pulmones. Solo consigue emitir unos sonidos guturales ininteligibles, mientras da unos pasos hacia adelante y estira uno de sus brazos hacia nosotros, en un intento inútil de alcanzarnos. Una vez que se queda completamente sin aliento, cae de rodillas, y empieza a arañarse la garganta con las manos, como si estuviera intentando crear un nuevo conducto para que el aire llegue a sus pulmones. Finalmente, deja de moverse por completo, y cae de bruces al suelo, sin vida.
+
+              "Bueno, eso fue anticlimático..." digo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_dead
+      - condition: b2_ch5_strategy = 1 AND b2_ch5_first_cut = 1
+        texts:
+          - source: scene_text
+            paragraph: 40
+            text: |-
+              Mantengo mi posición, intentando estudiar cuidadosamente al trol, mientras pelea. Sin embargo, no logro hacerlo por mucho tiempo, porque Leila aprovecha inmediatamente la breve distracción del trol, y consigue volver a cortarle la cabeza.
+
+              Después de que su cabeza es aplastada una vez más, el trol empieza a regenerar una nueva desde el cuello, pero esta vez algo claramente no está bien. La forma grotesca que está emergiendo de su cuello ya no puede llamarse ni remotamente una cabeza. Al rostro le falta la mitad de la piel, los ojos se le están saliendo de las órbitas, y su forma no se parece en nada a la de antes. Más importante aún, parecería que su cabeza no se ha regenerado lo bastante bien como para permitirle respirar.
+
+              El trol ahora intenta desesperadamente jadear por aire, mientras nos mira a Leila y a mí con puro odio en los ojos. Intenta hablar, pero ya no le queda aire en los pulmones. Solo consigue emitir unos sonidos guturales ininteligibles, mientras da unos pasos hacia adelante y estira uno de sus brazos hacia nosotros, en un intento inútil de alcanzarnos. Una vez que se queda completamente sin aliento, cae de rodillas, y empieza a arañarse la garganta con las manos, como si estuviera intentando crear un nuevo conducto para que el aire llegue a sus pulmones. Finalmente, deja de moverse por completo, y cae de bruces al suelo, sin vida.
+
+              "Bueno, eso fue anticlimático..." digo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_dead
+      - condition: b2_ch5_strategy = 2 AND b2_ch5_first_cut = 1
+        texts:
+          - source: scene_text
+            paragraph: 41
+            text: |-
+              "Así que, en fin," le digo al mago, "tengo un plan sobre cómo atacar al trol, pero voy a necesitar tu ayuda con--"
+
+              Me interrumpo, porque mientras estaba hablando, Leila aprovechó la breve distracción del trol, y consiguió volver a cortarle la cabeza.
+
+              Después de que su cabeza es aplastada una vez más, el trol empieza a regenerar una nueva desde el cuello, pero esta vez algo claramente no está bien. La forma grotesca que está emergiendo de su cuello ya no puede llamarse ni remotamente una cabeza. Al rostro le falta la mitad de la piel, los ojos se le están saliendo de las órbitas, y su forma no se parece en nada a la de antes. Más importante aún, parecería que su cabeza no se ha regenerado lo bastante bien como para permitirle respirar.
+
+              El trol ahora intenta desesperadamente jadear por aire, mientras nos mira a Leila y a mí con puro odio en los ojos. Intenta hablar, pero ya no le queda aire en los pulmones. Solo consigue emitir unos sonidos guturales ininteligibles, mientras da unos pasos hacia adelante y estira uno de sus brazos hacia nosotros, en un intento inútil de alcanzarnos. Una vez que se queda completamente sin aliento, cae de rodillas, y empieza a arañarse la garganta con las manos, como si estuviera intentando crear un nuevo conducto para que el aire llegue a sus pulmones. Finalmente, deja de moverse por completo, y cae de bruces al suelo, sin vida.
+
+              "Bueno, eso fue anticlimático..." digo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_dead
+      - condition: b2_ch5_strategy = 3 AND b2_ch5_first_cut = 1
+        texts:
+          - source: scene_text
+            paragraph: 42
+            text: |-
+              "Así que, en fin," le digo al mago, "fue divertido charlar contigo, pero tengo un trol que matar, así que si no te importa--"
+
+              Me interrumpo, porque mientras estaba hablando, Leila aprovechó la breve distracción del trol, y consiguió volver a cortarle la cabeza.
+
+              Después de que su cabeza es aplastada una vez más, el trol empieza a regenerar una nueva desde el cuello, pero esta vez algo claramente no está bien. La forma grotesca que está emergiendo de su cuello ya no puede llamarse ni remotamente una cabeza. Al rostro le falta la mitad de la piel, los ojos se le están saliendo de las órbitas, y su forma no se parece en nada a la de antes. Más importante aún, parecería que su cabeza no se ha regenerado lo bastante bien como para permitirle respirar.
+
+              El trol ahora intenta desesperadamente jadear por aire, mientras nos mira a Leila y a mí con puro odio en los ojos. Intenta hablar, pero ya no le queda aire en los pulmones. Solo consigue emitir unos sonidos guturales ininteligibles, mientras da unos pasos hacia adelante y estira uno de sus brazos hacia nosotros, en un intento inútil de alcanzarnos. Una vez que se queda completamente sin aliento, cae de rodillas, y empieza a arañarse la garganta con las manos, como si estuviera intentando crear un nuevo conducto para que el aire llegue a sus pulmones. Finalmente, deja de moverse por completo, y cae de bruces al suelo, sin vida.
+
+              "Bueno, eso fue anticlimático..." digo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_dead
+  - name: b2_ch05a_contrary_wilhelm
+    texts:
+      - source: scene_text
+        paragraph: 46
+        text: |-
+          Mientras me quedo ahí parado, pensando, Leila consigue encontrar una abertura en las defensas del trol, y le corta la cabeza de un solo movimiento. Luego aplasta la cabeza de Velgos bajo su sandalia, pero la cabeza no se regenera en el suelo. En cambio, el trol vuelve a regenerar su cabeza desde el cuello, aunque esta vez parece estar tomando más tiempo crearla completamente, y parece que está teniendo un poco de dificultad recreando exactamente los mismos rasgos faciales que tenía antes.
+
+          Tan pronto como su cabeza vuelve a crecer, Leila empieza a presionar al trol otra vez, asegurándose de que su atención esté puesta en ella todo el tiempo.
+
+          "Santo cielo," dice el mago, exasperado, mientras observa a Leila pelear. "¡Deja de apuntar a la cabeza! ¿No ves que no te está sirviendo de nada?"
+
+          "¡Al contrario!" le digo. "Creo que cortarle la cabeza es exactamente lo que deberíamos estar haciendo. Pudiste ver claramente que al trol le costó regenerar su cabeza cuando se la cortaron la segunda vez. Incluso con la alucinante capacidad regenerativa del trol, tiene que haber algún tipo de límite a cuántas veces puede regenerar su cabeza en un período de tiempo tan corto. ¡Mi suposición es que una o dos decapitaciones más deberían bastar!"
+
+          Echo otro vistazo rápido al campo de batalla, y parece que las cosas no van muy bien para Velgos en este momento. Wilhelm está haciendo un muy buen trabajo colocándose constantemente detrás de él sin ser detectado, así que el trol no puede bajar la guardia ni por un solo segundo. Es más, Velgos tampoco puede permitirse dirigir sus ataques contra el asesino, porque si aparta los ojos de Leila por un solo segundo, ella le cortará la cabeza otra vez en un abrir y cerrar de ojos.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch05a_anti_wilhelm
+  - name: b2_ch05a_anti_wilhelm
+    routes:
+      - condition: b2_ch5_strategy = 1
+        texts:
+          - source: scene_text
+            paragraph: 43
+            text: |-
+              Mantengo mi posición, intentando estudiar cuidadosamente al trol, mientras pelea. Sin embargo, no logro hacerlo por mucho tiempo, porque Leila pronto consigue encontrar otra abertura en las defensas del trol, y vuelve a cortarle la cabeza.
+
+              Después de que su cabeza es aplastada una vez más, el trol empieza a regenerar una nueva desde el cuello, pero esta vez algo claramente no está bien. La forma grotesca que está emergiendo de su cuello ya no puede llamarse ni remotamente una cabeza. Al rostro le falta la mitad de la piel, los ojos se le están saliendo de las órbitas, y su forma no se parece en nada a la de antes. Más importante aún, parecería que su cabeza no se ha regenerado lo bastante bien como para permitirle respirar.
+
+              El trol ahora intenta desesperadamente jadear por aire, mientras nos mira a Leila y a mí con puro odio en los ojos. Intenta hablar, pero ya no le queda aire en los pulmones. Solo consigue emitir unos sonidos guturales ininteligibles, mientras da unos pasos hacia adelante y estira uno de sus brazos hacia nosotros, en un intento inútil de alcanzarnos. Una vez que se queda completamente sin aliento, cae de rodillas, y empieza a arañarse la garganta con las manos, como si estuviera intentando crear un nuevo conducto para que el aire llegue a sus pulmones. Finalmente, deja de moverse por completo, y cae de bruces al suelo, sin vida.
+
+              "Bueno, eso fue anticlimático..." digo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_dead
+      - condition: b2_ch5_strategy = 2
+        texts:
+          - source: scene_text
+            paragraph: 44
+            text: |-
+              "Así que, en fin," le digo al mago, "tengo un plan sobre cómo atacar al trol, pero voy a necesitar tu ayuda con--"
+
+              Me interrumpo, porque mientras estaba hablando, Leila consiguió encontrar otra abertura en las defensas del trol, y volvió a cortarle la cabeza.
+
+              Después de que su cabeza es aplastada una vez más, el trol empieza a regenerar una nueva desde el cuello, pero esta vez algo claramente no está bien. La forma grotesca que está emergiendo de su cuello ya no puede llamarse ni remotamente una cabeza. Al rostro le falta la mitad de la piel, los ojos se le están saliendo de las órbitas, y su forma no se parece en nada a la de antes. Más importante aún, parecería que su cabeza no se ha regenerado lo bastante bien como para permitirle respirar.
+
+              El trol ahora intenta desesperadamente jadear por aire, mientras nos mira a Leila y a mí con puro odio en los ojos. Intenta hablar, pero ya no le queda aire en los pulmones. Solo consigue emitir unos sonidos guturales ininteligibles, mientras da unos pasos hacia adelante y estira uno de sus brazos hacia nosotros, en un intento inútil de alcanzarnos. Una vez que se queda completamente sin aliento, cae de rodillas, y empieza a arañarse la garganta con las manos, como si estuviera intentando crear un nuevo conducto para que el aire llegue a sus pulmones. Finalmente, deja de moverse por completo, y cae de bruces al suelo, sin vida.
+
+              "Bueno, eso fue anticlimático..." digo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_dead
+      - condition: b2_ch5_strategy = 3
+        texts:
+          - source: scene_text
+            paragraph: 45
+            text: |-
+              "Así que, en fin," le digo al mago, "fue divertido charlar contigo, pero tengo un trol que matar, así que si no te importa--"
+
+              Me interrumpo, porque mientras estaba hablando, Leila consiguió encontrar otra abertura en las defensas del trol, y volvió a cortarle la cabeza.
+
+              Después de que su cabeza es aplastada una vez más, el trol empieza a regenerar una nueva desde el cuello, pero esta vez algo claramente no está bien. La forma grotesca que está emergiendo de su cuello ya no puede llamarse ni remotamente una cabeza. Al rostro le falta la mitad de la piel, los ojos se le están saliendo de las órbitas, y su forma no se parece en nada a la de antes. Más importante aún, parecería que su cabeza no se ha regenerado lo bastante bien como para permitirle respirar.
+
+              El trol ahora intenta desesperadamente jadear por aire, mientras nos mira a Leila y a mí con puro odio en los ojos. Intenta hablar, pero ya no le queda aire en los pulmones. Solo consigue emitir unos sonidos guturales ininteligibles, mientras da unos pasos hacia adelante y estira uno de sus brazos hacia nosotros, en un intento inútil de alcanzarnos. Una vez que se queda completamente sin aliento, cae de rodillas, y empieza a arañarse la garganta con las manos, como si estuviera intentando crear un nuevo conducto para que el aire llegue a sus pulmones. Finalmente, deja de moverse por completo, y cae de bruces al suelo, sin vida.
+
+              "Bueno, eso fue anticlimático..." digo.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_dead
+  - name: b2_ch05a_contrary_without
+    texts:
+      - source: scene_text
+        paragraph: 47
+        text: |-
+          Mientras me quedo ahí parado, pensando, Leila consigue encontrar una abertura en las defensas del trol, y le corta la cabeza de un solo movimiento. Luego aplasta la cabeza de Velgos bajo su sandalia, pero la cabeza no se regenera en el suelo. En cambio, el trol vuelve a regenerar su cabeza desde el cuello, aunque esta vez parece estar tomando más tiempo crearla completamente, y parece que está teniendo un poco de dificultad recreando exactamente los mismos rasgos faciales que tenía antes.
+
+          Tan pronto como su cabeza vuelve a crecer, Leila empieza a presionar al trol otra vez, asegurándose de que su atención esté puesta en ella todo el tiempo.
+
+          "Santo cielo," dice el mago, exasperado, mientras observa a Leila pelear. "¡Deja de apuntar a la cabeza! ¿No ves que no te está sirviendo de nada?"
+
+          "¡Al contrario!" le digo. "Creo que cortarle la cabeza es exactamente lo que deberíamos estar haciendo. Pudiste ver claramente que al trol le costó regenerar su cabeza cuando se la cortaron la segunda vez. Incluso con la alucinante capacidad regenerativa del trol, tiene que haber algún tipo de límite a cuántas veces puede regenerar su cabeza en un período de tiempo tan corto. ¡Mi suposición es que una o dos decapitaciones más deberían bastar!"
+
+          Echo otro vistazo rápido al campo de batalla, y parece que Velgos y Leila están atrapados ahora mismo en una especie de punto muerto. Ninguno de los dos parece capaz de imponerse, así que siguen esquivando los ataques del otro, con la esperanza de que eventualmente su enemigo baje la guardia.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch05a_observe
+            condition: b2_ch5_strategy = 1
+          - set:
+              current_scene: b2_ch05a_effortlessly
+            condition: b2_ch5_strategy = 3
+          - set:
+              current_scene: b2_ch05a_mage
+            condition: b2_ch5_strategy = 2
+  - name: b2_ch05a_easily_without
+    texts:
+      - source: scene_text
+        paragraph: 54
+        text: |-
+          Mientras me quedo ahí parado, pensando, Leila consigue encontrar una abertura en las defensas del trol, y le corta la cabeza de un solo movimiento. Luego aplasta la cabeza de Velgos bajo su sandalia, pero la cabeza no se regenera en el suelo. En cambio, una nueva cabeza se forma desde el cuello del trol, tomándole solo unos cinco segundos regenerarla completamente a su forma original. Sin embargo, a juzgar por la expresión que ahora tiene en la cara, supongo que este debe haber sido un proceso particularmente doloroso.
+
+          Tan pronto como su cabeza vuelve a crecer, Leila empieza a presionar al trol otra vez, asegurándose de que su atención esté puesta en ella todo el tiempo.
+
+          "¿Por qué sigue atacando la cabeza?" me pregunta el mago. "¿No ve que no está funcionando?"
+
+          "Yo no estaría tan seguro de eso," le digo. "Podías notar fácilmente que antes estaba sintiendo mucho dolor, cuando regeneraba su cabeza desde el cuello. Algo me dice que este truco del trol de regenerar cabezas no es algo que pueda hacer indefinidamente. Además, no es como si tuviéramos mejores ideas a estas alturas. ¡Yo digo que sigamos obligándolo a regenerar su cabeza y veamos qué pasa!"
+      - source: scene_text_2
+        paragraph: 10
+        text: |-
+          Echo otro vistazo rápido al campo de batalla, y parece que las cosas no van muy bien para Velgos en este momento. Wilhelm está haciendo un muy buen trabajo colocándose constantemente detrás de él sin ser detectado, así que el trol no puede bajar la guardia ni por un solo segundo. Es más, Velgos tampoco puede permitirse dirigir sus ataques contra el asesino, porque si aparta los ojos de Leila por un solo segundo, ella le cortará la cabeza otra vez en un abrir y cerrar de ojos.
+
+          Solo hace falta un paso en falso del trol para que Leila aproveche la oportunidad una vez más y le corte la cabeza de los hombros. Mientras vuelve a aplastarla, el trol regenera su cabeza desde el cuello, pero esta vez parece estar tomando más tiempo crearla completamente, y parece que está teniendo un poco de dificultad recreando exactamente los mismos rasgos faciales que tenía antes. Leila no le deja tiempo para recuperarse del todo, y vuelve a atacarlo, intentando agarrarlo desprevenido una vez más. Sin embargo, Wilhelm parece haberse herido de algún modo en ese último intercambio, así que en este momento se está retirando para atender sus heridas.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch05a_observe
+            condition: b2_ch5_strategy = 1
+          - set:
+              current_scene: b2_ch05a_effortlessly
+            condition: b2_ch5_strategy = 3
+          - set:
+              current_scene: b2_ch05a_mage
+            condition: b2_ch5_strategy = 2
+  - name: b2_ch05a_easily_without_real
+    texts:
+      - source: scene_text
+        paragraph: 55
+        text: |-
+          Mientras me quedo ahí parado, pensando, Leila consigue encontrar una abertura en las defensas del trol, y le corta la cabeza de un solo movimiento. Luego aplasta la cabeza de Velgos bajo su sandalia, pero la cabeza no se regenera en el suelo. En cambio, una nueva cabeza se forma desde el cuello del trol, tomándole solo unos cinco segundos regenerarla completamente a su forma original. Sin embargo, a juzgar por la expresión que ahora tiene en la cara, supongo que este debe haber sido un proceso particularmente doloroso.
+
+          Tan pronto como su cabeza vuelve a crecer, Leila empieza a presionar al trol otra vez, asegurándose de que su atención esté puesta en ella todo el tiempo.
+
+          "¿Por qué sigue atacando la cabeza?" me pregunta el mago. "¿No ve que no está funcionando?"
+
+          "Yo no estaría tan seguro de eso," le digo. "Podías notar fácilmente que antes estaba sintiendo mucho dolor, cuando regeneraba su cabeza desde el cuello. Algo me dice que este truco del trol de regenerar cabezas no es algo que pueda hacer indefinidamente. Además, no es como si tuviéramos mejores ideas a estas alturas. ¡Yo digo que sigamos obligándolo a regenerar su cabeza y veamos qué pasa!"
+
+          Echo otro vistazo rápido al campo de batalla, y parece que Velgos y Leila están atrapados ahora mismo en una especie de punto muerto. Ninguno de los dos parece capaz de imponerse, así que siguen esquivando los ataques del otro, con la esperanza de que eventualmente su enemigo baje la guardia.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch05a_observe
+            condition: b2_ch5_strategy = 1
+          - set:
+              current_scene: b2_ch05a_effortlessly
+            condition: b2_ch5_strategy = 3
+          - set:
+              current_scene: b2_ch05a_mage_without
+            condition: b2_ch5_strategy = 2
+  - name: b2_ch05a_observe
+    routes:
+      - condition: perception >= 3
+        texts:
+          - source: scene_text
+            paragraph: 48
+            text: |-
+              Mantengo mi posición, intentando estudiar cuidadosamente al trol, mientras pelea. Después de observar a los dos combatientes durante un rato, noto que Velgos tiende a dar un gran salto hacia atrás cada vez que siente que los ataques de Leila lo están superando. ¡Eso es definitivamente algo que puedo usar en su contra! Solo tengo que esperar la oportunidad adecuada, y entonces podré apuñalarlo por detrás justo cuando dé el salto.
+
+              Empiezo a esperar a que Leila use una ráfaga de ataques contra su oponente, para poder lanzarme hacia él. No, espera, eso no basta. Solo salta hacia atrás si los ataques vienen del lado donde su hombrera ha sido destruida. De lo contrario, mantiene su posición. No puedo permitirme entrar en la batalla de forma descuidada. Solo tengo una oportunidad. Tengo que hacerlo bien.
+
+              Tan pronto como Velgos parece estar siendo superado, hago un rápido sprint hacia adelante para apuñalarlo por detrás mientras está desequilibrado. Consigo calcular el momento a la perfección, y clavo mi daga en su espalda antes de que tenga la oportunidad de esquivar. La abertura que acabo de crear era todo lo que Leila necesitaba, y rápidamente balancea una de sus dagas hacia el cuello del trol, volviéndole a cortar la cabeza.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de observación exitosa - nivel 3 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_final
+                condition: is_dead = 0
+      - condition: perception < 3
+        texts:
+          - source: scene_text
+            paragraph: 49
+            text: |-
+              Mantengo mi posición, intentando estudiar cuidadosamente al trol, mientras pelea. Después de observar a los dos combatientes durante un rato, noto que Velgos tiende a dar un gran salto hacia atrás cada vez que siente que los ataques de Leila lo están superando. ¡Eso es definitivamente algo que puedo usar en su contra! Solo tengo que esperar la oportunidad adecuada, y entonces podré apuñalarlo por detrás justo cuando dé el salto.
+
+              Espero a que Leila empiece a usar una ráfaga de ataques contra su oponente, y cuando parece que el trol está a punto de saltar, hago un rápido sprint hacia adelante para poder apuñalarlo con mi hoja mientras está desequilibrado.
+
+              No lo noté de inmediato, pero había algo distinto en la forma en que retrocedió esta vez. Parecía como si al principio no fuera a saltar, y solo se hubiera decidido a hacerlo después de verme lanzarme hacia él. Desafortunadamente, me di cuenta de todo esto demasiado tarde. Velgos saltó hacia atrás, pero esta vez no estaba desequilibrado en absoluto. Solo fingió estarlo para tenderme una trampa, y mientras intentaba apuñalarlo por detrás, el trol lanzó una de sus hojas hacia mi cuello, y me decapitó en un instante.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de observación fallida - nivel 3 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+  - name: b2_ch05a_effortlessly
+    routes:
+      - condition: strength >= 2
+        texts:
+          - source: scene_text
+            paragraph: 50
+            text: |-
+              "Así que, en fin," le digo al mago, "fue divertido charlar contigo, pero tengo un trol que matar, así que si no te importa, ¡ya me voy!"
+
+              Con estas últimas palabras, dejo atrás al mago, y voy a ayudar a Leila a pelear contra el trol. Dado que Velgos no puede permitirse apartar los ojos de Leila ni por un solo segundo mientras pelea, consigo colocarme justo detrás de él sin ningún esfuerzo, y balanceo mi daga hacia su cuello, desde el lado donde su hombrera había sido destrozada.
+
+              Le corto la cabeza de un solo movimiento, y luego le aplasto la cabeza bajo mi pie, igual que Leila hizo antes que yo.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de fuerza exitosa - nivel 2 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_final
+                condition: is_dead = 0
+      - condition: strength < 2
+        texts:
+          - source: scene_text
+            paragraph: 51
+            text: |-
+              "Así que, en fin," le digo al mago, "fue divertido charlar contigo, pero tengo un trol que matar, así que si no te importa, ¡ya me voy!"
+
+              Con estas últimas palabras, dejo atrás al mago, y voy a ayudar a Leila a pelear contra el trol. Dado que Velgos no puede permitirse apartar los ojos de Leila ni por un solo segundo mientras pelea, consigo colocarme justo detrás de él sin ningún esfuerzo, y balanceo mi daga hacia su cuello, desde el lado donde su hombrera había sido destrozada.
+
+              Mi golpe no es lo suficientemente potente como para cortarle la cabeza de un solo movimiento, sin embargo, así que mi cuchillo se queda atascado en su garganta a medio camino. Antes de que tenga la oportunidad de retroceder, el trol me agarra del brazo para impedir que escape, y luego usa su otra mano para hundirme una cimitarra en el pecho. Mientras el dolor me impide moverme, el trol suelta mi mano, y me remata con un rápido golpe de su hoja.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de fuerza fallida - nivel 2 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+  - name: b2_ch05a_mage
+    texts:
+      - source: scene_text
+        paragraph: 52
+        text: |-
+          "Así que, en fin," le digo al mago, "tengo un plan sobre cómo atacar al trol, pero voy a necesitar tu ayuda con algo."
+
+          "¿Qué quieres decir?" dice el mago.
+
+          "He notado que Velgos realmente no puede seguirle el ritmo a los ataques de Leila," digo, "y no deja de moverse para compensar su falta de habilidad a la hora de desviar sus golpes rápidos. Si nosotros dos nos acercamos desde atrás y lo atacamos por izquierda y derecha al mismo tiempo, no tendrá ningún lugar al que retirarse, y Leila podrá cortarle la cabeza fácilmente. Mejor aún, ni siquiera correríamos ningún riesgo, ¡ya que perdería la cabeza antes de que siquiera tenga la oportunidad de devolvernos el golpe!"
+
+          "Yo... supongo que podría ayudar," dice el mago. "Si no tiene riesgos..."
+
+          "Perfecto," digo, sin darle más tiempo para pensarlo. "¡Entonces vamos!"
+
+          Entonces me lanzo hacia el trol, y el mago se ve obligado a seguirme poco después, para poder alcanzarme. Sabía que saltaría a la oportunidad de unirse a la pelea en cuanto le ofreciera un plan sin riesgos. Ha estado actuando con extrema cautela desde que comenzó la primera ronda, pero está claro que no quiere que lo vean como un cobarde. Por supuesto que estaría más que feliz de poder demostrar su valía sin poner en peligro su vida de ninguna manera. Y mi plan ciertamente suena lo bastante seguro... al menos de la forma en que se lo presenté.
+      - source: scene_text_2
+        paragraph: 9
+        text: |-
+          La verdad del asunto es que omití un pequeño detalle cuando le di el resumen. Aunque el trol definitivamente no tendrá oportunidad de dañarnos antes de que le corten la cabeza, dependiendo de cuánto le afecte esta próxima decapitación, podría perfectamente quedarle suficiente energía como para atacarnos, incluso sin tener la cabeza sobre los hombros. Esa es exactamente la razón por la que no voy a apuñalar al trol en absoluto, y voy a dejar que el mago haga todo el trabajo. En cuanto a la seguridad del propio mago... estoy seguro de que encontrará la forma de arreglárselas. Probablemente.
+
+          Ambos conseguimos colocarnos detrás del trol, mientras Leila lo mantiene ocupado, y cuando estamos a distancia de ataque, le hago una seña con la cabeza al mago, y los dos nos lanzamos hacia nuestro enemigo desde lados opuestos. Justo cuando llego a Velgos, salto hacia atrás sin atacarlo de ninguna manera, y dejo que el mago lo apuñale él solo. El mago parece conmocionado por mi traición, pero no tiene mucho tiempo para reaccionar, porque una de las cimitarras del trol ya va de camino hacia él. Leila aprovecha inmediatamente la distracción, y le corta la cabeza al trol en un abrir y cerrar de ojos. Esto hace que Velgos detenga su ataque a medio movimiento, lo que le da al mago tiempo para sacar su daga del cuerpo del trol y saltar hacia atrás tan lejos como puede. Igual que la vez anterior, Leila arroja la cabeza al suelo, y la aplasta bajo su sandalia.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch05a_troll_final
+  - name: b2_ch05a_mage_helped
+    texts:
+      - source: scene_text
+        paragraph: 58
+        text: |-
+          A juzgar por la velocidad de ese salto, solo puedo asumir que por fin ha decidido activar su propia versión del dispositivo de estadísticas. No veo de qué otra forma podría haberse escapado tan rápido.
+
+          Mientras el mago se alejaba, Leila aplastó la cabeza del trol bajo su pie, igual que la última vez, y el trol empezó a regenerar otra vez su cabeza desde el cuello, pero esta vez parecía estar tomando más tiempo crearla completamente, luciendo como si estuviera teniendo un poco de dificultad recreando exactamente los mismos rasgos faciales que tenía antes.
+
+          "¡Me engañaste!" me grita el mago. "¡No puedo creerlo! ¿Este era tu plan desde el principio? ¿Hacerme quedar como un idiota y usarme de señuelo?"
+
+          "Oye," digo, "¿estás seguro de que de verdad este es el momento para discutir? Ese dispositivo tuyo no va a durar para siempre, ¿verdad? ¿No deberías aprovecharlo al máximo mientras todavía tienes la oportunidad?"
+
+          El mago rechina los dientes, pero no encuentra ninguna buena respuesta para devolverme a gritos. En su lugar, prepara su daga, y se dispone a volver a entrar en acción.
+
+          "¡Maldición!" dice, mientras se une de nuevo a Leila para pelear contra el trol.
+
+          Con ambos flanqueando ahora a Velgos, no pasa mucho tiempo hasta que Leila consigue volver a agarrarlo desprevenido, y le corta la cabeza por tercera vez, aplastándola bajo su pie poco después.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch05a_troll_final
+  - name: b2_ch05a_mage_rampage
+    routes:
+      - condition: agility >= 2
+        texts:
+          - source: scene_text
+            paragraph: 60
+            text: |-
+              "¡Tú!" me grita el mago. "¡Todo esto es culpa tuya! ¡Hijo de puta traicionero, voy a matarte!"
+
+              "¡Espera, espera, un momento!" le digo, pero el mago ya no está escuchando.
+
+              Extiende los brazos hacia mí, y un chorro de llamas sale de sus manos, abriéndose paso hacia mí a gran velocidad.
+
+              Consigo saltar fuera de su trayectoria a tiempo, pero en cuanto aterrizo en el suelo, veo una columna de fuego empezando a formarse bajo mis pies. Salgo corriendo del camino justo antes de que las llamas llenen el área, pero el mago no me da ni un momento de respiro, y sigue apuntando columnas debajo de mí justo cuando mis pies tocan el suelo.
+
+              "Mierda, mierda, mierda," digo, mientras sigo saltando entre las columnas de fuego, pareciendo como si estuviera realizando una elaborada danza tribal.
+
+              ¿Cómo salgo de esta? ¿Lo ataco? ¿Me está permitido atacarlo? ¿Sigue siendo considerado mi compañero de equipo después de romper las reglas? ¿Me ejecutarán a mí también si intento matarlo? ¿Debería simplemente dejarlo inconsciente? Malditos sean los dioses, ¡no puedo pensar con claridad con tanto salto!
+
+              Mientras el mago me mantiene ocupado, varios guardias más se están lanzando ahora hacia él, intentando clavarle sus hojas por la espalda mientras no está prestando atención. El mago no se deja tomar desprevenido, e inmediatamente empieza a apuntar también a sus nuevos atacantes, sin dejar de hacerme esquivar columnas de fuego.
+          - source: scene_text_2
+            paragraph: 14
+            text: |-
+              "¡Velgos, haz algo!" dice el presentador, desesperado. "¡Mátalo! ¡Mátalo ahora, antes de que empeore!"
+
+              El trol frunce el ceño al presentador, y empieza a caminar lentamente hacia el mago, sin dejar de mantener a Leila a la vista. El mago ya ha matado a todos los guardias, pero cuando ve que el trol se le acerca, se olvida por completo de mí, y apunta las manos hacia él en un intento de intimidar a su nuevo enemigo.
+
+              "¡No te acerques!" dice el mago, con un tono asustado. "¡Te quemaré hasta dejarte crujiente!"
+
+              "Adelante," dice Velgos, mientras sigue avanzando hacia el mago, mirando a Leila por el rabillo del ojo. "Me encantaría verlo."
+
+              Cuando Velgos se acerca aún más, el mago deja escapar un gemido, y el trol queda de repente engullido por una columna de fuego recién formada, mucho más grande que las de antes. Velgos sale de las llamas completamente ileso, con una sonrisa maliciosa en la cara, y sigue avanzando lentamente hacia su objetivo.
+
+              "¡Muere, monstruo!" grita el mago, cuando el trol llega hasta él, y empieza a apuñalarlo repetidamente en el pecho con su daga.
+
+              Al ver que no funciona, el mago intenta ir a por el cuello, como Leila, pero Velgos lo bloquea fácilmente con una de sus cimitarras, mientras baja su otra arma sobre el mago, partiéndolo en dos. Casi inmediatamente después de que el mago muere, Leila se lanza detrás del trol, sin darle tiempo a reaccionar, y le corta la cabeza de un solo golpe, aplastándola bajo su pie poco después.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de velocidad exitosa - nivel 2 ]'
+              ac_b2_ch5_tribal: 1
+            achievement:
+              id: ac_b2_ch5_tribal
+              title: Bailarín tribal
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_final
+                condition: is_dead = 0
+      - condition: agility < 2
+        texts:
+          - source: scene_text
+            paragraph: 61
+            text: |-
+              "¡Tú!" me grita el mago. "¡Todo esto es culpa tuya! ¡Hijo de puta traicionero, voy a matarte!"
+
+              "¡Espera, espera, un momento!" le digo, pero el mago ya no está escuchando.
+
+              Extiende los brazos hacia mí, y un chorro de llamas sale de sus manos, abriéndose paso hacia mí a gran velocidad.
+
+              Consigo saltar fuera de su trayectoria a tiempo, pero en cuanto aterrizo en el suelo, una columna de fuego se forma rápidamente bajo mis pies, y me envuelve en llamas en un instante. Apenas tuve oportunidad siquiera de sentir el dolor, antes de quedar convertido en cenizas.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de velocidad fallida - nivel 2 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+  - name: b2_ch05a_troll_final
+    routes:
+      - condition: b2_ch5_first_cut = 1
+        texts:
+          - source: scene_text
+            paragraph: 53
+            text: |-
+              Después de que su cabeza es aplastada una vez más, el trol empieza a regenerar una nueva desde el cuello, pero esta vez algo claramente no está bien. La forma grotesca que está emergiendo de su cuello ya no puede llamarse ni remotamente una cabeza. Al rostro le falta la mitad de la piel, los ojos se le están saliendo de las órbitas, y su forma no se parece en nada a la de antes. Más importante aún, parecería que su cabeza no se ha regenerado lo bastante bien como para permitirle respirar.
+
+              El trol ahora intenta desesperadamente jadear por aire, mientras nos mira a Leila y a mí con puro odio en los ojos. Intenta hablar, pero ya no le queda aire en los pulmones. Solo consigue emitir unos sonidos guturales ininteligibles, mientras da unos pasos hacia adelante y estira uno de sus brazos hacia nosotros, en un intento inútil de alcanzarnos. Una vez que se queda completamente sin aliento, cae de rodillas, y empieza a arañarse la garganta con las manos, como si estuviera intentando crear un nuevo conducto para que el aire llegue a sus pulmones. Finalmente, deja de moverse por completo, y cae de bruces al suelo, sin vida.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_dead
+      - condition: b2_ch5_wilhelm = 1
+        texts:
+          - source: scene_text
+            paragraph: 53
+            text: |-
+              Después de que su cabeza es aplastada una vez más, el trol empieza a regenerar una nueva desde el cuello, pero esta vez algo claramente no está bien. La forma grotesca que está emergiendo de su cuello ya no puede llamarse ni remotamente una cabeza. Al rostro le falta la mitad de la piel, los ojos se le están saliendo de las órbitas, y su forma no se parece en nada a la de antes. Más importante aún, parecería que su cabeza no se ha regenerado lo bastante bien como para permitirle respirar.
+
+              El trol ahora intenta desesperadamente jadear por aire, mientras nos mira a Leila y a mí con puro odio en los ojos. Intenta hablar, pero ya no le queda aire en los pulmones. Solo consigue emitir unos sonidos guturales ininteligibles, mientras da unos pasos hacia adelante y estira uno de sus brazos hacia nosotros, en un intento inútil de alcanzarnos. Una vez que se queda completamente sin aliento, cae de rodillas, y empieza a arañarse la garganta con las manos, como si estuviera intentando crear un nuevo conducto para que el aire llegue a sus pulmones. Finalmente, deja de moverse por completo, y cae de bruces al suelo, sin vida.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_dead
+      - condition: b2_ch5_strategy = 2
+        texts:
+          - source: scene_text
+            paragraph: 53
+            text: |-
+              Después de que su cabeza es aplastada una vez más, el trol empieza a regenerar una nueva desde el cuello, pero esta vez algo claramente no está bien. La forma grotesca que está emergiendo de su cuello ya no puede llamarse ni remotamente una cabeza. Al rostro le falta la mitad de la piel, los ojos se le están saliendo de las órbitas, y su forma no se parece en nada a la de antes. Más importante aún, parecería que su cabeza no se ha regenerado lo bastante bien como para permitirle respirar.
+
+              El trol ahora intenta desesperadamente jadear por aire, mientras nos mira a Leila y a mí con puro odio en los ojos. Intenta hablar, pero ya no le queda aire en los pulmones. Solo consigue emitir unos sonidos guturales ininteligibles, mientras da unos pasos hacia adelante y estira uno de sus brazos hacia nosotros, en un intento inútil de alcanzarnos. Una vez que se queda completamente sin aliento, cae de rodillas, y empieza a arañarse la garganta con las manos, como si estuviera intentando crear un nuevo conducto para que el aire llegue a sus pulmones. Finalmente, deja de moverse por completo, y cae de bruces al suelo, sin vida.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_dead
+      - condition: b2_ch5_wilhelm = 0 AND b2_ch5_first_cut = 0 AND b2_ch5_strategy <> 2
+        texts:
+          - source: scene_text
+            paragraph: 56
+            text: Igual que la última vez, el trol regenera su cabeza desde el cuello, pero esta vez parece estar tomando más tiempo crearla completamente, y parece que está teniendo un poco de dificultad recreando exactamente los mismos rasgos faciales que tenía antes. No le damos tiempo al trol para recuperarse del todo, y seguimos con el ataque, golpeándolo desde ambos lados. No pasa mucho tiempo hasta que Leila consigue volver a agarrar al trol desprevenido, y le corta la cabeza por tercera vez, aplastándola bajo su pie poco después.
+          - source: scene_text_2
+            paragraph: 11
+            text: |-
+              Después de que su cabeza es aplastada una vez más, el trol empieza a regenerar una nueva desde el cuello, pero esta vez algo claramente no está bien. La forma grotesca que está emergiendo de su cuello ya no puede llamarse ni remotamente una cabeza. Al rostro le falta la mitad de la piel, los ojos se le están saliendo de las órbitas, y su forma no se parece en nada a la de antes. Más importante aún, parecería que su cabeza no se ha regenerado lo bastante bien como para permitirle respirar.
+
+              El trol ahora intenta desesperadamente jadear por aire, mientras nos mira a Leila y a mí con puro odio en los ojos. Intenta hablar, pero ya no le queda aire en los pulmones. Solo consigue emitir unos sonidos guturales ininteligibles, mientras da unos pasos hacia adelante y estira uno de sus brazos hacia nosotros, en un intento inútil de alcanzarnos. Una vez que se queda completamente sin aliento, cae de rodillas, y empieza a arañarse la garganta con las manos, como si estuviera intentando crear un nuevo conducto para que el aire llegue a sus pulmones. Finalmente, deja de moverse por completo, y cae de bruces al suelo, sin vida.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_troll_dead
+  - name: b2_ch05a_mage_without
+    texts:
+      - source: scene_text
+        paragraph: 57
+        text: |-
+          "Así que, en fin," le digo al mago, "tengo un plan sobre cómo atacar al trol, pero voy a necesitar tu ayuda con algo."
+
+          "¿Qué quieres decir?" dice el mago.
+
+          "He notado que Velgos realmente no puede seguirle el ritmo a los ataques de Leila," digo, "y no deja de moverse para compensar su falta de habilidad a la hora de desviar sus golpes rápidos. Si nosotros dos nos acercamos desde atrás y lo atacamos por izquierda y derecha al mismo tiempo, no tendrá ningún lugar al que retirarse, y Leila podrá cortarle la cabeza fácilmente. Mejor aún, ni siquiera correríamos ningún riesgo, ¡ya que perdería la cabeza antes de que siquiera tenga la oportunidad de devolvernos el golpe!"
+
+          "Yo... supongo que podría ayudar," dice el mago. "Si no tiene riesgos..."
+
+          "Perfecto," digo, sin darle más tiempo para pensarlo. "¡Entonces vamos!"
+
+          Entonces me lanzo hacia el trol, y el mago se ve obligado a seguirme poco después, para poder alcanzarme. Sabía que saltaría a la oportunidad de unirse a la pelea en cuanto le ofreciera un plan sin riesgos. Ha estado actuando con extrema cautela desde que comenzó la primera ronda, pero está claro que no quiere que lo vean como un cobarde. Por supuesto que estaría más que feliz de poder demostrar su valía sin poner en peligro su vida de ninguna manera. Y mi plan ciertamente suena lo bastante seguro... al menos de la forma en que se lo presenté.
+      - source: scene_text_2
+        paragraph: 12
+        text: |-
+          La verdad del asunto es que omití un pequeño detalle cuando le di el resumen. Aunque el trol definitivamente no tendrá oportunidad de dañarnos antes de que le corten la cabeza, dependiendo de cuánto le afecte esta próxima decapitación, podría perfectamente quedarle suficiente energía como para atacarnos, incluso sin tener la cabeza sobre los hombros. Esa es exactamente la razón por la que no voy a apuñalar al trol en absoluto, y voy a dejar que el mago haga todo el trabajo. En cuanto a la seguridad del propio mago... estoy seguro de que encontrará la forma de arreglárselas. Probablemente.
+
+          Ambos conseguimos colocarnos detrás del trol, mientras Leila lo mantiene ocupado, y cuando estamos a distancia de ataque, le hago una seña con la cabeza al mago, y los dos nos lanzamos hacia nuestro enemigo desde lados opuestos. Justo cuando llego a Velgos, salto hacia atrás sin atacarlo de ninguna manera, y dejo que el mago lo apuñale él solo. El mago parece conmocionado por mi traición, pero no tiene mucho tiempo para reaccionar, porque una de las cimitarras del trol ya casi ha alcanzado su cuello.
+
+          Leila aprovecha inmediatamente la distracción, y le corta la cabeza al trol en un abrir y cerrar de ojos. Sin embargo, esto no hace que Velgos detenga su ataque, y sus cimitarras casi llegan al cuello del mago. En el último instante antes de ser alcanzado, el mago salta hacia atrás con velocidad sobrehumana, evitando el golpe mortal por apenas unos centímetros.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch05a_mage_helped
+            condition: b2_ch2_cell != 1
+          - set:
+              current_scene: b2_ch05a_mage_cell1
+            condition: b2_ch2_cell = 1
+  - name: b2_ch05a_mage_cell1
+    texts:
+      - source: scene_text
+        paragraph: 59
+        text: |-
+          Esa velocidad de hace un momento era casi comparable a la de Leila, y ella está usando un dispositivo de estadísticas. ¿Podría el mago estar usando también algo parecido?
+
+          Mientras el mago se alejaba, Leila aplastó la cabeza del trol bajo su pie, igual que la última vez, y el trol empezó a regenerar otra vez su cabeza desde el cuello, pero esta vez parecía estar tomando más tiempo crearla completamente, luciendo como si estuviera teniendo un poco de dificultad recreando exactamente los mismos rasgos faciales que tenía antes.
+
+          Antes de que los dos empiecen a pelear otra vez, un ruido muy fuerte y agudo empieza a resonar por toda la arena, y algo dentro del bolsillo derecho del mago empieza a brillar con una intensa luz roja. El mago entra en pánico, e intenta ocultar la luz poniendo la mano sobre el bolsillo, pero el daño ya está hecho.
+
+          "Disculpen el ruido, damas y caballeros," dice el presentador. "Ese es el sonido de nuestros detectores de magia activándose. ¿Podría la persona con la luz roja en el bolsillo quedarse quieta, por favor? Nuestros guardias irán a recogerla en breve."
+
+          Varios guardias de la arena se están dirigiendo ahora al área de combate, con sus espadas preparadas.
+
+          "¡No hay necesidad de que ninguno de los otros gladiadores se alarme!" dice el presentador. "¡Simplemente ignoren a los guardias y continúen sus peleas de forma ordenada!"
+      - source: scene_text_2
+        paragraph: 13
+        text: |-
+          Leila y el trol están quietos, mirando fijamente al mago, mientras al mismo tiempo se vigilan el uno al otro por el rabillo del ojo, para asegurarse de que ninguno intente un ataque sorpresa contra el otro durante esta distracción. Mientras tanto, Bruce y los ogros no parecen estar prestando ninguna atención a lo que sucede a su alrededor, y continúan su pelea sin interrupción.
+
+          "No..." dice el mago, con voz asustada, mientras ve a los guardias acercarse.
+
+          Una vez que los guardias lo rodean, uno de ellos intenta agarrar al mago del brazo.
+
+          "Vienes con nosotros," dice el guardia. "Vamos, en marcha."
+
+          "¡No!" grita el mago, apartando su brazo del guardia. "¡Aléjate de mí!"
+
+          "No sirve de nada resistirse, gladiador," dice el guardia, mientras se le acerca e intenta agarrarlo otra vez. "Tu vida se acabó, y lo sabes. Ahora puedes venir con nosotros pacíficamente, o lo haremos por las malas."
+
+          "¡He dicho que te alejes!" grita el mago, más fuerte, y un chorro de llamas brota de sus manos, envolviendo al guardia y quemándolo hasta dejarlo crujiente.
+
+          Todos los demás guardias se mueven rápidamente para inmovilizar al mago, pero él levanta ambos brazos en el aire, arrasándolos a todos con una poderosa ola de fuego que no deja nada más que cenizas a su paso.
+      - source: scene_3
+        paragraph: 2
+        text: |-
+          "¡Guardias!" grita el presentador, empezando a entrar un poco en pánico. "¡Abandonen sus puestos y vengan al área de combate inmediatamente. Tenemos a un elementalista de fuego descontrolado causando estragos! ¡Repito! ¡Un elementalista de fuego descontrolado causando estragos!"
+
+          El mago mira a su alrededor, con una expresión vacía en los ojos, como si poco a poco empezara a perder el rumbo. Luego, cuando sus ojos se cruzan con los míos, la expresión de su rostro cambia, y de repente recupera la concentración, mientras sus ojos se llenan de rabia.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch05a_mage_rampage
+  - name: b2_ch05a_troll_dead
+    texts:
+      - source: scene_text
+        paragraph: 62
+        text: |-
+          "¡Eh, Velgos!" dice el presentador. "¿Qué estás haciendo? ¡Deja de perder el tiempo y pelea en serio! ¿Para qué crees que te estamos pagando?"
+
+          Los espectadores parecen no saber muy bien cómo reaccionar. Velgos parecía ser algo así como uno de los favoritos del público, así que verlo morir frente a sus ojos debe de estar provocándoles sentimientos encontrados sobre todo este asunto. No pueden echarnos la culpa por haberlo matado, pero tampoco parecen demasiado dispuestos a vitorearnos. Lo que recibimos en su lugar son unos momentos de incómodo silencio, mientras el presentador todavía está luchando por aceptar la realidad.
+
+          "Velgos..." dice el presentador, esta vez con una voz suplicante. "¡No me hagas esto! ¡Vamos, incluso aposté un buen dinero por ti! ¡No puedes simplemente morirte así! ¿Qué pasa con el resto de la segunda ronda? ¿Quién va a pelear contra las otras divisiones? ¡Velgos, levántate, maldita sea!"
+
+          Una vez que el presentador termina su arrebato, escuchamos a Venard, el dueño de la arena, carraspear desde algún lugar detrás del presentador.
+
+          "Eh, por favor discúlpenme," dice el presentador a los espectadores. "Volveré enseguida..."
+      - source: scene_text_2
+        paragraph: 15
+        text: |-
+          Luego se dirige hacia el dueño de la arena, bajando de su plataforma elevada y entrando en uno de los niveles superiores del edificio principal que rodea el área de combate.
+
+          Mientras el presentador hablaba, apenas le prestaba atención, porque estaba concentrado en otra cosa por completo. Después de estudiar durante un rato las cimitarras que habían caído de las manos del trol, llegué a la conclusión de que ambas estaban en sorprendentemente buen estado. También estoy bastante seguro de que al menos ambas tienen encantamientos de filo y durabilidad, así que deberían ser bastante comparables a mi daga, en términos de utilidad.
+
+          Nunca me ha gustado realmente blandir dos armas al mismo tiempo cuando peleo, pero quizás podría llevarme una de estas conmigo, ¿para usarla cuando necesite un arma con mayor alcance? ¿O tal vez debería llevarme también la otra y venderla en una tienda? No estoy exactamente seguro de cuánto valdría, pero si lograra que Daren identificara todos los encantamientos lanzados sobre ella, estoy seguro de que podría negociar un precio razonable en las tiendas locales de armas.
+    choices:
+      - position: 1
+        text: Dejar las armas ahí
+        effects:
+          - set:
+              current_scene: b2_ch05a_troll_aftermath
+              b2_ch5_scimitar: 0
+      - position: 2
+        text: Tomar una cimitarra
+        effects:
+          - set:
+              current_scene: b2_ch05a_troll_aftermath
+              b2_ch5_scimitar: 1
+      - position: 3
+        text: Tomar ambas cimitarras
+        effects:
+          - set:
+              current_scene: b2_ch05a_troll_aftermath
+              b2_ch5_scimitar: 2
+  - name: b2_ch05a_troll_aftermath
+    routes:
+      - condition: b2_ch5_negotiate = 1
+        texts:
+          - source: scene_text
+            paragraph: 63
+            text: Mi daga es más que suficiente. No querría que un arma extra me pesara mientras peleo.
+            condition: b2_ch5_scimitar = 0
+          - source: scene_text
+            paragraph: 64
+            text: Siempre es bueno tener un arma extra. Recojo una de las cimitarras del suelo, la meto en su vaina, y luego engancho la vaina a mi cinturón.
+            condition: b2_ch5_scimitar = 1
+          - source: scene_text
+            paragraph: 65
+            text: Decido llevarme ambas cimitarras, porque sería una pena dejarlas ahí. Pongo ambas armas en sus vainas, y luego engancho las dos vainas a mi cinturón.
+            condition: b2_ch5_scimitar = 2
+          - source: scene_text_2
+            paragraph: 16
+            text: |-
+              "Humano," dice uno de los ogros, en su idioma. "Hemos cumplido nuestra parte del trato. Seguimos esperando que tú cumplas la tuya."
+
+              "Oh, claro, claro, los rehenes," digo. "Los tienen encerrados aquí mismo, en el edificio principal del coliseo. Los guardias dijeron que los están reteniendo en la celda que está más cerca de los vestuarios. No deberían tener problemas para encontrarla. Solo crucen esa reja de ahí, y giren a la izquierda."
+
+              "Espero que no nos estés mintiendo..." dice el ogro.
+
+              "Déjalo," dice el otro ogro. "Ya cumplió su promesa. No tenemos motivos para dudar de él. Vámonos. Rápido, antes de que envíen a los guardias por nosotros."
+
+              Los dos ogros se alejan de nosotros, y empiezan a dirigirse hacia la reja de la arena, con la intención de liberar a los miembros de su clan que están cautivos.
+
+              "Espera, ¿qué acaba de pasar aquí?" pregunta Bruce, confundido. "¿De qué estabas hablando con ellos? ¿Y por qué los estás dejando ir?"
+
+              "¿Y por qué no?" digo. "El objetivo de la ronda era matar al trol. Nunca dijeron nada sobre los ogros."
+
+              "¿Pero por qué nos ayudaron?" pregunta Bruce.
+
+              "Los estaban obligando a cooperar con el trol," digo, "porque tenía a algunos miembros de su clan como rehenes. Les dije dónde retenían a sus amigos a cambio de que nos ayudaran con el trol."
+          - source: scene_3
+            paragraph: 3
+            text: |-
+              "¿Quieres decir que acabas de dejar que se vayan para que puedan traer refuerzos?" dice Bruce, conmocionado.
+
+              "¿Refuerzos para qué?..." digo. "Escucha, los ogros pueden ser tontos, pero no tan tontos. Te garantizo que lo primero que harán después de liberar a sus aliados será huir de la ciudad lo antes posible. Ni de broma se van a quedar esperando a que los guardias de la ciudad se reúnan. Así que quizás maten a parte del personal de la arena al salir. No es mi problema. Deberían haber pensado en los riesgos antes de traer a un montón de ogros al medio de una ciudad poblada por humanos."
+
+              "Bien," dice Bruce. "Olvídate de los ogros. Entonces, ¿qué hacemos ahora? ¿La ronda ha terminado o qué?"
+
+              "Estamos esperando a que vuelva el presentador..." digo. "Se supone que él es quien debe anunciar el final de la pelea."
+        effects:
+          - set:
+              ac_b2_ch5_divide: 1
+            achievement:
+              id: ac_b2_ch5_divide
+              title: Divide y vencerás
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_smoothly
+      - condition: b2_ch5_negotiate = 2
+        texts:
+          - source: scene_text
+            paragraph: 63
+            text: Mi daga es más que suficiente. No querría que un arma extra me pesara mientras peleo.
+            condition: b2_ch5_scimitar = 0
+          - source: scene_text
+            paragraph: 64
+            text: Siempre es bueno tener un arma extra. Recojo una de las cimitarras del suelo, la meto en su vaina, y luego engancho la vaina a mi cinturón.
+            condition: b2_ch5_scimitar = 1
+          - source: scene_text
+            paragraph: 65
+            text: Decido llevarme ambas cimitarras, porque sería una pena dejarlas ahí. Pongo ambas armas en sus vainas, y luego engancho las dos vainas a mi cinturón.
+            condition: b2_ch5_scimitar = 2
+          - source: scene_text_2
+            paragraph: 20
+            text: |-
+              "Así que..." dice Bruce. "¿La pelea terminó o qué? ¿Por qué seguimos aquí parados?"
+
+              "Estamos esperando a que vuelva el presentador..." digo. "Se supone que él es quien debe anunciar el final de la pelea."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_smoothly
+      - condition: b2_ch5_negotiate = 0
+        texts:
+          - source: scene_text
+            paragraph: 63
+            text: Mi daga es más que suficiente. No querría que un arma extra me pesara mientras peleo.
+            condition: b2_ch5_scimitar = 0
+          - source: scene_text
+            paragraph: 64
+            text: Siempre es bueno tener un arma extra. Recojo una de las cimitarras del suelo, la meto en su vaina, y luego engancho la vaina a mi cinturón.
+            condition: b2_ch5_scimitar = 1
+          - source: scene_text
+            paragraph: 65
+            text: Decido llevarme ambas cimitarras, porque sería una pena dejarlas ahí. Pongo ambas armas en sus vainas, y luego engancho las dos vainas a mi cinturón.
+            condition: b2_ch5_scimitar = 2
+          - source: scene_text_2
+            paragraph: 18
+            text: |-
+              No mucho después de que matamos a Velgos, Bruce también termina su pelea con los ogros, y luego se dirige directamente hacia nosotros.
+
+              "¿Ya terminaron con el trol?" pregunta Bruce, sorprendido, cuando llega hasta nosotros.
+
+              "Sí, lo matamos hace siglos," digo. "¿Qué te tomó tanto tiempo?"
+
+              "Entonces... ¿la pelea terminó, no?" dice Bruce. "¿Por qué seguimos aquí parados?"
+
+              "Estamos esperando a que vuelva el presentador..." digo. "Se supone que él es quien debe anunciar el final de la pelea."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_smoothly
+      - condition: b2_ch5_negotiate = 0 AND b2_ch5_strategy = 2 AND b2_ch5_first_cut = 0
+        texts:
+          - source: scene_text
+            paragraph: 63
+            text: Mi daga es más que suficiente. No querría que un arma extra me pesara mientras peleo.
+            condition: b2_ch5_scimitar = 0
+          - source: scene_text
+            paragraph: 64
+            text: Siempre es bueno tener un arma extra. Recojo una de las cimitarras del suelo, la meto en su vaina, y luego engancho la vaina a mi cinturón.
+            condition: b2_ch5_scimitar = 1
+          - source: scene_text
+            paragraph: 65
+            text: Decido llevarme ambas cimitarras, porque sería una pena dejarlas ahí. Pongo ambas armas en sus vainas, y luego engancho las dos vainas a mi cinturón.
+            condition: b2_ch5_scimitar = 2
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              "¡No creas que te vas a salir con la tuya tan fácilmente, hijo de puta!" me dice el mago.
+
+              "¿Salir con la mía con qué?" digo.
+
+              "¡Con usarme de señuelo!" grita el mago.
+
+              "Oh, claro, ¡eso!" digo. "Vale, esto es lo que haremos. En la próxima ronda, tú podrás usarme de señuelo a mí, y estaremos a mano. ¿De acuerdo?"
+
+              "¡La próxima ronda es de peleas individuales!" dice el mago.
+
+              "¿Ah, sí?" digo, con tono desinteresado. "Bien, entonces la ronda después de la próxima."
+
+              "¡No hay ronda después de la próxima!" grita el mago. "¡Solo es una pelea opcional!"
+
+              "Técnicamente solo es opcional si no rompes las reglas, pero entiendo tu punto," digo, mientras hago una breve pausa para pensarlo bien. "Bueno, si así están las cosas, entonces supongo que ya no queda ninguna posibilidad de que estemos a mano. Qué pena. Pero oye, no hay resentimientos, ¿verdad?"
+          - source: scene_3
+            paragraph: 4
+            text: |-
+              Mientras el mago rechina los dientes, Bruce se dirige ahora hacia nosotros, después de haber terminado su pelea con los dos ogros.
+
+              "¿Ya terminaron con el trol?" pregunta Bruce, sorprendido, cuando llega hasta nosotros.
+
+              "Sí, lo matamos hace siglos," digo. "¿Qué te tomó tanto tiempo?"
+
+              "Entonces... ¿la pelea terminó, no?" dice Bruce. "¿Por qué seguimos aquí parados?"
+
+              "Estamos esperando a que vuelva el presentador..." digo. "Se supone que él es quien debe anunciar el final de la pelea."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_smoothly
+      - condition: b2_ch5_negotiate = 0 AND b2_ch5_strategy = 2 AND b2_ch5_first_cut = 1 AND b2_ch5_wilhelm = 0
+        texts:
+          - source: scene_text
+            paragraph: 63
+            text: Mi daga es más que suficiente. No querría que un arma extra me pesara mientras peleo.
+            condition: b2_ch5_scimitar = 0
+          - source: scene_text
+            paragraph: 64
+            text: Siempre es bueno tener un arma extra. Recojo una de las cimitarras del suelo, la meto en su vaina, y luego engancho la vaina a mi cinturón.
+            condition: b2_ch5_scimitar = 1
+          - source: scene_text
+            paragraph: 65
+            text: Decido llevarme ambas cimitarras, porque sería una pena dejarlas ahí. Pongo ambas armas en sus vainas, y luego engancho las dos vainas a mi cinturón.
+            condition: b2_ch5_scimitar = 2
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              "¡No creas que te vas a salir con la tuya tan fácilmente, hijo de puta!" me dice el mago.
+
+              "¿Salir con la mía con qué?" digo.
+
+              "¡Con usarme de señuelo!" grita el mago.
+
+              "Oh, claro, ¡eso!" digo. "Vale, esto es lo que haremos. En la próxima ronda, tú podrás usarme de señuelo a mí, y estaremos a mano. ¿De acuerdo?"
+
+              "¡La próxima ronda es de peleas individuales!" dice el mago.
+
+              "¿Ah, sí?" digo, con tono desinteresado. "Bien, entonces la ronda después de la próxima."
+
+              "¡No hay ronda después de la próxima!" grita el mago. "¡Solo es una pelea opcional!"
+
+              "Técnicamente solo es opcional si no rompes las reglas, pero entiendo tu punto," digo, mientras hago una breve pausa para pensarlo bien. "Bueno, si así están las cosas, entonces supongo que ya no queda ninguna posibilidad de que estemos a mano. Qué pena. Pero oye, no hay resentimientos, ¿verdad?"
+          - source: scene_3
+            paragraph: 4
+            text: |-
+              Mientras el mago rechina los dientes, Bruce se dirige ahora hacia nosotros, después de haber terminado su pelea con los dos ogros.
+
+              "¿Ya terminaron con el trol?" pregunta Bruce, sorprendido, cuando llega hasta nosotros.
+
+              "Sí, lo matamos hace siglos," digo. "¿Qué te tomó tanto tiempo?"
+
+              "Entonces... ¿la pelea terminó, no?" dice Bruce. "¿Por qué seguimos aquí parados?"
+
+              "Estamos esperando a que vuelva el presentador..." digo. "Se supone que él es quien debe anunciar el final de la pelea."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_smoothly
+      - condition: b2_ch5_negotiate = 0 AND b2_ch5_wilhelm = 0 AND b2_ch2_cell = 1 AND b2_ch5_strategy = 2 AND b2_ch5_first_cut = 0
+        texts:
+          - source: scene_text
+            paragraph: 63
+            text: Mi daga es más que suficiente. No querría que un arma extra me pesara mientras peleo.
+            condition: b2_ch5_scimitar = 0
+          - source: scene_text
+            paragraph: 64
+            text: Siempre es bueno tener un arma extra. Recojo una de las cimitarras del suelo, la meto en su vaina, y luego engancho la vaina a mi cinturón.
+            condition: b2_ch5_scimitar = 1
+          - source: scene_text
+            paragraph: 65
+            text: Decido llevarme ambas cimitarras, porque sería una pena dejarlas ahí. Pongo ambas armas en sus vainas, y luego engancho las dos vainas a mi cinturón.
+            condition: b2_ch5_scimitar = 2
+          - source: scene_text_2
+            paragraph: 19
+            text: |-
+              No mucho después de que matamos a Velgos, Bruce también termina su pelea con los ogros, y luego se dirige directamente hacia nosotros.
+
+              "¿Ya terminaron con el trol?" pregunta Bruce, sorprendido, cuando llega hasta nosotros.
+
+              "Sí, lo matamos hace siglos," digo. "¿Qué te tomó tanto tiempo?"
+
+              "Espera, ¿cómo murió el mago?" pregunta Bruce, después de notar el cadáver del mago en el suelo.
+
+              "Lo atraparon usando magia," digo. "Hasta sonaron alarmas y todo. ¿Cómo te las arreglaste para no darte cuenta?"
+
+              "Oh..." dice Bruce. "Sí escuché algunos ruidos fuertes, pero estaba demasiado concentrado en la pelea como para entender qué estaba pasando."
+
+              Hace una pausa.
+
+              "Entonces," continúa Bruce. "¿Esto significa que la pelea terminó, no? ¿Por qué seguimos aquí parados?"
+
+              "Estamos esperando a que vuelva el presentador..." digo. "Se supone que él es quien debe anunciar el final de la pelea."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch05a_smoothly
+  - name: b2_ch05a_smoothly
+    texts:
+      - source: scene_text
+        paragraph: 66
+        text: |-
+          Después de un poco más de tiempo, el presentador finalmente regresa a su plataforma, luciendo ligeramente molesto.
+
+          "Perdón por la demora, damas y caballeros," dice el presentador. "Después de una discusión con el dueño de la arena, el señor Venard, hemos llegado a la conclusión de que la segunda ronda no puede continuar después de la muerte de Velgos, el mercenario. En otras palabras, el final de esta pelea también marca el final de la ronda. La tercera y última ronda comenzará en breve, en cuanto el equipo organizador termine con los preparativos. Pedimos disculpas por las molestias."
+
+          Luego se vuelve hacia nosotros.
+
+          "Todos los gladiadores tendrán que esperar en sus áreas de división hasta el comienzo de la próxima ronda," dice. "¡Ya no se les permitirá deambular por los pasillos! Sus salas quedarán cerradas hasta el final de la tercera ronda. Esta vez no habrá más... incidentes."
+
+          Estoy bastante seguro de que me estaba mirando directamente a mí cuando dijo esas últimas palabras. Debe seguir molesto porque la última vez entré al área de combate antes del comienzo de la ronda. En fin, al menos ya no necesito más información de mi cuaderno. No poder salir de mi área de división no debería afectarme demasiado.
+
+          En cuanto volvemos a nuestra sala, oímos a una persona gritando fuerte desde el pasillo al otro lado de nuestra puerta. Es la voz del embajador de Ollendor.
+
+          "¿Qué quieres decir con que todo va sobre ruedas?" grita el embajador. "¿Te estás burlando de mí?"
+      - source: scene_text_2
+        paragraph: 21
+        text: |-
+          "En absoluto, embajador," dice Venard, el dueño de la arena. "Que yo sepa, no ha habido problemas con ninguna parte del evento de nuestra arena."
+
+          "¿No ha habido problemas?" dice el embajador. "¡Los responsables de la muerte del conde de Ollendor siguen todos vivos, y tú me estás diciendo que no ha habido problemas!"
+
+          "Le aseguro," dice Venard, "que no se les ha dado ninguna ventaja a nuestros invitados por encima de los otros gladiadores de la arena durante estas peleas. Muy al contrario, de hecho. Por supuesto, si tiene alguna duda, es libre de hablar con el equipo organizador para disponer los próximos duelos como usted quiera. Después de todo, siempre ha sido usted quien ha tenido la última palabra con respecto a la organización de estos eventos."
+
+          "¡He sido un necio por dejar las cosas en tus manos hasta ahora!" dice el embajador, furioso. "¡Si eres demasiado incompetente para hacer bien el trabajo, entonces tendré que hacerlo yo mismo!"
+
+          Luego oímos al embajador alejarse hecho una furia por el pasillo, presumiblemente hacia la sala donde el equipo organizador estaba haciendo los preparativos para la siguiente ronda.
+
+          "¡Adiós, embajador!" dice Venard con calma, y luego también lo oímos marcharse.
+
+          "Parece que cierta persona realmente te tiene entre ceja y ceja," escribe Leila, mientras me mira.
+
+          "¿A quién le importa?" digo. "No es que puedan hacer nada ya aunque lo intenten."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch05b_similar
+              storyboard_controls: Jump to frame "Book 2 Chapter 5 b"

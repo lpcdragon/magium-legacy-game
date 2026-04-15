@@ -1,0 +1,2134 @@
+scenes:
+  - name: b2_ch06a_intro
+    texts:
+      - source: scene_text
+        paragraph: 2
+        text: |-
+          La chica en pijama nos mira con una sonrisa victoriosa en el rostro. Se la ve de lo más satisfecha consigo misma por haber conseguido por fin llamar nuestra atención. A pesar de que es claramente ella quien nos mantiene suspendidos mágicamente en el aire, su aura no muestra absolutamente ningún rastro de magia. Incluso cuando Kate y Flower ocultan sus auras, todavía puedes darte cuenta de que son magas si examinas sus auras con muchísimo cuidado. La chica que tenemos delante, en cambio, no parece distinta de un humano común. Esto puede significar una de dos cosas. O se le da mucho mejor ocultar su aura que a Flower y Kate, o...
+
+          "¡Oye, yo te conozco!" suelta Arraka de repente. "¡Tú eres esa chica stillwater que no paraba de ir detrás de Eiden y del zorro durante el invierno inmóvil! Eh... ¿cómo era el nombre?... ¿Melenda? ¿Milandra?..."
+
+          "Melindra", dice la chica stillwater, con voz fría, y luego hace un gesto con uno de sus dedos, lanzando un hechizo de viento que cierra el amuleto de Arraka.
+
+          Arraka murmura furiosa desde dentro de su amuleto, pero nadie le presta atención. Tras hacer callar a la banshee, la chica stillwater recupera la sonrisa e intenta retomar su discurso por donde lo había dejado.
+      - source: scene_text_2
+        paragraph: 2
+        text: |-
+          "Así que, como iba diciendo", dice Melindra, "hay algo que me gustaría pedirles. La razón por la que fui a verlos a la arena fue que escuché que los condenaron por matar a un noble de Varathia, así que pensé--"
+
+          "Espera un segundo..." la interrumpe Hadrik. "¿Eres una stillwater?"
+
+          "Pues sí..." dice Melindra, confundida. "Pensé que eso ya sería obvio a estas alturas. Hasta Arraka dijo antes que--"
+
+          "¿Pero cómo te convertiste en una?" pregunta Hadrik. "¿Naciste así? ¿Las mujeres pueden nacer siendo stillwaters?"
+    effects:
+      - set:
+          successful_checks:
+            - 'Punto de control alcanzado: Partida guardada.'
+        condition: checkpoint_rich = 1
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch06a_intro2
+              checkpoint_rich: 0
+  - name: b2_ch06a_intro2
+    texts:
+      - source: scene_text
+        paragraph: 3
+        text: |-
+          "¡No, claro que no!" dice Melindra, ligeramente irritada. "No nací siendo una stillwater. Me convertí en una stillwater de la misma manera que todos los demás."
+
+          "¿Todos?" pregunto. "¿Hasta Eiden? ¿Eiden también es un mago artificial? ¿No nació siendo mago?"
+
+          "¿Qué es un mago artificial?" dice Melindra, en tono frustrado. "Eiden nació siendo mago. Simplemente se convirtió en un stillwater después, igual que todos los demás. ¿Qué tiene esto de tan difícil de entender?"
+
+          "¿Pero cómo?" le pregunto. "¿Cómo te conviertes en un stillwater?"
+
+          "A ver", dice Melindra. "Si creen que voy a quedarme aquí respondiendo todas y cada una de sus preguntas antes de que siquiera escuchen lo que estoy--"
+
+          "¿Cómo conoces a Eiden?" le pregunta Daren. "¿Trabajas con él?"
+
+          "¡No, no trabajo con Eiden!" dice Melindra, visiblemente alterada. "Si trabajara con Eiden, ¿de verdad creen que necesitaría venir a pedirles ayuda? ¿Por qué no pueden simplemente callarse diez segundos y dejarme terminar una maldita frase--"
+      - source: scene_text_2
+        paragraph: 3
+        text: |-
+          "Si quieres nuestra ayuda, entonces ¿qué tal si nos bajas primero?" le pregunta Kate. "No es forma de tratar a alguien a quien intentas pedirle un favor."
+
+          Melindra ahora mira a Kate con una cara de puchero que podría competir con la de Flower cuando se enfada. Tras unos segundos de silencio, la chica stillwater agita una mano, y todos empezamos a descender lentamente hacia el suelo.
+
+          Es curioso. Puede que esta chica tenga poder suficiente para aplastarnos con un simple gesto de los dedos, pero su forma de comportarse hace que parezca una de las personas menos amenazantes que he conocido en mi vida. Quizá incluso menos amenazante que Flower o el embajador de Ollendor.
+
+          "¡Ya está!" dice Melindra, una vez que su hechizo de levitación se cancela por completo. "Todos han vuelto al suelo. Ahora, ¿puedo continuar por donde lo dejé o piensan interrumpirme con todavía más preguntas?"
+    choices:
+      - position: 1
+        text: ¡De hecho, tengo unas cuantas preguntas más!
+        effects:
+          - set:
+              current_scene: b2_ch06a_questions
+      - position: 2
+        text: Sigue, te estamos escuchando.
+        effects:
+          - set:
+              current_scene: b2_ch06a_listening
+  - name: b2_ch06a_questions
+    texts:
+      - source: scene_text
+        paragraph: 4
+        text: |-
+          "¡De hecho, tengo unas cuantas preguntas más!"
+
+          "¿Qué?" dice Melindra, esforzándose por controlar su temperamento. "¿Qué preguntas?"
+
+          "Bueno, para empezar", digo, "nunca nos dijiste cómo se llega a ser un stillwater."
+
+          "No lo entiendo", dice Melindra. "¿Por qué me hacen esta pregunta a mí? ¿No deberían preguntárselo a Eiden? ¿No son sus seguidores?"
+
+          "¡Ni hablar!" grita Daren.
+
+          Melindra nos mira confundida.
+
+          "¿Sus amigos, entonces?" pregunta.
+
+          "Ni de lejos", dice Kate.
+      - source: scene_text_2
+        paragraph: 4
+        text: |-
+          "Entonces, ¿cómo se las arreglaron para atacar a ese noble?" dice Melindra. "¿No fue Eiden quien les dio el poder para hacerlo?"
+
+          "Así fue", dice Kate.
+
+          "Entonces, ¿por qué lo hizo, si no son sus amigos?" dice Melindra.
+
+          "Parece que conoces a Eiden desde hace tiempo", dice Kate. "¿De verdad crees que necesita una razón lógica para todo lo que hace? O, en realidad, para cualquier cosa?"
+
+          "Bueno..." dice Melindra. "Quiero decir... últimamente no... pero si de verdad no son sus amigos, debo decir que me sorprende bastante que los haya dejado con vida..."
+
+          "¿Y quién no?" dice Kate.
+
+          "Entonces, ¿qué era lo que querías pedirnos?" dice Daren.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch06a_assassins
+  - name: b2_ch06a_listening
+    texts:
+      - source: scene_text
+        paragraph: 5
+        text: |-
+          "Sigue, te estamos escuchando."
+
+          "¡Bien!" dice Melindra, sonriendo otra vez. "Ahora, como ya dije antes, si hubiera logrado contactar a Eiden, no los estaría molestando con esto, pero como me ha estado ignorando por completo desde que volví a Varathia, estaba pensando que quizá ustedes, como sus seguidores, podrían--"
+
+          "¿Cómo nos acabas de llamar?" le pregunta Daren, perplejo.
+
+          "Seguidores de Eiden", dice Melindra. "¿No son sus seguidores?"
+
+          "¡Ni hablar!" grita Daren.
+
+          Melindra nos mira confundida.
+
+          "¿Sus amigos, entonces?" pregunta.
+
+          "Ni de lejos", dice Kate.
+
+          "Entonces, ¿cómo se las arreglaron para atacar a ese noble?" dice Melindra. "¿No fue Eiden quien les dio el poder para hacerlo?"
+      - source: scene_text_2
+        paragraph: 5
+        text: |-
+          "Así fue", dice Kate.
+
+          "Entonces, ¿por qué lo hizo, si no son sus amigos?" dice Melindra.
+
+          "Parece que conoces a Eiden desde hace tiempo", dice Kate. "¿De verdad crees que necesita una razón lógica para todo lo que hace? O, en realidad, para cualquier cosa?"
+
+          "Bueno..." dice Melindra. "Quiero decir... últimamente no... pero si de verdad no son sus amigos, debo decir que me sorprende bastante que los haya dejado con vida..."
+
+          "¿Y quién no?" dice Kate.
+
+          "Entonces, ¿qué era lo que querías pedirnos?" dice Daren.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch06a_assassins
+  - name: b2_ch06a_assassins
+    texts:
+      - source: scene_text
+        paragraph: 6
+        text: |-
+          "¡Ah, cierto!" dice Melindra, recuperando la sonrisa. "En resumen, ¡quiero que maten a alguien por mí!"
+
+          "¡Eh, eh, eh!" dice Daren. "Voy a detenerte ahí mismo, Melindra. A pesar de lo que hayas oído sobre nosotros, ninguno de nosotros es un asesino. No matamos gente a menos que tengamos muy buenas razones para hacerlo. No vamos a matar a alguien solo porque tú nos lo pidas."
+
+          "¡Oh, pero no les estoy pidiendo que lo hagan gratis!" dice Melindra. "¡Estoy más que dispuesta a compensarlos por esta tarea!"
+
+          "No estamos buscando dinero", dice Daren. "Estamos aquí para participar en un torneo de magos, ¿recuerdas?"
+
+          "¡Lo sé!" dice Melindra. "Cuando hablaba de compensación, quería decir que los ayudaría con sus objetivos. ¿No quieren saber cómo encontrar las piñas?"
+
+          "¿Y por qué necesitaríamos tu ayuda para eso?" dice Daren. "Solo son unas piñas. ¿Qué tan difícil podría ser encontrarlas?"
+
+          Melindra le dedica una sonrisa burlona a Daren y saca del bolsillo lo que parece ser una semilla de piña. Luego coloca la semilla en la palma de su mano, y esta empieza de inmediato a brillar con una luz amarilla intensa, justo como dijo Golmyck cuando anunció nuestros primeros objetivos. Después extiende la mano hacia Daren, invitándolo a tomar la semilla de piña.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "Adelante", dice Melindra, sonriendo. "¡Tómala! Pronto entenderás por qué vas a necesitar mi ayuda."
+
+          Cuando Daren toma la semilla de la mano de la chica stillwater, el intenso resplandor amarillo se desvanece por completo, y la semilla no vuelve a brillar por más que Daren la haga rodar entre las palmas de sus manos.
+
+          "Como pueden ver", dice Melindra, con una sonrisa victoriosa, "las semillas de una piña luminosa no brillan para cualquiera. Solo resuenan con auras que contienen una cantidad extremadamente alta de poder mágico. Si hablamos de concursantes del torneo de magos, dudo que alguien que no sea uno de los cuatro sabios tenga suficiente poder mágico como para hacer que una piña empiece a brillar en sus manos. Necesitarían pura suerte ciega para encontrar una piña luminosa si ni siquiera pueden hacerlas brillar al tocarlas. Si no me creen, pueden pasarse esa semilla entre ustedes. Les garantizo que ninguno podrá hacerla brillar."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch06a_venture
+  - name: b2_ch06a_venture
+    texts:
+      - source: scene_text
+        paragraph: 7
+        text: |-
+          Hacemos lo que dice y nos vamos pasando la semilla de piña entre nosotros para ver si alguien es capaz de hacerla brillar. Por desgracia, parece que Melindra tenía razón, y ninguno de nosotros se acerca ni de lejos al nivel de poder mágico necesario para hacer que la semilla brille.
+
+          "Entonces", dice Daren, mientras le devuelve a Melindra su semilla de piña, "¿debo entender que lo que nos ofrecerás a cambio del asesinato será una de esas piñas luminosas?"
+
+          "Oh, no, no, no", dice Melindra. "Nunca conseguí hacerme con una piña. Tuve la suerte de encontrar unas cuantas semillas en el suelo, cerca del borde de un bosque sagrado, mientras venía hacia aquí. No me atrevería a adentrarme más en uno de esos bosques para buscar una piña de verdad. ¡El zorro dorado me odia a muerte!"
+
+          "Espera", digo. "¿Por qué un bosque sagrado? ¿No podrías conseguirla en otra parte?"
+
+          "No puedes conseguir piñas luminosas en ninguna otra parte", dice Melindra. "Solo crecen en los bosques sagrados, y todos ellos son territorio del zorro dorado."
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          "¡Oh, no!" grita Hadrik. "¡Ni hablar! ¡Acabamos de salir de allí hace apenas unos días, y ahora tenemos que volver! ¿Qué les pasa a estos organizadores? ¡Es como si no quisieran que nadie gane de verdad este maldito torneo!"
+
+          "Entonces", dice Kate, "si no vas a darnos una piña y tampoco te ofreces a guiarnos por los bosques sagrados, ¿qué es exactamente lo que intentas ofrecernos?"
+
+          "¡Información!" dice Melindra, sonriendo. "Hay un dispositivo creado específicamente para resonar con estas piñas, y puede hacer que brillen sin requerir una gran cantidad de poder mágico, siempre que quien lo use esté lo bastante cerca de ellas. Es un dispositivo muy raro, pero conozco a alguien que lo tiene, y puedo llevarlos hasta esa persona después de que me ayuden con mi objetivo. No puedo decirles quién es esa persona, pero estoy bastante segura de que puedo conseguir que se los preste durante unos días, lo cual debería ser más que suficiente para que encuentren una piña."
+    choices:
+      - position: 1
+        text: ¿Por qué no puedes decirnos quién es esa persona? ¿Es alguien que conocemos?
+        effects:
+          - set:
+              current_scene: b2_ch06a_ollendor
+              b2_ch6_person: 1
+      - position: 2
+        text: ¿Por qué iba a prestarnos gratis un dispositivo tan raro?
+        effects:
+          - set:
+              current_scene: b2_ch06a_ollendor
+              b2_ch6_person: 0
+  - name: b2_ch06a_ollendor
+    routes:
+      - condition: b2_ch6_person = 1
+        texts:
+          - source: scene_text
+            paragraph: 8
+            text: |-
+              "¿Por qué no puedes decirnos quién es esa persona? ¿Es alguien que conocemos?"
+
+              "Dudo mucho que alguno de ustedes haya conocido a esa persona antes", dice Melindra. "La razón por la que no puedo revelar su identidad es que me pidió específicamente que la mantuviera en secreto, si alguna vez necesitaba mencionarla en una conversación. Yo no le daría tantas vueltas, si fuera ustedes. Simplemente es del tipo reservado. No hay nada más que eso."
+
+              "Ya veo..." digo.
+
+              "Entonces, ¿tenemos un trato?" nos pregunta Melindra.
+
+              "Lo siento, Melindra", dice Daren, "pero no puedo ir por ahí asesinando gente para promover mis propios objetivos. Aunque mi objetivo final sea ayudar al mundo entero, no puedo matar a un hombre simplemente porque tú quieras verlo muerto."
+
+              "¿Así que lo que buscas es una justificación moral?" pregunta Melindra, con una mirada curiosa. "Bueno, ¿y si te digo que la persona a la que quiero que asesinen es un tirano que ha matado a miles de inocentes y que gobierna su reino por medio del miedo y la intimidación? ¿Eso ayudaría a hacerte cambiar de idea?"
+
+              "¿De quién estás hablando exactamente?" pregunta Kate.
+
+              "¡Pues del hermano del hombre al que acaban de matar hace apenas unos días!" dice Melindra. "Del rey de Ollendor."
+          - source: scene_text_2
+            paragraph: 8
+            text: |-
+              "¿Quieres que asesinemos a uno de los reyes de Varathia?" pregunta Hadrik, horrorizado. "¿Te volviste loca? Nos metieron en una arena solo por matar a un noble, ¿y ahora quieres que matemos a un rey?"
+
+              "Oh, no te preocupes", dice Melindra. "Ollendor nunca participó en la organización de este torneo. Nadie quiere saber nada de ellos. Hasta Golmyck es menos odiado por los otros reyes que el rey de Ollendor. Les aseguro que ninguno de los organizadores se inmutaría si armaran un alboroto en su reino. La única razón por la que los amenazaron con descalificarlos del torneo de magos después de matar al conde de Ollendor fue que estaban dentro de las fronteras de Thilias cuando lo asesinaron. Si empezaran a sembrar el caos en Ollendor, dudo mucho que a alguien le importara un comino. Bueno, salvo a las autoridades locales, claro."
+
+              "Eh... no estoy seguro de qué decir sobre esto", digo.
+
+              "Está diciendo la verdad", escribe Leila. "Ollendor es una especie de reino paria hoy en día. Ni los lessathi ni los demás reyes tienen ya influencia sobre lo que ocurre dentro de sus fronteras. Prácticamente todo el mundo los ignora, y muchos de los reinos ya expulsaron a sus embajadores de sus territorios. Por eso mi padre fue allí, después de escapar de Thilias. Porque es un reino donde nadie podría encontrarlo."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_motives
+      - condition: b2_ch6_person = 0
+        texts:
+          - source: scene_text
+            paragraph: 9
+            text: |-
+              "¿Por qué iba a prestarnos gratis un dispositivo tan raro?" digo. "¡Ni siquiera sabe quiénes somos!"
+
+              "¡Pero sí sabe quién soy yo!" dice Melindra. "Y aunque no aceptara prestárselos, siempre podríamos robárselo. Soy una stillwater. No es como si pudiera hacer algo para detenerme."
+
+              "Ya veo..." digo.
+
+              "Entonces, ¿tenemos un trato?" nos pregunta Melindra.
+
+              "Lo siento, Melindra", dice Daren, "pero no puedo ir por ahí asesinando gente para promover mis propios objetivos. Aunque mi objetivo final sea ayudar al mundo entero, no puedo matar a un hombre simplemente porque tú quieras verlo muerto."
+
+              "¿Así que lo que buscas es una justificación moral?" pregunta Melindra, con una mirada curiosa. "Bueno, ¿y si te digo que la persona a la que quiero que asesinen es un tirano que ha matado a miles de inocentes y que gobierna su reino por medio del miedo y la intimidación? ¿Eso ayudaría a hacerte cambiar de idea?"
+
+              "¿De quién estás hablando exactamente?" pregunta Kate.
+
+              "¡Pues del hermano del hombre al que acaban de matar hace apenas unos días!" dice Melindra. "Del rey de Ollendor."
+          - source: scene_text_2
+            paragraph: 8
+            text: |-
+              "¿Quieres que asesinemos a uno de los reyes de Varathia?" pregunta Hadrik, horrorizado. "¿Te volviste loca? Nos metieron en una arena solo por matar a un noble, ¿y ahora quieres que matemos a un rey?"
+
+              "Oh, no te preocupes", dice Melindra. "Ollendor nunca participó en la organización de este torneo. Nadie quiere saber nada de ellos. Hasta Golmyck es menos odiado por los otros reyes que el rey de Ollendor. Les aseguro que ninguno de los organizadores se inmutaría si armaran un alboroto en su reino. La única razón por la que los amenazaron con descalificarlos del torneo de magos después de matar al conde de Ollendor fue que estaban dentro de las fronteras de Thilias cuando lo asesinaron. Si empezaran a sembrar el caos en Ollendor, dudo mucho que a alguien le importara un comino. Bueno, salvo a las autoridades locales, claro."
+
+              "Eh... no estoy seguro de qué decir sobre esto", digo.
+
+              "Está diciendo la verdad", escribe Leila. "Ollendor es una especie de reino paria hoy en día. Ni los lessathi ni los demás reyes tienen ya influencia sobre lo que ocurre dentro de sus fronteras. Prácticamente todo el mundo los ignora, y muchos de los reinos ya expulsaron a sus embajadores de sus territorios. Por eso mi padre fue allí, después de escapar de Thilias. Porque es un reino donde nadie podría encontrarlo."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_motives
+  - name: b2_ch06a_motives
+    texts:
+      - source: scene_text
+        paragraph: 10
+        text: |-
+          "¿Ven?" nos dice Melindra, después de terminar de leer el texto de Leila. "¡No hay nada de qué preocuparse!"
+
+          "¿Pero Ollendor no está muy lejos?" dice Daren. "Y además tendrías que llevarnos hasta la persona que tiene el detector de piñas. Eso suena a mucho tiempo perdido, cuando ya llevamos tres días de retraso respecto a todos los demás participantes del torneo."
+
+          "¿Y qué?" dice Melindra. "No es como si alguien hubiera avanzado nada desde que anunciaron los objetivos. Nadie tiene idea de que las piñas solo pueden encontrarse en los bosques sagrados. De hecho, están evitando los territorios del zorro como si fueran la peste, porque no quieren tratar con ella, así que las probabilidades de que encuentren aunque sea una piña en la próxima semana son casi inexistentes. Incluso cuando por fin descubran lo que tienen que hacer, igual tendrán que enfrentarse al zorro dorado. Sin usar un detector, ni siquiera puedo imaginar cómo podrían pasar desapercibidos el tiempo suficiente para ir probando cada piña a mano, así que tendrán que enfrentarse directamente al zorro y a sus seguidores, y creo que ya pueden imaginarse cómo les irá."
+
+          "Lo siento, pero sigo sin creerme esto", dice Kate. "Eres una stillwater. ¿Por qué necesitarías nuestra ayuda para asesinar a un rey?"
+
+          "¡Porque vine a Varathia como participante del torneo!" dice Melindra. "¡Era la única forma que se me ocurrió de volver a este lugar después de que ese maldito rey de Ollendor me exiliara! Pero ahora el hechizo del torneo me impide hacerles daño a los lugareños, así que llevo atrapada aquí desde el primer día, intentando encontrar a alguien que haga el trabajo por mí."
+      - source: scene_text_2
+        paragraph: 9
+        text: |-
+          "¿Y qué garantía tenemos de que cumplirás tu promesa una vez que hayamos completado nuestra tarea?" pregunta Daren. "Diablos, ¿qué garantía tenemos siquiera de que no empezarás a actuar como Eiden e intentarás matarnos por diversión a mitad del viaje? Ya sabemos que has colaborado con él en el pasado."
+
+          "¡Pero por el amor de Dios!" grita Melindra, exasperada. "Si están tan preocupados por mis motivos, ¿por qué no me obligan a hacer un juramento? Tú eres un encantador, ¿no? Haz que jure que cumpliré mi parte del trato y que no intentaré hacerles daño, y asunto resuelto."
+
+          "¿Un juramento de encantador?" le pregunta Daren. "¿Hablas en serio? Sabes que morirás si rompes un juramento así, ¿verdad?"
+
+          "¡Sí, claro que lo sé!" dice Melindra.
+
+          "¿Y también querrías que nosotros juráramos que no te haremos daño durante el viaje?" pregunta Daren.
+
+          "Oh, no, no hace falta", dice Melindra. "Además, no es como si pudieran hacerme algo, de todas formas."
+
+          "Mmm..." dice Daren.
+
+          Luego se vuelve hacia nosotros.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch06a_payback
+  - name: b2_ch06a_payback
+    texts:
+      - source: scene_text
+        paragraph: 11
+        text: |-
+          "¿Qué opinan ustedes?" nos pregunta Daren. "Dejando de lado el comentario algo irritante y condescendiente que hizo antes, yo diría que su trato, considerándolo todo, ya no suena tan mal. Como mínimo, no me da la impresión de que esté intentando engañarnos, y encima podríamos salvar un reino en el proceso."
+
+          "Bueno..." dice Hadrik. "No puedo decir que antes haya tenido la oportunidad de hacer caer a un reino, y además daría para una muy buena historia cuando salga a beber en las tabernas... Desde luego suena más divertido que andar buscando piñas, ¡eso seguro!"
+
+          "Admito que, si tomamos en cuenta todo lo que dijo", dice Kate, "su forma de hacer las cosas quizá sí nos dé ventaja sobre los demás participantes, sobre todo porque este concurso parece haber estado amañado desde el principio para que solo los cuatro sabios pasen a la siguiente ronda."
+
+          "Sí, ¿qué se supone que fue eso?" dice Hadrik. "No puedo decir que estuviera apuntando a ganar el torneo, pero aun así esto me tiene bastante furioso. ¿Para qué invitaron siquiera a los otros magos, si no pensaban darles una oportunidad justa? ¿Fue todo solo para aparentar?"
+      - source: scene_text_2
+        paragraph: 10
+        text: |-
+          "Están olvidando", dice Illuna, "que la condición para superar esta ronda es llevar las piñas a la ciudad de Galamir. Eso significa que todavía se puede atacar a los sabios en su camino a la ciudad y robarles las piñas. Así que, si son lo bastante fuertes o ingeniosos como para quitarle un objeto a un sabio, todavía pueden pasar a la siguiente ronda, aunque no tengan suficiente poder para hacer brillar una piña. Además, también tienen la opción de unirse al equipo de uno de los sabios, si alguno de ellos los acepta. En otras palabras, hay más de una forma de superar esta ronda, pero todas requieren tratar con los sabios de un modo u otro. Si quieren evitar a los sabios, entonces el detector de piñas probablemente sea su mejor opción."
+
+          "Bueno, no sé ustedes", digo, "pero yo, por mi parte, tengo ganas de causar un pequeño caos en las tierras del embajador de Ollendor. La verdad es que se sentiría bastante bien por fin devolverle un poco de lo que nos hizo pasar en la arena. Y además, Ollendor prácticamente va a convertirse pronto en el nuevo hogar de Leila, así que bien podríamos hacer un poco de limpieza antes de que se mude."
+
+          Leila parece un poco desconcertada por mi último comentario. Creo que esta es la primera vez que de verdad se da cuenta de que ya no tendrá que separarse de nosotros, ahora que la arena terminó.
+
+          "Vendrás con nosotros a Ollendor, ¿verdad?" le pregunto.
+
+          "¡Sí!" escribe Leila, sonriendo feliz. "¡Sí, claro!"
+      - source: scene_3
+        paragraph: 2
+        text: '"Bueno, si todos están de acuerdo con esto", dice Daren, "entonces empezaremos de inmediato con el juramento de encantador. ¿Alguien tiene alguna sugerencia sobre cosas que no deberíamos olvidar incluir en este juramento? Por ahora, Melindra aceptó jurar que no nos causará ningún daño y que no se echará atrás con el trato después de que nosotros cumplamos nuestra parte, pero quizá haya algo más que debamos añadir para asegurarnos de que el acuerdo se haga de buena fe?"'
+    choices:
+      - position: 1
+        text: No debería considerarse que el trato terminó hasta que el dispositivo esté realmente en nuestras manos.
+        effects:
+          - set:
+              current_scene: b2_ch06a_doubting
+              b2_ch6_hurt: 0
+      - position: 2
+        text: Melindra también debería jurar que la persona que tiene el dispositivo tampoco intentará hacernos daño.
+        effects:
+          - set:
+              current_scene: b2_ch06a_doubting
+              b2_ch6_hurt: 1
+  - name: b2_ch06a_doubting
+    routes:
+      - condition: b2_ch6_hurt = 0
+        texts:
+          - source: scene_text
+            paragraph: 12
+            text: |-
+              "No deberíamos dar el trato por cerrado hasta que el dispositivo esté realmente en nuestras manos."
+
+              "Bueno, sí, obviamente", dice Daren. "Si espera que prácticamente nos enfrentemos solos a todo un reino, ni loco voy a hacerlo a cambio de una vaga promesa de que nos 'guiará' hasta alguien que tiene lo que necesitamos."
+
+              "Suena justo", dice Melindra.
+
+              Una vez que Daren se asegura de que nadie más tenga sugerencias, saca su espada y le hace un corte leve con ella en uno de los dedos de la mano izquierda a Melindra. Melindra esparce sobre la espada parte de la sangre que gotea de su dedo, y el arma empieza a brillar intensamente con una luz blanca.
+
+              "¿Está funcionando?" pregunta Melindra. "¿Puedo decir el juramento?"
+
+              "Sí, el hechizo está funcionando", dice Daren. "Puedes empezar."
+
+              "Bueno", dice Melindra. "Antes que nada, juro que no voy a hacerles daño a ninguno de ustedes."
+
+              "Tú... sí sabes cómo funciona esto, ¿verdad?..." le dice Daren. "Si no especificas una duración, el juramento se vuelve vinculante de por vida. Si acepto tu promesa así, ¡no podrás hacernos daño durante el resto de tu vida!"
+
+              "Escucha", dice Melindra, señalando a Daren con el dedo. "Si vamos a seguir dudando unos de otros, no vamos a llegar a ninguna parte. Acepta el juramento de una vez, ¿sí?"
+          - source: scene_text_2
+            paragraph: 11
+            text: |-
+              "Bueno... está bien, supongo...", dice Daren, mientras coloca una mano sobre la espada, y la luz blanca empieza a parpadear.
+
+              "¡Espera, espera, un momento!" dice Melindra.
+
+              "¿En serio?" dice Daren. "Apenas logré cancelar el juramento a tiempo. ¿Qué pasa?"
+
+              "¿Puedo cambiar las palabras 'hacer daño' por 'causar heridas graves'?" dice Melindra. "No me gustaría terminar muerta por darle a alguien una palmada en la espalda."
+
+              "¡Este es un juramento de encantador!" dice Daren. "Cuando dices 'hacer daño', realmente va a significar hacer daño. Darle a alguien una palmada en la espalda o incluso un golpe en la cabeza no entra dentro de eso. Y además, recibirás suficiente aviso si el hechizo considera que estás cruzando la línea. No podrás activarlo por accidente."
+
+              "Ah", dice Melindra. "Bueno, en ese caso, continúa."
+
+              En cuanto Daren termina de confirmar el primer juramento, insta a Melindra a continuar con el segundo.
+
+              "Bueno, eh...", dice Melindra. "Juro que, en cuanto maten al rey de Ollendor, empezaré a guiarlos hacia la persona que tiene el detector de piñas del que les hablé antes, y no haré ninguna pausa a menos que ustedes me lo pidan específicamente. También juro que, en cuanto haya terminado de guiarlos hasta esa persona, no descansaré hasta que el dispositivo esté a salvo en sus manos."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_pajama
+      - condition: b2_ch6_hurt = 1
+        texts:
+          - source: scene_text
+            paragraph: 13
+            text: |-
+              "Melindra también debería jurar que la persona que tiene el dispositivo no intentará hacernos daño."
+
+              "¡Bien pensado!" dice Daren. "Que ella misma no vaya a hacernos daño no significa nada si solo piensa guiarnos hasta una trampa."
+
+              "Eh...", dice Melindra. "No estoy segura de hasta qué punto puedo responder por la persona a la que llamo 'amiga', pero lo que sí puedo hacer es garantizar que no dejaré que les cause daño, y también podríamos hacer que nuestro trato no se considere terminado hasta que los deje en un lugar seguro, con el dispositivo en sus manos."
+
+              "Suena bien", dice Daren.
+
+              Una vez que Daren se asegura de que nadie más tenga sugerencias, saca su espada y le hace un corte leve con ella en uno de los dedos de la mano izquierda a Melindra. Melindra esparce sobre la espada parte de la sangre que gotea de su dedo, y el arma empieza a brillar intensamente con una luz blanca.
+
+              "¿Está funcionando?" pregunta Melindra. "¿Puedo decir el juramento?"
+
+              "Sí, el hechizo está funcionando", dice Daren. "Puedes empezar."
+
+              "Bueno", dice Melindra. "Antes que nada, juro que no voy a hacerles daño a ninguno de ustedes."
+
+              "Tú... sí sabes cómo funciona esto, ¿verdad?..." le dice Daren. "Si no especificas una duración, el juramento se vuelve vinculante de por vida. Si acepto tu promesa así, ¡no podrás hacernos daño durante el resto de tu vida!"
+          - source: scene_text_2
+            paragraph: 12
+            text: |-
+              "Escucha", dice Melindra, señalando a Daren con el dedo. "Si vamos a seguir dudando unos de otros, no vamos a llegar a ninguna parte. Acepta el juramento de una vez, ¿sí?"
+
+              "Bueno... está bien, supongo...", dice Daren, mientras coloca una mano sobre la espada, y la luz blanca empieza a parpadear.
+
+              "¡Espera, espera, un momento!" dice Melindra.
+
+              "¿En serio?" dice Daren. "Apenas logré cancelar el juramento a tiempo. ¿Qué pasa?"
+
+              "¿Puedo cambiar las palabras 'hacer daño' por 'causar heridas graves'?" dice Melindra. "No me gustaría terminar muerta por darle a alguien una palmada en la espalda."
+
+              "¡Este es un juramento de encantador!" dice Daren. "Cuando dices 'hacer daño', realmente va a significar hacer daño. Darle a alguien una palmada en la espalda o incluso un golpe en la cabeza no entra dentro de eso. Y además, recibirás suficiente aviso si el hechizo considera que estás cruzando la línea. No podrás activarlo por accidente."
+
+              "Ah", dice Melindra. "Bueno, en ese caso, continúa."
+
+              En cuanto Daren termina de confirmar el primer juramento, insta a Melindra a continuar con el segundo.
+
+              "Bueno, eh...", dice Melindra. "Juro que, en cuanto maten al rey de Ollendor, empezaré a guiarlos hacia la persona que tiene el detector de piñas del que les hablé antes, y no haré ninguna pausa a menos que ustedes me lo pidan específicamente."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_pajama
+  - name: b2_ch06a_pajama
+    routes:
+      - condition: b2_ch6_hurt = 0
+        texts:
+          - source: scene_text
+            paragraph: 14
+            text: |-
+              Daren mueve la mano sobre la espada una vez más, confirmando el segundo juramento de Melindra. La luz de su espada empieza entonces a desvanecerse lentamente, hasta que el arma vuelve a la normalidad.
+
+              "¿Eso es todo?" pregunta Melindra. "¿Ya terminamos?"
+
+              "Sí", dice Daren. "El juramento ya quedó sellado."
+
+              "¡Perfecto!" dice Melindra, recuperando la sonrisa. "Entonces supongo que tu equipo estará formado por ti, la maga de hielo, la chica con la banshee, el gigante que usa cambio de forma para hacerse pasar por enano, y..."
+
+              Melindra se detiene de repente, justo cuando estaba a punto de señalarme, y luego se queda mirándome sin decir nada.
+
+              "¿El enano era un gigante?..." escribe Leila, sorprendida, pero todos estamos demasiado centrados en la chica stillwater como para prestar atención a lo que escribe.
+
+              Melindra empieza a acercarse a mí, con las cejas fruncidas por la concentración, y se detiene a menos de treinta centímetros de mí, examinándome de cerca.
+
+              "Hmm..." dice Melindra, con gesto pensativo, mientras me examina de pies a cabeza.
+          - source: scene_text_2
+            paragraph: 13
+            text: |-
+              Al ver a la chica de cerca, no puedo evitar notar que tiene una cara bastante bonita, que se ve muy favorecida por su cabello castaño claro, recogido en una coleta alta. La ropa parecida a un pijama que lleva puesta a plena luz del día puede verse un poco ridícula a primera vista, pero, a diferencia de la ropa de Eiden, la que lleva Melindra parece haber sido elegida con algo más de cuidado desde un punto de vista estético. Además, a diferencia de unos pijamas normales, aunque esta ropa sin duda parece cómoda para moverse, también da la impresión de haber sido diseñada para ajustarse de una manera que resalta su figura esbelta y la forma de su busto.
+
+              "Hmm..." dice Melindra otra vez, esta vez acercando mucho más su rostro al mío, con la misma mirada pensativa, mientras se acaricia la barbilla con la mano derecha.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_mixture
+      - condition: b2_ch6_hurt = 1
+        texts:
+          - source: scene_text
+            paragraph: 15
+            text: |-
+              "Eso no basta", dice Daren. "También tienes que jurar que, en cuanto termines de guiarnos hasta esa persona, garantizarás personalmente que nos preste el dispositivo, y que el trato no se considerará terminado hasta que ese dispositivo esté realmente en nuestras manos."
+
+              "Está bien", dice Melindra. "Lo juro."
+
+              Daren vuelve a mover la mano sobre la espada, confirmando el segundo juramento de Melindra.
+
+              "Para tu tercer y último juramento", dice Daren, "¿juras que garantizarás nuestra seguridad frente a la persona que tiene el dispositivo o cualquiera de sus asociados si intentan atacarnos, y que nuestro trato no habrá terminado hasta que nos hayas dejado en un lugar seguro, con el detector de piñas en nuestras manos?"
+
+              "Sí, lo juro", dice Melindra.
+
+              Daren mueve la mano sobre la espada por última vez, y luego la luz de la espada empieza a desvanecerse lentamente, hasta que el arma vuelve a la normalidad.
+
+              "¿Eso es todo?" pregunta Melindra. "¿Ya terminamos?"
+
+              "Sí", dice Daren. "El juramento ya quedó sellado."
+
+              "¡Perfecto!" dice Melindra, recuperando la sonrisa. "Entonces supongo que tu equipo estará formado por ti, la maga de hielo, la chica con la banshee, el gigante que usa cambio de forma para hacerse pasar por enano, y..."
+
+              Melindra se detiene de repente, justo cuando estaba a punto de señalarme, y luego se queda mirándome sin decir nada.
+          - source: scene_text_2
+            paragraph: 14
+            text: |-
+              "¿El enano era un gigante?..." escribe Leila, sorprendida, pero todos estamos demasiado centrados en la chica stillwater como para prestar atención a lo que escribe.
+
+              Melindra empieza a acercarse a mí, con las cejas fruncidas por la concentración, y se detiene a menos de treinta centímetros de mí, examinándome de cerca.
+
+              "Hmm..." dice Melindra, con gesto pensativo, mientras me examina de pies a cabeza.
+
+              Al ver a la chica de cerca, no puedo evitar notar que tiene una cara bastante bonita, que se ve muy favorecida por su cabello castaño claro, recogido en una coleta alta. La ropa parecida a un pijama que lleva puesta a plena luz del día puede verse un poco ridícula a primera vista, pero, a diferencia de la ropa de Eiden, la que lleva Melindra parece haber sido elegida con algo más de cuidado desde un punto de vista estético. Además, a diferencia de unos pijamas normales, aunque esta ropa sin duda parece cómoda para moverse, también da la impresión de haber sido diseñada para ajustarse de una manera que resalta su figura esbelta y la forma de su busto.
+
+              "Hmm..." dice Melindra otra vez, esta vez acercando mucho más su rostro al mío, con la misma mirada pensativa, mientras se acaricia la barbilla con la mano derecha.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_mixture
+  - name: b2_ch06a_mixture
+    texts:
+      - source: scene_text
+        paragraph: 16
+        text: |-
+          "¿Hay algo que..." empiezo a decir, pero la chica me interrumpe.
+
+          "¡Date la vuelta!" dice.
+
+          Melindra no espera a que me dé la vuelta, y me agarra por los hombros para girarme ella misma. Tras unos segundos más de silencio, la chica stillwater por fin parece haber encontrado lo que buscaba y deja escapar un fuerte jadeo de asombro.
+
+          "¿Qué?" le pregunto, mientras me vuelvo hacia ella. "¿Qué pasa?"
+
+          "Eres un medio lessathi, ¿verdad?" dice Melindra, con una mezcla de sorpresa y entusiasmo en la voz. "¡Por eso tu aura me resultaba tan familiar! ¡Yo también soy medio lessathi! ¡Qué agradable es por fin conocer a alguien de mi propia raza después de tanto tiempo! Éramos miles antes del invierno inmóvil, pero desde entonces los lessathi se han vuelto mucho más estrictos con sus reglas, y tampoco quedan muchos de ellos, así que hoy en día casi no se ven medios lessathi."
+
+          Hace una pausa.
+
+          "Espera", dice. "¡Así que por eso Eiden se ha interesado por tu grupo!"
+
+          "¿Qué quieres decir?" digo. "¿Qué tiene de especial que yo sea medio lessathi? ¿Tiene algo que ver con mi dispositivo de estadísticas?"
+
+          "Oh, no", dice Melindra. "No con tu dispositivo de estadísticas."
+
+          "Entonces, ¿con qué?" digo.
+
+          "¡Seguro que tarde o temprano lo averiguarás!" dice Melindra.
+      - source: scene_text_2
+        paragraph: 15
+        text: |-
+          "A ustedes los stillwaters sí que les gusta hablar con acertijos, ¿no?" le pregunto.
+
+          Melindra sonríe, pero no responde a mi pregunta retórica.
+
+          "Aun así, me sorprende que hayas conseguido hacerte con un dispositivo de estadísticas", dice Melindra. "Yo también tenía curiosidad por ver qué efecto tendría un dispositivo de estadísticas en un torneo como este, con un aura de medio lessathi como la mía, así que intenté comprar uno antes de venir aquí, ¡pero no había ninguno a la venta en ninguno de los lugares donde busqué!"
+
+          "¿En qué continente?" pregunto. "Yo compré el mío en el Continente Occidental. De donde yo vengo, puedes encontrar uno de estos prácticamente en cada esquina."
+
+          "Yo también busqué en el Continente Occidental", dice Melindra. "En más de una ciudad. Todos los dueños de las tiendas me dijeron que se habían quedado sin existencias varias semanas antes de que intentara comprar uno."
+
+          "Espera...", digo. "Ahora que lo pienso, yo también tuve un poco más de problemas de los que esperaba cuando intenté comprar mi potenciador de estadísticas. De hecho, tuve que visitar varias tiendas antes de encontrar uno, y eso fue hace más de un mes. Es más, recuerdo que muchos de los dueños de las tiendas se mostraban muy evasivos cuando les preguntaba cuándo repondrían existencias. Casi parecía que tenían miedo de hablar del tema. ¿Crees que esos comerciantes podrían haber mentido sobre sus existencias porque alguien los amenazó para que dejaran de vender esos dispositivos?"
+
+          "¡Olvídate de eso!" dice Melindra. "¿Podrías prestarme tu dispositivo de estadísticas un momento? Tengo curiosidad por ver qué tan bien resuena con mi aura."
+    choices:
+      - position: 1
+        text: Sí, pero asegúrate de no alterarme las estadísticas.
+        effects:
+          - set:
+              current_scene: b2_ch06a_distinction
+              b2_ch6_stat: 1
+      - position: 2
+        text: La verdad, prefiero quedarme con mi dispositivo de estadísticas, si no te importa.
+        effects:
+          - set:
+              current_scene: b2_ch06a_distinction
+              b2_ch6_stat: 0
+  - name: b2_ch06a_distinction
+    effects:
+      - set:
+          ac_b2_ch6_secret: 1
+        achievement:
+          id: ac_b2_ch6_secret
+          title: Código secreto descubierto
+        condition: b2_ch6_stat = 1
+    routes:
+      - condition: b2_ch6_stat = 0
+        texts:
+          - source: scene_text
+            paragraph: 19
+            text: |-
+              "La verdad, prefiero quedarme con mi dispositivo de estadísticas, si no te importa."
+
+              "¡Está bien!" dice Melindra, con un puchero. "¡De todos modos no necesitaba tu dispositivo!"
+
+              "Perdona", escribe Leila, tirando suavemente de la manga de Melindra.
+
+              "¿Sí?" dice Melindra, mirando a Leila con curiosidad.
+
+              "Tengo una pregunta", escribe Leila. "¿Eres capaz de distinguir entre lessathi y medios lessathi solo por la sensación de su aura?"
+
+              "Sí", dice Melindra. "He conocido a suficientes medios lessathi a lo largo de mi vida como para poder hacer la distinción. Eso sí, necesitas un sentido mágico bastante agudo para notar la diferencia."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_shopping
+      - condition: b2_ch6_stat = 1 AND available_points = 22
+        texts:
+          - source: scene_text
+            paragraph: 17
+            text: |-
+              "Sí, pero asegúrate de no alterarme las estadísticas."
+
+              "¡Por supuesto!" dice Melindra. "Solo necesito hacer una prueba y luego te lo devuelvo."
+
+              Saco el dispositivo del bolsillo y se lo doy a Melindra.
+
+              Al ver las estadísticas en la pantalla, Melindra alza una ceja y luego vuelve a mirarme con incredulidad.
+
+              "¿En serio?" dice. "¿Todavía no has invertido ni un solo punto en tus estadísticas?"
+
+              "¿Qué puedo decir?" le respondo. "¡Me gusta vivir al límite!"
+
+              "Hmm..." dice Melindra, mirándome con curiosidad durante unos segundos, pero luego vuelve la vista al dispositivo.
+
+              Tras mirarlo unos segundos, la chica empieza a pulsar varias veces seguidas los botones laterales del dispositivo.
+
+              "¡Espera, un momento!" le digo. "Prometiste que no ibas a--"
+
+              "¡Shhh!" me dice Melindra, con una expresión muy seria en la cara.
+
+              Tras unos segundos de silencio, Melindra me devuelve el dispositivo, visiblemente contrariada.
+          - source: scene_text_2
+            paragraph: 16
+            text: |-
+              "No funciona", dice. "Supongo que mi aura ha cambiado demasiado desde que me convertí en una stillwater como para que el dispositivo siga reconociéndome como medio lessathi. Qué lástima."
+
+              "¿Qué estabas haciendo hace un momento?" le pregunto a Melindra. "Te vi pulsando los botones del dispositivo de estadísticas, pero no parece haber cambiado nada."
+
+              "Oh", dice Melindra. "Solo usé un código para aumentar temporalmente en unos cuantos puntos la estadística de audición, con el fin de ver si mi capacidad real para oír mejora o no. Está pensado como una prueba para ver qué tan bien reacciona el dispositivo de estadísticas a tu aura antes de que empieces a usarlo. El código solo funciona con la estadística de audición y solo puede activarse una vez al día, durante unos segundos."
+
+              "¿Puedes darme el código?" le pregunto.
+
+              "Claro", dice Melindra. "Es tres veces a la izquierda, tres veces a la derecha, dos veces a la izquierda, cuatro veces a la derecha, y luego izquierda, derecha, izquierda, derecha. Ah, y tienes que hacerlo en menos de cinco segundos o el código no se activará."
+
+              "Tres a la izquierda, tres a la derecha, dos a la izquierda, cuatro a la derecha, izquierda, derecha, izquierda, derecha, entendido", digo. "¡Muchas gracias!"
+
+              "¡De nada!" dice Melindra.
+          - source: scene_3
+            paragraph: 3
+            text: |-
+              "Perdona", escribe Leila, tirando suavemente de la manga de Melindra.
+
+              "¿Sí?" dice Melindra, mirando a Leila con curiosidad.
+
+              "Tengo una pregunta", escribe Leila. "¿Eres capaz de distinguir entre lessathi y medios lessathi solo por la sensación de su aura?"
+
+              "Sí", dice Melindra. "He conocido a suficientes medios lessathi a lo largo de mi vida como para poder hacer la distinción. Eso sí, necesitas un sentido mágico bastante agudo para notar la diferencia."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_shopping
+      - condition: b2_ch6_stat = 1 AND available_points <> 22
+        texts:
+          - source: scene_text
+            paragraph: 18
+            text: |-
+              "Sí, pero asegúrate de no alterarme las estadísticas."
+
+              "¡Por supuesto!" dice Melindra. "Solo necesito hacer una prueba y luego te lo devuelvo."
+
+              Saco el dispositivo del bolsillo y se lo doy a Melindra. Tras mirarlo unos segundos, la chica empieza a pulsar varias veces seguidas los botones laterales del dispositivo.
+
+              "¡Espera, un momento!" le digo. "Prometiste que no ibas a--"
+
+              "¡Shhh!" me dice Melindra, con una expresión muy seria en la cara.
+
+              Tras unos segundos de silencio, Melindra me devuelve el dispositivo, visiblemente contrariada.
+
+              "No funciona", dice. "Supongo que mi aura ha cambiado demasiado desde que me convertí en una stillwater como para que el dispositivo siga reconociéndome como medio lessathi. Qué lástima."
+
+              "¿Qué estabas haciendo hace un momento?" le pregunto a Melindra. "Te vi pulsando los botones del dispositivo de estadísticas, pero no parece haber cambiado nada."
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              "Oh", dice Melindra. "Solo usé un código para aumentar temporalmente en unos cuantos puntos la estadística de audición, con el fin de ver si mi capacidad real para oír mejora o no. Está pensado como una prueba para ver qué tan bien reacciona el dispositivo de estadísticas a tu aura antes de que empieces a usarlo. El código solo funciona con la estadística de audición y solo puede activarse una vez al día, durante unos segundos."
+
+              "¿Puedes darme el código?" le pregunto.
+
+              "Claro", dice Melindra. "Es tres veces a la izquierda, tres veces a la derecha, dos veces a la izquierda, cuatro veces a la derecha, y luego izquierda, derecha, izquierda, derecha. Ah, y tienes que hacerlo en menos de cinco segundos o el código no se activará."
+
+              "Tres a la izquierda, tres a la derecha, dos a la izquierda, cuatro a la derecha, izquierda, derecha, izquierda, derecha, entendido", digo. "¡Muchas gracias!"
+
+              "¡De nada!" dice Melindra.
+
+              "Perdona", escribe Leila, tirando suavemente de la manga de Melindra.
+
+              "¿Sí?" dice Melindra, mirando a Leila con curiosidad.
+
+              "Tengo una pregunta", escribe Leila. "¿Eres capaz de distinguir entre lessathi y medios lessathi solo por la sensación de su aura?"
+
+              "Sí", dice Melindra. "He conocido a suficientes medios lessathi a lo largo de mi vida como para poder hacer la distinción. Eso sí, necesitas un sentido mágico bastante agudo para notar la diferencia."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_shopping
+  - name: b2_ch06a_shopping
+    texts:
+      - source: scene_text
+        paragraph: 20
+        text: |-
+          "¿Podrías...?" empieza a escribir Leila, pero hace una pausa durante unos segundos.
+
+          "¿Podrías decirme si yo también soy medio lessathi?" continúa Leila.
+
+          "¿Medio lessathi?" pregunta Melindra, sorprendida.
+
+          Se acerca a Leila y frunce el ceño, igual que hizo conmigo antes.
+
+          "Mmm..." dice Melindra, mientras la estudia durante unos segundos. "No, definitivamente no eres medio lessathi. Es un aura lessathi normal, la mire por donde la mire."
+
+          "Ya veo..." escribe Leila, con una leve sonrisa en el rostro. "¡Gracias por tu respuesta!"
+
+          Al ver su sonrisa aliviada, de repente recuerdo la historia que me contó sobre los lessathi de su juventud que la trataban como si fuera una paria por ser muda y que la acusaban de ser medio lessathi debido a su discapacidad. Parece que las calumnias de esa gente la habían afectado mucho más de lo que había dejado ver hasta ahora.
+
+          "Bueno", dice Melindra, volviéndose hacia el resto de nosotros, "creo que hemos terminado por hoy. Si nadie más tiene objeciones, me gustaría mucho que empezáramos nuestro viaje mañana, al amanecer."
+
+          "En realidad", dice Daren, "todavía necesitamos conseguir unos documentos del rey antes de poder salir de la ciudad. Iremos a verlo más tarde hoy, pero no es seguro que los tenga listos para cuando lleguemos. ¡Espera!"
+      - source: scene_text_2
+        paragraph: 18
+        text: |-
+          Daren se quita la mochila y saca de ella un transceptor, que luego le entrega a Melindra.
+
+          "Nos pondremos en contacto contigo a través de este transceptor por si cambian nuestros planes", dice Daren. "No te preocupes por el alcance. Está encantado para cubrir distancias muy largas, así que podremos comunicarnos contigo sin importar en qué parte de la ciudad estés."
+
+          "De acuerdo, entonces", dice Melindra, mientras se guarda el transceptor en uno de los bolsillos. "Si no cambia nada, nos veremos en la puerta norte de la ciudad apenas salga el sol. De todos modos tendremos que dirigirnos al norte para llegar a Ollendor, así que lo mejor será encontrarnos en la puerta que queda más cerca de nuestro destino."
+
+          "Suena bien", dice Daren.
+
+          "¡Los veré a todos mañana!" dice Melindra, con una sonrisa, y luego sigue su camino.
+
+          "¡Maldición!" digo mientras la veo alejarse. "Todavía no nos dijo cómo alguien puede convertirse en un stillwater."
+
+          "A partir de mañana tendrás todo el tiempo que necesites para hacerle esa pregunta", dice Daren. "Vamos a viajar juntos por un tiempo, ¿recuerdas?"
+
+          "Ah, cierto..." digo.
+
+          "En cualquier caso", dice Daren, "probablemente deberíamos ir al palacio. El rey parecía bastante ocupado y no estoy seguro de cuánto tiempo nos estará esperando."
+      - source: scene_3
+        paragraph: 4
+        text: |-
+          "Me dijo que deberíamos esperar alrededor de una hora antes de dirigirnos al palacio", digo, "porque todavía tenía que arreglar unas cuantas cosas con su ejército. Sugiero que vayamos de compras mientras tanto. Vi bastantes tiendas mientras caminábamos entre el palacio y la arena, y realmente no vamos a tener otra oportunidad de comprar cosas en mucho tiempo después de salir de Thilias."
+
+          "Sí, probablemente sea lo mejor", dice Daren.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch06a_absorbed
+  - name: b2_ch06a_absorbed
+    routes:
+      - condition: ch11_saved_rose = 0
+        texts:
+          - source: scene_text
+            paragraph: 21
+            text: |-
+              "Bueno", dice Enrique, "ya que quedó decidido que pasarán la noche en Thilias, supongo que ya no habrá objeciones a la celebración de esta noche, ¿verdad?"
+
+              Daren suspira.
+
+              "Haz lo que quieras", dice.
+
+              "¡Perfecto!" dice Enrique. "Conozco a algunos de los mejores cocineros de Thilias, y todavía quedan muchas botellas de vino caro en la bodega. ¡Esta noche tendremos un festín que hará quedar en ridículo a los banquetes reales del rey!"
+
+              "Solo procura no excederte", dice Daren. "Nos iremos antes del amanecer, así que no podemos permitirnos quedarnos despiertos hasta muy tarde."
+
+              Después de despedirnos de Enrique con la mano, empezamos a dirigirnos hacia el castillo de Thilias a paso tranquilo. Apenas nos ponemos en marcha, Arraka vuelve a emitir sonidos ahogados desde el interior de su amuleto.
+
+              "¿Qué pasa, Arraka?..." dice Flower, mientras abre el amuleto.
+
+              "¡No puedo creer el descaro de esa chica!" grita Arraka, con la voz sonando otra vez como tres voces separadas hablando al mismo tiempo. "¿Vieron lo que hizo? ¡Simplemente cerró mi amuleto sin ni siquiera decir 'hola'! ¿Esa es forma de comportarse con alguien a quien conoces desde hace cientos de años?"
+          - source: scene_text_2
+            paragraph: 19
+            text: |-
+              "Sabes, siempre he querido preguntarte algo", le digo a Arraka. "¿Qué pasa con esa voz tuya? La mayor parte del tiempo suena normal, pero hay veces en que suena como si fueran tres voces hablando al mismo tiempo. ¿Eso es lo que les pasa a las banshees cuando envejecen?"
+
+              "Oh, no, no tiene nada que ver con la edad", dice Arraka. "Esas otras dos voces pertenecen a los dos primeros espíritus que absorbí cuando todavía estaba en el plano mágico. Eh... Elkira y Rinaru, creo... Ya pasó demasiado tiempo. Ya no recuerdo sus nombres con tanta claridad."
+
+              "¿Los dos primeros espíritus?" digo. "¿Quieres decir que absorbiste a más de dos espíritus mientras estabas en el plano mágico?"
+
+              "Oh, sí, absorbí a cientos de ellos", dice Arraka. "El método que usé para absorber a otros espíritus todavía era experimental cuando lo usé con Elkira y Rinaru, por eso sus voces siguen apareciendo de vez en cuando, incluso después de todos esos miles de años. Sin embargo, no volví a tener problemas al absorber a todos los demás espíritus."
+
+              "Pero, ¿los otros espíritus no intentaron detenerte?" le pregunto.
+
+              "Por supuesto que sí", dice Arraka. "Pero yo solo me hacía más fuerte con cada espíritu que absorbía, y para cuando los espíritus realmente poderosos se dieron cuenta de lo que estaba haciendo, yo ya era demasiado para ellos."
+        choices:
+          - position: 1
+            text: ¿Qué les pasa a los espíritus que absorbes?
+            effects:
+              - set:
+                  current_scene: b2_ch06a_amass
+                  b2_ch6_banned: 0
+          - position: 2
+            text: ¿Es esta la razón por la que te expulsaron del plano mágico?
+            effects:
+              - set:
+                  current_scene: b2_ch06a_amass
+                  b2_ch6_banned: 1
+      - condition: ch11_saved_rose = 1
+        texts:
+          - source: scene_text
+            paragraph: 22
+            text: |-
+              "¡Los veré a todos en mi casa!" dice Rose. "Si esta va a ser su última noche en Thilias, entonces me aseguraré de tener un festín esperándolos cuando regresen a la mansión."
+
+              "¡Todos estaremos esperándolo con ganas!" dice Hadrik.
+
+              Después de despedirnos de Rose con la mano, empezamos a dirigirnos hacia el castillo de Thilias a paso tranquilo. Apenas nos ponemos en marcha, Arraka vuelve a emitir sonidos ahogados desde el interior de su amuleto.
+
+              "¿Qué pasa, Arraka?..." dice Flower, mientras abre el amuleto.
+
+              "¡No puedo creer el descaro de esa chica!" grita Arraka, con la voz sonando otra vez como tres voces separadas hablando al mismo tiempo. "¿Vieron lo que hizo? ¡Simplemente cerró mi amuleto sin ni siquiera decir 'hola'! ¿Esa es forma de comportarse con alguien a quien conoces desde hace cientos de años?"
+          - source: scene_text_2
+            paragraph: 19
+            text: |-
+              "Sabes, siempre he querido preguntarte algo", le digo a Arraka. "¿Qué pasa con esa voz tuya? La mayor parte del tiempo suena normal, pero hay veces en que suena como si fueran tres voces hablando al mismo tiempo. ¿Eso es lo que les pasa a las banshees cuando envejecen?"
+
+              "Oh, no, no tiene nada que ver con la edad", dice Arraka. "Esas otras dos voces pertenecen a los dos primeros espíritus que absorbí cuando todavía estaba en el plano mágico. Eh... Elkira y Rinaru, creo... Ya pasó demasiado tiempo. Ya no recuerdo sus nombres con tanta claridad."
+
+              "¿Los dos primeros espíritus?" digo. "¿Quieres decir que absorbiste a más de dos espíritus mientras estabas en el plano mágico?"
+
+              "Oh, sí, absorbí a cientos de ellos", dice Arraka. "El método que usé para absorber a otros espíritus todavía era experimental cuando lo usé con Elkira y Rinaru, por eso sus voces siguen apareciendo de vez en cuando, incluso después de todos esos miles de años. Sin embargo, no volví a tener problemas al absorber a todos los demás espíritus."
+
+              "Pero, ¿los otros espíritus no intentaron detenerte?" le pregunto.
+
+              "Por supuesto que sí", dice Arraka. "Pero yo solo me hacía más fuerte con cada espíritu que absorbía, y para cuando los espíritus realmente poderosos se dieron cuenta de lo que estaba haciendo, yo ya era demasiado para ellos."
+        choices:
+          - position: 1
+            text: ¿Qué les pasa a los espíritus que absorbes?
+            effects:
+              - set:
+                  current_scene: b2_ch06a_amass
+                  b2_ch6_banned: 0
+          - position: 2
+            text: ¿Es esta la razón por la que te expulsaron del plano mágico?
+            effects:
+              - set:
+                  current_scene: b2_ch06a_amass
+                  b2_ch6_banned: 1
+  - name: b2_ch06a_amass
+    routes:
+      - condition: b2_ch6_banned = 0
+        texts:
+          - source: scene_text
+            paragraph: 23
+            text: |-
+              "¿Qué les pasa a los espíritus que absorbes? ¿Siguen vivos dentro de ti?"
+
+              "Más o menos", dice Arraka. "Técnicamente siguen ahí, pero están en un estado latente y no son conscientes de nada de lo que ocurre a su alrededor. El proceso de absorción es irreversible, así que, a efectos prácticos, es como si estuvieran muertos."
+
+              "Entonces, ¿qué dijeron los dioses de todo esto?" digo. "¿No dijiste que ellos también viven en el plano mágico? ¿Por qué no pudieron simplemente unirse contra ti para matarte?"
+
+              "¡Ja!" dice Arraka. "¿Crees que no lo intentaron? Los 'dioses' no tienen nada de especial. Son solo espíritus mágicos como el resto de nosotros. Solo empezaron a llamarse así después de descubrir que podían aprovechar la energía de los seres del plano terrenal, siempre que los convirtieran en sus seguidores leales. Una vez que reunieron suficientes seguidores, toda esa adoración se les subió a la cabeza, y empezaron a llamarse dioses, como si de alguna manera fueran más especiales que el resto de nosotros. Pero ni todos esos poderes 'divinos' que obtuvieron de sus adoradores les sirvieron cuando maté yo sola a la mitad de los suyos."
+
+              "¿Mataste a la mitad de los dioses del plano mágico?" le pregunto.
+          - source: scene_text_2
+            paragraph: 20
+            text: |-
+              "Sí, pero para ser justa, la mayoría eran de los más débiles, los que no tenían tantos seguidores", dice Arraka. "Los más fuertes, como el Dios de la Muerte, el Dios del Destino y el Dios del Tiempo, lograron hacerme frente bastante bien, así que estuvimos en una especie de punto muerto durante un tiempo, mientras yo iba a absorber más espíritus y ellos trataban de reunir más seguidores."
+
+              "¿Fue entonces cuando decidieron expulsarte del plano mágico?" le pregunto.
+
+              "No, fue algún tiempo después", dice Arraka. "Cuando se dieron cuenta de que no podían reunir seguidores con la misma rapidez con la que yo absorbía otros espíritus, celebraron una especie de reunión a la que invitaron a todos los espíritus poderosos del reino, incluidos los que no se hacían llamar dioses, como el zorro dorado, que por entonces todavía estaba en el plano mágico. En esa reunión decidieron expulsarme de su reino junto con todos los demás espíritus femeninos que pertenecieran a lo que ustedes llaman 'razas civilizadas' aquí en el plano terrenal. Ya sabes, humanos, elfos, gnomos y esas cosas."
+        choices:
+          - position: 1
+            text: Espera, ¿hay distintas razas en el plano mágico?
+            effects:
+              - set:
+                  current_scene: b2_ch06a_elf
+                  b2_ch6_fox: 0
+          - position: 2
+            text: ¿La zorra proviene del plano mágico? Entonces, ¿cómo terminó aquí?
+            effects:
+              - set:
+                  current_scene: b2_ch06a_elf
+                  b2_ch6_fox: 1
+      - condition: b2_ch6_banned = 1
+        texts:
+          - source: scene_text
+            paragraph: 24
+            text: |-
+              "¿Es esta la razón por la que te expulsaron del plano mágico?"
+
+              "Eh..." dice Arraka. "Probablemente fue parte de la razón. Creo que, más que nada, fue por mis matanzas."
+
+              "¿Matanzas?..." digo.
+
+              "Sí", dice Arraka. "En realidad no hay mucho que hacer en el plano mágico. La mayoría de los espíritus tienden a vivir únicamente para mantener su existencia. Es bastante raro que un espíritu del plano mágico muera de viejo, así que, mientras no hagas nada demasiado arriesgado, teóricamente podrías seguir viviendo para siempre. Por eso es tan divertido matar a un espíritu en el plano mágico. En el plano terrenal, la mayoría de los seres vivos esperan morir en algún momento, pero la gran mayoría de los espíritus del plano mágico se creen inmortales. La desesperación con la que se aferran a la vida en sus últimos momentos no puede compararse con la de ningún ser de este plano de existencia, y eso hace que resulte aún más satisfactorio acabar con ellos."
+
+              "Entonces, ¿qué dijeron los dioses de todo esto?" digo. "¿No dijiste que ellos también viven en el plano mágico? ¿Por qué no pudieron simplemente unirse contra ti para matarte?"
+          - source: scene_text_2
+            paragraph: 21
+            text: |-
+              "¡Ja!" dice Arraka. "¿Crees que no lo intentaron? Los 'dioses' no tienen nada de especial. Son solo espíritus mágicos como el resto de nosotros. Solo empezaron a llamarse así después de descubrir que podían aprovechar la energía de los seres del plano terrenal, siempre que los convirtieran en sus seguidores leales. Una vez que reunieron suficientes seguidores, toda esa adoración se les subió a la cabeza, y empezaron a llamarse dioses, como si de alguna manera fueran más especiales que el resto de nosotros. Pero ni todos esos poderes 'divinos' que obtuvieron de sus adoradores les sirvieron cuando maté yo sola a la mitad de los suyos."
+
+              "¿Mataste a la mitad de los dioses del plano mágico?" le pregunto.
+
+              "Sí, pero para ser justa, la mayoría eran de los más débiles, los que no tenían tantos seguidores", dice Arraka. "Los más fuertes, como el Dios de la Muerte, el Dios del Destino y el Dios del Tiempo, lograron hacerme frente bastante bien, así que estuvimos en una especie de punto muerto durante un tiempo, mientras yo iba a absorber más espíritus y ellos trataban de reunir más seguidores."
+          - source: scene_3
+            paragraph: 5
+            text: |-
+              "¿Fue entonces cuando decidieron expulsarte del plano mágico?" le pregunto.
+
+                "No, fue algún tiempo después", dice Arraka. "Cuando se dieron cuenta de que no podían reunir seguidores con la misma rapidez con la que yo absorbía otros espíritus, celebraron una especie de reunión a la que invitaron a todos los espíritus poderosos del reino, incluidos los que no se hacían llamar dioses, como el zorro dorado, que por entonces todavía estaba en el plano mágico. En esa reunión decidieron expulsarme de su reino junto con todos los demás espíritus femeninos que pertenecieran a lo que ustedes llaman 'razas civilizadas' aquí en el plano terrenal. Ya sabes, humanos, elfos, gnomos y esas cosas."
+        choices:
+          - position: 1
+            text: Espera, ¿hay distintas razas en el plano mágico?
+            effects:
+              - set:
+                  current_scene: b2_ch06a_elf
+                  b2_ch6_fox: 0
+          - position: 2
+            text: ¿La zorra proviene del plano mágico? Entonces, ¿cómo terminó aquí?
+            effects:
+              - set:
+                  current_scene: b2_ch06a_elf
+                  b2_ch6_fox: 1
+  - name: b2_ch06a_elf
+    routes:
+      - condition: b2_ch6_fox = 0
+        texts:
+          - source: scene_text
+            paragraph: 25
+            text: |-
+              "Espera, ¿hay distintas razas en el plano mágico?"
+
+              "No solo distintas razas", dice Arraka. "Son exactamente las mismas razas que tienen aquí en el plano terrenal. Incluidas las razas monstruosas y las razas animales, por supuesto. No es que tengamos cuerpos ni nada por el estilo, pero puedes distinguir nuestras razas por nuestras auras, igual que puedes hacerlo en este plano de existencia."
+
+              "Espera", digo. "¿Eso significa que nuestros espíritus irán al plano mágico después de morir?"
+
+              "Nah", dice Arraka. "Ustedes no tienen espíritus. Solo tienen almas. Cuando mueren, la materia etérea que compone su alma se descompone y se fusiona con el resto del plano etéreo. Lo mismo ocurre con las almas de los espíritus mágicos como nosotras. Es posible que las almas que se descomponen tras la muerte de alguien de algún modo se reciclen y luego se vinculen con un espíritu recién nacido del plano mágico, pero eso es solo una teoría. Ninguno de los espíritus del plano mágico tiene recuerdos de vidas pasadas en el plano terrenal ni nada por el estilo."
+
+              "Entonces, eh...", digo. "Volviendo a tu exilio del plano mágico... ¿sabes por qué los dioses y los otros espíritus poderosos decidieron expulsar también a los demás espíritus femeninos y no solo a ti?"
+          - source: scene_text_2
+            paragraph: 22
+            text: |-
+              "Oh", dice Arraka, "es porque yo solo estaba absorbiendo espíritus femeninos de las llamadas 'razas civilizadas', lo que hizo que pensaran que las demás también encerraban algún peligro y que podían acabar como yo si las dejaban solas demasiado tiempo. En realidad, la única razón por la que absorbía solo este tipo de espíritus era que eran los únicos con auras lo bastante parecidas a la mía como para que yo pudiera absorberlos, dado que soy una elfa. No había nada especial en los espíritus que absorbía. El 'peligro' de que alguien desarrolle la misma técnica de absorción que yo sigue existiendo, incluso después de que nos expulsaran a todas, pero no esperaría que inventaran nada parecido pronto, porque son demasiado estúpidos como para idear por su cuenta un hechizo tan complejo."
+
+              "Espera, ¿eres una elfa?" le pregunto.
+
+              "¡Claro que soy una elfa!" dice Arraka. "¿Qué creías que era?"
+
+              "Bueno, no lo sé", digo. "Siempre supuse que las banshees eran una raza aparte, y la verdad es que no le había dado muchas vueltas hasta ahora."
+
+              "¡Las banshees no son una raza!" dice Arraka. "Es solo un nombre que nos dieron los lugareños después de que nos desterraran al plano terrenal. Puedes distinguir claramente cuáles son nuestras razas por nuestras auras. En serio, ¿qué tan malo es tu sentido mágico? Illuna también es una elfa, pero apuesto a que tampoco sabías eso, ¿verdad?"
+
+              "¿Petal es una elfa?" pregunta Flower, sorprendida.
+          - source: scene_3
+            paragraph: 6
+            text: |-
+              "¿Por qué actúas tan sorprendida?" dice Illuna. "Tienes una imagen clara de cómo me veo dentro de tu propia mente. No me digas que esta es la primera vez que notas mis orejas puntiagudas en las últimas dos décadas..."
+
+              "Oh, sí las había notado", dice Flower, "pero siempre pensé que esa era solo la manera en que te imaginaba, y que no tenía nada que ver con cómo te veías de verdad."
+
+              "Entonces", digo, "¿me estás diciendo que las hemos tratado a las dos como si fueran parte de una raza monstruosa, pero todo este tiempo en realidad eran espíritus élficos?"
+
+              "Sí, eso es exactamente lo que estamos diciendo", dice Illuna.
+
+              "Nunca deja de sorprenderme lo malas que pueden ser estas personas para leer auras", dice Arraka. "No me extraña que después de tanto tiempo todavía no hayan descubierto por qué sus mujeres no pueden nacer como magas. Si ni siquiera pueden distinguir nuestras razas, no tienen ninguna posibilidad de averiguarlo por sí mismas."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_funnel
+      - condition: b2_ch6_fox = 1
+        texts:
+          - source: scene_text
+            paragraph: 26
+            text: |-
+              "¿La zorra proviene del plano mágico? Entonces, ¿cómo terminó aquí?"
+
+              "¿Por qué no se lo preguntas tú mismo?" dice Arraka. "Ahora son amigos, ¿no?"
+
+              "'Amigos' no es exactamente la palabra que usaría para describir nuestra relación con ella", digo.
+
+              "Bueno, lo único que sé", dice Arraka, "es que incluso antes de que me expulsaran del plano mágico, la zorra parecía haberse interesado mucho por los animales que vivían aquí, en Varathia. Por alguna razón, eran mucho más inteligentes que los animales de los otros continentes, y por lo que he oído, la zorra siempre hablaba de lo injustamente que eran tratados estos animales de Varathia en el plano terrenal. No estoy segura de cuándo decidió venir aquí, pero, por lo que pude deducir, debió de hacer un pacto con todas las plantas y animales de la región para que se unieran en algún tipo de relación simbiótica que la ayudara a mantener un cuerpo físico, a cambio de ofrecerles protección. En realidad no sé mucho más que eso, porque estuve atrapada en una montaña mientras todo esto sucedía."
+
+              "Entonces, eh...", digo. "Volviendo a tu exilio del plano mágico... ¿sabes por qué los dioses y los otros espíritus poderosos decidieron expulsar también a los demás espíritus femeninos y no solo a ti?"
+          - source: scene_text_2
+            paragraph: 22
+            text: |-
+              "Oh", dice Arraka, "es porque yo solo estaba absorbiendo espíritus femeninos de las llamadas 'razas civilizadas', lo que hizo que pensaran que las demás también encerraban algún peligro y que podían acabar como yo si las dejaban solas demasiado tiempo. En realidad, la única razón por la que absorbía solo este tipo de espíritus era que eran los únicos con auras lo bastante parecidas a la mía como para que yo pudiera absorberlos, dado que soy una elfa. No había nada especial en los espíritus que absorbía. El 'peligro' de que alguien desarrolle la misma técnica de absorción que yo sigue existiendo, incluso después de que nos expulsaran a todas, pero no esperaría que inventaran nada parecido pronto, porque son demasiado estúpidos como para idear por su cuenta un hechizo tan complejo."
+
+              "Espera, ¿eres una elfa?" le pregunto.
+
+              "¡Claro que soy una elfa!" dice Arraka. "¿Qué creías que era?"
+
+              "Bueno, no lo sé", digo. "Siempre supuse que las banshees eran una raza aparte, y la verdad es que no le había dado muchas vueltas hasta ahora."
+
+              "¡Las banshees no son una raza!" dice Arraka. "Es solo un nombre que nos dieron los lugareños después de que nos desterraran al plano terrenal. Puedes distinguir claramente cuáles son nuestras razas por nuestras auras. En serio, ¿qué tan malo es tu sentido mágico? Illuna también es una elfa, pero apuesto a que tampoco sabías eso, ¿verdad?"
+
+              "¿Petal es una elfa?" pregunta Flower, sorprendida.
+          - source: scene_3
+            paragraph: 6
+            text: |-
+              "¿Por qué actúas tan sorprendida?" dice Illuna. "Tienes una imagen clara de cómo me veo dentro de tu propia mente. No me digas que esta es la primera vez que notas mis orejas puntiagudas en las últimas dos décadas..."
+
+              "Oh, sí las había notado", dice Flower, "pero siempre pensé que esa era solo la manera en que te imaginaba, y que no tenía nada que ver con cómo te veías de verdad."
+
+              "Entonces", digo, "¿me estás diciendo que las hemos tratado a las dos como si fueran parte de una raza monstruosa, pero todo este tiempo en realidad eran espíritus élficos?"
+
+              "Sí, eso es exactamente lo que estamos diciendo", dice Illuna.
+
+              "Nunca deja de sorprenderme lo malas que pueden ser estas personas para leer auras", dice Arraka. "No me extraña que después de tanto tiempo todavía no hayan descubierto por qué sus mujeres no pueden nacer como magas. Si ni siquiera pueden distinguir nuestras razas, no tienen ninguna posibilidad de averiguarlo por sí mismas."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_funnel
+  - name: b2_ch06a_funnel
+    texts:
+      - source: scene_text
+        paragraph: 27
+        text: |-
+          "¿Acabas de...?" digo, pero me detengo unos instantes para ordenar mis ideas. "¿Acabas de dar a entender que la razón por la que las mujeres no pueden nacer siendo magas en nuestro plano terrenal está directamente relacionada con tu exilio del plano mágico?"
+
+          Tras oír mi última frase, Kate, que hasta ahora no parecía estar prestando demasiada atención a nuestra conversación, por fin gira la cabeza hacia nosotros y ahora nos observa atentamente.
+
+          "Así que al fin lo averiguaste, ¿eh, Barry?" dice Arraka. "¿Qué fue lo que te dio la pista? ¿Quizá el hecho de que todas las banshees sean prácticamente espíritus femeninos humanoides? ¿O quizá el hecho de que las hembras de los animales y de los monstruos aún puedan lanzar magia, mientras que sus mujeres son totalmente incapaces de hacerlo, a menos que sus auras hayan sido alteradas de forma drástica? Oh... ¿o quizá el hecho de que las mujeres solo adquieran magia cuando son poseídas por banshees? Esa es una pista bastante obvia, si me preguntas a mí. Demonios, incluso tenías a Flower como ejemplo. Su elemento es el fuego, mientras que el de Illuna es el agua. Está claro que no se limitó a heredar la magia de Illuna, ¿no? ¿Nunca se te ocurrió que, para canalizar esa energía desde el plano mágico, necesitas crear de verdad un vínculo con un espíritu mágico cuya naturaleza sea al menos algo parecida a la tuya? No habrás pensado de verdad que podías sacar esa energía por tu cuenta, sin algún espíritu mágico que te sirviera de embudo, ¿verdad?"
+
+          "Entonces", digo, "¿lo que estás diciendo es que todos y cada uno de los magos del plano terrenal están vinculados, en realidad, a un espíritu del plano mágico?"
+      - source: scene_text_2
+        paragraph: 23
+        text: |-
+          "Bueno, sí, pero no es que ninguno de los dos lo haga conscientemente", dice Arraka. "Como están en planos de existencia distintos, el vínculo no necesita ser tan estrecho ni tan personal. La mayoría de los magos probablemente solo se vinculan a un espíritu por instinto, y ni ellos ni los espíritus con los que están vinculados llegan a notarlo jamás durante el resto de sus vidas. Pero ya no puedes vincularte inconscientemente con un espíritu si todos los espíritus con auras parecidas a la tuya están aquí, en el plano terrenal, en vez de allí donde deberían estar. Claro, aún puedes intentar lanzar magia por otros medios, pero entonces tu aura tendría que volverse algo completamente distinto. Como la de la chica stillwater, por ejemplo. O la de tu amiga que usa magia de hielo."
+
+          "¿Pero cómo lograron esos espíritus exiliarte a un plano de existencia completamente distinto?" digo. "¡Seguro que no pudo ser tan simple como echarte y cerrar la puerta con llave detrás de ti!"
+
+          "Oh, por lo que he oído, el exilio fue idea de Memphir", dice Arraka. "Siempre tuvo talento para idear planes absurdamente elaborados como estos, aunque por lo general solo la mitad terminaba saliéndole bien."
+
+          "Memphir es el Dios del Destino, ¿verdad?" digo.
+      - source: scene_3
+        paragraph: 7
+        text: |-
+          "Sí, el de las ilusiones", dice Arraka. "No sé cómo se le ocurrió la idea ni cómo logró convencer a tantos espíritus de seguir su plan, pero lo que hicieron básicamente fue alterar todo el sistema que se encarga de asignar espíritus al plano mágico y reprogramarlo para que, en su lugar, asignara a los espíritus femeninos de las razas civilizadas al plano terrenal."
+
+          "¿Se puede hacer eso?" digo.
+
+          "Bueno, obviamente no es fácil", dice Arraka. "Y necesitas una cantidad tremenda de energía para lograrlo incluso si descubres cómo hacerlo, pero esos bastardos lograron reunir a suficientes espíritus de su lado como para llevarlo a cabo."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch06a_nest
+  - name: b2_ch06a_nest
+    texts:
+      - source: scene_text
+        paragraph: 28
+        text: |-
+          "Entonces, ¿por qué no lo devolviste simplemente a como estaba después de que te enviaran aquí?" digo. "¿No deberías tener más que suficiente energía para hacerlo después de absorber a todos esos espíritus?"
+
+          "¡No puedo hacerlo desde aquí!" dice Arraka. "Por eso estamos atascados. Si quisiera deshacer todo lo que hicieron Memphir y su grupo, tendría que acceder directamente al Magium, y no puedo hacer eso desde el plano terrenal."
+
+          "¿El Magium?..." le pregunto.
+
+          "Bueno, no exactamente el Magium", dice Arraka. "Ya sabes a qué me refiero..."
+
+          "No..." digo. "La verdad es que no..."
+
+          "Ya sabes..." dice Arraka. "Me refiero a la parte del Magium que se ocupa específicamente de la creación de espíritus mágicos y luego los envía al plano mágico. Sabes cómo funciona, ¿no? Los espíritus no fueron hechos para reproducirse, aunque estén divididos entre machos y hembras, igual que ustedes aquí en el plano terrenal. Por eso hay una especie de... nido, o como quieras llamarlo, dentro del Magium que se encarga de ir produciendo espíritus nuevos y de enviarlos al plano mágico después de que mueren los viejos, para que haya más o menos la misma cantidad de espíritus en el plano mágico en cualquier momento dado. ¡Solo que esos bastardos lograron cambiar la forma en que funciona! En cuanto terminaron de manipular el nido, este incluso envió al plano terrenal a las que ya estábamos allí, por no hablar de todas las nuevas que se crearon después. ¡Y aun desde Varathia, las únicas partes del Magium a las que puedo acceder son las que no necesito!"
+      - source: scene_text_2
+        paragraph: 24
+        text: |-
+          "¿Otras partes del Magium?..." digo, confundido. "No lo entiendo. ¿Qué tan grande es exactamente el Magium? ¿No se suponía que era una especie de artefacto poderoso que solo se encuentra aquí en Varathia?"
+
+          Arraka se queda un largo rato en silencio antes de volver a hablar, durante el cual todos esperamos su respuesta en silencio.
+
+          "¿Acabas..." dice, esforzándose por encontrar las palabras. "¿Acabas de preguntarme qué tan grande es el Magium?"
+
+          "Sí, eso dije", respondo.
+
+          Tras otra breve pausa, Arraka de repente empieza a reírse, más fuerte que nunca antes, y sigue así durante unos diez segundos antes de volver a hablar.
+
+          "Oye..." dice Arraka, casi sin aliento de tanto reírse, "oye, Illuna, ¿has... has oído lo que dijo? ¡Preguntó qué tan grande es el Magium! ¡Aja- AHAHAHAHA!"
+
+          "¡Deja de reírte, maldita sea!" digo, cuando por fin pierdo la paciencia. "¡Dime lo que sabes sobre el Magium!"
+      - source: scene_3
+        paragraph: 8
+        text: |-
+          "¡Ahahahaha!" dice Arraka. "¿Viniste aquí a luchar por el Magium, pero ni siquiera sabes qué es? Vaya, eso sí que tiene gracia. Estaría llorando de la risa si no viviera dentro de un amuleto sin cuerpo. No puedo creerlos... De verdad... De verdad vinieron aquí sin siquiera... ¡Ahahahaha!"
+
+          "¡Ya basta!" le digo. "¿Vas a decirme qué es el Magium o no?"
+
+          Arraka me ignora por completo y simplemente sigue riéndose y riéndose, sin dar señales de que piense detenerse pronto.
+    choices:
+      - position: 1
+        text: Amenazar con hacer girar su amuleto hasta que me responda.
+        effects:
+          - set:
+              current_scene: b2_ch06a_threaten
+      - position: 2
+        text: Esperar a que deje de reírse y volver a preguntarle.
+        effects:
+          - set:
+              current_scene: b2_ch06a_wait
+  - name: b2_ch06a_threaten
+    texts:
+      - source: scene_text
+        paragraph: 29
+        text: |-
+          "¿Quieres que haga girar tu amuleto hasta que me des una respuesta?"
+
+          "¿De verdad quieres hacer eso, Barry?" dice Arraka, dejando de reírse. "¿De verdad crees que a partir de ahora ya no volverás a necesitar mi ayuda? ¿De verdad te gusta tanto que te sorprendan enemigos invisibles?"
+
+          "Déjalo, Barry", dice Daren, mientras me pone una mano en el hombro. "Si no quiere decírnoslo, por mucho que la hagas girar no vas a hacerla cambiar de idea. Tendremos que averiguar por nuestra cuenta qué es el Magium."
+
+          "¡Yo sé lo que es el Magium!" dice Flower.
+
+          "¿Lo sabes?" le pregunto.
+
+          "Sí", dice Flower.
+
+          "Bueno, ¿qué es?" digo.
+
+          "¡Oh, eso no puedo decírtelo!" dice Flower.
+
+          "¿Y por qué demonios no?" digo.
+
+          "Porque no me dejan", dice Flower, sin más.
+
+          "¿Quién no te deja?" le pregunto. "¿Los reyes? ¿Los reyes de Varathia les prohíben revelar la verdadera naturaleza del Magium a los participantes del torneo?"
+
+          "Yo... no puedo responder esa pregunta", dice Flower, algo incómoda.
+      - source: scene_text_2
+        paragraph: 25
+        text: |-
+          "¿Pero por qué?" digo. "¿Qué pasará si nos hablan del Magium?"
+
+          "Moriremos", dice Illuna, sin rodeos.
+
+          "¿Quieres decir que enviarán a alguien a ejecutarlas?" digo.
+
+          "No, quiero decir que caeremos muertas", dice Illuna. "En el acto. Muy posiblemente incluso antes de que alcancemos a decirles qué es realmente el Magium."
+
+          "¿Qué quieres decir?" le pregunta Hadrik a Illuna. "¿Por qué caerían muertas solo por responder una pregunta?"
+
+          "Lo que quiere decir es que están bajo un juramento de encantador", dice Daren. "Probablemente las hicieron jurar que no revelarían la naturaleza del Magium a nadie. Ya fuera por los reyes o por alguien más. Seguramente ya se están arriesgando a morir incluso con lo poco que ya nos están diciendo. Deberíamos dejar de preguntarles por esto antes de que a Flower se le escape demasiada información por accidente y termine matándolas a las dos sin querer."
+
+          "Maldita sea", dice Hadrik. "Pensé que de verdad habíamos dado con algo por un segundo."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch06a_talkative
+  - name: b2_ch06a_wait
+    texts:
+      - source: scene_text
+        paragraph: 30
+        text: |-
+          Espero a que Arraka deje de reírse por sí sola, y cuando por fin se le pasa la risa, repito mi pregunta.
+
+          "Bien, ahora que ya terminaste de reírte", digo, "¿piensas decirnos qué es el Magium o no?"
+
+          "Nah", dice Arraka.
+
+          "¿Por qué no?" digo.
+
+          "Porque no tendría ninguna gracia que te lo dijera directamente", dice Arraka. "¡Tienes que ganártelo! ¿No es para eso que estás aquí?"
+
+          "Déjalo, Barry", dice Daren, mientras me pone una mano en el hombro. "Si no quiere decírnoslo, es poco probable que cualquiera de nosotros pueda hacerla cambiar de idea. Tendremos que averiguar por nuestra cuenta qué es el Magium."
+
+          "¡Yo sé lo que es el Magium!" dice Flower.
+
+          "¿Lo sabes?" le pregunto.
+
+          "Sí", dice Flower.
+
+          "Bueno, ¿qué es?" digo.
+
+          "¡Oh, eso no puedo decírtelo!" dice Flower.
+
+          "¿Y por qué demonios no?" digo.
+
+          "Porque no me dejan", dice Flower, sin más.
+      - source: scene_text_2
+        paragraph: 26
+        text: |-
+          "¿Quién no te deja?" le pregunto. "¿Los reyes? ¿Los reyes de Varathia les prohíben revelar la verdadera naturaleza del Magium a los participantes del torneo?"
+
+          "Yo... no puedo responder esa pregunta", dice Flower, algo incómoda.
+
+          "¿Pero por qué?" digo. "¿Qué pasará si nos hablan del Magium?"
+
+          "Moriremos", dice Illuna, sin rodeos.
+
+          "¿Quieres decir que enviarán a alguien a ejecutarlas?" digo.
+
+          "No, quiero decir que caeremos muertas", dice Illuna. "En el acto. Muy posiblemente incluso antes de que alcancemos a decirles qué es realmente el Magium."
+
+          "¿Qué quieres decir?" le pregunta Hadrik a Illuna. "¿Por qué caerían muertas solo por responder una pregunta?"
+
+          "Lo que quiere decir es que están bajo un juramento de encantador", dice Daren. "Probablemente las hicieron jurar que no revelarían la naturaleza del Magium a nadie. Ya fuera por los reyes o por alguien más. Seguramente ya se están arriesgando a morir incluso con lo poco que ya nos están diciendo. Deberíamos dejar de preguntarles por esto antes de que a Flower se le escape demasiada información por accidente y termine matándolas a las dos sin querer."
+
+          "Maldita sea", dice Hadrik. "Pensé que de verdad habíamos dado con algo por un segundo."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch06a_talkative
+  - name: b2_ch06a_talkative
+    texts:
+      - source: scene_text
+        paragraph: 31
+        text: |-
+          "¿Por qué actúas como si estuvieras tan decepcionado?" dice Daren. "No es como si alguna vez hubieras tenido la intención de ganar el Magium. Ya nos dijiste que solo estás aquí por el desafío."
+
+          "Bueno, sí", dice Hadrik, "¡pero imagina las historias que podríamos contar si lográramos ponerle las manos encima al Magium antes de que termine el torneo!"
+
+          "No va a pasar", dice Daren. "Aunque averigüemos qué es, seguramente está demasiado bien protegido o demasiado bien escondido como para que podamos hacer algo al respecto. Deberíamos centrarnos en nuestros objetivos y no en intentar engañar al sistema. Vamos, sigamos caminando. Todavía tenemos que hacer unas compras antes de ir a ver al rey."
+
+          Mientras seguimos avanzando hacia el castillo, notamos que Leila y Kate van caminando lado a lado, pero apenas han intercambiado palabra desde que salimos de la arena. Al cabo de un rato, Daren me lleva hacia la parte de atrás del grupo, donde él y Hadrik caminan a un paso más lento, y me hace una pregunta en voz baja.
+
+          "Oye, Barry", dice Daren, "corrígeme si me equivoco, pero se supone que Kate y la chica de pelo blanco eran amigas de la infancia o algo así, ¿no?"
+
+          "Más o menos", digo. "Las dos crecieron en el Faro, pero por lo que he oído, Leila estaba más aislada del resto del grupo por ser lessathi."
+
+          "Aun así", dice Daren, "si se conocen desde hace tanto tiempo, ¿no crees que deberían tener un poco más de tema de conversación? Quizá podríamos darles un pequeño empujón o algo. Ya sabes, ayudarlas un poco a superar la incomodidad inicial."
+      - source: scene_text_2
+        paragraph: 27
+        text: |-
+          "Yo digo que esperemos un poco más", le digo a Daren. "Ninguna de las dos es precisamente muy habladora, y encima Leila es muda. Deberíamos darles un poco más de tiempo para que se sientan cómodas la una con la otra antes de entrometernos."
+
+          "¿Sabes qué estaba pensando?" me dice Hadrik. "Si Leila es lessathi, ¿no deberías darle el mensaje de Eiden? El del invierno inmóvil."
+
+          "¡Oye, tienes razón!" le digo. "¡Se lo diré ahora mismo!"
+
+          "Barry..." empieza a decir Daren, pero lo ignoro y llamo a Leila.
+
+          "¡Eh, Leila!" grito.
+
+          "¿Sí?..." escribe Leila, mientras se vuelve para mirarme.
+
+          "Tengo un mensaje de Eiden", digo.
+
+          "¿Eiden?" escribe Leila. "¿Te refieres al stillwater que amenazó al dragón en la arena?"
+
+          "¡Sí, ese mismo!" digo. "¡Dice que recuerdes el invierno inmóvil!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch06a_message
+  - name: b2_ch06a_message
+    routes:
+      - condition: b2_ch5_scimitar = 2
+        texts:
+          - source: scene_text
+            paragraph: 32
+            text: |-
+              "Eh... ¿de acuerdo?" escribe Leila, viéndose muy confundida.
+
+              "No le hagas caso, Leila", dice Kate. "Barry solo está haciendo el idiota otra vez."
+
+              Leila se da la vuelta entonces, y Kate empieza a explicarle los detalles sobre Eiden y lo que significaba mi mensaje.
+
+              "¡Maldita sea, Barry!" dice Daren en voz baja. "¿No crees que deberías tomarte este asunto del mensaje un poco más en serio? La última vez que Eiden lo mencionó, casi morimos por eso."
+
+              "Relájate", le susurro a Daren. "Mi trato con Eiden ya quedó cancelado. Se suponía que debía entregarle su mensaje al primer lessathi que me encontrara, ¿recuerdas? Los primeros lessathi con los que me crucé fueron los amigos de Diane. La razón por la que Eiden casi nos mata fue precisamente porque no cumplí mi parte del trato. El hecho de que lo superara tan rápido y de que nunca llegara a matarnos demuestra que en realidad nunca le importó ese trato para empezar. Si de verdad hubiera querido que ese mensaje fuera entregado, podría haberse teletransportado junto a los lessathi y habérselo dicho él mismo, teniendo en cuenta que ya había reconocido sus auras a distancia cuando me los encontré. Siendo realistas, Eiden probablemente ya se olvidó de ese mensaje y no volverá a mencionárnoslo."
+
+              "Espero que tengas razón...", dice Daren.
+
+              "En cualquier caso", digo, "mi broma de antes no la hice porque sí. ¡Mira!"
+
+              Entonces señalo hacia Kate y Leila, que siguen conversando, salvo que el tema de su charla parece haber pasado de Eiden y sus planes a lo idiota que soy yo.
+          - source: scene_text_2
+            paragraph: 28
+            text: |-
+              "¿Ves?" le digo a Daren en voz baja. "¡Ahora ya tienen algo de qué hablar!"
+
+              Media hora después de nuestra conversación, llegamos al primer mercado que encontramos de camino al castillo. Decidimos separarnos en grupos y volver a reunirnos en el centro del mercado cuando cada uno termine de hacer sus compras. Mientras Kate va con Leila para ayudarla a comprar ropa nueva y una mochila, Daren y yo nos dirigimos a la tienda de armas para que yo pueda comprarme una ballesta nueva y para que Daren compre una nueva piedra de afilar mágica. Mientras tanto, Flower e Illuna van a comprar pociones, mientras que Hadrik, que no necesita comprar nada en particular, va directamente hacia el centro del mercado a esperarnos.
+
+              Antes de entrar en la tienda, le enseño a Daren mis cimitarras y le pregunto si podría decirme qué encantamientos tienen y si podría calcular su valor de mercado.
+
+              "Mmm...", dice Daren. "Estas dos parecen tener los mismos dos encantamientos. Afilado y durabilidad. Sin embargo, los encantamientos se hicieron casi exclusivamente con acero élfico, y la calidad de fabricación de las armas también es alta. Si yo fuera tú, no vendería una de estas por menos de cincuenta monedas de oro occidentales."
+          - source: scene_3
+            paragraph: 9
+            text: Una vez dentro de la tienda de armas, lo primero que hago es acercarme al tendero para hablarle de mis cimitarras. Hace falta un poco de regateo, pero al final logro convencerlo de que me compre una de las dos armas por setenta monedas de oro, mientras me quedo la otra para mí. En cuanto termino con la venta, voy de inmediato a la sección de ballestas para ver si encuentro algo que se adapte a lo que necesito.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_crossbow
+      - condition: b2_ch5_scimitar = 1
+        texts:
+          - source: scene_text
+            paragraph: 32
+            text: |-
+              "Eh... ¿de acuerdo?" escribe Leila, viéndose muy confundida.
+
+              "No le hagas caso, Leila", dice Kate. "Barry solo está haciendo el idiota otra vez."
+
+              Leila se da la vuelta entonces, y Kate empieza a explicarle los detalles sobre Eiden y lo que significaba mi mensaje.
+
+              "¡Maldita sea, Barry!" dice Daren en voz baja. "¿No crees que deberías tomarte este asunto del mensaje un poco más en serio? La última vez que Eiden lo mencionó, casi morimos por eso."
+
+              "Relájate", le susurro a Daren. "Mi trato con Eiden ya quedó cancelado. Se suponía que debía entregarle su mensaje al primer lessathi que me encontrara, ¿recuerdas? Los primeros lessathi con los que me crucé fueron los amigos de Diane. La razón por la que Eiden casi nos mata fue precisamente porque no cumplí mi parte del trato. El hecho de que lo superara tan rápido y de que nunca llegara a matarnos demuestra que en realidad nunca le importó ese trato para empezar. Si de verdad hubiera querido que ese mensaje fuera entregado, podría haberse teletransportado junto a los lessathi y habérselo dicho él mismo, teniendo en cuenta que ya había reconocido sus auras a distancia cuando me los encontré. Siendo realistas, Eiden probablemente ya se olvidó de ese mensaje y no volverá a mencionárnoslo."
+
+              "Espero que tengas razón...", dice Daren.
+
+              "En cualquier caso", digo, "mi broma de antes no la hice porque sí. ¡Mira!"
+
+              Entonces señalo hacia Kate y Leila, que siguen conversando, salvo que el tema de su charla parece haber pasado de Eiden y sus planes a lo idiota que soy yo.
+          - source: scene_text_2
+            paragraph: 29
+            text: |-
+              "¿Ves?" le digo a Daren en voz baja. "¡Ahora ya tienen algo de qué hablar!"
+
+              Media hora después de nuestra conversación, llegamos al primer mercado que encontramos de camino al castillo. Decidimos separarnos en grupos y volver a reunirnos en el centro del mercado cuando cada uno termine de hacer sus compras. Mientras Kate va con Leila para ayudarla a comprar ropa nueva y una mochila, Daren y yo nos dirigimos a la tienda de armas para que yo pueda comprarme una ballesta nueva y para que Daren compre una nueva piedra de afilar mágica. Mientras tanto, Flower e Illuna van a comprar pociones, mientras que Hadrik, que no necesita comprar nada en particular, va directamente hacia el centro del mercado a esperarnos.
+
+              Antes de entrar en la tienda, le enseño a Daren mi cimitarra y le pregunto si podría decirme qué encantamientos tiene.
+
+              "Mmm...", dice Daren. "Esta hoja parece tener solo dos encantamientos. Afilado y durabilidad. Sin embargo, los encantamientos se hicieron casi exclusivamente con acero élfico, y la calidad de fabricación del arma también es alta. ¿Piensas venderla?"
+          - source: scene_3
+            paragraph: 10
+            text: |-
+              "No, me la quedo", le digo. "Solo quería saber cómo se compara con la daga que encantaste para mí. Yo diría que están más o menos al mismo nivel, ¿no?"
+
+              "Más o menos", dice Daren. "La calidad del metal es la misma. Pero el mayor alcance podría venirte bien, así que entiendo por qué quieres quedártela."
+
+              Una vez dentro de la tienda de armas, lo primero que hago es preguntarle al tendero dónde guarda las ballestas, y luego me acerco a la sección de armas a distancia para ver si encuentro algo que se adapte a lo que necesito.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_crossbow
+      - condition: b2_ch5_scimitar = 0
+        texts:
+          - source: scene_text
+            paragraph: 32
+            text: |-
+              "Eh... ¿de acuerdo?" escribe Leila, viéndose muy confundida.
+
+              "No le hagas caso, Leila", dice Kate. "Barry solo está haciendo el idiota otra vez."
+
+              Leila se da la vuelta entonces, y Kate empieza a explicarle los detalles sobre Eiden y lo que significaba mi mensaje.
+
+              "¡Maldita sea, Barry!" dice Daren en voz baja. "¿No crees que deberías tomarte este asunto del mensaje un poco más en serio? La última vez que Eiden lo mencionó, casi morimos por eso."
+
+              "Relájate", le susurro a Daren. "Mi trato con Eiden ya quedó cancelado. Se suponía que debía entregarle su mensaje al primer lessathi que me encontrara, ¿recuerdas? Los primeros lessathi con los que me crucé fueron los amigos de Diane. La razón por la que Eiden casi nos mata fue precisamente porque no cumplí mi parte del trato. El hecho de que lo superara tan rápido y de que nunca llegara a matarnos demuestra que en realidad nunca le importó ese trato para empezar. Si de verdad hubiera querido que ese mensaje fuera entregado, podría haberse teletransportado junto a los lessathi y habérselo dicho él mismo, teniendo en cuenta que ya había reconocido sus auras a distancia cuando me los encontré. Siendo realistas, Eiden probablemente ya se olvidó de ese mensaje y no volverá a mencionárnoslo."
+
+              "Espero que tengas razón...", dice Daren.
+
+              "En cualquier caso", digo, "mi broma de antes no la hice porque sí. ¡Mira!"
+
+              Entonces señalo hacia Kate y Leila, que siguen conversando, salvo que el tema de su charla parece haber pasado de Eiden y sus planes a lo idiota que soy yo.
+          - source: scene_text_2
+            paragraph: 30
+            text: |-
+              "¿Ves?" le digo a Daren en voz baja. "¡Ahora ya tienen algo de qué hablar!"
+
+              Media hora después de nuestra conversación, llegamos al primer mercado que encontramos de camino al castillo. Decidimos separarnos en grupos y volver a reunirnos en el centro del mercado cuando cada uno termine de hacer sus compras. Mientras Kate va con Leila para ayudarla a comprar ropa nueva y una mochila, Daren y yo nos dirigimos a la tienda de armas para que yo pueda comprarme una ballesta nueva y para que Daren compre una nueva piedra de afilar mágica. Mientras tanto, Flower e Illuna van a comprar pociones, mientras que Hadrik, que no necesita comprar nada en particular, va directamente hacia el centro del mercado a esperarnos.
+
+              Una vez dentro de la tienda de armas, lo primero que hago es preguntarle al tendero dónde guarda las ballestas, y luego me acerco a la sección de armas a distancia para ver si encuentro algo que se adapte a lo que necesito.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_crossbow
+  - name: b2_ch06a_crossbow
+    routes:
+      - condition: ch3_treasure <> 0
+        texts:
+          - source: scene_text
+            paragraph: 33
+            text: |-
+              Lo que busco en particular son ballestas de repetición que puedan disparar al menos cinco virotes antes de tener que recargarse, como la que estoy usando ahora mismo.
+
+              Dos de las ballestas en exhibición me llaman la atención, y ambas son mucho mejores que la que tengo, pero una es bastante más cara que la otra. Con la cantidad de dinero que tengo ahora mismo, sinceramente no habría mucha diferencia si comprara una o la otra.
+
+              La ventaja de la cara es que puedo usarla para disparar siete virotes antes de recargar, y además tiene mejor potencia, alcance y precisión. La versión más barata sigue siendo mejor que la ballesta que tengo en todos los sentidos, pero no se puede comparar de verdad con la cara, y solo puede disparar seis virotes antes de recargarse.
+
+              Echo un último vistazo a la sección de armas a distancia para ver si no hay alguna otra ballesta de repetición que pudiera interesarme, pero la mayoría o no valen lo que cuestan o son peores que la que ya tengo. Supongo que, después de todo, voy a tener que elegir entre las dos ballestas que estaba mirando antes.
+        choices:
+          - position: 1
+            text: Comprar la ballesta más barata
+            effects:
+              - set:
+                  current_scene: b2_ch06a_elixir
+                  b2_ch6_crossbow: 0
+          - position: 2
+            text: Comprar la ballesta más cara
+            effects:
+              - set:
+                  current_scene: b2_ch06a_elixir
+                  b2_ch6_crossbow: 1
+      - condition: ch10_gems = 1
+        texts:
+          - source: scene_text
+            paragraph: 33
+            text: |-
+              Lo que busco en particular son ballestas de repetición que puedan disparar al menos cinco virotes antes de tener que recargarse, como la que estoy usando ahora mismo.
+
+              Dos de las ballestas en exhibición me llaman la atención, y ambas son mucho mejores que la que tengo, pero una es bastante más cara que la otra. Con la cantidad de dinero que tengo ahora mismo, sinceramente no habría mucha diferencia si comprara una o la otra.
+
+              La ventaja de la cara es que puedo usarla para disparar siete virotes antes de recargar, y además tiene mejor potencia, alcance y precisión. La versión más barata sigue siendo mejor que la ballesta que tengo en todos los sentidos, pero no se puede comparar de verdad con la cara, y solo puede disparar seis virotes antes de recargarse.
+
+              Echo un último vistazo a la sección de armas a distancia para ver si no hay alguna otra ballesta de repetición que pudiera interesarme, pero la mayoría o no valen lo que cuestan o son peores que la que ya tengo. Supongo que, después de todo, voy a tener que elegir entre las dos ballestas que estaba mirando antes.
+        choices:
+          - position: 1
+            text: Comprar la ballesta más barata
+            effects:
+              - set:
+                  current_scene: b2_ch06a_elixir
+                  b2_ch6_crossbow: 0
+          - position: 2
+            text: Comprar la ballesta más cara
+            effects:
+              - set:
+                  current_scene: b2_ch06a_elixir
+                  b2_ch6_crossbow: 1
+      - condition: b2_ch5_scimitar = 2 AND ch3_treasure = 0 AND ch10_gems = 0
+        texts:
+          - source: scene_text
+            paragraph: 34
+            text: |-
+              Lo que busco en particular son ballestas de repetición que puedan disparar al menos cinco virotes antes de tener que recargarse, como la que estoy usando ahora mismo.
+
+              Dos de las ballestas en exhibición me llaman la atención, y ambas son mucho mejores que la que tengo, pero una es bastante más cara que la otra. La cara cuesta casi lo mismo que la cimitarra que acabo de vender, mientras que la más barata cuesta tres veces menos.
+
+              La ventaja de la cara es que puedo usarla para disparar siete virotes antes de recargar, y además tiene mejor potencia, alcance y precisión. La versión más barata sigue siendo mejor que la ballesta que tengo en todos los sentidos, pero no se puede comparar de verdad con la cara, y solo puede disparar seis virotes antes de recargarse.
+
+              Echo un último vistazo a la sección de armas a distancia para ver si no hay alguna otra ballesta de repetición que pudiera interesarme, pero la mayoría o no valen lo que cuestan o son peores que la que ya tengo. Supongo que, después de todo, voy a tener que elegir entre las dos ballestas que estaba mirando antes.
+        choices:
+          - position: 1
+            text: Comprar la ballesta más barata
+            effects:
+              - set:
+                  current_scene: b2_ch06a_elixir
+                  b2_ch6_crossbow: 0
+          - position: 2
+            text: Comprar la ballesta más cara
+            effects:
+              - set:
+                  current_scene: b2_ch06a_elixir
+                  b2_ch6_crossbow: 1
+      - condition: b2_ch5_scimitar <> 2 AND ch3_treasure = 0 AND ch10_gems = 0
+        texts:
+          - source: scene_text
+            paragraph: 35
+            text: |-
+              Lo que busco en particular son ballestas de repetición que puedan disparar al menos cinco virotes antes de tener que recargarse, como la que estoy usando ahora mismo.
+
+              Dos de las ballestas en exhibición me llaman la atención, y ambas son mucho mejores que la que tengo, pero una es bastante más cara que la otra. Podría comprar cualquiera de las dos con el dinero que tengo, pero si comprara la cara, tendría que llevar mi presupuesto con muchísimo cuidado de aquí en adelante, y probablemente no podría permitirme hacer más compras caras durante el resto de mi estancia aquí en Varathia.
+
+              La ventaja de la cara es que puedo usarla para disparar siete virotes antes de recargar, y además tiene mejor potencia, alcance y precisión. La versión más barata sigue siendo mejor que la ballesta que tengo en todos los sentidos, pero no se puede comparar de verdad con la cara, y solo puede disparar seis virotes antes de recargarse.
+
+              Echo un último vistazo a la sección de armas a distancia para ver si no hay alguna otra ballesta de repetición que pudiera interesarme, pero la mayoría o no valen lo que cuestan o son peores que la que ya tengo. Supongo que, después de todo, voy a tener que elegir entre las dos ballestas que estaba mirando antes.
+        choices:
+          - position: 1
+            text: Comprar la ballesta más barata
+            effects:
+              - set:
+                  current_scene: b2_ch06a_elixir
+                  b2_ch6_crossbow: 0
+          - position: 2
+            text: Comprar la ballesta más cara
+            effects:
+              - set:
+                  current_scene: b2_ch06a_elixir
+                  b2_ch6_crossbow: 1
+                  ac_b2_ch6_edge: 1
+                achievement:
+                  id: ac_b2_ch6_edge
+                  title: Al límite
+  - name: b2_ch06a_elixir
+    routes:
+      - condition: b2_ch6_crossbow = 0
+        texts:
+          - source: scene_text
+            paragraph: 36
+            text: |-
+              Decido comprar la ballesta más barata. Ya es infinitamente mejor que la que tengo, y no es como si estuviera planeando participar en un concurso de puntería. No necesito comprar la opción más cara disponible.
+
+              Cuando terminamos de comprar lo que necesitamos, guardo mi nueva ballesta dentro de la mochila, y luego Daren y yo salimos de la tienda, yendo directamente hacia el centro del mercado. Mientras caminamos, de repente recuerdo que hay otra cosa que necesito comprar mientras todavía estoy en la ciudad, así que le digo a Daren que siga adelante y entro en la tienda de pociones.
+
+              "¿Barry?" pregunta Flower al verme entrar en el edificio. "¿No habías ido a comprar armas?"
+
+              "Sí", digo. "Pero recordé que también tenía que comprar algo aquí."
+
+              "¿Qué vas a comprar?" pregunta Flower.
+
+              "...Un elixir anti-veneno", digo, un poco avergonzado.
+
+              Los ojos de Flower se vuelven azules, e Illuna se me queda mirando durante unos segundos, sin decir nada.
+          - source: scene_text_2
+            paragraph: 31
+            text: |-
+              "Recuerda comprar también un elixir contra enfermedades ya que estás aquí", dice Illuna por fin. "Son más caros que los anti-veneno, y solo sirven para ciertas enfermedades fáciles de curar, pero aun así, sería bastante patético que murieras por alguna enfermedad local después de haber sobrevivido tanto tiempo al torneo."
+
+              Le pago al tendero diez monedas de cobre por el elixir anti-veneno y una moneda de plata por el elixir contra enfermedades, y luego me los bebo ambos mientras todavía estoy dentro de la tienda. Illuna hace lo mismo con todas las pociones que ha comprado, y luego ambos salimos del edificio en dirección al centro del mercado, donde Hadrik y Daren nos esperan. Al acercarnos, noto que los dos están en medio de una discusión bastante acalorada sobre quién ganaría en un duelo entre Azarius, el Sabio del Oeste, y Talmak, el Sabio del Norte.
+
+              "Escucha", le dice Hadrik a Daren cuando nos acercamos, "sé que Azarius puede lanzar un montón de hechizos. Ese no es el punto. Lo que digo es que, en términos de poder puro, Talmak está muy por encima del Sabio del Oeste. Además, ¡es un elementalista de tierra! ¿De qué sirve un montón de hechizos si al final va a aplastarte entre dos enormes capas de roca?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_complex
+      - condition: b2_ch6_crossbow = 1
+        texts:
+          - source: scene_text
+            paragraph: 37
+            text: |-
+              Decido comprar la ballesta más cara. No tengo ningún otro ataque a distancia, así que aquí no debería estar pensando en ahorrar dinero. La calidad es mucho más importante.
+
+              Cuando terminamos de comprar lo que necesitamos, guardo mi nueva ballesta dentro de la mochila, y luego Daren y yo salimos de la tienda, yendo directamente hacia el centro del mercado. Mientras caminamos, de repente recuerdo que hay otra cosa que necesito comprar mientras todavía estoy en la ciudad, así que le digo a Daren que siga adelante y entro en la tienda de pociones.
+
+              "¿Barry?" pregunta Flower al verme entrar en el edificio. "¿No habías ido a comprar armas?"
+
+              "Sí", digo. "Pero recordé que también tenía que comprar algo aquí."
+
+              "¿Qué vas a comprar?" pregunta Flower.
+
+              "...Un elixir anti-veneno", digo, un poco avergonzado.
+
+              Los ojos de Flower se vuelven azules, e Illuna se me queda mirando durante unos segundos, sin decir nada.
+          - source: scene_text_2
+            paragraph: 31
+            text: |-
+              "Recuerda comprar también un elixir contra enfermedades ya que estás aquí", dice Illuna por fin. "Son más caros que los anti-veneno, y solo sirven para ciertas enfermedades fáciles de curar, pero aun así, sería bastante patético que murieras por alguna enfermedad local después de haber sobrevivido tanto tiempo al torneo."
+
+              Le pago al tendero diez monedas de cobre por el elixir anti-veneno y una moneda de plata por el elixir contra enfermedades, y luego me los bebo ambos mientras todavía estoy dentro de la tienda. Illuna hace lo mismo con todas las pociones que ha comprado, y luego ambos salimos del edificio en dirección al centro del mercado, donde Hadrik y Daren nos esperan. Al acercarnos, noto que los dos están en medio de una discusión bastante acalorada sobre quién ganaría en un duelo entre Azarius, el Sabio del Oeste, y Talmak, el Sabio del Norte.
+
+              "Escucha", le dice Hadrik a Daren cuando nos acercamos, "sé que Azarius puede lanzar un montón de hechizos. Ese no es el punto. Lo que digo es que, en términos de poder puro, Talmak está muy por encima del Sabio del Oeste. Además, ¡es un elementalista de tierra! ¿De qué sirve un montón de hechizos si al final va a aplastarte entre dos enormes capas de roca?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_complex
+  - name: b2_ch06a_complex
+    texts:
+      - source: scene_text
+        paragraph: 38
+        text: |-
+          "Hadrik", dice Daren, "entiendo que estés intentando ponerte del lado de Talmak porque es un enano, pero así no funcionan las cosas en un duelo mágico. No puedes ganar una pelea solo con poder puro. Necesitas tener cierta versatilidad. Como generalista, Azarius puede usar hechizos de muchos tipos distintos, lo que hace que sus ataques sean mucho más impredecibles. Los especialistas siempre estarán en desventaja cuando luchan contra generalistas por esa razón. Por eso intenté con todas mis fuerzas dominar tanto el encantamiento como la magia blanca a lo largo de mi vida. Limitarme a una sola especialización me habría dado muchas menos opciones al luchar contra otros magos entrenados."
+
+          "¡Oh, vamos!" dice Hadrik. "No es como si Talmak solo pudiera usar magia de tierra. Lo viste en el concurso de sabios del año pasado. ¡También puede usar magia de relámpagos! ¡Y un montón de otros hechizos!"
+
+          "Sí", dice Daren. "Hechizos básicos. Nunca lo vi lanzar hechizos complejos fuera de su propia especialización."
+
+          "¿Y qué importa si son hechizos simples?" dice Hadrik. "¡Puede usar su enorme reserva de energía para potenciarlos y entonces serán igual de fuertes que los hechizos más complejos!"
+      - source: scene_text_2
+        paragraph: 32
+        text: |-
+          "¡Eso solo sería un desperdicio de energía mágica!" dice Daren. "Hay una razón por la que se inventaron versiones más complejas de los hechizos básicos. Es porque ahorran energía."
+
+          "¿Y por qué le importaría a Talmak ahorrar energía?" dice Hadrik. "Le sobra la energía. No es como si lo hubiéramos visto quedarse sin ella en un duelo alguna vez. Demonios, por lo que sabemos, ¡sus habilidades de regeneración mágica bien podrían ser lo bastante altas como para recuperar la energía antes siquiera de tener oportunidad de gastarla!"
+
+          "¡Uf!" dice Daren. "Barry, ¿puedes creer a este tipo? ¡De verdad está intentando argumentar que Azarius perdería en una pelea contra Talmak!"
+    choices:
+      - position: 1
+        text: Sí que tiene un punto. Quiero decir, Azarius ya es bastante viejo.
+        effects:
+          - set:
+              current_scene: b2_ch06a_old
+      - position: 2
+        text: Sí, sinceramente no me imagino a Azarius perdiendo nunca en una pelea justa.
+        effects:
+          - set:
+              current_scene: b2_ch06a_fair
+  - name: b2_ch06a_old
+    texts:
+      - source: scene_text
+        paragraph: 39
+        text: |-
+          "Pero tiene razón en algo. Quiero decir, Azarius ya es bastante viejo."
+
+          "¡Ja!" dice Hadrik. "¿Ven? ¡Ni siquiera Barry cree que él ganaría! ¡Y eso que es del Continente Occidental!"
+
+          "Eh..." dice Daren. "No es que por ser del Continente Occidental automáticamente tengas que estar del lado del Sabio del Oeste. Aun así, mantengo lo que dije antes. Puede que Talmak de verdad le diera problemas a Azarius en un duelo, pero no hay manera de que ganara si Azarius peleara en serio."
+
+          "Vale, vale..." dice Hadrik. "¡Bien, entonces tengo otra para ustedes! ¿Quién creen que ganaría en un duelo entre Eiden y Arraka?"
+
+          "Pero si esa pelea ya ocurrió, ¿no?" digo. "Durante el invierno inmóvil, quiero decir. Estoy bastante seguro de que Eiden hizo pedazos a Arraka la última vez que pelearon."
+
+          "Bueno, por lo que he oído", dice Hadrik, "la última vez que pelearon fue Eiden y el zorro contra Arraka, así que era una pelea de dos contra uno."
+
+          "Sí", digo, "pero te olvidas de que Arraka también estaba fusionada con algún otro stillwater en ese momento. Así que no era una pelea de dos contra uno, era una de dos contra dos. Para mí eso ya se parece bastante a un duelo. Como decía, Eiden le pasó por encima a Arraka la última vez que pelearon."
+
+          "¡Eh!" dice Arraka. "¡¡¿Pero qué demonios estás diciendo?!! ¡Aquí nadie le pasó por encima a nadie! ¡Y Therius no cuenta! ¡Era un debilucho! ¡Ni siquiera puedes compararlo con el zorro dorado, y mucho menos con Eiden!"
+      - source: scene_text_2
+        paragraph: 33
+        text: |-
+          "Sí, claro", digo. "Si era tan debilucho, ¿cómo es que ni siquiera pudiste apoderarte bien de su cuerpo durante tu despertar?"
+
+          "¡Eso no tiene nada que ver con el poder, idiota!" dice Arraka. "¿Tu amiga no te habló de los etéreos? Ese tipo tenía una ventaja abrumadora mientras peleábamos dentro de su propia mente. ¡En una pelea justa lo habría aniquilado! ¡Y lo mismo va para Eiden!"
+
+          "Ajá", digo. "Eso dices, pero igual perdiste contra él durante el invierno inmóvil."
+
+          "¡Eso es porque Eiden usa trucos!" dice Arraka. "¡En términos de poder puro, soy muchísimo más fuerte que él!"
+
+          "¿Y a quién le importa que técnicamente seas más fuerte que él?" digo. "Pelear no consiste solo en tener fuerza. También tienes que saber cómo usarla."
+
+          "¡No estoy hablando de que él sea más hábil que yo, imbécil!" dice Arraka. "¡Estoy diciendo que hace trampa! ¡No está usando la magia como se supone que debe usarse!"
+
+          "¿Y eso qué se supone que significa?" digo.
+      - source: scene_3
+        paragraph: 11
+        text: |-
+          "¡Olvídalo!" dice Arraka. "No voy a quedarme aquí perdiendo el tiempo explicándote cómo funciona la magia. Mira, te diré una cosa. ¿Por qué no le preguntas directamente a Eiden qué quise decir? Lleva ahí plantado, invisible, justo a tu lado desde hace unos veinte segundos, así que seguro que no tiene nada mejor que hacer ahora mismo."
+
+          En cuanto Arraka termina de hablar, Eiden disipa su hechizo de invisibilidad, con su sonrisa cortés de siempre en el rostro y los ojos cerrados.
+
+          "No vas a dejar que me divierta ni un poco, ¿verdad, Arraka?" dice Eiden.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch06a_calamity
+  - name: b2_ch06a_fair
+    texts:
+      - source: scene_text
+        paragraph: 40
+        text: |-
+          "Sí, la verdad es que no me imagino a Azarius perdiendo nunca en una pelea justa."
+
+          "¡Bah!" dice Hadrik. "Preguntarle a Barry es hacer trampa. Es del Continente Occidental. Claro que iba a ponerse del lado de Azarius."
+
+          "¡Eso no es cierto!" dice Daren. "Yo vengo del Continente Sur, pero si alguien me preguntara quién ganaría en una pelea entre Azarius y el Sabio del Sur, igual me quedaría con Azarius, sin dudarlo."
+
+          "Vale, vale..." dice Hadrik. "¡Bien, entonces tengo otra para ustedes! ¿Quién creen que ganaría en un duelo entre Eiden y Arraka?"
+
+          "Pero si esa pelea ya ocurrió, ¿no?" digo. "Durante el invierno inmóvil, quiero decir. Estoy bastante seguro de que Eiden hizo pedazos a Arraka la última vez que pelearon."
+
+          "Bueno, por lo que he oído", dice Hadrik, "la última vez que pelearon fue Eiden y el zorro contra Arraka, así que era una pelea de dos contra uno."
+
+          "Sí", digo, "pero te olvidas de que Arraka también estaba fusionada con algún otro stillwater en ese momento. Así que no era una pelea de dos contra uno, era una de dos contra dos. Para mí eso ya se parece bastante a un duelo. Como decía, Eiden le pasó por encima a Arraka la última vez que pelearon."
+
+          "¡Eh!" dice Arraka. "¡¡¿Pero qué demonios estás diciendo?!! ¡Aquí nadie le pasó por encima a nadie! ¡Y Therius no cuenta! ¡Era un debilucho! ¡Ni siquiera puedes compararlo con el zorro dorado, y mucho menos con Eiden!"
+      - source: scene_text_2
+        paragraph: 33
+        text: |-
+          "Sí, claro", digo. "Si era tan debilucho, ¿cómo es que ni siquiera pudiste apoderarte bien de su cuerpo durante tu despertar?"
+
+          "¡Eso no tiene nada que ver con el poder, idiota!" dice Arraka. "¿Tu amiga no te habló de los etéreos? Ese tipo tenía una ventaja abrumadora mientras peleábamos dentro de su propia mente. ¡En una pelea justa lo habría aniquilado! ¡Y lo mismo va para Eiden!"
+
+          "Ajá", digo. "Eso dices, pero igual perdiste contra él durante el invierno inmóvil."
+
+          "¡Eso es porque Eiden usa trucos!" dice Arraka. "¡En términos de poder puro, soy muchísimo más fuerte que él!"
+
+          "¿Y a quién le importa que técnicamente seas más fuerte que él?" digo. "Pelear no consiste solo en tener fuerza. También tienes que saber cómo usarla."
+
+          "¡No estoy hablando de que él sea más hábil que yo, imbécil!" dice Arraka. "¡Estoy diciendo que hace trampa! ¡No está usando la magia como se supone que debe usarse!"
+
+          "¿Y eso qué se supone que significa?" digo.
+      - source: scene_3
+        paragraph: 11
+        text: |-
+          "¡Olvídalo!" dice Arraka. "No voy a quedarme aquí perdiendo el tiempo explicándote cómo funciona la magia. Mira, te diré una cosa. ¿Por qué no le preguntas directamente a Eiden qué quise decir? Lleva ahí plantado, invisible, justo a tu lado desde hace unos veinte segundos, así que seguro que no tiene nada mejor que hacer ahora mismo."
+
+          En cuanto Arraka termina de hablar, Eiden disipa su hechizo de invisibilidad, con su sonrisa cortés de siempre en el rostro y los ojos cerrados.
+
+          "No vas a dejar que me divierta ni un poco, ¿verdad, Arraka?" dice Eiden.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch06a_calamity
+  - name: b2_ch06a_calamity
+    routes:
+      - condition: b2_ch1_interfere = 0
+        texts:
+          - source: scene_text
+            paragraph: 41
+            text: |-
+              "¿Otra vez?" le pregunta Daren a Eiden. "¡Por todos los dioses! ¿Qué hará falta para que dejes de seguirnos a todas partes?"
+
+              "No hace falta ser tan grosero", dice Eiden. "Sobre todo cuando he venido hasta aquí solo para felicitarlos por su magnífica actuación en la arena."
+
+              "Ajá", dice Hadrik, sin parecer muy convencido. "¿Seguro que esa es la única razón por la que viniste?"
+
+              "Ahora que lo mencionas, ¡había otra razón!" dice Eiden. "Verán, no pude evitar notar que la dirección en la que se han dirigido desde que salieron de la arena lleva directamente al castillo de Thilias. No me digan que van hacia allá porque el rey Golmyck les encargó algún tipo de misión, ¿verdad?"
+
+              "¿De qué estás hablando?" dice Daren. "Solo vamos al palacio a recoger unos papeles."
+
+              "¿Ah, sí?" dice Eiden, algo sorprendido. "Bueno, entonces solo quería hacerles saber que si resulta que el rey les encarga una misión relacionada de alguna manera con el bienestar de los ciudadanos de Thilias, no deberían molestarse en cumplirla."
+
+              "¿Por qué no?" dice Daren.
+
+              "Porque la ciudad de Thilias no seguirá en pie por mucho tiempo", dice Eiden. "Y, ya puestos, tampoco ninguna de las demás ciudades de Varathia."
+
+              "Espera, qué..." dice Daren, pero le cuesta continuar la frase. "¿Qué estás diciendo?..."
+          - source: scene_text_2
+            paragraph: 34
+            text: |-
+              "Lo que digo es que poco antes del final de este torneo", dice Eiden, "habrá una calamidad de tal magnitud que erradicará por completo todas y cada una de las ciudades de esta isla al mismo tiempo."
+
+              "¿Y me estás diciendo que vas a quedarte de brazos cruzados viendo cómo ocurre?" pregunta Daren, horrorizado. "¿Qué te pasa? ¿No se supone que eres el creador de este continente?"
+
+              "En realidad, esa es una idea equivocada bastante común", dice Eiden. "Aunque la gente de estas tierras me llame el Creador, la isla de Varathia lleva existiendo mucho más tiempo del que yo llevo vivo. La única razón por la que la gente empezó a llamarme el Creador hace tantos años fue porque querían que alguien reemplazara al antiguo Creador, para simbolizar el comienzo de una nueva era, y me eligieron a mí para asumir ese papel porque fui prácticamente el fundador de la nueva civilización que surgió tras el invierno inmóvil, junto con el zorro dorado. Ah, y creo que quizá hayas malinterpretado un poco lo que dije antes. De ningún modo voy a quedarme de brazos cruzados mientras ocurre esta calamidad. De hecho, la erradicación de estas ciudades ocurrirá como resultado directo de mis propias acciones."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_tantrum
+      - condition: b2_ch1_interfere = 1
+        texts:
+          - source: scene_text
+            paragraph: 42
+            text: |-
+              "¿Otra vez?" le pregunta Daren a Eiden. "¡Por todos los dioses! ¿Qué hará falta para que dejes de seguirnos a todas partes?"
+
+              "No hace falta ser tan grosero", dice Eiden. "Sobre todo cuando he venido hasta aquí solo para felicitarlos por su magnífica actuación en la arena."
+
+              "Ajá", dice Hadrik, sin parecer muy convencido. "¿Seguro que esa es la única razón por la que viniste?"
+
+              "Ahora que lo mencionas, ¡había otra razón!" dice Eiden. "Verán, no pude evitar notar que la dirección en la que se han dirigido desde que salieron de la arena lleva directamente al castillo de Thilias. No me digan que van hacia allá porque el rey Golmyck les encargó algún tipo de misión, ¿verdad?"
+
+              "¿De qué estás hablando?" dice Daren, fingiendo ignorancia. "Solo vamos al palacio a recoger unos papeles."
+
+              "¿Ah, sí?" dice Eiden, con un tono que deja claro que no le cree en absoluto. "Bueno, en cualquier caso, solo quería hacerles saber que si resulta que el rey les encarga una misión relacionada de alguna manera con el bienestar de los ciudadanos de Thilias, no deberían molestarse en cumplirla."
+
+              Daren frunce el ceño. "¿Por qué no?" dice Daren.
+
+              "Porque la ciudad de Thilias no seguirá en pie por mucho tiempo", dice Eiden. "Y, ya puestos, tampoco ninguna de las demás ciudades de Varathia."
+
+              "Espera, qué..." dice Daren, pero le cuesta continuar la frase. "¿Qué estás diciendo?..."
+          - source: scene_text_2
+            paragraph: 34
+            text: |-
+              "Lo que digo es que poco antes del final de este torneo", dice Eiden, "habrá una calamidad de tal magnitud que erradicará por completo todas y cada una de las ciudades de esta isla al mismo tiempo."
+
+              "¿Y me estás diciendo que vas a quedarte de brazos cruzados viendo cómo ocurre?" pregunta Daren, horrorizado. "¿Qué te pasa? ¿No se supone que eres el creador de este continente?"
+
+              "En realidad, esa es una idea equivocada bastante común", dice Eiden. "Aunque la gente de estas tierras me llame el Creador, la isla de Varathia lleva existiendo mucho más tiempo del que yo llevo vivo. La única razón por la que la gente empezó a llamarme el Creador hace tantos años fue porque querían que alguien reemplazara al antiguo Creador, para simbolizar el comienzo de una nueva era, y me eligieron a mí para asumir ese papel porque fui prácticamente el fundador de la nueva civilización que surgió tras el invierno inmóvil, junto con el zorro dorado. Ah, y creo que quizá hayas malinterpretado un poco lo que dije antes. De ningún modo voy a quedarme de brazos cruzados mientras ocurre esta calamidad. De hecho, la erradicación de estas ciudades ocurrirá como resultado directo de mis propias acciones."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_tantrum
+  - name: b2_ch06a_tantrum
+    texts:
+      - source: scene_text
+        paragraph: 43
+        text: |-
+          "¡Maldito seas!" dice Daren, con los ojos llenos de odio. "¡No voy a dejar que hagas esto!"
+
+          "Pero, Daren", dice Eiden, "¡yo pensaba que tú, de entre todos, tendrías todas las razones del mundo para alegrarte por este giro de los acontecimientos! ¿No eras tú quien me dijo que mientras uno nunca se rinda, siempre puede encontrar la forma de salvar a todos? Pues yo la he encontrado. ¡Una forma de salvarlos a todos de su miseria! Te aseguro que una muerte rápida sería un destino mucho mejor de lo que la mayoría de esta gente merece, y en cuanto al resto--"
+
+          "Ah, cállate de una vez", interrumpo a Eiden.
+
+          "¿Perdón?" me pregunta Eiden.
+
+          "Estoy harto de tus estupideces", digo. "Estás actuando como un niño malcriado que monta una rabieta. Cada vez que algo no sale como quieres, rompes todos los juguetes y dejas el patio hecho un desastre para que luego los adultos limpien lo que tú ensuciaste. Hiciste lo mismo con Olmnar. ¿Hacer volar una ciudad por los aires es tu solución habitual para todo?"
+
+          Todos mis amigos, incluido Daren, están demasiado sorprendidos por mi estallido repentino como para decir nada, y se limitan a mirarme sin poder creerlo. Eiden también me mira directamente, con los ojos cerrados, pero la sonrisa ya ha desaparecido de su rostro.
+
+          "¿Adónde quieres llegar?" me pregunta Eiden, con calma.
+      - source: scene_text_2
+        paragraph: 35
+        text: |-
+          "Lo que digo", digo, "es que no hay forma de que puedas construir casi tú solo toda una civilización así y luego, en el transcurso de apenas unos pocos cientos de años, simplemente dejar de preocuparte por lo que les pase a estas personas y matarlas como si nada. Esto no es más que negarte a admitir tus errores. Fracasaste. Tenías todo el poder del mundo y aun así no pudiste lograr lo que querías. Y en vez de dar la cara e intentar arreglar las cosas, ¿qué haces? Lo barres todo debajo de la alfombra como si nada de esto fuera culpa tuya, y luego decides acabar con todo con tu propia mano, como si eso fuera a mejorarlo de algún modo. Ya basta. Solo estás haciendo el ridículo."
+
+          "Ya he oído más que suficiente", dice Eiden, con tono desdeñoso. "Hablas sin siquiera conocer la situación en la que se encuentran las otras ciudades. ¿Crees que la esclavitud y las arenas son los verdaderos problemas de Varathia? No tienes ni idea de lo que está ocurriendo en los otros reinos. Algunas de estas personas han caído muchísimo más bajo de lo que podrías imaginar."
+
+          "¿Y qué?" digo. "¿No eres su líder? ¿No es trabajo de un líder asegurarse de que su gente no tome el camino equivocado? ¿Cómo demonios dejaste que esto llegara a este punto? ¿Simplemente los dejaste organizarse solos sin intervenir ni lo más mínimo? Diablos, hasta yo habría hecho un mejor trabajo manteniendo las cosas bajo control, y no sé nada de política."
+      - source: scene_3
+        paragraph: 12
+        text: |-
+          "¿Estás diciendo que habrías podido evitar esto si hubieras tenido mis poderes?" dice Eiden. "¿Tú, que ni siquiera pudiste entregar un simple mensaje?"
+
+          "No", digo. "Lo que digo es que habría podido evitar esto incluso sin tener ningún poder. Tú, en cambio, tenías todo el poder que necesitabas, y lo único que lograste fue empeorarlo todo. ¿Y qué demonios fue lo de Olmnar? ¿Creíste que destruyendo esa ciudad el zorro te perdonaría? ¿Eso creíste? ¡No me hagas reír! Si buscas perdón, entonces empieza por arreglar todo lo que rompiste y por dejar de ser un maldito cobarde."
+
+          En cuanto termino la frase, Eiden frunce el ceño y, de repente, todo a mi alrededor se congela, igual que aquella vez en que luché por primera vez contra el dragón. Luego empieza a caminar lentamente hacia mí, mientras todos, excepto nosotros dos, se quedan congelados en el sitio. Parece bastante furioso.
+    choices:
+      - position: 1
+        text: Intentar romper el hechizo de congelación del tiempo saliendo de su alcance
+        effects:
+          - set:
+              current_scene: b2_ch06a_range
+      - position: 2
+        text: Mantenerme firme y no apartar la mirada de Eiden
+        effects:
+          - set:
+              current_scene: b2_ch06a_avert
+  - name: b2_ch06a_range
+    routes:
+      - condition: ch11_difference <> 1
+        texts:
+          - source: scene_text
+            paragraph: 44
+            text: |-
+              Reconozco este hechizo. Es el mismo que uno de los hechizos a los que tuve acceso cuando luchaba contra Tyrath con mi dispositivo de estadísticas potenciado. Si consigo caminar lo bastante lejos en una dirección, el hechizo se cancelará de inmediato, y Eiden no podrá volver a lanzarlo durante el resto del día.
+
+              Intento saltar hacia atrás, pero de repente me doy cuenta de que hay una pared invisible detrás de mí que me bloquea el paso. Eiden, que ahora está a apenas un pie de mí, me mira con los ojos abiertos y una expresión muy sombría en el rostro.
+
+              "¿Qué ocurre, Barry?" dice Eiden, con un tono calmado pero amenazante. "¿No dijiste que yo era el cobarde? ¿Por qué intentas huir?"
+
+              "No estaba huyendo a ninguna parte", digo. "Solo intentaba cancelar tu hechizo."
+
+              "Sabes..." dice Eiden. "Ya hacía muchísimo tiempo que nadie me hacía enfadar tanto. Tengo que reconocértelo, Barry. Tienes un talento muy particular para sacar a la gente de quicio. Dime, ¿disfrutas arriesgando la vida en cada oportunidad que se te presenta? ¿De verdad tienes tantas ganas de morir?"
+
+              "No me vas a matar", digo.
+
+              "¿Por qué no?" dice Eiden.
+
+              "Porque, en el fondo, sabes que tengo razón", digo. "Todo lo que dije sobre ti era cierto. Si no, no te habrías enfadado tanto por ello. Matarme ahora solo serviría para darme la razón, y eso es lo último que quieres."
+          - source: scene_text_2
+            paragraph: 36
+            text: |-
+              "Realmente te gusta jugar con fuego, ¿verdad?" dice Eiden. "Creo que lo que más me enfurece es el hecho de que de verdad crees lo que estás diciendo. De verdad crees que habrías sido capaz de lograr lo imposible... cambiar la naturaleza humana sin siquiera tener acceso a ninguno de mis poderes. Me pregunto en qué basas exactamente semejantes afirmaciones."
+
+              "Las baso", digo, "en el hecho de que ya llevo intentando lograr lo imposible durante la mayor parte de mi vida. Y, a diferencia de ti, jamás se me ha pasado por la cabeza rendirme. ¡Mírame, demonios! ¡Mira dónde estoy! ¿Quién sería tan idiota o tan terco como para llegar tan lejos solo por un sueño de la infancia? Y aun así, aquí estoy."
+
+              Hago una pausa de unos segundos antes de continuar, pero durante ese tiempo sigo mirando a Eiden directamente a los ojos.
+
+              "No me importa la naturaleza humana", digo al cabo de un rato. "Después de ver cómo la gente de aquí está perfectamente conforme con que traten a otros seres humanos como ganado, y después de ver cómo consideran que ver morir a personas en una arena es una forma de entretenimiento, creo que ya he visto lo suficiente para saber que las cosas aquí tienen que cambiar. Y si tú ya no vas a hacerlo, entonces lo haré yo. No me importa si tengo el poder para hacerlo o no. Lo haré. Voy a hacer todo lo que tú no pudiste hacer, a pesar de tu inmenso poder, y luego voy a volver para restregártelo en la cara."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_loopholes
+      - condition: ch11_difference = 1
+        texts:
+          - source: scene_text
+            paragraph: 44
+            text: |-
+              Reconozco este hechizo. Es el mismo que uno de los hechizos a los que tuve acceso cuando luchaba contra Tyrath con mi dispositivo de estadísticas potenciado. Si consigo caminar lo bastante lejos en una dirección, el hechizo se cancelará de inmediato, y Eiden no podrá volver a lanzarlo durante el resto del día.
+
+              Intento saltar hacia atrás, pero de repente me doy cuenta de que hay una pared invisible detrás de mí que me bloquea el paso. Eiden, que ahora está a apenas un pie de mí, me mira con los ojos abiertos y una expresión muy sombría en el rostro.
+
+              "¿Qué ocurre, Barry?" dice Eiden, con un tono calmado pero amenazante. "¿No dijiste que yo era el cobarde? ¿Por qué intentas huir?"
+
+              "No estaba huyendo a ninguna parte", digo. "Solo intentaba cancelar tu hechizo."
+
+              "Sabes..." dice Eiden. "Ya hacía muchísimo tiempo que nadie me hacía enfadar tanto. Tengo que reconocértelo, Barry. Tienes un talento muy particular para sacar a la gente de quicio. Dime, ¿disfrutas arriesgando la vida en cada oportunidad que se te presenta? ¿De verdad tienes tantas ganas de morir?"
+
+              "No me vas a matar", digo.
+
+              "¿Por qué no?" dice Eiden.
+
+              "Porque, en el fondo, sabes que tengo razón", digo. "Todo lo que dije sobre ti era cierto. Si no, no te habrías enfadado tanto por ello. Matarme ahora solo serviría para darme la razón, y eso es lo último que quieres."
+          - source: scene_text_2
+            paragraph: 37
+            text: |-
+              "Realmente te gusta jugar con fuego, ¿verdad?" dice Eiden. "Creo que lo que más me enfurece es el hecho de que de verdad crees lo que estás diciendo. De verdad crees que habrías sido capaz de lograr lo imposible... cambiar la naturaleza humana sin siquiera tener acceso a ninguno de mis poderes. Me pregunto en qué basas exactamente semejantes afirmaciones."
+
+              "Las baso", digo, "en el hecho de que ya llevo intentando lograr lo imposible durante la mayor parte de mi vida. Y, a diferencia de ti, jamás se me ha pasado por la cabeza rendirme. ¡Mírame, demonios! ¡Mira dónde estoy! ¿Quién sería tan idiota o tan terco como para llegar tan lejos solo por un sueño de la infancia? Y aun así, aquí estoy."
+
+              Hago una pausa de unos segundos antes de continuar, pero durante ese tiempo sigo mirando a Eiden directamente a los ojos.
+
+              "No me importa la naturaleza humana", digo al cabo de un rato. "Después de ver cómo la gente de aquí está perfectamente conforme con que traten a otros seres humanos como ganado, y después de ver cómo consideran que ver morir a personas en una arena es una forma de entretenimiento, creo que ya he visto lo suficiente para saber que las cosas aquí tienen que cambiar. Y si tú ya no vas a hacerlo, entonces lo haré yo. No me importa si tengo el poder para hacerlo o no. Lo haré. Esto ya te lo dije una vez. Voy a hacer todo lo que tú no pudiste hacer, a pesar de tu inmenso poder, y luego voy a volver para restregártelo en la cara."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_loopholes
+  - name: b2_ch06a_avert
+    routes:
+      - condition: ch11_difference <> 1
+        texts:
+          - source: scene_text
+            paragraph: 45
+            text: |-
+              Decido mantenerme firme y mirar a Eiden directamente a los ojos mientras se acerca a mí. Cuando se queda a unos treinta centímetros de distancia, se detiene, abre los ojos y me mira con una expresión muy sombría.
+
+              "Sabes..." dice Eiden. "Hacía muchísimo tiempo que alguien no conseguía enfurecerme tanto. Tengo que reconocértelo, Barry. Tienes un talento muy particular para sacar de quicio a la gente. Dime, ¿disfrutas arriesgando la vida en cada oportunidad que se te presenta? ¿De verdad tienes tantas ganas de morir?"
+
+              "No vas a matarme", digo.
+
+              "¿Por qué no?" dice Eiden.
+
+              "Porque en el fondo sabes que tengo razón", digo. "Todo lo que dije sobre ti era cierto. Si no, no te habrías puesto tan furioso por ello. Matarme ahora solo serviría para demostrar que tengo razón, y eso es lo último que quieres."
+          - source: scene_text_2
+            paragraph: 36
+            text: |-
+              "De verdad te gusta jugar con fuego, ¿no?" dice Eiden. "Creo que lo que más me enfurece es el hecho de que de verdad crees lo que estás diciendo. De verdad crees que habrías podido lograr lo imposible... cambiar la naturaleza humana, sin siquiera tener acceso a ninguno de mis poderes. Me pregunto en qué basas exactamente esas afirmaciones."
+
+              "Las baso", digo, "en el hecho de que llevo gran parte de mi vida intentando lograr lo imposible. Y, a diferencia de ti, nunca se me ha pasado por la cabeza rendirme. Quiero decir, mírame, maldita sea. ¡Mira dónde estoy! ¿Quién sería tan estúpido o tan terco como para llegar tan lejos solo por un simple sueño de la infancia? Y aun así, aquí estoy."
+
+              Hago una pausa de unos segundos antes de continuar, pero sigo mirando a Eiden directamente a los ojos durante todo ese tiempo.
+
+              "La naturaleza humana me da igual", digo al cabo de un rato. "Después de ver que la gente de aquí no tiene ningún problema con que traten a otros seres humanos como ganado, y después de ver que consideran una forma de entretenimiento el hecho de que la gente muera en una arena, creo que ya he visto suficiente como para saber que las cosas aquí tienen que cambiar. Y si tú ya no vas a hacerlo, entonces lo haré yo. No me importa si tengo el poder para hacerlo o no. Lo haré. Voy a hacer todo lo que tú no pudiste hacer a pesar de tu inmenso poder, y luego voy a volver para restregártelo en la cara."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_loopholes
+      - condition: ch11_difference = 1
+        texts:
+          - source: scene_text
+            paragraph: 45
+            text: |-
+              Decido mantenerme firme y mirar a Eiden directamente a los ojos mientras se acerca a mí. Cuando se queda a unos treinta centímetros de distancia, se detiene, abre los ojos y me mira con una expresión muy sombría.
+
+              "Sabes..." dice Eiden. "Hacía muchísimo tiempo que alguien no conseguía enfurecerme tanto. Tengo que reconocértelo, Barry. Tienes un talento muy particular para sacar de quicio a la gente. Dime, ¿disfrutas arriesgando la vida en cada oportunidad que se te presenta? ¿De verdad tienes tantas ganas de morir?"
+
+              "No vas a matarme", digo.
+
+              "¿Por qué no?" dice Eiden.
+
+              "Porque en el fondo sabes que tengo razón", digo. "Todo lo que dije sobre ti era cierto. Si no, no te habrías puesto tan furioso por ello. Matarme ahora solo serviría para demostrar que tengo razón, y eso es lo último que quieres."
+          - source: scene_text_2
+            paragraph: 37
+            text: |-
+              "De verdad te gusta jugar con fuego, ¿no?" dice Eiden. "Creo que lo que más me enfurece es el hecho de que de verdad crees lo que estás diciendo. De verdad crees que habrías podido lograr lo imposible... cambiar la naturaleza humana, sin siquiera tener acceso a ninguno de mis poderes. Me pregunto en qué basas exactamente esas afirmaciones."
+
+              "Las baso", digo, "en el hecho de que llevo gran parte de mi vida intentando lograr lo imposible. Y, a diferencia de ti, nunca se me ha pasado por la cabeza rendirme. Quiero decir, mírame, maldita sea. ¡Mira dónde estoy! ¿Quién sería tan estúpido o tan terco como para llegar tan lejos solo por un simple sueño de la infancia? Y aun así, aquí estoy."
+
+              Hago una pausa de unos segundos antes de continuar, pero sigo mirando a Eiden directamente a los ojos durante todo ese tiempo.
+
+              "La naturaleza humana me da igual", digo al cabo de un rato. "Después de ver que la gente de aquí no tiene ningún problema con que traten a otros seres humanos como ganado, y después de ver que consideran una forma de entretenimiento el hecho de que la gente muera en una arena, creo que ya he visto suficiente como para saber que las cosas aquí tienen que cambiar. Y si tú ya no vas a hacerlo, entonces lo haré yo. No me importa si tengo el poder para hacerlo o no. Lo haré. Eso ya te lo dije una vez. Voy a hacer todo lo que tú no pudiste hacer a pesar de tu inmenso poder, y luego voy a volver para restregártelo en la cara."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b2_ch06a_loopholes
+  - name: b2_ch06a_loopholes
+    texts:
+      - source: scene_text
+        paragraph: 46
+        text: |-
+          Parte de la furia va desapareciendo poco a poco de los ojos de Eiden mientras hablo, y ahora parece un poco más calmado que antes. También noto que lleva estirando el brazo derecho hacia un lado de vez en cuando desde que se detuvo frente a mí, pero no tengo ni idea de por qué.
+
+          "Una de las ventajas de ser muy bueno leyendo auras", dice Eiden, "es que durante una conversación puedes saber en todo momento no solo si una persona está mintiendo, sino también si está vacilando de alguna manera, a partir de las fluctuaciones de su aura. El hecho de que no hayas mentido ni vacilado ni una sola vez durante todo el discurso que acabas de dar me resulta verdaderamente fascinante."
+
+          Eiden se toma unos momentos para pensar sus siguientes palabras, mientras vuelve a estirar el brazo derecho hacia un lado.
+      - source: scene_text_2
+        paragraph: 38
+        text: |-
+          "Esto es lo que vamos a hacer", dice, mientras vuelve a cerrar los ojos y empieza a caminar lentamente de un lado a otro, recorriendo unos pocos pasos. "Lo quieras o no, este torneo va a obligarte a visitar cierta cantidad de ciudades. Ya sabes que vas a visitar Galamir y, dado que te has encontrado con Melindra, voy a asumir que también visitarás Ollendor dentro de poco. Puede que haya otras ciudades también, dependiendo de lo que los organizadores del torneo preparen para las próximas rondas. Voy a observar desde lejos lo que hagas en esas ciudades, para ver cuánto consigues cambiar en el poco tiempo del que dispondrás. Si te mantienes fiel a lo que dijiste hace un momento y de verdad logras hacer cambios radicales por tus propios medios, entonces yo mismo te daré el poder necesario para detener la calamidad que amenaza a esas ciudades, y después te dejaré moldear el destino de esos reinos como te parezca mejor. Si de verdad llega a darse este improbable escenario, entonces yo--"
+
+          "¡Por los dioses!" grito, interrumpiéndolo. "¡Arraka tenía razón! No me lo puedo creer. ¡De verdad estás haciendo trampa!"
+
+          "¿Perdón?" dice Eiden.
+      - source: scene_3
+        paragraph: 13
+        text: |-
+          "¡Acabo de darme cuenta de por qué has estado estirando el brazo derecho hacia un lado de vez en cuando desde que lanzaste ese hechizo de congelación del tiempo!" digo. "Y también de por qué has estado yendo de un lado a otro durante los últimos treinta segundos. Es por el mensaje de advertencia, ¿verdad? Yo también tuve acceso a ese mismo hechizo de congelación del tiempo cuando potenciaste mi dispositivo de estadísticas, así que todavía recuerdo cómo funciona. No se te permite alejarte más de unos pocos pasos de tu posición original, así que, si alguna parte de tu cuerpo sobrepasa cierto límite, recibes un mensaje de advertencia diciéndote que, si no retrocedes en los siguientes diez segundos, el hechizo se cancelará."
+
+          "¿Y qué te hace pensar que activar esa advertencia me ayuda de algún modo?" me pregunta Eiden.
+
+          "Te ayuda", digo, "porque quien diseñó ese hechizo nunca se tomó la molestia de tener en cuenta las advertencias reales al calcular su duración. Mientras no sobrepases demasiado el límite y retrocedas justo al final de la cuenta atrás de diez segundos, prácticamente puedes sumarle diez segundos más a la duración del hechizo cada vez que haces esto. Y como el límite de tiempo del hechizo fue añadido por diseño, por motivos de seguridad, y no por limitaciones técnicas, probablemente podrías alargar la duración de este hechizo casi indefinidamente, siempre que confíes lo suficiente en poder mantenerlo bajo control. Así que de eso era de lo que Arraka y Tyrath hablaban todo este tiempo, cuando decían que estabas usando trucos. No es que no necesites obedecer las leyes de la magia porque seas demasiado poderoso. Lo que haces es aprovechar vacíos legales para saltarte las reglas, y haces que parezca que todo fue gracias a tu poder desde el principio. ¡Te estás aprovechando de vacíos legales!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch06a_formidable
+  - name: b2_ch06a_formidable
+    texts:
+      - source: scene_text
+        paragraph: 47
+        text: |-
+          "Aunque te reconozco el mérito de haber averiguado todo esto por ti solo", dice Eiden, "la verdad es que no veo cómo podría servirte de ayuda para--"
+
+          "Con Daren fue igual, ¿verdad?" digo. "¡Aquella vez que lo dormiste a pesar de todas sus protecciones también fue porque explotaste algún tecnicismo, y no porque tu hechizo ignorara todas las leyes de la magia!"
+
+          "¿Ah, sí?" pregunta Eiden, alzando las cejas con los ojos cerrados. "¿Y qué tecnicismo podría ser ese?"
+
+          Tras quedarme pensando unos segundos, la respuesta de repente se me viene a la cabeza, como si fuera lo más obvio del mundo.
+
+          "Sobrecarga de protecciones..." digo, mientras veo que la expresión de Eiden cambia un poco, incluso con los ojos cerrados. "Eso es, ¿verdad? He oído que eso solo les pasa a magos muy hábiles que se exceden lanzándose protecciones, sin tener en cuenta que algunos de esos hechizos en realidad pueden hacer más mal que bien porque entran en conflicto entre sí. Si no tienes cuidado, podrías acabar generando pequeñas aberturas en tus defensas que alguien con habilidad para leer el flujo de las auras podría explotar con facilidad. Puedo imaginarme perfectamente a Daren cometiendo un error así."
+      - source: scene_text_2
+        paragraph: 39
+        text: |-
+          "¡Extraordinario!" dice Eiden, recuperando la sonrisa. "He usado ese truco incontables veces contra muchos enemigos formidables en el pasado y, aun así, nadie había logrado descubrirlo hasta ahora. Sin embargo, sigo sin ver cómo esto podría ayudarte a ti y a tu grupo si alguna vez llegaran a enfrentarse a mí en serio. Dejando a un lado el hecho de que he tenido cientos de años para aprender estos tecnicismos, aunque lograran aprenderlos todos, mi nivel de poder mágico sigue estando muy por encima del de la mayoría de los seres de esta isla, con muy pocas excepciones. Yo diría que ahora no estás en mejor situación que cuando me conociste por primera vez el segundo día del torneo."
+
+          "Sí lo estoy", digo. "Porque ahora sé que no eres invencible. Si tuviste que aprender todos estos trucos, entonces eso significa que tu poder por sí solo no te bastaba para ganar todas tus batallas. Significa que tienes debilidades. Y si tienes debilidades, puedes ser derrotado."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b2_ch06a_accomplish
+  - name: b2_ch06a_accomplish
+    texts:
+      - source: scene_text
+        paragraph: 48
+        text: |-
+          Eiden se echa a reír.
+
+          "Así que aspiras no solo a lograr lo que yo no pude conseguir en toda una vida", dice, "sino también a derrotarme algún día en una batalla de verdad. Y yo que pensaba que no tendría nada interesante que hacer hasta que termine este torneo."
+
+          Hace una pausa.
+
+          "¡Muy bien!" dice Eiden. "En ese caso, esperaré con interés tus progresos. Y también observaré lo que hagas dentro de las ciudades, como dije antes. Ahora bien, ¿tienes alguna otra pregunta antes de que me marche?"
+
+          "Solo una", digo. "¿Qué es el Magium?"
+
+          Eiden sonríe.
+
+          "No pensarías en serio que iba a responderte esa pregunta tan fácilmente, ¿no?" dice.
+
+          "No", digo, "pero tenía que intentarlo."
+      - source: scene_text_2
+        paragraph: 40
+        text: |-
+          Eiden me dedica una última sonrisa con los ojos cerrados y luego se teletransporta fuera de mi vista. En cuanto desaparece, el hechizo de congelación del tiempo se cancela, y mis amigos empiezan a mirar a su alrededor, confundidos, intentando averiguar adónde fue Eiden.
+
+          "Así que Eiden se ha ido..." dice Daren al cabo de un rato. "Y Barry es el único que no parece sorprendido por este giro repentino de los acontecimientos. ¿Hay algo que quieras contarnos, Barry?"
+
+          "Daren..." digo. "Estoy seguro de que tienes muchas preguntas y te las responderé dentro de un momento, pero antes voy a necesitar que hagas algo por mí."
+
+          "¿Qué es?" pregunta Daren.
+
+          "Saca pluma y papel de tu mochila", digo, "y anota todos los hechizos de protección que lanzaste sobre ti mismo durante nuestro segundo día en Varathia. Tenemos trabajo que hacer."
+    choices:
+      - position: 1
+        text: Siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: b2_ch07a_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"
+  - name: b2_ch06a_credits
+    routes:
+      - condition: second_book_purchased = 0 AND b2_ch1_interfere = 1
+        texts:
+          - source: scene_text
+            paragraph: 49
+            text: |-
+              El séptimo capítulo ya está disponible.
+
+              Pulsa el botón de abajo para continuar.
+        choices:
+          - position: 1
+            text: Ir al siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: b2_ch07a_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"
+      - condition: second_book_purchased = 1 AND b2_ch1_interfere = 1
+        texts:
+          - source: scene_text
+            paragraph: 50
+            text: "The seventh chapter is now available.\r\n\r\nTap the button below to proceed."
+        choices:
+          - position: 1
+            text: Ir al siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: b2_ch07a_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"
+      - condition: second_book_purchased = 0 AND b2_ch1_interfere = 0
+        texts:
+          - source: scene_text
+            paragraph: 51
+            text: "The seventh chapter is now available.\r\n\r\nTap the button below to proceed."
+        choices:
+          - position: 1
+            text: Ir al siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: b2_ch07a_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"
+      - condition: second_book_purchased = 1 AND b2_ch1_interfere = 0
+        texts:
+          - source: scene_text
+            paragraph: 52
+            text: "The seventh chapter is now available.\r\n\r\nTap the button below to proceed."
+        choices:
+          - position: 1
+            text: Ir al siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: b2_ch07a_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"

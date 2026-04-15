@@ -1,0 +1,2082 @@
+scenes:
+  - name: ch4_intro
+    effects:
+      - set:
+          successful_checks:
+            - 'Punto de control alcanzado: Partida guardada.'
+        condition: checkpoint_rich = 1
+    routes:
+      - condition: ch3_kate_badly_hurt = 0 AND ch3_bloodied = 0
+        texts:
+          - source: scene_text
+            paragraph: 222
+            text: |-
+              Daren nos estaba esperando frente a nuestra cueva. En cuanto nos pusimos a su alcance auditivo, empezó a despotricar sobre cómo no deberíamos habernos ido por nuestra cuenta y sobre cómo deberíamos permanecer unidos en todo momento.
+
+              Kate simplemente lo ignoró con un gesto y entró en nuestra cueva para dormir un poco más, tras decirle que los sucesos de esta mañana la habían agotado. Cuando Daren me preguntó a qué se refería, le conté todo sobre el duque de Bagelberry y sus alegres seguidores, y cómo nos emboscaron.
+
+              "Tuviste suerte de lograr salir de allí con vida", me dijo Daren. "¿Para qué nos molestamos siquiera en tener una reunión de estrategia ayer si después todos íbamos a ignorarla de todos modos?"
+
+              Después de calmarse un poco, los dos reanudamos nuestra guardia, apostándonos frente a la entrada de la cueva.
+
+              Mientras montamos guardia, empezamos a discutir sobre el torneo y su organización tal y como la hemos visto hasta ahora.
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              "Simplemente no puedo entenderlo", me dice Daren. "¿En qué están pensando los organizadores? Permiten que gente sin rastro de magia se una a este concurso, y ni siquiera se molestan en imponer una regla que prohíba pelear antes de anunciar los objetivos. ¡Es como si ni siquiera les importaran todas las vidas que están en juego!"
+
+              "No creo que les importen", le digo a Daren. "¿Recuerdas lo que nos hicieron aceptar antes de unirnos al torneo? Quien gane este campeonato estará obligado a acudir en ayuda de Varathia en caso de una invasión exterior. La gente solo aceptó porque no ha habido un intento de invadir Varathia en miles de años, pero no creo que ese sea el punto. Solo quieren al mago más poderoso del mundo para que sirva como su propio espantapájaros personal. Probablemente solo les importe quién vaya a ganar".
+
+              "Pero aun así, si su objetivo es echar mano de un mago poderoso, ¿por qué todavía no han anunciado los objetivos? ¿No sería de su mayor interés terminar este torneo lo antes posible?"
+        choices:
+          - position: 1
+            text: Tal vez no haya objetivos.
+            effects:
+              - set:
+                  current_scene: ch4_intro2
+                  checkpoint_rich: 0
+                  ch4_objectives: 1
+          - position: 2
+            text: Tal vez encontraron algunas dificultades técnicas inesperadas.
+            effects:
+              - set:
+                  current_scene: ch4_intro2
+                  checkpoint_rich: 0
+                  ch4_objectives: 2
+          - position: 3
+            text: Tal vez están esperando a que nuestro número disminuya.
+            effects:
+              - set:
+                  current_scene: ch4_intro2
+                  checkpoint_rich: 0
+                  ch4_objectives: 3
+      - condition: ch3_kate_badly_hurt = 0 AND ch3_bloodied = 1
+        texts:
+          - source: scene_text
+            paragraph: 223
+            text: |-
+              Daren nos estaba esperando frente a nuestra cueva. En cuanto nos pusimos a su alcance auditivo, empezó a despotricar sobre cómo no deberíamos habernos ido por nuestra cuenta, pero se detuvo a mitad de la frase cuando nos acercamos y vio todos los cortes y moretones de Kate. Inmediatamente corrió en su ayuda con un hechizo de curación y, tras eso, ella volvió a entrar en la cueva para dormir un poco, sin decir ni una palabra más. Cuando Daren me preguntó qué había pasado, le conté todo sobre el duque de Bagelberry y sus alegres seguidores, y cómo nos emboscaron.
+
+              "Tuviste suerte de lograr salir de allí con vida", me dijo Daren. "¿Para qué nos molestamos siquiera en tener una reunión de estrategia ayer si después todos íbamos a ignorarla de todos modos?"
+
+              Después de calmarse un poco, los dos reanudamos nuestra guardia, apostándonos frente a la entrada de la cueva.
+
+              Mientras montamos guardia, empezamos a discutir sobre el torneo y su organización tal y como la hemos visto hasta ahora.
+          - source: scene_text_2
+            paragraph: 4
+            text: |-
+              "Simplemente no puedo entenderlo", me dice Daren. "¿En qué están pensando los organizadores? Permiten que gente sin rastro de magia se una a este concurso, y ni siquiera se molestan en imponer una regla que prohíba pelear antes de anunciar los objetivos. ¡Es como si ni siquiera les importaran todas las vidas que están en juego!"
+
+              "No creo que les importen", le digo a Daren. "¿Recuerdas lo que nos hicieron aceptar antes de unirnos al torneo? Quien gane este campeonato estará obligado a acudir en ayuda de Varathia en caso de una invasión exterior. La gente solo aceptó porque no ha habido un intento de invadir Varathia en miles de años, pero no creo que ese sea el punto. Solo quieren al mago más poderoso del mundo para que sirva como su propio espantapájaros personal. Probablemente solo les importe quién vaya a ganar".
+
+              "Pero aun así, si su objetivo es echar mano de un mago poderoso, ¿por qué todavía no han anunciado los objetivos? ¿No sería de su mayor interés terminar este torneo lo antes posible?"
+        choices:
+          - position: 1
+            text: Tal vez no haya objetivos.
+            effects:
+              - set:
+                  current_scene: ch4_intro2
+                  checkpoint_rich: 0
+                  ch4_objectives: 1
+          - position: 2
+            text: Tal vez encontraron algunas dificultades técnicas inesperadas.
+            effects:
+              - set:
+                  current_scene: ch4_intro2
+                  checkpoint_rich: 0
+                  ch4_objectives: 2
+          - position: 3
+            text: Tal vez están esperando a que nuestro número disminuya.
+            effects:
+              - set:
+                  current_scene: ch4_intro2
+                  checkpoint_rich: 0
+                  ch4_objectives: 3
+      - condition: ch3_kate_badly_hurt = 1
+        texts:
+          - source: scene_text
+            paragraph: 224
+            text: |-
+              Daren y yo reanudamos nuestra guardia, apostándonos frente a la entrada de la cueva.
+
+              Mientras montamos guardia, empezamos a discutir sobre el torneo y su organización tal y como la hemos visto hasta ahora.
+
+              "Simplemente no puedo entenderlo", me dice Daren. "¿En qué están pensando los organizadores? Permiten que gente sin rastro de magia se una a este concurso, y ni siquiera se molestan en imponer una regla que prohíba pelear antes de anunciar los objetivos. ¡Es como si ni siquiera les importaran todas las vidas que están en juego!"
+
+              "No creo que les importen", le digo a Daren. "¿Recuerdas lo que nos hicieron aceptar antes de unirnos al torneo? Quien gane este campeonato estará obligado a acudir en ayuda de Varathia en caso de una invasión exterior. La gente solo aceptó porque no ha habido un intento de invadir Varathia en miles de años, pero no creo que ese sea el punto. Solo quieren al mago más poderoso del mundo para que sirva como su propio espantapájaros personal. Probablemente solo les importe quién vaya a ganar".
+
+              "Pero aun así, si su objetivo es hacerse con un mago poderoso, ¿por qué todavía no han anunciado los objetivos? ¿No les convendría terminar este torneo lo más rápido posible?"
+        choices:
+          - position: 1
+            text: Tal vez no haya objetivos.
+            effects:
+              - set:
+                  current_scene: ch4_intro2
+                  checkpoint_rich: 0
+                  ch4_objectives: 1
+          - position: 2
+            text: Tal vez encontraron algunas dificultades técnicas inesperadas.
+            effects:
+              - set:
+                  current_scene: ch4_intro2
+                  checkpoint_rich: 0
+                  ch4_objectives: 2
+          - position: 3
+            text: Tal vez están esperando a que nuestro número disminuya.
+            effects:
+              - set:
+                  current_scene: ch4_intro2
+                  checkpoint_rich: 0
+                  ch4_objectives: 3
+  - name: ch4_intro2
+    routes:
+      - condition: ch4_objectives = 1
+        texts:
+          - source: scene_text
+            paragraph: 225
+            text: |-
+              "Tal vez no haya objetivos. Tal vez este sea realmente un torneo a vida o muerte y solo estén esperando a ver quién será el último hombre en pie".
+
+              "¡Por los dioses, Barry! Ni siquiera bromees con algo así. Si eso fuera cierto, entonces este torneo se convertiría en una de las mayores carnicerías de este siglo. Me niego a creer que los gobernantes de una de las mayores civilizaciones de nuestro mundo recurran a tal barbarie".
+
+              Antes de que podamos continuar nuestra conversación, sentimos que alguien se acerca a nuestra ubicación. El hechizo de barrera de Kate debe de haberse disipado.
+
+              "¡Mantén la guardia alta, Barry!"
+
+              A medida que esta persona se acerca, podemos sentir su aura mágica más claramente. Su aura mágica es tan débil como la de los ballesteros de antes. ¿Es un superviviente de nuestra última batalla que busca vengar a sus camaradas caídos?
+
+              Cuando llega a nuestro campo visual, descubrimos que es bastante joven para ser un guerrero y no lleva ningún equipo de protección. Parece estar en los últimos años de la adolescencia, pero no más de veinte, y viste pantalones holgados y una túnica holgada, no muy diferente de la ropa que uno se pondría normalmente antes de irse a la cama. El hecho de que camine con los ojos cerrados y las manos en los bolsillos no ayuda mucho a su caso. Parece que acaba de salir de la cama para tomar un bocadillo de medianoche y, definitivamente, no como un participante en un torneo de vida o muerte. Sin embargo, tampoco puede ser uno de los lugareños, ya que habríamos sido notificados inmediatamente de no hacerle daño.
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              "¡Buenos días, muchacho!", le grita Daren al chico. "Un día precioso para dar un paseo, ¿verdad? ¿Qué asunto tendrías con nosotros? Si estás perdido, ¡estaríamos más que encantados de darte indicaciones!"
+
+              Con Daren, es difícil saber cuándo está siendo sarcástico o sincero, ya que no hay pistas en su mirada ni en su tono de voz y, por lo que lo conozco hasta ahora, sería capaz de cualquiera de esas dos cosas en esta situación. Nuestro joven visitante no parece haberse ofendido por el comentario de Daren y sonríe cortésmente con los ojos todavía cerrados.
+
+              "No hay necesidad", responde el chico. "Estaba buscando a unos viejos amigos míos cuando sentí que había un compañero Stillwater cerca, así que tuve que detenerme a saludar. ¡Somos tan pocos hoy en día que sería una lástima ni siquiera saludarnos al pasar! Mi nombre es Eiden. ¡Encantado de conocerlos!"
+
+              Todo mi cuerpo se congela por un segundo. ¿Un Stillwater de verdad? ¿Aquí? No... No. Debería calmarme. Probablemente sea solo algún otro tipo al que se le ocurrió la misma idea que a mí. ¡Me niego a caer en mi propio truco!
+
+              Viendo que no digo nada, Daren responde en mi lugar.
+
+              "¡No le hagas caso! Barry es un poco tímido. Estoy seguro de que él también está encantado de conocerte. Mi nombre es Daren".
+
+              "¿Oh? ¡Entonces debes ser el sanador con armadura del que tanto he oído hablar! Y parece que también tienes un tercer miembro en tu grupo. Una superviviente del Faro de Esperanza, nada menos. No sabía que alguno de ellos siguiera con vida".
+        choices:
+          - position: 1
+            text: ¿Qué es el Faro de Esperanza?
+            effects:
+              - set:
+                  current_scene: ch4_beacon
+          - position: 2
+            text: ¿Por qué es una superviviente? ¿Se quemó el Faro de Esperanza?
+            effects:
+              - set:
+                  current_scene: ch4_survivor
+      - condition: ch4_objectives = 2
+        texts:
+          - source: scene_text
+            paragraph: 226
+            text: |-
+              "Tal vez encontraron algunas dificultades técnicas inesperadas. Tal vez están trabajando para solucionarlas mientras hablamos y recibiremos nuestros objetivos antes del mediodía".
+
+              "Realmente espero que tengas razón, Barry. Simplemente no puedo creer que estén haciendo esto intencionalmente..."
+
+              Antes de que podamos continuar nuestra conversación, sentimos que alguien se acerca a nuestra ubicación. El hechizo de barrera de Kate debe de haberse disipado.
+
+              "¡Mantén la guardia alta, Barry!"
+
+              A medida que esta persona se acerca, podemos sentir su aura mágica más claramente. Su aura mágica es tan débil como la de los ballesteros de antes. ¿Es un superviviente de nuestra última batalla que busca vengar a sus camaradas caídos?
+
+              Cuando llega a nuestro campo visual, descubrimos que es bastante joven para ser un guerrero y no lleva ningún equipo de protección. Parece estar en los últimos años de la adolescencia, pero no más de veinte, y viste pantalones holgados y una túnica holgada, no muy diferente de la ropa que uno se pondría normalmente antes de irse a la cama. El hecho de que camine con los ojos cerrados y las manos en los bolsillos no ayuda mucho a su caso. Parece que acaba de salir de la cama para tomar un bocadillo de medianoche y, definitivamente, no como un participante en un torneo de vida o muerte. Sin embargo, tampoco puede ser uno de los lugareños, ya que habríamos sido notificados inmediatamente de no hacerle daño.
+          - source: scene_text_2
+            paragraph: 6
+            text: "\"Good morrow, lad!\" Daren shouts after the boy. \"Lovely day for a walk, isn't it? What business would you have with us? If you are lost, we'd be more than happy to give you directions!\" \r\n\r\nWith Daren, it's hard to tell when he's being sarcastic or sincere, since there are no hints in his look or his tone of voice, and as I've known him so far he'd be capable of either of those things in this situation. Our young visitor doesn't seem to have taken offense at Daren's remark, and smiles politely with his eyes still closed.\r\n\r\n\"There's no need,\" the boy answers. \"I was looking for some old friends of mine when I sensed there was a fellow stillwater nearby, so I just had to stop by and say hello. There's so few of us nowadays, that it would be a shame to not at least greet each other in passing! My name is Eiden. Pleased to meet you!\"\r\n\r\nMy whole body freezes for a second. An actual stillwater? Here? No... No. I should calm down. It's likely just some other guy who came up with the same idea as me. I refuse to fall for my own trick! \r\n\r\nSeeing that I don't say anything, Daren replies in my stead.\r\n\r\n\"Don't mind him! Barry's a little shy. I'm sure he's also pleased to make your acquaintance. My name's Daren.\"\r\n\r\n\"Oh? Then you must be the healer in armor I've been hearing so much about! And it seems that you also have a third member in your party. A survivor of the Beacon of Hope, no less. I did not know any of them were still alive.\""
+        choices:
+          - position: 1
+            text: ¿Qué es el Faro de Esperanza?
+            effects:
+              - set:
+                  current_scene: ch4_beacon
+          - position: 2
+            text: ¿Por qué es una superviviente? ¿Se quemó el Faro de Esperanza?
+            effects:
+              - set:
+                  current_scene: ch4_survivor
+      - condition: ch4_objectives = 3
+        texts:
+          - source: scene_text
+            paragraph: 227
+            text: |-
+              "Tal vez están esperando a que nuestro número disminuya. Tal vez no esperaban un número tan alto de participantes y están esperando a que nos matemos unos a otros mientras esperamos los objetivos".
+
+              "Bueno, si ese es su plan, entonces les está funcionando magníficamente. Solo espero que te equivoques en esto".
+
+              Antes de que podamos continuar nuestra conversación, sentimos que alguien se acerca a nuestra ubicación. El hechizo de barrera de Kate debe de haberse disipado.
+
+              "¡Mantén la guardia alta, Barry!"
+
+              A medida que esta persona se acerca, podemos sentir su aura mágica más claramente. Su aura mágica es tan débil como la de los ballesteros de antes. ¿Es un superviviente de nuestra última batalla que busca vengar a sus camaradas caídos?
+
+              Cuando llega a nuestro campo visual, descubrimos que es bastante joven para ser un guerrero y no lleva ningún equipo de protección. Parece estar en los últimos años de la adolescencia, pero no más de veinte, y viste pantalones holgados y una túnica holgada, no muy diferente de la ropa que uno se pondría normalmente antes de irse a la cama. El hecho de que camine con los ojos cerrados y las manos en los bolsillos no ayuda mucho a su caso. Parece que acaba de salir de la cama para tomar un bocadillo de medianoche y, definitivamente, no como un participante en un torneo de vida o muerte. Sin embargo, tampoco puede ser uno de los lugareños, ya que habríamos sido notificados inmediatamente de no hacerle daño.
+          - source: scene_text_2
+            paragraph: 7
+            text: "\"Good morrow, lad!\" Daren shouts after the boy. \"Lovely day for a walk, isn't it? What business would you have with us? If you are lost, we'd be more than happy to give you directions!\" \r\n\r\nWith Daren, it's hard to tell when he's being sarcastic or sincere, since there are no hints in his look or his tone of voice, and as I've known him so far he'd be capable of either of those things in this situation. Our young visitor doesn't seem to have taken offense at Daren's remark, and smiles politely with his eyes still closed.\r\n\r\n\"There's no need,\" the boy answers. \"I was looking for some old friends of mine when I sensed there was a fellow stillwater nearby, so I just had to stop by and say hello. There's so few of us nowadays, that it would be a shame to not at least greet each other in passing! My name is Eiden. Pleased to meet you!\"\r\n\r\nMy whole body freezes for a second. An actual stillwater? Here? No... No. I should calm down. It's likely just some other guy who came up with the same idea as me. I refuse to fall for my own trick! \r\n\r\nSeeing that I don't say anything, Daren replies in my stead.\r\n\r\n\"Don't mind him! Barry's a little shy. I'm sure he's also pleased to make your acquaintance. My name's Daren.\"\r\n\r\n\"Oh? Then you must be the healer in armor I've been hearing so much about! And it seems that you also have a third member in your party. A survivor of the Beacon of Hope, no less. I did not know any of them were still alive.\""
+        choices:
+          - position: 1
+            text: ¿Qué es el Faro de Esperanza?
+            effects:
+              - set:
+                  current_scene: ch4_beacon
+          - position: 2
+            text: ¿Por qué es una superviviente? ¿Se quemó el Faro de Esperanza?
+            effects:
+              - set:
+                  current_scene: ch4_survivor
+  - name: ch4_beacon
+    texts:
+      - source: scene_text
+        paragraph: 228
+        text: |-
+          "¿Qué es el Faro de Esperanza?"
+
+          "¿Quieres decir que ella no te lo dijo? Bueno, entonces no arruinaré la sorpresa. ¿Por qué no se lo preguntas tú mismo cuando despierte, mi amigo Stillwater?"
+
+          "Voy a detenerte ahí mismo, Eiden", interrumpe Daren. "No creo que sea necesario seguir con esta farsa por más tiempo. Tú y yo sabemos que Barry es un humano común y no un Stillwater".
+
+          "¿Qué, les dijiste la verdad?", me pregunta Eiden. "Honestamente, no pensé que lograras llegar tan lejos sin fanfarronear. ¡Debo admitir que estoy impresionado!"
+
+          "Este farol del Stillwater no te va a llevar muy lejos, lo sabes", continúa Daren. "Especialmente siendo ciego. ¿Quién ha oído hablar de un Stillwater ciego?"
+
+          "¿Hmm? ¿Qué te hace pensar que soy ciego?"
+
+          "Has mantenido los ojos cerrados desde la primera vez que te vimos".
+
+          "¡Oh, esto! En realidad puedo ver perfectamente. Cerré los ojos por primera vez hace mucho tiempo, cuando me cansé de ver la fealdad de la humanidad. Hoy en día, casi solo abro los ojos en zonas completamente despobladas. Mi sentido mágico es un sustituto más que adecuado para mi vista. Puedo sentir el aura mágica de cada criatura y de cada objeto, lo que me indica dónde están, y obtengo el beneficio adicional de no ser víctima de hechizos de ilusión. No necesito un sentido extra que me recuerde constantemente por qué desprecio tanto a los humanos".
+
+          "¿No eres un poco joven para preocuparte por los pecados de la humanidad? ¿O es esto algún tipo de fase por la que estás pasando para que tus padres se fijen en ti?"
+      - source: scene_text_2
+        paragraph: 8
+        text: |-
+          Eiden sonríe.
+
+          "Tú mejor que nadie deberías saberlo, sanador con armadura. Seguramente habrás visto todo el sufrimiento e injusticia del mundo a lo largo de tus viajes. La angustia. La agonía. Los has visto todos, una y otra vez. Dime, sanador. Has pasado toda una vida intentando enmendar los errores que otros han cometido. ¿Sientes que el mundo se ha convertido en un lugar mejor gracias a ello?"
+
+          "Solo porque quede mucha maldad en el mundo no significa que no haya un bien por el que valga la pena luchar. Mientras no me rinda, encontraré el camino".
+
+          La sonrisa de Eiden se ensancha, pero sus ojos permanecen cerrados.
+
+          "¿Oh? Así que eres un idealista, entonces. Pero dime, héroe, ¿qué pasa cuando tus puros ideales chocan con la fría y dura realidad?"
+
+          De repente, Daren cae de bruces sobre su pecho, y puedo notar que está siendo presionado contra el suelo por una fuerza muy poderosa.
+
+          "¿Qué sucede cuando te encuentras con una fuerza tan grande que simplemente te aplasta contra el suelo, como si fueras un insecto?"
+
+          La fuerza que empujaba a Daren contra el suelo se intensificó tanto que hizo un gran agujero con la forma de Daren en el duro suelo rocoso bajo él. Ya no pudo contener más el dolor y empezó a gritar de agonía.
+      - source: scene_3
+        paragraph: 2
+        text: |-
+          Me doy cuenta de que mis manos se han enfriado y todo mi cuerpo tiembla. Necesito recomponerme. Si arruino esto, todos seremos masacrados.
+
+          "¡Suéltalo!", le digo a Eiden, intentando sonar lo más seguro posible.
+
+          "¿Quieres salvar a tu amigo, Barry? ¿Qué te parece si hacemos un trato justo? Tu vida por la suya. Prometo dejar en paz a tu amigo si das tu vida por él. ¿Qué me dices?"
+    choices:
+      - position: 1
+        text: Aceptar el trato
+        effects:
+          - set:
+              current_scene: ch4_accept
+      - position: 2
+        text: Proponer un trato diferente
+        effects:
+          - set:
+              current_scene: ch4_propose
+  - name: ch4_survivor
+    texts:
+      - source: scene_text
+        paragraph: 229
+        text: |-
+          "¿Por qué es una superviviente? ¿Se quemó el Faro de Esperanza?"
+
+          "¿Quemarse? Bueno, supongo que habrá ardido después de todos estos años. Pero no es por eso por lo que dije que es una superviviente. Sin embargo, no voy a arruinarte la sorpresa. ¿Por qué no se lo preguntas tú mismo cuando despierte, mi amigo Stillwater?"
+
+          "Voy a detenerte ahí mismo, Eiden", interrumpe Daren. "No creo que sea necesario seguir con esta farsa por más tiempo. Tú y yo sabemos que Barry es un humano común y no un Stillwater".
+
+          "¿Qué, les dijiste la verdad?", me pregunta Eiden. "Honestamente, no pensé que lograras llegar tan lejos sin fanfarronear. ¡Debo admitir que estoy impresionado!"
+
+          "Este farol del Stillwater no te va a llevar muy lejos, lo sabes", continúa Daren. "Especialmente siendo ciego. ¿Quién ha oído hablar de un Stillwater ciego?"
+
+          "¿Hmm? ¿Qué te hace pensar que soy ciego?"
+
+          "Has mantenido los ojos cerrados desde la primera vez que te vimos".
+
+          "¡Oh, esto! En realidad puedo ver perfectamente. Cerré los ojos por primera vez hace mucho tiempo, cuando me cansé de ver la fealdad de la humanidad. Hoy en día, casi solo abro los ojos en zonas completamente despobladas. Mi sentido mágico es un sustituto más que adecuado para mi vista. Puedo sentir el aura mágica de cada criatura y de cada objeto, lo que me indica dónde están, y obtengo el beneficio adicional de no ser víctima de hechizos de ilusión. No necesito un sentido extra que me recuerde constantemente por qué desprecio tanto a los humanos".
+      - source: scene_text_2
+        paragraph: 9
+        text: |-
+          "¿No eres un poco joven para preocuparte por los pecados de la humanidad? ¿O es esto algún tipo de fase por la que estás pasando para que tus padres se fijen en ti?"
+
+          Eiden sonríe.
+
+          "Tú mejor que nadie deberías saberlo, sanador con armadura. Seguramente habrás visto todo el sufrimiento e injusticia del mundo a lo largo de tus viajes. La angustia. La agonía. Los has visto todos, una y otra vez. Dime, sanador. Has pasado toda una vida intentando enmendar los errores que otros han cometido. ¿Sientes que el mundo se ha convertido en un lugar mejor gracias a ello?"
+
+          "Solo porque quede mucha maldad en el mundo no significa que no haya un bien por el que valga la pena luchar. Mientras no me rinda, encontraré el camino".
+
+          La sonrisa de Eiden se ensancha, pero sus ojos permanecen cerrados.
+
+          "¿Oh? Así que eres un idealista, entonces. Pero dime, héroe, ¿qué pasa cuando tus puros ideales chocan con la fría y dura realidad?"
+
+          De repente, Daren cae de bruces sobre su pecho, y puedo notar que está siendo presionado contra el suelo por una fuerza muy poderosa.
+
+          "¿Qué sucede cuando te encuentras con una fuerza tan grande que simplemente te aplasta contra el suelo, como si fueras un insecto?"
+
+          La fuerza que empujaba a Daren contra el suelo se intensificó tanto que hizo un gran agujero con la forma de Daren en el duro suelo rocoso bajo él. Ya no pudo contener más el dolor y empezó a gritar de agonía.
+      - source: scene_3
+        paragraph: 3
+        text: |-
+          Me doy cuenta de que mis manos se han enfriado y todo mi cuerpo tiembla. Necesito recomponerme. Si arruino esto, todos seremos masacrados.
+
+          "¡Suéltalo!", le digo a Eiden, intentando sonar lo más seguro posible.
+
+          "¿Quieres salvar a tu amigo, Barry? ¿Qué te parece si hacemos un trato justo? Tu vida por la suya. Prometo dejar en paz a tu amigo si das tu vida por él. ¿Qué me dices?"
+    choices:
+      - position: 1
+        text: Aceptar el trato
+        effects:
+          - set:
+              current_scene: ch4_accept
+      - position: 2
+        text: Proponer un trato diferente
+        effects:
+          - set:
+              current_scene: ch4_propose
+  - name: ch4_accept
+    texts:
+      - source: scene_text
+        paragraph: 230
+        text: |-
+          Un escalofrío me recorre todo el cuerpo cuando las palabras del Stillwater llegan a mis oídos. Esto no es una pesadilla, Barry. Está pasando. Esto está pasando de verdad. ¿En qué demonios estaba pensando? ¿Que me uniría a un torneo contra los magos más poderosos del mundo y que las cosas se arreglarían solas?
+
+          Mira lo que he hecho. He logrado no solo ponerme en peligro a mí mismo, sino también a un hombre que no ha hecho más que el bien en toda su vida. Un hombre mucho mejor de lo que yo seré nunca. Y yo soy la razón por la que este Stillwater vino a nosotros. Todo esto es culpa mía. Pero tal vez pueda arreglarlo.
+
+          "¿Qué garantía tengo de que no lo matarás simplemente después de que termines conmigo?", le pregunto a Eiden.
+
+          "Pues el hecho de que sigas vivo, por supuesto. Seguramente, ¿ya te habrás dado cuenta de que no me costaría más que un chasquido de dedos acabar con las vidas de ambos? ¿Por qué me molestaría siquiera en darte esta opción si no fuera sincero?"
+
+          No confío en él. No confío en él en absoluto. Pero ¿qué opción tengo? Daren está llegando a sus límites, y si lucho contra él uno a uno, me desintegrará. Ni siquiera Kate tendría una oportunidad contra él. Y además, ya he tomado una decisión.
+
+          "Entonces acepto tu trato. Mi vida por la de Daren".
+      - source: scene_text_2
+        paragraph: 10
+        text: |-
+          Eiden sonríe.
+
+          "Tu vida por la de Daren".
+
+          Siento como si mi propia alma abandonara mi cuerpo. Pierdo rápidamente el control de todos mis músculos y mi cuerpo cae al suelo. Todo se vuelve más frío, pero no siento dolor. Solo vacío.
+
+          "Está hecho", dice el Stillwater, mientras se teletransporta fuera de nuestro campamento.
+
+          "¡Barry, no!", grita Daren con todas sus fuerzas, mientras corre hacia mí.
+
+          Lo hice. Él sigue vivo.
+
+          Lo último que veo es la expresión desesperada de Daren mientras intenta en vano reanimarme.
+    effects:
+      - set:
+          ac_ch4_noble: 1
+        achievement:
+          id: ac_ch4_noble
+          title: Un sacrificio noble
+    choices:
+      - position: 1
+        text: Reiniciar juego
+        effects:
+          - set:
+              current_scene: ch1_intro1
+              storyboard_controls: Jump to frame "Chapter 1"
+      - position: 2
+        text: Cargar desde el último punto de control
+        effects:
+          - set:
+              chapter_load: 1
+              storyboard_controls: Jump to frame "Save load game"
+      - position: 3
+        text: Cargar partida
+        effects:
+          - set:
+              storyboard_controls: Jump to frame "Save load game"
+  - name: ch4_propose
+    texts:
+      - source: scene_text
+        paragraph: 231
+        text: |-
+          "¿Qué tal otro trato?"
+
+          "¿Qué tienes en mente?"
+
+          "Cuando nos conocimos, dijiste que buscabas a unos amigos. Si nos dejas vivir, podríamos entregar un mensaje por ti, en caso de que encontremos a esos amigos tuyos antes que tú".
+
+          "¿Así que dices que la vida de tu amigo solo vale entregar un mensaje?"
+
+          "Lo es para ti. Creo que ya has dejado suficientemente claro que la vida humana no tiene valor para ti. Eso significa que debería darte igual si nos dejas vivir o no. Pero si nos dejas vivir, conseguirás que se entregue tu mensaje. ¿Qué te parece un trato justo?"
+
+          Eiden se ríe y la fuerza que empuja a Daren contra el suelo se debilita.
+
+          "Cuando lo pones así, supongo que tienes razón. Muy bien, entonces. Sus vidas por un mensaje".
+
+          Se detiene un momento a pensar antes de continuar.
+
+          "Los amigos que busco siempre visten túnicas azul oscuro y en el pecho llevan broches que representan un halcón sosteniendo el sol entre sus garras. Si te encuentras con alguien que encaje con esta descripción, dile simplemente que Eiden les envía este mensaje: Recuerden el invierno en calma".
+
+          "...Y, ¿si me preguntan qué significa eso?"
+
+          "No lo harán. No importa a quién encuentres, mientras encajen con la descripción que te di, entenderán el mensaje perfectamente".
+
+          "Eh... Está bien, entonces. Considéralo hecho".
+      - source: scene_text_2
+        paragraph: 11
+        text: |-
+          "Perfecto".
+
+          Eiden libera a Daren de su hechizo y se gira para irse.
+
+          "No... dejaré que te vayas de aquí", dice Daren, mientras se levanta lentamente.
+
+          "Seguramente estarás bromeando", le dice Eiden.
+
+          "Si... te dejo ir ahora, solo harás daño a más gente inocente. Te detendré, cueste lo que cueste".
+
+          "Mira, ahora eso me pone en una posición difícil, ya que ya hice un trato justo con Barry de allí. No puedo matarte ahora, ya que violaría los términos de nuestro acuerdo comercial".
+
+          "¡Silencio!"
+
+          Daren corre hacia el Stillwater y lanza un tajo feroz hacia su cuello. Eiden lo esquiva sin esfuerzo y Daren va rápidamente por un segundo golpe, esta vez destinado a cortarlo por la mitad. Eiden se hace a un lado con naturalidad, haciendo que parezca un juego de niños. Tras unos cuantos golpes desperdiciados por parte de Daren, justo cuando parecía que podía haber pillado al Stillwater a contrapié, Eiden se limitó a poner su mano desnuda frente a su cara y detuvo el golpe de la espada con solo su dedo índice.
+
+          "No...", dice Daren, como si no pudiera creer lo que veían sus ojos.
+      - source: scene_3
+        paragraph: 4
+        text: |-
+          "Me cansa esto", dice Eiden mientras hace un gesto con la otra mano.
+
+          En menos de un segundo, Daren cayó al suelo como un tronco, su armadura haciendo un fuerte ruido metálico al golpear el suelo rocoso de abajo.
+
+          "¡No!", grito.
+
+          "Solo lo puse a dormir", dice el Stillwater. "Se despertará en unos minutos".
+
+          Se gira para irse.
+
+          "Ah, y no te preocupes por buscar a mis amigos. Estoy seguro de que los conocerás pronto".
+
+          Vuelve a sonreír y se dirige hacia el bosque.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch4_dave_vs_eiden
+            condition: ch1_show_yourself != 2
+          - set:
+              current_scene: ch4_face_shown
+            condition: ch1_show_yourself = 2
+  - name: ch4_dave_vs_eiden
+    texts:
+      - source: scene_text
+        paragraph: 232
+        text: |-
+          "Daren, ¿puedes oírme? ¡Despierta!"
+
+          No hay respuesta. ¿Qué clase de hechizo usó este tipo? Estoy bastante seguro de que Daren tiene algunos hechizos realmente fuertes que lo protegen en todo momento. Los hechizos de sueño estándar no deberían ser más que un inconveniente moderado para él.
+
+          Mientras intento despertar a Daren, de repente oigo una voz muy familiar que viene de la dirección en la que desapareció Eiden.
+
+          "¡Stillwater!"
+
+          Esa es la voz de Dave el Degollador. No hay duda. Reconocería esa voz ronca y ese acento de matón en cualquier parte.
+
+          Me doy la vuelta hacia donde venía la voz, pero solo hay árboles. ¿Por qué Dave el Degollador me gritaría antes de tener la oportunidad de ver bien mi cara?
+
+          Entonces caí en la cuenta. Nunca llegó a verme la cara. Estuve escondido detrás de un árbol todo el tiempo. Corro hacia el bosque para confirmar mis sospechas. Me escondo tras uno de los árboles y echo un vistazo.
+
+          Tal como pensaba, Dave el Degollador ha confundido a Eiden conmigo y busca venganza. Se las ha arreglado para reunir un equipo en el poco tiempo que estuvimos separados y tienen al Stillwater rodeado. Lo triste es que Dave parece un caballero bien educado comparado con sus nuevos colegas. Algunos de ellos parecen y huelen como si no se hubieran lavado en meses. Supongo que Dios los cría y ellos se juntan.
+      - source: scene_text_2
+        paragraph: 12
+        text: |-
+          "Te he estado buscando, Stillwater", dice Dave. "He estado siguiendo tus huellas desde ayer. Te dije que volveríamos a vernos. Nadie puede huir ni esconderse de Dave el Degollador".
+
+          "Me temo que se equivoca, mi buen hombre", dice Eiden, sonriendo. "Estoy seguro de que no le he visto en mi vida".
+
+          "Sí. Yo también estoy seguro de eso. Habrías necesitado abrir los ojos para verme".
+
+          Todos los hombres de Dave el Degollador estallan de repente en carcajadas al mismo tiempo. Se ríen de forma ruidosa y vulgar, probablemente en un intento de intimidar a su víctima, igual que un grupo de matones de colegio. La expresión de Eiden no cambia y sigue sonriendo amablemente.
+
+          "No creas que puedes engañarme cambiando un poco la voz. Soy demasiado listo para eso. Reconocería ese tono arrogante tuyo en cualquier parte. ¿Dónde está tu amigo el sanador? ¿Te ha dejado aquí tirado después de que le salvaras el pellejo?"
+
+          "¿Se refiere quizás al sanador con armadura? Si es así, está ahí mismo, pasando estos árboles".
+
+          "¡Ja! Buen intento, Stillwater. Ese truco tuyo de intimidar no me va a funcionar dos veces seguidas".
+
+          Se vuelve hacia sus estimados colegas.
+      - source: scene_3
+        paragraph: 5
+        text: |-
+          "¡Hombres! Preparen sus espadas. Saquen sus cuchillos. Para esto hemos venido. Hoy escribiremos nuestros nombres en la historia. ¡Hoy nos convertiremos en LEYENDAS!"
+
+          Los hombres de Dave el Degollador dan un rugido mientras levantan sus manos sosteniendo sus armas en el aire. La sonrisa de Eiden se ha ensanchado. Su expresión es similar a la que tenía antes de estampar a Daren contra el suelo. Está disfrutando esto. Van a ser masacrados.
+    choices:
+      - position: 1
+        text: Bien. Menos enemigos de los que preocuparnos.
+        effects:
+          - set:
+              current_scene: ch4_fewer_enemies
+      - position: 2
+        text: Nadie merece un destino tan espantoso, ni siquiera Dave el Degollador.
+        effects:
+          - set:
+              current_scene: ch4_gruesome_fate
+  - name: ch4_fewer_enemies
+    texts:
+      - source: scene_text
+        paragraph: 233
+        text: |-
+          No hay razón para que me compadezca de tipos como Dave el Degollador. Si le salvo el pellejo aquí, lo más seguro es que me ataque a mí después. Y si lo derroto y luego lo dejo vivo, se dedicará a asesinar a gente inocente. Unos cuantos matones muertos más en el mundo no supondrán ninguna diferencia. Dudo mucho que nadie vaya a llorar su muerte.
+
+          Decido no intervenir y dejar que la batalla siga su curso.
+
+          Dave el Degollador comienza enviando unos cuantos cuchillos voladores hacia el Stillwater. Justo cuando alcanzan a Eiden, todos se detienen en el aire frente a él. Eiden sonríe con sorna y señala al degollador. Todos los cuchillos obedecen incondicionalmente a su nuevo amo y se dirigen hacia Dave a una velocidad de vértigo. Este consigue pararlos en el último momento con sus propios cuchillos voladores, pero se queda estupefacto.
+
+          "¿Qué clase de brujería es esta?", dice.
+
+          "De la clase mágica, por supuesto", le responde el Stillwater. "Mira, esto es un torneo para magos. Las audiciones para el circo se celebraban al otro lado de la calle".
+
+          La cara de Dave se contorsiona en un gruñido.
+
+          "Ya veremos qué gracia te hace con unos agujeros en el cráneo, pedazo de bastardo. Hombres, denle una lección a este pequeño advenedizo".
+
+          Todos los hombres de Dave el Degollador saltan sobre Eiden, pero este desaparece delante de sus narices y aparece frente a Dave con una sonrisa, aunque sus ojos permanecen cerrados.
+      - source: scene_text_2
+        paragraph: 13
+        text: |-
+          "¿Envías a tus hombres a hacer el trabajo sucio, Dave? ¡Pensé que ibas a convertirte en una leyenda! ¿Por qué vacilas?"
+
+          Dave saca un cuchillo de su cinturón y lanza un tajo al cuello de Eiden.
+
+          "Cierra tu boca de sabelotodo y muere, pedazo de mi--"
+
+          Antes de que el matón terminara la frase, Eiden puso la palma de su mano en la cara de Dave e hizo que su cabeza explotara en mil pedazos. La vida de Dave el Degollador había terminado así, sin ni siquiera tener tiempo de darse cuenta de que estaba muerto.
+
+          Cegados por la rabia, los leales seguidores de Dave corrieron gritando hacia Eiden, con sus armas preparadas. Sin embargo, no llegaron muy lejos. Con un chasquido de dedos, el Stillwater hizo aparecer ante él una enorme columna de fuego que incineró a todos los matones hasta el punto de que ni siquiera sus huesos quedaron intactos. El fuego ignoró por completo todos los árboles a su alrededor y Eiden simplemente lo apagó con otro chasquido de dedos.
+
+          Esperaba que esto fuera rápido. Pero este resultado superó con creces mis expectativas. Incluso puede lanzar magia de fuego. ¿Qué demonios se supone que debemos hacer para luchar contra este tipo?
+
+          Eiden se vuelve hacia mí. De repente recuerdo que se basa principalmente en su sentido mágico y no en su vista para evaluar su entorno. Debe de haber sentido mi presencia desde antes del comienzo de la batalla.
+      - source: scene_3
+        paragraph: 6
+        text: |-
+          "¿Disfrutaste del espectáculo, Barry?", me pregunta. Su sonrisa ha desaparecido de su rostro.
+
+          "Ha sido todo un espectáculo", le respondo.
+
+          "Eso ha sido. Parecería que el degollador me había confundido con otro Stillwater. Uno que se asociaba con un sanador. Un malentendido bastante desafortunado. No sabrás por casualidad a quién buscaban, ¿verdad Barry?"
+    choices:
+      - position: 1
+        text: Decirle la verdad
+        effects:
+          - set:
+              current_scene: ch4_truth
+      - position: 2
+        text: Inventar una mentira
+        effects:
+          - set:
+              current_scene: ch4_lie
+  - name: ch4_lie
+    texts:
+      - source: scene_text
+        paragraph: 234
+        text: |-
+          "No lo sé. Pero a mí también me preocupa. ¿Crees que podría haber otros Stillwaters en esta zona?"
+
+          Eiden sonríe. Con un gesto de sus manos, paraliza mi cuerpo mientras estoy de pie y me hace flotar hasta su posición. Lucho en vano por escapar de su agarre. Su hechizo es demasiado fuerte. Una vez que llego ante él, Eiden responde a su propia pregunta.
+
+          "Te buscaban a ti, Barry. Realmente tienes mucho valor mintiéndome así a la cara. Quizá me equivoqué contigo. Quizá entregue mi mensaje yo mismo, después de todo".
+
+          "¡No, espera, puedo explicarlo!"
+
+          "No necesito más tus servicios ni tus explicaciones, Barry. Quedas relevado de tus funciones".
+
+          Antes de darme la oportunidad de responder, hace otro gesto con la mano y se me rompe el cuello, matándome al instante.
+    choices:
+      - position: 1
+        text: Reiniciar juego
+        effects:
+          - set:
+              current_scene: ch1_intro1
+              storyboard_controls: Jump to frame "Chapter 1"
+      - position: 2
+        text: Cargar desde el último punto de control
+        effects:
+          - set:
+              chapter_load: 1
+              storyboard_controls: Jump to frame "Save load game"
+      - position: 3
+        text: Cargar partida
+        effects:
+          - set:
+              storyboard_controls: Jump to frame "Save load game"
+  - name: ch4_truth
+    texts:
+      - source: scene_text
+        paragraph: 235
+        text: |-
+          "Creo que ya tienes la respuesta a esa pregunta".
+
+          "La tengo, en efecto. Dime, Barry. ¿Cómo llegaste a la conclusión de que usarme para limpiar tu desorden sería una buena idea?"
+
+          "Bueno, supuse que no tendrías problemas para lidiar con esos matones de poca monta. Y parecías disfrutarlo bastante. De lo contrario, simplemente habrías derribado el árbol tras el que me escondía para revelarme ante los degolladores".
+
+          "Fascinante. Realmente pareces no tener sentido del peligro. Permíteme ayudarte en ese sentido".
+
+          En cuanto termina la frase, empiezo a sentir algo que me presiona la garganta. Siento como si una cuerda invisible estuviera atada alrededor de mi cuello y me levantara lentamente sobre el suelo. No es solo mi imaginación. Realmente me están levantando más y más alto sobre el suelo. Me cuesta mucho más respirar a medida que el lazo invisible se aprieta alrededor de mi cuello. Intento quitarme la soga con las manos, pero no hay nada allí. Si esto sigue así mucho tiempo, voy a morir de verdad.
+
+          Una vez que estoy a varios pies del suelo, el lazo invisible desaparece de repente y caigo sobre el suelo rocoso, cayendo de rodillas. Pude oír un fuerte chasquido al golpear el suelo. Estoy bastante seguro de que la caída me rompió ambas rótulas. El dolor es insoportable.
+      - source: scene_text_2
+        paragraph: 14
+        text: |-
+          "Ahora que tengo tu atención", continúa el Stillwater, "quiero que entiendas algo. Si vuelves a intentar algo así, unas rótulas rotas van a ser la menor de tus preocupaciones. ¿Está claro?"
+
+          "Cristalino".
+
+          La sonrisa de Eiden vuelve a su rostro.
+
+          "Eso es lo que me gusta de ti, Barry. Incluso ante la aniquilación total, consigues mantener tu tono desafiante y sarcástico. Pero no eres ni fuerte ni valiente. Entonces, ¿qué es? ¿Cuál es la fuerza motriz que te impulsa hacia adelante?"
+
+          "La estupidez".
+
+          "¡Bien dicho!", dice Eiden sonriendo. "Creo que tu sanador ya debería haberse despertado de su sueño. Ve y llámalo. Estoy seguro de que ha arreglado más de unas cuantas rótulas rotas en su vida. Estaré esperando a que entregues mi mensaje. No me falles, Barry".
+
+          Con estas últimas palabras me da la espalda y se adentra en el bosque.
+    effects:
+      - set:
+          ac_ch4_kneed: 1
+        achievement:
+          id: ac_ch4_kneed
+          title: ¡Realmente necesito un respiro!
+    choices:
+      - position: 1
+        text: Siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: ch5_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"
+              ch4_ending: 1
+  - name: ch4_gruesome_fate
+    texts:
+      - source: scene_text
+        paragraph: 236
+        text: |-
+          Quién sabe qué les hará este sádico bastardo si le dejo. Ni siquiera Dave el Degollador merece un destino tan espantoso. Por lo menos, una muerte a mis manos o a las de Daren sería rápida e indolora. Aunque no estoy del todo seguro en cuanto a Kate.
+
+          Salgo de la sombra de mi árbol y me enfrento a los degolladores. Dave alterna ahora su mirada entre el Stillwater y yo, sin saber qué pensar. Eiden me mira sonriendo.
+
+          "¿Qué pasa, Dave? ¿Ha pasado tanto tiempo que has olvidado el sonido de mi voz?"
+
+          "No...", responde. "No, recuerdo perfectamente tu voz. Espero que te hayas lavado el cuello mientras me esperabas, capullo arrogante".
+
+          Señala entonces a Eiden.
+
+          "No creas que he terminado contigo. Más vale que no te vayas de aquí hasta que esto termine".
+
+          "¡Ni en sueños!", dice Eiden, todavía sonriendo.
+
+          Salgo corriendo del bosque y me dirijo directamente hacia Daren. Los degolladores me pisan los talones, pero se detienen en seco al ver que no estoy solo.
+
+          Daren, que se estaba despertando, mira a su alrededor confundido.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch4_barry_vs_dave
+  - name: ch4_barry_vs_dave
+    routes:
+      - condition: ch3_kate_badly_hurt = 0 AND ch3_bloodied = 0
+        texts:
+          - source: scene_text
+            paragraph: 237
+            text: |-
+              "¿Qué ha pasado? ¿Dónde está el Stillwater?", me pregunta.
+
+              "Olvida al Stillwater. Mira quién ha venido a saludarnos".
+
+              Los secuaces de Dave empezaron a hablar entre ellos. Parece que no están del todo convencidos de arriesgarse a entrar en batalla contra el héroe legendario Daren y un Stillwater al mismo tiempo.
+
+              Aprovecho esto y llamo a Kate.
+
+              "¡Kate! ¡Nos atacan! ¡Ven rápido!"
+
+              "Deja de gritar, estoy aquí", dice Kate al salir de la cueva. "Como si alguien pudiera dormir con este hedor. Huele peor que todos los campos de cadáveres que hemos pasado de camino aquí".
+
+              Se dirige a los hombres de Dave el Degollador.
+
+              "Dioses, ya hemos pasado por tres lagos desde que llegamos. ¡Tres! Un solo chapuzón en cualquiera de ellos habría hecho maravillas. Quizá con una piedra grande atada a los pies para asegurarse de eliminar la mugre para siempre".
+
+              "¿Quién es la moza bocazas?", me pregunta Dave el Degollador. "¿Llevamos aquí poco más de un día y ya te has comprado una puta? ¿No podías habértela guardado en los pantalones al menos hasta el final del torneo?"
+
+              A Kate le tiembla un ojo. Aquí vamos de nuevo...
+          - source: scene_text_2
+            paragraph: 15
+            text: |-
+              "Jefe, creo que es una banshee", le dice uno de los secuaces de Dave, visiblemente asustado.
+
+              "¿Lo es? No sabía que los burdeles contrataran banshees en este continente. Tengo que conseguirme una de esas".
+
+              Sonríe maliciosamente y mira a Kate.
+
+              "Amor, ¿cuánto pides? Apuesto a que puedo hacer que disfrutes más que cualquiera de estos dos pelagatos. Me aseguraré de darte mucho cariño. ¡Jejeje!"
+
+              Conociendo a Kate, lo primero que pensé fue en mirar hacia arriba. Como sospechaba, mientras Dave el Degollador hablaba, Kate estaba ocupada amontonando espadas de hielo flotantes en el cielo. Las envió todas volando a la vez. Cinco para cada uno, solo para estar segura.
+
+              Los secuaces de Dave murieron en el acto, empalados por las numerosas espadas conjuradas por Kate. Su líder, sin embargo, consiguió desviar cuatro de las espadas con sus cuchillos voladores en el último momento. La quinta espada le atravesó la pierna derecha.
+
+              "¿Ustedes cobardes han contratado a una puta como guardaespaldas?", nos pregunta Dave, mientras lucha por ocultar el dolor de su cara. "¿Cómo se puede caer tan bajo?"
+
+              "Parece que no eres solo palabrería, degollador. Pero veamos cómo desvías las siguientes".
+
+              "Espera, Kate", dice Daren. "Creo que ya ha aprendido la lección".
+
+              "¡No puedes hablar en serio! ¿Y qué quieres que hagamos? ¿Mandarlo de paseo con una severa advertencia?"
+          - source: scene_3
+            paragraph: 7
+            text: |-
+              "Lo ataremos, lo dejaremos aquí y que los dioses decidan su suerte".
+
+              Kate parece estar considerando si simplemente ejecutar a Dave el Degollador sin el consentimiento de Daren. Al final decide no hacerlo, probablemente para no forzar su suerte. En su lugar se dirige a mí.
+
+              "Barry, dile algo. Él te escucha".
+        choices:
+          - position: 1
+            text: Intentar persuadir a Daren para que acepte lo que dice Kate
+            effects:
+              - set:
+                  current_scene: ch4_persuade
+          - position: 2
+            text: Estar de acuerdo con Daren
+            effects:
+              - set:
+                  current_scene: ch4_agree
+      - condition: ch3_kate_badly_hurt = 0 AND ch3_bloodied = 1
+        texts:
+          - source: scene_text
+            paragraph: 245
+            text: |-
+              "¿Qué ha pasado? ¿Dónde está el Stillwater?", me pregunta.
+
+              "Olvida al Stillwater. Mira quién ha venido a saludarnos".
+
+              Los secuaces de Dave empezaron a hablar entre ellos. Parece que no están del todo convencidos de arriesgarse a entrar en batalla contra el héroe legendario Daren y un Stillwater al mismo tiempo.
+
+              Aprovecho esto y llamo a Kate.
+
+              "¡Kate! ¡Nos atacan! ¡Ven rápido!"
+
+              No hay respuesta. Intento llamarla de nuevo, pero sigo sin obtener respuesta. Supongo que nuestra pelea con los ballesteros debe de haberle pasado una factura mayor de la que dejó entrever. Parece que vamos a ser solo Daren y yo durante este combate. Será mejor que dé un buen uso a ese dispositivo de estadísticas.
+
+              "¿De qué tienen tanto miedo?", pregunta Dave a sus hombres. "Yo solo acabé ayer con esa triste excusa de héroe. No se crean todo lo que oyen en la calle. Sus leyendas son tan mentira como las de los Stillwaters. ¡Esto es el mundo real!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch4_strategy
+      - condition: ch3_kate_badly_hurt = 1
+        texts:
+          - source: scene_text
+            paragraph: 246
+            text: |-
+              "¿Qué ha pasado? ¿Dónde está el Stillwater?", me pregunta.
+
+              "Olvida al Stillwater. Mira quién ha venido a saludarnos".
+
+              Los secuaces de Dave empezaron a hablar entre ellos. Parece que no están del todo convencidos de arriesgarse a entrar en batalla contra el héroe legendario Daren y un Stillwater al mismo tiempo.
+
+              No puedo arriesgarme a pedir ayuda a Kate dada su condición actual. Vamos a ser solo Daren y yo durante este combate. Será mejor que dé un buen uso a ese dispositivo de estadísticas.
+
+              "¿De qué tienen tanto miedo?", pregunta Dave a sus hombres. "Yo solo acabé ayer con esa triste excusa de héroe. No se crean todo lo que oyen en la calle. Sus leyendas son tan mentira como las de los Stillwaters. ¡Esto es el mundo real!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch4_strategy
+  - name: ch4_persuade
+    texts:
+      - source: scene_text
+        paragraph: 238
+        text: |-
+          "Daren, creo que tiene razón... No podemos simplemente dejarlo aquí. Piensa en toda la gente inocente que matará si escapa".
+
+          "Solo dices eso para ganarte su favor".
+
+          "Daren..."
+
+          Él suspira.
+
+          "Lo sé... Sé que eso es lo que pasaría si se escapara. Es solo que... quería evitar más derramamiento de sangre innecesario. Pero tienes razón. El precio sería demasiado alto. Haz lo que debas, Kate".
+
+          "Oye, ahora, espera un minuto", dice Dave. "El viejo Dave el Degollador ha aprendido la lección. No hay necesidad de que la puta--"
+
+          Kate no deja que el degollador termine la frase y le atraviesa la cabeza con otra de sus espadas de hielo. Murió al instante.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch4_kate_meets_eiden
+              ch4_spared_dave: 0
+  - name: ch4_agree
+    texts:
+      - source: scene_text
+        paragraph: 239
+        text: |-
+          "Lo siento, Kate, pero estoy con Daren en esta ocasión. Que no haya más derramamiento de sangre hoy".
+
+          "¡Se han vuelto locos los dos! Escúchense. ¡Se están poniendo del lado de un matón!"
+
+          "No nos estamos poniendo del lado de nadie", dice Daren. "Si los dioses consideran oportuno liberarlo, entonces es que ha aprendido la lección. De lo contrario, se quedará aquí y se pudrirá".
+
+          Dave el Degollador estaba esperando el momento oportuno en que ninguno de los dos lo mirábamos. Aprovecha la oportunidad y saca rápidamente de su bolsillo un pergamino de teletransportación. Antes de que ninguno de nosotros tenga tiempo de reaccionar, lanza el hechizo y desaparece sin dejar rastro.
+
+          ¿De dónde demonios ha sacado ese desgraciado un pergamino de teletransportación? Llevo meses buscando uno y no he encontrado nada. Por no mencionar que incluso uno solo de esos pergaminos cuesta una fortuna.
+
+          "¡Miren lo que ha pasado!", dice Kate, furiosa. "Se ha escapado. ¿Ha sido eso también decisión de los dioses?"
+
+          "No te burles de los dioses, mujer", responde Daren. "Nadie podía saber que un matón común como él tendría acceso a un pergamino de teletransportación".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch4_kate_meets_eiden
+              ch4_spared_dave: 1
+  - name: ch4_kate_meets_eiden
+    texts:
+      - source: scene_text
+        paragraph: 240
+        text: |-
+          Se oye un lento aplauso que viene de los árboles. Al mirar para ver qué hace el ruido, veo a Eiden, apoyado en un pino con su sonrisa habitual en la cara.
+
+          "Magnífico", dice. "Esos matones nunca tuvieron oportunidad. ¡No esperaba menos de una superviviente del Faro de Esperanza!"
+
+          "¡Tú!", grita Daren, y corre hacia el Stillwater.
+
+          Una vez más, con un gesto de sus manos, Eiden pone a dormir a Daren en medio de su carrera, lo que le hace caer al suelo y deslizarse sobre su armadura unos metros antes de detenerse.
+
+          "En serio, esto se está volviendo ridículo", dice Eiden.
+
+          Kate mira al Stillwater con recelo.
+
+          "¿Por qué no lo hiciste?", le pregunta.
+
+          "¿Perdón?"
+
+          "¿Por qué no lo mataste? Si fuiste capaz de dormirlo tan fácilmente, podrías haber acabado con él mucho más fácilmente".
+
+          "¡Qué perspicaz! Bueno, resulta que hice un trato con Barry que me prohíbe matarlos a ninguno de ustedes. ¡A menos que no cumpla su parte del trato, por supuesto!"
+
+          "¿Un trato? ¿Con Barry? ¿Qué podría haberte ofrecido a cambio de nuestras vidas?"
+      - source: scene_text_2
+        paragraph: 16
+        text: |-
+          "Se ofreció a entregar un mensaje".
+
+          "¿Un mensaje?"
+
+          Kate me mira antes de continuar.
+
+          "No hay forma de que nos hayas perdonado la vida por un solo mensaje. ¿Qué es lo que realmente buscas?"
+
+          La sonrisa de Eiden vuelve a ensancharse.
+
+          "De verdad. ¿Cuándo fue la última vez que obtuviste una respuesta honesta haciendo una pregunta así?"
+
+          "Nunca. Así que te preguntaré esto en su lugar. ¿Cómo sabes lo del Faro de Esperanza?"
+
+          "¿Es esta realmente la pregunta que deberías hacer? ¿No debería ser la pregunta aquí por qué tus amigos no saben nada del Faro de Esperanza?"
+
+          Kate vuelve a mirarme. Puedo ver la duda en sus ojos.
+
+          "Es complicado", me dice finalmente.
+
+          "En efecto, lo es", dice Eiden, y se vuelve hacia mí. "Bueno, entonces. Estaré esperando a que entregues mi mensaje. No me falles, Barry".
+
+          "Espera", le grita Kate, pero Eiden no le hace caso y desaparece en la oscuridad del bosque.
+    choices:
+      - position: 1
+        text: Siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: ch5_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"
+              ch4_ending: 2
+  - name: ch4_face_shown
+    texts:
+      - source: scene_text
+        paragraph: 241
+        text: |-
+          "Daren, ¿puedes oírme? ¡Despierta!"
+
+          No hay respuesta. ¿Qué clase de hechizo usó este tipo? Estoy bastante seguro de que Daren tiene algunos hechizos realmente fuertes que lo protegen en todo momento. Los hechizos de sueño estándar no deberían ser más que un inconveniente moderado para él.
+
+          Mientras intento despertar a Daren, de repente oigo una voz muy familiar que viene de la dirección en la que desapareció Eiden.
+
+          "¡Stillwater!"
+
+          Esa es la voz de Dave el Degollador. No hay duda. Reconocería esa voz ronca y ese acento de matón en cualquier parte.
+
+          Me doy la vuelta hacia donde venía la voz y veo que, aparte de una cara conocida, también hay una docena de otras caras desconocidas alineadas frente a mí.
+
+          Parece que Dave se las ha arreglado para reunir un equipo en el poco tiempo que estuvimos separados. Lo triste es que Dave parece un caballero bien educado comparado con sus nuevos colegas. Algunos de ellos parecen y huelen como si no se hubieran lavado en meses. Supongo que Dios los cría y ellos se juntan.
+
+          "Te he estado buscando, Stillwater", dice Dave. "He estado siguiendo tus huellas desde ayer. Te dije que volveríamos a vernos. Nadie puede huir ni esconderse de Dave el Degollador".
+    choices:
+      - position: 1
+        text: ¡Nunca dudé de ti ni un segundo, Dave!
+        effects:
+          - set:
+              current_scene: ch4_doubted
+      - position: 2
+        text: ¿Podríamos volver a intentarlo? ¡Se me acaba de ocurrir una idea genial para un escondite!
+        effects:
+          - set:
+              current_scene: ch4_hiding
+      - position: 3
+        text: ¡Qué alivio! Pensé que te habías perdido por el camino.
+        effects:
+          - set:
+              current_scene: ch4_relieved
+  - name: ch4_doubted
+    texts:
+      - source: scene_text
+        paragraph: 242
+        text: |-
+          "¡Nunca dudé de ti ni un segundo, Dave!"
+
+          "¡Ja! Voy a disfrutar cortándote esa cabeza arrogante de tus hombros, muchacho. ¿Qué le ha pasado a tu amigo sanador? ¿Se está echando una siestecita?"
+
+          Justo cuando Dave termina la frase, Daren empieza a despertarse y mira a su alrededor, confundido.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch4_barry_vs_dave
+  - name: ch4_hiding
+    texts:
+      - source: scene_text
+        paragraph: 243
+        text: |-
+          "¿Podríamos volver a intentarlo? ¡Se me acaba de ocurrir una idea genial para un nuevo escondite!"
+
+          "El único escondite al que te diriges es a tu tumba, muchacho. ¿Qué le ha pasado a tu amigo sanador? ¿Se está echando una siestecita?"
+
+          Justo cuando Dave termina la frase, Daren empieza a despertarse y mira a su alrededor, confundido.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch4_barry_vs_dave
+  - name: ch4_relieved
+    texts:
+      - source: scene_text
+        paragraph: 244
+        text: |-
+          "¡Qué alivio! Pensé que te habías perdido por el camino".
+
+          "Más vale que te preocupes por ti mismo, muchacho. Tus días están contados. ¿Qué le ha pasado a tu amigo sanador? ¿Se está echando una siestecita?"
+
+          Justo cuando Dave termina la frase, Daren empieza a despertarse y mira a su alrededor, confundido.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: ch4_barry_vs_dave
+  - name: ch4_strategy
+    routes:
+      - condition: ch3_tactics = 1
+        texts:
+          - source: scene_text
+            paragraph: 247
+            text: |-
+              "Esto es todo, Barry", dice Daren. "¿Recuerdas nuestra reunión de estrategia de ayer? Si consigues mantener ocupado a Dave el Degollador hasta que yo acabe con sus secuaces, podría significar la diferencia entre la vida y la muerte".
+
+              "Yo, eh... Esto puede parecer una pregunta bastante estúpida, dada nuestra situación, pero... ¿No tendrás por casualidad una daga de repuesto que pueda usar?"
+
+              Daren sacude la cabeza en señal de desaprobación y me entrega una daga de su cinturón.
+
+              "De verdad, Barry. Había docenas de dagas en el suelo que podrías haber recogido de camino aquí. Intenta tomarte esto más en serio".
+        choices:
+          - position: 1
+            text: Intentar mantener ocupado a Dave el Degollador mientras Daren derrota a los demás
+            effects:
+              - set:
+                  current_scene: ch4_busy
+          - position: 2
+            text: Intentar derrotar a Dave el Degollador
+            effects:
+              - set:
+                  current_scene: ch4_defeat
+      - condition: ch3_tactics = 2
+        texts:
+          - source: scene_text
+            paragraph: 248
+            text: |-
+              "Barry", dice Daren. "Recuerda nuestra reunión de estrategia de ayer. Este es tu momento de brillar. Yo no pude acabar con Dave ayer, pero tal vez tú sí. Yo me encargaré de sus secuaces mientras tanto".
+
+              "Yo, eh... Esto puede parecer una pregunta bastante estúpida, dada nuestra situación, pero... ¿No tendrás por casualidad una daga de repuesto que pueda usar?"
+
+              Daren sacude la cabeza en señal de desaprobación y me entrega una daga de su cinturón.
+
+              "De verdad, Barry. Había docenas de dagas en el suelo que podrías haber recogido de camino aquí. Intenta tomarte esto más en serio".
+        choices:
+          - position: 1
+            text: Intentar mantener ocupado a Dave el Degollador mientras Daren derrota a los demás
+            effects:
+              - set:
+                  current_scene: ch4_busy
+          - position: 2
+            text: Intentar derrotar a Dave el Degollador
+            effects:
+              - set:
+                  current_scene: ch4_defeat
+      - condition: ch3_tactics = 3
+        texts:
+          - source: scene_text
+            paragraph: 249
+            text: |-
+              "Barry", dice Daren. "Sé que esto no es lo que hablamos ayer durante nuestra reunión de estrategia, pero no creo que pueda luchar contra todos estos matones yo solo, sobre todo teniendo en cuenta mi debilidad ante la técnica de Dave. ¿Hay alguna forma de que puedas unirte a la lucha? Incluso mantener a su líder ocupado un rato podría significar la diferencia entre la vida y la muerte".
+
+              "Yo, eh... Esto puede parecer una pregunta bastante estúpida, dada nuestra situación, pero... ¿No tendrás por casualidad una daga de repuesto que pueda usar?"
+
+              Daren sacude la cabeza en señal de desaprobación y me entrega una daga de su cinturón.
+
+              "De verdad, Barry. Había docenas de dagas en el suelo que podrías haber recogido de camino aquí. Intenta tomarte esto más en serio".
+        choices:
+          - position: 1
+            text: Intentar mantener ocupado a Dave el Degollador mientras Daren derrota a los demás
+            effects:
+              - set:
+                  current_scene: ch4_busy
+          - position: 2
+            text: Intentar derrotar a Dave el Degollador
+            effects:
+              - set:
+                  current_scene: ch4_defeat
+  - name: ch4_busy
+    routes:
+      - condition: ch3_tactics <> 1
+        texts:
+          - source: scene_text
+            paragraph: 250
+            text: |-
+              "Prefiero intentar distraer a Dave que luchar contra él de frente. No tengo mucha confianza en mis habilidades de combate en este momento".
+
+              "¿Y cómo piensas atraer su atención?"
+
+              "Mira esto".
+
+              Le grito a Dave tan fuerte como puedo, con una voz muy patética y suplicante.
+
+              "¡Dave, por favor! ¡Ten piedad! Puedes hacer lo que quieras con Daren. ¡Solo perdóname la vida! ¡Por favor, te lo ruego!"
+
+              "¡Jajajaja! No obtendrás ninguna piedad de mí, patético gusano. ¡Culpa a tu destino por haber tenido la mala suerte de cruzarte en el camino de Dave el Degollador! Voy a usar tus entrañas para decorar mi cueva".
+
+              "¡Aaahh!", grito como una niña pequeña y corro hacia los árboles en el lado opuesto al degollador.
+
+              "Vuelve aquí, perro cobarde. Hombres, les dejo a ustedes esta vieja reliquia apaleada. ¡El Stillwater es mío!"
+
+              Daren me sonríe y luego se enfrenta a los matones.
+
+              Entro en la sombra del bosque y espero a que Dave me siga. Si juego bien mis cartas, puedo usar los árboles como cobertura el tiempo suficiente para que Daren acabe con los degolladores.
+
+              Dave sigue corriendo hacia mí, pero sus cuchillos tienen vida propia y ya han empezado a rastrearme por el bosque.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch4_busy2
+      - condition: ch3_tactics = 1
+        texts:
+          - source: scene_text
+            paragraph: 251
+            text: |-
+              "Muy bien, es hora de que capte su atención, entonces".
+
+              "¿Y cómo piensas hacerlo?"
+
+              "Mira esto".
+
+              Le grito a Dave tan fuerte como puedo, con una voz muy patética y suplicante.
+
+              "¡Dave, por favor! ¡Ten piedad! Puedes hacer lo que quieras con Daren. ¡Solo perdóname la vida! ¡Por favor, te lo ruego!"
+
+              "¡Jajajaja! No obtendrás ninguna piedad de mí, patético gusano. ¡Culpa a tu destino por haber tenido la mala suerte de cruzarte en el camino de Dave el Degollador! Voy a usar tus entrañas para decorar mi cueva".
+
+              "¡Aaahh!", grito como una niña pequeña y corro hacia los árboles en el lado opuesto al degollador.
+
+              "Vuelve aquí, perro cobarde. Hombres, les dejo a ustedes esta vieja reliquia apaleada. ¡El Stillwater es mío!"
+
+              Daren me sonríe y luego se enfrenta a los matones.
+
+              Entro en la sombra del bosque y espero a que Dave me siga. Si juego bien mis cartas, puedo usar los árboles como cobertura el tiempo suficiente para que Daren acabe con los degolladores.
+
+              Dave sigue corriendo hacia mí, pero sus cuchillos tienen vida propia y ya han empezado a rastrearme por el bosque.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch4_busy2
+  - name: ch4_busy2
+    routes:
+      - condition: reflexes = 3
+        texts:
+          - source: scene_text
+            paragraph: 252
+            text: |-
+              Los cuchillos son increíblemente rápidos, pero mis agudos reflejos me ayudan a quitarme de su camino justo a tiempo, incluso cuando me pillan por sorpresa.
+
+              "¡Sal aquí y enfréntate a mí, cobarde!", me llama Dave. "Si hubiera sabido que este torneo sería tan patético, me habría quedado en casa, donde al menos la gente a la que mataba tenía la dignidad de ¡¡AARGHHHHHHH!!"
+
+              Me doy la vuelta para ver qué ha pasado y veo a Daren, con su espada en las costillas de Dave el Degollador, clavándolo a un pino.
+
+              "Gracias por hacerme saber dónde estabas", dice Daren. "No te habría encontrado nunca si no fuera por tu constante parloteo".
+
+              "¡¿Quieres que vuelva a fregar el suelo contigo, sanador?! ¿Crees que no puedo luchar contra los dos?"
+
+              Intenta enviar sus cuchillos voladores contra Daren, pero debido al dolor, no puede tomar el control total sobre ellos y caen al suelo antes de alcanzarlo. Daren saca su espada del degollador y le da un puñetazo en el estómago con una fuerza brutal. Dave cae de posaderas, intentando recuperar el aliento.
+
+              "No vas a luchar contra nadie, Dave. Estás acabado. Vamos a atarte a este árbol y que los dioses decidan tu suerte".
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de reflejos exitosa - nivel 3 ]'
+        choices:
+          - position: 1
+            text: Intentar persuadir a Daren para que lo mate en su lugar
+            effects:
+              - set:
+                  current_scene: ch4_daren_kill
+                  next_chapter_crash: 1
+                condition: is_dead = 0
+          - position: 2
+            text: Aceptar perdonarle la vida a Dave
+            effects:
+              - set:
+                  current_scene: ch4_daren_spare
+                condition: is_dead = 0
+      - condition: reflexes < 3 AND agility = 3
+        texts:
+          - source: scene_text
+            paragraph: 253
+            text: |-
+              Uno de los cuchillos me pilla por sorpresa y me roza el hombro.
+
+              Como mis reflejos no son lo suficientemente buenos como para esquivar las dagas voladoras cuando me pillan por sorpresa, intento dejarlas atrás corriendo en su lugar. Los cuchillos no son lo suficientemente rápidos como para seguirme el ritmo, lo que hace que se queden clavados en un árbol cada vez que cambio rápidamente de dirección.
+
+              "¡Sal aquí y enfréntate a mí, cobarde!", me llama Dave. "Si hubiera sabido que este torneo sería tan patético, me habría quedado en casa, donde al menos la gente a la que mataba tenía la dignidad de ¡¡AARGHHHHHHH!!"
+
+              Me doy la vuelta para ver qué ha pasado y veo a Daren, con su espada en las costillas de Dave el Degollador, clavándolo a un pino.
+
+              "Gracias por hacerme saber dónde estabas", dice Daren. "No te habría encontrado nunca si no fuera por tu constante parloteo".
+
+              "¡¿Quieres que vuelva a fregar el suelo contigo, sanador?! ¿Crees que no puedo luchar contra los dos?"
+
+              Intenta enviar sus cuchillos voladores contra Daren, pero debido al dolor, no puede tomar el control total sobre ellos y caen al suelo antes de alcanzarlo. Daren saca su espada del degollador y le da un puñetazo en el estómago con una fuerza brutal. Dave cae de posaderas, intentando recuperar el aliento.
+
+              "No vas a luchar contra nadie, Dave. Estás acabado. Vamos a atarte a este árbol y que los dioses decidan tu suerte".
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de velocidad exitosa - nivel 3 ]'
+              failed_checks:
+                - '[ Comprobación de reflejos fallida - nivel 3 ]'
+        choices:
+          - position: 1
+            text: Intentar persuadir a Daren para que lo mate en su lugar
+            effects:
+              - set:
+                  current_scene: ch4_daren_kill
+                  next_chapter_crash: 1
+                condition: is_dead = 0
+          - position: 2
+            text: Aceptar perdonarle la vida a Dave
+            effects:
+              - set:
+                  current_scene: ch4_daren_spare
+                condition: is_dead = 0
+      - condition: reflexes < 3 AND agility < 3 AND perception = 3
+        texts:
+          - source: scene_text
+            paragraph: 254
+            text: |-
+              Uno de los cuchillos me pilla por sorpresa y me roza el hombro. Intento moverme constantemente entre los árboles para despistar a sus dagas voladoras, pero son más rápidas que yo.
+
+              Por suerte, con mi capacidad de observación, si me concentro lo suficiente, puedo prestar atención a casi todos los cuchillos al mismo tiempo, lo que es más que suficiente para mantenerme fuera de peligro hasta que Daren se encargue de los demás.
+
+              "¡Sal aquí y enfréntate a mí, cobarde!", me llama Dave. "Si hubiera sabido que este torneo sería tan patético, me habría quedado en casa, donde al menos la gente a la que mataba tenía la dignidad de ¡¡AARGHHHHHHH!!"
+
+              Me doy la vuelta para ver qué ha pasado y veo a Daren, con su espada en las costillas de Dave el Degollador, clavándolo a un pino.
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              "Gracias por hacerme saber dónde estabas", dice Daren. "No te habría encontrado nunca si no fuera por tu constante parloteo".
+
+              "¡¿Quieres que vuelva a fregar el suelo contigo, sanador?! ¿Crees que no puedo luchar contra los dos?"
+
+              Intenta enviar sus cuchillos voladores contra Daren, pero debido al dolor, no puede tomar el control total sobre ellos y caen al suelo antes de alcanzarlo. Daren saca su espada del degollador y le da un puñetazo en el estómago con una fuerza brutal. Dave cae de posaderas, intentando recuperar el aliento.
+
+              "No vas a luchar contra nadie, Dave. Estás acabado. Vamos a atarte a este árbol y que los dioses decidan tu suerte".
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de observación exitosa - nivel 3 ]'
+              failed_checks:
+                - '[ Comprobación de reflejos fallida - nivel 3 ]'
+                - '[ Comprobación de velocidad fallida - nivel 3 ]'
+        choices:
+          - position: 1
+            text: Intentar persuadir a Daren para que lo mate en su lugar
+            effects:
+              - set:
+                  current_scene: ch4_daren_kill
+                  next_chapter_crash: 1
+                condition: is_dead = 0
+          - position: 2
+            text: Aceptar perdonarle la vida a Dave
+            effects:
+              - set:
+                  current_scene: ch4_daren_spare
+                condition: is_dead = 0
+      - condition: reflexes < 3 AND agility < 3 AND perception < 3
+        texts:
+          - source: scene_text
+            paragraph: 255
+            text: |-
+              Uno de los cuchillos me pilla por sorpresa y me roza el hombro. Intento moverme constantemente entre los árboles para despistar a sus dagas voladoras, pero son más rápidas que yo.
+
+              Hay dos de ellos a mi izquierda, y tres más a la derecha. ¿O son cuatro a la derecha? Son tan rápidos que apenas puedo seguirlos. Sus cuchillos han conseguido acorralarme y ahora están todos frente a mí amenazantes, flotando en el aire, listos para atacar.
+
+              Dave el Degollador entra pavoneándose desde detrás de un árbol, con una sonrisa tan grande como su cara.
+
+              "De nada sirve llorar por piedad ahora, muchacho. No creas que voy a darte una muerte fácil. A mis cuchillos les gusta jugar con su presa antes de terminar con ella. Rezad vuestras plegarias, estúpido mocoso. Dave el Degollador va a disfrutar AAAARRRGHHHHHH"
+
+              Una columna de fuego aparece en el lugar donde Dave el Degollador estaba originalmente de pie y su jactancia se ve sustituida por gritos desesperados de agonía. El fuego ignora por completo toda la vegetación a su alrededor y, cuando se extingue, veo que no queda nada del degollador excepto sus cenizas, que ahora se dispersan con el viento.
+          - source: scene_text_2
+            paragraph: 18
+            text: |-
+              Poco después, Eiden emerge de las sombras con su sonrisa habitual en la cara. No tardo mucho en darme cuenta de quién estaba detrás de la exhibición anterior de fuegos artificiales.
+
+              "Ves, Barry, así es como se lidia con una plaga de alimañas. Dime, ¿qué clase de cartero muere antes de salir de la oficina de correos? Tengo ganas de presentar una queja por tus pésimos servicios".
+
+              "Lo... siento mucho, prometo que lo haré mejor la próxima... ¿vez?"
+
+              "¡Ese es el espíritu!"
+
+              "¡Barry!", oigo gritar a Daren desde fuera del bosque.
+
+              Una mirada rápida al exterior me muestra que todos los secuaces de Dave han sido eliminados y Daren corre ahora hacia mi posición.
+
+              Al volverme, descubro para mi sorpresa que Eiden no aparece por ninguna parte. Debe de haberse teletransportado mientras no miraba.
+
+              "Entrega mi mensaje, Barry", oigo la voz de Eiden resonar entre los árboles que me rodean. "Y no vuelvas a fallarme".
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de reflejos fallida - nivel 3 ]'
+                - '[ Comprobación de velocidad fallida - nivel 3 ]'
+                - '[ Comprobación de observación fallida - nivel 3 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Siguiente capítulo
+            effects:
+              - set:
+                  current_scene: ch5_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                  ch4_ending: 4
+                  next_chapter_crash: 1
+                condition: is_dead = 1
+  - name: ch4_daren_kill
+    texts:
+      - source: scene_text
+        paragraph: 256
+        text: |-
+          "¿Atarlo a este árbol? ¿Por qué no matarlo de una vez?"
+
+          "Porque ya ha habido suficiente derramamiento de sangre desde que empezó este torneo y no quiero ejecutar a un enemigo que ya ha sido derrotado".
+
+          "Pero ¿qué pasa con toda la gente que matará si escapa?"
+
+          "Entiendo tu preocupación, Barry, pero no creo que los dioses consideren oportuno dejarle libre a menos que haya aprendido la lección. Sin embargo, no te impediré que lo mates si de verdad crees que es lo correcto".
+    choices:
+      - position: 1
+        text: Matarlo
+        effects:
+          - set:
+              current_scene: ch4_bait_kill
+      - position: 2
+        text: Perdonarlo
+        effects:
+          - set:
+              current_scene: ch4_bait_spare
+  - name: ch4_daren_spare
+    texts:
+      - source: scene_text
+        paragraph: 257
+        text: |-
+          "¿Con qué lo vas a atar? Sus dagas encantadas acabarían pronto con cuerdas o cadenas normales".
+
+          "Lo harían, si pudiera usarlas. Voy a usar una cuerda antimágica para atarlo, lo que le impedirá usar cualquiera de sus magias. Aquí, deja que te enseñe".
+
+          Daren echa mano de su faja para sacar la cuerda. En los pocos instantes en que apartó la vista de Dave, sin embargo, el degollador sacó rápidamente un pergamino de teletransportación de su bolsillo y lo utilizó para escabullirse.
+
+          ¿De dónde demonios ha sacado ese desgraciado un pergamino de teletransportación? Llevo meses buscando uno y no he encontrado nada. Por no mencionar que incluso uno solo de esos pergaminos cuesta una fortuna.
+
+          Se oye un lento aplauso que viene de los árboles. Al mirar para ver qué hace el ruido, veo a Eiden, apoyado en un pino con su sonrisa habitual en la cara.
+
+          "Impresionante, Barry", dice. "¡No se ven a menudo potenciadores de estadísticas usados tan eficientemente hoy en día!"
+
+          ¡Tú!", grita Daren, y corre hacia el Stillwater.
+
+          Una vez más, con un gesto de sus manos, Eiden pone a dormir a Daren en medio de su carrera, lo que le hace caer al suelo y deslizarse sobre su armadura unos metros antes de detenerse.
+      - source: scene_text_2
+        paragraph: 19
+        text: |-
+          "En serio, esto se está volviendo ridículo", dice Eiden.
+
+          "¿Tú también sabes lo de los potenciadores de estadísticas?", le pregunto al Stillwater.
+
+          "¡Sí! Y lo que también sé es por qué ese potenciador de estadísticas funciona tan bien contigo, en concreto. ¿Te has preguntado alguna vez por qué es así, Barry?"
+
+          Tiene razón. El dispositivo de estadísticas ha funcionado por encima de todas mis expectativas desde que llegué aquí. No le di muchas vueltas porque supuse que mis cálculos debían de estar equivocados. Pero incluso con toda la energía que está acumulando, algo está claramente fuera de lugar.
+
+          "Lo he hecho. Pero ¿no supongo que me vas a dar la respuesta así como así?"
+
+          "Por supuesto que no. ¿Dónde estaría la diversión en eso? ¡Pero no te inquietes! Mientras permanezcas en este continente, obtendrás tus respuestas tarde o temprano".
+
+          Él sonríe.
+
+          "Bueno, entonces. Estaré esperando a que entregues mi mensaje. No me falles, Barry".
+
+          Con estas últimas palabras me da la espalda y se adentra en el bosque.
+    choices:
+      - position: 1
+        text: Siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: ch5_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"
+              ch4_ending: 3
+              ch4_spared_dave: 1
+  - name: ch4_bait_kill
+    texts:
+      - source: scene_text
+        paragraph: 258
+        text: |-
+          Agarro firmemente mi daga en la mano derecha y me acerco al degollador.
+
+          "Ahora, espera un momento", dice Dave. "El viejo Dave el Degollador ha aprendido la lección. No hay necesidad de que--"
+
+          No llega a terminar la frase, ya que le clavo el cuchillo en el cuello y lo silencio por completo.
+
+          Se oye un lento aplauso que viene de los árboles. Al mirar para ver qué hace el ruido, veo a Eiden, apoyado en un pino con su sonrisa habitual en la cara.
+
+          "Impresionante, Barry", dice. "¡No se ven a menudo potenciadores de estadísticas usados tan eficientemente hoy en día!"
+
+          ¡Tú!", grita Daren, y corre hacia el Stillwater.
+
+          Una vez más, con un gesto de sus manos, Eiden pone a dormir a Daren en medio de su carrera, lo que le hace caer al suelo y deslizarse sobre su armadura unos metros antes de detenerse.
+      - source: scene_text_2
+        paragraph: 20
+        text: |-
+          "En serio, esto se está volviendo ridículo", dice Eiden.
+
+          "¿Tú también sabes lo de los potenciadores de estadísticas?", le pregunto al Stillwater.
+
+          "¡Sí! Y lo que también sé es por qué ese potenciador de estadísticas funciona tan bien contigo, en concreto. ¿Te has preguntado alguna vez por qué es así, Barry?"
+
+          Tiene razón. El dispositivo de estadísticas ha funcionado por encima de todas mis expectativas desde que llegué aquí. No le di muchas vueltas porque supuse que mis cálculos debían de estar equivocados. Pero incluso con toda la energía que está acumulando, algo está claramente fuera de lugar.
+
+          "Lo he hecho. Pero ¿no supongo que me vas a dar la respuesta así como así?"
+
+          "Por supuesto que no. ¿Dónde estaría la diversión en eso? ¡Pero no te inquietes! Mientras permanezcas en este continente, obtendrás tus respuestas tarde o temprano".
+
+          Él sonríe.
+
+          "Bueno, entonces. Estaré esperando a que entregues mi mensaje. No me falles, Barry".
+
+          Con estas últimas palabras me da la espalda y se adentra en el bosque.
+    choices:
+      - position: 1
+        text: Siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: ch5_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"
+              ch4_ending: 3
+              ch4_spared_dave: 0
+  - name: ch4_bait_spare
+    texts:
+      - source: scene_text
+        paragraph: 259
+        text: |-
+          "Tal vez tengas razón. Que no haya más derramamiento de sangre hoy".
+
+          Echo un vistazo al degollador.
+
+          "¿Con qué lo vas a atar? Sus dagas encantadas acabarían pronto con cuerdas o cadenas normales".
+
+          "Lo harían, si pudiera usarlas. Voy a usar una cuerda antimágica para atarlo, lo que le impedirá usar cualquiera de sus magias. Aquí, deja que te enseñe".
+
+          Daren echa mano de su faja para sacar la cuerda. En los pocos instantes en que apartó la vista de Dave, sin embargo, el degollador sacó rápidamente un pergamino de teletransportación de su bolsillo y lo utilizó para escabullirse.
+
+          ¿De dónde demonios ha sacado ese desgraciado un pergamino de teletransportación? Llevo meses buscando uno y no he encontrado nada. Por no mencionar que incluso uno solo de esos pergaminos cuesta una fortuna.
+
+          Se oye un lento aplauso que viene de los árboles. Al mirar para ver qué hace el ruido, veo a Eiden, apoyado en un pino con su sonrisa habitual en la cara.
+
+          "Impresionante, Barry", dice. "¡No se ven a menudo potenciadores de estadísticas usados tan eficientemente hoy en día!"
+
+          ¡Tú!", grita Daren, y corre hacia el Stillwater.
+      - source: scene_text_2
+        paragraph: 21
+        text: |-
+          Una vez más, con un gesto de sus manos, Eiden pone a dormir a Daren en medio de su carrera, lo que le hace caer al suelo y deslizarse sobre su armadura unos metros antes de detenerse.
+
+          "En serio, esto se está volviendo ridículo", dice Eiden.
+
+          "¿Tú también sabes lo de los potenciadores de estadísticas?", le pregunto al Stillwater.
+
+          "¡Sí! Y lo que también sé es por qué ese potenciador de estadísticas funciona tan bien contigo, en concreto. ¿Te has preguntado alguna vez por qué es así, Barry?"
+
+          Tiene razón. El dispositivo de estadísticas ha funcionado por encima de todas mis expectativas desde que llegué aquí. No le di muchas vueltas porque supuse que mis cálculos debían de estar equivocados. Pero incluso con toda la energía que está acumulando, algo está claramente fuera de lugar.
+
+          "Lo he hecho. Pero ¿no supongo que me vas a dar la respuesta así como así?"
+
+          "Por supuesto que no. ¿Dónde estaría la diversión en eso? ¡Pero no te inquietes! Mientras permanezcas en este continente, obtendrás tus respuestas tarde o temprano".
+
+          Él sonríe.
+
+          "Bueno, entonces. Estaré esperando a que entregues mi mensaje. No me falles, Barry".
+
+          Con estas últimas palabras me da la espalda y se adentra en el bosque.
+    choices:
+      - position: 1
+        text: Siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: ch5_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"
+              ch4_ending: 3
+              ch4_spared_dave: 1
+  - name: ch4_defeat
+    routes:
+      - condition: ch3_tactics <> 2
+        texts:
+          - source: scene_text
+            paragraph: 260
+            text: |-
+              "Prefiero luchar contra Dave de frente que intentar distraerlo. Creo que es más seguro intentar terminar el combate rápidamente, que alargarlo hasta que puedas unirte".
+
+              "Como desees. Entonces, ¿cuál es tu plan?"
+
+              "Pienso hacer esto".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch4_defeat2
+      - condition: ch3_tactics = 2
+        texts:
+          - source: scene_text
+            paragraph: 261
+            text: |-
+              "He estado esperando esto", digo, mientras miro hacia Dave el Degollador.
+
+              "Entonces, ¿cuál es tu plan?"
+
+              "Pienso hacer esto".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: ch4_defeat2
+  - name: ch4_defeat2
+    routes:
+      - condition: strength = 3
+        texts:
+          - source: scene_text
+            paragraph: 262
+            text: |-
+              Cojo una piedra del suelo y se la lanzo a Dave el Degollador con todas mis fuerzas.
+
+              El degollador intentó bloquearla con dos de sus dagas voladoras, pero no fue lo suficientemente rápido. La fuerza del impacto fue tan grande que estampó a Dave contra un árbol detrás de él. Luego cayó al suelo, con las manos delante de él, tosiendo sangre.
+
+              Un golpe más debería sellar el trato.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de fuerza exitosa - nivel 3 ]'
+              ch4_dave_defeat: 1
+        choices:
+          - position: 1
+            text: Intentar matarlo
+            effects:
+              - set:
+                  current_scene: ch4_defeat_kill
+                condition: is_dead = 0
+          - position: 2
+            text: Intentar dejarlo inconsciente
+            effects:
+              - set:
+                  current_scene: ch4_defeat_spare
+                condition: is_dead = 0
+      - condition: strength < 3 AND agility = 3
+        texts:
+          - source: scene_text
+            paragraph: 263
+            text: |-
+              Cojo una piedra del suelo y se la lanzo a Dave el Degollador con todas mis fuerzas.
+
+              El degollador la bloqueó con dos de sus dagas voladoras.
+
+              "Esto no es un concurso de lanzamiento de piedras, muchacho. Será mejor que estés preparado para lo que viene".
+
+              "Tengo su atención", le digo a Daren. "¡Ahora, vete. ¡Vete!"
+
+              Daren no pierde más tiempo y corre hacia los secuaces de Dave el Degollador.
+
+              Los cuchillos voladores del degollador vuelan ahora hacia mí a un ritmo muy rápido. Me quito de su camino y empiezo a dirigirme hacia mi objetivo.
+
+              Recorro la distancia entre Dave y yo casi instantáneamente y le ataco con mi daga. Él consigue pararla con dos cuchillos que tenía en sus propias manos, pero parece bastante sorprendido.
+
+              "No sé qué clase de magia has usado para correr tan rápido, muchacho, pero no puedes correr más que mis dagas".
+          - source: scene_text_2
+            paragraph: 22
+            text: |-
+              Tres de sus cuchillos voladores corren hacia mí, pero los esquivo en el último momento. Estamos luchando en un espacio abierto y ya sé a qué velocidad pueden ir sus dagas. No voy a dejar que me sorprenda.
+
+              Empiezo a correr en círculos alrededor del degollador para desorientarlo. Sigue enviándome sus dagas, pero no son lo suficientemente rápidas para atraparme. Intenta seguirme el ritmo, pero veo que se le escapa. Necesito ir más rápido.
+
+              Sigo corriendo a su alrededor, esquivando dagas a derecha e izquierda, buscando una apertura. Cada vez que parece que me ha perdido de vista, salto a por él, pero consigue bloquear mis golpes en el último momento. Más rápido. Necesito ir aún más rápido.
+
+              Empiezo a moverme de forma más errática, para confundirlo aún más. Dave el Degollador sigue girando tras de mí para no dejar su espalda expuesta, pero empieza a marearse. La mirada de sus ojos no es ni de lejos tan segura como cuando empezó esta pelea. Sus cuchillos aún no me han tocado y no me siento ni lo más mínimo cansado.
+
+              Ahí está. El momento que estaba esperando. Sus ojos han perdido el foco y me ha perdido de vista. Ya lo tengo. Le lanzo otra estocada, esta vez con mucha más velocidad que antes. Él me ve e intenta bloquear mi golpe de nuevo, pero es demasiado tarde. Mi cuchillo atravesó su pecho, pero no toqué ninguno de sus órganos vitales.
+
+              Solo necesito un golpe más para terminar con esto de una vez por todas.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de velocidad exitosa - nivel 3 ]'
+              failed_checks:
+                - '[ Comprobación de fuerza fallida - nivel 3 ]'
+              ch4_dave_defeat: 2
+        choices:
+          - position: 1
+            text: Ir a matar
+            effects:
+              - set:
+                  current_scene: ch4_defeat_kill
+                condition: is_dead = 0
+          - position: 2
+            text: Apuntar a neutralizarlo, pero sin matarlo
+            effects:
+              - set:
+                  current_scene: ch4_defeat_spare
+                condition: is_dead = 0
+      - condition: strength < 3 AND agility < 3 AND reflexes = 3
+        texts:
+          - source: scene_text
+            paragraph: 264
+            text: |-
+              Cojo una piedra del suelo y se la lanzo a Dave el Degollador con todas mis fuerzas.
+
+              El degollador la bloqueó con dos de sus dagas voladoras.
+
+              "Esto no es un concurso de lanzamiento de piedras, muchacho. Será mejor que estés preparado para lo que viene".
+
+              "Tengo su atención", le digo a Daren. "¡Ahora, vete. ¡Vete!"
+
+              Daren no pierde más tiempo y corre hacia los secuaces de Dave el Degollador.
+
+              Los cuchillos voladores del degollador vuelan ahora hacia mí a un ritmo muy rápido. Me quito de su camino y empiezo a dirigirme hacia mi objetivo.
+
+              Al acercarme a Dave, cuatro de sus cuchillos me bloquean el paso y vuelan hacia mí.
+
+              Puede que no sea lo suficientemente rápido para superar a sus dagas, pero al menos mis reflejos son lo suficientemente agudos para quitarme de su camino a tiempo.
+          - source: scene_text_2
+            paragraph: 23
+            text: |-
+              Intento acercarme a él de nuevo, pero sus cuchillos no me dejan. Esto no me lleva a ninguna parte. Tengo que encontrar una forma de pasar a la ofensiva.
+
+              "Mis dagas tienen vida propia, Stillwater. Nunca escaparás de ellas por mucho que lo intentes".
+
+              Eso es. Sus dagas tienen vida propia. No las controla todas al mismo tiempo. Puedo usar eso a mi favor.
+
+              Echo un buen vistazo para ver dónde están todas sus dagas. Luego me aseguro de que unas cuantas me sigan y corro hacia Dave el Degollador. Como antes, unas cuantas de sus dagas se apostan frente a mí para defender a su amo. Espero hasta el último momento y me deslizo por debajo de ellas, continuando mi carrera hacia el degollador. Dave prepara dos dagas que sostenía en sus manos y se dispone a bloquear mi golpe.
+
+              En lugar de lanzarle un tajo, amago un ataque y rápidamente doy un paso lateral hacia su derecha. Como esperaba, no vio las dagas voladoras que me seguían de cerca y, por tanto, no consiguió pararlas a tiempo. Dos de ellas le atravesaron el estómago y otra la pierna izquierda.
+
+              Un golpe más debería terminar con esto de una vez por todas.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de reflejos exitosa - nivel 3 ]'
+              failed_checks:
+                - '[ Comprobación de fuerza fallida - nivel 3 ]'
+                - '[ Comprobación de velocidad fallida - nivel 3 ]'
+              ch4_dave_defeat: 3
+        choices:
+          - position: 1
+            text: Ir a matar
+            effects:
+              - set:
+                  current_scene: ch4_defeat_kill
+                condition: is_dead = 0
+          - position: 2
+            text: Apuntar a neutralizarlo, pero sin matarlo
+            effects:
+              - set:
+                  current_scene: ch4_defeat_spare
+                condition: is_dead = 0
+      - condition: strength < 3 AND agility < 3 AND reflexes < 3
+        texts:
+          - source: scene_text
+            paragraph: 265
+            text: |-
+              Cojo una piedra del suelo y se la lanzo a Dave el Degollador con todas mis fuerzas.
+
+              El degollador la bloqueó con dos de sus dagas voladoras.
+
+              "Esto no es un concurso de lanzamiento de piedras, muchacho. Será mejor que estés preparado para lo que viene".
+
+              "Tengo su atención", le digo a Daren. "¡Ahora, vete. ¡Vete!"
+
+              Daren no pierde más tiempo y corre hacia los secuaces de Dave el Degollador.
+
+              Los cuchillos voladores del degollador vuelan ahora hacia mí a un ritmo muy rápido. Me quito de su camino y empiezo a dirigirme hacia mi objetivo.
+
+              Al acercarme a Dave, cuatro de sus cuchillos me bloquean el paso y vuelan hacia mí.
+
+              Consigo esquivar dos de ellos, pero los otros dos me dan en la pierna izquierda. Caigo de rodillas, incapaz de moverme por el dolor.
+
+              Dave el Degollador se me acerca con una gran sonrisa en la cara. Sus cuchillos voladores me tienen ahora completamente rodeado y todos me miran amenazadoramente, flotando en el aire, listos para atacar.
+          - source: scene_text_2
+            paragraph: 24
+            text: |-
+              "Se acabó, muchacho. Ya es tarde para pedir clemencia. No creas que voy a darte una muerte fácil. A mis cuchillos les gusta jugar con su presa antes de terminar con ella. Rezad vuestras plegarias, estúpido arrogante. Dave el Degollador va a disfrutar AAAARRRGHHHHHH"
+
+              Una columna de fuego aparece en el lugar donde Dave el Degollador estaba originalmente de pie y su jactancia se ve sustituida por gritos desesperados de agonía. El fuego ignora por completo toda la vegetación a su alrededor y, cuando se extingue, veo que no queda nada del degollador excepto sus cenizas, que ahora se dispersan con el viento.
+
+              Poco después, Eiden emerge de las sombras con su sonrisa habitual en la cara. No tardo mucho en darme cuenta de quién estaba detrás de la exhibición anterior de fuegos fireworks.
+
+              "Ves, Barry, así es como se lidia con una plaga de alimañas".
+
+              "¡¡¡Tú!!!" grita Daren desde el otro extremo del claro. Parece que ha terminado de ocuparse de los secuaces de Dave el Degollador y corre ahora hacia el Stillwater con su espada en la mano.
+
+              Una vez más, con un gesto de sus manos, Eiden pone a dormir a Daren en medio de su carrera, lo que le hace caer al suelo y deslizarse sobre su armadura unos metros antes de detenerse.
+
+              "En serio, esto se está volviendo ridículo", dice Eiden.
+
+              Vuelve su mirada hacia mí.
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "Dime, ¿qué clase de cartero muere antes de salir de la oficina de correos? Tengo ganas de presentar una queja por tus pésimos servicios".
+
+              "Lo... siento mucho, prometo que lo haré mejor la próxima... ¿vez?"
+
+              "¡Ese es el espíritu!", dice mientras empieza a desvanecerse en el aire.
+
+              Cuando la silueta de Eiden apenas es ya visible, oigo su voz resonar entre los árboles que me rodean.
+
+              "Entrega mi mensaje, Barry. Y no vuelvas a fallarme".
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de fuerza fallida - nivel 3 ]'
+                - '[ Comprobación de velocidad fallida - nivel 3 ]'
+                - '[ Comprobación de reflejos fallida - nivel 3 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: ch5_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                  ch4_ending: 6
+                condition: is_dead = 1
+  - name: ch4_defeat_kill
+    effects:
+      - set:
+          ac_ch4_cutthroat: 1
+        achievement:
+          id: ac_ch4_cutthroat
+          title: Dave el Degollador derrotado
+    routes:
+      - condition: ch4_dave_defeat = 1
+        texts:
+          - source: scene_text
+            paragraph: 266
+            text: |-
+              Cojo otra piedra del suelo y uso toda la fuerza de mi brazo derecho para un último lanzamiento. El degollador vuelve a intentar bloquear el ataque con dos de sus dagas, pero no acierta en el momento oportuno y la piedra le destroza la cabeza por completo.
+
+              Sus secuaces, que vieron lo ocurrido, parecen totalmente aterrorizados.
+
+              "¡MALDITA SEA, Barry!", dice Daren. "Desde luego no te andas con chiquitas".
+
+              "Aún no he terminado".
+
+              Cojo dos piedras más del suelo y se las lanzo a otros dos matones. A ambos se les rompe el cráneo y los hombres caen al suelo, sin vida.
+
+              Los secuaces restantes de Dave el Degollador gritan con todas sus fuerzas y corren hacia el bosque. Lanzo otra piedra en su dirección general, pero no me molesto en perseguirlos. Apuntar mis disparos sería mucho más difícil en el bosque, debido a todos los árboles que se interponen en mi camino. Y además, con el miedo que tenían en los ojos, dudo que vuelvan a molestarnos más.
+
+              Se oye un lento aplauso que viene de los árboles. Al mirar para ver qué hace el ruido, veo a Eiden, apoyado en un pino con su sonrisa habitual en la cara.
+
+              "Impresionante, Barry", dice. "¡No se ven a menudo potenciadores de estadísticas usados tan eficientemente hoy en día!"
+
+              ¡Tú!", grita Daren, y corre hacia el Stillwater.
+          - source: scene_text_2
+            paragraph: 25
+            text: |-
+              Una vez más, con un gesto de sus manos, Eiden pone a dormir a Daren en medio de su carrera, lo que le hace caer al suelo y deslizarse sobre su armadura unos metros antes de detenerse.
+
+              "En serio, esto se está volviendo ridículo", dice Eiden.
+
+              "¿Tú también sabes lo de los potenciadores de estadísticas?", le pregunto al Stillwater.
+
+              "¡Sí! Y lo que también sé es por qué ese potenciador de estadísticas funciona tan bien contigo, en concreto. ¿Te has preguntado alguna vez por qué es así, Barry?"
+
+              Tiene razón. El dispositivo de estadísticas ha funcionado por encima de todas mis expectativas desde que llegué aquí. No le di muchas vueltas porque supuse que mis cálculos debían de estar equivocados. Pero incluso con toda la energía que está acumulando, algo está claramente fuera de lugar.
+
+              "Lo he hecho. Pero ¿no supongo que me vas a dar la respuesta así como así?"
+
+              "Por supuesto que no. ¿Dónde estaría la diversión en eso? ¡Pero no te inquietes! Mientras permanezcas en este continente, obtendrás tus respuestas tarde o temprano".
+
+              Él sonríe.
+
+              "Bueno, entonces. Estaré esperando a que entregues mi mensaje. No me falles, Barry".
+
+              Con estas últimas palabras me da la espalda y desaparece en la oscuridad del bosque.
+        choices:
+          - position: 1
+            text: Siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: ch5_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                  ch4_ending: 5
+                  ch4_spared_dave: 0
+      - condition: ch4_dave_defeat = 2
+        texts:
+          - source: scene_text
+            paragraph: 268
+            text: |-
+              No tengo piedad con él. Le ataco rápidamente de nuevo, esta vez yendo directo al corazón. Siento que su cuerpo deja de moverse al sacar mi daga y cae al suelo, sin vida, junto con sus cuchillos voladores.
+
+              Mirando hacia el otro lado del claro, parece que Daren ha conseguido acabar rápidamente con los secuaces de Dave el Degollador. No queda ni uno vivo.
+
+              Se oye un lento aplauso que viene de los árboles. Al mirar para ver qué hace el ruido, veo a Eiden, apoyado en un pino con su sonrisa habitual en la cara.
+
+              "Impresionante, Barry", dice. "¡No se ven a menudo potenciadores de estadísticas usados tan eficientemente hoy en día!"
+
+              ¡Tú!", grita Daren, y corre hacia el Stillwater.
+
+              Una vez más, con un gesto de sus manos, Eiden pone a dormir a Daren en medio de su carrera, lo que le hace caer al suelo y deslizarse sobre su armadura unos metros antes de detenerse.
+
+              "En serio, esto se está volviendo ridículo", dice Eiden.
+          - source: scene_text_2
+            paragraph: 27
+            text: |-
+              "¿Tú también sabes lo de los potenciadores de estadísticas?", le pregunto al Stillwater.
+
+              "¡Sí! Y lo que también sé es por qué ese potenciador de estadísticas funciona tan bien contigo, en concreto. ¿Te has preguntado alguna vez por qué es así, Barry?"
+
+              Tiene razón. El dispositivo de estadísticas ha funcionado por encima de todas mis expectativas desde que llegué aquí. No le di muchas vueltas porque supuse que mis cálculos debían de estar equivocados. Pero incluso con toda la energía que está acumulando, algo está claramente fuera de lugar.
+
+              "Lo he hecho. Pero ¿no supongo que me vas a dar la respuesta así como así?"
+
+              "Por supuesto que no. ¿Dónde estaría la diversión en eso? ¡Pero no te inquietes! Mientras permanezcas en esta isla, obtendrás tus respuestas tarde o temprano".
+
+              Él sonríe.
+
+              "Bueno, entonces. Estaré esperando a que entregues mi mensaje. No me falles, Barry".
+
+              Con estas últimas palabras me da la espalda y desaparece en la oscuridad del bosque.
+        choices:
+          - position: 1
+            text: Siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: ch5_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                  ch4_ending: 5
+                  ch4_spared_dave: 0
+      - condition: ch4_dave_defeat = 3
+        texts:
+          - source: scene_text
+            paragraph: 270
+            text: |-
+              No tengo piedad con él. Rápidamente me lanzo hacia él, apuntando con mi espada directamente a su corazón. Siento que su cuerpo deja de moverse al sacar mi daga y cae al suelo, sin vida, junto con sus cuchillos voladores.
+
+              Mirando hacia el otro lado del claro, parece que Daren ha conseguido acabar rápidamente con los secuaces de Dave el Degollador. No queda ni uno vivo.
+
+              Se oye un lento aplauso que viene de los árboles. Al mirar para ver qué hace el ruido, veo a Eiden, apoyado en un pino con su sonrisa habitual en la cara.
+
+              "Impresionante, Barry", dice. "¡No se ven a menudo potenciadores de estadísticas usados tan eficientemente hoy en día!"
+
+              ¡Tú!", grita Daren, y corre hacia el Stillwater.
+
+              Una vez más, con un gesto de sus manos, Eiden pone a dormir a Daren en medio de su carrera, lo que le hace caer al suelo y deslizarse sobre su armadura unos metros antes de detenerse.
+
+              "En serio, esto se está volviendo ridículo", dice Eiden.
+          - source: scene_text_2
+            paragraph: 29
+            text: |-
+              "¿Tú también sabes lo de los potenciadores de estadísticas?", le pregunto al Stillwater.
+
+              "¡Sí! Y lo que también sé es por qué ese potenciador de estadísticas funciona tan bien contigo, en concreto. ¿Te has preguntado alguna vez por qué es así, Barry?"
+
+              Tiene razón. El dispositivo de estadísticas ha funcionado por encima de todas mis expectativas desde que llegué aquí. No le di muchas vueltas porque supuse que mis cálculos debían de estar equivocados. Pero incluso con toda la energía que está acumulando, algo está claramente fuera de lugar.
+
+              "Lo he hecho. Pero ¿no supongo que me vas a dar la respuesta así como así?"
+
+              "Por supuesto que no. ¿Dónde estaría la diversión en eso? ¡Pero no te inquietes! Mientras permanezcas en esta isla, obtendrás tus respuestas tarde o temprano".
+
+              Él sonríe.
+
+              "Bueno, entonces. Estaré esperando a que entregues mi mensaje. No me falles, Barry".
+
+              Con estas últimas palabras me da la espalda y desaparece en la oscuridad del bosque.
+        choices:
+          - position: 1
+            text: Siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: ch5_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                  ch4_ending: 5
+                  ch4_spared_dave: 0
+  - name: ch4_defeat_spare
+    effects:
+      - set:
+          ac_ch4_cutthroat: 1
+        achievement:
+          id: ac_ch4_cutthroat
+          title: Dave el Degollador derrotado
+    routes:
+      - condition: ch4_dave_defeat = 1
+        texts:
+          - source: scene_text
+            paragraph: 267
+            text: |-
+              Cojo otra piedra del suelo, pero esta vez no pongo toda mi fuerza en el lanzamiento para evitar matar a Dave. Como la piedra iba más lenta esta vez, el degollador tuvo tiempo de bloquearla con dos de sus dagas voladoras.
+
+              Tose un poco más de sangre.
+
+              "Tuviste suerte, Stillwater. Me pillaste desprevenido. No volverá a ocurrir".
+
+              Dave el Degollador saca entonces un pergamino de teletransportación de su bolsillo y lo utiliza rápidamente para escabullirse, ante la sorpresa y consternación de sus leales seguidores.
+
+              ¿De dónde demonios ha sacado ese desgraciado un pergamino de teletransportación? Llevo meses buscando uno y no he encontrado nada. Por no mencionar que incluso uno solo de esos pergaminos cuesta una fortuna.
+
+              "¡MALDITA SEA, Barry!", dice Daren. "Desde luego no te andas con chiquitas".
+
+              "En realidad, sí que lo hice. Y me costó caro. Pero aún no he terminado".
+
+              Cojo unos guijarros del suelo y uso toda la fuerza de mi brazo derecho para lanzarlos contra los secuaces de Dave. Siete de ellos resultaron gravemente heridos y ahora gritan asustados.
+
+              "¡¿Viste eso?!", dice uno de ellos. "Todo lo que hizo fue tirar unos guijarros que recogió del suelo".
+
+              "También ha vencido al jefe. ¡Salgamos de aquí!"
+          - source: scene_text_2
+            paragraph: 26
+            text: |-
+              Los matones corren hacia el bosque. Lanzo otra piedra en su dirección general, pero no me molesto en perseguirlos. Apuntar mis disparos sería mucho más difícil en el bosque, debido a todos los árboles que se interponen en mi camino. Y además, con el miedo que tenían en los ojos, dudo que vuelvan a molestarnos más.
+
+              Se oye un lento aplauso que viene de los árboles. Al mirar para ver qué hace el ruido, veo a Eiden, apoyado en un pino con su sonrisa habitual en la cara.
+
+              "Impresionante, Barry", dice. "¡No se ven a menudo potenciadores de estadísticas usados tan eficientemente hoy en día!"
+
+              ¡¡¡Tú!!!" grita Daren, y corre hacia el Stillwater.
+
+              Una vez más, con un gesto de sus manos, Eiden pone a dormir a Daren en medio de su carrera, lo que le hace caer al suelo y deslizarse sobre su armadura unos metros antes de detenerse.
+
+              "En serio, esto se está volviendo ridículo", dice Eiden.
+
+              "¿Tú también sabes lo de los potenciadores de estadísticas?", le pregunto al Stillwater.
+
+              "¡Sí! Y lo que también sé es por qué ese potenciador de estadísticas funciona tan bien contigo, en concreto. ¿Te has preguntado alguna vez por qué es así, Barry?"
+
+              Tiene razón. El dispositivo de estadísticas ha funcionado por encima de todas mis expectativas desde que llegué aquí. No le di muchas vueltas porque supuse que mis cálculos debían de estar equivocados. Pero incluso con toda la energía que está acumulando, algo está claramente fuera de lugar.
+          - source: scene_3
+            paragraph: 9
+            text: |-
+              "Lo he hecho. Pero ¿no supongo que me vas a dar la respuesta así como así?"
+
+              "Por supuesto que no. ¿Dónde estaría la diversión en eso? ¡Pero no te inquietes! Mientras permanezcas en este continente, obtendrás tus respuestas tarde o temprano".
+
+              Él sonríe.
+
+              "Bueno, entonces. Estaré esperando a que entregues mi mensaje. No me falles, Barry".
+
+              Con estas últimas palabras me da la espalda y desaparece en la oscuridad del bosque.
+        choices:
+          - position: 1
+            text: Siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: ch5_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                  ch4_spared_dave: 1
+                  ch4_ending: 5
+      - condition: ch4_dave_defeat = 2
+        texts:
+          - source: scene_text
+            paragraph: 269
+            text: |-
+              Apunto mi segundo golpe entre sus costillas. Luego saco mi daga de él y lo pateo al suelo. Dave el Degollador tose un poco de sangre y, sin decir una palabra más, saca rápidamente un pergamino de teletransportación de su bolsillo y desaparece.
+
+              ¿De dónde demonios ha sacado ese desgraciado un pergamino de teletransportación? Llevo meses buscando uno y no he encontrado nada. Por no mencionar que incluso uno solo de esos pergaminos cuesta una fortuna.
+
+              Mirando hacia el otro lado del claro, parece que Daren ha conseguido acabar rápidamente con los secuaces de Dave el Degollador. No queda ni uno vivo.
+
+              Se oye un lento aplauso que viene de los árboles. Al mirar para ver qué hace el ruido, veo a Eiden, apoyado en un pino con su sonrisa habitual en la cara.
+
+              "Impresionante, Barry", dice. "¡No se ven a menudo potenciadores de estadísticas usados tan eficientemente hoy en día!"
+
+              ¡Tú!", grita Daren, y corre hacia el Stillwater.
+
+              Una vez más, con un gesto de sus manos, Eiden pone a dormir a Daren en medio de su carrera, lo que le hace caer al suelo y deslizarse sobre su armadura unos metros antes de detenerse.
+
+              "En serio, esto se está volviendo ridículo", dice Eiden.
+          - source: scene_text_2
+            paragraph: 28
+            text: |-
+              "¿Tú también sabes lo de los potenciadores de estadísticas?", le pregunto al Stillwater.
+
+              "¡Sí! Y lo que también sé es por qué ese potenciador de estadísticas funciona tan bien contigo, en concreto. ¿Te has preguntado alguna vez por qué es así, Barry?"
+
+              Tiene razón. El dispositivo de estadísticas ha funcionado por encima de todas mis expectativas desde que llegué aquí. No le di muchas vueltas porque supuse que mis cálculos debían de estar equivocados. Pero incluso con toda la energía que está acumulando, algo está claramente fuera de lugar.
+
+              "Lo he hecho. Pero ¿no supongo que me vas a dar la respuesta así como así?"
+
+              "Por supuesto que no. ¿Dónde estaría la diversión en eso? ¡Pero no te inquietes! Mientras permanezcas en esta isla, obtendrás tus respuestas tarde o temprano".
+
+              Sonríe.
+
+              "Bien, entonces. Estaré esperando a que entregues mi mensaje. No me falles, Barry".
+
+              Con estas últimas palabras me da la espalda y desaparece en la oscuridad del bosque.
+        choices:
+          - position: 1
+            text: Siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: ch5_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                  ch4_spared_dave: 1
+                  ch4_ending: 5
+      - condition: ch4_dave_defeat = 3
+        texts:
+          - source: scene_text
+            paragraph: 271
+            text: |-
+              Me lanzo hacia él y apunto mi hoja entre sus costillas. Luego saco mi daga de él y lo pateo al suelo. Dave el Degollador tose un poco de sangre y, sin decir una palabra más, saca rápidamente un pergamino de teletransportación de su bolsillo y desaparece.
+
+              ¿De dónde demonios ha sacado ese desgraciado un pergamino de teletransportación? Llevo meses buscando uno y no he encontrado nada. Por no mencionar que incluso uno solo de esos pergaminos cuesta una fortuna.
+
+              Mirando hacia el otro lado del claro, parece que Daren ha conseguido acabar rápidamente con los secuaces de Dave el Degollador. No queda ni uno vivo.
+
+              Se oye un lento aplauso que viene de los árboles. Al mirar para ver qué hace el ruido, veo a Eiden, apoyado en un pino con su sonrisa habitual en la cara.
+
+              "Impresionante, Barry", dice. "¡No se ven a menudo potenciadores de estadísticas usados tan eficientemente hoy en día!"
+
+              ¡Tú!", grita Daren, y corre hacia el Stillwater.
+
+              Una vez más, con un gesto de sus manos, Eiden pone a dormir a Daren en medio de su carrera, lo que le hace caer al suelo y deslizarse sobre su armadura unos metros antes de detenerse.
+
+              "En serio, esto se está volviendo ridículo", dice Eiden.
+
+              "¿Tú también sabes lo de los potenciadores de estadísticas?", le pregunto al Stillwater.
+          - source: scene_text_2
+            paragraph: 30
+            text: |-
+              "¡Sí! Y lo que también sé es por qué ese potenciador de estadísticas funciona tan bien contigo, en concreto. ¿Te has preguntado alguna vez por qué es así, Barry?"
+
+              Tiene razón. El dispositivo de estadísticas ha funcionado por encima de todas mis expectativas desde que llegué aquí. No le di muchas vueltas porque supuse que mis cálculos debían de estar equivocados. Pero incluso con toda la energía que está acumulando, algo está claramente fuera de lugar.
+
+              "Lo he hecho. Pero ¿no supongo que me vas a dar la respuesta así como así?"
+
+              "Por supuesto que no. ¿Dónde estaría la diversión en eso? ¡Pero no te inquietes! Mientras permanezcas en esta isla, obtendrás tus respuestas tarde o temprano".
+
+              Sonríe.
+
+              "Bien, entonces. Estaré esperando a que entregues mi mensaje. No me falles, Barry".
+
+              Con estas últimas palabras me da la espalda y desaparece en la oscuridad del bosque.
+        choices:
+          - position: 1
+            text: Siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: ch5_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                  ch4_spared_dave: 1
+                  ch4_ending: 5
