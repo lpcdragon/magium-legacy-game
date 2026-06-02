@@ -1,191 +1,1738 @@
+chapter_effects:
+  - condition: b3_ch3_stats_unavailable = 1
+    effects:
+      - disable stats
+  - condition: b3_ch3_stats_unavailable = 0
+    effects:
+      - enable stats
 scenes:
   - name: b3_ch05b_refreshed
-    texts:
-      - source: scene_text
-        paragraph: 1
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch5_moustache = 2
+        texts:
+          - source: scene_text
+            paragraph: 2
+            text: |-
+              Cuando se cumplieron nuestras cuatro horas, volvimos a la habitación para despertar a Kate y a Leila. Mientras ellas dos se preparaban para hacer el siguiente turno, Hadrik también se levantó de la cama y dijo que quería practicar sus técnicas nuevas durante unas horas en uno de los pasillos más vacíos. Cuando Hadrik, Kate y Leila se fueron, Flower, Melindra y yo nos dormimos y no volvimos a despertarnos hasta unas cuatro horas después, cuando todos ya estaban recogiendo sus mochilas y preparándose para salir.
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              Después de guardar rápido nuestras cosas también, llamamos a Hadrik por el transceptor y luego nos reunimos todos con Hadrik fuera de nuestra habitación para poder dirigirnos juntos a la sala de espera.
+
+              "¿Estás bien, Hadrik?", dice Daren mientras le da una palmada en el hombro mientras caminamos por uno de los pasillos. "No olvides que siempre puedes hablar con nosotros si sientes que necesitas sacarte algo del pecho."
+
+              "Agradezco la preocupación, Daren, pero no hace falta que te preocupes por mí", dice Hadrik. "Ayer tuve un día un poco malo, pero después de una buena noche de sueño me siento completamente renovado y estoy más que listo para la revancha. ¿Cuándo salimos a la superficie?"
+
+              "Saldremos en cuanto nos reunamos con Kelrim", dice Daren. "Probablemente ya esté en la zona de cuarentena, así que iré a buscarlo en cuanto lleguemos a la sala de espera."
+
+              "¿Illuna y Arraka vienen con nosotros también, o tenemos que despertarlas?", digo. "No he oído ni una palabra de ninguna de las dos esta mañana."
+          - source: scene_text_2
+            paragraph: 2
+            text: |-
+              "Sí, sí, estoy despierta", dice Arraka. "Ah, y ya he usado un hechizo de agua para limpiar ese bigote falso, por si lo estabas buscando. Muy gracioso, por cierto. Me alegra saber que estás aprovechando bien todo ese tiempo libre. Tengo muchas ganas de verte usar esas nuevas habilidades tuyas contra Selkram en nuestro enfrentamiento final."
+
+              "¿Eso es un desafío?", le pregunto a Arraka.
+
+              "Claro, ¿por qué no?", dice Arraka.
+
+              "Entonces me aseguraré de aprender algunos buenos hechizos de bigote falso especialmente para Selkram en cuanto consiga mis estadísticas mágicas", digo. "En fin, ¿Illuna también se despertó, o solo Arraka?"
+
+              "Illuna está despierta, pero no creo que vaya a responderte", dice Flower. "Llevo intentando hablar con ella desde que me desperté, pero no hace más que decirme que está intentando aprender un hechizo nuevo y que solo me hablará cuando termine."
+
+              "¿Un hechizo nuevo, eh?", digo. "Quizá sea algo que pueda ayudarnos contra la guardia real. Vale, entonces dejémosla con eso."
+
+              Seguimos caminando un poco más por los pasillos hasta llegar a la sala de espera. El tumulto de hace nueve horas parece haberse calmado un poco, pero no estoy seguro de si es porque ya terminaron con la evacuación o porque los rebeldes ya no tienen espacio suficiente en su base para ofrecer refugio a todos los refugiados. A juzgar por todos los civiles que todavía siguen en la sala de espera, yo apostaría a que realmente se quedaron sin lugares donde mandar a dormir a la gente.
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              Albert parece haber estado esperándonos, porque en cuanto nos vio salir del pasillo, se apresuró de inmediato en nuestra dirección. Ahora está plantado delante de nosotros, con aspecto cansado e irritable. Debe de haber pasado toda la noche guiando refugiados sin tener tiempo alguno para dormir.
+
+              "El rey del subsuelo ha solicitado una reunión con ustedes", dice Albert, intentando actuar con cortesía, aunque se nota claramente por su tono de voz que se está forzando a hablar así. "Los espera en el salón del trono. Síganme."
+        effects:
+          - set:
+              ac_b3_ch5_passed: 1
+            achievement:
+              id: ac_b3_ch5_passed
+              title: Reto aceptado
+        choices:
+          - position: 1
+            text: Claro. Vamos.
+            effects:
+              - set:
+                  current_scene: b3_ch05b_tension
+                  b3_ch5_follow: 0
+          - position: 2
+            text: Psst, Albert. Se te olvidó ponerte la sonrisa falsa cuando nos pediste que fuéramos contigo.
+            effects:
+              - set:
+                  current_scene: b3_ch05b_tension
+                  b3_ch5_follow: 1
+          - position: 3
+            text: Tu rey puede esperar. Primero tenemos que encontrar a Kelrim.
+            effects:
+              - set:
+                  current_scene: b3_ch05b_tension
+                  b3_ch5_follow: 2
+      - condition: b3_ch5_moustache <> 2
+        texts:
+          - source: scene_text
+            paragraph: 2
+            text: |-
+              Cuando se cumplieron nuestras cuatro horas, volvimos a la habitación para despertar a Kate y a Leila. Mientras ellas dos se preparaban para hacer el siguiente turno, Hadrik también se levantó de la cama y dijo que quería practicar sus técnicas nuevas durante unas horas en uno de los pasillos más vacíos. Cuando Hadrik, Kate y Leila se fueron, Flower, Melindra y yo nos dormimos y no volvimos a despertarnos hasta unas cuatro horas después, cuando todos ya estaban recogiendo sus mochilas y preparándose para salir.
+
+              Después de guardar rápido nuestras cosas también, llamamos a Hadrik por el transceptor y luego nos reunimos todos con Hadrik fuera de nuestra habitación para poder dirigirnos juntos a la sala de espera.
+
+              "¿Estás bien, Hadrik?", dice Daren mientras le da una palmada en el hombro mientras caminamos por uno de los pasillos. "No olvides que siempre puedes hablar con nosotros si sientes que necesitas sacarte algo del pecho."
+
+              "Agradezco la preocupación, Daren, pero no hace falta que te preocupes por mí", dice Hadrik. "Ayer tuve un día un poco malo, pero después de una buena noche de sueño me siento completamente renovado y estoy más que listo para la revancha. ¿Cuándo salimos a la superficie?"
+
+              "Saldremos en cuanto nos reunamos con Kelrim", dice Daren. "Probablemente ya esté en la zona de cuarentena, así que iré a buscarlo en cuanto lleguemos a la sala de espera."
+
+              "¿Illuna y Arraka vienen con nosotros también, o tenemos que despertarlas?", digo. "No he oído ni una palabra de ninguna de las dos esta mañana."
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              "Sí, sí, estoy despierta", dice Arraka.
+
+              "¿Y qué pasa con Illuna?", pregunto.
+
+              "Illuna está despierta, pero no creo que vaya a responderte", dice Flower. "Llevo intentando hablar con ella desde que me desperté, pero no hace más que decirme que está intentando aprender un hechizo nuevo y que solo me hablará cuando termine."
+
+              "¿Un hechizo nuevo, eh?", digo. "Quizá sea algo que pueda ayudarnos contra la guardia real. Vale, entonces dejémosla con eso."
+
+              Seguimos caminando un poco más por los pasillos hasta llegar a la sala de espera. El tumulto de hace nueve horas parece haberse calmado un poco, pero no estoy seguro de si es porque ya terminaron con la evacuación o porque los rebeldes ya no tienen espacio suficiente en su base para ofrecer refugio a todos los refugiados. A juzgar por todos los civiles que todavía siguen en la sala de espera, yo apostaría a que realmente se quedaron sin lugares donde mandar a dormir a la gente.
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              Albert parece haber estado esperándonos, porque en cuanto nos vio salir del pasillo, se apresuró de inmediato en nuestra dirección. Ahora está plantado delante de nosotros, con aspecto cansado e irritable. Debe de haber pasado toda la noche guiando refugiados sin tener tiempo alguno para dormir.
+
+              "El rey del subsuelo ha solicitado una reunión con ustedes", dice Albert, intentando actuar con cortesía, aunque se nota claramente por su tono de voz que se está forzando a hablar así. "Los espera en el salón del trono. Síganme."
+        choices:
+          - position: 1
+            text: Claro. Vamos.
+            effects:
+              - set:
+                  current_scene: b3_ch05b_tension
+                  b3_ch5_follow: 0
+          - position: 2
+            text: Psst, Albert. Se te olvidó ponerte la sonrisa falsa cuando nos pediste que fuéramos contigo.
+            effects:
+              - set:
+                  current_scene: b3_ch05b_tension
+                  b3_ch5_follow: 1
+          - position: 3
+            text: Tu rey puede esperar. Primero tenemos que encontrar a Kelrim.
+            effects:
+              - set:
+                  current_scene: b3_ch05b_tension
+                  b3_ch5_follow: 2
   - name: b3_ch05b_tension
-    texts:
-      - source: scene_text
-        paragraph: 2
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch5_follow = 0
+        texts:
+          - source: scene_text
+            paragraph: 3
+            text: |-
+              "Claro. Vamos."
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              Albert asiente y luego empieza a caminar hacia el salón del trono, mientras el resto nos disponemos a seguirlo.
+
+              Después de caminar un rato, por fin llegamos a la sala donde el rey nos esperaba y nos sentamos en las sillas vacías que hay frente al trono. Mientras ocupamos nuestros asientos, Albert pasa junto a nosotros y va a reunirse con Peter, que está de pie detrás del trono del rey. Parece que los dos guardias que suelen estar al lado del rey no han sido invitados esta vez. Aquí no hay nadie más aparte de nuestro grupo, el rey del subsuelo, Albert y Peter.
+          - source: scene_text_2
+            paragraph: 4
+            text: |-
+              Los tres parecen muy cansados, y el rey incluso tiene bolsas visibles bajo los ojos. Sin embargo, aparte del cansancio, también percibo cierta... tensión en el aire que no había sentido en nuestras dos reuniones anteriores. Espero que solo sea cosa mía.
+
+              "Buenos días, amigos", dice el rey. "Espero que hayan dormido bien. Mis disculpas por llamarlos a otra reunión improvisada, pero hay bastantes cosas que necesito discutir con ustedes y que ya no pueden aplazarse más. Primero, permítanme darles un poco de contexto."
+
+              Entonces saca de su bolsillo un pequeño cubo metálico, igual que el que utilizó en nuestra primera reunión con él, y lo sostiene delante de nosotros.
+
+              "Su amigo Eiden volvió a esforzarse por atraer a cierta gente a una de las pocas salas del palacio en las que teníamos dispositivos de grabación", dice el rey. "Supongo que hizo esto porque quería que ustedes escucharan esta conversación, así que respetaré sus deseos. La discusión que están a punto de oír ocurrió ayer, poco después de que la mayoría de ustedes fueran teletransportados por error a las cavernas llenas de trampas bajo la ciudad. Creo que deberían poder reconocer con facilidad a la mayoría, si no a todos, los participantes de esta conversación. Empecemos."
+
+              Luego pulsa uno de los botones del cubo metálico y empezamos a oír voces salir de él, igual que la última vez. En cuanto reconozco la primera voz, entiendo enseguida de qué va a tratar esta conversación.
+
+              "¿Es esta la sala a la que querías traernos?...", dice el embajador de Ollendor.
+          - source: scene_3
+            paragraph: 3
+            text: |-
+              "Sí", dice Eiden. "Aquí deberíamos estar a salvo de cualquier espía que pueda estar intentando escuchar nuestra conversación."
+
+              "¡Le aseguro, Creador, que no hay espías en este palacio!", dice el rey de Ollendor. "¡No habría manera de que atravesaran a nuestros guardias!"
+
+              "No dudo de la competencia de sus guardias, gran rey", dice Eiden. "Pero aun así, es mejor prevenir que lamentar."
+
+              "¿Qué era lo que quería hablarnos, embajador?", dice el capitán de la guardia real.
+
+              "Yo... no sé por dónde empezar...", dice el embajador. "Es tan difícil poner esto en palabras. Mi rey, con el corazón encogido vengo a traerle la noticia de que su hermano... nuestro amado conde ha sido asesinado en Thilias."
+
+              El rey no responde de ninguna manera al embajador, y ninguno de los demás tampoco. Tras más de cinco segundos de silencio, el embajador vuelve a hablar.
+
+              "¿Mi rey?...", dice el embajador con una voz ligeramente intranquila.
+
+              "Embajador, quiero que piense con muchísimo cuidado sus próximas palabras", dice el rey de Ollendor en un tono aterradoramente calmado. "Lo que va a decir a partir de ahora bien puede decidir si hoy vive o muere. Ante todo, quiero que me confirme una vez más lo que acaba de decirme. ¿Está absolutamente seguro de que mi hermano ha muerto?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_bypass
+      - condition: b3_ch5_follow = 1
+        texts:
+          - source: scene_text
+            paragraph: 4
+            text: |-
+              "Psst, Albert. Se te olvidó ponerte la sonrisa falsa cuando nos pediste que fuéramos contigo."
+
+              "No se me olvidó", dice Albert con un tono ácido. "No veo ninguna razón para sonreír en este momento, y menos a ti. Ahora bien, ¿piensan seguirme o no?"
+
+              "Supongo que el rey del subsuelo no habría pedido una reunión tan temprano por la mañana si no fuera importante...", dice Daren. "De acuerdo, vamos a ver qué quiere. Guíanos."
+
+              Albert asiente y luego empieza a caminar hacia el salón del trono, mientras el resto nos disponemos a seguirlo.
+
+              Después de caminar un rato, por fin llegamos a la sala donde el rey nos esperaba y nos sentamos en las sillas vacías que hay frente al trono. Mientras ocupamos nuestros asientos, Albert pasa junto a nosotros y va a reunirse con Peter, que está de pie detrás del trono del rey. Parece que los dos guardias que suelen estar al lado del rey no han sido invitados esta vez. Aquí no hay nadie más aparte de nuestro grupo, el rey del subsuelo, Albert y Peter.
+          - source: scene_text_2
+            paragraph: 4
+            text: |-
+              Los tres parecen muy cansados, y el rey incluso tiene bolsas visibles bajo los ojos. Sin embargo, aparte del cansancio, también percibo cierta... tensión en el aire que no había sentido en nuestras dos reuniones anteriores. Espero que solo sea cosa mía.
+
+              "Buenos días, amigos", dice el rey. "Espero que hayan dormido bien. Mis disculpas por llamarlos a otra reunión improvisada, pero hay bastantes cosas que necesito discutir con ustedes y que ya no pueden aplazarse más. Primero, permítanme darles un poco de contexto."
+
+              Entonces saca de su bolsillo un pequeño cubo metálico, igual que el que utilizó en nuestra primera reunión con él, y lo sostiene delante de nosotros.
+
+              "Su amigo Eiden volvió a esforzarse por atraer a cierta gente a una de las pocas salas del palacio en las que teníamos dispositivos de grabación", dice el rey. "Supongo que hizo esto porque quería que ustedes escucharan esta conversación, así que respetaré sus deseos. La discusión que están a punto de oír ocurrió ayer, poco después de que la mayoría de ustedes fueran teletransportados por error a las cavernas llenas de trampas bajo la ciudad. Creo que deberían poder reconocer con facilidad a la mayoría, si no a todos, los participantes de esta conversación. Empecemos."
+
+              Luego pulsa uno de los botones del cubo metálico y empezamos a oír voces salir de él, igual que la última vez. En cuanto reconozco la primera voz, entiendo enseguida de qué va a tratar esta conversación.
+
+              "¿Es esta la sala a la que querías traernos?...", dice el embajador de Ollendor.
+          - source: scene_3
+            paragraph: 3
+            text: |-
+              "Sí", dice Eiden. "Aquí deberíamos estar a salvo de cualquier espía que pueda estar intentando escuchar nuestra conversación."
+
+              "¡Le aseguro, Creador, que no hay espías en este palacio!", dice el rey de Ollendor. "¡No habría manera de que atravesaran a nuestros guardias!"
+
+              "No dudo de la competencia de sus guardias, gran rey", dice Eiden. "Pero aun así, es mejor prevenir que lamentar."
+
+              "¿Qué era lo que quería hablarnos, embajador?", dice el capitán de la guardia real.
+
+              "Yo... no sé por dónde empezar...", dice el embajador. "Es tan difícil poner esto en palabras. Mi rey, con el corazón encogido vengo a traerle la noticia de que su hermano... nuestro amado conde ha sido asesinado en Thilias."
+
+              El rey no responde de ninguna manera al embajador, y ninguno de los demás tampoco. Tras más de cinco segundos de silencio, el embajador vuelve a hablar.
+
+              "¿Mi rey?...", dice el embajador con una voz ligeramente intranquila.
+
+              "Embajador, quiero que piense con muchísimo cuidado sus próximas palabras", dice el rey de Ollendor en un tono aterradoramente calmado. "Lo que va a decir a partir de ahora bien puede decidir si hoy vive o muere. Ante todo, quiero que me confirme una vez más lo que acaba de decirme. ¿Está absolutamente seguro de que mi hermano ha muerto?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_bypass
+      - condition: b3_ch5_follow = 2
+        texts:
+          - source: scene_text
+            paragraph: 5
+            text: |-
+              "Tu rey puede esperar. Primero tenemos que encontrar a Kelrim."
+
+              "No creo haberme explicado con suficiente claridad", dice Albert con tono amenazante. "No les estaba dando una opción. Van a seguirme al salón del trono."
+
+              "¿O qué?", digo.
+
+              Al oírme, Albert adopta una mirada furiosa y empieza a caminar hacia mí.
+
+              "Eh, eh, no hace falta que te alteres tanto", dice Daren, colocándose delante de Albert para impedirle avanzar. "Aquí todos somos amigos, ¿verdad? O como mínimo estamos más o menos del mismo lado. Si la reunión de tu rey es tan importante que no puede retrasarse, entonces ya hablaré con Kelrim un poco más tarde. Supongo que está en el área de cuarentena, ¿no?"
+
+              "El goblin está, efectivamente, en la zona de cuarentena", dice Albert. "Podrán hablar con él cuando regresen. Ahora síganme."
+
+              "De acuerdo", dice Daren. "Guíanos."
+
+              Albert asiente y luego empieza a caminar hacia el salón del trono, mientras el resto nos disponemos a seguirlo.
+
+              Después de caminar un rato, por fin llegamos a la sala donde el rey nos esperaba y nos sentamos en las sillas vacías que hay frente al trono. Mientras ocupamos nuestros asientos, Albert pasa junto a nosotros y va a reunirse con Peter, que está de pie detrás del trono del rey. Parece que los dos guardias que suelen estar al lado del rey no han sido invitados esta vez. Aquí no hay nadie más aparte de nuestro grupo, el rey del subsuelo, Albert y Peter.
+          - source: scene_text_2
+            paragraph: 4
+            text: |-
+              Los tres parecen muy cansados, y el rey incluso tiene bolsas visibles bajo los ojos. Sin embargo, aparte del cansancio, también percibo cierta... tensión en el aire que no había sentido en nuestras dos reuniones anteriores. Espero que solo sea cosa mía.
+
+              "Buenos días, amigos", dice el rey. "Espero que hayan dormido bien. Mis disculpas por llamarlos a otra reunión improvisada, pero hay bastantes cosas que necesito discutir con ustedes y que ya no pueden aplazarse más. Primero, permítanme darles un poco de contexto."
+
+              Entonces saca de su bolsillo un pequeño cubo metálico, igual que el que utilizó en nuestra primera reunión con él, y lo sostiene delante de nosotros.
+
+              "Su amigo Eiden volvió a esforzarse por atraer a cierta gente a una de las pocas salas del palacio en las que teníamos dispositivos de grabación", dice el rey. "Supongo que hizo esto porque quería que ustedes escucharan esta conversación, así que respetaré sus deseos. La discusión que están a punto de oír ocurrió ayer, poco después de que la mayoría de ustedes fueran teletransportados por error a las cavernas llenas de trampas bajo la ciudad. Creo que deberían poder reconocer con facilidad a la mayoría, si no a todos, los participantes de esta conversación. Empecemos."
+
+              Luego pulsa uno de los botones del cubo metálico y empezamos a oír voces salir de él, igual que la última vez. En cuanto reconozco la primera voz, entiendo enseguida de qué va a tratar esta conversación.
+
+              "¿Es esta la sala a la que querías traernos?...", dice el embajador de Ollendor.
+          - source: scene_3
+            paragraph: 3
+            text: |-
+              "Sí", dice Eiden. "Aquí deberíamos estar a salvo de cualquier espía que pueda estar intentando escuchar nuestra conversación."
+
+              "¡Le aseguro, Creador, que no hay espías en este palacio!", dice el rey de Ollendor. "¡No habría manera de que atravesaran a nuestros guardias!"
+
+              "No dudo de la competencia de sus guardias, gran rey", dice Eiden. "Pero aun así, es mejor prevenir que lamentar."
+
+              "¿Qué era lo que quería hablarnos, embajador?", dice el capitán de la guardia real.
+
+              "Yo... no sé por dónde empezar...", dice el embajador. "Es tan difícil poner esto en palabras. Mi rey, con el corazón encogido vengo a traerle la noticia de que su hermano... nuestro amado conde ha sido asesinado en Thilias."
+
+              El rey no responde de ninguna manera al embajador, y ninguno de los demás tampoco. Tras más de cinco segundos de silencio, el embajador vuelve a hablar.
+
+              "¿Mi rey?...", dice el embajador con una voz ligeramente intranquila.
+
+              "Embajador, quiero que piense con muchísimo cuidado sus próximas palabras", dice el rey de Ollendor en un tono aterradoramente calmado. "Lo que va a decir a partir de ahora bien puede decidir si hoy vive o muere. Ante todo, quiero que me confirme una vez más lo que acaba de decirme. ¿Está absolutamente seguro de que mi hermano ha muerto?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_bypass
   - name: b3_ch05b_bypass
     texts:
       - source: scene_text
-        paragraph: 3
-        text: |
-          Traducción en progreso.
+        paragraph: 6
+        text: |-
+          "S-sí, su alteza", dice el embajador con voz temblorosa. "Estoy seguro. Hemos traído de vuelta su cadáver como prueba. Nuestros magos hicieron todo lo posible por preservar el cuerpo con sus hechizos, pero ha pasado más de una semana desde su muerte, así que debo advertirle de que verlo resultará un poco impactante..."
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Cómo ocurrió esto?", pregunta el rey con la misma voz calmada.
+
+          "Fue... atacado en mitad de la calle por algunos participantes del torneo", dice el embajador. "El conde... luchó valientemente por su vida, pero los magos emplearon tácticas cobardes para--"
+
+          "¿Algunos participantes del torneo hicieron esto?", pregunta el rey. "¿Cómo es posible? ¿Por qué no fueron enviados de vuelta a sus propios continentes por el hechizo que les impide dañar a la gente de Varathia?"
+
+          "Sí, ¡a mí también me interesa saber eso!", dice Eiden. "Díganos, embajador, ¿cómo pudieron esos magos malvados sortear un hechizo de protección tan fiable e imposible de explotar?"
+
+          Aunque no puedo verlos hablar, puedo imaginarme con facilidad la sonrisa burlona que Eiden debe de tener en la cara en este momento de la conversación, mientras mira al embajador con los ojos cerrados esperando una respuesta.
+
+          "¿No piensa responderles, embajador?", dice el capitán de la guardia real tras una larga pausa.
+      - source: scene_text_2
+        paragraph: 5
+        text: |-
+          "Nosotros... no sabemos cómo esos magos pudieron saltarse el hechizo de protección", dice el embajador. "Sin embargo, tenemos motivos para creer que son capaces de dañar a cualquiera de los lugareños, sin ninguna restricción."
+
+          "Y esos participantes del torneo... ¿fueron ejecutados por su crimen?", pregunta el rey, todavía con un tono calmado, aunque se nota que apenas se está conteniendo en este punto.
+
+          "...No, su alteza", dice el embajador. "El rey gnomo se opuso firmemente a la idea de ejecutarlos. Al final... llegamos a un compromiso y los condenamos a luchar en uno de los mayores eventos de arena de toda la historia de nuestro continente, pero de algún modo sobrevivieron hasta el final incluso sin su magia, y así, según las leyes escritas en el tratado entre todos los reinos de Varathia, quedaron en libertad el mismo día en que--"
+
+          "¡¿Los dejaste ir?!", grita el rey de Ollendor con tanta fuerza que casi tuve que taparme los oídos. "Gusano miserable, ¿me estás diciendo que los responsables de la muerte de mi hermano están deambulando libremente por Varathia en este mismo momento? Debería encadenarte y echártele a los perros por tu incompetencia, patética excusa de diplomático. ¿Para esto te envié a Thilias? ¿Para negociar con ese idiota de gnomo como si él y yo fuéramos iguales? ¿Por qué no le dijiste que habría guerra si no ejecutaba a esos magos en el acto? ¿Simplemente dejaste que te pasara por encima como si fueras uno de sus sirvientes insignificantes?"
+      - source: scene_3
+        paragraph: 4
+        text: |-
+          "Mi rey, sí intenté decirle que habría guerra, pero no quiso escuchar", dice el embajador con voz presa del pánico. "Y además, ¡Golmyck no fue el único que se puso del lado de los magos! De hecho, la principal razón por la que fueron enviados a la arena fue porque..."
+
+          El embajador deja de hablar de repente, probablemente porque se dio cuenta de lo que muy probablemente le pasaría si delataba a Eiden delante del rey.
+
+          "Porque...", vuelve a decir el embajador, ahora con una voz aún más temblorosa.
+
+          Probablemente puedo imaginar lo que el embajador estaría pensando en esos momentos. ¿Sería mejor que lo matara el rey o Eiden? ¿Cuál de los dos tendría más probabilidades de perdonarle la vida? ¿Era siquiera la misericordia algo de lo que cualquiera de ellos fuera capaz?
+
+          "Si me permite intervenir, su alteza", dice el capitán de la guardia real al darse cuenta de que el embajador no piensa terminar la frase. "Los intrusos de los que le hablé antes también eran participantes del torneo, y eran perfectamente capaces de atacarme, pese a ser yo ciudadano de Ollendor. El grupo con el que luchamos incluía a un mago de piel oscura con armadura completa y una cicatriz en forma de 'X' en la frente, una banshee que podía usar hielo como elemento mágico, una niña pequeña que podía lanzar magia de fuego y un gigante transformado para parecer un enano. ¿Le suena familiar alguna de estas descripciones, embajador?"
+
+          "¡Son ellos!", grita el embajador. "¡Ellos fueron quienes mataron al conde! ¡Estoy seguro!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch05b_manhunt
   - name: b3_ch05b_manhunt
     texts:
       - source: scene_text
-        paragraph: 4
-        text: |
-          Traducción en progreso.
+        paragraph: 7
+        text: |-
+          "Así que los responsables de la muerte de mi hermano estuvieron todo este tiempo a las puertas de mi casa...", dice el rey de Ollendor, controlando esta vez la ira en su voz. "Capitán, me dijo que sus hombres estuvieron a punto de apresar a algunos de esos intrusos antes de que se teletransportaran a último momento. ¿Cree que siguen dentro de la ciudad?"
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Sin ninguna duda, su alteza", dice el capitán. "Biliborrathrathsarran nos aseguró que la barrera invisible que creó alrededor de la ciudad impide que nadie se teletransporte más allá de nuestras murallas usando hechizos convencionales. La única forma de entrar o salir de esta ciudad es a través de las puertas de la ciudad. Dondequiera que se escondan esos criminales, tiene que ser dentro de la ciudad."
+
+          "Entonces está claro lo que debemos hacer...", dice el rey de Ollendor, y luego hace una breve pausa antes de volver a hablar. "Capitán, quiero que la guardia registre cada palmo de esta ciudad hasta que encuentren a esos magos, empezando ahora mismo. No me importa que ya casi haya anochecido. Despierte a todos y cada uno de los guardias que tenemos y dígales que miren en cada rincón y cada grieta hasta que no quede ni un solo lugar donde esconderse. Si nuestros ciudadanos se niegan a abrir las puertas de sus casas, den por hecho que están intentando dar cobijo a criminales y tendrán permiso para matarlos en el acto. Nadie podrá entrar ni salir de la ciudad hasta que todos los culpables de la muerte de mi hermano sean encontrados y ejecutados. Esta ciudad entra en cierre total y usted, embajador, va a supervisar toda esta operación junto con el capitán."
+
+          "¿Yo?...", pregunta el embajador con un tono ligeramente temeroso.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "Sí, embajador", dice el rey. "Lo pongo a cargo de ocuparse de estos criminales. Usted será personalmente responsable de los resultados de esta cacería. No creo que tenga que decirle qué le ocurrirá si vuelve a fracasar en capturar a estos magos por segunda vez. Estoy seguro de que su deseo de corregir sus errores bastará de sobra para motivarlo a hacer bien su trabajo esta vez."
+
+          "Sí, su majestad", dice el embajador. "Por supuesto..."
+
+          "Bien", dice el rey. "Entonces queda decidido. Espero que ninguno de los dos pensara dormir esta noche, porque sospecho que van a estar bastante ocupados durante un buen tiempo. Empiecen a hacer los preparativos necesarios. Quiero que ambos elaboren un plan de acción en menos de una hora. Ah, y capitán... ¿sería tan amable de enviar a uno de los sirvientes del palacio a traer aquí a Bilibo... Bilibo... al lessathi? Dígale que es un asunto muy urgente y que solicito su presencia inmediata en el castillo. Seguro que al menos uno de sus dispositivos nos será útil en una situación así."
+
+          "Sí, mi rey", dice el capitán. "Enviaré a alguien a contactar con él de inmediato."
+      - source: scene_3
+        paragraph: 5
+        text: |-
+          "Me reuniré con ambos en mi salón del trono cuando terminen de planearlo todo", dice el rey. "No me hagan esperar."
+
+          Entonces oímos unos pasos que se alejan de los dispositivos de grabación, a medida que el rey y, presumiblemente, el capitán de la guardia real salen de la sala. Una vez que ya no podemos oír los pasos, Eiden se dirige al embajador en voz baja.
+
+          "¿No se alegra de que el capitán de la guardia lo interrumpiera antes, embajador?", dice Eiden. "Gracias a él no tuvo que contarles nuestro pequeño secreto, ¡y todos ustedes pudieron vivir para ver un día más! Asegúrese de aprovechar al máximo sus próximas horas, embajador. La vida es corta. ¡Nunca se sabe qué puede pasar!"
+
+          "Sí... Creador", dice el embajador, con un tono cortés muy forzado. "Le agradezco su sabiduría."
+
+          Entonces lo oímos salir de la sala, y un poco después hace lo mismo Eiden. Cuando la conversación termina, el rey del subsuelo vuelve a guardarse el cubo metálico en el bolsillo y luego nos mira para ver nuestra reacción.
+
+          "¿Bien?", dice el rey del subsuelo unos segundos después. "¿Qué les pareció?"
+    choices:
+      - position: 1
+        text: Creo que la calidad de la grabación era muy buena.
+        effects:
+          - set:
+              current_scene: b3_ch05b_quality
+      - position: 2
+        text: Yo... supongo que ya se destapó todo.
+        effects:
+          - set:
+              current_scene: b3_ch05b_bag
+      - position: 3
+        text: Juro que íbamos a contarte que matamos al hermano del rey.
+        effects:
+          - set:
+              current_scene: b3_ch05b_brother
   - name: b3_ch05b_quality
     texts:
       - source: scene_text
-        paragraph: 5
-        text: |
-          Traducción en progreso.
+        paragraph: 8
+        text: |-
+          "Creo que la calidad de la grabación era muy buena."
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Yo también lo creo", dice el rey del subsuelo. "Hemos invertido mucho dinero en estos dispositivos y puedo decir que estoy muy satisfecho con ellos. Ahora bien, ¿hay quizá algo más que quieran decirnos aparte de eso?"
+
+          "Escucha", dice Daren. "Sé que esta situación parece muy mala, pero te prometo que podemos arreglarla."
+
+          "Hay gente muriendo ahí arriba, sanador", dice el rey del subsuelo con un tono grave. "Los guardias siguen sembrando el caos por la ciudad, derribando puertas y matando a cualquiera que se atreva a oponerse. Ya hemos evacuado de la superficie a las familias de todos los rebeldes, pero aquí abajo no hay ni espacio ni aire suficientes para dar cobijo a toda la población de la ciudad. Incluso ahora hay gente siendo asesinada en sus propias casas porque los hombres del rey siguen buscándolos a ustedes. Esa gente no habría muerto si ustedes no hubieran entrado en esta ciudad. Su sangre está en sus manos."
+
+          "Lo entiendo y lo siento de verdad", dice Daren. "No sabía que esto fuera a llegar tan lejos. Pensábamos que tendríamos más tiempo antes de la llegada del embajador y no sopesamos del todo las consecuencias de nuestras acciones. Pero todavía podemos ayudar. Nuestros objetivos siguen siendo los mismos, y siguen alineándose con los tuyos. Si pudiéramos organizarnos para atacar juntos al rey de Ollendor, entonces quizá--"
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          "No creo que comprendas del todo la posición en la que te encuentras, sanador con armadura", dice el rey del subsuelo. "La única razón por la que todavía no han sido capturados por la guardia real es que nosotros les estamos proporcionando refugio. Ahora bien, no me malinterpretes, sigo estando muy agradecido por tus esfuerzos por encontrar una cura para los enfermos de nuestra área de cuarentena. Por eso les he permitido dormir aquí, a pesar de lo que ha estado ocurriendo en la superficie. Sin embargo, no puedo sacrificar en conciencia la vida de la gente de arriba solo porque exista una pequeña posibilidad de que cures a algunos de nuestros habitantes terminales."
+
+          "¡La posibilidad no es pequeña en absoluto!", dice Daren. "Kelrim y yo ya tenemos una pista muy buena sobre lo que puede estar causando la enfermedad, y si conseguimos las hierbas que necesitamos, ¡incluso podríamos curar a esa gente hoy mismo!"
+
+          "Y cuando termines de curar a la gente de la zona de cuarentena, ¿qué harás?", dice el rey. "¿Te entregarás a la guardia real? ¿O quizá tienes algún otro plan para acabar con la violencia absurda que sigue produciéndose en la superficie?"
+
+          "Haremos lo que vinimos a hacer", dice Daren. "Mataremos al rey de Ollendor y, cuando esté muerto, con suerte toda esta locura llegará a su fin."
+
+          "¡¿Hablas de matar al rey cuando todos ustedes juntos ni siquiera pudieron derrotar a dos de sus guardias?!", grita Albert. "¿O acaso ya olvidaron que fuimos nosotros quienes arriesgamos la vida para salvarlos de Gontrok y del capitán de la guardia real ayer?"
+      - source: scene_3
+        paragraph: 6
+        text: |-
+          Arraka se echa a reír.
+
+          "Ahí sí que te la ha dejado caer", nos dice.
+
+          "¡Hemos mejorado desde entonces!", dice Hadrik. "¡Solo esta mañana practiqué estas técnicas nuevas de lucha que seguro que--"
+
+          "¡Unos cuantos movimientos nuevos no van a ayudarlos cuando el capitán los inmovilice a todos contra el suelo con su aura!", dice Albert.
+
+          "¿Quieres apostar?", dice Hadrik con una sonrisa.
+
+          "Tú, pequeño arrogante--", empieza a decir Albert, pero el rey lo interrumpe.
+
+          "Vamos, vamos, Albert", dice el rey del subsuelo, "no deberíamos apresurarnos a desestimar sus esfuerzos por mejorar solo porque sus afirmaciones parezcan poco realistas. Creo que lo justo sería darles una última oportunidad para demostrar lo que valen. Si fallan nuestra prueba, pondremos fin a nuestra alianza y les pediremos amablemente que abandonen nuestro territorio."
+
+          "Si fallamos la prueba, ¿nos echas para siempre?", dice Daren. "¿Me estás diciendo que ni siquiera nos dejarás volver para curar a los enfermos del área de cuarentena?"
+
+          "Si aun en esas circunstancias siguen queriendo salvar a esa gente, no les impediremos volver una última vez para curarlos", dice el rey. "Sin embargo, debes entender que incluso en tal caso les pediremos que se marchen en cuanto hayan terminado."
+
+          "Bien", dice Daren. "Puedo aceptar eso. Así que supongo que si superamos esta prueba, lucharás junto a nosotros contra el rey de Ollendor."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch05b_improved
   - name: b3_ch05b_bag
     texts:
       - source: scene_text
-        paragraph: 6
-        text: |
-          Traducción en progreso.
+        paragraph: 9
+        text: |-
+          "Yo... supongo que ya se destapó todo."
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Así es", dice el rey del subsuelo. "Pero seguro que tienen algo más que comentar sobre esto aparte de afirmar lo obvio, ¿no?"
+
+          "Escucha", dice Daren. "Sé que esta situación parece muy mala, pero te prometo que podemos arreglarla."
+
+          "Hay gente muriendo ahí arriba, sanador", dice el rey del subsuelo con un tono grave. "Los guardias siguen sembrando el caos por la ciudad, derribando puertas y matando a cualquiera que se atreva a oponerse. Ya hemos evacuado de la superficie a las familias de todos los rebeldes, pero aquí abajo no hay ni espacio ni aire suficientes para dar cobijo a toda la población de la ciudad. Incluso ahora hay gente siendo asesinada en sus propias casas porque los hombres del rey siguen buscándolos a ustedes. Esa gente no habría muerto si ustedes no hubieran entrado en esta ciudad. Su sangre está en sus manos."
+
+          "Lo entiendo y lo siento de verdad", dice Daren. "No sabía que esto fuera a llegar tan lejos. Pensábamos que tendríamos más tiempo antes de la llegada del embajador y no sopesamos del todo las consecuencias de nuestras acciones. Pero todavía podemos ayudar. Nuestros objetivos siguen siendo los mismos, y siguen alineándose con los tuyos. Si pudiéramos organizarnos para atacar juntos al rey de Ollendor, entonces quizá--"
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          "No creo que comprendas del todo la posición en la que te encuentras, sanador con armadura", dice el rey del subsuelo. "La única razón por la que todavía no han sido capturados por la guardia real es que nosotros les estamos proporcionando refugio. Ahora bien, no me malinterpretes, sigo estando muy agradecido por tus esfuerzos por encontrar una cura para los enfermos de nuestra área de cuarentena. Por eso les he permitido dormir aquí, a pesar de lo que ha estado ocurriendo en la superficie. Sin embargo, no puedo sacrificar en conciencia la vida de la gente de arriba solo porque exista una pequeña posibilidad de que cures a algunos de nuestros habitantes terminales."
+
+          "¡La posibilidad no es pequeña en absoluto!", dice Daren. "Kelrim y yo ya tenemos una pista muy buena sobre lo que puede estar causando la enfermedad, y si conseguimos las hierbas que necesitamos, ¡incluso podríamos curar a esa gente hoy mismo!"
+
+          "Y cuando termines de curar a la gente de la zona de cuarentena, ¿qué harás?", dice el rey. "¿Te entregarás a la guardia real? ¿O quizá tienes algún otro plan para acabar con la violencia absurda que sigue produciéndose en la superficie?"
+
+          "Haremos lo que vinimos a hacer", dice Daren. "Mataremos al rey de Ollendor y, cuando esté muerto, con suerte toda esta locura llegará a su fin."
+
+          "¡¿Hablas de matar al rey cuando todos ustedes juntos ni siquiera pudieron derrotar a dos de sus guardias?!", grita Albert. "¿O acaso ya olvidaron que fuimos nosotros quienes arriesgamos la vida para salvarlos de Gontrok y del capitán de la guardia real ayer?"
+      - source: scene_3
+        paragraph: 6
+        text: |-
+          Arraka se echa a reír.
+
+          "Ahí sí que te la ha dejado caer", nos dice.
+
+          "¡Hemos mejorado desde entonces!", dice Hadrik. "¡Solo esta mañana practiqué estas técnicas nuevas de lucha que seguro que--"
+
+          "¡Unos cuantos movimientos nuevos no van a ayudarlos cuando el capitán los inmovilice a todos contra el suelo con su aura!", dice Albert.
+
+          "¿Quieres apostar?", dice Hadrik con una sonrisa.
+
+          "Tú, pequeño arrogante--", empieza a decir Albert, pero el rey lo interrumpe.
+
+          "Vamos, vamos, Albert", dice el rey del subsuelo, "no deberíamos apresurarnos a desestimar sus esfuerzos por mejorar solo porque sus afirmaciones parezcan poco realistas. Creo que lo justo sería darles una última oportunidad para demostrar lo que valen. Si fallan nuestra prueba, pondremos fin a nuestra alianza y les pediremos amablemente que abandonen nuestro territorio."
+
+          "Si fallamos la prueba, ¿nos echas para siempre?", dice Daren. "¿Me estás diciendo que ni siquiera nos dejarás volver para curar a los enfermos del área de cuarentena?"
+
+          "Si aun en esas circunstancias siguen queriendo salvar a esa gente, no les impediremos volver una última vez para curarlos", dice el rey. "Sin embargo, debes entender que incluso en tal caso les pediremos que se marchen en cuanto hayan terminado."
+
+          "Bien", dice Daren. "Puedo aceptar eso. Así que supongo que si superamos esta prueba, lucharás junto a nosotros contra el rey de Ollendor."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch05b_improved
   - name: b3_ch05b_brother
     texts:
       - source: scene_text
-        paragraph: 7
-        text: |
-          Traducción en progreso.
+        paragraph: 10
+        text: |-
+          "Juro que íbamos a contarte que matamos al hermano del rey."
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Seguro que sí", dice el rey del subsuelo. "No obstante, lo importante es que ahora conocemos la información. Así que, ¿hay algo más que quieran decirnos?"
+
+          "Escucha", dice Daren. "Sé que esta situación parece muy mala, pero te prometo que podemos arreglarla."
+
+          "Hay gente muriendo ahí arriba, sanador", dice el rey del subsuelo con un tono grave. "Los guardias siguen sembrando el caos por la ciudad, derribando puertas y matando a cualquiera que se atreva a oponerse. Ya hemos evacuado de la superficie a las familias de todos los rebeldes, pero aquí abajo no hay ni espacio ni aire suficientes para dar cobijo a toda la población de la ciudad. Incluso ahora hay gente siendo asesinada en sus propias casas porque los hombres del rey siguen buscándolos a ustedes. Esa gente no habría muerto si ustedes no hubieran entrado en esta ciudad. Su sangre está en sus manos."
+
+          "Lo entiendo y lo siento de verdad", dice Daren. "No sabía que esto fuera a llegar tan lejos. Pensábamos que tendríamos más tiempo antes de la llegada del embajador y no sopesamos del todo las consecuencias de nuestras acciones. Pero todavía podemos ayudar. Nuestros objetivos siguen siendo los mismos, y siguen alineándose con los tuyos. Si pudiéramos organizarnos para atacar juntos al rey de Ollendor, entonces quizá--"
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          "No creo que comprendas del todo la posición en la que te encuentras, sanador con armadura", dice el rey del subsuelo. "La única razón por la que todavía no han sido capturados por la guardia real es que nosotros les estamos proporcionando refugio. Ahora bien, no me malinterpretes, sigo estando muy agradecido por tus esfuerzos por encontrar una cura para los enfermos de nuestra área de cuarentena. Por eso les he permitido dormir aquí, a pesar de lo que ha estado ocurriendo en la superficie. Sin embargo, no puedo sacrificar en conciencia la vida de la gente de arriba solo porque exista una pequeña posibilidad de que cures a algunos de nuestros habitantes terminales."
+
+          "¡La posibilidad no es pequeña en absoluto!", dice Daren. "Kelrim y yo ya tenemos una pista muy buena sobre lo que puede estar causando la enfermedad, y si conseguimos las hierbas que necesitamos, ¡incluso podríamos curar a esa gente hoy mismo!"
+
+          "Y cuando termines de curar a la gente de la zona de cuarentena, ¿qué harás?", dice el rey. "¿Te entregarás a la guardia real? ¿O quizá tienes algún otro plan para acabar con la violencia absurda que sigue produciéndose en la superficie?"
+
+          "Haremos lo que vinimos a hacer", dice Daren. "Mataremos al rey de Ollendor y, cuando esté muerto, con suerte toda esta locura llegará a su fin."
+
+          "¡¿Hablas de matar al rey cuando todos ustedes juntos ni siquiera pudieron derrotar a dos de sus guardias?!", grita Albert. "¿O acaso ya olvidaron que fuimos nosotros quienes arriesgamos la vida para salvarlos de Gontrok y del capitán de la guardia real ayer?"
+      - source: scene_3
+        paragraph: 6
+        text: |-
+          Arraka se echa a reír.
+
+          "Ahí sí que te la ha dejado caer", nos dice.
+
+          "¡Hemos mejorado desde entonces!", dice Hadrik. "¡Solo esta mañana practiqué estas técnicas nuevas de lucha que seguro que--"
+
+          "¡Unos cuantos movimientos nuevos no van a ayudarlos cuando el capitán los inmovilice a todos contra el suelo con su aura!", dice Albert.
+
+          "¿Quieres apostar?", dice Hadrik con una sonrisa.
+
+          "Tú, pequeño arrogante--", empieza a decir Albert, pero el rey lo interrumpe.
+
+          "Vamos, vamos, Albert", dice el rey del subsuelo, "no deberíamos apresurarnos a desestimar sus esfuerzos por mejorar solo porque sus afirmaciones parezcan poco realistas. Creo que lo justo sería darles una última oportunidad para demostrar lo que valen. Si fallan nuestra prueba, pondremos fin a nuestra alianza y les pediremos amablemente que abandonen nuestro territorio."
+
+          "Si fallamos la prueba, ¿nos echas para siempre?", dice Daren. "¿Me estás diciendo que ni siquiera nos dejarás volver para curar a los enfermos del área de cuarentena?"
+
+          "Si aun en esas circunstancias siguen queriendo salvar a esa gente, no les impediremos volver una última vez para curarlos", dice el rey. "Sin embargo, debes entender que incluso en tal caso les pediremos que se marchen en cuanto hayan terminado."
+
+          "Bien", dice Daren. "Puedo aceptar eso. Así que supongo que si superamos esta prueba, lucharás junto a nosotros contra el rey de Ollendor."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch05b_improved
   - name: b3_ch05b_improved
     texts:
       - source: scene_text
-        paragraph: 8
-        text: |
-          Traducción en progreso.
+        paragraph: 11
+        text: |-
+          "Eso es probablemente a lo que se reducirá, sí", dice el rey del subsuelo.
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Entonces, ¿en qué va a consistir esta prueba?", dice Hadrik. "¿Tienen algunos luchadores realmente fuertes a los que quieren que derrotemos?"
+
+          El rey, Albert y Peter intercambian unas miradas antes de que el rey vuelva a dirigirse a nosotros.
+
+          "Sí, supongo que esa sería una forma de decirlo", dice el rey. "Pero antes, déjenme hacerles una pregunta. ¿No les ha parecido extraño que alguien tan precavido como yo suela celebrar estas reuniones con tan pocos hombres propios protegiéndome?"
+
+          "Sí me pareció un poco raro, ahora que lo mencionas", dice Daren. "Y lo que me parece todavía más raro es que ahora tengas aún menos seguridad que en nuestras dos reuniones anteriores. Antes tenías dos guardias a tu lado, pero ahora solo están Peter y Albert. ¿Por qué evitaste traer a tus dos guardias habituales si sabías que la conversación de hoy podía desembocar en un enfrentamiento?"
+
+          "Oh, la respuesta a esa pregunta es bastante simple", dice el rey. "Es porque estorbarían."
+
+          De repente, una fuerza invisible desde arriba nos aplasta contra el suelo con tanta fuerza que las sillas de madera en las que estábamos sentados se rompen en pedazos. Intento levantarme, pero debido a la ridícula cantidad de presión que me empuja contra el suelo, apenas puedo mover un músculo. Al final consigo girar un poco la cabeza y me doy cuenta de que todos los demás, salvo Melindra y Leila, también están tumbados boca arriba como yo, incapaces de moverse. Mientras sigo allí tirado intentando entender qué ha pasado, oigo a Arraka estallar en carcajadas.
+      - source: scene_text_2
+        paragraph: 8
+        text: |-
+          "¡Ja, ja, ja, ja, ja, ja, ja!", se ríe Arraka. "Me preguntaba cuándo ibas a revelarles por fin tu poder oculto, pero esto ya es demasiado. Me estoy muriendo de risa. ¡Ja, ja, ja, ja, ja!"
+
+          "¿Qué ocurre?", nos pregunta el rey del subsuelo, ignorando a Arraka. "La prueba ya ha comenzado. Esta es la misma técnica de manipulación de aura contra la que decían con tanto orgullo que podrían luchar en cuanto volvieran a encontrarse con el capitán de la guardia real. ¿Por qué no me muestran cuánto han mejorado de verdad?"
+
+          ¿Es el rey quien nos está haciendo esto? ¡Ni siquiera sabía que fuera mago! Maldición, si al menos pudiera mover el brazo para lanzarle la daga o algo así...
+
+          "Pueden rendirse en cualquier momento, ya lo saben", dice el rey del subsuelo cuando pasa un poco más de tiempo. "Solo admitan la derrota y los dejaré levantarse."
+      - source: scene_3
+        paragraph: 7
+        text: |-
+          "Desenredar...", dice Daren con una voz apenas audible mientras sigue aplastado contra el suelo.
+
+          "¿Cómo dice?", pregunta el rey del subsuelo.
+
+          "Desenredar... el flujo del aura... con la mente", dice Daren otra vez, ahora con más voz.
+
+          Entonces consigue sacar la espada de la vaina, la usa para apuñalar el aire que tiene encima y luego hace un rápido tajo hacia la derecha. En cuanto lo hace, la fuerza invisible que nos mantenía inmovilizados desaparece por completo, y todos nos levantamos al instante adoptando posturas de combate.
+
+          "Ahí lo tienes", dice Arraka. "¿Ves? Puedes hacerlo si lo intentas."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch05b_invisibility
   - name: b3_ch05b_invisibility
     texts:
       - source: scene_text
-        paragraph: 9
-        text: |
-          Traducción en progreso.
-
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch05b_hearing
-    texts:
-      - source: scene_text
-        paragraph: 10
-        text: |
-          Traducción en progreso.
-
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch05b_bluff
-    texts:
-      - source: scene_text
-        paragraph: 11
-        text: |
-          Traducción en progreso.
-
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch05b_observation
-    texts:
-      - source: scene_text
         paragraph: 12
-        text: |
-          Traducción en progreso.
+        text: |-
+          "¡Oh, ahora lo entiendo!", dice el rey mirando a Daren. "Hace un momento estabas imaginando que desatabas un nudo invisible con la espada, ¿verdad? ¡Nada mal! Muy bien, has superado la primera fase de la prueba. Albert, puedes comenzar la segunda fase cuando quieras."
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Sí, mi rey", dice Albert, y unos segundos después desaparece por completo en el aire.
+
+          "¿Qué ha hecho?...", dice Hadrik mirando por toda la sala, intentando averiguar adónde ha desaparecido Albert. "¿Era un hechizo de invisibilidad?"
+
+          "Es más que un simple hechizo de invisibilidad", dice el rey. "Lo que Albert está usando ahora mismo es una habilidad que solo pueden aprender los asesinos más hábiles. Está ocultando por completo su presencia. No solo no podrán verlo, sino que tampoco podrán oírlo, olerlo ni siquiera sentir su aura. Desde su punto de vista, bien podría no estar en esta sala en absoluto."
+
+          "Ah, entonces es parecido al hechizo de invisibilidad de Eiden", digo. "Arraka, supongo que tú sabes dónde está, ¿no?"
+      - source: scene_text_2
+        paragraph: 9
+        text: |-
+          "Claro que sé dónde está", dice Arraka. "Pero no voy a perder mi tiempo mostrándoles su posición solo por un simulacro de batalla de pacotilla. Si quieren superar esta prueba cutre, averígüenlo ustedes mismos."
+
+          "Bueno, da igual dónde esté", dice Hadrik, "en algún momento tendrá que salir de la invisibilidad para atacarnos, así que me limitaré a esperar la ocasión adecuada y lo agarraré entonces. Todavía puedo agarrar a la gente, ¿no? No es como si fuera a atacarlo ni nada por el estilo, así que el hecho de que sea un lugareño no debería imp-- ¿¡pero qué demonios!?"
+
+          De repente Hadrik intenta agarrar algo del aire vacío a su espalda, pero no ocurre nada. Cuando intento entender qué ha pasado, noto que la armadura de cuero de Hadrik ha sido atravesada por detrás y que una pequeña cantidad de sangre le cae por la parte alta de la espalda.
+
+          "¡¿En serio acaba de atacarme mientras seguía invisible?!", dice Hadrik, mientras Peter se aparta ahora hacia una de las paredes para observar mejor la pelea. "¿Desde cuándo funcionan así los hechizos de invisibilidad?"
+
+          "Ya te dije que es más que un simple hechizo", dice el rey. "Su respiración, su control del aura y su daga especial de empuñadura naranja desempeñan un papel a la hora de ayudarlo a enmascarar su presencia. Este es el resultado de años y años de arduo entrenamiento. Se están tomando a los asesinos demasiado a la ligera si creen que basta con esperar a que ataquen para luego contraatacar. Si esto no fuera un simulacro, una puñalada por la espalda como esa bien podría haberte matado, enano. Quizá deberías empezar a tomarte esta prueba un poco más en serio."
+    choices:
+      - position: 1
+        text: Intentar escuchar con muchísima atención para oír los pasos de Albert.
+        effects:
+          - set:
+              current_scene: b3_ch05b_hearing
+              b3_ch5_fight: 0
+      - position: 2
+        text: Mentirle a Albert diciéndole que sé exactamente dónde está.
+        effects:
+          - set:
+              current_scene: b3_ch05b_bluff
+              b3_ch5_fight: 1
+      - position: 3
+        text: Intentar concentrarme para ver si puedo detectar su aura con mi Sentido mágico.
+        effects:
+          - set:
+              current_scene: b3_ch05b_observation
+              b3_ch5_fight: 2
+      - position: 4
+        text: Quedarme ahí sin hacer nada, esperando que todo se resuelva solo.
+        effects:
+          - set:
+              current_scene: b3_ch05b_nothing
+              b3_ch5_fight: 3
+  - name: b3_ch05b_hearing
+    routes:
+      - condition: hearing < 4
+        texts:
+          - source: scene_text
+            paragraph: 13
+            text: |-
+              Por muy hábil que sea Albert, sus pies siguen teniendo que tocar el suelo cuando camina de un sitio a otro. Si escucho con muchísima atención, quizá pueda averiguar dónde va a atacar a continuación.
+
+              Intento concentrarme en cualquier sonido que se parezca a unos pasos, bloqueando todos los demás ruidos de mi mente. Por desgracia, parece que quizá subestimé la habilidad del asesino, porque por mucho que me esfuerzo no consigo oír ningún sonido proveniente del suelo.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de audición fallida - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_premonition
+                condition: b3_ch5_fight < 4
+              - set:
+                  current_scene: b3_ch05b_obscure
+                condition: b3_ch5_fight >= 4
+      - condition: hearing >= 4 AND b2_ch6_stat <> 1
+        texts:
+          - source: scene_text
+            paragraph: 14
+            text: |-
+              Por muy hábil que sea Albert, sus pies siguen teniendo que tocar el suelo cuando camina de un sitio a otro. Si escucho con muchísima atención, quizá pueda averiguar dónde va a atacar a continuación.
+
+              Intento concentrarme en cualquier sonido que se parezca a unos pasos, bloqueando todos los demás ruidos de mi mente. Por desgracia, parece que quizá subestimé la habilidad del asesino, porque ni siquiera con mi estadística de audición al máximo consigo oír ningún sonido proveniente del suelo.
+
+              Si tuviera alguna forma de aumentar temporalmente mi estadística de audición más allá de su nivel máximo actual, quizá la cosa sería distinta, pero no creo que mi dispositivo de estadísticas sea capaz de algo así.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de audición fallida - nivel 7 ]'
+              successful_checks:
+                - '[ Comprobación de audición exitosa - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_premonition
+                condition: b3_ch5_fight < 4
+              - set:
+                  current_scene: b3_ch05b_obscure
+                condition: b3_ch5_fight >= 4
+      - condition: hearing >= 4 AND b2_ch6_stat = 1
+        texts:
+          - source: scene_text
+            paragraph: 15
+            text: |-
+              Por muy hábil que sea Albert, sus pies siguen teniendo que tocar el suelo cuando camina de un sitio a otro. Si escucho con muchísima atención, quizá pueda averiguar dónde va a atacar a continuación.
+
+              Intento concentrarme en cualquier sonido que se parezca a unos pasos, bloqueando todos los demás ruidos de mi mente. Por desgracia, parece que quizá subestimé la habilidad del asesino, porque ni siquiera con mi estadística de audición al máximo consigo oír ningún sonido proveniente del suelo.
+
+              Pero ¿y si usara el código secreto que conozco por Melindra para potenciar temporalmente mi estadística de audición? ¿Bastaría con eso para oírlo moverse?
+
+              Saco a toda prisa mi dispositivo de estadísticas del bolsillo y la ballesta de la mochila. Luego introduzco el código del que Melindra me habló y agarro de inmediato la ballesta con ambas manos, sabiendo que solo tengo unos segundos para reaccionar antes de que el aumento temporal desaparezca.
+
+              Ahora sí puedo oír los pasos. Incluso con este nivel de estadística apenas son audibles, pero puedo oírlos. Necesito dispararle rápido, antes de que el efecto desaparezca. Pero no debo acertarle en un punto vital. Al fin y al cabo, él hizo todo lo posible por no matar a Hadrik.
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              Calculo rápidamente su trayectoria a partir de los pocos pasos que consigo oír e intento anticipar lo mejor que puedo su recorrido cuando disparo mi virote de ballesta al aire vacío que tengo delante. Para mi sorpresa, en vez de acertarle o atravesar simplemente el aire, el virote de ballesta resuena contra una superficie metálica y cae al suelo. Al darse cuenta de que Albert había desviado el proyectil con su daga mientras seguía invisible, Hadrik no pierde tiempo y se lanza de inmediato hacia el asesino, agarrándose a algo que a primera vista no parece más que aire vacío.
+
+              "¡Suéltame de una vez!", dice Albert, mientras va saliendo lentamente de la invisibilidad y nos revela que Hadrik, al parecer, lo había agarrado por la pierna. "¡Suéltame o te juro que esta vez sí te apuñalo de verdad!"
+
+              "¡Oye, lo único que tienes que hacer es 'admitir la derrota' y te soltaré, amigo!", dice Hadrik con una sonrisa torcida. "No hace falta que te pongas tan nervioso. Al fin y al cabo, no es más que un combate amistoso."
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              De repente, Peter extiende las manos hacia Hadrik y dispara desde las palmas un poderoso ataque de rayo. Mientras Hadrik recibe la descarga de la corriente eléctrica que le atraviesa el cuerpo, Albert intenta liberarse, pero el enano sigue aferrado a él con fuerza y no lo deja escapar. Parece que el asesino no se ve afectado en absoluto por el ataque eléctrico, aunque Hadrik lo siga sujetando por la pierna. ¿Significa eso que tiene algún tipo de objeto que le concede inmunidad a la electricidad?
+
+              "¡Vas a... tener que... hacerlo mejor que eso!", le dice Hadrik a Peter mientras contiene el dolor de la corriente eléctrica. "¡Comparado con los ataques de la amiga elementalista de Kate, esto es un juego de niños!"
+
+              "¿Pero qué demonios?", dice Daren mientras se gira hacia el rey del subsuelo. "¿Desde cuándo Peter forma parte de la prueba? ¡Nunca nos dijiste que nos lanzaría rayos y-- NGH!"
+
+              Mientras Daren hablaba, Peter cambió de idea y decidió apuntarle a él en vez de a Hadrik, lanzándole un hechizo de rayo a Daren en cuanto le expuso la espalda.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de audición exitosa - nivel 4 ]'
+                - '[ Comprobación de audición exitosa - nivel 7 ]'
+              b3_ch5_fight: 4
+              ac_b3_ch5_footsteps: 1
+            achievement:
+              id: ac_b3_ch5_footsteps
+              title: Oigo pasos.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_obscure
+  - name: b3_ch05b_bluff
+    routes:
+      - condition: bluff < 4
+        texts:
+          - source: scene_text
+            paragraph: 16
+            text: |-
+              "Oye, Albert, te das cuenta de que sé perfectamente dónde estás, ¿verdad?", digo. "Será mejor que empieces a moverte de una forma menos obvia, porque ahora mismo parece que estás suplicando que te disparen un virote de ballesta en el pecho."
+
+              Ninguna respuesta. Ni un solo sonido. Parece que mi farol no le ha afectado en absoluto. Supongo que voy a tener que encontrar otra forma de obligarlo a revelar su posición.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de farol fallida - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_premonition
+                condition: b3_ch5_fight < 4
+              - set:
+                  current_scene: b3_ch05b_obscure
+                condition: b3_ch5_fight >= 4
+      - condition: bluff >= 4
+        texts:
+          - source: scene_text
+            paragraph: 17
+            text: |-
+              "Oye, Albert, te das cuenta de que sé perfectamente dónde estás, ¿verdad?", digo. "Será mejor que empieces a moverte de una forma menos obvia, porque ahora mismo parece que estás suplicando que te disparen un virote de ballesta en el pecho."
+
+              Parece que mi farol sí surtió efecto, porque de repente oímos varios pasos fuertes cuando el asesino intenta alejarse rápido de la posición en la que cree que lo he descubierto. Kate no desaprovecha la oportunidad y le dispara un carámbano tan rápido como puede. Sin embargo, en lugar de alcanzarlo, el carámbano produce un fuerte sonido metálico y cambia de dirección, cayendo al suelo.
+
+              Al darse cuenta de que Albert había desviado el proyectil con su daga mientras seguía invisible, Hadrik no pierde tiempo y se lanza de inmediato hacia el asesino, agarrándose a algo que a primera vista no parece más que aire vacío.
+
+              "¡Suéltame de una vez!", dice Albert, mientras va saliendo lentamente de la invisibilidad y nos revela que Hadrik, al parecer, lo había agarrado por la pierna. "¡Suéltame o te juro que esta vez sí te apuñalo de verdad!"
+          - source: scene_text_2
+            paragraph: 11
+            text: |-
+              "¡Oye, lo único que tienes que hacer es 'admitir la derrota' y te soltaré, amigo!", dice Hadrik con una sonrisa torcida. "No hace falta que te pongas tan nervioso. Al fin y al cabo, no es más que un combate amistoso."
+
+              De repente, Peter extiende las manos hacia Hadrik y dispara desde las palmas un poderoso ataque de rayo. Mientras Hadrik recibe la descarga de la corriente eléctrica que le atraviesa el cuerpo, Albert intenta liberarse, pero el enano sigue aferrado a él con fuerza y no lo deja escapar. Parece que el asesino no se ve afectado en absoluto por el ataque eléctrico, aunque Hadrik lo siga sujetando por la pierna. ¿Significa eso que tiene algún tipo de objeto que le concede inmunidad a la electricidad?
+
+              "¡Vas a... tener que... hacerlo mejor que eso!", le dice Hadrik a Peter mientras contiene el dolor de la corriente eléctrica. "¡Comparado con los ataques de la amiga elementalista de Kate, esto es un juego de niños!"
+
+              "¿Pero qué demonios?", dice Daren mientras se gira hacia el rey del subsuelo. "¿Desde cuándo Peter forma parte de la prueba? ¡Nunca nos dijiste que nos lanzaría rayos y-- NGH!"
+
+              Mientras Daren hablaba, Peter cambió de idea y decidió apuntarle a él en vez de a Hadrik, lanzándole un hechizo de rayo a Daren en cuanto le expuso la espalda.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de farol exitosa - nivel 4 ]'
+              b3_ch5_fight: 5
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_obscure
+  - name: b3_ch05b_observation
+    routes:
+      - condition: magical_sense < 4
+        texts:
+          - source: scene_text
+            paragraph: 18
+            text: |-
+              El rey dijo que Albert está ocultando su aura, pero quizá si me concentro con todas mis fuerzas pueda captar aunque sea un atisbo de ella. Intento bloquear la mayoría de mis otros sentidos y concentrarme únicamente en leer las auras que me rodean.
+
+              Por mucho que lo intento, me resulta imposible percibir ninguna aura salvo las de la gente a la que ya puedo ver. Supongo que voy a tener que encontrar otra forma de obligarlo a revelar su posición.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de sentido mágico fallida - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_premonition
+                condition: b3_ch5_fight < 4
+              - set:
+                  current_scene: b3_ch05b_obscure
+                condition: b3_ch5_fight >= 4
+      - condition: magical_sense >= 4 AND perception < 4
+        texts:
+          - source: scene_text
+            paragraph: 19
+            text: |-
+              El rey dijo que Albert está ocultando su aura, pero quizá si me concentro con todas mis fuerzas pueda captar aunque sea un atisbo de ella. Intento bloquear la mayoría de mis otros sentidos y concentrarme únicamente en leer las auras que me rodean.
+
+              Siento que puedo detectar algunos rastros vagos de su aura por la sala, pero es muy difícil precisar su ubicación exacta.
+
+              Mientras sigo recorriendo la sala con la mirada, me doy cuenta de que, incluso en su nivel máximo, mi estadística de Sentido mágico no basta para ayudarme a averiguar de forma fiable dónde se encuentra el asesino.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de observación fallida - nivel 4 ]'
+              successful_checks:
+                - '[ Comprobación de sentido mágico exitosa - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_premonition
+                condition: b3_ch5_fight < 4
+              - set:
+                  current_scene: b3_ch05b_obscure
+                condition: b3_ch5_fight >= 4
+      - condition: magical_sense >= 4 AND perception >= 4
+        texts:
+          - source: scene_text
+            paragraph: 20
+            text: |-
+              El rey dijo que Albert está ocultando su aura, pero quizá si me concentro con todas mis fuerzas pueda captar aunque sea un atisbo de ella. Intento bloquear la mayoría de mis otros sentidos y concentrarme únicamente en leer las auras que me rodean.
+
+              Siento que puedo detectar algunos rastros vagos de su aura por la sala, pero es muy difícil precisar su ubicación exacta.
+
+              Mientras sigo recorriendo la sala con la mirada, me doy cuenta de que, en una zona concreta donde he percibido el aura de Albert, las motas minúsculas de polvo que flotan en el aire se mueven de una forma antinatural. Nunca me habría fijado en ellas si no hubiera estado concentrado en ese punto exacto, pero ahora que las he visto, debería ser bastante fácil averiguar en qué dirección se mueve el asesino.
+
+              Saco rápidamente la ballesta de la mochila y disparo hacia el lugar donde el polvo del aire se mueve de forma más errática, intentando evitar en la medida de lo posible acertarle en un punto vital. Para mi sorpresa, en vez de darle, el virote de ballesta resuena contra una superficie metálica y cae al suelo. Al darse cuenta de que Albert había desviado el proyectil con su daga mientras seguía invisible, Hadrik no pierde tiempo y se lanza de inmediato hacia el asesino, agarrándose a algo que a primera vista no parece más que aire vacío.
+          - source: scene_text_2
+            paragraph: 12
+            text: |-
+              "¡Suéltame de una vez!", dice Albert, mientras va saliendo lentamente de la invisibilidad y nos revela que Hadrik, al parecer, lo había agarrado por la pierna. "¡Suéltame o te juro que esta vez sí te apuñalo de verdad!"
+
+              "¡Oye, lo único que tienes que hacer es 'admitir la derrota' y te soltaré, amigo!", dice Hadrik con una sonrisa torcida. "No hace falta que te pongas tan nervioso. Al fin y al cabo, no es más que un combate amistoso."
+
+              De repente, Peter extiende las manos hacia Hadrik y dispara desde las palmas un poderoso ataque de rayo. Mientras Hadrik recibe la descarga de la corriente eléctrica que le atraviesa el cuerpo, Albert intenta liberarse, pero el enano sigue aferrado a él con fuerza y no lo deja escapar. Parece que el asesino no se ve afectado en absoluto por el ataque eléctrico, aunque Hadrik lo siga sujetando por la pierna. ¿Significa eso que tiene algún tipo de objeto que le concede inmunidad a la electricidad?
+
+              "¡Vas a... tener que... hacerlo mejor que eso!", le dice Hadrik a Peter mientras contiene el dolor de la corriente eléctrica. "¡Comparado con los ataques de la amiga elementalista de Kate, esto es un juego de niños!"
+
+              "¿Pero qué demonios?", dice Daren mientras se gira hacia el rey del subsuelo. "¿Desde cuándo Peter forma parte de la prueba? ¡Nunca nos dijiste que nos lanzaría rayos y-- NGH!"
+
+              Mientras Daren hablaba, Peter cambió de idea y decidió apuntarle a él en vez de a Hadrik, lanzándole un hechizo de rayo a Daren en cuanto le expuso la espalda.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de sentido mágico exitosa - nivel 4 ]'
+                - '[ Comprobación de observación exitosa - nivel 4 ]'
+              b3_ch5_fight: 6
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_obscure
   - name: b3_ch05b_nothing
     texts:
       - source: scene_text
-        paragraph: 13
-        text: |
-          Traducción en progreso.
-
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+        paragraph: 21
+        text: Decido no hacer nada de momento y limitarme a esperar para ver qué pasa. La sala permanece en silencio durante un rato mientras todos intentamos averiguar a quién intentará atacar el asesino.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch05b_premonition
   - name: b3_ch05b_premonition
-    texts:
-      - source: scene_text
-        paragraph: 14
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: premonition < 2 AND toughness = 0
+        texts:
+          - source: scene_text
+            paragraph: 22
+            text: |-
+              Mientras permanezco ahí pensando qué hacer a continuación, Hadrik decide que ya ha esperado bastante y opta por provocar a su oponente.
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "¿Qué pasa, Albert?", dice Hadrik. "¿Ya tienes miedo?"
+
+              Poco después de que Hadrik termine de hablar, siento un dolor agudo en el lado derecho del abdomen y, al mirar hacia abajo, me doy cuenta de que ya estoy sangrando. Me aprieto rápido la herida con la mano para impedir que siga saliendo sangre, pero duele como el infierno y me resulta muy difícil concentrarme.
+
+              "¡Ah, mierda!", dice Daren. "Barry, aguanta, ¡ya voy!"
+
+              Antes siquiera de dar el primer paso hacia mí, oímos un gemido ahogado de Daren mientras se lleva la mano a la parte de atrás de la rodilla izquierda, que ahora empieza a sangrar.
+
+              "¡¿Pero qué demonios, tío?!", le grita Daren a Albert. "Iba a curar-- NGH!"
+
+              Mientras terminaba la frase, Daren recibió el impacto de un poderoso rayo que lo hizo caer de rodillas. Parece que el hechizo vino de Peter, que por fin decidió unirse a la batalla también.
+
+              "¡Eh, eso no vale!", dice Hadrik. "¿Desde cuándo Peter forma parte de la prueba?"
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de premonición fallida - nivel 2 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_obscure
+      - condition: premonition < 2 AND toughness > 0
+        texts:
+          - source: scene_text
+            paragraph: 23
+            text: |-
+              Mientras permanezco ahí pensando qué hacer a continuación, Hadrik decide que ya ha esperado bastante y opta por provocar a su oponente.
+
+              "¿Qué pasa, Albert?", dice Hadrik. "¿Ya tienes miedo?"
+
+              Poco después de que Hadrik termine de hablar, siento un dolor agudo en el lado derecho del abdomen y, al mirar hacia abajo, me doy cuenta de que ya estoy sangrando. Al parecer, la hoja invisible del asesino era lo bastante afilada como para atravesar mi piel y mis músculos como si fueran papel incluso con mi nivel de resistencia. Me aprieto rápido la herida con la mano para impedir que siga saliendo sangre, pero duele como el infierno y me resulta muy difícil concentrarme.
+
+              "¡Ah, mierda!", dice Daren. "Barry, aguanta, ¡ya voy!"
+
+              Antes siquiera de dar el primer paso hacia mí, oímos un gemido ahogado de Daren mientras se lleva la mano a la parte de atrás de la rodilla izquierda, que ahora empieza a sangrar.
+
+              "¡¿Pero qué demonios, tío?!", le grita Daren a Albert. "Iba a curar-- NGH!"
+
+              Mientras terminaba la frase, Daren recibió el impacto de un poderoso rayo que lo hizo caer de rodillas. Parece que el hechizo vino de Peter, que por fin decidió unirse a la batalla también.
+
+              "¡Eh, eso no vale!", dice Hadrik. "¿Desde cuándo Peter forma parte de la prueba?"
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de premonición fallida - nivel 2 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_obscure
+      - condition: premonition >= 2 AND aura_hardening < 4
+        texts:
+          - source: scene_text
+            paragraph: 24
+            text: |-
+              Mientras permanezco ahí pensando qué hacer a continuación, de repente tengo una premonición en la que me veo siendo apuñalado en el lado derecho del abdomen por una hoja invisible. Además, estoy bastante seguro de que Hadrik iba a decir algo justo antes de que me atacaran en la visión.
+
+              Mi atacante debería venir desde el lado derecho, así que mientras sea capaz de averiguar exactamente cuándo va a golpear, debería poder--
+
+              "¿Qué pasa, Albert?", pregunta Hadrik de repente. "¿Ya tienes miedo?"
+
+              En cuanto oigo las palabras de Hadrik, sé exactamente lo que va a ocurrir a continuación, y de inmediato me giro hacia la derecha, extendiendo los brazos delante de mí para agarrar a Albert justo antes de que me ataque. Mi intento tiene éxito, porque el asesino empieza ahora a hacerse visible lentamente mientras intenta soltarse de mi agarre.
+
+              "Más vale que me sueltes si no quieres perder un brazo", dice Albert en un tono amenazante. "Te lo advierto."
+
+              "¿Perder un brazo?", digo. "¿En un simulacro? ¿No crees que te lo estás tomando un poco demasiado a pecho?"
+          - source: scene_text_2
+            paragraph: 13
+            text: |-
+              De repente un dolor intensísimo se apodera de mí cuando siento una poderosa corriente eléctrica atravesándome el cuerpo. Albert, en cambio, parece completamente inmune al ataque de rayo aunque yo siga sujetándolo por los brazos, y aprovecha mi pérdida de concentración para liberarse y volverse invisible otra vez.
+
+              Maldición, lo he perdido de vista otra vez. ¿Cómo sigue estando perfectamente bien después de recibir una descarga así? ¿Tiene algún objeto que lo haga inmune a los ataques eléctricos?
+
+              "¿Pero qué demonios?", dice Daren. "¿Desde cuándo Peter forma parte de la prueba? ¡Nunca nos dijiste que nos lanzaría rayos y-- NGH!"
+
+              Mientras Daren hablaba, Albert aprovechó al parecer su confusión para apuñalarlo detrás de la rodilla, porque puedo ver algo de sangre deslizándose por su tobillo.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de endurecimiento de aura fallida - nivel 4 ]'
+              successful_checks:
+                - '[ Comprobación de premonición exitosa - nivel 2 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_obscure
+      - condition: premonition >= 2 AND aura_hardening >= 4
+        texts:
+          - source: scene_text
+            paragraph: 24
+            text: |-
+              Mientras permanezco ahí pensando qué hacer a continuación, de repente tengo una premonición en la que me veo siendo apuñalado en el lado derecho del abdomen por una hoja invisible. Además, estoy bastante seguro de que Hadrik iba a decir algo justo antes de que me atacaran en la visión.
+
+              Mi atacante debería venir desde el lado derecho, así que mientras sea capaz de averiguar exactamente cuándo va a golpear, debería poder--
+
+              "¿Qué pasa, Albert?", pregunta Hadrik de repente. "¿Ya tienes miedo?"
+
+              En cuanto oigo las palabras de Hadrik, sé exactamente lo que va a ocurrir a continuación, y de inmediato me giro hacia la derecha, extendiendo los brazos delante de mí para agarrar a Albert justo antes de que me ataque. Mi intento tiene éxito, porque el asesino empieza ahora a hacerse visible lentamente mientras intenta soltarse de mi agarre.
+
+              "Más vale que me sueltes si no quieres perder un brazo", dice Albert en un tono amenazante. "Te lo advierto."
+
+              "¿Perder un brazo?", digo. "¿En un simulacro? ¿No crees que te lo estás tomando un poco demasiado a pecho?"
+          - source: scene_text_2
+            paragraph: 14
+            text: |-
+              De repente siento una poderosa corriente eléctrica atravesarme el cuerpo. Aunque sin duda es una sensación bastante dolorosa, desde luego no resulta inmanejable. Probablemente tenga que agradecérselo a mi estadística de Endurecimiento de aura por mi mayor resistencia a los ataques de rayo.
+
+              Mientras sigo recibiendo la descarga, Albert intenta soltarse otra vez, pero lo sujeto con fuerza y no lo dejo escapar. El asesino no parece verse afectado en absoluto por el ataque eléctrico, aunque lo esté agarrando por los brazos. ¿Significa eso que tiene algún tipo de objeto que le concede inmunidad a la electricidad?
+
+              "¿Pero qué demonios?", dice Daren mientras se gira hacia el rey del subsuelo. "¿Desde cuándo Peter forma parte de la prueba? ¡Nunca nos dijiste que nos lanzaría rayos y-- NGH!"
+
+              Mientras Daren hablaba, Peter cambió de idea y decidió apuntarle a él en vez de a mí, lanzándole un hechizo de rayo a Daren en cuanto le expuso la espalda.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de premonición exitosa - nivel 2 ]'
+                - '[ Comprobación de endurecimiento de aura exitosa - nivel 4 ]'
+              b3_ch5_fight: 7
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_obscure
   - name: b3_ch05b_obscure
-    texts:
-      - source: scene_text
-        paragraph: 15
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch5_fight < 4
+        texts:
+          - source: scene_text
+            paragraph: 25
+            text: |-
+              "No pensarían de verdad que en la segunda fase de la prueba solo iban a pelear contra Albert, ¿verdad?", dice el rey del subsuelo. "Peter obviamente solo les estaba dando ventaja. Esa es la única razón por la que no los había atacado hasta ahora."
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              Cuando Kate oye lo que ha dicho el rey, conjura de inmediato tres conos de hielo de la nada y los lanza contra él. Por desgracia, los carámbanos ni siquiera llegan a acercarse a su objetivo, porque todos son desviados con facilidad por una fuerza invisible.
+
+              "¡Buen intento!", le dice el rey a Kate. "Pero me temo que no ha sido suficiente."
+
+              Una vez más, el rey nos aplasta a todos contra el suelo con su fuerza invisible, salvo a Melindra y Leila, pero esta vez también usa su técnica de manipulación de aura para retorcer la muñeca derecha de Daren hasta que suelta la espada. Entonces hace que la espada flote hasta su propia posición y la agarra con la mano.
+
+              "Como ya adivinó Kate, la segunda fase era en realidad una pelea contra Albert, Peter y contra mí", dice el rey del subsuelo. "No esperábamos realmente que ganaran, pero al menos queríamos ver cuánta pelea eran capaces de presentar. Por desgracia, aunque fueron capaces de deshacer mi técnica de manipulación de aura durante la primera fase, no lograron incapacitar a ninguno de nosotros en la segunda parte de la prueba, pese a que Peter y yo les dejamos tiempo de sobra para hacer algo con Albert. Como resultado, me apena decir que han fallado nuestra prueba."
+          - source: scene_text_2
+            paragraph: 15
+            text: |-
+              Entonces reduce la presión que hay sobre nosotros para que podamos volver a levantarnos.
+
+              "Quiero verlos fuera de nuestra base en cuanto terminen de despedirse", dice el rey. "A menos, claro, que dijeran la verdad sobre seguir queriendo curar a los enfermos del área de cuarentena, en cuyo caso, por supuesto, se les permitirá volver una vez más."
+
+              "No estaba mintiendo", dice Daren, mientras se lanza a sí mismo un hechizo de curación rápido y luego viene hacia mí para curarme también. "Curaré a toda esa gente."
+
+              "Como quieras", dice el rey del subsuelo, y luego hace que la espada de Daren vuele de vuelta a su mano. "Aquí tienes tu espada. Más vale que la cuides mejor a partir de ahora. Lo que yo te recomendaría personalmente es que aprendas algo de manipulación de aura básica. Es fácil usarla sobre objetos que conoces muy bien, y te ayudaría a recuperar la espada cuando vuelvan a robártela. Sigue practicando hasta que consigas hacer que tu espada regrese a tu mano desde al menos cincuenta pies de distancia. Estoy seguro de que acabarás cogiéndole el truco."
+
+              "Gracias por la sugerencia", dice Daren. "Veré si consigo entenderlo."
+          - source: scene_3
+            paragraph: 9
+            text: |-
+              "Si no le importa que se lo pregunte", dice Hadrik mirando al rey, "¿cómo demonios llegó a aprender una técnica tan poco común como la manipulación de aura? ¿Y cómo llegó a ser tan bueno en ella?"
+
+              "Lo más probable es que la aprendiera del capitán de la guardia real", dice Kate. "Sus técnicas son demasiado parecidas para que sea una coincidencia."
+
+              "Su amiga tiene razón", le dice el rey del subsuelo a Hadrik. "El actual capitán de la guardia y yo servimos ambos como guardias reales hace mucho tiempo, y fue él quien me enseñó todo lo que sé sobre manipulación de aura. Por desgracia, no pude convencerlo de que viniera conmigo y me ayudara a formar este reino subterráneo cuando dejé la guardia real hace unos veinticinco años, así que hoy en día no estamos precisamente en términos amistosos. Por lo que he oído, sigue buscando pupilos, pero hasta la fecha no ha conseguido encontrar a nadie con talento suficiente como para aprender algo más que las técnicas de manipulación de aura más básicas."
+
+              "Bueno, desde luego eso son buenas noticias para nosotros", dice Daren. "No habríamos tenido ninguna oportunidad contra ellos si tuvieran todo un ejército de manipuladores de aura expertos de su lado."
+
+              "En efecto", dice el rey del subsuelo. "Ahora bien, no quiero ser grosero, pero Albert, Peter y yo aún tenemos algunas cosas que discutir en privado sobre nuestra situación actual con los refugiados, así que si tienen alguna pregunta más, les agradecería que fueran breves."
+        choices:
+          - position: 1
+            text: ¿Por qué ninguno de ustedes atacó a Melindra ni a Leila durante la prueba?
+            effects:
+              - set:
+                  current_scene: b3_ch05b_tunnel
+                  b3_ch5_brief: 0
+          - position: 2
+            text: ¿Por qué te convertiste en guardia real?
+            effects:
+              - set:
+                  current_scene: b3_ch05b_tunnel
+                  b3_ch5_brief: 1
+          - position: 3
+            text: ¿Tú y el capitán de la guardia real tienen otras especializaciones como magos aparte de la manipulación de aura?
+            effects:
+              - set:
+                  current_scene: b3_ch05b_tunnel
+                  b3_ch5_brief: 2
+      - condition: b3_ch5_fight >= 4
+        texts:
+          - source: scene_text
+            paragraph: 26
+            text: |-
+              "No pensarían de verdad que en la segunda fase de la prueba solo iban a pelear contra Albert, ¿verdad?", dice el rey del subsuelo. "Peter obviamente solo les estaba dando ventaja. Esa es la única razón por la que no los había atacado hasta ahora."
+
+              Cuando Kate oye lo que ha dicho el rey, conjura de inmediato tres conos de hielo de la nada y los lanza contra él. Por desgracia, los carámbanos ni siquiera llegan a acercarse a su objetivo, porque todos son desviados con facilidad por una fuerza invisible.
+
+              "¡Buen intento!", le dice el rey a Kate. "Pero me temo que no ha sido suficiente."
+
+              Una vez más, el rey nos aplasta a todos contra el suelo con su fuerza invisible, salvo a Melindra y Leila, pero esta vez también usa su técnica de manipulación de aura para retorcer la muñeca derecha de Daren hasta que suelta la espada. Entonces hace que la espada flote hasta su propia posición y la agarra con la mano.
+
+              "Como ya adivinó Kate, la segunda fase era en realidad una pelea contra Albert, Peter y contra mí", dice el rey del subsuelo. "No esperábamos realmente que ganaran, pero al menos queríamos ver cuánta pelea eran capaces de presentar. Debo decir que no ha sido una mala actuación. No esperaba que fueran capaces tanto de capturar a Albert como de sujetarlo durante tanto tiempo, y tampoco pensaba que Daren sería capaz de usar su espada para deshacer mi técnica de manipulación de aura. Verlos en acción me hizo pensar que quizá sí podamos trabajar juntos para alcanzar nuestros objetivos comunes. ¡Enhorabuena! Han superado la prueba."
+          - source: scene_text_2
+            paragraph: 16
+            text: |-
+              Entonces reduce la presión que hay sobre nosotros para que podamos volver a levantarnos.
+
+              "Estupendo", dice Daren. "¿Puedo recuperar ya mi arma?"
+
+              "Por supuesto", dice el rey del subsuelo, y luego hace que la espada de Daren vuele de vuelta a su mano. "Aquí tienes tu espada. Más vale que la cuides mejor a partir de ahora. Lo que yo te recomendaría personalmente es que aprendas algo de manipulación de aura básica. Es fácil usarla sobre objetos que conoces muy bien, y te ayudaría a recuperar la espada cuando vuelvan a robártela. Sigue practicando hasta que consigas hacer que tu espada regrese a tu mano desde al menos cincuenta pies de distancia. Estoy seguro de que acabarás cogiéndole el truco."
+
+              "Hmm", dice Daren. "En realidad nunca he intentado hacer algo así, pero supongo que vale la pena probar. Gracias."
+          - source: scene_3
+            paragraph: 9
+            text: |-
+              "Si no le importa que se lo pregunte", dice Hadrik mirando al rey, "¿cómo demonios llegó a aprender una técnica tan poco común como la manipulación de aura? ¿Y cómo llegó a ser tan bueno en ella?"
+
+              "Lo más probable es que la aprendiera del capitán de la guardia real", dice Kate. "Sus técnicas son demasiado parecidas para que sea una coincidencia."
+
+              "Su amiga tiene razón", le dice el rey del subsuelo a Hadrik. "El actual capitán de la guardia y yo servimos ambos como guardias reales hace mucho tiempo, y fue él quien me enseñó todo lo que sé sobre manipulación de aura. Por desgracia, no pude convencerlo de que viniera conmigo y me ayudara a formar este reino subterráneo cuando dejé la guardia real hace unos veinticinco años, así que hoy en día no estamos precisamente en términos amistosos. Por lo que he oído, sigue buscando pupilos, pero hasta la fecha no ha conseguido encontrar a nadie con talento suficiente como para aprender algo más que las técnicas de manipulación de aura más básicas."
+
+              "Bueno, desde luego eso son buenas noticias para nosotros", dice Daren. "No habríamos tenido ninguna oportunidad contra ellos si tuvieran todo un ejército de manipuladores de aura expertos de su lado."
+
+              "En efecto", dice el rey del subsuelo. "Ahora bien, no quiero ser grosero, pero Albert, Peter y yo aún tenemos algunas cosas que discutir en privado sobre nuestra situación actual con los refugiados, así que si tienen alguna pregunta más, les agradecería que fueran breves."
+        choices:
+          - position: 1
+            text: ¿Por qué ninguno de ustedes atacó a Melindra ni a Leila durante la prueba?
+            effects:
+              - set:
+                  current_scene: b3_ch05b_tunnel
+                  b3_ch5_brief: 0
+          - position: 2
+            text: ¿Por qué te convertiste en guardia real?
+            effects:
+              - set:
+                  current_scene: b3_ch05b_tunnel
+                  b3_ch5_brief: 1
+          - position: 3
+            text: ¿Tú y el capitán de la guardia real tienen otras especializaciones como magos aparte de la manipulación de aura?
+            effects:
+              - set:
+                  current_scene: b3_ch05b_tunnel
+                  b3_ch5_brief: 2
   - name: b3_ch05b_tunnel
-    texts:
-      - source: scene_text
-        paragraph: 16
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch5_brief = 0
+        texts:
+          - source: scene_text
+            paragraph: 27
+            text: |-
+              "¿Por qué ninguno de ustedes atacó a Melindra ni a Leila durante la prueba?"
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Bueno, Melindra los trajo aquí precisamente porque ella misma no podía dañar a los lugareños", dice el rey, "así que ponerla a prueba habría sido un poco inútil, ¿no creen? Y en cuanto a Leila, que yo sepa no es una de las personas implicadas en el asesinato del conde de Ollendor, así que nunca íbamos a echarla, sobre todo teniendo en cuenta que además es la hija del doctor Reidzek. Otra cuestión muy distinta es si quiere quedarse aquí o unirse a ustedes en la batalla contra el rey de Ollendor. En fin, creo que a estas alturas ya conocen el camino a la sala del teletransportador, así que espero que nos perdonen por no acompañarlos a la salida. ¡Les deseo suerte!"
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              "Sí, sí", digo. "Adiós, supongo."
+
+              Justo cuando estamos a punto de salir del salón del trono, oímos unos susurros detrás de nosotros y, poco después, el rey vuelve a llamarnos.
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              "Sí, sí", digo. "Adiós, supongo."
+
+              Justo cuando estamos a punto de salir del salón del trono, oímos unos susurros detrás de nosotros y, poco después, el rey vuelve a llamarnos.
+            condition: b3_ch5_fight >= 4
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              "Un momento, por favor...", dice el rey. "Peter acaba de recordarme algo que creo que quizá quieran saber antes de volver a la superficie. En resumen, hemos notado que las bolas metálicas voladoras dejaron de patrullar los cielos en algún momento de la noche. La mayoría de ellas ahora se limitan a flotar sobre la ciudad, sin moverse en absoluto de sus posiciones. He oído por Breynan que Billy Bob puede haber tenido motivos para desactivar al Supervisor después de enterarse de su traición, pero no tenemos claro si la desactivación llegó a producirse de verdad o si simplemente está intentando reprogramarlo para que sea más obediente. Sea como sea, yo tendría cuidado si fuera ustedes. No hay manera de saber qué está pensando ese lessathi."
+
+              "De acuerdo", dice Daren. "Intentaremos tener cuidado. ¡Adiós!"
+
+              Entonces salimos por la puerta al túnel exterior y empezamos a dirigirnos a la sala de espera.
+            condition: b3_ch4_billy = 9
+          - source: scene_3
+            paragraph: 10
+            text: |-
+              "Un momento, por favor...", dice el rey. "Peter acaba de recordarme algo que creo que quizá quieran saber antes de volver a la superficie. En resumen, hemos notado que las bolas metálicas voladoras han dejado de seguir sus rutas de patrulla habituales desde ayer por la noche, y además se han estado comportando de forma bastante errática. Oí por Breynan que ustedes mataron a Billy Bob ayer, así que eso puede ser parte del motivo, pero yo tendría cuidado si fuera ustedes. Algo me dice que el Supervisor está planeando algo grande, y quizá no les convenga quedar atrapados en medio."
+
+              "De acuerdo", dice Daren. "Intentaremos tener cuidado. ¡Adiós!"
+
+              Entonces salimos por la puerta al túnel exterior y empezamos a dirigirnos a la sala de espera.
+            condition: b3_ch4_billy <= 6 AND b3_ch4_billy != 0
+          - source: scene_3
+            paragraph: 10
+            text: |-
+              "Un momento, por favor...", dice el rey. "Peter acaba de recordarme algo que creo que quizá quieran saber antes de volver a la superficie. En resumen, hemos notado que las bolas metálicas voladoras han dejado de seguir sus rutas de patrulla habituales desde ayer por la noche, y además se han estado comportando de forma bastante errática. Oí por Breynan que ustedes mataron a Billy Bob ayer, así que eso puede ser parte del motivo, pero yo tendría cuidado si fuera ustedes. Algo me dice que el Supervisor está planeando algo grande, y quizá no les convenga quedar atrapados en medio."
+
+              "De acuerdo", dice Daren. "Intentaremos tener cuidado. ¡Adiós!"
+
+              Entonces salimos por la puerta al túnel exterior y empezamos a dirigirnos a la sala de espera.
+            condition: b3_ch4_billy = 7
+          - source: scene_3
+            paragraph: 10
+            text: |-
+              "Un momento, por favor...", dice el rey. "Peter acaba de recordarme algo que creo que quizá quieran saber antes de volver a la superficie. En resumen, hemos notado que las bolas metálicas voladoras han dejado de seguir sus rutas de patrulla habituales desde ayer por la noche, y además se han estado comportando de forma bastante errática. Oí por Breynan que ustedes mataron a Billy Bob ayer, así que eso puede ser parte del motivo, pero yo tendría cuidado si fuera ustedes. Algo me dice que el Supervisor está planeando algo grande, y quizá no les convenga quedar atrapados en medio."
+
+              "De acuerdo", dice Daren. "Intentaremos tener cuidado. ¡Adiós!"
+
+              Entonces salimos por la puerta al túnel exterior y empezamos a dirigirnos a la sala de espera.
+            condition: b3_ch4_billy = 8
+          - source: scene_3
+            paragraph: 12
+            text: |-
+              "Un momento, por favor...", dice el rey. "Peter acaba de recordarme algo que creo que quizá quieran saber antes de volver a la superficie. En resumen, hemos notado que las bolas metálicas voladoras han dejado de seguir sus rutas de patrulla habituales desde ayer por la noche, y además se han estado comportando de forma bastante errática. Teniendo en cuenta que Billy Bob fue convocado al palacio anoche, es posible que el rey le haya ordenado a él y al Supervisor que asuman un papel activo en la persecución de ustedes a partir de ahora. Yo desde luego tendría mucho cuidado si fuera ustedes. Esos dos no son el tipo de enemigos que conviene tomarse a la ligera."
+
+              "De acuerdo", dice Daren. "Intentaremos tener cuidado. ¡Adiós!"
+
+              Entonces salimos por la puerta al túnel exterior y empezamos a dirigirnos a la sala de espera.
+            condition: b3_ch4_billy = 0
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_workshop
+      - condition: b3_ch5_brief = 1
+        texts:
+          - source: scene_text
+            paragraph: 28
+            text: |-
+              "¿Por qué te convertiste en guardia real?"
+
+              "¿Qué quieren que les diga?", me responde el rey. "Hubo un tiempo en el que era joven e ingenuo. Nuestras escuelas están hechas de tal forma que te lavan el cerebro desde muy pequeño para que pienses que nuestro reino es el mejor de todos, que la realeza siempre trabaja por el bien del pueblo y que no existe mayor honor que ser guardia real. Mis padres evitaron decirme lo que pensaban de verdad de nuestro reino por miedo a que yo los delatara sin querer ante mis maestros, así que solo descubrí cómo funcionaba realmente el mundo después de empezar a servir como guardia real. Ese descubrimiento fue, por supuesto, lo que me llevó a abandonar la guardia real a los veintinueve años y a formar mi propio pequeño reino aquí, en estos túneles subterráneos. En fin, espero que esta respuesta haya satisfecho su curiosidad. Creo que a estas alturas ya conocen el camino a la sala del teletransportador, así que espero que nos perdonen por no acompañarlos a la salida. ¡Les deseo suerte!"
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              "Sí, sí", digo. "Adiós, supongo."
+
+              Justo cuando estamos a punto de salir del salón del trono, oímos unos susurros detrás de nosotros y, poco después, el rey vuelve a llamarnos.
+            condition: b3_ch5_fight >= 4
+          - source: scene_text_2
+            paragraph: 18
+            text: |-
+              "Sí, sí", digo. "Adiós, supongo."
+
+              "Ah, y para que quede claro...", dice el rey del subsuelo. "Leila no estaba siendo puesta a prueba junto con el resto de ustedes hace un momento. Que yo sepa, no estuvo implicada en el asesinato del conde de Ollendor, así que no hay motivo para echarla de nuestra base, sobre todo teniendo en cuenta que además es la hija del doctor Reidzek. Dicho eso, por supuesto puede unirse a ustedes en la lucha contra el rey de Ollendor, si así lo desea."
+
+              "Entiendo", escribe Leila. "Gracias por decírmelo."
+
+              Justo cuando estamos a punto de salir del salón del trono, oímos unos susurros detrás de nosotros y, poco después, el rey vuelve a llamarnos.
+            condition: b3_ch5_brief != 0 AND b3_ch5_fight < 4
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              "Un momento, por favor...", dice el rey. "Peter acaba de recordarme algo que creo que quizá quieran saber antes de volver a la superficie. En resumen, hemos notado que las bolas metálicas voladoras dejaron de patrullar los cielos en algún momento de la noche. La mayoría de ellas ahora se limitan a flotar sobre la ciudad, sin moverse en absoluto de sus posiciones. He oído por Breynan que Billy Bob puede haber tenido motivos para desactivar al Supervisor después de enterarse de su traición, pero no tenemos claro si la desactivación llegó a producirse de verdad o si simplemente está intentando reprogramarlo para que sea más obediente. Sea como sea, yo tendría cuidado si fuera ustedes. No hay manera de saber qué está pensando ese lessathi."
+
+              "De acuerdo", dice Daren. "Intentaremos tener cuidado. ¡Adiós!"
+
+              Entonces salimos por la puerta al túnel exterior y empezamos a dirigirnos a la sala de espera.
+            condition: b3_ch4_billy = 9
+          - source: scene_3
+            paragraph: 10
+            text: |-
+              "Un momento, por favor...", dice el rey. "Peter acaba de recordarme algo que creo que quizá quieran saber antes de volver a la superficie. En resumen, hemos notado que las bolas metálicas voladoras han dejado de seguir sus rutas de patrulla habituales desde ayer por la noche, y además se han estado comportando de forma bastante errática. Oí por Breynan que ustedes mataron a Billy Bob ayer, así que eso puede ser parte del motivo, pero yo tendría cuidado si fuera ustedes. Algo me dice que el Supervisor está planeando algo grande, y quizá no les convenga quedar atrapados en medio."
+
+              "De acuerdo", dice Daren. "Intentaremos tener cuidado. ¡Adiós!"
+
+              Entonces salimos por la puerta al túnel exterior y empezamos a dirigirnos a la sala de espera.
+            condition: b3_ch4_billy <= 6 AND b3_ch4_billy != 0
+          - source: scene_3
+            paragraph: 10
+            text: |-
+              "Un momento, por favor...", dice el rey. "Peter acaba de recordarme algo que creo que quizá quieran saber antes de volver a la superficie. En resumen, hemos notado que las bolas metálicas voladoras han dejado de seguir sus rutas de patrulla habituales desde ayer por la noche, y además se han estado comportando de forma bastante errática. Oí por Breynan que ustedes mataron a Billy Bob ayer, así que eso puede ser parte del motivo, pero yo tendría cuidado si fuera ustedes. Algo me dice que el Supervisor está planeando algo grande, y quizá no les convenga quedar atrapados en medio."
+
+              "De acuerdo", dice Daren. "Intentaremos tener cuidado. ¡Adiós!"
+
+              Entonces salimos por la puerta al túnel exterior y empezamos a dirigirnos a la sala de espera.
+            condition: b3_ch4_billy = 7
+          - source: scene_3
+            paragraph: 10
+            text: |-
+              "Un momento, por favor...", dice el rey. "Peter acaba de recordarme algo que creo que quizá quieran saber antes de volver a la superficie. En resumen, hemos notado que las bolas metálicas voladoras han dejado de seguir sus rutas de patrulla habituales desde ayer por la noche, y además se han estado comportando de forma bastante errática. Oí por Breynan que ustedes mataron a Billy Bob ayer, así que eso puede ser parte del motivo, pero yo tendría cuidado si fuera ustedes. Algo me dice que el Supervisor está planeando algo grande, y quizá no les convenga quedar atrapados en medio."
+
+              "De acuerdo", dice Daren. "Intentaremos tener cuidado. ¡Adiós!"
+
+              Entonces salimos por la puerta al túnel exterior y empezamos a dirigirnos a la sala de espera.
+            condition: b3_ch4_billy = 8
+          - source: scene_3
+            paragraph: 12
+            text: |-
+              "Un momento, por favor...", dice el rey. "Peter acaba de recordarme algo que creo que quizá quieran saber antes de volver a la superficie. En resumen, hemos notado que las bolas metálicas voladoras han dejado de seguir sus rutas de patrulla habituales desde ayer por la noche, y además se han estado comportando de forma bastante errática. Teniendo en cuenta que Billy Bob fue convocado al palacio anoche, es posible que el rey le haya ordenado a él y al Supervisor que asuman un papel activo en la persecución de ustedes a partir de ahora. Yo desde luego tendría mucho cuidado si fuera ustedes. Esos dos no son el tipo de enemigos que conviene tomarse a la ligera."
+
+              "De acuerdo", dice Daren. "Intentaremos tener cuidado. ¡Adiós!"
+
+              Entonces salimos por la puerta al túnel exterior y empezamos a dirigirnos a la sala de espera.
+            condition: b3_ch4_billy = 0
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_workshop
+      - condition: b3_ch5_brief = 2
+        texts:
+          - source: scene_text
+            paragraph: 29
+            text: |-
+              "¿Tú y el capitán de la guardia real tienen especializaciones mágicas aparte de la manipulación de aura?"
+
+              "No necesariamente especializaciones, pero podemos usar hechizos normales de mago como otros magos", dice el rey del subsuelo. "Al capitán de la guardia le gusta utilizar la manipulación de aura casi todo el tiempo, porque es muy eficaz y difícil de contrarrestar, pero se sabe que también usa otros tipos de hechizos cuando siente que lo están acorralando. No sabemos exactamente cuántos hechizos es capaz de lanzar, así que les recomiendo tener cuidado cuando peleen con él, incluso si sienten que llevan la ventaja durante una batalla. En fin, espero que esto haya respondido su pregunta. Creo que a estas alturas ya conocen el camino a la sala del teletransportador, así que espero que nos perdonen por no acompañarlos a la salida. ¡Les deseo suerte!"
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              "Sí, sí", digo. "Adiós, supongo."
+
+              Justo cuando estamos a punto de salir del salón del trono, oímos unos susurros detrás de nosotros y, poco después, el rey vuelve a llamarnos.
+            condition: b3_ch5_fight >= 4
+          - source: scene_text_2
+            paragraph: 18
+            text: |-
+              "Sí, sí", digo. "Adiós, supongo."
+
+              "Ah, y para que quede claro...", dice el rey del subsuelo. "Leila no estaba siendo puesta a prueba junto con el resto de ustedes hace un momento. Que yo sepa, no estuvo implicada en el asesinato del conde de Ollendor, así que no hay motivo para echarla de nuestra base, sobre todo teniendo en cuenta que además es la hija del doctor Reidzek. Dicho eso, por supuesto puede unirse a ustedes en la lucha contra el rey de Ollendor, si así lo desea."
+
+              "Entiendo", escribe Leila. "Gracias por decírmelo."
+
+              Justo cuando estamos a punto de salir del salón del trono, oímos unos susurros detrás de nosotros y, poco después, el rey vuelve a llamarnos.
+            condition: b3_ch5_brief != 0 AND b3_ch5_fight < 4
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              "Un momento, por favor...", dice el rey. "Peter acaba de recordarme algo que creo que quizá quieran saber antes de volver a la superficie. En resumen, hemos notado que las bolas metálicas voladoras dejaron de patrullar los cielos en algún momento de la noche. La mayoría de ellas ahora se limitan a flotar sobre la ciudad, sin moverse en absoluto de sus posiciones. He oído por Breynan que Billy Bob puede haber tenido motivos para desactivar al Supervisor después de enterarse de su traición, pero no tenemos claro si la desactivación llegó a producirse de verdad o si simplemente está intentando reprogramarlo para que sea más obediente. Sea como sea, yo tendría cuidado si fuera ustedes. No hay manera de saber qué está pensando ese lessathi."
+
+              "De acuerdo", dice Daren. "Intentaremos tener cuidado. ¡Adiós!"
+
+              Entonces salimos por la puerta al túnel exterior y empezamos a dirigirnos a la sala de espera.
+            condition: b3_ch4_billy = 9
+          - source: scene_3
+            paragraph: 10
+            text: |-
+              "Un momento, por favor...", dice el rey. "Peter acaba de recordarme algo que creo que quizá quieran saber antes de volver a la superficie. En resumen, hemos notado que las bolas metálicas voladoras han dejado de seguir sus rutas de patrulla habituales desde ayer por la noche, y además se han estado comportando de forma bastante errática. Oí por Breynan que ustedes mataron a Billy Bob ayer, así que eso puede ser parte del motivo, pero yo tendría cuidado si fuera ustedes. Algo me dice que el Supervisor está planeando algo grande, y quizá no les convenga quedar atrapados en medio."
+
+              "De acuerdo", dice Daren. "Intentaremos tener cuidado. ¡Adiós!"
+
+              Entonces salimos por la puerta al túnel exterior y empezamos a dirigirnos a la sala de espera.
+            condition: b3_ch4_billy <= 6 AND b3_ch4_billy != 0
+          - source: scene_3
+            paragraph: 10
+            text: |-
+              "Un momento, por favor...", dice el rey. "Peter acaba de recordarme algo que creo que quizá quieran saber antes de volver a la superficie. En resumen, hemos notado que las bolas metálicas voladoras han dejado de seguir sus rutas de patrulla habituales desde ayer por la noche, y además se han estado comportando de forma bastante errática. Oí por Breynan que ustedes mataron a Billy Bob ayer, así que eso puede ser parte del motivo, pero yo tendría cuidado si fuera ustedes. Algo me dice que el Supervisor está planeando algo grande, y quizá no les convenga quedar atrapados en medio."
+
+              "De acuerdo", dice Daren. "Intentaremos tener cuidado. ¡Adiós!"
+
+              Entonces salimos por la puerta al túnel exterior y empezamos a dirigirnos a la sala de espera.
+            condition: b3_ch4_billy = 7
+          - source: scene_3
+            paragraph: 10
+            text: |-
+              "Un momento, por favor...", dice el rey. "Peter acaba de recordarme algo que creo que quizá quieran saber antes de volver a la superficie. En resumen, hemos notado que las bolas metálicas voladoras han dejado de seguir sus rutas de patrulla habituales desde ayer por la noche, y además se han estado comportando de forma bastante errática. Oí por Breynan que ustedes mataron a Billy Bob ayer, así que eso puede ser parte del motivo, pero yo tendría cuidado si fuera ustedes. Algo me dice que el Supervisor está planeando algo grande, y quizá no les convenga quedar atrapados en medio."
+
+              "De acuerdo", dice Daren. "Intentaremos tener cuidado. ¡Adiós!"
+
+              Entonces salimos por la puerta al túnel exterior y empezamos a dirigirnos a la sala de espera.
+            condition: b3_ch4_billy = 8
+          - source: scene_3
+            paragraph: 12
+            text: |-
+              "Un momento, por favor...", dice el rey. "Peter acaba de recordarme algo que creo que quizá quieran saber antes de volver a la superficie. En resumen, hemos notado que las bolas metálicas voladoras han dejado de seguir sus rutas de patrulla habituales desde ayer por la noche, y además se han estado comportando de forma bastante errática. Teniendo en cuenta que Billy Bob fue convocado al palacio anoche, es posible que el rey le haya ordenado a él y al Supervisor que asuman un papel activo en la persecución de ustedes a partir de ahora. Yo desde luego tendría mucho cuidado si fuera ustedes. Esos dos no son el tipo de enemigos que conviene tomarse a la ligera."
+
+              "De acuerdo", dice Daren. "Intentaremos tener cuidado. ¡Adiós!"
+
+              Entonces salimos por la puerta al túnel exterior y empezamos a dirigirnos a la sala de espera.
+            condition: b3_ch4_billy = 0
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_workshop
   - name: b3_ch05b_workshop
     texts:
       - source: scene_text
-        paragraph: 17
-        text: |
-          Traducción en progreso.
+        paragraph: 30
+        text: |-
+          "Entonces, ¿alguno de ustedes sabía que el rey del subsuelo y Peter eran magos antes de que nos revelaran sus poderes hace un rato?", nos escribe Leila mientras seguimos avanzando por el pasillo. "La verdad es que me tomaron completamente por sorpresa..."
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch05b_birthday
-    texts:
-      - source: scene_text
-        paragraph: 18
-        text: |
-          Traducción en progreso.
+          "Se podía notar que eran magos si mirabas con atención sus auras, pero admito que el nivel de poder del rey me sorprendió un poco a mí también", dice Melindra. "No me di cuenta de que estaba suprimiendo la magia de su aura hasta ese punto."
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch05b_birthday2
-    texts:
-      - source: scene_text
+          "Esperemos no tener que luchar contra ellos en el futuro", dice Daren. "Ya tenemos bastante con la guardia real y el resto del ejército del rey tal y como están las cosas."
+
+          Unos minutos después, cuando llegamos a la sala de espera, Daren nos dice que lo esperemos mientras va a buscar a Kelrim al área de cuarentena. Mientras tanto, Leila aprovecha la ocasión para hacer una visita rápida al taller de su padre, para decirle adónde vamos. Mientras esperamos a que ambos regresen, Flower vuelve a intentar entablar conversación con Illuna, aunque parece que la siguen ignorando.
+      - source: scene_text_2
         paragraph: 19
-        text: |
-          Traducción en progreso.
+        text: |-
+          "Illuna, ¿ya terminaste de aprender ese hechizo?", dice Flower. "Illuna, venga... necesito hablar contigo de algo. Es... es sobre la forma en que he estado actuando últimamente... Oye, ¿me estás escuchando?"
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Todavía no has hablado con ella?", le pregunto a Flower.
+
+          "¡No!", dice Flower. "¡No tengo ni idea de qué está haciendo! Incluso durante esa pelea con el rey del subsuelo y sus hombres apenas conseguí que me prestara atención."
+
+          "¡Vale, ya encontré a Kelrim!", dice Daren en voz alta, mientras él y el goblin salen ahora de la zona de cuarentena. "¿Están todos listos para irnos?"
+
+          "Seguimos esperando a Leila", le digo. "Fue a decirle a su padre que vamos al--"
+
+          "¡Ya volví!", vemos la escritura de Leila delante de nosotros, mientras corre ahora hacia nosotros. "Ya podemos irnos."
+
+          "¿Has venido corriendo todo este tiempo?", le pregunto a Leila cuando se acerca. "¡Estás empapada en sudor!"
+
+          "Teniendo en cuenta que tengo la estadística de velocidad al máximo, lo lógico es usarla, ¿no?", escribe Leila, todavía respirando algo agitada. "No se preocupen por mí. Descansaré mientras caminamos."
+    choices:
+      - position: 1
+        text: Oye, seguro que podemos esperar dos minutos más a que recuperes el aliento.
+        effects:
+          - set:
+              current_scene: b3_ch05b_birthday
+              b3_ch5_breath: 1
+      - position: 2
+        text: Bueno, si estás segura de que estás bien, supongo que deberíamos ponernos en marcha.
+        effects:
+          - set:
+              current_scene: b3_ch05b_birthday
+              b3_ch5_breath: 0
+  - name: b3_ch05b_birthday
+    routes:
+      - condition: b3_ch5_breath = 1
+        texts:
+          - source: scene_text
+            paragraph: 31
+            text: |-
+              "Oye, seguro que podemos esperar dos minutos más a que recuperes el aliento", digo. "¿Verdad, Daren?"
+
+              "¡Oh, sí, claro!", dice Daren. "No hay problema."
+
+              Decidimos esperar unos minutos más hasta que Leila esté en condiciones de seguir, y luego empezamos a dirigirnos hacia la salida que lleva a la sala del teletransportador. Justo cuando estamos a punto de dar los primeros pasos, oímos la voz de Flower mientras sus ojos se vuelven de un azul brillante.
+
+              "¡Esperen!", dice Illuna, y todos nos detenemos en seco.
+
+              "¿Illuna?", dice Flower. "¿Por fin terminaste de practicar ese hechizo?"
+
+              "No diría que esté completamente terminado, pero al menos conseguí poner bien todas las letras", dice Illuna. "Apártense. Voy a conjurar un montón de platos."
+
+              Illuna hace entonces unos gestos con las manos, y un plato grande con una tarta de chocolate aparece en el suelo delante de nosotros, junto con varios platos pequeños que rodean al plato grande y que tienen cada uno un cuchillo y un tenedor encima. Hay un montón de velas apagadas sobre la tarta y, ahora que la miro mejor, veo que también hay unas letras escritas en la superficie con glaseado. Las letras forman la frase '¡Feliz cumpleaños, Flower!'.
+
+              "No soy tan buena como Flower usando el hechizo de creación de comida, así que necesité un poco de tiempo para hacer todos los preparativos de este hechizo", dice Illuna, "pero creo que--"
+          - source: scene_text_2
+            paragraph: 20
+            text: |-
+              "¡¿Hoy es el cumpleaños de Flower?!", pregunta Kate, conmocionada, cuando se acerca y lee las letras de la tarta.
+
+              "Sí, eso es lo que dicen las letras de la tarta", le responde Illuna con brusquedad.
+
+              "Flower, ¿por qué no nos dijiste que hoy era tu cumpleaños?", dice Kate.
+
+              "Bueno, todos tenían cosas más importantes de las que preocuparse, así que en realidad no quería... espera un momento...", dice Flower, acercándose a la tarta y empezando a contar una por una las velas con el dedo índice.
+
+              Una vez termina de contarlas la primera vez, vuelve a hacerlo pero mucho más despacio, como si le costara creer lo que está viendo.
+
+              "I-I-Illuna...", dice Flower con voz temblorosa. "¿H-hay exactamente treinta velas encima de esta tarta?"
+
+              "Claro que sí", dice Illuna. "Todavía sabes contar, ¿no?"
+
+              "¿E-eso significa lo que creo que significa?", dice Flower.
+
+              "No, eso no significa que ahora te considere una adulta", dice Illuna. "Y por muchas veces que me llames Illuna o actúes como si fueras una persona mayor, eso no va a cambiar. Sin embargo... he pensado más en ello y he... llegado a la conclusión de que SÍ puedo hacer una concesión y aceptar llamarte una persona de treinta años, si de verdad significa tanto para ti... Todavía me llevará un poco de tiempo acostumbrarme a la idea, pero--"
+          - source: scene_3
+            paragraph: 13
+            text: |-
+              "¡Oh, Pétalo, muchas gracias!", dice Flower en voz muy alta, mientras ahora parece estar abrazándose a sí misma.
+
+              "¿Podrías al menos controlar tu cuerpo cuando me abrazas dentro de tu mente?", dice Illuna. "¿O no te das cuenta de lo ridículas que nos vemos ahora mismo las dos?"
+
+              "¡No me importa!", dice Flower, mientras sigue abrazándose a sí misma. "No quiero soltarte. No quiero volver a pelearme contigo. Por favor, por favor, prométeme que no volveremos a tener una pelea así en toda nuestra vida. Te juro que no volveré a intentar actuar como alguien que no soy. No volveré a llamarte Illuna. Solo di que nunca más tendremos que pasar por algo así."
+
+              "Nosotras no estábamos pele--", empieza a decir Illuna, pero entonces se interrumpe. "Ugh... vale, me rindo... Tú ganas. Prometo que no volveremos a pelear. ¿Ya estás contenta?"
+
+              "¡Sí!", dice Flower radiante, al tiempo que por fin deja de abrazarse a sí misma. "¡No tienes ni idea de cuánto! ¡Gracias!"
+
+              Entonces se acerca a Melindra y a mí y nos agarra de las manos mientras nos sonríe.
+
+              "¡Y gracias a ustedes dos también!", dice Flower. "¡Gracias por todo lo que hicieron por nosotras!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_birthday2
+      - condition: b3_ch5_breath = 0
+        texts:
+          - source: scene_text
+            paragraph: 32
+            text: |-
+              "Bueno, si estás segura de que estás bien, supongo que deberíamos ponernos en marcha."
+
+              Poco después de terminar de hablar, todos empezamos a dirigirnos hacia la salida que lleva a la sala del teletransportador. Justo cuando estamos a punto de dar los primeros pasos, oímos la voz de Flower mientras sus ojos se vuelven de un azul brillante.
+
+              "¡Esperen!", dice Illuna, y todos nos detenemos en seco.
+
+              "¿Illuna?", dice Flower. "¿Por fin terminaste de practicar ese hechizo?"
+
+              "Bueno, me habrían venido bien unos minutos más para al menos poner bien todas las letras de este hechizo, pero digamos que está prácticamente terminado", dice Illuna. "Apártense. Voy a conjurar un montón de platos."
+
+              Illuna hace entonces unos gestos con las manos, y un plato grande con una tarta de chocolate aparece en el suelo delante de nosotros, junto con varios platos pequeños que rodean al plato grande y que tienen cada uno un cuchillo y un tenedor encima. Hay un montón de velas apagadas sobre la tarta y, ahora que la miro mejor, veo que también hay unas letras escritas en la superficie con glaseado. Las letras forman la frase '¡Feliz cumpeaños, Flower!'.
+
+              "¿'Feliz cumpeaños, Flower'?", pregunta Hadrik.
+
+              "Obviamente se supone que pone 'cumpleaños', pero ya dije que no tuve tiempo para--", dice Illuna.
+
+              "¡¿Hoy es el cumpleaños de Flower?!", pregunta Kate, conmocionada.
+
+              "Sí, para eso es la tarta", dice Illuna, ligeramente irritada.
+          - source: scene_text_2
+            paragraph: 21
+            text: |-
+              "Flower, ¿por qué no nos dijiste que hoy era tu cumpleaños?", dice Kate.
+
+              "Bueno, todos tenían cosas más importantes de las que preocuparse, así que en realidad no quería... espera un momento...", dice Flower, acercándose a la tarta y empezando a contar una por una las velas con el dedo índice.
+
+              Una vez termina de contarlas la primera vez, vuelve a hacerlo pero mucho más despacio, como si le costara creer lo que está viendo.
+
+              "I-I-Illuna...", dice Flower con voz temblorosa. "¿H-hay exactamente treinta velas encima de esta tarta?"
+
+              "Claro que sí", dice Illuna. "Todavía sabes contar, ¿no?"
+
+              "¿E-eso significa lo que creo que significa?", dice Flower.
+
+              "No, eso no significa que ahora te considere una adulta", dice Illuna. "Y por muchas veces que me llames Illuna o actúes como si fueras una persona mayor, eso no va a cambiar. Sin embargo... he pensado más en ello y he... llegado a la conclusión de que SÍ puedo hacer una concesión y aceptar llamarte una persona de treinta años, si de verdad significa tanto para ti... Todavía me llevará un poco de tiempo acostumbrarme a la idea, pero--"
+          - source: scene_3
+            paragraph: 13
+            text: |-
+              "¡Oh, Pétalo, muchas gracias!", dice Flower en voz muy alta, mientras ahora parece estar abrazándose a sí misma.
+
+              "¿Podrías al menos controlar tu cuerpo cuando me abrazas dentro de tu mente?", dice Illuna. "¿O no te das cuenta de lo ridículas que nos vemos ahora mismo las dos?"
+
+              "¡No me importa!", dice Flower, mientras sigue abrazándose a sí misma. "No quiero soltarte. No quiero volver a pelearme contigo. Por favor, por favor, prométeme que no volveremos a tener una pelea así en toda nuestra vida. Te juro que no volveré a intentar actuar como alguien que no soy. No volveré a llamarte Illuna. Solo di que nunca más tendremos que pasar por algo así."
+
+              "Nosotras no estábamos pele--", empieza a decir Illuna, pero entonces se interrumpe. "Ugh... vale, me rindo... Tú ganas. Prometo que no volveremos a pelear. ¿Ya estás contenta?"
+
+              "¡Sí!", dice Flower radiante, al tiempo que por fin deja de abrazarse a sí misma. "¡No tienes ni idea de cuánto! ¡Gracias!"
+
+              Entonces se acerca a Melindra y a mí y nos agarra de las manos mientras nos sonríe.
+
+              "¡Y gracias a ustedes dos también!", dice Flower. "¡Gracias por todo lo que hicieron por nosotras!"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_birthday2
+  - name: b3_ch05b_birthday2
+    routes:
+      - condition: ch11_saved_rose = 1
+        texts:
+          - source: scene_text
+            paragraph: 33
+            text: |-
+              "¡Eh, basta ya!", dice Melindra apartando la mano, mientras veo que se ruboriza por primera vez desde que la conozco. "¡No hace falta que me des las gracias! Somos amigas, ¿recuerdas? Y además, ¡si apenas hice nada!"
+
+              "¡Eso no es verdad!", dice Flower. "¡Nos ayudaste mucho! ¡Las dos! ¡Pétalo y yo quizá seguiríamos peleadas hoy si no fuera por ustedes! ¡Muchísimas gracias!"
+
+              "¡Ejém!", oímos la voz de Hadrik, que está junto a los platos.
+
+              Parece que, mientras el resto estábamos ocupados hablando, Hadrik ha usado un yesquero que llevaba en la mochila para encender todas las velas de la tarta.
+
+              "Entonces, ¿vas a soplar estas velas o qué?", le pregunta Hadrik a Flower, mientras sostiene en las manos el plato con la tarta.
+
+              "¡Sí!", dice Flower emocionada, corriendo hacia la tarta. "¡Sí, claro!"
+
+              Entonces se inclina hacia delante y sopla las velas con todas sus fuerzas hasta que ninguna sigue encendida. Después de que todos le deseemos feliz cumpleaños, empieza a cortar trozos de tarta y a repartirlos entre todos los que la rodean.
+          - source: scene_text_2
+            paragraph: 22
+            text: |-
+              "Es una pena que Rose no esté aquí con nosotros", digo. "Habría estado bien darle un trozo de tarta, teniendo en cuenta que anoche también ayudó."
+
+              "Ya...", dice Flower mientras corta otro trozo de tarta. "Me aseguraré de conjurar otra tarta solo para ella la próxima vez que nos veamos. ¡Aquí tienes tu trozo, Kelrim!"
+
+              "Oh", dice Kelrim al coger el plato con el trozo de tarta. "¡Gracias!"
+
+              "¡De nada!", dice Flower, mirando ahora al resto de nosotros y viendo que cada uno sostiene un plato en las manos. "Hmm... creo que sé qué hacer con este último trozo."
+
+              Flower conjura un plato pequeño con cuchillo y tenedor y coloca sobre él el último trozo de tarta. Luego se acerca a la entrada del área de cuarentena y extiende las manos con el plato hacia Desmond, que sigue vigilando la puerta.
+
+              "¡Es mi cumpleaños!", dice Flower sonriendo, mientras Desmond la mira con cara de confusión.
+
+              "Oh...", dice Desmond, cogiendo el plato de sus manos. "Bueno, gracias, supongo..."
+
+              Cuando Flower está regresando con nosotros, Desmond le grita en voz alta.
+
+              "¡Eh!", dice Desmond. "¡Feliz cumpleaños!"
+
+              "¡Gracias!", dice Flower, saludándolo feliz con la mano, antes de volver con nosotros.
+          - source: scene_3
+            paragraph: 14
+            text: |-
+              "Vale, ya he repartido todos los trozos de tarta", nos dice Flower. "¡Vámonos!"
+
+              "¿Eh?", dice Hadrik, confundido. "Pero todavía no hemos terminado de comer."
+
+              "¡Pueden terminar de comer mientras caminamos!", dice Flower. "¡Vamos! ¡No quiero que nadie de la zona de cuarentena muera esperando la cura por mi culpa!"
+
+              "Vale, vale", dice Hadrik. "Entonces vayamos hacia el teletransportador."
+
+              Hacemos lo que dice Flower y nos llevamos los platitos con nosotros mientras caminamos hacia la sala del teletransportador. Mientras avanzamos por el pasillo, Hadrik saca con la mano libre unas cuantas tazas diminutas de la mochila y las coloca sobre su plato, junto a la tarta. Luego saca una botella de cerveza enana y empieza a llenar las tazas.
+
+              "No se puede tener un cumpleaños sin cerveza enana, ¿verdad?", dice Hadrik y, cuando termina de llenarlas, empieza a darnos una taza a cada uno. "Solo les he servido un par de sorbos a cada uno. ¡No querría que todos se emborracharan antes de una batalla! Daren, supongo que tú sigues sin beber durante el día, ¿no?"
+
+              "¡Claro que no!", dice Daren.
+
+              "¡Como siempre!", dice Hadrik, mientras me pasa una de las tazas.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_ending
+      - condition: ch11_saved_rose = 0
+        texts:
+          - source: scene_text
+            paragraph: 33
+            text: |-
+              "¡Eh, basta ya!", dice Melindra apartando la mano, mientras veo que se ruboriza por primera vez desde que la conozco. "¡No hace falta que me des las gracias! Somos amigas, ¿recuerdas? Y además, ¡si apenas hice nada!"
+
+              "¡Eso no es verdad!", dice Flower. "¡Nos ayudaste mucho! ¡Las dos! ¡Pétalo y yo quizá seguiríamos peleadas hoy si no fuera por ustedes! ¡Muchísimas gracias!"
+
+              "¡Ejém!", oímos la voz de Hadrik, que está junto a los platos.
+
+              Parece que, mientras el resto estábamos ocupados hablando, Hadrik ha usado un yesquero que llevaba en la mochila para encender todas las velas de la tarta.
+
+              "Entonces, ¿vas a soplar estas velas o qué?", le pregunta Hadrik a Flower, mientras sostiene en las manos el plato con la tarta.
+
+              "¡Sí!", dice Flower emocionada, corriendo hacia la tarta. "¡Sí, claro!"
+
+              Entonces se inclina hacia delante y sopla las velas con todas sus fuerzas hasta que ninguna sigue encendida. Después de que todos le deseemos feliz cumpleaños, empieza a cortar trozos de tarta y a repartirlos entre todos los que la rodean.
+          - source: scene_text_2
+            paragraph: 23
+            text: |-
+              "¡Aquí tienes tu trozo, Kelrim!", dice Flower, ofreciéndole al goblin el penúltimo trozo de tarta.
+
+              "Oh", dice Kelrim al coger el plato con el trozo de tarta. "¡Gracias!"
+
+              "¡De nada!", dice Flower, mirando ahora al resto de nosotros y viendo que cada uno sostiene un plato en las manos. "Hmm... creo que sé qué hacer con este último trozo."
+
+              Flower conjura un plato pequeño con cuchillo y tenedor y coloca sobre él el último trozo de tarta. Luego se acerca a la entrada del área de cuarentena y extiende las manos con el plato hacia Desmond, que sigue vigilando la puerta.
+
+              "¡Es mi cumpleaños!", dice Flower sonriendo, mientras Desmond la mira con cara de confusión.
+
+              "Oh...", dice Desmond, cogiendo el plato de sus manos. "Bueno, gracias, supongo..."
+
+              Cuando Flower está regresando con nosotros, Desmond le grita en voz alta.
+
+              "¡Eh!", dice Desmond. "¡Feliz cumpleaños!"
+
+              "¡Gracias!", dice Flower, saludándolo feliz con la mano, antes de volver con nosotros.
+          - source: scene_3
+            paragraph: 14
+            text: |-
+              "Vale, ya he repartido todos los trozos de tarta", nos dice Flower. "¡Vámonos!"
+
+              "¿Eh?", dice Hadrik, confundido. "Pero todavía no hemos terminado de comer."
+
+              "¡Pueden terminar de comer mientras caminamos!", dice Flower. "¡Vamos! ¡No quiero que nadie de la zona de cuarentena muera esperando la cura por mi culpa!"
+
+              "Vale, vale", dice Hadrik. "Entonces vayamos hacia el teletransportador."
+
+              Hacemos lo que dice Flower y nos llevamos los platitos con nosotros mientras caminamos hacia la sala del teletransportador. Mientras avanzamos por el pasillo, Hadrik saca con la mano libre unas cuantas tazas diminutas de la mochila y las coloca sobre su plato, junto a la tarta. Luego saca una botella de cerveza enana y empieza a llenar las tazas.
+
+              "No se puede tener un cumpleaños sin cerveza enana, ¿verdad?", dice Hadrik y, cuando termina de llenarlas, empieza a darnos una taza a cada uno. "Solo les he servido un par de sorbos a cada uno. ¡No querría que todos se emborracharan antes de una batalla! Daren, supongo que tú sigues sin beber durante el día, ¿no?"
+
+              "¡Claro que no!", dice Daren.
+
+              "¡Como siempre!", dice Hadrik, mientras me pasa una de las tazas.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch05b_ending
   - name: b3_ch05b_ending
     texts:
       - source: scene_text
-        paragraph: 20
-        text: |
-          Traducción en progreso.
+        paragraph: 34
+        text: |-
+          "Oye, entonces si ahora oficialmente tengo treinta años, ¿eso significa que puedo beber alcohol?", nos pregunta Flower emocionada.
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¡No!", decimos todos al unísono.
+
+          "Aww...", dice Flower.
+
+          "No te pongas tan triste, Flower", dice Hadrik, mientras da un sorbo a su taza. "Puede que no siempre puedas tener todo lo que quieres en la vida, pero eso no significa que no puedas aprovechar al máximo lo que sí consigues. Por ejemplo, quizá no puedas beber con nosotros ahora, ¡pero mira cuántas rocas tienes por el suelo a tu alrededor! Mientras el resto estamos ocupados bebiendo, podrías estar recogiendo una roca rara que deje la colección de Melindra en ridículo."
+
+          "Nah", le digo a Hadrik. "Las rocas de aquí no les servirán. La mitad son demasiado pequeñas, y la otra mitad o no tienen las tonalidades adecuadas o su superficie es demasiado lisa. No me extrañaría nada que Melindra ya hubiera cogido todas las rocas que considerarían valiosas la primera vez que atravesamos este túnel."
+      - source: scene_text_2
+        paragraph: 24
+        text: |-
+          Mientras todos los demás salvo Melindra me miran demasiado sorprendidos para hablar, Flower deja escapar un fuerte jadeo, cubriéndose la boca con las dos manos.
+
+          "¡Mira tú por dónde!", dice Melindra, con una sonrisa de suficiencia, dándome una fuerte palmada en la espalda. "¡Parece que pasarnos todo el turno de guardia enseñándote sobre rocas no fue un esfuerzo desperdiciado, después de todo! ¡Todavía haremos de ti un coleccionista de rocas!"
+
+          "Yo no contaría con eso", le digo.
+
+          "¡Oh, por todos los dioses!", dice Flower. "Barry de verdad aprendió a distinguir qué tipos de rocas nos gusta coleccionar. No me lo puedo creer. ¡Este es el mejor cumpleaños de todos!"
+
+          Acabamos pasando el resto del viaje hacia la sala del teletransportador comiendo tarta, bebiendo cerveza enana y ayudando a Flower a recoger unas cuantas rocas de la cueva que usaría para iniciar su propia colección. El tiempo que tuvimos para celebrar el cumpleaños de Flower fue breve, pero aun así parecía que lo había disfrutado de verdad, y nosotros también. Para cuando terminamos la tarta, todos nos sentíamos completamente renovados y estábamos listos para empezar el siguiente capítulo de nuestra aventura.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch05b_credits
   - name: b3_ch05b_credits
     texts:
       - source: scene_text
-        paragraph: 21
-        text: |
-          Traducción en progreso.
+        paragraph: 35
+        text: |-
+          El capítulo 6 del Libro 3 ya está disponible. Pulsa el botón de la parte inferior de esta página para continuar.
 
-          El texto en Español para el Libro 3, Capítulo 5 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-chapter_effects: []
+          ----------------------------------------
+
+          Perdón por la larga espera. El retraso se debió a algunos problemas de salud que tuve allá por noviembre y diciembre, y también a la variación de rutas extremadamente complicada de este capítulo. (el capítulo tiene 10 logros en total)
+
+          Pista: Algunos de los logros de este capítulo están en rutas que pueden variar dependiendo de cómo interactuaste con el Supervisor al final del capítulo 4 del libro 3. También habrá otros factores que influirán en la variación de las rutas, como si Rose sigue viva o no y si superaste o no la prueba del rey del subsuelo en el capítulo anterior.
+
+          Además, recuerda que todos los capítulos de Magium pueden completarse sin invertir ningún punto en tus estadísticas, así que si te encuentras incapaz de superar una comprobación de estadísticas, intenta cargar tu último punto de control y rehacer algunas de tus elecciones anteriores hasta encontrar las rutas que no requieren estadísticas.
+
+          ¡Buena suerte!
+    choices:
+      - position: 1
+        text: Pasar al siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: b3_ch06a_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"

@@ -1,281 +1,2350 @@
+chapter_effects:
+  - condition: current_scene = "b3_ch02a_resort" AND warning.text is empty
+    effects:
+      - warning:
+          text: La estadística de audición no es lo suficientemente alta
 scenes:
   - name: b3_ch02a_intro
     texts:
       - source: scene_text
-        paragraph: 1
-        text: |
-          Traducción en progreso.
+        paragraph: 2
+        text: |-
+          "Muy bien, Melindra", dice Daren, después de que todos volvamos a retirarnos al bosque para tener otra reunión de estrategia. "Creo que ahora sería un buen momento para que nos cuentes todo lo que sabes sobre las defensas de Ollendor. Somos todo oídos."
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¡Bien!", dice Melindra. "Aunque, para ser sincera, en realidad no sé mucho más que ustedes. No he pasado tanto tiempo en Ollendor, y ya hace bastantes años que fui exiliada de este continente, así que puede que muchas cosas hayan cambiado desde entonces."
+
+          "Ah, claro, casi había olvidado que esa era la razón por la que querías muerto al rey de Ollendor", dice Hadrik. "¿Qué hiciste para que te expulsaran de Varathia, al fin y al cabo? ¿No dijiste que naciste aquí?"
+
+          "Eso es... un asunto personal", dice Melindra. "Preferiría no hablar de ello, salvo que sea absolutamente necesario."
+
+          "Mmm...", dice Daren. "Sigo sin poder evitar pensar que hay algo importante que no nos estás contando sobre tu razón para volver aquí. No pareces la clase de persona que pasaría por todos estos problemas solo por una venganza mezquina. Tiene que haber otra razón por la que querrías matar al rey de esta ciudad."
+
+          "Tienes razón", dice Melindra. "Hay otra razón. En pocas palabras, el rey de Ollendor me ha robado algo muy importante y lo quiero de vuelta. Sin embargo, eso no es algo de lo que deban preocuparse. Lo único que tienen que hacer es ayudarme a matarlo. Del resto me encargaré yo sola."
+      - source: scene_text_2
+        paragraph: 2
+        text: |-
+          "Ya veo...", dice Daren. "Bueno, mientras cumplas tu parte del trato, procuraremos no entrometernos en tus asuntos, entonces. Sean los que sean..."
+
+          "¿Y qué hay de las defensas de Ollendor?", dice Kate. "¿No recuerdas nada que pueda servirnos? ¿Quizá alguna debilidad poco conocida que al menos nos ayude a enfrentarnos a esos gólems?"
+
+          "Lo único que sé es que todos estos avances tecnológicos son relativamente recientes", dice Melindra. "Hace unas décadas, el rey se alió con un lessathi renegado, y gracias a él consiguieron convertir aquellas viejas ruinas lessathi en algo funcional. Esos gólems de metal que vieron fuera también fueron diseñados por él. La razón por la que quería que los vieran con sus propios ojos antes de hacer nuestros planes para infiltrarnos en la ciudad era porque quería que se tomaran en serio sus defensas. No podemos permitirnos simplemente atravesar por la fuerza sus puertas principales y abrirnos paso peleando. Tenemos que mantener un perfil bajo durante el mayor tiempo posible. Dicho esto, es casi seguro que tendremos que abrirnos paso peleando para salir después de asesinar a su rey, así que también deberían prepararse mentalmente para nuestro inevitable enfrentamiento con esos gólems cuando escapemos de la ciudad."
+    effects:
+      - set:
+          successful_checks:
+            - 'Punto de control alcanzado: Partida guardada.'
+        condition: checkpoint_rich = 1
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02a_intro2
+              checkpoint_rich: 0
   - name: b3_ch02a_intro2
     texts:
       - source: scene_text
-        paragraph: 2
-        text: |
-          Traducción en progreso.
+        paragraph: 3
+        text: |-
+          "¿Pero cómo se supone que vamos a escabullirnos junto a esos gólems si siempre están patrullando fuera de las murallas?", pregunta Daren. "¿Ven peor de noche o algo así?"
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¡No, pero no hace falta que nos escabullamos junto a ellos!", dice Melindra. "Podemos entrar por la puerta principal como cualquiera. Diremos que vinieron aquí a comerciar con algunas de sus mercancías encantadas, y que el resto somos sus guardaespaldas o algo así. Eso debería bastar para que los guardias de la entrada nos dejen pasar. Y mi exilio se mantuvo en secreto para todos salvo para los asesores de mayor confianza del rey, así que no deberíamos preocuparnos de que los guardias no me dejen entrar por mi culpa."
+
+          "Creo que quizá te estás olvidando del pequeño detalle de que matamos al conde de Ollendor allá en Thilias", dice Hadrik. "Ya sé que técnicamente cumplimos nuestra condena con lo de la arena y que tenemos los papeles de Golmyck para demostrarlo, pero algo me dice que eso no va a impedir precisamente que el rey de esta ciudad nos ejecute por asesinar a su hermano."
+      - source: scene_text_2
+        paragraph: 3
+        text: '"¡No los ejecutará si ni siquiera sabe todavía que su hermano ha muerto!", dice Melindra. "Créanme, si el rey supiera de la muerte del conde, todo el pueblo estaría de luto. Esas murallas estarían cubiertas de estandartes negros y habría retratos de la cara del conde en carteles por toda la pequeña aldea que hay fuera de la ciudad. Teniendo en cuenta lo normal que parece estar todo, creo que es seguro asumir que el embajador todavía no ha enviado a ninguno de sus emisarios para informarle al rey de la muerte de su hermano, y que quería dársela en persona cuando regresara. Solo que nosotros llegamos antes, porque tomamos un atajo por los bosques infestados de monstruos. Probablemente pase al menos otro día antes de que el embajador alcance la ciudad por el camino normal, así que hasta entonces no serán más que unos participantes cualquiera del torneo, y no deberían despertar ninguna sospecha."'
+    choices:
+      - position: 1
+        text: ¿Pero de verdad van a dejar que un grupo de extraños armados entre tan fácilmente en la ciudad?
+        effects:
+          - set:
+              current_scene: b3_ch02a_bunch
+      - position: 2
+        text: ¿Qué haremos si no se creen nuestra historia?
+        effects:
+          - set:
+              current_scene: b3_ch02a_story
   - name: b3_ch02a_bunch
     texts:
       - source: scene_text
-        paragraph: 3
-        text: |
-          Traducción en progreso.
+        paragraph: 4
+        text: |-
+          "¿Pero de verdad van a dejar que un grupo de extraños armados entre tan fácilmente en la ciudad?"
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Y por qué no?", dice Melindra. "Desde su punto de vista, la mayoría de ustedes ni siquiera debería poder hacerle daño a los lugareños por el hechizo de protección del torneo, ¿recuerdan? Como todavía no descubrieron que ustedes mataron al hermano del rey, no sabrán que pueden saltarse los efectos del hechizo de protección. No tienen ningún motivo para temerles."
+
+          "Bueno, supongo que merece la pena probar el plan de Melindra", dice Daren. "Al fin y al cabo, es la que mejor conoce esta ciudad. Pero recuerden mantenerse alerta. Si las cosas se descontrolan, puede que tengamos que abrirnos paso por la fuerza, así que todos deberían estar preparados para el peor escenario posible. Melindra, ¿hay algo más que debamos saber antes de empezar a dirigirnos hacia la ciudad?"
+      - source: scene_text_2
+        paragraph: 4
+        text: |-
+          "Sí", dice Melindra. "Deberían decirle al guardia de las puertas de la ciudad que alguien de dentro los invitó a Ollendor. Así deberían dejarnos entrar más rápido. Si pregunta quién los invitó, solo díganle que su cliente quiere mantener el anonimato. A menos que hayan endurecido la seguridad con los años, esto debería ser más que suficiente para conseguirnos la entrada a la ciudad. ¡Ah, y otra cosa! Mientras nos acerquemos a la ciudad, todos deberíamos procurar hablar en voz baja, para que la gente de la aldea no pueda oírnos. De hecho, quizá sería mejor que no habláramos en absoluto, salvo que sea absolutamente necesario. Los aldeanos y la gente de la ciudad viven aterrorizados por su rey loco, y nos delatarían de inmediato si descubrieran nuestras verdaderas razones para querer infiltrarnos en la ciudad. Recuerden que aquí estamos en territorio enemigo. No podemos permitirnos cometer errores."
+
+          "Entendido", dice Daren. "Entonces sigamos adelante. Cuando lleguemos a las puertas, intentaré llevar yo la mayor parte de la conversación. Con suerte, todo saldrá a nuestro favor."
+      - source: scene_3
+        paragraph: 2
+        text: |-
+          Después de asegurarnos de que ninguno de nosotros tenía una idea mejor para infiltrarnos en Ollendor, todos salimos del bosque y nos dirigimos a la carretera principal que llevaba hasta las puertas de la ciudad. A cada lado del camino podíamos ver las casas de madera de todos los campesinos que vivían fuera de la ciudad, cada uno ocupado en trabajar sus campos. Mientras pasábamos junto a los granjeros, algunos nos lanzaban breves miradas en nuestra dirección, pero en su mayoría no nos prestaban demasiada atención y seguían con lo suyo. Al mirarles a la cara, no pude evitar notar que tenían la misma expresión cansada en los ojos que los huérfanos del Faro de Esperanza. Era como si hubieran perdido la esperanza hacía mucho tiempo y ya se hubieran resignado a unos destinos que ya no estaban en sus manos.
+
+          Todos seguimos el consejo de Melindra y no hablamos entre nosotros hasta llegar a las puertas. Una vez estuvimos cerca de nuestro destino, Daren se puso al frente para dirigirse al guardia que estaba ante la entrada de la ciudad.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02a_unimpressed
   - name: b3_ch02a_story
     texts:
       - source: scene_text
-        paragraph: 4
-        text: |
-          Traducción en progreso.
+        paragraph: 5
+        text: |-
+          "¿Qué haremos si no se creen nuestra historia?"
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Mmm...", dice Melindra. "Bueno, sería mejor que pensaran que Daren vino aquí a comerciar, porque en esta ciudad tratan mejor a los mercaderes debido a lo poco frecuente que es que alguno se moleste en visitarla, pero si no nos creen, supongo que tendremos que entrar en la ciudad por la vía normal. Eso requeriría un poco más de papeleo y llevaría más tiempo, pero dudo que pueda tardar TANTO más, así que estoy segura de que estaremos bien."
+
+          "Bueno, supongo que merece la pena probar el plan de Melindra", dice Daren. "Al fin y al cabo, es la que mejor conoce esta ciudad. Pero recuerden mantenerse alerta. Si las cosas se descontrolan, puede que tengamos que abrirnos paso por la fuerza, así que todos deberían estar preparados para el peor escenario posible. Melindra, ¿hay algo más que debamos saber antes de empezar a dirigirnos hacia la ciudad?"
+      - source: scene_text_2
+        paragraph: 4
+        text: |-
+          "Sí", dice Melindra. "Deberían decirle al guardia de las puertas de la ciudad que alguien de dentro los invitó a Ollendor. Así deberían dejarnos entrar más rápido. Si pregunta quién los invitó, solo díganle que su cliente quiere mantener el anonimato. A menos que hayan endurecido la seguridad con los años, esto debería ser más que suficiente para conseguirnos la entrada a la ciudad. ¡Ah, y otra cosa! Mientras nos acerquemos a la ciudad, todos deberíamos procurar hablar en voz baja, para que la gente de la aldea no pueda oírnos. De hecho, quizá sería mejor que no habláramos en absoluto, salvo que sea absolutamente necesario. Los aldeanos y la gente de la ciudad viven aterrorizados por su rey loco, y nos delatarían de inmediato si descubrieran nuestras verdaderas razones para querer infiltrarnos en la ciudad. Recuerden que aquí estamos en territorio enemigo. No podemos permitirnos cometer errores."
+
+          "Entendido", dice Daren. "Entonces sigamos adelante. Cuando lleguemos a las puertas, intentaré llevar yo la mayor parte de la conversación. Con suerte, todo saldrá a nuestro favor."
+      - source: scene_3
+        paragraph: 2
+        text: |-
+          Después de asegurarnos de que ninguno de nosotros tenía una idea mejor para infiltrarnos en Ollendor, todos salimos del bosque y nos dirigimos a la carretera principal que llevaba hasta las puertas de la ciudad. A cada lado del camino podíamos ver las casas de madera de todos los campesinos que vivían fuera de la ciudad, cada uno ocupado en trabajar sus campos. Mientras pasábamos junto a los granjeros, algunos nos lanzaban breves miradas en nuestra dirección, pero en su mayoría no nos prestaban demasiada atención y seguían con lo suyo. Al mirarles a la cara, no pude evitar notar que tenían la misma expresión cansada en los ojos que los huérfanos del Faro de Esperanza. Era como si hubieran perdido la esperanza hacía mucho tiempo y ya se hubieran resignado a unos destinos que ya no estaban en sus manos.
+
+          Todos seguimos el consejo de Melindra y no hablamos entre nosotros hasta llegar a las puertas. Una vez estuvimos cerca de nuestro destino, Daren se puso al frente para dirigirse al guardia que estaba ante la entrada de la ciudad.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02a_unimpressed
   - name: b3_ch02a_unimpressed
     texts:
       - source: scene_text
-        paragraph: 5
-        text: |
-          Traducción en progreso.
-
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch02a_resort
-    texts:
-      - source: scene_text
         paragraph: 6
-        text: |
-          Traducción en progreso.
+        text: |-
+          "¡Buenos días!", dice Daren en voz alta, para asegurarse de que el hombre frente a la puerta pudiera oírlo. "¿Eres la persona con la que tengo que hablar para poder entrar en la ciudad?"
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          El guardia no le responde de inmediato. Cuando llegamos estaba sentado en una silla, midiéndonos de arriba abajo con una expresión bastante poco impresionada, y mientras Daren hablaba, daba la impresión de que el guardián de la puerta solo prestaba atención a la mitad de lo que decía.
+
+          Daren espera con paciencia a que el guardia se levante lentamente de su silla y camine hasta él, mientras dos gólems de metal que estaban delante de la puerta parecen estudiarnos con atención.
+
+          "¿Qué asuntos te traen aquí?", pregunta el guardia, deteniéndose frente a Daren y mirándolo con recelo.
+
+          "He venido a vender unas mercancías", dice Daren. "No sé si sabes quién soy, pero fuera de Varathia soy un encantador muy famoso. A mí me llaman Daren, el sanador con armadura."
+
+          "No me suenas", dice el guardia, con tono desinteresado.
+      - source: scene_text_2
+        paragraph: 5
+        text: |-
+          "Bueno, no puedo reprochártelo", dice Daren. "Este continente está bastante aislado del resto del mundo. En fin, tengo un cliente que quiere mantener el anonimato y que desea comprar mis mercancías, y he quedado con él dentro de la ciudad. ¿Podrías abrir la puerta para dejarme pasar?"
+
+          De nuevo, el guardia no le responde enseguida, y se limita a mirarlo con el ceño fruncido mientras mastica sin parar lo que parece ser algún tipo de planta. Digo que frunce el ceño, aunque en realidad es un poco difícil saber si de verdad le molesta algo o si simplemente así le funcionan las cejas, porque estoy bastante seguro de que ya las tenía fruncidas antes siquiera de fijarse en nosotros.
+
+          "¿Cuál es la contraseña?", dice el guardia, al cabo de un rato.
+
+          "¿Contraseña?...", pregunta Daren, confundido.
+
+          "Sí", dice el guardia. "Contraseña. Si alguien te invitó aquí, entonces debió darte una contraseña. Esa es la única forma de entrar en la ciudad sin tramitar el papeleo habitual. Así que, ¿cuál es la contraseña?"
+      - source: scene_3
+        paragraph: 3
+        text: Mientras el guardia habla, de repente recuerdo el texto de aquella roca de la colección de Melindra, que decía que 'La contraseña es pico de grifo'. ¿Era posible que se refiriera a la contraseña necesaria para entrar en la ciudad de Ollendor?
+        condition: b3_ch1_password = 1
+    choices:
+      - position: 1
+        text: Eh, el tipo con el que se suponía que íbamos a reunirnos no nos dijo nada de contraseñas.
+        effects:
+          - set:
+              current_scene: b3_ch02a_resort
+              b3_ch2_pass2: 0
+      - position: 2
+        text: La contraseña es 'cierra la boca y abre la puerta'
+        effects:
+          - set:
+              current_scene: b3_ch02a_resort
+              b3_ch2_pass2: 1
+      - position: 3
+        text: Olvidamos la contraseña.
+        effects:
+          - set:
+              current_scene: b3_ch02a_resort
+              b3_ch2_pass2: 2
+      - position: 4
+        text: La contraseña es 'un orangután borracho con un gorro de fiesta'
+        effects:
+          - set:
+              current_scene: b3_ch02a_resort
+              b3_ch2_pass2: 3
+      - position: 5
+        text: La contraseña es 'pico de grifo'
+        effects:
+          - set:
+              current_scene: b3_ch02a_resort
+              b3_ch2_pass2: 4
+        condition: b3_ch1_password = 1
+  - name: b3_ch02a_resort
+    routes:
+      - condition: b3_ch2_pass2 = 0
+        texts:
+          - source: scene_text
+            paragraph: 7
+            text: |-
+              "Eh, el tipo con el que se suponía que íbamos a reunirnos no nos dijo nada de contraseñas."
+
+              "Lo dudo", dice el guardia. "Todo el mundo en esta ciudad sabe que hace falta una contraseña para entrar. Si de verdad no te dio ninguna, entonces eso solo puede significar que no necesitaba con urgencia las mercancías que vienes a venderle, y que le parecía bien que tramitaras el papeleo requerido, como cualquier otro forastero."
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              "¿Y qué tenemos que hacer exactamente para tramitar esos papeles?", dice Daren.
+
+              "Por el momento, no tienes que hacer nada", dice el guardia. "Más tarde hoy enviaré a alguien a conseguir todos los permisos necesarios de mis superiores, y luego les traeremos unos papeles para que los firmen. Eso suele tardar un tiempo, eso sí. Podrías probar a volver mañana, pero yo no me haría muchas ilusiones si fuera tú. La gente rara vez recibe sus papeles de entrada antes de que pasen tres días desde su llegada."
+
+              "¿Tres días?!", dice Daren, un poco demasiado alto, pero enseguida se calma. "Oh... De acuerdo. Entiendo. En ese caso, volveremos a nuestro campamento y regresaremos mañana. Quizá tengamos suerte y haya noticias. ¡Que tengas un buen día, y gracias por tu ayuda!"
+
+              El guardia le hace un gesto de asentimiento a Daren, y luego todos volvemos hacia el bosque del que venimos, sin decir una palabra. Solo cuando ya estamos a salvo, lejos de todos los aldeanos, la voz de Hadrik estalla de repente, como si la presión hubiera estado acumulándose todo el tiempo que tuvo que obligarse a no hablar.
+
+              "¡Tres días!", grita Hadrik. "¿Has oído a ese tipo?... ¡Para entonces el embajador habrá llegado tres veces! ¡Casi que podríamos atravesar ahora mismo su puerta principal! ¡Al menos así tendríamos el factor sorpresa!"
+          - source: scene_3
+            paragraph: 4
+            text: |-
+              "Usar la fuerza bruta es nuestro último recurso absoluto", dice Daren. "¿No vieron esos gólems? Esos son solo una de sus muchas defensas. Quién sabe qué más sacarán de la manga mientras intentamos abrirnos paso hasta el palacio. De todos modos, no es que nos hayamos quedado sin opciones por completo. Acabamos de descubrir que necesitamos algún tipo de contraseña para entrar. Lo único que nos hace falta ahora es un plan para averiguar esa contraseña, y volveremos a estar bien encaminados."
+
+              "Quizá podríamos conseguir esa información de los aldeanos de alguna manera", escribe Leila. "Supongo que los granjeros deberían conocer la contraseña, ya que tendrían que entrar en la ciudad a diario para comprar provisiones."
+
+              "Leila tiene razón", dice Illuna. "Podríamos intentar sobornar a uno de los aldeanos. Me imagino que no debería ser demasiado difícil encontrar a alguien dispuesto a romper las reglas por algo de dinero extra en una aldea llena de gente empobrecida."
+
+              "No es tan fácil como crees", dice Melindra. "Esta ciudad no es como Thilias. Aquí romper la ley bien puede hacer que asesinen a toda tu familia, o algo peor. La mayoría de la gente no correría ese riesgo, sin importar cuánto dinero hubiera en juego."
+        choices:
+          - position: 1
+            text: ¿Y si intentáramos emborrachar a alguno?
+            effects:
+              - set:
+                  current_scene: b3_ch02a_drunk
+                  b3_ch2_infiltration: 0
+                  strength: ${strength_aux}
+                  agility: ${agility_aux}
+                  toughness: ${toughness_aux}
+                  reflexes: ${reflexes_aux}
+                  hearing: ${hearing_aux}
+                  perception: ${perception_aux}
+                  ancient_languages: ${ancient_languages_aux}
+                  combat_technique: ${combat_technique_aux}
+                  premonition: ${premonition_aux}
+                  available_points: ${available_points_aux}
+          - position: 2
+            text: Si soy sincero, estoy de acuerdo con Hadrik. Deberíamos atravesar sus puertas principales por la fuerza.
+            effects:
+              - set:
+                  current_scene: b3_ch02a_smash
+                  b3_ch2_infiltration: 1
+                  strength: ${strength_aux}
+                  agility: ${agility_aux}
+                  toughness: ${toughness_aux}
+                  reflexes: ${reflexes_aux}
+                  hearing: ${hearing_aux}
+                  perception: ${perception_aux}
+                  ancient_languages: ${ancient_languages_aux}
+                  combat_technique: ${combat_technique_aux}
+                  premonition: ${premonition_aux}
+                  available_points: ${available_points_aux}
+              - set:
+                  strength: ${strength_aux}
+                  agility: ${agility_aux}
+                  toughness: ${toughness_aux}
+                  reflexes: ${reflexes_aux}
+                  hearing: ${hearing_aux}
+                  perception: ${perception_aux}
+                  ancient_languages: ${ancient_languages_aux}
+                  combat_technique: ${combat_technique_aux}
+                  premonition: ${premonition_aux}
+                  available_points: ${available_points_aux}
+                condition: b3_ch1_unlock != 2 AND hearing_aux = 4
+          - position: 3
+            text: '"Podría intentar escuchar a alguien desde lejos." (requiere nivel 4 en audición)'
+            effects:
+              - condition: b3_ch1_unlock = 2
+                show_warning:
+                  text: Stat device locked
+              - condition: hearing_aux < 4 AND b3_ch1_unlock != 2
+                show_warning: {}
+              - set:
+                  current_scene: b3_ch02a_eavesdrop
+                  b3_ch2_infiltration: 2
+                condition: hearing_aux = 4 AND b3_ch1_unlock != 2
+      - condition: b3_ch2_pass2 = 1
+        texts:
+          - source: scene_text
+            paragraph: 8
+            text: |-
+              "La contraseña es 'cierra la boca y abre la puerta' "
+
+              "Parece que tu compañero tiene un sentido del humor bastante refinado", le dice el guardia a Daren, después de lanzarme una breve mirada. "He oído que esos dos grandes gólems que tengo detrás también tienen muy buen sentido del humor. ¿Quizá a tu amigo le gustaría que se los presentara? Seguro que se llevarían bien."
+
+              "Por favor, ignora a mi guardaespaldas", dice Daren. "A veces no sabe cuándo callarse. Te aseguro que no habla en mi nombre de ninguna manera. Por desgracia, no conozco la contraseña que me pides."
+
+              "Si no conoces la contraseña, entonces tendrás que tramitar el papeleo requerido, como cualquier otro forastero", dice el guardia.
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              "¿Y qué tenemos que hacer exactamente para tramitar esos papeles?", dice Daren.
+
+              "Por el momento, no tienes que hacer nada", dice el guardia. "Más tarde hoy enviaré a alguien a conseguir todos los permisos necesarios de mis superiores, y luego les traeremos unos papeles para que los firmen. Eso suele tardar un tiempo, eso sí. Podrías probar a volver mañana, pero yo no me haría muchas ilusiones si fuera tú. La gente rara vez recibe sus papeles de entrada antes de que pasen tres días desde su llegada."
+
+              "¿Tres días?!", dice Daren, un poco demasiado alto, pero enseguida se calma. "Oh... De acuerdo. Entiendo. En ese caso, volveremos a nuestro campamento y regresaremos mañana. Quizá tengamos suerte y haya noticias. ¡Que tengas un buen día, y gracias por tu ayuda!"
+
+              El guardia le hace un gesto de asentimiento a Daren, y luego todos volvemos hacia el bosque del que venimos, sin decir una palabra. Solo cuando ya estamos a salvo, lejos de todos los aldeanos, la voz de Hadrik estalla de repente, como si la presión hubiera estado acumulándose todo el tiempo que tuvo que obligarse a no hablar.
+
+              "¡Tres días!", grita Hadrik. "¿Has oído a ese tipo?... ¡Para entonces el embajador habrá llegado tres veces! ¡Casi que podríamos atravesar ahora mismo su puerta principal! ¡Al menos así tendríamos el factor sorpresa!"
+          - source: scene_3
+            paragraph: 4
+            text: |-
+              "Usar la fuerza bruta es nuestro último recurso absoluto", dice Daren. "¿No vieron esos gólems? Esos son solo una de sus muchas defensas. Quién sabe qué más sacarán de la manga mientras intentamos abrirnos paso hasta el palacio. De todos modos, no es que nos hayamos quedado sin opciones por completo. Acabamos de descubrir que necesitamos algún tipo de contraseña para entrar. Lo único que nos hace falta ahora es un plan para averiguar esa contraseña, y volveremos a estar bien encaminados."
+
+              "Quizá podríamos conseguir esa información de los aldeanos de alguna manera", escribe Leila. "Supongo que los granjeros deberían conocer la contraseña, ya que tendrían que entrar en la ciudad a diario para comprar provisiones."
+
+              "Leila tiene razón", dice Illuna. "Podríamos intentar sobornar a uno de los aldeanos. Me imagino que no debería ser demasiado difícil encontrar a alguien dispuesto a romper las reglas por algo de dinero extra en una aldea llena de gente empobrecida."
+
+              "No es tan fácil como crees", dice Melindra. "Esta ciudad no es como Thilias. Aquí romper la ley bien puede hacer que asesinen a toda tu familia, o algo peor. La mayoría de la gente no correría ese riesgo, sin importar cuánto dinero hubiera en juego."
+        choices:
+          - position: 1
+            text: ¿Y si intentáramos emborrachar a alguno?
+            effects:
+              - set:
+                  current_scene: b3_ch02a_drunk
+                  b3_ch2_infiltration: 0
+                  strength: ${strength_aux}
+                  agility: ${agility_aux}
+                  toughness: ${toughness_aux}
+                  reflexes: ${reflexes_aux}
+                  hearing: ${hearing_aux}
+                  perception: ${perception_aux}
+                  ancient_languages: ${ancient_languages_aux}
+                  combat_technique: ${combat_technique_aux}
+                  premonition: ${premonition_aux}
+                  available_points: ${available_points_aux}
+          - position: 2
+            text: Si soy sincero, estoy de acuerdo con Hadrik. Deberíamos atravesar sus puertas principales por la fuerza.
+            effects:
+              - set:
+                  current_scene: b3_ch02a_smash
+                  b3_ch2_infiltration: 1
+                  strength: ${strength_aux}
+                  agility: ${agility_aux}
+                  toughness: ${toughness_aux}
+                  reflexes: ${reflexes_aux}
+                  hearing: ${hearing_aux}
+                  perception: ${perception_aux}
+                  ancient_languages: ${ancient_languages_aux}
+                  combat_technique: ${combat_technique_aux}
+                  premonition: ${premonition_aux}
+                  available_points: ${available_points_aux}
+              - set:
+                  strength: ${strength_aux}
+                  agility: ${agility_aux}
+                  toughness: ${toughness_aux}
+                  reflexes: ${reflexes_aux}
+                  hearing: ${hearing_aux}
+                  perception: ${perception_aux}
+                  ancient_languages: ${ancient_languages_aux}
+                  combat_technique: ${combat_technique_aux}
+                  premonition: ${premonition_aux}
+                  available_points: ${available_points_aux}
+                condition: b3_ch1_unlock != 2 AND hearing_aux = 4
+          - position: 3
+            text: '"Podría intentar escuchar a alguien desde lejos." (requiere nivel 4 en audición)'
+            effects:
+              - condition: b3_ch1_unlock = 2
+                show_warning:
+                  text: Stat device locked
+              - condition: hearing_aux < 4 AND b3_ch1_unlock != 2
+                show_warning: {}
+              - set:
+                  current_scene: b3_ch02a_eavesdrop
+                  b3_ch2_infiltration: 2
+                condition: hearing_aux = 4 AND b3_ch1_unlock != 2
+      - condition: b3_ch2_pass2 = 2
+        texts:
+          - source: scene_text
+            paragraph: 9
+            text: |-
+              "Olvidamos la contraseña."
+
+              "En ese caso, ¿por qué no llamas a esa 'persona anónima' por un transceptor y le pides la contraseña otra vez?", dice el guardia.
+
+              "Nos... pusimos en contacto con él poco antes de llegar aquí, pero no logramos localizarlo", dice Daren.
+
+              "Bueno, si no tienes la contraseña, entonces vas a tener que tramitar el papeleo requerido, como cualquier otro forastero", dice el guardia.
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              "¿Y qué tenemos que hacer exactamente para tramitar esos papeles?", dice Daren.
+
+              "Por el momento, no tienes que hacer nada", dice el guardia. "Más tarde hoy enviaré a alguien a conseguir todos los permisos necesarios de mis superiores, y luego les traeremos unos papeles para que los firmen. Eso suele tardar un tiempo, eso sí. Podrías probar a volver mañana, pero yo no me haría muchas ilusiones si fuera tú. La gente rara vez recibe sus papeles de entrada antes de que pasen tres días desde su llegada."
+
+              "¿Tres días?!", dice Daren, un poco demasiado alto, pero enseguida se calma. "Oh... De acuerdo. Entiendo. En ese caso, volveremos a nuestro campamento y regresaremos mañana. Quizá tengamos suerte y haya noticias. ¡Que tengas un buen día, y gracias por tu ayuda!"
+
+              El guardia le hace un gesto de asentimiento a Daren, y luego todos volvemos hacia el bosque del que venimos, sin decir una palabra. Solo cuando ya estamos a salvo, lejos de todos los aldeanos, la voz de Hadrik estalla de repente, como si la presión hubiera estado acumulándose todo el tiempo que tuvo que obligarse a no hablar.
+
+              "¡Tres días!", grita Hadrik. "¿Has oído a ese tipo?... ¡Para entonces el embajador habrá llegado tres veces! ¡Casi que podríamos atravesar ahora mismo su puerta principal! ¡Al menos así tendríamos el factor sorpresa!"
+          - source: scene_3
+            paragraph: 4
+            text: |-
+              "Usar la fuerza bruta es nuestro último recurso absoluto", dice Daren. "¿No vieron esos gólems? Esos son solo una de sus muchas defensas. Quién sabe qué más sacarán de la manga mientras intentamos abrirnos paso hasta el palacio. De todos modos, no es que nos hayamos quedado sin opciones por completo. Acabamos de descubrir que necesitamos algún tipo de contraseña para entrar. Lo único que nos hace falta ahora es un plan para averiguar esa contraseña, y volveremos a estar bien encaminados."
+
+              "Quizá podríamos conseguir esa información de los aldeanos de alguna manera", escribe Leila. "Supongo que los granjeros deberían conocer la contraseña, ya que tendrían que entrar en la ciudad a diario para comprar provisiones."
+
+              "Leila tiene razón", dice Illuna. "Podríamos intentar sobornar a uno de los aldeanos. Me imagino que no debería ser demasiado difícil encontrar a alguien dispuesto a romper las reglas por algo de dinero extra en una aldea llena de gente empobrecida."
+
+              "No es tan fácil como crees", dice Melindra. "Esta ciudad no es como Thilias. Aquí romper la ley bien puede hacer que asesinen a toda tu familia, o algo peor. La mayoría de la gente no correría ese riesgo, sin importar cuánto dinero hubiera en juego."
+        choices:
+          - position: 1
+            text: ¿Y si intentáramos emborrachar a alguno?
+            effects:
+              - set:
+                  current_scene: b3_ch02a_drunk
+                  b3_ch2_infiltration: 0
+                  strength: ${strength_aux}
+                  agility: ${agility_aux}
+                  toughness: ${toughness_aux}
+                  reflexes: ${reflexes_aux}
+                  hearing: ${hearing_aux}
+                  perception: ${perception_aux}
+                  ancient_languages: ${ancient_languages_aux}
+                  combat_technique: ${combat_technique_aux}
+                  premonition: ${premonition_aux}
+                  available_points: ${available_points_aux}
+          - position: 2
+            text: Si soy sincero, estoy de acuerdo con Hadrik. Deberíamos atravesar sus puertas principales por la fuerza.
+            effects:
+              - set:
+                  current_scene: b3_ch02a_smash
+                  b3_ch2_infiltration: 1
+                  strength: ${strength_aux}
+                  agility: ${agility_aux}
+                  toughness: ${toughness_aux}
+                  reflexes: ${reflexes_aux}
+                  hearing: ${hearing_aux}
+                  perception: ${perception_aux}
+                  ancient_languages: ${ancient_languages_aux}
+                  combat_technique: ${combat_technique_aux}
+                  premonition: ${premonition_aux}
+                  available_points: ${available_points_aux}
+              - set:
+                  strength: ${strength_aux}
+                  agility: ${agility_aux}
+                  toughness: ${toughness_aux}
+                  reflexes: ${reflexes_aux}
+                  hearing: ${hearing_aux}
+                  perception: ${perception_aux}
+                  ancient_languages: ${ancient_languages_aux}
+                  combat_technique: ${combat_technique_aux}
+                  premonition: ${premonition_aux}
+                  available_points: ${available_points_aux}
+                condition: b3_ch1_unlock != 2 AND hearing_aux = 4
+          - position: 3
+            text: '"Podría intentar escuchar a alguien desde lejos." (requiere nivel 4 en audición)'
+            effects:
+              - condition: b3_ch1_unlock = 2
+                show_warning:
+                  text: Stat device locked
+              - condition: hearing_aux < 4 AND b3_ch1_unlock != 2
+                show_warning: {}
+              - set:
+                  current_scene: b3_ch02a_eavesdrop
+                  b3_ch2_infiltration: 2
+                condition: hearing_aux = 4 AND b3_ch1_unlock != 2
+      - condition: b3_ch2_pass2 = 3
+        texts:
+          - source: scene_text
+            paragraph: 10
+            text: |-
+              "La contraseña es 'un orangután borracho con un gorro de fiesta'. "
+
+              "¿Un orangután borracho con un gorro de fiesta?...", dice el guardia. "¿Qué eres, idiota? ¡Hace más de un año que no usamos esa contraseña! No pensarías de verdad que íbamos a dejarte entrar por darme esa vieja contraseña, ¿verdad?"
+
+              "Eh... no, claro que no", le digo, un poco desconcertado por el hecho de que una contraseña tan ridícula pudiera haberse usado alguna vez en serio.
+
+              "Si no conoces la contraseña, entonces vas a tener que tramitar el papeleo requerido, como cualquier otro forastero", dice el guardia.
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              "¿Y qué tenemos que hacer exactamente para tramitar esos papeles?", dice Daren.
+
+              "Por el momento, no tienes que hacer nada", dice el guardia. "Más tarde hoy enviaré a alguien a conseguir todos los permisos necesarios de mis superiores, y luego les traeremos unos papeles para que los firmen. Eso suele tardar un tiempo, eso sí. Podrías probar a volver mañana, pero yo no me haría muchas ilusiones si fuera tú. La gente rara vez recibe sus papeles de entrada antes de que pasen tres días desde su llegada."
+
+              "¿Tres días?!", dice Daren, un poco demasiado alto, pero enseguida se calma. "Oh... De acuerdo. Entiendo. En ese caso, volveremos a nuestro campamento y regresaremos mañana. Quizá tengamos suerte y haya noticias. ¡Que tengas un buen día, y gracias por tu ayuda!"
+
+              El guardia le hace un gesto de asentimiento a Daren, y luego todos volvemos hacia el bosque del que venimos, sin decir una palabra. Solo cuando ya estamos a salvo, lejos de todos los aldeanos, la voz de Hadrik estalla de repente, como si la presión hubiera estado acumulándose todo el tiempo que tuvo que obligarse a no hablar.
+
+              "¡Tres días!", grita Hadrik. "¿Has oído a ese tipo?... ¡Para entonces el embajador habrá llegado tres veces! ¡Casi que podríamos atravesar ahora mismo su puerta principal! ¡Al menos así tendríamos el factor sorpresa!"
+          - source: scene_3
+            paragraph: 4
+            text: |-
+              "Usar la fuerza bruta es nuestro último recurso absoluto", dice Daren. "¿No vieron esos gólems? Esos son solo una de sus muchas defensas. Quién sabe qué más sacarán de la manga mientras intentamos abrirnos paso hasta el palacio. De todos modos, no es que nos hayamos quedado sin opciones por completo. Acabamos de descubrir que necesitamos algún tipo de contraseña para entrar. Lo único que nos hace falta ahora es un plan para averiguar esa contraseña, y volveremos a estar bien encaminados."
+
+              "Quizá podríamos conseguir esa información de los aldeanos de alguna manera", escribe Leila. "Supongo que los granjeros deberían conocer la contraseña, ya que tendrían que entrar en la ciudad a diario para comprar provisiones."
+
+              "Leila tiene razón", dice Illuna. "Podríamos intentar sobornar a uno de los aldeanos. Me imagino que no debería ser demasiado difícil encontrar a alguien dispuesto a romper las reglas por algo de dinero extra en una aldea llena de gente empobrecida."
+
+              "No es tan fácil como crees", dice Melindra. "Esta ciudad no es como Thilias. Aquí romper la ley bien puede hacer que asesinen a toda tu familia, o algo peor. La mayoría de la gente no correría ese riesgo, sin importar cuánto dinero hubiera en juego."
+        choices:
+          - position: 1
+            text: ¿Y si intentáramos emborrachar a alguno?
+            effects:
+              - set:
+                  current_scene: b3_ch02a_drunk
+                  b3_ch2_infiltration: 0
+                  strength: ${strength_aux}
+                  agility: ${agility_aux}
+                  toughness: ${toughness_aux}
+                  reflexes: ${reflexes_aux}
+                  hearing: ${hearing_aux}
+                  perception: ${perception_aux}
+                  ancient_languages: ${ancient_languages_aux}
+                  combat_technique: ${combat_technique_aux}
+                  premonition: ${premonition_aux}
+                  available_points: ${available_points_aux}
+          - position: 2
+            text: Si soy sincero, estoy de acuerdo con Hadrik. Deberíamos atravesar sus puertas principales por la fuerza.
+            effects:
+              - set:
+                  current_scene: b3_ch02a_smash
+                  b3_ch2_infiltration: 1
+                  strength: ${strength_aux}
+                  agility: ${agility_aux}
+                  toughness: ${toughness_aux}
+                  reflexes: ${reflexes_aux}
+                  hearing: ${hearing_aux}
+                  perception: ${perception_aux}
+                  ancient_languages: ${ancient_languages_aux}
+                  combat_technique: ${combat_technique_aux}
+                  premonition: ${premonition_aux}
+                  available_points: ${available_points_aux}
+              - set:
+                  strength: ${strength_aux}
+                  agility: ${agility_aux}
+                  toughness: ${toughness_aux}
+                  reflexes: ${reflexes_aux}
+                  hearing: ${hearing_aux}
+                  perception: ${perception_aux}
+                  ancient_languages: ${ancient_languages_aux}
+                  combat_technique: ${combat_technique_aux}
+                  premonition: ${premonition_aux}
+                  available_points: ${available_points_aux}
+                condition: b3_ch1_unlock != 2 AND hearing_aux = 4
+          - position: 3
+            text: '"Podría intentar escuchar a alguien desde lejos." (requiere nivel 4 en audición)'
+            effects:
+              - condition: b3_ch1_unlock = 2
+                show_warning:
+                  text: Stat device locked
+              - condition: hearing_aux < 4 AND b3_ch1_unlock != 2
+                show_warning: {}
+              - set:
+                  current_scene: b3_ch02a_eavesdrop
+                  b3_ch2_infiltration: 2
+                condition: hearing_aux = 4 AND b3_ch1_unlock != 2
+      - condition: b3_ch2_pass2 = 4
+        texts:
+          - source: scene_text
+            paragraph: 11
+            text: |-
+              "La contraseña es 'pico de grifo'. "
+
+              "No, no lo es", dice el guardia. "No estoy seguro de si acabas de decir eso al azar o de si alguien te engañó de verdad, pero si quieres entrar en la ciudad sin conocer la contraseña real, entonces vas a tener que tramitar el papeleo requerido, como cualquier otro forastero."
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              "¿Y qué tenemos que hacer exactamente para tramitar esos papeles?", dice Daren.
+
+              "Por el momento, no tienes que hacer nada", dice el guardia. "Más tarde hoy enviaré a alguien a conseguir todos los permisos necesarios de mis superiores, y luego les traeremos unos papeles para que los firmen. Eso suele tardar un tiempo, eso sí. Podrías probar a volver mañana, pero yo no me haría muchas ilusiones si fuera tú. La gente rara vez recibe sus papeles de entrada antes de que pasen tres días desde su llegada."
+
+              "¿Tres días?!", dice Daren, un poco demasiado alto, pero enseguida se calma. "Oh... De acuerdo. Entiendo. En ese caso, volveremos a nuestro campamento y regresaremos mañana. Quizá tengamos suerte y haya noticias. ¡Que tengas un buen día, y gracias por tu ayuda!"
+
+              El guardia le hace un gesto de asentimiento a Daren, y luego todos volvemos hacia el bosque del que venimos, sin decir una palabra. Solo cuando ya estamos a salvo, lejos de todos los aldeanos, la voz de Hadrik estalla de repente, como si la presión hubiera estado acumulándose todo el tiempo que tuvo que obligarse a no hablar.
+
+              "¡Tres días!", grita Hadrik. "¿Has oído a ese tipo?... ¡Para entonces el embajador habrá llegado tres veces! ¡Casi que podríamos atravesar ahora mismo su puerta principal! ¡Al menos así tendríamos el factor sorpresa!"
+          - source: scene_3
+            paragraph: 4
+            text: |-
+              "Usar la fuerza bruta es nuestro último recurso absoluto", dice Daren. "¿No vieron esos gólems? Esos son solo una de sus muchas defensas. Quién sabe qué más sacarán de la manga mientras intentamos abrirnos paso hasta el palacio. De todos modos, no es que nos hayamos quedado sin opciones por completo. Acabamos de descubrir que necesitamos algún tipo de contraseña para entrar. Lo único que nos hace falta ahora es un plan para averiguar esa contraseña, y volveremos a estar bien encaminados."
+
+              "Quizá podríamos conseguir esa información de los aldeanos de alguna manera", escribe Leila. "Supongo que los granjeros deberían conocer la contraseña, ya que tendrían que entrar en la ciudad a diario para comprar provisiones."
+
+              "Leila tiene razón", dice Illuna. "Podríamos intentar sobornar a uno de los aldeanos. Me imagino que no debería ser demasiado difícil encontrar a alguien dispuesto a romper las reglas por algo de dinero extra en una aldea llena de gente empobrecida."
+
+              "No es tan fácil como crees", dice Melindra. "Esta ciudad no es como Thilias. Aquí romper la ley bien puede hacer que asesinen a toda tu familia, o algo peor. La mayoría de la gente no correría ese riesgo, sin importar cuánto dinero hubiera en juego."
+        choices:
+          - position: 1
+            text: ¿Y si intentáramos emborrachar a alguno?
+            effects:
+              - set:
+                  current_scene: b3_ch02a_drunk
+                  b3_ch2_infiltration: 0
+                  strength: ${strength_aux}
+                  agility: ${agility_aux}
+                  toughness: ${toughness_aux}
+                  reflexes: ${reflexes_aux}
+                  hearing: ${hearing_aux}
+                  perception: ${perception_aux}
+                  ancient_languages: ${ancient_languages_aux}
+                  combat_technique: ${combat_technique_aux}
+                  premonition: ${premonition_aux}
+                  available_points: ${available_points_aux}
+          - position: 2
+            text: Si soy sincero, estoy de acuerdo con Hadrik. Deberíamos atravesar sus puertas principales por la fuerza.
+            effects:
+              - set:
+                  current_scene: b3_ch02a_smash
+                  b3_ch2_infiltration: 1
+                  strength: ${strength_aux}
+                  agility: ${agility_aux}
+                  toughness: ${toughness_aux}
+                  reflexes: ${reflexes_aux}
+                  hearing: ${hearing_aux}
+                  perception: ${perception_aux}
+                  ancient_languages: ${ancient_languages_aux}
+                  combat_technique: ${combat_technique_aux}
+                  premonition: ${premonition_aux}
+                  available_points: ${available_points_aux}
+              - set:
+                  strength: ${strength_aux}
+                  agility: ${agility_aux}
+                  toughness: ${toughness_aux}
+                  reflexes: ${reflexes_aux}
+                  hearing: ${hearing_aux}
+                  perception: ${perception_aux}
+                  ancient_languages: ${ancient_languages_aux}
+                  combat_technique: ${combat_technique_aux}
+                  premonition: ${premonition_aux}
+                  available_points: ${available_points_aux}
+                condition: b3_ch1_unlock != 2 AND hearing_aux = 4
+          - position: 3
+            text: '"Podría intentar escuchar a alguien desde lejos." (requiere nivel 4 en audición)'
+            effects:
+              - condition: b3_ch1_unlock = 2
+                show_warning:
+                  text: Stat device locked
+              - condition: hearing_aux < 4 AND b3_ch1_unlock != 2
+                show_warning: {}
+              - set:
+                  current_scene: b3_ch02a_eavesdrop
+                  b3_ch2_infiltration: 2
+                condition: hearing_aux = 4 AND b3_ch1_unlock != 2
   - name: b3_ch02a_drunk
     texts:
       - source: scene_text
-        paragraph: 7
-        text: |
-          Traducción en progreso.
+        paragraph: 12
+        text: |-
+          "¿Y si intentáramos emborrachar a alguno?"
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¡Eh, ahora sí que esa es una idea que me gusta!", dice Hadrik. "Apostaría a que esta gente jamás ha tenido la oportunidad de probar ale enana en toda su vida, así que debería ser fácil encontrar a alguien dispuesto a beber con nosotros si llevo conmigo una de mis botellas."
+
+          "Recuerden que debemos tener cuidado", dice Daren. "No podemos ir por ahí atrayendo a la gente a callejones desiertos para beber con nosotros, porque parecería demasiado sospechoso. Y si simplemente le pedimos a alguien la contraseña en público, seguro que alguien oye la conversación y nos denuncia a los guardias."
+
+          "No te preocupes por eso", dice Hadrik. "Sé exactamente cómo lograr que alguien beba con nosotros en privado. Pero no podemos ir como grupo, porque pareceríamos demasiado intimidantes, sobre todo con Daren caminando a nuestro lado. Yo diría que Barry y yo bastamos para encargarnos. ¿Qué dices, Barry? ¿Listo para ir a la taberna local?"
+
+          "Claro, me apunto", digo. "Guía el camino."
+
+          "¡Perfecto!", dice Hadrik. "Pongámonos en marcha. El resto de ustedes quédense aquí hasta que terminemos. Los contactaremos por los transceptores en cuanto sepamos la contraseña."
+
+          "¡No olviden llamarnos si pasa algo inesperado!", dice Daren. "No podremos saber si están en problemas desde tan lejos."
+
+          "Sí, sí, los llamaremos si pasa algo", dice Hadrik. "Aunque estoy seguro de que estaremos bien."
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          Mientras Hadrik y yo salimos del bosque, ambos miramos alrededor, intentando averiguar dónde está la taberna. Como no hay señales claras que lleven hasta ella, Hadrik decide preguntarle a uno de los lugareños cómo llegar.
+
+          "¡Oye, disculpa!", le pregunta Hadrik a un hombre que estaba sentado en un banco en su patio. "¿Te importaría decirnos dónde está la taberna de tu aldea? ¡A mi amigo y a mí nos vendría muy bien una copa ahora mismo!"
+
+          El aldeano se queda mirando a Hadrik con expresión ausente durante unos segundos, y luego se levanta del banco, entra en su casa y cierra la puerta detrás de sí sin decir una palabra.
+
+          "Supongo que no era precisamente de los habladores, ¿eh?", me dice Hadrik.
+
+          Luego se gira para dirigirse a otro hombre, que estaba cavando su patio delantero con una pala para plantar unas semillas.
+
+          "¡Señor, disculpe!", dice Hadrik. "¿Sabe por casualidad dónde está la taberna local?"
+
+          El hombre deja de trabajar para mirar a Hadrik, y asiente brevemente con la cabeza en dirección a la taberna. Luego vuelve a cavar, sin prestarnos más atención.
+
+          "Bueno... supongo que al menos ahora ya sabemos por dónde ir", dice Hadrik, algo confundido por la reacción de los aldeanos hacia nosotros. "Vamos a beber algo."
+      - source: scene_3
+        paragraph: 5
+        text: |-
+          No tardamos mucho en encontrar la taberna, después de seguir las indicaciones de aquel aldeano. Aunque en ninguna parte del edificio ponía que fuera una taberna, pudimos ver salir de ella a personas que apenas podían mantenerse en pie y que olían con fuerza a alcohol, así que no había lugar a dudas.
+
+          Los dos entramos en la taberna y, en cuanto llegamos a la barra, Hadrik le pide de inmediato al tabernero la bebida alcohólica más fuerte del menú. Al principio el tabernero no lo ve, porque la barra no estaba pensada precisamente para enanos y quedaba un poco más alta que Hadrik, pero en cuanto se da cuenta de quién está haciendo el pedido, le sirve la bebida en una jarra de madera.
+
+          "¿Eso es lo más fuerte que sirven aquí?", grita Hadrik, después de beberse todo el alcohol de un solo trago. "Lo juro, ustedes, la gente de fuera de las tierras enanas, no tienen ni idea de cómo divertirse. ¡Mira, déjame enseñarte a qué sabe el alcohol de verdad!"
+
+          Luego saca una botella de ale enana de su mochila y estira el brazo hacia arriba para dejarla sobre la barra.
+
+          "¿Ves esto?", le dice Hadrik al tabernero. "¡Esto es ale enana! Te garantizo que nunca has probado nada mejor. Vamos, ¡pruébala! Tengo muchas más en la mochila."
+
+          "Lo siento, pero no se permite traer bebidas de fuera a esta taberna", dice el tabernero con tono frío. "Si quieres beber tu ale enana, puedes irte fuera."
+
+          "¿Ah, sí?", dice Hadrik, recuperando la botella. "Pues igual eso hago."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02a_drunk2
   - name: b3_ch02a_drunk2
     texts:
       - source: scene_text
-        paragraph: 8
-        text: |
-          Traducción en progreso.
+        paragraph: 13
+        text: |-
+          Luego da un trago de su botella y se gira hacia la gente de la taberna.
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Y cualquiera que esté harto de escuchar a ese imbécil estirado y sus reglas estúpidas también puede venir conmigo", dice Hadrik. "¡Yo invito!"
+
+          Luego salimos de la taberna y nos detenemos justo delante, mientras Hadrik da otro trago de su botella.
+
+          "¿Crees que vendrá alguien?", le pregunto a Hadrik.
+
+          "Créeme, ya he hecho esto en muchos sitios y hasta ahora nunca me ha fallado", dice Hadrik, mientras saca una botella de ale enana de la mochila y me la entrega. "Los países pueden ser distintos, pero las tabernas siempre son iguales. Casi seguro que en los próximos segundos veremos salir al menos a un tipo para buscarnos."
+
+          En cuanto Hadrik termina de hablar, un hombre de mediana edad que tiene toda la pinta de ser un bebedor empedernido sale de la taberna y mira a todos lados para ver si ya nos hemos ido o no. En cuanto el borracho nos ve, se dirige de inmediato hacia nosotros, y a medida que se acerca, el fuerte olor a alcohol de su aliento se vuelve cada vez más difícil de ignorar.
+
+          "¡Ahí lo tienes!", me dice Hadrik con una sonrisa.
+
+          "Entonces, eh...", dice el borracho, deteniéndose frente a nosotros. "He oído que estaban dispuestos a compartir esa ale enana. ¿Puedo probarla o...?"
+      - source: scene_text_2
+        paragraph: 8
+        text: |-
+          "Te diré una cosa...", dice Hadrik, después de volver a beber de su botella. "Haré una excepción contigo y te daré una botella entera gratis. ¿Qué dices?"
+
+          "¿Una botella entera de ale enana?", dice el borracho, incapaz de contener su emoción. "Eso es... muy generoso de tu parte."
+
+          "Sí, bueno, es tu recompensa por escogernos a nosotros en vez de a ese insufrible tabernero tuyo", dice Hadrik, mientras saca otra botella de ale de la mochila y se la entrega al hombre de mediana edad. "Aquí tienes. Pero no bebamos aquí. No me apetece que ese idiota venga a quejarse de que estamos bebiendo en su porche. Busquemos un lugar más tranquilo, donde podamos disfrutar de esta excelente bebida como se debe y sin que nadie nos moleste."
+
+          "¡Conozco el lugar perfecto!", dice el borracho, después de dar un trago a la botella de ale enana. "¡Síganme!"
+
+          "¡Vamos justo detrás de ti, amigo!", dice Hadrik, dedicándome una sonrisa, y los dos seguimos al borracho hacia un lugar más apartado.
+
+          Unos cinco minutos de caminata después, el borracho se detiene ante una casa vacía con las ventanas rotas. Cuando entramos detrás de él, nos damos cuenta de que este edificio lleva probablemente abandonado mucho tiempo, porque está lleno de polvo y telarañas, y ya ni siquiera queda un solo mueble.
+
+          Como no hay camas ni sillas donde sentarnos, el borracho se sienta en el suelo con la espalda apoyada contra una de las paredes, mientras Hadrik y yo hacemos lo mismo frente a él, con las piernas cruzadas.
+      - source: scene_3
+        paragraph: 6
+        text: |-
+          "Antes vivía aquí una familia de magos", nos dice el borracho. "Pero ahora está vacía. Lleva así un tiempo. Creo que fue hace un año... ¿o quizá dos?... Los magos desaparecieron en mitad de la noche y nadie ha vuelto a saber de ellos desde entonces. Cuando les preguntamos a los guardias qué había sido del padre y de los tres hijos que vivían en esta casa, nos dijeron que dejáramos de hacer preguntas. Así que dejamos de hacer preguntas. En fin, pensé que aquí nadie nos molestaría, ya que todo lo que se podía robar ya se lo llevaron, y no es como si los dueños fueran a volver a estas alturas. ¡Salud!"
+
+          "Eh... ¡salud!", dice Hadrik, mientras los tres chocamos las botellas y damos un sorbo.
+
+          "Esta bebida es... realmente fuerte", dice el borracho. "Apenas he empezado a beber y ya me siento un poco somnoliento."
+
+          "¡Je!", dice Hadrik. "Supongo que beber ale enana justo después de otro tipo de alcohol tiene ese efecto si no estás acostumbrado. No te preocupes. Aunque no puedas terminar la botella con nosotros ahora, te dejaré quedártela igualmente."
+
+          "¡Yo nunca dije que no pudiera terminármela!", dice el borracho, ahora dando un trago más largo de la botella. "No me subestimes, enano. Llevo yendo a tabernas desde que era un chiquillo. ¡No voy a perder contra una simple 'ale enana', por muy fuerte que sea!"
+
+          "¡Ese es el espíritu!", dice Hadrik, mientras también da un trago.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02a_drunk3
   - name: b3_ch02a_drunk3
     texts:
       - source: scene_text
+        paragraph: 14
+        text: |-
+          "Entonces...", digo, fingiendo dar un largo trago de mi botella, aunque en realidad solo estoy dando pequeños sorbos para mantenerme sobrio. "¿Qué crees que les pasó a los antiguos dueños de esta casa? ¿Piensas que los arrestaron o algo así? ¿Con qué frecuencia desaparece la gente de la nada en esta aldea, al fin y al cabo?"
+
+          "En la aldea no pasa tan a menudo, pero en la ciudad ya no estoy tan seguro", dice el borracho. "He oído muchas historias sobre gente de allí dentro que desaparece de la nada, sobre todo en los últimos años, y nadie sabe qué está pasando. Son tiempos oscuros los que vivimos, te lo digo yo. No sé qué vinieron a hacer aquí, pero les recomiendo que terminen sus asuntos rápido y se marchen mientras puedan. Aquí no les espera nada bueno."
+
+          "Por desgracia, puede que ni siquiera logremos pasar de las puertas de la ciudad, por cómo han ido las cosas hasta ahora", dice Hadrik.
+
+          "¿Cómo es eso?", pregunta el borracho, dando otro trago de su botella.
+
+          "Bueno, hay un tipo que nos invitó aquí para comerciar con él", dice Hadrik, "pero olvidó decirnos que necesitábamos una contraseña para entrar en la ciudad, y ahora no logramos contactar con él por algún motivo. Estamos atrapados esperando frente a la ciudad después de todo el tiempo que tardamos en llegar hasta aquí. El guardia de la entrada dijo que pondría en marcha algún tipo de procedimiento para que recibiéramos permiso para entrar en la ciudad, pero no me creo ni una palabra de lo que dice. Apostaría a que ni siquiera le ha dicho a nadie que estamos aquí y simplemente espera a que nos vayamos. Vaya pérdida de tiempo resultó ser todo este viaje..."
+      - source: scene_text_2
         paragraph: 9
-        text: |
-          Traducción en progreso.
+        text: |-
+          "¿No pueden entrar en la ciudad?...", dice el borracho. "Es una verdadera lástima. Y después de todo el tiempo que tardaron en llegar hasta aquí..."
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          Se queda callado un momento, mirando al frente con expresión pensativa.
+
+          "Sí... Sería una verdadera lástima que no pudieran entrar en la ciudad solo por una contraseña estúpida", dice el borracho. "No sé por qué inventaron una regla tan ridícula. Ni siquiera recibimos tantas visitas. ¿Por qué íbamos a rechazar a la poca gente que viene solo por la 'seguridad'? Yo te diré por qué piden una contraseña. ¡Porque al rey se le ha ido la cabeza, por eso! Ve enemigos en todas partes. Hasta en su propia ciudad."
+
+          El hombre vuelve a hacer una pausa, da otro largo trago a la botella y luego vuelve a mirar al frente, esta vez con una expresión más decidida en los ojos.
+
+          "Les diré una cosa", dice el borracho, girándose ahora hacia nosotros. "Yo les daré esa contraseña. Me sentiría mal por ustedes si tuvieran que volver a su tierra con las manos vacías a estas alturas, y además me dieron gratis esta botella de ale."
+
+          "¿Seguro?", le pregunta Hadrik. "¿No se enfadarán los guardias contigo si se enteran?"
+      - source: scene_3
+        paragraph: 7
+        text: |-
+          "¡Al diablo los guardias y el rey!", dice el borracho, volviendo a beber, y su cara se pone mucho más roja que antes. "No es como si alguien fuera a morir por una contraseña inofensiva. Solo... asegúrense de no decirle a nadie que se la di yo. ¡No quiero acabar en la cárcel por algo tan trivial como esto!"
+
+          "Claro, claro...", dice Hadrik. "Solo diremos que conseguimos contactar con nuestro cliente y que nos dio la contraseña por el transceptor."
+
+          "¡Muy bien, entonces!", dice el borracho. "En ese caso, la contraseña de esta semana es 'alas de gárgola'. Ah, y la de la semana pasada era 'remos rotos', por si preguntan. Eso debería bastar para que pasen por las puertas principales."
+
+          "¡Vaya, eso es fantástico!", dice Hadrik. "¡Muchas gracias! ¡No puedo esperar a verles la cara a nuestros amigos cuando les digamos que conseguimos averiguar la contraseña!"
+
+          "¡Pueden ir a decírselo ahora mismo, no me importa!", dice el borracho. "No tienen que preocuparse por este viejo borracho. Puedo encontrar solo el camino de vuelta a casa, y estoy seguro de que su socio comercial ya debe de estar esperándolos dentro de la ciudad con toda la impaciencia del mundo."
+    choices:
+      - position: 1
+        text: ¡Es buena idea! ¡Vamos, Hadrik!
+        effects:
+          - set:
+              current_scene: b3_ch02a_shrewd
+              b3_ch2_infiltration: 0
+      - position: 2
+        text: Podemos esperar a que termines de beber. No tenemos TANTA prisa.
+        effects:
+          - set:
+              current_scene: b3_ch02a_shrewd
+              b3_ch2_infiltration: 3
   - name: b3_ch02a_shrewd
-    texts:
-      - source: scene_text
-        paragraph: 10
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch2_infiltration = 0
+        texts:
+          - source: scene_text
+            paragraph: 15
+            text: |-
+              "¡Es buena idea! ¡Vamos, Hadrik!"
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Eh... vale", dice Hadrik, mientras los dos nos levantamos del suelo. "Supongo que podré terminarme la bebida por el camino, entonces."
+
+              "¡Adiós, amigos!", dice el borracho. "¡Les deseo lo mejor!"
+
+              Al salir del edificio abandonado, nos despedimos con la mano de nuestro amigo borracho, y luego tomamos la carretera principal de vuelta hacia donde Daren y los demás estaban esperando en el bosque.
+
+              "Sabes... al menos podríamos haber esperado a que el tipo terminara la bebida...", me dice Hadrik mientras caminamos.
+
+              "¿Y arriesgarnos a delatarnos?", le digo. "No, gracias. Cuanto más habláramos con él, más probable sería que empezara a hacernos preguntas incómodas."
+
+              "Como tú digas", dice Hadrik. "En fin, voy a llamar a Daren. Será mejor que nos preparemos para ir hacia las puertas de la ciudad."
+
+              Hadrik saca entonces su transceptor y usa el dial del lado derecho para cambiarlo a la frecuencia de Daren antes de llamarlo.
+
+              "Oye, Daren, ¿me oyes?", dice Hadrik.
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "Sí", dice Daren. "¿Dónde están?"
+
+              "Estamos en la carretera principal", dice Hadrik. "Deberían poder vernos si salen del bosque. Conseguimos lo que buscábamos. Vamos a las puertas."
+
+              "¿Lo hicieron?", pregunta Daren, sorprendido. "¡Eso es estupendo! ¡Esperen, vamos para allá!"
+
+              Mientras Daren y los demás salen del bosque uno por uno, le pongo la tapa a mi botella de ale enana y se la devuelvo a Hadrik, diciéndole que por ahora he terminado de beber.
+
+              "¡Bastardo astuto!", dice Hadrik con una sonrisa al notar el peso de la botella en la mano. "Apenas le diste unos pocos sorbos. Con razón no parecía afectarte. Y yo aquí pensando que por fin habías logrado desarrollar algo de tolerancia a la ale enana."
+
+              "Otro día, Hadrik", digo. "Otro día."
+
+              Cuando nuestros amigos llegan hasta nosotros, todos empezamos a dirigirnos juntos hacia las puertas de la ciudad, con la esperanza de que esta vez tengamos más éxito. Sin embargo, justo cuando damos los primeros pasos, oímos una voz desconocida llamándonos desde dentro del bosque.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02a_information
+      - condition: b3_ch2_infiltration = 3
+        texts:
+          - source: scene_text
+            paragraph: 16
+            text: |-
+              "Podemos esperar a que termines de beber. No tenemos TANTA prisa."
+
+              "Sí, estoy seguro de que a nuestros amigos no les importará esperar unos minutos más", dice Hadrik. "Tómate tu tiempo y disfruta de la bebida."
+
+              "Bueno, en ese caso, ¡hasta el fondo!", dice el borracho, y luego volvemos a chocar las botellas.
+
+              Cuando por fin terminamos las bebidas y decidimos marcharnos, vemos que el borracho apenas puede caminar ya, así que Hadrik y yo nos apresuramos a sostenerlo al salir del edificio. No mucho después de que salgamos, el borracho recuerda de pronto algo importante y se esfuerza por articular las palabras manteniendo la voz baja.
+
+              "Yo... casi olvidaba...", nos dice el borracho. "La contraseña no basta... También tienen que... guiñar tres veces el ojo izquierdo mientras la dicen. Nuevo conjunto de reglas... para impedir que la gente escuche a escondidas."
+
+              "¡Oooh!", dice Hadrik, también en voz baja. "Menos mal que te acordaste. Podríamos haber tenido problemas si no."
+
+              "Sí, culpa mía...", dice el borracho. "Van cambiando esas reglas cada cierto tiempo, y ya no puedo seguirles el ritmo... Mi casa está allí. Pueden dejarme en la entrada del patio. Yo me arrastraré solo hasta la puerta."
+
+              "Muy bien, entonces", dice Hadrik, mientras el borracho sigue apoyándose en los dos al caminar.
+          - source: scene_text_2
+            paragraph: 11
+            text: |-
+              En cuanto llegamos a su casa, nos despedimos con la mano de nuestro amigo borracho y luego tomamos la carretera principal de vuelta hacia donde Daren y los demás estaban esperando en el bosque.
+
+              "Oye, Daren, ¿me oyes?", dice Hadrik, después de sacar su transceptor y ponerlo en la frecuencia de Daren.
+
+              "Sí", dice Daren. "¿Dónde están?"
+
+              "Estamos en la carretera principal", dice Hadrik. "Deberían poder vernos si salen del bosque. Conseguimos lo que buscábamos. Vamos a las puertas."
+
+              "¿Lo hicieron?", pregunta Daren, sorprendido. "¡Eso es estupendo! ¡Esperen, vamos para allá!"
+
+              Mientras Daren y los demás salen del bosque uno por uno, le pongo la tapa a mi botella de ale enana y se la devuelvo a Hadrik, diciéndole que por ahora he terminado de beber.
+
+              "¡Bastardo astuto!", dice Hadrik con una sonrisa al notar el peso de la botella en la mano. "Apenas le diste unos pocos sorbos. Con razón no parecía afectarte. Y yo aquí pensando que por fin habías logrado desarrollar algo de tolerancia a la ale enana."
+
+              "Otro día, Hadrik", digo. "Otro día."
+
+              Cuando nuestros amigos llegan hasta nosotros, todos empezamos a dirigirnos juntos hacia las puertas de la ciudad, con la esperanza de que esta vez tengamos más éxito. Sin embargo, justo cuando damos los primeros pasos, oímos una voz desconocida llamándonos desde dentro del bosque.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02a_information
   - name: b3_ch02a_smash
     texts:
       - source: scene_text
-        paragraph: 11
-        text: |
-          Traducción en progreso.
+        paragraph: 17
+        text: |-
+          "Si soy sincero, estoy de acuerdo con Hadrik", digo. "Deberíamos atravesar sus puertas principales por la fuerza. Como él dijo, al menos así tendríamos el factor sorpresa. Si volvemos y le decimos al guardia la contraseña después de no saberla la primera vez, solo vamos a parecernos aún más sospechosos. No me sorprendería que ese tipo nos dejara entrar solo para atraernos a una trampa."
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¡Sí, exacto!", dice Hadrik. "¡Eso es lo que pensaba! ¿Ves? ¡Barry lo entiende!"
+
+          "¿Se les está olvidando a ustedes esos gólems gigantes que escupen fuego y patrullan frente a las murallas de la ciudad?...", dice Daren.
+
+          "Vamos...", dice Hadrik. "No son más que gólems de metal. ¿Qué tan resistentes pueden ser? Por muy dura que sea su piel de metal, con mi fuerza podría mandarlos a volar de un puñetazo, y esos haces de fuego que lanzaban por la boca eran claramente fuego mágico, así que Daren podría tanto defendernos de ellos con su escudo como absorber las llamas con su espada. Y mientras estuviéramos escondidos dentro de la barrera mágica de Daren, los dos podríamos devolverles sus llamas, mientras Kate, Flower e Illuna les lanzarían su propia magia elemental."
+      - source: scene_text_2
+        paragraph: 12
+        text: |-
+          "Te das cuenta de que esos gólems seguramente llevan armadura anti-magia, ¿verdad?", dice Daren.
+
+          "Si tuviera tiempo suficiente para reforzar bien mis carámbanos, probablemente podría atravesar su armadura incluso si tiene protección anti-magia", dice Kate. "Además, el impacto de las bolas de fuego de Flower y de los chorros de agua de Illuna todavía puede hacerles un daño razonable, incluso contra armadura anti-magia. Además, no es como si necesitáramos contenerlos mucho tiempo. Una vez que entremos en la ciudad estoy segura de que los gólems no podrán seguirnos, porque causarían demasiados destrozos y pondrían en riesgo la vida de los civiles."
+
+          "¡Entonces queda decidido!", dice Hadrik. "Lo primero que haré será destruir las puertas, y luego avanzaremos despacio hacia la entrada mientras nos escondemos bajo la protección de la barrera mágica de Daren. Daren, aún puedes moverte mientras mantienes la barrera levantada, ¿no?"
+
+          "Sí, pero tendríamos que movernos muy despacio...", dice Daren. "De lo contrario el hechizo de protección se rompería, y tendría que lanzarlo otra vez. ¡Pero sigo sin decir que esté de acuerdo con nada de esto!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02a_smash2
   - name: b3_ch02a_smash2
     texts:
       - source: scene_text
-        paragraph: 12
-        text: |
-          Traducción en progreso.
+        paragraph: 18
+        text: |-
+          "Para que lo sepan...", dice Melindra. "No voy a usar ninguno de mis poderes para atacar a los gólems. El riesgo de golpear por accidente a alguno de ustedes o a uno de los guardias de la ciudad con mis hechizos es demasiado grande. Puede que vuelva a lanzarle el hechizo de vuelo a Barry, pero nada más."
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¡No pasa nada!", dice Hadrik. "Yo seré quien más se centre en los gólems, de todos modos. Al fin y al cabo, no podré atacar a ninguno de los lugareños, así que es lo mínimo que puedo hacer para ser útil. El resto de ustedes debería concentrarse en entrar a salvo en la ciudad, mientras yo capto toda la atención de los gólems."
+
+          "¡Genial!", digo. "En ese caso, los que sí podamos atacar a los lugareños nos encargaremos de los guardias de la ciudad. Si Melindra me lanza ese hechizo de vuelo, hasta podría intentar librarnos de algunos de los guardias apostados en las murallas, para que no tengamos que preocuparnos por defendernos desde demasiadas direcciones."
+
+          "Van a arrastrarme a su plan diga yo lo que diga, ¿verdad?", dice Daren con tono resignado.
+
+          "¡Ja!", dice Arraka. "Ahora sabes lo que se siente cuando ignoran tu opinión una y otra vez. ¿Recuerdas cuando ayer sugerí que Flower lanzara bolas de fuego por encima de sus murallas para que quemáramos sus casas y los ahumáramos como a las ratas que son, pero nadie me prestó atención? Si me hubieras apoyado entonces, quizá ahora tendrías mi voto de confianza, pero ya es demasiado tarde. ¡Dejaste pasar tu oportunidad!"
+      - source: scene_text_2
+        paragraph: 13
+        text: |-
+          "Bromas aparte, aquí vamos a necesitar un voto unánime", dice Hadrik. "Todos estamos poniendo nuestras vidas en juego, así que cualquiera que no esté completamente de acuerdo con este plan debería pensárselo un poco, porque una vez crucemos esas puertas no habrá vuelta atrás. Tal vez deberíamos hacer una pequeña pausa para despejarnos, y luego seguiremos la discusión donde la dejamos. Estoy seguro de que al final encontraremos un plan con el que todos estén de acuerdo."
+
+          Todos seguimos el consejo de Hadrik y nos tomamos un pequeño descanso, para darnos algo de tiempo para evaluar la situación con más calma. Al final conseguimos convencer a Daren de seguir adelante con nuestro plan, aunque seguía algo reacio. Eso sí, tuvimos que prometerle que haríamos todo lo posible por evitar cualquier derramamiento de sangre innecesario y que intentaríamos evitar matar a los guardias de la ciudad en la medida de lo posible, ya que no era culpa suya verse obligados a obedecer las órdenes de su rey y solo estaban cumpliendo con su trabajo de defender su ciudad de invasores.
+
+          Una vez todos estamos de acuerdo con nuestro curso de acción, empezamos a salir del bosque para volver a la carretera principal. Sin embargo, poco después de haber llegado al camino que atraviesa la aldea, oímos una voz desconocida llamándonos desde dentro del bosque.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02a_information
   - name: b3_ch02a_eavesdrop
     texts:
       - source: scene_text
-        paragraph: 13
-        text: |
-          Traducción en progreso.
+        paragraph: 19
+        text: |-
+          "Podría intentar escuchar a alguien desde lejos", digo. "Seguro que algún aldeano tendrá que entrar en la ciudad tarde o temprano."
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¡En realidad es una idea muy buena!", dice Daren. "Pero ¿a qué distancia tendrías que estar para oír bien las palabras? ¿Puedes oír al guardia de las puertas hablar desde aquí? Porque no podemos dejarte merodeando sin rumbo por la aldea hasta que a alguien le apetezca entrar en la ciudad. Parecerías demasiado sospechoso."
+
+          "No pasa nada", digo. "No necesitaré entrar en la aldea, porque desde dentro del bosque puedo oír de qué habla la mayoría de los aldeanos. Suelo ignorar las voces de fondo porque es demasiado difícil concentrarse en lo que dice cada persona por separado, pero si me concentro muchísimo debería poder notar si alguien planea ir hacia las puertas de la ciudad, y entonces podré acercarme un poco más."
+
+          "Bueno, no te esfuerces demasiado", dice Daren. "No querríamos que te cansaras antes siquiera de empezar a infiltrarnos en la ciudad."
+
+          "Sí, lo sé", digo. "No me pasaré. Vuelvo enseguida. Intentaré llegar lo más cerca posible del borde del bosque, para poder oír el mayor número posible de conversaciones de los aldeanos."
+      - source: scene_text_2
+        paragraph: 14
+        text: |-
+          Entonces camino hasta el borde del bosque y me escondo detrás de uno de los árboles, asegurándome de que nadie de la aldea pueda verme. Paso los siguientes minutos intentando concentrarme en oír lo que dice cada persona por separado, aunque con tanta gente hablando al mismo tiempo no es una tarea nada fácil. La mayoría de las conversaciones son sobre cosas mundanas, que no me sirven de nada, aunque no puedo evitar fijarme en que casi todos hablan con un tono muy cansado y en que casi todos parecen tener una actitud muy pesimista, sin importar el tema.
+
+          A veces, algún marido aislado desahoga con su esposa su frustración hacia el rey o hacia los guardias de la ciudad, pero luego se calla de repente por miedo a que alguien pueda oírlo. Por lo demás, las conversaciones de los aldeanos giran sobre todo en torno a sus actividades cotidianas, y no hablan realmente de mucho más.
+    effects:
+      - set:
+          successful_checks:
+            - '[ Comprobación de audición exitosa - nivel 4 ]'
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02a_eavesdrop2
   - name: b3_ch02a_eavesdrop2
     texts:
       - source: scene_text
-        paragraph: 14
-        text: |
-          Traducción en progreso.
+        paragraph: 20
+        text: Después de escuchar cientos de conversaciones durante unos diez minutos, por fin tengo suerte y oigo que uno de los aldeanos planea entrar en la ciudad para comprar provisiones. Salgo de inmediato del bosque y empiezo a seguir lentamente el camino hacia las puertas de la ciudad, mientras intento identificar al hombre cuya voz oí antes. No me lleva mucho tiempo averiguar quién era, porque no muy lejos de mí ya puedo ver a un tipo tirando de un pequeño carro de madera en dirección a la ciudad. Finjo mirar alrededor buscando una señal mientras le doy al hombre del carro el tiempo suficiente para alejarse de mí, y luego empiezo a caminar también despacio en dirección a la ciudad, para asegurarme de que no se salga de mi alcance auditivo.
+      - source: scene_text_2
+        paragraph: 15
+        text: |-
+          En cuanto el hombre llega a las puertas, el guardia le pide la contraseña, y el aldeano le responde: 'alas de gárgola'. Esa era al parecer la respuesta correcta, porque las puertas a lo lejos empiezan a abrirse y los gólems se apartan para dejar pasar al hombre. Una vez que las puertas se cierran de nuevo, saco mi transceptor y lo pongo en la frecuencia de Daren, para contarle lo que averigüé.
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Oye, Daren, ¿me oyes?", le digo, mientras empiezo a volver en dirección al bosque.
+
+          "Sí", dice Daren. "¿Qué pasó? ¿Funcionó tu plan?"
+
+          "Sí", digo. "Ya pueden salir. Los esperaré en la carretera principal, cerca del lugar por donde salimos del bosque la primera vez."
+
+          "De acuerdo", dice Daren. "Vamos para allá."
+
+          No mucho después, me reúno con Daren y los demás, y luego todos empezamos a dirigirnos juntos hacia las puertas de la ciudad. Sin embargo, justo cuando damos nuestros primeros pasos, oímos una voz desconocida llamándonos desde dentro del bosque.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02a_information
   - name: b3_ch02a_information
     texts:
       - source: scene_text
-        paragraph: 15
-        text: |
-          Traducción en progreso.
+        paragraph: 21
+        text: |-
+          "¡Ustedes ahí... humanos!", dice la voz en lengua común, pero con un acento destrozado. "No entrar en ciudad todavía. Nosotros tener información importante que quizá necesitar. Información sobre contraseña necesaria para pasar puertas. Si interesados, volver dentro de bosque, y nosotros hablar."
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          Mientras intento averiguar quién nos está hablando, me doy cuenta de que puedo percibir unas auras muy débiles y muy bien reprimidas detrás de los árboles, aunque no habría tenido ninguna posibilidad de notar que estaban allí de no saber de antemano dónde mirar. Por su tamaño y por el sonido de aquel acento roto de antes, deduzco que estamos tratando con un grupo de goblins.
+
+          "Arraka...", dice Illuna. "¿Por qué no nos avisaste de que unos goblins nos estaban siguiendo?"
+
+          "¿Qué clase de pregunta es esa?", dice Arraka. "¿También quieres que te vaya diciendo lo de las ardillas de los árboles y los pájaros del cielo? Me pediste que te hablara de enemigos que pudieran intentar rodearlos, y eso es exactamente lo que he hecho. Estos goblins obviamente son inofensivos. Apenas van armados, y ustedes mismos pueden ver lo débiles que son sus auras. Si me detuviera a hablarles de cada animal o monstruo que tienen cerca, nunca llegaríamos a ninguna parte."
+      - source: scene_text_2
+        paragraph: 16
+        text: |-
+          "¿Pero ya estaban por la zona cuando llegamos, o nos siguieron hasta aquí?", pregunta Illuna.
+
+          "Los goblins nos siguen desde esta mañana", dice Melindra. "Pensé que para estas alturas todo el mundo ya lo sabía. No parecía que quisieran pelear, así que los dejé estar."
+
+          "¿Y cómo sabes exactamente que no son exploradores de Tyrath?", dice Daren en voz baja, procurando que los goblins no lo oigan. "¡Podrían haber estado filtrándole al dragón información sobre nuestra ubicación todo este tiempo!"
+
+          "¿Y qué?", dice Melindra, bajando también la voz. "Las tropas de élite de Tyrath ya te demostraron que pueden encontrarte donde sea que te escondas, con exploradores o sin ellos. ¿Qué diferencia importante hace dejar con vida a unos pocos goblins?"
+
+          "Humanos...", vuelve a llamarnos la voz del goblin desde dentro del bosque. "¿Vienen o no?"
+    choices:
+      - position: 1
+        text: Sugerir que ignoremos a los goblins y vayamos a la ciudad.
+        effects:
+          - set:
+              current_scene: b3_ch02a_ignore
+              b3_ch2_goblins: 0
+      - position: 2
+        text: Sugerir que vayamos a matar a los goblins, por si acaso.
+        effects:
+          - set:
+              current_scene: b3_ch02a_kill
+              b3_ch2_goblins: 1
+      - position: 3
+        text: Sugerir que vayamos a hablar con los goblins para ver qué quieren.
+        effects:
+          - set:
+              current_scene: b3_ch02a_talk
+              b3_ch2_goblins: 2
   - name: b3_ch02a_ignore
     texts:
       - source: scene_text
-        paragraph: 16
-        text: |
-          Traducción en progreso.
+        paragraph: 22
+        text: |-
+          "Olvídense de los goblins", digo. "No tiene sentido tratar con ellos a estas alturas. Si iban a filtrarle información a Tyrath, ya lo habrían hecho, y no es como si pudieran seguirnos dentro de la ciudad. Solo estamos perdiendo tiempo hablando de ellos. Yo digo que sigamos con nuestro plan inicial y vayamos a las puertas."
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Sí, creo que será lo mejor", dice Hadrik.
+
+          "Bueno, si todos los demás también están de acuerdo, entonces pongámonos en marcha", dice Daren. "Con suerte, las tropas de Tyrath no serán tan descaradas como para atacarnos mientras estemos dentro de Ollendor."
+
+          Dicho eso, Daren vuelve a caminar hacia la ciudad, y todos nos movemos para seguirlo. El goblin de antes intenta llamarnos una última vez antes de que salgamos de su alcance auditivo, pero lo ignoramos y seguimos adelante.
+
+          Nos lleva un rato, pero cuando por fin terminamos de atravesar de nuevo la aldea, acabamos llegando a las puertas por segunda vez. El guardia de la entrada nos mira ahora con la misma expresión recelosa que tenía la primera vez, y nos habla en cuanto nos detenemos ante él.
+
+          "Veo que han vuelto", dice el guardia. "¿Debo entender que por fin han conseguido que ese 'cliente' suyo les dé la contraseña?..."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02a_ruckus
+            condition: b3_ch2_infiltration = 3
+          - set:
+              current_scene: b3_ch02a_insane
+            condition: b3_ch2_infiltration != 3
   - name: b3_ch02a_kill
     texts:
       - source: scene_text
-        paragraph: 17
-        text: |
-          Traducción en progreso.
+        paragraph: 23
+        text: |-
+          "Yo digo que los matemos, por si acaso", les digo a los demás, también en voz baja. "Con un poco de suerte, quizá todavía no le hayan dicho nada a Tyrath, y podamos retrasar un poco más la próxima emboscada de monstruos."
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Sí, eso es lo que estaba pensando", dice Daren. "Pero deberíamos ir con cuidado. Hasta donde sabemos, podrían estar atrayéndonos a una trampa."
+
+          "Uf...", dice Hadrik. "Acabemos con esto de una vez, ¿sí? No soy precisamente fan de matar enemigos débiles e indefensos."
+
+          "Ahora mismo vamos", les grito a los goblins. "Quédense donde están."
+
+          Daren, Hadrik y yo caminamos despacio hacia los goblins hasta estar lo bastante cerca, y entonces Daren y yo sacamos nuestras armas. Sorprendemos a dos de los goblins, matándolos antes de que tengan tiempo de reaccionar, pero el tercer goblin entra en pánico y echa a correr. Cuando Hadrik va tras él, un carámbano vuela entre los árboles y se clava directo en la cabeza del monstruo, haciéndolo caer muerto en el acto.
+
+          "¡Oye, buena puntería!", le dice Hadrik a Kate, mientras Melindra se acerca ahora para echar un mejor vistazo a los cadáveres de los goblins.
+
+          "Siento aguarles la fiesta, pero estos goblins no parecen de forma realista parte del ejército de Tyrath", dice Melindra, tras mirar los cuerpos durante unos segundos. "Su equipo es demasiado básico, incluso para exploradores."
+
+          "Entonces, si no trabajaban para Tyrath, ¿por qué razón nos siguieron durante tanto tiempo?", dice Daren.
+      - source: scene_text_2
+        paragraph: 17
+        text: |-
+          Melindra se encoge de hombros.
+
+          "Supongo que nunca lo sabremos", dice Melindra. "Teniendo en cuenta que los mataron a todos antes de que pudiéramos preguntarles, claro."
+
+          "Espera un momento...", digo. "Illuna, ¿no supondrás que esos goblins podrían haber formado parte del ejército de Fyron?"
+
+          "Lo dudo mucho", dice Illuna. "No habrían tenido ningún motivo para alejarse tanto de su campamento principal si fueran tropas de Fyron. Lo más probable es que fueran unos goblins cualquiera, que no estaban vinculados ni al dragón ni al general goblin."
+
+          "Bueno, sin importar para quién trabajaran, seguían siendo monstruos, así que casi seguro que no tramaban nada bueno", dice Daren. "No creo que tenga mucho sentido seguir dándole vueltas a esto. Lo hecho, hecho está. Deberíamos dirigirnos a la ciudad."
+
+          "Sí...", dice Hadrik con un tono poco convencido, mientras todos volvemos a dirigirnos hacia la ciudad.
+
+          Nos lleva un rato, pero cuando por fin terminamos de atravesar de nuevo la aldea, acabamos llegando a las puertas por segunda vez. El guardia de la entrada nos mira ahora con la misma expresión recelosa que tenía la primera vez, y nos habla en cuanto nos detenemos ante él.
+
+          "Veo que han vuelto", dice el guardia. "¿Debo entender que por fin han conseguido que ese 'cliente' suyo les dé la contraseña?..."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02a_ruckus
+            condition: b3_ch2_infiltration = 3
+          - set:
+              current_scene: b3_ch02a_insane
+            condition: b3_ch2_infiltration != 3
   - name: b3_ch02a_talk
     texts:
       - source: scene_text
-        paragraph: 18
-        text: |
-          Traducción en progreso.
+        paragraph: 24
+        text: |-
+          "Creo que deberíamos ir a hablar con ellos y ver qué quieren", digo, también en voz baja. "Solo por ser goblins no significa necesariamente que formen parte del ejército de Tyrath."
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Y si sí lo son?", dice Daren.
+
+          "Entonces tendremos que ocuparnos de ellos según corresponda, supongo", digo. "Aun así, no veo por qué unos exploradores nos estarían llamando en voz alta en lugar de mantener las distancias, y dudo que quieran pelear con nosotros, ya que son demasiado débiles como para tener ninguna esperanza de vencer a nuestro grupo. Tampoco es como si hubieran tenido tiempo de preparar trampas, ya que acabamos de venir de ese bosque. Solo digo que no perdemos nada por ir a ver qué quieren. Además, sí dijeron que sabían algo sobre la contraseña..."
+
+          "Bien...", dice Daren. "Supongo que pronto veremos si son hostiles o no. Pero asegúrense de mantenerse alerta. No sabemos qué trucos podrían tener bajo la manga."
+
+          "Sí, sí...", digo, mientras todos empezamos a volver hacia el bosque.
+
+          "¡Ya vamos!", les digo a los goblins. "¡Quédense justo donde están!"
+
+          En cuanto volvemos a entrar en el bosque, vemos que los tres goblins que nos llamaron llevan una armadura de cuero de aspecto muy barato y que las armas que usan parecen estar en muy mal estado. El mayor de los tres goblins da ahora un paso al frente para presentarse.
+      - source: scene_text_2
+        paragraph: 18
+        text: |-
+          "Saludos, viajeros", dice el viejo goblin en lengua común, haciendo una breve reverencia. "Sé que están ocupados, así que intentaré ser breve. No pudimos evitar fijarnos en que antes tuvieron algunos problemas para entrar en la ciudad, y pensamos que podríamos ofrecerles información valiosa sobre la contraseña que necesitan, a cambio de uno de los objetos que llevan encima."
+
+          "Primero lo primero", dice Daren. "¿Trabajan para Tyrath o no?"
+
+          "¿El rey de todos los dragones?...", dice el viejo goblin. "No, nunca hemos formado parte de su ejército."
+
+          "Entonces están con Fyron, ¿no?", le pregunto.
+
+          "No, viajamos solos", dice el viejo goblin. "La razón por la que vinimos aquí, a esta ciudad, es que sabemos con certeza que aceptan goblins dentro de sus murallas, junto con otras razas monstruosas humanoides, así que queríamos ver si podíamos pedir refugio dentro de sus fronteras."
+
+          "¿Ah, sí?", dice Daren. "Si ese es el caso, entonces ¿por qué nos han estado siguiendo desde esta mañana? ¿Por qué no se dirigieron directamente a Ollendor mientras todavía estábamos acampando?"
+      - source: scene_3
+        paragraph: 8
+        text: |-
+          Los goblins intercambian unas miradas antes de que el viejo goblin vuelva a hablar.
+
+          "Los seguimos porque vimos a su compañera de allí recoger unas rocas en la orilla de un río", dice el viejo goblin, señalando a Melindra. "El problema es que un amigo nuestro tenía que escribir la contraseña necesaria para entrar en Ollendor en una de esas rocas, pero creemos que su amiga pudo llevársela por error. Por eso nos gustaría compartir con ustedes cierta información sobre la contraseña a cambio de esa roca."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02a_unfortunate
+            condition: b3_ch1_password = 0
+          - set:
+              current_scene: b3_ch02a_dialect
+            condition: b3_ch1_password = 1
   - name: b3_ch02a_unfortunate
     texts:
       - source: scene_text
-        paragraph: 19
-        text: |
-          Traducción en progreso.
+        paragraph: 25
+        text: |-
+          "Ninguna de las rocas que recogí tenía nada escrito, ni en lengua común ni en lengua goblin", dice Melindra. "No entiendo la lengua goblin, pero estoy bastante segura de que sabría reconocer el aspecto de su escritura, y no vi nada parecido en ninguna de las piedras que recogí."
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Podrías quizá darnos tus rocas para que nosotros también les echemos un vistazo?", dice el viejo goblin. "Si las miramos con más atención, es posible que encontremos algo que se te haya pasado."
+
+          "Intenta tocar una sola de mis rocas, y usaré una cuchilla de viento para partirte en dos", dice Melindra, con una sonrisa amable.
+
+          "Ya veo...", dice el viejo goblin, intentando conservar la calma. "Bueno, entonces quizá podrías sostenerlas tú misma e ir enseñándonoslas una por una, ¿no?"
+
+          "No, no voy a hacer eso", dice Melindra, todavía sonriendo.
+
+          "Eso es desafortunado", dice el viejo goblin. "En ese caso, me temo que ya no es posible llegar a ningún trato. Lamentamos haberles hecho perder el tiempo. Por supuesto, estaremos esperándolos aquí por si cambian de opinión."
+
+          "¿Eso es todo?", pregunta Daren. "¿No van a intentar robarnos la roca?"
+
+          "¡Santos dioses, claro que no!", dice el viejo goblin. "¡No somos salvajes!"
+      - source: scene_text_2
+        paragraph: 19
+        text: |-
+          "Vaya...", dice Daren. "Bueno, si ya no tienen nada que tratar con nosotros, supongo que seguiremos nuestro camino."
+
+          "¡Hasta luego!", dice el viejo goblin, y entonces todos volvemos hacia la carretera principal.
+
+          "Vaya, menuda pérdida de tiempo acabó siendo eso, ¿eh?", dice Hadrik, cuando ya estamos fuera del alcance auditivo de los goblins. "Esperemos que al menos nuestro plan para entrar en la ciudad tenga un poco más de éxito."
+
+          Nos lleva un rato, pero cuando por fin terminamos de atravesar de nuevo la aldea, acabamos llegando a las puertas por segunda vez. El guardia de la entrada nos mira ahora con la misma expresión recelosa que tenía la primera vez, y nos habla en cuanto nos detenemos ante él.
+
+          "Veo que han vuelto", dice el guardia. "¿Debo entender que por fin han conseguido que ese 'cliente' suyo les dé la contraseña?..."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02a_ruckus
+            condition: b3_ch2_infiltration = 3
+          - set:
+              current_scene: b3_ch02a_insane
+            condition: b3_ch2_infiltration != 3
   - name: b3_ch02a_dialect
     texts:
       - source: scene_text
+        paragraph: 26
+        text: |-
+          "Ninguna de las rocas que recogí tenía nada escrito, ni en lengua común ni en lengua goblin", dice Melindra. "No entiendo la lengua goblin, pero estoy bastante segura de que sabría reconocer el aspecto de su escritura, y no vi nada parecido en ninguna de las piedras que recogí."
+
+          "¿Podrías quizá darnos tus rocas para que nosotros también les echemos un vistazo?", dice el viejo goblin. "Si las miramos con más atención, es posible que encontremos algo que se te haya pasado."
+
+          "Intenta tocar una sola de mis rocas, y usaré una cuchilla de viento para partirte en dos", dice Melindra, con una sonrisa amable.
+
+          "Ya veo...", dice el viejo goblin, intentando conservar la calma. "Bueno, entonces quizá podrías sostenerlas tú misma e ir enseñándonoslas una por una, ¿no?"
+
+          "No, no voy a hacer eso", dice Melindra, todavía sonriendo.
+
+          "Un momento, Melindra", digo. "Sé con total seguridad que vi unas palabras escritas en lengua goblin en una de tus rocas. Estaban en una de las rocas que le estabas enseñando a Flower poco antes de que llegáramos a la ciudad."
+
+          "¿Ah, sí?", dice Melindra con expresión desconcertada. "¿Cuál?"
+      - source: scene_text_2
         paragraph: 20
-        text: |
-          Traducción en progreso.
+        text: |-
+          "Mmm, creo que la roca era algo morada y cabía fácilmente en la palma de la mano", digo. "Los grabados eran bastante pequeños, pero podían verse si mirabas con atención."
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Mmm...", dice Melindra, quitándose la mochila y sacando de ella una pequeña roca morada. "¿Esta?"
+
+          Luego estira el brazo hacia mí para que pueda ver mejor la roca que sostiene en la mano.
+
+          "¡Sí, esa es!", digo. "¿Ves esos arañazos raros de allí? Esos son símbolos de un dialecto antiguo de la lengua goblin."
+
+          "¡Oooh, era un dialecto antiguo!", dice Melindra, examinando bien la roca en su mano. "Eso explicaría por qué no reconocí que era una forma de escritura. Mis disculpas, entonces. Toma, puedes quedarte con la roca, si originalmente era tuya."
+
+          Luego le entrega la roca al viejo goblin, y este empieza a estudiarla de cerca.
+
+          "Oh, ya entiendo...", dice el viejo goblin. "Parece que la contraseña de esta semana es 'alas de gárgola'. Gracias. Eso era todo lo que necesitábamos saber."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02a_dialect2
   - name: b3_ch02a_dialect2
-    texts:
-      - source: scene_text
-        paragraph: 21
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch2_infiltration = 0
+        texts:
+          - source: scene_text
+            paragraph: 27
+            text: |-
+              "¿Cómo que 'alas de gárgola'?...", le pregunto, confundido. "¿No dice esa escritura 'pico de grifo'?"
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Ah... ¡veo que puedes leer nuestro dialecto antiguo!", dice el viejo goblin, sorprendido. "¡Muy impresionante! En cuanto a tu pregunta, los símbolos que describen la contraseña sí pueden traducirse directamente como 'pico de grifo', pero tenemos un código con nuestro amigo que siempre usamos cuando nos transmitimos mensajes. Si reordenamos esos símbolos según nuestro código secreto, el significado cambia por completo y pasa a leerse como 'alas de gárgola'. ¿Lo entiendes ahora?"
+
+              "Sí, supongo que tiene sentido", digo. "Entonces, ¿esa era la información que querían darnos a cambio de la roca?"
+
+              "No, en realidad la información en cuestión era que la contraseña no es lo único que hace falta si quieren entrar en la ciudad", dice el viejo goblin. "También tienen que guiñar tres veces el ojo izquierdo mientras la dicen, o no los dejarán entrar. Eso se añadió hace un tiempo como precaución extra, para evitar que la gente escuche a escondidas. Las contraseñas cambian cada semana, pero que yo sepa la cantidad de guiños no cambia."
+          - source: scene_text_2
+            paragraph: 21
+            text: |-
+              "Eso sí que no lo sabíamos...", digo. "Lo tendremos en cuenta. ¡Gracias!"
+
+              "Mmm... ¡disculpen!", les dice Melindra a los goblins, adoptando esta vez una de sus sonrisas más agradables. "¿Les interesaría quizá cambiarme esa roca morada con garabatos? Le he tomado mucho cariño y me daría pena perderla de mi colección."
+
+              "¿Perdón?...", dice el viejo goblin, recordando de repente la roca que todavía sostenía en la mano. "Oh, pueden recuperar la roca. Lo único que necesitábamos de ella era la contraseña."
+
+              "¡Qué generoso por su parte!", dice Melindra, mientras el goblin le devuelve la roca. "¡Muchas gracias!"
+
+              "Bueno, ahora que nuestros asuntos están resueltos, creo que ha llegado el momento de dirigirnos a la ciudad", dice el viejo goblin. "Puede que no sea la mejor idea que vayamos todos a la vez, eso sí, porque podríamos parecer sospechosos. Pueden ir ustedes primero, si quieren, y nosotros los seguiremos poco después."
+        choices:
+          - position: 1
+            text: Suena bien. ¡Vamos!
+            effects:
+              - set:
+                  current_scene: b3_ch02a_trouble
+                  b3_ch2_goblins: 3
+          - position: 2
+            text: No pasa nada, no tenemos prisa. Mejor vayan ustedes primero.
+            effects:
+              - set:
+                  current_scene: b3_ch02a_trouble
+                  b3_ch2_goblins: 4
+      - condition: b3_ch2_infiltration = 2
+        texts:
+          - source: scene_text
+            paragraph: 27
+            text: |-
+              "¿Cómo que 'alas de gárgola'?...", le pregunto, confundido. "¿No dice esa escritura 'pico de grifo'?"
+
+              "Ah... ¡veo que puedes leer nuestro dialecto antiguo!", dice el viejo goblin, sorprendido. "¡Muy impresionante! En cuanto a tu pregunta, los símbolos que describen la contraseña sí pueden traducirse directamente como 'pico de grifo', pero tenemos un código con nuestro amigo que siempre usamos cuando nos transmitimos mensajes. Si reordenamos esos símbolos según nuestro código secreto, el significado cambia por completo y pasa a leerse como 'alas de gárgola'. ¿Lo entiendes ahora?"
+
+              "Sí, supongo que tiene sentido", digo. "Entonces, ¿esa era la información que querían darnos a cambio de la roca?"
+
+              "No, en realidad la información en cuestión era que la contraseña no es lo único que hace falta si quieren entrar en la ciudad", dice el viejo goblin. "También tienen que guiñar tres veces el ojo izquierdo mientras la dicen, o no los dejarán entrar. Eso se añadió hace un tiempo como precaución extra, para evitar que la gente escuche a escondidas. Las contraseñas cambian cada semana, pero que yo sepa la cantidad de guiños no cambia."
+          - source: scene_text_2
+            paragraph: 21
+            text: |-
+              "Eso sí que no lo sabíamos...", digo. "Lo tendremos en cuenta. ¡Gracias!"
+
+              "Mmm... ¡disculpen!", les dice Melindra a los goblins, adoptando esta vez una de sus sonrisas más agradables. "¿Les interesaría quizá cambiarme esa roca morada con garabatos? Le he tomado mucho cariño y me daría pena perderla de mi colección."
+
+              "¿Perdón?...", dice el viejo goblin, recordando de repente la roca que todavía sostenía en la mano. "Oh, pueden recuperar la roca. Lo único que necesitábamos de ella era la contraseña."
+
+              "¡Qué generoso por su parte!", dice Melindra, mientras el goblin le devuelve la roca. "¡Muchas gracias!"
+
+              "Bueno, ahora que nuestros asuntos están resueltos, creo que ha llegado el momento de dirigirnos a la ciudad", dice el viejo goblin. "Puede que no sea la mejor idea que vayamos todos a la vez, eso sí, porque podríamos parecer sospechosos. Pueden ir ustedes primero, si quieren, y nosotros los seguiremos poco después."
+        choices:
+          - position: 1
+            text: Suena bien. ¡Vamos!
+            effects:
+              - set:
+                  current_scene: b3_ch02a_trouble
+                  b3_ch2_goblins: 3
+          - position: 2
+            text: No pasa nada, no tenemos prisa. Mejor vayan ustedes primero.
+            effects:
+              - set:
+                  current_scene: b3_ch02a_trouble
+                  b3_ch2_goblins: 4
+      - condition: b3_ch2_infiltration = 1
+        texts:
+          - source: scene_text
+            paragraph: 27
+            text: |-
+              "¿Cómo que 'alas de gárgola'?...", le pregunto, confundido. "¿No dice esa escritura 'pico de grifo'?"
+
+              "Ah... ¡veo que puedes leer nuestro dialecto antiguo!", dice el viejo goblin, sorprendido. "¡Muy impresionante! En cuanto a tu pregunta, los símbolos que describen la contraseña sí pueden traducirse directamente como 'pico de grifo', pero tenemos un código con nuestro amigo que siempre usamos cuando nos transmitimos mensajes. Si reordenamos esos símbolos según nuestro código secreto, el significado cambia por completo y pasa a leerse como 'alas de gárgola'. ¿Lo entiendes ahora?"
+
+              "Sí, supongo que tiene sentido", digo. "Entonces, ¿esa era la información que querían darnos a cambio de la roca?"
+
+              "No, en realidad la información en cuestión era que la contraseña no es lo único que hace falta si quieren entrar en la ciudad", dice el viejo goblin. "También tienen que guiñar tres veces el ojo izquierdo mientras la dicen, o no los dejarán entrar. Eso se añadió hace un tiempo como precaución extra, para evitar que la gente escuche a escondidas. Las contraseñas cambian cada semana, pero que yo sepa la cantidad de guiños no cambia."
+          - source: scene_text_2
+            paragraph: 22
+            text: |-
+              "Vaya, sí que están tomando un buen número de precauciones para mantener a los forasteros fuera de su ciudad", digo. "¿De verdad esta gente odia tanto a los de fuera?"
+
+              "Por lo que hemos oído, su rey actual está bastante paranoico y piensa que todo el mundo va a por él", dice el viejo goblin. "Viendo a esos grandes gólems patrullando fuera de las murallas, supongo que esos rumores deben de ser al menos parcialmente ciertos."
+
+              "Mmm... ¡disculpen!", les dice Melindra a los goblins, adoptando esta vez una de sus sonrisas más agradables. "¿Les interesaría quizá cambiarme esa roca morada con garabatos? Le he tomado mucho cariño y me daría pena perderla de mi colección."
+
+              "¿Perdón?...", dice el viejo goblin, recordando de repente la roca que todavía sostenía en la mano. "Oh, pueden recuperar la roca. Lo único que necesitábamos de ella era la contraseña."
+
+              "¡Qué generoso por su parte!", dice Melindra, mientras el goblin le devuelve la roca. "¡Muchas gracias!"
+
+              "Bueno, ahora que nuestros asuntos están resueltos, creo que ha llegado el momento de dirigirnos a la ciudad", dice el viejo goblin. "Puede que no sea la mejor idea que vayamos todos a la vez, eso sí, porque podríamos parecer sospechosos. Pueden ir ustedes primero, si quieren, y nosotros los seguiremos poco después."
+        choices:
+          - position: 1
+            text: Suena bien. ¡Vamos!
+            effects:
+              - set:
+                  current_scene: b3_ch02a_trouble
+                  b3_ch2_goblins: 3
+          - position: 2
+            text: No pasa nada, no tenemos prisa. Mejor vayan ustedes primero.
+            effects:
+              - set:
+                  current_scene: b3_ch02a_trouble
+                  b3_ch2_goblins: 4
+      - condition: b3_ch2_infiltration = 3
+        texts:
+          - source: scene_text
+            paragraph: 27
+            text: |-
+              "¿Cómo que 'alas de gárgola'?...", le pregunto, confundido. "¿No dice esa escritura 'pico de grifo'?"
+
+              "Ah... ¡veo que puedes leer nuestro dialecto antiguo!", dice el viejo goblin, sorprendido. "¡Muy impresionante! En cuanto a tu pregunta, los símbolos que describen la contraseña sí pueden traducirse directamente como 'pico de grifo', pero tenemos un código con nuestro amigo que siempre usamos cuando nos transmitimos mensajes. Si reordenamos esos símbolos según nuestro código secreto, el significado cambia por completo y pasa a leerse como 'alas de gárgola'. ¿Lo entiendes ahora?"
+
+              "Sí, supongo que tiene sentido", digo. "Entonces, ¿esa era la información que querían darnos a cambio de la roca?"
+
+              "No, en realidad la información en cuestión era que la contraseña no es lo único que hace falta si quieren entrar en la ciudad", dice el viejo goblin. "También tienen que guiñar tres veces el ojo izquierdo mientras la dicen, o no los dejarán entrar. Eso se añadió hace un tiempo como precaución extra, para evitar que la gente escuche a escondidas. Las contraseñas cambian cada semana, pero que yo sepa la cantidad de guiños no cambia."
+          - source: scene_text_2
+            paragraph: 23
+            text: |-
+              "Bueno, supongo que no hemos averiguado nada nuevo, pero al menos confirmamos que la información que ya teníamos era correcta", digo.
+
+              "Mmm... ¡disculpen!", les dice Melindra a los goblins, adoptando esta vez una de sus sonrisas más agradables. "¿Les interesaría quizá cambiarme esa roca morada con garabatos? Le he tomado mucho cariño y me daría pena perderla de mi colección."
+
+              "¿Perdón?...", dice el viejo goblin, recordando de repente la roca que todavía sostenía en la mano. "Oh, pueden recuperar la roca. Lo único que necesitábamos de ella era la contraseña."
+
+              "¡Qué generoso por su parte!", dice Melindra, mientras el goblin le devuelve la roca. "¡Muchas gracias!"
+
+              "Bueno, ahora que nuestros asuntos están resueltos, creo que ha llegado el momento de dirigirnos a la ciudad", dice el viejo goblin. "Puede que no sea la mejor idea que vayamos todos a la vez, eso sí, porque podríamos parecer sospechosos. Pueden ir ustedes primero, si quieren, y nosotros los seguiremos poco después."
+        choices:
+          - position: 1
+            text: Suena bien. ¡Vamos!
+            effects:
+              - set:
+                  current_scene: b3_ch02a_trouble
+                  b3_ch2_goblins: 3
+          - position: 2
+            text: No pasa nada, no tenemos prisa. Mejor vayan ustedes primero.
+            effects:
+              - set:
+                  current_scene: b3_ch02a_trouble
+                  b3_ch2_goblins: 4
   - name: b3_ch02a_trouble
-    texts:
-      - source: scene_text
-        paragraph: 22
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch2_goblins = 4 AND b3_ch2_infiltration <> 2
+        texts:
+          - source: scene_text
+            paragraph: 28
+            text: |-
+              "No pasa nada, no tenemos prisa. Mejor vayan ustedes primero."
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Muy bien", dice el viejo goblin. "En ese caso, nos marchamos. ¡Cuídense!"
+
+              "¡Bien pensado, Barry!", dice Hadrik una vez que los goblins están demasiado lejos para oírnos. "Si son ellos los que van primero, no tendremos que quedar como idiotas en caso de que la contraseña sea falsa."
+
+              "Sí, está eso", digo, "pero más importante aún, también está el hecho de que probablemente ellos sí puedan permitirse equivocarse con la contraseña una vez, porque esta es apenas su primera vez intentando pasar por las puertas. En cambio, si nosotros fallamos una segunda vez, seguramente no volverían a dejarnos entrar en la ciudad nunca más."
+
+              "Pronto sabremos si la contraseña es falsa o no", dice Daren. "A los goblins no les falta mucho para llegar a las puertas."
+
+              Esperamos un poco más hasta ver a los goblins llegar a la entrada de la ciudad, a lo lejos. Tras una breve conversación con el guardia de la entrada, las puertas se abren y los tres goblins entran en la ciudad sin ningún problema.
+          - source: scene_text_2
+            paragraph: 24
+            text: |-
+              "Vaya...", dice Hadrik. "Supongo que la contraseña funcionó, ¿no? Vamos, nosotros también deberíamos irnos. Ya hemos pasado suficiente tiempo en este bosque."
+
+              Nos lleva un rato, pero cuando por fin terminamos de atravesar de nuevo la aldea, acabamos llegando a las puertas por segunda vez. El guardia de la entrada nos mira ahora con la misma expresión recelosa que tenía la primera vez, y nos habla en cuanto nos detenemos ante él.
+
+              "Veo que han vuelto", dice el guardia. "¿Debo entender que por fin han conseguido que ese 'cliente' suyo les dé la contraseña?..."
+
+              "Sí, al final conseguimos dar con él por el transceptor y nos dijo la contraseña", digo, mientras hago tres guiños con el ojo izquierdo. "Es 'alas de gárgola'. "
+
+              "Mmm...", dice el guardia. "Esa es, en efecto, la contraseña correcta."
+
+              Entonces les hace una señal a los dos gólems de metal que tiene detrás, y estos abren de inmediato las grandes puertas para nosotros.
+
+              "No sé exactamente a qué han venido, pero más vale que no causen problemas", nos dice el guardia.
+
+              "¡No, señor!", digo. "¡No vamos a molestarte en absoluto!"
+
+              "Sigan", dice el guardia. "Muévanse."
+
+              Todos pasamos junto al guardia y entramos en la ciudad, y en cuanto estamos dentro, las puertas se cierran de golpe a nuestras espaldas.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02a_communicating
+      - condition: b3_ch2_goblins = 4 AND b3_ch2_infiltration = 2
+        texts:
+          - source: scene_text
+            paragraph: 47
+            text: |-
+              "No pasa nada, no tenemos prisa. Mejor vayan ustedes primero."
+
+              "Muy bien", dice el viejo goblin. "En ese caso, nos marchamos. ¡Cuídense!"
+
+              "¡Bien pensado, Barry!", dice Hadrik una vez que los goblins están demasiado lejos para oírnos. "Si son ellos los que van primero, no tendremos que quedar como idiotas en caso de que la contraseña sea falsa."
+
+              "Dudo que la contraseña en sí sea incorrecta, porque ya oí a alguien usarla para entrar en la ciudad", digo. "Solo quiero ver si su información sobre los guiños era correcta o no. Nunca está de más ir sobre seguro."
+
+              "Pronto lo averiguaremos", dice Daren. "A los goblins no les falta mucho para llegar a las puertas."
+
+              Esperamos un poco más hasta ver a los goblins llegar a la entrada de la ciudad, a lo lejos. Tras una breve conversación con el guardia de la entrada, las puertas se abren y los tres goblins entran en la ciudad sin ningún problema.
+          - source: scene_text_2
+            paragraph: 37
+            text: |-
+              "Bueno, supongo que eso responde a nuestra duda", dice Hadrik. "Vamos, nosotros también deberíamos irnos. Ya hemos pasado suficiente tiempo en este bosque."
+
+              Nos lleva un rato, pero cuando por fin terminamos de atravesar de nuevo la aldea, acabamos llegando a las puertas por segunda vez. El guardia de la entrada nos mira ahora con la misma expresión recelosa que tenía la primera vez, y nos habla en cuanto nos detenemos ante él.
+
+              "Veo que han vuelto", dice el guardia. "¿Debo entender que por fin han conseguido que ese 'cliente' suyo les dé la contraseña?..."
+
+              "Sí, al final conseguimos dar con él por el transceptor y nos dijo la contraseña", digo, mientras hago tres guiños con el ojo izquierdo. "Es 'alas de gárgola'. "
+
+              "Mmm...", dice el guardia. "Esa es, en efecto, la contraseña correcta."
+
+              Entonces les hace una señal a los dos gólems de metal que tiene detrás, y estos abren de inmediato las grandes puertas para nosotros.
+
+              "No sé exactamente a qué han venido, pero más vale que no causen problemas", nos dice el guardia.
+
+              "¡No, señor!", digo. "¡No vamos a molestarte en absoluto!"
+
+              "Sigan", dice el guardia. "Muévanse."
+
+              Todos pasamos junto al guardia y entramos en la ciudad, y en cuanto estamos dentro, las puertas se cierran de golpe a nuestras espaldas.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02a_communicating
+      - condition: b3_ch2_infiltration <> 1 AND b3_ch2_goblins = 3
+        texts:
+          - source: scene_text
+            paragraph: 29
+            text: |-
+              "Suena bien. ¡Vamos!"
+
+              "¡Cuídense!", dice el viejo goblin, mientras volvemos a la carretera principal.
+
+              Nos lleva un rato, pero cuando por fin terminamos de atravesar de nuevo la aldea, acabamos llegando a las puertas por segunda vez. El guardia de la entrada nos mira ahora con la misma expresión recelosa que tenía la primera vez, y nos habla en cuanto nos detenemos ante él.
+
+              "Veo que han vuelto", dice el guardia. "¿Debo entender que por fin han conseguido que ese 'cliente' suyo les dé la contraseña?..."
+          - source: scene_text_2
+            paragraph: 25
+            text: |-
+              "Sí, al final conseguimos dar con él por el transceptor y nos dijo la contraseña", digo, mientras hago tres guiños con el ojo izquierdo. "Es 'alas de gárgola'. "
+
+              "Mmm...", dice el guardia. "Esa es, en efecto, la contraseña correcta."
+
+              Entonces les hace una señal a los dos gólems de metal que tiene detrás, y estos abren de inmediato las grandes puertas para nosotros.
+
+              "No sé exactamente a qué han venido, pero más vale que no causen problemas", nos dice el guardia.
+
+              "¡No, señor!", digo. "¡No vamos a molestarte en absoluto!"
+
+              "Sigan", dice el guardia. "Muévanse."
+
+              Todos pasamos junto al guardia y entramos en la ciudad, y en cuanto estamos dentro, las puertas se cierran de golpe a nuestras espaldas.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02a_communicating
+      - condition: b3_ch2_infiltration = 1 AND b3_ch2_goblins = 3
+        texts:
+          - source: scene_text
+            paragraph: 30
+            text: |-
+              "Suena bien. ¡Vamos!"
+
+              "¡Cuídense!", dice el viejo goblin, mientras volvemos a la carretera principal.
+
+              "Solo para asegurarme de que todos estamos en la misma página", dice Hadrik cuando ya estamos fuera del alcance auditivo de los goblins, "si esa contraseña de los goblins resulta ser falsa, volvemos a nuestro plan de atravesar sus puertas por la fuerza, ¿verdad?"
+
+              "Por supuesto", digo.
+
+              "Muy bien, entonces", dice Hadrik.
+
+              Nos lleva un rato, pero cuando por fin terminamos de atravesar de nuevo la aldea, acabamos llegando a las puertas por segunda vez. El guardia de la entrada nos mira ahora con la misma expresión recelosa que tenía la primera vez, y nos habla en cuanto nos detenemos ante él.
+
+              "Veo que han vuelto", dice el guardia. "¿Debo entender que por fin han conseguido que ese 'cliente' suyo les dé la contraseña?..."
+          - source: scene_text_2
+            paragraph: 25
+            text: |-
+              "Sí, al final conseguimos dar con él por el transceptor y nos dijo la contraseña", digo, mientras hago tres guiños con el ojo izquierdo. "Es 'alas de gárgola'. "
+
+              "Mmm...", dice el guardia. "Esa es, en efecto, la contraseña correcta."
+
+              Entonces les hace una señal a los dos gólems de metal que tiene detrás, y estos abren de inmediato las grandes puertas para nosotros.
+
+              "No sé exactamente a qué han venido, pero más vale que no causen problemas", nos dice el guardia.
+
+              "¡No, señor!", digo. "¡No vamos a molestarte en absoluto!"
+
+              "Sigan", dice el guardia. "Muévanse."
+
+              Todos pasamos junto al guardia y entramos en la ciudad, y en cuanto estamos dentro, las puertas se cierran de golpe a nuestras espaldas.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02a_communicating
   - name: b3_ch02a_communicating
     texts:
       - source: scene_text
-        paragraph: 23
-        text: |
-          Traducción en progreso.
+        paragraph: 31
+        text: |-
+          "¿Y ahora qué?", nos pregunta Kate, después de adentrarnos un poco en la ciudad. "¿Vamos a hacer un poco de reconocimiento o deberíamos ir directamente al palacio?"
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Estoy seguro de que tendremos muchas oportunidades de estudiar sus defensas de camino al castillo", dice Daren. "Dado que en realidad no sabemos cuándo volverá el embajador, no creo que debamos perder tiempo explorando la ciudad. Melindra, ¿sabes en qué dirección general debería estar el palacio?"
+
+          "Sí", dice Melindra. "Si el trazado de la ciudad sigue siendo el mismo que antes de que me desterraran, la ruta más corta sería pasar por la plaza Perrelion. Síganme."
+
+          Melindra toma la delantera y todos la seguimos, mientras tanto los ciudadanos que van por tierra como los que vuelan en los vehículos metálicos sobre nosotros siguen tranquilamente con sus vidas, sin prestarnos demasiada atención.
+
+          "Leila, ¿tienes alguna forma de comunicarte con tu padre?", dice Daren. "¿Puedes hacerle saber que estamos aquí?"
+      - source: scene_text_2
+        paragraph: 26
+        text: |-
+          "No...", escribe Leila. "No llevaba ningún objeto encima cuando escapábamos juntos de Thilias, así que no puedo llamarlo por un transceptor. Antes de que nos separáramos, me prometió que cuando llegara a Ollendor encontraría la manera de contactar conmigo pasara lo que pasara, pero no sé cuánto tardará en enterarse de que he llegado."
+
+          "No te preocupes", dice Daren. "Con todo el alboroto que vamos a montar dentro de la ciudad en breve, estoy seguro de que terminará encontrándonos."
+
+          "¡Esperemos que tengas razón!", escribe Leila.
+
+          A medida que avanzamos por la ciudad, me doy cuenta de que la mayoría de las casas tienen un estilo arquitectónico muy extraño, distinto al de la mayoría de los edificios normales que esperarías ver en una ciudad típica. Algunas casas tienen más de cuatro pisos y están construidas con forma ovalada. Algunas están hechas enteramente de vidrio. Otras son de metal, recubiertas de polvo de seredium. Es bastante difícil encontrar dos casas que se vean exactamente igual, y varios de los edificios sinceramente parecen diseñados por alguien que simplemente estaba divirtiéndose.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02b_weird
+              storyboard_controls: Jump to frame "Book 3 Chapter 2 b"
   - name: b3_ch02a_ruckus
     texts:
       - source: scene_text
-        paragraph: 24
-        text: |
-          Traducción en progreso.
+        paragraph: 32
+        text: |-
+          "Sí, al final conseguimos dar con él por el transceptor y nos dijo la contraseña", digo, mientras hago tres guiños con el ojo izquierdo. "Es 'alas de gárgola'. "
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Mmm...", dice el guardia. "Esa es, en efecto, la contraseña correcta."
+
+          Entonces les hace una señal a los dos gólems de metal que tiene detrás, y estos abren de inmediato las grandes puertas para nosotros.
+
+          "No sé exactamente a qué han venido, pero más vale que no causen problemas", nos dice el guardia.
+
+          "¡No, señor!", digo. "¡No vamos a molestarte en absoluto!"
+
+          "Sigan", dice el guardia. "Muévanse."
+
+          Todos pasamos junto al guardia y entramos en la ciudad, y en cuanto estamos dentro, las puertas se cierran de golpe a nuestras espaldas.
+
+          "¿Y ahora qué?", nos pregunta Kate, después de adentrarnos un poco en la ciudad. "¿Vamos a hacer un poco de reconocimiento o deberíamos ir directamente al palacio?"
+
+          "Estoy seguro de que tendremos muchas oportunidades de estudiar sus defensas de camino al castillo", dice Daren. "Dado que en realidad no sabemos cuándo volverá el embajador, no creo que debamos perder tiempo explorando la ciudad. Melindra, ¿sabes en qué dirección general debería estar el palacio?"
+      - source: scene_text_2
+        paragraph: 27
+        text: |-
+          "Sí", dice Melindra. "Si el trazado de la ciudad sigue siendo el mismo que antes de que me desterraran, la ruta más corta sería pasar por la plaza Perrelion. Síganme."
+
+          Melindra toma la delantera y todos la seguimos, mientras tanto los ciudadanos que van por tierra como los que vuelan en los vehículos metálicos sobre nosotros siguen tranquilamente con sus vidas, sin prestarnos demasiada atención.
+
+          "Leila, ¿tienes alguna forma de comunicarte con tu padre?", dice Daren. "¿Puedes hacerle saber que estamos aquí?"
+
+          "No...", escribe Leila. "No llevaba ningún objeto encima cuando escapábamos juntos de Thilias, así que no puedo llamarlo por un transceptor. Antes de que nos separáramos, me prometió que cuando llegara a Ollendor encontraría la manera de contactar conmigo pasara lo que pasara, pero no sé cuánto tardará en enterarse de que he llegado."
+
+          "No te preocupes", dice Daren. "Con todo el alboroto que vamos a montar dentro de la ciudad en breve, estoy seguro de que terminará encontrándonos."
+
+          "¡Esperemos que tengas razón!", escribe Leila.
+
+          A medida que avanzamos por la ciudad, me doy cuenta de que la mayoría de las casas tienen un estilo arquitectónico muy extraño, distinto al de la mayoría de los edificios normales que esperarías ver en una ciudad típica. Algunas casas tienen más de cuatro pisos y están construidas con forma ovalada. Algunas están hechas enteramente de vidrio. Otras son de metal, recubiertas de polvo de seredium. Es bastante difícil encontrar dos casas que se vean exactamente igual, y varios de los edificios sinceramente parecen diseñados por alguien que simplemente estaba divirtiéndose.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02b_weird
+              storyboard_controls: Jump to frame "Book 3 Chapter 2 b"
   - name: b3_ch02a_insane
-    texts:
-      - source: scene_text
-        paragraph: 25
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch2_infiltration = 0
+        texts:
+          - source: scene_text
+            paragraph: 33
+            text: |-
+              "Sí, al final conseguimos dar con él por el transceptor y nos dijo la contraseña", digo. "Es 'alas de gárgola'. "
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "¿Estás diciendo que la contraseña es 'alas de gárgola'?", dice el guardia. "¿Estás seguro de eso?"
+
+              "Eh, sí...", digo. "¡Sí, claro!"
+
+              "Muy bien, entonces", dice el guardia. "Todos quedan arrestados. Los mantendremos en una celda hasta que aparezca ese misterioso cliente suyo y confirme que él los invitó aquí. Si no aparece en unas semanas, serán ejecutados por intentar infiltrarse ilegalmente en la ciudad."
+
+              "¡¿Qué?!", digo. "¡Pero te dimos la contraseña!"
+
+              "Esa no es la contraseña completa", dice el guardia. "También tenían que guiñar varias veces mientras decían las palabras. Es una medida que hemos tomado contra la gente que intenta escuchar a escondidas. No sé si de verdad tenían un cliente o no, pero quebrantar nuestras leyes no es algo que deba tomarse a la ligera. Ahora síganme. Espero que no sean lo bastante estúpidos como para resistirse al arresto en esta situación."
+
+              En cuanto el guardia se gira para llevarnos dentro de la ciudad, Hadrik mira a Daren, que le responde con un breve asentimiento.
+
+              "Oye, espera un segundo", dice Daren, poniéndole una mano en el hombro al guardia. "Creo que aún hay algo que quizá no has tenido en cuenta."
+          - source: scene_text_2
+            paragraph: 28
+            text: |-
+              "¿Ah, sí?", dice el guardia, volviéndose hacia Daren. "¿Como qué?"
+
+              Justo cuando el guardia se gira, Hadrik sale corriendo junto a él y se dirige hacia uno de los dos grandes gólems apostados a unos cuantos metros delante de las puertas.
+
+              En cuanto está lo bastante cerca, Hadrik salta muy alto y, con un fuerte puñetazo en la cara, tumba a uno de los gólems y lo manda volando contra las grandes puertas que tiene detrás. Las hojas no soportan el impacto del choque y saltan de sus bisagras, pero ahora el gran gólem que ha caído sobre ellas se esfuerza por volver a levantarse. Hadrik no le da tiempo a recuperarse y salta enseguida sobre su enorme cabeza, descargándole una rápida ráfaga de puñetazos hasta que el gólem gigante de metal deja de moverse por completo.
+
+              "¡¿Se han vuelto completamente locos?!", nos grita el guardia, pero antes de que pueda decir nada más, Daren lo golpea en la cabeza con el escudo y lo deja inconsciente.
+
+              "¡Todos, dentro de mi barrera, ahora!", dice Daren.
+
+              Entonces levanta su escudo, y una barrera mágica semitransparente aparece a nuestro alrededor. Varios de los gólems que estaban más lejos ya se han dado cuenta de que algo va mal, y todos se preparan para dispararnos sus haces de fuego por la boca al unísono.
+
+              "Prepárense", dice Daren. "Va a hacer calor."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02a_insane2
+      - condition: b3_ch2_infiltration = 2
+        texts:
+          - source: scene_text
+            paragraph: 33
+            text: |-
+              "Sí, al final conseguimos dar con él por el transceptor y nos dijo la contraseña", digo. "Es 'alas de gárgola'. "
+
+              "¿Estás diciendo que la contraseña es 'alas de gárgola'?", dice el guardia. "¿Estás seguro de eso?"
+
+              "Eh, sí...", digo. "¡Sí, claro!"
+
+              "Muy bien, entonces", dice el guardia. "Todos quedan arrestados. Los mantendremos en una celda hasta que aparezca ese misterioso cliente suyo y confirme que él los invitó aquí. Si no aparece en unas semanas, serán ejecutados por intentar infiltrarse ilegalmente en la ciudad."
+
+              "¡¿Qué?!", digo. "¡Pero te dimos la contraseña!"
+
+              "Esa no es la contraseña completa", dice el guardia. "También tenían que guiñar varias veces mientras decían las palabras. Es una medida que hemos tomado contra la gente que intenta escuchar a escondidas. No sé si de verdad tenían un cliente o no, pero quebrantar nuestras leyes no es algo que deba tomarse a la ligera. Ahora síganme. Espero que no sean lo bastante estúpidos como para resistirse al arresto en esta situación."
+
+              En cuanto el guardia se gira para llevarnos dentro de la ciudad, Hadrik mira a Daren, que le responde con un breve asentimiento.
+
+              "Oye, espera un segundo", dice Daren, poniéndole una mano en el hombro al guardia. "Creo que aún hay algo que quizá no has tenido en cuenta."
+          - source: scene_text_2
+            paragraph: 28
+            text: |-
+              "¿Ah, sí?", dice el guardia, volviéndose hacia Daren. "¿Como qué?"
+
+              Justo cuando el guardia se gira, Hadrik sale corriendo junto a él y se dirige hacia uno de los dos grandes gólems apostados a unos cuantos metros delante de las puertas.
+
+              En cuanto está lo bastante cerca, Hadrik salta muy alto y, con un fuerte puñetazo en la cara, tumba a uno de los gólems y lo manda volando contra las grandes puertas que tiene detrás. Las hojas no soportan el impacto del choque y saltan de sus bisagras, pero ahora el gran gólem que ha caído sobre ellas se esfuerza por volver a levantarse. Hadrik no le da tiempo a recuperarse y salta enseguida sobre su enorme cabeza, descargándole una rápida ráfaga de puñetazos hasta que el gólem gigante de metal deja de moverse por completo.
+
+              "¡¿Se han vuelto completamente locos?!", nos grita el guardia, pero antes de que pueda decir nada más, Daren lo golpea en la cabeza con el escudo y lo deja inconsciente.
+
+              "¡Todos, dentro de mi barrera, ahora!", dice Daren.
+
+              Entonces levanta su escudo, y una barrera mágica semitransparente aparece a nuestro alrededor. Varios de los gólems que estaban más lejos ya se han dado cuenta de que algo va mal, y todos se preparan para dispararnos sus haces de fuego por la boca al unísono.
+
+              "Prepárense", dice Daren. "Va a hacer calor."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02a_insane2
+      - condition: b3_ch2_infiltration = 1
+        texts:
+          - source: scene_text
+            paragraph: 34
+            text: |-
+              "No exactamente", digo, mientras Hadrik pasa corriendo junto al guardia en dirección a uno de los dos grandes gólems apostados a unos cuantos metros delante de las puertas.
+
+              En cuanto está lo bastante cerca, Hadrik salta muy alto y, con un fuerte puñetazo en la cara, tumba a uno de los gólems y lo manda volando contra las grandes puertas que tiene detrás. Las hojas no soportan el impacto del choque y saltan de sus bisagras, pero ahora el gran gólem que ha caído sobre ellas se esfuerza por volver a levantarse. Hadrik no le da tiempo a recuperarse y salta enseguida sobre su enorme cabeza, descargándole una rápida ráfaga de puñetazos hasta que el gólem gigante de metal deja de moverse por completo.
+
+              "¡¿Se han vuelto completamente locos?!", nos grita el guardia, pero antes de que pueda decir nada más, Daren lo golpea en la cabeza con el escudo y lo deja inconsciente.
+
+              "¡Todos, dentro de mi barrera, ahora!", dice Daren.
+
+              Entonces levanta su escudo, y una barrera mágica semitransparente aparece a nuestro alrededor. Varios de los gólems que estaban más lejos ya se han dado cuenta de que algo va mal, y todos se preparan para dispararnos sus haces de fuego por la boca al unísono.
+
+              "Prepárense", dice Daren. "Va a hacer calor."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02a_insane2
   - name: b3_ch02a_insane2
     texts:
       - source: scene_text
-        paragraph: 26
-        text: |
-          Traducción en progreso.
+        paragraph: 35
+        text: |-
+          Cuatro haces de fuego golpean a la vez la barrera de Daren, generando una explosión de aire caliente que incluso los que estamos dentro podemos sentir un poco. No parece que los gólems puedan moverse mientras nos disparan sus haces, así que al menos no podrán acercarse más a menos que cancelen sus ataques. Mientras tanto, Hadrik ya ha empezado a asaltar al segundo gólem junto a las puertas, pero está teniendo un poco más de problemas con él que con el primero. El gólem parece lo bastante fuerte como para hacer retroceder a Hadrik, y como no puede arriesgarse a recibir el impacto de ninguno de los haces, el enano se ve obligado a pelear de una forma bastante más evasiva de lo habitual.
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch02a_observation
-    texts:
-      - source: scene_text
-        paragraph: 27
-        text: |
-          Traducción en progreso.
+          "Kate, ¿podrías encargarte de uno o dos de los gólems?", dice Daren, mientras el aire dentro de la barrera se vuelve lentamente más caliente. "No puedo mover la barrera mientras tantos haces la estén atacando a la vez."
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch02a_reflexes
-    texts:
-      - source: scene_text
-        paragraph: 28
-        text: |
-          Traducción en progreso.
+          "Por desgracia, ya estoy demasiado ocupada defendiéndonos de la lluvia de flechas que cae desde arriba", dice Kate.
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch02a_speed
-    texts:
-      - source: scene_text
+          Cuando miramos hacia lo alto, vemos que Kate controla varias plataformas voladoras de hielo que no dejan de moverse para interceptar los virotes de ballesta y las flechas de los guardias apostados encima de las murallas.
+      - source: scene_text_2
         paragraph: 29
-        text: |
-          Traducción en progreso.
+        text: |-
+          "A menos que hayas aprendido de repente a crear barreras contra ataques no mágicos, deshacer esas plataformas de hielo significaría nuestra muerte", dice Kate. "Alguien más tendrá que concentrarse en atacar a los gólems."
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¡Maldita sea, tienes razón!", dice Daren.
+
+          Entonces saca la espada fuera de la barrera para empezar a absorber uno de los haces de fuego, y cuando la espada se pone al rojo vivo, la blande con todas sus fuerzas de vuelta hacia el gólem que lo disparó. El haz que sale de la espada de Daren y el que viene del gólem chocan entre sí y crean una explosión de aire lo bastante potente como para tumbar al gólem, y también abren una pequeña grieta en la barrera semitransparente de Daren.
+
+          "Flower y yo iremos a ocuparnos de los guardias de las murallas", dice Illuna, mientras el gólem que cayó antes está en proceso de volver a levantarse.
+
+          "¡Asegúrense de no matarlos!", dice Daren. "¡Recuerden, no es culpa suya! ¡Solo están defendiendo su ciudad!"
+
+          "Sí...", dice Illuna, saliendo de la barrera, saltando por los aires, y entonces Flower activa sus chorros de fuego.
+
+          "Tú tienes el hechizo de vuelo, Barry", dice Melindra, mientras de repente siento sus corrientes de aire girando alrededor de mi cuerpo. "Haz con él lo que mejor te parezca."
+    choices:
+      - position: 1
+        text: Salir volando y ayudar a Illuna a neutralizar a los guardias de las murallas
+        effects:
+          - set:
+              current_scene: b3_ch02a_observation
+              b3_ch2_golems: 0
+      - position: 2
+        text: Salir de la barrera volando e intentar distraer a algunos de los gólems
+        effects:
+          - set:
+              current_scene: b3_ch02a_reflexes
+              b3_ch2_golems: 1
+      - position: 3
+        text: Echar a correr e intentar distraer a los gólems con mi velocidad.
+        effects:
+          - set:
+              current_scene: b3_ch02a_speed
+              b3_ch2_golems: 2
+      - position: 4
+        text: Salir de la barrera volando e intentar darle un puñetazo en la cara a uno de los gólems.
+        effects:
+          - set:
+              current_scene: b3_ch02a_strength
+              b3_ch2_golems: 3
+  - name: b3_ch02a_observation
+    routes:
+      - condition: b3_ch1_unlock = 2
+        texts:
+          - source: scene_text
+            paragraph: 36
+            text: |-
+              "Iré a ayudar a Illuna", digo. "Cuanto antes nos encarguemos de los ballesteros, mejor."
+
+              Saco la ballesta de la mochila, levanto los brazos en el aire para indicarle a las corrientes que quiero subir y luego empiezo a elevarme por encima de las murallas, para tener una buena vista de mis enemigos. Uno de los gólems me ve salir volando de la barrera de Daren y cambia enseguida de objetivo, disparándome su haz de fuego directamente. Esquivo el haz, pero varios de los ballesteros en las murallas también se han dado cuenta ya de mí y me están disparando decenas de virotes.
+
+              Mientras me esfuerzo por esquivar en pleno aire el haz y las flechas volando de la forma más impredecible posible, Illuna dispara un torrente de agua desde las manos, anegando a varios de los ballesteros que nos estaban disparando a ella y a mí.
+
+              Sin embargo, lo que no me di cuenta fue de que un segundo gólem a mi espalda también estaba preparando su haz de fuego en ese momento, y ni siquiera llegué a ver venir el ataque antes de que me convirtiera en cenizas.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Dispositivo de estadísticas bloqueado - comprobación fallida ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: perception < 4 AND b3_ch1_unlock <> 2
+        texts:
+          - source: scene_text
+            paragraph: 36
+            text: |-
+              "Iré a ayudar a Illuna", digo. "Cuanto antes nos encarguemos de los ballesteros, mejor."
+
+              Saco la ballesta de la mochila, levanto los brazos en el aire para indicarle a las corrientes que quiero subir y luego empiezo a elevarme por encima de las murallas, para tener una buena vista de mis enemigos. Uno de los gólems me ve salir volando de la barrera de Daren y cambia enseguida de objetivo, disparándome su haz de fuego directamente. Esquivo el haz, pero varios de los ballesteros en las murallas también se han dado cuenta ya de mí y me están disparando decenas de virotes.
+
+              Mientras me esfuerzo por esquivar en pleno aire el haz y las flechas volando de la forma más impredecible posible, Illuna dispara un torrente de agua desde las manos, anegando a varios de los ballesteros que nos estaban disparando a ella y a mí.
+
+              Sin embargo, lo que no me di cuenta fue de que un segundo gólem a mi espalda también estaba preparando su haz de fuego en ese momento, y ni siquiera llegué a ver venir el ataque antes de que me convirtiera en cenizas.
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Comprobación de observación fallida - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: perception = 4 AND b3_ch1_unlock <> 2
+        texts:
+          - source: scene_text
+            paragraph: 37
+            text: |-
+              "Iré a ayudar a Illuna", digo. "Cuanto antes nos encarguemos de los ballesteros, mejor."
+
+              Saco la ballesta de la mochila, levanto los brazos en el aire para indicarle a las corrientes que quiero subir y luego empiezo a elevarme por encima de las murallas, para tener una buena vista de mis enemigos. Uno de los gólems me ve salir volando de la barrera de Daren y cambia enseguida de objetivo, disparándome su haz de fuego directamente. Esquivo el haz, pero varios de los ballesteros en las murallas también se han dado cuenta ya de mí y me están disparando decenas de virotes.
+
+              Mientras me esfuerzo por esquivar en pleno aire el haz y las flechas volando de la forma más impredecible posible, Illuna dispara un torrente de agua desde las manos, anegando a varios de los ballesteros que nos estaban disparando a ella y a mí.
+
+              Sin embargo, parece que el gólem que tengo delante y los ballesteros no son mis únicos problemas. Por el rabillo del ojo, de algún modo consigo ver que otro gólem está preparando su haz de fuego a mis espaldas, lo que me da justo el tiempo suficiente para apartarme volando y evitar la muerte por apenas unos centímetros.
+          - source: scene_text_2
+            paragraph: 30
+            text: |-
+              Viendo que los gólems no piensan dejarme en paz, decido colocarme entre ellos y los ballesteros, y espero a ver qué pasa. Mi plan parece funcionar, porque los gólems han dejado de inmediato de usar sus ataques de haz para evitar herir por accidente a sus propias tropas, y ahora simplemente se quedan mirándome sin hacer nada. Me aseguro de mantener exactamente la misma altura y empiezo a volar en horizontal, disparándoles a los ballesteros en las piernas uno por uno, mientras también esquivo los virotes de ballesta que me lanzan. Cuando se dan cuenta de que no pienso apartarme de delante de sus aliados, los dos gólems que me estaban atacando deciden cambiar de objetivo e ir a por Hadrik, que ya ha terminado con el gólem de la puerta y corre ahora hacia uno de los otros.
+
+              Mientras tanto, Daren, sobre quien ahora se centran menos ataques de fuego, por fin puede mover un poco la barrera, así que avanza lentamente hacia las puertas junto con Kate, Leila y Melindra. Mientras Illuna y yo nos ocupamos de unos cuantos ballesteros y arqueros más, Kate decide que ya puede deshacer algunas de sus plataformas defensivas de hielo, y se concentra en reforzar un enorme carámbano en el cielo, asegurándose de que el proyectil sea lo bastante fuerte como para atravesar la armadura anti-magia de los gólems.
+          - source: scene_3
+            paragraph: 9
+            text: |-
+              Después de incapacitar a unos cuantos ballesteros más, Kate dispara su carámbano gigante con una fuerza increíble, provocando una explosión de aire detrás de él y atravesando directamente la cabeza de uno de los gólems, que cae de inmediato al suelo con un fuerte estruendo. Al mismo tiempo, Hadrik también remata a otro de los gólems y pasa al cuarto.
+
+              Por desgracia, mientras estábamos ocupados con los pocos gólems que estaban lo bastante cerca como para enfrentarse a nosotros de inmediato, alrededor de una docena más de grandes gólems que oyeron el alboroto han ido acercándose lentamente, y pronto estarán dentro del alcance de sus ataques de haz. Mientras Hadrik atrae la atención de uno de los dos gólems que están lo bastante cerca para atacarnos, y el último gólem que estaba atacando la barrera de Daren empieza a apuntar en cambio a Illuna y a Flower, Daren y los demás salen rápidamente de la barrera y corren hacia las puertas, y nos llaman en cuanto las alcanzan.
+
+              "¡Por aquí!", nos grita Daren. "¡Dejen a los gólems y vengan! ¡Rápido, antes de que lleguen los otros!"
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de observación exitosa - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02a_rubble
+                condition: is_dead = 0
+  - name: b3_ch02a_reflexes
+    routes:
+      - condition: b3_ch1_unlock = 2
+        texts:
+          - source: scene_text
+            paragraph: 38
+            text: |-
+              "Iré a distraer a algunos de los gólems", digo. "Ustedes intenten acercarse mientras tanto a la entrada de la ciudad. Me reuniré con ustedes cuando estén en las puertas."
+
+              Saco la ballesta de la mochila, levanto los brazos en el aire para indicarle a las corrientes que quiero subir y luego me dirijo hacia la zona donde hay más gólems cerca unos de otros, para distraer a tantos como pueda. Mientras vuelo, me aseguro de mantenerme lo más lejos posible de las murallas, porque lo último que querría es que los ballesteros también se fijaran en mí mientras lidio con los gólems. Dejaré que Illuna se encargue de los guardias de la muralla. Ya tengo suficientes enemigos de los que preocuparme.
+
+              En cuanto me acerco lo suficiente a los gólems, les disparo unos cuantos virotes de ballesta para llamar su atención. Como sospechaba, los virotes no les hacen absolutamente ningún daño, pero al menos parece que he cumplido mi objetivo principal de ofrecer una buena distracción. Los tres gólems que tengo cerca ya han dejado de apuntar a la barrera de Daren y están girando la cabeza hacia mí, preparándose para cargar sus haces de fuego. En cuanto empiezan a dispararme, comienzo a volar de manera errática, tratando de ponérselo lo más difícil posible para que predigan mis movimientos.
+
+              Sin embargo, esquivar continuamente tres haces de fuego resultó ser un poco más de lo que podía manejar, y bastó con un pequeño error por mi parte para fallar el momento exacto y acabar incinerado al instante.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Dispositivo de estadísticas bloqueado - comprobación fallida ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: reflexes < 4 AND b3_ch1_unlock <> 2
+        texts:
+          - source: scene_text
+            paragraph: 38
+            text: |-
+              "Iré a distraer a algunos de los gólems", digo. "Ustedes intenten acercarse mientras tanto a la entrada de la ciudad. Me reuniré con ustedes cuando estén en las puertas."
+
+              Saco la ballesta de la mochila, levanto los brazos en el aire para indicarle a las corrientes que quiero subir y luego me dirijo hacia la zona donde hay más gólems cerca unos de otros, para distraer a tantos como pueda. Mientras vuelo, me aseguro de mantenerme lo más lejos posible de las murallas, porque lo último que querría es que los ballesteros también se fijaran en mí mientras lidio con los gólems. Dejaré que Illuna se encargue de los guardias de la muralla. Ya tengo suficientes enemigos de los que preocuparme.
+
+              En cuanto me acerco lo suficiente a los gólems, les disparo unos cuantos virotes de ballesta para llamar su atención. Como sospechaba, los virotes no les hacen absolutamente ningún daño, pero al menos parece que he cumplido mi objetivo principal de ofrecer una buena distracción. Los tres gólems que tengo cerca ya han dejado de apuntar a la barrera de Daren y están girando la cabeza hacia mí, preparándose para cargar sus haces de fuego. En cuanto empiezan a dispararme, comienzo a volar de manera errática, tratando de ponérselo lo más difícil posible para que predigan mis movimientos.
+
+              Sin embargo, esquivar continuamente tres haces de fuego resultó ser un poco más de lo que podía manejar, y bastó con un pequeño error por mi parte para fallar el momento exacto y acabar incinerado al instante.
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Comprobación de reflejos fallida - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: reflexes = 4 AND b3_ch1_unlock <> 2
+        texts:
+          - source: scene_text
+            paragraph: 39
+            text: |-
+              "Iré a distraer a algunos de los gólems", digo. "Ustedes intenten acercarse mientras tanto a la entrada de la ciudad. Me reuniré con ustedes cuando estén en las puertas."
+
+              Saco la ballesta de la mochila, levanto los brazos en el aire para indicarle a las corrientes que quiero subir y luego me dirijo hacia la zona donde hay más gólems cerca unos de otros, para distraer a tantos como pueda. Mientras vuelo, me aseguro de mantenerme lo más lejos posible de las murallas, porque lo último que querría es que los ballesteros también se fijaran en mí mientras lidio con los gólems. Dejaré que Illuna se encargue de los guardias de la muralla. Ya tengo suficientes enemigos de los que preocuparme.
+
+              En cuanto me acerco lo suficiente a los gólems, les disparo unos cuantos virotes de ballesta para llamar su atención. Como sospechaba, los virotes no les hacen absolutamente ningún daño, pero al menos parece que he cumplido mi objetivo principal de ofrecer una buena distracción. Los tres gólems que tengo cerca ya han dejado de apuntar a la barrera de Daren y están girando la cabeza hacia mí, preparándose para cargar sus haces de fuego. En cuanto empiezan a dispararme, comienzo a volar de manera errática, tratando de ponérselo lo más difícil posible para que predigan mis movimientos.
+          - source: scene_text_2
+            paragraph: 31
+            text: |-
+              Mientras los tres haces de fuego me persiguen por el cielo, a menudo me veo obligado a hacer pleno uso de mis reflejos sobrehumanos para esquivar eficazmente los ataques de mis enemigos. Por suerte para mí, no tengo que aguantar mucho tiempo, porque Hadrik pronto consigue acabar con el gólem de las puertas y luego viene hacia mi lado para enfrentarse a uno de mis oponentes en combate, obligándolo a cancelar su ataque de haz y a luchar de forma más defensiva.
+
+              Después de pasar un poco más de tiempo volando de un lado a otro, miro hacia la barrera de Daren y me alegra ver que mis esfuerzos no fueron en vano, y que aunque Daren, Kate, Melindra y Leila siguen siendo atacados por uno de los haces de fuego, aun así han logrado acercarse bastante a la puerta mientras yo entretenía a estos gólems. Además, dado que Illuna también ha conseguido ocuparse mientras tanto de algunos de los guardias de la muralla, Kate ha decidido que ya puede deshacer algunas de sus plataformas defensivas de hielo, y ahora se concentra en reforzar un enorme carámbano en el cielo, asegurándose de que el proyectil sea lo bastante fuerte como para atravesar la armadura anti-magia de los gólems.
+          - source: scene_3
+            paragraph: 10
+            text: |-
+              Una vez terminados los preparativos, Kate dispara su carámbano gigante con una fuerza increíble, provocando una explosión de aire detrás de él y atravesando de lado a lado la cabeza de uno de los gólems de mi lado, que cae de inmediato al suelo con un fuerte estruendo. Al mismo tiempo, Hadrik también remata al gólem con el que estaba luchando, y ahora pasa al cuarto.
+
+              Por desgracia, mientras estábamos ocupados con los pocos gólems que estaban lo bastante cerca como para enfrentarse a nosotros de inmediato, alrededor de una docena más de grandes gólems que oyeron el alboroto han ido acercándose lentamente, y pronto estarán dentro del alcance de sus ataques de haz. Mientras Hadrik atrae la atención de uno de los dos gólems que están lo bastante cerca para atacarnos, y el último gólem que estaba atacando la barrera de Daren empieza a apuntar en cambio a Illuna y a Flower, Daren y los demás salen rápidamente de la barrera y corren hacia las puertas, y nos llaman en cuanto las alcanzan.
+
+              "¡Por aquí!", nos grita Daren. "¡Dejen a los gólems y vengan! ¡Rápido, antes de que lleguen los otros!"
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de reflejos exitosa - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02a_rubble
+                condition: is_dead = 0
+  - name: b3_ch02a_speed
+    routes:
+      - condition: b3_ch1_unlock = 2
+        texts:
+          - source: scene_text
+            paragraph: 40
+            text: |-
+              "Iré a distraer a algunos de los gólems", digo. "Ustedes intenten acercarse mientras tanto a la entrada de la ciudad. Me reuniré con ustedes cuando estén en las puertas."
+
+              Saco la ballesta de la mochila, salgo disparado fuera de la barrera de Daren y luego me dirijo hacia la zona donde hay más gólems cerca unos de otros, para distraer a tantos como pueda. Mientras corro, me aseguro de mantenerme lo más lejos posible de las murallas, porque lo último que querría es que los ballesteros también se fijaran en mí mientras lidio con los gólems. Dejaré que Illuna se encargue de los guardias de la muralla. Ya tengo suficientes enemigos de los que preocuparme.
+
+              En cuanto me acerco lo suficiente a los gólems, les disparo unos cuantos virotes de ballesta para llamar su atención. Como sospechaba, los virotes no les hacen absolutamente ningún daño, pero al menos parece que he cumplido mi objetivo principal de ofrecer una buena distracción. Los tres gólems que tengo cerca ya han dejado de apuntar a la barrera de Daren y están girando la cabeza hacia mí, preparándose para cargar sus haces de fuego. En cuanto empiezan a dispararme, comienzo a correr de forma errática, tratando de ponérselo lo más difícil posible para que predigan mis movimientos.
+
+              Por desgracia, no era lo bastante rápido como para poder evitar tres haces de fuego apuntándome al mismo tiempo, y muy pronto me vi superado por mis enemigos y quedé incinerado en el acto.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Dispositivo de estadísticas bloqueado - comprobación fallida ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: agility < 4 AND b3_ch1_unlock <> 2
+        texts:
+          - source: scene_text
+            paragraph: 40
+            text: |-
+              "Iré a distraer a algunos de los gólems", digo. "Ustedes intenten acercarse mientras tanto a la entrada de la ciudad. Me reuniré con ustedes cuando estén en las puertas."
+
+              Saco la ballesta de la mochila, salgo disparado fuera de la barrera de Daren y luego me dirijo hacia la zona donde hay más gólems cerca unos de otros, para distraer a tantos como pueda. Mientras corro, me aseguro de mantenerme lo más lejos posible de las murallas, porque lo último que querría es que los ballesteros también se fijaran en mí mientras lidio con los gólems. Dejaré que Illuna se encargue de los guardias de la muralla. Ya tengo suficientes enemigos de los que preocuparme.
+
+              En cuanto me acerco lo suficiente a los gólems, les disparo unos cuantos virotes de ballesta para llamar su atención. Como sospechaba, los virotes no les hacen absolutamente ningún daño, pero al menos parece que he cumplido mi objetivo principal de ofrecer una buena distracción. Los tres gólems que tengo cerca ya han dejado de apuntar a la barrera de Daren y están girando la cabeza hacia mí, preparándose para cargar sus haces de fuego. En cuanto empiezan a dispararme, comienzo a correr de forma errática, tratando de ponérselo lo más difícil posible para que predigan mis movimientos.
+
+              Por desgracia, no era lo bastante rápido como para poder evitar tres haces de fuego apuntándome al mismo tiempo, y muy pronto me vi superado por mis enemigos y quedé incinerado en el acto.
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Comprobación de velocidad fallida - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: agility = 4 AND b3_ch1_unlock <> 2
+        texts:
+          - source: scene_text
+            paragraph: 41
+            text: |-
+              "Iré a distraer a algunos de los gólems", digo. "Ustedes intenten acercarse mientras tanto a la entrada de la ciudad. Me reuniré con ustedes cuando estén en las puertas."
+
+              Saco la ballesta de la mochila, salgo disparado fuera de la barrera de Daren y luego me dirijo hacia la zona donde hay más gólems cerca unos de otros, para distraer a tantos como pueda. Mientras corro, me aseguro de mantenerme lo más lejos posible de las murallas, porque lo último que querría es que los ballesteros también se fijaran en mí mientras lidio con los gólems. Dejaré que Illuna se encargue de los guardias de la muralla. Ya tengo suficientes enemigos de los que preocuparme.
+
+              En cuanto me acerco lo suficiente a los gólems, les disparo unos cuantos virotes de ballesta para llamar su atención. Como sospechaba, los virotes no les hacen absolutamente ningún daño, pero al menos parece que he cumplido mi objetivo principal de ofrecer una buena distracción. Los tres gólems que tengo cerca ya han dejado de apuntar a la barrera de Daren y están girando la cabeza hacia mí, preparándose para cargar sus haces de fuego. En cuanto empiezan a dispararme, comienzo a correr de forma errática, tratando de ponérselo lo más difícil posible para que predigan mis movimientos.
+          - source: scene_text_2
+            paragraph: 32
+            text: |-
+              Evitar tres haces de fuego que me apuntan al mismo tiempo no es en absoluto tarea fácil, pero gracias a mi increíble velocidad siempre voy un paso por delante de mis enemigos, incluso cuando las probabilidades claramente no están a mi favor. Por suerte para mí, no tengo que aguantar mucho tiempo, porque Hadrik pronto consigue acabar con el gólem de las puertas y luego viene hacia mi lado para enfrentarse a uno de mis oponentes en combate, obligándolo a cancelar su ataque de haz y a luchar de forma más defensiva.
+
+              Después de pasar un poco más de tiempo corriendo de un lado a otro, miro hacia la barrera de Daren y me alegra ver que mis esfuerzos no fueron en vano, y que aunque Daren, Kate, Melindra y Leila siguen siendo atacados por uno de los haces de fuego, aun así han logrado acercarse bastante a la puerta mientras yo entretenía a estos gólems. Además, dado que Illuna también ha conseguido ocuparse mientras tanto de algunos de los guardias de la muralla, Kate ha decidido que ya puede deshacer algunas de sus plataformas defensivas de hielo, y ahora se concentra en reforzar un enorme carámbano en el cielo, asegurándose de que el proyectil sea lo bastante fuerte como para atravesar la armadura anti-magia de los gólems.
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              Una vez terminados los preparativos, Kate dispara su carámbano gigante con una fuerza increíble, provocando una explosión de aire detrás de él y atravesando de lado a lado la cabeza de uno de los gólems de mi lado, que cae de inmediato al suelo con un fuerte estruendo. Al mismo tiempo, Hadrik también remata al gólem con el que estaba luchando, y ahora pasa al cuarto.
+
+              Por desgracia, mientras estábamos ocupados con los pocos gólems que estaban lo bastante cerca como para enfrentarse a nosotros de inmediato, alrededor de una docena más de grandes gólems que oyeron el alboroto han ido acercándose lentamente, y pronto estarán dentro del alcance de sus ataques de haz. Mientras Hadrik atrae la atención de uno de los dos gólems que están lo bastante cerca para atacarnos, y el último gólem que estaba atacando la barrera de Daren empieza a apuntar en cambio a Illuna y a Flower, Daren y los demás salen rápidamente de la barrera y corren hacia las puertas, y nos llaman en cuanto las alcanzan.
+
+              "¡Por aquí!", nos grita Daren. "¡Dejen a los gólems y vengan! ¡Rápido, antes de que lleguen los otros!"
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de velocidad exitosa - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02a_rubble
+                condition: is_dead = 0
   - name: b3_ch02a_strength
-    texts:
-      - source: scene_text
-        paragraph: 30
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch1_unlock = 2
+        texts:
+          - source: scene_text
+            paragraph: 42
+            text: |-
+              "Intentaré encargarme de uno de los gólems", digo. "Cuanto antes los eliminemos, mejor."
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Espera, ¿piensas atacar tú solo a uno de ellos?...", dice Daren. "De verdad espero que no estés hablando en serio cuand--"
+
+              No dejo que Daren termine la frase y levanto los brazos en el aire para indicarle a las corrientes que quiero subir al cielo. Luego salgo volando de la barrera, intentando ascender todo lo posible para no convertirme en objetivo ni de los gólems ni de los guardias de la muralla. Le echo un buen vistazo al campo de batalla y decido que mi mejor opción es atacar al gólem que está más aislado de los cuatro que están atacando la barrera de Daren.
+
+              Me lanzo en picado desde el cielo lo más rápido que puedo, poniendo ambos puños delante de mí para indicarle a mis corrientes que sigan acelerando. Entonces, cuando llego lo bastante cerca del gólem al que he elegido, concentro toda mi fuerza en el golpe y le pego directamente en la cara antes de que tenga oportunidad de reaccionar.
+
+              Por desgracia para mí, golpear la dura superficie metálica del gólem con mi frágil brazo tuvo sobre él más o menos el mismo efecto que si lo hubiera golpeado con una ramita. Intentando ignorar el dolor del puño, salgo inmediatamente volando hacia atrás para retirarme, pero el gólem gira enseguida su haz de fuego hacia mí, y estoy demasiado cerca como para poder esquivarlo de ningún modo. Solo tarda un segundo en incinerarme por completo y convertirme en cenizas.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Dispositivo de estadísticas bloqueado - comprobación fallida ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: toughness < 4 AND b3_ch1_unlock <> 2
+        texts:
+          - source: scene_text
+            paragraph: 42
+            text: |-
+              "Intentaré encargarme de uno de los gólems", digo. "Cuanto antes los eliminemos, mejor."
+
+              "Espera, ¿piensas atacar tú solo a uno de ellos?...", dice Daren. "De verdad espero que no estés hablando en serio cuand--"
+
+              No dejo que Daren termine la frase y levanto los brazos en el aire para indicarle a las corrientes que quiero subir al cielo. Luego salgo volando de la barrera, intentando ascender todo lo posible para no convertirme en objetivo ni de los gólems ni de los guardias de la muralla. Le echo un buen vistazo al campo de batalla y decido que mi mejor opción es atacar al gólem que está más aislado de los cuatro que están atacando la barrera de Daren.
+
+              Me lanzo en picado desde el cielo lo más rápido que puedo, poniendo ambos puños delante de mí para indicarle a mis corrientes que sigan acelerando. Entonces, cuando llego lo bastante cerca del gólem al que he elegido, concentro toda mi fuerza en el golpe y le pego directamente en la cara antes de que tenga oportunidad de reaccionar.
+
+              Por desgracia para mí, golpear la dura superficie metálica del gólem con mi frágil brazo tuvo sobre él más o menos el mismo efecto que si lo hubiera golpeado con una ramita. Intentando ignorar el dolor del puño, salgo inmediatamente volando hacia atrás para retirarme, pero el gólem gira enseguida su haz de fuego hacia mí, y estoy demasiado cerca como para poder esquivarlo de ningún modo. Solo tarda un segundo en incinerarme por completo y convertirme en cenizas.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de resistencia fallida - nivel 4 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: toughness = 4 AND strength < 4 AND b3_ch1_unlock <> 2
+        texts:
+          - source: scene_text
+            paragraph: 43
+            text: |-
+              "Intentaré encargarme de uno de los gólems", digo. "Cuanto antes los eliminemos, mejor."
+
+              "Espera, ¿piensas atacar tú solo a uno de ellos?...", dice Daren. "De verdad espero que no estés hablando en serio cuand--"
+
+              No dejo que Daren termine la frase y levanto los brazos en el aire para indicarle a las corrientes que quiero subir al cielo. Luego salgo volando de la barrera, intentando ascender todo lo posible para no convertirme en objetivo ni de los gólems ni de los guardias de la muralla. Le echo un buen vistazo al campo de batalla y decido que mi mejor opción es atacar al gólem que está más aislado de los cuatro que están atacando la barrera de Daren.
+
+              Me lanzo en picado desde el cielo lo más rápido que puedo, poniendo ambos puños delante de mí para indicarle a mis corrientes que sigan acelerando. Entonces, cuando llego lo bastante cerca del gólem al que he elegido, concentro toda mi fuerza en el golpe y le pego directamente en la cara antes de que tenga oportunidad de reaccionar.
+
+              Por desgracia, mi fuerza no basta para mover al gólem, y me veo obligado a salir volando hacia atrás justo después del puñetazo para retirarme. El gólem, sin embargo, gira de inmediato su haz de fuego hacia mí, y estoy demasiado cerca como para poder esquivarlo de ningún modo. Solo tarda un segundo en incinerarme por completo y convertirme en cenizas.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de fuerza fallida - nivel 4 ]'
+              successful_checks:
+                - '[ Comprobación de resistencia exitosa - nivel 4 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: toughness = 4 AND strength = 4 AND b3_ch1_unlock <> 2
+        texts:
+          - source: scene_text
+            paragraph: 44
+            text: |-
+              "Intentaré encargarme de uno de los gólems", digo. "Cuanto antes los eliminemos, mejor."
+
+              "Espera, ¿piensas atacar tú solo a uno de ellos?...", dice Daren. "De verdad espero que no estés hablando en serio cuand--"
+
+              No dejo que Daren termine la frase y levanto los brazos en el aire para indicarle a las corrientes que quiero subir al cielo. Luego salgo volando de la barrera, intentando ascender todo lo posible para no convertirme en objetivo ni de los gólems ni de los guardias de la muralla. Le echo un buen vistazo al campo de batalla y decido que mi mejor opción es atacar al gólem que está más aislado de los cuatro que están atacando la barrera de Daren.
+
+              Me lanzo en picado desde el cielo lo más rápido que puedo, poniendo ambos puños delante de mí para indicarle a mis corrientes que sigan acelerando. Entonces, cuando llego lo bastante cerca del gólem al que he elegido, concentro toda mi fuerza en el golpe y le pego directamente en la cara antes de que tenga oportunidad de reaccionar.
+          - source: scene_text_2
+            paragraph: 33
+            text: |-
+              Mi golpe fue lo bastante potente como para tumbar al gólem de espaldas, aunque por muy poco, y aun así tuve que contener el dolor de golpear esa dura superficie metálica con el puño desnudo. No pierdo ni un segundo: saco la daga, salto sobre la cara del gólem y le clavo el arma en uno de los ojos con toda la fuerza que puedo. El constructo de metal emite unos ruidos muy extraños y no consigue volver a incorporarse, lo que me hace pensar que mis ataques están funcionando, así que saco la daga de la cuenca y también le apuñalo el otro ojo. Viendo que el gólem sigue sin estar muerto, retuerzo la hoja un poco más fuerte por dentro, hasta que mi oponente deja de moverse por completo.
+
+              Cuando me giro para ver qué hacen los demás, noto que Hadrik ya se ha encargado del gólem de las puertas y ahora corre hacia otro de los restantes. Como solo quedan dos gólems en nuestra zona aparte del que está enfrentando Hadrik, decido sacar la ballesta e ir a distraerlos, para darles a Daren, Kate, Leila y Melindra tiempo suficiente para llegar a salvo a las puertas.
+          - source: scene_3
+            paragraph: 12
+            text: |-
+              En cuanto me acerco lo suficiente a los dos gólems, les disparo a ambos con mi ballesta, lo que hace que de inmediato dejen de atacar la barrera de Daren y se concentren en mí. Al ver que ya no están siendo objetivo de ninguno de los haces de fuego, Daren y los demás aprovechan rápidamente esta oportunidad para echar a correr hacia las puertas de la ciudad, mientras Hadrik consigue rematar a otro de los gólems y pasa ahora al cuarto.
+
+              Por desgracia, parece que mientras estábamos ocupados con los pocos gólems que estaban lo bastante cerca como para enfrentarse a nosotros de inmediato, alrededor de una docena más de grandes gólems que oyeron el alboroto han ido acercándose lentamente, y pronto estarán dentro del alcance de sus ataques de haz.
+
+              "¡Por aquí!", nos grita Daren en cuanto él y los demás alcanzan las puertas. "¡Dejen a los gólems y vengan! ¡Rápido, antes de que lleguen los otros!"
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de resistencia exitosa - nivel 4 ]'
+                - '[ Comprobación de fuerza exitosa - nivel 4 ]'
+              is_dead: 0
+              ac_b3_ch2_metal: 1
+            achievement:
+              id: ac_b3_ch2_metal
+              title: Matador de gólems de metal
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02a_rubble
+                condition: is_dead = 0
   - name: b3_ch02a_rubble
     texts:
       - source: scene_text
-        paragraph: 31
-        text: |
-          Traducción en progreso.
+        paragraph: 45
+        text: |-
+          Illuna, Hadrik y yo hacemos exactamente lo que dice Daren, y nos dirigimos hacia las puertas tan rápido como podemos. Casi inmediatamente después de pasar junto a las grandes puertas destrozadas, los dos gólems que siguen cerca de nosotros disparan sus haces al mismo tiempo, mientras Daren prepara su escudo y crea otra barrera. Los dos haces de fuego chocan entre sí y crean otra gran explosión, haciendo que algunos escombros salgan disparados hacia nosotros, pero Hadrik se encarga enseguida de ellos con unos cuantos puñetazos.
 
-          El texto en Español para el Libro 3, Capítulo 2 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-chapter_effects: []
+          A medida que seguimos adentrándonos en la ciudad, los gólems parecen haber abandonado la persecución, probablemente para no arriesgarse a causar demasiados daños colaterales a los habitantes del pueblo con sus devastadores ataques.
+
+          "¿Y ahora qué?", nos pregunta Kate, mientras pasamos junto a varios grupos de ciudadanos asustados que aparentemente se acercaron a las puertas para ver de qué iba todo aquel alboroto. "¿Buscamos un sitio donde escondernos o seguimos avanzando?"
+
+          "Teniendo en cuenta que ya hemos llegado hasta aquí, probablemente sea mejor idea ir directamente al palacio", dice Daren. "Cuanto más esperemos, más tiempo les damos para organizarse. Melindra, ¿sabes en qué dirección general debería estar el palacio?"
+
+          "Sí", dice Melindra. "Si el trazado de la ciudad sigue siendo el mismo que antes de que me desterraran, la ruta más corta sería pasar por la plaza Perrelion. Síganme."
+      - source: scene_text_2
+        paragraph: 34
+        text: |-
+          Melindra toma la delantera y todos vamos tras ella, mientras cada vez más ciudadanos curiosos salen de sus casas y se dirigen hacia la entrada de la ciudad para ver qué ha pasado. En cambio, la gente que vuela en los vehículos metálicos sobre la ciudad parece ir a lo suyo, y no le presta ninguna atención a lo que ocurre debajo.
+
+          "Leila, ¿tienes alguna forma de comunicarte con tu padre?", dice Daren. "¿Puedes hacerle saber que estamos aquí?"
+
+          "No...", escribe Leila. "No llevaba ningún objeto encima cuando escapábamos juntos de Thilias, así que no puedo llamarlo por un transceptor. Antes de que nos separáramos, me prometió que cuando llegara a Ollendor encontraría la manera de contactar conmigo pasara lo que pasara, pero no sé cuánto tardará en enterarse de que he llegado."
+
+          "No te preocupes", dice Daren. "Con todo el alboroto que vamos a montar dentro de la ciudad en breve, estoy seguro de que terminará encontrándonos."
+
+          "¡Esperemos que tengas razón!", escribe Leila.
+
+          A medida que avanzamos por la ciudad, me doy cuenta de que la mayoría de las casas tienen un estilo arquitectónico muy extraño, distinto al de la mayoría de los edificios normales que esperarías ver en una ciudad típica. Algunas casas tienen más de cuatro pisos y están construidas con forma ovalada. Algunas están hechas enteramente de vidrio. Otras son de metal, recubiertas de polvo de seredium. Es bastante difícil encontrar dos casas que se vean exactamente igual, y varios de los edificios sinceramente parecen diseñados por alguien que simplemente estaba divirtiéndose.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02b_weird
+              storyboard_controls: Jump to frame "Book 3 Chapter 2 b"

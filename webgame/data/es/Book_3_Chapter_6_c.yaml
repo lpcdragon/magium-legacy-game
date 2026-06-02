@@ -1,110 +1,1017 @@
 scenes:
   - name: b3_ch06c_explanation
-    texts:
-      - source: scene_text
-        paragraph: 1
-        text: |
-          Traducción en progreso.
+    effects:
+      - set:
+          ac_b3_ch6_average: 1
+        achievement:
+          id: ac_b3_ch6_average
+          title: Promedio es mi segundo nombre
+        condition: strength = 0 AND agility = 0 AND toughness = 0 AND reflexes = 0 AND hearing = 0 AND perception = 0 AND ancient_languages = 0 AND combat_technique = 0 AND premonition = 0 AND bluff = 0 AND magical_sense = 0 AND aura_hardening = 0
+    routes:
+      - condition: b3_ch6_kelrim <> 1 AND b3_ch6_plan <> 3
+        texts:
+          - source: scene_text
+            paragraph: 2
+            text: |-
+              "También deberíamos volver a la sala de espera", nos dice Daren. "Hasta luego, Barry. ¡Y ​​gracias por la ayuda!"
 
-          El texto en Español para el Libro 3, Capítulo 6 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "En cualquier momento..." dice el tipo del teletransportador, y luego todos salimos de la sala del teletransportador para dirigirnos al túnel que conduce a la base rebelde.
+
+              Mientras caminamos, Daren comienza a curar a todos los que resultaron heridos durante la batalla.
+
+              "Entonces, uhm..." dice Hadrik, mientras Daren está ocupado curando a Leila. "Supongo que les debo a todos una explicación sobre todas esas... cosas que Gontrok dijo sobre mí mientras estábamos peleando."
+          - source: scene_text_2
+            paragraph: 2
+            text: |-
+              "Sólo si estás listo para hablar de ello", le dice Daren.
+
+              "Sí..." dice Hadrik, mientras mira hacia un lado por un segundo. "Sí, creo que estoy listo".
+
+              "Oh, ¿entonces finalmente les vas a contar sobre tu ritual con la aldea enana y las rocas?" Arraka dice, de repente. "Ya era hora, si me preguntas. Guardar tu pequeño secreto realmente estaba empezando a convertirse en más problemas de lo que valía la pena".
+
+              "¿Lo sabías?...", le pregunta Hadrik, estupefacto.
+
+              "¡Por supuesto que lo sabía!" dice Arraka. "¿En serio pensaste que yo me saltaría tu ritual, de todas las personas? Tu juicio fue obviamente el primero que visité. Para que lo sepas, ahora me debes dos cervezas, enano. Una por salvarte del capitán ogro esa vez, y otra por no revelar la verdad sobre Gontrok y la aldea de los enanos. La próxima vez que salga de este amuleto, espero que pagues".
+
+              "Sí", dice Hadrik, con media sonrisa. "¡Me aseguraré de guardar algunas botellas de cerveza enana para la ocasión!"
+
+              Hace una pausa.
+
+              "Ejem", tose Hadrik nerviosamente, mientras se gira hacia el resto de nosotros. "Entonces, ¿por dónde debería empezar?... ¿Recuerdan esa vez que mencioné sin pensarlo que yo era una especie de oveja negra de mi familia?"
+
+              "¡Sí, lo recuerdo!" Flower dice. "¡Dijiste que las razones por las que no le agradabas a tu familia no tenían nada que ver con tu tamaño!"
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              "Exactamente", dice Hadrik. "Bueno, resulta que la razón por la que mi familia me odia es bastante simple, y está directamente relacionada con los eventos que me vi obligado a revivir durante la prueba del Dios del Tiempo. Para empezar desde el principio... Gontrok y algunos otros amigos comunes nuestros me despertaron una noche y me contaron sobre cierta aldea enana que supuestamente estaba siendo utilizada como base temporal para una fuerza de ataque enana que iba a atacar nuestro campamento en los próximos días. Esto fue hace más de cincuenta años, y estábamos en una guerra bastante desagradable con los enanos en ese momento, así que realmente no tenía ninguna razón para sospechar que me estarían mintiendo sobre esto."
+
+              "Entonces, ¿no era una base militar?" pregunta Daren. "¿Era sólo un pueblo normal?"
+
+              "Sí", dice Hadrik. "La aldea en cuestión no era más que un pequeño pueblo enano normal que no tenía soldados en absoluto. Probablemente debería haberme dado cuenta de esto cuando noté que ni siquiera tenían vigías apostados durante la noche, pero me engañé pensando que estaban muy bien escondidos y que podían saltar de los arbustos para atacarnos en cualquier momento. Gontrok me convenció de que necesitábamos tomar la iniciativa antes de que tuvieran la oportunidad de atacar primero, y me llevó a la cima de un acantilado que supervisa el valle en el que se encuentra el pueblo. La razón por la que nos llevó hasta allí fue por algunas rocas enormes que estaban colocadas justo en la cima, que eran demasiado grandes para ser movidas por alguien que no fuera gigantes como nosotros. Él quería que los empujáramos a todos por el acantilado simultáneamente, para que rodaran hasta el pueblo y destruyeran las casas antes de que cualquiera de los aldeanos tuviera tiempo de reaccionar."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch06c_explanation2
+      - condition: b3_ch6_plan = 3
+        texts:
+          - source: scene_text
+            paragraph: 3
+            text: |-
+              "Chicos, tengo algunas tareas domésticas que hacer, así que cerraré el transceptor ahora", nos dice Rose. "Trata de no meterte en problemas por el resto del día, ¿vale? No creo que pueda congelar el tiempo más hasta que descanse un poco".
+
+              "Intentaremos ser más cuidadosos a partir de ahora", le digo a Rose. "¡Adiós y gracias de nuevo!"
+
+              Una vez que Rose cierra el transceptor, Daren comienza a curar a todos los que resultaron heridos durante la batalla, mientras avanzamos con paso firme hacia la sala de espera.
+
+              "Entonces, uhm..." dice Hadrik, mientras Daren está ocupado curando a Leila. "Supongo que les debo a todos una explicación sobre todas esas... cosas que Gontrok dijo sobre mí mientras estábamos peleando."
+          - source: scene_text_2
+            paragraph: 2
+            text: |-
+              "Sólo si estás listo para hablar de ello", le dice Daren.
+
+              "Sí..." dice Hadrik, mientras mira hacia un lado por un segundo. "Sí, creo que estoy listo".
+
+              "Oh, ¿entonces finalmente les vas a contar sobre tu ritual con la aldea enana y las rocas?" Arraka dice, de repente. "Ya era hora, si me preguntas. Guardar tu pequeño secreto realmente estaba empezando a convertirse en más problemas de lo que valía la pena".
+
+              "¿Lo sabías?...", le pregunta Hadrik, estupefacto.
+
+              "¡Por supuesto que lo sabía!" dice Arraka. "¿En serio pensaste que yo me saltaría tu ritual, de todas las personas? Tu juicio fue obviamente el primero que visité. Para que lo sepas, ahora me debes dos cervezas, enano. Una por salvarte del capitán ogro esa vez, y otra por no revelar la verdad sobre Gontrok y la aldea de los enanos. La próxima vez que salga de este amuleto, espero que pagues".
+
+              "Sí", dice Hadrik, con media sonrisa. "¡Me aseguraré de guardar algunas botellas de cerveza enana para la ocasión!"
+
+              Hace una pausa.
+
+              "Ejem", tose Hadrik nerviosamente, mientras se gira hacia el resto de nosotros. "Entonces, ¿por dónde debería empezar?... ¿Recuerdan esa vez que mencioné sin pensarlo que yo era una especie de oveja negra de mi familia?"
+
+              "¡Sí, lo recuerdo!" Flower dice. "¡Dijiste que las razones por las que no le agradabas a tu familia no tenían nada que ver con tu tamaño!"
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              "Exactamente", dice Hadrik. "Bueno, resulta que la razón por la que mi familia me odia es bastante simple, y está directamente relacionada con los eventos que me vi obligado a revivir durante la prueba del Dios del Tiempo. Para empezar desde el principio... Gontrok y algunos otros amigos comunes nuestros me despertaron una noche y me contaron sobre cierta aldea enana que supuestamente estaba siendo utilizada como base temporal para una fuerza de ataque enana que iba a atacar nuestro campamento en los próximos días. Esto fue hace más de cincuenta años, y estábamos en una guerra bastante desagradable con los enanos en ese momento, así que realmente no tenía ninguna razón para sospechar que me estarían mintiendo sobre esto."
+
+              "Entonces, ¿no era una base militar?" pregunta Daren. "¿Era sólo un pueblo normal?"
+
+              "Sí", dice Hadrik. "La aldea en cuestión no era más que un pequeño pueblo enano normal que no tenía soldados en absoluto. Probablemente debería haberme dado cuenta de esto cuando noté que ni siquiera tenían vigías apostados durante la noche, pero me engañé pensando que estaban muy bien escondidos y que podían saltar de los arbustos para atacarnos en cualquier momento. Gontrok me convenció de que necesitábamos tomar la iniciativa antes de que tuvieran la oportunidad de atacar primero, y me llevó a la cima de un acantilado que supervisa el valle en el que se encuentra el pueblo. La razón por la que nos llevó hasta allí fue por algunas rocas enormes que estaban colocadas justo en la cima, que eran demasiado grandes para ser movidas por alguien que no fuera gigantes como nosotros. Él quería que los empujáramos a todos por el acantilado simultáneamente, para que rodaran hasta el pueblo y destruyeran las casas antes de que cualquiera de los aldeanos tuviera tiempo de reaccionar."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch06c_explanation2
+      - condition: b3_ch6_kelrim = 1
+        texts:
+          - source: scene_text
+            paragraph: 4
+            text: |-
+              "Kate, quería preguntarte", dice Melindra, mientras entramos al túnel. "¿Cómo lograste deshacer la técnica del aura del capitán antes? ¿Has estado practicando más sin decírmelo?"
+
+              "No sin decírtelo", dice Kate. "Estuviste allí cuando pegué un carámbano a mi mano con mi aura esta mañana, ¿recuerdas?"
+
+              "¡Oh, claro, tú hiciste eso!" Melindra dice. "Casi lo olvido. ¿Pero era eso realmente todo lo que necesitabas para descubrir cómo cancelar la técnica del capitán?"
+
+              "No, pero Daren mencionó ayer que para desenredar un aura, debes imaginarte a ti mismo desatando nudos", dice Kate. "Me tomó un tiempo entender qué quería decir exactamente con eso, pero afortunadamente logré entenderlo antes de que el capitán nos matara a todos".
+
+              "Vaya", dice Daren. "¿Entendiste lo que tenías que hacer sólo con eso? ¡Estoy impresionado!"
+
+              "No fue fácil", dice Kate. "Con suerte, la próxima vez que hables sobre conceptos abstractos como este se te ocurrirán algunas metáforas mejores".
+
+              "¡Haré lo mejor que pueda!" dice Daren.
+
+              Luego comienza a curar a todos los que resultaron heridos durante la batalla, mientras continuamos avanzando constantemente hacia la sala de espera.
+
+              "Entonces, uhm..." dice Hadrik, mientras Daren está ocupado curando a Leila. "Supongo que les debo a todos una explicación sobre todas esas... cosas que Gontrok dijo sobre mí mientras estábamos peleando."
+          - source: scene_text_2
+            paragraph: 2
+            text: |-
+              "Sólo si estás listo para hablar de ello", le dice Daren.
+
+              "Sí..." dice Hadrik, mientras mira hacia un lado por un segundo. "Sí, creo que estoy listo".
+
+              "Oh, ¿entonces finalmente les vas a contar sobre tu ritual con la aldea enana y las rocas?" Arraka dice, de repente. "Ya era hora, si me preguntas. Guardar tu pequeño secreto realmente estaba empezando a convertirse en más problemas de lo que valía la pena".
+
+              "¿Lo sabías?...", le pregunta Hadrik, estupefacto.
+
+              "¡Por supuesto que lo sabía!" dice Arraka. "¿En serio pensaste que yo me saltaría tu ritual, de todas las personas? Tu juicio fue obviamente el primero que visité. Para que lo sepas, ahora me debes dos cervezas, enano. Una por salvarte del capitán ogro esa vez, y otra por no revelar la verdad sobre Gontrok y la aldea de los enanos. La próxima vez que salga de este amuleto, espero que pagues".
+
+              "Sí", dice Hadrik, con media sonrisa. "¡Me aseguraré de guardar algunas botellas de cerveza enana para la ocasión!"
+
+              Hace una pausa.
+
+              "Ejem", tose Hadrik nerviosamente, mientras se gira hacia el resto de nosotros. "Entonces, ¿por dónde debería empezar?... ¿Recuerdan esa vez que mencioné sin pensarlo que yo era una especie de oveja negra de mi familia?"
+
+              "¡Sí, lo recuerdo!" Flower dice. "¡Dijiste que las razones por las que no le agradabas a tu familia no tenían nada que ver con tu tamaño!"
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              "Exactamente", dice Hadrik. "Bueno, resulta que la razón por la que mi familia me odia es bastante simple, y está directamente relacionada con los eventos que me vi obligado a revivir durante la prueba del Dios del Tiempo. Para empezar desde el principio... Gontrok y algunos otros amigos comunes nuestros me despertaron una noche y me contaron sobre cierta aldea enana que supuestamente estaba siendo utilizada como base temporal para una fuerza de ataque enana que iba a atacar nuestro campamento en los próximos días. Esto fue hace más de cincuenta años, y estábamos en una guerra bastante desagradable con los enanos en ese momento, así que realmente no tenía ninguna razón para sospechar que me estarían mintiendo sobre esto."
+
+              "Entonces, ¿no era una base militar?" pregunta Daren. "¿Era sólo un pueblo normal?"
+
+              "Sí", dice Hadrik. "La aldea en cuestión no era más que un pequeño pueblo enano normal que no tenía soldados en absoluto. Probablemente debería haberme dado cuenta de esto cuando noté que ni siquiera tenían vigías apostados durante la noche, pero me engañé pensando que estaban muy bien escondidos y que podían saltar de los arbustos para atacarnos en cualquier momento. Gontrok me convenció de que necesitábamos tomar la iniciativa antes de que tuvieran la oportunidad de atacar primero, y me llevó a la cima de un acantilado que supervisa el valle en el que se encuentra el pueblo. La razón por la que nos llevó hasta allí fue por algunas rocas enormes que estaban colocadas justo en la cima, que eran demasiado grandes para ser movidas por alguien que no fuera gigantes como nosotros. Él quería que los empujáramos a todos por el acantilado simultáneamente, para que rodaran hasta el pueblo y destruyeran las casas antes de que cualquiera de los aldeanos tuviera tiempo de reaccionar."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch06c_explanation2
   - name: b3_ch06c_explanation2
     texts:
       - source: scene_text
-        paragraph: 2
-        text: |
-          Traducción en progreso.
+        paragraph: 5
+        text: |-
+          "Así que de eso se trataba tu ritual", dice Kate, en tono serio.
 
-          El texto en Español para el Libro 3, Capítulo 6 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Sí", dice Hadrik, con voz algo vacilante. "Para completar la prueba, tuve que empujar la roca por ese acantilado como la primera vez, y matar a todas esas personas inocentes otra vez. Obviamente, no lo sabía al principio, y al igual que ustedes, pensé que esta era mi única oportunidad de cambiar mi error del pasado. Me tomó mucho tiempo entender lo que el ritual realmente quería de mí. Me tomó incluso más tiempo darme cuenta de que tenía que recrear todo lo que sucedió, no solo el empuje de la roca, así que en realidad tuve que bajar al pueblo y revisar cada casa en busca de sobrevivientes inexistentes, observando de cerca a cada una de las personas que he matado, incluidas las mujeres y los niños. No es exactamente la mejor experiencia, considerando lo mucho que he estado tratando de olvidar esos rostros después de que han perseguido mis sueños durante años."
+
+          "Dioses míos, eso es horrible...", dice Flower. "Pero... ¿cómo esto te llevó a pelear con tus padres?"
+      - source: scene_text_2
+        paragraph: 3
+        text: |-
+          "Bueno, como puedes imaginar, cuando regresé a nuestro campamento después de este evento, quedé absolutamente devastado", dice Hadrik. "Lo primero que intenté hacer fue ir con el líder de mi campamento para entregarme, junto con mis amigos, por los crímenes de guerra que habíamos cometido. El líder se rió en mi cara, diciéndome que nuestras reglas sobre crímenes de guerra solo se aplicaban a las guerras con otros clanes de gigantes, no a nuestra guerra en curso con los enanos. También me dijo que esos niños probablemente habrían crecido para convertirse en soldados más tarde de todos modos, así que era mejor eliminarlos cuando todavía eran jóvenes. Esa fue la primera vez que me di cuenta Qué diferente trataría nuestra gente el concepto de honor cuando se trata de razas distintas a los gigantes. Obviamente, no podía dejar esto pasar, y traté de hacer justicia para esos enanos muertos por todos los medios a mi disposición. Los otros gigantes pensaron que estaba bromeando al principio, pero cuando entendieron que hablaba en serio, comenzaron a tratarme con mucha más frialdad, llamándome simpatizante de los enanos y diciendo que ya no tenía derecho a llamarme guerrero después de ponerme del lado de los nuestros. enemigo."
+
+          "¿Es por eso que Gontrok dijo que tus padres creen que has perdido tu honor?" pregunta Daren.
+      - source: scene_3
+        paragraph: 3
+        text: |-
+          "No sólo por esto, sino que fue parte de la razón, sí", dice Hadrik. "La otra parte de la razón fue el hecho de que cuando me di cuenta de que no podía obtener justicia para los enanos muertos quedándome con mi clan, decidí ir a un exilio autoimpuesto, transformándome en un enano para poder infiltrarme en las tierras de los enanos y localizar a los familiares restantes de los civiles inocentes que maté en esa aldea. Obviamente, dejar el clan por una razón como esta garantizaría que ya no sería bienvenido si alguna vez decidiera regresar. No me importaba, porque lo único que quería era hacer las cosas bien."
+
+          "¿Al final lograste encontrar a alguno de esos familiares?" dice Kate.
+
+          "Lo hice", dice Hadrik. "Resultó que algunos de los enanos que maté esa noche solo estaban visitando la aldea, y dejaron a sus hijos atrás, en sus propios pueblos. Cuando me enteré de esto, me encargué de criar a esos niños hasta que alcanzaran la mayoría de edad, y también ayudé a algunos otros niños que habían quedado huérfanos debido a la guerra, a lo largo de los años. Finalmente, la guerra entre los gigantes y los enanos terminó, y los niños a los que ayudé habían crecido, ahora tenían sus propios trabajos, esposas y hijos, pero ya no tenía un lugar al que llamar hogar en la nación gigante, así que decidí permanecer en las tierras de los enanos y continuar mi vida transformado en un enano".
+
+          "¿Esos enanos nunca descubrieron que eras un gigante?" Melindra dice.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch06c_explanation3
   - name: b3_ch06c_explanation3
     texts:
       - source: scene_text
-        paragraph: 3
-        text: |
-          Traducción en progreso.
-
-          El texto en Español para el Libro 3, Capítulo 6 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch06c_drink
-    texts:
-      - source: scene_text
+        paragraph: 6
+        text: '"La mayoría de ellos se enteraron en un momento u otro", dice Hadrik, "pero para entonces yo ya había vivido con ellos durante mucho tiempo, por lo que ya no les importaba mucho. Después de pasar tanto tiempo en las tierras de los enanos, comencé a hablar, actuar y beber como cualquier otro enano, por lo que la mayoría de ellos no vieron mucha diferencia para empezar. Sin embargo, lo único que todavía anhelaba era luchar. Como gigante, estaba prácticamente en mi sangre, y me había cansado un poco de tener que contenerme durante las peleas en las tabernas para no matar a nadie por accidente. Es por eso que eventualmente comencé a emprender aventuras por todo el mundo, para finalmente poder encontrar algunos adversarios que pudieran brindarme un verdadero desafío. Siempre terminaría regresando a las tierras de los enanos después de un tiempo, e iría a beber un poco más a sus tabernas, pero incluso después de todo este tiempo, todavía nunca tuve las agallas para decirles cuál fue mi razón inicial para comenzar a cambiar de forma como enano. Tal vez algún día les cuente sobre esa aldea enana. Tal vez algún día..."'
+      - source: scene_text_2
         paragraph: 4
-        text: |
-          Traducción en progreso.
+        text: |-
+          Cuando Hadrik termina su historia, me doy cuenta de que en algún momento todos dejamos de movernos y simplemente estábamos parados en círculo alrededor de Hadrik, escuchando atentamente lo que tenía que decir.
 
-          El texto en Español para el Libro 3, Capítulo 6 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Hadrik", dice Daren, mientras pone su mano sobre su hombro. "¿Podrías hacerme un favor y servirnos dos vasos de cerveza enana? Dos vasos más pequeños, quiero decir. Como los que usaste para el cumpleaños de Flower. No quiero emborracharme demasiado para poder concentrarme en mis hechizos curativos". 
+
+          "¡¿Acabas de ofrecerte a beber conmigo... durante el día?!" pregunta Hadrik, aparentemente en estado de shock total. "¡Pero nunca bebes durante el día!"
+      - source: scene_3
+        paragraph: 4
+        text: |-
+          "Sí, bueno... pensé que haría una excepción esta vez", dice Daren, "ya que estoy bastante seguro de que realmente te vendría bien un trago ahora mismo".
+
+          Cuando Hadrik entiende lo que quiere decir Daren, sonríe y luego saca una de sus botellas de cerveza enana de su mochila.
+
+          "Tienes razón", dice Hadrik. "Realmente me vendría bien un trago. Toma, sostén esta botella por un segundo, mientras saco dos vasos. ¿O debería sacar tres? Barry, ¿tienes ganas de unirte?"
+    choices:
+      - position: 1
+        text: Bebe un vaso de cerveza enana con Daren y Hadrik.
+        effects:
+          - set:
+              current_scene: b3_ch06c_drink
+              b3_ch6_drink: 1
+      - position: 2
+        text: No bebas con ellos.
+        effects:
+          - set:
+              current_scene: b3_ch06c_drink
+              b3_ch6_drink: 0
+  - name: b3_ch06c_drink
+    routes:
+      - condition: b3_ch6_drink = 1
+        texts:
+          - source: scene_text
+            paragraph: 7
+            text: |-
+              "Claro, beberé un vaso", digo.
+
+              "Perfecto", dice Hadrik, mientras nos entrega los vasos y luego comienza a llenarlos con cerveza. "En ese caso, brindemos por nuestra contundente victoria contra los guardias reales. Quiero decir, hubiera sido un poco mejor si lograra eliminar a Gontrok para siempre, pero al menos lo hicimos correr con el rabo entre las piernas. ¡Salud!"
+
+              "¡Salud!" Daren y yo decimos, y luego todos bebemos la cerveza de los vasos pequeños de un trago.
+
+              "Probablemente deberíamos ponernos en marcha ahora", dice Hadrik, mientras guarda los vasos y la botella en su mochila. "Ya hemos hecho esperar bastante a esas personas en la zona de cuarentena".
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              Después de caminar por el túnel por un tiempo, finalmente llegamos a la sala de espera, donde Daren se separa de nosotros y entra al área de cuarentena una vez más. Mientras esperamos que Daren cure a todos los enfermos, Kate continúa su entrenamiento con Melindra en uno de los pasillos vacíos, mientras que Hadrik y Flower también van a hacer sus propios entrenamientos separados en otras áreas más vacías de la base rebelde.
+
+              "Creo que voy a hacerle una visita rápida a mi padre para ver cómo está", me escribe Leila. "¿Quieres venir?"
+
+              "Claro", digo. "¡Dirige el camino!"
+
+              Ambos nos abrimos camino hacia uno de los túneles que salen de la sala de espera y luego comenzamos a dirigirnos hacia el taller del doctor Reidzek a un ritmo relajado.  Mientras caminamos, veo las letras azules de Leila flotando frente a mí, moviéndose a la misma velocidad que nosotros para poder leerlas con claridad.
+
+              "El que nosotros dos caminemos juntos solos a través de este túnel subterráneo nos trae recuerdos, ¿no?" Escribe Leila con una sonrisa. "¡Casi parece como si estuviéramos de nuevo debajo del área de nuestra división en Thilias, tratando de sabotear el evento de la arena!"
+            condition: b3_ch6_kelrim != 1 AND b3_ch6_plan != 3
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              Después de caminar por el túnel por un tiempo, finalmente llegamos a la sala de espera, donde Daren se separa de nosotros y va a ingresar al área de cuarentena una vez más, junto con Kelrim. Mientras esperamos que Daren cure a todos los enfermos, Kate continúa su entrenamiento con Melindra en uno de los pasillos vacíos, mientras que Hadrik y Flower también van a hacer sus propios entrenamientos separados en otras áreas más vacías de la base rebelde.
+
+              "Creo que voy a hacerle una visita rápida a mi padre para ver cómo está", me escribe Leila. "¿Quieres venir?"
+
+              "Claro", digo. "¡Dirige el camino!"
+
+              Ambos nos abrimos camino hacia uno de los túneles que salen de la sala de espera y luego comenzamos a dirigirnos hacia el taller del doctor Reidzek a un ritmo relajado.  Mientras caminamos, veo las letras azules de Leila flotando frente a mí, moviéndose a la misma velocidad que nosotros para poder leerlas con claridad.
+
+              "El que nosotros dos caminemos juntos solos a través de este túnel subterráneo nos trae recuerdos, ¿no?" Escribe Leila con una sonrisa. "¡Casi parece como si estuviéramos de nuevo debajo del área de nuestra división en Thilias, tratando de sabotear el evento de la arena!"
+            condition: b3_ch6_kelrim = 1
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              Después de caminar por el túnel por un tiempo, finalmente llegamos a la sala de espera, donde Daren se separa de nosotros y va a ingresar al área de cuarentena una vez más, junto con Kelrim. Mientras esperamos que Daren cure a todos los enfermos, Kate continúa su entrenamiento con Melindra en uno de los pasillos vacíos, mientras que Hadrik y Flower también van a hacer sus propios entrenamientos separados en otras áreas más vacías de la base rebelde.
+
+              "Creo que voy a hacerle una visita rápida a mi padre para ver cómo está", me escribe Leila. "¿Quieres venir?"
+
+              "Claro", digo. "¡Dirige el camino!"
+
+              Ambos nos abrimos camino hacia uno de los túneles que salen de la sala de espera y luego comenzamos a dirigirnos hacia el taller del doctor Reidzek a un ritmo relajado.  Mientras caminamos, veo las letras azules de Leila flotando frente a mí, moviéndose a la misma velocidad que nosotros para poder leerlas con claridad.
+
+              "El que nosotros dos caminemos juntos solos a través de este túnel subterráneo nos trae recuerdos, ¿no?" Escribe Leila con una sonrisa. "¡Casi parece como si estuviéramos de nuevo debajo del área de nuestra división en Thilias, tratando de sabotear el evento de la arena!"
+            condition: b3_ch6_plan = 3
+          - source: scene_3
+            paragraph: 5
+            text: |-
+              "Sí, supongo que se siente un poco nostálgico", le digo. "Quiero decir, aparte de la parte en la que descubrimos que el dueño de la arena nos había estado espiando a través de las paredes todo el tiempo. Probablemente me habría ido bien sin saber ese detalle".
+
+              "Sí", escribe Leila, "y creo que también podemos tachar 'casi ahogarme en un lago subterráneo' como una actividad que no tengo muchas ganas de repetir en el corto plazo".
+
+              "Wow, casi me olvido de eso..." digo. "Creo que tal vez quieras considerar tomar algunas lecciones de natación en el futuro. Ustedes tienen áreas para nadar en sus ciudades varathianas, ¿verdad?"
+
+              "Lo hacemos", escribe Leila. "Por lo que he oído, también hay algunos de ellos en Ollendor. Tal vez puedas enseñarme tú mismo algún tiempo. ¡Por lo que vi, parecías un nadador bastante bueno!"
+            condition: b3_ch6_kelrim != 1 AND b3_ch6_plan != 3
+          - source: scene_3
+            paragraph: 5
+            text: |-
+              "Sí, supongo que se siente un poco nostálgico", le digo. "Quiero decir, aparte de la parte en la que descubrimos que el dueño de la arena nos había estado espiando a través de las paredes todo el tiempo. Probablemente me habría ido bien sin saber ese detalle".
+
+              "Sí", escribe Leila, "y creo que también podemos tachar 'casi ahogarme en un lago subterráneo' como una actividad que no tengo muchas ganas de repetir en el corto plazo".
+
+              "Wow, casi me olvido de eso..." digo. "Creo que tal vez quieras considerar tomar algunas lecciones de natación en el futuro. Ustedes tienen áreas para nadar en sus ciudades varathianas, ¿verdad?"
+
+              "Lo hacemos", escribe Leila. "Por lo que he oído, también hay algunos de ellos en Ollendor. Tal vez puedas enseñarme tú mismo algún tiempo. ¡Por lo que vi, parecías un nadador bastante bueno!"
+            condition: b3_ch6_kelrim = 1
+          - source: scene_3
+            paragraph: 5
+            text: |-
+              "Sí, supongo que se siente un poco nostálgico", le digo. "Quiero decir, aparte de la parte en la que descubrimos que el dueño de la arena nos había estado espiando a través de las paredes todo el tiempo. Probablemente me habría ido bien sin saber ese detalle".
+
+              "Sí", escribe Leila, "y creo que también podemos tachar 'casi ahogarme en un lago subterráneo' como una actividad que no tengo muchas ganas de repetir en el corto plazo".
+
+              "Wow, casi me olvido de eso..." digo. "Creo que tal vez quieras considerar tomar algunas lecciones de natación en el futuro. Ustedes tienen áreas para nadar en sus ciudades varathianas, ¿verdad?"
+
+              "Lo hacemos", escribe Leila. "Por lo que he oído, también hay algunos de ellos en Ollendor. Tal vez puedas enseñarme tú mismo algún tiempo. ¡Por lo que vi, parecías un nadador bastante bueno!"
+            condition: b3_ch6_plan = 3
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch06c_swimming
+      - condition: b3_ch6_drink = 0
+        texts:
+          - source: scene_text
+            paragraph: 8
+            text: |-
+              "Creo que pasaré, por ahora", digo. "No quiero arriesgarme a emborracharme en caso de que tengamos otra batalla más tarde".
+
+              "Haz lo que quieras", dice Hadrik, mientras le entrega a Daren su vaso y luego comienza a llenarlo con cerveza. "En ese caso, Daren, dedicaré este brindis porque finalmente sales de tu caparazón y te ofreces a beber conmigo a una hora tan temprana. Tal vez no toda esperanza esté perdida, y tú también algún día llegarás a apreciar la querida tradición enana de estar borracho en cualquier momento del día, ¿eh? ¿Qué dices? ¡Jajajaja!"
+
+              "¡Lo deseas!" Daren dice con una sonrisa, mientras los dos chocan sus vasos pequeños y luego ambos beben la cerveza de un trago.
+
+              "Probablemente deberíamos ponernos en marcha ahora", dice Hadrik, mientras guarda los vasos y la botella en su mochila. "Ya hemos hecho esperar bastante a esas personas en la zona de cuarentena".
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              Después de caminar por el túnel por un tiempo, finalmente llegamos a la sala de espera, donde Daren se separa de nosotros y entra al área de cuarentena una vez más. Mientras esperamos que Daren cure a todos los enfermos, Kate continúa su entrenamiento con Melindra en uno de los pasillos vacíos, mientras que Hadrik y Flower también van a hacer sus propios entrenamientos separados en otras áreas más vacías de la base rebelde.
+
+              "Creo que voy a hacerle una visita rápida a mi padre para ver cómo está", me escribe Leila. "¿Quieres venir?"
+
+              "Claro", digo. "¡Dirige el camino!"
+
+              Ambos nos abrimos camino hacia uno de los túneles que salen de la sala de espera y luego comenzamos a dirigirnos hacia el taller del doctor Reidzek a un ritmo relajado.  Mientras caminamos, veo las letras azules de Leila flotando frente a mí, moviéndose a la misma velocidad que nosotros para poder leerlas con claridad.
+
+              "El que nosotros dos caminemos juntos solos a través de este túnel subterráneo nos trae recuerdos, ¿no?" Escribe Leila con una sonrisa. "¡Casi parece como si estuviéramos de nuevo debajo del área de nuestra división en Thilias, tratando de sabotear el evento de la arena!"
+            condition: b3_ch6_kelrim != 1 AND b3_ch6_plan != 3
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              Después de caminar por el túnel por un tiempo, finalmente llegamos a la sala de espera, donde Daren se separa de nosotros y va a ingresar al área de cuarentena una vez más, junto con Kelrim. Mientras esperamos que Daren cure a todos los enfermos, Kate continúa su entrenamiento con Melindra en uno de los pasillos vacíos, mientras que Hadrik y Flower también van a hacer sus propios entrenamientos separados en otras áreas más vacías de la base rebelde.
+
+              "Creo que voy a hacerle una visita rápida a mi padre para ver cómo está", me escribe Leila. "¿Quieres venir?"
+
+              "Claro", digo. "¡Dirige el camino!"
+
+              Ambos nos abrimos camino hacia uno de los túneles que salen de la sala de espera y luego comenzamos a dirigirnos hacia el taller del doctor Reidzek a un ritmo relajado.  Mientras caminamos, veo las letras azules de Leila flotando frente a mí, moviéndose a la misma velocidad que nosotros para poder leerlas con claridad.
+
+              "El que nosotros dos caminemos juntos solos a través de este túnel subterráneo nos trae recuerdos, ¿no?" Escribe Leila con una sonrisa. "¡Casi parece como si estuviéramos de nuevo debajo del área de nuestra división en Thilias, tratando de sabotear el evento de la arena!"
+            condition: b3_ch6_kelrim = 1
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              Después de caminar por el túnel por un tiempo, finalmente llegamos a la sala de espera, donde Daren se separa de nosotros y va a ingresar al área de cuarentena una vez más, junto con Kelrim. Mientras esperamos que Daren cure a todos los enfermos, Kate continúa su entrenamiento con Melindra en uno de los pasillos vacíos, mientras que Hadrik y Flower también van a hacer sus propios entrenamientos separados en otras áreas más vacías de la base rebelde.
+
+              "Creo que voy a hacerle una visita rápida a mi padre para ver cómo está", me escribe Leila. "¿Quieres venir?"
+
+              "Claro", digo. "¡Dirige el camino!"
+
+              Ambos nos abrimos camino hacia uno de los túneles que salen de la sala de espera y luego comenzamos a dirigirnos hacia el taller del doctor Reidzek a un ritmo relajado.  Mientras caminamos, veo las letras azules de Leila flotando frente a mí, moviéndose a la misma velocidad que nosotros para poder leerlas con claridad.
+
+              "El que nosotros dos caminemos juntos solos a través de este túnel subterráneo nos trae recuerdos, ¿no?" Escribe Leila con una sonrisa. "¡Casi parece como si estuviéramos de nuevo debajo del área de nuestra división en Thilias, tratando de sabotear el evento de la arena!"
+            condition: b3_ch6_plan = 3
+          - source: scene_3
+            paragraph: 5
+            text: |-
+              "Sí, supongo que se siente un poco nostálgico", le digo. "Quiero decir, aparte de la parte en la que descubrimos que el dueño de la arena nos había estado espiando a través de las paredes todo el tiempo. Probablemente me habría ido bien sin saber ese detalle".
+
+              "Sí", escribe Leila, "y creo que también podemos tachar 'casi ahogarme en un lago subterráneo' como una actividad que no tengo muchas ganas de repetir en el corto plazo".
+
+              "Wow, casi me olvido de eso..." digo. "Creo que tal vez quieras considerar tomar algunas lecciones de natación en el futuro. Ustedes tienen áreas para nadar en sus ciudades varathianas, ¿verdad?"
+
+              "Lo hacemos", escribe Leila. "Por lo que he oído, también hay algunos de ellos en Ollendor. Tal vez puedas enseñarme tú mismo algún tiempo. ¡Por lo que vi, parecías un nadador bastante bueno!"
+            condition: b3_ch6_kelrim != 1 AND b3_ch6_plan != 3
+          - source: scene_3
+            paragraph: 5
+            text: |-
+              "Sí, supongo que se siente un poco nostálgico", le digo. "Quiero decir, aparte de la parte en la que descubrimos que el dueño de la arena nos había estado espiando a través de las paredes todo el tiempo. Probablemente me habría ido bien sin saber ese detalle".
+
+              "Sí", escribe Leila, "y creo que también podemos tachar 'casi ahogarme en un lago subterráneo' como una actividad que no tengo muchas ganas de repetir en el corto plazo".
+
+              "Wow, casi me olvido de eso..." digo. "Creo que tal vez quieras considerar tomar algunas lecciones de natación en el futuro. Ustedes tienen áreas para nadar en sus ciudades varathianas, ¿verdad?"
+
+              "Lo hacemos", escribe Leila. "Por lo que he oído, también hay algunos de ellos en Ollendor. Tal vez puedas enseñarme tú mismo algún tiempo. ¡Por lo que vi, parecías un nadador bastante bueno!"
+            condition: b3_ch6_kelrim = 1
+          - source: scene_3
+            paragraph: 5
+            text: |-
+              "Sí, supongo que se siente un poco nostálgico", le digo. "Quiero decir, aparte de la parte en la que descubrimos que el dueño de la arena nos había estado espiando a través de las paredes todo el tiempo. Probablemente me habría ido bien sin saber ese detalle".
+
+              "Sí", escribe Leila, "y creo que también podemos tachar 'casi ahogarme en un lago subterráneo' como una actividad que no tengo muchas ganas de repetir en el corto plazo".
+
+              "Wow, casi me olvido de eso..." digo. "Creo que tal vez quieras considerar tomar algunas lecciones de natación en el futuro. Ustedes tienen áreas para nadar en sus ciudades varathianas, ¿verdad?"
+
+              "Lo hacemos", escribe Leila. "Por lo que he oído, también hay algunos de ellos en Ollendor. Tal vez puedas enseñarme tú mismo algún tiempo. ¡Por lo que vi, parecías un nadador bastante bueno!"
+            condition: b3_ch6_plan = 3
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch06c_swimming
   - name: b3_ch06c_swimming
     texts:
       - source: scene_text
-        paragraph: 5
-        text: |
-          Traducción en progreso.
+        paragraph: 9
+        text: |-
+          "En realidad, yo también solía ser bastante malo nadando, hasta que una vez estaba explorando una cueva con un profesor de arqueología y terminamos atrapados dentro", digo. "Para llegar a la única otra salida, necesitábamos nadar a través de una larga sección submarina de la cueva, y como ambos éramos bastante mal nadadores, tuvimos que pasar horas y horas aprendiendo a contener la respiración durante largos períodos de tiempo y a movernos rápido bajo el agua. Lo curioso es que esta fue probablemente la parte más fácil de todas las cosas que tuvimos que hacer para salir de esa cueva".
 
-          El texto en Español para el Libro 3, Capítulo 6 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch06c_shift
-    texts:
-      - source: scene_text
+          "¿Es esta otra de tus historias 'mundanas' de cuando hacías trabajos ocasionales y viajabas por el mundo?" Escribe Leila, con una pequeña sonrisa.
+
+          "Está bien, está bien, lo admito", digo. "Tal vez, en retrospectiva, algunas de estas historias no son tan aburridas como inicialmente pensé. Ahora, ¿quieres escuchar el resto de la historia o no?"
+
+          "Soy toda oídos", escribe Leila, con una sonrisa, mientras seguimos caminando lentamente hacia el taller de su padre.
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          Cuando termino de contarle mi historia a Leila, finalmente llegamos a la puerta del doctor Reidzek y llamamos varias veces para hacerle saber que estamos aquí. Al ver que no responde incluso después de que lo llamo, concluimos que no debe estar en su taller en este momento y decidimos esperarlo aquí.
+
+          Mientras esperamos, Leila y yo nos sentamos en el suelo, de espaldas a la puerta, y comenzamos a intercambiar historias sobre nuestras vidas antes del torneo. Leila me cuenta sobre su vida con su padre después de que ella dejó la baliza y yo le cuento varias cosas que he visto mientras viajaba por el Continente Occidental. 
+
+          Por alguna razón, hablar con Leila de esta manera se siente realmente natural, como si nos conociéramos desde hace mucho tiempo y ahora estuviéramos poniéndonos al día con lo que el otro ha estado haciendo desde la última vez que hablamos. Nuestra conversación fluye sin esfuerzo de un tema a otro, haciéndonos perder la noción del tiempo a medida que ambos nos relajamos cada vez más. 
+
+          "Ha pasado un tiempo desde que tuvimos la oportunidad de simplemente hablar y relajarnos así, ¿no es así?" Escribe Leila, mientras estira perezosamente los brazos sobre su cabeza. "Últimamente, parece que todo lo que hemos estado haciendo durante nuestro tiempo libre es entrenar y más entrenamiento. Los únicos momentos en los que realmente podemos relajarnos un poco son en nuestros turnos de noche".
+      - source: scene_3
         paragraph: 6
-        text: |
-          Traducción en progreso.
+        text: |-
+          "Habla por ti mismo", le digo. "La última vez que tomé un turno de noche con Daren, me hizo pararme en el lugar y girar una y otra vez para poder estudiarme desde todos los ángulos como parte de su entrenamiento de aura. Incluso me hizo pararme sobre un pie mientras me tocaba la nariz con ambas manos. ¡Ni siquiera estoy bromeando!"
 
-          El texto en Español para el Libro 3, Capítulo 6 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          Leila se ríe en silencio.
+
+          "Eso no suena tan mal", escribe. "Al menos no tan malo como esa vez cuando Kate casi me da un ataque al corazón durante uno de nuestros turnos de noche al saltar del suelo de repente y matar algunos pájaros al azar con sus carámbanos porque pensó que un mago enemigo los convocó como exploradores..."
+
+          Ella hace una pausa.
+
+          "Oye, tal vez deberíamos hacer un turno de noche juntas también en algún momento", escribe Leila, "sería un buen cambio de ritmo. Y te prometo que conmigo no tendrás que preocuparte de que te digan que te pares sobre un pie y gires en el lugar... mucho".
+    choices:
+      - position: 1
+        text: Acepta tomar el siguiente turno de noche con Leila.
+        effects:
+          - set:
+              current_scene: b3_ch06c_shift
+              b3_ch6_shift: 1
+      - position: 2
+        text: Dile que estaba planeando trabajar en el siguiente turno de noche con Hadrik para animarlo.
+        effects:
+          - set:
+              current_scene: b3_ch06c_shift
+              b3_ch6_shift: 0
+  - name: b3_ch06c_shift
+    routes:
+      - condition: b3_ch6_shift = 1
+        texts:
+          - source: scene_text
+            paragraph: 10
+            text: |-
+              "Sí, eso no parece una mala idea", digo. "Estoy hablando, por supuesto, de hacer nuestro próximo turno de noche juntos y no de la parte de 'girar sobre una pierna'".
+
+              "Ya lo he descubierto, pero gracias por aclararlo", escribe Leila con una sonrisa. "Entonces... ¿tomaremos el segundo turno esta noche, entonces?"
+
+              "¡Suena bien!" digo.
+
+              "¡Estaré deseando que llegue!" Escribe Leila.
+
+              Después de una breve pausa durante la cual ninguno de los dos dice nada, el escrito de Leila aparece nuevamente frente a mí.
+
+              "Mi padre seguro que está tardando un poco en volver, ¿no?" escribe, ahora pareciendo un poco preocupada.
+
+              "¿Tienes la frecuencia mágica de su transceptor, así que puedo intentar llamarlo?" Le pregunto.
+
+              "No", escribe Leila, mientras niega con la cabeza. "No hay forma de comunicarme con él a través de un transceptor, así que realmente no tenía muchas razones para pedirle su número de frecuencia".
+
+              "Bueno, supongo que podríamos intentar preguntar en la sala de espera si alguien vio adónde fue", digo. "Sólo hay un corredor que conduce desde aquí a la sala de espera, por lo que es casi seguro que deberíamos toparnos con él en nuestro camino hacia allí si regresa".
+
+              "Sí", escribe Leila. "Probablemente deberíamos hacer eso".
+          - source: scene_text_2
+            paragraph: 8
+            text: |-
+              Ambos nos levantamos y comenzamos a caminar nuevamente por el mismo corredor, regresando al lugar de donde vinimos originalmente. Mientras caminamos, no puedo evitar notar que Leila parece un poco ansiosa.
+
+              "¿Crees que mi padre está bien?..." me escribe al cabo de un rato.
+
+              "¡Oye, estoy seguro de que está bien!" Le digo. "Conociéndolo, probablemente fue a arreglar algún aparato que es demasiado grande para volver a trasladarlo a su taller, y por eso no ha regresado todavía".
+
+              "Sí", escribe Leila, como si estuviera tratando de convencerse a sí misma de que todo está bien. "Sí... eso es probablemente lo que pasó."
+
+              Después de unos minutos más, finalmente llegamos a la sala de espera y comenzamos a preguntar a la gente que estaba allí si vieron pasar al doctor Reidzek, pero ninguno parece haberse topado con él últimamente. Mientras interrogamos a todas las personas que están alrededor, vemos a Albert acercándose a nosotros, quien parece haber venido desde la dirección de la sala del trono.
+
+              "¿Doctor Reidzek?..." dice Albert, después de que le hacemos la misma pregunta que le hicimos a todos los demás en la sala. "Creo que fue a enseñar a nuestros magos blancos más jóvenes cómo usar sus dispositivos de curación hace unas horas... Ah, y después de eso recibió una llamada de Barry para que lo ayudara a hacer un mantenimiento regular en el dispositivo de teletransportación. Sin embargo, eso fue hace más de una hora. ¿No ha regresado desde entonces?"
+
+              "No", escribe Leila. "Lo hemos estado esperando todo este tiempo frente a su taller, pero no ha regresado".
+          - source: scene_3
+            paragraph: 7
+            text: |-
+              "Bueno, es posible que esta vez el mantenimiento del teletransportador le esté llevando un poco más de tiempo de lo habitual", dice Albert. "¿Quieres que lo llame?"
+
+              "Sí, por favor", escribe Leila. "Si no es mucha molestia."
+
+              "Está bien", dice Albert, mientras saca su transceptor.
+
+              Luego cambia la frecuencia del transceptor y lo toca una vez, mientras se lo acerca a la boca.
+
+              "Doctor Reidzek, ¿puede oírme?" Dice Albert, pero luego revisa su transceptor nuevamente, mirando su pantalla con mucha atención. "Hmm... Eso es extraño. Su transceptor parece estar cerrado. Sé que hace esto a veces para no perder la concentración mientras trabaja en algo realmente complicado, pero ¿realmente necesitaría concentrarse tanto en arreglar el teletransportador?... Dame un momento. Intentaré llamar a Barry en su lugar".
+
+              Albert cambia la frecuencia del transceptor y lo toca nuevamente, pero una vez más no obtiene ninguna respuesta.
+
+              "Tampoco puedo comunicarme con Barry", dice Albert, visiblemente frustrado. "Está hablando con alguien más en el transceptor. Tendremos que esperar a que termine su conversación antes de que podamos... en realidad, ¿sabes qué? No importa. ¡Oye, Peter! ¿Puedes venir aquí un momento?"
+
+              "Claro", dice Peter, que parece haber entrado recientemente en la sala de espera y ahora se acerca a nosotros. "¿Qué es?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch06c_herbs
+      - condition: b3_ch6_shift = 0
+        texts:
+          - source: scene_text
+            paragraph: 11
+            text: |-
+              "En realidad, estaba planeando tomar el siguiente turno con Hadrik, para animarlo un poco..." digo.
+
+              "No te preocupes", escribe Leila. "Dije 'en algún momento', no 'esta noche'. Podemos tener nuestro turno de noche otro día. ¡Hacerle compañía a tu amigo en su momento de necesidad es definitivamente más importante!"
+
+              "¡Gracias por entender!" digo. "Espero encontrar una manera de animar un poco su estado de ánimo".
+
+              "¡Estoy seguro de que descubrirás algo!" Escribe Leila, sonriendo.
+
+              Después de una breve pausa durante la cual ninguno de los dos dice nada, el escrito de Leila aparece nuevamente frente a mí.
+
+              "Mi padre seguro que está tardando un poco en volver, ¿no?" escribe, ahora pareciendo un poco preocupada.
+
+              "¿Tienes la frecuencia mágica de su transceptor, así que puedo intentar llamarlo?" Le pregunto.
+
+              "No", escribe Leila, mientras niega con la cabeza. "No hay forma de comunicarme con él a través de un transceptor, así que realmente no tenía muchas razones para pedirle su número de frecuencia".
+
+              "Bueno, supongo que podríamos intentar preguntar en la sala de espera si alguien vio adónde fue", digo. "Sólo hay un corredor que conduce desde aquí a la sala de espera, por lo que es casi seguro que deberíamos toparnos con él en nuestro camino hacia allí si regresa".
+
+              "Sí", escribe Leila. "Probablemente deberíamos hacer eso".
+          - source: scene_text_2
+            paragraph: 8
+            text: |-
+              Ambos nos levantamos y comenzamos a caminar nuevamente por el mismo corredor, regresando al lugar de donde vinimos originalmente. Mientras caminamos, no puedo evitar notar que Leila parece un poco ansiosa.
+
+              "¿Crees que mi padre está bien?..." me escribe al cabo de un rato.
+
+              "¡Oye, estoy seguro de que está bien!" Le digo. "Conociéndolo, probablemente fue a arreglar algún aparato que es demasiado grande para volver a trasladarlo a su taller, y por eso no ha regresado todavía".
+
+              "Sí", escribe Leila, como si estuviera tratando de convencerse a sí misma de que todo está bien. "Sí... eso es probablemente lo que pasó."
+
+              Después de unos minutos más, finalmente llegamos a la sala de espera y comenzamos a preguntar a la gente que estaba allí si vieron pasar al doctor Reidzek, pero ninguno parece haberse topado con él últimamente. Mientras interrogamos a todas las personas que están alrededor, vemos a Albert acercándose a nosotros, quien parece haber venido desde la dirección de la sala del trono.
+
+              "¿Doctor Reidzek?..." dice Albert, después de que le hacemos la misma pregunta que le hicimos a todos los demás en la sala. "Creo que fue a enseñar a nuestros magos blancos más jóvenes cómo usar sus dispositivos de curación hace unas horas... Ah, y después de eso recibió una llamada de Barry para que lo ayudara a hacer un mantenimiento regular en el dispositivo de teletransportación. Sin embargo, eso fue hace más de una hora. ¿No ha regresado desde entonces?"
+
+              "No", escribe Leila. "Lo hemos estado esperando todo este tiempo frente a su taller, pero no ha regresado".
+          - source: scene_3
+            paragraph: 7
+            text: |-
+              "Bueno, es posible que esta vez el mantenimiento del teletransportador le esté llevando un poco más de tiempo de lo habitual", dice Albert. "¿Quieres que lo llame?"
+
+              "Sí, por favor", escribe Leila. "Si no es mucha molestia."
+
+              "Está bien", dice Albert, mientras saca su transceptor.
+
+              Luego cambia la frecuencia del transceptor y lo toca una vez, mientras se lo acerca a la boca.
+
+              "Doctor Reidzek, ¿puede oírme?" Dice Albert, pero luego revisa su transceptor nuevamente, mirando su pantalla con mucha atención. "Hmm... Eso es extraño. Su transceptor parece estar cerrado. Sé que hace esto a veces para no perder la concentración mientras trabaja en algo realmente complicado, pero ¿realmente necesitaría concentrarse tanto en arreglar el teletransportador?... Dame un momento. Intentaré llamar a Barry en su lugar".
+
+              Albert cambia la frecuencia del transceptor y lo toca nuevamente, pero una vez más no obtiene ninguna respuesta.
+
+              "Tampoco puedo comunicarme con Barry", dice Albert, visiblemente frustrado. "Está hablando con alguien más en el transceptor. Tendremos que esperar a que termine su conversación antes de que podamos... en realidad, ¿sabes qué? No importa. ¡Oye, Peter! ¿Puedes venir aquí un momento?"
+
+              "Claro", dice Peter, que parece haber entrado recientemente en la sala de espera y ahora se acerca a nosotros. "¿Qué es?"
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch06c_herbs
   - name: b3_ch06c_herbs
     texts:
       - source: scene_text
-        paragraph: 7
-        text: |
-          Traducción en progreso.
+        paragraph: 12
+        text: |-
+          "El doctor Reidzek ha estado desaparecido por un tiempo, y lo último que sabemos sobre él es que fue a la sala del teletransportador para realizar algunas tareas de mantenimiento periódicas", dice Albert. "Intentamos llamarlo a él y a Barry por el transceptor, pero ninguno de los dos responde. ¿Podrías hacerle una visita rápida a Barry para ver si hay algún problema? Y asegúrate de tener el transceptor abierto, para poder contactarnos en caso de una emergencia".
 
-          El texto en Español para el Libro 3, Capítulo 6 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Entendido", dice Peter. "¡Ya vuelvo!"
+
+          "Gracias", dice Albert. "¡Oh, y Peter! ¿Podrías también mantener oculta tu aura mientras te acercas a la sala del teletransportador? Por si acaso."
+
+          "Entendido", dice Peter en un tono más serio, y luego se dirige al túnel que conduce a la sala del teletransportador sin decir una palabra más.
+
+          "Estoy seguro de que el doctor Reidzek está bien", le dice Albert a Leila, cuando ve la expresión ansiosa en su rostro. "Debe haberse quedado demasiado atrapado en su trabajo, como siempre. Sólo tenemos que esperar hasta que Peter llegue a la sala del teletransportador y tendremos noticias de tu padre nuevamente".
+
+          "Sí", escribe Leila, como si ahora estuviera aún más ansiosa que antes. "Sólo tenemos que esperar".
+
+          Mientras estamos allí, esperando que Peter se comunique con nosotros, vemos a Daren saliendo del área de cuarentena y comenzando una conversación con Desmond, quien todavía está vigilando la puerta.
+      - source: scene_text_2
+        paragraph: 9
+        text: |-
+          "Desmond, lo... lo siento mucho", dice Daren, con la cabeza inclinada. "No hay forma de salvar a tu hermano. Su enfermedad es demasiado grave en este momento. Si hubiera llegado aquí unos días antes, es posible que todavía hubiera tenido una oportunidad, pero tal como están las cosas ahora es que... él también lo es... Lo siento..."
+
+          "Está bien", dice Desmond, en tono resignado. "No necesitas castigarte por eso. Estoy seguro de que has hecho todo lo que pudiste. ¿Qué pasa con los demás? ¿Hay alguna posibilidad de que alguno de ellos se recupere?"
+
+          "La mitad de ellos ya están curados, incluyéndome a mí", dice Daren. "En cuanto a la otra mitad, todavía es difícil decirlo. Este tratamiento funciona mejor si se detecta la enfermedad en sus primeras etapas, pero si se detecta demasiado tarde, las posibilidades de supervivencia disminuyen drásticamente. Los que están en condiciones críticas no lo lograrán, pero aquellos cuyos síntomas son sólo un poco severos aún pueden tener una oportunidad. Tendremos que esperar un poco más hasta que podamos sacar algunas conclusiones definitivas".
+
+          "Incluso si es sólo la mitad de ellos, esto es mucho más de lo que podríamos haber esperado", dice Desmond. "Hasta hoy, cualquiera que atravesara esa puerta era considerado hombre muerto. Ahora es posible que ya no necesitemos enviar a la gente a cuarentena. Deberías estar orgulloso de lo que has logrado aquí, sanador. Tal vez mi hermano no lo logrará, pero muchas familias ahora podrán volver a ver a sus seres queridos después de pensar que estaban muertos. Debería ser yo quien se disculpe por haberte juzgado mal. Todos estamos en deuda contigo".
+      - source: scene_text_2
+        paragraph: 10
+        text: |-
+          "Desmond, quería decirte que tu hermano ya no corre peligro de morir a causa de la enfermedad", dice Daren. "Todavía le llevará un tiempo recuperarse por completo, porque su estado era muy grave, pero si todo va bien, deberíamos poder volver a verlo en una semana o dos".
+
+          "¿Hablas en serio?..." Desmond le pregunta a Daren, luciendo como si todavía estuviera luchando por darle sentido a lo que acaba de escuchar. "¡No, no puede ser! ¡Esto tiene que ser un error! ¡Mi hermano ya no podía salvarse en este momento! ¿Cómo puedes estar tan seguro de que realmente fue él y no otra persona?"
+
+          "Porque dos enfermeras distintas me dijeron que él es el hermano del hombre llamado Desmond que está vigilando la puerta", dice Daren. "No me vas a decir que hay dos Desmond separados custodiando esta misma puerta, ¿verdad?"
+
+          "No... es sólo que yo... no sé qué decir..." dice Desmond, luciendo como si estuviera tratando de no dejar que su alegría lo abrume, ante la remota posibilidad de que Daren esté siendo demasiado optimista. "¡Gracias! Nunca pensé que realmente lo harías... ¡Estaba tan seguro de que eras simplemente un soñador empedernido como el resto de ellos! Ni en mis sueños más locos podría haberlo imaginado... espera, ¿qué pasa con las otras personas en la zona de cuarentena? ¿A cuántos de ellos lograste salvar?"
+        condition: b3_ch6_password = 3
+      - source: scene_text_2
+        paragraph: 10
+        text: |-
+          "Desmond, quería decirte que tu hermano ya no corre peligro de morir a causa de la enfermedad", dice Daren. "Todavía le llevará un tiempo recuperarse por completo, porque su estado era muy grave, pero si todo va bien, deberíamos poder volver a verlo en una semana o dos".
+
+          "¿Hablas en serio?..." Desmond le pregunta a Daren, luciendo como si todavía estuviera luchando por darle sentido a lo que acaba de escuchar. "¡No, no puede ser! ¡Esto tiene que ser un error! ¡Mi hermano ya no podía salvarse en este momento! ¿Cómo puedes estar tan seguro de que realmente fue él y no otra persona?"
+
+          "Porque dos enfermeras distintas me dijeron que él es el hermano del hombre llamado Desmond que está vigilando la puerta", dice Daren. "No me vas a decir que hay dos Desmond separados custodiando esta misma puerta, ¿verdad?"
+
+          "No... es sólo que yo... no sé qué decir..." dice Desmond, luciendo como si estuviera tratando de no dejar que su alegría lo abrume, ante la remota posibilidad de que Daren esté siendo demasiado optimista. "¡Gracias! Nunca pensé que realmente lo harías... ¡Estaba tan seguro de que eras simplemente un soñador empedernido como el resto de ellos! Ni en mis sueños más locos podría haberlo imaginado... espera, ¿qué pasa con las otras personas en la zona de cuarentena? ¿A cuántos de ellos lograste salvar?"
+        condition: b3_ch6_labels >= 2
+      - source: scene_text_2
+        paragraph: 10
+        text: |-
+          "Desmond, quería decirte que tu hermano ya no corre peligro de morir a causa de la enfermedad", dice Daren. "Todavía le llevará un tiempo recuperarse por completo, porque su estado era muy grave, pero si todo va bien, deberíamos poder volver a verlo en una semana o dos".
+
+          "¿Hablas en serio?..." Desmond le pregunta a Daren, luciendo como si todavía estuviera luchando por darle sentido a lo que acaba de escuchar. "¡No, no puede ser! ¡Esto tiene que ser un error! ¡Mi hermano ya no podía salvarse en este momento! ¿Cómo puedes estar tan seguro de que realmente fue él y no otra persona?"
+
+          "Porque dos enfermeras distintas me dijeron que él es el hermano del hombre llamado Desmond que está vigilando la puerta", dice Daren. "No me vas a decir que hay dos Desmond separados custodiando esta misma puerta, ¿verdad?"
+
+          "No... es sólo que yo... no sé qué decir..." dice Desmond, luciendo como si estuviera tratando de no dejar que su alegría lo abrume, ante la remota posibilidad de que Daren esté siendo demasiado optimista. "¡Gracias! Nunca pensé que realmente lo harías... ¡Estaba tan seguro de que eras simplemente un soñador empedernido como el resto de ellos! Ni en mis sueños más locos podría haberlo imaginado... espera, ¿qué pasa con las otras personas en la zona de cuarentena? ¿A cuántos de ellos lograste salvar?"
+        condition: b3_ch6_secret >= 1 AND ch11_saved_rose = 1
+      - source: scene_text_2
+        paragraph: 10
+        text: |-
+          "Desmond, quería decirte que tu hermano ya no corre peligro de morir a causa de la enfermedad", dice Daren. "Todavía le llevará un tiempo recuperarse por completo, porque su estado era muy grave, pero si todo va bien, deberíamos poder volver a verlo en una semana o dos".
+
+          "¿Hablas en serio?..." Desmond le pregunta a Daren, luciendo como si todavía estuviera luchando por darle sentido a lo que acaba de escuchar. "¡No, no puede ser! ¡Esto tiene que ser un error! ¡Mi hermano ya no podía salvarse en este momento! ¿Cómo puedes estar tan seguro de que realmente fue él y no otra persona?"
+
+          "Porque dos enfermeras distintas me dijeron que él es el hermano del hombre llamado Desmond que está vigilando la puerta", dice Daren. "No me vas a decir que hay dos Desmond separados custodiando esta misma puerta, ¿verdad?"
+
+          "No... es sólo que yo... no sé qué decir..." dice Desmond, luciendo como si estuviera tratando de no dejar que su alegría lo abrume, ante la remota posibilidad de que Daren esté siendo demasiado optimista. "¡Gracias! Nunca pensé que realmente lo harías... ¡Estaba tan seguro de que eras simplemente un soñador empedernido como el resto de ellos! Ni en mis sueños más locos podría haberlo imaginado... espera, ¿qué pasa con las otras personas en la zona de cuarentena? ¿A cuántos de ellos lograste salvar?"
+        condition: b3_ch6_secret = 0 AND ch11_saved_rose = 1 AND b3_ch6_sleep = 0
+      - source: scene_3
+        paragraph: 8
+        text: |-
+          "Realmente lamento lo de tu hermano", dice Daren, luciendo genuinamente deprimido. "Ojalá hubiera podido salvar a todos. Lo único que puedo decirles es que sus últimos momentos serán un poco mejores ahora que dos de las enfermeras han sido curadas de la enfermedad, por lo que podrán dedicar más tiempo a cuidar a los pacientes".
+
+          "Has hecho más que suficiente", dice Desmond. "Ve a descansar un poco. Te lo has ganado".
+
+          "Lo haré pronto", dice Daren. "Gracias."
+
+          Luego comienza a caminar hacia uno de los túneles que salen de la sala de espera, pero cuando nos ve a Leila y a mí se detiene para darnos una breve actualización sobre lo que está haciendo.
+
+          "¡Lo siento, no tengo tiempo para charlar!" Daren nos lo cuenta desde la distancia. "¡Necesito ir a buscar a los magos blancos de los rebeldes para poder enseñarles cómo curar esta enfermedad por sí mismos una vez que yo ya no esté aquí!"
+
+          "¡No te preocupes!" Le digo en voz alta. "Ve y haz lo que tengas que hacer. ¡Estaremos aquí cuando regreses!"
+
+          "Está bien", dice. "¡Hasta luego!"
+
+          No mucho después de que Daren abandona la habitación, finalmente escuchamos la voz de Peter proveniente del transceptor de Albert, pero su tono parece muy alerta y respira con dificultad, como si estuviera corriendo.
+
+          "¡Alberto!" Pedro dice en voz alta. "Alberto, ¿estás ahí?"
+
+          "¡Sí!" dice Alberto. "¿Qué pasó? ¿Dónde está el doctor Reidzek?"
+      - source: scene_3
+        paragraph: 9
+        text: |-
+          "La mayoría de los pacientes se encuentran ahora en condición estable", dice Daren. "Todavía hay algunos de ellos que no se han curado por completo porque habían sido afectados muy gravemente por la enfermedad, pero las enfermeras están haciendo todo lo posible para estabilizarlos mientras hablamos. Mientras tanto, me reuniré con algunos de sus magos blancos para poder enseñarles qué hechizos y qué medicamentos necesitan usar para curar a las personas que se enferman después de que yo ya no esté aquí".
+
+          "Bueno, en ese caso no te retendré más", dice Desmond. "Ve a hacer lo que tengas que hacer. Y que los dioses te bendigan, sanador... Todos estamos en deuda contigo".
+
+          Daren le hace un gesto con la cabeza y luego comienza a caminar hacia uno de los túneles que salen de la sala de espera cuando finalmente nos ve a Leila y a mí.
+
+          "¡Lo siento, no tengo tiempo para charlar!" Daren nos lo cuenta desde la distancia. "Necesito ir a buscar--"
+
+          "¡Sí, sí, te escuchamos la primera vez!" Le digo en voz alta. "¡Ve a hacer lo tuyo! ¡Estaremos aquí cuando regreses!"
+
+          "Está bien", dice. "¡Hasta luego!"
+
+          No mucho después de que Daren abandona la habitación, finalmente escuchamos la voz de Peter proveniente del transceptor de Albert, pero su tono parece muy alerta y respira con dificultad, como si estuviera corriendo.
+
+          "¡Alberto!" Pedro dice en voz alta. "Alberto, ¿estás ahí?"
+
+          "¡Sí!" dice Alberto. "¿Qué pasó? ¿Dónde está el doctor Reidzek?"
+        condition: b3_ch6_password = 3
+      - source: scene_3
+        paragraph: 9
+        text: |-
+          "La mayoría de los pacientes se encuentran ahora en condición estable", dice Daren. "Todavía hay algunos de ellos que no se han curado por completo porque habían sido afectados muy gravemente por la enfermedad, pero las enfermeras están haciendo todo lo posible para estabilizarlos mientras hablamos. Mientras tanto, me reuniré con algunos de sus magos blancos para poder enseñarles qué hechizos y qué medicamentos necesitan usar para curar a las personas que se enferman después de que yo ya no esté aquí".
+
+          "Bueno, en ese caso no te retendré más", dice Desmond. "Ve a hacer lo que tengas que hacer. Y que los dioses te bendigan, sanador... Todos estamos en deuda contigo".
+
+          Daren le hace un gesto con la cabeza y luego comienza a caminar hacia uno de los túneles que salen de la sala de espera cuando finalmente nos ve a Leila y a mí.
+
+          "¡Lo siento, no tengo tiempo para charlar!" Daren nos lo cuenta desde la distancia. "Necesito ir a buscar--"
+
+          "¡Sí, sí, te escuchamos la primera vez!" Le digo en voz alta. "¡Ve a hacer lo tuyo! ¡Estaremos aquí cuando regreses!"
+
+          "Está bien", dice. "¡Hasta luego!"
+
+          No mucho después de que Daren abandona la habitación, finalmente escuchamos la voz de Peter proveniente del transceptor de Albert, pero su tono parece muy alerta y respira con dificultad, como si estuviera corriendo.
+
+          "¡Alberto!" Pedro dice en voz alta. "Alberto, ¿estás ahí?"
+
+          "¡Sí!" dice Alberto. "¿Qué pasó? ¿Dónde está el doctor Reidzek?"
+        condition: b3_ch6_labels >= 2
+      - source: scene_3
+        paragraph: 9
+        text: |-
+          "La mayoría de los pacientes se encuentran ahora en condición estable", dice Daren. "Todavía hay algunos de ellos que no se han curado por completo porque habían sido afectados muy gravemente por la enfermedad, pero las enfermeras están haciendo todo lo posible para estabilizarlos mientras hablamos. Mientras tanto, me reuniré con algunos de sus magos blancos para poder enseñarles qué hechizos y qué medicamentos necesitan usar para curar a las personas que se enferman después de que yo ya no esté aquí".
+
+          "Bueno, en ese caso no te retendré más", dice Desmond. "Ve a hacer lo que tengas que hacer. Y que los dioses te bendigan, sanador... Todos estamos en deuda contigo".
+
+          Daren le hace un gesto con la cabeza y luego comienza a caminar hacia uno de los túneles que salen de la sala de espera cuando finalmente nos ve a Leila y a mí.
+
+          "¡Lo siento, no tengo tiempo para charlar!" Daren nos lo cuenta desde la distancia. "Necesito ir a buscar--"
+
+          "¡Sí, sí, te escuchamos la primera vez!" Le digo en voz alta. "¡Ve a hacer lo tuyo! ¡Estaremos aquí cuando regreses!"
+
+          "Está bien", dice. "¡Hasta luego!"
+
+          No mucho después de que Daren abandona la habitación, finalmente escuchamos la voz de Peter proveniente del transceptor de Albert, pero su tono parece muy alerta y respira con dificultad, como si estuviera corriendo.
+
+          "¡Alberto!" Pedro dice en voz alta. "Alberto, ¿estás ahí?"
+
+          "¡Sí!" dice Alberto. "¿Qué pasó? ¿Dónde está el doctor Reidzek?"
+        condition: b3_ch6_secret >= 1 AND ch11_saved_rose = 1
+      - source: scene_3
+        paragraph: 9
+        text: |-
+          "La mayoría de los pacientes se encuentran ahora en condición estable", dice Daren. "Todavía hay algunos de ellos que no se han curado por completo porque habían sido afectados muy gravemente por la enfermedad, pero las enfermeras están haciendo todo lo posible para estabilizarlos mientras hablamos. Mientras tanto, me reuniré con algunos de sus magos blancos para poder enseñarles qué hechizos y qué medicamentos necesitan usar para curar a las personas que se enferman después de que yo ya no esté aquí".
+
+          "Bueno, en ese caso no te retendré más", dice Desmond. "Ve a hacer lo que tengas que hacer. Y que los dioses te bendigan, sanador... Todos estamos en deuda contigo".
+
+          Daren le hace un gesto con la cabeza y luego comienza a caminar hacia uno de los túneles que salen de la sala de espera cuando finalmente nos ve a Leila y a mí.
+
+          "¡Lo siento, no tengo tiempo para charlar!" Daren nos lo cuenta desde la distancia. "Necesito ir a buscar--"
+
+          "¡Sí, sí, te escuchamos la primera vez!" Le digo en voz alta. "¡Ve a hacer lo tuyo! ¡Estaremos aquí cuando regreses!"
+
+          "Está bien", dice. "¡Hasta luego!"
+
+          No mucho después de que Daren abandona la habitación, finalmente escuchamos la voz de Peter proveniente del transceptor de Albert, pero su tono parece muy alerta y respira con dificultad, como si estuviera corriendo.
+
+          "¡Alberto!" Pedro dice en voz alta. "Alberto, ¿estás ahí?"
+
+          "¡Sí!" dice Alberto. "¿Qué pasó? ¿Dónde está el doctor Reidzek?"
+        condition: b3_ch6_secret = 0 AND ch11_saved_rose = 1 AND b3_ch6_sleep = 0
+    effects:
+      - set:
+          ac_b3_ch6_quarantine: 1
+        achievement:
+          id: ac_b3_ch6_quarantine
+          title: Fin de la cuarentena
+        condition: b3_ch6_password = 3
+      - set:
+          ac_b3_ch6_quarantine: 1
+        achievement:
+          id: ac_b3_ch6_quarantine
+          title: Fin de la cuarentena
+        condition: b3_ch6_labels >= 2
+      - set:
+          ac_b3_ch6_quarantine: 1
+        achievement:
+          id: ac_b3_ch6_quarantine
+          title: Fin de la cuarentena
+        condition: b3_ch6_secret >= 1 AND ch11_saved_rose = 1
+      - set:
+          ac_b3_ch6_quarantine: 1
+        achievement:
+          id: ac_b3_ch6_quarantine
+          title: Fin de la cuarentena
+        condition: b3_ch6_secret = 0 AND ch11_saved_rose = 1 AND b3_ch6_sleep = 0
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch06c_panic
   - name: b3_ch06c_panic
     texts:
       - source: scene_text
-        paragraph: 8
-        text: |
-          Traducción en progreso.
+        paragraph: 13
+        text: |-
+          "¡Alberto!" dice Pedro. "¡Barry nos traicionó! ¡Lo escuché hablando con Gontrok en el transceptor hace un momento mientras estaba en la sala del teletransportador! ¡Los guardias reales recibieron la aprobación del rey de Ollendor para matar a todos en el subsuelo, y Barry los está ayudando! ¡Tienes que decírselo a nuestro rey, rápido!"
 
-          El texto en Español para el Libro 3, Capítulo 6 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Barry está trabajando con la guardia real?..." dice Albert, sorprendido. "¡No, no, eso es imposible! Su hermano fue asesinado por--"
+
+          "¡Su hermano está vivo!" dice Pedro. "Barry nos ha estado mintiendo todo este tiempo. ¡Su hermano está vivo y está siendo rehén del rey de Ollendor! ¡Por eso nos traicionó! Escuché a Gontrok amenazar con matar a su hermano si no obedecía sus órdenes. ¡Y se llevaron al doctor Reidzek también! Hicieron que Barry lo teletransportara a una de las torres de seredium, para que pueda ayudarlos a controlar al Supervisor porque también es un lessathi que es bueno jugando con viejos dispositivos, como Billy Bob!"
+
+          "¡¿Qué?!" Escribe Leila, empezando a entrar en pánico.
+
+          "¡¿El doctor Reidzek ha sido secuestrado?!" dice Alberto. "¡Tenemos que ir a salvarlo ahora! ¿Sabes en cuál de las torres--"
+      - source: scene_text_2
+        paragraph: 11
+        text: |-
+          "¡Albert, escúchame, no hay tiempo!" dice Pedro. "¡Barry ha estado teletransportando guardias en las cavernas directamente encima de ti durante una hora entera! ¡Van a derribar el techo y atraparte dentro como ratas en cualquier momento! Tienes que evacuar a todos, ¿me oyes? Tienes que-- ARGH--"
+
+          "Peter, ¡¿qué está pasando allí?!" dice Alberto. "¡¿Pedro?!"
+
+          "Me están persiguiendo algunos aprendices de la guardia real", dice Peter. "Uno de ellos acaba de dispararme con un proyectil. Lo siento, necesito cerrar el transceptor ahora. ¡Buena suerte!"
+
+          "¡Maldita sea!" Albert grita, mientras Peter cierra su transceptor.
+
+          Albert luego mira a un hombre frente a él, que parece haber escuchado toda la conversación y está ahí parado, congelado.
+
+          "¿Por qué estás ahí parado?" Alberto le dice. "Escuchaste lo que dijo Peter. Ve y dile al rey que evacue a todos ahora mismo. ¡Voy a salvar a Peter!"
+      - source: scene_3
+        paragraph: 10
+        text: |-
+          Luego corre hacia la sala del teletransportador, volviéndose invisible en el camino, mientras el hombre con el que habló antes se dirige a la sala del trono para advertir al rey sobre lo que está sucediendo. Justo cuando estoy tratando de decidir qué hacer, Leila comienza a correr hacia la sala del teletransportador también, pero la agarro del brazo y la detengo en seco.
+
+          "Leila, ¿adónde vas?" Le digo.
+
+          "Barry... ¡mi padre!" Escribe Leila, luciendo extremadamente asustada. "¡Necesito ir a salvar a mi padre!"
+
+          Al ver la expresión que tiene en su rostro, puedo decir claramente que está demasiado asustada para pensar con claridad en este momento. La mirada que tiene en sus ojos inmediatamente me recuerda el momento en que casi se ahoga en el lago subterráneo, mientras intentaba gritar, pero no salían palabras de su boca.
+
+          "¡Leila, mírame!" Le digo, mientras la agarro ligeramente por los hombros. "Vamos a salvar a tu padre. Juntos. Pero por ahora, voy a necesitar que te calmes, ¿de acuerdo? Si quieres ayudar a tu padre debes pensar con claridad. ¿Entiendes?"
+
+          "¡Sí!" Escribe Leila, mientras intenta salir poco a poco de su estado de pánico. "Sí, lo entiendo..."
+    choices:
+      - position: 1
+        text: Intenta ver si puedo escuchar algo desde el túnel que conduce a la sala del teletransportador.
+        effects:
+          - set:
+              current_scene: b3_ch06c_hearing
+              b3_ch6_transceivers: 0
+      - position: 2
+        text: Intente llamar a mis amigos a través de los transceptores para contarles lo que pasó.
+        effects:
+          - set:
+              current_scene: b3_ch06c_transceivers
+              b3_ch6_transceivers: 1
   - name: b3_ch06c_hearing
-    texts:
-      - source: scene_text
-        paragraph: 9
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: hearing < 4
+        texts:
+          - source: scene_text
+            paragraph: 14
+            text: |-
+              Mientras Leila se calma, trato de concentrarme en los sonidos que provienen del túnel que conduce a la sala del teletransportador. ¿Dónde están los guardias reales ahora mismo? ¿Nos atacarán desde esa dirección o vendrán desde arriba, como dijo Peter? ¿Los alumnos sólo persiguieron a Peter para silenciarlo o también llegarán aquí después?
 
-          El texto en Español para el Libro 3, Capítulo 6 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              Mientras me concentro un poco más, empiezo a escuchar el sonido de una batalla, pero no puedo decir exactamente quién está ganando, o cuántos guardias están ahora luchando contra Peter y Albert. Sin embargo, lo que puedo decir es que los sonidos se vuelven un poco más fuertes con cada segundo. Están cada vez más cerca de nosotros. ¿Significa esto que la sala de espera pronto se convertirá en un campo de batalla? ¿Qué pasa con la evacuación? ¿Qué hará el rey del subsuelo con todos los civiles que quedarán atrapados en la línea de fuego?
+
+              Maldita sea, no debería perder el tiempo pensando en todo esto. Lo que tengo que hacer es encontrar una manera de salvar al padre de Leila. Estoy seguro de que los rebeldes se manejarán bien.
+          - source: scene_text_2
+            paragraph: 12
+            text: |-
+              "¿Barry?..." escribe Leila, cuando me ve perdida en mis propios pensamientos. "Creo que ahora estoy más tranquilo. Intentemos llamar a los demás para que puedan venir a ayudarnos".
+
+              "Tienes razón", digo. "Daren debería ser el más cercano a nosotros. Intentaré llamarlo primero".
+
+              Luego saco mi transceptor y empiezo a girar el dial hasta que llego al número de Daren. Mientras hago esto, giro el dial con demasiada fuerza dos veces seguidas, debido a que me tiembla la mano. Parece que no debería ser yo quien dé consejos sobre cómo mantener la calma. Yo también estoy bastante nervioso.
+
+              Justo cuando estoy a punto de tocar el transceptor, escucho una gran explosión justo encima de nosotros y varias rocas comienzan a caer del techo.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de audición fallida - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch06c_ending
+      - condition: hearing >= 4
+        texts:
+          - source: scene_text
+            paragraph: 15
+            text: |-
+              Mientras Leila se calma, trato de concentrarme en los sonidos que provienen del túnel que conduce a la sala del teletransportador. ¿Dónde están los guardias reales ahora mismo? ¿Nos atacarán desde esa dirección o vendrán desde arriba, como dijo Peter? ¿Los alumnos sólo persiguieron a Peter para silenciarlo o también llegarán aquí después?
+
+              Mientras estoy allí y escucho los sonidos del túnel, de repente escucho un débil eco de la voz de Gontrok, que parece estar todavía hablando con el teletransportador a través de su transceptor.
+
+              "¡No quiero escuchar tus excusas!" dice Gontrok. "¡Te dije que la teletransportaras ahora!"
+
+              "¡Pero ella no está lo suficientemente tranquila!" dice el tipo del teletransportador. "Su aura está por todas partes, y si intento teletransportarla ahora, quién sabe dónde terminará..."
+
+              "La necesitamos como rehén, ¿entiendes?" —grita Gontrok. "Si queremos que su padre lessathi haga lo que le decimos, ¡necesitamos encerrarla de manera segura en el calabozo del castillo! Ya tienes las coordenadas de la celda de la prisión. ¡Ahora haz lo que tienes que hacer!"
+          - source: scene_text_2
+            paragraph: 13
+            text: |-
+              "Yo... no puedo... ni siquiera tengo un canal abierto para su transceptor, así que rastrear su ubicación exacta será... ¡sólo dame un minuto!" dice el tipo del teletransportador.
+
+              "Leila", digo, después de escuchar la conversación entre Gontrok y el tipo del teletransportador. "Sé que esto va a sonar realmente estúpido, pero necesito que vuelvas a entrar en pánico".
+
+              "¿Qué?..." escribe Leila, ahora luciendo completamente confundida.
+
+              "Están tratando de teletransportarte lejos, pero no pueden hacerlo si tu aura es inestable, así que debes mantener el pánico", le digo. "¿Eso tiene sentido?"
+
+              "Umm, sí..." escribe Leila. "Sí, creo que puedo--"
+
+              De repente, mientras Leila sigue escribiendo, oigo una gran explosión justo encima de nosotros y varias piedras empiezan a caer del techo.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de audición exitosa - nivel 4 ]'
+              b3_ch6_transceivers: 2
+              ac_b3_ch6_echoes: 1
+            achievement:
+              id: ac_b3_ch6_echoes
+              title: ¿Oyes un eco?
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch06c_ending
   - name: b3_ch06c_transceivers
     texts:
       - source: scene_text
-        paragraph: 10
-        text: |
-          Traducción en progreso.
+        paragraph: 16
+        text: |-
+          Mientras Leila se calma, decido que lo primero que tengo que hacer es llamar a mis amigos y contarles lo que pasó. Mientras saco mi transceptor y empiezo a girar el dial para cambiar el número de frecuencia, mis manos temblorosas me hacen girar el dial con demasiada fuerza dos veces seguidas, antes de que finalmente obtenga el número correcto. Parece que no debería ser yo quien dé consejos sobre cómo mantener la calma. Yo también estoy bastante nervioso.
 
-          El texto en Español para el Libro 3, Capítulo 6 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Daren, ¿estás ahí?" Le digo al transceptor después de tocarlo.
+
+          "Sí, estoy aquí con los curanderos", dice Daren. "¿Qué ocurre?"
+
+          "No tengo mucho tiempo para explicar, así que escuchen", le digo. "Aparentemente Barry Nubarrón de la sala de teletransporte nos traicionó, y teletransportó a muchos guardias en las cavernas justo encima de nosotros. Van a volar el techo para que caiga encima de nosotros. Además, el padre de Leila fue secuestrado y el rey lo retiene en una de las torres de seredium. Ven rápido a la sala de espera. Intentaré decirles a los demás que se reúnan aquí también".
+      - source: scene_text_2
+        paragraph: 14
+        text: |-
+          "Está bien", dice Daren, sin hacerme ninguna pregunta. "Llama a Kate y Flower. Yo llamaré a Hadrik. Será más rápido de esta manera".
+
+          "Correcto", digo. "Gracias. Hablaré contigo más tarde."
+
+          Luego llamo a Kate y le doy el mismo resumen, intentando hablar lo más rápido que puedo para no perder el tiempo. Justo cuando estoy a punto de llamar a Flower también, escucho una gran explosión justo encima de nosotros y varias rocas comienzan a caer del techo.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch06c_ending
   - name: b3_ch06c_ending
-    texts:
-      - source: scene_text
-        paragraph: 11
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch6_transceivers = 2
+        texts:
+          - source: scene_text
+            paragraph: 17
+            text: |-
+              "¡Cuidado!" Le digo a Leila, mientras la tomo de la mano y la arrastro lejos de las rocas que caen.
 
-          El texto en Español para el Libro 3, Capítulo 6 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "¡Uf!" Digo, después de que escapemos ilesos. "Eso estuvo cerca--"
+
+              Antes de terminar mi frase, ahora es el turno de Leila de tirarme del brazo, salvándome de un segundo grupo de rocas que acababan de desprenderse del techo. Poco después empezamos a escuchar explosiones en varios lugares más encima de nosotros, ya que el techo comienza a derrumbarse en varias partes de los túneles subterráneos. Mientras Leila todavía me sostiene, una luz blanca nos envuelve a ambos y nuestros cuerpos comienzan a vibrar mientras somos teletransportados lejos de la base rebelde.
+          - source: scene_text_2
+            paragraph: 15
+            text: |-
+              Una vez que somos transportados a nuestro nuevo destino, miro rápidamente a nuestro alrededor e inmediatamente reconozco el lugar como el mismo túnel subterráneo en el que fuimos teletransportados por error cuando ayer intentábamos huir de la guardia real vestida de negro. ¿Por qué estamos aquí otra vez?... ¿Se supone que este es el lugar predeterminado al que te envía el teletransportador si no puede llevarte a tu destino correcto?
+
+              No puedo pensar mucho en esto, porque al igual que la última vez que nuestra teletransportación salió mal, un dolor de cabeza muy fuerte se apodera de mí lo que me hace difícil incluso mantenerme despierto. Pronto caigo al suelo mientras intento con todas mis fuerzas suprimir el dolor de mi cabeza, y justo cuando estoy a punto de perder el conocimiento, veo unas grandes letras azules flotando frente a mis ojos.
+
+              "Barry, ¿puedes leer esto? ¡Por favor, respóndeme! ¡Barry!"
+
+              Las palabras de Leila son lo último que puedo ver antes de finalmente ceder al dolor de cabeza y desmayarme en el frío suelo de la cueva.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch06c_credits
+      - condition: b3_ch6_transceivers <> 2
+        texts:
+          - source: scene_text
+            paragraph: 17
+            text: |-
+              "¡Cuidado!" Le digo a Leila, mientras la tomo de la mano y la arrastro lejos de las rocas que caen.
+
+              "¡Uf!" Digo, después de que escapemos ilesos. "Eso estuvo cerca--"
+
+              Antes de terminar mi frase, ahora es el turno de Leila de tirarme del brazo, salvándome de un segundo grupo de rocas que acababan de desprenderse del techo. Poco después empezamos a escuchar explosiones en varios lugares más encima de nosotros, ya que el techo comienza a derrumbarse en varias partes de los túneles subterráneos. Mientras Leila todavía me sostiene, una luz blanca nos envuelve a ambos y nuestros cuerpos comienzan a vibrar mientras somos teletransportados lejos de la base rebelde.
+          - source: scene_text_2
+            paragraph: 16
+            text: |-
+              Una vez que somos transportados a nuestro nuevo destino, miro rápidamente a nuestro alrededor e inmediatamente reconozco el lugar como el mismo túnel subterráneo en el que fuimos teletransportados por error cuando ayer intentábamos huir de la guardia real vestida de negro. ¿Por qué estamos aquí otra vez?... ¿Se supone que este es el lugar predeterminado al que te envía el teletransportador si no puede llevarte a tu destino correcto? ¿Y por qué nos teletransportaron solo a nosotros dos en lugar de intentar matarnos allí, en la base rebelde, junto con todos los demás?
+
+              No puedo pensar mucho en esto, porque al igual que la última vez que nuestra teletransportación salió mal, un dolor de cabeza muy fuerte se apodera de mí lo que me hace difícil incluso mantenerme despierto. Pronto caigo al suelo mientras intento con todas mis fuerzas suprimir el dolor de mi cabeza, y justo cuando estoy a punto de perder el conocimiento, veo unas grandes letras azules flotando frente a mis ojos.
+
+              "Barry, ¿puedes leer esto? ¡Por favor, respóndeme! ¡Barry!"
+
+              Las palabras de Leila son lo último que puedo ver antes de finalmente ceder al dolor de cabeza y desmayarme en el frío suelo de la cueva.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch06c_credits
   - name: b3_ch06c_credits
     texts:
       - source: scene_text
-        paragraph: 12
-        text: |
-          Traducción en progreso.
-
-          El texto en Español para el Libro 3, Capítulo 6 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-chapter_effects: []
+        paragraph: 18
+        text: El capítulo 7 del libro 3 ya está disponible. Presione el botón de abajo para continuar.
+    choices:
+      - position: 1
+        text: Pasar al siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: b3_ch07a_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"

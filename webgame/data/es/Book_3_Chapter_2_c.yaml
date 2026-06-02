@@ -1,218 +1,2009 @@
 scenes:
   - name: b3_ch02c_assassinate
-    texts:
-      - source: scene_text
-        paragraph: 1
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch2_gontrok = 3
+        texts:
+          - source: scene_text
+            paragraph: 2
+            text: |-
+              "Puede que alguien más también esté intentando asesinar al rey."
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Eso sí plantea una buena pregunta...", dice Hadrik. "Si el rey ya estuviera muerto cuando lo encontremos, ¿no significaría eso que nuestro juramento de encantador con Melindra quedaría anulado?"
+
+              "Anulado o no, mientras me ayuden a conseguir de él lo que quiero, seguiré considerando válido nuestro acuerdo", dice Melindra. "De eso pueden estar seguros."
+
+              "No deberíamos quedarnos aquí mucho tiempo", dice Daren, mientras recoge la espada del suelo y luego empieza a avanzar cojeando lentamente hacia nosotros. "Aunque los guardias reales ya se hayan ido, los guardias normales de la ciudad podrían llegar en cualquier momento. Deberíamos buscar un lugar donde escondernos, descansar un rato y recuperarnos."
+
+              "Joder...", dice Hadrik al ver lo poco que Daren es capaz de mantenerse en pie. "¿Qué te ha pasado? ¡Pareces alguien a quien le acaba de caer una casa encima!"
+
+              "¿Y tú me lo dices?...", dice Daren cuando por fin logra llegar hasta nosotros. "¿Te has mirado al espejo últimamente? Tienes toda la cara hinchada y estás lleno de moratones. Te curaría, pero ahora mismo estoy demasiado debilitado para hacerlo. Apenas he conseguido lanzarme un hechizo de recuperación para volver a ponerme en pie."
+
+              "Estoy de acuerdo en que deberíamos buscar refugio", dice Kate, echando un vistazo rápido a la plaza, ahora casi vacía, que nos rodea. "Cuanto más tiempo nos quedemos aquí, más vulnerables seremos. El problema es que no tengo ni idea de cómo podríamos encontrar un lugar seguro en medio de territorio enemigo..."
+          - source: scene_text_2
+            paragraph: 2
+            text: |-
+              "¡Quizá podamos serles de ayuda!", dice un hombre de unos cincuenta y tantos, con una barba gris recortada y una sonrisa amable en el rostro, mientras se abre paso lentamente hacia nosotros.
+
+              El hombre parece llevar algún tipo de bata de laboratorio y sale de uno de los muchos callejones que desembocan en la plaza, seguido por dos jóvenes armados que probablemente rondan la mitad de la veintena.
+
+              "Y usted quién sería, si no le importa que le preg--", empieza a decir Daren, pero se interrumpe al ver a Leila correr hacia el hombre que acaba de hablar.
+
+              "¡Padre!", escribe Leila con letras muy grandes mientras va a abrazar al hombre de la bata de laboratorio.
+
+              "Leila, querida mía... ¡te he echado muchísimo de menos!", dice el hombre mientras abraza a su hija con fuerza.
+
+              "Padre, estos son mis amigos", escribe Leila en cuanto suelta a su padre. "Me ayudaron a salir de prisión y me escoltaron hasta aquí."
+
+              "Sí, creo que ya me hago una idea general", dice el padre de Leila. "Les estoy muy agradecido a todos por haber cuidado de mi hija durante tanto tiempo, pero les recomiendo que dejemos las presentaciones para más tarde, cuando estemos a salvo y lejos de aquí."
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              "¿Debemos entender que ya tienen preparada alguna ruta de escape para nosotros?", pregunta Kate.
+
+              "¡Así es!", dice el padre de Leila. "Síganme, por favor."
+
+              Nos cruzamos unas cuantas miradas y luego seguimos a Leila, a su padre y a sus dos guardaespaldas por el estrecho callejón del que habían salido. Entonces el padre de Leila saca un transceptor de su bata de laboratorio y empieza a hablar de inmediato por él.
+
+              "Barry, ¿me oyes?", dice el padre de Leila.
+
+              "Uf... ¡otra vez no!", digo, mientras Hadrik y Arraka empiezan a reírse de fondo.
+
+              "¡Barry!", vuelve a gritar el padre de Leila por el transceptor, mientras las risas de Hadrik y Arraka van a más.
+
+              "Esperen un momento", nos dice el padre de Leila. "Estoy teniendo algunos problemas para ponerme en contacto con uno de mis compañeros por culpa de la gruesa capa de seredium que... perdón, ¿pasa algo?"
+
+              "¡No nos hagan caso!", dice Hadrik, intentando contener la risa. "Solo nos estamos riendo porque nuestro amigo de aquí también se llama Barry y no es la primera vez que nos encontramos con alguien que lleva su mismo nombre durante nuestros viajes."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02c_transceiver
+      - condition: b3_ch2_gontrok <> 3
+        texts:
+          - source: scene_text
+            paragraph: 7
+            text: |-
+              "Puede que alguien más también esté intentando asesinar al rey."
+
+              "Eso sí plantea una buena pregunta...", dice Hadrik. "Si el rey ya estuviera muerto cuando lo encontremos, ¿no significaría eso que nuestro juramento de encantador con Melindra quedaría anulado?"
+
+              "Anulado o no, mientras me ayuden a conseguir de él lo que quiero, seguiré considerando válido nuestro acuerdo", dice Melindra. "De eso pueden estar seguros."
+
+              "No deberíamos quedarnos aquí mucho tiempo", dice Daren, mientras avanza cojeando lentamente hacia nosotros y recoge la espada de donde la dejé caer cuando el capitán me tenía inmovilizado contra el suelo. "Aunque los guardias reales ya se hayan ido, los guardias normales de la ciudad podrían llegar en cualquier momento. Deberíamos buscar un lugar donde escondernos, descansar un rato y recuperarnos."
+
+              "Joder...", dice Hadrik al ver lo poco que Daren es capaz de mantenerse en pie. "¿Qué te ha pasado? ¡Pareces alguien a quien le acaba de caer una casa encima!"
+
+              "¿Y tú me lo dices?...", dice Daren cuando por fin logra llegar hasta nosotros. "¿Te has mirado al espejo últimamente? Tienes toda la cara hinchada y estás lleno de moratones. Te curaría, pero ahora mismo estoy demasiado debilitado para hacerlo. Apenas he conseguido lanzarme un hechizo de recuperación para volver a ponerme en pie."
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              "Estoy de acuerdo en que deberíamos buscar refugio", dice Kate, echando un vistazo rápido a la plaza, ahora casi vacía, que nos rodea. "Cuanto más tiempo nos quedemos aquí, más vulnerables seremos. El problema es que no tengo ni idea de cómo podríamos encontrar un lugar seguro en medio de territorio enemigo..."
+
+              "¡Quizá podamos serles de ayuda!", dice un hombre de unos cincuenta y tantos, con una barba gris recortada y una sonrisa amable en el rostro, mientras se abre paso lentamente hacia nosotros.
+
+              El hombre parece llevar algún tipo de bata de laboratorio y sale de uno de los muchos callejones que desembocan en la plaza, seguido por dos jóvenes armados que probablemente rondan la mitad de la veintena.
+
+              "Y usted quién sería, si no le importa que le preg--", empieza a decir Daren, pero se interrumpe al ver a Leila correr hacia el hombre que acaba de hablar.
+
+              "¡Padre!", escribe Leila con letras muy grandes mientras va a abrazar al hombre de la bata de laboratorio.
+
+              "Leila, querida mía... ¡te he echado muchísimo de menos!", dice el hombre mientras abraza a su hija con fuerza.
+
+              "Padre, estos son mis amigos", escribe Leila en cuanto suelta a su padre. "Me ayudaron a salir de prisión y me escoltaron hasta aquí."
+
+              "Sí, creo que ya me hago una idea general", dice el padre de Leila. "Les estoy muy agradecido a todos por haber cuidado de mi hija durante tanto tiempo, pero les recomiendo que dejemos las presentaciones para más tarde, cuando estemos a salvo y lejos de aquí."
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              "¿Debemos entender que ya tienen preparada alguna ruta de escape para nosotros?", pregunta Kate.
+
+              "¡Así es!", dice el padre de Leila. "Síganme, por favor."
+
+              Nos cruzamos unas cuantas miradas y luego seguimos a Leila, a su padre y a sus dos guardaespaldas por el estrecho callejón del que habían salido. Entonces el padre de Leila saca un transceptor de su bata de laboratorio y empieza a hablar de inmediato por él.
+
+              "Barry, ¿me oyes?", dice el padre de Leila.
+
+              "Uf... ¡otra vez no!", digo, mientras Hadrik y Arraka empiezan a reírse de fondo.
+
+              "¡Barry!", vuelve a gritar el padre de Leila por el transceptor, mientras las risas de Hadrik y Arraka van a más.
+
+              "Esperen un momento", nos dice el padre de Leila. "Estoy teniendo algunos problemas para ponerme en contacto con uno de mis compañeros por culpa de la gruesa capa de seredium que... perdón, ¿pasa algo?"
+
+              "¡No nos hagan caso!", dice Hadrik, intentando contener la risa. "Solo nos estamos riendo porque nuestro amigo de aquí también se llama Barry y no es la primera vez que nos encontramos con alguien que lleva su mismo nombre durante nuestros viajes."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02c_transceiver
   - name: b3_ch02c_mess
-    texts:
-      - source: scene_text
-        paragraph: 2
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch2_gontrok = 3
+        texts:
+          - source: scene_text
+            paragraph: 3
+            text: |-
+              "Puede que Eiden intentara jugar con el rey para ver cómo reaccionaba."
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Sí, no me costaría creer que hiciera algo así", dice Hadrik. "Aunque, a juzgar por su reacción, no parecía algo planeado por él."
+
+              "No deberíamos quedarnos aquí mucho tiempo", dice Daren, mientras recoge la espada del suelo y luego empieza a avanzar cojeando lentamente hacia nosotros. "Aunque los guardias reales ya se hayan ido, los guardias normales de la ciudad podrían llegar en cualquier momento. Deberíamos buscar un lugar donde escondernos, descansar un rato y recuperarnos."
+
+              "Joder...", dice Hadrik al ver lo poco que Daren es capaz de mantenerse en pie. "¿Qué te ha pasado? ¡Pareces alguien a quien le acaba de caer una casa encima!"
+
+              "¿Y tú me lo dices?...", dice Daren cuando por fin logra llegar hasta nosotros. "¿Te has mirado al espejo últimamente? Tienes toda la cara hinchada y estás lleno de moratones. Te curaría, pero ahora mismo estoy demasiado debilitado para hacerlo. Apenas he conseguido lanzarme un hechizo de recuperación para volver a ponerme en pie."
+
+              "Estoy de acuerdo en que deberíamos buscar refugio", dice Kate, echando un vistazo rápido a la plaza, ahora casi vacía, que nos rodea. "Cuanto más tiempo nos quedemos aquí, más vulnerables seremos. El problema es que no tengo ni idea de cómo podríamos encontrar un lugar seguro en medio de territorio enemigo..."
+          - source: scene_text_2
+            paragraph: 2
+            text: |-
+              "¡Quizá podamos serles de ayuda!", dice un hombre de unos cincuenta y tantos, con una barba gris recortada y una sonrisa amable en el rostro, mientras se abre paso lentamente hacia nosotros.
+
+              El hombre parece llevar algún tipo de bata de laboratorio y sale de uno de los muchos callejones que desembocan en la plaza, seguido por dos jóvenes armados que probablemente rondan la mitad de la veintena.
+
+              "Y usted quién sería, si no le importa que le preg--", empieza a decir Daren, pero se interrumpe al ver a Leila correr hacia el hombre que acaba de hablar.
+
+              "¡Padre!", escribe Leila con letras muy grandes mientras va a abrazar al hombre de la bata de laboratorio.
+
+              "Leila, querida mía... ¡te he echado muchísimo de menos!", dice el hombre mientras abraza a su hija con fuerza.
+
+              "Padre, estos son mis amigos", escribe Leila en cuanto suelta a su padre. "Me ayudaron a salir de prisión y me escoltaron hasta aquí."
+
+              "Sí, creo que ya me hago una idea general", dice el padre de Leila. "Les estoy muy agradecido a todos por haber cuidado de mi hija durante tanto tiempo, pero les recomiendo que dejemos las presentaciones para más tarde, cuando estemos a salvo y lejos de aquí."
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              "¿Debemos entender que ya tienen preparada alguna ruta de escape para nosotros?", pregunta Kate.
+
+              "¡Así es!", dice el padre de Leila. "Síganme, por favor."
+
+              Nos cruzamos unas cuantas miradas y luego seguimos a Leila, a su padre y a sus dos guardaespaldas por el estrecho callejón del que habían salido. Entonces el padre de Leila saca un transceptor de su bata de laboratorio y empieza a hablar de inmediato por él.
+
+              "Barry, ¿me oyes?", dice el padre de Leila.
+
+              "Uf... ¡otra vez no!", digo, mientras Hadrik y Arraka empiezan a reírse de fondo.
+
+              "¡Barry!", vuelve a gritar el padre de Leila por el transceptor, mientras las risas de Hadrik y Arraka van a más.
+
+              "Esperen un momento", nos dice el padre de Leila. "Estoy teniendo algunos problemas para ponerme en contacto con uno de mis compañeros por culpa de la gruesa capa de seredium que... perdón, ¿pasa algo?"
+
+              "¡No nos hagan caso!", dice Hadrik, intentando contener la risa. "Solo nos estamos riendo porque nuestro amigo de aquí también se llama Barry y no es la primera vez que nos encontramos con alguien que lleva su mismo nombre durante nuestros viajes."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02c_transceiver
+      - condition: b3_ch2_gontrok <> 3
+        texts:
+          - source: scene_text
+            paragraph: 8
+            text: |-
+              "Puede que Eiden intentara jugar con el rey para ver cómo reaccionaba."
+
+              "Sí, no me costaría creer que hiciera algo así", dice Hadrik. "Aunque, a juzgar por su reacción, no parecía algo planeado por él."
+
+              "No deberíamos quedarnos aquí mucho tiempo", dice Daren, mientras avanza cojeando lentamente hacia nosotros y recoge la espada de donde la dejé caer cuando el capitán me tenía inmovilizado contra el suelo. "Aunque los guardias reales ya se hayan ido, los guardias normales de la ciudad podrían llegar en cualquier momento. Deberíamos buscar un lugar donde escondernos, descansar un rato y recuperarnos."
+
+              "Joder...", dice Hadrik al ver lo poco que Daren es capaz de mantenerse en pie. "¿Qué te ha pasado? ¡Pareces alguien a quien le acaba de caer una casa encima!"
+
+              "¿Y tú me lo dices?...", dice Daren cuando por fin logra llegar hasta nosotros. "¿Te has mirado al espejo últimamente? Tienes toda la cara hinchada y estás lleno de moratones. Te curaría, pero ahora mismo estoy demasiado debilitado para hacerlo. Apenas he conseguido lanzarme un hechizo de recuperación para volver a ponerme en pie."
+
+              "Estoy de acuerdo en que deberíamos buscar refugio", dice Kate, echando un vistazo rápido a la plaza, ahora casi vacía, que nos rodea. "Cuanto más tiempo nos quedemos aquí, más vulnerables seremos. El problema es que no tengo ni idea de cómo podríamos encontrar un lugar seguro en medio de territorio enemigo..."
+          - source: scene_text_2
+            paragraph: 2
+            text: |-
+              "¡Quizá podamos serles de ayuda!", dice un hombre de unos cincuenta y tantos, con una barba gris recortada y una sonrisa amable en el rostro, mientras se abre paso lentamente hacia nosotros.
+
+              El hombre parece llevar algún tipo de bata de laboratorio y sale de uno de los muchos callejones que desembocan en la plaza, seguido por dos jóvenes armados que probablemente rondan la mitad de la veintena.
+
+              "Y usted quién sería, si no le importa que le preg--", empieza a decir Daren, pero se interrumpe al ver a Leila correr hacia el hombre que acaba de hablar.
+
+              "¡Padre!", escribe Leila con letras muy grandes mientras va a abrazar al hombre de la bata de laboratorio.
+
+              "Leila, querida mía... ¡te he echado muchísimo de menos!", dice el hombre mientras abraza a su hija con fuerza.
+
+              "Padre, estos son mis amigos", escribe Leila en cuanto suelta a su padre. "Me ayudaron a salir de prisión y me escoltaron hasta aquí."
+
+              "Sí, creo que ya me hago una idea general", dice el padre de Leila. "Les estoy muy agradecido a todos por haber cuidado de mi hija durante tanto tiempo, pero les recomiendo que dejemos las presentaciones para más tarde, cuando estemos a salvo y lejos de aquí."
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              "¿Debemos entender que ya tienen preparada alguna ruta de escape para nosotros?", pregunta Kate.
+
+              "¡Así es!", dice el padre de Leila. "Síganme, por favor."
+
+              Nos cruzamos unas cuantas miradas y luego seguimos a Leila, a su padre y a sus dos guardaespaldas por el estrecho callejón del que habían salido. Entonces el padre de Leila saca un transceptor de su bata de laboratorio y empieza a hablar de inmediato por él.
+
+              "Barry, ¿me oyes?", dice el padre de Leila.
+
+              "Uf... ¡otra vez no!", digo, mientras Hadrik y Arraka empiezan a reírse de fondo.
+
+              "¡Barry!", vuelve a gritar el padre de Leila por el transceptor, mientras las risas de Hadrik y Arraka van a más.
+
+              "Esperen un momento", nos dice el padre de Leila. "Estoy teniendo algunos problemas para ponerme en contacto con uno de mis compañeros por culpa de la gruesa capa de seredium que... perdón, ¿pasa algo?"
+
+              "¡No nos hagan caso!", dice Hadrik, intentando contener la risa. "Solo nos estamos riendo porque nuestro amigo de aquí también se llama Barry y no es la primera vez que nos encontramos con alguien que lleva su mismo nombre durante nuestros viajes."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02c_transceiver
   - name: b3_ch02c_defective
-    texts:
-      - source: scene_text
-        paragraph: 3
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch2_gontrok = 3
+        texts:
+          - source: scene_text
+            paragraph: 4
+            text: |-
+              "Puede que solo fuera un dispositivo defectuoso y el rey teletransportara a los guardias para nada."
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "¡Ja!", dice Hadrik. "Me lo creo perfectamente. Me pregunto qué cara pondría Gontrok cuando se diera cuenta de que lo llamaron para algo tan trivial."
+
+              "No deberíamos quedarnos aquí mucho tiempo", dice Daren, mientras recoge la espada del suelo y luego empieza a avanzar cojeando lentamente hacia nosotros. "Aunque los guardias reales ya se hayan ido, los guardias normales de la ciudad podrían llegar en cualquier momento. Deberíamos buscar un lugar donde escondernos, descansar un rato y recuperarnos."
+
+              "Joder...", dice Hadrik al ver lo poco que Daren es capaz de mantenerse en pie. "¿Qué te ha pasado? ¡Pareces alguien a quien le acaba de caer una casa encima!"
+
+              "¿Y tú me lo dices?...", dice Daren cuando por fin logra llegar hasta nosotros. "¿Te has mirado al espejo últimamente? Tienes toda la cara hinchada y estás lleno de moratones. Te curaría, pero ahora mismo estoy demasiado debilitado para hacerlo. Apenas he conseguido lanzarme un hechizo de recuperación para volver a ponerme en pie."
+
+              "Estoy de acuerdo en que deberíamos buscar refugio", dice Kate, echando un vistazo rápido a la plaza, ahora casi vacía, que nos rodea. "Cuanto más tiempo nos quedemos aquí, más vulnerables seremos. El problema es que no tengo ni idea de cómo podríamos encontrar un lugar seguro en medio de territorio enemigo..."
+          - source: scene_text_2
+            paragraph: 2
+            text: |-
+              "¡Quizá podamos serles de ayuda!", dice un hombre de unos cincuenta y tantos, con una barba gris recortada y una sonrisa amable en el rostro, mientras se abre paso lentamente hacia nosotros.
+
+              El hombre parece llevar algún tipo de bata de laboratorio y sale de uno de los muchos callejones que desembocan en la plaza, seguido por dos jóvenes armados que probablemente rondan la mitad de la veintena.
+
+              "Y usted quién sería, si no le importa que le preg--", empieza a decir Daren, pero se interrumpe al ver a Leila correr hacia el hombre que acaba de hablar.
+
+              "¡Padre!", escribe Leila con letras muy grandes mientras va a abrazar al hombre de la bata de laboratorio.
+
+              "Leila, querida mía... ¡te he echado muchísimo de menos!", dice el hombre mientras abraza a su hija con fuerza.
+
+              "Padre, estos son mis amigos", escribe Leila en cuanto suelta a su padre. "Me ayudaron a salir de prisión y me escoltaron hasta aquí."
+
+              "Sí, creo que ya me hago una idea general", dice el padre de Leila. "Les estoy muy agradecido a todos por haber cuidado de mi hija durante tanto tiempo, pero les recomiendo que dejemos las presentaciones para más tarde, cuando estemos a salvo y lejos de aquí."
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              "¿Debemos entender que ya tienen preparada alguna ruta de escape para nosotros?", pregunta Kate.
+
+              "¡Así es!", dice el padre de Leila. "Síganme, por favor."
+
+              Nos cruzamos unas cuantas miradas y luego seguimos a Leila, a su padre y a sus dos guardaespaldas por el estrecho callejón del que habían salido. Entonces el padre de Leila saca un transceptor de su bata de laboratorio y empieza a hablar de inmediato por él.
+
+              "Barry, ¿me oyes?", dice el padre de Leila.
+
+              "Uf... ¡otra vez no!", digo, mientras Hadrik y Arraka empiezan a reírse de fondo.
+
+              "¡Barry!", vuelve a gritar el padre de Leila por el transceptor, mientras las risas de Hadrik y Arraka van a más.
+
+              "Esperen un momento", nos dice el padre de Leila. "Estoy teniendo algunos problemas para ponerme en contacto con uno de mis compañeros por culpa de la gruesa capa de seredium que... perdón, ¿pasa algo?"
+
+              "¡No nos hagan caso!", dice Hadrik, intentando contener la risa. "Solo nos estamos riendo porque nuestro amigo de aquí también se llama Barry y no es la primera vez que nos encontramos con alguien que lleva su mismo nombre durante nuestros viajes."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02c_transceiver
+      - condition: b3_ch2_gontrok <> 3
+        texts:
+          - source: scene_text
+            paragraph: 9
+            text: |-
+              "Puede que solo fuera un dispositivo defectuoso y el rey teletransportara a los guardias para nada."
+
+              "¡Ja!", dice Hadrik. "Me lo creo perfectamente. Me pregunto qué cara pondría Gontrok cuando se diera cuenta de que lo llamaron para algo tan trivial."
+
+              "No deberíamos quedarnos aquí mucho tiempo", dice Daren, mientras avanza cojeando lentamente hacia nosotros y recoge la espada de donde la dejé caer cuando el capitán me tenía inmovilizado contra el suelo. "Aunque los guardias reales ya se hayan ido, los guardias normales de la ciudad podrían llegar en cualquier momento. Deberíamos buscar un lugar donde escondernos, descansar un rato y recuperarnos."
+
+              "Joder...", dice Hadrik al ver lo poco que Daren es capaz de mantenerse en pie. "¿Qué te ha pasado? ¡Pareces alguien a quien le acaba de caer una casa encima!"
+
+              "¿Y tú me lo dices?...", dice Daren cuando por fin logra llegar hasta nosotros. "¿Te has mirado al espejo últimamente? Tienes toda la cara hinchada y estás lleno de moratones. Te curaría, pero ahora mismo estoy demasiado debilitado para hacerlo. Apenas he conseguido lanzarme un hechizo de recuperación para volver a ponerme en pie."
+
+              "Estoy de acuerdo en que deberíamos buscar refugio", dice Kate, echando un vistazo rápido a la plaza, ahora casi vacía, que nos rodea. "Cuanto más tiempo nos quedemos aquí, más vulnerables seremos. El problema es que no tengo ni idea de cómo podríamos encontrar un lugar seguro en medio de territorio enemigo..."
+          - source: scene_text_2
+            paragraph: 2
+            text: |-
+              "¡Quizá podamos serles de ayuda!", dice un hombre de unos cincuenta y tantos, con una barba gris recortada y una sonrisa amable en el rostro, mientras se abre paso lentamente hacia nosotros.
+
+              El hombre parece llevar algún tipo de bata de laboratorio y sale de uno de los muchos callejones que desembocan en la plaza, seguido por dos jóvenes armados que probablemente rondan la mitad de la veintena.
+
+              "Y usted quién sería, si no le importa que le preg--", empieza a decir Daren, pero se interrumpe al ver a Leila correr hacia el hombre que acaba de hablar.
+
+              "¡Padre!", escribe Leila con letras muy grandes mientras va a abrazar al hombre de la bata de laboratorio.
+
+              "Leila, querida mía... ¡te he echado muchísimo de menos!", dice el hombre mientras abraza a su hija con fuerza.
+
+              "Padre, estos son mis amigos", escribe Leila en cuanto suelta a su padre. "Me ayudaron a salir de prisión y me escoltaron hasta aquí."
+
+              "Sí, creo que ya me hago una idea general", dice el padre de Leila. "Les estoy muy agradecido a todos por haber cuidado de mi hija durante tanto tiempo, pero les recomiendo que dejemos las presentaciones para más tarde, cuando estemos a salvo y lejos de aquí."
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              "¿Debemos entender que ya tienen preparada alguna ruta de escape para nosotros?", pregunta Kate.
+
+              "¡Así es!", dice el padre de Leila. "Síganme, por favor."
+
+              Nos cruzamos unas cuantas miradas y luego seguimos a Leila, a su padre y a sus dos guardaespaldas por el estrecho callejón del que habían salido. Entonces el padre de Leila saca un transceptor de su bata de laboratorio y empieza a hablar de inmediato por él.
+
+              "Barry, ¿me oyes?", dice el padre de Leila.
+
+              "Uf... ¡otra vez no!", digo, mientras Hadrik y Arraka empiezan a reírse de fondo.
+
+              "¡Barry!", vuelve a gritar el padre de Leila por el transceptor, mientras las risas de Hadrik y Arraka van a más.
+
+              "Esperen un momento", nos dice el padre de Leila. "Estoy teniendo algunos problemas para ponerme en contacto con uno de mis compañeros por culpa de la gruesa capa de seredium que... perdón, ¿pasa algo?"
+
+              "¡No nos hagan caso!", dice Hadrik, intentando contener la risa. "Solo nos estamos riendo porque nuestro amigo de aquí también se llama Barry y no es la primera vez que nos encontramos con alguien que lleva su mismo nombre durante nuestros viajes."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02c_transceiver
   - name: b3_ch02c_transceiver
     texts:
       - source: scene_text
-        paragraph: 4
-        text: |
-          Traducción en progreso.
+        paragraph: 5
+        text: |-
+          "¡Ah!", dice el padre de Leila. "Ahora lo entiendo. No dejes que te afecte, amigo mío. ¡A mí me parece que 'Barry' es un nombre estupendo!"
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¡Eh, gracias, Doc!", oímos que dice una voz desde el transceptor. "¿Pero a qué viene todo esto de repente?"
+
+          "No estaba hablando contigo...", dice el padre de Leila, acercando de nuevo el transceptor a su boca. "Estaba hablando con otro Barry que... ¿sabes qué? ¡Da igual! ¿Crees que puedes teletransportarnos sin peligro? ¿Puedes saber dónde estamos a partir de la señal de este transceptor?"
+
+          "Sí, recibo bien su señal", dice la voz del transceptor. "¿Los teletransporto ahora mismo?"
+
+          "¡Sí!", dice el padre de Leila. "Pero asegúrate de transportarnos a todos. No querríamos que nadie se quedara atrás."
+
+          "Entendido", dice la voz del transceptor. "¡Allá vamos!"
+      - source: scene_text_2
+        paragraph: 3
+        text: |-
+          En cuanto la voz deja de hablar, todos nos sentimos teletransportados fuera del callejón mientras una luz blanca empieza a envolvernos. Unos instantes después, nos encontramos de pie en medio de una cueva tenuemente iluminada, cuya única fuente de luz son unos cristales azules brillantes incrustados en las paredes. Al mirar a mi alrededor, me doy cuenta de que tanto las paredes como el techo, que se alza muy arriba, están hechos de seredium, y también hay unas plantas de aspecto peculiar creciendo dentro de esta cueva, que probablemente solo pueden encontrarse en lugares subterráneos como este.
+
+          El hombre llamado Barry del que hablaba antes el padre de Leila está de pie detrás de una especie de escritorio metálico con varios botones, y detrás de él hay un aparato metálico enorme con muchas luces de distintos colores iluminándolo, que solo puedo suponer que es el teletransportador que se usó para traernos aquí. Ya había oído que la gente de Varathia tiene acceso a tecnología como esta y estoy bastante seguro de que fue con un aparato semejante como nos trajeron a este continente, pero esta es la primera vez que tengo la oportunidad de ver uno de cerca.
+
+          "Gracias, Barry, por traernos aquí", le dice el padre de Leila al hombre que está detrás del escritorio.
+      - source: scene_3
+        paragraph: 3
+        text: |-
+          "De nada, Doc", dice el hombre que está detrás del escritorio. "¿Pero quién es toda esta gente? ¿Amigos tuyos?"
+
+          "Esta es mi hija, Leila", dice el padre de Leila mientras la señala. "Creo que ya te hablé de ella en varias ocasiones. Y estos son los amigos de Leila, que la ayudaron a llegar hasta Ollendor. Por desgracia, aún no he tenido tiempo de aprenderme sus nombres. Leila, ¿serías tan amable de presentarnos?"
+
+          Leila asiente y hace aparecer cada uno de nuestros nombres sobre nuestras cabezas, escritos con su habitual caligrafía azul.
+
+          "¡Encantado de conocerlos a todos!", dice el padre de Leila. "Yo soy Reidzek, estos dos a mi lado son Peter y Albert, y ese hombre junto al escritorio, como ya saben, es Barry."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02c_homeland
   - name: b3_ch02c_homeland
     texts:
       - source: scene_text
-        paragraph: 5
-        text: |
-          Traducción en progreso.
+        paragraph: 6
+        text: |-
+          "¡Ah, ahora lo entiendo!", dice el hombre detrás del escritorio al mirar el nombre sobre mi cabeza. "Antes hablabas con este otro Barry por el transceptor. Me recuerda a cuando yo era amigo de otros dos Barry de pequeño y todos tuvimos que ponernos apodos para que la cosa no resultara demasiado confusa."
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Sí, así lo hacíamos también en mi tierra", dice Hadrik. "Siempre que había otros por ahí, la gente se limitaba a llamarme 'enano'. A lo mejor podríamos encontrarle algún apodo a nuestro Barry también. Algo como Barry el improvisador. O el temerario."
+
+          "Con que me llamen Barry me basta, muchas gracias", digo.
+
+          "No seas así, 'temerario'", dice Hadrik con una sonrisa. "Seguro que podemos encontrar un apodo que te guste más. O podríamos añadir el nombre de tu padre al final del tuyo, como hacen a veces esos nobles del Continente Occidental con sus apellidos para sentirse más importantes. ¿Qué me dices?"
+
+          "No hace falta obligarlo a usar un apodo si no quiere", dice el hombre detrás del escritorio. "Yo ya tengo uno viejo al que estoy acostumbrado, así que pueden llamarme así si creen que sería menos confuso. Antes me llamaban 'Nubarrón'."
+      - source: scene_text_2
+        paragraph: 4
+        text: |-
+          "Oye, no está nada mal ese apodo", dice Hadrik. "Muy bien, entonces, Nubarrón... ¿te importaría decirnos qué es exactamente este lugar? ¿Nos han teletransportado debajo de la ciudad o...?"
+
+          "Eh... creo que sí...", dice el hombre detrás del escritorio. "Recuerdo que me hablaron de ello durante mi charla de orientación inicial, pero ha pasado mucho tiempo desde entonces. Doctor, a usted se lo explicaron hace relativamente poco. ¿Recuerda si el teletransportador está situado bajo Ollendor o no?"
+
+          "Sí, creo que este dispositivo de teletransporte fue colocado en algún punto bajo el centro de la ciudad", dice el padre de Leila. "Pero estamos muy, muy abajo. Ese techo que ven allá arriba está formado por una capa enorme de seredium y, hasta donde yo sé, no hay otra forma de llegar a la superficie que usar este teletransportador. Estos túneles subterráneos se extienden durante millas y millas, eso sí, así que no es imposible que exista alguna salida que lleve arriba, pero esto es como un laberinto gigantesco, así que lo más probable es que uno se pierda y muera de hambre antes de encontrar la salida."
+      - source: scene_3
+        paragraph: 4
+        text: |-
+          "¿Cómo consiguieron encontrarnos?", escribe Leila. "¿Solo pasaban por allí o alguien les dijo que íbamos a estar en ese sitio?"
+
+          "Los hemos estado siguiendo desde que entraron en la ciudad", dice Albert, uno de los dos guardaespaldas de Reidzek. "Nosotros dos, quiero decir. No el doctor Reidzek. El doctor nos dijo una vez que su hija tenía el pelo plateado, así que en cuanto los vimos a ti y a tu grupo, contactamos de inmediato con Barry para que pudiera avisar al doctor y teletransportarlo a la superficie. Cuando los vimos pelear contra los guardias reales, entramos un poco en pánico, pero conseguimos convencer al rey del subsuelo de que enviara a algunos de nuestros hombres a crear una distracción en el templo donde se celebraba la ceremonia, con la esperanza de que eso hiciera que los guardias reales dejaran de perseguirlos."
+
+          "Un momento...", dice Daren. "Entonces, ¿fueron ustedes los que provocaron esa explosión?"
+
+          "Algunos de nuestros compañeros, sí", dice Albert. "Sabíamos que el rey suele teletransportar a los guardias reales a su posición siempre que siente que su vida puede estar en peligro, así que supusimos que una explosión bastaría para asustarlo un poco."
+    choices:
+      - position: 1
+        text: ¿Qué pasó con sus amigos, los que provocaron la explosión? ¿Están todos a salvo?
+        effects:
+          - set:
+              current_scene: b3_ch02c_safe
+      - position: 2
+        text: ¿Y cómo se las arreglaron para hacerlo? ¿No había gente vigilando el lugar?
+        effects:
+          - set:
+              current_scene: b3_ch02c_guarding
+      - position: 3
+        text: ¿No fue un poco arriesgado? ¿Por qué aceptaron hacerlo solo por nosotros?
+        effects:
+          - set:
+              current_scene: b3_ch02c_risky
   - name: b3_ch02c_safe
     texts:
       - source: scene_text
-        paragraph: 6
-        text: |
-          Traducción en progreso.
+        paragraph: 10
+        text: |-
+          "¿Qué pasó con sus amigos, los que provocaron la explosión? ¿Están todos a salvo?"
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Contactamos con ellos antes de salir a buscarlos y todos consiguieron huir a tiempo", dice Peter, la segunda persona que acompaña al padre de Leila. "Probablemente se reúnan con nosotros aquí dentro de poco, cuando terminen con los asuntos que tenían en la superficie."
+
+          "Antes mencionaron algo sobre un 'rey del subsuelo'", dice Illuna mientras mira a Albert. "¿Quién es exactamente esa persona?"
+
+          "El rey del subsuelo es el líder de esta pequeña sociedad subterránea y un patrocinador muy generoso de nuestro movimiento de resistencia", dice Albert. "Tuvo la amabilidad de proporcionarnos una base de operaciones aquí, en estas cavernas subterráneas, y también nos dio muchas herramientas útiles que han sido de gran ayuda en nuestros esfuerzos por socavar la tiranía del rey loco de Ollendor. A cambio de sus inversiones, el rey del subsuelo nos ha pedido que no emprendamos ninguna acción sin su consentimiento explícito, y también aceptamos ir en ocasiones a misiones solicitadas personalmente por él, aunque no siempre estén relacionadas de forma directa con derrocar al rey de la superficie."
+
+          "Entonces, lo que intentan es iniciar una rebelión, ¿no?", dice Hadrik.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "No exactamente", dice Albert. "Preferiríamos evitar una guerra civil en la medida de lo posible. No queremos que la sangre de nuestros hermanos manche la tierra de esta ciudad. Lo único que queremos es deshacernos de la cúpula corrupta que lleva años asolando este reino, y preferiríamos hacerlo de una manera que requiera la menor cantidad de sangre posible. Cuando le dijimos al rey del subsuelo que estaban peleando contra los guardias reales, se interesó por su grupo, y por eso decidió ayudarlos. Dijo que le gustaría conocerlos cuanto antes, con la esperanza de convencerlos de unirse a nuestra causa o al menos de formar una alianza temporal con nosotros. En fin, no deberíamos quedarnos aquí parados. Nuestra base de operaciones está un poco más adelante, por estos pasillos. Sígannos y los llevaremos a nuestra sala de espera."
+
+          "¡Hasta luego, Barry!", dice el padre de Leila mientras todos empezamos a seguir a Albert por uno de los túneles. "Ah, perdón, quería decir Nubarrón. Voy a tardar un poco en acostumbrarme a ese apodo."
+
+          "¡Hasta luego, Doc!", dice el hombre que está detrás del escritorio. "¡Me alegra muchísimo que por fin haya encontrado a su hija!"
+
+          "Padre, ¿por qué esta gente te llama 'doctor'?", escribe Leila. "¿Has empezado a ejercer la medicina desde que llegaste aquí?"
+
+          "Creo que es sobre todo por esta bata blanca de laboratorio que suelo llevar para no mancharme la ropa de aceite cuando trabajo en mis aparatos", dice el padre de Leila. "Se parece a las batas que suelen llevar los médicos en los hospitales y la gente de aquí necesitaba ponerme un apodo, porque mi nombre real es bastante difícil de pronunciar."
+      - source: scene_3
+        paragraph: 5
+        text: '"Es más que la bata, doctor", dice Peter. "La primera vez que lo conocimos, estuvo a punto de acabar arrestado por los guardias de la ciudad porque estaba prestando asistencia médica a uno de nuestros compañeros, que había resultado gravemente herido durante una de sus misiones. Si usted no hubiera estado allí para ayudarlo, podría haber muerto desangrado antes de que llegáramos hasta él. También nos ha ayudado a reparar algunos de nuestros dispositivos de curación, que han servido para salvar muchas vidas en los últimos días. Todos estamos enormemente agradecidos por el trabajo que ha estado haciendo desde que llegó aquí."'
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02c_seredium
   - name: b3_ch02c_guarding
     texts:
       - source: scene_text
-        paragraph: 7
-        text: |
-          Traducción en progreso.
+        paragraph: 11
+        text: |-
+          "¿Y cómo se las arreglaron para hacerlo? ¿No había gente vigilando el lugar?"
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "En realidad colocamos esos explosivos hace mucho tiempo, por si acaso", dice Peter, la segunda persona que acompaña al padre de Leila. "Nunca se sabe cuándo va a hacer falta una distracción. Lo único que tenían que hacer nuestros compañeros era acercarse lo suficiente para activarlos, no entrar de verdad en el templo, así que no necesitaban enfrentarse directamente a ninguno de los guardias."
+
+          "Antes mencionaron algo sobre un 'rey del subsuelo'", dice Illuna mientras mira a Albert. "¿Quién es exactamente esa persona?"
+
+          "El rey del subsuelo es el líder de esta pequeña sociedad subterránea y un patrocinador muy generoso de nuestro movimiento de resistencia", dice Albert. "Tuvo la amabilidad de proporcionarnos una base de operaciones aquí, en estas cavernas subterráneas, y también nos dio muchas herramientas útiles que han sido de gran ayuda en nuestros esfuerzos por socavar la tiranía del rey loco de Ollendor. A cambio de sus inversiones, el rey del subsuelo nos ha pedido que no emprendamos ninguna acción sin su consentimiento explícito, y también aceptamos ir en ocasiones a misiones solicitadas personalmente por él, aunque no siempre estén relacionadas de forma directa con derrocar al rey de la superficie."
+
+          "Entonces, lo que intentan es iniciar una rebelión, ¿no?", dice Hadrik.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "No exactamente", dice Albert. "Preferiríamos evitar una guerra civil en la medida de lo posible. No queremos que la sangre de nuestros hermanos manche la tierra de esta ciudad. Lo único que queremos es deshacernos de la cúpula corrupta que lleva años asolando este reino, y preferiríamos hacerlo de una manera que requiera la menor cantidad de sangre posible. Cuando le dijimos al rey del subsuelo que estaban peleando contra los guardias reales, se interesó por su grupo, y por eso decidió ayudarlos. Dijo que le gustaría conocerlos cuanto antes, con la esperanza de convencerlos de unirse a nuestra causa o al menos de formar una alianza temporal con nosotros. En fin, no deberíamos quedarnos aquí parados. Nuestra base de operaciones está un poco más adelante, por estos pasillos. Sígannos y los llevaremos a nuestra sala de espera."
+
+          "¡Hasta luego, Barry!", dice el padre de Leila mientras todos empezamos a seguir a Albert por uno de los túneles. "Ah, perdón, quería decir Nubarrón. Voy a tardar un poco en acostumbrarme a ese apodo."
+
+          "¡Hasta luego, Doc!", dice el hombre que está detrás del escritorio. "¡Me alegra muchísimo que por fin haya encontrado a su hija!"
+
+          "Padre, ¿por qué esta gente te llama 'doctor'?", escribe Leila. "¿Has empezado a ejercer la medicina desde que llegaste aquí?"
+
+          "Creo que es sobre todo por esta bata blanca de laboratorio que suelo llevar para no mancharme la ropa de aceite cuando trabajo en mis aparatos", dice el padre de Leila. "Se parece a las batas que suelen llevar los médicos en los hospitales y la gente de aquí necesitaba ponerme un apodo, porque mi nombre real es bastante difícil de pronunciar."
+      - source: scene_3
+        paragraph: 5
+        text: '"Es más que la bata, doctor", dice Peter. "La primera vez que lo conocimos, estuvo a punto de acabar arrestado por los guardias de la ciudad porque estaba prestando asistencia médica a uno de nuestros compañeros, que había resultado gravemente herido durante una de sus misiones. Si usted no hubiera estado allí para ayudarlo, podría haber muerto desangrado antes de que llegáramos hasta él. También nos ha ayudado a reparar algunos de nuestros dispositivos de curación, que han servido para salvar muchas vidas en los últimos días. Todos estamos enormemente agradecidos por el trabajo que ha estado haciendo desde que llegó aquí."'
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02c_seredium
   - name: b3_ch02c_risky
     texts:
       - source: scene_text
-        paragraph: 8
-        text: |
-          Traducción en progreso.
+        paragraph: 12
+        text: |-
+          "¿No fue un poco arriesgado? ¿Por qué aceptaron hacerlo solo por nosotros?"
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "No fue tan arriesgado como podrían pensar", dice Peter, la segunda persona que acompaña al padre de Leila. "No necesitaban pelear con los guardias frente al templo ni nada parecido. Lo único que hicieron fue activar los explosivos y largarse rápido antes de que nadie pudiera darse cuenta de que eran los culpables."
+
+          "Antes mencionaron algo sobre un 'rey del subsuelo'", dice Illuna mientras mira a Albert. "¿Quién es exactamente esa persona?"
+
+          "El rey del subsuelo es el líder de esta pequeña sociedad subterránea y un patrocinador muy generoso de nuestro movimiento de resistencia", dice Albert. "Tuvo la amabilidad de proporcionarnos una base de operaciones aquí, en estas cavernas subterráneas, y también nos dio muchas herramientas útiles que han sido de gran ayuda en nuestros esfuerzos por socavar la tiranía del rey loco de Ollendor. A cambio de sus inversiones, el rey del subsuelo nos ha pedido que no emprendamos ninguna acción sin su consentimiento explícito, y también aceptamos ir en ocasiones a misiones solicitadas personalmente por él, aunque no siempre estén relacionadas de forma directa con derrocar al rey de la superficie."
+
+          "Entonces, lo que intentan es iniciar una rebelión, ¿no?", dice Hadrik.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "No exactamente", dice Albert. "Preferiríamos evitar una guerra civil en la medida de lo posible. No queremos que la sangre de nuestros hermanos manche la tierra de esta ciudad. Lo único que queremos es deshacernos de la cúpula corrupta que lleva años asolando este reino, y preferiríamos hacerlo de una manera que requiera la menor cantidad de sangre posible. Cuando le dijimos al rey del subsuelo que estaban peleando contra los guardias reales, se interesó por su grupo, y por eso decidió ayudarlos. Dijo que le gustaría conocerlos cuanto antes, con la esperanza de convencerlos de unirse a nuestra causa o al menos de formar una alianza temporal con nosotros. En fin, no deberíamos quedarnos aquí parados. Nuestra base de operaciones está un poco más adelante, por estos pasillos. Sígannos y los llevaremos a nuestra sala de espera."
+
+          "¡Hasta luego, Barry!", dice el padre de Leila mientras todos empezamos a seguir a Albert por uno de los túneles. "Ah, perdón, quería decir Nubarrón. Voy a tardar un poco en acostumbrarme a ese apodo."
+
+          "¡Hasta luego, Doc!", dice el hombre que está detrás del escritorio. "¡Me alegra muchísimo que por fin haya encontrado a su hija!"
+
+          "Padre, ¿por qué esta gente te llama 'doctor'?", escribe Leila. "¿Has empezado a ejercer la medicina desde que llegaste aquí?"
+
+          "Creo que es sobre todo por esta bata blanca de laboratorio que suelo llevar para no mancharme la ropa de aceite cuando trabajo en mis aparatos", dice el padre de Leila. "Se parece a las batas que suelen llevar los médicos en los hospitales y la gente de aquí necesitaba ponerme un apodo, porque mi nombre real es bastante difícil de pronunciar."
+      - source: scene_3
+        paragraph: 5
+        text: '"Es más que la bata, doctor", dice Peter. "La primera vez que lo conocimos, estuvo a punto de acabar arrestado por los guardias de la ciudad porque estaba prestando asistencia médica a uno de nuestros compañeros, que había resultado gravemente herido durante una de sus misiones. Si usted no hubiera estado allí para ayudarlo, podría haber muerto desangrado antes de que llegáramos hasta él. También nos ha ayudado a reparar algunos de nuestros dispositivos de curación, que han servido para salvar muchas vidas en los últimos días. Todos estamos enormemente agradecidos por el trabajo que ha estado haciendo desde que llegó aquí."'
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02c_seredium
   - name: b3_ch02c_seredium
     texts:
       - source: scene_text
-        paragraph: 9
-        text: |
-          Traducción en progreso.
+        paragraph: 13
+        text: |-
+          "No hace falta que me lo agradezcas, Peter", dice el padre de Leila. "Yo también les estoy agradecido a todos ustedes por haber sido tan amables de darme un lugar donde vivir cuando no tenía adónde ir. Solo espero que todo el trabajo que estamos haciendo aquí no sea en vano. Me gustaría mucho poder vivir algún día con mi hija en la superficie de esta ciudad, sin tener que temer por nuestras vidas a diario."
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Así de mal está la cosa en esta ciudad, ¿eh?...", dice Hadrik.
+
+          "Sí", dice Albert. "El rey hace lo que le da la gana y, si miras mal a un guardia, puede que al día siguiente desaparezcas de tu casa sin que nadie vuelva a saber de ti jamás. Todos tenemos muchísima suerte de poder vivir en estas cavernas subterráneas, pero aquí abajo no hay espacio suficiente para acoger a todos los habitantes de Ollendor. Por no hablar de que la mayor parte del aire que respiramos proviene de estas plantas que ven creciendo en las paredes, y no hay bastantes como para proporcionar un entorno adecuado a tanta gente."
+
+          "Nunca había visto plantas como estas", dice Daren, que sigue cojeando justo detrás de nosotros. "¿Cómo se llaman?"
+      - source: scene_text_2
+        paragraph: 7
+        text: |-
+          "Creo que nadie les ha puesto nombre todavía", dice el padre de Leila, "pero parecen ser un tipo especial de planta que se ha adaptado para sobrevivir solo con los pocos nutrientes que le proporcionan estas rocas de seredium y la tenue luz de estos cristales azules. También deben de tener raíces muy fuertes, porque desde luego no debe de ser fácil atravesar estas paredes de seredium."
+
+          "¡Oh, acabo de acordarme de algo que olvidé decirles!", dice Albert. "Estas gruesas paredes y este techo de seredium hacen casi imposible contactar con nadie del exterior mediante un transceptor, así que si alguna vez quieren enviar un mensaje a alguien de la superficie, tendrán que ponerse en contacto con Barry o ir ustedes mismos a la sala del teletransportador, porque ese es el único lugar donde hay tan poco seredium en el techo que no bloquea por completo todas las ondas mágicas enviadas por el transceptor."
+
+          "Ya que hablamos de ese teletransportador...", digo. "¿Será por casualidad el mismo teletransportador que nos trasladó a los participantes del torneo hasta Varathia?"
+
+          "¡Oh, no, no, no!", dice Albert. "Desde luego que no. Este teletransportador apenas cubre el alcance de esta ciudad, y eso solo porque está colocado justo en el centro. No creo que haya más que unos pocos teletransportadores en toda esta isla capaces de enviarte a otro continente, y todos deben de estar fuertemente vigilados. Estoy bastante seguro, eso sí, de que en Ollendor no se encuentra ninguno de ese tipo."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02c_banshees
   - name: b3_ch02c_banshees
     texts:
       - source: scene_text
-        paragraph: 10
-        text: |
-          Traducción en progreso.
+        paragraph: 14
+        text: |-
+          "Eh... perdonen si estoy siendo demasiado directo", dice Peter mientras mira a Kate y a Illuna, "pero las vi pelear allí fuera y quería preguntarles una cosa. ¿Serían por casualidad... banshees?"
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "De nosotras dos, solo yo soy una banshee", dice Illuna. "Kate es una maga, pero no nació siéndolo. Se convirtió en una más tarde."
+
+          "Ya veo...", dice Peter, sin saber muy bien qué más añadir.
+
+          "Además, comparto este cuerpo con una niña llamada Flower, que también puede usar magia", dice Illuna. "Los propulsores de fuego que viste antes venían de ella, no de mí."
+
+          "¿Compartes el cuerpo?...", dice Peter, en un ligero estado de shock. "¿Con tu anfitriona?"
+
+          "¡Oooh!", dice Albert. "¡Conque por eso había dos nombres sobre tu cabeza cuando la hija del doctor Reidzek hizo las presentaciones! Entonces supongo que tu nombre era Illuna, ¿no?"
+
+          "Sí, así es", dice Illuna.
+
+          "Bueno, sean banshees o no, ¡estoy seguro de que nuestro rey estará más que encantado de tenerlas en nuestro bando!", dice Albert.
+
+          "Cuando dices rey, te refieres a vuestro 'rey del subsuelo', ¿verdad?", dice Hadrik. "Porque esto empieza a ser un poco confuso."
+      - source: scene_text_2
+        paragraph: 8
+        text: |-
+          "Sí, me refería a eso", dice Albert cuando por fin llegamos al final del pasillo y entramos en una gran sala vacía, con alrededor de una docena de sillas alineadas cerca de la entrada y varias personas de pie en el centro del recinto. "En fin, esta es la sala de espera de la que hablábamos antes. Tomen asiento, por favor. Mientras tanto, Peter y yo iremos a avisar al rey de su llegada."
+
+          Mientras hablamos, un hombre de unos cuarenta años, con una cicatriz en el ojo izquierdo y un aspecto curtido, empieza a acercarse despacio desde el otro extremo de la sala. Por su aura y por la señal de advertencia que estoy viendo encima de su cabeza, parece ser uno de los magos locales, aunque no sabría decir si es un encantador de armas o si se especializa en otra cosa. Lleva una espada colgada del cinturón y viste una armadura de cuero, pero también sostiene un bastón en la mano derecha, que supongo que usa para lanzar hechizos.
+
+          "¡Eh, Albert!", dice el hombre cuando se acerca. "¿Estos son los forasteros de los que Barry nos habló antes?"
+
+          "Sí, son ellos", dice Albert.
+
+          "¿Ah, sí?", dice el hombre, con una expresión algo impresionada. "¿Así que todavía no han muerto después de enfrentarse ellos solos a los guardias reales? Nada mal... Nada mal en absoluto."
+
+          "Solo se han topado con tres miembros de la guardia real", dice Albert. "El capitán, el mercenario y el gigante. Los demás deben de haber estado ocupados con alguna otra misión."
+      - source: scene_3
+        paragraph: 6
+        text: '"¿Se toparon con el capitán?", dice sorprendido el hombre de la cicatriz, mientras nos mira. "Eso explicaría por qué tienen todos esa pinta de haber recibido una paliza. Díganme, ¿qué clase de locura se les metió en la cabeza para decidir infiltrarse ilegalmente en una de las ciudades mejor vigiladas de este continente?"'
+    choices:
+      - position: 1
+        text: Es porque oímos que por aquí sirven unos bagels buenísimos.
+        effects:
+          - set:
+              current_scene: b3_ch02c_artificial
+              b3_ch2_madness: 0
+      - position: 2
+        text: Solo vinimos a comerciar. Todo es un gran malentendido.
+        effects:
+          - set:
+              current_scene: b3_ch02c_artificial
+              b3_ch2_madness: 1
+      - position: 3
+        text: La verdad es que vinimos a matar al rey de Ollendor.
+        effects:
+          - set:
+              current_scene: b3_ch02c_artificial
+              b3_ch2_madness: 2
   - name: b3_ch02c_artificial
-    texts:
-      - source: scene_text
-        paragraph: 11
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch2_madness = 0
+        texts:
+          - source: scene_text
+            paragraph: 15
+            text: |-
+              "Es porque oímos que por aquí sirven unos bagels buenísimos."
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Si eso es así, me temo decirles que han viajado hasta aquí para nada", dice el hombre de la cicatriz. "Los bagels que sirven aquí son absolutamente horribles. No le hagan caso a nadie que diga lo contrario."
+
+              "Qué verdadera lástima", digo. "Pero supongo que, ya que hemos venido hasta aquí, al menos podríamos quedarnos un rato y hacer algo de turismo. Si no, el viaje parecería un desperdicio."
+
+              "Sin duda", dice el hombre. "Entonces díganme, forasteros... ya que ya se han topado con los guardias reales, ¿por casualidad tuvieron también el placer de conocer al Supervisor y a sus 'drouns'?"
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "¿El Supervisor?", digo. "Ah, ¿te refieres a esa bola metálica de ojos verdes que habla raro? Sí, nos topamos con él."
+
+              "Puede que pienses que no es más que una bola metálica que habla raro, pero es muchísimo más que eso", dice el hombre. "Ese cabrón controla por completo todas esas bolas metálicas de ojos rojos que ves volando por la ciudad, y puede enviarlas a atacarte con decenas de hechizos elementales o incluso usarlas para espiarte. Puede que algunos de aquí no estén de acuerdo conmigo, pero desde mi punto de vista ese Supervisor es aún más peligroso que Billy Bob y la guardia real juntos."
+
+              "Sigues hablando de él como si fuera una persona, pero el Supervisor es claramente una cosa", dice Albert. "No es más que un protocolo de inteligencia artificial que inventaron los antiguos hace mucho tiempo y que Billy Bob consiguió reparar hace poco. Por muy 'inteligente' que sea, eso no lo convierte en una persona."
+
+              "¡Eso lo dices porque nunca lo has conocido!", dice el hombre de la cicatriz. "¡Te digo que ese cabrón solo está fingiendo! Puede que lo tomes por tonto, por cómo habla, pero juro que uno de estos días va a destronar al rey para coronarse nuevo gobernante de Ollendor, y entonces no podrán decir que no se los advertí."
+
+              "Sí, sí, Breynan", dice Albert. "Ya nos lo has dicho. Nos lo has repetido mil veces. Así que quizá ya podríamos dejar este tema y centrarnos en cosas más importantes, ¿no te parece?"
+            condition: b3_ch2_goblins = 3
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "¿El Supervisor?", digo. "Ah, ¿te refieres a esa bola metálica de ojos verdes que habla raro? Sí, nos topamos con él."
+
+              "Puede que pienses que no es más que una bola metálica que habla raro, pero es muchísimo más que eso", dice el hombre. "Ese cabrón controla por completo todas esas bolas metálicas de ojos rojos que ves volando por la ciudad, y puede enviarlas a atacarte con decenas de hechizos elementales o incluso usarlas para espiarte. Puede que algunos de aquí no estén de acuerdo conmigo, pero desde mi punto de vista ese Supervisor es aún más peligroso que Billy Bob y la guardia real juntos."
+
+              "Sigues hablando de él como si fuera una persona, pero el Supervisor es claramente una cosa", dice Albert. "No es más que un protocolo de inteligencia artificial que inventaron los antiguos hace mucho tiempo y que Billy Bob consiguió reparar hace poco. Por muy 'inteligente' que sea, eso no lo convierte en una persona."
+
+              "¡Eso lo dices porque nunca lo has conocido!", dice el hombre de la cicatriz. "¡Te digo que ese cabrón solo está fingiendo! Puede que lo tomes por tonto, por cómo habla, pero juro que uno de estos días va a destronar al rey para coronarse nuevo gobernante de Ollendor, y entonces no podrán decir que no se los advertí."
+
+              "Sí, sí, Breynan", dice Albert. "Ya nos lo has dicho. Nos lo has repetido mil veces. Así que quizá ya podríamos dejar este tema y centrarnos en cosas más importantes, ¿no te parece?"
+            condition: b3_ch2_goblins = 4
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "¿El Supervisor?", digo. "Ah, ¿te refieres a esa bola metálica de ojos verdes que habla raro? Sí, nos topamos con él."
+
+              "Puede que pienses que no es más que una bola metálica que habla raro, pero es muchísimo más que eso", dice el hombre. "Ese cabrón controla por completo todas esas bolas metálicas de ojos rojos que ves volando por la ciudad, y puede enviarlas a atacarte con decenas de hechizos elementales o incluso usarlas para espiarte. Puede que algunos de aquí no estén de acuerdo conmigo, pero desde mi punto de vista ese Supervisor es aún más peligroso que Billy Bob y la guardia real juntos."
+
+              "Sigues hablando de él como si fuera una persona, pero el Supervisor es claramente una cosa", dice Albert. "No es más que un protocolo de inteligencia artificial que inventaron los antiguos hace mucho tiempo y que Billy Bob consiguió reparar hace poco. Por muy 'inteligente' que sea, eso no lo convierte en una persona."
+
+              "¡Eso lo dices porque nunca lo has conocido!", dice el hombre de la cicatriz. "¡Te digo que ese cabrón solo está fingiendo! Puede que lo tomes por tonto, por cómo habla, pero juro que uno de estos días va a destronar al rey para coronarse nuevo gobernante de Ollendor, y entonces no podrán decir que no se los advertí."
+
+              "Sí, sí, Breynan", dice Albert. "Ya nos lo has dicho. Nos lo has repetido mil veces. Así que quizá ya podríamos dejar este tema y centrarnos en cosas más importantes, ¿no te parece?"
+            condition: b3_ch2_infiltration = 3
+          - source: scene_text_2
+            paragraph: 9
+            text: |-
+              "No estoy seguro de quién se supone que es ese Supervisor, pero si con 'drouns' te refieres a esas bolas metálicas voladoras, entonces sí, nos topamos con ellas", digo. "Esas chatarras estuvieron a punto de matarnos."
+
+              "Ah, sí", dice el hombre. "Esos 'drouns' no son ninguna broma, pero el Supervisor es todavía peor... Tiene el control absoluto sobre esas bolas metálicas y hasta puede usarlas para espiarte. Puede que algunos de aquí no estén de acuerdo conmigo, pero yo creo que ese cabrón es aún más peligroso que Billy Bob y la guardia real juntos."
+
+              "Sigues hablando de él como si fuera una persona, pero el Supervisor es claramente una cosa", dice Albert. "No es más que un protocolo de inteligencia artificial que inventaron los antiguos hace mucho tiempo y que Billy Bob consiguió reparar hace poco. Por muy 'inteligente' que sea, eso no lo convierte en una persona."
+
+              "¡Eso lo dices porque nunca lo has conocido!", dice el hombre de la cicatriz. "¡Te digo que ese cabrón solo está fingiendo! Puede que lo tomes por tonto, por cómo habla, pero juro que uno de estos días va a destronar al rey para coronarse nuevo gobernante de Ollendor, y entonces no podrán decir que no se los advertí."
+
+              "Sí, sí, Breynan", dice Albert. "Ya nos lo has dicho. Nos lo has repetido mil veces. Así que quizá ya podríamos dejar este tema y centrarnos en cosas más importantes, ¿no te parece?"
+            condition: b3_ch2_goblins != 3 AND b3_ch2_goblins != 4 AND b3_ch2_infiltration != 3
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "Un momento...", dice Hadrik. "¿Me están diciendo que esa vieja chatarra de ojo verde que nos habló está realmente viva?"
+
+              Albert suspira.
+
+              "No viva en el verdadero sentido de la palabra", dice. "Solo es lo bastante inteligente como para tomar sus propias decisiones."
+
+              "¿Pero eso es siquiera posible?...", dice Hadrik. "¿Hacer inteligentes los objetos solo manipulando su aura? Daren, tú eres encantador. ¿Habías oído algo así antes?"
+
+              "Oye, yo ni siquiera sabía que los objetos tenían aura hasta que Arraka me lo dijo hace unos días", dice Daren. "Siempre había pensado que, cuando encantaba algo, lo que hacía era lanzar magia sobre el aire alrededor de los objetos. El aura de los objetos es tan distinta de la de los seres vivos que, sinceramente, no sé decir qué es posible y qué no."
+
+              "¡Claro que es posible, idiotas!", suelta Arraka de pronto. "Es igual que cuando fabricas gólems. Si los gólems pueden ser lo bastante listos como para tomar decisiones por sí mismos, ¿por qué no también este 'Supervisor' o como demonios se llame? A mí esta 'inteligencia artificial' solo me suena a una versión más lista de esos gólems que suelen verse custodiando ruinas y atacando a cualquiera que se ponga a su alcance. No entiendo por qué habría que tratarlo como algo especial."
+            condition: b3_ch2_goblins = 3
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "Un momento...", dice Hadrik. "¿Me están diciendo que esa vieja chatarra de ojo verde que nos habló está realmente viva?"
+
+              Albert suspira.
+
+              "No viva en el verdadero sentido de la palabra", dice. "Solo es lo bastante inteligente como para tomar sus propias decisiones."
+
+              "¿Pero eso es siquiera posible?...", dice Hadrik. "¿Hacer inteligentes los objetos solo manipulando su aura? Daren, tú eres encantador. ¿Habías oído algo así antes?"
+
+              "Oye, yo ni siquiera sabía que los objetos tenían aura hasta que Arraka me lo dijo hace unos días", dice Daren. "Siempre había pensado que, cuando encantaba algo, lo que hacía era lanzar magia sobre el aire alrededor de los objetos. El aura de los objetos es tan distinta de la de los seres vivos que, sinceramente, no sé decir qué es posible y qué no."
+
+              "¡Claro que es posible, idiotas!", suelta Arraka de pronto. "Es igual que cuando fabricas gólems. Si los gólems pueden ser lo bastante listos como para tomar decisiones por sí mismos, ¿por qué no también este 'Supervisor' o como demonios se llame? A mí esta 'inteligencia artificial' solo me suena a una versión más lista de esos gólems que suelen verse custodiando ruinas y atacando a cualquiera que se ponga a su alcance. No entiendo por qué habría que tratarlo como algo especial."
+            condition: b3_ch2_goblins = 4
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "Un momento...", dice Hadrik. "¿Me están diciendo que esa vieja chatarra de ojo verde que nos habló está realmente viva?"
+
+              Albert suspira.
+
+              "No viva en el verdadero sentido de la palabra", dice. "Solo es lo bastante inteligente como para tomar sus propias decisiones."
+
+              "¿Pero eso es siquiera posible?...", dice Hadrik. "¿Hacer inteligentes los objetos solo manipulando su aura? Daren, tú eres encantador. ¿Habías oído algo así antes?"
+
+              "Oye, yo ni siquiera sabía que los objetos tenían aura hasta que Arraka me lo dijo hace unos días", dice Daren. "Siempre había pensado que, cuando encantaba algo, lo que hacía era lanzar magia sobre el aire alrededor de los objetos. El aura de los objetos es tan distinta de la de los seres vivos que, sinceramente, no sé decir qué es posible y qué no."
+
+              "¡Claro que es posible, idiotas!", suelta Arraka de pronto. "Es igual que cuando fabricas gólems. Si los gólems pueden ser lo bastante listos como para tomar decisiones por sí mismos, ¿por qué no también este 'Supervisor' o como demonios se llame? A mí esta 'inteligencia artificial' solo me suena a una versión más lista de esos gólems que suelen verse custodiando ruinas y atacando a cualquiera que se ponga a su alcance. No entiendo por qué habría que tratarlo como algo especial."
+            condition: b3_ch2_infiltration = 3
+          - source: scene_3
+            paragraph: 7
+            text: |-
+              "Un momento...", dice Hadrik. "¿Me están diciendo que los lessathi de hace mil años encontraron la forma de dar vida a los objetos?"
+
+              Albert suspira.
+
+              "El Supervisor no está vivo en el verdadero sentido de la palabra", dice. "Solo es lo bastante inteligente como para tomar sus propias decisiones."
+
+              "¿Pero eso es siquiera posible?...", dice Hadrik. "¿Hacer inteligentes los objetos solo manipulando su aura? Daren, tú eres encantador. ¿Habías oído algo así antes?"
+
+              "Oye, yo ni siquiera sabía que los objetos tenían aura hasta que Arraka me lo dijo hace unos días", dice Daren. "Siempre había pensado que, cuando encantaba algo, lo que hacía era lanzar magia sobre el aire alrededor de los objetos. El aura de los objetos es tan distinta de la de los seres vivos que, sinceramente, no sé decir qué es posible y qué no."
+
+              "¡Claro que es posible, idiotas!", suelta Arraka de pronto. "Es igual que cuando fabricas gólems. Si los gólems pueden ser lo bastante listos como para tomar decisiones por sí mismos, ¿por qué no también este 'Supervisor' o como demonios se llame? A mí esta 'inteligencia artificial' solo me suena a una versión más lista de esos gólems que suelen verse custodiando ruinas y atacando a cualquiera que se ponga a su alcance. No entiendo por qué habría que tratarlo como algo especial."
+            condition: b3_ch2_goblins != 3 AND b3_ch2_goblins != 4 AND b3_ch2_infiltration != 3
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02c_alice
+      - condition: b3_ch2_madness = 1
+        texts:
+          - source: scene_text
+            paragraph: 16
+            text: |-
+              "Solo vinimos a comerciar. Todo es un gran malentendido."
+
+              "Oh, sí, eso tiene muchísimo sentido...", dice el hombre de la cicatriz. "Quiero decir, ¿quién no se apuntaría a un torneo mortal solo para venir a comerciar con un reino del que nunca ha oído hablar en su vida?..."
+
+              "¡Sí, exacto!", digo. "Me alegra que vea mi punto."
+
+              "Entonces díganme, 'comerciantes'... ya que ya se han topado con los guardias reales, ¿por casualidad tuvieron también el placer de conocer al Supervisor y a sus 'drouns'?"
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "¿El Supervisor?", digo. "Ah, ¿te refieres a esa bola metálica de ojos verdes que habla raro? Sí, nos topamos con él."
+
+              "Puede que pienses que no es más que una bola metálica que habla raro, pero es muchísimo más que eso", dice el hombre. "Ese cabrón controla por completo todas esas bolas metálicas de ojos rojos que ves volando por la ciudad, y puede enviarlas a atacarte con decenas de hechizos elementales o incluso usarlas para espiarte. Puede que algunos de aquí no estén de acuerdo conmigo, pero desde mi punto de vista ese Supervisor es aún más peligroso que Billy Bob y la guardia real juntos."
+
+              "Sigues hablando de él como si fuera una persona, pero el Supervisor es claramente una cosa", dice Albert. "No es más que un protocolo de inteligencia artificial que inventaron los antiguos hace mucho tiempo y que Billy Bob consiguió reparar hace poco. Por muy 'inteligente' que sea, eso no lo convierte en una persona."
+
+              "¡Eso lo dices porque nunca lo has conocido!", dice el hombre de la cicatriz. "¡Te digo que ese cabrón solo está fingiendo! Puede que lo tomes por tonto, por cómo habla, pero juro que uno de estos días va a destronar al rey para coronarse nuevo gobernante de Ollendor, y entonces no podrán decir que no se los advertí."
+
+              "Sí, sí, Breynan", dice Albert. "Ya nos lo has dicho. Nos lo has repetido mil veces. Así que quizá ya podríamos dejar este tema y centrarnos en cosas más importantes, ¿no te parece?"
+            condition: b3_ch2_goblins = 3
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "¿El Supervisor?", digo. "Ah, ¿te refieres a esa bola metálica de ojos verdes que habla raro? Sí, nos topamos con él."
+
+              "Puede que pienses que no es más que una bola metálica que habla raro, pero es muchísimo más que eso", dice el hombre. "Ese cabrón controla por completo todas esas bolas metálicas de ojos rojos que ves volando por la ciudad, y puede enviarlas a atacarte con decenas de hechizos elementales o incluso usarlas para espiarte. Puede que algunos de aquí no estén de acuerdo conmigo, pero desde mi punto de vista ese Supervisor es aún más peligroso que Billy Bob y la guardia real juntos."
+
+              "Sigues hablando de él como si fuera una persona, pero el Supervisor es claramente una cosa", dice Albert. "No es más que un protocolo de inteligencia artificial que inventaron los antiguos hace mucho tiempo y que Billy Bob consiguió reparar hace poco. Por muy 'inteligente' que sea, eso no lo convierte en una persona."
+
+              "¡Eso lo dices porque nunca lo has conocido!", dice el hombre de la cicatriz. "¡Te digo que ese cabrón solo está fingiendo! Puede que lo tomes por tonto, por cómo habla, pero juro que uno de estos días va a destronar al rey para coronarse nuevo gobernante de Ollendor, y entonces no podrán decir que no se los advertí."
+
+              "Sí, sí, Breynan", dice Albert. "Ya nos lo has dicho. Nos lo has repetido mil veces. Así que quizá ya podríamos dejar este tema y centrarnos en cosas más importantes, ¿no te parece?"
+            condition: b3_ch2_goblins = 4
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "¿El Supervisor?", digo. "Ah, ¿te refieres a esa bola metálica de ojos verdes que habla raro? Sí, nos topamos con él."
+
+              "Puede que pienses que no es más que una bola metálica que habla raro, pero es muchísimo más que eso", dice el hombre. "Ese cabrón controla por completo todas esas bolas metálicas de ojos rojos que ves volando por la ciudad, y puede enviarlas a atacarte con decenas de hechizos elementales o incluso usarlas para espiarte. Puede que algunos de aquí no estén de acuerdo conmigo, pero desde mi punto de vista ese Supervisor es aún más peligroso que Billy Bob y la guardia real juntos."
+
+              "Sigues hablando de él como si fuera una persona, pero el Supervisor es claramente una cosa", dice Albert. "No es más que un protocolo de inteligencia artificial que inventaron los antiguos hace mucho tiempo y que Billy Bob consiguió reparar hace poco. Por muy 'inteligente' que sea, eso no lo convierte en una persona."
+
+              "¡Eso lo dices porque nunca lo has conocido!", dice el hombre de la cicatriz. "¡Te digo que ese cabrón solo está fingiendo! Puede que lo tomes por tonto, por cómo habla, pero juro que uno de estos días va a destronar al rey para coronarse nuevo gobernante de Ollendor, y entonces no podrán decir que no se los advertí."
+
+              "Sí, sí, Breynan", dice Albert. "Ya nos lo has dicho. Nos lo has repetido mil veces. Así que quizá ya podríamos dejar este tema y centrarnos en cosas más importantes, ¿no te parece?"
+            condition: b3_ch2_infiltration = 3
+          - source: scene_text_2
+            paragraph: 9
+            text: |-
+              "No estoy seguro de quién se supone que es ese Supervisor, pero si con 'drouns' te refieres a esas bolas metálicas voladoras, entonces sí, nos topamos con ellas", digo. "Esas chatarras estuvieron a punto de matarnos."
+
+              "Ah, sí", dice el hombre. "Esos 'drouns' no son ninguna broma, pero el Supervisor es todavía peor... Tiene el control absoluto sobre esas bolas metálicas y hasta puede usarlas para espiarte. Puede que algunos de aquí no estén de acuerdo conmigo, pero yo creo que ese cabrón es aún más peligroso que Billy Bob y la guardia real juntos."
+
+              "Sigues hablando de él como si fuera una persona, pero el Supervisor es claramente una cosa", dice Albert. "No es más que un protocolo de inteligencia artificial que inventaron los antiguos hace mucho tiempo y que Billy Bob consiguió reparar hace poco. Por muy 'inteligente' que sea, eso no lo convierte en una persona."
+
+              "¡Eso lo dices porque nunca lo has conocido!", dice el hombre de la cicatriz. "¡Te digo que ese cabrón solo está fingiendo! Puede que lo tomes por tonto, por cómo habla, pero juro que uno de estos días va a destronar al rey para coronarse nuevo gobernante de Ollendor, y entonces no podrán decir que no se los advertí."
+
+              "Sí, sí, Breynan", dice Albert. "Ya nos lo has dicho. Nos lo has repetido mil veces. Así que quizá ya podríamos dejar este tema y centrarnos en cosas más importantes, ¿no te parece?"
+            condition: b3_ch2_goblins != 3 AND b3_ch2_goblins != 4 AND b3_ch2_infiltration != 3
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "Un momento...", dice Hadrik. "¿Me están diciendo que esa vieja chatarra de ojo verde que nos habló está realmente viva?"
+
+              Albert suspira.
+
+              "No viva en el verdadero sentido de la palabra", dice. "Solo es lo bastante inteligente como para tomar sus propias decisiones."
+
+              "¿Pero eso es siquiera posible?...", dice Hadrik. "¿Hacer inteligentes los objetos solo manipulando su aura? Daren, tú eres encantador. ¿Habías oído algo así antes?"
+
+              "Oye, yo ni siquiera sabía que los objetos tenían aura hasta que Arraka me lo dijo hace unos días", dice Daren. "Siempre había pensado que, cuando encantaba algo, lo que hacía era lanzar magia sobre el aire alrededor de los objetos. El aura de los objetos es tan distinta de la de los seres vivos que, sinceramente, no sé decir qué es posible y qué no."
+
+              "¡Claro que es posible, idiotas!", suelta Arraka de pronto. "Es igual que cuando fabricas gólems. Si los gólems pueden ser lo bastante listos como para tomar decisiones por sí mismos, ¿por qué no también este 'Supervisor' o como demonios se llame? A mí esta 'inteligencia artificial' solo me suena a una versión más lista de esos gólems que suelen verse custodiando ruinas y atacando a cualquiera que se ponga a su alcance. No entiendo por qué habría que tratarlo como algo especial."
+            condition: b3_ch2_goblins = 3
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "Un momento...", dice Hadrik. "¿Me están diciendo que esa vieja chatarra de ojo verde que nos habló está realmente viva?"
+
+              Albert suspira.
+
+              "No viva en el verdadero sentido de la palabra", dice. "Solo es lo bastante inteligente como para tomar sus propias decisiones."
+
+              "¿Pero eso es siquiera posible?...", dice Hadrik. "¿Hacer inteligentes los objetos solo manipulando su aura? Daren, tú eres encantador. ¿Habías oído algo así antes?"
+
+              "Oye, yo ni siquiera sabía que los objetos tenían aura hasta que Arraka me lo dijo hace unos días", dice Daren. "Siempre había pensado que, cuando encantaba algo, lo que hacía era lanzar magia sobre el aire alrededor de los objetos. El aura de los objetos es tan distinta de la de los seres vivos que, sinceramente, no sé decir qué es posible y qué no."
+
+              "¡Claro que es posible, idiotas!", suelta Arraka de pronto. "Es igual que cuando fabricas gólems. Si los gólems pueden ser lo bastante listos como para tomar decisiones por sí mismos, ¿por qué no también este 'Supervisor' o como demonios se llame? A mí esta 'inteligencia artificial' solo me suena a una versión más lista de esos gólems que suelen verse custodiando ruinas y atacando a cualquiera que se ponga a su alcance. No entiendo por qué habría que tratarlo como algo especial."
+            condition: b3_ch2_goblins = 4
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "Un momento...", dice Hadrik. "¿Me están diciendo que esa vieja chatarra de ojo verde que nos habló está realmente viva?"
+
+              Albert suspira.
+
+              "No viva en el verdadero sentido de la palabra", dice. "Solo es lo bastante inteligente como para tomar sus propias decisiones."
+
+              "¿Pero eso es siquiera posible?...", dice Hadrik. "¿Hacer inteligentes los objetos solo manipulando su aura? Daren, tú eres encantador. ¿Habías oído algo así antes?"
+
+              "Oye, yo ni siquiera sabía que los objetos tenían aura hasta que Arraka me lo dijo hace unos días", dice Daren. "Siempre había pensado que, cuando encantaba algo, lo que hacía era lanzar magia sobre el aire alrededor de los objetos. El aura de los objetos es tan distinta de la de los seres vivos que, sinceramente, no sé decir qué es posible y qué no."
+
+              "¡Claro que es posible, idiotas!", suelta Arraka de pronto. "Es igual que cuando fabricas gólems. Si los gólems pueden ser lo bastante listos como para tomar decisiones por sí mismos, ¿por qué no también este 'Supervisor' o como demonios se llame? A mí esta 'inteligencia artificial' solo me suena a una versión más lista de esos gólems que suelen verse custodiando ruinas y atacando a cualquiera que se ponga a su alcance. No entiendo por qué habría que tratarlo como algo especial."
+            condition: b3_ch2_infiltration = 3
+          - source: scene_3
+            paragraph: 7
+            text: |-
+              "Un momento...", dice Hadrik. "¿Me están diciendo que los lessathi de hace mil años encontraron la forma de dar vida a los objetos?"
+
+              Albert suspira.
+
+              "El Supervisor no está vivo en el verdadero sentido de la palabra", dice. "Solo es lo bastante inteligente como para tomar sus propias decisiones."
+
+              "¿Pero eso es siquiera posible?...", dice Hadrik. "¿Hacer inteligentes los objetos solo manipulando su aura? Daren, tú eres encantador. ¿Habías oído algo así antes?"
+
+              "Oye, yo ni siquiera sabía que los objetos tenían aura hasta que Arraka me lo dijo hace unos días", dice Daren. "Siempre había pensado que, cuando encantaba algo, lo que hacía era lanzar magia sobre el aire alrededor de los objetos. El aura de los objetos es tan distinta de la de los seres vivos que, sinceramente, no sé decir qué es posible y qué no."
+
+              "¡Claro que es posible, idiotas!", suelta Arraka de pronto. "Es igual que cuando fabricas gólems. Si los gólems pueden ser lo bastante listos como para tomar decisiones por sí mismos, ¿por qué no también este 'Supervisor' o como demonios se llame? A mí esta 'inteligencia artificial' solo me suena a una versión más lista de esos gólems que suelen verse custodiando ruinas y atacando a cualquiera que se ponga a su alcance. No entiendo por qué habría que tratarlo como algo especial."
+            condition: b3_ch2_goblins != 3 AND b3_ch2_goblins != 4 AND b3_ch2_infiltration != 3
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02c_alice
+      - condition: b3_ch2_madness = 2
+        texts:
+          - source: scene_text
+            paragraph: 17
+            text: |-
+              "La verdad es que vinimos a matar al rey de Ollendor."
+
+              "¿Ah, sí?", dice el hombre de la cicatriz. "Entonces se han marcado un objetivo bastante ambicioso. Aunque tampoco es tan sorprendente. No serían los primeros asesinos que vienen aquí con la esperanza de matar al rey. Todos fracasaron, por supuesto, por si eso no resultaba ya bastante obvio."
+
+              "¡No se preocupe!", digo. "¡Sabemos defendernos!"
+
+              "No me cabe duda", dice el hombre, echando un vistazo rápido hacia Daren y Hadrik, que están cubiertos de moratones. "Entonces díganme, forasteros... ya que ya se han topado con los guardias reales, ¿por casualidad tuvieron también el placer de conocer al Supervisor y a sus 'drouns'?"
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "¿El Supervisor?", digo. "Ah, ¿te refieres a esa bola metálica de ojos verdes que habla raro? Sí, nos topamos con él."
+
+              "Puede que pienses que no es más que una bola metálica que habla raro, pero es muchísimo más que eso", dice el hombre. "Ese cabrón controla por completo todas esas bolas metálicas de ojos rojos que ves volando por la ciudad, y puede enviarlas a atacarte con decenas de hechizos elementales o incluso usarlas para espiarte. Puede que algunos de aquí no estén de acuerdo conmigo, pero desde mi punto de vista ese Supervisor es aún más peligroso que Billy Bob y la guardia real juntos."
+
+              "Sigues hablando de él como si fuera una persona, pero el Supervisor es claramente una cosa", dice Albert. "No es más que un protocolo de inteligencia artificial que inventaron los antiguos hace mucho tiempo y que Billy Bob consiguió reparar hace poco. Por muy 'inteligente' que sea, eso no lo convierte en una persona."
+
+              "¡Eso lo dices porque nunca lo has conocido!", dice el hombre de la cicatriz. "¡Te digo que ese cabrón solo está fingiendo! Puede que lo tomes por tonto, por cómo habla, pero juro que uno de estos días va a destronar al rey para coronarse nuevo gobernante de Ollendor, y entonces no podrán decir que no se los advertí."
+
+              "Sí, sí, Breynan", dice Albert. "Ya nos lo has dicho. Nos lo has repetido mil veces. Así que quizá ya podríamos dejar este tema y centrarnos en cosas más importantes, ¿no te parece?"
+            condition: b3_ch2_goblins = 3
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "¿El Supervisor?", digo. "Ah, ¿te refieres a esa bola metálica de ojos verdes que habla raro? Sí, nos topamos con él."
+
+              "Puede que pienses que no es más que una bola metálica que habla raro, pero es muchísimo más que eso", dice el hombre. "Ese cabrón controla por completo todas esas bolas metálicas de ojos rojos que ves volando por la ciudad, y puede enviarlas a atacarte con decenas de hechizos elementales o incluso usarlas para espiarte. Puede que algunos de aquí no estén de acuerdo conmigo, pero desde mi punto de vista ese Supervisor es aún más peligroso que Billy Bob y la guardia real juntos."
+
+              "Sigues hablando de él como si fuera una persona, pero el Supervisor es claramente una cosa", dice Albert. "No es más que un protocolo de inteligencia artificial que inventaron los antiguos hace mucho tiempo y que Billy Bob consiguió reparar hace poco. Por muy 'inteligente' que sea, eso no lo convierte en una persona."
+
+              "¡Eso lo dices porque nunca lo has conocido!", dice el hombre de la cicatriz. "¡Te digo que ese cabrón solo está fingiendo! Puede que lo tomes por tonto, por cómo habla, pero juro que uno de estos días va a destronar al rey para coronarse nuevo gobernante de Ollendor, y entonces no podrán decir que no se los advertí."
+
+              "Sí, sí, Breynan", dice Albert. "Ya nos lo has dicho. Nos lo has repetido mil veces. Así que quizá ya podríamos dejar este tema y centrarnos en cosas más importantes, ¿no te parece?"
+            condition: b3_ch2_goblins = 4
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "¿El Supervisor?", digo. "Ah, ¿te refieres a esa bola metálica de ojos verdes que habla raro? Sí, nos topamos con él."
+
+              "Puede que pienses que no es más que una bola metálica que habla raro, pero es muchísimo más que eso", dice el hombre. "Ese cabrón controla por completo todas esas bolas metálicas de ojos rojos que ves volando por la ciudad, y puede enviarlas a atacarte con decenas de hechizos elementales o incluso usarlas para espiarte. Puede que algunos de aquí no estén de acuerdo conmigo, pero desde mi punto de vista ese Supervisor es aún más peligroso que Billy Bob y la guardia real juntos."
+
+              "Sigues hablando de él como si fuera una persona, pero el Supervisor es claramente una cosa", dice Albert. "No es más que un protocolo de inteligencia artificial que inventaron los antiguos hace mucho tiempo y que Billy Bob consiguió reparar hace poco. Por muy 'inteligente' que sea, eso no lo convierte en una persona."
+
+              "¡Eso lo dices porque nunca lo has conocido!", dice el hombre de la cicatriz. "¡Te digo que ese cabrón solo está fingiendo! Puede que lo tomes por tonto, por cómo habla, pero juro que uno de estos días va a destronar al rey para coronarse nuevo gobernante de Ollendor, y entonces no podrán decir que no se los advertí."
+
+              "Sí, sí, Breynan", dice Albert. "Ya nos lo has dicho. Nos lo has repetido mil veces. Así que quizá ya podríamos dejar este tema y centrarnos en cosas más importantes, ¿no te parece?"
+            condition: b3_ch2_infiltration = 3
+          - source: scene_text_2
+            paragraph: 9
+            text: |-
+              "No estoy seguro de quién se supone que es ese Supervisor, pero si con 'drouns' te refieres a esas bolas metálicas voladoras, entonces sí, nos topamos con ellas", digo. "Esas chatarras estuvieron a punto de matarnos."
+
+              "Ah, sí", dice el hombre. "Esos 'drouns' no son ninguna broma, pero el Supervisor es todavía peor... Tiene el control absoluto sobre esas bolas metálicas y hasta puede usarlas para espiarte. Puede que algunos de aquí no estén de acuerdo conmigo, pero yo creo que ese cabrón es aún más peligroso que Billy Bob y la guardia real juntos."
+
+              "Sigues hablando de él como si fuera una persona, pero el Supervisor es claramente una cosa", dice Albert. "No es más que un protocolo de inteligencia artificial que inventaron los antiguos hace mucho tiempo y que Billy Bob consiguió reparar hace poco. Por muy 'inteligente' que sea, eso no lo convierte en una persona."
+
+              "¡Eso lo dices porque nunca lo has conocido!", dice el hombre de la cicatriz. "¡Te digo que ese cabrón solo está fingiendo! Puede que lo tomes por tonto, por cómo habla, pero juro que uno de estos días va a destronar al rey para coronarse nuevo gobernante de Ollendor, y entonces no podrán decir que no se los advertí."
+
+              "Sí, sí, Breynan", dice Albert. "Ya nos lo has dicho. Nos lo has repetido mil veces. Así que quizá ya podríamos dejar este tema y centrarnos en cosas más importantes, ¿no te parece?"
+            condition: b3_ch2_goblins != 3 AND b3_ch2_goblins != 4 AND b3_ch2_infiltration != 3
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "Un momento...", dice Hadrik. "¿Me están diciendo que esa vieja chatarra de ojo verde que nos habló está realmente viva?"
+
+              Albert suspira.
+
+              "No viva en el verdadero sentido de la palabra", dice. "Solo es lo bastante inteligente como para tomar sus propias decisiones."
+
+              "¿Pero eso es siquiera posible?...", dice Hadrik. "¿Hacer inteligentes los objetos solo manipulando su aura? Daren, tú eres encantador. ¿Habías oído algo así antes?"
+
+              "Oye, yo ni siquiera sabía que los objetos tenían aura hasta que Arraka me lo dijo hace unos días", dice Daren. "Siempre había pensado que, cuando encantaba algo, lo que hacía era lanzar magia sobre el aire alrededor de los objetos. El aura de los objetos es tan distinta de la de los seres vivos que, sinceramente, no sé decir qué es posible y qué no."
+
+              "¡Claro que es posible, idiotas!", suelta Arraka de pronto. "Es igual que cuando fabricas gólems. Si los gólems pueden ser lo bastante listos como para tomar decisiones por sí mismos, ¿por qué no también este 'Supervisor' o como demonios se llame? A mí esta 'inteligencia artificial' solo me suena a una versión más lista de esos gólems que suelen verse custodiando ruinas y atacando a cualquiera que se ponga a su alcance. No entiendo por qué habría que tratarlo como algo especial."
+            condition: b3_ch2_goblins = 3
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "Un momento...", dice Hadrik. "¿Me están diciendo que esa vieja chatarra de ojo verde que nos habló está realmente viva?"
+
+              Albert suspira.
+
+              "No viva en el verdadero sentido de la palabra", dice. "Solo es lo bastante inteligente como para tomar sus propias decisiones."
+
+              "¿Pero eso es siquiera posible?...", dice Hadrik. "¿Hacer inteligentes los objetos solo manipulando su aura? Daren, tú eres encantador. ¿Habías oído algo así antes?"
+
+              "Oye, yo ni siquiera sabía que los objetos tenían aura hasta que Arraka me lo dijo hace unos días", dice Daren. "Siempre había pensado que, cuando encantaba algo, lo que hacía era lanzar magia sobre el aire alrededor de los objetos. El aura de los objetos es tan distinta de la de los seres vivos que, sinceramente, no sé decir qué es posible y qué no."
+
+              "¡Claro que es posible, idiotas!", suelta Arraka de pronto. "Es igual que cuando fabricas gólems. Si los gólems pueden ser lo bastante listos como para tomar decisiones por sí mismos, ¿por qué no también este 'Supervisor' o como demonios se llame? A mí esta 'inteligencia artificial' solo me suena a una versión más lista de esos gólems que suelen verse custodiando ruinas y atacando a cualquiera que se ponga a su alcance. No entiendo por qué habría que tratarlo como algo especial."
+            condition: b3_ch2_goblins = 4
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "Un momento...", dice Hadrik. "¿Me están diciendo que esa vieja chatarra de ojo verde que nos habló está realmente viva?"
+
+              Albert suspira.
+
+              "No viva en el verdadero sentido de la palabra", dice. "Solo es lo bastante inteligente como para tomar sus propias decisiones."
+
+              "¿Pero eso es siquiera posible?...", dice Hadrik. "¿Hacer inteligentes los objetos solo manipulando su aura? Daren, tú eres encantador. ¿Habías oído algo así antes?"
+
+              "Oye, yo ni siquiera sabía que los objetos tenían aura hasta que Arraka me lo dijo hace unos días", dice Daren. "Siempre había pensado que, cuando encantaba algo, lo que hacía era lanzar magia sobre el aire alrededor de los objetos. El aura de los objetos es tan distinta de la de los seres vivos que, sinceramente, no sé decir qué es posible y qué no."
+
+              "¡Claro que es posible, idiotas!", suelta Arraka de pronto. "Es igual que cuando fabricas gólems. Si los gólems pueden ser lo bastante listos como para tomar decisiones por sí mismos, ¿por qué no también este 'Supervisor' o como demonios se llame? A mí esta 'inteligencia artificial' solo me suena a una versión más lista de esos gólems que suelen verse custodiando ruinas y atacando a cualquiera que se ponga a su alcance. No entiendo por qué habría que tratarlo como algo especial."
+            condition: b3_ch2_infiltration = 3
+          - source: scene_3
+            paragraph: 7
+            text: |-
+              "Un momento...", dice Hadrik. "¿Me están diciendo que los lessathi de hace mil años encontraron la forma de dar vida a los objetos?"
+
+              Albert suspira.
+
+              "El Supervisor no está vivo en el verdadero sentido de la palabra", dice. "Solo es lo bastante inteligente como para tomar sus propias decisiones."
+
+              "¿Pero eso es siquiera posible?...", dice Hadrik. "¿Hacer inteligentes los objetos solo manipulando su aura? Daren, tú eres encantador. ¿Habías oído algo así antes?"
+
+              "Oye, yo ni siquiera sabía que los objetos tenían aura hasta que Arraka me lo dijo hace unos días", dice Daren. "Siempre había pensado que, cuando encantaba algo, lo que hacía era lanzar magia sobre el aire alrededor de los objetos. El aura de los objetos es tan distinta de la de los seres vivos que, sinceramente, no sé decir qué es posible y qué no."
+
+              "¡Claro que es posible, idiotas!", suelta Arraka de pronto. "Es igual que cuando fabricas gólems. Si los gólems pueden ser lo bastante listos como para tomar decisiones por sí mismos, ¿por qué no también este 'Supervisor' o como demonios se llame? A mí esta 'inteligencia artificial' solo me suena a una versión más lista de esos gólems que suelen verse custodiando ruinas y atacando a cualquiera que se ponga a su alcance. No entiendo por qué habría que tratarlo como algo especial."
+            condition: b3_ch2_goblins != 3 AND b3_ch2_goblins != 4 AND b3_ch2_infiltration != 3
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02c_alice
   - name: b3_ch02c_alice
     texts:
       - source: scene_text
-        paragraph: 12
-        text: |
-          Traducción en progreso.
+        paragraph: 18
+        text: |-
+          "Entonces, si yo quisiera, ¿podría trastear con las auras de unas cuantas rocas y acabar con mi propio ejército personal de gólems de piedra superinteligentes?...", dice Hadrik.
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Claro", dice Arraka. "Si además mezclas esas rocas con algo de seredium, algunos de los cristales azules tirados por estas cuevas y un montón de cosas más, y luego pasas unas cuantas décadas trabajando en ello con los conocimientos que hayas adquirido del Magium, sí, tendrás tu ejército. Llámame dentro de treinta años y me cuentas cómo te ha ido."
+
+          "En fin...", dice Albert. "Lo importante que deben saber sobre el Supervisor es que, por lo que hemos averiguado, no parece llevarse demasiado bien con Billy Bob, el lessathi, y por eso todavía no se le ha concedido el control total de los 'drouns' de la ciudad y sigue figurando como un protocolo 'experimental'. Tenemos razones para creer que el Supervisor tiene sus propios planes, aunque no tenemos claro qué intenta conseguir exactamente. En cualquier caso, si lográsemos ponerlo de nuestro lado, ganaríamos potencialmente un gran aliado, porque esos 'drouns' son sin duda una fuerza a tener en cuenta."
+
+          "¿Por qué siguen llamándolos 'drouns'?", dice Melindra. "Estoy bastante segura de que el nombre correcto era 'droons'. ¿No era así como Billy Bob solía llamarlos?"
+
+          "No, estoy bastante seguro de haberle oído llamarlos 'drouns' una vez", dice Albert. "O quizá era 'droines'. Escucha, da igual cómo los llame. El nombre es estúpido de todas formas. Llamémoslos simplemente bolas metálicas y se acabó."
+      - source: scene_text_2
+        paragraph: 11
+        text: |-
+          "En realidad, yo prefiero llamarlas cabezas de gólem", dice Melindra. "Ya saben, por ese ojo que tienen en medio."
+
+          "Uf...", dice Albert. "Como sea. Vamos, Peter, deberíamos ir a ver al rey. Ya lo hemos hecho esperar bastante."
+
+          "Perdonen...", dice una niña de unos siete años, acercándose tímidamente a nuestro grupo. "¿Vienen de la superficie? ¿Son guerreros?..."
+
+          "Eh... sí", dice Daren. "Sí lo somos... ¿Por qué lo preguntas?"
+
+          "Por favor, señores...", dice la niña mientras nos agarra débilmente a Daren y a mí de las muñecas. "¿Podrían ayudarme a encontrar a mi familia? Mi madre lleva tres días desaparecida... Mi padre y mi hermano llevan aún más tiempo. Esta gente dijo que me ayudaría. Dijeron que me ayudarían a encontrarlos, ¡pero mintieron! No los han buscado en absoluto y ya han pasado tres días. Por favor, señores, tienen que ayudarme... ¡Ustedes son mi única esperanza!"
+      - source: scene_3
+        paragraph: 9
+        text: |-
+          "Vamos, Alice, ya sabes que no deberías molestar a desconocidos...", dice Albert, y luego aparta a la niña de nuestro lado, mientras ella parece estar a punto de echarse a llorar.
+
+          "Sí, señor...", dice Alice con voz apagada y una expresión de enorme cansancio, como si ya hubiera perdido toda esperanza. "Lo siento. No volverá a pasar..."
+
+          "Perdonen por esto", nos dice Albert, y luego se vuelve hacia su amigo. "¡Vamos, Peter!"
+
+          "Oh, no es... ninguna molestia", dice Daren, mirando a la niña y a los dos hombres que se alejan despacio hacia el fondo de la larga sala con una expresión algo preocupada en los ojos.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02c_alice2
   - name: b3_ch02c_alice2
     texts:
       - source: scene_text
-        paragraph: 13
-        text: |
-          Traducción en progreso.
+        paragraph: 19
+        text: |-
+          "¿Y eso de qué iba?", le pregunta Hadrik en voz baja a Breynan, el hombre de la cicatriz.
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Te refieres a la niña?...", dice Breynan. "La recogimos durante una misión. Toda su familia había sido llevada por los guardias de la ciudad y ya no tenía adónde ir. Su padre y su hermano eran magos, y ambos desaparecieron una noche de sus casas sin dejar rastro y sin que nadie volviera a saber de ellos. No son los únicos magos que se han visto arrastrados fuera de sus hogares de repente y sin explicación en los últimos años. Este tipo de cosas ha empezado a pasar cada vez con más frecuencia conforme avanzaban los años, y la gente apenas se atreve ya a hablar del tema, por miedo a ser los siguientes a los que saquen de casa en mitad de la noche si no vigilan lo que dicen."
+
+          "¿Tienen alguna idea de por qué podrían estar haciendo esto?", le pregunta Daren a Breynan, mientras veo que Albert y Peter se detienen en medio de la sala para hablar con uno de sus compañeros, mientras la niña se queda allí plantada, con la cabeza gacha.
+      - source: scene_text_2
+        paragraph: 12
+        text: |-
+          "Dado que la mayoría de sus objetivos hasta ahora han sido magos", dice Breynan, "creemos que quizá se los están llevando a esas grandes torres negras recubiertas de seredium. No sé si han visto cómo funcionan, pero esas torres son básicamente la principal fuente de energía mágica para todos los artilugios de esta ciudad, desde los carruajes metálicos voladores hasta esas bolas metálicas que patrullan los cielos. La energía de esas torres proviene de todos los magos que ves de pie en las plataformas voladoras adosadas a sus lados, y también de todos los magos que están dentro de las torres. Esta gente se pasa el día transfiriendo energía mágica a la torre y, a cambio, se les paga por sus servicios. Pero creo que Billy Bob no estaba contento con la cantidad de energía que obtenía del trabajo voluntario, así que decidió secuestrar a algunos magos para que pudieran trabajar día y noche en las torres, sin cobrar. No lo sabemos con certeza, claro. Por ahora solo es una especulación por nuestra parte."
+
+          "¿No han ido a esas torres para ver si podían encontrar allí al padre y al hermano de la niña?", dice Daren.
+      - source: scene_3
+        paragraph: 10
+        text: |-
+          "Lo intentamos, pero esas zonas están fuertemente vigiladas", dice Breynan. "Tendríamos que arriesgar a demasiados de nuestros hombres solo para confirmar nuestra teoría, y luego haría falta todo un batallón para liberar de verdad a los esclavos. Por cruel que suene, por desgracia tenemos cosas más importantes en las que gastar nuestros recursos que buscar a la familia de una niña."
+
+          "¿Y qué pasa con la madre de la niña?", pregunta Hadrik. "¿Saben qué fue de ella?"
+
+          "Su madre desapareció poco después de empezar a insistir a los guardias de la ciudad para que investigaran por qué habían desaparecido su marido y su hijo", dice Breynan. "Debió de insistir un poco demasiado y puso nervioso a alguno de los guardias. Solo los dioses saben dónde puede estar ahora... si es que sigue viva."
+
+          Cuando vuelvo a mirar hacia el otro extremo de la sala, veo que Albert y Peter han terminado su conversación con su compañero y están ya casi a punto de salir, con la niña siguiéndolos de cerca.
+    choices:
+      - position: 1
+        text: Llamar a la niña y decirle que encontraremos a su familia.
+        effects:
+          - set:
+              current_scene: b3_ch02c_sundown
+              b3_ch2_alice: 1
+      - position: 2
+        text: Guardar silencio.
+        effects:
+          - set:
+              current_scene: b3_ch02c_sundown
+              b3_ch2_alice: 0
   - name: b3_ch02c_sundown
-    texts:
-      - source: scene_text
-        paragraph: 14
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch2_alice = 0
+        texts:
+          - source: scene_text
+            paragraph: 21
+            text: |-
+              Daren y Hadrik continúan un rato su conversación con Breynan después de que la niña salga de la sala con Albert y Peter. Durante ese tiempo, vemos a varias personas entrar y salir del recinto mientras se ocupan de sus asuntos diarios, pero hay una situación en particular que acaba llamándonos la atención.
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              Justo cuando estamos terminando una de nuestras conversaciones, vemos a un hombre mayor siendo arrastrado a la sala contra su voluntad por dos de sus compañeros, mientras les suplica desesperadamente que lo suelten. Al cabo de un rato, los tres se detienen frente a un hombre que guarda una puerta de hierro con una cantidad impresionante de cerraduras y la palabra 'Cuarentena' escrita en grandes letras rojas justo encima.
+          - source: scene_text_2
+            paragraph: 15
+            text: |-
+              "Tenemos otro para ti, Desmond", le dice al guardia uno de los dos hombres más jóvenes. "Abre la puerta."
+
+              "Ahora mismo", dice Desmond, mientras empieza a abrir las cerraduras una por una.
+
+              "Por favor...", dice el hombre mayor. "Todavía me quedan dos horas. ¡Al menos dejen que me despida de mi hijo!"
+
+              "Tu hijo está fuera, en una misión, viejo", dice el joven que había hablado antes. "No volverá hasta el atardecer. No vas a volver a verlo."
+
+              "¡Pero todavía me quedan dos horas!", dice el hombre mayor. "¡No pueden hacerme esto!"
+
+              "No se lo pongas más difícil al resto, Jack", dice el otro joven. "Tu vida ya se acabó. Lo sabes. ¿Qué diferencia van a suponer dos horas más? Deja de llorar y compórtate como un hombre, ¿quieres? No es que estemos haciendo esto porque nos guste."
+
+              "Muy bien, métanlo dentro", dice el guardia al abrir la puerta.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02c_quarantine
+      - condition: b3_ch2_alice = 1 AND b3_ch2_madness = 2
+        texts:
+          - source: scene_text
+            paragraph: 20
+            text: |-
+              "¡Eh, Alice!", grito. "¡No te preocupes, vamos a encontrar a tu familia!"
+
+              Al oír lo que digo, la niña vuelve de repente la cabeza hacia mí con un destello de esperanza en sus ojos cansados.
+
+              "¿De verdad lo dice?...", me grita la niña de vuelta, con cierta vacilación en la voz.
+
+              "¡Claro!", digo a voz en grito. "¡Puedes contar con nosotros! Estoy seguro de que se los devolveremos enseguida."
+
+              La niña da un respingo y las lágrimas de alegría empiezan a correrle por el rostro.
+
+              "¡Gracias!", grita con la voz temblorosa. "¡Muchísimas gracias! Prometo que haré cualquier cosa para compensárselo. Lavaré sus platos, y... y les cocinaré, y fregaré sus suelos, y..."
+
+              "¡No pasa nada!", le digo. "No hace falta que hagas ninguna de esas cosas. Ve a descansar. Tienes muy mala cara."
+
+              La niña me asiente con una débil sonrisa mientras se seca las lágrimas y luego se marcha detrás de Albert y Peter hasta que los tres dejan de verse.
+          - source: scene_text_2
+            paragraph: 13
+            text: |-
+              "Barry, entiendo lo que intentabas hacer, pero no deberías darles falsas esperanzas a los demás así como así...", dice Daren. "Ni siquiera sabemos dónde está su familia o si sigue con vida. Por no hablar de que hacer lo que has prometido significaría desviarnos bastante del objetivo con el que vinimos originalmente aquí..."
+
+              "¿Seguro?", digo. "Porque, tal como yo lo veo, una vez que matemos al rey, todas sus fuerzas quedarán desorganizadas y nos resultará fácil infiltrarnos en una de las torres. Además, si colocamos a uno de nuestros aliados como nuevo rey, podremos ordenar a los guardias que nos digan qué hicieron con la madre. Si me preguntas a mí, ayudar a la niña encaja perfectamente con lo que vinimos a hacer."
+
+              "Estás dando por hecho muchas cosas, Barry...", dice Daren. "Pero supongo que, en cierto modo, tienes razón. Como mínimo, deberíamos poder hacer más por esa niña de lo que han hecho los rebeldes hasta ahora, aunque nos limitemos a nuestro plan inicial. Supongo que solo podremos ver cómo se desarrolla todo al final."
+
+              Justo cuando estamos a punto de terminar nuestra conversación, vemos a un hombre mayor siendo arrastrado a la sala contra su voluntad por dos de sus compañeros, mientras les suplica desesperadamente que lo suelten. Al cabo de un rato, los tres se detienen frente a un hombre que guarda una puerta de hierro con una cantidad impresionante de cerraduras y la palabra 'Cuarentena' escrita en grandes letras rojas justo encima.
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              "Tenemos otro para ti, Desmond", le dice al guardia uno de los dos hombres más jóvenes. "Abre la puerta."
+
+              "Ahora mismo", dice Desmond, mientras empieza a abrir las cerraduras una por una.
+
+              "Por favor...", dice el hombre mayor. "Todavía me quedan dos horas. ¡Al menos dejen que me despida de mi hijo!"
+
+              "Tu hijo está fuera, en una misión, viejo", dice el joven que había hablado antes. "No volverá hasta el atardecer. No vas a volver a verlo."
+
+              "¡Pero todavía me quedan dos horas!", dice el hombre mayor. "¡No pueden hacerme esto!"
+
+              "No se lo pongas más difícil al resto, Jack", dice el otro joven. "Tu vida ya se acabó. Lo sabes. ¿Qué diferencia van a suponer dos horas más? Deja de llorar y compórtate como un hombre, ¿quieres? No es que estemos haciendo esto porque nos guste."
+
+              "Muy bien, métanlo dentro", dice el guardia al abrir la puerta.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02c_quarantine
+      - condition: b3_ch2_alice = 1 AND b3_ch2_madness <> 2
+        texts:
+          - source: scene_text
+            paragraph: 20
+            text: |-
+              "¡Eh, Alice!", grito. "¡No te preocupes, vamos a encontrar a tu familia!"
+
+              Al oír lo que digo, la niña vuelve de repente la cabeza hacia mí con un destello de esperanza en sus ojos cansados.
+
+              "¿De verdad lo dice?...", me grita la niña de vuelta, con cierta vacilación en la voz.
+
+              "¡Claro!", digo a voz en grito. "¡Puedes contar con nosotros! Estoy seguro de que se los devolveremos enseguida."
+
+              La niña da un respingo y las lágrimas de alegría empiezan a correrle por el rostro.
+
+              "¡Gracias!", grita con la voz temblorosa. "¡Muchísimas gracias! Prometo que haré cualquier cosa para compensárselo. Lavaré sus platos, y... y les cocinaré, y fregaré sus suelos, y..."
+
+              "¡No pasa nada!", le digo. "No hace falta que hagas ninguna de esas cosas. Ve a descansar. Tienes muy mala cara."
+
+              La niña me asiente con una débil sonrisa mientras se seca las lágrimas y luego se marcha detrás de Albert y Peter hasta que los tres dejan de verse.
+          - source: scene_text_2
+            paragraph: 14
+            text: |-
+              "Barry, entiendo lo que intentabas hacer, pero no deberías darles falsas esperanzas a los demás así como así...", dice Daren. "Ni siquiera sabemos dónde está su familia o si sigue con vida. Por no hablar de que hacer lo que has prometido significaría desviarnos bastante del objetivo con el que vinimos originalmente aquí..."
+
+              "¿Seguro?", digo. "Porque, tal como yo lo veo, una vez que matemos al rey, todas sus fuerzas quedarán desorganizadas y nos resultará fácil infiltrarnos en una de las torres. Además, si colocamos a uno de nuestros aliados como nuevo rey, podremos ordenar a los guardias que nos digan qué hicieron con la madre. Si me preguntas a mí, ayudar a la niña encaja perfectamente con lo que vinimos a hacer."
+
+              "Estás dando por hecho muchas cosas, Barry...", dice Daren. "Pero supongo que, en cierto modo, tienes razón. Como mínimo, deberíamos poder hacer más por esa niña de lo que han hecho los rebeldes hasta ahora, aunque nos limitemos a nuestro plan inicial. Supongo que solo podremos ver cómo se desarrolla todo al final."
+
+              "Vaya...", dice Breynan. "Así que esa era de verdad la razón por la que vinieron aquí, entonces. A matar al rey de Ollendor... Estoy seguro de que nuestro rey del subsuelo se pondrá encantado cuando lo oiga."
+
+              Justo cuando estamos a punto de terminar nuestra conversación, vemos a un hombre mayor siendo arrastrado a la sala contra su voluntad por dos de sus compañeros, mientras les suplica desesperadamente que lo suelten. Al cabo de un rato, los tres se detienen frente a un hombre que guarda una puerta de hierro con una cantidad impresionante de cerraduras y la palabra 'Cuarentena' escrita en grandes letras rojas justo encima.
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              "Tenemos otro para ti, Desmond", le dice al guardia uno de los dos hombres más jóvenes. "Abre la puerta."
+
+              "Ahora mismo", dice Desmond, mientras empieza a abrir las cerraduras una por una.
+
+              "Por favor...", dice el hombre mayor. "Todavía me quedan dos horas. ¡Al menos dejen que me despida de mi hijo!"
+
+              "Tu hijo está fuera, en una misión, viejo", dice el joven que había hablado antes. "No volverá hasta el atardecer. No vas a volver a verlo."
+
+              "¡Pero todavía me quedan dos horas!", dice el hombre mayor. "¡No pueden hacerme esto!"
+
+              "No se lo pongas más difícil al resto, Jack", dice el otro joven. "Tu vida ya se acabó. Lo sabes. ¿Qué diferencia van a suponer dos horas más? Deja de llorar y compórtate como un hombre, ¿quieres? No es que estemos haciendo esto porque nos guste."
+
+              "Muy bien, métanlo dentro", dice el guardia al abrir la puerta.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02c_quarantine
   - name: b3_ch02c_quarantine
     texts:
       - source: scene_text
-        paragraph: 15
-        text: |
-          Traducción en progreso.
+        paragraph: 22
+        text: |-
+          "¡No, no, no!", grita Jack mientras sus compañeros lo empujan a la zona de cuarentena.
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          En cuanto lo meten dentro, el guardia cierra la puerta y vuelve a echarle todas las cerraduras.
+
+          "¡Déjenme salir!", oímos gritar desesperadamente a Jack desde el otro lado, mientras golpea la puerta de hierro con los puños. "¡No quiero morir aquí dentro! ¡No, suéltenme, qué están haciendo! ¡He dicho que me suelten! No pueden hacerme esto. ¡No pueden!"
+
+          La voz del anciano se va apagando cada vez más a medida que los hombres del interior lo arrastran más adentro del área de cuarentena, hasta que finalmente deja de oírse por completo y el pasillo vuelve a quedar en silencio.
+
+          "Vale, ¿qué COÑO ha sido eso?", le pregunta Hadrik a Breynan después de unos momentos en los que todos nos quedamos mirando la puerta de hierro sin decir nada.
+      - source: scene_text_2
+        paragraph: 16
+        text: |-
+          "Escuchen, sé cómo parece esto visto desde fuera, pero aquí no tenemos muchas opciones...", dice Breynan. "Hay una enfermedad terrible azotando nuestra ciudad en estos momentos y, a veces, los hombres que enviamos a misiones acaban contagiándose. No sabemos de dónde viene, no sabemos qué es y no tenemos manera de curarla. Lo único que sabemos es que, una vez la contraes, te aparecen de inmediato tres manchas rosadas en la nuca y, exactamente una semana después, empiezas a tener los primeros síntomas de la enfermedad, momento en que esta se vuelve contagiosa. Cuando la dolencia entra de lleno en acción, empiezas a sufrir ataques violentos de tos, fiebre alta y, con el tiempo, ni siquiera puedes levantarte de la cama. Nadie que haya contraído esta enfermedad ha conseguido sobrevivirla. Lo único que podemos hacer es aislar a cualquiera que se ponga enfermo, para al menos mantener nuestras bajas al mínimo."
+
+          "No...", dice Daren. "No, esto no está bien... No pueden simplemente abandonar así a esta gente. Tiene que haber una manera de salvarlos. ¡Voy a entrar ahí!"
+      - source: scene_3
+        paragraph: 12
+        text: |-
+          "No, espera, no se te permite--", empieza a decir Breynan, pero Daren no le hace caso y pasa a toda prisa junto a nosotros directo hacia la puerta de hierro, a una velocidad que hace parecer que se ha olvidado por completo del dolor que todavía arrastra por la paliza de antes.
+
+          "Iré a buscarlo", le digo a Breynan, mientras corro detrás de Daren.
+
+          Antes de que logre alcanzarlo, sin embargo, Daren ya llama al guardia que hay frente a la puerta de hierro y le pide que le permita entrar en la zona de cuarentena.
+
+          "Abra la puerta, por favor", le dice Daren al guardia cuando se detiene frente a él. "Quiero echar un vistazo dentro y ver si puedo ayudar."
+
+          Al darme cuenta de que ya llego tarde, me quedo no muy lejos detrás de Daren y decido esperar a ver adónde lleva su conversación.
+
+          "Nadie puede entrar en la zona de cuarentena", dice Desmond, el guardia. "Y menos aún los forasteros. Vuelve a tu silla y espera a que el rey te haga llamar. Aquí no hay nada que ver."
+
+          "No, no lo entiende", dice Daren. "Soy un sanador. Si me deja entrar, quizá encuentre la forma de curarlos."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02c_iknar
   - name: b3_ch02c_iknar
     texts:
       - source: scene_text
-        paragraph: 16
-        text: |
-          Traducción en progreso.
+        paragraph: 23
+        text: |-
+          "Sé quién eres, sanador con armadura", dice Desmond. "Sé lo que has conseguido. Pero esta enfermedad no se parece en nada a esa peste de Iknar que eres tan famoso por haber curado tú solo. Aquí tenemos muchos sanadores hábiles y todos han dicho que jamás habían visto nada parecido. Ya perdimos a dos de nuestros mejores sanadores por culpa de esta plaga antes de darnos cuenta de que no hay nada que pueda hacerse para detenerla. No voy a dejar que tú también tires tu vida por la borda."
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Así que simplemente vas a dejarlos morir delante de tus ojos?", dice Daren, furioso. "¡Son tus amigos!"
+
+          "No te atrevas a darme lecciones, sanador", dice Desmond, en un tono que sugiere que apenas logra contener la rabia. "Ya he perdido a mi esposa por esta enfermedad y dentro de unos días estoy a punto de perder también a mi hermano. Si te digo que no se puede, entonces no se puede. ¡Solo vas a tirar tu vida por la borda para nada! ¿Es que no lo entiendes? No hay nada que puedas hacer para salvarlos. Da igual lo bueno que seas como sanador. ¡Nadie puede lograr lo imposible!"
+      - source: scene_text_2
+        paragraph: 17
+        text: |-
+          "¡Eso no significa que no pueda intentarlo!", dice Daren, con una mirada muy decidida en los ojos. "Escúchame, Desmond. Cuando vine a este torneo, me prometí a mí mismo que no me distraería. Juré que me centraría en mi objetivo de ganar el torneo pasara lo que pasara, porque ganar el Magium es lo más importante. Si yo ganara el Magium, todo aquello que antes no podía hacer se volvería posible y podría llegar a salvar decenas de miles de vidas en el tiempo que normalmente me habría llevado salvar una sola. Pero ahora mismo nada de eso importa. Nada de eso importa, porque para cuando gane el torneo... para cuando por fin consiga acceder al Magium... toda la gente que está detrás de esa puerta llevará mucho tiempo muerta, y no puedo permitir que eso ocurra. Nunca podría perdonármelo."
+
+          Daren da entonces un paso hacia delante y le apoya ambas manos sobre los hombros al guardia mientras lo mira directamente a los ojos.
+      - source: scene_3
+        paragraph: 13
+        text: |-
+          "Desmond, por favor... déjame entrar", dice Daren. "Déjame entrar para que pueda salvar a tu hermano..."
+
+          Parece que la rabia en los ojos de Desmond se ha desvanecido y ahora le sostiene a Daren una mirada larga y reflexiva, probablemente intentando decidir si debe confiar en él o no.
+
+          "¡Estás loco, sanador!", le dice Desmond a Daren al cabo de un rato, apartándole las manos de los hombros. "¡Eres un demente y un necio! ¡Aún más necio que ese idiota de Kelrim!"
+
+          El guardia empieza entonces a abrir las cerraduras una por una hasta que por fin termina y abre la puerta de hierro.
+
+          "Haz lo que quieras", dice Desmond. "Pero que te quede claro que solo dispones de una semana. Si dentro de una semana no haces ningún progreso, o te mantienes fuera de nuestra base o te encerraremos dentro con el resto. No digas que no te lo advertí."
+
+          "Gracias", dice Daren. "Me aseguraré de no desperdiciar la oportunidad que me has dado."
+
+          Daren se vuelve entonces hacia mí.
+
+          "Vamos, Barry", dice.
+    choices:
+      - position: 1
+        text: Espera, ¡yo no te seguí hasta aquí por eso!
+        effects:
+          - set:
+              current_scene: b3_ch02c_lousy
+              b3_ch2_kelrim: 0
+      - position: 2
+        text: Muy bien. Guía tú.
+        effects:
+          - set:
+              current_scene: b3_ch02c_cards
+              b3_ch2_kelrim: 1
   - name: b3_ch02c_lousy
     texts:
       - source: scene_text
-        paragraph: 17
-        text: |
-          Traducción en progreso.
+        paragraph: 24
+        text: |-
+          "Espera, ¡yo no te seguí hasta aquí por eso!"
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿No?...", dice Daren.
+
+          "No, solo vine detrás de ti porque quería detenerte, pero llegué un poco tarde", digo. "En fin, veo que ya has tomado una decisión, así que lo único que puedo hacer ahora es desearte suerte."
+
+          "Ah...", dice Daren, con voz decepcionada. "Bueno, en ese caso, gracias, supongo... Haré lo posible por no fastidiarla."
+
+          Dicho esto, Daren entra en el área de cuarentena y, en cuanto cruza el umbral, Desmond cierra la puerta detrás de él y vuelve a echarle todas las cerraduras. Como ya no tengo nada que hacer aquí, decido regresar junto a mis amigos, que siguen reunidos cerca de la fila de sillas pegada a la pared.
+
+          "Supongo que no conseguiste convencer a Daren para que cambiara de idea...", dice Kate cuando me reúno con ellos.
+
+          "Estaba demasiado decidido a entrar ahí", digo. "No había nada que pudiera hacer."
+
+          "Bah, seguro que estará bien", dice Hadrik. "Todos hemos salido de situaciones mucho peores que una maldita enfermedad. Ya encontrará la manera de arreglárselas al final."
+      - source: scene_text_2
+        paragraph: 18
+        text: |-
+          Mientras Daren está ocupado atendiendo a los enfermos dentro del área de cuarentena, el resto aprovechamos ese tiempo para mantener algunas conversaciones con Breynan y con el padre de Leila sobre la estructura de su sociedad subterránea y su relación con la gente que vive en la superficie de la ciudad. Justo cuando estamos empezando a entender mejor cómo funcionan las cosas en Ollendor, tanto arriba como abajo, vemos abrirse la puerta de hierro y a Daren salir cojeando del área de cuarentena, con un goblin vestido con túnicas de mago blanco siguiéndolo de cerca.
+
+          "¿Un goblin?...", pregunta Illuna, sorprendida, cuando los dos llegan hasta nosotros.
+      - source: scene_3
+        paragraph: 14
+        text: |-
+          "Sí, este es Kelrim", dice Daren. "Un goblin mago blanco que lleva dos semanas ofreciéndose voluntario para atender a los enfermos del área de cuarentena."
+
+          "¿Dos semanas?", pregunto. "¿No debería significar eso que su enfermedad ya es contagiosa?"
+
+          "No", dice Daren. "Al parecer esta dolencia se desarrolla más lentamente en los goblins que en los humanos, así que todavía debería quedarle alrededor de un par de semanas antes de que su propia enfermedad se vuelva contagiosa y tenga que quedar encerrado en el área de cuarentena junto con los demás."
+
+          "Vale...", digo. "¿Pero por qué lo has traído aquí?"
+
+          "Lo he traído porque quiere encontrar una cura para esta enfermedad tanto como yo", dice Daren. "También me ha ayudado mucho lanzándome un hechizo de protección que me protegió temporalmente de la enfermedad y es gracias a él que he conseguido averiguar la verdadera naturaleza de esta dolencia."
+
+          "¿Daren trabajando con un monstruo?", dice Hadrik. "Desde luego, eso es algo que nunca pensé que vería en esta vida."
+
+          "¡El sanador dice la verdad!", dice Breynan después de inspeccionar la parte trasera del cuello de Daren. "¡Ese hechizo temporal del que habló de verdad consiguió protegerlo de la enfermedad!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02c_strangers
   - name: b3_ch02c_cards
     texts:
       - source: scene_text
-        paragraph: 18
-        text: |
-          Traducción en progreso.
+        paragraph: 25
+        text: |-
+          "Muy bien. Tú delante", digo.
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Así que había dos locos de remate en lugar de uno...", dice Desmond, mirándome.
+
+          "Bueno, supongo que no me llaman 'Barry el temerario' por nada", digo. "¡Hasta luego!"
+
+          Dicho eso, sigo a Daren al interior del área de cuarentena y, en cuanto ambos entramos, Desmond cierra la puerta detrás de nosotros y vuelve a echarle todas las cerraduras. Ahora nos encontramos dentro de un pequeño pasillo iluminado por dos antorchas y, al fondo del túnel, hay otra puerta de hierro que no parece tener ninguna cerradura.
+
+          Mientras nos acercamos a la puerta, empezamos a oír la voz del anciano que arrojaron aquí antes y parece que está discutiendo con varios de los otros enfermos que hay en el área de cuarentena.
+
+          "Compórtate, Jack", dice uno de los hombres al otro lado de la puerta mientras Daren y yo avanzamos por el pasillo. "No has hecho más que quejarte desde que llegaste. Incluso tuvimos que apartarte de la entrada para que no molestaras a nadie en la sala de espera. ¿No puedes al menos intentar disfrutar de tus últimos días de relativa buena salud mientras todavía los tienes? Ven aquí. Tómate una cerveza. Échate unas cartas con nosotros. Al fin y al cabo, todos estamos metidos en lo mismo. No hace falta que hagas esto aún más deprimente de lo que ya es."
+      - source: scene_text_2
+        paragraph: 19
+        text: |-
+          Los hombres dejan de hablar de golpe cuando Daren y yo abrimos la puerta de hierro y entramos en la enorme sala en la que se encuentran. Al mirar alrededor, vemos que hay una mesa montada cerca de la entrada donde el anciano Jack y varios hombres más jóvenes están bebiendo cerveza y jugando a las cartas. El resto de la habitación está lleno de enfermos tumbados en sus camas, tosiendo con violencia o limitándose a mirar al techo. Y en medio de toda esa gente, para nuestra sorpresa, vemos a un goblin solitario vestido con túnicas de mago blanco que va de una cama a otra atendiendo a los enfermos, aparentemente demasiado concentrado en su trabajo como para haberse dado cuenta de que hemos entrado.
+
+          "¿Un goblin?...", pregunta Daren, visiblemente atónito. "¿Es un goblin quien está atendiendo a toda esta gente?"
+
+          Después de quedarse varios segundos mirando al goblin, boquiabierto, Daren reacciona de inmediato al ver al goblin lanzar un hechizo de curación sobre uno de los pacientes.
+
+          "¡No, no, no!", dice Daren en voz alta y enseguida empieza a cojear a toda prisa hacia el goblin. "¡Así no se lanza ese hechizo! Ven, deja que te ayude."
+      - source: scene_3
+        paragraph: 15
+        text: |-
+          Cuando me acerco a los dos, veo que Daren le está sujetando una de las muñecas al goblin con la mano derecha mientras le toca el pecho al paciente con la izquierda. Por lo que puedo distinguir usando mi sentido mágico, parece que Daren está ayudando al goblin con el hechizo de curación estabilizando el flujo de su magia. Una vez lanzado el hechizo, Daren suelta al goblin y aparta también la mano del enfermo.
+
+          "¿Ves? ¡Así es como se hace!", dice Daren. "No deberías arriesgarte a lanzar estos hechizos avanzados a menos que los controles por completo. Podrías lastimarte muy fácilmente con uno de estos si no andas con cuidado."
+
+          "Gracias por el consejo, amable desconocido", dice el goblin en Lengua Común, con un acento sorprendentemente bueno. "Como probablemente habrás notado, no soy más que un novicio en las artes de la curación, pero hago lo que puedo para ayudar. Mi nombre es Kelrim. ¡Encantado de conocerte!"
+
+          Luego extiende la mano y Daren se la estrecha con cierta vacilación.
+
+          "Yo soy Daren", dice. "Y este es mi amigo, Barry. Dices que te llamas Kelrim... Creo que oí al guardia de la puerta mencionarte. Te llamó idiota. No lo entiendo... ¿Qué haces en este sitio? ¿Por qué estás ayudando a esta gente? ¿Te arrojaron al área de cuarentena como al resto?"
+    effects:
+      - set:
+          ac_b3_ch2_reckless: 1
+        achievement:
+          id: ac_b3_ch2_reckless
+          title: Temerario
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02c_healing
   - name: b3_ch02c_healing
     texts:
       - source: scene_text
-        paragraph: 19
-        text: |
-          Traducción en progreso.
+        paragraph: 26
+        text: |-
+          "Oh, yo no estaba enfermo cuando vine aquí por primera vez", dice Kelrim. "Pero cuando vi lo que estaba ocurriendo, no podía quedarme de brazos cruzados y dejar que toda esta gente sufriera. Mientras existiera alguna posibilidad de que yo pudiera ayudar a curar a cualquiera de ellos, tenía que intentarlo."
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Pero por qué ibas a arriesgar tu vida solo para salvar a unos humanos?", pregunta Daren, perplejo. "¡Eres un goblin! ¿Por qué ibas a preocuparte de si esta gente vive o muere?"
+
+          "Podría hacerte la misma pregunta a ti, humano llamado Daren", dice Kelrim. "¿Por qué te iba a importar la vida de ninguno de ellos? ¿Acaso no eres un forastero aquí? ¿No son todos estos humanos unos desconocidos para ti? Entonces, ¿por qué ibas a querer salvarlos? La respuesta es simple. Porque ambos somos sanadores, y está en nuestra naturaleza preocuparnos por la vida de los demás sin importar su raza o su especie. ¿No fue esa la razón por la que empezaste a aprender magia blanca en primer lugar? ¿Para intentar marcar una diferencia?"
+
+          "Yo...", dice Daren, pero no parece encontrar las palabras. "No..."
+
+          "¡Por los dioses!", dice Kelrim al ver por accidente la nuca de Daren cuando se mueve hacia otra cama. "¡Tu cuello! ¡No tiene las manchas rosadas! ¿Qué haces aquí si no estás enfermo? ¡Podrías contagiarte en cualquier momento! No te muevas, ¡te lanzaré ahora mismo un hechizo de protección!"
+      - source: scene_text_2
+        paragraph: 20
+        text: |-
+          El goblin extiende entonces las manos hacia Daren y una luz blanca lo envuelve mientras noto el flujo de la magia a su alrededor.
+
+          "Y aquí va otro para tu amigo", dice Kelrim mientras me lanza de inmediato el mismo hechizo a mí. "Ahora salgan, rápido. Este hechizo no durará más de una hora y solo puede lanzarse una vez cada varios días sobre cada persona. Si no salen ahora, no puedo garantizar su seguridad durante mucho tiempo."
+
+          "¡Ahora eso no importa!", dice Daren. "Dime, ¿qué hechizo de protección es ese que acabas de lanzarnos? Me ha resultado muy familiar."
+
+          "Oh", dice Kelrim, "no es más que una versión ligeramente modificada de uno de los hechizos de protección básicos descritos en el libro 'Teoría avanzada de la magia', escrito por su sabio Azarius."
+
+          "Otra vez ese libro...", dice Daren. "Barry, tú dijiste que lo habías leído. ¿Sabes a cuál de esos hechizos se refiere?"
+
+          "Por la forma en que colocó las manos y por cómo nos envolvió la luz", digo, "apostaría a que se trata de una de esas protecciones que te defienden de enfermedades mágicas que afectan directamente al aura."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02c_grim
   - name: b3_ch02c_grim
     texts:
       - source: scene_text
-        paragraph: 20
-        text: |
-          Traducción en progreso.
+        paragraph: 27
+        text: |-
+          "¡Sí, eso es exactamente!", dice Kelrim. "He pasado las últimas dos semanas aquí dentro, intentando encontrar una forma de curar esta plaga, pero por desgracia este breve hechizo de protección es lo único que he conseguido idear hasta ahora. Por suerte para mí, soy un goblin, así que la enfermedad tarda mucho más en pasarme factura que a los humanos. Todavía deberían quedarme unas dos semanas antes de que mi propia enfermedad se vuelva contagiosa, así que intentaré aprovechar al máximo ese tiempo para encontrar una cura."
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Si esta enfermedad afecta al aura", dice Daren, "entonces debería poder hacerme una idea de lo que hay que hacer concentrando mi sentido mágico sobre esta persona mientras la toco directamente. Déjame probarlo."
+
+          Daren vuelve a posar la mano sobre el pecho del enfermo y cierra los ojos para visualizar mejor el flujo de su aura. Después de quedarse así alrededor de treinta segundos, por fin vuelve a abrirlos con una expresión muy sombría en el rostro.
+
+          "Desmond tenía razón...", dice Daren. "Esto SÍ que es imposible. A menos que..."
+      - source: scene_text_2
+        paragraph: 21
+        text: |-
+          Daren se endereza, con un gesto mucho más serio en los ojos, mientras aparta la mano del paciente en la cama.
+
+          "¿A menos que qué?", pregunta Kelrim.
+
+          "Hay una persona que podría ayudarnos, pero conseguir que nos eche una mano quizá no sea tan fácil", dice Daren. "Síganme y les enseñaré de qué hablo."
+
+          "Eh... vale", dice Kelrim. "Guíame."
+
+          Daren asiente y empieza a dirigirse hacia la salida, mientras el goblin y yo lo seguimos. Cuando atravesamos la primera puerta de hierro y el pasillo que hay más allá, llamamos a la puerta de hierro que da a la sala de espera para avisar al guardia de que queremos salir.
+
+          "Entonces, ¿ya te has rendido, sanador?", le pregunta Desmond a Daren mientras abre la puerta.
+
+          "Todavía no", dice Daren, y luego nos conduce de vuelta junto a nuestros amigos, que siguen esperando a que llegue el rey del subsuelo cerca de la fila de sillas junto a la pared.
+
+          "¿Un goblin?...", pregunta Illuna, sorprendida, cuando llegamos hasta ellos.
+
+          "Sí, este es Kelrim", dice Daren. "Un goblin mago blanco que lleva dos semanas ofreciéndose voluntario para atender a los enfermos del área de cuarentena. También nos lanzó a Barry y a mí un hechizo de protección que nos protegió temporalmente de la enfermedad y me ayudó a averiguar la naturaleza de esta dolencia."
+
+          "¿Daren trabajando con un monstruo?", dice Hadrik. "Desde luego, eso es algo que nunca pensé que vería en esta vida."
+      - source: scene_3
+        paragraph: 17
+        text: '"¡El sanador dice la verdad!", dice Breynan después de inspeccionarnos la nuca. "¡Ese hechizo temporal del que habló de verdad consiguió protegerlos de la enfermedad!"'
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch02c_strangers
   - name: b3_ch02c_strangers
     texts:
       - source: scene_text
-        paragraph: 21
-        text: |
-          Traducción en progreso.
+        paragraph: 28
+        text: |-
+          "Entonces, si ya has conseguido averiguar la naturaleza de la enfermedad, ¿por qué has vuelto aquí?", pregunta Kate.
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch02c_river
-    texts:
-      - source: scene_text
+          "Porque no puedo curarla yo solo", dice Daren. "Necesito ayuda. La enfermedad está afectando al aura de los pacientes, pero mi sentido mágico no es ni de lejos lo bastante refinado como para entender qué la causa y cómo puedo curarla. Por eso tuve que volver."
+
+          Luego se coloca frente a Illuna y se arrodilla, inclinando la cabeza.
+
+          "Arraka, necesito tu ayuda", dice Daren. "Eres la única persona que conozco con un sentido mágico lo bastante bueno como para entender cómo funciona esta enfermedad. Me doy cuenta de lo patético que es esto, pero no tengo a nadie más a quien recurrir y, si no hago algo, toda esa gente morirá. Por favor... ¿me ayudarás?"
+
+          "¿Pero qué demonios?...", dice Arraka, mientras todos los demás miran a Daren demasiado atónitos como para decir nada. "¿Va a ser esta tu nueva manía a partir de ahora? ¿Agachar la cabeza ante tus enemigos para que te ayuden a salvar a unos desconocidos al azar?..."
+
+          Hace una pausa de varios segundos durante la cual Daren no levanta la cabeza en ningún momento.
+      - source: scene_text_2
         paragraph: 22
-        text: |
-          Traducción en progreso.
+        text: |-
+          "Mmm...", dice Arraka. "¿Sabes qué? Lo haré. La verdad es que me da exactamente igual que la gente de esa sala viva o muera, pero si esto te va a servir de motivación suficiente para mejorar de una vez tu sentido mágico más allá de un nivel básico, entonces será tiempo bien invertido para mí. Eso sí, te advierto de que no pienso dártelo todo mascado. Vas a ser tú quien encuentre la cura de esa enfermedad, no yo. Lo único que haré será darte pistas vagas para orientarte en la dirección adecuada. No creas que voy a ponértelo fácil solo porque estés jugando con tu vida. Si mueres por una estupidez como esta, solo me demostrarás que nunca estuviste preparado para enfrentarte a Selkram. Así que dime, sanador... después de oír todo esto, ¿sigues queriendo mi ayuda?"
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Sí", dice Daren, todavía sin levantar la cabeza.
+
+          "Bien, en ese caso tenemos un trato", dice Arraka. "Enséñame a esos enfermos tuyos y podremos empezar a trabajar con ellos ahora mismo, si quieres."
+      - source: scene_3
+        paragraph: 16
+        text: |-
+          "Daren, ¿estás seguro de esto?", dice Kelrim, cuando Daren por fin levanta la cabeza y se pone de pie. "No podré lanzarte el hechizo de protección por segunda vez. Si decides volver ahí dentro ahora, contraerás la enfermedad para siempre."
+
+          "Ya acepté ese riesgo la primera vez que entré", dice Daren. "Illuna, dame el amuleto."
+
+          "Esperen", dice Breynan. "No vayan a la sala de cuarentena todavía. El rey del subsuelo debería llegar de un momento a otro y creo que querrán oír lo que tiene que decir. Estoy seguro de que les sobrará tiempo para tratar a los enfermos cuando terminen de hablar con nuestro rey."
+
+          "Está bien", dice Daren. "Pero espero que se dé prisa. Ya hace bastante que estamos aquí."
+
+          "Sí, desde luego este rey se está tomando su tiempo para venir a saludarnos", dice Hadrik. "Esperemos que ese Albert no se haya parado a hablar con más amigos por el camino, o vamos a esperar una eternidad."
+
+          "A mí no me parece mal", dice el padre de Leila. "Nos da una buena oportunidad para conocernos mejor. Por ejemplo, estoy seguro de que muchos de ustedes tendrán más de una pregunta que hacerle a nuestro amigo Kelrim, aquí presente. Al fin y al cabo, no es habitual encontrarse con un goblin mago blanco y mucho menos dentro de una ciudad humana."
+    choices:
+      - position: 1
+        text: Debo admitir que sí me preguntaba cómo había aprendido Kelrim magia blanca.
+        effects:
+          - set:
+              current_scene: b3_ch02c_river
+              b3_ch2_question: 0
+      - position: 2
+        text: Ahora que lo menciona, sí me da un poco de curiosidad saber cómo acabó un goblin en una ciudad humana.
+        effects:
+          - set:
+              current_scene: b3_ch02c_river
+              b3_ch2_question: 1
+      - position: 3
+        text: La verdad es que no puedo decir que me importe demasiado, sinceramente.
+        effects:
+          - set:
+              current_scene: b3_ch02c_river
+              b3_ch2_question: 2
+  - name: b3_ch02c_river
+    routes:
+      - condition: b3_ch2_question = 0
+        texts:
+          - source: scene_text
+            paragraph: 29
+            text: |-
+              "Debo admitir que sí me preguntaba cómo había aprendido Kelrim magia blanca."
+
+              "La aprendí sobre todo de los libros", dice Kelrim. "Los goblins no suelen practicar magia curativa, así que no tuve a nadie que me enseñara. El grimorio estándar de mago blanco me ayudó mucho al principio, pero también he leído muchos otros libros y, con el tiempo, empecé a experimentar, haciendo pequeñas modificaciones en ciertos hechizos para ver qué resultados daban. Por desgracia, no soy más que un lanzador de hechizos novato, así que muchos de esos experimentos acabaron en fracaso."
+
+              "Si has conseguido modificar algún hechizo con éxito, yo diría que estás muy lejos de ser un mago novato", dice Illuna. "La mayoría de los magos principiantes rara vez se molestan en lanzar algo más que los hechizos más básicos y, desde luego, no se arriesgarían a modificarlos."
+
+              "¿No lo harían?...", pregunta Kelrim, sorprendido. "Yo siempre había supuesto que así era como todo el mundo empezaba a aprender a usar la magia. En fin, yo también quería hacerles una pregunta. Ustedes parecen haber llegado a Ollendor hace poco. ¿Por casualidad no se habrán encontrado con un grupo de tres goblins de camino hacia aquí? Se suponía que iban a regresar a la ciudad de un día para otro y me aseguré de dejarles la contraseña de esta semana escrita en una roca junto a un río, no muy lejos de aquí, pero aún no he sabido nada de ellos."
+          - source: scene_text_2
+            paragraph: 24
+            text: |-
+              "Esos goblins que mencionas...", dice Daren, visiblemente afectado. "¿Llevaban por casualidad un equipo muy básico? ¿Como una armadura de cuero barata y unas armas muy gastadas? ¿Uno de ellos era bastante mayor que los otros dos?"
+
+              "¡Sí, eran ellos!", dice Kelrim. "¿Se los han encontrado, entonces?"
+
+              "Sí, pero...", dice Daren, esforzándose por encontrar las palabras. "Nosotros... los matamos. Los matamos a todos. Creíamos que estaban con Tyrath. Kelrim, lo siento muchísimo, nosotros no pensábamos que... es que..."
+
+              Mientras Daren sigue intentando explicarse, Kelrim parece empezar a asimilar poco a poco el significado completo de lo que acaba de oír.
+
+              "¿Mis amigos están... muertos?", dice Kelrim con un dolor inmenso en la voz, mirando ahora al frente como si hubiera olvidado que hay alguien más en la sala aparte de él.
+
+              Las rodillas del goblin empiezan a temblarle y, al perder incluso la fuerza para mantenerse en pie, retrocede un paso y cae sentado en una de las sillas que tiene detrás, sin decir una palabra más. Mientras tanto, Kate parece estar atravesando su propia crisis. Está sudando muchísimo y mira fijamente al suelo, como si estuviera a punto de sufrir un derrumbe mental.
+            condition: b3_ch2_goblins = 1
+          - source: scene_text_2
+            paragraph: 23
+            text: |-
+              "¿La escritura de esa roca decía 'pico de grifo' por casualidad?", digo.
+
+              "No", dice Kelrim. "Quiero decir, sí, técnicamente eso es lo que pone, pero no debes leer la escritura tal cual. Se supone que tienes que reorganizar los símbolos usando un código secreto conocido solo por mis amigos y por mí y, si lo haces, la contraseña que obtienes es 'alas de gárgola'. Pero ¿cómo sabes lo que estaba escrito en la roca?"
+
+              "Bueno...", digo. "Resulta que nuestra amiga Melindra de aquí se llevó esa roca para añadirla a su colección."
+
+              "¿Qué?...", dice Melindra. "¡No, no había ninguna escritura en ninguna de mis rocas!"
+
+              "Como puedes ver, Melindra no sabía lo de la escritura", digo. "Solo cogió la roca por accidente."
+
+              "¡Oye!", dice Melindra. "¡He dicho que no había nada escrito en ninguna de las rocas! ¡No me ignores!"
+
+              "Pero entonces... si no tienen la roca, ¡significa que mis amigos siguen atrapados fuera, sin poder entrar en la ciudad!", dice Kelrim.
+
+              "Sí, están casi seguro fuera", digo. "Unos goblins intentaron llamarnos antes de que llegáramos aquí, pero nosotros los ignoramos y seguimos adelante."
+
+              "Ya veo...", dice Kelrim. "En ese caso, más tarde tendré que salir a buscarlos."
+            condition: b3_ch2_goblins = 0 AND b3_ch1_password = 1
+          - source: scene_text_2
+            paragraph: 25
+            text: |-
+              "La verdad es que sí nos cruzamos con unos goblins de camino hacia aquí", digo. "Querían hablar con nosotros sobre la contraseña necesaria para entrar en la ciudad, pero los ignoramos y seguimos nuestro camino."
+
+              "Ya veo...", dice Kelrim. "Esos debían de ser mis amigos. No veo por qué otros goblins iban a merodear cerca de la ciudad. Más tarde tendré que salir a buscarlos."
+            condition: b3_ch2_goblins = 0 AND b3_ch1_password = 0
+          - source: scene_text_2
+            paragraph: 26
+            text: |-
+              "La verdad es que sí nos cruzamos con unos goblins de camino hacia aquí", digo. "Tuvimos una pequeña charla con ellos precisamente sobre esa roca de la que hablabas. Al parecer no la encontraron junto al río y creían que éramos nosotros quienes la habíamos cogido. En cualquier caso, lo más probable es que todavía sigan esperando en el bosque a las afueras de la aldea, ya que dudo que hayan podido entrar en la ciudad por algún otro medio."
+
+              "Ya veo...", dice Kelrim. "En ese caso, más tarde tendré que salir a buscarlos."
+            condition: b3_ch2_goblins = 2
+          - source: scene_text_2
+            paragraph: 27
+            text: |-
+              "La verdad es que sí nos cruzamos con unos goblins de camino hacia aquí", digo. "Tuvimos una pequeña charla con ellos precisamente sobre esa roca de la que hablabas. Resultó que la habíamos cogido por accidente, así que intercambiamos la contraseña que había escrita en ella a cambio de que nos dijeran que debíamos guiñarle el ojo tres veces al guardia para que nos dejara pasar. Estoy seguro de que tus amigos ya deben de haber entrado en la ciudad a estas alturas."
+
+              "Oh, cielos...", dice Kelrim. "En ese caso, ya deben de estar esperándome en nuestro punto de encuentro. Tendré que ir allí en cuanto pueda."
+            condition: b3_ch2_goblins = 3
+          - source: scene_text_2
+            paragraph: 28
+            text: |-
+              "La verdad es que sí nos cruzamos con unos goblins de camino hacia aquí", digo. "Tuvimos una pequeña charla con ellos precisamente sobre esa roca de la que hablabas. Resultó que la habíamos cogido por accidente, así que intercambiamos la contraseña que había escrita en ella a cambio de que nos dijeran que debíamos guiñarle el ojo tres veces al guardia para que nos dejara pasar. Tus amigos entraron en la ciudad poco antes que nosotros, así que ahora mismo deberían de estar por algún lugar de la superficie."
+
+              "Oh, cielos...", dice Kelrim. "En ese caso, ya deben de estar esperándome en nuestro punto de encuentro. Tendré que ir allí en cuanto pueda."
+            condition: b3_ch2_goblins = 4
+          - source: scene_3
+            paragraph: 18
+            text: |-
+              Eso es... Kate mató ella misma a uno de los amigos de Kelrim. Debe de estar reaccionando así por la culpa que siente después de ver cómo el goblin reaccionó a la muerte de sus amigos.
+
+              "Kelrim...", dice Daren. "Yo no lo sabía... Yo..."
+
+              "No, está bien", dice Kelrim mientras hace un esfuerzo enorme por recuperar la compostura, aunque, por el aspecto que tienen ahora sus ojos, cualquiera diría que lleva tres días sin dormir. "No te culpo. Al fin y al cabo, eran goblins... No tenías ningún motivo para pensártelo dos veces antes de matarlos. Quién sabe. Si hubieran sido otros goblins distintos, quizá te habrían matado a ti si no hubieras atacado primero... Sé que así funciona el mundo, pero aun así... yo... solo necesito unos momentos para recomponerme, eso es todo..."
+
+              Oír esas palabras del goblin parece empujar a Kate todavía más al borde. Parpadea con rapidez y da la impresión de que está entrando en pánico.
+
+              "Kate, ¿me oyes?", le pregunto colocándome frente a ella. "¡Kate!"
+
+              Kate levanta la vista del suelo, pero no responde. Ahora me mira con la misma expresión de pánico que tenía hace un momento.
+
+              Mientras sigo intentando hacer que Kate reaccione, Breynan se gira de repente y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 1
+          - source: scene_3
+            paragraph: 19
+            text: De repente, Breynan se gira y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 0 AND b3_ch1_password = 1
+          - source: scene_3
+            paragraph: 19
+            text: De repente, Breynan se gira y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 0 AND b3_ch1_password = 0
+          - source: scene_3
+            paragraph: 19
+            text: De repente, Breynan se gira y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 2
+          - source: scene_3
+            paragraph: 19
+            text: De repente, Breynan se gira y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 3
+          - source: scene_3
+            paragraph: 19
+            text: De repente, Breynan se gira y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 4
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02c_ending
+      - condition: b3_ch2_question = 1
+        texts:
+          - source: scene_text
+            paragraph: 30
+            text: |-
+              "Ahora que lo menciona, sí me da un poco de curiosidad saber cómo acabó un goblin en una ciudad humana."
+
+              "No es para tanto, la verdad", dice Kelrim. "Hace un tiempo, mi amigo y yo oímos que la ciudad de Ollendor aceptaba goblins dentro de sus fronteras, así que decidimos venir aquí a probar suerte. Después de vivir aquí durante un tiempo, mi amigo decidió salir en busca de dos viejos amigos nuestros a los que habíamos dejado atrás, con la esperanza de convencerlos de que vinieran también. Mientras tanto, han ocurrido muchas cosas y al final acabé uniéndome a los rebeldes, como pueden ver."
+
+              Hace una pausa.
+
+              "Hablando de mis amigos...", continúa Kelrim. "¿Por casualidad no se habrán encontrado con un grupo de tres goblins de camino hacia aquí? Se suponía que iban a regresar a la ciudad de un día para otro y me aseguré de dejarles la contraseña de esta semana escrita en una roca junto a un río, no muy lejos de aquí, pero aún no he sabido nada de ellos."
+          - source: scene_text_2
+            paragraph: 24
+            text: |-
+              "Esos goblins que mencionas...", dice Daren, visiblemente afectado. "¿Llevaban por casualidad un equipo muy básico? ¿Como una armadura de cuero barata y unas armas muy gastadas? ¿Uno de ellos era bastante mayor que los otros dos?"
+
+              "¡Sí, eran ellos!", dice Kelrim. "¿Se los han encontrado, entonces?"
+
+              "Sí, pero...", dice Daren, esforzándose por encontrar las palabras. "Nosotros... los matamos. Los matamos a todos. Creíamos que estaban con Tyrath. Kelrim, lo siento muchísimo, nosotros no pensábamos que... es que..."
+
+              Mientras Daren sigue intentando explicarse, Kelrim parece empezar a asimilar poco a poco el significado completo de lo que acaba de oír.
+
+              "¿Mis amigos están... muertos?", dice Kelrim con un dolor inmenso en la voz, mirando ahora al frente como si hubiera olvidado que hay alguien más en la sala aparte de él.
+
+              Las rodillas del goblin empiezan a temblarle y, al perder incluso la fuerza para mantenerse en pie, retrocede un paso y cae sentado en una de las sillas que tiene detrás, sin decir una palabra más. Mientras tanto, Kate parece estar atravesando su propia crisis. Está sudando muchísimo y mira fijamente al suelo, como si estuviera a punto de sufrir un derrumbe mental.
+            condition: b3_ch2_goblins = 1
+          - source: scene_text_2
+            paragraph: 23
+            text: |-
+              "¿La escritura de esa roca decía 'pico de grifo' por casualidad?", digo.
+
+              "No", dice Kelrim. "Quiero decir, sí, técnicamente eso es lo que pone, pero no debes leer la escritura tal cual. Se supone que tienes que reorganizar los símbolos usando un código secreto conocido solo por mis amigos y por mí y, si lo haces, la contraseña que obtienes es 'alas de gárgola'. Pero ¿cómo sabes lo que estaba escrito en la roca?"
+
+              "Bueno...", digo. "Resulta que nuestra amiga Melindra de aquí se llevó esa roca para añadirla a su colección."
+
+              "¿Qué?...", dice Melindra. "¡No, no había ninguna escritura en ninguna de mis rocas!"
+
+              "Como puedes ver, Melindra no sabía lo de la escritura", digo. "Solo cogió la roca por accidente."
+
+              "¡Oye!", dice Melindra. "¡He dicho que no había nada escrito en ninguna de las rocas! ¡No me ignores!"
+
+              "Pero entonces... si no tienen la roca, ¡significa que mis amigos siguen atrapados fuera, sin poder entrar en la ciudad!", dice Kelrim.
+
+              "Sí, están casi seguro fuera", digo. "Unos goblins intentaron llamarnos antes de que llegáramos aquí, pero nosotros los ignoramos y seguimos adelante."
+
+              "Ya veo...", dice Kelrim. "En ese caso, más tarde tendré que salir a buscarlos."
+            condition: b3_ch2_goblins = 0 AND b3_ch1_password = 1
+          - source: scene_text_2
+            paragraph: 25
+            text: |-
+              "La verdad es que sí nos cruzamos con unos goblins de camino hacia aquí", digo. "Querían hablar con nosotros sobre la contraseña necesaria para entrar en la ciudad, pero los ignoramos y seguimos nuestro camino."
+
+              "Ya veo...", dice Kelrim. "Esos debían de ser mis amigos. No veo por qué otros goblins iban a merodear cerca de la ciudad. Más tarde tendré que salir a buscarlos."
+            condition: b3_ch2_goblins = 0 AND b3_ch1_password = 0
+          - source: scene_text_2
+            paragraph: 26
+            text: |-
+              "La verdad es que sí nos cruzamos con unos goblins de camino hacia aquí", digo. "Tuvimos una pequeña charla con ellos precisamente sobre esa roca de la que hablabas. Al parecer no la encontraron junto al río y creían que éramos nosotros quienes la habíamos cogido. En cualquier caso, lo más probable es que todavía sigan esperando en el bosque a las afueras de la aldea, ya que dudo que hayan podido entrar en la ciudad por algún otro medio."
+
+              "Ya veo...", dice Kelrim. "En ese caso, más tarde tendré que salir a buscarlos."
+            condition: b3_ch2_goblins = 2
+          - source: scene_text_2
+            paragraph: 27
+            text: |-
+              "La verdad es que sí nos cruzamos con unos goblins de camino hacia aquí", digo. "Tuvimos una pequeña charla con ellos precisamente sobre esa roca de la que hablabas. Resultó que la habíamos cogido por accidente, así que intercambiamos la contraseña que había escrita en ella a cambio de que nos dijeran que debíamos guiñarle el ojo tres veces al guardia para que nos dejara pasar. Estoy seguro de que tus amigos ya deben de haber entrado en la ciudad a estas alturas."
+
+              "Oh, cielos...", dice Kelrim. "En ese caso, ya deben de estar esperándome en nuestro punto de encuentro. Tendré que ir allí en cuanto pueda."
+            condition: b3_ch2_goblins = 3
+          - source: scene_text_2
+            paragraph: 28
+            text: |-
+              "La verdad es que sí nos cruzamos con unos goblins de camino hacia aquí", digo. "Tuvimos una pequeña charla con ellos precisamente sobre esa roca de la que hablabas. Resultó que la habíamos cogido por accidente, así que intercambiamos la contraseña que había escrita en ella a cambio de que nos dijeran que debíamos guiñarle el ojo tres veces al guardia para que nos dejara pasar. Tus amigos entraron en la ciudad poco antes que nosotros, así que ahora mismo deberían de estar por algún lugar de la superficie."
+
+              "Oh, cielos...", dice Kelrim. "En ese caso, ya deben de estar esperándome en nuestro punto de encuentro. Tendré que ir allí en cuanto pueda."
+            condition: b3_ch2_goblins = 4
+          - source: scene_3
+            paragraph: 18
+            text: |-
+              Eso es... Kate mató ella misma a uno de los amigos de Kelrim. Debe de estar reaccionando así por la culpa que siente después de ver cómo el goblin reaccionó a la muerte de sus amigos.
+
+              "Kelrim...", dice Daren. "Yo no lo sabía... Yo..."
+
+              "No, está bien", dice Kelrim mientras hace un esfuerzo enorme por recuperar la compostura, aunque, por el aspecto que tienen ahora sus ojos, cualquiera diría que lleva tres días sin dormir. "No te culpo. Al fin y al cabo, eran goblins... No tenías ningún motivo para pensártelo dos veces antes de matarlos. Quién sabe. Si hubieran sido otros goblins distintos, quizá te habrían matado a ti si no hubieras atacado primero... Sé que así funciona el mundo, pero aun así... yo... solo necesito unos momentos para recomponerme, eso es todo..."
+
+              Oír esas palabras del goblin parece empujar a Kate todavía más al borde. Parpadea con rapidez y da la impresión de que está entrando en pánico.
+
+              "Kate, ¿me oyes?", le pregunto colocándome frente a ella. "¡Kate!"
+
+              Kate levanta la vista del suelo, pero no responde. Ahora me mira con la misma expresión de pánico que tenía hace un momento.
+
+              Mientras sigo intentando hacer que Kate reaccione, Breynan se gira de repente y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 1
+          - source: scene_3
+            paragraph: 19
+            text: De repente, Breynan se gira y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 0 AND b3_ch1_password = 1
+          - source: scene_3
+            paragraph: 19
+            text: De repente, Breynan se gira y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 0 AND b3_ch1_password = 0
+          - source: scene_3
+            paragraph: 19
+            text: De repente, Breynan se gira y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 2
+          - source: scene_3
+            paragraph: 19
+            text: De repente, Breynan se gira y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 3
+          - source: scene_3
+            paragraph: 19
+            text: De repente, Breynan se gira y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 4
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02c_ending
+      - condition: b3_ch2_question = 2
+        texts:
+          - source: scene_text
+            paragraph: 31
+            text: |-
+              "La verdad es que no puedo decir que me importe demasiado, sinceramente."
+
+              "Es comprensible", dice Kelrim. "A fin de cuentas, apenas me conocen... Sin embargo, si no es mucha molestia, había una pregunta que quería hacerles, ya que parece que llegaron a Ollendor hace poco."
+
+              "Por supuesto", dice Daren. "¿Cuál es?"
+
+              "¿Por casualidad no se habrán encontrado con un grupo de tres goblins de camino hacia aquí?", dice Kelrim. "Se suponía que iban a regresar a la ciudad de un día para otro y me aseguré de dejarles la contraseña de esta semana escrita en una roca junto a un río, no muy lejos de aquí, pero aún no he sabido nada de ellos."
+          - source: scene_text_2
+            paragraph: 24
+            text: |-
+              "Esos goblins que mencionas...", dice Daren, visiblemente afectado. "¿Llevaban por casualidad un equipo muy básico? ¿Como una armadura de cuero barata y unas armas muy gastadas? ¿Uno de ellos era bastante mayor que los otros dos?"
+
+              "¡Sí, eran ellos!", dice Kelrim. "¿Se los han encontrado, entonces?"
+
+              "Sí, pero...", dice Daren, esforzándose por encontrar las palabras. "Nosotros... los matamos. Los matamos a todos. Creíamos que estaban con Tyrath. Kelrim, lo siento muchísimo, nosotros no pensábamos que... es que..."
+
+              Mientras Daren sigue intentando explicarse, Kelrim parece empezar a asimilar poco a poco el significado completo de lo que acaba de oír.
+
+              "¿Mis amigos están... muertos?", dice Kelrim con un dolor inmenso en la voz, mirando ahora al frente como si hubiera olvidado que hay alguien más en la sala aparte de él.
+
+              Las rodillas del goblin empiezan a temblarle y, al perder incluso la fuerza para mantenerse en pie, retrocede un paso y cae sentado en una de las sillas que tiene detrás, sin decir una palabra más. Mientras tanto, Kate parece estar atravesando su propia crisis. Está sudando muchísimo y mira fijamente al suelo, como si estuviera a punto de sufrir un derrumbe mental.
+            condition: b3_ch2_goblins = 1
+          - source: scene_text_2
+            paragraph: 23
+            text: |-
+              "¿La escritura de esa roca decía 'pico de grifo' por casualidad?", digo.
+
+              "No", dice Kelrim. "Quiero decir, sí, técnicamente eso es lo que pone, pero no debes leer la escritura tal cual. Se supone que tienes que reorganizar los símbolos usando un código secreto conocido solo por mis amigos y por mí y, si lo haces, la contraseña que obtienes es 'alas de gárgola'. Pero ¿cómo sabes lo que estaba escrito en la roca?"
+
+              "Bueno...", digo. "Resulta que nuestra amiga Melindra de aquí se llevó esa roca para añadirla a su colección."
+
+              "¿Qué?...", dice Melindra. "¡No, no había ninguna escritura en ninguna de mis rocas!"
+
+              "Como puedes ver, Melindra no sabía lo de la escritura", digo. "Solo cogió la roca por accidente."
+
+              "¡Oye!", dice Melindra. "¡He dicho que no había nada escrito en ninguna de las rocas! ¡No me ignores!"
+
+              "Pero entonces... si no tienen la roca, ¡significa que mis amigos siguen atrapados fuera, sin poder entrar en la ciudad!", dice Kelrim.
+
+              "Sí, están casi seguro fuera", digo. "Unos goblins intentaron llamarnos antes de que llegáramos aquí, pero nosotros los ignoramos y seguimos adelante."
+
+              "Ya veo...", dice Kelrim. "En ese caso, más tarde tendré que salir a buscarlos."
+            condition: b3_ch2_goblins = 0 AND b3_ch1_password = 1
+          - source: scene_text_2
+            paragraph: 25
+            text: |-
+              "La verdad es que sí nos cruzamos con unos goblins de camino hacia aquí", digo. "Querían hablar con nosotros sobre la contraseña necesaria para entrar en la ciudad, pero los ignoramos y seguimos nuestro camino."
+
+              "Ya veo...", dice Kelrim. "Esos debían de ser mis amigos. No veo por qué otros goblins iban a merodear cerca de la ciudad. Más tarde tendré que salir a buscarlos."
+            condition: b3_ch2_goblins = 0 AND b3_ch1_password = 0
+          - source: scene_text_2
+            paragraph: 26
+            text: |-
+              "La verdad es que sí nos cruzamos con unos goblins de camino hacia aquí", digo. "Tuvimos una pequeña charla con ellos precisamente sobre esa roca de la que hablabas. Al parecer no la encontraron junto al río y creían que éramos nosotros quienes la habíamos cogido. En cualquier caso, lo más probable es que todavía sigan esperando en el bosque a las afueras de la aldea, ya que dudo que hayan podido entrar en la ciudad por algún otro medio."
+
+              "Ya veo...", dice Kelrim. "En ese caso, más tarde tendré que salir a buscarlos."
+            condition: b3_ch2_goblins = 2
+          - source: scene_text_2
+            paragraph: 27
+            text: |-
+              "La verdad es que sí nos cruzamos con unos goblins de camino hacia aquí", digo. "Tuvimos una pequeña charla con ellos precisamente sobre esa roca de la que hablabas. Resultó que la habíamos cogido por accidente, así que intercambiamos la contraseña que había escrita en ella a cambio de que nos dijeran que debíamos guiñarle el ojo tres veces al guardia para que nos dejara pasar. Estoy seguro de que tus amigos ya deben de haber entrado en la ciudad a estas alturas."
+
+              "Oh, cielos...", dice Kelrim. "En ese caso, ya deben de estar esperándome en nuestro punto de encuentro. Tendré que ir allí en cuanto pueda."
+            condition: b3_ch2_goblins = 3
+          - source: scene_text_2
+            paragraph: 28
+            text: |-
+              "La verdad es que sí nos cruzamos con unos goblins de camino hacia aquí", digo. "Tuvimos una pequeña charla con ellos precisamente sobre esa roca de la que hablabas. Resultó que la habíamos cogido por accidente, así que intercambiamos la contraseña que había escrita en ella a cambio de que nos dijeran que debíamos guiñarle el ojo tres veces al guardia para que nos dejara pasar. Tus amigos entraron en la ciudad poco antes que nosotros, así que ahora mismo deberían de estar por algún lugar de la superficie."
+
+              "Oh, cielos...", dice Kelrim. "En ese caso, ya deben de estar esperándome en nuestro punto de encuentro. Tendré que ir allí en cuanto pueda."
+            condition: b3_ch2_goblins = 4
+          - source: scene_3
+            paragraph: 18
+            text: |-
+              Eso es... Kate mató ella misma a uno de los amigos de Kelrim. Debe de estar reaccionando así por la culpa que siente después de ver cómo el goblin reaccionó a la muerte de sus amigos.
+
+              "Kelrim...", dice Daren. "Yo no lo sabía... Yo..."
+
+              "No, está bien", dice Kelrim mientras hace un esfuerzo enorme por recuperar la compostura, aunque, por el aspecto que tienen ahora sus ojos, cualquiera diría que lleva tres días sin dormir. "No te culpo. Al fin y al cabo, eran goblins... No tenías ningún motivo para pensártelo dos veces antes de matarlos. Quién sabe. Si hubieran sido otros goblins distintos, quizá te habrían matado a ti si no hubieras atacado primero... Sé que así funciona el mundo, pero aun así... yo... solo necesito unos momentos para recomponerme, eso es todo..."
+
+              Oír esas palabras del goblin parece empujar a Kate todavía más al borde. Parpadea con rapidez y da la impresión de que está entrando en pánico.
+
+              "Kate, ¿me oyes?", le pregunto colocándome frente a ella. "¡Kate!"
+
+              Kate levanta la vista del suelo, pero no responde. Ahora me mira con la misma expresión de pánico que tenía hace un momento.
+
+              Mientras sigo intentando hacer que Kate reaccione, Breynan se gira de repente y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 1
+          - source: scene_3
+            paragraph: 19
+            text: De repente, Breynan se gira y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 0 AND b3_ch1_password = 1
+          - source: scene_3
+            paragraph: 19
+            text: De repente, Breynan se gira y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 0 AND b3_ch1_password = 0
+          - source: scene_3
+            paragraph: 19
+            text: De repente, Breynan se gira y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 2
+          - source: scene_3
+            paragraph: 19
+            text: De repente, Breynan se gira y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 3
+          - source: scene_3
+            paragraph: 19
+            text: De repente, Breynan se gira y da un salto hacia atrás, sobresaltado, mirando ahora a un hombre de unos cincuenta y tantos que tiene delante, vestido con una cota de malla y una capa gris sobre los hombros.
+            condition: b3_ch2_goblins = 4
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch02c_ending
   - name: b3_ch02c_ending
-    texts:
-      - source: scene_text
-        paragraph: 23
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch2_goblins = 1
+        texts:
+          - source: scene_text
+            paragraph: 32
+            text: |-
+              "¡Mi rey!", grita Breynan, e inclina entonces la cabeza con solemnidad.
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "¡Oh, no hace falta que interrumpan lo que estaban haciendo!", dice el hombre de la capa gris cuando todos nos volvemos hacia él. "Por favor, continúen por donde lo dejaron. Esperaré."
+
+              Mientras todos nos limitamos a mirarlo, sin saber muy bien qué decir, Kate parece ir calmándose un poco y ahora se masajea la frente con ambas manos, intentando relajarse un poco.
+
+              "¿Debo entender entonces que han terminado?", dice el hombre de la capa, alzando una ceja. "Bien. En ese caso, aprovecharé para disculparme por haberlos hecho esperar tanto. Por desgracia, estaba en medio de una reunión que no podía interrumpirse, así que no pude invitarlos a verme de inmediato. Dado que fui yo quien los hizo esperar, pensé que debía venir a escoltarlos personalmente como disculpa."
+          - source: scene_text_2
+            paragraph: 29
+            text: |-
+              "¿Es usted el rey del subsuelo?...", pregunta Daren.
+
+              "En carne y hueso", dice el hombre de la capa gris.
+
+              "Entonces, ¿adónde piensa escoltarnos?", dice Hadrik.
+
+              "A mi sala del trono, por supuesto", dice el rey del subsuelo. "Síganme."
+
+              Empieza entonces a dirigirse hacia el otro extremo de la sala, pero luego se detiene y se vuelve hacia nosotros por última vez.
+
+              "Ah, y espero que no tengan ninguna cita programada justo después de nuestra reunión", dice el rey del subsuelo. "Va a llevar un buen rato."
+        choices:
+          - position: 1
+            text: Siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: b3_ch03a_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"
+      - condition: b3_ch2_goblins <> 1
+        texts:
+          - source: scene_text
+            paragraph: 33
+            text: |-
+              "¡Mi rey!", grita Breynan, e inclina entonces la cabeza con solemnidad.
+
+              "¡Oh, no hace falta que interrumpan lo que estaban haciendo!", dice el hombre de la capa gris cuando todos nos volvemos hacia él. "Por favor, continúen por donde lo dejaron. Esperaré."
+
+              Todos intercambiamos unas cuantas miradas y luego nos limitamos a observar al hombre que tenemos delante, sin saber muy bien qué decir.
+
+              "¿Debo entender entonces que han terminado?", dice el hombre de la capa, alzando una ceja. "Bien. En ese caso, aprovecharé para disculparme por haberlos hecho esperar tanto. Por desgracia, estaba en medio de una reunión que no podía interrumpirse, así que no pude invitarlos a verme de inmediato. Dado que fui yo quien los hizo esperar, pensé que debía venir a escoltarlos personalmente como disculpa."
+          - source: scene_text_2
+            paragraph: 29
+            text: |-
+              "¿Es usted el rey del subsuelo?...", pregunta Daren.
+
+              "En carne y hueso", dice el hombre de la capa gris.
+
+              "Entonces, ¿adónde piensa escoltarnos?", dice Hadrik.
+
+              "A mi sala del trono, por supuesto", dice el rey del subsuelo. "Síganme."
+
+              Empieza entonces a dirigirse hacia el otro extremo de la sala, pero luego se detiene y se vuelve hacia nosotros por última vez.
+
+              "Ah, y espero que no tengan ninguna cita programada justo después de nuestra reunión", dice el rey del subsuelo. "Va a llevar un buen rato."
+        choices:
+          - position: 1
+            text: Siguiente capítulo
+            effects:
+              - set:
+                  next_chapter_crash: 1
+                  current_scene: b3_ch03a_intro
+                  chapter_save: 1
+                  checkpoint_rich: 1
+                  storyboard_controls: Jump to frame "Save load game"
   - name: b3_ch02c_credits
     texts:
       - source: scene_text
-        paragraph: 24
-        text: |
-          Traducción en progreso.
+        paragraph: 34
+        text: |-
+          El tercer capítulo ya está disponible.
 
-          El texto en Español para el Libro 3, Capítulo 2 C todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-chapter_effects: []
+          Toca el botón de abajo para continuar.
+    choices:
+      - position: 1
+        text: Ir al siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: b3_ch03a_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"

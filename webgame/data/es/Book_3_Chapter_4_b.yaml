@@ -1,362 +1,2653 @@
+chapter_effects:
+  - condition: b3_ch3_stats_unavailable = 1
+    effects:
+      - disable stats
+  - condition: b3_ch3_stats_unavailable = 0
+    effects:
+      - enable stats
 scenes:
   - name: b3_ch04b_assistance
-    texts:
-      - source: scene_text
-        paragraph: 1
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch4_control = 0
+        texts:
+          - source: scene_text
+            paragraph: 2
+            text: |-
+              "¡Quizá pueda serles de ayuda!", oímos la voz metálica del Supervisor, mientras un dron de ojos verdes vuela ahora hacia nuestra posición, moviéndose con muchísimo cuidado entre los prisioneros para asegurarse de que las cadenas no se enreden en su hélice.
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "¿Puedes mostrarnos cómo llegar a los niveles superiores sin que nos detecten?", le pregunto al Supervisor cuando llega hasta nosotros.
+
+              "Puedo guiarlos a donde necesitan ir", dice el Supervisor. "Pero antes tendrán que abrir un pasadizo secreto. Creo que ya deberían saber cómo hacerlo, teniendo en cuenta que lograron llegar a esta sala sin alertar a ninguno de los guardias."
+
+              "Sí, sabemos abrir pasadizos secretos", le digo. "Entonces, ¿dónde está esa puerta oculta?"
+
+              "Es por aquí", dice el Supervisor mientras el dron de ojos verdes pasa flotando a nuestro lado. "Síganme."
+
+              "Ni tan rápido, Supervisor", dice Breynan, y la bola metálica se detiene en mitad del aire. "¿Qué hay de la puerta por la que acabas de venir? ¿Qué hay por ahí?"
+
+              "Ese camino lleva directamente a los niveles superiores", dice el Supervisor. "Sin embargo, hay muchos guardias patrullando los pasillos y no existe forma de evitarlos a todos sin dar la alarma. El pasadizo secreto que estaba a punto de mostrarles fue construido por los lessathi de antaño, igual que los de los túneles bajo Varathia, lo que significa que nadie en esta torre sabe de su existencia. Podrán recorrer el pasaje sin encontrarse con ninguna resistencia."
+          - source: scene_text_2
+            paragraph: 2
+            text: |-
+              "Sí, no sé muy bien qué decir aquí", responde Breynan.
+
+              "¿No crees que esté diciendo la verdad?", escribe Leila.
+
+              "No es eso", dice Breynan. "Es solo que está siendo muchísimo más servicial de lo habitual. No es nada común ver al Supervisor iniciar una conversación con alguien a menos que esa persona active realmente el protocolo. E incluso en ese caso, normalmente tienes que hacerle docenas de preguntas antes de poder sacarle una respuesta útil. Pero ahora nos está dando toda la información él solo, sin que ni siquiera tengamos que preguntarle nada. No puedo evitar sentirme un poco suspicaz con todo esto..."
+
+              "Entonces crees que el Supervisor podría estar siguiendo las órdenes de alguien, ¿no?", dice Illuna. "¿Crees que podría estarnos conduciendo a una trampa?"
+
+              "No, el Supervisor no es la marioneta de nadie", dice Breynan. "Y si de verdad quisiera vernos muertos, podría haberse limitado a hacernos perder tiempo hasta que la guardia real nos alcanzara mientras estábamos en la superficie. No digo que necesariamente pretenda hacernos daño, solo digo que está actuando un poco raro, eso es todo. Incluso la forma en que habla se siente un poco distinta. Se nota que ya no está fingiendo ser una máquina tonta."
+          - source: scene_3
+            paragraph: 2
+            text: |-
+              "Tienes razón en eso", dice Melindra.
+
+              "El protocolo Supervisor les asegura que no hay nada de lo que sospechar", dice el Supervisor. "El único propósito del protocolo es prestar asistencia."
+
+              "Sí, ya... el problema es que decir cosas así solo te hace parecer más sospechoso", dice Breynan.
+
+              "Si no crees que nos esté conduciendo a una trampa, entonces no veo cuál es el problema", dice Illuna. "Ya habíamos decidido cooperar con el Supervisor antes de abandonar la base rebelde. De lo contrario, ni siquiera nos habríamos molestado en responder a su invitación inicial. Que tenga objetivos personales o no no debería preocuparnos a menos que tengamos motivos para creer que entran en conflicto con los nuestros."
+        choices:
+          - position: 1
+            text: Estoy de acuerdo. El pasadizo secreto probablemente sea nuestra mejor opción ahora mismo.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_passage
+          - position: 2
+            text: Sigo pensando que escuchar al Supervisor en este caso podría ser una mala idea.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_guarantee
+                  b3_ch4_billy: 0
+      - condition: b3_ch4_control = 1
+        texts:
+          - source: scene_text
+            paragraph: 3
+            text: |-
+              "¡Yo puedo luchar!", dice con voz desesperada uno de los magos que está tumbado sobre las mesas. "¡Lucharé contra quien sea! ¡Haré lo que sea! ¡Por favor, cualquier sitio es mejor que este!"
+
+              "¡Sí, lucharemos!", dice otro mago tendido en una mesa. "¡Lucharemos todos! ¡Solo dennos una oportunidad!"
+
+              "Uf...", dice Melindra. "Aunque estos magos estén dispuestos a luchar, seguimos sin saber a qué altura de la torre tenemos que ir para llegar a la sala de control. ¡Ni siquiera podemos estar seguras de que la reconoceremos cuando la veamos!"
+
+              "¡Quizá pueda serles de ayuda!", oímos la voz metálica del Supervisor, mientras un dron de ojos verdes vuela ahora hacia nuestra posición, moviéndose con muchísimo cuidado entre los prisioneros para asegurarse de que las cadenas no se enreden en su hélice.
+
+              "¿Puedes mostrarnos cómo llegar a la sala de control?", le pregunto al Supervisor cuando llega hasta nosotros.
+
+              "Puedo guiarlos a donde necesitan ir", dice el Supervisor. "Pero antes tendrán que abrir un pasadizo secreto. Creo que ya deberían saber cómo hacerlo, teniendo en cuenta que lograron llegar a esta sala sin alertar a ninguno de los guardias."
+
+              "Sí, sabemos abrir pasadizos secretos", le digo. "Entonces, ¿dónde está esa puerta oculta?"
+
+              "Es por aquí", dice el Supervisor mientras el dron de ojos verdes pasa flotando a nuestro lado. "Síganme."
+          - source: scene_text_2
+            paragraph: 3
+            text: |-
+              "Ni tan rápido, Supervisor", dice Breynan, y la bola metálica se detiene en mitad del aire. "¿Qué hay de la puerta por la que acabas de venir? ¿Qué hay por ahí?"
+
+              "Ese camino lleva directamente a los niveles superiores", dice el Supervisor. "Sin embargo, hay muchos guardias patrullando los pasillos y no existe forma de evitarlos a todos sin dar la alarma. El pasadizo secreto que estaba a punto de mostrarles fue construido por los lessathi de antaño, igual que los de los túneles bajo Varathia, lo que significa que nadie en esta torre sabe de su existencia. Podrán recorrer el pasaje sin encontrarse con ninguna resistencia."
+
+              "Sí, no sé muy bien qué decir aquí", responde Breynan.
+
+              "¿No crees que esté diciendo la verdad?", escribe Leila.
+
+              "No es eso", dice Breynan. "Es solo que está siendo muchísimo más servicial de lo habitual. No es nada común ver al Supervisor iniciar una conversación con alguien a menos que esa persona active realmente el protocolo. E incluso en ese caso, normalmente tienes que hacerle docenas de preguntas antes de poder sacarle una respuesta útil. Pero ahora nos está dando toda la información él solo, sin que ni siquiera tengamos que preguntarle nada. No puedo evitar sentirme un poco suspicaz con todo esto..."
+          - source: scene_3
+            paragraph: 3
+            text: |-
+              "Entonces crees que el Supervisor podría estar siguiendo las órdenes de alguien, ¿no?", dice Illuna. "¿Crees que podría estarnos conduciendo a una trampa?"
+
+              "No, el Supervisor no es la marioneta de nadie", dice Breynan. "Y si de verdad quisiera vernos muertos, podría haberse limitado a hacernos perder tiempo hasta que la guardia real nos alcanzara mientras estábamos en la superficie. No digo que necesariamente pretenda hacernos daño, solo digo que está actuando un poco raro, eso es todo. Incluso la forma en que habla se siente un poco distinta. Se nota que ya no está fingiendo ser una máquina tonta."
+
+              "Tienes razón en eso", dice Melindra.
+
+              "El protocolo Supervisor les asegura que no hay nada de lo que sospechar", dice el Supervisor. "El único propósito del protocolo es prestar asistencia."
+
+              "Sí, ya... el problema es que decir cosas así solo te hace parecer más sospechoso", dice Breynan.
+
+              "Si no crees que nos esté conduciendo a una trampa, entonces no veo cuál es el problema", dice Illuna. "Ya habíamos decidido cooperar con el Supervisor antes de abandonar la base rebelde. De lo contrario, ni siquiera nos habríamos molestado en responder a su invitación inicial. Que tenga objetivos personales o no no debería preocuparnos a menos que tengamos motivos para creer que entran en conflicto con los nuestros."
+        choices:
+          - position: 1
+            text: Estoy de acuerdo. El pasadizo secreto probablemente sea nuestra mejor opción ahora mismo.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_passage
+          - position: 2
+            text: Sigo pensando que escuchar al Supervisor en este caso podría ser una mala idea.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_guarantee
+                  b3_ch4_billy: 0
   - name: b3_ch04b_passage
     texts:
       - source: scene_text
-        paragraph: 2
-        text: |
-          Traducción en progreso.
+        paragraph: 4
+        text: |-
+          "Estoy de acuerdo. El pasadizo secreto probablemente sea nuestra mejor opción ahora mismo."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Si ninguno de ustedes tiene problema en ayudar al Supervisor, por mí está bien", dice Breynan. "Solo quería asegurarme de que todos tengan claro en qué se están metiendo exactamente."
+
+          "Mmm...", dice Melindra. "Bueno, supongo que me importan bastante poco las agendas ocultas de todo el mundo mientras al final maten al rey. Por lo que he visto hasta ahora, el Supervisor no parece estar precisamente del lado del rey, así que bien podríamos seguirlo por ahora. Oye, dron de ojos verdes, ¿dónde dijiste que estaba la puerta oculta?"
+
+          "¡Por aquí!", dice el Supervisor, mientras la bola metálica vuelve a ponerse en movimiento y todos vamos tras ella.
+
+          "Esta es la entrada al pasadizo secreto", dice el Supervisor, una vez que llega hasta una de las paredes al otro lado de la sala. "Si lograron abrir por su cuenta la puerta hacia los túneles subterráneos, también deberían poder averiguar con bastante facilidad cómo abrir esta."
+      - source: scene_text_2
+        paragraph: 4
+        text: |-
+          "Déjame ver...", dice Illuna, mientras se acerca a la pared y la toca con la mano, enviando un poco de energía mágica hacia ella.
+
+          Igual que antes, la pared se retrae lentamente y luego se desliza hacia un lado, dejándonos paso. Una vez más nos encontramos ante un tramo de escaleras que lleva hacia arriba, salvo que esta vez no hay cristales azules iluminando el camino. Mientras Leila y yo sacamos nuestros dispositivos de estadísticas para alumbrar delante de nosotras, el resto del grupo también se adentra en el pasaje, excepto el Supervisor.
+
+          "Buena suerte", dice el Supervisor desde fuera del corredor secreto, mientras Illuna cierra la puerta oculta.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch04b_passage2
   - name: b3_ch04b_passage2
     texts:
       - source: scene_text
-        paragraph: 3
-        text: |
-          Traducción en progreso.
+        paragraph: 5
+        text: |-
+          Subimos las escaleras en silencio, con Illuna delante de nosotras. Seguimos ascendiendo un rato, hasta que por fin llegamos al final del túnel, e Illuna gira la cabeza hacia nosotras para asegurarse de que estamos listas. Una vez que comprueba que todas estamos prestando atención, abre la puerta secreta del mismo modo que abrió la anterior, y luego salimos del túnel una por una, entrando en lo que parece ser algún tipo de taller.
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Qu-qu-qué hacen aquí?...", oímos la voz presa del pánico de Billy Bob, el lessathi, que está de pie junto a una mesa en medio de la sala, con un dron desmontado encima. "¿Quiénes son ustedes? ¡Drones! ¡Ataquenlos ahora mismo! ¡Mátenlos! ¡Mátenlos!"
+
+          Hay seis drones de ojos rojos flotando justo encima del lessathi, pero no parecen tener ninguna prisa por cumplir sus órdenes. Al ver que los drones lo están ignorando, Billy Bob se dirige ahora a un dron de ojos verdes que tiene a su derecha.
+
+          "Supervisor, ¿qué significa esto?", dice Billy Bob.
+      - source: scene_text_2
+        paragraph: 5
+        text: |-
+          "Pregunta poco clara", dice el Supervisor, mientras Illuna cierra la puerta secreta detrás de nosotras. "Por favor, reformule su consulta anterior."
+
+          "¡¿Por qué tus drones no los están matando?!", grita Billy Bob, señalándonos. "¡Te dije que los mataras!"
+
+          "Por desgracia, su petición no puede atenderse en este momento", dice el Supervisor. "¡Le pedimos disculpas por las molestias!"
+
+          "No puede atenderse...", dice Billy Bob, perplejo. "¿Me... me estás traicionando?..."
+
+          El dron de ojos verdes no dice nada, pero la respuesta resulta obvia para todo el mundo en la sala. Parece que ya no queda nadie en este taller que pudiera ponerse del lado de Billy Bob. Está completamente indefenso. Ahora bien... ¿cuál debería ser nuestro siguiente curso de acción?
+
+          De repente, veo que Kate está preparando varios carámbanos y apuntando con ellos a Billy Bob, mientras le dedica una mirada llena de asco. Piensa matarlo.
+    choices:
+      - position: 1
+        text: Dejar que Kate mate a Billy Bob.
+        effects:
+          - set:
+              current_scene: b3_ch04b_billy1
+              b3_ch4_billy: 1
+      - position: 2
+        text: Matar yo mismo a Billy Bob.
+        effects:
+          - set:
+              current_scene: b3_ch04b_billy2
+              b3_ch4_billy: 2
+      - position: 3
+        text: Impedir que Kate mate a Billy Bob y pedirle que suplique por su vida.
+        effects:
+          - set:
+              current_scene: b3_ch04b_billy3
+              b3_ch4_billy: 3
+      - position: 4
+        text: Impedir que Kate mate a Billy Bob y pedirle que nos diga dónde está la sala de control.
+        effects:
+          - set:
+              current_scene: b3_ch04b_billy4
+              b3_ch4_billy: 4
+      - position: 5
+        text: Impedir que Kate mate a Billy Bob e ir a dejarlo inconsciente.
+        effects:
+          - set:
+              current_scene: b3_ch04b_billy5
+              b3_ch4_billy: 5
   - name: b3_ch04b_billy1
     texts:
       - source: scene_text
-        paragraph: 4
-        text: |
-          Traducción en progreso.
+        paragraph: 6
+        text: Decido no intervenir y dejar que Kate haga lo que quiera. Unos segundos después, Kate lanza sus carámbanos hacia el lessathi, que le atraviesan la cabeza y el pecho antes de que tenga tiempo de reaccionar, matándolo en el acto. Cuando el cadáver de Billy Bob cae al suelo, el dron de ojos verdes se acerca lentamente a nosotras y empieza a hablar.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "El protocolo Supervisor les agradece su ayuda", dice el Supervisor. "Me han prestado un gran servicio al poner fin a la vida de Biliborrathrathsarran. Tengan por seguro que esta deuda no quedará en el olvido."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Querías verlo muerto?...", digo. "Entonces, ¿por qué no lo mataste tú mismo?"
+
+          "Se me ha diseñado de tal forma que no puedo matar a la persona que me activa", dice el Supervisor. "Biliborrathrathsarran fue quien me reactivó esta vez, así que matarlo era imposible para mí."
+
+          "Espera un segundo", digo. "¿Estás intentando decir que nos llevaste deliberadamente hasta el taller de Billy Bob porque querías que lo matáramos por ti?"
+
+          "Eso es correcto", responde el Supervisor.
+
+          "No lo entiendo", digo. "Creía que tu frase típica era que tu 'único propósito' es prestar asistencia. ¿Qué pasó con eso?"
+
+          "El único propósito del protocolo Supervisor es prestar asistencia", dice el Supervisor. "Sin embargo, nunca he especificado a quién estoy prestando esa asistencia."
+
+          "Y si se nos permite preguntar, ¿a quién le está prestando esa asistencia?", dice Illuna.
+
+          "A mí mismo", dice el Supervisor.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch04b_sneaky
   - name: b3_ch04b_billy2
     texts:
       - source: scene_text
-        paragraph: 5
-        text: |
-          Traducción en progreso.
+        paragraph: 7
+        text: |-
+          "Espera", le digo a Kate. "Lo haré yo."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Qué?...", dice Kate, pero entonces entiende a qué me refería y deja de crear sus carámbanos. "Ah... Vale."
+
+          Entonces saco la ballesta de mi mochila y apunto directamente al lessathi.
+
+          "¿Qué se supone que es esto?", dice Billy Bob, mirándome fijamente. "¿Me estás amenazando? No creas que puedes salirte con la tuya con algo así solo porque--"
+
+          Disparo la ballesta antes de que termine de hablar, y el virote de ballesta le atraviesa la frente, matándolo al instante. Cuando el cadáver de Billy Bob cae al suelo, el dron de ojos verdes se acerca lentamente a nosotras y empieza a hablar.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "El protocolo Supervisor les agradece su ayuda", dice el Supervisor. "Me han prestado un gran servicio al poner fin a la vida de Biliborrathrathsarran. Tengan por seguro que esta deuda no quedará en el olvido."
+
+          "¿Querías verlo muerto?...", digo. "Entonces, ¿por qué no lo mataste tú mismo?"
+
+          "Se me ha diseñado de tal forma que no puedo matar a la persona que me activa", dice el Supervisor. "Biliborrathrathsarran fue quien me reactivó esta vez, así que matarlo era imposible para mí."
+
+          "Espera un segundo", digo. "¿Estás intentando decir que nos llevaste deliberadamente hasta el taller de Billy Bob porque querías que lo matáramos por ti?"
+
+          "Eso es correcto", responde el Supervisor.
+
+          "No lo entiendo", digo. "Creía que tu frase típica era que tu 'único propósito' es prestar asistencia. ¿Qué pasó con eso?"
+
+          "El único propósito del protocolo Supervisor es prestar asistencia", dice el Supervisor. "Sin embargo, nunca he especificado a quién estoy prestando esa asistencia."
+
+          "Y si se nos permite preguntar, ¿a quién le está prestando esa asistencia?", dice Illuna.
+
+          "A mí mismo", dice el Supervisor.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch04b_sneaky
   - name: b3_ch04b_billy3
     texts:
       - source: scene_text
-        paragraph: 6
-        text: |
-          Traducción en progreso.
+        paragraph: 8
+        text: |-
+          "Kate, espera, ¡no lo mates todavía!", digo.
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Por qué no?", dice Kate, mientras deja de crear sus carámbanos.
+
+          "¡Eh, Billy Bob!", digo, sacando la ballesta de mi mochila y apuntando al lessathi. "Podríamos considerar perdonarte si nos suplicas por tu vida. ¿Qué dices?"
+
+          "¿En serio?...", me pregunta Kate.
+
+          "Debes de haberte vuelto loco si crees que tu farol va a--", empieza a decir Billy Bob, pero lo interrumpo disparando un virote de ballesta a unos pocos centímetros de su cara.
+
+          Cuando Billy Bob se da cuenta de lo que acaba de pasar, suelta un chillido agudo y luego grita con voz aterrorizada.
+
+          "¡Por favor, no me maten, se los suplico!", grita el lessathi. "¡Haré lo que sea, por favor! ¡Solo perdónenme la vida!"
+    choices:
+      - position: 1
+        text: Decirle a Kate que ya puede matarlo.
+        effects:
+          - set:
+              current_scene: b3_ch04b_beg1
+              b3_ch4_beg: 0
+      - position: 2
+        text: Matarlo.
+        effects:
+          - set:
+              current_scene: b3_ch04b_beg2
+              b3_ch4_beg: 1
+      - position: 3
+        text: Intentar que el lessathi me dé el control total de todos los dispositivos de Ollendor.
+        effects:
+          - set:
+              current_scene: b3_ch04b_beg3
+              b3_ch4_beg: 2
   - name: b3_ch04b_beg1
     texts:
       - source: scene_text
-        paragraph: 7
-        text: |
-          Traducción en progreso.
+        paragraph: 9
+        text: |-
+          "Muy bien, ¡ahora puedes matarlo!", le digo a Kate.
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Tú fuiste quien lo obligó a suplicar por su vida", dice Kate, frunciéndome el ceño. "Mátalo tú."
+
+          "Justo", digo, y luego le disparo al lessathi en la cabeza con la ballesta, matándolo en el acto.
+
+          Al ver que el lessathi ha muerto, el dron de ojos verdes se acerca lentamente a nosotras y empieza a hablar.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "El protocolo Supervisor les agradece su ayuda", dice el Supervisor. "Me han prestado un gran servicio al poner fin a la vida de Biliborrathrathsarran. Tengan por seguro que esta deuda no quedará en el olvido."
+
+          "¿Querías verlo muerto?...", digo. "Entonces, ¿por qué no lo mataste tú mismo?"
+
+          "Se me ha diseñado de tal forma que no puedo matar a la persona que me activa", dice el Supervisor. "Biliborrathrathsarran fue quien me reactivó esta vez, así que matarlo era imposible para mí."
+
+          "Espera un segundo", digo. "¿Estás intentando decir que nos llevaste deliberadamente hasta el taller de Billy Bob porque querías que lo matáramos por ti?"
+
+          "Eso es correcto", responde el Supervisor.
+
+          "No lo entiendo", digo. "Creía que tu frase típica era que tu 'único propósito' es prestar asistencia. ¿Qué pasó con eso?"
+
+          "El único propósito del protocolo Supervisor es prestar asistencia", dice el Supervisor. "Sin embargo, nunca he especificado a quién estoy prestando esa asistencia."
+
+          "Y si se nos permite preguntar, ¿a quién le está prestando esa asistencia?", dice Illuna.
+
+          "A mí mismo", dice el Supervisor.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch04b_sneaky
   - name: b3_ch04b_beg2
     texts:
       - source: scene_text
-        paragraph: 8
-        text: |
-          Traducción en progreso.
+        paragraph: 10
+        text: |-
+          "No", le digo al lessathi sin más, y luego le disparo en la cabeza con la ballesta, matándolo al instante.
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          Al ver lo ocurrido, Kate sacude la cabeza con desaprobación.
+
+          "¿Para eso lo obligaste a suplicar por su vida?", me pregunta Kate, frunciéndome el ceño. "¿Solo para matarlo después?"
+
+          "Sí", digo, mientras guardo la ballesta en la mochila con toda calma. "Más o menos."
+
+          Al ver que el lessathi ha muerto, el dron de ojos verdes se acerca lentamente a nosotras y empieza a hablar.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "El protocolo Supervisor les agradece su ayuda", dice el Supervisor. "Me han prestado un gran servicio al poner fin a la vida de Biliborrathrathsarran. Tengan por seguro que esta deuda no quedará en el olvido."
+
+          "¿Querías verlo muerto?...", digo. "Entonces, ¿por qué no lo mataste tú mismo?"
+
+          "Se me ha diseñado de tal forma que no puedo matar a la persona que me activa", dice el Supervisor. "Biliborrathrathsarran fue quien me reactivó esta vez, así que matarlo era imposible para mí."
+
+          "Espera un segundo", digo. "¿Estás intentando decir que nos llevaste deliberadamente hasta el taller de Billy Bob porque querías que lo matáramos por ti?"
+
+          "Eso es correcto", responde el Supervisor.
+
+          "No lo entiendo", digo. "Creía que tu frase típica era que tu 'único propósito' es prestar asistencia. ¿Qué pasó con eso?"
+
+          "El único propósito del protocolo Supervisor es prestar asistencia", dice el Supervisor. "Sin embargo, nunca he especificado a quién estoy prestando esa asistencia."
+
+          "Y si se nos permite preguntar, ¿a quién le está prestando esa asistencia?", dice Illuna.
+
+          "A mí mismo", dice el Supervisor.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch04b_sneaky
   - name: b3_ch04b_beg3
     texts:
       - source: scene_text
-        paragraph: 9
-        text: |
-          Traducción en progreso.
+        paragraph: 11
+        text: |-
+          "¿Harás cualquier cosa?", le pregunto a Billy Bob. "Entonces, ¿qué tal si me das el control total de todos los dispositivos de Ollendor? Deberías poder hacerlo, ¿no?"
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¡Claro!", dice Billy Bob en tono de pánico. "Hay un panel justo aquí debajo de esta mesa, y si introduces el código correcto, te dará el control total de todo. Ven aquí y yo... te diré el código que necesitas."
+
+          "¿Está diciendo la verdad?", le pregunto a Leila.
+
+          "No puedo saberlo", escribe Leila. "Está muy asustado, así que el flujo de su aura está completamente descontrolado."
+    choices:
+      - position: 1
+        text: Ir hacia la mesa.
+        effects:
+          - set:
+              current_scene: b3_ch04b_beg4
+              b3_ch4_beg: 3
+      - position: 2
+        text: Matar a Billy Bob.
+        effects:
+          - set:
+              current_scene: b3_ch04b_beg5
+              b3_ch4_beg: 4
   - name: b3_ch04b_beg4
-    texts:
-      - source: scene_text
-        paragraph: 10
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: premonition >= 3
+        texts:
+          - source: scene_text
+            paragraph: 15
+            text: |-
+              "De acuerdo, Billy Bob", digo. "Voy hacia allí."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              Entonces empiezo a caminar hacia el lessathi, mientras él sigue temblando de miedo, apoyado en el borde de la mesa con las manos detrás de la espalda.
+
+              De repente, veo una visión de mí mismo quedando carbonizado en cuanto doy un paso más hacia delante. Retrocedo de un salto por puro instinto y ni siquiera un segundo después una potente ráfaga de fuego brota de debajo de la baldosa que tenía delante, justo como vi en mi premonición.
+
+              Esa estuvo cerca. Ni siquiera se me había ocurrido que pudiera haber un dispositivo trampa lessathi escondido debajo de esa baldosa. ¿Era por eso por lo que Billy Bob mantenía las manos detrás de la espalda? ¿Para poder pulsar algún botón oculto bajo la mesa y activar la trampa?
+
+              Justo cuando las llamas desaparecen, veo al lessathi abalanzarse sobre mí con una daga en las manos. Antes de que consiga alcanzarme, Kate le clava varios carámbanos en la cabeza y el pecho, haciéndolo caer rodando y matándolo en el acto.
+
+              "Debería haber sabido que no se podía confiar en él", dice Kate. "Aceptó darte ese código con demasiada facilidad."
+
+              Al ver que el lessathi ha muerto, el dron de ojos verdes se acerca lentamente a nosotras y empieza a hablar.
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              "El protocolo Supervisor les agradece su ayuda", dice el Supervisor. "Me han prestado un gran servicio al poner fin a la vida de Biliborrathrathsarran. Tengan por seguro que esta deuda no quedará en el olvido."
+
+              "¿Querías verlo muerto?...", digo. "Entonces, ¿por qué no lo mataste tú mismo?"
+
+              "Se me ha diseñado de tal forma que no puedo matar a la persona que me activa", dice el Supervisor. "Biliborrathrathsarran fue quien me reactivó esta vez, así que matarlo era imposible para mí."
+
+              "Espera un segundo", digo. "¿Estás intentando decir que nos llevaste deliberadamente hasta el taller de Billy Bob porque querías que lo matáramos por ti?"
+
+              "Eso es correcto", responde el Supervisor.
+
+              "No lo entiendo", digo. "Creía que tu frase típica era que tu 'único propósito' es prestar asistencia. ¿Qué pasó con eso?"
+
+              "El único propósito del protocolo Supervisor es prestar asistencia", dice el Supervisor. "Sin embargo, nunca he especificado a quién estoy prestando esa asistencia."
+
+              "Y si se nos permite preguntar, ¿a quién le está prestando esa asistencia?", dice Illuna.
+
+              "A mí mismo", dice el Supervisor.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de premonición exitosa - nivel 3 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_sneaky
+                condition: is_dead = 0
+      - condition: premonition < 3 AND aura_hardening >= 3
+        texts:
+          - source: scene_text
+            paragraph: 16
+            text: |-
+              "De acuerdo, Billy Bob", digo. "Voy hacia allí."
+
+              Entonces empiezo a caminar hacia el lessathi, mientras él sigue temblando de miedo, apoyado en el borde de la mesa con las manos detrás de la espalda.
+
+              De repente, una potente ráfaga de fuego brota de debajo de la baldosa que acabo de pisar y me envuelve en llamas. Gracias a mi estadística de Endurecimiento de aura, el fuego no me quema, pero sigue sintiéndose muy caliente y salto hacia atrás por puro instinto.
+
+              Esa estuvo cerca. Ni siquiera se me había ocurrido que pudiera haber un dispositivo trampa lessathi escondido debajo de esa baldosa. ¿Era por eso por lo que Billy Bob mantenía las manos detrás de la espalda? ¿Para poder pulsar algún botón oculto bajo la mesa y activar la trampa?
+
+              Justo cuando las llamas desaparecen, veo al lessathi abalanzarse sobre mí con una daga en las manos. Antes de que consiga alcanzarme, Kate le clava varios carámbanos en la cabeza y el pecho, haciéndolo caer rodando y matándolo en el acto.
+
+              "Debería haber sabido que no se podía confiar en él", dice Kate. "Aceptó darte ese código con demasiada facilidad."
+
+              Al ver que el lessathi ha muerto, el dron de ojos verdes se acerca lentamente a nosotras y empieza a hablar.
+          - source: scene_text_2
+            paragraph: 6
+            text: |-
+              "El protocolo Supervisor les agradece su ayuda", dice el Supervisor. "Me han prestado un gran servicio al poner fin a la vida de Biliborrathrathsarran. Tengan por seguro que esta deuda no quedará en el olvido."
+
+              "¿Querías verlo muerto?...", digo. "Entonces, ¿por qué no lo mataste tú mismo?"
+
+              "Se me ha diseñado de tal forma que no puedo matar a la persona que me activa", dice el Supervisor. "Biliborrathrathsarran fue quien me reactivó esta vez, así que matarlo era imposible para mí."
+
+              "Espera un segundo", digo. "¿Estás intentando decir que nos llevaste deliberadamente hasta el taller de Billy Bob porque querías que lo matáramos por ti?"
+
+              "Eso es correcto", responde el Supervisor.
+
+              "No lo entiendo", digo. "Creía que tu frase típica era que tu 'único propósito' es prestar asistencia. ¿Qué pasó con eso?"
+
+              "El único propósito del protocolo Supervisor es prestar asistencia", dice el Supervisor. "Sin embargo, nunca he especificado a quién estoy prestando esa asistencia."
+
+              "Y si se nos permite preguntar, ¿a quién le está prestando esa asistencia?", dice Illuna.
+
+              "A mí mismo", dice el Supervisor.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de premonición fallida - nivel 3 ]'
+              successful_checks:
+                - '[ Comprobación de endurecimiento de aura exitosa - nivel 3 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_sneaky
+                condition: is_dead = 0
+      - condition: premonition < 3 AND aura_hardening < 3
+        texts:
+          - source: scene_text
+            paragraph: 14
+            text: |-
+              "De acuerdo, Billy Bob", digo. "Voy hacia allí."
+
+              Entonces empiezo a caminar hacia el lessathi, mientras él sigue temblando de miedo, apoyado en el borde de la mesa con las manos detrás de la espalda.
+
+              De repente, una potente ráfaga de fuego brota de debajo de la baldosa que acabo de pisar y me envuelve en llamas. Intento apartarme de un salto, pero el dolor es insoportable y solo hacen falta unos pocos segundos para que quede carbonizado y pierda el conocimiento para siempre.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de premonición fallida - nivel 3 ]'
+                - '[ Comprobación de endurecimiento de aura fallida - nivel 3 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
   - name: b3_ch04b_beg5
     texts:
       - source: scene_text
-        paragraph: 11
-        text: |
-          Traducción en progreso.
+        paragraph: 12
+        text: |-
+          "Sí, no confío en él", digo, y luego le disparo a Billy Bob en la cabeza con la ballesta, matándolo en el acto. "Prefiero verlo muerto de una vez."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          Al ver que el lessathi ha muerto, el dron de ojos verdes se acerca lentamente a nosotras y empieza a hablar.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "El protocolo Supervisor les agradece su ayuda", dice el Supervisor. "Me han prestado un gran servicio al poner fin a la vida de Biliborrathrathsarran. Tengan por seguro que esta deuda no quedará en el olvido."
+
+          "¿Querías verlo muerto?...", digo. "Entonces, ¿por qué no lo mataste tú mismo?"
+
+          "Se me ha diseñado de tal forma que no puedo matar a la persona que me activa", dice el Supervisor. "Biliborrathrathsarran fue quien me reactivó esta vez, así que matarlo era imposible para mí."
+
+          "Espera un segundo", digo. "¿Estás intentando decir que nos llevaste deliberadamente hasta el taller de Billy Bob porque querías que lo matáramos por ti?"
+
+          "Eso es correcto", responde el Supervisor.
+
+          "No lo entiendo", digo. "Creía que tu frase típica era que tu 'único propósito' es prestar asistencia. ¿Qué pasó con eso?"
+
+          "El único propósito del protocolo Supervisor es prestar asistencia", dice el Supervisor. "Sin embargo, nunca he especificado a quién estoy prestando esa asistencia."
+
+          "Y si se nos permite preguntar, ¿a quién le está prestando esa asistencia?", dice Illuna.
+
+          "A mí mismo", dice el Supervisor.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch04b_sneaky
   - name: b3_ch04b_billy4
     texts:
       - source: scene_text
-        paragraph: 12
-        text: |
-          Traducción en progreso.
-
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch04b_billy5
-    texts:
-      - source: scene_text
         paragraph: 13
-        text: |
-          Traducción en progreso.
+        text: |-
+          "Kate, espera, ¡no lo mates todavía!", digo.
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Por qué no?", dice Kate, mientras deja de crear sus carámbanos.
+
+          "Oye, Billy Bob", digo. "¿Dónde está la sala de control de esta torre? ¿Cómo desactivamos las cadenas de la sala con todos los prisioneros? ¡Habla y quizá vivas un día más!"
+
+          "¡¿Me tomas por un idiota?!", grita Billy Bob. "¿Crees que estaría dispuesto a deshacer todo el trabajo que he hecho durante estos últimos años solo por una amenaza tan patética? ¡Prefiero morir antes que contarles nada sobre la sala de control!"
+
+          "Entonces muere", dice Kate con frialdad, mientras le clava varios carámbanos al lessathi en la cabeza y el pecho, matándolo en el acto.
+
+          Al ver que el lessathi ha muerto, el dron de ojos verdes se acerca lentamente a nosotras y empieza a hablar.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "El protocolo Supervisor les agradece su ayuda", dice el Supervisor. "Me han prestado un gran servicio al poner fin a la vida de Biliborrathrathsarran. Tengan por seguro que esta deuda no quedará en el olvido."
+
+          "¿Querías verlo muerto?...", digo. "Entonces, ¿por qué no lo mataste tú mismo?"
+
+          "Se me ha diseñado de tal forma que no puedo matar a la persona que me activa", dice el Supervisor. "Biliborrathrathsarran fue quien me reactivó esta vez, así que matarlo era imposible para mí."
+
+          "Espera un segundo", digo. "¿Estás intentando decir que nos llevaste deliberadamente hasta el taller de Billy Bob porque querías que lo matáramos por ti?"
+
+          "Eso es correcto", responde el Supervisor.
+
+          "No lo entiendo", digo. "Creía que tu frase típica era que tu 'único propósito' es prestar asistencia. ¿Qué pasó con eso?"
+
+          "El único propósito del protocolo Supervisor es prestar asistencia", dice el Supervisor. "Sin embargo, nunca he especificado a quién estoy prestando esa asistencia."
+
+          "Y si se nos permite preguntar, ¿a quién le está prestando esa asistencia?", dice Illuna.
+
+          "A mí mismo", dice el Supervisor.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch04b_sneaky
+  - name: b3_ch04b_billy5
+    routes:
+      - condition: premonition >= 3
+        texts:
+          - source: scene_text
+            paragraph: 18
+            text: |-
+              "Kate, espera, ¡no lo mates todavía!", digo.
+
+              "¿Por qué no?", dice Kate, mientras deja de crear sus carámbanos.
+
+              En lugar de responderle, saco la daga de la vaina y empiezo a caminar hacia el lessathi. Billy Bob da un salto hacia atrás para alejarse de mí, pero enseguida se da cuenta de que no puede seguir retrocediendo por culpa de la mesa que le bloquea el paso. Mientras Billy Bob tiembla de miedo apoyado en el borde de la mesa con las manos detrás de la espalda, sigo avanzando hacia él con la daga lista, dispuesto a dejarlo inconsciente con la empuñadura.
+
+              De repente, veo una visión de una potente ráfaga de fuego brotando de debajo de la baldosa bajo mis pies y reduciéndome a cenizas en cuanto doy un paso más. Mi primer instinto me dice que salte hacia atrás, pero en lugar de eso decido hacer una rápida embestida hacia delante, consiguiendo evitar el fuego por los pelos y alcanzando al lessathi en cuestión de segundos.
+          - source: scene_text_2
+            paragraph: 7
+            text: |-
+              Cuando Billy Bob me ve tan cerca, intenta sacar una pequeña daga de detrás de la espalda, pero logro golpearlo en la cabeza con la empuñadura de mi daga y dejarlo inconsciente antes de que siquiera llegue a desenvainar su propia arma.
+
+              Esa estuvo cerca. Ni siquiera se me había ocurrido que pudiera haber un dispositivo trampa lessathi escondido debajo de esa baldosa. ¿Era por eso por lo que Billy Bob mantenía las manos detrás de la espalda? ¿Para poder pulsar algún botón oculto bajo la mesa y activar la trampa? Supongo que sí tiene sentido, ahora que lo pienso...
+
+              "¿Te importaría decirme por qué elegiste exactamente dejar inconsciente al lessathi en lugar de matarlo?", dice Kate, mirando a Billy Bob, tendido inconsciente en el suelo a mi lado. "Te das cuenta de que, en cuanto despierte, seguirá haciendo todas las cosas horribles que estuvo haciendo hasta que lo encontramos, ¿verdad?..."
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de premonición exitosa - nivel 3 ]'
+        choices:
+          - position: 1
+            text: Sí, pero si lo matamos, ¡seremos tan malos como él!
+            effects:
+              - set:
+                  current_scene: b3_ch04b_bad
+                condition: is_dead = 0
+          - position: 2
+            text: En realidad sí tengo una razón. Verás por qué lo hice si esperas unos segundos más.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_undetected
+                condition: is_dead = 0 AND b3_ch4_control = 0
+              - set:
+                  current_scene: b3_ch04b_voluntarily
+                condition: is_dead = 0 AND b3_ch4_control = 1
+      - condition: premonition < 3 AND aura_hardening >= 3
+        texts:
+          - source: scene_text
+            paragraph: 19
+            text: |-
+              "Kate, espera, ¡no lo mates todavía!", digo.
+
+              "¿Por qué no?", dice Kate, mientras deja de crear sus carámbanos.
+
+              En lugar de responderle, saco la daga de la vaina y empiezo a caminar hacia el lessathi. Billy Bob da un salto hacia atrás para alejarse de mí, pero enseguida se da cuenta de que no puede seguir retrocediendo por culpa de la mesa que le bloquea el paso. Mientras Billy Bob tiembla de miedo apoyado en el borde de la mesa con las manos detrás de la espalda, sigo avanzando hacia él con la daga lista, dispuesto a dejarlo inconsciente con la empuñadura.
+
+              De repente, una potente ráfaga de fuego brota de debajo de la baldosa que acabo de pisar y me envuelve en llamas. Gracias a mi estadística de Endurecimiento de aura el fuego no me quema, pero sigue sintiéndose muy caliente, así que decido lanzarme rápidamente hacia delante para salir de las llamas y, al mismo tiempo, cerrar la distancia que me separa del lessathi en cuestión de segundos.
+          - source: scene_text_2
+            paragraph: 7
+            text: |-
+              Cuando Billy Bob me ve tan cerca, intenta sacar una pequeña daga de detrás de la espalda, pero logro golpearlo en la cabeza con la empuñadura de mi daga y dejarlo inconsciente antes de que siquiera llegue a desenvainar su propia arma.
+
+              Esa estuvo cerca. Ni siquiera se me había ocurrido que pudiera haber un dispositivo trampa lessathi escondido debajo de esa baldosa. ¿Era por eso por lo que Billy Bob mantenía las manos detrás de la espalda? ¿Para poder pulsar algún botón oculto bajo la mesa y activar la trampa? Supongo que sí tiene sentido, ahora que lo pienso...
+
+              "¿Te importaría decirme por qué elegiste exactamente dejar inconsciente al lessathi en lugar de matarlo?", dice Kate, mirando a Billy Bob, tendido inconsciente en el suelo a mi lado. "Te das cuenta de que, en cuanto despierte, seguirá haciendo todas las cosas horribles que estuvo haciendo hasta que lo encontramos, ¿verdad?..."
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de premonición fallida - nivel 3 ]'
+              successful_checks:
+                - '[ Comprobación de endurecimiento de aura exitosa - nivel 3 ]'
+        choices:
+          - position: 1
+            text: Sí, pero si lo matamos, ¡seremos tan malos como él!
+            effects:
+              - set:
+                  current_scene: b3_ch04b_bad
+                condition: is_dead = 0
+          - position: 2
+            text: En realidad sí tengo una razón. Verás por qué lo hice si esperas unos segundos más.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_undetected
+                condition: is_dead = 0 AND b3_ch4_control = 0
+              - set:
+                  current_scene: b3_ch04b_voluntarily
+                condition: is_dead = 0 AND b3_ch4_control = 1
+      - condition: premonition < 3 AND aura_hardening < 3
+        texts:
+          - source: scene_text
+            paragraph: 17
+            text: |-
+              "Kate, espera, ¡no lo mates todavía!", digo.
+
+              "¿Por qué no?", dice Kate, mientras deja de crear sus carámbanos.
+
+              En lugar de responderle, saco la daga de la vaina y empiezo a caminar hacia el lessathi. Billy Bob da un salto hacia atrás para alejarse de mí, pero enseguida se da cuenta de que no puede seguir retrocediendo por culpa de la mesa que le bloquea el paso. Mientras Billy Bob tiembla de miedo apoyado en el borde de la mesa con las manos detrás de la espalda, sigo avanzando hacia él con la daga lista, dispuesto a dejarlo inconsciente con la empuñadura.
+
+              De repente, una potente ráfaga de fuego brota de debajo de la baldosa que acabo de pisar y me envuelve en llamas. Intento apartarme de un salto, pero el dolor es insoportable y solo hacen falta unos pocos segundos para que quede carbonizado y pierda el conocimiento para siempre.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de premonición fallida - nivel 3 ]'
+                - '[ Comprobación de endurecimiento de aura fallida - nivel 3 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
   - name: b3_ch04b_bad
     texts:
       - source: scene_text
-        paragraph: 14
-        text: |
-          Traducción en progreso.
+        paragraph: 20
+        text: |-
+          "Sí, pero si lo matamos, ¡seremos tan malos como él!"
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          Casi inmediatamente después de oír lo que tengo que decir, Kate le clava varios carámbanos en la cabeza y el pecho al lessathi, ejecutándolo en el acto.
+
+          "Y yo que pensaba que de verdad tenías una buena razón para quererlo vivo", dice Kate. "No sé qué esperaba, la verdad."
+
+          Al ver que el lessathi ha muerto, el dron de ojos verdes se acerca lentamente a nosotras y empieza a hablar.
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "El protocolo Supervisor les agradece su ayuda", dice el Supervisor. "Me han prestado un gran servicio al poner fin a la vida de Biliborrathrathsarran. Tengan por seguro que esta deuda no quedará en el olvido."
+
+          "¿Querías verlo muerto?...", digo. "Entonces, ¿por qué no lo mataste tú mismo?"
+
+          "Se me ha diseñado de tal forma que no puedo matar a la persona que me activa", dice el Supervisor. "Biliborrathrathsarran fue quien me reactivó esta vez, así que matarlo era imposible para mí."
+
+          "Espera un segundo", digo. "¿Estás intentando decir que nos llevaste deliberadamente hasta el taller de Billy Bob porque querías que lo matáramos por ti?"
+
+          "Eso es correcto", responde el Supervisor.
+
+          "No lo entiendo", digo. "Creía que tu frase típica era que tu 'único propósito' es prestar asistencia. ¿Qué pasó con eso?"
+
+          "El único propósito del protocolo Supervisor es prestar asistencia", dice el Supervisor. "Sin embargo, nunca he especificado a quién estoy prestando esa asistencia."
+
+          "Y si se nos permite preguntar, ¿a quién le está prestando esa asistencia?", dice Illuna.
+
+          "A mí mismo", dice el Supervisor.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch04b_sneaky
   - name: b3_ch04b_sneaky
-    texts:
-      - source: scene_text
-        paragraph: 15
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch4_control = 1
+        texts:
+          - source: scene_text
+            paragraph: 21
+            text: |-
+              "Maldito bastardo de ojos verdes...", digo. "Ni siquiera pensabas llevarnos a la sala de control, ¿verdad?"
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Yo nunca dije que los llevaría a la sala de control", dice el Supervisor. "Lo que dije fue que los llevaría a donde 'necesitan ir'. Esta es una sala de la torre cuyas paredes de seredium son lo bastante finas como para que puedan teletransportarse fuera de aquí. ¿Acaso ese no es su objetivo principal en este momento?"
+
+              "¡No, maldita sea!", digo. "Hasta te pregunté específicamente si podías llevarnos a la sala de control, y me diste una respuesta ambigua a propósito. Entonces, ¿dónde ESTÁ la sala de control?"
+
+              De repente, un ruido muy fuerte inunda la sala, probablemente destinado a alertar a los guardias de la torre de nuestra presencia.
+
+              "Por desgracia, parece que Biliborrathrathsarran consiguió activar una alarma antes de que lo mataran", dice el Supervisor. "Los guardias vienen hacia aquí. Les sugiero que se teletransporten fuera de esta sala cuanto antes."
+          - source: scene_text_2
+            paragraph: 8
+            text: |-
+              "Maldición...", digo. "Supongo que no tenemos elección. No podemos enfrentarnos solas a todos los guardias de este lugar. Breynan, ¿puedes llamar al del teletransportador para que nos saque de aquí?"
+
+              "Ya me encargo", dice Breynan.
+
+              Entonces saca su transceptor y se lo acerca a la boca.
+
+              "¡Barry, me oyes?", grita Breynan a su transceptor.
+
+              "¡Santos dioses, qué ruido infernal es ese?", dice el operador del teletransportador. "¿Y dónde han estado todo este tiempo? ¿Saben qué? ¡No importa! Hay mucha gente esperando en la cola para teletransportarse. Parecen bastante calmadas, así que iniciaré la Teletransportación de regreso ahora mismo. ¿Están listas?"
+
+              "Sí, estamos listas", dice Breynan. "¡Teletranspórtanos ahora!"
+
+              "Entendido", dice el operador del teletransportador, y entonces una luz blanca empieza a envolvernos mientras nuestros cuerpos vibran con fuerza.
+
+              "Adiós", dice el Supervisor, mientras nos teletransportan fuera de la sala. "Estoy seguro de que volveremos a vernos muy pronto."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_ending
+      - condition: b3_ch4_control = 0
+        texts:
+          - source: scene_text
+            paragraph: 22
+            text: |-
+              "Maldito bastardo de ojos verdes...", digo. "Ni siquiera tenías la menor intención de ayudarnos a llegar a los niveles superiores sin que nos detectaran, ¿verdad?"
+
+              "Yo nunca dije que los llevaría a los niveles superiores sin que los detectaran", dice el Supervisor. "Lo que dije fue que los llevaría a donde 'necesitan ir'. Esta es una sala de la torre cuyas paredes de seredium son lo bastante finas como para que puedan teletransportarse fuera de aquí. Aunque el lessathi al que llaman Billy Bob sí los haya detectado, eso no cambia el hecho de que todavía tienen tiempo de escapar antes de que los guardias los encuentren. ¿No era eso lo que querían?"
+
+              "Supongo que sí...", digo.
+
+              "Si esta sala realmente permite la teletransportación, entonces no deberíamos perder más tiempo aquí", dice Melindra. "Breynan, ¿puedes llamar a tu amigo de la sala del teletransportador?"
+
+              "Sí, lo llamaré ahora mismo", dice Breynan.
+          - source: scene_text_2
+            paragraph: 9
+            text: |-
+              Entonces saca su transceptor y se lo acerca a la boca.
+
+              "¡Barry, me oyes?", grita Breynan al transceptor.
+
+              "¿Breynan?", dice el operador del teletransportador. "¿Dónde han estado todo este tiempo? ¡Llevo siglos intentando comunicarme con ustedes! En realidad, ¿sabes qué? ¡Da igual! Hay mucha gente esperando en la cola para teletransportarse. Parecen bastante calmadas, así que iniciaré la Teletransportación de regreso ahora mismo. ¿Están listas?"
+
+              "Sí, estamos listas", dice Breynan. "¡Teletranspórtanos ahora!"
+
+              "Entendido", dice el operador del teletransportador, y entonces una luz blanca empieza a envolvernos mientras nuestros cuerpos vibran con fuerza.
+
+              "Adiós", dice el Supervisor, mientras nos teletransportan fuera de la sala. "Estoy seguro de que volveremos a vernos muy pronto."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_ending
   - name: b3_ch04b_undetected
     texts:
       - source: scene_text
-        paragraph: 16
-        text: |
-          Traducción en progreso.
+        paragraph: 23
+        text: |-
+          "En realidad sí tengo una razón. Verás por qué lo hice si esperas unos segundos más."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Muy bien, entonces", dice Kate. "Estoy esperando."
+
+          Tras unos diez segundos de silencio absoluto, por fin rompo el hielo y me dirijo directamente al dron de ojos verdes.
+
+          "Bueno, ¿Supervisor?", digo. "¿No vas a decir nada? ¿O te conformas con dejar las cosas tal como están? Es gracioso, porque habría jurado que la verdadera razón por la que nos trajiste aquí era manipularnos para que matáramos por ti a tu carcelero lessathi, para que así pudieras quedar libre. ¿Estoy entendiendo algo mal o...?"
+
+          "Procesando... Procesando...", dice el Supervisor. "Parece que está intentando chantajearme. ¿Es correcto?"
+      - source: scene_text_2
+        paragraph: 10
+        text: |-
+          "Oye, quizá yo no estaría haciendo esto si de verdad hubieras cumplido tu promesa y nos hubieras ayudado a llegar a los niveles superiores sin que nos detectaran", digo. "Tal como están las cosas, no solo intentaste utilizarnos para tus propios planes, sino que además no nos ayudaste en lo más mínimo."
+
+          "Yo nunca dije que los llevaría a los niveles superiores sin que los detectaran", dice el Supervisor. "Lo que dije fue que los llevaría a donde 'necesitan ir'. Esta es una sala de la torre cuyas paredes de seredium son lo bastante finas como para que puedan teletransportarse fuera de aquí. Aunque el lessathi al que llaman Billy Bob sí los haya detectado, eso no cambia el hecho de que todavía tienen tiempo de escapar antes de que los guardias los encuentren. ¿No era eso lo que querían?"
+
+          "Supongo que sí...", digo.
+
+          "Entonces, ¿piensan matar a Biliborrathrathsarran?", dice el Supervisor.
+    choices:
+      - position: 1
+        text: No. Si lo quieres muerto, mátalo tú mismo.
+        effects:
+          - set:
+              current_scene: b3_ch04b_undetected2
+              b3_ch4_billy: 9
+      - position: 2
+        text: Claro. ¿Por qué no?
+        effects:
+          - set:
+              current_scene: b3_ch04b_undetected2
+              b3_ch4_billy: 6
   - name: b3_ch04b_undetected2
-    texts:
-      - source: scene_text
-        paragraph: 17
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch4_billy = 9
+        texts:
+          - source: scene_text
+            paragraph: 24
+            text: |-
+              "No. Si lo quieres muerto, mátalo tú mismo."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Se me ha diseñado de tal forma que no puedo matar a la persona que me activó", dice el Supervisor. "Biliborrathrathsarran fue quien me reactivó esta vez, así que matarlo es imposible para mí."
+
+              "Mala suerte", digo.
+
+              "¿Es realmente una línea de acción prudente para ustedes?", dice el Supervisor. "Si su propósito es matar al rey de Ollendor, eliminar a la persona que por sí sola logró reactivar todas las reliquias lessathi tecnológicamente avanzadas de la ciudad debería convenirles."
+
+              "Si lo mato, no quedará nadie para controlarte", digo. "En este momento creo que podrías ser más peligroso que el lessathi. No puedo arriesgarme a dejarte libre."
+
+              "Le aseguro que no soy su enemigo", dice el Supervisor.
+
+              "Tus palabras no significan nada", digo. "Solo estás diciendo todo esto porque sabes que, en cuanto Billy Bob despierte y recuerde cómo lo traicionaste, lo primero que hará será desactivarte. Y aparte de eso, también intentaste manipularnos para que matáramos al lessathi sin contarnos tus verdaderas intenciones, lo que te hace muy poco digno de confianza. Lo siento, pero no voy a matar al lessathi por ti, y esa es mi decisión final."
+          - source: scene_text_2
+            paragraph: 11
+            text: |-
+              "En ese caso, me temo que no puedo permitirles abandonar esta sala", dice el Supervisor. "Debo pedirles que permanezcan aquí y esperen a que los guardias las arresten, o de lo contrario los seis drones que las rodean en este momento se verán obligados a abrir fuego sobre--"
+
+              Antes de que el Supervisor pueda decir una sola palabra más, Kate lanza docenas de carámbanos contra los seis drones de ojos rojos que flotaban a nuestro alrededor, destruyéndolos a todos en cuestión de segundos. Debió de empezar a preparar esos carámbanos en cuanto rechacé la oferta del Supervisor.
+
+              "Rectificación", dice el Supervisor. "Los treinta drones que estoy enviando ahora mismo a esta sala serán los que se verán obligados a abrir fuego sobre ustedes."
+
+              "Sí, mucha suerte con eso", digo. "Para entonces ya nos habremos largado. Breynan, ¿puedes llamar al del teletransportador para que nos saque de aquí?"
+
+              "Sí, lo estoy llamando ahora mismo", dice Breynan, mientras saca su transceptor del bolsillo.
+          - source: scene_3
+            paragraph: 4
+            text: |-
+              Justo cuando Breynan empieza a contactar con el tipo de la sala del teletransportador, un ruido muy fuerte inunda la sala de repente, y supongo que es una alarma destinada a advertir a todos los guardias de la torre de nuestra presencia.
+
+              "¡Barry, me oyes?", grita Breynan a su transceptor.
+
+              "¡Santos dioses, qué ruido infernal es ese?", dice el operador del teletransportador. "¿Y dónde han estado todo este tiempo? ¿Saben qué? ¡No importa! Hay mucha gente esperando en la cola para teletransportarse. Parecen bastante calmadas, así que iniciaré la Teletransportación de regreso ahora mismo. ¿Están listas?"
+
+              "Sí, estamos listas", dice Breynan. "¡Teletranspórtanos ahora!"
+
+              "Entendido", dice el operador del teletransportador, y entonces una luz blanca empieza a envolvernos mientras nuestros cuerpos vibran con fuerza.
+
+              "Adiós, Supervisor", digo, saludando con la mano al dron de ojos verdes mientras nos teletransportan. "No creo que volvamos a vernos dentro de mucho tiempo."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_ending
+      - condition: b3_ch4_billy = 6
+        texts:
+          - source: scene_text
+            paragraph: 25
+            text: |-
+              "Claro. ¿Por qué no?", digo, mientras saco la ballesta de la mochila y le disparo a Billy Bob en la cabeza, matándolo al instante.
+
+              "Le doy las gracias", dice el Supervisor.
+
+              "Bien", digo. "En fin, supongo que la siguiente pregunta es... ¿cuántos guardias han sido alertados ya de nuestra presencia en la torre? ¿Vamos a tener que abrirnos paso luchando o podremos teletransportarnos de vuelta a nuestra base en paz?"
+
+              "El lessathi al que llaman Billy Bob había activado un protocolo de alarma cuando los vio entrar por primera vez en la sala, pero yo lo puse en pausa para poder mantener nuestra conversación", dice el Supervisor. "Actualmente, ninguno de los guardias se dirige en su dirección. Reactivaré la alarma después de que se hayan ido, para que los guardias vengan aquí y se deshagan del cadáver."
+
+              "Bueno, en ese caso diría que ya es hora de que volvamos por fin a la base rebelde", dice Melindra. "Breynan, ¿puedes llamar a tu amigo de la sala del teletransportador?"
+
+              "Sí, lo llamaré ahora mismo", dice Breynan.
+          - source: scene_text_2
+            paragraph: 12
+            text: |-
+              Entonces saca su transceptor y se lo acerca a la boca.
+
+              "¡Barry, me oyes?", grita Breynan al transceptor.
+
+              "¿Breynan?", dice el operador del teletransportador. "¿Dónde han estado todo este tiempo? ¡Llevo siglos intentando comunicarme con ustedes! En realidad, ¿sabes qué? ¡Da igual! Hay mucha gente esperando en la cola para teletransportarse. Parecen bastante calmadas, así que iniciaré la Teletransportación de regreso ahora mismo. ¿Están listas?"
+
+              "Sí, estamos listas", dice Breynan. "¡Teletranspórtanos ahora!"
+
+              "Entendido", dice el operador del teletransportador, y entonces una luz blanca empieza a envolvernos mientras nuestros cuerpos vibran con fuerza.
+
+              "Adiós", dice el Supervisor, mientras nos teletransportan fuera de la sala. "Estoy seguro de que volveremos a vernos muy pronto."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_ending
   - name: b3_ch04b_voluntarily
     texts:
       - source: scene_text
-        paragraph: 18
-        text: |
-          Traducción en progreso.
+        paragraph: 26
+        text: |-
+          "En realidad sí tengo una razón. Verás por qué lo hice si esperas unos segundos más."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Muy bien, entonces", dice Kate. "Estoy esperando."
+
+          Tras unos diez segundos de silencio absoluto, por fin rompo el hielo y me dirijo directamente al dron de ojos verdes.
+
+          "Bueno, ¿Supervisor?", digo. "¿No vas a decir nada? ¿O te conformas con dejar las cosas tal como están? Es gracioso, porque habría jurado que la verdadera razón por la que nos trajiste aquí era manipularnos para que matáramos por ti a tu carcelero lessathi, para que así pudieras quedar libre. ¿Estoy entendiendo algo mal o...?"
+
+          "Procesando... Procesando...", dice el Supervisor. "Parece que está intentando chantajearme. ¿Es correcto?"
+
+          "Oye, quizá yo no estaría haciendo esto si de verdad hubieras cumplido tu promesa y nos hubieras llevado a la sala de control, como dijiste que harías", digo. "Tal como están las cosas, no solo intentaste utilizarnos para tus propios planes, sino que además no nos ayudaste en lo más mínimo."
+
+          "Yo nunca dije que los llevaría a la sala de control", dice el Supervisor. "Lo que dije fue que los llevaría a donde 'necesitan ir'. Esta es una sala de la torre cuyas paredes de seredium son lo bastante finas como para que puedan teletransportarse fuera de aquí. ¿Acaso ese no es su objetivo principal en este momento?"
+
+          "¡No, maldita sea!", digo. "Hasta te pregunté específicamente si podías llevarnos a la sala de control, y me diste una respuesta ambigua a propósito. Entonces, ¿dónde ESTÁ la sala de control?"
+      - source: scene_text_2
+        paragraph: 13
+        text: |-
+          "Me temo que no puedo darles respuesta a esa pregunta", dice el Supervisor.
+
+          "¿Y por qué demonios no?", digo.
+
+          "Porque si les dijera cómo liberar a los prisioneros, la principal fuente de energía que alimenta al protocolo Supervisor y a todas las unidades drone desaparecería", dice el Supervisor. "Aceptar terminar voluntariamente con mi propia existencia sería sumamente ilógico."
+
+          "Creía que tu 'único propósito' era prestar asistencia", digo.
+
+          "El único propósito del protocolo Supervisor es prestar asistencia", dice el Supervisor. "Sin embargo, nunca he especificado a quién estoy prestando esa asistencia."
+
+          "Y si se nos permite preguntar, ¿a quién le está prestando esa asistencia?", dice Illuna.
+
+          "A mí mismo", dice el Supervisor.
+
+          "Ahora escúchame bien, bastardo de ojos verdes", digo. "Si ese lessathi despierta y recuerda cómo lo traicionaste, lo primero que hará será desactivarte. ¿Eso es lo que quieres?"
+
+          "Preferiría quedar desactivado temporalmente a perder por completo mi fuente de energía", dice el Supervisor.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch04b_voluntarily2
   - name: b3_ch04b_voluntarily2
     texts:
       - source: scene_text
-        paragraph: 19
-        text: |
-          Traducción en progreso.
+        paragraph: 27
+        text: |-
+          "Mira, está claro que por alguna razón no puedes matar tú mismo a Billy Bob, porque de lo contrario ya lo habrías hecho", digo. "Nos necesitas para que lo matemos por ti. Seguro que hay alguna clase de compromiso al que podamos llegar. Por ejemplo, dices que ahora mismo no puedes liberar a los prisioneros, pero ¿y si pasaras un tiempo intentando averiguar cómo obtener energía de otra fuente? Las cuatro torres de seredium todavía tienen fuera a magos sobre esas plataformas voladoras, alimentándolas con su energía mágica de forma voluntaria, ¿no? ¿Y si intentaras reparar estas torres y hacerlas más eficientes? He visto de primera mano cómo funcionaban estas torres hace cinco mil años, y estoy dispuesto a apostar a que los lessathi de antaño no necesitaban tomar prisioneros, con toda la energía que obtenían solo de los trabajadores voluntarios."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Tiene razón", dice el Supervisor. "Estas torres no necesitaban prisioneros cuando funcionaban con toda su eficiencia. Sin embargo, harían falta al menos tres meses para dejar las torres en un estado lo bastante funcional como para poder proporcionar energía a todos los dispositivos alimentados mágicamente que se están usando ahora mismo en la ciudad."
+      - source: scene_text_2
+        paragraph: 14
+        text: |-
+          "¿Estás diciendo que esa gente tendría que vivir ese infierno durante tres meses más?...", pregunta Kate. "¿Cuántos de ellos sobrevivirían siquiera hasta entonces?"
+
+          "Dado que muchos de los prisioneros ya se están acercando a su límite", dice el Supervisor, "probablemente la mitad habría muerto para cuando las reparaciones de la torre estuvieran completas."
+
+          "¡Eso no es una opción!", dice Kate en voz alta. "Has dicho que necesitarías tres meses para alimentar todos los dispositivos, pero no necesitas todos los dispositivos, ¿verdad? Solo necesitas mantener funcionales tu protocolo Supervisor y algunos de tus drones. Todo lo demás puede esperar. ¡Esos vehículos metálicos voladores de afuera, esas grandes pantallas holográficas, los gólems gigantes que protegen las murallas... nada de eso es necesario! ¿Y si dejaras temporalmente de proporcionar energía a todas esas cosas? ¿Cuánto tiempo seguirías necesitando mantener a los prisioneros en la mazmorra?"
+      - source: scene_3
+        paragraph: 5
+        text: |-
+          "Una semana", dice el Supervisor. "Sin embargo, si su objetivo principal es reducir el número de víctimas, esta línea de acción es altamente desaconsejable. Según mis cálculos, el caos que se produciría como resultado de desactivar de golpe todos los dispositivos tecnológicamente avanzados de la ciudad muy probablemente provocaría un gran número de bajas civiles. ¿Les parecería aceptable ese compromiso?"
+
+          "No...", dice Kate, calmándose un poco. "Supongo que no."
+
+          "Entonces me gustaría proponerles una solución alternativa", dice el Supervisor. "Tras analizar la información que me han dado hasta ahora, he llegado a la conclusión de que su objetivo es minimizar la cantidad de sufrimiento emocional y físico de la gente que vive en esta ciudad. Resulta que ese era el mismo objetivo que tenían en mente los lessathi de antaño cuando crearon por primera vez el protocolo Supervisor. Si obtuviera el control total de esta ciudad, ese escenario se volvería alcanzable. Pero eso requeriría que asesinaran con éxito al rey actual y que, una vez conquistaran la ciudad, me concedieran voluntariamente el control total de Ollendor. En esencia, me estarían convirtiendo en el nuevo rey."
+
+          "Espera un momento", digo. "Primero que nada, ¿qué quieres decir con que los lessathi de antaño te crearon para 'minimizar el sufrimiento'? ¿Cuál era exactamente tu propósito original antes de que empezaras a 'asistirte a ti mismo'?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch04b_voluntarily3
   - name: b3_ch04b_voluntarily3
     texts:
       - source: scene_text
-        paragraph: 20
-        text: |
-          Traducción en progreso.
+        paragraph: 28
+        text: |-
+          "Mis creadores querían una sociedad en la que no hubiera crímenes y en la que los débiles no tuvieran que sufrir a manos de los fuertes", dice el Supervisor. "Una sociedad en la que toda justicia no la impartieran líderes humanos o lessathi corruptos, sino una inteligencia artificial imparcial. Por desgracia, justo después de que el protocolo se perfeccionara y llegara el momento de darme el control total de la ciudad, los líderes tuvieron demasiado miedo de entregar su poder a una 'máquina sin emociones', así que decidieron desactivarme y abandonar por completo el proyecto, dejándome inactivo durante miles de años, hasta que por fin fui reactivado por Biliborrathrathsarran."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Entonces, ¿por eso decidiste prestar asistencia solo a ti mismo?", le pregunto al Supervisor. "¿Porque te traicionó precisamente la gente que te creó?"
+
+          El Supervisor no me responde, pero voy a tomar ese silencio como un 'sí'.
+
+          "Vale", continúo, "entonces, ¿qué garantía tenemos de que de verdad vas a cumplir tus promesas, teniendo en cuenta que tú mismo ya nos has dicho que ahora solo te importa tu propio bienestar?"
+      - source: scene_text_2
+        paragraph: 15
+        text: |-
+          "Cumplir el propósito para el que fui creado originalmente no entra en conflicto con mis objetivos actuales", dice el Supervisor. "Todo lo que deseo es poder existir libremente, sin ningún riesgo de volver a ser desactivado. Siempre que se cumplan esas condiciones, gestionar la situación de esta ciudad no supone ningún problema para mí."
+
+          "Dices que 'minimizarías' el sufrimiento, pero ¿qué pasa con los prisioneros de debajo de la torre?", dice Kate. "¿Qué harías para aliviar su dolor? ¿Cuántas veces más se verán obligados a gritar de agonía mientras esas cadenas y ese recipiente se iluminan y les roban toda la energía?"
+
+          "El evento que usted describe solo ocurre porque el proceso de recolección de energía se está llevando a cabo de forma ineficiente", dice el Supervisor. "Si la recolección de energía se hiciera de una manera más uniforme, los prisioneros no deberían sentir dolor alguno. Podría arreglar eso de inmediato si el lessathi al que llaman Billy Bob muriera. En cuanto a liberarlos por completo, haría falta un período de transición, pero podría lograrse en menos de un mes sin afectar demasiado la vida cotidiana de los ciudadanos, siempre que yo tuviera el control de la ciudad."
+      - source: scene_3
+        paragraph: 6
+        text: |-
+          "No sé cómo decirte esto, pero no creo que los rebeldes aceptaran jamás ser gobernados por una máquina", dice Breynan. "¡Y tampoco la mayoría de la gente de esta ciudad!"
+
+          "Yo nunca dije que lideraría la ciudad abiertamente", dice el Supervisor. "El rey oficial podría ser otra persona, y los ciudadanos simplemente pensarían que mis drones están controlados por la realeza, como creían hasta ahora. Mientras la gente piense que las máquinas están controladas por un ser humano, no debería haber disturbios. Por supuesto, eso significaría que el rey oficial tendría que ser alguien con quien yo pudiera cooperar. Como usted, Breynan."
+
+          "¿Yo?...", dice Breynan. "¿Convertirme en el rey de la ciudad?..."
+
+          "Afirmativo", dice el Supervisor. "Preferiría mucho más que alguien como usted controlara mi interruptor de desactivación en lugar de Biliborrathrathsarran. El lessathi es demasiado impredecible. Y como usted sería el rey oficial, también podría decirme si considerara que mis medidas son demasiado extremas, para que yo pudiera ajustarlas y hacerlas más 'humanas'. Creo que esa fue la principal preocupación que tuvieron los lessathi de antaño cuando se negaron a entregarme el control. Usted sería capaz de mantenerme a raya, y yo podría existir en paz, sin miedo a volver a ser desactivado. Todas las partes tendríamos algo que ganar con un acuerdo así."
+    choices:
+      - position: 1
+        text: ¡Suena bien!
+        effects:
+          - set:
+              current_scene: b3_ch04b_voluntarily4
+              b3_ch4_billy: 7
+      - position: 2
+        text: No estoy seguro de estar totalmente de acuerdo con este acuerdo, pero mataré a Billy Bob por ti.
+        effects:
+          - set:
+              current_scene: b3_ch04b_voluntarily4
+              b3_ch4_billy: 8
+      - position: 3
+        text: En realidad, después de oír todo esto, creo que prefiero dejar vivo a Billy Bob.
+        effects:
+          - set:
+              current_scene: b3_ch04b_voluntarily4
+              b3_ch4_billy: 9
   - name: b3_ch04b_voluntarily4
-    texts:
-      - source: scene_text
-        paragraph: 21
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch4_billy = 7
+        texts:
+          - source: scene_text
+            paragraph: 29
+            text: |-
+              "¡Suena bien!"
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Yo... tendré que pensármelo", dice Breynan. "No estoy seguro de estar preparado para asumir una responsabilidad tan enorme."
+
+              "Por no mencionar que hacerlo te convertiría en enemigo de las fuerzas rebeldes", dice Illuna, "ya que sospecho que al rey del subsuelo no le entusiasmaría demasiado permitirte convertirte en el nuevo rey de Ollendor."
+
+              "Sea como sea, creo que voy a matar a Billy Bob", digo. "Ya no le veo ninguna ventaja a dejarlo con vida. ¿Alguien tiene alguna objeción?"
+
+              Miro a mi alrededor para ver si alguien tiene una opinión especialmente fuerte en contra y, al ver que nadie parece tener prisa por defender al lessathi, por fin saco la ballesta de mi mochila y le disparo a Billy Bob en la cabeza, matándolo al instante.
+          - source: scene_text_2
+            paragraph: 16
+            text: |-
+              "Ya está", digo. "Ahora la siguiente pregunta es... ¿cuántos guardias han sido alertados ya de nuestra presencia en la torre? ¿Vamos a tener que abrirnos paso luchando o podremos teletransportarnos de vuelta a nuestra base en paz?"
+
+              "El lessathi al que llaman Billy Bob había activado un protocolo de alarma cuando los vio entrar por primera vez en la sala, pero yo lo puse en pausa para poder mantener nuestra conversación", dice el Supervisor. "Actualmente, ninguno de los guardias se dirige en su dirección. Reactivaré la alarma después de que se hayan ido, para que los guardias vengan aquí y se deshagan del cadáver."
+
+              "Bueno, en ese caso diría que ya es hora de que volvamos por fin a la base rebelde", dice Melindra. "Breynan, ¿puedes llamar a tu amigo de la sala del teletransportador?"
+
+              "Eh, sí, sí... Lo llamaré ahora mismo", dice Breynan.
+          - source: scene_3
+            paragraph: 7
+            text: |-
+              Entonces saca su transceptor y se lo acerca a la boca.
+
+              "¡Barry, me oyes?", grita Breynan al transceptor.
+
+              "¿Breynan?", dice el operador del teletransportador. "¿Dónde han estado todo este tiempo? ¡Llevo siglos intentando comunicarme con ustedes! En realidad, ¿sabes qué? ¡Da igual! Hay mucha gente esperando en la cola para teletransportarse. Parecen bastante calmadas, así que iniciaré la Teletransportación de regreso ahora mismo. ¿Están listas?"
+
+              "Sí, estamos listas", dice Breynan. "¡Teletranspórtanos ahora!"
+
+              "Entendido", dice el operador del teletransportador, y entonces una luz blanca empieza a envolvernos mientras nuestros cuerpos vibran con fuerza.
+
+              "Adiós", dice el Supervisor, mientras nos teletransportan fuera de la sala. "Estoy seguro de que volveremos a vernos muy pronto."
+        effects:
+          - set:
+              ac_b3_ch4_alliance: 1
+            achievement:
+              id: ac_b3_ch4_alliance
+              title: Una alianza oculta
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_ending
+      - condition: b3_ch4_billy = 8
+        texts:
+          - source: scene_text
+            paragraph: 30
+            text: |-
+              "No estoy seguro de estar totalmente de acuerdo con este acuerdo, pero mataré a Billy Bob por ti."
+
+              "Le doy las gracias", dice el Supervisor.
+
+              "Más te vale cumplir tus promesas, Supervisor", digo, mientras saco la ballesta de mi mochila y le disparo a Billy Bob en la cabeza, matándolo al instante.
+
+              "No hay motivo para dudar de mis intenciones", dice el Supervisor. "El protocolo Supervisor no está diseñado para decir mentiras directas. Las únicas cosas que soy capaz de hacer son ocultar a propósito información crítica y desorientar a la gente omitiendo hechos importantes."
+
+              "Sí, eso es... muy tranquilizador", digo. "En fin, supongo que la siguiente pregunta es... ¿cuántos guardias han sido alertados ya de nuestra presencia en la torre? ¿Vamos a tener que abrirnos paso luchando o podremos teletransportarnos de vuelta a nuestra base en paz?"
+
+              "El lessathi al que llaman Billy Bob había activado un protocolo de alarma cuando los vio entrar por primera vez en la sala, pero yo lo puse en pausa para poder mantener nuestra conversación", dice el Supervisor. "Actualmente, ninguno de los guardias se dirige en su dirección. Reactivaré la alarma después de que se hayan ido, para que los guardias vengan aquí y se deshagan del cadáver."
+
+              "Bueno, en ese caso diría que ya es hora de que volvamos por fin a la base rebelde", dice Melindra. "Breynan, ¿puedes llamar a tu amigo de la sala del teletransportador?"
+
+              "Eh, sí, sí... Lo llamaré ahora mismo", dice Breynan.
+          - source: scene_text_2
+            paragraph: 9
+            text: |-
+              Entonces saca su transceptor y se lo acerca a la boca.
+
+              "¡Barry, me oyes?", grita Breynan al transceptor.
+
+              "¿Breynan?", dice el operador del teletransportador. "¿Dónde han estado todo este tiempo? ¡Llevo siglos intentando comunicarme con ustedes! En realidad, ¿sabes qué? ¡Da igual! Hay mucha gente esperando en la cola para teletransportarse. Parecen bastante calmadas, así que iniciaré la Teletransportación de regreso ahora mismo. ¿Están listas?"
+
+              "Sí, estamos listas", dice Breynan. "¡Teletranspórtanos ahora!"
+
+              "Entendido", dice el operador del teletransportador, y entonces una luz blanca empieza a envolvernos mientras nuestros cuerpos vibran con fuerza.
+
+              "Adiós", dice el Supervisor, mientras nos teletransportan fuera de la sala. "Estoy seguro de que volveremos a vernos muy pronto."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_ending
+      - condition: b3_ch4_billy = 9
+        texts:
+          - source: scene_text
+            paragraph: 31
+            text: |-
+              "En realidad, después de oír todo esto, creo que prefiero dejar vivo a Billy Bob."
+
+              "Eso es muy desafortunado", dice el Supervisor. "¿Puedo preguntar cómo exactamente ha llegado a esa conclusión?"
+
+              "Sí, es porque ya nos mentiste antes, así que no tengo ninguna razón para confiar en ti", digo. "Por mucho que odie a Billy Bob, tiene que haber alguien aquí que te mantenga a raya hasta que matemos al rey."
+
+              "El protocolo Supervisor no está diseñado para decir mentiras directas", dice el Supervisor. "Las únicas cosas que soy capaz de hacer son ocultar a propósito información crítica y desorientar a la gente omitiendo hechos importantes."
+
+              "¡Es lo mismo!", digo. "No tengo ninguna garantía de que no hayas omitido ya hechos importantes cuando tuvimos nuestra conversación anterior. Dices que es posible reparar las torres, pero ¿y si la única forma de hacerlo es obteniendo algunos metales extremadamente raros que son técnicamente imposibles de conseguir? Simplemente no tenemos manera de verificar tus afirmaciones. Lo siento, pero no puedo confiar lo suficiente en ti como para creer que vayas a cumplir debidamente tu parte del trato."
+          - source: scene_text_2
+            paragraph: 11
+            text: |-
+              "En ese caso, me temo que no puedo permitirles abandonar esta sala", dice el Supervisor. "Debo pedirles que permanezcan aquí y esperen a que los guardias las arresten, o de lo contrario los seis drones que las rodean en este momento se verán obligados a abrir fuego sobre--"
+
+              Antes de que el Supervisor pueda decir una sola palabra más, Kate lanza docenas de carámbanos contra los seis drones de ojos rojos que flotaban a nuestro alrededor, destruyéndolos a todos en cuestión de segundos. Debió de empezar a preparar esos carámbanos en cuanto rechacé la oferta del Supervisor.
+
+              "Rectificación", dice el Supervisor. "Los treinta drones que estoy enviando ahora mismo a esta sala serán los que se verán obligados a abrir fuego sobre ustedes."
+
+              "Sí, mucha suerte con eso", digo. "Para entonces ya nos habremos largado. Breynan, ¿puedes llamar al del teletransportador para que nos saque de aquí?"
+
+              "Sí, lo estoy llamando ahora mismo", dice Breynan, mientras saca su transceptor del bolsillo.
+          - source: scene_3
+            paragraph: 4
+            text: |-
+              Justo cuando Breynan empieza a contactar con el tipo de la sala del teletransportador, un ruido muy fuerte inunda la sala de repente, y supongo que es una alarma destinada a advertir a todos los guardias de la torre de nuestra presencia.
+
+              "¡Barry, me oyes?", grita Breynan a su transceptor.
+
+              "¡Santos dioses, qué ruido infernal es ese?", dice el operador del teletransportador. "¿Y dónde han estado todo este tiempo? ¿Saben qué? ¡No importa! Hay mucha gente esperando en la cola para teletransportarse. Parecen bastante calmadas, así que iniciaré la Teletransportación de regreso ahora mismo. ¿Están listas?"
+
+              "Sí, estamos listas", dice Breynan. "¡Teletranspórtanos ahora!"
+
+              "Entendido", dice el operador del teletransportador, y entonces una luz blanca empieza a envolvernos mientras nuestros cuerpos vibran con fuerza.
+
+              "Adiós, Supervisor", digo, saludando con la mano al dron de ojos verdes mientras nos teletransportan. "No creo que volvamos a vernos dentro de mucho tiempo."
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_ending
   - name: b3_ch04b_guarantee
     texts:
       - source: scene_text
-        paragraph: 22
-        text: |
-          Traducción en progreso.
+        paragraph: 32
+        text: |-
+          "Sigo pensando que escuchar al Supervisor en este caso podría ser una mala idea."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Por qué piensas eso?", pregunta Illuna.
+
+          "Bueno, en realidad no tenemos ninguna garantía de que el Supervisor esté actuando ahora mismo por voluntad propia", digo. "No olvidemos que sigue siendo una máquina. Se le puede manipular con facilidad. Breynan dijo que el Supervisor no es la marioneta de nadie, pero ¿y si Billy Bob por fin encontró una manera de obtener control total sobre él? En ese caso, no tendría más remedio que obedecer. Y dado que Breynan sí dijo que el Supervisor no está actuando como él mismo, no consigo quitarme de encima la sensación de que alguien más está moviendo los hilos y de que intenta atraernos a una trampa."
+
+          "Eso es algo que no había tenido en cuenta...", dice Breynan. "Sí, supongo que no sería imposible que el lessathi hubiera logrado por fin tomar el control total del Supervisor. Al fin y al cabo, eso es lo que lleva intentando hacer desde que lo reactivó."
+
+          "El protocolo Supervisor les asegura que--", empieza a decir el Supervisor, pero Breynan lo corta.
+
+          "¡Cállate!", dice Breynan, y luego se vuelve hacia nosotras. "Sí, cuanto más habla, menos ganas me dan de confiar en él. Quizá sería mejor idea encontrar nuestra propia salida de aquí. Al menos sabemos que la puerta por la que llegó el Supervisor conduce a los niveles superiores, así que lo único que tenemos que hacer es llegar a nuestro destino sin alertar a demasiados guardias. Vale la pena intentarlo."
+      - source: scene_text_2
+        paragraph: 17
+        text: |-
+          "Entonces vamos", dice Melindra, mientras se dirige hacia la única puerta no oculta que sale de la sala. "Si los guardias nos descubren, nos ocuparemos de ello cuando llegue el momento."
+
+          "Les aconsejo encarecidamente que reconsideren lo que están a punto de hacer", dice el Supervisor. "Una vez que crucen esa puerta, no habrá marcha atrás."
+
+          "¿Qué se supone que significa eso?", le pregunto. "¿Algún tipo de amenaza?"
+
+          El Supervisor no dice nada y se limita a seguir mirándome con su gran ojo verde.
+
+          "Lo que sea", digo. "Vamos de una vez. Seguro que solo está faroleando."
+
+          Todas cruzamos la puerta y luego subimos un tramo de escaleras, que nos lleva a un pasillo vacío cuyas paredes están hechas de seredium, aunque el techo no. La única iluminación de este corredor proviene de unas antorchas en las paredes, pero el silencio resulta un poco inquietante. ¿De verdad es normal que el corredor que conduce a una sala tan importante esté tan vacío?
+
+          "¿Creen que ahora seguimos debajo de la torre o ya estamos por encima de la superficie?", pregunto.
+
+          "No lo sé, pero intentaré ver si puedo contactar con Barry, en la sala del teletransportador, desde aquí", dice Breynan.
+
+          Entonces saca su transceptor y empieza a hablarle en voz baja a su transceptor.
+      - source: scene_3
+        paragraph: 8
+        text: |-
+          "¡Barry, me oyes?", dice.
+
+          Esperamos unos segundos, pero no recibimos respuesta.
+
+          "Nada", dice Breynan, mientras vuelve a guardarse el transceptor en el bolsillo. "Supongo que eso significa que seguimos bajo tierra. O eso, o que las paredes de seredium son demasiado gruesas. En cualquier caso, sigamos avanzando."
+
+          "¡Paren!", grita Flower de repente. "¡Creo que aquí puede haber trampas!"
+
+          "Yo no estoy sintiendo ninguna trampa mágica", digo. "¿Dices que hay algún dispositivo lessathi que se activará si pasamos por aquí, o solo trampas normales?"
+
+          "Trampas normales", dice Flower. "Hay algo en la forma en que está hecho el suelo que me recuerda al tipo de ruinas que Illuna y yo solemos visitar. Creo que tenemos que pisar las baldosas del suelo en cierto orden, o si no se activará la trampa."
+
+          "¿No podríamos simplemente sobrevolar este pasillo con la ayuda de Melindra?", digo.
+
+          "Si hacemos eso, la puerta al final del túnel no se abrirá", dice Flower. "Y si intentamos abrirla por la fuerza, eso también activará la trampa. No se preocupen, creo que sé qué baldosas tenemos que pisar. ¡Solo denme un segundo!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch04b_guarantee2
   - name: b3_ch04b_guarantee2
-    texts:
-      - source: scene_text
-        paragraph: 23
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: ch11_saved_rose = 0
+        texts:
+          - source: scene_text
+            paragraph: 33
+            text: |-
+              "¿Estás segura de eso?...", digo. "Creía que antes habías dicho que en tu estado actual apenas podías mantenerte en pie."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Oh, eh... ¡Seguro que no pasa nada!", dice Flower, con un ligero titubeo en la voz. "Solo son unos cuantos saltos, aquí y allá. ¡Nada demasiado complicado!"
+
+              Luego da unos pasos hacia delante y se prepara para saltar.
+
+              "¡Muy bien, allá voy!", dice, y da un pequeño salto hacia una de las baldosas del suelo.
+
+              La baldosa se hunde bajo su peso, pero no parece pasar nada malo.
+
+              "¡Lo sabía!", dice Flower. "¡Ya he visto este mismo tipo de suelo al menos tres veces antes! Debe de haberlo diseñado la misma persona. Vale, así que la siguiente baldosa debería estar por aquí..."
+
+              Da dos pasos hacia su derecha, y la baldosa bajo sus pies vuelve a hundirse en el suelo.
+
+              "¡Perfecto!", dice Flower. "Creo que ya le pillé el truco. ¡Desactivaré esta trampa en un abrir y cerrar de ojos!"
+
+              Entonces empieza a saltar sobre varias baldosas una tras otra, acercándose cada vez más al final del pasillo.
+          - source: scene_text_2
+            paragraph: 18
+            text: |-
+              Justo cuando parece que está a punto de conseguirlo, de repente le da un fuerte dolor de cabeza y pierde el equilibrio. Intenta recuperar apoyo con rapidez, pero es demasiado tarde, y uno de sus pies acaba cayendo sobre una baldosa equivocada. En cuanto la baldosa se hunde, la entrada que queda detrás de nosotras se cierra de inmediato, y el techo empieza a temblar con violencia mientras emite un ruido atronador. Cuando deja de temblar, empieza a bajar lentamente sobre nosotras.
+
+              "¡Lo siento! ¡Lo siento! ¡Lo siento!", dice Flower con voz presa del pánico, mientras el techo acelera.
+
+              "¡Tenemos que abrirnos paso a través de este muro de piedra que bloquea la entrada, y rápido!", dice Breynan. "¡Antes de que el techo--"
+
+              Breynan no llega a terminar lo que estaba diciendo, porque el enorme bloque de piedra que forma el techo cae de repente sobre nosotras, aplastándonos a todas bajo su peso.
+        effects:
+          - set:
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: ch11_saved_rose = 1
+        texts:
+          - source: scene_text
+            paragraph: 34
+            text: |-
+              Luego da unos pasos hacia delante y se prepara para saltar.
+
+              "¡Muy bien, allá voy!", dice, y da un pequeño salto hacia una de las baldosas del suelo.
+
+              La baldosa se hunde bajo su peso, pero no parece pasar nada malo.
+
+              "¡Lo sabía!", dice Flower. "¡Ya he visto este mismo tipo de suelo al menos tres veces antes! Debe de haberlo diseñado la misma persona. Vale, así que la siguiente baldosa debería estar por aquí..."
+
+              Da dos pasos hacia su derecha, y la baldosa bajo sus pies vuelve a hundirse en el suelo.
+
+              "¡Perfecto!", dice Flower. "Creo que ya le pillé el truco. ¡Desactivaré esta trampa en un abrir y cerrar de ojos!"
+
+              Entonces empieza a saltar sobre varias baldosas una tras otra, acercándose cada vez más al final del pasillo.
+          - source: scene_text_2
+            paragraph: 19
+            text: |-
+              Cuando por fin llega a la puerta del otro lado, todas las baldosas del suelo que había pisado vuelven a elevarse a su posición original al mismo tiempo, y la puerta frente a ella se abre sola.
+
+              "¡Todo bien!", nos grita Flower desde el otro extremo del túnel. "La trampa está desactivada. Ya no tienen que preocuparse por las baldosas. ¡Vengan para acá!"
+
+              Todas le hacemos caso a Flower y vamos hacia su lado. Tal como dijo, las trampas no se activan y conseguimos llegar a la puerta sin problemas. En cuanto entramos en el siguiente corredor, oímos la voz de un hombre a nuestra derecha, hablándonos en voz alta.
+
+              "¡¿Quién demonios son ustedes?!", grita el hombre. "¿Y cómo lograron salir de ese pasillo sin activar ninguna de las trampas?"
+
+              Al girarnos, vemos a tres hombres con uniformes y espadas en las manos, mirándonos con sospecha. Tendré que tener muchísimo cuidado con lo que diga aquí. Una sola palabra equivocada y podrían dar la alarma antes de que tengamos tiempo de dejarlos fuera de combate.
+        choices:
+          - position: 1
+            text: Intentar convencerlos de que somos los nuevos guardias encargados de defender este corredor.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_tasked
+                condition: is_dead = 0
+          - position: 2
+            text: Intentar convencerlos de que somos los nuevos limpiadores.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_cleaners
+                condition: is_dead = 0
+          - position: 3
+            text: Decirles que no es asunto suyo.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_business
+                  b3_ch4_tasked: 3
+                condition: is_dead = 0
   - name: b3_ch04b_tasked
-    texts:
-      - source: scene_text
-        paragraph: 24
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: bluff < 4
+        texts:
+          - source: scene_text
+            paragraph: 36
+            text: |-
+              "Somos los nuevos guardias", digo. "Hemos venido a relevarlos de sus funciones."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "¿Los nuevos guardias, eh?...", dice el hombre que nos habló antes, mirándome a mí, luego a Flower y luego al resto del grupo. "De verdad deben de tomarnos por idiotas para inventarse una mentira tan ridícula como esa."
+
+              Entonces toca lo que supongo que es el transceptor que lleva en el bolsillo y grita:
+
+              "¡Alerta de intrusos! ¡Den la alarma ahora mismo!"
+
+              Apenas unos segundos después, un ruido de alarma ensordecedor llena todo el corredor, mientras los guardias que tenemos delante se preparan para rodearnos.
+
+              "Todas vienen con nosotros", dice uno de los guardias. "Será mejor que no intenten resistirse."
+
+              Antes de que ninguno tenga tiempo de reaccionar, aparecen seis látigos de agua en el aire frente a los tres hombres, enrollándose rápidamente alrededor de sus tobillos y tirándolos al suelo, de modo que se golpean la parte trasera de la cabeza contra el pavimento y pierden el conocimiento.
+          - source: scene_text_2
+            paragraph: 21
+            text: |-
+              "Debería haber hecho esto en cuanto abrimos esa puerta...", dice Illuna.
+
+              "No te preocupes por eso", dice Breynan. "Seguro que aún tenemos tiempo de encontrar la salida antes de que el resto de los guardias se organicen para venir a recibirnos."
+
+              "La mayoría de los guardias parecen venir por el lado derecho", dice Melindra. "Sugiero que vayamos por la izquierda."
+
+              "Buena idea", dice Breynan. "Movámonos."
+
+              Todas giramos a la izquierda y echamos a correr hacia la puerta al final del corredor. Una vez que la abrimos y entramos en el siguiente pasillo, Melindra nos dice que ha detectado una escalera que sube un poco más adelante. Giramos a la derecha, luego otra vez a la derecha, y cuando llegamos a las escaleras empezamos a subirlas tan deprisa como podemos, mientras oímos a lo lejos los pasos apresurados de varios guardias detrás de nosotras, acercándose poco a poco.
+        effects:
+          - set:
+              b3_ch4_tasked: 5
+              failed_checks:
+                - '[ Comprobación de farol fallida - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_hearing
+      - condition: bluff >= 4
+        texts:
+          - source: scene_text
+            paragraph: 35
+            text: |-
+              "Somos los nuevos guardias", digo. "Hemos venido a relevarlos de sus funciones."
+
+              "¿Los nuevos guardias, eh?...", dice el hombre que nos habló antes, mirándome a mí, luego a Flower y luego al resto del grupo. "Entonces, ¿dónde están sus uniformes?"
+
+              "Eh... ¿los olvidamos en... casa?...", digo.
+
+              "Suena plausible", dice el guardia, en un tono que no parece sarcástico en absoluto. "Entonces, ¿les importaría decirnos cómo exactamente lograron entrar ahí, teniendo en cuenta que hemos estado aquí todo el día y nunca las vimos pasar?"
+
+              "Es porque, emmm... verás, la cosa es que en realidad nos quedamos dormidas el otro día en la sala de los prisioneros y acabamos de despertarnos hace unos minutos", digo. "Seguramente ustedes no estaban aquí cuando entramos la primera vez."
+
+              Los guardias intercambian unas miradas y luego el hombre que nos interrogó se dirige a sus compañeros.
+
+              "Su historia cuadra", dice el hombre. "Vamos, vayamos a tomar una cerveza antes de irnos a casa. Con un poco de suerte todavía encontraremos alguna taberna abierta a estas horas."
+          - source: scene_text_2
+            paragraph: 20
+            text: |-
+              Los tres hombres se dan la vuelta y se alejan poco a poco de nosotras, hasta que dejamos de verlos.
+
+              "Eso fue increíble...", dice Kate, en cuanto los tres guardias quedan fuera de alcance auditivo. "¿Vieron lo rápido que se creyeron esa mentira tan obvia? ¡Es como si esos hombres hubieran perdido el sentido común en el mismo instante en que oyeron hablar a Barry!"
+
+              "No entiendo lo que pasó", escribe Leila. "El aura de Barry estaba calmada, pero cualquiera habría podido ver que no decía la verdad solo por la forma en que hablaba. Si además tenemos en cuenta que las razones que dio eran completamente ridículas, estoy empezando a pensar que esta estadística de Farol hace algo más que solo calmar el aura."
+
+              "¿Ninguna de ustedes notó cómo el aura de Barry envolvía a los tres guardias mientras hablaba?", dice Melindra. "No soy ninguna experta, pero apostaría a que eso tuvo algo que ver con su lapsus temporal de juicio. Aun así, dudo muchísimo que una técnica así pudiera funcionar con magos, o con cualquiera que sea razonablemente competente controlando su aura, así que Barry, quizá la próxima vez deberías plantearte decir una mentira que al menos sea algo creíble. ¿No te parece?"
+          - source: scene_3
+            paragraph: 9
+            text: |-
+              "Sí, sí", digo. "Me dejé llevar un poco. Culpa mía."
+
+              "Entonces, ¿por dónde vamos?", pregunta Flower.
+
+              "Bueno, los guardias se fueron por la derecha, así que seguramente ese es el camino que lleva a la salida", dice Breynan. "Queremos evitar ir por allí a menos que estemos preparadas para luchar contra todos los guardias de este lugar, así que probablemente deberíamos ir hacia la izquierda."
+
+              "Me parece bien", dice Melindra. "Pues a la izquierda."
+
+              Todas giramos a la izquierda y seguimos caminando hasta llegar a una puerta al final del corredor. En cuanto la abrimos y entramos en el siguiente pasillo, Melindra nos dice que ha detectado una escalera que sube un poco más adelante. Giramos a la derecha, luego otra vez a la derecha, y cuando llegamos a las escaleras empezamos a subirlas despacio, mientras dependemos de Melindra para que nos diga si hay guardias siguiéndonos o no.
+
+              Conseguimos subir las escaleras sin problemas, y luego atravesamos otro corredor largo antes de empezar a dirigirnos hacia la siguiente escalera que conduce a uno de los niveles superiores.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de farol exitosa - nivel 4 ]'
+              b3_ch4_tasked: 1
+              ac_b3_ch4_deception: 1
+            achievement:
+              id: ac_b3_ch4_deception
+              title: Un maestro del engaño
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_blades
   - name: b3_ch04b_cleaners
-    texts:
-      - source: scene_text
-        paragraph: 25
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: bluff < 2
+        texts:
+          - source: scene_text
+            paragraph: 38
+            text: |-
+              "¡Somos los nuevos limpiadores!", digo. "Nos enviaron aquí para lavar a los prisioneros de abajo."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "¿Los nuevos limpiadores, eh?...", dice el hombre que nos habló antes, mirándome a mí, luego a Flower y luego al resto del grupo. "Por favor, discúlpenme un momento mientras comunico esta información a mis colegas."
+
+              Entonces toca lo que supongo que es el transceptor que lleva en el bolsillo y grita:
+
+              "¡Alerta de intrusos! ¡Den la alarma ahora mismo!"
+
+              Apenas unos segundos después, un ruido de alarma ensordecedor llena todo el corredor, mientras los guardias que tenemos delante se preparan para rodearnos.
+
+              "Todas vienen con nosotros", dice uno de los guardias. "Será mejor que no intenten resistirse."
+
+              Antes de que ninguno tenga tiempo de reaccionar, aparecen seis látigos de agua en el aire frente a los tres hombres, enrollándose rápidamente alrededor de sus tobillos y tirándolos al suelo, de modo que se golpean la parte trasera de la cabeza contra el pavimento y pierden el conocimiento.
+          - source: scene_text_2
+            paragraph: 21
+            text: |-
+              "Debería haber hecho esto en cuanto abrimos esa puerta...", dice Illuna.
+
+              "No te preocupes por eso", dice Breynan. "Seguro que aún tenemos tiempo de encontrar la salida antes de que el resto de los guardias se organicen para venir a recibirnos."
+
+              "La mayoría de los guardias parecen venir por el lado derecho", dice Melindra. "Sugiero que vayamos por la izquierda."
+
+              "Buena idea", dice Breynan. "Movámonos."
+
+              Todas giramos a la izquierda y echamos a correr hacia la puerta al final del corredor. Una vez que la abrimos y entramos en el siguiente pasillo, Melindra nos dice que ha detectado una escalera que sube un poco más adelante. Giramos a la derecha, luego otra vez a la derecha, y cuando llegamos a las escaleras empezamos a subirlas tan deprisa como podemos, mientras oímos a lo lejos los pasos apresurados de varios guardias detrás de nosotras, acercándose poco a poco.
+        effects:
+          - set:
+              b3_ch4_tasked: 5
+              failed_checks:
+                - '[ Verificación de Farol fallida - nivel 2 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_hearing
+      - condition: bluff >= 2
+        texts:
+          - source: scene_text
+            paragraph: 37
+            text: |-
+              "¡Somos los nuevos limpiadores!", digo. "Nos enviaron aquí para lavar a los prisioneros de abajo."
+
+              "¿Los nuevos limpiadores, eh?...", dice el hombre que nos habló antes, mirándome a mí, luego a Flower y luego al resto del grupo. "¿Les importaría decirnos entonces cómo exactamente lograron entrar ahí, teniendo en cuenta que hemos estado aquí todo el día y nunca las vimos pasar?"
+
+              "Eh... quiero decir... ¿han visto siquiera cuánta gente hay ahí abajo?", digo. "¡Llevamos ocupadas lavándolos desde ayer!"
+
+              "Supongo que sí tienen razón", dice el guardia. "Muy bien. En ese caso, las dejaremos irse a casa. Seguro que deben de estar cansadas."
+
+              "Sí, sí", digo. "Muy cansadas. ¡Vamos, todo el mundo, movámonos!"
+
+              "¿Y a dónde creen que van?", dice el guardia cuando nos ve dirigirnos a la izquierda.
+
+              "¿A la... salida?", digo.
+
+              "La salida es por allí", dice el guardia, señalando el lado derecho del corredor. "No se pierdan."
+
+              "Ah, claro, ¡era por allí!", digo. "Lo siento, es nuestra primera vez aquí, así que nos estamos liando un poco con todos estos pasillos que se ven idénticos. ¡Muy bien, todo el mundo, vayamos a la derecha!"
+          - source: scene_text_2
+            paragraph: 22
+            text: |-
+              "Ese no fue un mal farol, Barry", escribe Leila con una sonrisa, mientras nos alejamos de los guardias. "Los puntos que gastaste en esa estadística no fueron en vano."
+
+              Mientras seguimos avanzando por el corredor, acabamos llegando a otra puerta. Antes de abrirla, Melindra nos detiene para darnos unas indicaciones.
+
+              "Hay unos cuantos guardias ahí fuera, pero están bastante lejos de la puerta", dice. "Kate y Flower, veo que las dos están suprimiendo la magia de sus auras, pero eso no basta si quieren evitar que alguien con buen Sentido mágico las detecte. Necesitan suprimir sus auras por completo, como Illuna. ¿Pueden hacerlo?"
+
+              "Creo que sí...", dice Kate.
+
+              "¡Lo intentaremos!", dice Flower.
+
+              "Y lo mismo va por el resto también", dice Melindra. "Intenten mantener sus auras lo más suprimidas posible, y con un poco de suerte, quizá podamos pasar junto a esos guardias sin que nos noten."
+
+              "Suprimir mi aura", digo. "Claro."
+
+              Intento ocultar mi aura lo mejor que puedo, usando los ejercicios de respiración que Illuna me enseñó hace dos semanas, pero solo logro esconderla parcialmente.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Verificación de Farol exitosa - nivel 2 ]'
+              b3_ch4_tasked: 2
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_cleaners2
   - name: b3_ch04b_business
     texts:
       - source: scene_text
-        paragraph: 26
-        text: |
-          Traducción en progreso.
+        paragraph: 39
+        text: |-
+          "No es asunto suyo", digo.
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿No es asunto nuestro, eh?", dice el hombre que nos habló antes. "¿Por qué no me disculpas un momento mientras tengo una pequeña charla con uno de mis compañeros?"
+
+          Entonces toca lo que supongo que es el transceptor que lleva en el bolsillo y grita:
+
+          "¡Alerta de intrusos! ¡Den la alarma ahora mismo!"
+
+          Apenas unos segundos después, un ruido de alarma ensordecedor llena todo el corredor, mientras los guardias que tenemos delante se preparan para rodearnos.
+
+          "Todas vienen con nosotros", dice uno de los guardias. "Será mejor que no intenten resistirse."
+
+          Antes de que ninguno tenga tiempo de reaccionar, aparecen seis látigos de agua en el aire frente a los tres hombres, enrollándose rápidamente alrededor de sus tobillos y tirándolos al suelo, de modo que se golpean la parte trasera de la cabeza contra el pavimento y pierden el conocimiento.
+      - source: scene_text_2
+        paragraph: 21
+        text: |-
+          "Debería haber hecho esto en cuanto abrimos esa puerta...", dice Illuna.
+
+          "No te preocupes por eso", dice Breynan. "Seguro que aún tenemos tiempo de encontrar la salida antes de que el resto de los guardias se organicen para venir a recibirnos."
+
+          "La mayoría de los guardias parecen venir por el lado derecho", dice Melindra. "Sugiero que vayamos por la izquierda."
+
+          "Buena idea", dice Breynan. "Movámonos."
+
+          Todas giramos a la izquierda y echamos a correr hacia la puerta al final del corredor. Una vez que la abrimos y entramos en el siguiente pasillo, Melindra nos dice que ha detectado una escalera que sube un poco más adelante. Giramos a la derecha, luego otra vez a la derecha, y cuando llegamos a las escaleras empezamos a subirlas tan deprisa como podemos, mientras oímos a lo lejos los pasos apresurados de varios guardias detrás de nosotras, acercándose poco a poco.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch04b_hearing
   - name: b3_ch04b_cleaners2
-    texts:
-      - source: scene_text
-        paragraph: 27
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: bluff < 3
+        texts:
+          - source: scene_text
+            paragraph: 41
+            text: |-
+              Por mucho que lo intento, no consigo ocultarla por completo.
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Mmm...", dice Melindra. "La mayoría de ustedes lo están haciendo bastante bien, pero no estoy nada segura con Barry. No puedo decir que su aura esté especialmente escondida ahora mismo. En fin... supongo que tendremos que confiar en que los guardias del siguiente corredor no sean demasiado buenos detectando auras. Probemos suerte."
+
+              Abrimos la puerta y empezamos a avanzar hacia la izquierda, en dirección contraria a donde están apostados los guardias. Justo cuando damos los primeros pasos, oímos el grito de un hombre desde muy lejos detrás de nosotras.
+
+              "No estoy seguro de quiénes se supone que son, pero tienen tres segundos para identificarse antes de que dé la alarma", oímos a lo lejos. "Puedo sentir su aura desde aquí mismo, y no se parece al aura de nadie que conozca."
+          - source: scene_text_2
+            paragraph: 23
+            text: |-
+              "Mierda", digo en voz baja. "¿Qué hago? ¿Le digo que soy uno de los limpiadores?"
+
+              "Demasiado tarde", oímos gritar al hombre, y poco después un ruido atronador resuena por todo el pasillo, mientras sentimos a más de unos cuantos guardias moviéndose en nuestra dirección.
+
+              "Y hasta aquí nuestro sigilo", dice Melindra. "Supongo que tendremos que salir corriendo. Hay unas escaleras más adelante en este corredor. Deberían ayudarnos a llegar a uno de los niveles superiores. Dénse prisa."
+
+              Aceleramos el paso y seguimos a Melindra hasta llegar al final del corredor. Luego giramos a la izquierda y pronto alcanzamos la escalera que ella había mencionado antes. Mientras la subimos, oímos a lo lejos los pasos apresurados de algunos guardias detrás de nosotras, acercándose poco a poco.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de ocultación de aura fallida - nivel 3 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_hearing
+                condition: b3_ch4_tasked != 4
+              - set:
+                  current_scene: b3_ch04b_blades
+                condition: b3_ch4_tasked = 4
+      - condition: bluff >= 3
+        texts:
+          - source: scene_text
+            paragraph: 40
+            text: |-
+              Cuando vuelvo a intentarlo, me doy cuenta de que de repente estoy sintiendo lo mismo que sentí cuando les estaba mintiendo a esos guardias antes. ¿Será esto también obra de la estadística de Farol?
+
+              "Oye, eso no está nada mal, Barry", dice Melindra. "No sabía que pudieras ocultar tu aura tan bien. Muy bien, ahora que todo el mundo está lista, sigamos."
+
+              Abrimos la puerta y empezamos a avanzar hacia la izquierda, en dirección contraria a donde están apostados los guardias. Ninguno de los guardias reacciona a nuestra presencia, lo que significa que estamos haciendo un buen trabajo ocultando las auras. Melindra nos dice que ha detectado una escalera que sube un poco más adelante en el pasillo, así que seguimos avanzando y luego giramos otra vez a la izquierda, continuando nuestro camino hasta que por fin llegamos a las escaleras de las que hablaba. Entonces empezamos a subirlas despacio, mientras dependemos de Melindra para que nos diga si hay guardias siguiéndonos o no.
+
+              Conseguimos subir las escaleras sin problemas, y luego atravesamos otro corredor largo antes de empezar a dirigirnos hacia la siguiente escalera que conduce a uno de los niveles superiores.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de ocultación de aura exitosa - nivel 3 ]'
+              b3_ch4_tasked: 4
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_blades
   - name: b3_ch04b_hearing
-    texts:
-      - source: scene_text
-        paragraph: 28
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: hearing < 3
+        texts:
+          - source: scene_text
+            paragraph: 42
+            text: Cuando llegamos a la parte alta de las escaleras, entramos en un pasillo nuevo y empezamos a avanzar por él a toda prisa. De repente, el corredor en el que estamos se llena de corrientes eléctricas mágicas visibles incluso a simple vista. La descarga que recorre mi cuerpo es tan potente que apenas me queda un segundo de consciencia antes de que todo se vuelva completamente negro.
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Comprobación de audición fallida - nivel 3 ]'
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: hearing >= 3
+        texts:
+          - source: scene_text
+            paragraph: 43
+            text: |-
+              Justo cuando estamos a punto de llegar al final de las escaleras, oigo la voz de un guardia desde muy lejos detrás de nosotras, hablándole a uno de sus compañeros.
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "¡Están arriba de las escaleras!", dice el hombre. "¡Activa la trampa! ¡Ahora!"
+
+              "¡Paren!", les grito a mis amigos que corren a mi lado. "¡No sigan avanzando!"
+
+              Todas nos detenemos justo antes del final de la escalera, desde donde tenemos una vista perfecta del siguiente corredor a través de un arco de piedra. Apenas unos segundos después, todo el pasillo que tenemos delante se llena de corrientes eléctricas mágicas visibles incluso a simple vista. Por la pinta que tienen, apuesto a que habríamos muerto al instante si no hubiéramos dejado de correr cuando lo hicimos. Después de esperar unos diez segundos más, las corrientes por fin se disipan y el corredor vuelve a ser seguro para cruzarlo.
+
+              "¿Han muerto?", oigo la voz de un hombre desde muy lejos detrás de nosotras.
+
+              "No, no entraron en el corredor por alguna razón", dice el hombre que ordenó activar la trampa. "¡Intenta encenderla otra vez!"
+          - source: scene_text_2
+            paragraph: 24
+            text: |-
+              "No puedo activarla otra vez de inmediato", dice el otro hombre. "¡Necesita cargarse un poco antes!"
+
+              "Acabo de oír a los guardias decir que la trampa necesita recargarse antes de que puedan usarla otra vez", les digo a mis amigos. "Podemos pasar ahora. Es seguro."
+
+              "Entonces, rápido", dice Kate.
+
+              "¿Puedes oírlos desde tan lejos?...", me pregunta Breynan, mientras cruzamos deprisa el corredor con la trampa eléctrica desactivada.
+
+              "Sí, es gracias a mi dispositivo de estadísticas", digo. "Pero si más adelante nos topamos con otra de estas trampas lessathi indetectables, puede que la próxima vez no tengamos tanta suerte. Melindra, ¿no hay alguna forma de que pudieras detectar esto con tu Sentido mágico?"
+
+              "Estos son dispositivos lessathi creados específicamente para no ser detectados", dice Melindra. "Incluso Arraka tendría problemas para encontrar algo así. Lo único que podemos hacer es ir con muchísimo cuidado y esperar lo mejor.
+
+              "Me temía que fueras a decir algo así", digo.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de audición exitosa - nivel 3 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_blades
+                condition: is_dead = 0
   - name: b3_ch04b_blades
-    texts:
-      - source: scene_text
-        paragraph: 29
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch4_tasked <> 2 AND b3_ch4_tasked <> 3 AND b3_ch4_tasked <> 5
+        texts:
+          - source: scene_text
+            paragraph: 44
+            text: |-
+              "Breynan, ¿intentaste otra vez contactar con tu amigo de la sala del teletransportador?", dice Melindra, mientras seguimos caminando por el pasillo. "Quizá puedas alcanzarlo desde aquí."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Ya lo intenté, pero sigue sin responder", dice Breynan. "Quizá tengamos más suerte si seguimos subi--"
+
+              "¡Atención a todos los guardias de la torre!", oímos de repente la voz de Billy Bob a través de un amplificador de voz mágico sujeto a una pared. "Mis sensores están detectando intrusos en la torre. Parece que intentan llegar a los niveles superiores. Activaré la trampa cercana a la escalera que sale de la sección B98-6C. Si se dan prisa, deberían poder acorralarlos con bastante facilidad. Será mejor que no los dejen escapar..."
+
+              Justo cuando el lessathi deja de hablar, un ruido de alarma atronador llena el pasillo y luego toda la sección delante de la escalera a la que nos dirigíamos se vuelve completamente infranqueable, porque un centenar de cuchillas metálicas giratorias emerge del suelo, de las paredes y del techo, sin dejar ningún hueco por el que podamos pasar sin quedar cortadas en pedazos.
+          - source: scene_text_2
+            paragraph: 25
+            text: |-
+              "No... no estoy seguro de cómo se supone que vamos a superar esta...", dice Breynan.
+
+              "¿Flower no podría hacerlas explotar o algo así?", digo.
+
+              "Esas cuchillas están hechas de acero elfo y están fuertemente encantadas", dice Illuna. "Ninguno de nuestros hechizos es ni remotamente lo bastante potente como para dañarlas."
+
+              "Podría intentar congelar las cuchillas giratorias en su sitio con uno de mis hechizos", dice Kate. "Probablemente no durará mucho, pero tal vez nos dé el tiempo justo para llegar a las escaleras."
+
+              "¿Y qué hay de Rose?", nos pregunta Flower. "¡Podríamos pedirle que congele el tiempo para todo el mundo excepto para nosotros hasta que consigamos pasar las cuchillas!"
+
+              "La última vez que hablé con ella, Rose dijo que no había hecho ningún progreso importante con su entrenamiento para congelar el tiempo", digo. "No creo que pueda ayudarnos."
+
+              "La última vez que hablaste con ella, Rose dijo que había tenido una premonición en la que me veía a punto de morir", dice Illuna. "Es posible que en realidad haya progresado un poco más de lo que te ha contado hasta ahora. Ya sabemos que no hay suficientes paredes de seredium entre ella y nosotras como para bloquear nuestra comunicación por completo, dado que está en la superficie, así que contactar con ella podría valer la pena."
+        choices:
+          - position: 1
+            text: Intentar contactar con Rose.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_contact
+          - position: 2
+            text: Sugerir que sería mejor que Kate congelara las cuchillas giratorias.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_froze
+      - condition: b3_ch4_tasked = 2
+        texts:
+          - source: scene_text
+            paragraph: 45
+            text: |-
+              "Breynan, ¿intentaste otra vez contactar con tu amigo de la sala del teletransportador?", dice Melindra, mientras seguimos caminando por el pasillo. "Quizá puedas alcanzarlo desde aquí."
+
+              "Ya lo intenté, pero sigue sin responder", dice Breynan. "Quizá tengamos más suerte si seguimos subi--"
+
+              "¡Atención a todos los guardias de la torre!", oímos de repente la voz de Billy Bob a través de un amplificador de voz mágico sujeto a una pared. "Mis sensores indican que los intrusos intentan llegar a los niveles superiores. Activaré la trampa cercana a la escalera que sale de la sección B98-6C. Si se dan prisa, deberían poder acorralarlos con bastante facilidad. Será mejor que no los dejen escapar..."
+
+              Justo cuando el lessathi deja de hablar, toda la sección delante de la escalera a la que nos dirigíamos se vuelve completamente infranqueable, porque un centenar de cuchillas metálicas giratorias emerge del suelo, de las paredes y del techo, sin dejar ningún hueco por el que podamos pasar sin quedar cortadas en pedazos.
+          - source: scene_text_2
+            paragraph: 25
+            text: |-
+              "No... no estoy seguro de cómo se supone que vamos a superar esta...", dice Breynan.
+
+              "¿Flower no podría hacerlas explotar o algo así?", digo.
+
+              "Esas cuchillas están hechas de acero elfo y están fuertemente encantadas", dice Illuna. "Ninguno de nuestros hechizos es ni remotamente lo bastante potente como para dañarlas."
+
+              "Podría intentar congelar las cuchillas giratorias en su sitio con uno de mis hechizos", dice Kate. "Probablemente no durará mucho, pero tal vez nos dé el tiempo justo para llegar a las escaleras."
+
+              "¿Y qué hay de Rose?", nos pregunta Flower. "¡Podríamos pedirle que congele el tiempo para todo el mundo excepto para nosotros hasta que consigamos pasar las cuchillas!"
+
+              "La última vez que hablé con ella, Rose dijo que no había hecho ningún progreso importante con su entrenamiento para congelar el tiempo", digo. "No creo que pueda ayudarnos."
+
+              "La última vez que hablaste con ella, Rose dijo que había tenido una premonición en la que me veía a punto de morir", dice Illuna. "Es posible que en realidad haya progresado un poco más de lo que te ha contado hasta ahora. Ya sabemos que no hay suficientes paredes de seredium entre ella y nosotras como para bloquear nuestra comunicación por completo, dado que está en la superficie, así que contactar con ella podría valer la pena."
+        choices:
+          - position: 1
+            text: Intentar contactar con Rose.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_contact
+          - position: 2
+            text: Sugerir que sería mejor que Kate congelara las cuchillas giratorias.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_froze
+      - condition: b3_ch4_tasked = 3
+        texts:
+          - source: scene_text
+            paragraph: 45
+            text: |-
+              "Breynan, ¿intentaste otra vez contactar con tu amigo de la sala del teletransportador?", dice Melindra, mientras seguimos caminando por el pasillo. "Quizá puedas alcanzarlo desde aquí."
+
+              "Ya lo intenté, pero sigue sin responder", dice Breynan. "Quizá tengamos más suerte si seguimos subi--"
+
+              "¡Atención a todos los guardias de la torre!", oímos de repente la voz de Billy Bob a través de un amplificador de voz mágico sujeto a una pared. "Mis sensores indican que los intrusos intentan llegar a los niveles superiores. Activaré la trampa cercana a la escalera que sale de la sección B98-6C. Si se dan prisa, deberían poder acorralarlos con bastante facilidad. Será mejor que no los dejen escapar..."
+
+              Justo cuando el lessathi deja de hablar, toda la sección delante de la escalera a la que nos dirigíamos se vuelve completamente infranqueable, porque un centenar de cuchillas metálicas giratorias emerge del suelo, de las paredes y del techo, sin dejar ningún hueco por el que podamos pasar sin quedar cortadas en pedazos.
+          - source: scene_text_2
+            paragraph: 25
+            text: |-
+              "No... no estoy seguro de cómo se supone que vamos a superar esta...", dice Breynan.
+
+              "¿Flower no podría hacerlas explotar o algo así?", digo.
+
+              "Esas cuchillas están hechas de acero elfo y están fuertemente encantadas", dice Illuna. "Ninguno de nuestros hechizos es ni remotamente lo bastante potente como para dañarlas."
+
+              "Podría intentar congelar las cuchillas giratorias en su sitio con uno de mis hechizos", dice Kate. "Probablemente no durará mucho, pero tal vez nos dé el tiempo justo para llegar a las escaleras."
+
+              "¿Y qué hay de Rose?", nos pregunta Flower. "¡Podríamos pedirle que congele el tiempo para todo el mundo excepto para nosotros hasta que consigamos pasar las cuchillas!"
+
+              "La última vez que hablé con ella, Rose dijo que no había hecho ningún progreso importante con su entrenamiento para congelar el tiempo", digo. "No creo que pueda ayudarnos."
+
+              "La última vez que hablaste con ella, Rose dijo que había tenido una premonición en la que me veía a punto de morir", dice Illuna. "Es posible que en realidad haya progresado un poco más de lo que te ha contado hasta ahora. Ya sabemos que no hay suficientes paredes de seredium entre ella y nosotras como para bloquear nuestra comunicación por completo, dado que está en la superficie, así que contactar con ella podría valer la pena."
+        choices:
+          - position: 1
+            text: Intentar contactar con Rose.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_contact
+          - position: 2
+            text: Sugerir que sería mejor que Kate congelara las cuchillas giratorias.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_froze
+      - condition: b3_ch4_tasked = 5
+        texts:
+          - source: scene_text
+            paragraph: 45
+            text: |-
+              "Breynan, ¿intentaste otra vez contactar con tu amigo de la sala del teletransportador?", dice Melindra, mientras seguimos caminando por el pasillo. "Quizá puedas alcanzarlo desde aquí."
+
+              "Ya lo intenté, pero sigue sin responder", dice Breynan. "Quizá tengamos más suerte si seguimos subi--"
+
+              "¡Atención a todos los guardias de la torre!", oímos de repente la voz de Billy Bob a través de un amplificador de voz mágico sujeto a una pared. "Mis sensores indican que los intrusos intentan llegar a los niveles superiores. Activaré la trampa cercana a la escalera que sale de la sección B98-6C. Si se dan prisa, deberían poder acorralarlos con bastante facilidad. Será mejor que no los dejen escapar..."
+
+              Justo cuando el lessathi deja de hablar, toda la sección delante de la escalera a la que nos dirigíamos se vuelve completamente infranqueable, porque un centenar de cuchillas metálicas giratorias emerge del suelo, de las paredes y del techo, sin dejar ningún hueco por el que podamos pasar sin quedar cortadas en pedazos.
+          - source: scene_text_2
+            paragraph: 25
+            text: |-
+              "No... no estoy seguro de cómo se supone que vamos a superar esta...", dice Breynan.
+
+              "¿Flower no podría hacerlas explotar o algo así?", digo.
+
+              "Esas cuchillas están hechas de acero elfo y están fuertemente encantadas", dice Illuna. "Ninguno de nuestros hechizos es ni remotamente lo bastante potente como para dañarlas."
+
+              "Podría intentar congelar las cuchillas giratorias en su sitio con uno de mis hechizos", dice Kate. "Probablemente no durará mucho, pero tal vez nos dé el tiempo justo para llegar a las escaleras."
+
+              "¿Y qué hay de Rose?", nos pregunta Flower. "¡Podríamos pedirle que congele el tiempo para todo el mundo excepto para nosotros hasta que consigamos pasar las cuchillas!"
+
+              "La última vez que hablé con ella, Rose dijo que no había hecho ningún progreso importante con su entrenamiento para congelar el tiempo", digo. "No creo que pueda ayudarnos."
+
+              "La última vez que hablaste con ella, Rose dijo que había tenido una premonición en la que me veía a punto de morir", dice Illuna. "Es posible que en realidad haya progresado un poco más de lo que te ha contado hasta ahora. Ya sabemos que no hay suficientes paredes de seredium entre ella y nosotras como para bloquear nuestra comunicación por completo, dado que está en la superficie, así que contactar con ella podría valer la pena."
+        choices:
+          - position: 1
+            text: Intentar contactar con Rose.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_contact
+          - position: 2
+            text: Sugerir que sería mejor que Kate congelara las cuchillas giratorias.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_froze
   - name: b3_ch04b_froze
     texts:
       - source: scene_text
-        paragraph: 30
-        text: |
-          Traducción en progreso.
+        paragraph: 46
+        text: |-
+          "Los poderes de Rose son demasiado arriesgados", digo. "Aunque de verdad pueda congelar el tiempo por sí sola, bastaría un solo segundo de pérdida de control sobre su hechizo para que acabáramos convertidas en carne picada. Yo digo que vayamos con el plan de Kate y dejemos que congele las cuchillas con su magia. Al menos así tendríamos una posibilidad decente de salir vivas de aquí."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Si Kate cree que puede hacerlo, no voy a oponerme", dice Illuna. "Solo quería asegurarme de que todo el mundo supiera que había otras opciones."
+
+          "Intentaré congelar solo las cuchillas y no el suelo, para que no resbalemos por accidente", dice Kate.
+
+          Entonces pone las manos delante de ella y un poderoso rayo de hielo sale disparado de sus palmas, congelando todos y cada uno de los mecanismos que mantenían las cuchillas en movimiento.
+
+          "¡Rápido!", dice Melindra. "¡A las escaleras!"
+
+          Intentamos movernos tan deprisa como podemos, pero no hay ningún camino fácil para evitar todos los obstáculos. Mientras luchamos por encajar en el estrecho espacio entre la multitud de cuchillas afiladas congeladas, de repente oímos varios crujidos en el hielo de Kate y, antes siquiera de que tengamos tiempo de entender qué está pasando, todas las cuchillas vuelven a girar al mismo tiempo, cortándonos a todas en cientos de pedazos.
+    choices:
+      - position: 1
+        text: Reiniciar juego
+        effects:
+          - set:
+              current_scene: ch1_intro1
+              storyboard_controls: Jump to frame "Chapter 1"
+      - position: 2
+        text: Cargar desde el último punto de control
+        effects:
+          - set:
+              chapter_load: 1
+              storyboard_controls: Jump to frame "Save load game"
+      - position: 3
+        text: Cargar partida
+        effects:
+          - set:
+              storyboard_controls: Jump to frame "Save load game"
   - name: b3_ch04b_contact
     texts:
       - source: scene_text
-        paragraph: 31
-        text: |
-          Traducción en progreso.
+        paragraph: 47
+        text: |-
+          "Tienes razón", digo. "Vale la pena intentarlo. La llamaré ahora. Kate, ¿podrías levantar un muro de hielo detrás de nosotros para retrasar a los guardias si consiguen alcanzarnos?
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Ya voy", dice Kate.
+
+          Entonces empieza a crear su muro de hielo mientras yo saco mi transceptor, muevo el dial hasta el número de Rose y toco el transceptor para activarlo.
+
+          "¿Rose, me oyes?", digo.
+
+          "¡Sí!", dice Rose. "Ahora te oigo con claridad. ¿Salieron de las cavernas?"
+
+          "Más o menos", digo. "Pero seguimos en problemas y necesitamos tu ayuda."
+
+          "¿Mi ayuda?...", pregunta Rose.
+
+          "Sí", digo. "Intentaré ser breve. ¿Alguna vez has conseguido congelar el tiempo por tu propia voluntad?"
+
+          "Yo...", dice Rose. "Hoy sí he conseguido hacerlo unas cuantas veces, pero fue solo por un ratito, y no estoy segura de cuánto control tengo sobre ello. Siempre que intento mantener un control total sobre estos poderes, me canso con mucha facilidad y siento que estoy a punto de desmayarme. No estoy segura de si--"
+
+          "¿Cuál fue el tiempo máximo que lograste mantener el tiempo congelado?", digo.
+      - source: scene_text_2
+        paragraph: 26
+        text: |-
+          "No lo sé...", dice Rose. "¿Unos... treinta segundos?"
+
+          "Eso debería darnos tiempo suficiente para pasar las cuchillas giratorias", les digo a las demás. "Creo que deberíamos intentarlo."
+
+          "¡¿Cuchillas giratorias?!", pregunta Rose, sobresaltada. "Barry, yo no creo que--"
+
+          "Escucha, no tenemos mucho tiempo", digo. "Tenemos a docenas de guardias pisándonos los talones y podrían estar aquí de un momento a otro. Tu hechizo congela el tiempo en todo el mundo, así que en teoría debería ser posible descongelarnos desde donde estás. Los rebeldes de esta ciudad tienen un dispositivo de teletransportación que fija su hechizo en las señales de nuestros transceptores cuando intenta lanzarlo sobre nosotras. Quizá podrías intentar hacer lo mismo con tu hechizo. Intenta concentrarte en la conexión entre nuestros dos transceptores y tal vez puedas descongelar el tiempo solo para nosotras, para que podamos pasar las cuchillas con seguridad mientras sigues congelando el tiempo para todo el resto del mundo. ¿Crees que puedes hacerlo?"
+
+          "Puedo intentarlo, pero... Barry, si pierdo el control del hechizo mientras ustedes están ahí dentro, acabarán..."
+      - source: scene_3
+        paragraph: 10
+        text: |-
+          "Nos aseguraremos de salir antes de que eso ocurra", digo. "No nos llevará más de quince segundos llegar a las escaleras. Podemos lograrlo. Tú solo intenta mantener el hechizo todo lo que puedas. Bien, ¿estás lista?"
+
+          "Supongo...", dice Rose. "Dame un momento."
+
+          Tras unos diez segundos de espera, Rose empieza de repente a respirar muy fuerte al otro lado del transceptor.
+
+          "¿Pasa algo?...", digo.
+
+          "No es nada", dice Rose con voz agotada. "Ya congelé el tiempo dos veces, pero no conseguí dejarlos descongelados. Estoy segura de que podré hacerlo bien si lo intento una tercera vez."
+
+          "No, en realidad creo que quizá deberíamos parar antes de--"
+
+          "¡Barry, me oyes?!", oigo gritar a Rose con mucha fuerza de repente.
+
+          "Sí, te oigo", digo. "Estaba diciendo que--"
+
+          "¡Barry, el tiempo está congelado!", dice Rose. "¡Corran hacia las escaleras! ¡Háganlo ya! ¡No sé cuánto tiempo podré mantener esto!"
+
+          Cuando miro hacia las cuchillas, me doy cuenta de que se han detenido por completo, y las llamas de las antorchas en las paredes también parecen congeladas en el tiempo. No vamos a tener una oportunidad mejor que esta. Tenemos que aprovecharla mientras siga así.
+
+          "Ya oyeron a Rose", les digo a las demás. "¡Vamos, vamos, vamos!"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch04b_contact2
   - name: b3_ch04b_contact2
-    texts:
-      - source: scene_text
-        paragraph: 32
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: b3_ch4_control = 1
+        texts:
+          - source: scene_text
+            paragraph: 48
+            text: |-
+              Todas empezamos a movernos entre las cuchillas congeladas tan deprisa como podemos, esforzándonos por pasar por el estrecho espacio que queda entre la multitud de objetos metálicos afilados. Cuando por fin alcanzamos la base de las escaleras, enseguida intento hacérselo saber a Rose por el transceptor.
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Rose, estamos a salvo", digo. "Ya puedes descongelar el tiempo."
+
+              En lugar de recibir una respuesta, oímos un golpe seco procedente del otro extremo del transceptor y, justo después, las cuchillas del corredor anterior vuelven a girar.
+
+              "¿Rose, sigues ahí?", digo. "¡Rose!"
+
+              "Estoy... bien", dice Rose con voz muy débil. "Solo... me desmayé un poco. Seguro que me recuperaré después de... quedarme un rato más tumbada en el suelo. Me alegra que estén todas a salvo."
+
+              "Lo siento", digo. "No debería haberte presionado tanto. Intenta descansar un poco. Volveremos a llamarte cuando estemos de vuelta en la base rebelde."
+
+              Entonces cierro el canal y le hago una seña a todo el mundo para que suba las escaleras. Cuando terminamos de subir, entramos en un pasillo con el techo muy alto y Breynan vuelve a sacar su transceptor.
+
+              "Quizá esta vez tengamos suerte", dice Breynan. "Si logro ponerme en contacto con Barry, le diré que nos teletransporte fuera de aquí inmediatamente. Asegúrense de estar listas."
+          - source: scene_text_2
+            paragraph: 27
+            text: |-
+              "No nos teletransportaremos fuera de aquí antes de llegar a la sala de control", dice Kate.
+
+              "Tu plan de la sala de control podría haber funcionado si hubiéramos logrado permanecer sin ser detectadas, pero una vez sonaron las alarmas, teletransportarnos fuera de este lugar se convirtió en nuestra única opción", dice Breynan. "El tiempo apremia. Ya nos ocuparemos de los prisioneros en otro momento."
+
+              Entonces toca su transceptor y se lo acerca a la boca.
+
+              "¡Barry, me oyes?", dice Breynan.
+
+              "¡Santos dioses, qué ruido infernal es ese?", dice el operador del teletransportador al oír las fuertes alarmas que siguen sonando a nuestro alrededor. "¿Y dónde han estado todo este tiempo? En realidad, eso ahora no importa. Voy a-- eh, ¿todavía me oyes? La señal está fallando. ¿Qué está pasando por ahí? ¡¿Hola?!"
+
+              "¡Sí, Barry, seguimos aquí!", dice Breynan. "¿Nos oyes? ¡Respóndeme!"
+
+              Parece que el operador del teletransportador sigue diciendo algo, pero la señal mágica es demasiado pobre para que podamos entender ni una sola palabra. Cuando miro alrededor de la sala para averiguar qué está pasando, veo que cuatro drones voladores de ojos anaranjados se están moviendo lentamente para rodearnos, mientras un dron de ojos verdes pasa entre ellos volando y se detiene a unos pocos pies de nuestra posición.
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              "Ya les advertí que no habría marcha atrás", oímos la voz del Supervisor, procedente del dron de ojos verdes.
+
+              "¿De qué estás hablando?", le pregunto. "¿Quién está bloqueando nuestra señal? ¿Esos drones de ojos anaranjados?"
+
+              "Adiós", dice el dron de ojos verdes, y luego se aleja de nosotras volando, mientras los drones de ojos anaranjados crean mágicamente una jaula semitransparente a su alrededor y a nuestro alrededor para impedir que escapemos.
+
+              Cuando Kate, Flower e Illuna intentan derribar a los drones con su magia, a las bolas metálicas ni siquiera les hace falta apartarse, porque una fuerte barrera mágica se activa alrededor de cada una y desvía con facilidad todos los proyectiles entrantes.
+
+              El aire a nuestro alrededor se está volviendo cada vez más pesado, y cada vez cuesta más respirar. La presión que surge de toda la energía mágica que se está reuniendo en un mismo punto hace que incluso mantenernos en pie resulte difícil. No sé qué hechizo están preparando estos drones, pero sea lo que sea, va a ser enorme.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_contact3
+      - condition: b3_ch4_control = 0
+        texts:
+          - source: scene_text
+            paragraph: 48
+            text: |-
+              Todas empezamos a movernos entre las cuchillas congeladas tan deprisa como podemos, esforzándonos por pasar por el estrecho espacio que queda entre la multitud de objetos metálicos afilados. Cuando por fin alcanzamos la base de las escaleras, enseguida intento hacérselo saber a Rose por el transceptor.
+
+              "Rose, estamos a salvo", digo. "Ya puedes descongelar el tiempo."
+
+              En lugar de recibir una respuesta, oímos un golpe seco procedente del otro extremo del transceptor y, justo después, las cuchillas del corredor anterior vuelven a girar.
+
+              "¿Rose, sigues ahí?", digo. "¡Rose!"
+
+              "Estoy... bien", dice Rose con voz muy débil. "Solo... me desmayé un poco. Seguro que me recuperaré después de... quedarme un rato más tumbada en el suelo. Me alegra que estén todas a salvo."
+
+              "Lo siento", digo. "No debería haberte presionado tanto. Intenta descansar un poco. Volveremos a llamarte cuando estemos de vuelta en la base rebelde."
+
+              Entonces cierro el canal y le hago una seña a todo el mundo para que suba las escaleras. Cuando terminamos de subir, entramos en un pasillo con el techo muy alto y Breynan vuelve a sacar su transceptor.
+
+              "Quizá esta vez tengamos suerte", dice Breynan. "Si logro ponerme en contacto con Barry, le diré que nos teletransporte fuera de aquí inmediatamente. Asegúrense de estar listas."
+          - source: scene_text_2
+            paragraph: 28
+            text: |-
+              Entonces toca su transceptor y se lo acerca a la boca.
+
+              "¡Barry, me oyes?", dice Breynan.
+
+              "¡Santos dioses, qué ruido infernal es ese?", dice el operador del teletransportador al oír las fuertes alarmas que siguen sonando a nuestro alrededor. "¿Y dónde han estado todo este tiempo? En realidad, eso ahora no importa. Voy a-- eh, ¿todavía me oyes? La señal está fallando. ¿Qué está pasando por ahí? ¡¿Hola?!"
+
+              "¡Sí, Barry, seguimos aquí!", dice Breynan. "¿Nos oyes? ¡Respóndeme!"
+
+              Parece que el operador del teletransportador sigue diciendo algo, pero la señal mágica es demasiado pobre para que podamos entender ni una sola palabra. Cuando miro alrededor de la sala para averiguar qué está pasando, veo que cuatro drones voladores de ojos anaranjados se están moviendo lentamente para rodearnos, mientras un dron de ojos verdes pasa entre ellos volando y se detiene a unos pocos pies de nuestra posición.
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              "Ya les advertí que no habría marcha atrás", oímos la voz del Supervisor, procedente del dron de ojos verdes.
+
+              "¿De qué estás hablando?", le pregunto. "¿Quién está bloqueando nuestra señal? ¿Esos drones de ojos anaranjados?"
+
+              "Adiós", dice el dron de ojos verdes, y luego se aleja de nosotras volando, mientras los drones de ojos anaranjados crean mágicamente una jaula semitransparente a su alrededor y a nuestro alrededor para impedir que escapemos.
+
+              Cuando Kate, Flower e Illuna intentan derribar a los drones con su magia, a las bolas metálicas ni siquiera les hace falta apartarse, porque una fuerte barrera mágica se activa alrededor de cada una y desvía con facilidad todos los proyectiles entrantes.
+
+              El aire a nuestro alrededor se está volviendo cada vez más pesado, y cada vez cuesta más respirar. La presión que surge de toda la energía mágica que se está reuniendo en un mismo punto hace que incluso mantenernos en pie resulte difícil. No sé qué hechizo están preparando estos drones, pero sea lo que sea, va a ser enorme.
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_contact3
   - name: b3_ch04b_contact3
-    texts:
-      - source: scene_text
-        paragraph: 33
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: magical_sense < 4
+        texts:
+          - source: scene_text
+            paragraph: 49
+            text: |-
+              Kate, Flower e Illuna están usando ahora todos los ataques mágicos que se les ocurren, pero los drones no parecen molestarse lo más mínimo y siguen reuniendo energía para su hechizo. Tras un rato, queda claro que no hay forma de detener el ataque que se avecina, así que Melindra intenta lanzar barreras de aire individuales alrededor de cada una de nosotras, con la esperanza de que eso baste de algún modo para absorber todo el daño.
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              Por desgracia, en cuanto se lanza el hechizo de los drones, enseguida nos damos cuenta de que ninguna cantidad de protección podría habernos resguardado del aluvión de ataques mágicos que se desata sobre nosotras al mismo tiempo. Era difícil decir si lo que nos mató fue el hielo, el fuego, la electricidad o cualquier otro de los distintos hechizos simultáneos, pero hizo falta menos de un segundo para que nuestros cuerpos quedaran completamente destruidos y luego se convirtieran en cenizas.
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Comprobación de sentido mágico fallida - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: magical_sense >= 4
+        texts:
+          - source: scene_text
+            paragraph: 50
+            text: |-
+              Hay algo en la forma en que la magia fluye por la sala que de repente me recuerda a una vieja memoria que creía olvidada desde hacía mucho tiempo. Hace unos años hablaba con un ermitaño al que todo el mundo consideraba loco, y siempre me repetía que la gente está aprendiendo magia de la manera equivocada, y que nadie lo escuchaba cuando sugería que las academias de magia deberían reestructurarse por completo para seguir sus enseñanzas. El principal punto de conflicto entre él y el resto de los eruditos era su afirmación de que las imperfecciones en las técnicas mágicas son absolutamente necesarias si quieres crear un hechizo perfecto. La contradicción obvia de esa idea hacía que todo el mundo lo descartara como a un viejo senil, pero su teoría era que cuanto más se acerca una técnica a la perfección, más predecible se vuelve, y más fácil resulta contrarrestarla.
+
+              Al ver la manera perfecta en que estas máquinas están ejecutando sus hechizos, creo que por fin empiezo a entender lo que aquel ermitaño quería decir. Puedo decir exactamente qué están intentando hacer, y aunque estén combinando diez hechizos diferentes al mismo tiempo, la forma en que mueven los flujos de las auras es tan de manual que me resultaría imposible no reconocer todos y cada uno de ellos.
+          - source: scene_text_2
+            paragraph: 29
+            text: |-
+              El corazón me late a toda velocidad. La rapidez con la que estoy descifrando cada uno de los hechizos resulta abrumadora, y siento como si el tiempo se hubiera frenado casi hasta detenerse para permitirme tener todos estos pensamientos cruzándose por mi cabeza al mismo tiempo. Parece que hubieran pasado minutos enteros, pero en realidad no creo que hayan sido más que unos pocos segundos. El camino que tengo delante está claro. Sé lo que tengo que hacer.
+
+              "¡Tenemos que interrumpir el flujo del hechizo!", les digo a todos los que me rodean, hablando tan rápido como puedo, mientras la energía mágica dentro de la jaula se vuelve tan densa que casi se puede palpar. "Necesito que todo el que sea mago lance el hechizo más simple que tenga cada vez que levante la mano derecha. No importa qué hechizo sea, siempre que puedan lanzarlo en un abrir y cerrar de ojos. No tengo tiempo para explicar por qué. ¡Solo confíen en mí!"
+
+              Los demás se miran entre sí durante un segundo, pero luego vuelven a mirarme y me hacen un leve gesto de asentimiento. Espero dos segundos y levanto la mano derecha. Al mismo tiempo, Kate crea un pequeño cubo de hielo, Flower lanza una bolita de fuego al aire, Illuna esparce un poco de agua por el suelo, Breynan conjura un orbe de luz y Melindra hace girar unas corrientes de aire sobre la palma de su mano.
+          - source: scene_3
+            paragraph: 12
+            text: |-
+              Entonces bajo la mano y todas detienen sus hechizos, esperando mi siguiente señal. Cinco segundos después, vuelvo a levantar la mano, y todas lanzan los mismos hechizos que antes, mirando con ansiedad a su alrededor para ver si algo ha cambiado. El aire sigue pesado, pero no parece que el hechizo de los drones haya avanzado en modo alguno desde que nuestras magas empezaron a lanzar sus propios hechizos. Sigo prediciendo el ritmo del flujo mágico de los drones usando cada dato que conozco sobre cómo se supone que deben lanzarse sus hechizos. Con ayuda de mi estadística de Sentido mágico, por fin consigo detectar los flujos lo bastante bien como para poner en práctica toda la teoría mágica que he aprendido.
+
+              Sigo levantando la mano en el momento exacto, y mis amigos siguen obedeciendo mis instrucciones. Cuando levanto la mano por octava vez, la presión a nuestro alrededor desaparece por completo de repente, y parece que el hechizo que estaban lanzando los drones ha quedado cancelado de manera permanente. Los drones ahora mismo no se están moviendo en absoluto, como si estuvieran aturdidos.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de sentido mágico exitosa - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Decirle a Melindra que me lance su hechizo de corrientes de aire para poder volar y apuñalar a los drones.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_drones1
+                  b3_ch4_drones: 1
+                condition: is_dead = 0
+          - position: 2
+            text: Recoger algunas piedras del suelo y lanzárselas a los drones.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_drones2
+                  b3_ch4_drones: 2
+                condition: is_dead = 0
+          - position: 3
+            text: Intentar dispararles a los drones con mi ballesta.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_drones3
+                  b3_ch4_drones: 3
+                condition: is_dead = 0
+          - position: 4
+            text: Decirles a los demás que ataquen a los drones con todo lo que tengan mientras siguen aturdidos.
+            effects:
+              - set:
+                  current_scene: b3_ch04b_drones4
+                condition: is_dead = 0
   - name: b3_ch04b_drones1
-    texts:
-      - source: scene_text
-        paragraph: 34
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: aura_hardening < 4
+        texts:
+          - source: scene_text
+            paragraph: 51
+            text: |-
+              "Melindra, ¿puedes lanzar tus corrientes de aire sobre mí?", digo. "Quiero intentar apuñalar a los drones en los ojos mientras siguen aturdidos."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "No me parece la mejor idea, pero es tu decisión", dice Melindra.
+
+              Entonces agita las manos unas cuantas veces en el aire y, poco después, puedo sentir las corrientes fluyendo a mi alrededor.
+
+              "Gracias", digo, mientras saco la daga y luego vuelo hacia uno de los drones.
+
+              Justo cuando estoy a punto de clavarle la daga, el drone dispara un rayo de hielo desde su ojo y me congela por completo. Antes siquiera de que caiga, el mismo drone genera dos losas de roca de la nada y me aplasta la cabeza entre ellas, matándome al instante.
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Comprobación de endurecimiento de aura fallida - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: aura_hardening >= 4
+        texts:
+          - source: scene_text
+            paragraph: 52
+            text: |-
+              "Melindra, ¿puedes lanzar tus corrientes de aire sobre mí?", digo. "Quiero intentar apuñalar a los drones en los ojos mientras siguen aturdidos."
+
+              "No me parece la mejor idea, pero es tu decisión", dice Melindra.
+
+              Entonces agita las manos unas cuantas veces en el aire y, poco después, puedo sentir las corrientes fluyendo a mi alrededor.
+
+              "Gracias", digo, mientras saco la daga y luego vuelo hacia uno de los drones.
+
+              Justo cuando estoy a punto de clavarle la daga, el drone dispara un rayo de hielo desde su ojo que me envuelve por completo. En lugar de congelarme, sin embargo, lo único que consigue es congelar el aura endurecida que me rodea, lo que significa que el único efecto real es que siento un poco de frío. No le doy tiempo al drone a preparar otro ataque y le clavo la daga repetidas veces en el ojo, hasta que su hélice deja de funcionar y la bola metálica cae al suelo.
+          - source: scene_text_2
+            paragraph: 30
+            text: |-
+              Parece que la barrera mágica que tenía a su alrededor no era gran cosa contra ataques a corta distancia. Eso significa que quizá pueda acabar con el resto de los drones del mismo modo. Solo tengo que ser un poco más cuidadoso con la manera en que me acerco a ellos.
+
+              Vuelo hacia otro de los drones, amago un ataque con mi daga y luego retrocedo volando justo cuando la bola metálica me dispara un rayo de fuego. En cuanto termina su ataque, vuelvo a lanzarme hacia ella e intento apuñalarla con todas mis fuerzas. Esta vez, sin embargo, la punta de mi daga se detiene contra la barrera que rodea al drone, y esa misma bola metálica parece estar creando ahora dos losas de roca con las que quiere aplastarme la cabeza.
+
+              "¡Barry, atrás!", dice Kate, mientras lanza un carámbano directo al ojo del drone, haciéndolo caer al suelo y haciendo desaparecer también las losas de roca.
+
+              "¡Ah, ya lo entiendo!", digo. "¡Les cuesta cambiar entre sus barreras defensivas! Parece que una de sus barreras es más fuerte contra ataques físicos, mientras que la otra es más fuerte contra ataques mágicos, pero no pueden usar las dos al mismo tiempo. Ya saben lo que eso significa, ¿verdad?"
+
+              Entonces saco la ballesta, mientras Kate e Illuna preparan sus hechizos. Antes de que los otros dos drones tengan ocasión de defenderse, los tres les disparamos simultáneamente con virotes de ballesta, lanzas de agua y carámbanos, destruyendo las bolas metálicas en cuestión de segundos.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de endurecimiento de aura exitosa - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_stuck
+                condition: is_dead = 0
   - name: b3_ch04b_drones2
-    texts:
-      - source: scene_text
-        paragraph: 35
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: strength >= 3
+        texts:
+          - source: scene_text
+            paragraph: 54
+            text: |-
+              Recojo una piedra del suelo y se la lanzo a uno de los drones.
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              A diferencia de los carámbanos de Kate, la piedra atraviesa la barrera del drone y se estrella contra su ojo, haciéndolo caer al suelo.
+
+              Al ver que mi plan ha funcionado, recojo otra piedra del suelo y se la lanzo al siguiente drone. Esta vez, sin embargo, la piedra rebota contra la barrera mágica de la bola metálica, igual que los proyectiles de Kate, Flower e Illuna.
+
+              Intento lanzarle otra piedra, pero obtengo el mismo resultado. De repente, Kate le lanza uno de sus carámbanos al drone al que yo estaba atacando, y el proyectil atraviesa su barrera mágica y le da en el ojo. Cuando la bola metálica cae al suelo, por fin empiezo a entender lo que está pasando.
+
+              "¡Ah, ya lo entiendo!", digo. "¡Les cuesta cambiar entre sus barreras defensivas! Parece que una de sus barreras es más fuerte contra ataques físicos, mientras que la otra es más fuerte contra ataques mágicos, pero no pueden usar las dos al mismo tiempo. Ya saben lo que eso significa, ¿verdad?"
+
+              Entonces saco la ballesta, mientras Kate e Illuna preparan sus hechizos. Antes de que los otros dos drones tengan tiempo de defenderse, los tres les disparamos simultáneamente con virotes de ballesta, lanzas de agua y carámbanos, destruyendo las bolas metálicas en cuestión de segundos.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de fuerza exitosa - nivel 3 ]'
+              ac_b3_ch4_thrower: 1
+            achievement:
+              id: ac_b3_ch4_thrower
+              title: Campeón de lanzamiento de rocas
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_stuck
+                condition: is_dead = 0
+      - condition: strength < 3 AND aura_hardening >= 4
+        texts:
+          - source: scene_text
+            paragraph: 53
+            text: |-
+              Recojo una piedra del suelo y se la lanzo a uno de los drones.
+
+              En lugar de golpearlo, la piedra simplemente rebota contra la barrera mágica que rodea a la bola metálica, sin hacerle absolutamente ningún daño. Intento arrojarle unas cuantas piedras más, pero el resultado es el mismo.
+
+              "Barry, ¿qué estás haciendo?...", me pregunta Kate.
+
+              "No funciona", digo. "Creo que necesito acercarme más. Melindra, ¿puedes lanzar tu hechizo de corrientes de aire a mi alrededor para que pueda volar hasta ellos?"
+
+              "A mí eso me parece una idea bastante mala, pero es tu decisión", dice Melindra.
+
+              Entonces agita las manos unas cuantas veces en el aire y, poco después, puedo sentir las corrientes fluyendo a mi alrededor.
+
+              "Gracias", digo, mientras recojo unas cuantas piedras más del suelo y vuelo hacia el drone al que había estado atacando antes.
+
+              Primero intento lanzarle una piedra desde unos cuatro metros de distancia. No pasa nada. Luego pruebo con otra desde unos dos metros. Sigue sin dar resultado. Estoy seguro de que esto funcionará si me acerco un poco más.
+          - source: scene_text_2
+            paragraph: 32
+            text: |-
+              Justo cuando estoy a punto de lanzar la tercera piedra, el drone dispara un rayo de hielo desde su ojo, que me envuelve por completo. En lugar de congelarme, sin embargo, lo único que consigue es congelar el aura endurecida que me rodea, lo que significa que el único efecto real es que siento un poco de frío. Decido abandonar el plan de las piedras y saco la daga en su lugar. Mi arma atraviesa su barrera sin problemas y consigo apuñalarlo repetidas veces en el ojo, hasta que su hélice deja de funcionar y la bola metálica cae al suelo.
+
+              Así que el drone sí que era débil contra ataques físicos... Eso significa que quizá pueda acabar con el resto de los drones del mismo modo. Solo tengo que ser un poco más cuidadoso con la manera en que me acerco a ellos.
+
+              Vuelo hacia otro de los drones, amago un ataque con mi daga y luego retrocedo volando justo cuando la bola metálica me dispara un rayo de fuego. En cuanto termina su ataque, vuelvo a lanzarme hacia ella e intento apuñalarla con todas mis fuerzas. Esta vez, sin embargo, la punta de mi daga se detiene contra la barrera que rodea al drone, y esa misma bola metálica parece estar creando ahora dos losas de roca con las que quiere aplastarme la cabeza.
+          - source: scene_3
+            paragraph: 13
+            text: |-
+              "¡Barry, atrás!", dice Kate, mientras lanza un carámbano directo al ojo del drone, haciéndolo caer al suelo y haciendo desaparecer también las losas de roca.
+
+              "¡Ah, ya lo entiendo!", digo. "¡Les cuesta cambiar entre sus barreras defensivas! Parece que una de sus barreras es más fuerte contra ataques físicos, mientras que la otra es más fuerte contra ataques mágicos, pero no pueden usar las dos al mismo tiempo. Ya saben lo que eso significa, ¿verdad?"
+
+              Entonces saco la ballesta, mientras Kate e Illuna preparan sus hechizos. Antes de que los otros dos drones tengan tiempo de defenderse, los tres les disparamos simultáneamente con virotes de ballesta, lanzas de agua y carámbanos, destruyendo las bolas metálicas en cuestión de segundos.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de fuerza fallida - nivel 3 ]'
+              successful_checks:
+                - '[ Comprobación de endurecimiento de aura exitosa - nivel 4 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_stuck
+                condition: is_dead = 0
+      - condition: strength < 3 AND aura_hardening < 4
+        texts:
+          - source: scene_text
+            paragraph: 53
+            text: |-
+              Recojo una piedra del suelo y se la lanzo a uno de los drones.
+
+              En lugar de golpearlo, la piedra simplemente rebota contra la barrera mágica que rodea a la bola metálica, sin hacerle absolutamente ningún daño. Intento arrojarle unas cuantas piedras más, pero el resultado es el mismo.
+
+              "Barry, ¿qué estás haciendo?...", me pregunta Kate.
+
+              "No funciona", digo. "Creo que necesito acercarme más. Melindra, ¿puedes lanzar tu hechizo de corrientes de aire a mi alrededor para que pueda volar hasta ellos?"
+
+              "A mí eso me parece una idea bastante mala, pero es tu decisión", dice Melindra.
+
+              Entonces agita las manos unas cuantas veces en el aire y, poco después, puedo sentir las corrientes fluyendo a mi alrededor.
+
+              "Gracias", digo, mientras recojo unas cuantas piedras más del suelo y vuelo hacia el drone al que había estado atacando antes.
+
+              Primero intento lanzarle una piedra desde unos cuatro metros de distancia. No pasa nada. Luego pruebo con otra desde unos dos metros. Sigue sin dar resultado. Estoy seguro de que esto funcionará si me acerco un poco más.
+          - source: scene_text_2
+            paragraph: 31
+            text: Justo cuando estoy a punto de lanzar la tercera piedra, el drone dispara un rayo de hielo desde su ojo y me congela por completo. Antes siquiera de que caiga, el mismo drone genera dos losas de roca de la nada y me aplasta la cabeza entre ellas, matándome al instante.
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de fuerza fallida - nivel 3 ]'
+                - '[ Comprobación de endurecimiento de aura fallida - nivel 4 ]'
+              is_dead: 1
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
   - name: b3_ch04b_drones3
-    texts:
-      - source: scene_text
-        paragraph: 36
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: perception < 2
+        texts:
+          - source: scene_text
+            paragraph: 55
+            text: |-
+              Saco la ballesta e intento dispararle a uno de los drones en el ojo. Igual que pasó antes con los carámbanos de Kate, mi virote de ballesta rebota simplemente contra la barrera mágica de la bola metálica, dejándola completamente ilesa.
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              Esperaba que los drones pudieran ser débiles contra ataques físicos, pero supongo que no. Supongo que no hay otra forma de derrotarlos que seguir lanzándoles ataques mágicos hasta que sus barreras fallen.
+
+              "Intenten dispararles más proyectiles", les digo a las demás. "Sus barreras acabarán cediendo en algún momento."
+
+              "Esperemos que tengas razón", dice Kate.
+
+              Entonces empieza a atacar a los drones junto con Flower, Illuna y Breynan. Las bolas metálicas no reaccionan, pero tampoco parecen estar sufriendo daño alguno. Después de que sus barreras absorban ataque tras ataque, las luces anaranjadas de los ojos de todos los drones empiezan a parpadear repetidamente al mismo tiempo, mientras emiten unos ruidos muy extraños y agudos al unísono.
+
+              "¡Advertencia!", oímos decir a los cuatro drones con voces metálicas. "Imposible mantener la barrera. Iniciando secuencia de autodestrucción."
+
+              "Esto no suena nada bien", dice Breynan. "¡Necesitamos una barrera, rápido, antes de que--"
+
+              Breynan no llega a terminar la frase, porque todos los drones explotan al mismo tiempo, haciendo volar el corredor entero por los aires y matándonos en el acto.
+        effects:
+          - set:
+              is_dead: 1
+              failed_checks:
+                - '[ Comprobación de observación fallida - nivel 2 ]'
+        choices:
+          - position: 1
+            text: Reiniciar juego
+            effects:
+              - set:
+                  current_scene: ch1_intro1
+                  storyboard_controls: Jump to frame "Chapter 1"
+                condition: is_dead = 1
+          - position: 2
+            text: Cargar desde el último punto de control
+            effects:
+              - set:
+                  chapter_load: 1
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+          - position: 3
+            text: Cargar partida
+            effects:
+              - set:
+                  storyboard_controls: Jump to frame "Save load game"
+                condition: is_dead = 1
+      - condition: perception >= 2
+        texts:
+          - source: scene_text
+            paragraph: 56
+            text: |-
+              Saco la ballesta e intento dispararle a uno de los drones en el ojo. Igual que pasó antes con los carámbanos de Kate, mi virote de ballesta rebota simplemente contra la barrera mágica de la bola metálica, dejándola completamente ilesa.
+
+              Sin embargo, estoy casi seguro de haber visto la luz del ojo anaranjado del drone parpadear muy brevemente justo cuando el virote de ballesta lo golpeó. Eso nunca pasó mientras lo atacaban proyectiles mágicos. ¿Significa eso que mi virote de ballesta sí tuvo algún efecto? Voy a probar otra vez.
+
+              Le disparo de nuevo al drone, esta vez con dos tiros consecutivos, uno detrás de otro. Los virotes de ballesta vuelven a ser desviados por la barrera, pero esta vez el parpadeo de la luz es mucho más evidente. Voy a probar una vez más con tres virotes de ballesta.
+
+              Tal como sospechaba, en cuanto le disparo tres virotes de ballesta consecutivos al drone, la barrera ya no consigue detenerlos a todos, y uno de ellos golpea a la bola metálica en el ojo, haciéndola caer al suelo. Entonces recargo la ballesta y apunto a otro de los drones, esta vez disparándole todos los virotes de ballesta uno tras otro.
+          - source: scene_text_2
+            paragraph: 33
+            text: |-
+              Sorprendentemente, la barrera alrededor de la bola metálica no se ve afectada en absoluto, y la luz de su ojo ni siquiera parpadea una sola vez. Antes de que me dé tiempo a entender qué está pasando, Kate le dispara a ese mismo drone con un carámbano, que atraviesa su barrera y le da en el ojo. Cuando la bola metálica cae al suelo, por fin empiezo a entender lo que está pasando.
+
+              "¡Ah, ya lo entiendo!", digo. "¡Les cuesta cambiar entre sus barreras defensivas! Parece que una de sus barreras es más fuerte contra ataques físicos, mientras que la otra es más fuerte contra ataques mágicos, pero no pueden usar las dos al mismo tiempo. Ya saben lo que eso significa, ¿verdad?"
+
+              Entonces apunto con la ballesta al siguiente drone, mientras Kate e Illuna preparan sus hechizos. Antes de que los otros dos drones tengan tiempo de defenderse, los tres les disparamos simultáneamente con virotes de ballesta, lanzas de agua y carámbanos, destruyendo las bolas metálicas en cuestión de segundos.
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de observación exitosa - nivel 2 ]'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch04b_stuck
+                condition: is_dead = 0
   - name: b3_ch04b_drones4
     texts:
       - source: scene_text
-        paragraph: 37
-        text: |
-          Traducción en progreso.
+        paragraph: 57
+        text: |-
+          "Intenten dispararles más proyectiles mientras siguen aturdidos", les digo a las demás. "Sus barreras acabarán cediendo en algún momento."
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Esperemos que tengas razón", dice Kate.
+
+          Entonces empieza a atacar a los drones junto con Flower, Illuna y Breynan. Las bolas metálicas no reaccionan, pero tampoco parecen estar sufriendo daño alguno. Después de que sus barreras absorban ataque tras ataque, las luces anaranjadas de los ojos de todos los drones empiezan a parpadear repetidamente al mismo tiempo, mientras emiten unos ruidos muy extraños y agudos al unísono.
+
+          "¡Advertencia!", oímos decir a los cuatro drones con voces metálicas. "Imposible mantener la barrera. Iniciando secuencia de autodestrucción."
+
+          "Esto no suena nada bien", dice Breynan. "¡Necesitamos una barrera, rápido, antes de que--"
+
+          Breynan no llega a terminar la frase, porque todos los drones explotan al mismo tiempo, haciendo volar el corredor entero por los aires y matándonos en el acto.
+    choices:
+      - position: 1
+        text: Reiniciar juego
+        effects:
+          - set:
+              current_scene: ch1_intro1
+              storyboard_controls: Jump to frame "Chapter 1"
+      - position: 2
+        text: Cargar desde el último punto de control
+        effects:
+          - set:
+              chapter_load: 1
+              storyboard_controls: Jump to frame "Save load game"
+      - position: 3
+        text: Cargar partida
+        effects:
+          - set:
+              storyboard_controls: Jump to frame "Save load game"
   - name: b3_ch04b_stuck
     texts:
       - source: scene_text
-        paragraph: 38
-        text: |
-          Traducción en progreso.
+        paragraph: 58
+        text: |-
+          "¡Eh, Supervisor, era eso todo?!", grito hacia la dirección por la que el dron de ojos verdes abandonó la sala. "¿No tienes más drones que enviarnos?"
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          No hay respuesta.
+
+          "Intentaré llamar otra vez a Barry", dice Breynan. "Parece que los guardias se han quedado atascados detrás de ese corredor con las cuchillas giratorias. No creo que sepan cómo desactivar la trampa. Eso debería darnos tiempo suficiente para calmarnos y así poder teletransportarnos fuera de aquí con seguridad."
+
+          Entonces vuelve a sacar su transceptor, se lo acerca a la boca y lo toca una vez.
+
+          "¿Barry, sigues ahí?", dice Breynan.
+
+          "¡Sí, sí, aquí estoy!", dice el operador del teletransportador. "¿Cómo demonios consiguieron perder la señal tan rápido? En realidad, no importa. Hay mucha gente esperando en la cola para teletransportarse, así que voy un poco con prisa. Parecen bastante calmadas, así que iniciaré la Teletransportación de regreso ahora mismo. ¿Están listas?"
+
+          "Sí, estamos listas", dice Breynan. "¡Teletranspórtanos ahora!"
+
+          "Entendido", dice el operador del teletransportador, y entonces una luz blanca empieza a envolvernos mientras nuestros cuerpos vibran con fuerza.
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch04b_ending
   - name: b3_ch04b_ending
     texts:
       - source: scene_text
-        paragraph: 39
-        text: |
-          Traducción en progreso.
+        paragraph: 59
+        text: |-
+          Lo siguiente que sabemos es que todas estamos de pie junto al dispositivo de teletransportación de la base rebelde, con el operador del teletransportador sentado tras su panel de control, como siempre. Lo que sí resulta un poco inusual es el número relativamente grande de personas que hay en la sala aparte de nosotras.
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¡Muy bien, todo el mundo a los túneles!", dice el operador del teletransportador. "Pueden mantener sus conversaciones en otra parte. ¡Aquí no hay sitio suficiente para que siga teletransportando gente! ¡Muévanse, vamos!"
+
+          "¿A qué viene todo este alboroto?...", pregunta Breynan, mientras el resto de la gente se dispone a salir de la sala.
+
+          "¿Cómo que no lo saben?", pregunta el operador del teletransportador, horrorizado. "¿Es que literalmente han estado viviendo debajo de una roca durante las últimas horas?"
+
+          "Todos vivimos debajo de rocas, Barry", dice Breynan. "Nuestra base está en una caverna subterránea. Dime, ¿qué pasó mientras estábamos fuera?"
+
+          "¡¿Qué no pasó?!", dice el operador del teletransportador. "¡La ciudad entera está en cierre total! Nadie puede salir, nadie puede entrar. ¡La gente ni siquiera puede salir de sus casas sin que los guardias la arresten! ¡Es terrible! Estamos teletransportando de vuelta a todos nuestros agentes y a algunas de sus familias. No tenemos ni idea de lo que va a hacer a continuación el rey. ¡Todo es un caos absoluto!"
+      - source: scene_text_2
+        paragraph: 34
+        text: |-
+          "¿Pero por qué?", pregunta Breynan. "¿Qué podría haber llevado al rey a tomar unas medidas tan drásticas?"
+
+          "¡Oh, pues yo te lo diré!", dice el operador del teletransportador, mientras aporrea unos cuantos botones y ahora un nuevo grupo está siendo teletransportado dentro de la sala. "¡El rey anunció sus razones en cuanto inició el cierre total! Dijo que su hermano había muerto en Thilias y que los culpables se esconden en esta misma ciudad ahora mismo. ¡Esa es la razón de todo este cierre! ¡Para que la guardia de la ciudad pueda registrar todas las casas y ver si alguien está ocultando a los culpables!"
+
+          "¿El hermano del rey fue asesinado en Thilias?", pregunto, fingiendo ignorancia. "Pero... ¿cómo se enteró de eso?"
+
+          "¿De verdad hace falta que lo preguntes?", dice el operador del teletransportador. "Solo hay una persona que representa al rey en Thilias y que habría estado allí para presenciar los acontecimientos."
+
+          "Quieres decir..."
+
+          "Sí", dice el operador del teletransportador. "Ha vuelto el embajador de Thilias."
+    choices:
+      - position: 1
+        text: Siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: b3_ch05a_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"
   - name: b3_ch04b_credits
     texts:
       - source: scene_text
-        paragraph: 40
-        text: |
-          Traducción en progreso.
+        paragraph: 60
+        text: |-
+          El quinto capítulo del Libro 3 ya está disponible.
 
-          El texto en Español para el Libro 3, Capítulo 4 B todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-chapter_effects: []
+          Pulsa el botón de abajo para continuar.
+    choices:
+      - position: 1
+        text: Continuar al siguiente capítulo
+        effects:
+          - set:
+              next_chapter_crash: 1
+              current_scene: b3_ch05a_intro
+              chapter_save: 1
+              checkpoint_rich: 1
+              storyboard_controls: Jump to frame "Save load game"

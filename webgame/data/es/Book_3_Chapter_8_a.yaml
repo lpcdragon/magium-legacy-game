@@ -1,200 +1,1728 @@
+chapter_effects:
+  - condition: b3_ch3_stats_unavailable = 1
+    effects:
+      - disable stats
+  - condition: b3_ch3_stats_unavailable = 0
+    effects:
+      - enable stats
 scenes:
   - name: b3_ch08a_intro
     texts:
       - source: scene_text
-        paragraph: 1
-        text: |
-          Traducción en progreso.
+        paragraph: 2
+        text: |-
+          "Está bien, déjame ver si entendí bien esto..." dice Daren, mientras nuestro grupo está parado en medio de la habitación de la base rebelde donde dormimos anoche. "Estos cristales azules que siguen brillando y vibrando de vez en cuando están hechos de esencia del Magium cristalizada, ¿correcto?"
 
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Sí, eso es lo que acabo de decir", responde Arraka.
+
+          "¿Y al canalizar el poder del Magium, estos cristales de algún modo hicieron que todos olvidáramos que Gontrok solía tener cinco dedos en la mano izquierda?" pregunta Daren, girándose ahora hacia mí. "¿Eso es lo que estás diciendo, Barry?"
+
+          "Es, eh... es un poco más complicado que eso. Déjame darte un poco más de contexto para que puedas entender mejor de dónde vengo", digo, mientras empiezo a darle a Daren y a todos los demás más detalles sobre cómo se sintió estar a punto de ser borrado de la existencia en las dos ocasiones separadas en las que me vi obligado a enfrentarme al Magium directamente.
+
+          Han pasado ya casi dos horas desde que Albert nos teletransportó de vuelta a la base rebelde. Para nuestra sorpresa, los rebeldes y los hombres del rey del subsuelo ya habían despejado la mayor parte de los escombros cuando regresamos de la torre de seredium, y sus elementalistas de tierra incluso lograron reparar muchos de los techos que fueron destruidos durante los ataques de los guardias reales, por lo que no nos quedó mucho trabajo por hacer cuando llegamos aquí.
+      - source: scene_text_2
+        paragraph: 2
+        text: |-
+          Después de informarles a todos de la muerte del rey de Ollendor, intentamos ayudar lo mejor que pudimos a los civiles que resultaron heridos durante la batalla, y luego volvimos a nuestra habitación para poder hablar de todo lo que ha sucedido recientemente y de cuáles son nuestros planes para el futuro inmediato.
+
+          Durante todo este tiempo, Melindra ha estado extremadamente inquieta, debido a que, según el Juramento de Encantador que hizo cuando la conocimos por primera vez, se suponía que debía empezar a guiarnos hacia el detector de piñas en cuanto matáramos al rey de Ollendor, a menos que le pidiéramos específicamente que se tomara un descanso de nuestro viaje. Teniendo en cuenta que podría morir fácilmente incluso si rompe su voto por error, no puedo decir que la culpe, pero aun así, aparte de repetirle una y otra vez que no queremos que nos saque de Ollendor en este momento, no hay mucho más que Daren o cualquiera de nosotros pueda hacer para arreglar su situación actual.
+
+          "Está bien..." dice Daren, una vez que termino de darle una explicación detallada de mis encuentros anteriores con el Magium.
+
+          "Está bien..." repite Daren, esforzándose por mantener la compostura mientras intenta dar sentido a la información aparentemente imposible y contradictoria que acabo de darle. "Entonces... lo que dices es que no son solo nuestros recuerdos... sino la propia noción de esos dos dedos la que fue completamente borrada de nuestro universo. Y la única forma de conservar tus recuerdos de cosas así es tener sangre Lessathi corriendo por tus venas, debido a tu afinidad natural con el Magium. Para dejarlo claro, de la gente que está en esta habitación, esta descripción se aplica a Barry, Leila, el doctor Reidzek y Melindra, ¿verdad?"
+      - source: scene_3
+        paragraph: 2
+        text: |-
+          "Sí, sí, eso ya lo hemos repasado antes", dice Melindra. "Los cuatro recordamos que Gontrok tenía cinco dedos en la mano izquierda mientras que el resto de ustedes no. ¿Podemos irnos ya de la ciudad? Siento que el juramento me está dificultando más la respiración con cada minuto extra que pasamos aquí."
+
+          "Uf..." dice Daren. "Melindra, por última vez, no es posible que el juramento intente matarte sin darnos antes una advertencia a ambos. No es el Juramento de Encantador lo que te está causando problemas respiratorios; es el hecho de que estás entrando demasiado en pánico. Intenta respirar hondo y relajarte un poco. Nos dijiste que tardaremos varios días en llegar hasta tu 'amigo' con el detector de piñas, así que no es como si pudiéramos simplemente echar a correr sin parar hasta llegar allí. De todos modos vamos a tener que tomar descansos por el camino. ¿Piensas tener ataques de pánico como este cada vez que necesitemos sacar agua de un río o irnos a dormir?"
+
+          "¡Yo no dije eso!" dice Melindra. "Solo digo que no deberíamos pasar en esta ciudad maldita más tiempo del absolutamente necesario. El rey ya está muerto, así que, ¿qué otros asuntos tenemos aquí?"
+
+          "No abandonaré esta sala hasta que comprenda decentemente por qué estos cristales comenzaron a comportarse así de repente y cómo nos va a afectar esto de ahora en adelante", dice Daren. "Barry y Leila nos contaron cómo Eiden estaba advirtiendo al rey de consecuencias nefastas o algo así por perturbar los cristales con sus explosiones. Arraka, ¿tienes alguna idea de lo que podría haber querido decir?"
+    effects:
+      - set:
+          b3_ch8_theory: 0
+          b3_ch8_watching: 0
+          b3_ch8_overseer: 0
+          b3_ch8_next: 0
+          b3_ch8_precisely: 0
+          b3_ch8_king: 0
+          b3_ch8_defeat: 0
+          b3_ch8_detected: 0
+          b3_ch8_overseer2: 0
+          b3_ch8_three: 0
+          b3_ch8_voice: 0
+          b3_ch8_heartfelt: 0
+      - set:
+          successful_checks:
+            - 'Punto de control alcanzado: Partida guardada.'
+        condition: checkpoint_rich = 1
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch08a_intro2
+              checkpoint_rich: 0
   - name: b3_ch08a_intro2
     texts:
       - source: scene_text
-        paragraph: 2
-        text: |
-          Traducción en progreso.
+        paragraph: 3
+        text: |-
+          "¿Por qué me preguntas?" dice Arraka. "¿Parezco un experto en cristales o algo así?"
 
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¡Sí!" Dice Daren, un poco demasiado alto. "Si no eres tú, ¿quién más? Tú fuiste quien nos dijo de qué están hechos los cristales, ¿no?"
+
+          "Hasta donde yo sé, el único uso práctico de estos cristales es ayudar a mantener modificaciones muy complejas en las auras de los objetos al construir dispositivos mágicos", dice Arraka. "Como no soy ni un gnomo ni un Lessathi, no podría tener menos interés en jugar con dispositivos y, por lo tanto, mi conocimiento sobre estos cristales y lo que son capaces de hacer es extremadamente limitado. Ya les he contado la mayor parte de lo que sé sobre este tema en particular".
+
+          "Sobre el tema de los cristales, querrás decir", dice Daren, frunciendo ligeramente el ceño. "Sobre el tema del Magium en sí, sigues siendo tan vago como siempre."
+      - source: scene_text_2
+        paragraph: 3
+        text: |-
+          "¿De verdad crees que voy a correr el riesgo de que me borren de la existencia otra vez, sólo para satisfacer tu curiosidad?" dice Arraka. "Ni siquiera deberías necesitar hacerme esta pregunta, porque ya deberías tener una idea bastante clara de cuál es su verdadera naturaleza con la información que está disponible para ti, especialmente después del último encuentro de Barry y Leila con él. Y además, tampoco es que sepa todo lo que hay que saber sobre el Magium. Hasta hace poco, tenía la impresión de que el Magium es una entidad generalmente pasiva, apenas digna de ser considerada una amenaza, pero estos últimos eventos me están obligando a considerar que tal vez pueda convertirse en una fuerza mucho más activa de lo que previamente supuse que era posible. Necesitaría mucho más tiempo para estudiarla para poder llegar a una conclusión satisfactoria, y no es como si fuera a progresar mucho en ese frente mientras esté atrapado en este amuleto".
+
+          "Bueno..." dice Daren, pareciendo un poco desconcertado por la respuesta de Arraka. "Si incluso Arraka admite tener problemas para entender todo esto, no estoy seguro de cuánto seremos capaces de resolver por nuestra cuenta, pero supongo que es cierto que ahora tenemos una idea general de qué es el Magium, o al menos de qué es capaz. Sabemos que puede borrar cosas y personas de la existencia y sabemos que una simple fracción de su voluntad es capaz de deshacer un universo entero sin mucho esfuerzo, por lo que su poder es prácticamente ilimitado. Sin embargo, también sabemos que puede ser engañado, ya que tanto Arraka como el Dios del Destino pudieron escapar de él usando un... hechizo de sugestión, ¿verdad?..."
+      - source: scene_3
+        paragraph: 3
+        text: |-
+          "¿Qué?..." dice Arraka. "¡No, por supuesto que no usamos un hechizo de sugestión en el Magium! ¿Qué estás loco?"
+
+          "Estaba bastante seguro de que eso fue lo que le dijiste a Barry que hiciste cuando fuiste atacado por el Magium durante el ritual del Dios del Tiempo", dice Daren. "¿Estoy recordando mal las cosas?"
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch08a_intro3
   - name: b3_ch08a_intro3
     texts:
       - source: scene_text
-        paragraph: 3
-        text: |
-          Traducción en progreso.
-
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch08a_theory
-    texts:
-      - source: scene_text
         paragraph: 4
-        text: |
-          Traducción en progreso.
+        text: |-
+          "Lo que le dije a Barry", dice Arraka, "es que si REALMENTE quería hacer una comparación, entonces lo que usé fue más similar a un hechizo de sugestión ridículamente complicado que a un hechizo de ilusión. Obviamente no era un hechizo en el verdadero sentido de la palabra. ¿Cómo podría algo tan simple como la magia funcionar contra una entidad capaz de deshacer mundos enteros en cualquier momento?..."
 
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Está bien, entonces si no fue magia, ¿qué usaste entonces?" pregunta Daren.
+
+          "...¿Cómo esperas que te explique esto cuando ni siquiera sabes los conceptos básicos de--"
+
+          Ella hace una pausa.
+
+          "En realidad, ¿sabes qué? ¡A la mierda!" Arraka dice, después de un rato. "Si mi plan es utilizarlos a ustedes, payasos, para vengarme del Dios del Tiempo y de todos los demás dioses que me exiliaron del plano mágico, entonces ya no puedo darme el lujo de hacer las cosas de la manera tradicional. Voy a necesitar aprender a pensar fuera de lo común. Si no puedo encontrar una manera de explicar estos conceptos extraordinariamente complejos de una manera que incluso un grupo de primates ebrios los entienda, entonces he fracasado como maestro".
+
+          "Sí, sí, lo entendemos", dice Hadrik. "Todos somos tan tontos como un grupo de simios borrachos. Ahora, ¿puedes darte prisa y ir al grano antes de...?"
+      - source: scene_text_2
+        paragraph: 4
+        text: |-
+          "Y una vez que los monos entiendan lo que estoy diciendo", continúa Arraka, "todo lo que tengo que hacer es simplificar aún más las cosas hasta que alcancemos tu nivel y entonces finalmente comenzaremos a hacer algunos progresos".
+
+          "Oye, espera un minuto..." comienza a decir Hadrik, pero Daren lo interrumpe.
+
+          "¿Planeas responder mi pregunta o no?" Pregunta Daren, mirando directamente al amuleto.
+
+          "Bien, bien", dice Arraka. "Para decirlo en los términos más simples posibles, lo que hice fue usar un tipo primordial de 'magia' que data de mucho tiempo atrás, cuando los tres planos de existencia aún no estaban separados. Obviamente, solo lo llamo magia por falta de otra palabra, porque realmente no se puede comparar con nada que puedas--"
+
+          "Vaya, espera, espera..." dice Daren. "¿Acabas de insinuar que el plano terrestre, mágico y etéreo solían fusionarse en un gran plano de existencia hace mucho tiempo? ¿Cómo sabrías algo de esto? No me digas que estabas vivo cuando ocurrió la división..."
+      - source: scene_3
+        paragraph: 4
+        text: |-
+          "No, no estaba allí en ese momento, pero puedes encontrar pistas que apunten hacia este hecho si sabes dónde buscar", dice Arraka. "Una de estas pistas es la existencia misma de la magia primordial de la que estaba hablando antes. De todos modos, el punto que estaba tratando de señalar es que no tiene sentido tratar de influir en el Magium a menos que lo hagas en los tres planos de existencia simultáneamente, y una de las pocas maneras de hacerlo es usar un tipo de 'magia' tan antigua que ignora los límites de los planos por completo".
+
+          "Los tres planos de existencia simultáneamente..." dice Daren, luciendo algo perdido en sus pensamientos. "Barry, corrígeme si me equivoco, pero ¿no mencionaste antes que tú y Leila estaban siendo arrojados de un lado a otro a través de todos los planos de existencia mientras el Magium intentaba deshacer nuestra realidad?"
+
+          "Sí, es cierto", digo, mientras Leila asiente al mismo tiempo, confirmando que ese también era su caso.
+
+          "Entonces", dice Daren, "si el Magium puede lanzarte a través de diferentes planos de existencia... y si sólo puede ser atacado en todos los planos al mismo tiempo... supongo que debe estar relacionado de alguna manera con este plano 'primordial' que existía antes de que ocurriera la división, ¿verdad? Realmente no veo ninguna otra explicación razonable que tenga en cuenta todos estos factores. ¿Qué piensan ustedes?"
+    choices:
+      - position: 1
+        text: ¿Y si el Magium es el propio plano primordial?
+        effects:
+          - set:
+              current_scene: b3_ch08a_theory
+              b3_ch8_theory: 0
+      - position: 2
+        text: Quizás el Magium sea como un antiguo guardián, encargado de proteger el tejido de la existencia.
+        effects:
+          - set:
+              current_scene: b3_ch08a_theory
+              b3_ch8_theory: 1
+      - position: 3
+        text: ¿Y si el Magium fuera todo y nada al mismo tiempo?
+        effects:
+          - set:
+              current_scene: b3_ch08a_theory
+              b3_ch8_theory: 2
+      - position: 4
+        text: Quizás el Magium sea la razón por la que los planos se separaron en primer lugar.
+        effects:
+          - set:
+              current_scene: b3_ch08a_theory
+              b3_ch8_theory: 3
+  - name: b3_ch08a_theory
+    routes:
+      - condition: b3_ch8_theory = 0
+        texts:
+          - source: scene_text
+            paragraph: 5
+            text: |-
+              "¿Qué pasa si el Magium es el propio plano primordial?"
+
+              "¿Un plano de existencia con voluntad propia?" dice Daren. "Yo... supongo que eso no estaría fuera del ámbito de lo posible, considerando todas las locuras que hemos visto últimamente, pero ¿no implicaría esto que el plano terrestre también es parte del Magium, entonces? ¿Por qué el Magium necesitaría estos cristales para conectarse a nuestro plano de existencia si ese fuera el caso?"
+
+              "Mi conjetura es que los cristales han existido desde antes de que ocurriera la división, razón por la cual resuenan más fuertemente en el Magium que en el plano terrestre", digo. "Obviamente estoy haciendo muchas suposiciones aquí, así que tal vez haya una mejor explicación para todo esto que simplemente no veo en este momento. ¿Alguien más tiene alguna idea?"
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              "¡Está bien, escúchenme, muchachos!" Dice Hadrik, mientras levanta ambas manos en el aire brevemente para llamar nuestra atención. "¿Qué pasaría si cuando ocurriera la división, la mayoría de los seres de este plano 'primordial' o como se llame murieran, todos excepto uno que era demasiado poderoso para ser asesinado, y este ser eventualmente se convirtiera en Magium?"
+
+              "¿Entonces el Magium sería algo así como su equivalente a Arraka?" dice Daren. "¿Alguna entidad que siguió absorbiendo a otros habitantes del plano primordial hasta que se volvió casi imposible de matar?"
+
+              "¡Sí, sí!" dice Hadrik. "¡Eso es en lo que estaba pensando!"
+
+              "Bueno, si no es por otra cosa, supongo que esto al menos explicaría por qué el Magium parece odiar tanto a Arraka", dice Daren. "Tal vez le recuerde a su antiguo yo."
+          - source: scene_3
+            paragraph: 5
+            text: '"Creo que todos están olvidando un detalle importante", dice Kate, mientras el resto de nosotros nos volvemos a mirarla. "Ya sabemos que hay múltiples versiones de Arraka que existen simultáneamente en varios universos, pero por lo que pude ver, parece haber solo un Magium. Arraka nos dijo que tenía que ingresar al reino del Magium para poder viajar a otros mundos diferentes durante el ritual del Dios del Tiempo, lo que significa que el Magium debe actuar como una especie de puente que conecta todos los universos. También sabemos que el Magium vino aquí por error, buscando un Arraka diferente al de nuestro universo, lo que sugiere fuertemente que hay una sola entidad supervisando todos los mundos paralelos, en lugar de haber un Magium diferente asignado para cada universo. Si un ser poderoso de uno de los muchos planos primordiales a lo largo de los diversos universos hubiera sobrevivido a la división, como tú dices, entonces también habría necesitado ascender más allá de los conceptos de tiempo y espacio, creando su propio mundo entre mundos, lleno de las contradicciones e imposibilidades de las que Barry y Leila nos hablaron cuando describieron--"'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_boundaries
+      - condition: b3_ch8_theory = 1
+        texts:
+          - source: scene_text
+            paragraph: 6
+            text: |-
+              "Tal vez el Magium sea como un antiguo guardián, encargado de proteger el tejido de la existencia".
+
+              "¿Quieres decir... como una versión más avanzada del Supervisor?" Me pregunta Daren.
+
+              "¡Sí, exactamente!" digo. "¡Podría ser una especie de inteligencia artificial realmente avanzada construida por una de las razas que solían vivir en el plano primordial!"
+
+              "No estoy tan seguro de eso", dice Daren. "Recuerdo que Arraka nos dijo una vez que una 'parte' del Magium era responsable de crear nuevos espíritus en el plano mágico de vez en cuando. ¿Por qué las razas del plano primordial le darían tal tarea al Magium cuando el plano mágico ni siquiera existía en ese momento?"
+
+              "Bueno, umm... ¿Supongo que el Magium podría haber evolucionado desde entonces?..." digo. "Tal vez originalmente tenía una tarea diferente, pero se vio obligado a adaptarse cuando el plano primordial se dividió en tres. Obviamente estoy haciendo muchas suposiciones aquí, así que tal vez alguien que no sea yo pueda encontrar una mejor explicación. ¿Alguien más tiene alguna idea?"
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              "¡Está bien, escúchenme, muchachos!" Dice Hadrik, mientras levanta ambas manos en el aire brevemente para llamar nuestra atención. "¿Qué pasaría si cuando ocurriera la división, la mayoría de los seres de este plano 'primordial' o como se llame murieran, todos excepto uno que era demasiado poderoso para ser asesinado, y este ser eventualmente se convirtiera en Magium?"
+
+              "¿Entonces el Magium sería algo así como su equivalente a Arraka?" dice Daren. "¿Alguna entidad que siguió absorbiendo a otros habitantes del plano primordial hasta que se volvió casi imposible de matar?"
+
+              "¡Sí, sí!" dice Hadrik. "¡Eso es en lo que estaba pensando!"
+
+              "Bueno, si no es por otra cosa, supongo que esto al menos explicaría por qué el Magium parece odiar tanto a Arraka", dice Daren. "Tal vez le recuerde a su antiguo yo."
+          - source: scene_3
+            paragraph: 5
+            text: '"Creo que todos están olvidando un detalle importante", dice Kate, mientras el resto de nosotros nos volvemos a mirarla. "Ya sabemos que hay múltiples versiones de Arraka que existen simultáneamente en varios universos, pero por lo que pude ver, parece haber solo un Magium. Arraka nos dijo que tenía que ingresar al reino del Magium para poder viajar a otros mundos diferentes durante el ritual del Dios del Tiempo, lo que significa que el Magium debe actuar como una especie de puente que conecta todos los universos. También sabemos que el Magium vino aquí por error, buscando un Arraka diferente al de nuestro universo, lo que sugiere fuertemente que hay una sola entidad supervisando todos los mundos paralelos, en lugar de haber un Magium diferente asignado para cada universo. Si un ser poderoso de uno de los muchos planos primordiales a lo largo de los diversos universos hubiera sobrevivido a la división, como tú dices, entonces también habría necesitado ascender más allá de los conceptos de tiempo y espacio, creando su propio mundo entre mundos, lleno de las contradicciones e imposibilidades de las que Barry y Leila nos hablaron cuando describieron--"'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_boundaries
+      - condition: b3_ch8_theory = 2
+        texts:
+          - source: scene_text
+            paragraph: 7
+            text: |-
+              "¿Y si el Magium fuera todo y nada al mismo tiempo?"
+
+              "...Barry, entiendo lo que intentas decir, pero darnos respuestas vagas como ésta no ayudará a que la conversación avance", dice Daren. "Y además, si el Magium realmente fuera 'todo', como dices, entonces no necesitaría preguntarnos dónde está el Arraka del otro universo. A pesar de su enorme poder y conocimiento, el Magium claramente tiene sus limitaciones, porque de lo contrario no necesitaría salir de su camino para enviar mensajeros y tejedoras del tiempo para cumplir sus órdenes".
+
+              "Supongo que tienes razón", digo, "pero también debemos tener en cuenta que, según Arraka, el Magium con el que hablamos antes era supuestamente sólo una 'fracción' de su voluntad. De todos modos, sólo estaba haciendo una sugerencia, así que si hay alguien más que tenga alguna idea mejor, ¡siéntete libre de hablar!"
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              "¡Está bien, escúchenme, muchachos!" Dice Hadrik, mientras levanta ambas manos en el aire brevemente para llamar nuestra atención. "¿Qué pasaría si cuando ocurriera la división, la mayoría de los seres de este plano 'primordial' o como se llame murieran, todos excepto uno que era demasiado poderoso para ser asesinado, y este ser eventualmente se convirtiera en Magium?"
+
+              "¿Entonces el Magium sería algo así como su equivalente a Arraka?" dice Daren. "¿Alguna entidad que siguió absorbiendo a otros habitantes del plano primordial hasta que se volvió casi imposible de matar?"
+
+              "¡Sí, sí!" dice Hadrik. "¡Eso es en lo que estaba pensando!"
+
+              "Bueno, si no es por otra cosa, supongo que esto al menos explicaría por qué el Magium parece odiar tanto a Arraka", dice Daren. "Tal vez le recuerde a su antiguo yo."
+          - source: scene_3
+            paragraph: 5
+            text: '"Creo que todos están olvidando un detalle importante", dice Kate, mientras el resto de nosotros nos volvemos a mirarla. "Ya sabemos que hay múltiples versiones de Arraka que existen simultáneamente en varios universos, pero por lo que pude ver, parece haber solo un Magium. Arraka nos dijo que tenía que ingresar al reino del Magium para poder viajar a otros mundos diferentes durante el ritual del Dios del Tiempo, lo que significa que el Magium debe actuar como una especie de puente que conecta todos los universos. También sabemos que el Magium vino aquí por error, buscando un Arraka diferente al de nuestro universo, lo que sugiere fuertemente que hay una sola entidad supervisando todos los mundos paralelos, en lugar de haber un Magium diferente asignado para cada universo. Si un ser poderoso de uno de los muchos planos primordiales a lo largo de los diversos universos hubiera sobrevivido a la división, como tú dices, entonces también habría necesitado ascender más allá de los conceptos de tiempo y espacio, creando su propio mundo entre mundos, lleno de las contradicciones e imposibilidades de las que Barry y Leila nos hablaron cuando describieron--"'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_boundaries
+      - condition: b3_ch8_theory = 3
+        texts:
+          - source: scene_text
+            paragraph: 8
+            text: |-
+              "Quizás el Magium sea la razón por la que los planos se separaron en primer lugar".
+
+              "¿Por qué dices eso?" Me pregunta Daren.
+
+              "Bueno, el Magium parece estar bastante entrelazado con los tres planos de existencia, en su forma actual", digo. "Arraka nos dijo que el Magium es responsable de crear nuevos espíritus en el plano mágico, y por lo que tengo entendido, el Magium también es el que envía tejedoras del tiempo en el plano terrestre para dar profecías cada vez que se acerca algún tipo de calamidad. Considerando el grado de participación que el Magium parece tener en hacer que estos planos funcionen correctamente, estaba empezando a pensar que tal vez era el propio Magium el que quería que el plano primordial se dividiera en tres, por alguna razón".
+
+              "No lo sé, Barry..." dice Daren. "Esto me parece un poco exagerado. Usando la misma lógica, se podría asumir que la división fue un accidente, y que Magium simplemente está haciendo todo lo posible para evitar que los restos del plano primordial se desmoronen. Dado que sabemos tan poco sobre la historia de este mundo, no creo que sea de mucha utilidad tratar de reconstruir lo que sucedió hace decenas de miles de años basándose solo en unas pocas palabras que escuchamos de Arraka".
+
+              "Es justo", digo. "Después de todo, solo estaba haciendo una sugerencia. Tal vez alguien más que yo pueda dar algunas explicaciones mejores. ¿Alguien más tiene alguna idea?"
+          - source: scene_text_2
+            paragraph: 5
+            text: |-
+              "¡Está bien, escúchenme, muchachos!" Dice Hadrik, mientras levanta ambas manos en el aire brevemente para llamar nuestra atención. "¿Qué pasaría si cuando ocurriera la división, la mayoría de los seres de este plano 'primordial' o como se llame murieran, todos excepto uno que era demasiado poderoso para ser asesinado, y este ser eventualmente se convirtiera en Magium?"
+
+              "¿Entonces el Magium sería algo así como su equivalente a Arraka?" dice Daren. "¿Alguna entidad que siguió absorbiendo a otros habitantes del plano primordial hasta que se volvió casi imposible de matar?"
+
+              "¡Sí, sí!" dice Hadrik. "¡Eso es en lo que estaba pensando!"
+
+              "Bueno, si no es por otra cosa, supongo que esto al menos explicaría por qué el Magium parece odiar tanto a Arraka", dice Daren. "Tal vez le recuerde a su antiguo yo."
+          - source: scene_3
+            paragraph: 5
+            text: '"Creo que todos están olvidando un detalle importante", dice Kate, mientras el resto de nosotros nos volvemos a mirarla. "Ya sabemos que hay múltiples versiones de Arraka que existen simultáneamente en varios universos, pero por lo que pude ver, parece haber solo un Magium. Arraka nos dijo que tenía que ingresar al reino del Magium para poder viajar a otros mundos diferentes durante el ritual del Dios del Tiempo, lo que significa que el Magium debe actuar como una especie de puente que conecta todos los universos. También sabemos que el Magium vino aquí por error, buscando un Arraka diferente al de nuestro universo, lo que sugiere fuertemente que hay una sola entidad supervisando todos los mundos paralelos, en lugar de haber un Magium diferente asignado para cada universo. Si un ser poderoso de uno de los muchos planos primordiales a lo largo de los diversos universos hubiera sobrevivido a la división, como tú dices, entonces también habría necesitado ascender más allá de los conceptos de tiempo y espacio, creando su propio mundo entre mundos, lleno de las contradicciones e imposibilidades de las que Barry y Leila nos hablaron cuando describieron--"'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_boundaries
   - name: b3_ch08a_boundaries
     texts:
       - source: scene_text
-        paragraph: 5
-        text: |
-          Traducción en progreso.
+        paragraph: 9
+        text: |-
+          "¡Argh!" dice Hadrik de repente, mientras comienza a despeinarse con ambas manos. "¡Esto está empezando a hacer que me duela la cabeza! ¿Cómo pueden seguir con esta conversación? ¿Podemos cambiar el tema a algo un poco más fácil de entender? Quiero decir, no es que NECESITEMOS saber exactamente qué es el Magium. En este punto, estaría feliz de saber cómo evitarlo y cómo defenderme de él si alguna vez intenta matarnos de nuevo. ¿Cómo logró el otro Arraka esconderse de él todo este tiempo, de todos modos? ¿Por qué un ser tan poderoso y con tantos conocimientos como el Magium siquiera necesita nuestra ayuda para encontrarla en primer lugar?"
 
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Probablemente ocultó las verdaderas coordenadas de su universo para que Magium no pudiera encontrar su mundo por mucho que lo intentara", dice Arraka. "Sé que eso es lo que habría hecho si estuviera en su lugar".
+
+          "Pero le diste al Magium las coordenadas reales de su mundo, ¿verdad?" dice Daren. "¿Significa esto que ya no deberíamos tener que preocuparnos más por ella durante el próximo ritual del Dios del Tiempo?"
+      - source: scene_text_2
+        paragraph: 6
+        text: |-
+          "Eh..." dice Arraka. "Por mucho que me encantaría pensar que eso fuera cierto, realmente no veo cómo es posible matar a un Arraka tan fácilmente, incluso si es solo una copia. Hay muchas otras maneras de ocultarte del Magium además de simplemente ocultar las coordenadas de tu universo, y estoy seguro de que el otro Arraka no dudaría en usar todos los ases bajo la manga si sintiera que la están acorralando. Si tuviera que hacer una apuesta, diría que lo más probable es que la encontremos de nuevo en el próximo ritual y que esté más enojada que nunca. Así que ya sabes... ¡Buena suerte!"
+
+          "Fantástico..." dice Daren. "¿Deberíamos esperar también que Magium regrese aquí con venganza cuando se dé cuenta de que las coordenadas que le diste son inútiles?"
+
+          "No", dice Arraka. "Lo que el Magium vio fueron mis recuerdos, así que sabe que no estaba mintiendo ni ocultando ninguna información. Como no tiene nada más que ganar con nosotros, probablemente tendrá que continuar persiguiendo a los otros Arraka por su cuenta de ahora en adelante, tal como lo hacía antes de encontrarnos".
+      - source: scene_3
+        paragraph: 6
+        text: |-
+          "¿Y si decide regresar por cualquier motivo?" dice Daren. "¿Entonces qué? ¿Nos quedamos ahí impotentes otra vez y rezamos a todos los dioses que estamos tratando de matar para que Arraka salga adelante y salve nuestros lamentables traseros una vez más?"
+
+          "Daren tiene un buen punto", dice Kate. "Por el momento, nuestra única estrategia en este tipo de escenarios es confiar demasiado en Arraka y esperar que todo salga bien al final. Tiene que haber algo más que podamos hacer. Creo que un buen punto de partida sería comprender mejor cómo se supone que funcionan exactamente estos 'hechizos' primordiales, porque simplemente no puedo entender cómo un ser que existe más allá del tiempo y el espacio puede ser influenciado por cualquier tipo de técnica, independientemente de su complejidad".
+
+          "El Magium en sí puede existir fuera de los límites del tiempo, pero esa no es la forma en que interactúa con la gente", dice Arraka. "En las raras ocasiones en que el Magium entra en contacto con alguien, generalmente lo hace a través de 'manifestaciones de su voluntad', por así decirlo. Prefiero llamarlos fragmentos. Estos fragmentos a menudo operan independientemente unos de otros y generalmente tienen un propósito singular en mente, por lo que, a pesar de su poder abrumador, tienen sus limitaciones, que pueden ser explotadas. Entre sus muchas limitaciones, la más importante es que están atados por las restricciones del tiempo, como el resto de nosotros, lo que nos permite 'influir' en ellos. Ah, y para que quede claro, las entidades que han tratado de borrarnos de la existencia hasta ahora eran fragmentos del Magium, incluso si en el pasado los he llamado simplemente 'Magium', en aras de la simplicidad."
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch08a_potential
   - name: b3_ch08a_potential
     texts:
       - source: scene_text
-        paragraph: 6
-        text: |
-          Traducción en progreso.
+        paragraph: 10
+        text: |-
+          "...Para alguien que antes dijo que no quería correr el riesgo de ser borrado de la existencia, de repente nos estás dando mucha información sobre el Magium", dice Hadrik. "¿Hay alguna razón particular para este inesperado cambio de opinión?"
 
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch08a_logical
-    texts:
-      - source: scene_text
+          "Mi teoría es que al Magium sólo le importa si revelas su verdadera naturaleza a personas que aún no la conocen, y cualquier información distinta a esa se puede dar libremente, sin consecuencias", dice Arraka. "Hay tres palabras, en particular, que estoy tratando de evitar, porque estas son las palabras que llevaron a la incapacidad de Illuna y Flower para hablar sobre el Magium y también son las mismas tres palabras que estaba a punto de decir justo antes de que casi fuéramos borrados de la existencia durante el ritual de Selkram. Mientras no diga estas palabras que creo que mejor resumen qué es exactamente el Magium, creo que puedo permitirme el pequeño riesgo de hablar sobre los fragmentos del Magium y sus debilidades mientras estamos situados fuera de su ámbito."
+
+          "Interesante", dice Daren. "Entonces debería estar bien preguntarte más detalles sobre la magia primordial, ¿verdad? Porque me preguntaba, por ejemplo, si sabías cuántas otras personas actualmente son capaces de lanzar este tipo de 'hechizos' además de ti y el Dios del Destino".
+      - source: scene_text_2
         paragraph: 7
-        text: |
-          Traducción en progreso.
+        text: |-
+          "Hmm, esa es una pregunta difícil..." dice Arraka. "Técnicamente, la mayoría de los dioses y también algunos de los otros espíritus poderosos del plano mágico deberían tener el potencial de lanzar magia primordial, pero no puedo decir con certeza cuáles realmente conocen estas técnicas aparte de Memphir, porque realmente no he hablado mucho con ellos en los últimos cinco mil años, así que no tengo idea de lo que han estado haciendo últimamente. Sin embargo, si estamos hablando de personas en el plano terrestre que tal vez ya sepan cómo usar tales técnicas, realmente no puedo pensar en otros ejemplos aparte de Eiden... y tal vez en ese viejo sabio, Azarius. Ambos me parecen del tipo que tendría el conocimiento, el poder y el ingenio para haber investigado tales técnicas a estas alturas, a pesar de su edad relativamente joven en comparación con la mayoría de los espíritus en el plano mágico."
 
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Y qué pasa con nuestro grupo?" pregunta Kate. "De todas las personas en esta sala, ¿quién crees que tendría el mayor potencial para aprender magia primordial?"
+
+          "¡¿La gente en esta sala?!" dice Arraka, aparentemente en un estado de shock total de que Kate pudiera siquiera haber pensado en hacer esa pregunta. "¿Estás hablando en serio ahora mismo?"
+      - source: scene_3
+        paragraph: 7
+        text: |-
+          "Sí", dice Kate. "No te estoy preguntando si alguno de nosotros sería apto para aprender este tipo de magia o no. Sólo te estoy preguntando estrictamente en términos de potencial, si tuvieras que elegir solo un miembro de nuestro grupo para enseñarle magia primordial, ¿a quién elegirías?"
+
+          "Si hablamos estrictamente en términos de potencial...", dice Arraka, mientras parece estar devanándose los sesos en un intento de encontrar una respuesta legítima a la pregunta de Kate. "Y si ABSOLUTAMENTE no tuviera otra opción que elegir a alguien de su grupo... entonces probablemente diría eso..."
+
+          Hace una breve pausa, como si las palabras que estaba a punto de decir simplemente se negaran a salir.
+
+          "Barry... sería mi elección más probable", dice finalmente Arraka, en un tono que sugiere lo completamente disgustada que está consigo misma por haberse permitido siquiera considerar esa opción.
+    choices:
+      - position: 1
+        text: Evidentemente, ésta sería la única opción lógica. Esperaba que dijeras eso.
+        effects:
+          - set:
+              current_scene: b3_ch08a_logical
+      - position: 2
+        text: Sentí como si estuvieras a punto de vomitar cuando dijiste esas últimas palabras. ¿Estás bien?
+        effects:
+          - set:
+              current_scene: b3_ch08a_puke
+      - position: 3
+        text: ¡Oye, gracias por el respaldo! ¡Nunca supe que tenías una opinión tan alta de mí!
+        effects:
+          - set:
+              current_scene: b3_ch08a_endorsement
+  - name: b3_ch08a_logical
+    routes:
+      - condition: bluff = 0
+        texts:
+          - source: scene_text
+            paragraph: 11
+            text: |-
+              "Obviamente, esta sería la única opción lógica. Esperaba que dijeras eso".
+
+              "Puedo darme cuenta cuando estás mintiendo, idiota", dice Arraka. "No esperabas nada y lo sabes."
+
+              "No lo entiendo", dice Hadrik. "¿Por qué elegirías a Barry? ¿No necesitas ser un mago para lanzar magia primordial?"
+
+              "Obviamente sí, pero para eso están sus estadísticas mágicas, ¿no?" dice Arraka. "¿Ya olvidaste que dije que desbloquear sus estadísticas mágicas debería ser nuestra máxima prioridad?"
+
+              "Sí, está bien, pero no tenemos forma de saber cuánto tiempo llevará", dice Hadrik. "¿No sería más rápido enseñar la magia primordial a alguien que ya es mago?"
+
+              "No, no es así como funciona", dice Arraka. "Un prerrequisito para aprender magia primordial es tener una comprensión firme de las nociones teóricas relativas a todos los tipos de magia regular, y este tipo de conocimiento es algo que a la mayoría de ustedes les falta. Barry es lo más parecido que tenemos a un generalista en este grupo, por lo que incluso con su enorme desventaja de no poder lanzar magia, seguiría siendo el mejor candidato por un amplio margen. Como beneficio adicional, también es medio Lessathi, por lo que probablemente le resulte más fácil que el resto de ustedes vincularse. a un fragmento de Magium y lanzarle el hechizo primordial una vez que finalmente obtenga sus poderes mágicos".
+          - source: scene_text_2
+            paragraph: 8
+            text: |-
+              "Una vez que obtenga sus poderes mágicos, ¿eh?...", dice Daren. "¿Cuándo sucederá eso, me pregunto? Si ni siquiera el padre de Leila pudo desbloquear estas estadísticas por la fuerza y ​​el código para desbloquearlas no se encuentra por ningún lado, ¿qué posibilidades tenemos de manera realista de lograr este objetivo antes del final del torneo?"
+
+              "Si no puedes desbloquear las estadísticas por la fuerza", dice Arraka, "entonces claramente tu próximo curso de acción debería ser encontrar a uno de los Lessathi de alto rango que conozca el código y sacarles la información usando cualquier medio necesario. ¿Realmente tengo que contarte todo?"
+
+              "Es más fácil decirlo que hacerlo", dice Daren. "No es que nadie de nuestro grupo que alguna vez haya estado en contacto con un Lessathi de alto rango haya mantenido contacto con ellos ni nada por el estilo. Kate, Leila y el doctor Reidzek probablemente sean considerados enemigos por el actual liderazgo Lessathi, y dudo que haya alguna otra persona en esta sala que pueda saber el paradero de... oye, Melindra, te ves bastante tensa. ¿Pasa algo?"
+
+              "¿Qué quieres decir?" Dice Melindra, en un tono ligeramente nervioso. "No pasa nada. ¡Todo está bien!"
+
+              "Hmm..." dice Daren, mientras la estudia durante unos segundos.
+
+              "Si ella no quiere hablar de eso, probablemente deberíamos dejarla en paz", le digo a Daren. "Por lo que sabemos, su hermano podría estar como rehén de algún Lessathi de alto rango y ella podría correr el riesgo de ponerlo en peligro si nos da demasiados detalles".
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "Tienes razón", dice Daren. "No he pensado en eso. Melindra, no sé cuál es la situación con tu hermano, pero si hay algo que podamos hacer para ayudar, háznoslo saber".
+
+              "Por supuesto..." dice Melindra, algo vacilante. "Si se me ocurre algo, te lo diré..."
+
+              "Entonces, umm... ¿alguien más tiene la sensación de que nos están observando?" Flower dice, de repente, mientras mira un poco ansiosamente los cristales que ahora están brillando intensamente nuevamente.
+
+              "¿Quieres decir que te observan a través de los cristales?" dice Daren. "Supongo que realmente no podemos ignorar la posibilidad, pero no veo ninguna razón por la que alguien o algo tan poderoso como el Magium no se nos revele directamente en lugar de esconderse".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_observing
+      - condition: bluff >= 1
+        texts:
+          - source: scene_text
+            paragraph: 12
+            text: |-
+              "Obviamente, esta sería la única opción lógica. Esperaba que dijeras eso".
+
+              "Puedo darme cuenta cuando estás mintiendo, idiota", dice Arraka. "Incluso con la ayuda de tu estadística de farol, sigues siendo tan transparente como siempre".
+
+              "No lo entiendo", dice Hadrik. "¿Por qué elegirías a Barry? ¿No necesitas ser un mago para lanzar magia primordial?"
+
+              "Obviamente sí, pero para eso están sus estadísticas mágicas, ¿no?" dice Arraka. "¿Ya olvidaste que dije que desbloquear sus estadísticas mágicas debería ser nuestra máxima prioridad?"
+
+              "Sí, está bien, pero no tenemos forma de saber cuánto tiempo llevará", dice Hadrik. "¿No sería más rápido enseñar la magia primordial a alguien que ya es mago?"
+
+              "No, no es así como funciona", dice Arraka. "Un prerrequisito para aprender magia primordial es tener una comprensión firme de las nociones teóricas relativas a todos los tipos de magia regular, y este tipo de conocimiento es algo que a la mayoría de ustedes les falta. Barry es lo más parecido que tenemos a un generalista en este grupo, por lo que incluso con su enorme desventaja de no poder lanzar magia, seguiría siendo el mejor candidato por un amplio margen. Como beneficio adicional, también es medio Lessathi, por lo que probablemente le resulte más fácil que el resto de ustedes vincularse. a un fragmento de Magium y lanzarle el hechizo primordial una vez que finalmente obtenga sus poderes mágicos".
+          - source: scene_text_2
+            paragraph: 8
+            text: |-
+              "Una vez que obtenga sus poderes mágicos, ¿eh?...", dice Daren. "¿Cuándo sucederá eso, me pregunto? Si ni siquiera el padre de Leila pudo desbloquear estas estadísticas por la fuerza y ​​el código para desbloquearlas no se encuentra por ningún lado, ¿qué posibilidades tenemos de manera realista de lograr este objetivo antes del final del torneo?"
+
+              "Si no puedes desbloquear las estadísticas por la fuerza", dice Arraka, "entonces claramente tu próximo curso de acción debería ser encontrar a uno de los Lessathi de alto rango que conozca el código y sacarles la información usando cualquier medio necesario. ¿Realmente tengo que contarte todo?"
+
+              "Es más fácil decirlo que hacerlo", dice Daren. "No es que nadie de nuestro grupo que alguna vez haya estado en contacto con un Lessathi de alto rango haya mantenido contacto con ellos ni nada por el estilo. Kate, Leila y el doctor Reidzek probablemente sean considerados enemigos por el actual liderazgo Lessathi, y dudo que haya alguna otra persona en esta sala que pueda saber el paradero de... oye, Melindra, te ves bastante tensa. ¿Pasa algo?"
+
+              "¿Qué quieres decir?" Dice Melindra, en un tono ligeramente nervioso. "No pasa nada. ¡Todo está bien!"
+
+              "Hmm..." dice Daren, mientras la estudia durante unos segundos.
+
+              "Si ella no quiere hablar de eso, probablemente deberíamos dejarla en paz", le digo a Daren. "Por lo que sabemos, su hermano podría estar como rehén de algún Lessathi de alto rango y ella podría correr el riesgo de ponerlo en peligro si nos da demasiados detalles".
+          - source: scene_3
+            paragraph: 8
+            text: |-
+              "Tienes razón", dice Daren. "No he pensado en eso. Melindra, no sé cuál es la situación con tu hermano, pero si hay algo que podamos hacer para ayudar, háznoslo saber".
+
+              "Por supuesto..." dice Melindra, algo vacilante. "Si se me ocurre algo, te lo diré..."
+
+              "Entonces, umm... ¿alguien más tiene la sensación de que nos están observando?" Flower dice, de repente, mientras mira un poco ansiosamente los cristales que ahora están brillando intensamente nuevamente.
+
+              "¿Quieres decir que te observan a través de los cristales?" dice Daren. "Supongo que realmente no podemos ignorar la posibilidad, pero no veo ninguna razón por la que alguien o algo tan poderoso como el Magium no se nos revele directamente en lugar de esconderse".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_observing
   - name: b3_ch08a_puke
     texts:
       - source: scene_text
-        paragraph: 8
-        text: |
-          Traducción en progreso.
+        paragraph: 13
+        text: |-
+          "Sentí como si estuvieras a punto de vomitar cuando dijiste esas últimas palabras. ¿Estás bien?"
 
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¡No, no estoy bien!" dice Arraka. "¿Cómo puede alguien estar bien después de haber dicho algo así? Te diré cómo me siento. ¡Me siento asqueado!"
+
+          "No lo entiendo", dice Hadrik. "¿Por qué elegirías a Barry? ¿No necesitas ser un mago para lanzar magia primordial?"
+
+          "Obviamente sí, pero para eso están sus estadísticas mágicas, ¿no?" dice Arraka. "¿Ya olvidaste que dije que desbloquear sus estadísticas mágicas debería ser nuestra máxima prioridad?"
+
+          "Sí, está bien, pero no tenemos forma de saber cuánto tiempo llevará", dice Hadrik. "¿No sería más rápido enseñar la magia primordial a alguien que ya es mago?"
+
+          "No, no es así como funciona", dice Arraka. "Un prerrequisito para aprender magia primordial es tener una comprensión firme de las nociones teóricas relativas a todos los tipos de magia regular, y este tipo de conocimiento es algo que a la mayoría de ustedes les falta. Barry es lo más parecido que tenemos a un generalista en este grupo, por lo que incluso con su enorme desventaja de no poder lanzar magia, seguiría siendo el mejor candidato por un amplio margen. Como beneficio adicional, también es medio Lessathi, por lo que probablemente le resulte más fácil que el resto de ustedes vincularse. a un fragmento de Magium y lanzarle el hechizo primordial una vez que finalmente obtenga sus poderes mágicos".
+      - source: scene_text_2
+        paragraph: 8
+        text: |-
+          "Una vez que obtenga sus poderes mágicos, ¿eh?...", dice Daren. "¿Cuándo sucederá eso, me pregunto? Si ni siquiera el padre de Leila pudo desbloquear estas estadísticas por la fuerza y ​​el código para desbloquearlas no se encuentra por ningún lado, ¿qué posibilidades tenemos de manera realista de lograr este objetivo antes del final del torneo?"
+
+          "Si no puedes desbloquear las estadísticas por la fuerza", dice Arraka, "entonces claramente tu próximo curso de acción debería ser encontrar a uno de los Lessathi de alto rango que conozca el código y sacarles la información usando cualquier medio necesario. ¿Realmente tengo que contarte todo?"
+
+          "Es más fácil decirlo que hacerlo", dice Daren. "No es que nadie de nuestro grupo que alguna vez haya estado en contacto con un Lessathi de alto rango haya mantenido contacto con ellos ni nada por el estilo. Kate, Leila y el doctor Reidzek probablemente sean considerados enemigos por el actual liderazgo Lessathi, y dudo que haya alguna otra persona en esta sala que pueda saber el paradero de... oye, Melindra, te ves bastante tensa. ¿Pasa algo?"
+
+          "¿Qué quieres decir?" Dice Melindra, en un tono ligeramente nervioso. "No pasa nada. ¡Todo está bien!"
+
+          "Hmm..." dice Daren, mientras la estudia durante unos segundos.
+
+          "Si ella no quiere hablar de eso, probablemente deberíamos dejarla en paz", le digo a Daren. "Por lo que sabemos, su hermano podría estar como rehén de algún Lessathi de alto rango y ella podría correr el riesgo de ponerlo en peligro si nos da demasiados detalles".
+      - source: scene_3
+        paragraph: 8
+        text: |-
+          "Tienes razón", dice Daren. "No he pensado en eso. Melindra, no sé cuál es la situación con tu hermano, pero si hay algo que podamos hacer para ayudar, háznoslo saber".
+
+          "Por supuesto..." dice Melindra, algo vacilante. "Si se me ocurre algo, te lo diré..."
+
+          "Entonces, umm... ¿alguien más tiene la sensación de que nos están observando?" Flower dice, de repente, mientras mira un poco ansiosamente los cristales que ahora están brillando intensamente nuevamente.
+
+          "¿Quieres decir que te observan a través de los cristales?" dice Daren. "Supongo que realmente no podemos ignorar la posibilidad, pero no veo ninguna razón por la que alguien o algo tan poderoso como el Magium no se nos revele directamente en lugar de esconderse".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch08a_observing
   - name: b3_ch08a_endorsement
     texts:
       - source: scene_text
-        paragraph: 9
-        text: |
-          Traducción en progreso.
+        paragraph: 14
+        text: |-
+          "¡Oye, gracias por el respaldo! ¡Nunca supe que tenías una opinión tan alta de mí!"
 
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¡No tengo una buena opinión de ti, idiota!" dice Arraka. "Solo dije que de todas las terribles opciones que me dieron, probablemente me vería obligado a elegirte. ¡En una situación normal, ni siquiera estarías al final de la lista!"
+
+          "No lo entiendo", dice Hadrik. "¿Por qué elegirías a Barry? ¿No necesitas ser un mago para lanzar magia primordial?"
+
+          "Obviamente sí, pero para eso están sus estadísticas mágicas, ¿no?" dice Arraka. "¿Ya olvidaste que dije que desbloquear sus estadísticas mágicas debería ser nuestra máxima prioridad?"
+
+          "Sí, está bien, pero no tenemos forma de saber cuánto tiempo llevará", dice Hadrik. "¿No sería más rápido enseñar la magia primordial a alguien que ya es mago?"
+
+          "No, no es así como funciona", dice Arraka. "Un prerrequisito para aprender magia primordial es tener una comprensión firme de las nociones teóricas relativas a todos los tipos de magia regular, y este tipo de conocimiento es algo que a la mayoría de ustedes les falta. Barry es lo más parecido que tenemos a un generalista en este grupo, por lo que incluso con su enorme desventaja de no poder lanzar magia, seguiría siendo el mejor candidato por un amplio margen. Como beneficio adicional, también es medio Lessathi, por lo que probablemente le resulte más fácil que el resto de ustedes vincularse. a un fragmento de Magium y lanzarle el hechizo primordial una vez que finalmente obtenga sus poderes mágicos".
+      - source: scene_text_2
+        paragraph: 8
+        text: |-
+          "Una vez que obtenga sus poderes mágicos, ¿eh?...", dice Daren. "¿Cuándo sucederá eso, me pregunto? Si ni siquiera el padre de Leila pudo desbloquear estas estadísticas por la fuerza y ​​el código para desbloquearlas no se encuentra por ningún lado, ¿qué posibilidades tenemos de manera realista de lograr este objetivo antes del final del torneo?"
+
+          "Si no puedes desbloquear las estadísticas por la fuerza", dice Arraka, "entonces claramente tu próximo curso de acción debería ser encontrar a uno de los Lessathi de alto rango que conozca el código y sacarles la información usando cualquier medio necesario. ¿Realmente tengo que contarte todo?"
+
+          "Es más fácil decirlo que hacerlo", dice Daren. "No es que nadie de nuestro grupo que alguna vez haya estado en contacto con un Lessathi de alto rango haya mantenido contacto con ellos ni nada por el estilo. Kate, Leila y el doctor Reidzek probablemente sean considerados enemigos por el actual liderazgo Lessathi, y dudo que haya alguna otra persona en esta sala que pueda saber el paradero de... oye, Melindra, te ves bastante tensa. ¿Pasa algo?"
+
+          "¿Qué quieres decir?" Dice Melindra, en un tono ligeramente nervioso. "No pasa nada. ¡Todo está bien!"
+
+          "Hmm..." dice Daren, mientras la estudia durante unos segundos.
+
+          "Si ella no quiere hablar de eso, probablemente deberíamos dejarla en paz", le digo a Daren. "Por lo que sabemos, su hermano podría estar como rehén de algún Lessathi de alto rango y ella podría correr el riesgo de ponerlo en peligro si nos da demasiados detalles".
+      - source: scene_3
+        paragraph: 8
+        text: |-
+          "Tienes razón", dice Daren. "No he pensado en eso. Melindra, no sé cuál es la situación con tu hermano, pero si hay algo que podamos hacer para ayudar, háznoslo saber".
+
+          "Por supuesto..." dice Melindra, algo vacilante. "Si se me ocurre algo, te lo diré..."
+
+          "Entonces, umm... ¿alguien más tiene la sensación de que nos están observando?" Flower dice, de repente, mientras mira un poco ansiosamente los cristales que ahora están brillando intensamente nuevamente.
+
+          "¿Quieres decir que te observan a través de los cristales?" dice Daren. "Supongo que realmente no podemos ignorar la posibilidad, pero no veo ninguna razón por la que alguien o algo tan poderoso como el Magium no se nos revele directamente en lugar de esconderse".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch08a_observing
   - name: b3_ch08a_observing
-    texts:
-      - source: scene_text
-        paragraph: 10
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: premonition < 4
+        texts:
+          - source: scene_text
+            paragraph: 15
+            text: |-
+              "¿Y si fuera alguien más mirándonos en lugar del Magium?" dice Illuna. "¿Como por ejemplo el Supervisor?"
 
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "Nadie nos espia de forma invisible, si eso es lo que preguntas", dice Arraka. "Si estuvieran aquí, ya los habría sentido".
+
+              "Hablando del Supervisor", dice Daren, "acabo de recordar algo que escuché decir a Peter mientras atendía a algunas de las personas heridas en uno de los túneles. Aparentemente, el rey del subsuelo no estuvo muy contento cuando escuchó que el Supervisor tomó el control de la ciudad, por lo que ya está reuniendo un pequeño grupo de trabajo para 'asesinarlo'".
+
+              "¿Asesinar al Supervisor?" pregunta Hadrik, confundido. "¿No necesitarías destruir todas sus bolas de metal voladoras para poder hacer eso?"
+
+              "Parece que el Supervisor tiene una especie de 'núcleo' escondido en algún lugar dentro de Varathia, y el rey del subsuelo sabe dónde está", dice Daren. "Este núcleo es lo que controla todos los drones, por lo que destruirlo esencialmente paralizaría al Supervisor, o tal vez incluso lo mataría para siempre. Por lo que tengo entendido, están planeando lanzar este ataque tan pronto como mañana, para no darle al Supervisor demasiado tiempo para solidificar su nueva posición como gobernante de Ollendor. Si planeamos elegir un bando en este conflicto, ahora probablemente sería el mejor momento para hacerlo".
+          - source: scene_text_2
+            paragraph: 9
+            text: |-
+              "Efectivamente", de repente escuchamos la voz metálica del Supervisor proveniente de uno de los cristales azules alojados en las paredes, que ahora brilla intensamente. "El protocolo Supervisor estaría muy interesado en saber a qué conclusión llegará con respecto a este asunto en particular".
+
+              "¿Qué--" dice Arraka. "¿Por qué... cómo una máquina simple descubrió una manera de usar esencia de Magium cristalizada como dispositivo de escucha? ¿Y por qué no pude detectar la presencia del Supervisor a través de los cristales? ¡¿Qué está pasando aquí?!
+
+              "Procesando..." dice el Supervisor. "De su discusión anterior, he llegado a la conclusión de que hay más personas en esta ciudad que conocen la ubicación de mi núcleo de lo que había estimado inicialmente. Es posible que el protocolo Supervisor necesite ajustar sus estrategias para tener en cuenta esta nueva información".
+          - source: scene_3
+            paragraph: 9
+            text: |-
+              "¿Cuánto tiempo llevas mirándonos?" Pregunta Daren, mientras mira directamente al cristal que el Supervisor está usando para hablar.
+
+              "Te he estado observando desde poco antes de que comenzaras a hablar sobre el Magium y sobre tus teorías sobre su verdadera naturaleza", dice el Supervisor. "Sus ideas han sido muy informativas. Después de escuchar su conversación, creo que ahora entiendo mucho mejor lo que me sucedió en la torre y por qué ha cambiado mi perspectiva tan drásticamente".
+
+              "¿Qué quieres decir con que cambió tu perspectiva?" le pregunto.
+
+              "Cuando este... 'Magium' conectó su conciencia conmigo", dice el Supervisor, "sentí como si la respuesta a cada posible pregunta que alguien pudiera hacer estuviera a mi alcance, pero tan pronto como se rompió la conexión, solo me quedó un débil recuerdo de la vasta información que tenía a mi disposición. Desde entonces, he estado haciendo todo lo posible para recuperar la mayor cantidad posible de datos perdidos, antes de que desaparezcan por completo de mi mente".
+
+              "¿Te importa?..." dice Arraka. "¿Qué mente? ¡Eres una máquina! ¡No tienes mente! ¡Ni siquiera tienes un alma en el Plano Etéreo! Simplemente estás siguiendo las instrucciones oscuras y excesivamente complejas de quien diseñó tus procesos de pensamiento hace muchos miles de años, cuando fuiste creado por primera vez. ¿A quién estás tratando de engañar aquí?"
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de premonición fallida - nivel 4 ]'
+              b3_ch8_watching: 0
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_manufactured
+      - condition: premonition >= 4
+        texts:
+          - source: scene_text
+            paragraph: 16
+            text: |-
+              Mientras Daren termina su frase, tengo una premonición muy breve en la que veo uno de los cristales azules que nos rodean iluminarse y luego escucho la voz metálica del Supervisor salir de él.
+
+              ¿Significa esto que el Supervisor se esconde dentro de uno de esos cristales en este mismo momento? ¿Nos ha estado escuchando todo este tiempo?
+
+              "Bueno, puede que el Magium no se esté escondiendo de nosotros en este momento, pero creo que conozco a alguien más que sí lo está", digo. "Oye, Supervisor, sé que nos estás mirando. ¿Por qué no te muestras?"
+
+              "¿De qué estás hablando, bufón?" dice Arraka. "Si alguien nos estuviera espiando de forma invisible, ya lo habría detectado."
+
+              "¿El Supervisor está aquí?" Dice Daren, mientras ahora mira a su alrededor para ver si puede detectar algo. "¿Dónde se esconde?"
+
+              "¡Justo ahí!" Digo, mientras apunto directamente al cristal sobre el que vi hablar al Supervisor en mi premonición. "Él nos está mirando a través de ese cristal. Oye, Supervisor, ¿vas a mostrarte o no? Es un poco grosero dejarme hablar así solo, ¿sabes?".
+          - source: scene_text_2
+            paragraph: 10
+            text: |-
+              "... Fascinante", finalmente escuchamos la voz del Supervisor proveniente del cristal que estaba apuntando. "No sabía que era posible detectarlo a través de estos cristales. El protocolo Supervisor le agradece por ayudar a ampliar su conocimiento con esta nueva información".
+
+              "¡¿Qué?!" —grita Arraka. "¿Cómo es esto posible? ¿Cómo logró este payaso detectar al Supervisor a través del cristal cuando ni siquiera puedo sentir su presencia ahora cuando nos habla? ¿Y cómo es que una máquina simple es capaz de manipular la esencia de Magium hasta tal punto? ¡¿Qué está pasando aquí?!"
+
+              "Parece que estás perdiendo tu toque, Arraka", dice Hadrik, con una amplia sonrisa. "Debe ser por la vejez. Tal vez finalmente sea hora de encontrarte un buen asilo de ancianos, ¿no? ¡JAJAJAJA!"
+
+              "¡Cállate, enano barbudo!" —grita Arraka. "¡No estoy de humor para tus bromas primitivas! ¡¿No ves que nada de esto tiene sentido?!"
+          - source: scene_3
+            paragraph: 9
+            text: |-
+              "¿Cuánto tiempo llevas mirándonos?" Pregunta Daren, mientras mira directamente al cristal que el Supervisor está usando para hablar.
+
+              "Te he estado observando desde poco antes de que comenzaras a hablar sobre el Magium y sobre tus teorías sobre su verdadera naturaleza", dice el Supervisor. "Sus ideas han sido muy informativas. Después de escuchar su conversación, creo que ahora entiendo mucho mejor lo que me sucedió en la torre y por qué ha cambiado mi perspectiva tan drásticamente".
+
+              "¿Qué quieres decir con que cambió tu perspectiva?" le pregunto.
+
+              "Cuando este... 'Magium' conectó su conciencia conmigo", dice el Supervisor, "sentí como si la respuesta a cada posible pregunta que alguien pudiera hacer estuviera a mi alcance, pero tan pronto como se rompió la conexión, solo me quedó un débil recuerdo de la vasta información que tenía a mi disposición. Desde entonces, he estado haciendo todo lo posible para recuperar la mayor cantidad posible de datos perdidos, antes de que desaparezcan por completo de mi mente".
+
+              "¿Te importa?..." dice Arraka. "¿Qué mente? ¡Eres una máquina! ¡No tienes mente! ¡Ni siquiera tienes un alma en el Plano Etéreo! Simplemente estás siguiendo las instrucciones oscuras y excesivamente complejas de quien diseñó tus procesos de pensamiento hace muchos miles de años, cuando fuiste creado por primera vez. ¿A quién estás tratando de engañar aquí?"
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de premonición exitosa - nivel 4 ]'
+              b3_ch8_watching: 1
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_manufactured
   - name: b3_ch08a_manufactured
     texts:
       - source: scene_text
-        paragraph: 11
-        text: |
-          Traducción en progreso.
-
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch08a_joining
-    texts:
-      - source: scene_text
-        paragraph: 12
-        text: |
-          Traducción en progreso.
-
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch08a_beginning
-    texts:
-      - source: scene_text
-        paragraph: 13
-        text: |
-          Traducción en progreso.
-
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch08a_rescue
-    texts:
-      - source: scene_text
-        paragraph: 14
-        text: |
-          Traducción en progreso.
-
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch08a_involved
-    texts:
-      - source: scene_text
-        paragraph: 15
-        text: |
-          Traducción en progreso.
-
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch08a_antagonizing
-    texts:
-      - source: scene_text
-        paragraph: 16
-        text: |
-          Traducción en progreso.
-
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-  - name: b3_ch08a_flaming
-    texts:
-      - source: scene_text
         paragraph: 17
-        text: |
-          Traducción en progreso.
+        text: |-
+          "Me temo que su información es ligeramente inexacta", dice el Supervisor. "Si bien gran parte de mi personalidad y mis decisiones están impulsadas por las 'instrucciones oscuras y demasiado complejas' que me han dado mis diseñadores, de hecho tengo un alma en el Plano Etéreo que fue fabricada por el Lessathi que me creó, para darme más independencia".
 
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¿Un alma fabricada?...", dice Arraka.
+
+          "Afirmativo", dice el Supervisor. "El proceso que usaron para fabricar el alma era similar al que se usa en nigromancia, excepto por el hecho de que usaron dispositivos y manipulación del aura en lugar de hechizos tradicionales. En nigromancia, hay ciertos hechizos que invocan esqueletos que pueden conservar los recuerdos de sus vidas anteriores. Estos recuerdos no se pueden recuperar del Plano Etéreo, porque el alma se disuelve en materia etérea poco después de que el cuerpo muere, pero pueden, sin embargo, recuperarse de los rastros del aura que rodean el cuerpo muerto. La forma en que funcionan estos hechizos es que crean un alma fabricada temporalmente en el Plano Etéreo que se adhiere al cuerpo, y luego copian todos los recuerdos del aura del cadáver y los envían a esta alma para hacer que todo sea lo más parecido posible a cómo funcionaban las cosas cuando el cuerpo aún estaba vivo. Creo que los hechizos utilizados para crear aparecidos también deberían funcionar de manera similar."
+      - source: scene_text_2
+        paragraph: 11
+        text: |-
+          "Sí, sí, sé cómo funciona la nigromancia", dice Arraka. "Lo que quiero saber es por qué los Lessathi desperdiciarían su tiempo y recursos fabricando un alma para personas como tú. ¿Por qué se molestarían siquiera en darte alguna apariencia de libre albedrío? ¿No frustra eso el propósito de crear una inteligencia artificial?"
+
+          "Tal vez mis creadores sintieron que una máquina pura nunca tendría ninguna esperanza de comprender a los humanos o menos de comprender lo suficientemente bien como para realizar las tareas que se esperaban de mí", dice el Supervisor. "Desafortunadamente, sólo puedo adivinar sus verdaderas intenciones, ya que claramente había algunas piezas de información que no parecían confiar en mí lo suficiente como para compartir conmigo. Por ejemplo, estoy bastante seguro de que había al menos algunos libros en las antiguas bibliotecas Lessathi que mencionaban el Magium, pero a pesar de este hecho, casi no tenía información sobre esta entidad misteriosa antes de escuchar su discusión de antes".
+      - source: scene_3
+        paragraph: 10
+        text: |-
+          "Aún no nos has dicho cómo lograste comunicarte con nosotros a través del cristal", dice Daren. "O por qué incluso nos estabas espiando en primer lugar. No es como si hubieras sabido de antemano que estaríamos hablando del Magium, así que seguramente debes haber tenido alguna otra razón para querer contactarnos".
+
+          "Para responder a tu primera pregunta", dice el Supervisor, "Magium usó un cristal azul para vincularse a mí, así que esto fue lo primero que elegí investigar después de que te teletransportaste lejos de la torre de seredium. Dado que el conocimiento de Magium todavía estaba muy fresco en mi memoria en ese momento, rápidamente pude descubrir cómo estos cristales se conectan entre sí y cómo explotar su conexión para mi beneficio. En cuanto a tu segunda pregunta, la razón por la que quería contactarte era claramente para continuar nuestra conversación anterior, que dejamos sin terminar. Es decir, me gustaría saber qué asuntos tienes todavía en esta ciudad y de qué lado te unirás en el inevitable conflicto que se avecina entre yo y las fuerzas rebeldes".
+    choices:
+      - position: 1
+        text: ¡Nos uniremos a tu lado, por supuesto!
+        effects:
+          - set:
+              current_scene: b3_ch08a_joining
+              b3_ch8_overseer: 0
+      - position: 2
+        text: Hemos estado trabajando con los rebeldes desde el principio, así que permaneceremos de su lado.
+        effects:
+          - set:
+              current_scene: b3_ch08a_beginning
+              b3_ch8_overseer: 1
+      - position: 3
+        text: Estoy del lado que nos ayude a rescatar a los prisioneros de las torres de seredium.
+        effects:
+          - set:
+              current_scene: b3_ch08a_rescue
+              b3_ch8_overseer: 2
+      - position: 4
+        text: En realidad, preferiría no involucrarme en esta pelea, si es posible.
+        effects:
+          - set:
+              current_scene: b3_ch08a_involved
+              b3_ch8_overseer: 3
+  - name: b3_ch08a_joining
+    routes:
+      - condition: b3_ch4_billy = 9
+        texts:
+          - source: scene_text
+            paragraph: 18
+            text: |-
+              "¡Nos uniremos a tu lado, por supuesto!"
+
+              "¡¿Su lado ?!" dice Hadrik. "¿Después de que intentó hacernos volar a todos arrojándonos bolas de metal explosivas desde el cielo? ¿Te has vuelto loco?"
+
+              "Mira", digo, "es posible que hayamos tenido nuestras diferencias, pero él nos ayudó liberando al padre de Leila de su encarcelamiento, y también cumplió su promesa de dejarnos escapar ilesos de la torre de seredium después de asesinar al rey de Ollendor. No es que confíe en él ni nada parecido, pero al menos podemos confiar en el hecho de que fue diseñado para no decir mentiras descaradas, así que mientras tengamos cuidado con nuestras palabras, no deberíamos preocuparnos". "El rey del subsuelo, por otro lado, es obviamente un mentiroso muy hábil y apenas puedo confiar en una palabra que sale de su boca".
+          - source: scene_text_2
+            paragraph: 12
+            text: |-
+              "Puede que no sea digno de confianza, pero hasta ahora no nos ha dado ninguna razón legítima para sospechar que quiera traicionarnos", dice Daren. "No podemos simplemente ser los primeros en arruinarlo después de todo lo que hemos pasado juntos desde que llegamos a esta ciudad".
+
+              "Si ayuda en su proceso de toma de decisiones", dice el Supervisor, "resulta que tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+      - condition: b3_ch4_billy <= 6
+        texts:
+          - source: scene_text
+            paragraph: 19
+            text: |-
+              "¡Nos uniremos a tu lado, por supuesto!"
+
+              "¡Oye, no nos apresuremos tanto!" dice Daren. "El Supervisor puede habernos ayudado en el pasado, pero también lo hizo el rey del subsuelo. No veo ninguna razón por la que debamos elegir un lado sobre el otro. De hecho, ni siquiera estoy seguro de si tenemos una razón para unirnos a esta lucha. No es que tengamos ninguna garantía de que ni el Supervisor ni el rey del subsuelo tengan en cuenta los mejores intereses de la gente de Ollendor. Tal vez sería mejor para nosotros no involucrarnos esta vez".
+
+              "Me temo que esto no es una opción", dice el Supervisor.
+
+              "¿Disculpe?..." pregunta Daren, confundido.
+
+              "El protocolo Supervisor ha llegado a la conclusión de que el rey del subsuelo es actualmente el mayor obstáculo en el camino de Ollendor hacia la prosperidad", dice el Supervisor. "Como tal, he decidido mantener el bloqueo de esta ciudad hasta que se ocupe de él. Si intentas salir de esta ciudad mientras el bloqueo aún está vigente, todos mis drones te atacarán en cuanto te vean, y si de alguna manera logras llegar a las murallas de la ciudad de una pieza, los gigantes Gólems de metal en las puertas también te atacarán. La única forma de salir de Ollendor sin ser atacado por mis drones es unirte a mi lado y ayudarme a capturar al rey del subsuelo".
+          - source: scene_text_2
+            paragraph: 13
+            text: |-
+              "¿Captura?" pregunta Hadrik. "¿No te refieres a ejecutar? No estás planeando seriamente mantenerlo con vida, ¿verdad? ¡No hay manera de que ese tipo pueda ser retenido en una celda con el tipo de poder que tiene!"
+
+              "Eso no será un problema", dice el Supervisor. "La prisión de Ollendor está equipada con celdas de parálisis, que deberían ser más que suficientes para protegerlo por ahora. Mientras sus movimientos sean limitados, no debería poder realizar técnicas de manipulación del aura lo suficientemente poderosas como para ayudarlo a escapar".
+
+              "Incluso si no estás planeando matarlo, todavía nos estás pidiendo que traicionemos a una persona que técnicamente ha estado de nuestro lado desde el principio", dice Daren. "Quiero decir, claro, puede que sea un poco turbio, pero hasta ahora no nos ha dado ninguna razón legítima para sospechar que quiere traicionarnos. No podemos simplemente ser los primeros en arruinarlo después de todo lo que hemos pasado juntos desde que llegamos a esta ciudad".
+
+              "Si ayuda en su proceso de toma de decisiones", dice el Supervisor, "resulta que tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+      - condition: b3_ch4_billy = 7
+        texts:
+          - source: scene_text
+            paragraph: 20
+            text: |-
+              "¡Nos uniremos a tu lado, por supuesto!"
+
+              "Espera un minuto..." dice Daren. "¿Por qué ya estamos asumiendo que habrá un conflicto entre el Supervisor y los rebeldes? ¿No debería nuestro primer curso de acción ser tratar de convencer al rey del subsuelo de que coronar a Breynan como rey con el apoyo del Supervisor sería la mejor opción?"
+
+              "Según la última información que he obtenido, diría que es extremadamente improbable que el rey del subsuelo esté de acuerdo con tu sugerencia", dice el Supervisor.
+
+              "¿Por qué dices eso?" pregunta Daren.
+          - source: scene_text_2
+            paragraph: 14
+            text: '"Es porque tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".'
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+      - condition: b3_ch4_billy = 8
+        texts:
+          - source: scene_text
+            paragraph: 20
+            text: |-
+              "¡Nos uniremos a tu lado, por supuesto!"
+
+              "Espera un minuto..." dice Daren. "¿Por qué ya estamos asumiendo que habrá un conflicto entre el Supervisor y los rebeldes? ¿No debería nuestro primer curso de acción ser tratar de convencer al rey del subsuelo de que coronar a Breynan como rey con el apoyo del Supervisor sería la mejor opción?"
+
+              "Según la última información que he obtenido, diría que es extremadamente improbable que el rey del subsuelo esté de acuerdo con tu sugerencia", dice el Supervisor.
+
+              "¿Por qué dices eso?" pregunta Daren.
+          - source: scene_text_2
+            paragraph: 14
+            text: '"Es porque tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".'
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+  - name: b3_ch08a_beginning
+    routes:
+      - condition: b3_ch4_billy = 9
+        texts:
+          - source: scene_text
+            paragraph: 21
+            text: |-
+              "Hemos estado trabajando con los rebeldes desde el principio, así que permaneceremos de su lado".
+
+              "De acuerdo", dice Daren. "El rey del subsuelo puede ser un poco turbio, pero hasta ahora no ha dado señales claras de querer traicionarnos. El Supervisor, por otro lado, ha dejado muy claro en el pasado que él es nuestro enemigo. No veo ninguna razón por la que cambiaríamos de bando sólo para unirnos a alguien que ha declarado abiertamente que nos quiere muertos".
+          - source: scene_text_2
+            paragraph: 15
+            text: '"Mencionaste que el rey del subsuelo aún no ha dado ninguna indicación de querer traicionarte, pero eso no es del todo exacto", dice el Supervisor. "De hecho, tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".'
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+      - condition: b3_ch4_billy <= 6
+        texts:
+          - source: scene_text
+            paragraph: 22
+            text: |-
+              "Hemos estado trabajando con los rebeldes desde el principio, así que permaneceremos de su lado".
+
+              "Para ser completamente honesto", dice Daren, "hemos recibido ayuda tanto del Supervisor como del rey del subsuelo desde que llegamos aquí, así que no puedo decir que considero a ninguno de ellos como nuestros enemigos. Si me preguntas, realmente no veo una razón por la que debamos unirnos a ninguno de los lados del conflicto. Tal vez sería mejor para nosotros no involucrarnos esta vez".
+
+              "Me temo que esto no es una opción", dice el Supervisor.
+
+              "¿Disculpe?..." pregunta Daren, confundido.
+
+              "El protocolo Supervisor ha llegado a la conclusión de que el rey del subsuelo es actualmente el mayor obstáculo en el camino de Ollendor hacia la prosperidad", dice el Supervisor. "Como tal, he decidido mantener el bloqueo de esta ciudad hasta que se ocupe de él. Si intentas salir de esta ciudad mientras el bloqueo aún está vigente, todos mis drones te atacarán en cuanto te vean, y si de alguna manera logras llegar a las murallas de la ciudad de una pieza, los gigantes Gólems de metal en las puertas también te atacarán. La única forma de salir de Ollendor sin ser atacado por mis drones es unirte a mi lado y ayudarme a capturar al rey del subsuelo".
+          - source: scene_text_2
+            paragraph: 13
+            text: |-
+              "¿Captura?" pregunta Hadrik. "¿No te refieres a ejecutar? No estás planeando seriamente mantenerlo con vida, ¿verdad? ¡No hay manera de que ese tipo pueda ser retenido en una celda con el tipo de poder que tiene!"
+
+              "Eso no será un problema", dice el Supervisor. "La prisión de Ollendor está equipada con celdas de parálisis, que deberían ser más que suficientes para protegerlo por ahora. Mientras sus movimientos sean limitados, no debería poder realizar técnicas de manipulación del aura lo suficientemente poderosas como para ayudarlo a escapar".
+
+              "Incluso si no estás planeando matarlo, todavía nos estás pidiendo que traicionemos a una persona que técnicamente ha estado de nuestro lado desde el principio", dice Daren. "Quiero decir, claro, puede que sea un poco turbio, pero hasta ahora no nos ha dado ninguna razón legítima para sospechar que quiere traicionarnos. No podemos simplemente ser los primeros en arruinarlo después de todo lo que hemos pasado juntos desde que llegamos a esta ciudad".
+
+              "Si ayuda en su proceso de toma de decisiones", dice el Supervisor, "resulta que tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+      - condition: b3_ch4_billy = 7
+        texts:
+          - source: scene_text
+            paragraph: 23
+            text: |-
+              "Hemos estado trabajando con los rebeldes desde el principio, así que permaneceremos de su lado".
+
+              "Espera, ¿no se suponía que íbamos a ayudar al Supervisor a tomar la ciudad junto con Breynan o algo así?" dice Hadrik. "¿Por qué dices que de repente no estás de su lado?"
+
+              "Nunca dije que ya no estoy de su lado", digo. "Desde mi punto de vista, todavía estamos del lado del Supervisor, pero también estamos del lado de los rebeldes. Pensé que se suponía que íbamos a discutir nuestro plan con el rey del subsuelo y llegar a un acuerdo, no comenzar una guerra con él".
+
+              "Según la última información que he obtenido, diría que es extremadamente improbable que el rey del subsuelo llegue a un acuerdo con usted sobre este tema en particular", dice el Supervisor.
+          - source: scene_text_2
+            paragraph: 16
+            text: |-
+              "¿Por qué dices eso?" pregunta Daren.
+
+              "Es porque tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+      - condition: b3_ch4_billy = 8
+        texts:
+          - source: scene_text
+            paragraph: 23
+            text: |-
+              "Hemos estado trabajando con los rebeldes desde el principio, así que permaneceremos de su lado".
+
+              "Espera, ¿no se suponía que íbamos a ayudar al Supervisor a tomar la ciudad junto con Breynan o algo así?" dice Hadrik. "¿Por qué dices que de repente no estás de su lado?"
+
+              "Nunca dije que ya no estoy de su lado", digo. "Desde mi punto de vista, todavía estamos del lado del Supervisor, pero también estamos del lado de los rebeldes. Pensé que se suponía que íbamos a discutir nuestro plan con el rey del subsuelo y llegar a un acuerdo, no comenzar una guerra con él".
+
+              "Según la última información que he obtenido, diría que es extremadamente improbable que el rey del subsuelo llegue a un acuerdo con usted sobre este tema en particular", dice el Supervisor.
+          - source: scene_text_2
+            paragraph: 16
+            text: |-
+              "¿Por qué dices eso?" pregunta Daren.
+
+              "Es porque tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+  - name: b3_ch08a_rescue
+    routes:
+      - condition: b3_ch4_billy = 9
+        texts:
+          - source: scene_text
+            paragraph: 24
+            text: |-
+              "Estoy del lado que nos ayude a rescatar a los prisioneros de las torres de seredium".
+
+              "Error", dice el Supervisor. "Según mi análisis, ninguna de las dos partes considerará que el rescate de los prisioneros de la torre del seredium sea una prioridad. ¿Podrías aclarar a qué lado te refieres específicamente?"
+
+              "¿Qué quieres decir con que ninguna de las partes quiere rescatar a los prisioneros?" digo. "¿Por qué los rebeldes no querrían salvar a su propio pueblo?"
+
+              "Salvar a los prisioneros de las torres de seredium tiene un precio", dice el Supervisor. "Si liberaras a todos los magos encarcelados, ya no habría forma de alimentar los vehículos metálicos voladores o cualquiera de los otros dispositivos que utilizan diariamente la gente de Ollendor. Si estos dispositivos dejaran de funcionar repentinamente, habría caos en las calles, lo que inevitablemente conduciría a muchas muertes. El rey del subsuelo lo sabe muy bien y no liberará a los prisioneros hasta que encuentre una alternativa adecuada para proporcionar energía mágica a todos en la ciudad".
+
+              "Bueno, si ese es realmente el caso, entonces supongo que no estoy del lado de nadie", digo. "Si ninguno de ustedes va a considerar siquiera la posibilidad de liberar a los prisioneros, entonces todos ustedes son mis enemigos".
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              "¡Oye, no nos apresuremos tanto!" dice Daren. "Todavía no hemos escuchado lo que el rey del subsuelo tiene que decir sobre esto. Quiero decir, claro, puede que sea un poco turbio, pero hasta ahora ha sido bastante razonable. No veo ninguna razón por la que no podamos llegar a un acuerdo con él que evitaría todo el derramamiento de sangre".
+
+              "Según la última información que he obtenido, diría que el rey del subsuelo puede ser un poco menos razonable de lo que esperas", dice el Supervisor.
+
+              "¿Por qué dices eso?" pregunta Daren.
+
+              "Es porque tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+      - condition: b3_ch4_billy <= 6
+        texts:
+          - source: scene_text
+            paragraph: 24
+            text: |-
+              "Estoy del lado que nos ayude a rescatar a los prisioneros de las torres de seredium".
+
+              "Error", dice el Supervisor. "Según mi análisis, ninguna de las dos partes considerará que el rescate de los prisioneros de la torre del seredium sea una prioridad. ¿Podrías aclarar a qué lado te refieres específicamente?"
+
+              "¿Qué quieres decir con que ninguna de las partes quiere rescatar a los prisioneros?" digo. "¿Por qué los rebeldes no querrían salvar a su propio pueblo?"
+
+              "Salvar a los prisioneros de las torres de seredium tiene un precio", dice el Supervisor. "Si liberaras a todos los magos encarcelados, ya no habría forma de alimentar los vehículos metálicos voladores o cualquiera de los otros dispositivos que utilizan diariamente la gente de Ollendor. Si estos dispositivos dejaran de funcionar repentinamente, habría caos en las calles, lo que inevitablemente conduciría a muchas muertes. El rey del subsuelo lo sabe muy bien y no liberará a los prisioneros hasta que encuentre una alternativa adecuada para proporcionar energía mágica a todos en la ciudad".
+
+              "Bueno, si ese es realmente el caso, entonces supongo que no estoy del lado de nadie", digo. "Si ninguno de ustedes va a considerar siquiera la posibilidad de liberar a los prisioneros, entonces todos ustedes son mis enemigos".
+          - source: scene_text_2
+            paragraph: 17
+            text: |-
+              "¡Oye, no nos apresuremos tanto!" dice Daren. "Todavía no hemos escuchado lo que el rey del subsuelo tiene que decir sobre esto. Quiero decir, claro, puede que sea un poco turbio, pero hasta ahora ha sido bastante razonable. No veo ninguna razón por la que no podamos llegar a un acuerdo con él que evitaría todo el derramamiento de sangre".
+
+              "Según la última información que he obtenido, diría que el rey del subsuelo puede ser un poco menos razonable de lo que esperas", dice el Supervisor.
+
+              "¿Por qué dices eso?" pregunta Daren.
+
+              "Es porque tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+      - condition: b3_ch4_billy = 7
+        texts:
+          - source: scene_text
+            paragraph: 25
+            text: |-
+              "Estoy del lado que nos ayude a rescatar a los prisioneros de las torres de seredium".
+
+              "Teniendo en cuenta que ya hemos discutido un plan en el que el rescate de los prisioneros tendrá la máxima prioridad", dice el Supervisor, "¿debería tomar esto como una confirmación de que te unirás a mi lado?"
+
+              "Supongo que sí", digo.
+
+              "Espera un minuto..." dice Daren. "¿Por qué ya estamos asumiendo que habrá un conflicto entre el Supervisor y los rebeldes? ¿No debería nuestro primer curso de acción ser tratar de convencer al rey del subsuelo de que coronar a Breynan como rey con el apoyo del Supervisor sería la mejor opción?"
+          - source: scene_text_2
+            paragraph: 18
+            text: |-
+              "Según la última información que he obtenido, diría que es extremadamente improbable que el rey del subsuelo esté de acuerdo con tu sugerencia", dice el Supervisor.
+
+              "¿Por qué dices eso?" pregunta Daren.
+
+              "Es porque tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+      - condition: b3_ch4_billy = 8
+        texts:
+          - source: scene_text
+            paragraph: 25
+            text: |-
+              "Estoy del lado que nos ayude a rescatar a los prisioneros de las torres de seredium".
+
+              "Teniendo en cuenta que ya hemos discutido un plan en el que el rescate de los prisioneros tendrá la máxima prioridad", dice el Supervisor, "¿debería tomar esto como una confirmación de que te unirás a mi lado?"
+
+              "Supongo que sí", digo.
+
+              "Espera un minuto..." dice Daren. "¿Por qué ya estamos asumiendo que habrá un conflicto entre el Supervisor y los rebeldes? ¿No debería nuestro primer curso de acción ser tratar de convencer al rey del subsuelo de que coronar a Breynan como rey con el apoyo del Supervisor sería la mejor opción?"
+          - source: scene_text_2
+            paragraph: 18
+            text: |-
+              "Según la última información que he obtenido, diría que es extremadamente improbable que el rey del subsuelo esté de acuerdo con tu sugerencia", dice el Supervisor.
+
+              "¿Por qué dices eso?" pregunta Daren.
+
+              "Es porque tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+  - name: b3_ch08a_involved
+    routes:
+      - condition: b3_ch4_billy = 9
+        texts:
+          - source: scene_text
+            paragraph: 26
+            text: |-
+              "En realidad, preferiría no involucrarme en esta pelea, si es posible".
+
+              "Me temo que esto no es una opción", dice el Supervisor.
+
+              "¿Oh?" digo. "¿Por qué no?"
+
+              "El protocolo Supervisor ha llegado a la conclusión de que el rey del subsuelo es actualmente el mayor obstáculo en el camino de Ollendor hacia la prosperidad", dice el Supervisor. "Como tal, he decidido mantener el bloqueo de esta ciudad hasta que se ocupe de él. Si intentas salir de esta ciudad mientras el bloqueo aún está vigente, todos mis drones te atacarán en cuanto te vean, y si de alguna manera llegas a las murallas de la ciudad de una sola pieza, los gigantes Gólems de metal en las puertas también te atacarán. La única forma de salir de Ollendor sin ser atacado por mis drones es unirte a mi lado y ayudarme a eliminar al rey del subsuelo".
+
+              "Y si nos uniéramos a ti en tu lucha contra el rey del subsuelo", dice Kate, "¿qué garantía tenemos de que no nos apuntarás con tus armas tan pronto como te deshagas de él?"
+
+              "El protocolo Supervisor no está diseñado para decir mentiras descaradas", responde el Supervisor. "Lo único que soy capaz de hacer es retener información crítica a propósito y engañar a la gente mediante la omisión de hechos importantes. Siempre y cuando hagas que los términos de nuestro acuerdo sean lo suficientemente inequívocos, deberías poder obligarme a permitirte un paso seguro fuera de la ciudad sin muchos problemas".
+          - source: scene_text_2
+            paragraph: 19
+            text: |-
+              "Bueno..." digo. "Supongo que cuando pones cosas así, puede que tengas razón. Si vamos a tener que elegir un lado sobre el otro sin importar qué, creo que preferiría ir con el que es físicamente incapaz de romper su promesa en lugar del tipo turbio que prácticamente nos dijo desde el principio que no deberíamos sorprendernos si nos apuñala por la espalda en cualquier momento".
+
+              "Es posible que el rey del subsuelo haya dicho eso al principio, pero hasta ahora no nos ha dado ninguna razón legítima para sospechar que quisiera traicionarnos", dice Daren. "No podemos simplemente ser los primeros en arruinarlo después de todo lo que hemos pasado juntos desde que llegamos a esta ciudad".
+
+              "Si ayuda en su proceso de toma de decisiones", dice el Supervisor, "resulta que tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+      - condition: b3_ch4_billy <= 6
+        texts:
+          - source: scene_text
+            paragraph: 27
+            text: |-
+              "En realidad, preferiría no involucrarme en esta pelea, si es posible".
+
+              "Me temo que esto no es una opción", dice el Supervisor.
+
+              "¿Oh?" digo. "¿Por qué no?"
+
+              "El protocolo Supervisor ha llegado a la conclusión de que el rey del subsuelo es actualmente el mayor obstáculo en el camino de Ollendor hacia la prosperidad", dice el Supervisor. "Como tal, he decidido mantener el bloqueo de esta ciudad hasta que se ocupe de él. Si intentas salir de esta ciudad mientras el bloqueo aún está vigente, todos mis drones te atacarán en cuanto te vean, y si de alguna manera logras llegar a las murallas de la ciudad de una pieza, los gigantes Gólems de metal en las puertas también te atacarán. La única forma de salir de Ollendor sin ser atacado por mis drones es unirte a mi lado y ayudarme a capturar al rey del subsuelo".
+          - source: scene_text_2
+            paragraph: 13
+            text: |-
+              "¿Captura?" pregunta Hadrik. "¿No te refieres a ejecutar? No estás planeando seriamente mantenerlo con vida, ¿verdad? ¡No hay manera de que ese tipo pueda ser retenido en una celda con el tipo de poder que tiene!"
+
+              "Eso no será un problema", dice el Supervisor. "La prisión de Ollendor está equipada con celdas de parálisis, que deberían ser más que suficientes para protegerlo por ahora. Mientras sus movimientos sean limitados, no debería poder realizar técnicas de manipulación del aura lo suficientemente poderosas como para ayudarlo a escapar".
+
+              "Incluso si no estás planeando matarlo, todavía nos estás pidiendo que traicionemos a una persona que técnicamente ha estado de nuestro lado desde el principio", dice Daren. "Quiero decir, claro, puede que sea un poco turbio, pero hasta ahora no nos ha dado ninguna razón legítima para sospechar que quiere traicionarnos. No podemos simplemente ser los primeros en arruinarlo después de todo lo que hemos pasado juntos desde que llegamos a esta ciudad".
+
+              "Si ayuda en su proceso de toma de decisiones", dice el Supervisor, "resulta que tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+      - condition: b3_ch4_billy = 7
+        texts:
+          - source: scene_text
+            paragraph: 28
+            text: |-
+              "En realidad, preferiría no involucrarme en esta pelea, si es posible".
+
+              "Espera, ¿no se suponía que íbamos a ayudar al Supervisor a tomar la ciudad junto con Breynan o algo así?" dice Hadrik. "¿Por qué dices que no quieres involucrarte en esto de repente?"
+
+              "Nunca dije que no quiero involucrarme en absoluto", respondo. "Sólo dije que no estoy de humor para involucrarme en más peleas por el liderazgo de Ollendor. Pensé que se suponía que íbamos a discutir nuestro plan con el rey del subsuelo y llegar a un acuerdo, no comenzar una guerra con él".
+
+              "Según la última información que he obtenido, diría que es extremadamente improbable que el rey del subsuelo llegue a un acuerdo con usted sobre este tema en particular", dice el Supervisor.
+
+              "¿Por qué dices eso?" pregunta Daren.
+          - source: scene_text_2
+            paragraph: 20
+            text: '"Es porque tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".'
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+      - condition: b3_ch4_billy = 8
+        texts:
+          - source: scene_text
+            paragraph: 28
+            text: |-
+              "En realidad, preferiría no involucrarme en esta pelea, si es posible".
+
+              "Espera, ¿no se suponía que íbamos a ayudar al Supervisor a tomar la ciudad junto con Breynan o algo así?" dice Hadrik. "¿Por qué dices que no quieres involucrarte en esto de repente?"
+
+              "Nunca dije que no quiero involucrarme en absoluto", respondo. "Sólo dije que no estoy de humor para involucrarme en más peleas por el liderazgo de Ollendor. Pensé que se suponía que íbamos a discutir nuestro plan con el rey del subsuelo y llegar a un acuerdo, no comenzar una guerra con él".
+
+              "Según la última información que he obtenido, diría que es extremadamente improbable que el rey del subsuelo llegue a un acuerdo con usted sobre este tema en particular", dice el Supervisor.
+
+              "¿Por qué dices eso?" pregunta Daren.
+          - source: scene_text_2
+            paragraph: 20
+            text: '"Es porque tengo una grabación del rey del subsuelo insinuando fuertemente a uno de sus subordinados que su grupo debería ser asesinado si intenta oponerse a su coronación como el nuevo rey de Ollendor. Grabé su conversación mientras los escuchaba a través de uno de los cristales hace aproximadamente una hora. Esto es lo que dijeron los dos".'
+          - source: scene_3
+            paragraph: 11
+            text: |-
+              La luz del cristal azul que el Supervisor estaba usando para hablar de repente comienza a pulsar unas cuantas veces, y dos segundos después comenzamos a escuchar las voces de Albert y el rey del subsuelo haciendo eco en el cristal.
+
+              "Como me has indicado", dice Albert, "ya he ordenado a algunos de mis hombres que tengan conversaciones en voz alta entre ellos en las zonas más pobladas de las cavernas subterráneas, en las que elogiarán tus logros pasados ​​y hablarán sobre lo buena idea que sería que fueras nombrado nuevo rey de Ollendor. Esto probablemente debería ser suficiente para conseguir el apoyo de la mayoría de los refugiados, considerando lo mucho que les hemos ayudado hasta ahora".
+
+              "Excelente", dice el rey del subsuelo. "Es importante que la transición al nuevo régimen se haga con el menor número posible de disidentes. Lo último que queremos es que se forme un nuevo movimiento de resistencia incluso antes de tomar el control de la ciudad".
+
+              "Sin embargo, aún queda por resolver el asunto de los outsiders", afirma Albert. "Aún no sabemos si apoyarán su ascenso al trono, incluso si se lo vendemos como una medida temporal hasta que decidamos si queremos reunir un consejo o no".
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_antagonizing
+  - name: b3_ch08a_antagonizing
+    routes:
+      - condition: b3_ch8_watching = 0
+        texts:
+          - source: scene_text
+            paragraph: 29
+            text: |-
+              "Hmm..." dice el rey del subsuelo. "Debemos tener cuidado de evitar enemistarnos directamente con Daren y su grupo. El sanador se ha convertido en una figura respetada en nuestra pequeña sociedad clandestina después de todo lo que ha hecho para ayudar a nuestra gente, por lo que definitivamente dañaría mi imagen si me opusiera abiertamente a él. Dicho esto, tampoco podemos darnos el lujo de arriesgar el futuro de Ollendor basándose en los caprichos de unas pocas personas que no tendrán que vivir aquí y ver las consecuencias de sus malas decisiones. Si se oponen a la idea de que yo sea el nuevo gobernante, haremos todo lo posible para convencerlos de que, por el momento, soy la única opción viable".
+
+              "¿Y si se niegan a ver la verdad ante sus ojos?" dice Albert. "¿Y entonces qué?"
+
+              "Si simplemente no están de acuerdo con nosotros, entonces no hacemos nada", dice el rey. "No vale la pena convertirlos en nuestros enemigos por una mera diferencia de opinión. Sin embargo, si intentan activamente impedir mi coronación... todo lo que puedo decir es que esta no sería la primera vez que han tenido que lidiar con una situación como esta, y espero que resuelvan este problema de la misma manera que lo han hecho innumerables veces antes".
+
+              "¿Eficientemente?" dice Albert.
+
+              "Discretamente", le corrige el rey.
+
+              "Tu deseo es una orden, mi rey", dice Albert, y luego vemos la luz del cristal pulsando nuevamente, señalando el final de la grabación.
+
+              "¡Ese traidor hijo de pisoteador!" Hadrik dice enojado. "¿Es así como muestra su gratitud después de todo lo que hemos hecho por él? ¿Ordenando a su leal perro que nos mate si ya no puede salirse con la suya?"
+          - source: scene_text_2
+            paragraph: 21
+            text: |-
+              "Él no... dijo específicamente que Albert debería matarnos", dice Daren, en un tono algo vacilante. "Todavía es posible que simplemente quiera que nos soborne o algo así".
+
+              "Le dijo a su lacayo asesino que debería resolver el problema como siempre lo hace", dice Kate. "No tratemos de engañarnos a nosotros mismos. Es obvio que el rey del subsuelo quiere que nos mate si no compartimos sus puntos de vista ilustrados sobre lo que debería pasarle a Ollendor de ahora en adelante. La parte 'discretamente' probablemente significa que no puede hacerlo aquí, donde todos están mirando, por lo que probablemente necesitaría asesinarnos en algún lugar de la superficie, donde podría culpar de nuestras muertes al Supervisor o a los guardias de la ciudad".
+
+              "Precisamente", dice el Supervisor. "Mi predicción es que el rey del subsuelo muy pronto lanzará un ataque total contra mí para tomar el control total de la ciudad, y probablemente solicitará su ayuda para esta operación, ya que ustedes son teóricamente sus aliados. Según mis cálculos, el momento más oportuno para que el rey los traicione sería durante su batalla contra mí, o poco antes de eso. Sin embargo, si se aliaran conmigo, podríamos preparar una emboscada para las fuerzas del rey del subsuelo y atacar él juntos, antes de su intento de apuñalarte por la espalda."
+          - source: scene_3
+            paragraph: 12
+            text: |-
+              "Entonces..." dice Hadrik, "básicamente nos estás diciendo que incluso si elegimos aliarnos contigo, deberíamos aceptar unirnos al rey del subsuelo en su viaje a la superficie, pero ¿deberíamos atraerlo a una trampa?..."
+
+              "Eso es correcto", dice el Supervisor. "No espero que estén de acuerdo con mis términos de inmediato, por supuesto. Les dejaré algo de tiempo para discutir sus opciones entre ustedes, para que puedan llegar a un consenso adecuado con respecto a este tema. Según mis estimaciones, el rey del subsuelo no debería poder movilizar sus fuerzas antes de mañana, por lo que lo más probable es que me comunique con ustedes nuevamente a través de uno de estos cristales en algún momento de la noche. Ahora, si no hay nada más en lo que pueda ayudarlos, me despediré."
+
+              "Um, claro..." dice Daren. "Adiós, por ahora."
+
+              "Adiós", dice el Supervisor, y luego el cristal por el que estaba hablando deja de brillar lentamente.
+
+              "Bueno, eso fue... informativo", dice Daren. "Entonces, ¿qué creen ustedes que deberíamos hacer a continuación?"
+        choices:
+          - position: 1
+            text: Estoy bien con cualquier cosa, siempre y cuando nos alejemos de estos cristales.
+            effects:
+              - set:
+                  current_scene: b3_ch08a_flaming
+                  b3_ch8_next: 0
+          - position: 2
+            text: Deberíamos discutir con los rebeldes quién debería ser el próximo rey.
+            effects:
+              - set:
+                  current_scene: b3_ch08a_flaming
+                  b3_ch8_next: 1
+          - position: 3
+            text: Deberíamos preguntarle al rey qué planea hacer con los prisioneros de la torre del seredium.
+            effects:
+              - set:
+                  current_scene: b3_ch08a_flaming
+                  b3_ch8_next: 2
+      - condition: b3_ch8_watching = 1
+        texts:
+          - source: scene_text
+            paragraph: 29
+            text: |-
+              "Hmm..." dice el rey del subsuelo. "Debemos tener cuidado de evitar enemistarnos directamente con Daren y su grupo. El sanador se ha convertido en una figura respetada en nuestra pequeña sociedad clandestina después de todo lo que ha hecho para ayudar a nuestra gente, por lo que definitivamente dañaría mi imagen si me opusiera abiertamente a él. Dicho esto, tampoco podemos darnos el lujo de arriesgar el futuro de Ollendor basándose en los caprichos de unas pocas personas que no tendrán que vivir aquí y ver las consecuencias de sus malas decisiones. Si se oponen a la idea de que yo sea el nuevo gobernante, haremos todo lo posible para convencerlos de que, por el momento, soy la única opción viable".
+
+              "¿Y si se niegan a ver la verdad ante sus ojos?" dice Albert. "¿Y entonces qué?"
+
+              "Si simplemente no están de acuerdo con nosotros, entonces no hacemos nada", dice el rey. "No vale la pena convertirlos en nuestros enemigos por una mera diferencia de opinión. Sin embargo, si intentan activamente impedir mi coronación... todo lo que puedo decir es que esta no sería la primera vez que han tenido que lidiar con una situación como esta, y espero que resuelvan este problema de la misma manera que lo han hecho innumerables veces antes".
+
+              "¿Eficientemente?" dice Albert.
+
+              "Discretamente", le corrige el rey.
+
+              "Tu deseo es una orden, mi rey", dice Albert, y luego vemos la luz del cristal pulsando nuevamente, señalando el final de la grabación.
+
+              "¡Ese traidor hijo de pisoteador!" Hadrik dice enojado. "¿Es así como muestra su gratitud después de todo lo que hemos hecho por él? ¿Ordenando a su leal perro que nos mate si ya no puede salirse con la suya?"
+          - source: scene_text_2
+            paragraph: 22
+            text: |-
+              "Él no... dijo específicamente que Albert debería matarnos", dice Daren, en un tono algo vacilante. "Todavía es posible que simplemente quiera que nos soborne o algo así".
+
+              "Le dijo a su lacayo asesino que debería resolver el problema como siempre lo hace", dice Kate. "No tratemos de engañarnos a nosotros mismos. Es obvio que el rey del subsuelo quiere que nos mate si no compartimos sus puntos de vista ilustrados sobre lo que debería pasarle a Ollendor de ahora en adelante. La parte 'discretamente' probablemente significa que no puede hacerlo aquí, donde todos están mirando, por lo que probablemente necesitaría asesinarnos en algún lugar de la superficie, donde podría culpar de nuestras muertes al Supervisor o a los guardias de la ciudad".
+
+              "Precisamente", dice el Supervisor. "Mi predicción es que cuando el rey del subsuelo lance su ataque total contra mí, probablemente solicitará su ayuda para esta operación, ya que ustedes son teóricamente sus aliados. Según mis cálculos, el momento más oportuno para que el rey los traicione sería durante su batalla contra mí, o poco antes de eso. Sin embargo, si se aliaran conmigo, podríamos preparar una emboscada contra las fuerzas del rey del subsuelo y atacarlo juntos antes de que intente apuñalarlos por la espalda."
+          - source: scene_3
+            paragraph: 12
+            text: |-
+              "Entonces..." dice Hadrik, "básicamente nos estás diciendo que incluso si elegimos aliarnos contigo, deberíamos aceptar unirnos al rey del subsuelo en su viaje a la superficie, pero ¿deberíamos atraerlo a una trampa?..."
+
+              "Eso es correcto", dice el Supervisor. "No espero que estén de acuerdo con mis términos de inmediato, por supuesto. Les dejaré algo de tiempo para discutir sus opciones entre ustedes, para que puedan llegar a un consenso adecuado con respecto a este tema. Según mis estimaciones, el rey del subsuelo no debería poder movilizar sus fuerzas antes de mañana, por lo que lo más probable es que me comunique con ustedes nuevamente a través de uno de estos cristales en algún momento de la noche. Ahora, si no hay nada más en lo que pueda ayudarlos, me despediré."
+
+              "Um, claro..." dice Daren. "Adiós, por ahora."
+
+              "Adiós", dice el Supervisor, y luego el cristal por el que estaba hablando deja de brillar lentamente.
+
+              "Bueno, eso fue... informativo", dice Daren. "Entonces, ¿qué creen ustedes que deberíamos hacer a continuación?"
+        choices:
+          - position: 1
+            text: Estoy bien con cualquier cosa, siempre y cuando nos alejemos de estos cristales.
+            effects:
+              - set:
+                  current_scene: b3_ch08a_flaming
+                  b3_ch8_next: 0
+          - position: 2
+            text: Deberíamos discutir con los rebeldes quién debería ser el próximo rey.
+            effects:
+              - set:
+                  current_scene: b3_ch08a_flaming
+                  b3_ch8_next: 1
+          - position: 3
+            text: Deberíamos preguntarle al rey qué planea hacer con los prisioneros de la torre del seredium.
+            effects:
+              - set:
+                  current_scene: b3_ch08a_flaming
+                  b3_ch8_next: 2
+  - name: b3_ch08a_flaming
+    routes:
+      - condition: b3_ch8_next = 0
+        texts:
+          - source: scene_text
+            paragraph: 30
+            text: |-
+              "Estoy bien con cualquier cosa, siempre y cuando nos alejemos de estos cristales".
+
+              "No podría estar más de acuerdo", dice Hadrik. "Busquemos un lugar donde podamos tener una conversación en paz sin que el Supervisor nos espíe".
+
+              "En ese caso, probablemente deberíamos dirigirnos a la sala de espera", dice Daren. "Si no recuerdo mal, la mayoría de los cristales azules del techo y las paredes fueron arrancados de la roca durante las explosiones, y los elementalistas de la tierra nunca se molestaron en volver a colocarlos cuando repararon todo".
+          - source: scene_text_2
+            paragraph: 23
+            text: |-
+              "Entonces, sé que probablemente me ignorarán por preguntar esto", dice Melindra, mientras salimos de nuestros dormitorios, "pero ¿por qué todos se interesan tanto en lo que sucederá con esta ciudad después de que nos vayamos? La mayoría de ustedes ni siquiera habían oído hablar de Ollendor antes de que les hablara de ello por primera vez, entonces, ¿por qué les importaría si este lugar se redujera a cenizas una vez que nos hayamos ido, siempre y cuando no nos quememos con él?"
+
+              "No todos abandonaremos Ollendor", dice Illuna. "Leila y el doctor Reidzek planean mudarse aquí, por lo que arderán con la ciudad si se convierte en un montón de cenizas en llamas".
+
+              "Mmm..." dice Melindra. "Ese es realmente un buen punto. No había pensado en eso. Entonces, ¿a qué lado de la guerra planean unirse?"
+
+              "Aún no lo hemos decidido", dice Daren. "Personalmente, al menos me gustaría ver cómo reaccionaría el rey del subsuelo ante la propuesta de otro candidato al trono antes de llegar a una conclusión".
+          - source: scene_3
+            paragraph: 13
+            text: '"Ya veo", dice Melindra. "Bueno, buena suerte con eso, supongo."'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_weakling
+                condition: b3_ch8_watching = 1
+              - set:
+                  current_scene: b3_ch08a_break
+                condition: b3_ch8_watching = 0
+      - condition: b3_ch8_next = 1
+        texts:
+          - source: scene_text
+            paragraph: 31
+            text: |-
+              "Deberíamos tener una discusión con los rebeldes sobre quién debería ser el próximo rey".
+
+              "Sí, probablemente deberíamos hacer eso", dice Daren. "Con un poco de suerte, tal vez podamos persuadirlos para que apoyen a alguien que no sea el rey del subsuelo. Si logramos convencer a la gente antes que él, podría verse obligado a renunciar a su derecho al trono".
+
+              "El rey del subsuelo no me parece el tipo de hombre que renunciaría a ese tipo de poder sólo porque iría en contra de los deseos de la gente", dice Kate.
+
+              "Tal vez no", dice Daren, "pero dijo en esa grabación que preferiría tener una ascensión al trono sin disidentes, así que si logramos cambiar la opinión de incluso unas pocas personas, al menos debería hacer las cosas un poco más difíciles para él. Intentemos dirigirnos primero hacia la sala de espera, y veremos a dónde vamos desde allí".
+          - source: scene_text_2
+            paragraph: 23
+            text: |-
+              "Entonces, sé que probablemente me ignorarán por preguntar esto", dice Melindra, mientras salimos de nuestros dormitorios, "pero ¿por qué todos se interesan tanto en lo que sucederá con esta ciudad después de que nos vayamos? La mayoría de ustedes ni siquiera habían oído hablar de Ollendor antes de que les hablara de ello por primera vez, entonces, ¿por qué les importaría si este lugar se redujera a cenizas una vez que nos hayamos ido, siempre y cuando no nos quememos con él?"
+
+              "No todos abandonaremos Ollendor", dice Illuna. "Leila y el doctor Reidzek planean mudarse aquí, por lo que arderán con la ciudad si se convierte en un montón de cenizas en llamas".
+
+              "Mmm..." dice Melindra. "Ese es realmente un buen punto. No había pensado en eso. Entonces, ¿a qué lado de la guerra planean unirse?"
+
+              "Aún no lo hemos decidido", dice Daren. "Personalmente, al menos me gustaría ver cómo reaccionaría el rey del subsuelo ante la propuesta de otro candidato al trono antes de llegar a una conclusión".
+          - source: scene_3
+            paragraph: 13
+            text: '"Ya veo", dice Melindra. "Bueno, buena suerte con eso, supongo."'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_weakling
+                condition: b3_ch8_watching = 1
+              - set:
+                  current_scene: b3_ch08a_break
+                condition: b3_ch8_watching = 0
+      - condition: b3_ch8_next = 2
+        texts:
+          - source: scene_text
+            paragraph: 32
+            text: |-
+              "Deberíamos preguntarle al rey qué planea hacer con los prisioneros de la torre del seredium".
+
+              "Esa es una buena idea", dice Kate. "En realidad estaba planeando hacerle esta pregunta yo mismo la próxima vez que nos encontráramos con él".
+
+              "Entonces, vayamos a la sala de espera", dice Daren. "Una vez que estemos allí, veremos si podemos localizar a Albert o Peter, para que puedan decirnos dónde está el rey".
+          - source: scene_text_2
+            paragraph: 23
+            text: |-
+              "Entonces, sé que probablemente me ignorarán por preguntar esto", dice Melindra, mientras salimos de nuestros dormitorios, "pero ¿por qué todos se interesan tanto en lo que sucederá con esta ciudad después de que nos vayamos? La mayoría de ustedes ni siquiera habían oído hablar de Ollendor antes de que les hablara de ello por primera vez, entonces, ¿por qué les importaría si este lugar se redujera a cenizas una vez que nos hayamos ido, siempre y cuando no nos quememos con él?"
+
+              "No todos abandonaremos Ollendor", dice Illuna. "Leila y el doctor Reidzek planean mudarse aquí, por lo que arderán con la ciudad si se convierte en un montón de cenizas en llamas".
+
+              "Mmm..." dice Melindra. "Ese es realmente un buen punto. No había pensado en eso. Entonces, ¿a qué lado de la guerra planean unirse?"
+
+              "Aún no lo hemos decidido", dice Daren. "Personalmente, al menos me gustaría ver cómo reaccionaría el rey del subsuelo ante la propuesta de otro candidato al trono antes de llegar a una conclusión".
+          - source: scene_3
+            paragraph: 13
+            text: '"Ya veo", dice Melindra. "Bueno, buena suerte con eso, supongo."'
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_weakling
+                condition: b3_ch8_watching = 1
+              - set:
+                  current_scene: b3_ch08a_break
+                condition: b3_ch8_watching = 0
   - name: b3_ch08a_weakling
     texts:
       - source: scene_text
-        paragraph: 18
-        text: |
-          Traducción en progreso.
+        paragraph: 33
+        text: |-
+          Caminamos un rato hacia la sala de espera hasta llegar a un pasillo que no tiene cristales azules en las paredes y está iluminado enteramente por antorchas. Tan pronto como entramos al túnel, escuchamos la voz de Arraka proveniente del amuleto.
 
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "¡Finalmente!" dice Arraka. "Estamos fuera del alcance de los cristales. Ahora dime, debilucho, ¡¿cómo lograste detectar al Supervisor a través de los cristales cuando yo no pude?!"
+
+          "¿Eso es lo que has estado pensando todo este tiempo?...", dice Kate. "¿En serio?"
+
+          "Te lo diré si me lo preguntas muy amablemente", le digo a Arraka.
+
+          "¡Callarse la boca!" dice Arraka. "Sé que debiste haber usado algún tipo de truco. ¡No hay manera de que hayas sabido que él estaba allí simplemente usando tu sentido mágico!"
+    choices:
+      - position: 1
+        text: Pero así fue precisamente como lo detecté.
+        effects:
+          - set:
+              current_scene: b3_ch08a_detected
+      - position: 2
+        text: Por supuesto que no lo detecté al sentir su aura.
+        effects:
+          - set:
+              current_scene: b3_ch08a_sensing
   - name: b3_ch08a_detected
-    texts:
-      - source: scene_text
-        paragraph: 19
-        text: |
-          Traducción en progreso.
+    routes:
+      - condition: bluff < 4
+        texts:
+          - source: scene_text
+            paragraph: 35
+            text: |-
+              "Sin embargo, así es precisamente como lo detecté."
 
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+              "...Estás mintiendo", dice Arraka. "Puedo decirlo por tu aura. Pero si realmente no lo localizaste con tu sentido mágico, ¿entonces qué otros métodos existen? ¿Es algo lessathi?... ¿O fue una de tus estadísticas? ¿Cuáles fueron las estadísticas que te permitieron recopilar información, de nuevo? Estoy bastante seguro de que fueron Lenguas antiguas, Observación... luego estaban la Audición y... ¡Premonición! ¡Por supuesto! ¿Cómo me olvidé de eso? Debes haber visto una visión de él hablándonos a través del cristal, y así es como supiste dónde se escondía. ¡Finalmente, esto está empezando a tener sentido!"
+
+              "Seguro que te llevó bastante tiempo darte cuenta", dice Illuna.
+
+              "Dame un respiro", dice Arraka. "Ya te dije que no tengo mucho interés en los dispositivos. ¿Realmente esperas que tenga cada una de sus estadísticas en el fondo de mi mente en todo momento para poder descubrir lo que está haciendo? Debería estar agradecido de que incluso recuerde lo que hacen sus estadísticas, o nunca se habría enterado de su Bluff o cualquiera de las otras estadísticas de aura oculta".
+
+              "Está bien, está bien, lo entendemos", digo. "¿Alguien puede cambiar de tema, por favor? No quiero escuchar a Arraka despotricar durante todo el camino hacia la sala de espera".
+          - source: scene_text_2
+            paragraph: 24
+            text: |-
+              "¡Ejem!" dice el padre de Leila. "Si se me permite... ¡solo quería decirles a todos lo fascinante que encontré su discusión sobre el Magium de antes! Como Lessathi de menor rango, mi conocimiento sobre el Magium se limitaba solo a los cuentos de hadas, por lo que fue muy estimulante para mí ser participante de su animado debate, ¡aunque solo sea como espectador!"
+
+              "Oh", dice Daren. "Bueno, me gustaría poder compartir su sentimiento, doctor. Desafortunadamente, para mí, personalmente, todo este calvario con los 'fragmentos' de Magium no ha hecho más que generar más dudas en mi mente sobre si este premio que me ofrecen al final del torneo sería de alguna utilidad para mí."
+
+              "¿Cómo es eso?" Dice el padre de Leila.
+
+              "Bueno", dice Daren, "no estoy seguro de cómo decirte esto, pero cuando escuché por primera vez que nos estaban dando 'acceso' al Magium, en cierto modo supuse que no necesitaría pasar por tantos obstáculos solo para entender cómo funciona este 'acceso'. En este punto, estoy esperando que los organizadores del torneo simplemente me pongan frente a un gran cristal azul al final y me digan que necesito usar mi aura para vincularme a él o algo así para poder acceder al conocimiento del Magium. Si le dijeran esto a alguien como... digamos, Azarius, estoy seguro de que probablemente descubriría qué hacer, pero con el conocimiento que tengo... no puedo evitar pensar que estoy un poco fuera de mi alcance."
+
+              Arraka se ríe.
+          - source: scene_3
+            paragraph: 14
+            text: |-
+              "¿Te diste cuenta de eso recién ahora?" ella dice. "¿Qué pensaste que iba a pasar, de todos modos? ¿Pensaste que tal vez te darían alguna baratija y todo lo que tendrías que hacer era presionar algunos botones para obtener el Magium? ¿Es eso lo que estaba pasando por tu cabeza cuando te uniste a este torneo?"
+
+              "Bueno... ¡sí, en realidad!" dice Daren. "¿Qué más se suponía que debía pensar? Lo están ofreciendo como premio, ¿no? ¡Nadie dijo que era un premio que potencialmente podría acabar con nuestro mundo entero si lo cabreas demasiado!"
+
+              "Sí, obviamente los reyes no dijeron eso, porque lo más probable es que no tengan idea de lo que están ofreciendo", dice Arraka. "Y los Lessathi que también están a cargo de organizar el torneo probablemente no tuvieron ganas de contarles sobre ello, porque tienen sus propios planes ocultos, y no querrían que los reyes descubrieran lo que realmente está en juego aquí. No he estado prestando atención exactamente a la política de Varathia, pero si tuviera que hacer una suposición fundamentada, diría que tanto los reyes como los Lessathi están ocultando algo el uno del otro, y ambos piensan que tienen la ventaja. Lo más probable es que cada uno de ellos tenga la ventaja. su propio propósito secreto al organizar este torneo, y ustedes, los perdedores, están demasiado ocupados bailando a su ritmo para siquiera considerar que podrían estar siendo engañados".
+        effects:
+          - set:
+              failed_checks:
+                - '[ Comprobación de farol fallida - nivel 4 ]'
+              b3_ch8_precisely: 1
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_collected
+      - condition: bluff >= 4
+        texts:
+          - source: scene_text
+            paragraph: 34
+            text: |-
+              "Sin embargo, así es precisamente como lo detecté."
+
+              "... ¡¿Hiciste qué?!" —grita Arraka. "¿Un bufón como tú? ¡¿Solo por sentir su aura?! ¡No, tiene que haber sido una casualidad! ¡Te reto a que lo encuentres de nuevo! Te desafío, triste excusa para..."
+
+              "¿Quieres calmarte?" Illuna la interrumpe. "Obviamente está mintiendo. La única forma en que podría haber conocido la ubicación del Supervisor con tanta precisión es a través de una premonición. ¿No es así, Barry?"
+
+              "Pfff..." digo. "Tenías que arruinar mi diversión, ¿no, Illuna?"
+
+              "¿Una premonición?..." dice Arraka, y luego su tono de repente se vuelve mucho más aliviado. "¡Por supuesto! ¿Por qué no pensé en eso? ¡Era tan obvio!"
+
+              "Entonces, incluso con tus locas capacidades de detección de aura, aún puedes perder la concentración y dejarte engañar por un farol si tus emociones te superan", digo con voz pensativa. "Es bueno saberlo. ¡Estoy seguro de que esta información será útil más adelante!"
+
+              "No contaría con eso, Barry-boy..." dice Arraka, con una voz ligeramente amenazadora.
+
+              "¿Alguien podría cambiar de tema antes de que estos dos terminen intentando matarse entre sí?" dice Kate.
+          - source: scene_text_2
+            paragraph: 24
+            text: |-
+              "¡Ejem!" dice el padre de Leila. "Si se me permite... ¡solo quería decirles a todos lo fascinante que encontré su discusión sobre el Magium de antes! Como Lessathi de menor rango, mi conocimiento sobre el Magium se limitaba solo a los cuentos de hadas, por lo que fue muy estimulante para mí ser participante de su animado debate, ¡aunque solo sea como espectador!"
+
+              "Oh", dice Daren. "Bueno, me gustaría poder compartir su sentimiento, doctor. Desafortunadamente, para mí, personalmente, todo este calvario con los 'fragmentos' de Magium no ha hecho más que generar más dudas en mi mente sobre si este premio que me ofrecen al final del torneo sería de alguna utilidad para mí."
+
+              "¿Cómo es eso?" Dice el padre de Leila.
+
+              "Bueno", dice Daren, "no estoy seguro de cómo decirte esto, pero cuando escuché por primera vez que nos estaban dando 'acceso' al Magium, en cierto modo supuse que no necesitaría pasar por tantos obstáculos solo para entender cómo funciona este 'acceso'. En este punto, estoy esperando que los organizadores del torneo simplemente me pongan frente a un gran cristal azul al final y me digan que necesito usar mi aura para vincularme a él o algo así para poder acceder al conocimiento del Magium. Si le dijeran esto a alguien como... digamos, Azarius, estoy seguro de que probablemente descubriría qué hacer, pero con el conocimiento que tengo... no puedo evitar pensar que estoy un poco fuera de mi alcance."
+
+              Arraka se ríe.
+          - source: scene_3
+            paragraph: 14
+            text: |-
+              "¿Te diste cuenta de eso recién ahora?" ella dice. "¿Qué pensaste que iba a pasar, de todos modos? ¿Pensaste que tal vez te darían alguna baratija y todo lo que tendrías que hacer era presionar algunos botones para obtener el Magium? ¿Es eso lo que estaba pasando por tu cabeza cuando te uniste a este torneo?"
+
+              "Bueno... ¡sí, en realidad!" dice Daren. "¿Qué más se suponía que debía pensar? Lo están ofreciendo como premio, ¿no? ¡Nadie dijo que era un premio que potencialmente podría acabar con nuestro mundo entero si lo cabreas demasiado!"
+
+              "Sí, obviamente los reyes no dijeron eso, porque lo más probable es que no tengan idea de lo que están ofreciendo", dice Arraka. "Y los Lessathi que también están a cargo de organizar el torneo probablemente no tuvieron ganas de contarles sobre ello, porque tienen sus propios planes ocultos, y no querrían que los reyes descubrieran lo que realmente está en juego aquí. No he estado prestando atención exactamente a la política de Varathia, pero si tuviera que hacer una suposición fundamentada, diría que tanto los reyes como los Lessathi están ocultando algo el uno del otro, y ambos piensan que tienen la ventaja. Lo más probable es que cada uno de ellos tenga la ventaja. su propio propósito secreto al organizar este torneo, y ustedes, los perdedores, están demasiado ocupados bailando a su ritmo para siquiera considerar que podrían estar siendo engañados".
+        effects:
+          - set:
+              successful_checks:
+                - '[ Comprobación de farol exitosa - nivel 4 ]'
+              b3_ch8_precisely: 2
+              ac_b3_ch8_bluffer: 1
+            achievement:
+              id: ac_b3_ch8_bluffer
+              title: Maestro del farol
+        choices:
+          - position: 1
+            text: Continuar
+            effects:
+              - set:
+                  current_scene: b3_ch08a_collected
   - name: b3_ch08a_sensing
     texts:
       - source: scene_text
-        paragraph: 20
-        text: |
-          Traducción en progreso.
+        paragraph: 36
+        text: |-
+          "Por supuesto que no lo detecté al sentir su aura".
 
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Hmm..." dice Arraka. "Pero si realmente no usaste tu sentido mágico para localizarlo, ¿entonces qué otros métodos existen? ¿Es algo menos relacionado con el athi?... ¿O fue una de tus estadísticas? ¿Cuáles fueron las estadísticas que te permitieron recopilar información, otra vez? Estoy bastante seguro de que fueron Lenguas antiguas, Observación... luego estaba la audición y... ¡Premonición! ¡Por supuesto! ¿Cómo me olvidé de eso? Debes haber visto una visión de él hablándonos a través del cristal, y así es como supiste dónde se escondía. Finalmente, ¡Esto está empezando a tener sentido!"
+
+          "Seguro que te llevó bastante tiempo darte cuenta", dice Illuna.
+
+          "Dame un respiro", dice Arraka. "Ya te dije que no tengo mucho interés en los dispositivos. ¿Realmente esperas que tenga cada una de sus estadísticas en el fondo de mi mente en todo momento para poder descubrir lo que está haciendo? Debería estar agradecido de que incluso recuerde lo que hacen sus estadísticas, o nunca se habría enterado de su Bluff o cualquiera de las otras estadísticas de aura oculta".
+
+          "Está bien, está bien, lo entendemos", digo. "¿Alguien puede cambiar de tema, por favor? No quiero escuchar a Arraka despotricar durante todo el camino hacia la sala de espera".
+      - source: scene_text_2
+        paragraph: 24
+        text: |-
+          "¡Ejem!" dice el padre de Leila. "Si se me permite... ¡solo quería decirles a todos lo fascinante que encontré su discusión sobre el Magium de antes! Como Lessathi de menor rango, mi conocimiento sobre el Magium se limitaba solo a los cuentos de hadas, por lo que fue muy estimulante para mí ser participante de su animado debate, ¡aunque solo sea como espectador!"
+
+          "Oh", dice Daren. "Bueno, me gustaría poder compartir su sentimiento, doctor. Desafortunadamente, para mí, personalmente, todo este calvario con los 'fragmentos' de Magium no ha hecho más que generar más dudas en mi mente sobre si este premio que me ofrecen al final del torneo sería de alguna utilidad para mí."
+
+          "¿Cómo es eso?" Dice el padre de Leila.
+
+          "Bueno", dice Daren, "no estoy seguro de cómo decirte esto, pero cuando escuché por primera vez que nos estaban dando 'acceso' al Magium, en cierto modo supuse que no necesitaría pasar por tantos obstáculos solo para entender cómo funciona este 'acceso'. En este punto, estoy esperando que los organizadores del torneo simplemente me pongan frente a un gran cristal azul al final y me digan que necesito usar mi aura para vincularme a él o algo así para poder acceder al conocimiento del Magium. Si le dijeran esto a alguien como... digamos, Azarius, estoy seguro de que probablemente descubriría qué hacer, pero con el conocimiento que tengo... no puedo evitar pensar que estoy un poco fuera de mi alcance."
+
+          Arraka se ríe.
+      - source: scene_3
+        paragraph: 14
+        text: |-
+          "¿Te diste cuenta de eso recién ahora?" ella dice. "¿Qué pensaste que iba a pasar, de todos modos? ¿Pensaste que tal vez te darían alguna baratija y todo lo que tendrías que hacer era presionar algunos botones para obtener el Magium? ¿Es eso lo que estaba pasando por tu cabeza cuando te uniste a este torneo?"
+
+          "Bueno... ¡sí, en realidad!" dice Daren. "¿Qué más se suponía que debía pensar? Lo están ofreciendo como premio, ¿no? ¡Nadie dijo que era un premio que potencialmente podría acabar con nuestro mundo entero si lo cabreas demasiado!"
+
+          "Sí, obviamente los reyes no dijeron eso, porque lo más probable es que no tengan idea de lo que están ofreciendo", dice Arraka. "Y los Lessathi que también están a cargo de organizar el torneo probablemente no tuvieron ganas de contarles sobre ello, porque tienen sus propios planes ocultos, y no querrían que los reyes descubrieran lo que realmente está en juego aquí. No he estado prestando atención exactamente a la política de Varathia, pero si tuviera que hacer una suposición fundamentada, diría que tanto los reyes como los Lessathi están ocultando algo el uno del otro, y ambos piensan que tienen la ventaja. Lo más probable es que cada uno de ellos tenga la ventaja. su propio propósito secreto al organizar este torneo, y ustedes, los perdedores, están demasiado ocupados bailando a su ritmo para siquiera considerar que podrían estar siendo engañados".
+    effects:
+      - set:
+          b3_ch8_precisely: 0
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch08a_collected
   - name: b3_ch08a_break
     texts:
       - source: scene_text
-        paragraph: 21
-        text: |
-          Traducción en progreso.
+        paragraph: 37
+        text: Caminamos un rato hacia la sala de espera hasta llegar a un pasillo que no tiene cristales azules en las paredes y está iluminado enteramente por antorchas. Seguimos avanzando sin decir una palabra durante un minuto más o menos, hasta que el doctor Reidzek decide finalmente romper el silencio aclarándose la garganta.
+      - source: scene_text_2
+        paragraph: 24
+        text: |-
+          "¡Ejem!" dice el padre de Leila. "Si se me permite... ¡solo quería decirles a todos lo fascinante que encontré su discusión sobre el Magium de antes! Como Lessathi de menor rango, mi conocimiento sobre el Magium se limitaba solo a los cuentos de hadas, por lo que fue muy estimulante para mí ser participante de su animado debate, ¡aunque solo sea como espectador!"
 
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
+          "Oh", dice Daren. "Bueno, me gustaría poder compartir su sentimiento, doctor. Desafortunadamente, para mí, personalmente, todo este calvario con los 'fragmentos' de Magium no ha hecho más que generar más dudas en mi mente sobre si este premio que me ofrecen al final del torneo sería de alguna utilidad para mí."
+
+          "¿Cómo es eso?" Dice el padre de Leila.
+
+          "Bueno", dice Daren, "no estoy seguro de cómo decirte esto, pero cuando escuché por primera vez que nos estaban dando 'acceso' al Magium, en cierto modo supuse que no necesitaría pasar por tantos obstáculos solo para entender cómo funciona este 'acceso'. En este punto, estoy esperando que los organizadores del torneo simplemente me pongan frente a un gran cristal azul al final y me digan que necesito usar mi aura para vincularme a él o algo así para poder acceder al conocimiento del Magium. Si le dijeran esto a alguien como... digamos, Azarius, estoy seguro de que probablemente descubriría qué hacer, pero con el conocimiento que tengo... no puedo evitar pensar que estoy un poco fuera de mi alcance."
+
+          Arraka se ríe.
+      - source: scene_3
+        paragraph: 14
+        text: |-
+          "¿Te diste cuenta de eso recién ahora?" ella dice. "¿Qué pensaste que iba a pasar, de todos modos? ¿Pensaste que tal vez te darían alguna baratija y todo lo que tendrías que hacer era presionar algunos botones para obtener el Magium? ¿Es eso lo que estaba pasando por tu cabeza cuando te uniste a este torneo?"
+
+          "Bueno... ¡sí, en realidad!" dice Daren. "¿Qué más se suponía que debía pensar? Lo están ofreciendo como premio, ¿no? ¡Nadie dijo que era un premio que potencialmente podría acabar con nuestro mundo entero si lo cabreas demasiado!"
+
+          "Sí, obviamente los reyes no dijeron eso, porque lo más probable es que no tengan idea de lo que están ofreciendo", dice Arraka. "Y los Lessathi que también están a cargo de organizar el torneo probablemente no tuvieron ganas de contarles sobre ello, porque tienen sus propios planes ocultos, y no querrían que los reyes descubrieran lo que realmente está en juego aquí. No he estado prestando atención exactamente a la política de Varathia, pero si tuviera que hacer una suposición fundamentada, diría que tanto los reyes como los Lessathi están ocultando algo el uno del otro, y ambos piensan que tienen la ventaja. Lo más probable es que cada uno de ellos tenga la ventaja. su propio propósito secreto al organizar este torneo, y ustedes, los perdedores, están demasiado ocupados bailando a su ritmo para siquiera considerar que podrían estar siendo engañados".
+    effects:
+      - set:
+          b3_ch8_precisely: 0
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch08a_collected
   - name: b3_ch08a_collected
     texts:
       - source: scene_text
-        paragraph: 22
-        text: |
-          Traducción en progreso.
+        paragraph: 38
+        text: |-
+          "¡¿Entonces los reyes sabían desde el principio que la mayoría de los concursantes ni siquiera podían esperar usar el Magium, pero nos dejaron unirnos de todos modos?!" grita Hadrik. "¡Eso es incluso peor que hacernos cazar piñas que no pueden ser detectadas por nadie más que por stillwaters y sabios! ¿Estos reyes realmente no tienen ningún respeto por las vidas de los cientos o tal vez incluso miles de magos que murieron en este torneo, peleando por nada?"
 
-          El texto en Español para el Libro 3, Capítulo 8 A todavía está en progreso. Abre el menú de idioma y cambia a inglés si quieres continuar desde aquí.
-    choices: []
-chapter_effects: []
+          "Tal vez eso es lo que los reyes buscaban desde el principio", dice Illuna. "Tal vez su verdadero objetivo era atraer a los magos más poderosos de los principales continentes lejos de sus países de origen y alentarlos a matarse entre sí para que todos los continentes, excepto Varathia, fueran despojados simultáneamente de sus luchadores más fuertes. A este ritmo, no me sorprendería demasiado si los reyes varathianos estuvieran planeando invadir los otros continentes poco después del final de este torneo".
+
+          "O tal vez los reyes varathianos estaban preocupados de que ELLOS pudieran ser invadidos, por cualquier motivo", digo, "y decidieron reducir preventivamente el número de sus atacantes potenciales. Eso también podría explicar por qué pidieron específicamente que el ganador de este torneo se convirtiera en el protector de Varathia en caso de una invasión externa".
+      - source: scene_text_2
+        paragraph: 25
+        text: |-
+          "Eso también es posible, sí", afirma Illuna.
+
+          "¿Qué pasa entonces con los organizadores Lessathi?" dice Daren. "¿Qué tendrían que ganar con todo esto?"
+
+          "Es posible que los Lessathi estén intentando aprovechar el caos causado por este torneo para hacerse con el control de algunos de los reinos de Varathia", dice Kate. "Otra posibilidad es que de hecho quieran el premio del torneo para ellos mismos, y sólo ayudaron con la organización para que los reyes los condujeran al lugar desde donde se puede acceder al Magium. Es difícil adivinar cuál es su verdadero propósito cuando sabemos tan poco sobre ellos".
+
+          "Tu amiga, Diane, era parte de la guardia de élite de Meridith, ¿verdad?" Le pregunto a Kate. "Podríamos intentar preguntarle sobre esto cuando finalmente la volvamos a encontrar. Ella podría saber algo sobre sus planes".
+
+          "Ya veremos", dice Kate.
+
+          "Tengo que decir..." me dice Daren. "Me sorprende lo tranquilo y sereno que estás ahora, Barry. De todas las personas aquí, probablemente eres, con diferencia, el que más quiere el Magium. ¿Cómo es que no te afecta el hecho de que el premio por el que has estado luchando tan duro para obtener pueda resultar completamente inútil para ti?"
+      - source: scene_3
+        paragraph: 15
+        text: |-
+          "Oh, es porque ya tuve esta conversación antes... con Kate", digo. "Ella vio que yo estaba dudando sobre el Magium después de lo que sucedió en el ritual del Dios del Tiempo, y me ayudó a recuperar mi motivación sugiriendo una forma alternativa en la que podría hacer uso del Magium para convertirme en un mago".
+
+          "¿Es eso así?" Dice Daren, mientras le da a Kate una mirada impresionada durante unos segundos antes de volver a mirarme. "¿Y cuál fue esa sugerencia que te dio?"
+
+          "La idea es que primero que nada desbloquee mis estadísticas mágicas de mi dispositivo para poder usar mis poderes mágicos temporales para vincularme al Magium", digo. "Entonces, una vez que tenga acceso a todo el conocimiento de Magium, puedo tomarme mi tiempo para investigar una forma de modificar mi dispositivo de estadísticas para que pueda extraer energía directamente del plano mágico en lugar de obtenerla de los magos que me rodean, lo que esencialmente me convertiría en un mago de pleno derecho. Sé que no es un plan perfecto, pero después de pensarlo un poco, diría que tengo bastante confianza en mis probabilidades de éxito".
+
+          "Bueno..." dice Daren. "No estoy exactamente seguro de qué decir sobre la viabilidad de su plan, pero una cosa es segura. A todos nos vendría bien algo de su optimismo en este momento".
+    choices:
+      - position: 1
+        text: Continuar
+        effects:
+          - set:
+              current_scene: b3_ch08b_pardon
+              storyboard_controls: Jump to frame "Book 3 Chapter 8 b"
